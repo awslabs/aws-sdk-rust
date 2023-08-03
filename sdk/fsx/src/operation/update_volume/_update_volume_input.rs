@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
-    #[doc(hidden)]
     pub ontap_configuration: ::std::option::Option<crate::types::UpdateOntapVolumeConfiguration>,
     /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
-    #[doc(hidden)]
     pub open_zfs_configuration: ::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>,
 }
 impl UpdateVolumeInput {

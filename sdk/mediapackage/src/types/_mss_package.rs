@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::MssEncryption>,
     /// The time window (in seconds) contained in each manifest.
-    #[doc(hidden)]
     pub manifest_window_seconds: ::std::option::Option<i32>,
     /// The duration (in seconds) of each segment.
-    #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
     /// A StreamSelection configuration.
-    #[doc(hidden)]
     pub stream_selection: ::std::option::Option<crate::types::StreamSelection>,
 }
 impl MssPackage {

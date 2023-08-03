@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeClusterSecurityGroupIngressInput {
     /// <p>The name of the security group to which the ingress rule is added.</p>
-    #[doc(hidden)]
     pub cluster_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP range to be added the Amazon Redshift security group.</p>
-    #[doc(hidden)]
     pub cidrip: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
-    #[doc(hidden)]
     pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
     /// <p>Example: <code>111122223333</code> </p>
-    #[doc(hidden)]
     pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizeClusterSecurityGroupIngressInput {

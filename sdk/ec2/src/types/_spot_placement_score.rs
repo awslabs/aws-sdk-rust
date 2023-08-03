@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotPlacementScore {
     /// <p>The Region.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The placement score, on a scale from <code>1</code> to <code>10</code>. A score of <code>10</code> indicates that your Spot request is highly likely to succeed in this Region or Availability Zone. A score of <code>1</code> indicates that your Spot request is not likely to succeed. </p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<i32>,
 }
 impl SpotPlacementScore {

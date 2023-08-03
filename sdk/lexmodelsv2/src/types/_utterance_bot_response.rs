@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceBotResponse {
     /// <p>The text of the response to the utterance from the bot.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The type of the response. The following values are possible:</p>
     /// <ul>
@@ -14,11 +13,9 @@ pub struct UtteranceBotResponse {
     /// <li> <p> <code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize the audio response.</p> </li>
     /// <li> <p> <code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::UtteranceContentType>,
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-    #[doc(hidden)]
     pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
 impl UtteranceBotResponse {

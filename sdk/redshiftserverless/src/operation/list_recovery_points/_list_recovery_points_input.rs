@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsInput {
     /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The time when the recovery point's creation was initiated.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when creation of the recovery point finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the namespace to list recovery points for.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list recovery points.</p>
-    #[doc(hidden)]
     pub namespace_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListRecoveryPointsInput {

@@ -4,26 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateProvisionedProductInput {
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    #[doc(hidden)]
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    #[doc(hidden)]
     pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
-    #[doc(hidden)]
     pub terminate_token: ::std::option::Option<::std::string::String>,
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
-    #[doc(hidden)]
     pub ignore_errors: ::std::option::Option<bool>,
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
-    #[doc(hidden)]
     pub retain_physical_resources: ::std::option::Option<bool>,
 }
 impl TerminateProvisionedProductInput {

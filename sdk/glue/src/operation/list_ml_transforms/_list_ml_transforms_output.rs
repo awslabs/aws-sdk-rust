@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMlTransformsOutput {
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
-    #[doc(hidden)]
     pub transform_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

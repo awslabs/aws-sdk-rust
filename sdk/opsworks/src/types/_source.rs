@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Source {
     /// <p>The repository type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>This parameter depends on the repository type.</p>
     /// <ul>
     /// <li> <p>For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key ID.</p> </li>
     /// <li> <p>For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code> to the user name.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>When included in a request, the parameter depends on the repository type.</p>
     /// <ul>
@@ -24,14 +21,11 @@ pub struct Source {
     /// </ul>
     /// <p>For more information on how to safely handle IAM credentials, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>In requests, the repository's SSH key.</p>
     /// <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
-    #[doc(hidden)]
     pub ssh_key: ::std::option::Option<::std::string::String>,
     /// <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions of an application. One of the simplest approaches is to have branches or revisions in your repository that represent different versions that can potentially be deployed.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<::std::string::String>,
 }
 impl Source {

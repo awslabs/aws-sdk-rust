@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Column {
     /// <p>The name of the column.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a> in the <i>Glue Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl Column {

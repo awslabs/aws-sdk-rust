@@ -7,13 +7,10 @@ pub struct GetLensVersionDifferenceInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    #[doc(hidden)]
     pub lens_alias: ::std::option::Option<::std::string::String>,
     /// <p>The base version of the lens.</p>
-    #[doc(hidden)]
     pub base_lens_version: ::std::option::Option<::std::string::String>,
     /// <p>The lens version to target a difference for.</p>
-    #[doc(hidden)]
     pub target_lens_version: ::std::option::Option<::std::string::String>,
 }
 impl GetLensVersionDifferenceInput {

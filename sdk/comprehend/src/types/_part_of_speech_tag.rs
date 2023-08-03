@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartOfSpeechTag {
     /// <p>Identifies the part of speech that the token represents.</p>
-    #[doc(hidden)]
     pub tag: ::std::option::Option<crate::types::PartOfSpeechTagType>,
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl PartOfSpeechTag {

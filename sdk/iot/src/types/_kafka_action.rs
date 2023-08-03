@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaAction {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The Kafka message key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The Kafka message partition.</p>
-    #[doc(hidden)]
     pub partition: ::std::option::Option<::std::string::String>,
     /// <p>Properties of the Apache Kafka producer client.</p>
-    #[doc(hidden)]
     pub client_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl KafkaAction {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignNameInput {
     /// Identifier representing a Campaign
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The name of an Amazon Connect Campaign name.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCampaignNameInput {

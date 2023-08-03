@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to stop.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to stop.</p>
-    #[doc(hidden)]
     pub experiment: ::std::option::Option<::std::string::String>,
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::ExperimentStopDesiredState>,
     /// <p>A string that describes why you are stopping the experiment.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl StopExperimentInput {

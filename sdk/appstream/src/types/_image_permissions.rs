@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImagePermissions {
     /// <p>Indicates whether the image can be used for a fleet.</p>
-    #[doc(hidden)]
     pub allow_fleet: ::std::option::Option<bool>,
     /// <p>Indicates whether the image can be used for an image builder.</p>
-    #[doc(hidden)]
     pub allow_image_builder: ::std::option::Option<bool>,
 }
 impl ImagePermissions {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectorDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the connector definition.
-    #[doc(hidden)]
     pub connector_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    #[doc(hidden)]
     pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
 }
 impl CreateConnectorDefinitionVersionInput {

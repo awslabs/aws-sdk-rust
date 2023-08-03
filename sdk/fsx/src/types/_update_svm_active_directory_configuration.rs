@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSvmActiveDirectoryConfiguration {
     /// <p>Specifies changes you are making to the self-managed Microsoft Active Directory (AD) configuration to which an FSx for Windows File Server file system or an FSx for ONTAP SVM is joined.</p>
-    #[doc(hidden)]
     pub self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
     /// <p>Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.</p>
-    #[doc(hidden)]
     pub net_bios_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSvmActiveDirectoryConfiguration {

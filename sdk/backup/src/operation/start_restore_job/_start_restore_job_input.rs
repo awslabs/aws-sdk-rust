@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartRestoreJobInput {
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    #[doc(hidden)]
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
     /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
@@ -18,13 +17,10 @@ pub struct StartRestoreJobInput {
     /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
     /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
     /// <ul>
@@ -44,11 +40,9 @@ pub struct StartRestoreJobInput {
     /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to the restored resource.</p>
     /// <p>This can only be applied to backups created through Backup.</p>
-    #[doc(hidden)]
     pub copy_source_tags_to_restored_resource: ::std::option::Option<bool>,
 }
 impl StartRestoreJobInput {

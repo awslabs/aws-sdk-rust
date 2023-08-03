@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionAtRest {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
-    #[doc(hidden)]
     pub catalog_encryption_mode: ::std::option::Option<crate::types::CatalogEncryptionMode>,
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
-    #[doc(hidden)]
     pub sse_aws_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionAtRest {

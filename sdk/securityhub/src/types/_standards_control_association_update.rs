@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsControlAssociationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
-    #[doc(hidden)]
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
-    #[doc(hidden)]
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The desired enablement status of the control in the standard.</p>
-    #[doc(hidden)]
     pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>The reason for updating the control's enablement status in the standard.</p>
-    #[doc(hidden)]
     pub updated_reason: ::std::option::Option<::std::string::String>,
 }
 impl StandardsControlAssociationUpdate {

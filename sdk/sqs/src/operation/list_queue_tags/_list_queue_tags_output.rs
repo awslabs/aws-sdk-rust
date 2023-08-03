@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueueTagsOutput {
     /// <p>The list of all tags added to the specified queue.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

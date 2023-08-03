@@ -6,11 +6,9 @@
 pub struct Tag {
     /// <p>The key of the tag.</p>
     /// <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the tag.</p>
     /// <p>Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {

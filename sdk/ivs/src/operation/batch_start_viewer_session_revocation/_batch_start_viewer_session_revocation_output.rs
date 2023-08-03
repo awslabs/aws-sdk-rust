@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationOutput {
     /// <p>Each error object is related to a specific <code>channelArn</code> and <code>viewerId</code> pair in the request.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationError>>,
     _request_id: Option<String>,
 }

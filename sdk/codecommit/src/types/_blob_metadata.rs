@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlobMetadata {
     /// <p>The full ID of the blob.</p>
-    #[doc(hidden)]
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the blob and associated file name, if any.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct BlobMetadata {
     /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
     /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<::std::string::String>,
 }
 impl BlobMetadata {

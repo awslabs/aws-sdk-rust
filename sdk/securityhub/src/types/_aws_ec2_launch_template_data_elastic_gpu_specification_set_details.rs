@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
     /// <p> The type of Elastic Graphics accelerator. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The information for the requested channel memberships.</p>
-    #[doc(hidden)]
     pub channel_memberships: ::std::option::Option<::std::vec::Vec<crate::types::ChannelMembershipForAppInstanceUserSummary>>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

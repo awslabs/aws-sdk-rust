@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAttachPolicy {
     /// <p>The reference that is associated with the policy object.</p>
-    #[doc(hidden)]
     pub policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchAttachPolicy {

@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlatformVersionOutput {
     /// <p>Detailed information about the new version of the custom platform.</p>
-    #[doc(hidden)]
     pub platform_summary: ::std::option::Option<crate::types::PlatformSummary>,
     /// <p>The builder used to create the custom platform.</p>
     ///
     /// _Note: This member has been renamed from `builder`._
-    #[doc(hidden)]
     pub builder_value: ::std::option::Option<crate::types::Builder>,
     _request_id: Option<String>,
 }

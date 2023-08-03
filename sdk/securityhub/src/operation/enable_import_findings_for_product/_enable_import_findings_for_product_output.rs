@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableImportFindingsForProductOutput {
     /// <p>The ARN of your subscription to the product to enable integrations for.</p>
-    #[doc(hidden)]
     pub product_subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

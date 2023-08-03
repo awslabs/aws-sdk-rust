@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
-    #[doc(hidden)]
     pub backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
-    #[doc(hidden)]
     pub hsm_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
-    #[doc(hidden)]
     pub source_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
     /// <ul>
     /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
     /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterInput {

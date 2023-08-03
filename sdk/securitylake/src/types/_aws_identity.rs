@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIdentity {
     /// <p>The AWS identity principal.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The external ID used to estalish trust relationship with the AWS identity.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsIdentity {

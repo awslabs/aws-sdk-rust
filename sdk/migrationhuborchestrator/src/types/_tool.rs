@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tool {
     /// <p>The name of an AWS service. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an AWS service.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl Tool {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>A complex data type that contains zero or more tag elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

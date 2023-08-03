@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTapeArchiveInput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual tape shelf (VTS).</p>
-    #[doc(hidden)]
     pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
-    #[doc(hidden)]
     pub bypass_governance_retention: bool,
 }
 impl DeleteTapeArchiveInput {

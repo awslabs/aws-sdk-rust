@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
-    #[doc(hidden)]
     pub vpc_ingress_connection: ::std::option::Option<crate::types::VpcIngressConnection>,
     _request_id: Option<String>,
 }

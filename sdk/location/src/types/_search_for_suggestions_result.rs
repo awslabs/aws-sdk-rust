@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p>
     /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note>
     /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
     /// </note>
-    #[doc(hidden)]
     pub place_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Location categories that describe the Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    #[doc(hidden)]
     pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchForSuggestionsResult {

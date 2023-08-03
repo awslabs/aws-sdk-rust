@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesIamInstanceProfile {
     /// <p>The Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesIamInstanceProfile {

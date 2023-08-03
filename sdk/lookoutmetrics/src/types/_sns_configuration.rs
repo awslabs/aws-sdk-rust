@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsConfiguration {
     /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target SNS topic.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The format of the SNS topic.</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct SnsConfiguration {
     /// <li> <p> <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to the anomaly detail page. We recommend this for email.</p> </li>
     /// <li> <p> <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this for SMS.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sns_format: ::std::option::Option<crate::types::SnsFormat>,
 }
 impl SnsConfiguration {

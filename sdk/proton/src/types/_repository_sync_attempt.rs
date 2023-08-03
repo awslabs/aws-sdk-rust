@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The sync attempt status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RepositorySyncStatus>,
     /// <p>Detail data for sync attempt events.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>,
 }
 impl RepositorySyncAttempt {

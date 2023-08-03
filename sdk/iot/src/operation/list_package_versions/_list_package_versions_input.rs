@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackageVersionsInput {
     /// <p>The name of the target package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPackageVersionsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPublicAccessBlockOutput {
     /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     _request_id: Option<String>,
 }

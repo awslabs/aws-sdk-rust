@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCalculationExecutionOutput {
     /// <p>The calculation execution UUID.</p>
-    #[doc(hidden)]
     pub calculation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
     /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
@@ -14,7 +13,6 @@ pub struct StartCalculationExecutionOutput {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CalculationExecutionState>,
     _request_id: Option<String>,
 }

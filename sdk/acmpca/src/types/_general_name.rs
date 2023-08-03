@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeneralName {
     /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
-    #[doc(hidden)]
     pub other_name: ::std::option::Option<crate::types::OtherName>,
     /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
-    #[doc(hidden)]
     pub rfc822_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
-    #[doc(hidden)]
     pub directory_name: ::std::option::Option<crate::types::Asn1Subject>,
     /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
-    #[doc(hidden)]
     pub edi_party_name: ::std::option::Option<crate::types::EdiPartyName>,
     /// <p>Represents <code>GeneralName</code> as a URI.</p>
-    #[doc(hidden)]
     pub uniform_resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
-    #[doc(hidden)]
     pub registered_id: ::std::option::Option<::std::string::String>,
 }
 impl GeneralName {

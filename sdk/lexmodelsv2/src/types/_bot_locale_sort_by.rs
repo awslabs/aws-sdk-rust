@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotLocaleSortBy {
     /// <p>The bot locale attribute to sort by.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::BotLocaleSortAttribute>,
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl BotLocaleSortBy {

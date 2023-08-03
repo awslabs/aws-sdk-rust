@@ -9,7 +9,6 @@ pub struct RuntimeHints {
     /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
     /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints to improve accuracy</a>.</p>
     /// <p>The intent name and slot name must exist.</p>
-    #[doc(hidden)]
     pub slot_hints: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
     >,

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultField {
     /// <p>The log event field.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The value of this field.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResultField {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSequenceStoreInput {
     /// <p>A name for the store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the store.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Server-side encryption (SSE) settings for the store.</p>
-    #[doc(hidden)]
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>Tags for the store.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
-    #[doc(hidden)]
     pub fallback_location: ::std::option::Option<::std::string::String>,
 }
 impl CreateSequenceStoreInput {

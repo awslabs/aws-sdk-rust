@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportLabelsTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
-    #[doc(hidden)]
     pub input_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
-    #[doc(hidden)]
     pub replace: bool,
 }
 impl ImportLabelsTaskRunProperties {

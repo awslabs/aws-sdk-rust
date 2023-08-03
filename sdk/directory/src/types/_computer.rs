@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Computer {
     /// <p>The identifier of the computer.</p>
-    #[doc(hidden)]
     pub computer_id: ::std::option::Option<::std::string::String>,
     /// <p>The computer name.</p>
-    #[doc(hidden)]
     pub computer_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    #[doc(hidden)]
     pub computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl Computer {

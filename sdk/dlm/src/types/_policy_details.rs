@@ -6,31 +6,23 @@
 pub struct PolicyDetails {
     /// <p> <b>[All policy types]</b> The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
     /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyTypeValues>,
     /// <p> <b>[Snapshot policies only]</b> The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
     /// <p> <b>[Snapshot and AMI policies only]</b> The location of the resources to backup. If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.</p>
     /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of the specified type with matching target tags across all of the Outposts in your account.</p>
-    #[doc(hidden)]
     pub resource_locations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceLocationValues>>,
     /// <p> <b>[Snapshot and AMI policies only]</b> The single tag that identifies targeted resources for this policy.</p>
-    #[doc(hidden)]
     pub target_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> <b>[Snapshot and AMI policies only]</b> The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
-    #[doc(hidden)]
     pub schedules: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
     /// <p> <b>[Snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies. </p> <note>
     /// <p>If you are modifying a policy that was created or previously modified using the Amazon Data Lifecycle Manager console, then you must include this parameter and specify either the default values or the new values that you require. You can't omit this parameter or set its values to null.</p>
     /// </note>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<crate::types::Parameters>,
     /// <p> <b>[Event-based policies only]</b> The event that activates the event-based policy.</p>
-    #[doc(hidden)]
     pub event_source: ::std::option::Option<crate::types::EventSource>,
     /// <p> <b>[Event-based policies only]</b> The actions to be performed when the event-based policy is activated. You can specify only one action per policy.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
 }
 impl PolicyDetails {

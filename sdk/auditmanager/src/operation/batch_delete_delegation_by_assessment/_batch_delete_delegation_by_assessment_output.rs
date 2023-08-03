@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentOutput {
     /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDelegationByAssessmentError>>,
     _request_id: Option<String>,
 }

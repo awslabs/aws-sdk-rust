@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteInput {
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway route table.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    #[doc(hidden)]
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLocalGatewayRouteInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetEntriesOutput {
     /// <p>A list of the entries (JSON Lines) within the dataset.</p>
-    #[doc(hidden)]
     pub dataset_entries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

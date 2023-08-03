@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>The Amazon Web Services account ID that creates the job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
-    #[doc(hidden)]
     pub confirmation_required: ::std::option::Option<bool>,
     /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::JobOperation>,
     /// <p>Configuration parameters for the optional job-completion report.</p>
-    #[doc(hidden)]
     pub report: ::std::option::Option<crate::types::JobReport>,
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Configuration parameters for the manifest.</p>
-    #[doc(hidden)]
     pub manifest: ::std::option::Option<crate::types::JobManifest>,
     /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
-    #[doc(hidden)]
     pub manifest_generator: ::std::option::Option<crate::types::JobManifestGenerator>,
 }
 impl CreateJobInput {

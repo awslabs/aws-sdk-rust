@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Device {
     /// The ARN of the certificate associated with the device.
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// If true, the device's local shadow will be automatically synced with the cloud.
-    #[doc(hidden)]
     pub sync_shadow: ::std::option::Option<bool>,
     /// The thing ARN of the device.
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl Device {

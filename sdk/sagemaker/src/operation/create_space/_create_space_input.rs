@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSpaceInput {
     /// <p>The ID of the associated Domain.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A collection of space settings.</p>
-    #[doc(hidden)]
     pub space_settings: ::std::option::Option<crate::types::SpaceSettings>,
 }
 impl CreateSpaceInput {

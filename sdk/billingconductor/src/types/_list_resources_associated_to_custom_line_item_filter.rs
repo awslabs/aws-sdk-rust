@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemFilter {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    #[doc(hidden)]
     pub relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
 }
 impl ListResourcesAssociatedToCustomLineItemFilter {

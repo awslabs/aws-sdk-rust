@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace that you want to delete.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNamespaceInput {

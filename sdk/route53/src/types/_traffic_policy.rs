@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficPolicy {
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
     /// <p>The name that you specified when you created the traffic policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RrType>,
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl TrafficPolicy {

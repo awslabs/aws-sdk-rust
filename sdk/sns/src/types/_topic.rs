@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Topic {
     /// <p>The topic's ARN.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl Topic {

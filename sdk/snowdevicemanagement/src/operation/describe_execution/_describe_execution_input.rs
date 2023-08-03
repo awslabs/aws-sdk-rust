@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExecutionInput {
     /// <p>The ID of the task that the action is describing.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the managed device.</p>
-    #[doc(hidden)]
     pub managed_device_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeExecutionInput {

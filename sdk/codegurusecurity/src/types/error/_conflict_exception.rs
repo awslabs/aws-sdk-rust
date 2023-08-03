@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>The identifier for the error.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>Description of the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the service resource associated with the request.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource associated with the request.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

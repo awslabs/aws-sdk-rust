@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseShortInfoResponse {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub database_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
-    #[doc(hidden)]
     pub database_engine: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseShortInfoResponse {

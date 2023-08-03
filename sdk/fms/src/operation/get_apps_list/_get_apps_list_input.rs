@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppsListInput {
     /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
-    #[doc(hidden)]
     pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
-    #[doc(hidden)]
     pub default_list: ::std::option::Option<bool>,
 }
 impl GetAppsListInput {

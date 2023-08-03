@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing name associated with the device the job execution is running on.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-    #[doc(hidden)]
     pub include_job_document: ::std::option::Option<bool>,
     /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
-    #[doc(hidden)]
     pub execution_number: ::std::option::Option<i64>,
 }
 impl DescribeJobExecutionInput {

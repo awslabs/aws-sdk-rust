@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>A FinSpace resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys (names) of one or more tags to be removed.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

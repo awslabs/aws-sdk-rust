@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificatesInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of items that should show up on one page</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListCertificatesInput {

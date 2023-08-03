@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Connection {
     /// <p>The ID of the connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the first device in the connection.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the second device in the connection.</p>
-    #[doc(hidden)]
     pub connected_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link for the first device in the connection.</p>
-    #[doc(hidden)]
     pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link for the second device in the connection.</p>
-    #[doc(hidden)]
     pub connected_link_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the connection.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the connection was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the connection.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The tags for the connection.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Connection {

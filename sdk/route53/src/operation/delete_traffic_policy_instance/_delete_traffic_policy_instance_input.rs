@@ -7,7 +7,6 @@ pub struct DeleteTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to delete. </p> <important>
     /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
     /// </important>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrafficPolicyInstanceInput {

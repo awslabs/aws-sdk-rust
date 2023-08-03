@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVpnConnectionDeviceSampleConfigurationInput {
     /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
-    #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
-    #[doc(hidden)]
     pub vpn_connection_device_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
-    #[doc(hidden)]
     pub internet_key_exchange_version: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl GetVpnConnectionDeviceSampleConfigurationInput {

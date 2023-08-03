@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInput {

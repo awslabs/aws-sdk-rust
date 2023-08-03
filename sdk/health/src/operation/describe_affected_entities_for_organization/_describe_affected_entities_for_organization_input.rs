@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesForOrganizationInput {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    #[doc(hidden)]
     pub organization_entity_filters: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeAffectedEntitiesForOrganizationInput {

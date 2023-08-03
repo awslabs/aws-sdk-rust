@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCoreDefinitionOutput {
     /// The ARN of the definition.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was created.
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::std::string::String>,
     /// The ID of the definition.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the definition was last updated.
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::std::string::String>,
     /// The ID of the latest version associated with the definition.
-    #[doc(hidden)]
     pub latest_version: ::std::option::Option<::std::string::String>,
     /// The ARN of the latest version associated with the definition.
-    #[doc(hidden)]
     pub latest_version_arn: ::std::option::Option<::std::string::String>,
     /// The name of the definition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

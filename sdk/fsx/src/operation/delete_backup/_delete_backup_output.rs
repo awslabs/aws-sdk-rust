@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBackupOutput {
     /// <p>The ID of the backup that was deleted.</p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::BackupLifecycle>,
     _request_id: Option<String>,
 }

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineageObject {
     /// <p>The time when the process started. This is in UTC format.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The process ID of the child process.</p>
-    #[doc(hidden)]
     pub namespace_pid: i32,
     /// <p>The user ID of the user that executed the process.</p>
-    #[doc(hidden)]
     pub user_id: i32,
     /// <p>The name of the process.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the process.</p>
-    #[doc(hidden)]
     pub pid: i32,
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
-    #[doc(hidden)]
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>The absolute path of the process executable file.</p>
-    #[doc(hidden)]
     pub executable_path: ::std::option::Option<::std::string::String>,
     /// <p>The effective user ID that was used to execute the process.</p>
-    #[doc(hidden)]
     pub euid: i32,
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
-    #[doc(hidden)]
     pub parent_uuid: ::std::option::Option<::std::string::String>,
 }
 impl LineageObject {

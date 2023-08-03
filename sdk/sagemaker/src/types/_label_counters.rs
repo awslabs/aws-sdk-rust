@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelCounters {
     /// <p>The total number of objects labeled.</p>
-    #[doc(hidden)]
     pub total_labeled: i32,
     /// <p>The total number of objects labeled by a human worker.</p>
-    #[doc(hidden)]
     pub human_labeled: i32,
     /// <p>The total number of objects labeled by automated data labeling.</p>
-    #[doc(hidden)]
     pub machine_labeled: i32,
     /// <p>The total number of objects that could not be labeled due to an error.</p>
-    #[doc(hidden)]
     pub failed_non_retryable_error: i32,
     /// <p>The total number of objects not yet labeled.</p>
-    #[doc(hidden)]
     pub unlabeled: i32,
 }
 impl LabelCounters {

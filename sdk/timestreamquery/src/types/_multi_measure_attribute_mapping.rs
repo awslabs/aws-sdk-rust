@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiMeasureAttributeMapping {
     /// <p>Source column from where the attribute value is to be read.</p>
-    #[doc(hidden)]
     pub source_column: ::std::option::Option<::std::string::String>,
     /// <p>Custom name to be used for attribute name in derived table. If not provided, source column name would be used.</p>
-    #[doc(hidden)]
     pub target_multi_measure_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of the attribute to be read from the source column.</p>
-    #[doc(hidden)]
     pub measure_value_type: ::std::option::Option<crate::types::ScalarMeasureValueType>,
 }
 impl MultiMeasureAttributeMapping {

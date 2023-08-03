@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectoryVpcSettings {
     /// <p>The identifier of the VPC in which to create the directory.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DirectoryVpcSettings {

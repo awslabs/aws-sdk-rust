@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
-    #[doc(hidden)]
     pub bucket_key: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {

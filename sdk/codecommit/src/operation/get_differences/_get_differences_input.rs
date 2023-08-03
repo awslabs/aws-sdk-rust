@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDifferencesInput {
     /// <p>The name of the repository where you want to get differences.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
-    #[doc(hidden)]
     pub before_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-    #[doc(hidden)]
     pub after_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
-    #[doc(hidden)]
     pub before_path: ::std::option::Option<::std::string::String>,
     /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
-    #[doc(hidden)]
     pub after_path: ::std::option::Option<::std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDifferencesInput {

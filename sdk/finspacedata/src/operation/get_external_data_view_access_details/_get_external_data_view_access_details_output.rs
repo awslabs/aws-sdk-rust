@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExternalDataViewAccessDetailsOutput {
     /// <p>The credentials required to access the external Dataview from the S3 location.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::AwsCredentials>,
     /// <p>The location where the external Dataview is stored.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
     _request_id: Option<String>,
 }

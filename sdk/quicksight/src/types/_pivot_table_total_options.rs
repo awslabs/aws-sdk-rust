@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableTotalOptions {
     /// <p>The row subtotal options.</p>
-    #[doc(hidden)]
     pub row_subtotal_options: ::std::option::Option<crate::types::SubtotalOptions>,
     /// <p>The column subtotal options.</p>
-    #[doc(hidden)]
     pub column_subtotal_options: ::std::option::Option<crate::types::SubtotalOptions>,
     /// <p>The row total options.</p>
-    #[doc(hidden)]
     pub row_total_options: ::std::option::Option<crate::types::PivotTotalOptions>,
     /// <p>The column total options.</p>
-    #[doc(hidden)]
     pub column_total_options: ::std::option::Option<crate::types::PivotTotalOptions>,
 }
 impl PivotTableTotalOptions {

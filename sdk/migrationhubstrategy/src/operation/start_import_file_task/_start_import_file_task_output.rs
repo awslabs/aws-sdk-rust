@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportFileTaskOutput {
     /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

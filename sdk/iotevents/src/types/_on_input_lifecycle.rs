@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnInputLifecycle {
     /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
-    #[doc(hidden)]
     pub transition_events: ::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>>,
 }
 impl OnInputLifecycle {

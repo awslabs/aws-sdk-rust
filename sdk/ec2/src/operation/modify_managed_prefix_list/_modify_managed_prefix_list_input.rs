@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyManagedPrefixListInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the prefix list.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<i64>,
     /// <p>A name for the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more entries to add to the prefix list.</p>
-    #[doc(hidden)]
     pub add_entries: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
     /// <p>One or more entries to remove from the prefix list.</p>
-    #[doc(hidden)]
     pub remove_entries: ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>,
     /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
-    #[doc(hidden)]
     pub max_entries: ::std::option::Option<i32>,
 }
 impl ModifyManagedPrefixListInput {

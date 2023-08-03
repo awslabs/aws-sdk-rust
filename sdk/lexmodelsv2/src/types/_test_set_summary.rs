@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetSummary {
     /// <p>The unique identifier of the test set.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the test set.</p>
-    #[doc(hidden)]
     pub test_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the test set.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the test set contains written or spoken data.</p>
-    #[doc(hidden)]
     pub modality: ::std::option::Option<crate::types::TestSetModality>,
     /// <p>The status of the test set.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TestSetStatus>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of turns in the test set.</p>
-    #[doc(hidden)]
     pub num_turns: ::std::option::Option<i32>,
     /// <p>Contains information about the location at which the test set is stored.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p>The date and time at which the test set was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the test set was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TestSetSummary {

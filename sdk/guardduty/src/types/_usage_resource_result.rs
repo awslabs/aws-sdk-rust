@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageResourceResult {
     /// <p>The Amazon Web Services resource that generated usage.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>Represents the sum total of usage for the specified resource type.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::Total>,
 }
 impl UsageResourceResult {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentRecommendation {
     /// <p>The name of the Application Component.</p>
-    #[doc(hidden)]
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation status.</p>
-    #[doc(hidden)]
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationComplianceStatus>,
     /// <p>The list of recommendations.</p>
-    #[doc(hidden)]
     pub config_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ConfigRecommendation>>,
 }
 impl ComponentRecommendation {

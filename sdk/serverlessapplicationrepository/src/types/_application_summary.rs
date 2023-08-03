@@ -5,35 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this resource was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    #[doc(hidden)]
     pub home_page_url: ::std::option::Option<::std::string::String>,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-    #[doc(hidden)]
     pub spdx_license_id: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationSummary {

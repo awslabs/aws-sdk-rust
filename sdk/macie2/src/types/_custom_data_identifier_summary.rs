@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The custom description of the custom data identifier.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the custom data identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the custom data identifier.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl CustomDataIdentifierSummary {

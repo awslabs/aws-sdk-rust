@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterConfig {
     /// <p>Instance type of data nodes in the cluster.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a validation exception.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will use a dedicated master node.<code>False</code> if the cluster will not.</p>
-    #[doc(hidden)]
     pub dedicated_master_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether multiple Availability Zones are enabled. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.</p>
-    #[doc(hidden)]
     pub zone_awareness_enabled: ::std::option::Option<bool>,
     /// <p>Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub zone_awareness_config: ::std::option::Option<crate::types::ZoneAwarenessConfig>,
     /// <p>OpenSearch Service instance type of the dedicated master nodes in the cluster.</p>
-    #[doc(hidden)]
     pub dedicated_master_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     /// <p>Number of dedicated master nodes in the cluster. This number must be greater than 2 and not 4, otherwise you receive a validation exception.</p>
-    #[doc(hidden)]
     pub dedicated_master_count: ::std::option::Option<i32>,
     /// <p>Whether to enable warm storage for the cluster.</p>
-    #[doc(hidden)]
     pub warm_enabled: ::std::option::Option<bool>,
     /// <p>The instance type for the cluster's warm nodes.</p>
-    #[doc(hidden)]
     pub warm_type: ::std::option::Option<crate::types::OpenSearchWarmPartitionInstanceType>,
     /// <p>The number of warm nodes in the cluster.</p>
-    #[doc(hidden)]
     pub warm_count: ::std::option::Option<i32>,
     /// <p>Container for cold storage configuration options.</p>
-    #[doc(hidden)]
     pub cold_storage_options: ::std::option::Option<crate::types::ColdStorageOptions>,
     /// <p>A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
-    #[doc(hidden)]
     pub multi_az_with_standby_enabled: ::std::option::Option<bool>,
 }
 impl ClusterConfig {

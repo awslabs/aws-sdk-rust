@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkloadProfile {
     /// <p>The profile ARN.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile version.</p>
-    #[doc(hidden)]
     pub profile_version: ::std::option::Option<::std::string::String>,
 }
 impl WorkloadProfile {

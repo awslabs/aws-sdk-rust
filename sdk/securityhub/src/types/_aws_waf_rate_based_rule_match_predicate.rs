@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRateBasedRuleMatchPredicate {
     /// <p>The unique identifier for the predicate.</p>
-    #[doc(hidden)]
     pub data_id: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
-    #[doc(hidden)]
     pub negated: bool,
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
@@ -21,7 +19,6 @@ pub struct AwsWafRateBasedRuleMatchPredicate {
     /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
     /// <li> <p> <code>XssMatch</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRateBasedRuleMatchPredicate {

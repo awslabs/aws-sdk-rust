@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     /// <p>You get this resource when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed. .</p>
-    #[doc(hidden)]
     pub conflict_resource: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

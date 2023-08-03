@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAdditionalAssignmentsForHitInput {
     /// <p>The ID of the HIT to extend.</p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of additional assignments to request for this HIT.</p>
-    #[doc(hidden)]
     pub number_of_additional_assignments: ::std::option::Option<i32>,
     /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
-    #[doc(hidden)]
     pub unique_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAdditionalAssignmentsForHitInput {

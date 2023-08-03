@@ -13,7 +13,6 @@ pub struct StackInstanceComprehensiveStatus {
     /// <li> <p> <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped because the account was suspended at the time of the operation.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub detailed_status: ::std::option::Option<crate::types::StackInstanceDetailedStatus>,
 }
 impl StackInstanceComprehensiveStatus {

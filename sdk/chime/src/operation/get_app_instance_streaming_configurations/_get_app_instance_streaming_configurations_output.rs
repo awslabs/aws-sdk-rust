@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppInstanceStreamingConfigurationsOutput {
     /// <p>The streaming settings.</p>
-    #[doc(hidden)]
     pub app_instance_streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceStreamingConfiguration>>,
     _request_id: Option<String>,
 }

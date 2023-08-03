@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSuiteRunInput {
     /// <p>Suite definition ID of the test suite.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite definition version of the test suite.</p>
-    #[doc(hidden)]
     pub suite_definition_version: ::std::option::Option<::std::string::String>,
     /// <p>Suite run configuration.</p>
-    #[doc(hidden)]
     pub suite_run_configuration: ::std::option::Option<crate::types::SuiteRunConfiguration>,
     /// <p>The tags to be attached to the suite run.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartSuiteRunInput {

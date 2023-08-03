@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationObjectStorageOutput {
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

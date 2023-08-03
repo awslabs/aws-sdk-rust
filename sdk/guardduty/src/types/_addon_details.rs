@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddonDetails {
     /// <p>Version of the installed EKS add-on.</p>
-    #[doc(hidden)]
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>Status of the installed EKS add-on.</p>
-    #[doc(hidden)]
     pub addon_status: ::std::option::Option<::std::string::String>,
 }
 impl AddonDetails {

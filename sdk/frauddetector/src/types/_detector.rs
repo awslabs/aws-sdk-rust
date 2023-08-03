@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Detector {
     /// <p>The detector ID.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event type.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the detector was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the detector was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The detector ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Detector {

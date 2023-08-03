@@ -7,28 +7,21 @@ pub struct VolumeInfo {
     /// <p>The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
     /// <p> <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code> </p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier assigned to the volume. This ID becomes part of the volume Amazon Resource Name (ARN), which you use as input for other operations.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume in bytes.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    #[doc(hidden)]
     pub volume_size_in_bytes: i64,
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    #[doc(hidden)]
     pub volume_attachment_status: ::std::option::Option<::std::string::String>,
 }
 impl VolumeInfo {

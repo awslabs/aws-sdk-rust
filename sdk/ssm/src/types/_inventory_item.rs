@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryItem {
     /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema version for the inventory item.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The time the inventory information was collected.</p>
-    #[doc(hidden)]
     pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
-    #[doc(hidden)]
     pub content_hash: ::std::option::Option<::std::string::String>,
     /// <p>The inventory data of the inventory type.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl InventoryItem {

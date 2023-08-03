@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountConfigurationOutput {
     /// <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub expiry_events: ::std::option::Option<crate::types::ExpiryEventsConfiguration>,
     _request_id: Option<String>,
 }

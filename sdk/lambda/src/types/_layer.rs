@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Layer {
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the layer archive in bytes.</p>
-    #[doc(hidden)]
     pub code_size: i64,
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-    #[doc(hidden)]
     pub signing_profile_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
-    #[doc(hidden)]
     pub signing_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl Layer {

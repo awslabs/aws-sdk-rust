@@ -8,38 +8,32 @@ pub struct UpdateProvisioningPreferences {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
-    #[doc(hidden)]
     pub stack_set_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
-    #[doc(hidden)]
     pub stack_set_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
-    #[doc(hidden)]
     pub stack_set_failure_tolerance_count: ::std::option::Option<i32>,
     /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
-    #[doc(hidden)]
     pub stack_set_failure_tolerance_percentage: ::std::option::Option<i32>,
     /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
-    #[doc(hidden)]
     pub stack_set_max_concurrency_count: ::std::option::Option<i32>,
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
-    #[doc(hidden)]
     pub stack_set_max_concurrency_percentage: ::std::option::Option<i32>,
     /// <p>Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
@@ -63,7 +57,6 @@ pub struct UpdateProvisioningPreferences {
     /// <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub stack_set_operation_type: ::std::option::Option<crate::types::StackSetOperationType>,
 }
 impl UpdateProvisioningPreferences {

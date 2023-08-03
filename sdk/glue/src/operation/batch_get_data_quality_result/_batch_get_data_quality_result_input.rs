@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultInput {
     /// <p>A list of unique result IDs for the data quality results.</p>
-    #[doc(hidden)]
     pub result_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetDataQualityResultInput {

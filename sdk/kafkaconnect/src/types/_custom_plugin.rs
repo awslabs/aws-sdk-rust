@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPlugin {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    #[doc(hidden)]
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the custom plugin.</p>
-    #[doc(hidden)]
     pub revision: i64,
 }
 impl CustomPlugin {

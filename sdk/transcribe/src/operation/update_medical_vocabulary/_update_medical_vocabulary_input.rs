@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMedicalVocabularyInput {
     /// <p>The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
-    #[doc(hidden)]
     pub vocabulary_file_uri: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMedicalVocabularyInput {

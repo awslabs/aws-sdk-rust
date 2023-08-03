@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectKeyPhrasesInput {
     /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl DetectKeyPhrasesInput {

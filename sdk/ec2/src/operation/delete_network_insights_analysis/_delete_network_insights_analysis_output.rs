@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsAnalysisOutput {
     /// <p>The ID of the network insights analysis.</p>
-    #[doc(hidden)]
     pub network_insights_analysis_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTaskProtectionInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetTaskProtectionInput {

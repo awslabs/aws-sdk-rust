@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ComponentState {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
-    #[doc(hidden)]
     pub service_spec: ::std::option::Option<::std::string::String>,
     /// <p>The template file used.</p>
-    #[doc(hidden)]
     pub template_file: ::std::option::Option<::std::string::String>,
 }
 impl ComponentState {

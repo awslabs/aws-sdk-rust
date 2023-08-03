@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The request id associated with the call responsible for the exception.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds the caller should wait before retrying.</p>
-    #[doc(hidden)]
     pub retry_after_seconds: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

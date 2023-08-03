@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    #[doc(hidden)]
     pub suggesters: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>,
     _request_id: Option<String>,
 }

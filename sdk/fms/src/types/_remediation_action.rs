@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationAction {
     /// <p>A description of a remediation action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the CreateRoute action in the Amazon EC2 API.</p>
-    #[doc(hidden)]
     pub ec2_create_route_action: ::std::option::Option<crate::types::Ec2CreateRouteAction>,
     /// <p>Information about the ReplaceRoute action in the Amazon EC2 API.</p>
-    #[doc(hidden)]
     pub ec2_replace_route_action: ::std::option::Option<crate::types::Ec2ReplaceRouteAction>,
     /// <p>Information about the DeleteRoute action in the Amazon EC2 API.</p>
-    #[doc(hidden)]
     pub ec2_delete_route_action: ::std::option::Option<crate::types::Ec2DeleteRouteAction>,
     /// <p>Information about the CopyRouteTable action in the Amazon EC2 API.</p>
-    #[doc(hidden)]
     pub ec2_copy_route_table_action: ::std::option::Option<crate::types::Ec2CopyRouteTableAction>,
     /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
-    #[doc(hidden)]
     pub ec2_replace_route_table_association_action: ::std::option::Option<crate::types::Ec2ReplaceRouteTableAssociationAction>,
     /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
-    #[doc(hidden)]
     pub ec2_associate_route_table_action: ::std::option::Option<crate::types::Ec2AssociateRouteTableAction>,
     /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
-    #[doc(hidden)]
     pub ec2_create_route_table_action: ::std::option::Option<crate::types::Ec2CreateRouteTableAction>,
     /// <p>The remedial action to take when updating a firewall configuration.</p>
-    #[doc(hidden)]
     pub fms_policy_update_firewall_creation_config_action: ::std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
 }
 impl RemediationAction {

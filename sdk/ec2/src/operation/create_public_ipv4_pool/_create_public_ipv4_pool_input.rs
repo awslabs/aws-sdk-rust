@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePublicIpv4PoolInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreatePublicIpv4PoolInput {

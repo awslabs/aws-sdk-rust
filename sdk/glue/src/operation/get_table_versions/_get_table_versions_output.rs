@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableVersionsOutput {
     /// <p>A list of strings identifying available versions of the specified table.</p>
-    #[doc(hidden)]
     pub table_versions: ::std::option::Option<::std::vec::Vec<crate::types::TableVersion>>,
     /// <p>A continuation token, if the list of available versions does not include the last one.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

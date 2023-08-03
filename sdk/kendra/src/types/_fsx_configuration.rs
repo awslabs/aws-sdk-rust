@@ -6,29 +6,22 @@
 pub struct FsxConfiguration {
     /// <p>The identifier of the Amazon FSx file system.</p>
     /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
-    #[doc(hidden)]
     pub file_system_type: ::std::option::Option<crate::types::FsxFileSystemType>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>username—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example, <i>user@corp.example.com</i>. The Active Directory user account must have read and mounting access to the Amazon FSx file system for Windows.</p> </li>
     /// <li> <p>password—The password of the Active Directory user account with read and mounting access to the Amazon FSx Windows file system.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of regular expression patterns to include certain files in your Amazon FSx file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon FSx file system. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    #[doc(hidden)]
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon FSx data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon FSx fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon FSx data source field names must exist in your Amazon FSx custom metadata.</p>
-    #[doc(hidden)]
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl FsxConfiguration {

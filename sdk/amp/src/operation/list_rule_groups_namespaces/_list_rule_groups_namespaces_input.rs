@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesInput {
     /// The ID of the workspace.
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Maximum results to return in response (default=100, maximum=1000).
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListRuleGroupsNamespacesInput {

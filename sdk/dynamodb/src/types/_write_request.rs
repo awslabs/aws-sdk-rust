@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WriteRequest {
     /// <p>A request to perform a <code>PutItem</code> operation.</p>
-    #[doc(hidden)]
     pub put_request: ::std::option::Option<crate::types::PutRequest>,
     /// <p>A request to perform a <code>DeleteItem</code> operation.</p>
-    #[doc(hidden)]
     pub delete_request: ::std::option::Option<crate::types::DeleteRequest>,
 }
 impl WriteRequest {

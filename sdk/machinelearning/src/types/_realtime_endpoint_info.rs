@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeEndpointInfo {
     /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
-    #[doc(hidden)]
     pub peak_requests_per_second: i32,
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
     /// <p> <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
-    #[doc(hidden)]
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values: </p>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct RealtimeEndpointInfo {
     /// <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Updating/creating the endpoint. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub endpoint_status: ::std::option::Option<crate::types::RealtimeEndpointStatus>,
 }
 impl RealtimeEndpointInfo {

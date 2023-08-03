@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoDetectionMetricSource {
     /// <p>The source's source config.</p>
-    #[doc(hidden)]
     pub s3_source_config: ::std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
 }
 impl AutoDetectionMetricSource {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnError {
     /// <p>The name of the column that failed.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>An error message with the reason for the failure of an operation.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl ColumnError {

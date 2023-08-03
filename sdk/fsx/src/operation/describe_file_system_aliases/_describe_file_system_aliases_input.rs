@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the file system to return the associated DNS aliases for (String).</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of DNS aliases to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action continues the list from where the previous returning call left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFileSystemAliasesInput {

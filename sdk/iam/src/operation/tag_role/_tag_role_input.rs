@@ -5,10 +5,8 @@
 pub struct TagRoleInput {
     /// <p>The name of the IAM role to which you want to add tags.</p>
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that you want to attach to the IAM role. Each tag consists of a key name and an associated value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagRoleInput {

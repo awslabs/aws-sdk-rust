@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoteAccountDetails {
     /// <p>The Amazon Web Services account ID of the remote API caller.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>
-    #[doc(hidden)]
     pub affiliated: bool,
 }
 impl RemoteAccountDetails {

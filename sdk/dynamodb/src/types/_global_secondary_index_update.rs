@@ -10,7 +10,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalSecondaryIndexUpdate {
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
-    #[doc(hidden)]
     pub update: ::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
@@ -20,10 +19,8 @@ pub struct GlobalSecondaryIndexUpdate {
     /// <li> <p> <code>Projection </code> </p> </li>
     /// <li> <p> <code>ProvisionedThroughput </code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub create: ::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,
     /// <p>The name of an existing global secondary index to be removed.</p>
-    #[doc(hidden)]
     pub delete: ::std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>,
 }
 impl GlobalSecondaryIndexUpdate {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventConfigurationsInput {
     /// <p>The new event configuration values.</p>
-    #[doc(hidden)]
     pub event_configurations: ::std::option::Option<::std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
 }
 impl UpdateEventConfigurationsInput {

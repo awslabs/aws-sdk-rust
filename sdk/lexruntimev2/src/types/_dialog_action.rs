@@ -12,10 +12,8 @@ pub struct DialogAction {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DialogActionType>,
     /// <p>The name of the slot that should be elicited from the user.</p>
-    #[doc(hidden)]
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
     /// <ul>
@@ -23,10 +21,8 @@ pub struct DialogAction {
     /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
-    #[doc(hidden)]
     pub slot_elicitation_style: ::std::option::Option<crate::types::StyleType>,
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
-    #[doc(hidden)]
     pub sub_slot_to_elicit: ::std::option::Option<crate::types::ElicitSubSlot>,
 }
 impl DialogAction {

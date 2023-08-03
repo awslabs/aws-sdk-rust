@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecoderManifestSummary {
     /// <p>The name of the decoder manifest.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a vehicle model (model manifest) associated with the decoder manifest.</p>
-    #[doc(hidden)]
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the decoder manifest.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ManifestStatus>,
     /// <p>The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DecoderManifestSummary {

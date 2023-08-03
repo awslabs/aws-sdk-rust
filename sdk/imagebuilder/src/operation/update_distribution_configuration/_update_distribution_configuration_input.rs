@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
-    #[doc(hidden)]
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the distribution configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The distributions of the distribution configuration.</p>
-    #[doc(hidden)]
     pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
     /// <p>The idempotency token of the distribution configuration.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDistributionConfigurationInput {

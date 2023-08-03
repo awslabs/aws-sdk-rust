@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OfiMetricDataPoint {
     /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
-    #[doc(hidden)]
     pub fpr: ::std::option::Option<f32>,
     /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
-    #[doc(hidden)]
     pub precision: ::std::option::Option<f32>,
     /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
-    #[doc(hidden)]
     pub tpr: ::std::option::Option<f32>,
     /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<f32>,
 }
 impl OfiMetricDataPoint {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTable {
     /// <p>The ID of the transit gateway route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the transit gateway route table.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayRouteTableState>,
     /// <p>Indicates whether this is the default association route table for the transit gateway.</p>
-    #[doc(hidden)]
     pub default_association_route_table: ::std::option::Option<bool>,
     /// <p>Indicates whether this is the default propagation route table for the transit gateway.</p>
-    #[doc(hidden)]
     pub default_propagation_route_table: ::std::option::Option<bool>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any tags assigned to the route table.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGatewayRouteTable {

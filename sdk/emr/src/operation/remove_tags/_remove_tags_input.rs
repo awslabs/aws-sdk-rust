@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag keys to remove from the resource.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsInput {

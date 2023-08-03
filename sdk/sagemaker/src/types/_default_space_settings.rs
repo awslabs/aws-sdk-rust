@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultSpaceSettings {
     /// <p>The ARN of the execution role for the space.</p>
-    #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The JupyterServer app settings.</p>
-    #[doc(hidden)]
     pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     /// <p>The KernelGateway app settings.</p>
-    #[doc(hidden)]
     pub kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
 }
 impl DefaultSpaceSettings {

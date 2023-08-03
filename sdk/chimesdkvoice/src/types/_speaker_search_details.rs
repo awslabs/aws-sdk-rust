@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpeakerSearchDetails {
     /// <p>The result value in the speaker search details.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::SpeakerSearchResult>>,
     /// <p>The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code> or <code>VoiceprintGenerationFailure</code>..</p>
-    #[doc(hidden)]
     pub voiceprint_generation_status: ::std::option::Option<::std::string::String>,
 }
 impl SpeakerSearchDetails {

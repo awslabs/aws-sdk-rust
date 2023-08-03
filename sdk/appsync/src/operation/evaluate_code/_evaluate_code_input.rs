@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateCodeInput {
     /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::AppSyncRuntime>,
     /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::string::String>,
     /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
-    #[doc(hidden)]
     pub function: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateCodeInput {

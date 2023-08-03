@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resource policies to display for each page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetResourcePoliciesInput {

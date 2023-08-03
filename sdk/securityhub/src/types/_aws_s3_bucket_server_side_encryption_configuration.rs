@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketServerSideEncryptionConfiguration {
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
 }
 impl AwsS3BucketServerSideEncryptionConfiguration {

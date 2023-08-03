@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchSetUpdate {
     /// <p>Specifies whether to insert or delete a country with <code>UpdateGeoMatchSet</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
-    #[doc(hidden)]
     pub geo_match_constraint: ::std::option::Option<crate::types::GeoMatchConstraint>,
 }
 impl GeoMatchSetUpdate {

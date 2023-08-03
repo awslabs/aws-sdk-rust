@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PresenterOnlyConfiguration {
     /// <p>Defines the position of the presenter video tile. Default: <code>TopRight</code>.</p>
-    #[doc(hidden)]
     pub presenter_position: ::std::option::Option<crate::types::PresenterPosition>,
 }
 impl PresenterOnlyConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-    #[doc(hidden)]
     pub tls: ::std::option::Option<crate::types::ClientPolicyTls>,
 }
 impl ClientPolicy {

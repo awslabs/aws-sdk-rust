@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deserializer {
     /// <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
-    #[doc(hidden)]
     pub open_x_json_ser_de: ::std::option::Option<crate::types::OpenXJsonSerDe>,
     /// <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
-    #[doc(hidden)]
     pub hive_json_ser_de: ::std::option::Option<crate::types::HiveJsonSerDe>,
 }
 impl Deserializer {

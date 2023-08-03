@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFileCacheOutput {
     /// <p>A description of the cache that was updated.</p>
-    #[doc(hidden)]
     pub file_cache: ::std::option::Option<crate::types::FileCache>,
     _request_id: Option<String>,
 }

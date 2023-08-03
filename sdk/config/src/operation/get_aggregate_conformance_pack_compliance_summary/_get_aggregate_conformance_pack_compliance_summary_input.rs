@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAggregateConformancePackComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub group_by_key: ::std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetAggregateConformancePackComplianceSummaryInput {

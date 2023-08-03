@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataReplicationMetadataOutput {
     /// <p>Describes the replica/primary broker. Only returned if this broker is currently set as a primary or replica in the broker's dataReplicationRole property.</p>
-    #[doc(hidden)]
     pub data_replication_counterpart: ::std::option::Option<crate::types::DataReplicationCounterpart>,
     /// <p>Defines the role of this broker in a data replication pair. When a replica broker is promoted to primary, this role is interchanged.</p>
-    #[doc(hidden)]
     pub data_replication_role: ::std::option::Option<::std::string::String>,
 }
 impl DataReplicationMetadataOutput {

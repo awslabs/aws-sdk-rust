@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRulesOutput {
     /// <p>The resource type that the readiness rule applies to.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of a readiness rule.</p>
-    #[doc(hidden)]
     pub rule_description: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the readiness rule.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl ListRulesOutput {

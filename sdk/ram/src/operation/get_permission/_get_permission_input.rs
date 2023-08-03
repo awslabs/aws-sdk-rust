@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPermissionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
-    #[doc(hidden)]
     pub permission_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
     /// <p>To see the list of available versions, use <code>ListPermissionVersions</code>.</p>
-    #[doc(hidden)]
     pub permission_version: ::std::option::Option<i32>,
 }
 impl GetPermissionInput {

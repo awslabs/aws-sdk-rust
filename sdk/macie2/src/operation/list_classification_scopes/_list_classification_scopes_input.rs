@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClassificationScopesInput {
     /// <p>The name of the classification scope to retrieve the unique identifier for.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListClassificationScopesInput {

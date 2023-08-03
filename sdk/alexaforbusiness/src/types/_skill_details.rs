@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SkillDetails {
     /// <p>The description of the product.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The phrase used to trigger the skill.</p>
-    #[doc(hidden)]
     pub invocation_phrase: ::std::option::Option<::std::string::String>,
     /// <p>The date when the skill was released.</p>
-    #[doc(hidden)]
     pub release_date: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the end user license agreement.</p>
-    #[doc(hidden)]
     pub end_user_license_agreement: ::std::option::Option<::std::string::String>,
     /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
-    #[doc(hidden)]
     pub generic_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The details about what the skill supports organized as bullet points.</p>
-    #[doc(hidden)]
     pub bullet_points: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The updates added in bullet points.</p>
-    #[doc(hidden)]
     pub new_in_this_version_bullet_points: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of skills.</p>
-    #[doc(hidden)]
     pub skill_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> <i>This member has been deprecated.</i> </p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
-    #[doc(hidden)]
     pub reviews: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The details about the developer that published the skill.</p>
-    #[doc(hidden)]
     pub developer_info: ::std::option::Option<crate::types::DeveloperInfo>,
 }
 impl SkillDetails {

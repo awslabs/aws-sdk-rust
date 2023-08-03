@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePackageInput {
     /// <p>The unique identifier for the package.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon S3 bucket and key for the package.</p>
-    #[doc(hidden)]
     pub package_source: ::std::option::Option<crate::types::PackageSource>,
     /// <p>A new description of the package.</p>
-    #[doc(hidden)]
     pub package_description: ::std::option::Option<::std::string::String>,
     /// <p>Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
-    #[doc(hidden)]
     pub commit_message: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackageInput {

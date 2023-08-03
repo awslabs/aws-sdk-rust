@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The source repository provider.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateConnectionInput {

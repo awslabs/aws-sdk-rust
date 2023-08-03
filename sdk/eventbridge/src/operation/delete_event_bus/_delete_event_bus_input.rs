@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventBusInput {
     /// <p>The name of the event bus to delete.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventBusInput {

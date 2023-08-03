@@ -4,32 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBotRecommendationOutput {
     /// <p>The unique identifier of the bot containing the bot recommendation that has been updated.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot containing the bot recommendation that has been updated.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    #[doc(hidden)]
     pub bot_recommendation_status: ::std::option::Option<crate::types::BotRecommendationStatus>,
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    #[doc(hidden)]
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    #[doc(hidden)]
     pub transcript_source_setting: ::std::option::Option<crate::types::TranscriptSourceSetting>,
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    #[doc(hidden)]
     pub encryption_setting: ::std::option::Option<crate::types::EncryptionSetting>,
     _request_id: Option<String>,
 }

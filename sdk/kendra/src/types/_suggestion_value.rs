@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestionValue {
     /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<crate::types::SuggestionTextWithHighlights>,
 }
 impl SuggestionValue {

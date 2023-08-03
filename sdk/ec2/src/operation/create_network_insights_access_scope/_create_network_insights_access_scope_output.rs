@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkInsightsAccessScopeOutput {
     /// <p>The Network Access Scope.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope: ::std::option::Option<crate::types::NetworkInsightsAccessScope>,
     /// <p>The Network Access Scope content.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_content: ::std::option::Option<crate::types::NetworkInsightsAccessScopeContent>,
     _request_id: Option<String>,
 }

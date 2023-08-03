@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppCampaignSchedule {
     /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::std::string::String>,
     /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
-    #[doc(hidden)]
     pub event_filter: ::std::option::Option<crate::types::CampaignEventFilter>,
     /// <p>Time during which the in-app message should not be shown to the user.</p>
-    #[doc(hidden)]
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
 }
 impl InAppCampaignSchedule {

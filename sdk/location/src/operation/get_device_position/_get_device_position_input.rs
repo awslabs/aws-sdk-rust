@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePositionInput {
     /// <p>The tracker resource receiving the position update.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The device whose position you want to retrieve.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDevicePositionInput {

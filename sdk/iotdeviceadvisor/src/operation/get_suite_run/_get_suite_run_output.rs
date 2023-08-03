@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuiteRunOutput {
     /// <p>Suite definition ID for the test suite run.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite definition version for the test suite run.</p>
-    #[doc(hidden)]
     pub suite_definition_version: ::std::option::Option<::std::string::String>,
     /// <p>Suite run ID for the test suite run.</p>
-    #[doc(hidden)]
     pub suite_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the suite run.</p>
-    #[doc(hidden)]
     pub suite_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>Suite run configuration for the test suite run.</p>
-    #[doc(hidden)]
     pub suite_run_configuration: ::std::option::Option<crate::types::SuiteRunConfiguration>,
     /// <p>Test results for the test suite run.</p>
-    #[doc(hidden)]
     pub test_result: ::std::option::Option<crate::types::TestResult>,
     /// <p>Date (in Unix epoch time) when the test suite run started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the test suite run ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status for the test suite run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SuiteRunStatus>,
     /// <p>Error reason for any test suite run failure.</p>
-    #[doc(hidden)]
     pub error_reason: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the suite run.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

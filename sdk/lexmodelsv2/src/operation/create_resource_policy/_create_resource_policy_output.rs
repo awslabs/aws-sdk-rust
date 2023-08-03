@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourcePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy was attached to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

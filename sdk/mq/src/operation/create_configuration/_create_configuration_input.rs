@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationInput {
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
-    #[doc(hidden)]
     pub authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Create tags when creating the configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfigurationInput {

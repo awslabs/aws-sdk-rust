@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTransactionOutput {
     /// <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
-    #[doc(hidden)]
     pub transaction_description: ::std::option::Option<crate::types::TransactionDescription>,
     _request_id: Option<String>,
 }

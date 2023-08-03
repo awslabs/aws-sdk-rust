@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to list imports for.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ImportSortBy>,
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ImportFilter>>,
     /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
 }
 impl ListImportsInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterClusterParameterGroup {
     /// <p>The list of parameter statuses.</p>
-    #[doc(hidden)]
     pub cluster_parameter_status_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterStatus>>,
     /// <p>The status of updates to the parameters.</p>
-    #[doc(hidden)]
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterClusterParameterGroup {

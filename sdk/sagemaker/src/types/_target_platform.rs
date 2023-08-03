@@ -9,7 +9,6 @@ pub struct TargetPlatform {
     /// <li> <p> <code>LINUX</code>: Linux-based operating systems.</p> </li>
     /// <li> <p> <code>ANDROID</code>: Android operating systems. Android API level can be specified using the <code>ANDROID_PLATFORM</code> compiler option. For example, <code>"CompilerOptions": {'ANDROID_PLATFORM': 28}</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub os: ::std::option::Option<crate::types::TargetPlatformOs>,
     /// <p>Specifies a target platform architecture.</p>
     /// <ul>
@@ -19,7 +18,6 @@ pub struct TargetPlatform {
     /// <li> <p> <code>ARM_EABIHF</code>: ARMv7 32-bit, Hard Float.</p> </li>
     /// <li> <p> <code>ARM_EABI</code>: ARMv7 32-bit, Soft Float. Used by Android 32-bit ARM platform.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub arch: ::std::option::Option<crate::types::TargetPlatformArch>,
     /// <p>Specifies a target platform accelerator (optional).</p>
     /// <ul>
@@ -27,7 +25,6 @@ pub struct TargetPlatform {
     /// <li> <p> <code>MALI</code>: ARM Mali graphics processor</p> </li>
     /// <li> <p> <code>INTEL_GRAPHICS</code>: Integrated Intel graphics</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accelerator: ::std::option::Option<crate::types::TargetPlatformAccelerator>,
 }
 impl TargetPlatform {

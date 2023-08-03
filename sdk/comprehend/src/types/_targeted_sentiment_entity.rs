@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetedSentimentEntity {
     /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
-    #[doc(hidden)]
     pub descriptive_mention_index: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
-    #[doc(hidden)]
     pub mentions: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>,
 }
 impl TargetedSentimentEntity {

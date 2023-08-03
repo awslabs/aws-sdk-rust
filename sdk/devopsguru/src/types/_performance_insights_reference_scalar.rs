@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceScalar {
     /// <p>The reference value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl PerformanceInsightsReferenceScalar {

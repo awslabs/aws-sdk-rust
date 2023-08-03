@@ -12,7 +12,6 @@ pub struct AnalyticsIntentStageMetric {
     /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent stage.</p> </li>
     /// <li> <p> <code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsIntentStageMetricName>,
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
@@ -20,10 +19,8 @@ pub struct AnalyticsIntentStageMetric {
     /// <li> <p> <code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
     /// <p>Specifies whether to sort the results in ascending or descending order of the summary statistic (<code>value</code> in the response).</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
 impl AnalyticsIntentStageMetric {

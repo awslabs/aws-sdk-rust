@@ -6,11 +6,9 @@
 pub struct ProvisioningHook {
     /// <p>The payload that was sent to the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
-    #[doc(hidden)]
     pub payload_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target function.</p>
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
 }
 impl ProvisioningHook {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutProjectPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>A name for the policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes the previous version of the policy.</p>
-    #[doc(hidden)]
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
     /// <p>A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON policy reference</a>. </p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PutProjectPolicyInput {

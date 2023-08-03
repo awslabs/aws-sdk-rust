@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageFilterCriterion {
     /// <p>An enum value representing possible filter fields.</p>
-    #[doc(hidden)]
     pub criterion_key: ::std::option::Option<crate::types::CoverageFilterCriterionKey>,
     /// <p>Contains information about the condition.</p>
-    #[doc(hidden)]
     pub filter_condition: ::std::option::Option<crate::types::CoverageFilterCondition>,
 }
 impl CoverageFilterCriterion {

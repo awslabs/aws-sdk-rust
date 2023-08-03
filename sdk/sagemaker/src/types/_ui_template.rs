@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UiTemplate {
     /// <p>The content of the Liquid template for the worker user interface.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl UiTemplate {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrCollection {
     /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the CIDR collection.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a CIDR collection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i64>,
 }
 impl CidrCollection {

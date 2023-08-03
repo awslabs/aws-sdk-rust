@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStorageLensConfigurationsInput {
     /// <p>The account ID of the requester.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListStorageLensConfigurationsInput {

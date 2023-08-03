@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastCutoverInitiated {
     /// <p></p>
-    #[doc(hidden)]
     pub api_call_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle last Cutover initiated by Job ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastCutoverInitiated {

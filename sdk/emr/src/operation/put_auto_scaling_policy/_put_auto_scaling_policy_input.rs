@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAutoScalingPolicyInput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
-    #[doc(hidden)]
     pub instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the definition of the automatic scaling policy.</p>
-    #[doc(hidden)]
     pub auto_scaling_policy: ::std::option::Option<crate::types::AutoScalingPolicy>,
 }
 impl PutAutoScalingPolicyInput {

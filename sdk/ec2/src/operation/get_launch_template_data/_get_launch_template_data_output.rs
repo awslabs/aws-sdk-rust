@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLaunchTemplateDataOutput {
     /// <p>The instance data.</p>
-    #[doc(hidden)]
     pub launch_template_data: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     /// <p>Present if there are more DNS aliases than returned in the response (String). You can use the <code>NextToken</code> value in a later request to fetch additional descriptions. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

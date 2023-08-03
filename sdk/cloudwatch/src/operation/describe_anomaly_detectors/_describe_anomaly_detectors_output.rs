@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorsOutput {
     /// <p>The list of anomaly detection models returned by the operation.</p>
-    #[doc(hidden)]
     pub anomaly_detectors: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>>,
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagDeliveryStreamInput {
     /// <p>The name of the delivery stream to which you want to add the tags.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs to use to create the tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagDeliveryStreamInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsOutput {
     /// <p>Information about the deployment groups.</p>
-    #[doc(hidden)]
     pub deployment_groups_info: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentGroupInfo>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

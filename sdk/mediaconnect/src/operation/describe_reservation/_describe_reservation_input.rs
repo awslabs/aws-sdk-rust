@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservationInput {
     /// The Amazon Resource Name (ARN) of the reservation.
-    #[doc(hidden)]
     pub reservation_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservationInput {

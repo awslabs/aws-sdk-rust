@@ -9,16 +9,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoundingBox {
     /// <p>Width of the bounding box as a ratio of the overall image width.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<f32>,
     /// <p>Height of the bounding box as a ratio of the overall image height.</p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<f32>,
     /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
-    #[doc(hidden)]
     pub left: ::std::option::Option<f32>,
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
-    #[doc(hidden)]
     pub top: ::std::option::Option<f32>,
 }
 impl BoundingBox {

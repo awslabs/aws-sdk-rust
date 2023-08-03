@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The network fabric type of the environment.</p>
-    #[doc(hidden)]
     pub network_fabric_type: ::std::option::Option<crate::types::NetworkFabricType>,
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInput {

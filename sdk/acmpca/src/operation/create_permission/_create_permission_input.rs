@@ -5,16 +5,12 @@
 pub struct CreatePermissionInput {
     /// <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the calling account.</p>
-    #[doc(hidden)]
     pub source_account: ::std::option::Option<::std::string::String>,
     /// <p>The actions that the specified Amazon Web Services service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
 }
 impl CreatePermissionInput {

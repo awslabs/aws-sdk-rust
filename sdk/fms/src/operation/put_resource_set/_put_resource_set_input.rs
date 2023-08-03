@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourceSetInput {
     /// <p>Details about the resource set to be created or updated.&gt;</p>
-    #[doc(hidden)]
     pub resource_set: ::std::option::Option<crate::types::ResourceSet>,
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutResourceSetInput {

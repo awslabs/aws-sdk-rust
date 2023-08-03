@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnFailure {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl OnFailure {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResiliencyPolicyOutput {
     /// <p>The type of resiliency policy that was updated, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     _request_id: Option<String>,
 }

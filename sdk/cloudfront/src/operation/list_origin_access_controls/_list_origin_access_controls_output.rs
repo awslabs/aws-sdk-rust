@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOriginAccessControlsOutput {
     /// <p>A list of origin access controls.</p>
-    #[doc(hidden)]
     pub origin_access_control_list: ::std::option::Option<crate::types::OriginAccessControlList>,
     _request_id: Option<String>,
 }

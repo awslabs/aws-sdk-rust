@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DatadogConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
-    #[doc(hidden)]
     pub application_key: ::std::option::Option<::std::string::String>,
 }
 impl DatadogConnectorProfileCredentials {

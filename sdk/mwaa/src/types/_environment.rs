@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon MWAA environment. Valid values:</p>
     /// <ul>
@@ -21,95 +20,68 @@ pub struct Environment {
     /// <li> <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p> </li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The day and time the environment was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
-    #[doc(hidden)]
     pub webserver_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
-    #[doc(hidden)]
     pub airflow_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
-    #[doc(hidden)]
     pub source_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The relative path to the DAGs folder in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
-    #[doc(hidden)]
     pub dag_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The relative path to the file in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
-    #[doc(hidden)]
     pub plugins_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
     /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
     /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
-    #[doc(hidden)]
     pub plugins_s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
-    #[doc(hidden)]
     pub requirements_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
     /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
     /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>. </p>
-    #[doc(hidden)]
     pub requirements_s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
     /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-    #[doc(hidden)]
     pub startup_script_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file.</p>
     /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
     /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-    #[doc(hidden)]
     pub startup_script_s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
-    #[doc(hidden)]
     pub airflow_configuration_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
-    #[doc(hidden)]
     pub environment_class: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of workers that run in your environment. For example, <code>20</code>.</p>
-    #[doc(hidden)]
     pub max_workers: ::std::option::Option<i32>,
     /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The Apache Airflow logs published to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>The status of the last update on the environment.</p>
-    #[doc(hidden)]
     pub last_update: ::std::option::Option<crate::types::LastUpdate>,
     /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
     /// <p>The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
-    #[doc(hidden)]
     pub webserver_access_mode: ::std::option::Option<crate::types::WebserverAccessMode>,
     /// <p>The minimum number of workers that run in your environment. For example, <code>2</code>.</p>
-    #[doc(hidden)]
     pub min_workers: ::std::option::Option<i32>,
     /// <p>The number of Apache Airflow schedulers that run in your Amazon MWAA environment.</p>
-    #[doc(hidden)]
     pub schedulers: ::std::option::Option<i32>,
 }
 impl Environment {

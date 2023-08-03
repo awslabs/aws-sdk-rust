@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationInstanceTaskLogsOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
-    #[doc(hidden)]
     pub replication_instance_task_logs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstanceTaskLog>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

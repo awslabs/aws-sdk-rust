@@ -6,10 +6,8 @@
 pub struct PrefixListId {
     /// <p>A description for the security group rule that references this prefix list ID.</p>
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl PrefixListId {

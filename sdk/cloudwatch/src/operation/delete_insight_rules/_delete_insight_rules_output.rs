@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInsightRulesOutput {
     /// <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::PartialFailure>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationCodeConfigurationDescription {
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    #[doc(hidden)]
     pub code_content_type: ::std::option::Option<crate::types::CodeContentType>,
     /// <p>Describes details about the location and format of the application code.</p>
-    #[doc(hidden)]
     pub code_content_description: ::std::option::Option<crate::types::CodeContentDescription>,
 }
 impl ApplicationCodeConfigurationDescription {

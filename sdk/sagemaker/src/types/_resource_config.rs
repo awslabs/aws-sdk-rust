@@ -13,10 +13,8 @@ pub struct ResourceConfig {
     /// </ul>
     /// <p>To request quota limit increase and start using P4de instances, contact the SageMaker Training service team through your account team.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>
-    #[doc(hidden)]
     pub instance_count: i32,
     /// <p>The size of the ML storage volume that you want to provision. </p>
     /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. </p>
@@ -24,7 +22,6 @@ pub struct ResourceConfig {
     /// <p>When using an ML instance with the EBS-only storage option and without instance storage, you must define the size of EBS volume through <code>VolumeSizeInGB</code> in the <code>ResourceConfig</code> API. For example, ML instance families that use EBS volumes include <code>ml.c5</code> and <code>ml.p2</code>. </p>
     /// <p>To look up instance types and their instance storage types and volumes, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.</p>
     /// <p>To find the default local paths defined by the SageMaker training platform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-train-storage.html">Amazon SageMaker Training Storage Folders for Training Datasets, Checkpoints, Model Artifacts, and Outputs</a>.</p>
-    #[doc(hidden)]
     pub volume_size_in_gb: i32,
     /// <p>The Amazon Web Services KMS key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</p> <note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
@@ -36,13 +33,10 @@ pub struct ResourceConfig {
     /// <li> <p>// KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    #[doc(hidden)]
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
-    #[doc(hidden)]
     pub keep_alive_period_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceConfig {

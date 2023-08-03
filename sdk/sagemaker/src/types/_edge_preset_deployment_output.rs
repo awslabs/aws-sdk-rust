@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgePresetDeploymentOutput {
     /// <p>The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
     /// <p>The Amazon Resource Name (ARN) of the generated deployable resource.</p>
-    #[doc(hidden)]
     pub artifact: ::std::option::Option<::std::string::String>,
     /// <p>The status of the deployable resource.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EdgePresetDeploymentStatus>,
     /// <p>Returns a message describing the status of the deployed resource.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl EdgePresetDeploymentOutput {

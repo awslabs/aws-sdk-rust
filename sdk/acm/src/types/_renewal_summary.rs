@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewalSummary {
     /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
-    #[doc(hidden)]
     pub renewal_status: ::std::option::Option<crate::types::RenewalStatus>,
     /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different from the initial validation that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    #[doc(hidden)]
     pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidation>>,
     /// <p>The reason that a renewal request was unsuccessful.</p>
-    #[doc(hidden)]
     pub renewal_status_reason: ::std::option::Option<crate::types::FailureReason>,
     /// <p>The time at which the renewal summary was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RenewalSummary {

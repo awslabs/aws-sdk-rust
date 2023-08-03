@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableEnhancedMonitoringInput {
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>List of shard-level metrics to disable.</p>
     /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
@@ -20,10 +19,8 @@ pub struct DisableEnhancedMonitoringInput {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisableEnhancedMonitoringInput {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDashboardPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the permissions on the dashboard.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>Updates the permissions of a shared link to an Amazon QuickSight dashboard.</p>
-    #[doc(hidden)]
     pub link_sharing_configuration: ::std::option::Option<crate::types::LinkSharingConfiguration>,
     _request_id: Option<String>,
 }

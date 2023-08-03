@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WriteOperation {
     /// <p>A new object to add to the governed table.</p>
-    #[doc(hidden)]
     pub add_object: ::std::option::Option<crate::types::AddObjectInput>,
     /// <p>An object to delete from the governed table.</p>
-    #[doc(hidden)]
     pub delete_object: ::std::option::Option<crate::types::DeleteObjectInput>,
 }
 impl WriteOperation {

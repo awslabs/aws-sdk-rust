@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-    #[doc(hidden)]
     pub inference_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
     _request_id: Option<String>,
 }

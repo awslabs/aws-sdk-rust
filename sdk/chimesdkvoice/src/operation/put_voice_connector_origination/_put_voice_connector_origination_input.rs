@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorOriginationInput {
     /// <p>The Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The origination settings being updated.</p>
-    #[doc(hidden)]
     pub origination: ::std::option::Option<crate::types::Origination>,
 }
 impl PutVoiceConnectorOriginationInput {

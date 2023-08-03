@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainSuggestionsOutput {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
-    #[doc(hidden)]
     pub suggestions_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainSuggestion>>,
     _request_id: Option<String>,
 }

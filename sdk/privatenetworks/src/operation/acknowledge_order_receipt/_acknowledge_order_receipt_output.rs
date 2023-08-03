@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcknowledgeOrderReceiptOutput {
     /// <p>Information about the order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::Order>,
     _request_id: Option<String>,
 }

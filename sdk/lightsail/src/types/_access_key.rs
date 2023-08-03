@@ -8,23 +8,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccessKey {
     /// <p>The ID of the access key.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret access key used to sign requests.</p>
     /// <p>You should store the secret access key in a safe location. We recommend that you delete the access key if the secret access key is compromised.</p>
-    #[doc(hidden)]
     pub secret_access_key: ::std::option::Option<::std::string::String>,
     /// <p>The status of the access key.</p>
     /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code> means it is not.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The timestamp when the access key was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that describes the last time the access key was used.</p> <note>
     /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_used: ::std::option::Option<crate::types::AccessKeyLastUsed>,
 }
 impl AccessKey {

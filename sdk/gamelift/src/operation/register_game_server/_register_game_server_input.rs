@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub game_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
-    #[doc(hidden)]
     pub connection_info: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    #[doc(hidden)]
     pub game_server_data: ::std::option::Option<::std::string::String>,
 }
 impl RegisterGameServerInput {

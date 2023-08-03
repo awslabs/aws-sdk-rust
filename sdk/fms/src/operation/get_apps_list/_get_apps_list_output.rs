@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppsListOutput {
     /// <p>Information about the specified Firewall Manager applications list.</p>
-    #[doc(hidden)]
     pub apps_list: ::std::option::Option<crate::types::AppsListData>,
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
-    #[doc(hidden)]
     pub apps_list_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

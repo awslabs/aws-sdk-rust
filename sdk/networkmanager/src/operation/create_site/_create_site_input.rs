@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateSiteInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
     /// <ul>
@@ -16,10 +14,8 @@ pub struct CreateSiteInput {
     /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
     /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>The tags to apply to the resource during creation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSiteInput {

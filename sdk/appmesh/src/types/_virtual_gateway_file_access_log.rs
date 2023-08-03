@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::LoggingFormat>,
 }
 impl VirtualGatewayFileAccessLog {

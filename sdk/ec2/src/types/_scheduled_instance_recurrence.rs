@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstanceRecurrence {
     /// <p>The frequency (<code>Daily</code>, <code>Weekly</code>, or <code>Monthly</code>).</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<::std::string::String>,
     /// <p>The interval quantity. The interval unit depends on the value of <code>frequency</code>. For example, every 2 weeks or every 2 months.</p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<i32>,
     /// <p>The days. For a monthly schedule, this is one or more days of the month (1-31). For a weekly schedule, this is one or more days of the week (1-7, where 1 is Sunday).</p>
-    #[doc(hidden)]
     pub occurrence_day_set: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>Indicates whether the occurrence is relative to the end of the specified week or month.</p>
-    #[doc(hidden)]
     pub occurrence_relative_to_end: ::std::option::Option<bool>,
     /// <p>The unit for <code>occurrenceDaySet</code> (<code>DayOfWeek</code> or <code>DayOfMonth</code>).</p>
-    #[doc(hidden)]
     pub occurrence_unit: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstanceRecurrence {

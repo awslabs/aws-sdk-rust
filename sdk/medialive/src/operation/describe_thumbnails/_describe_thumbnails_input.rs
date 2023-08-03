@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThumbnailsInput {
     /// Unique ID of the channel
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// Pipeline ID ("0" or "1")
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// thumbnail type
-    #[doc(hidden)]
     pub thumbnail_type: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThumbnailsInput {

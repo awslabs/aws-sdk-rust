@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnapshotDetail {
     /// <p>A description for the snapshot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The block device mapping for the snapshot.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in the snapshot, in GiB.</p>
-    #[doc(hidden)]
     pub disk_image_size: ::std::option::Option<f64>,
     /// <p>The format of the disk image from which the snapshot is created.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of progress for the task.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot ID of the disk being imported.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>A brief status of the snapshot creation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A detailed status message for the snapshot creation.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The URL used to access the disk image.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket for the disk image.</p>
-    #[doc(hidden)]
     pub user_bucket: ::std::option::Option<crate::types::UserBucketDetails>,
 }
 impl SnapshotDetail {

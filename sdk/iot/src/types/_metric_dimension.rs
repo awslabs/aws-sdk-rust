@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>A unique identifier for the dimension.</p>
-    #[doc(hidden)]
     pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example, for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator, a message will be counted only if it doesn't match any of the topic filters. The operator is optional: if it's not provided (is <code>null</code>), it will be interpreted as <code>IN</code>.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::DimensionValueOperator>,
 }
 impl MetricDimension {

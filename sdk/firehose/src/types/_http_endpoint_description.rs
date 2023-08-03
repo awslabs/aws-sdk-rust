@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HttpEndpointDescription {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointDescription {

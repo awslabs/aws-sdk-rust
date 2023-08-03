@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FontConfiguration {
     /// <p>The option that determines the text display size.</p>
-    #[doc(hidden)]
     pub font_size: ::std::option::Option<crate::types::FontSize>,
     /// <p>Determines the appearance of decorative lines on the text.</p>
-    #[doc(hidden)]
     pub font_decoration: ::std::option::Option<crate::types::FontDecoration>,
     /// <p>Determines the color of the text.</p>
-    #[doc(hidden)]
     pub font_color: ::std::option::Option<::std::string::String>,
     /// <p>The option that determines the text display weight, or boldness.</p>
-    #[doc(hidden)]
     pub font_weight: ::std::option::Option<crate::types::FontWeight>,
     /// <p>Determines the text display face that is inherited by the given font family.</p>
-    #[doc(hidden)]
     pub font_style: ::std::option::Option<crate::types::FontStyle>,
 }
 impl FontConfiguration {

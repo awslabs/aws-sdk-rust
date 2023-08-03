@@ -7,19 +7,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineContext {
     /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The stage of the pipeline.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::StageContext>,
     /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ActionContext>,
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The execution ID of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl PipelineContext {

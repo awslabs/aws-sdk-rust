@@ -5,85 +5,58 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CmafGroupSettings {
     /// By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each CMAF output group in your job. These default manifests reference every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here. For each additional manifest that you specify, the service creates one HLS manifest and one DASH manifest.
-    #[doc(hidden)]
     pub additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CmafAdditionalManifest>>,
     /// A partial URI prefix that will be put in the manifest file at the top level BaseURL element. Can be used if streams are delivered from a different URL than the manifest file.
-    #[doc(hidden)]
     pub base_url: ::std::option::Option<::std::string::String>,
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
-    #[doc(hidden)]
     pub client_cache: ::std::option::Option<crate::types::CmafClientCache>,
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
-    #[doc(hidden)]
     pub codec_specification: ::std::option::Option<crate::types::CmafCodecSpecification>,
     /// Specify how MediaConvert writes SegmentTimeline in your output DASH manifest. To write a SegmentTimeline in each video Representation: Keep the default value, Basic. To write a common SegmentTimeline in the video AdaptationSet: Choose Compact. Note that MediaConvert will still write a SegmentTimeline in any Representation that does not share a common timeline. To write a video AdaptationSet for each different output framerate, and a common SegmentTimeline in each AdaptationSet: Choose Distinct.
-    #[doc(hidden)]
     pub dash_manifest_style: ::std::option::Option<crate::types::DashManifestStyle>,
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// Settings associated with the destination. Will vary based on the type of destination
-    #[doc(hidden)]
     pub destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
     /// DRM settings.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::CmafEncryptionSettings>,
     /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control to specify whether the encoder enforces this value strictly.
-    #[doc(hidden)]
     pub fragment_length: ::std::option::Option<i32>,
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest, MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest, MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
-    #[doc(hidden)]
     pub image_based_trick_play: ::std::option::Option<crate::types::CmafImageBasedTrickPlay>,
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
-    #[doc(hidden)]
     pub image_based_trick_play_settings: ::std::option::Option<crate::types::CmafImageBasedTrickPlaySettings>,
     /// When set to GZIP, compresses HLS playlist.
-    #[doc(hidden)]
     pub manifest_compression: ::std::option::Option<crate::types::CmafManifestCompression>,
     /// Indicates whether the output manifest should use floating point values for segment duration.
-    #[doc(hidden)]
     pub manifest_duration_format: ::std::option::Option<crate::types::CmafManifestDurationFormat>,
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
-    #[doc(hidden)]
     pub min_buffer_time: ::std::option::Option<i32>,
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
-    #[doc(hidden)]
     pub min_final_segment_length: ::std::option::Option<f64>,
     /// Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
-    #[doc(hidden)]
     pub mpd_manifest_bandwidth_type: ::std::option::Option<crate::types::CmafMpdManifestBandwidthType>,
     /// Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control to Single file.
-    #[doc(hidden)]
     pub mpd_profile: ::std::option::Option<crate::types::CmafMpdProfile>,
     /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
-    #[doc(hidden)]
     pub pts_offset_handling_for_b_frames: ::std::option::Option<crate::types::CmafPtsOffsetHandlingForBFrames>,
     /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
-    #[doc(hidden)]
     pub segment_control: ::std::option::Option<crate::types::CmafSegmentControl>,
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
-    #[doc(hidden)]
     pub segment_length: ::std::option::Option<i32>,
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    #[doc(hidden)]
     pub segment_length_control: ::std::option::Option<crate::types::CmafSegmentLengthControl>,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
-    #[doc(hidden)]
     pub stream_inf_resolution: ::std::option::Option<crate::types::CmafStreamInfResolution>,
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
-    #[doc(hidden)]
     pub target_duration_compatibility_mode: ::std::option::Option<crate::types::CmafTargetDurationCompatibilityMode>,
     /// Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers.
-    #[doc(hidden)]
     pub video_composition_offsets: ::std::option::Option<crate::types::CmafVideoCompositionOffsets>,
     /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
-    #[doc(hidden)]
     pub write_dash_manifest: ::std::option::Option<crate::types::CmafWriteDashManifest>,
     /// When set to ENABLED, an Apple HLS manifest will be generated for this output.
-    #[doc(hidden)]
     pub write_hls_manifest: ::std::option::Option<crate::types::CmafWriteHlsManifest>,
     /// When you enable Precise segment duration in DASH manifests, your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
-    #[doc(hidden)]
     pub write_segment_timeline_in_representation: ::std::option::Option<crate::types::CmafWriteSegmentTimelineInRepresentation>,
 }
 impl CmafGroupSettings {

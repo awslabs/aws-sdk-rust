@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworkShareRequestsInput {
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
-    #[doc(hidden)]
     pub request_type: ::std::option::Option<crate::types::ShareRequestType>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAssessmentFrameworkShareRequestsInput {

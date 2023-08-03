@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAliasInput {
     /// <p>The ID of the distribution that you're associating the alias with.</p>
-    #[doc(hidden)]
     pub target_distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAliasInput {

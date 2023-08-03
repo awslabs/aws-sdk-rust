@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackendStorageOutput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
-    #[doc(hidden)]
     pub backend_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource configuration for the backend storage resource.</p>
-    #[doc(hidden)]
     pub resource_config: ::std::option::Option<crate::types::GetBackendStorageResourceConfig>,
     /// <p>The name of the storage resource.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

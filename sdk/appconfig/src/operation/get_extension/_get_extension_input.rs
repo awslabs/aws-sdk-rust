@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExtensionInput {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    #[doc(hidden)]
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i32>,
 }
 impl GetExtensionInput {

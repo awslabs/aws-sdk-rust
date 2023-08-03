@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the Timestream resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {

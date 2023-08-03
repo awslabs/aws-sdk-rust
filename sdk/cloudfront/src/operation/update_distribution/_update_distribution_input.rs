@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDistributionInput {
     /// <p>The distribution's configuration information.</p>
-    #[doc(hidden)]
     pub distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     /// <p>The distribution's id.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDistributionInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    #[doc(hidden)]
     pub monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
 }
 impl UpdateEnvironmentInput {

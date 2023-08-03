@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendDataToMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
-    #[doc(hidden)]
     pub payload_data: ::std::option::Option<::std::string::String>,
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
-    #[doc(hidden)]
     pub wireless_metadata: ::std::option::Option<crate::types::MulticastWirelessMetadata>,
 }
 impl SendDataToMulticastGroupInput {

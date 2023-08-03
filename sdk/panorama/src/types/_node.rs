@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Node {
     /// <p>The node's ID.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The node's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The node's category.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::NodeCategory>,
     /// <p>The account ID of the node's owner.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The node's package name.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The node's package ID.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The node's ARN.</p>
-    #[doc(hidden)]
     pub package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The node's package version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The node's patch version.</p>
-    #[doc(hidden)]
     pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The node's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>When the node was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Node {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedStandardsControlAssociation {
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific controls for which the enablement status couldn't be retrieved in specified standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
-    #[doc(hidden)]
     pub standards_control_association_id: ::std::option::Option<crate::types::StandardsControlAssociationId>,
     /// <p>The error code for the unprocessed standard and control association. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     /// <p>The reason why the standard and control association was unprocessed. </p>
-    #[doc(hidden)]
     pub error_reason: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedStandardsControlAssociation {

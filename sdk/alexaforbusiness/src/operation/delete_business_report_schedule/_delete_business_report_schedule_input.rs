@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBusinessReportScheduleInput {
     /// <p>The ARN of the business report schedule.</p>
-    #[doc(hidden)]
     pub schedule_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBusinessReportScheduleInput {

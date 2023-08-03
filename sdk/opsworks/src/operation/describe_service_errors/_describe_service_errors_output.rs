@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceErrorsOutput {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    #[doc(hidden)]
     pub service_errors: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
     _request_id: Option<String>,
 }

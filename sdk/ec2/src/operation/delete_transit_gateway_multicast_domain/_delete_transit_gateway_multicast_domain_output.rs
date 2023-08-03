@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayMulticastDomainOutput {
     /// <p>Information about the deleted transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub transit_gateway_multicast_domain: ::std::option::Option<crate::types::TransitGatewayMulticastDomain>,
     _request_id: Option<String>,
 }

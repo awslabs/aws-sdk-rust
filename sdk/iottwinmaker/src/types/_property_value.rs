@@ -6,10 +6,8 @@
 pub struct PropertyValue {
     /// <p>The timestamp of a value for a time series property.</p>
     #[deprecated(note = "This field is deprecated and will throw an error in the future. Use time instead.")]
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that specifies a value for a time series property.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::DataValue>,
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
     /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
@@ -25,7 +23,6 @@ pub struct PropertyValue {
     /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
     /// </ul>
     /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::std::string::String>,
 }
 impl PropertyValue {

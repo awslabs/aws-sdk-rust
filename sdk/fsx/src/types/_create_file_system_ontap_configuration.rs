@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
-    #[doc(hidden)]
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
-    #[doc(hidden)]
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the FSx for ONTAP file system deployment type to use in creating the file system. </p>
     /// <ul>
@@ -16,31 +14,23 @@ pub struct CreateFileSystemOntapConfiguration {
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::OntapDeploymentType>,
     /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.</p>
-    #[doc(hidden)]
     pub endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
     /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user with which you administer your file system using the NetApp ONTAP CLI and REST API.</p>
-    #[doc(hidden)]
     pub fsx_admin_password: ::std::option::Option<::std::string::String>,
     /// <p>The SSD IOPS configuration for the FSx for ONTAP file system.</p>
-    #[doc(hidden)]
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which you want the preferred file server to be located.</p>
-    #[doc(hidden)]
     pub preferred_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
-    #[doc(hidden)]
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
-    #[doc(hidden)]
     pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl CreateFileSystemOntapConfiguration {

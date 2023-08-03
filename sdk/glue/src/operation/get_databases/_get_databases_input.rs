@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDatabasesInput {
     /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A continuation token, if this is a continuation call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of databases to return in one response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct GetDatabasesInput {
     /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
     /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_share_type: ::std::option::Option<crate::types::ResourceShareType>,
 }
 impl GetDatabasesInput {

@@ -9,17 +9,14 @@ pub struct CloudWatchDimensionConfiguration {
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
-    #[doc(hidden)]
     pub dimension_value_source: ::std::option::Option<crate::types::DimensionValueSource>,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
     /// <ul>
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub default_dimension_value: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchDimensionConfiguration {

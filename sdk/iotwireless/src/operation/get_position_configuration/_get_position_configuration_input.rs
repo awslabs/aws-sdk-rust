@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPositionConfigurationInput {
     /// <p>Resource identifier used in a position configuration.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
 }
 impl GetPositionConfigurationInput {

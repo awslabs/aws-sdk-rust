@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ID specifying the EFS resource that you want to create a tag for.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {

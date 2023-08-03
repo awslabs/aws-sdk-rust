@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrConfigurationState {
     /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
-    #[doc(hidden)]
     pub rescan_duration_state: ::std::option::Option<crate::types::EcrRescanDurationState>,
 }
 impl EcrConfigurationState {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetContentStatus {
     /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DatasetContentState>,
     /// <p>The reason the dataset contents are in this state.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DatasetContentStatus {

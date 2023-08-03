@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBotAliasesOutput {
     /// <p>Summary information for the bot aliases that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more aliases available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    #[doc(hidden)]
     pub bot_alias_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotAliasSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotAliases</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot associated with the aliases.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

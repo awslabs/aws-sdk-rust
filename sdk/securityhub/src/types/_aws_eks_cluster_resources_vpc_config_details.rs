@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEksClusterResourcesVpcConfigDetails {
     /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnets that are associated with the cluster.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
-    #[doc(hidden)]
     pub endpoint_public_access: bool,
 }
 impl AwsEksClusterResourcesVpcConfigDetails {

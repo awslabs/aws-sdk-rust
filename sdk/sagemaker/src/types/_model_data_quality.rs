@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDataQuality {
     /// <p>Data quality statistics for a model.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::MetricsSource>,
     /// <p>Data quality constraints for a model.</p>
-    #[doc(hidden)]
     pub constraints: ::std::option::Option<crate::types::MetricsSource>,
 }
 impl ModelDataQuality {

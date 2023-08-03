@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExclusionsInput {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
-    #[doc(hidden)]
     pub exclusion_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
 }
 impl DescribeExclusionsInput {

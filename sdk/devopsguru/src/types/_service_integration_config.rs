@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
-    #[doc(hidden)]
     pub ops_center: ::std::option::Option<crate::types::OpsCenterIntegration>,
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
-    #[doc(hidden)]
     pub logs_anomaly_detection: ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
     /// <p> Information about whether DevOps Guru is configured to encrypt server-side data using KMS. </p>
-    #[doc(hidden)]
     pub kms_server_side_encryption: ::std::option::Option<crate::types::KmsServerSideEncryptionIntegration>,
 }
 impl ServiceIntegrationConfig {

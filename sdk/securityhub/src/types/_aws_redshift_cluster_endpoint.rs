@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterEndpoint {
     /// <p>The DNS address of the cluster.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port that the database engine listens on.</p>
-    #[doc(hidden)]
     pub port: i32,
 }
 impl AwsRedshiftClusterEndpoint {

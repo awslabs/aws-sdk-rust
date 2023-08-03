@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDefaultMailDomainInput {
     /// <p>The WorkMail organization for which to list domains.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name that will become the default domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultMailDomainInput {

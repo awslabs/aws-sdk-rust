@@ -5,47 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageDescriptor {
     /// <p>A list of the <code>Columns</code> in the table.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    #[doc(hidden)]
     pub additional_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
-    #[doc(hidden)]
     pub input_format: ::std::option::Option<::std::string::String>,
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<::std::string::String>,
     /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
-    #[doc(hidden)]
     pub compressed: bool,
     /// <p>Must be specified if the table contains any dimension columns.</p>
-    #[doc(hidden)]
     pub number_of_buckets: i32,
     /// <p>The serialization/deserialization (SerDe) information.</p>
-    #[doc(hidden)]
     pub serde_info: ::std::option::Option<crate::types::SerDeInfo>,
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    #[doc(hidden)]
     pub bucket_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list specifying the sort order of each bucket in the table.</p>
-    #[doc(hidden)]
     pub sort_columns: ::std::option::Option<::std::vec::Vec<crate::types::Order>>,
     /// <p>The user-supplied properties in key-value form.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
-    #[doc(hidden)]
     pub skewed_info: ::std::option::Option<crate::types::SkewedInfo>,
     /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
-    #[doc(hidden)]
     pub stored_as_sub_directories: bool,
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
-    #[doc(hidden)]
     pub schema_reference: ::std::option::Option<crate::types::SchemaReference>,
 }
 impl StorageDescriptor {

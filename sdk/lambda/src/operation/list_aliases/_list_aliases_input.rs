@@ -11,16 +11,12 @@ pub struct ListAliasesInput {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify a function version to only list aliases that invoke that version.</p>
-    #[doc(hidden)]
     pub function_version: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Limit the number of aliases returned.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListAliasesInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Service {
     /// <p>Identifier for the service. Unique within the service map.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<i32>,
     /// <p>The canonical name of the service.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of names for the service, including the canonical name.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates that the service was the first service to process a request.</p>
-    #[doc(hidden)]
     pub root: ::std::option::Option<bool>,
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of service.</p>
     /// <ul>
@@ -26,28 +21,20 @@ pub struct Service {
     /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
     /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The service's state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the first segment that the service generated.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the last segment that the service generated.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Connections to downstream services.</p>
-    #[doc(hidden)]
     pub edges: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>,
     /// <p>Aggregated statistics for the service.</p>
-    #[doc(hidden)]
     pub summary_statistics: ::std::option::Option<crate::types::ServiceStatistics>,
     /// <p>A histogram that maps the spread of service durations.</p>
-    #[doc(hidden)]
     pub duration_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
     /// <p>A histogram that maps the spread of service response times.</p>
-    #[doc(hidden)]
     pub response_time_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
 }
 impl Service {

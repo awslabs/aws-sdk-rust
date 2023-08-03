@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStreamingDistributionInput {
     /// <p>The streaming distribution's configuration information.</p>
-    #[doc(hidden)]
     pub streaming_distribution_config: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     /// <p>The streaming distribution's id.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStreamingDistributionInput {

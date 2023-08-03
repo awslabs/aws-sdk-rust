@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutboundConnection {
     /// <p>Information about the source (local) domain.</p>
-    #[doc(hidden)]
     pub local_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     /// <p>Information about the destination (remote) domain.</p>
-    #[doc(hidden)]
     pub remote_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     /// <p>Unique identifier of the connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the connection.</p>
-    #[doc(hidden)]
     pub connection_alias: ::std::option::Option<::std::string::String>,
     /// <p>Status of the connection.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::OutboundConnectionStatus>,
     /// <p>The connection mode.</p>
-    #[doc(hidden)]
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     /// <p>Properties for the outbound connection.</p>
-    #[doc(hidden)]
     pub connection_properties: ::std::option::Option<crate::types::ConnectionProperties>,
 }
 impl OutboundConnection {

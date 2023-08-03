@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOriginAccessControlInput {
     /// <p>Contains the origin access control.</p>
-    #[doc(hidden)]
     pub origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
 }
 impl CreateOriginAccessControlInput {

@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestedServiceQuotaChange {
     /// <p>The unique identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The case ID.</p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The service identifier.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The service name.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The quota identifier.</p>
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The quota name.</p>
-    #[doc(hidden)]
     pub quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The new, increased value for the quota.</p>
-    #[doc(hidden)]
     pub desired_value: ::std::option::Option<f64>,
     /// <p>The state of the quota increase request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RequestStatus>,
     /// <p>The date and time when the quota increase request was received and the case ID was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the most recent change.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The IAM identity of the requester.</p>
-    #[doc(hidden)]
     pub requester: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
-    #[doc(hidden)]
     pub quota_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the quota is global.</p>
-    #[doc(hidden)]
     pub global_quota: bool,
     /// <p>The unit of measurement.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl RequestedServiceQuotaChange {

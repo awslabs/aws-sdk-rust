@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelMetrics {
     /// <p>Metrics that measure the quality of a model.</p>
-    #[doc(hidden)]
     pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
     /// <p>Metrics that measure the quality of the input data for a model.</p>
-    #[doc(hidden)]
     pub model_data_quality: ::std::option::Option<crate::types::ModelDataQuality>,
     /// <p>Metrics that measure bais in a model.</p>
-    #[doc(hidden)]
     pub bias: ::std::option::Option<crate::types::Bias>,
     /// <p>Metrics that help explain a model.</p>
-    #[doc(hidden)]
     pub explainability: ::std::option::Option<crate::types::Explainability>,
 }
 impl ModelMetrics {

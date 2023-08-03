@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetDigestOutput {
     /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
-    #[doc(hidden)]
     pub digest: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-    #[doc(hidden)]
     pub digest_tip_address: ::std::option::Option<crate::types::ValueHolder>,
     _request_id: Option<String>,
 }

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSnapshotRecordSourceInfo {
     /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ExportSnapshotRecordSourceType>,
     /// <p>The date when the source instance or disk snapshot was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the source instance or disk snapshot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot's source instance or disk.</p>
-    #[doc(hidden)]
     pub from_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
-    #[doc(hidden)]
     pub from_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects describing an instance snapshot.</p>
-    #[doc(hidden)]
     pub instance_snapshot_info: ::std::option::Option<crate::types::InstanceSnapshotInfo>,
     /// <p>A list of objects describing a disk snapshot.</p>
-    #[doc(hidden)]
     pub disk_snapshot_info: ::std::option::Option<crate::types::DiskSnapshotInfo>,
 }
 impl ExportSnapshotRecordSourceInfo {

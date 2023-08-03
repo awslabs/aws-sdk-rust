@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InternalServerException {
     /// <p>A description of the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>How long to wait before you retry this operation.</p>
-    #[doc(hidden)]
     pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

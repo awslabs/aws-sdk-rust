@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartWorkflowRunOutput {
     /// <p>An Id for the new run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

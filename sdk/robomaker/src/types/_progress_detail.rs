@@ -43,16 +43,12 @@ pub struct ProgressDetail {
     /// <p>Deployment is complete.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub current_progress: ::std::option::Option<crate::types::RobotDeploymentStep>,
     /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
-    #[doc(hidden)]
     pub percent_done: ::std::option::Option<f32>,
     /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_seconds: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    #[doc(hidden)]
     pub target_resource: ::std::option::Option<::std::string::String>,
 }
 impl ProgressDetail {

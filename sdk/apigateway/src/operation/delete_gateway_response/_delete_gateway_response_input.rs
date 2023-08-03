@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The response type of the associated GatewayResponse.</p>
-    #[doc(hidden)]
     pub response_type: ::std::option::Option<crate::types::GatewayResponseType>,
 }
 impl DeleteGatewayResponseInput {

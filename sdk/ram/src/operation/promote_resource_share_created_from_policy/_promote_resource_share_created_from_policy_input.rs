@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PromoteResourceShareCreatedFromPolicyInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to promote.</p>
-    #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
 }
 impl PromoteResourceShareCreatedFromPolicyInput {

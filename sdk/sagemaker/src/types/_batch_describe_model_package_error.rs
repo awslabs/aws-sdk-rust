@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeModelPackageError {
     /// <p></p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub error_response: ::std::option::Option<::std::string::String>,
 }
 impl BatchDescribeModelPackageError {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailSettings {
     /// <p>The contents of the email message.</p>
-    #[doc(hidden)]
     pub email_message: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the subject line of the email message.</p>
-    #[doc(hidden)]
     pub email_subject: ::std::option::Option<::std::string::String>,
 }
 impl EmailSettings {

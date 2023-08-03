@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingPolicyUpdate {
     /// <p>The name of the scaling policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents a target tracking scaling policy configuration.</p>
-    #[doc(hidden)]
     pub target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate>,
 }
 impl AutoScalingPolicyUpdate {

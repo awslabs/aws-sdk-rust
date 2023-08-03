@@ -5,28 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildArtifacts {
     /// <p>Information about the location of the build artifacts.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub sha256sum: ::std::option::Option<::std::string::String>,
     /// <p>The MD5 hash of the build artifact.</p>
     /// <p>You can use this hash along with a checksum tool to confirm file integrity and authenticity.</p> <note>
     /// <p>This value is available only if the build project's <code>packaging</code> value is set to <code>ZIP</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub md5sum: ::std::option::Option<::std::string::String>,
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
-    #[doc(hidden)]
     pub override_artifact_name: ::std::option::Option<bool>,
     /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
-    #[doc(hidden)]
     pub encryption_disabled: ::std::option::Option<bool>,
     /// <p> An identifier for this artifact definition. </p>
-    #[doc(hidden)]
     pub artifact_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -57,7 +51,6 @@ pub struct BuildArtifacts {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub bucket_owner_access: ::std::option::Option<crate::types::BucketOwnerAccess>,
 }
 impl BuildArtifacts {

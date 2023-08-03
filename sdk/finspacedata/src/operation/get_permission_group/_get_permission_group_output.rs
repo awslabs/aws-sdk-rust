@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPermissionGroupOutput {
     /// <p>The structure for a permission group.</p>
-    #[doc(hidden)]
     pub permission_group: ::std::option::Option<crate::types::PermissionGroup>,
     _request_id: Option<String>,
 }

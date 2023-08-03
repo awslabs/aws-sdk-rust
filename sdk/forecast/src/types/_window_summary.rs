@@ -6,23 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WindowSummary {
     /// <p>The timestamp that defines the start of the window.</p>
-    #[doc(hidden)]
     pub test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that defines the end of the window.</p>
-    #[doc(hidden)]
     pub test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of data points within the window.</p>
-    #[doc(hidden)]
     pub item_count: ::std::option::Option<i32>,
     /// <p>The type of evaluation.</p>
     /// <ul>
     /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
     /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::Metrics>,
 }
 impl WindowSummary {

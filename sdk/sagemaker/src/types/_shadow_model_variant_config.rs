@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShadowModelVariantConfig {
     /// <p>The name of the shadow variant.</p>
-    #[doc(hidden)]
     pub shadow_model_variant_name: ::std::option::Option<::std::string::String>,
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
-    #[doc(hidden)]
     pub sampling_percentage: i32,
 }
 impl ShadowModelVariantConfig {

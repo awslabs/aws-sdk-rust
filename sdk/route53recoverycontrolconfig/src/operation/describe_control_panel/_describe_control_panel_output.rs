@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeControlPanelOutput {
     /// <p>Information about the control panel.</p>
-    #[doc(hidden)]
     pub control_panel: ::std::option::Option<crate::types::ControlPanel>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileMetadata {
     /// <p>The full path to the file to be added or updated, including the name of the file.</p>
-    #[doc(hidden)]
     pub absolute_path: ::std::option::Option<::std::string::String>,
     /// <p>The blob ID that contains the file information.</p>
-    #[doc(hidden)]
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    #[doc(hidden)]
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
 impl FileMetadata {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableDirectoryInput {
     /// <p>The ARN of the directory to enable.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
 }
 impl EnableDirectoryInput {

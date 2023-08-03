@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceStatistics {
     /// <p>The total amount of data, in bytes, that Amazon Macie has analyzed in the bucket.</p>
-    #[doc(hidden)]
     pub total_bytes_classified: ::std::option::Option<i64>,
     /// <p>The total number of occurrences of sensitive data that Amazon Macie has found in the bucket's objects. This includes occurrences that are currently suppressed by the sensitivity scoring settings for the bucket (totalDetectionsSuppressed).</p>
-    #[doc(hidden)]
     pub total_detections: ::std::option::Option<i64>,
     /// <p>The total number of occurrences of sensitive data that are currently suppressed by the sensitivity scoring settings for the bucket. These represent occurrences of sensitive data that Amazon Macie found in the bucket's objects, but the occurrences were manually suppressed. By default, suppressed occurrences are excluded from the bucket's sensitivity score.</p>
-    #[doc(hidden)]
     pub total_detections_suppressed: ::std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie has analyzed in the bucket.</p>
-    #[doc(hidden)]
     pub total_items_classified: ::std::option::Option<i64>,
     /// <p>The total number of the bucket's objects that Amazon Macie has found sensitive data in.</p>
-    #[doc(hidden)]
     pub total_items_sensitive: ::std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.</p>
-    #[doc(hidden)]
     pub total_items_skipped: ::std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are encrypted with a key that Macie can't access. The objects use server-side encryption with customer-provided keys (SSE-C).</p>
-    #[doc(hidden)]
     pub total_items_skipped_invalid_encryption: ::std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket because the objects are encrypted with KMS keys that were disabled, are scheduled for deletion, or were deleted.</p>
-    #[doc(hidden)]
     pub total_items_skipped_invalid_kms: ::std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to the permissions settings for the objects or the permissions settings for the keys that were used to encrypt the objects.</p>
-    #[doc(hidden)]
     pub total_items_skipped_permission_denied: ::std::option::Option<i64>,
 }
 impl ResourceStatistics {

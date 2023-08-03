@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterImageOutput {
     /// <p>The ID of the newly registered AMI.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

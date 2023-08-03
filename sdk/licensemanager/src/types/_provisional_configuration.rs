@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionalConfiguration {
     /// <p>Maximum time for the provisional configuration, in minutes.</p>
-    #[doc(hidden)]
     pub max_time_to_live_in_minutes: ::std::option::Option<i32>,
 }
 impl ProvisionalConfiguration {

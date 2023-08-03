@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tag {
     /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the tag key.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {

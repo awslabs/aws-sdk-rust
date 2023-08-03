@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTypeDetails {
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
-    #[doc(hidden)]
     pub encryption_enabled: ::std::option::Option<bool>,
     /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
-    #[doc(hidden)]
     pub cognito_enabled: ::std::option::Option<bool>,
     /// <p>Whether logging is supported for the instance type.</p>
-    #[doc(hidden)]
     pub app_logs_enabled: ::std::option::Option<bool>,
     /// <p>Whether fine-grained access control is supported for the instance type.</p>
-    #[doc(hidden)]
     pub advanced_security_enabled: ::std::option::Option<bool>,
     /// <p>Whether UltraWarm is supported for the instance type.</p>
-    #[doc(hidden)]
     pub warm_enabled: ::std::option::Option<bool>,
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    #[doc(hidden)]
     pub instance_role: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported Availability Zones for the instance type.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceTypeDetails {

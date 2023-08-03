@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDetectorInput {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
-    #[doc(hidden)]
     pub key_value: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDetectorInput {

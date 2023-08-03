@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UiTemplateInfo {
     /// <p>The URL for the user interface template.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 digest of the contents of the template.</p>
-    #[doc(hidden)]
     pub content_sha256: ::std::option::Option<::std::string::String>,
 }
 impl UiTemplateInfo {

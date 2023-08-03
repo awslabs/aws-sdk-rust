@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MailDomainSummary {
     /// <p>The domain name.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the domain is default or not.</p>
-    #[doc(hidden)]
     pub default_domain: bool,
 }
 impl MailDomainSummary {

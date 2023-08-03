@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServicesOutput {
     /// <p>The list of services described.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }

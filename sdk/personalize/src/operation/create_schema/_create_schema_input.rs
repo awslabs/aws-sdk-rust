@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSchemaInput {
     /// <p>The name for the schema.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A schema in Avro JSON format.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::Domain>,
 }
 impl CreateSchemaInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayClientPolicyTls {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
-    #[doc(hidden)]
     pub enforce: ::std::option::Option<bool>,
     /// <p>One or more ports that the policy is enforced for.</p>
-    #[doc(hidden)]
     pub ports: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<crate::types::VirtualGatewayClientTlsCertificate>,
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
-    #[doc(hidden)]
     pub validation: ::std::option::Option<crate::types::VirtualGatewayTlsValidationContext>,
 }
 impl VirtualGatewayClientPolicyTls {

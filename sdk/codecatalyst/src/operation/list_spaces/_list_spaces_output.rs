@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSpacesOutput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the spaces. </p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::SpaceSummary>>,
     _request_id: Option<String>,
 }

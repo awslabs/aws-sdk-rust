@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableOptions {
     /// <p>The orientation (vertical, horizontal) for a table.</p>
-    #[doc(hidden)]
     pub orientation: ::std::option::Option<crate::types::TableOrientation>,
     /// <p>The table cell style of a table header.</p>
-    #[doc(hidden)]
     pub header_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The table cell style of table cells.</p>
-    #[doc(hidden)]
     pub cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The row alternate color options (widget status, row alternate colors) for a table.</p>
-    #[doc(hidden)]
     pub row_alternate_color_options: ::std::option::Option<crate::types::RowAlternateColorOptions>,
 }
 impl TableOptions {

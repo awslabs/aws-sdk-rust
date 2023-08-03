@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the subnets in the VPC to which you want to connect your training job or model. For information about the availability of specific instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and Availability Zones</a>.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcConfig {

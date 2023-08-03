@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicSummary {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the topic. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the topic.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl TopicSummary {

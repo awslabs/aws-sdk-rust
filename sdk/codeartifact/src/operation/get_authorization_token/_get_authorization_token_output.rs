@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenOutput {
     /// <p> The returned authentication token. </p>
-    #[doc(hidden)]
     pub authorization_token: ::std::option::Option<::std::string::String>,
     /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

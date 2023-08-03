@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericFormatConfiguration {
     /// <p>The options that determine the number display format configuration.</p>
-    #[doc(hidden)]
     pub number_display_format_configuration: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
     /// <p>The options that determine the currency display format configuration.</p>
-    #[doc(hidden)]
     pub currency_display_format_configuration: ::std::option::Option<crate::types::CurrencyDisplayFormatConfiguration>,
     /// <p>The options that determine the percentage display format configuration.</p>
-    #[doc(hidden)]
     pub percentage_display_format_configuration: ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
 }
 impl NumericFormatConfiguration {

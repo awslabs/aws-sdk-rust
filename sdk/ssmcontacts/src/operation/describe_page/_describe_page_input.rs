@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePageInput {
     /// <p>The ID of the engagement to a contact channel.</p>
-    #[doc(hidden)]
     pub page_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePageInput {

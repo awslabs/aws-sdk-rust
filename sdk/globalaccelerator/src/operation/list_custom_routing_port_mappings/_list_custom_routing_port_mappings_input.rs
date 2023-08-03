@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
-    #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
-    #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCustomRoutingPortMappingsInput {

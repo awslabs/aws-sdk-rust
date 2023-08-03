@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnDescription {
     /// <p>The name of the column description.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the column description.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ColumnType>,
 }
 impl ColumnDescription {

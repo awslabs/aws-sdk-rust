@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RulesPackage {
     /// <p>The ARN of the rules package.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rules package.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the rules package.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The provider of the rules package.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>The description of the rules package.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl RulesPackage {

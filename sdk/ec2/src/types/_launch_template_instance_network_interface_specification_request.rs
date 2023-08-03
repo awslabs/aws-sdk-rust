@@ -6,63 +6,44 @@
 pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     /// <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
     /// <p>Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network interface. For more information about Carrier IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>Wavelength Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub associate_carrier_ip_address: ::std::option::Option<bool>,
     /// <p>Associates a public IPv4 address with eth0 for a new network interface.</p>
-    #[doc(hidden)]
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>A description for the network interface.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The device index for the network interface attachment.</p>
-    #[doc(hidden)]
     pub device_index: ::std::option::Option<i32>,
     /// <p>The IDs of one or more security groups.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
-    #[doc(hidden)]
     pub interface_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
-    #[doc(hidden)]
     pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you're specifying a number of IPv6 addresses.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6AddressRequest>>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary private IPv4 address of the network interface.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>One or more private IPv4 addresses.</p>
-    #[doc(hidden)]
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
     /// <p>The number of secondary private IPv4 addresses to assign to a network interface.</p>
-    #[doc(hidden)]
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
     /// <p>The ID of the subnet for the network interface.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
-    #[doc(hidden)]
     pub network_card_index: ::std::option::Option<i32>,
     /// <p>One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    #[doc(hidden)]
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
     /// <p>The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
-    #[doc(hidden)]
     pub ipv4_prefix_count: ::std::option::Option<i32>,
     /// <p>One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    #[doc(hidden)]
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     /// <p>The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
-    #[doc(hidden)]
     pub ipv6_prefix_count: ::std::option::Option<i32>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {

@@ -9,7 +9,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCacheParameterGroupOutput {
     /// <p>The name of the cache parameter group.</p>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

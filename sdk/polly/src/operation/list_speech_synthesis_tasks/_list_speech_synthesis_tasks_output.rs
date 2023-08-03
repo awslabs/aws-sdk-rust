@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasksOutput {
     /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
-    #[doc(hidden)]
     pub synthesis_tasks: ::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>>,
     _request_id: Option<String>,
 }

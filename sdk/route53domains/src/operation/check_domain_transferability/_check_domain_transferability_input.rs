@@ -12,10 +12,8 @@ pub struct CheckDomainTransferabilityInput {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
-    #[doc(hidden)]
     pub auth_code: ::std::option::Option<::std::string::String>,
 }
 impl CheckDomainTransferabilityInput {

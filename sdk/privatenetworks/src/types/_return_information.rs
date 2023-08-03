@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReturnInformation {
     /// <p>The shipping address.</p>
-    #[doc(hidden)]
     pub shipping_address: ::std::option::Option<crate::types::Address>,
     /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
-    #[doc(hidden)]
     pub return_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replacement order.</p>
-    #[doc(hidden)]
     pub replacement_order_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
-    #[doc(hidden)]
     pub shipping_label: ::std::option::Option<::std::string::String>,
 }
 impl ReturnInformation {

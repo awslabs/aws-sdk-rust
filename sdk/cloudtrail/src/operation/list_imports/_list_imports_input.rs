@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p> The maximum number of imports to display on a single page. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The ARN of the destination event data store. </p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p> The status of the import. </p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p> A token you can use to get the next page of import results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportsInput {

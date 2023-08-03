@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the facet.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
-    #[doc(hidden)]
     pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>,
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
-    #[doc(hidden)]
     pub object_type: ::std::option::Option<crate::types::ObjectType>,
 }
 impl UpdateFacetInput {

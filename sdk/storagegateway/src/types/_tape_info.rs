@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TapeInfo {
     /// <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
-    #[doc(hidden)]
     pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>The barcode that identifies a specific virtual tape.</p>
-    #[doc(hidden)]
     pub tape_barcode: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of a virtual tape.</p>
-    #[doc(hidden)]
     pub tape_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The status of the tape.</p>
-    #[doc(hidden)]
     pub tape_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The date that the tape became subject to tape retention lock.</p>
-    #[doc(hidden)]
     pub retention_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the tape entered the custom tape pool with tape retention lock enabled.</p>
-    #[doc(hidden)]
     pub pool_entry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TapeInfo {

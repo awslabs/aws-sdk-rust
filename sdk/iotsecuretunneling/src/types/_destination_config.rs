@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DestinationConfig {

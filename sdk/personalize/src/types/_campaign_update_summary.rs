@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignUpdateSummary {
     /// <p>The Amazon Resource Name (ARN) of the deployed solution version.</p>
-    #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
-    #[doc(hidden)]
     pub min_provisioned_tps: ::std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
-    #[doc(hidden)]
     pub campaign_config: ::std::option::Option<crate::types::CampaignConfig>,
     /// <p>The status of the campaign update.</p>
     /// <p>A campaign update can be in one of the following states:</p>
@@ -19,16 +16,12 @@ pub struct CampaignUpdateSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If a campaign update fails, the reason behind the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the campaign update was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the campaign update was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CampaignUpdateSummary {

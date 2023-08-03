@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTypeOffering {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The location type.</p>
-    #[doc(hidden)]
     pub location_type: ::std::option::Option<crate::types::LocationType>,
     /// <p>The identifier for the location. This depends on the location type. For example, if the location type is <code>region</code>, the location is the Region code (for example, <code>us-east-2</code>.)</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl InstanceTypeOffering {

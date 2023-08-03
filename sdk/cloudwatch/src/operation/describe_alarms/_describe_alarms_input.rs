@@ -4,38 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlarmsInput {
     /// <p>The names of the alarms to retrieve information about.</p>
-    #[doc(hidden)]
     pub alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
-    #[doc(hidden)]
     pub alarm_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    #[doc(hidden)]
     pub alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
     /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
     /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub children_of_alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
     /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
     /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub parents_of_alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
-    #[doc(hidden)]
     pub state_value: ::std::option::Option<crate::types::StateValue>,
     /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
-    #[doc(hidden)]
     pub action_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of alarm descriptions to retrieve.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAlarmsInput {

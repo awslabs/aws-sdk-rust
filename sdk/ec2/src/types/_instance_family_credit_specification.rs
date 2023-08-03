@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceFamilyCreditSpecification {
     /// <p>The instance family.</p>
-    #[doc(hidden)]
     pub instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
     /// <p>The default credit option for CPU usage of the instance family. Valid values are <code>standard</code> and <code>unlimited</code>.</p>
-    #[doc(hidden)]
     pub cpu_credits: ::std::option::Option<::std::string::String>,
 }
 impl InstanceFamilyCreditSpecification {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingLogs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
-    #[doc(hidden)]
     pub audit: ::std::option::Option<bool>,
     /// <p>Enables general logging.</p>
-    #[doc(hidden)]
     pub general: ::std::option::Option<bool>,
 }
 impl PendingLogs {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferencePredictorSummary {
     /// <p>The ARN of the reference predictor.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
 }
 impl ReferencePredictorSummary {

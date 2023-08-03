@@ -7,19 +7,14 @@ pub struct PipeTargetEventBridgeEventBusParameters {
     /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
     /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
     /// </important>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    #[doc(hidden)]
     pub detail_type: ::std::option::Option<::std::string::String>,
     /// <p>The source of the event.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::std::string::String>,
 }
 impl PipeTargetEventBridgeEventBusParameters {

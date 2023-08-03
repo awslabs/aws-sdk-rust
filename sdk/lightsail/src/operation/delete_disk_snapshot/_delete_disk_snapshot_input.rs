@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDiskSnapshotInput {
     /// <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
-    #[doc(hidden)]
     pub disk_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDiskSnapshotInput {

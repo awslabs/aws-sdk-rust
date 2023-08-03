@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsStorageInfo {
     /// <p>EBS volume provisioned throughput information.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
 }
 impl EbsStorageInfo {

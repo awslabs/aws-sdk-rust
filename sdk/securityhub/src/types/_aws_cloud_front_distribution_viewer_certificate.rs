@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionViewerCertificate {
     /// <p>The ARN of the ACM certificate. Used if the certificate is stored in ACM. If you provide an ACM certificate ARN, you must also provide <code>MinimumCertificateVersion</code> and <code>SslSupportMethod</code>.</p>
-    #[doc(hidden)]
     pub acm_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the certificate. Note that in CloudFront, this attribute is deprecated.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The source of the certificate identified by <code>Certificate</code>. Note that in CloudFront, this attribute is deprecated.</p>
-    #[doc(hidden)]
     pub certificate_source: ::std::option::Option<::std::string::String>,
     /// <p>Whether the distribution uses the CloudFront domain name. If set to <code>false</code>, then you provide either <code>AcmCertificateArn</code> or <code>IamCertificateId</code>.</p>
-    #[doc(hidden)]
     pub cloud_front_default_certificate: bool,
     /// <p>The identifier of the IAM certificate. Used if the certificate is stored in IAM. If you provide <code>IamCertificateId</code>, then you also must provide <code>MinimumProtocolVersion</code> and <code>SslSupportMethod</code>.</p>
-    #[doc(hidden)]
     pub iam_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The security policy that CloudFront uses for HTTPS connections with viewers. If <code>SslSupportMethod</code> is <code>sni-only</code>, then <code>MinimumProtocolVersion</code> must be <code>TLSv1</code> or higher.</p>
-    #[doc(hidden)]
     pub minimum_protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The viewers that the distribution accepts HTTPS connections from.</p>
-    #[doc(hidden)]
     pub ssl_support_method: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionViewerCertificate {

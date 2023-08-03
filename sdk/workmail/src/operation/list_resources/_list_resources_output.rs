@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesOutput {
     /// <p>One page of the organization's resource representation.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

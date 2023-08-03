@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductionVariantServerlessUpdateConfig {
     /// <p>The updated maximum number of concurrent invocations your serverless endpoint can process.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<i32>,
     /// <p>The updated amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
-    #[doc(hidden)]
     pub provisioned_concurrency: ::std::option::Option<i32>,
 }
 impl ProductionVariantServerlessUpdateConfig {

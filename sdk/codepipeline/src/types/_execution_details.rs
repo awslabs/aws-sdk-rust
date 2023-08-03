@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionDetails {
     /// <p>The summary of the current status of the actions.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as CodeDeploy.</p>
-    #[doc(hidden)]
     pub external_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
-    #[doc(hidden)]
     pub percent_complete: ::std::option::Option<i32>,
 }
 impl ExecutionDetails {

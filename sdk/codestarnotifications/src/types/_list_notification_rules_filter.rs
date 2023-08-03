@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationRulesFilter {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ListNotificationRulesFilterName>,
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ListNotificationRulesFilter {

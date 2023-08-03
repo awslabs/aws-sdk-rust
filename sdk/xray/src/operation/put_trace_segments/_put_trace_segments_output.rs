@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutTraceSegmentsOutput {
     /// <p>Segments that failed processing.</p>
-    #[doc(hidden)]
     pub unprocessed_trace_segments: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedTraceSegment>>,
     _request_id: Option<String>,
 }

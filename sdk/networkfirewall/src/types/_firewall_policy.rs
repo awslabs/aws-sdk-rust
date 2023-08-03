@@ -6,23 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicy {
     /// <p>References to the stateless rule groups that are used in the policy. These define the matching criteria in stateless rules. </p>
-    #[doc(hidden)]
     pub stateless_rule_group_references: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRuleGroupReference>>,
     /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the policy. If you want non-matching packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
     /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
-    #[doc(hidden)]
     pub stateless_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
     /// <p>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your standard section choice.</p>
     /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see the custom action descriptions under <code>CustomAction</code>.</p>
-    #[doc(hidden)]
     pub stateless_fragment_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The custom action definitions that are available for use in the firewall policy's <code>StatelessDefaultActions</code> setting. You name each custom action that you define, and then you can use it by name in your default actions specifications.</p>
-    #[doc(hidden)]
     pub stateless_custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
     /// <p>References to the stateful rule groups that are used in the policy. These define the inspection criteria in stateful rules. </p>
-    #[doc(hidden)]
     pub stateful_rule_group_references: ::std::option::Option<::std::vec::Vec<crate::types::StatefulRuleGroupReference>>,
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
@@ -33,16 +28,12 @@ pub struct FirewallPolicy {
     /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub stateful_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
-    #[doc(hidden)]
     pub stateful_engine_options: ::std::option::Option<crate::types::StatefulEngineOptions>,
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    #[doc(hidden)]
     pub tls_inspection_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains variables that you can use to override default Suricata settings in your firewall policy.</p>
-    #[doc(hidden)]
     pub policy_variables: ::std::option::Option<crate::types::PolicyVariables>,
 }
 impl FirewallPolicy {

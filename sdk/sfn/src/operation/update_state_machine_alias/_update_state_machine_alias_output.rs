@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStateMachineAliasOutput {
     /// <p>The date and time the state machine alias was updated.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

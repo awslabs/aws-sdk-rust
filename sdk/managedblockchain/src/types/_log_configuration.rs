@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogConfiguration {
     /// <p>Indicates whether logging is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl LogConfiguration {

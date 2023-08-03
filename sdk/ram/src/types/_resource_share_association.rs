@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceShareAssociation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share.</p>
-    #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource share.</p>
-    #[doc(hidden)]
     pub resource_share_name: ::std::option::Option<::std::string::String>,
     /// <p>The associated entity. This can be either of the following:</p>
     /// <ul>
@@ -22,25 +20,18 @@ pub struct ResourceShareAssociation {
     /// <li> <p>The ARN of an IAM user</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub associated_entity: ::std::option::Option<::std::string::String>,
     /// <p>The type of entity included in this association.</p>
-    #[doc(hidden)]
     pub association_type: ::std::option::Option<crate::types::ResourceShareAssociationType>,
     /// <p>The current status of the association.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceShareAssociationStatus>,
     /// <p>A message about the status of the association.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the association was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the association was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
-    #[doc(hidden)]
     pub external: ::std::option::Option<bool>,
 }
 impl ResourceShareAssociation {

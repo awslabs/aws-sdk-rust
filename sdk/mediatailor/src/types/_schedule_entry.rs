@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
-    #[doc(hidden)]
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the program will start playing.</p>
-    #[doc(hidden)]
     pub approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the program.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel that uses this schedule.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the live source used for the program.</p>
-    #[doc(hidden)]
     pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the program.</p>
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
     /// <p>The schedule's ad break properties.</p>
-    #[doc(hidden)]
     pub schedule_ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
     /// <p>The type of schedule entry.</p>
-    #[doc(hidden)]
     pub schedule_entry_type: ::std::option::Option<crate::types::ScheduleEntryType>,
     /// <p>The name of the source location.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VOD source.</p>
-    #[doc(hidden)]
     pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleEntry {

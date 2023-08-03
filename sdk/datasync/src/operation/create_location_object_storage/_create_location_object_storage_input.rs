@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLocationObjectStorageInput {
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
-    #[doc(hidden)]
     pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
-    #[doc(hidden)]
     pub server_port: ::std::option::Option<i32>,
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    #[doc(hidden)]
     pub server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
-    #[doc(hidden)]
     pub access_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
-    #[doc(hidden)]
     pub secret_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
@@ -40,7 +31,6 @@ pub struct CreateLocationObjectStorageInput {
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-    #[doc(hidden)]
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl CreateLocationObjectStorageInput {

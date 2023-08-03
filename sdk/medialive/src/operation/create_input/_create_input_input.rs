@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInputInput {
     /// Destination settings for PUSH type inputs.
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
     /// Settings for the devices.
-    #[doc(hidden)]
     pub input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
     /// A list of security groups referenced by IDs to attach to the input.
-    #[doc(hidden)]
     pub input_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    #[doc(hidden)]
     pub media_connect_flows: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
     /// Name of the input.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InputType>,
     /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::InputVpcRequest>,
 }
 impl CreateInputInput {

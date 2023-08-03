@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDocumentOutput {
     /// <p>Information about the SSM document.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<crate::types::DocumentDescription>,
     _request_id: Option<String>,
 }

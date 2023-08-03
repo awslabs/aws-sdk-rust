@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowLog {
     /// <p>The date and time the flow log was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
-    #[doc(hidden)]
     pub deliver_logs_error_message: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub deliver_logs_permission_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that allows the service to publish flow logs across accounts.</p>
-    #[doc(hidden)]
     pub deliver_cross_account_role: ::std::option::Option<::std::string::String>,
     /// <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-    #[doc(hidden)]
     pub deliver_logs_status: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the flow log.</p>
-    #[doc(hidden)]
     pub flow_log_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the flow log (<code>ACTIVE</code>).</p>
-    #[doc(hidden)]
     pub flow_log_status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the flow log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource being monitored.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of traffic captured for the flow log.</p>
-    #[doc(hidden)]
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
     /// <p>The type of destination for the flow log data.</p>
-    #[doc(hidden)]
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
     /// <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
-    #[doc(hidden)]
     pub log_destination: ::std::option::Option<::std::string::String>,
     /// <p>The format of the flow log record.</p>
-    #[doc(hidden)]
     pub log_format: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the flow log.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow log record.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified value.</p>
     /// <p>Valid Values: <code>60</code> | <code>600</code> </p>
-    #[doc(hidden)]
     pub max_aggregation_interval: ::std::option::Option<i32>,
     /// <p>The destination options.</p>
-    #[doc(hidden)]
     pub destination_options: ::std::option::Option<crate::types::DestinationOptionsResponse>,
 }
 impl FlowLog {

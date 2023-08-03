@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
-    #[doc(hidden)]
     pub delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     /// <p>The settings for the email message.</p>
-    #[doc(hidden)]
     pub email_settings: ::std::option::Option<crate::types::EmailSettings>,
     /// <p>The settings for the SMS message.</p>
-    #[doc(hidden)]
     pub sms_settings: ::std::option::Option<crate::types::SmsSettings>,
 }
 impl CreateBackendAuthVerificationMessageConfig {

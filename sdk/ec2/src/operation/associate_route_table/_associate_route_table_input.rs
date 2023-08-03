@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateRouteTableInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateRouteTableInput {

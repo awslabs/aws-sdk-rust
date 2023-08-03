@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckSchemaVersionValidityOutput {
     /// <p>Return true, if the schema is valid and false otherwise.</p>
-    #[doc(hidden)]
     pub valid: bool,
     /// <p>A validation failure error message.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

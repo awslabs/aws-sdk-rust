@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPartitionsInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partitions' table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>An expression that filters the partitions to be returned.</p>
     /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
@@ -81,25 +78,18 @@ pub struct GetPartitionsInput {
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
     /// <p> <i>Sample API Call</i>: </p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The segment of the table's partitions to scan in this request.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<crate::types::Segment>,
     /// <p>The maximum number of partitions to return in a single response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
-    #[doc(hidden)]
     pub exclude_column_schema: ::std::option::Option<bool>,
     /// <p>The transaction ID at which to read the partition contents.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    #[doc(hidden)]
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetPartitionsInput {

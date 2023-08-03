@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartNetworkResourceUpdateOutput {
     /// <p>The network resource.</p>
-    #[doc(hidden)]
     pub network_resource: ::std::option::Option<crate::types::NetworkResource>,
     _request_id: Option<String>,
 }

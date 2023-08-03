@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeferredMaintenanceWindow {
     /// <p>A unique identifier for the maintenance window.</p>
-    #[doc(hidden)]
     pub defer_maintenance_identifier: ::std::option::Option<::std::string::String>,
     /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
-    #[doc(hidden)]
     pub defer_maintenance_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
-    #[doc(hidden)]
     pub defer_maintenance_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeferredMaintenanceWindow {

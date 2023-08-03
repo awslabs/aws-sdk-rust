@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
-    #[doc(hidden)]
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::Edition>,
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub default_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
-    #[doc(hidden)]
     pub notification_email: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
-    #[doc(hidden)]
     pub public_sharing_enabled: bool,
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
-    #[doc(hidden)]
     pub termination_protection_enabled: bool,
 }
 impl AccountSettings {

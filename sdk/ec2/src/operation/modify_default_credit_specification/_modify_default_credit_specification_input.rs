@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDefaultCreditSpecificationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The instance family.</p>
-    #[doc(hidden)]
     pub instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
     /// <p>The credit option for CPU usage of the instance family.</p>
     /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
-    #[doc(hidden)]
     pub cpu_credits: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDefaultCreditSpecificationInput {

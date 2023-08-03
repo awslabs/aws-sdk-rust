@@ -7,20 +7,15 @@ pub struct DescribeMovingAddressesInput {
     /// <ul>
     /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
     /// <p>Default: If no value is provided, the default is 1000.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more Elastic IP addresses.</p>
-    #[doc(hidden)]
     pub public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeMovingAddressesInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyEndpointAccessInput {
     /// <p>The endpoint to be modified.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyEndpointAccessInput {

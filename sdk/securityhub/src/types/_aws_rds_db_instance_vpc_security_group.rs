@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbInstanceVpcSecurityGroup {
     /// <p>The name of the VPC security group.</p>
-    #[doc(hidden)]
     pub vpc_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the VPC security group.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbInstanceVpcSecurityGroup {

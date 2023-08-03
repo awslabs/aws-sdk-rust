@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTopicsDetectionJobOutput {
     /// <p>The list of properties for the requested job.</p>
-    #[doc(hidden)]
     pub topics_detection_job_properties: ::std::option::Option<crate::types::TopicsDetectionJobProperties>,
     _request_id: Option<String>,
 }

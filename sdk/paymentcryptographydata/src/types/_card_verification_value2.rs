@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CardVerificationValue2 {
     /// <p>The expiry date of a payment card.</p>
-    #[doc(hidden)]
     pub card_expiry_date: ::std::option::Option<::std::string::String>,
 }
 impl CardVerificationValue2 {

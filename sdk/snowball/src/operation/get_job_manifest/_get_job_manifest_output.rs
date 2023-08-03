@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobManifestOutput {
     /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
-    #[doc(hidden)]
     pub manifest_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

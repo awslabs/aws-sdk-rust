@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionSummary {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this resource was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    #[doc(hidden)]
     pub source_code_url: ::std::option::Option<::std::string::String>,
 }
 impl VersionSummary {

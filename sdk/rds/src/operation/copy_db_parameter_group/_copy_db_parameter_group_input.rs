@@ -9,7 +9,6 @@ pub struct CopyDbParameterGroupInput {
     /// <ul>
     /// <li> <p>Must specify a valid DB parameter group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the copied DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -20,13 +19,10 @@ pub struct CopyDbParameterGroupInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-db-parameter-group</code> </p>
-    #[doc(hidden)]
     pub target_db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A description for the copied DB parameter group.</p>
-    #[doc(hidden)]
     pub target_db_parameter_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyDbParameterGroupInput {

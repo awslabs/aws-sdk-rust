@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProtectionInput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
-    #[doc(hidden)]
     pub protection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProtectionInput {

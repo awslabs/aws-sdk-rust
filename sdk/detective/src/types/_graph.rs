@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Graph {
     /// <p>The ARN of the behavior graph.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the behavior graph was created. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Graph {

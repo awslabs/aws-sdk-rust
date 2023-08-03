@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOriginEndpointInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    #[doc(hidden)]
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    #[doc(hidden)]
     pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
-    #[doc(hidden)]
     pub container_type: ::std::option::Option<crate::types::ContainerType>,
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<crate::types::Segment>,
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
-    #[doc(hidden)]
     pub startover_window_seconds: ::std::option::Option<i32>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    #[doc(hidden)]
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
-    #[doc(hidden)]
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
 }
 impl UpdateOriginEndpointInput {

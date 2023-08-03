@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBatchPredictionInput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-    #[doc(hidden)]
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBatchPredictionInput {

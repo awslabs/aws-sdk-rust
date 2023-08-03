@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesForPatchGroupOutput {
     /// <p>The high-level patch state for the requested managed nodes. </p>
-    #[doc(hidden)]
     pub instance_patch_states: ::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

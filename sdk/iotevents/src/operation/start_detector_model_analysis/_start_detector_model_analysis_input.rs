@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDetectorModelAnalysisInput {
     /// <p>Information that defines how a detector operates.</p>
-    #[doc(hidden)]
     pub detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
 }
 impl StartDetectorModelAnalysisInput {

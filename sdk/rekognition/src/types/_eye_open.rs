@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EyeOpen {
     /// <p>Boolean value that indicates whether the eyes on the face are open.</p>
-    #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl EyeOpen {

@@ -6,31 +6,23 @@
 pub struct AnomalyDetector {
     /// <p>The namespace of the metric associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Namespace property.")]
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.MetricName property.")]
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric dimensions associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Dimensions property.")]
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The statistic associated with the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.Stat property.")]
-    #[doc(hidden)]
     pub stat: ::std::option::Option<::std::string::String>,
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model, and the time zone to use for the metric.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
     /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
-    #[doc(hidden)]
     pub state_value: ::std::option::Option<crate::types::AnomalyDetectorStateValue>,
     /// <p>The CloudWatch metric and statistic for this anomaly detector.</p>
-    #[doc(hidden)]
     pub single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
     /// <p>The CloudWatch metric math expression for this anomaly detector.</p>
-    #[doc(hidden)]
     pub metric_math_anomaly_detector: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
 }
 impl AnomalyDetector {

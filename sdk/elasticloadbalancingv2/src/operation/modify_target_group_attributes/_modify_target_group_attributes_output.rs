@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupAttributesOutput {
     /// <p>Information about the attributes.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
     _request_id: Option<String>,
 }

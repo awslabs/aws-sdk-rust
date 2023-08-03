@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessCustomActionDefinition {
     /// <p>Information about metrics to publish to CloudWatch.</p>
-    #[doc(hidden)]
     pub publish_metric_action: ::std::option::Option<crate::types::StatelessCustomPublishMetricAction>,
 }
 impl StatelessCustomActionDefinition {

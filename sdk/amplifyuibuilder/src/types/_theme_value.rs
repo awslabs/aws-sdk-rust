@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThemeValue {
     /// <p>The value of a theme property.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    #[doc(hidden)]
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
 }
 impl ThemeValue {

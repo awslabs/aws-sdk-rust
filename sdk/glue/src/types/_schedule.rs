@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schedule {
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>The state of the schedule.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ScheduleState>,
 }
 impl Schedule {

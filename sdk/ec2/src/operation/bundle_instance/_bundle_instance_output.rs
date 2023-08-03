@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BundleInstanceOutput {
     /// <p>Information about the bundle task.</p>
-    #[doc(hidden)]
     pub bundle_task: ::std::option::Option<crate::types::BundleTask>,
     _request_id: Option<String>,
 }

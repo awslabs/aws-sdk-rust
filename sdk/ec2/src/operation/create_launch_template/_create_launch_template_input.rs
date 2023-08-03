@@ -4,25 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLaunchTemplateInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A name for the launch template.</p>
-    #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the first version of the launch template.</p>
-    #[doc(hidden)]
     pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>The information for the launch template.</p>
-    #[doc(hidden)]
     pub launch_template_data: ::std::option::Option<crate::types::RequestLaunchTemplateData>,
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p> <note>
     /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
     /// </note>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateLaunchTemplateInput {

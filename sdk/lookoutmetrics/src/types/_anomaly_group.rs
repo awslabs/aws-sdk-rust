@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyGroup {
     /// <p>The start time for the group.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The end time for the group.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the anomaly group.</p>
-    #[doc(hidden)]
     pub anomaly_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The severity score of the group.</p>
-    #[doc(hidden)]
     pub anomaly_group_score: ::std::option::Option<f64>,
     /// <p>The name of the primary affected measure for the group.</p>
-    #[doc(hidden)]
     pub primary_metric_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of measures affected by the anomaly.</p>
-    #[doc(hidden)]
     pub metric_level_impact_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricLevelImpact>>,
 }
 impl AnomalyGroup {

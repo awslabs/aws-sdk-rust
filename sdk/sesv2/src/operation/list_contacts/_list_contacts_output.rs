@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactsOutput {
     /// <p>The contacts present in a specific contact list.</p>
-    #[doc(hidden)]
     pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
     /// <p>A string token indicating that there might be additional contacts available to be listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same parameters to retrieve the next page of contacts.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

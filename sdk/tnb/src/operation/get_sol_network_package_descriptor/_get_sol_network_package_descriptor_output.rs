@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageDescriptorOutput {
     /// <p>Indicates the media type of the resource.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::DescriptorContentType>,
     /// <p>Contents of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

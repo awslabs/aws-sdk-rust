@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNamespaceOutput {
     /// <p>The ARN of the Amazon QuickSight namespace you created. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new namespace that you created.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
-    #[doc(hidden)]
     pub capacity_region: ::std::option::Option<::std::string::String>,
     /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
-    #[doc(hidden)]
     pub creation_status: ::std::option::Option<crate::types::NamespaceStatus>,
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    #[doc(hidden)]
     pub identity_store: ::std::option::Option<crate::types::IdentityStore>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

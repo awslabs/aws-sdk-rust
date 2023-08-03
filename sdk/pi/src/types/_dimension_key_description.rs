@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionKeyDescription {
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The aggregated metric value for the dimensions, over the requested time range.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<f64>,
     /// <p>A map that contains the value for each additional metric.</p>
-    #[doc(hidden)]
     pub additional_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
-    #[doc(hidden)]
     pub partitions: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl DimensionKeyDescription {

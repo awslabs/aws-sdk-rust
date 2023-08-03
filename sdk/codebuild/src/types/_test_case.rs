@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestCase {
     /// <p> The ARN of the report to which the test case belongs. </p>
-    #[doc(hidden)]
     pub report_arn: ::std::option::Option<::std::string::String>,
     /// <p> The path to the raw data file that contains the test result. </p>
-    #[doc(hidden)]
     pub test_raw_data_path: ::std::option::Option<::std::string::String>,
     /// <p> A string that is applied to a series of related test cases. CodeBuild generates the prefix. The prefix depends on the framework used to generate the tests. </p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p> The name of the test case. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The status returned by the test case after it was run. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p> The number of nanoseconds it took to run this test case. </p>
-    #[doc(hidden)]
     pub duration_in_nano_seconds: ::std::option::Option<i64>,
     /// <p> A message associated with a test case. For example, an error message or stack trace. </p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p> The date and time a test case expires. A test case expires 30 days after it is created. An expired test case is not available to view in CodeBuild. </p>
-    #[doc(hidden)]
     pub expired: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TestCase {

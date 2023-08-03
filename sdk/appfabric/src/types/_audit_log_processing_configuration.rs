@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditLogProcessingConfiguration {
     /// <p>The event schema in which the audit logs need to be formatted.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
     /// <p>The format in which the audit logs need to be formatted.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
 }
 impl AuditLogProcessingConfiguration {

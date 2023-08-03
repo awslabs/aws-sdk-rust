@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FastRestoreRule {
     /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
-    #[doc(hidden)]
     pub count: i32,
     /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
-    #[doc(hidden)]
     pub interval: i32,
     /// <p>The unit of time for enabling fast snapshot restore.</p>
-    #[doc(hidden)]
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FastRestoreRule {

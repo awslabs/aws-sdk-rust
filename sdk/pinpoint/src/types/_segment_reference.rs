@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentReference {
     /// <p>The unique identifier for the segment.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the segment.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl SegmentReference {

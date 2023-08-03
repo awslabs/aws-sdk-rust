@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResolverEndpointOutput {
     /// <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
-    #[doc(hidden)]
     pub resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,
 }

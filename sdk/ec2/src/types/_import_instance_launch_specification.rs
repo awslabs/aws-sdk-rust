@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportInstanceLaunchSpecification {
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub additional_info: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the instance.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     /// <p>The security group IDs.</p>
-    #[doc(hidden)]
     pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The security group names.</p>
-    #[doc(hidden)]
     pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    #[doc(hidden)]
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
     /// <p>The instance type. For more information about the instance types that you can import, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance Types</a> in the VM Import/Export User Guide.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>Indicates whether monitoring is enabled.</p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<bool>,
     /// <p>The placement information for the instance.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::Placement>,
     /// <p>[EC2-VPC] An available IP address from the IP address range of the subnet.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>[EC2-VPC] The ID of the subnet in which to launch the instance.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded user data to make available to the instance.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<crate::types::UserData>,
 }
 impl ImportInstanceLaunchSpecification {

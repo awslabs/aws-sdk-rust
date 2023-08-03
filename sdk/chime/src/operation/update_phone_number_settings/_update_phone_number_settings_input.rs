@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberSettingsInput {
     /// <p>The default outbound calling name for the account.</p>
-    #[doc(hidden)]
     pub calling_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePhoneNumberSettingsInput {

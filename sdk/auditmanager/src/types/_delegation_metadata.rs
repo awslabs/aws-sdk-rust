@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DelegationMetadata {
     /// <p> The unique identifier for the delegation. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the associated assessment. </p>
-    #[doc(hidden)]
     pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the delegation. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DelegationStatus>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> Specifies when the delegation was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the name of the control set that was delegated for review. </p>
-    #[doc(hidden)]
     pub control_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DelegationMetadata {

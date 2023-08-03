@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamingImagesOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A collection of streaming images.</p>
-    #[doc(hidden)]
     pub streaming_images: ::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>>,
     _request_id: Option<String>,
 }

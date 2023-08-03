@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesDataPoint {
     /// <p>The timestamp when the measure value was collected.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::std::string::String>,
     /// <p>The measure value for the data point.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::Datum>,
 }
 impl TimeSeriesDataPoint {

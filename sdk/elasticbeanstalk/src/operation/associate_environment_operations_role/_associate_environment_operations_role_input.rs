@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment to which to set the operations role.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
-    #[doc(hidden)]
     pub operations_role: ::std::option::Option<::std::string::String>,
 }
 impl AssociateEnvironmentOperationsRoleInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAggregationAuthorizationOutput {
     /// <p>Returns an AggregationAuthorization object. </p>
-    #[doc(hidden)]
     pub aggregation_authorization: ::std::option::Option<crate::types::AggregationAuthorization>,
     _request_id: Option<String>,
 }

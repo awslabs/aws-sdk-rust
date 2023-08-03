@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountPreferencesInput {
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeAccountPreferencesInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLunaClientInput {
     /// <p>The label for the client.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
 }
 impl CreateLunaClientInput {

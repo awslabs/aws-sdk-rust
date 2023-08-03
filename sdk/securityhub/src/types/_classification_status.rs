@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassificationStatus {
     /// <p>The code that represents the status of the sensitive data detection.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A longer description of the current status of the sensitive data detection.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ClassificationStatus {

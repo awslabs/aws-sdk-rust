@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartContactStreamingOutput {
     /// <p>The identifier of the streaming configuration enabled. </p>
-    #[doc(hidden)]
     pub streaming_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

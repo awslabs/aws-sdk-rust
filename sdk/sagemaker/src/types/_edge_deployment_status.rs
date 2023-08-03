@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeDeploymentStatus {
     /// <p>The general status of the current stage.</p>
-    #[doc(hidden)]
     pub stage_status: ::std::option::Option<crate::types::StageStatus>,
     /// <p>The number of edge devices with the successful deployment in the current stage.</p>
-    #[doc(hidden)]
     pub edge_deployment_success_in_stage: i32,
     /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
-    #[doc(hidden)]
     pub edge_deployment_pending_in_stage: i32,
     /// <p>The number of edge devices that failed the deployment in current stage.</p>
-    #[doc(hidden)]
     pub edge_deployment_failed_in_stage: i32,
     /// <p>A detailed message about deployment status in current stage.</p>
-    #[doc(hidden)]
     pub edge_deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time when the deployment API started.</p>
-    #[doc(hidden)]
     pub edge_deployment_stage_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EdgeDeploymentStatus {

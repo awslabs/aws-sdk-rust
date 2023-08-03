@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceNetworkInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    #[doc(hidden)]
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceNetworkInput {

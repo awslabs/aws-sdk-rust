@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    #[doc(hidden)]
     pub sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct UpdateSqlInjectionMatchSetInput {
     /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>>,
 }
 impl UpdateSqlInjectionMatchSetInput {

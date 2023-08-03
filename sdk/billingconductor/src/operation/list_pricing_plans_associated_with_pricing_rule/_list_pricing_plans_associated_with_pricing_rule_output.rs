@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingPlansAssociatedWithPricingRuleOutput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    #[doc(hidden)]
     pub pricing_rule_arn: ::std::option::Option<::std::string::String>,
     /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
-    #[doc(hidden)]
     pub pricing_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The pagination token to be used on subsequent calls. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

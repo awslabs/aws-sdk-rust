@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotDatafeedSubscription {
     /// <p>The name of the Amazon S3 bucket where the Spot Instance data feed is located.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The fault codes for the Spot Instance request, if any.</p>
-    #[doc(hidden)]
     pub fault: ::std::option::Option<crate::types::SpotInstanceStateFault>,
     /// <p>The Amazon Web Services account ID of the account.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the data feed files.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Spot Instance data feed subscription.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DatafeedSubscriptionState>,
 }
 impl SpotDatafeedSubscription {

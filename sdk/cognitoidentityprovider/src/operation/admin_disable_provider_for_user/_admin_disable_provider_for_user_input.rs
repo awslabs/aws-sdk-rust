@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminDisableProviderForUserInput {
     /// <p>The user pool ID for the user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user to be disabled.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
 }
 impl AdminDisableProviderForUserInput {

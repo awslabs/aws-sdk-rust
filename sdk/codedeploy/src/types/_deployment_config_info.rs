@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentConfigInfo {
     /// <p>The deployment configuration ID.</p>
-    #[doc(hidden)]
     pub deployment_config_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment configuration name.</p>
-    #[doc(hidden)]
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the number or percentage of minimum healthy instance.</p>
-    #[doc(hidden)]
     pub minimum_healthy_hosts: ::std::option::Option<crate::types::MinimumHealthyHosts>,
     /// <p>The time at which the deployment configuration was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    #[doc(hidden)]
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
-    #[doc(hidden)]
     pub traffic_routing_config: ::std::option::Option<crate::types::TrafficRoutingConfig>,
 }
 impl DeploymentConfigInfo {

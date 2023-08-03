@@ -6,7 +6,6 @@ pub struct DeleteSystemTemplateInput {
     /// <p>The ID of the system to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSystemTemplateInput {

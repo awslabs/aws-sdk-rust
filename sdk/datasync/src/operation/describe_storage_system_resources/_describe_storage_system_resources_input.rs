@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemResourcesInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
-    #[doc(hidden)]
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::DiscoveryResourceType>,
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::collections::HashMap<crate::types::DiscoveryResourceFilter, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStorageSystemResourcesInput {

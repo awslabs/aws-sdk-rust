@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceSqsQueueParameters {
     /// <p>The maximum number of records to include in each batch.</p>
-    #[doc(hidden)]
     pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
-    #[doc(hidden)]
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
 impl UpdatePipeSourceSqsQueueParameters {

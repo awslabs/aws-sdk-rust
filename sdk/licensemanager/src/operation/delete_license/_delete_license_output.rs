@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLicenseOutput {
     /// <p>License status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LicenseDeletionStatus>,
     /// <p>Date when the license is deleted.</p>
-    #[doc(hidden)]
     pub deletion_date: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

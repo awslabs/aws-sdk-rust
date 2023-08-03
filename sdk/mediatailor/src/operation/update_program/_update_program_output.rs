@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProgramOutput {
     /// <p>The ad break configuration settings.</p>
-    #[doc(hidden)]
     pub ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     /// <p>The ARN to assign to the program.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name to assign to the channel for this program.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the program was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name to assign to this program.</p>
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
     /// <p>The name to assign to the source location for this program.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
-    #[doc(hidden)]
     pub vod_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the LiveSource for this Program.</p>
-    #[doc(hidden)]
     pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The clip range configuration settings.</p>
-    #[doc(hidden)]
     pub clip_range: ::std::option::Option<crate::types::ClipRange>,
     /// <p>The duration of the live program in milliseconds.</p>
-    #[doc(hidden)]
     pub duration_millis: i64,
     /// <p>The scheduled start time for this Program.</p>
-    #[doc(hidden)]
     pub scheduled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

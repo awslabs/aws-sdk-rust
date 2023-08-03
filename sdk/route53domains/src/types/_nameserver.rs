@@ -6,11 +6,9 @@
 pub struct Nameserver {
     /// <p>The fully qualified host name of the name server.</p>
     /// <p>Constraint: Maximum 255 characters</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
-    #[doc(hidden)]
     pub glue_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Nameserver {

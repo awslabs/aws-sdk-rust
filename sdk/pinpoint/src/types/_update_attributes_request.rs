@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAttributesRequest {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
-    #[doc(hidden)]
     pub blacklist: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateAttributesRequest {

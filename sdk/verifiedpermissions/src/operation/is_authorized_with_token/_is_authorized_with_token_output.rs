@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsAuthorizedWithTokenOutput {
     /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
-    #[doc(hidden)]
     pub decision: ::std::option::Option<crate::types::Decision>,
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are multiple matching policies, where at least one is a forbid policy, then because forbid always overrides permit the forbid policies are the determining policies. If all matching policies are permit policies, then those policies are the determining policies. When no policies match and the response is the default DENY, there are no determining policies.</p>
-    #[doc(hidden)]
     pub determining_policies: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
     /// <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>,
     _request_id: Option<String>,
 }

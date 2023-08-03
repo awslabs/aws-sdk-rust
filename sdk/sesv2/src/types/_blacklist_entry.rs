@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
-    #[doc(hidden)]
     pub rbl_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the blacklisting event occurred.</p>
-    #[doc(hidden)]
     pub listing_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl BlacklistEntry {

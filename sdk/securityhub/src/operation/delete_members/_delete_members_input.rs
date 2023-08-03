@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMembersInput {
     /// <p>The list of account IDs for the member accounts to delete.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteMembersInput {

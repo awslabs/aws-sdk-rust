@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChangesetsOutput {
     /// <p>List of Changesets found.</p>
-    #[doc(hidden)]
     pub changesets: ::std::option::Option<::std::vec::Vec<crate::types::ChangesetSummary>>,
     /// <p>A token that indicates where a results page should begin.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePublishingDestinationOutput {
     /// <p>The ID of the publishing destination.</p>
-    #[doc(hidden)]
     pub destination_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<crate::types::DestinationType>,
     /// <p>The status of the publishing destination.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PublishingStatus>,
     /// <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
-    #[doc(hidden)]
     pub publishing_failure_start_timestamp: i64,
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
-    #[doc(hidden)]
     pub destination_properties: ::std::option::Option<crate::types::DestinationProperties>,
     _request_id: Option<String>,
 }

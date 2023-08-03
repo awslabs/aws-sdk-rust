@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTagsOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags that match your request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
-    #[doc(hidden)]
     pub return_size: ::std::option::Option<i32>,
     /// <p>The total number of query results.</p>
-    #[doc(hidden)]
     pub total_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

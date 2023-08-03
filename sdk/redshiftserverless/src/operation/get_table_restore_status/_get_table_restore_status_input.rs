@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableRestoreStatusInput {
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
-    #[doc(hidden)]
     pub table_restore_request_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTableRestoreStatusInput {

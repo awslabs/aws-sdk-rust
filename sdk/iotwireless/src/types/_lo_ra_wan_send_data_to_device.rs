@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanSendDataToDevice {
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub f_port: ::std::option::Option<i32>,
     /// <p>Choose the gateways that you want to use for the downlink data traffic when the wireless device is running in class B or class C mode.</p>
-    #[doc(hidden)]
     pub participating_gateways: ::std::option::Option<crate::types::ParticipatingGateways>,
 }
 impl LoRaWanSendDataToDevice {

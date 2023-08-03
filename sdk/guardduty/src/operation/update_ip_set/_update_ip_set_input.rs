@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIpSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
-    #[doc(hidden)]
     pub ip_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated URI of the file that contains the IPSet. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
-    #[doc(hidden)]
     pub activate: ::std::option::Option<bool>,
 }
 impl UpdateIpSetInput {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectMitigationActionExecution {
     /// <p> The unique identifier of the task. </p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the violation. </p>
-    #[doc(hidden)]
     pub violation_id: ::std::option::Option<::std::string::String>,
     /// <p> The friendly name that uniquely identifies the mitigation action. </p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the thing. </p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p> The date a mitigation action was started. </p>
-    #[doc(hidden)]
     pub execution_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date a mitigation action ended. </p>
-    #[doc(hidden)]
     pub execution_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of a mitigation action. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetectMitigationActionExecutionStatus>,
     /// <p> The error code of a mitigation action. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p> The message of a mitigation action. </p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DetectMitigationActionExecution {

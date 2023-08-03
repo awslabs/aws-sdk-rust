@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAliasesOutput {
     /// <p>The entity's paginated aliases.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

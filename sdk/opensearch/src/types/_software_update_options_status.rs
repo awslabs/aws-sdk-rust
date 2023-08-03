@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SoftwareUpdateOptionsStatus {
     /// <p>The service software update options for a domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     /// <p>The status of service software update options, including creation date and last updated date.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl SoftwareUpdateOptionsStatus {

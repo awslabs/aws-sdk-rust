@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFilterInput {
     /// <p>The ARN of the filter to describe.</p>
-    #[doc(hidden)]
     pub filter_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFilterInput {

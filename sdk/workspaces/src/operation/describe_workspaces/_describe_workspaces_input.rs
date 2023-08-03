@@ -5,22 +5,16 @@
 pub struct DescribeWorkspacesInput {
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    #[doc(hidden)]
     pub workspace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspacesInput {

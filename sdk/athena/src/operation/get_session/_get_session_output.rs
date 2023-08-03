@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionOutput {
     /// <p>The session ID.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The session description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup to which the session belongs.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains engine configuration information like DPU usage.</p>
-    #[doc(hidden)]
     pub engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
     /// <p>The notebook version.</p>
-    #[doc(hidden)]
     pub notebook_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains the workgroup configuration information used by the session.</p>
-    #[doc(hidden)]
     pub session_configuration: ::std::option::Option<crate::types::SessionConfiguration>,
     /// <p>Contains information about the status of the session.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SessionStatus>,
     /// <p>Contains the DPU execution time.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::SessionStatistics>,
     _request_id: Option<String>,
 }

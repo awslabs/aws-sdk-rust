@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchIndexOutput {
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The things that match the search query.</p>
-    #[doc(hidden)]
     pub things: ::std::option::Option<::std::vec::Vec<crate::types::ThingDocument>>,
     /// <p>The thing groups that match the search query.</p>
-    #[doc(hidden)]
     pub thing_groups: ::std::option::Option<::std::vec::Vec<crate::types::ThingGroupDocument>>,
     _request_id: Option<String>,
 }

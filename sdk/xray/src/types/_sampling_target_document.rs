@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
-    #[doc(hidden)]
     pub fixed_rate: f64,
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
-    #[doc(hidden)]
     pub reservoir_quota: ::std::option::Option<i32>,
     /// <p>When the reservoir quota expires.</p>
-    #[doc(hidden)]
     pub reservoir_quota_ttl: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<i32>,
 }
 impl SamplingTargetDocument {

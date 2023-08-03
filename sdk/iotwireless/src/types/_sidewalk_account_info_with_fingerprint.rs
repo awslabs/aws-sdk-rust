@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SidewalkAccountInfoWithFingerprint {
     /// <p>The Sidewalk Amazon ID.</p>
-    #[doc(hidden)]
     pub amazon_id: ::std::option::Option<::std::string::String>,
     /// <p>The fingerprint of the Sidewalk application server private key.</p>
-    #[doc(hidden)]
     pub fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkAccountInfoWithFingerprint {

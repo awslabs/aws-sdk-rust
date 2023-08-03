@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub resource_policy_summary: ::std::option::Option<crate::types::ResourcePolicySummary>,
     /// <p>The policy text of the resource policy.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicy {

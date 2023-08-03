@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserContext {
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-    #[doc(hidden)]
     pub user_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user's profile.</p>
-    #[doc(hidden)]
     pub user_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain associated with the user.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
-    #[doc(hidden)]
     pub iam_identity: ::std::option::Option<crate::types::IamIdentity>,
 }
 impl UserContext {

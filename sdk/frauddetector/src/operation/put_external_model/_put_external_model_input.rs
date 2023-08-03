@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutExternalModelInput {
     /// <p>The model endpoints name.</p>
-    #[doc(hidden)]
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The source of the model.</p>
-    #[doc(hidden)]
     pub model_source: ::std::option::Option<crate::types::ModelSource>,
     /// <p>The IAM role used to invoke the model endpoint.</p>
-    #[doc(hidden)]
     pub invoke_model_endpoint_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The model endpoint input configuration.</p>
-    #[doc(hidden)]
     pub input_configuration: ::std::option::Option<crate::types::ModelInputConfiguration>,
     /// <p>The model endpoint output configuration.</p>
-    #[doc(hidden)]
     pub output_configuration: ::std::option::Option<crate::types::ModelOutputConfiguration>,
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
-    #[doc(hidden)]
     pub model_endpoint_status: ::std::option::Option<crate::types::ModelEndpointStatus>,
     /// <p>A collection of key and value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutExternalModelInput {

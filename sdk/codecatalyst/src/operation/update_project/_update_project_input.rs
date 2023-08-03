@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInput {

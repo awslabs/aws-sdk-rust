@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutWorkflowRunPropertiesInput {
     /// <p>Name of the workflow which was run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run for which the run properties should be updated.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties to put for the specified run.</p>
-    #[doc(hidden)]
     pub run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutWorkflowRunPropertiesInput {

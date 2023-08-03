@@ -6,10 +6,8 @@
 pub struct Principal {
     /// <p>The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code>, with or without wildcard characters if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>. </p>
     /// <p>For more information, review <a href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference. </p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
-    #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
 impl Principal {

@@ -10,10 +10,8 @@ pub struct AdditionalLimit {
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
     /// </ul>
     /// <p></p>
-    #[doc(hidden)]
     pub limit_name: ::std::option::Option<::std::string::String>,
     /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
-    #[doc(hidden)]
     pub limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdditionalLimit {

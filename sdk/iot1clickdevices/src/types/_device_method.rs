@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceMethod {
     /// <p>The type of the device, such as "button".</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the method applicable to the deviceType.</p>
-    #[doc(hidden)]
     pub method_name: ::std::option::Option<::std::string::String>,
 }
 impl DeviceMethod {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCrawlsOutput {
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
-    #[doc(hidden)]
     pub crawls: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

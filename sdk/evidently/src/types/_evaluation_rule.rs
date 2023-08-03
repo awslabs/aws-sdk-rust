@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationRule {
     /// <p>The name of the experiment or launch.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationRule {

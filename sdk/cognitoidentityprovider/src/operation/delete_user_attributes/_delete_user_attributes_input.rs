@@ -6,10 +6,8 @@
 pub struct DeleteUserAttributesInput {
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
-    #[doc(hidden)]
     pub user_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserAttributesInput {

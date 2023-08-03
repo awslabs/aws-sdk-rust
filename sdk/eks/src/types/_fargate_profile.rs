@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FargateProfile {
     /// <p>The name of the Fargate profile.</p>
-    #[doc(hidden)]
     pub fargate_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-    #[doc(hidden)]
     pub fargate_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EKS cluster that the Fargate profile belongs to.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
-    #[doc(hidden)]
     pub pod_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of subnets to launch pods into.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The selectors to match for pods to use this Fargate profile.</p>
-    #[doc(hidden)]
     pub selectors: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>,
     /// <p>The current status of the Fargate profile.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FargateProfileStatus>,
     /// <p>The metadata applied to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FargateProfile {

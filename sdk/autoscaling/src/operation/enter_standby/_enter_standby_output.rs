@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnterStandbyOutput {
     /// <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    #[doc(hidden)]
     pub activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>The status of organization sharing settings.</p>
-    #[doc(hidden)]
     pub organization_sharing_status: ::std::option::Option<crate::types::OrganizationSharingStatus>,
     /// <p>The status of discovery support settings.</p>
-    #[doc(hidden)]
     pub discovery_integration_status: ::std::option::Option<crate::types::DiscoveryIntegrationStatus>,
 }
 impl UpdateGlobalSettingsInput {

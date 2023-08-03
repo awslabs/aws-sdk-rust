@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListAppInstanceUsersOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub app_instance_users: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>>,
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

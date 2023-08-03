@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
-    #[doc(hidden)]
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    #[doc(hidden)]
     pub migration_task_name: ::std::option::Option<::std::string::String>,
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
-    #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
-    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl DisassociateDiscoveredResourceInput {

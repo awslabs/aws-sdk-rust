@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelStatementInput {
     /// <p>The Session ID of the statement to be cancelled.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the statement to be cancelled.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p>The origin of the request to cancel the statement.</p>
-    #[doc(hidden)]
     pub request_origin: ::std::option::Option<::std::string::String>,
 }
 impl CancelStatementInput {

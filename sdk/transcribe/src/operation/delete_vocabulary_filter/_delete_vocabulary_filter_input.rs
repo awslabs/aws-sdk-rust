@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVocabularyFilterInput {
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
-    #[doc(hidden)]
     pub vocabulary_filter_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVocabularyFilterInput {

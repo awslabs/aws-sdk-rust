@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueueInput {
     /// The name of the queue that you want information about.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetQueueInput {

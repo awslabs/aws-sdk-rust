@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationInstanceDetailsOutput {
     /// <p>The application instance's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's default runtime context device.</p>
-    #[doc(hidden)]
     pub default_runtime_context_device: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's configuration manifest.</p>
-    #[doc(hidden)]
     pub manifest_payload: ::std::option::Option<crate::types::ManifestPayload>,
     /// <p>Parameter overrides for the configuration manifest.</p>
-    #[doc(hidden)]
     pub manifest_overrides_payload: ::std::option::Option<crate::types::ManifestOverridesPayload>,
     /// <p>The ID of the application instance that this instance replaced.</p>
-    #[doc(hidden)]
     pub application_instance_id_to_replace: ::std::option::Option<::std::string::String>,
     /// <p>When the application instance was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The application instance's ID.</p>
-    #[doc(hidden)]
     pub application_instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The date of the maintenance window when the action is to be applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
-    #[doc(hidden)]
     pub auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the maintenance action will be automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
-    #[doc(hidden)]
     pub forced_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of opt-in request that has been received for the resource.</p>
-    #[doc(hidden)]
     pub opt_in_status: ::std::option::Option<::std::string::String>,
     /// <p>The effective date when the pending maintenance action will be applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation, and also the <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This value is blank if an opt-in request has not been received and nothing has been specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-    #[doc(hidden)]
     pub current_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description providing more detail about the maintenance action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenanceAction {

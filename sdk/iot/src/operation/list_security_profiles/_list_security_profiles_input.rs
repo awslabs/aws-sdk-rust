@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesInput {
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
-    #[doc(hidden)]
     pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl ListSecurityProfilesInput {

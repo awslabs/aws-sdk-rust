@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceEndpointInput {
     /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::WirelessGatewayServiceType>,
 }
 impl GetServiceEndpointInput {

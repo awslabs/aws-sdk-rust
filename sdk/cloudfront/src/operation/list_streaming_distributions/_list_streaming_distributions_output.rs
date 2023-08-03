@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamingDistributionsOutput {
     /// <p>The <code>StreamingDistributionList</code> type.</p>
-    #[doc(hidden)]
     pub streaming_distribution_list: ::std::option::Option<crate::types::StreamingDistributionList>,
     _request_id: Option<String>,
 }

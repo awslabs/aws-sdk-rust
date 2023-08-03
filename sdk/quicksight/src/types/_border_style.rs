@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BorderStyle {
     /// <p>The option to enable display of borders for visuals.</p>
-    #[doc(hidden)]
     pub show: ::std::option::Option<bool>,
 }
 impl BorderStyle {

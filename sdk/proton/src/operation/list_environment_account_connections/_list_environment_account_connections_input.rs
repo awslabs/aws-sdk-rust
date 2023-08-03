@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsInput {
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
-    #[doc(hidden)]
     pub requested_by: ::std::option::Option<crate::types::EnvironmentAccountConnectionRequesterAccountType>,
     /// <p>The environment name that's associated with each listed environment account connection.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The status details for each listed environment account connection.</p>
-    #[doc(hidden)]
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionStatus>>,
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of environment account connections to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEnvironmentAccountConnectionsInput {

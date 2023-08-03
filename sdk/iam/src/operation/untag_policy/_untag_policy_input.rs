@@ -5,10 +5,8 @@
 pub struct UntagPolicyInput {
     /// <p>The ARN of the IAM customer managed policy from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified policy.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagPolicyInput {

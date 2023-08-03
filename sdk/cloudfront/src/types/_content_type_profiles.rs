@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentTypeProfiles {
     /// <p>The number of field-level encryption content type-profile mappings.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>>,
 }
 impl ContentTypeProfiles {

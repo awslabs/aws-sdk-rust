@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpsNotificationConfiguration {
     /// <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The key name for the notification subscription.</p>
-    #[doc(hidden)]
     pub authorization_api_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The key value for the notification subscription.</p>
-    #[doc(hidden)]
     pub authorization_api_key_value: ::std::option::Option<::std::string::String>,
     /// <p>The HTTPS method used for the notification subscription.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<crate::types::HttpMethod>,
     /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the <i>Amazon Security Lake User Guide</i>.</p>
-    #[doc(hidden)]
     pub target_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl HttpsNotificationConfiguration {

@@ -15,10 +15,8 @@ pub struct Owner {
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Container for the ID of the owner.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl Owner {

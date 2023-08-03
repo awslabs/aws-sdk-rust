@@ -5,31 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportJob {
     /// <p>The identifier for a report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. Report job IDs cannot be edited.</p>
-    #[doc(hidden)]
     pub report_job_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    #[doc(hidden)]
     pub report_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are: </p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-    #[doc(hidden)]
     pub report_template: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a report job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that a report job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of a report job. The statuses are:</p>
     /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
     /// <p> <code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A message explaining the status of the report job.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket name and S3 keys for the destination where the report job publishes the report.</p>
-    #[doc(hidden)]
     pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
 }
 impl ReportJob {

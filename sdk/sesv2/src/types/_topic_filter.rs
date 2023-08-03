@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicFilter {
     /// <p>The name of a topic on which you wish to apply the filter.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
     /// <p>Notes that the default subscription status should be applied to a contact because the contact has not noted their preference for subscribing to a topic.</p>
-    #[doc(hidden)]
     pub use_default_if_preference_unavailable: bool,
 }
 impl TopicFilter {

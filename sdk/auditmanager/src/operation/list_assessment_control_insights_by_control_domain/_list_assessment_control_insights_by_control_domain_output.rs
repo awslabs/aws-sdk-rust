@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentControlInsightsByControlDomainOutput {
     /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
-    #[doc(hidden)]
     pub control_insights_by_assessment: ::std::option::Option<::std::vec::Vec<crate::types::ControlInsightsMetadataByAssessmentItem>>,
     /// <p>The pagination token that's used to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

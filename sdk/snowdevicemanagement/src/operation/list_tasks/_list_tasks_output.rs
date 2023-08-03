@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTasksOutput {
     /// <p>A list of task structures containing details about each task.</p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::TaskSummary>>,
     /// <p>A pagination token to continue to the next page of tasks.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

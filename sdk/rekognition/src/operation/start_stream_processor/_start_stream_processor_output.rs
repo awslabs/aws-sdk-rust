@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartStreamProcessorOutput {
     /// <p> A unique identifier for the stream processing session. </p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

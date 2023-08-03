@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Button {
     /// <p>The text that appears on the button. Use this to tell the user what value is returned when they choose this button.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Button {

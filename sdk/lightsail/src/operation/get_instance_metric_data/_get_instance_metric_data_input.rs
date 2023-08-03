@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceMetricDataInput {
     /// <p>The name of the instance for which you want to get metrics data.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>
@@ -19,20 +18,15 @@ pub struct GetInstanceMetricDataInput {
     /// <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// <li> <p> <b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::InstanceMetricName>,
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The start time of the time period.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the time period.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units to specify with each available metric, see the <code>metricName</code> parameter.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::MetricUnit>,
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -43,7 +37,6 @@ pub struct GetInstanceMetricDataInput {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
 }
 impl GetInstanceMetricDataInput {

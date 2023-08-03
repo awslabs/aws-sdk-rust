@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicy {
     /// <p> Describes the period of time that a file is not accessed, after which it transitions to IA storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-    #[doc(hidden)]
     pub transition_to_ia: ::std::option::Option<crate::types::TransitionToIaRules>,
     /// <p>Describes when to transition a file from IA storage to primary storage. Metadata operations such as listing the contents of a directory don't count as file access events.</p>
-    #[doc(hidden)]
     pub transition_to_primary_storage_class: ::std::option::Option<crate::types::TransitionToPrimaryStorageClassRules>,
 }
 impl LifecyclePolicy {

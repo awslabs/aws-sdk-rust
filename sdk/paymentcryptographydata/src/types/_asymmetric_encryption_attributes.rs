@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsymmetricEncryptionAttributes {
     /// <p>The padding to be included with the data.</p>
-    #[doc(hidden)]
     pub padding_type: ::std::option::Option<crate::types::PaddingType>,
 }
 impl AsymmetricEncryptionAttributes {

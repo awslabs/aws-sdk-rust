@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PromoteInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::PromoteMode>,
 }
 impl PromoteInput {

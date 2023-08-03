@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesInput {
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListMonitoredResourcesFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMonitoredResourcesInput {

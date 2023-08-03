@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyDetectorDataQualityMetric {
     /// <p>The start time for the data quality metrics collection.</p>
-    #[doc(hidden)]
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
-    #[doc(hidden)]
     pub metric_set_data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>>,
 }
 impl AnomalyDetectorDataQualityMetric {

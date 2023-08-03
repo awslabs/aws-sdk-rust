@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoadBalancerTlsCertificatesInput {
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
 }
 impl GetLoadBalancerTlsCertificatesInput {

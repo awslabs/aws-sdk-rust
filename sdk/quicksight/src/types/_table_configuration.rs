@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::TableFieldWells>,
     /// <p>The sort configuration for a <code>TableVisual</code>.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::TableSortConfiguration>,
     /// <p>The table options for a table visual.</p>
-    #[doc(hidden)]
     pub table_options: ::std::option::Option<crate::types::TableOptions>,
     /// <p>The total options for a table visual.</p>
-    #[doc(hidden)]
     pub total_options: ::std::option::Option<crate::types::TotalOptions>,
     /// <p>The field options for a table visual.</p>
-    #[doc(hidden)]
     pub field_options: ::std::option::Option<crate::types::TableFieldOptions>,
     /// <p>The paginated report options for a table visual.</p>
-    #[doc(hidden)]
     pub paginated_report_options: ::std::option::Option<crate::types::TablePaginatedReportOptions>,
     /// <p>A collection of inline visualizations to display within a chart.</p>
-    #[doc(hidden)]
     pub table_inline_visualizations: ::std::option::Option<::std::vec::Vec<crate::types::TableInlineVisualization>>,
 }
 impl TableConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeArtifactDetails {
     /// <p>The minimum number of artifacts that can be used with the action type. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
-    #[doc(hidden)]
     pub minimum_count: i32,
     /// <p>The maximum number of artifacts that can be used with the actiontype. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
-    #[doc(hidden)]
     pub maximum_count: i32,
 }
 impl ActionTypeArtifactDetails {

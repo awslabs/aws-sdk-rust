@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUpdateDirectoryInput {
     /// <p> The unique identifier of the directory. </p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of updates you want to describe for the directory. </p>
-    #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::UpdateType>,
     /// <p> The name of the Region. </p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUpdateDirectoryInput {

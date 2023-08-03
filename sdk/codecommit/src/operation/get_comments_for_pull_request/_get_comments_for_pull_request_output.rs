@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommentsForPullRequestOutput {
     /// <p>An array of comment objects on the pull request.</p>
-    #[doc(hidden)]
     pub comments_for_pull_request_data: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForPullRequest>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

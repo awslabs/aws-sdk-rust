@@ -5,13 +5,10 @@
 pub struct PutEventSelectorsOutput {
     /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    #[doc(hidden)]
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the event selectors configured for your trail.</p>
-    #[doc(hidden)]
     pub event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
     /// <p>Specifies the advanced event selectors configured for your trail.</p>
-    #[doc(hidden)]
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     _request_id: Option<String>,
 }

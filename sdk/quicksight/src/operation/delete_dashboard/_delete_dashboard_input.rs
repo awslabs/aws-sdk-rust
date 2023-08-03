@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDashboardInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're deleting.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
 }
 impl DeleteDashboardInput {

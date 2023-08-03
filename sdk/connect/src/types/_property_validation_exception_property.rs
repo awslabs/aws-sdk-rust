@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyValidationExceptionProperty {
     /// <p>The full property path.</p>
-    #[doc(hidden)]
     pub property_path: ::std::option::Option<::std::string::String>,
     /// <p>Why the property is not valid.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::PropertyValidationExceptionReason>,
     /// <p>A message describing why the property is not valid.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl PropertyValidationExceptionProperty {

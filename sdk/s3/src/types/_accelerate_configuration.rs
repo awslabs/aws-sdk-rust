@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccelerateConfiguration {
     /// <p>Specifies the transfer acceleration status of the bucket.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BucketAccelerateStatus>,
 }
 impl AccelerateConfiguration {

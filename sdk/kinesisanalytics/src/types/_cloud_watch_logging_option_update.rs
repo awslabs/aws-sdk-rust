@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionUpdate {
     /// <p>ID of the CloudWatch logging option to update</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the CloudWatch log to receive application messages.</p>
-    #[doc(hidden)]
     pub log_stream_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>
-    #[doc(hidden)]
     pub role_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptionUpdate {

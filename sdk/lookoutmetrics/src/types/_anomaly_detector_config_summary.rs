@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyDetectorConfigSummary {
     /// <p>The interval at which the detector analyzes its source data.</p>
-    #[doc(hidden)]
     pub anomaly_detector_frequency: ::std::option::Option<crate::types::Frequency>,
 }
 impl AnomalyDetectorConfigSummary {

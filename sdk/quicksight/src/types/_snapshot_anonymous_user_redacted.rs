@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotAnonymousUserRedacted {
     /// <p>The tag keys for the <code>RowLevelPermissionTags</code>.</p>
-    #[doc(hidden)]
     pub row_level_permission_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnapshotAnonymousUserRedacted {

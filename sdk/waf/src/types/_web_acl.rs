@@ -10,22 +10,16 @@
 pub struct WebAcl {
     /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<crate::types::WafAction>,
     /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>,
     /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
-    #[doc(hidden)]
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
 }
 impl WebAcl {

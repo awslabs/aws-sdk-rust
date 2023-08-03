@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FeedbackType>,
 }
 impl UserFeedback {

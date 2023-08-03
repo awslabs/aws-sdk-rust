@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SettablePolicyStateValues>,
     /// <p>A description of the lifecycle policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
-    #[doc(hidden)]
     pub policy_details: ::std::option::Option<crate::types::PolicyDetails>,
 }
 impl UpdateLifecyclePolicyInput {

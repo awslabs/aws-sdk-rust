@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkflowExecutionOutput {
     /// <p>Information about the workflow execution.</p>
-    #[doc(hidden)]
     pub execution_info: ::std::option::Option<crate::types::WorkflowExecutionInfo>,
     /// <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
-    #[doc(hidden)]
     pub execution_configuration: ::std::option::Option<crate::types::WorkflowExecutionConfiguration>,
     /// <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
-    #[doc(hidden)]
     pub open_counts: ::std::option::Option<crate::types::WorkflowExecutionOpenCounts>,
     /// <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
-    #[doc(hidden)]
     pub latest_activity_task_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
-    #[doc(hidden)]
     pub latest_execution_context: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

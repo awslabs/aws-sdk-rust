@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionDefaultConfig {
     /// Configuration information that specifies how a Lambda function runs.
-    #[doc(hidden)]
     pub execution: ::std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
 }
 impl FunctionDefaultConfig {

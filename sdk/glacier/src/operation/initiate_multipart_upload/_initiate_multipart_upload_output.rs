@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateMultipartUploadOutput {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

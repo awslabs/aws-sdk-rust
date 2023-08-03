@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Exclusion {
     /// <p>The ARN that specifies the exclusion.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the exclusion.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the exclusion.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation for the exclusion.</p>
-    #[doc(hidden)]
     pub recommendation: ::std::option::Option<::std::string::String>,
     /// <p>The AWS resources for which the exclusion pertains.</p>
-    #[doc(hidden)]
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::Scope>>,
     /// <p>The system-defined attributes for the exclusion.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl Exclusion {

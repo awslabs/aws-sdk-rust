@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImagePipelineInput {
     /// <p>The name of the image pipeline.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the image pipeline.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
-    #[doc(hidden)]
     pub image_recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
-    #[doc(hidden)]
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
-    #[doc(hidden)]
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
-    #[doc(hidden)]
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The image test configuration of the image pipeline.</p>
-    #[doc(hidden)]
     pub image_tests_configuration: ::std::option::Option<crate::types::ImageTestsConfiguration>,
     /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
-    #[doc(hidden)]
     pub enhanced_image_metadata_enabled: ::std::option::Option<bool>,
     /// <p>The schedule of the image pipeline.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::Schedule>,
     /// <p>The status of the image pipeline.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PipelineStatus>,
     /// <p>The tags of the image pipeline.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The idempotency token used to make this request idempotent.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains settings for vulnerability scans.</p>
-    #[doc(hidden)]
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl CreateImagePipelineInput {

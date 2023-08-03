@@ -9,13 +9,10 @@ pub struct ListWebAcLsInput {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListWebAcLsInput {

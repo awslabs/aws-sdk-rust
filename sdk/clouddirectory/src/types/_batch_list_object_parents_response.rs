@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListObjectParentsResponse {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    #[doc(hidden)]
     pub parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListObjectParentsResponse {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateCustomVocabularyItemInput {
     /// <p>The identifier of the bot associated with this custom vocabulary</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of custom vocabulary items with updated fields. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.</p>
-    #[doc(hidden)]
     pub custom_vocabulary_item_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
 }
 impl BatchUpdateCustomVocabularyItemInput {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationProfileInput {
     /// <p>The application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the configuration profile.</p>
-    #[doc(hidden)]
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the configuration profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    #[doc(hidden)]
     pub retrieval_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
-    #[doc(hidden)]
     pub validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
 }
 impl UpdateConfigurationProfileInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnalyzerOutput {
     /// <p>The ARN of the analyzer that was created by the request.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallDomainsInput {
     /// <p>The ID of the domain list whose domains you want to update. </p>
-    #[doc(hidden)]
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
     /// <ul>
@@ -12,7 +11,6 @@ pub struct UpdateFirewallDomainsInput {
     /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
     /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>,
     /// <p>A list of domains to use in the update operation.</p> <important>
     /// <p>There is a limit of 1000 domains per request.</p>
@@ -23,7 +21,6 @@ pub struct UpdateFirewallDomainsInput {
     /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
     /// <li> <p>It must be from 1-255 characters in length. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFirewallDomainsInput {

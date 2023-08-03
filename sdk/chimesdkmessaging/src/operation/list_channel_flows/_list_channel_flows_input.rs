@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListChannelFlowsInput {
     /// <p>The ARN of the app instance.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of channel flows that you want to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channel flows are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListChannelFlowsInput {

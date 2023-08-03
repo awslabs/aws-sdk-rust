@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectCountByEncryptionType {
     /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
-    #[doc(hidden)]
     pub customer_managed: ::std::option::Option<i64>,
     /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
-    #[doc(hidden)]
     pub kms_managed: ::std::option::Option<i64>,
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
-    #[doc(hidden)]
     pub s3_managed: ::std::option::Option<i64>,
     /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
-    #[doc(hidden)]
     pub unencrypted: ::std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
-    #[doc(hidden)]
     pub unknown: ::std::option::Option<i64>,
 }
 impl ObjectCountByEncryptionType {

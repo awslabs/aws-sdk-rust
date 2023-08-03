@@ -7,7 +7,6 @@ pub struct UpdateStreamingImageOutput {
     /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
     /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
     /// <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
-    #[doc(hidden)]
     pub streaming_image: ::std::option::Option<crate::types::StreamingImage>,
     _request_id: Option<String>,
 }

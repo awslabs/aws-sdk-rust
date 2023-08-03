@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeliveryChannelInput {
     /// <p>The name of the delivery channel to delete.</p>
-    #[doc(hidden)]
     pub delivery_channel_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeliveryChannelInput {

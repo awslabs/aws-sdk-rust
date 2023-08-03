@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddCustomRoutingEndpointsOutput {
     /// <p>The endpoint objects added to the custom routing accelerator.</p>
-    #[doc(hidden)]
     pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

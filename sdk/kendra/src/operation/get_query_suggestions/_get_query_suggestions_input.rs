@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuerySuggestionsInput {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The text of a user's query to generate query suggestions.</p>
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
-    #[doc(hidden)]
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
-    #[doc(hidden)]
     pub max_suggestions_count: ::std::option::Option<i32>,
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    #[doc(hidden)]
     pub suggestion_types: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>>,
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    #[doc(hidden)]
     pub attribute_suggestions_config: ::std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
 }
 impl GetQuerySuggestionsInput {

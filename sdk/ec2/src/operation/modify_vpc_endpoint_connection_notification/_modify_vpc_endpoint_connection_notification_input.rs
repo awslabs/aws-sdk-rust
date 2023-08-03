@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointConnectionNotificationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the notification.</p>
-    #[doc(hidden)]
     pub connection_notification_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the SNS topic for the notification.</p>
-    #[doc(hidden)]
     pub connection_notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    #[doc(hidden)]
     pub connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyVpcEndpointConnectionNotificationInput {

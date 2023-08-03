@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesInput {
     /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetResourcePoliciesInput {

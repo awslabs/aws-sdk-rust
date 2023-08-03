@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceDirectoriesInput {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
-    #[doc(hidden)]
     pub directory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of directories to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspaceDirectoriesInput {

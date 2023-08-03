@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptions {
     /// <p>True if fine-grained access control is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>True if the internal user database is enabled.</p>
-    #[doc(hidden)]
     pub internal_user_database_enabled: ::std::option::Option<bool>,
     /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
-    #[doc(hidden)]
     pub saml_options: ::std::option::Option<crate::types::SamlOptionsOutput>,
     /// <p>Date and time when the migration period will be disabled. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
-    #[doc(hidden)]
     pub anonymous_auth_disable_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>True if a 30-day migration period is enabled, during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
-    #[doc(hidden)]
     pub anonymous_auth_enabled: ::std::option::Option<bool>,
 }
 impl AdvancedSecurityOptions {

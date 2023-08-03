@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotOptions {
     /// <p>The style options of the box plot.</p>
-    #[doc(hidden)]
     pub style_options: ::std::option::Option<crate::types::BoxPlotStyleOptions>,
     /// <p>Determines the visibility of the outlier in a box plot.</p>
-    #[doc(hidden)]
     pub outlier_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Determines the visibility of all data points of the box plot.</p>
-    #[doc(hidden)]
     pub all_data_points_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl BoxPlotOptions {

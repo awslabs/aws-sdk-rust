@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleRule {
     /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
-    #[doc(hidden)]
     pub input_property: ::std::option::Option<::std::string::String>,
     /// <p>The comparison operator.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<::std::string::String>,
 }
 impl SimpleRule {

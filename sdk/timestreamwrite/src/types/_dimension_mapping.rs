@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionMapping {
     /// <p></p>
-    #[doc(hidden)]
     pub source_column: ::std::option::Option<::std::string::String>,
     /// <p> </p>
-    #[doc(hidden)]
     pub destination_column: ::std::option::Option<::std::string::String>,
 }
 impl DimensionMapping {

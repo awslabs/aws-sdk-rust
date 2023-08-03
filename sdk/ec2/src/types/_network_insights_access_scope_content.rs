@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInsightsAccessScopeContent {
     /// <p>The ID of the Network Access Scope.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The paths to match.</p>
-    #[doc(hidden)]
     pub match_paths: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>>,
     /// <p>The paths to exclude.</p>
-    #[doc(hidden)]
     pub exclude_paths: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>>,
 }
 impl NetworkInsightsAccessScopeContent {

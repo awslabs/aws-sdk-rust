@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The Amazon S3 artifact bucket for an action's artifacts.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The artifact name.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {

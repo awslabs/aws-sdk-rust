@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PluginDescription {
     /// <p>Details about a custom plugin.</p>
-    #[doc(hidden)]
     pub custom_plugin: ::std::option::Option<crate::types::CustomPluginDescription>,
 }
 impl PluginDescription {

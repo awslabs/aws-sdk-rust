@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchMetrics {
     /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
-    #[doc(hidden)]
     pub is_enabled: bool,
 }
 impl CloudWatchMetrics {

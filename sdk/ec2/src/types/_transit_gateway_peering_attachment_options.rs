@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayPeeringAttachmentOptions {
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
-    #[doc(hidden)]
     pub dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
 }
 impl TransitGatewayPeeringAttachmentOptions {

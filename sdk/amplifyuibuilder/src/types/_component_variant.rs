@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentVariant {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-    #[doc(hidden)]
     pub variant_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,

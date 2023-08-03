@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTemplateSyncConfigInput {
     /// <p>The template name.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The template type.</p>
-    #[doc(hidden)]
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
 }
 impl DeleteTemplateSyncConfigInput {

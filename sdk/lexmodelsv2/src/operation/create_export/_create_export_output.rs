@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExportOutput {
     /// <p>An identifier for a specific request to create an export.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     /// <p>The file format used for the bot or bot locale definition files.</p>
-    #[doc(hidden)]
     pub file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     /// <p>The status of the export. When the status is <code>Completed</code>, you can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation to get the pre-signed S3 URL link to your exported bot or bot locale.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>The date and time that the request to export a bot was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

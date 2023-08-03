@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSolNetworkPackageContentOutput {
     /// <p>Network package ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network package ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Network service descriptor ID.</p>
-    #[doc(hidden)]
     pub nsd_id: ::std::option::Option<::std::string::String>,
     /// <p>Network service descriptor name.</p>
-    #[doc(hidden)]
     pub nsd_name: ::std::option::Option<::std::string::String>,
     /// <p>Network service descriptor version.</p>
-    #[doc(hidden)]
     pub nsd_version: ::std::option::Option<::std::string::String>,
     /// <p>Function package IDs.</p>
-    #[doc(hidden)]
     pub vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Network package metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ValidateSolNetworkPackageContentMetadata>,
     _request_id: Option<String>,
 }

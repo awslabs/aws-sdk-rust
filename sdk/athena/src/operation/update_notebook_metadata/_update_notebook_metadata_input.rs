@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNotebookMetadataInput {
     /// <p>The ID of the notebook to update the metadata for.</p>
-    #[doc(hidden)]
     pub notebook_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The name to update the notebook to.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNotebookMetadataInput {

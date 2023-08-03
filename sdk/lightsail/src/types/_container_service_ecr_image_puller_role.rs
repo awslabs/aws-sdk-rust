@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceEcrImagePullerRole {
     /// <p>A Boolean value that indicates whether the role is activated.</p>
-    #[doc(hidden)]
     pub is_active: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
 }
 impl ContainerServiceEcrImagePullerRole {

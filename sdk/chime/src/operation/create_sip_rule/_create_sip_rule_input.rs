@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSipRuleInput {
     /// <p>The name of the SIP rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
-    #[doc(hidden)]
     pub trigger_type: ::std::option::Option<crate::types::SipRuleTriggerType>,
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
-    #[doc(hidden)]
     pub trigger_value: ::std::option::Option<::std::string::String>,
     /// <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
     /// <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    #[doc(hidden)]
     pub target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
 }
 impl CreateSipRuleInput {

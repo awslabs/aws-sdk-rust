@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceContentEntry {
     /// <p>The path of the conflicting file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
-    #[doc(hidden)]
     pub replacement_type: ::std::option::Option<crate::types::ReplacementTypeEnum>,
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The file mode to apply during conflict resoltion.</p>
-    #[doc(hidden)]
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
 impl ReplaceContentEntry {

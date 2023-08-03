@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DataIntegration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key for the DataIntegration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key for the DataIntegration.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the data source.</p>
-    #[doc(hidden)]
     pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    #[doc(hidden)]
     pub schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for what files should be pulled from the source.</p>
-    #[doc(hidden)]
     pub file_configuration: ::std::option::Option<crate::types::FileConfiguration>,
     /// <p>The configuration for what data should be pulled from the source.</p>
-    #[doc(hidden)]
     pub object_configuration: ::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,

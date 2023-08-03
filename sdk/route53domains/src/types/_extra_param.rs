@@ -263,10 +263,8 @@ pub struct ExtraParam {
     /// </dd>
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ExtraParamName>,
     /// <p>The value that corresponds with the name of an extra parameter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ExtraParam {

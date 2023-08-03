@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCidrCollectionOutput {
     /// <p>A complex type that contains information about the CIDR collection.</p>
-    #[doc(hidden)]
     pub collection: ::std::option::Option<crate::types::CidrCollection>,
     /// <p>A unique URL that represents the location for the CIDR collection.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

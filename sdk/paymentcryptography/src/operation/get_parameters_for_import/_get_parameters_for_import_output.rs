@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
     /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
-    #[doc(hidden)]
     pub wrapping_key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
-    #[doc(hidden)]
     pub wrapping_key_certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
-    #[doc(hidden)]
     pub wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
-    #[doc(hidden)]
     pub import_token: ::std::option::Option<::std::string::String>,
     /// <p>The validity period of the import token.</p>
-    #[doc(hidden)]
     pub parameters_valid_until_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

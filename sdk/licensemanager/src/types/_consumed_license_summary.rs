@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConsumedLicenseSummary {
     /// <p>Resource type of the resource consuming a license.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Number of licenses consumed by the resource.</p>
-    #[doc(hidden)]
     pub consumed_licenses: ::std::option::Option<i64>,
 }
 impl ConsumedLicenseSummary {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectiveConstant {
     /// <p>A list of values for the collective constant.</p>
-    #[doc(hidden)]
     pub value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CollectiveConstant {

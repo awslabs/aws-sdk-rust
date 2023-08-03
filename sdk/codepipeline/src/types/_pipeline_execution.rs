@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineExecution {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_version: ::std::option::Option<i32>,
     /// <p>The ID of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the pipeline execution.</p>
     /// <ul>
@@ -23,13 +20,10 @@ pub struct PipelineExecution {
     /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     /// <p>A summary that contains a description of the pipeline execution status.</p>
-    #[doc(hidden)]
     pub status_summary: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-    #[doc(hidden)]
     pub artifact_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
 }
 impl PipelineExecution {

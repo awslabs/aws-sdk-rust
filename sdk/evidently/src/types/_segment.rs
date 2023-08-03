@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Segment {
     /// <p>The ARN of the segment.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the segment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that this segment was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that this segment was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The customer-created description for this segment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
-    #[doc(hidden)]
     pub experiment_count: ::std::option::Option<i64>,
     /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
-    #[doc(hidden)]
     pub launch_count: ::std::option::Option<i64>,
     /// <p>The list of tag keys and values associated with this launch.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Segment {

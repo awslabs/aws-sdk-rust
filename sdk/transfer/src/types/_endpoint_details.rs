@@ -10,29 +10,24 @@ pub struct EndpointDetails {
     /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
     /// </note>
-    #[doc(hidden)]
     pub address_allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the VPC endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// </note>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC identifier of the VPC in which a server's endpoint will be hosted.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p> <note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EndpointDetails {

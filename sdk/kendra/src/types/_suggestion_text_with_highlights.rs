@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestionTextWithHighlights {
     /// <p>The query suggestion text to display to the user.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
-    #[doc(hidden)]
     pub highlights: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionHighlight>>,
 }
 impl SuggestionTextWithHighlights {

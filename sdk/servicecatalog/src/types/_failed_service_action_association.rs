@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedServiceActionAssociation {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    #[doc(hidden)]
     pub service_action_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code. Valid values are listed below.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ServiceActionAssociationErrorCode>,
     /// <p>A text description of the error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedServiceActionAssociation {

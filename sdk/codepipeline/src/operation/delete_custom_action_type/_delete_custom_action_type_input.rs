@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomActionTypeInput {
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::ActionCategory>,
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>The version of the custom action to delete.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomActionTypeInput {

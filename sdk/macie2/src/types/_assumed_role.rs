@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssumedRole {
     /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the entity that was used to get the credentials.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
-    #[doc(hidden)]
     pub session_context: ::std::option::Option<crate::types::SessionContext>,
 }
 impl AssumedRole {

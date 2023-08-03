@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LongRangeType {
     /// <p>The size start range (in bytes).</p>
-    #[doc(hidden)]
     pub start_value: ::std::option::Option<i64>,
     /// <p>The size end range (in bytes).</p>
-    #[doc(hidden)]
     pub end_value: ::std::option::Option<i64>,
 }
 impl LongRangeType {

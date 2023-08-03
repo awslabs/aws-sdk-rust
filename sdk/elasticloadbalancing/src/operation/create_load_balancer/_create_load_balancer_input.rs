@@ -6,31 +6,24 @@
 pub struct CreateLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    #[doc(hidden)]
     pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
     /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
     /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
-    #[doc(hidden)]
     pub scheme: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to assign to the load balancer.</p>
     /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLoadBalancerInput {

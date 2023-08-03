@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VirtualNodeStatusCode>,
 }
 impl VirtualNodeStatus {

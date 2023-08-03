@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoiseReducer {
     /// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::NoiseReducerFilter>,
     /// Settings for a noise reducer filter
-    #[doc(hidden)]
     pub filter_settings: ::std::option::Option<crate::types::NoiseReducerFilterSettings>,
     /// Noise reducer filter settings for spatial filter.
-    #[doc(hidden)]
     pub spatial_filter_settings: ::std::option::Option<crate::types::NoiseReducerSpatialFilterSettings>,
     /// Noise reducer filter settings for temporal filter.
-    #[doc(hidden)]
     pub temporal_filter_settings: ::std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>,
 }
 impl NoiseReducer {

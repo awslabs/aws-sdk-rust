@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorProxyOutput {
     /// <p>The proxy configuration details.</p>
-    #[doc(hidden)]
     pub proxy: ::std::option::Option<crate::types::Proxy>,
     _request_id: Option<String>,
 }

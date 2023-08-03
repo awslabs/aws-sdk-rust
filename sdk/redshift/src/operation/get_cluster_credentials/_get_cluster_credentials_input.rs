@@ -14,7 +14,6 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>
     /// <p>Constraints:</p>
@@ -25,18 +24,14 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Constraint: minimum 900, maximum 3600.</p>
     /// <p>Default: 900</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
     /// <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
-    #[doc(hidden)]
     pub auto_create: ::std::option::Option<bool>,
     /// <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>
     /// <p>Database group name constraints</p>
@@ -47,10 +42,8 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The custom domain name for the cluster credentials.</p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterCredentialsInput {

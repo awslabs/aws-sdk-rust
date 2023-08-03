@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationOptionsOutput {
     /// <p>The name of the solution stack these configuration options belong to.</p>
-    #[doc(hidden)]
     pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform version.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>>,
     _request_id: Option<String>,
 }

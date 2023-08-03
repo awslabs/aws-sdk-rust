@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWirelessDevicesInput {
     /// <p>The maximum number of results to return in this operation.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter to list only the wireless devices that use this destination.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter to list only the wireless devices that use this device profile.</p>
-    #[doc(hidden)]
     pub device_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A filter to list only the wireless devices that use this service profile.</p>
-    #[doc(hidden)]
     pub service_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A filter to list only the wireless devices that use this wireless device type.</p>
-    #[doc(hidden)]
     pub wireless_device_type: ::std::option::Option<crate::types::WirelessDeviceType>,
     /// <p>The ID of a FUOTA task.</p>
-    #[doc(hidden)]
     pub fuota_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the multicast group.</p>
-    #[doc(hidden)]
     pub multicast_group_id: ::std::option::Option<::std::string::String>,
 }
 impl ListWirelessDevicesInput {

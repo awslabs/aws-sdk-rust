@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestAvailabilityConfigurationOutput {
     /// <p>Boolean indicating whether the test passed or failed.</p>
-    #[doc(hidden)]
     pub test_passed: bool,
     /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

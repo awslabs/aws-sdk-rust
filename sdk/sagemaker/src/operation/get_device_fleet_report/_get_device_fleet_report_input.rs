@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceFleetReportInput {
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceFleetReportInput {

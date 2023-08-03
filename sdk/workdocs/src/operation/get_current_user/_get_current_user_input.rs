@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetCurrentUserInput {
     /// <p>Amazon WorkDocs authentication token.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCurrentUserInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionQueryStringParameter {
     /// <p>The key for a query string parameter.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the key for the query string parameter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the value is secret.</p>
-    #[doc(hidden)]
     pub is_value_secret: bool,
 }
 impl ConnectionQueryStringParameter {

@@ -5,48 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TapeArchive {
     /// <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
-    #[doc(hidden)]
     pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>The barcode that identifies the archived virtual tape.</p>
-    #[doc(hidden)]
     pub tape_barcode: ::std::option::Option<::std::string::String>,
     /// <p>The date the virtual tape was created.</p>
-    #[doc(hidden)]
     pub tape_created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of the archived virtual tape.</p>
-    #[doc(hidden)]
     pub tape_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The time that the archiving of the virtual tape was completed.</p>
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
     /// <p>The virtual tape is retrieved from the virtual tape shelf (VTS).</p>
-    #[doc(hidden)]
     pub retrieved_to: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the archived virtual tape.</p>
-    #[doc(hidden)]
     pub tape_status: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of data stored on the virtual tape.</p> <note>
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
-    #[doc(hidden)]
     pub tape_used_in_bytes: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class that is associated with the pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> if the archived tape is stored as write-once-read-many (WORM).</p>
-    #[doc(hidden)]
     pub worm: bool,
     /// <p>If the archived tape is subject to tape retention lock, the date that the archived tape started being retained.</p>
-    #[doc(hidden)]
     pub retention_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the tape entered the custom tape pool.</p>
     /// <p>The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    #[doc(hidden)]
     pub pool_entry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TapeArchive {

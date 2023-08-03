@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAuthenticationProfileInput {
     /// <p>The name of the authentication profile to delete.</p>
-    #[doc(hidden)]
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAuthenticationProfileInput {

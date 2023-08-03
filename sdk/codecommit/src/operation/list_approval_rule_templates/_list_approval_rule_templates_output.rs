@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApprovalRuleTemplatesOutput {
     /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
-    #[doc(hidden)]
     pub approval_rule_template_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

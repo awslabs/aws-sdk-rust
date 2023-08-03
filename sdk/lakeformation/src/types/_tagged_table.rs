@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaggedTable {
     /// <p>A table that has LF-tags attached to it.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::TableResource>,
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
-    #[doc(hidden)]
     pub lf_tag_on_database: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     /// <p>A list of LF-tags attached to the table.</p>
-    #[doc(hidden)]
     pub lf_tags_on_table: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     /// <p>A list of LF-tags attached to columns in the table.</p>
-    #[doc(hidden)]
     pub lf_tags_on_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>>,
 }
 impl TaggedTable {

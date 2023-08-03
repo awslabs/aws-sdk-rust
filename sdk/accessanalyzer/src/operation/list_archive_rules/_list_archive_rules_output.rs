@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArchiveRulesOutput {
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    #[doc(hidden)]
     pub archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
     /// <p>A token used for pagination of results returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

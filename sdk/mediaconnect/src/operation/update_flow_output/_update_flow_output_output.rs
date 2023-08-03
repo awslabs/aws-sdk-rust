@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowOutputOutput {
     /// The ARN of the flow that is associated with the updated output.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The new settings of the output that you updated.
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::Output>,
     _request_id: Option<String>,
 }

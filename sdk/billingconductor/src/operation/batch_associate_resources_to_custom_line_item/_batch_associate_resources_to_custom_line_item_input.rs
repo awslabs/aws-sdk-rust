@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateResourcesToCustomLineItemInput {
     /// <p> A percentage custom line item ARN to associate the resources to. </p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p> A list containing the ARNs of the resources to be associated. </p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    #[doc(hidden)]
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
 impl BatchAssociateResourcesToCustomLineItemInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDestinationInput {
     /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Site ARN.
-    #[doc(hidden)]
     pub site: ::std::option::Option<::std::string::String>,
     /// The state of the destination. Default used if not specified.
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DestinationState>,
     /// JSON document containing additional fixed properties regarding the destination
-    #[doc(hidden)]
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
 }
 impl CreateDestinationInput {

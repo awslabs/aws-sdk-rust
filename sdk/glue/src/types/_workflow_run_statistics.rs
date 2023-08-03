@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowRunStatistics {
     /// <p>Total number of Actions in the workflow run.</p>
-    #[doc(hidden)]
     pub total_actions: i32,
     /// <p>Total number of Actions that timed out.</p>
-    #[doc(hidden)]
     pub timeout_actions: i32,
     /// <p>Total number of Actions that have failed.</p>
-    #[doc(hidden)]
     pub failed_actions: i32,
     /// <p>Total number of Actions that have stopped.</p>
-    #[doc(hidden)]
     pub stopped_actions: i32,
     /// <p>Total number of Actions that have succeeded.</p>
-    #[doc(hidden)]
     pub succeeded_actions: i32,
     /// <p>Total number Actions in running state.</p>
-    #[doc(hidden)]
     pub running_actions: i32,
     /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
-    #[doc(hidden)]
     pub errored_actions: i32,
     /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
-    #[doc(hidden)]
     pub waiting_actions: i32,
 }
 impl WorkflowRunStatistics {

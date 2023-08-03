@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to delete.</p>
-    #[doc(hidden)]
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResolverEndpointInput {

@@ -5,34 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BackupRuleInput {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    #[doc(hidden)]
     pub target_backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>A CRON expression in UTC specifying when Backup initiates a backup job.</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.</p>
     /// <p>During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully begun or until the start window time has run out. If within the start window time Backup receives an error that allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur when the start window time is over).</p>
-    #[doc(hidden)]
     pub start_window_minutes: ::std::option::Option<i64>,
     /// <p>A value in minutes after a backup job is successfully started before it must be completed or it will be canceled by Backup. This value is optional.</p>
-    #[doc(hidden)]
     pub completion_window_minutes: ::std::option::Option<i64>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub recovery_point_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy operation.</p>
-    #[doc(hidden)]
     pub copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::CopyAction>>,
     /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False (or not specified) causes Backup to create snapshot backups.</p>
-    #[doc(hidden)]
     pub enable_continuous_backup: ::std::option::Option<bool>,
 }
 impl BackupRuleInput {

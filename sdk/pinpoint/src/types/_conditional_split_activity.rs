@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalSplitActivity {
     /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
-    #[doc(hidden)]
     pub evaluation_wait_time: ::std::option::Option<crate::types::WaitTime>,
     /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
-    #[doc(hidden)]
     pub false_activity: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
-    #[doc(hidden)]
     pub true_activity: ::std::option::Option<::std::string::String>,
 }
 impl ConditionalSplitActivity {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootWorkspacesInput {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    #[doc(hidden)]
     pub reboot_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::RebootRequest>>,
 }
 impl RebootWorkspacesInput {

@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMonitorOutput {
     /// <p>The name of the monitor.</p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitor resource.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
-    #[doc(hidden)]
     pub last_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the monitor's latest evaluation.</p>
-    #[doc(hidden)]
     pub last_evaluation_state: ::std::option::Option<::std::string::String>,
     /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
-    #[doc(hidden)]
     pub baseline: ::std::option::Option<crate::types::Baseline>,
     /// <p>An error message, if any, for the monitor.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the monitor resource was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the latest modification to the monitor.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
-    #[doc(hidden)]
     pub estimated_evaluation_time_remaining_in_minutes: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

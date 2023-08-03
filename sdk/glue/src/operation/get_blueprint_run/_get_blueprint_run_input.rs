@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlueprintRunInput {
     /// <p>The name of the blueprint.</p>
-    #[doc(hidden)]
     pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>The run ID for the blueprint run you want to retrieve.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBlueprintRunInput {

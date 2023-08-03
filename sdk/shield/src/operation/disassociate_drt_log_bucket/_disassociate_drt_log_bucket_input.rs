@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateDrtLogBucketInput {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-    #[doc(hidden)]
     pub log_bucket: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateDrtLogBucketInput {

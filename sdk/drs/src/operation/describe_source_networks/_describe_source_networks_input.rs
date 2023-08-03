@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSourceNetworksInput {
     /// <p>A set of filters by which to return Source Networks.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::DescribeSourceNetworksRequestFilters>,
     /// <p>Maximum number of Source Networks to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token of the next Source Networks to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSourceNetworksInput {

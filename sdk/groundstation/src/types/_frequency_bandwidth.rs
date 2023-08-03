@@ -10,10 +10,8 @@ pub struct FrequencyBandwidth {
     /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
     /// <p>Frequency bandwidth units.</p>
-    #[doc(hidden)]
     pub units: ::std::option::Option<crate::types::BandwidthUnits>,
 }
 impl FrequencyBandwidth {

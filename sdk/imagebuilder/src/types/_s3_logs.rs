@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Logs {
     /// <p>The S3 bucket in which to store the logs.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3Logs {

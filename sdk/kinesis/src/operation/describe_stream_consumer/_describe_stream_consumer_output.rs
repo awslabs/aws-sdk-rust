@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamConsumerOutput {
     /// <p>An object that represents the details of the consumer.</p>
-    #[doc(hidden)]
     pub consumer_description: ::std::option::Option<crate::types::ConsumerDescription>,
     _request_id: Option<String>,
 }

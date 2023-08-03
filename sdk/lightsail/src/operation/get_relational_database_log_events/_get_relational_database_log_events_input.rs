@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogEventsInput {
     /// <p>The name of your database for which to get log events.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
-    #[doc(hidden)]
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
@@ -16,7 +14,6 @@ pub struct GetRelationalDatabaseLogEventsInput {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
@@ -24,16 +21,13 @@ pub struct GetRelationalDatabaseLogEventsInput {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
     /// </note>
-    #[doc(hidden)]
     pub start_from_head: ::std::option::Option<bool>,
     /// <p>The token to advance to the next or previous page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetRelationalDatabaseLogEventsInput {

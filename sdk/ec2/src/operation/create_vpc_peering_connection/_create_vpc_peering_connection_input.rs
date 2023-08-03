@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcPeeringConnectionInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
     /// <p>Default: Your Amazon Web Services account ID</p>
-    #[doc(hidden)]
     pub peer_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request.</p>
-    #[doc(hidden)]
     pub peer_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the requester VPC. You must specify this parameter in the request.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region code for the accepter VPC, if the accepter VPC is located in a Region other than the Region in which you make the request.</p>
     /// <p>Default: The Region in which you make the request.</p>
-    #[doc(hidden)]
     pub peer_region: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the peering connection.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpcPeeringConnectionInput {

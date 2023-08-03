@@ -11,10 +11,8 @@ pub struct GetKeyPolicyInput {
     /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the key policy. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyPolicyInput {

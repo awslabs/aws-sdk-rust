@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentVersionListItem {
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
-    #[doc(hidden)]
     pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ComponentVersionListItem {

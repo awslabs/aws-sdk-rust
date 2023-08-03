@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the migration workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
     /// <p>The status message of the migration workflow.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the migration workflow was last started.</p>
-    #[doc(hidden)]
     pub last_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

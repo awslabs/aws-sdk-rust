@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Accuracy {
     /// <p>The horizontal accuracy of the estimated position, which is the difference between the estimated location and the actual device location.</p>
-    #[doc(hidden)]
     pub horizontal_accuracy: ::std::option::Option<f32>,
     /// <p>The vertical accuracy of the estimated position, which is the difference between the estimated altitude and actual device latitude in meters.</p>
-    #[doc(hidden)]
     pub vertical_accuracy: ::std::option::Option<f32>,
 }
 impl Accuracy {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerSideEncryption {
     /// <p>The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption settings aren't configured for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ServerSideEncryption {

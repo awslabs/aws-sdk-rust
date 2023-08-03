@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsuccessfulInstanceCreditSpecificationItem {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The applicable error for the burstable performance instance whose credit option for CPU usage was not modified.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationItemError>,
 }
 impl UnsuccessfulInstanceCreditSpecificationItem {

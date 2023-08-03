@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Hive {
     /// <p>The query for the Hive job run.</p>
-    #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>The query file for the Hive job run.</p>
-    #[doc(hidden)]
     pub init_query_file: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the Hive job run.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::string::String>,
 }
 impl Hive {

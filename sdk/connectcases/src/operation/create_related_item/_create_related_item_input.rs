@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRelatedItemInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the case.</p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of a related item.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RelatedItemType>,
     /// <p>The content of a related item to be created.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::RelatedItemInputContent>,
 }
 impl CreateRelatedItemInput {

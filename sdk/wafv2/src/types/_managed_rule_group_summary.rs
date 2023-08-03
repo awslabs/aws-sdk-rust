@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedRuleGroupSummary {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    #[doc(hidden)]
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>. </p>
-    #[doc(hidden)]
     pub versioning_supported: bool,
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ManagedRuleGroupSummary {

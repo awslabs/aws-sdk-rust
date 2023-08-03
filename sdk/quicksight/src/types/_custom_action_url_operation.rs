@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionUrlOperation {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
-    #[doc(hidden)]
     pub url_template: ::std::option::Option<::std::string::String>,
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -14,7 +13,6 @@ pub struct CustomActionUrlOperation {
     /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
     /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub url_target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
 }
 impl CustomActionUrlOperation {

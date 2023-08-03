@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserAccessLoggingSettingsOutput {
     /// <p>The user access logging settings.</p>
-    #[doc(hidden)]
     pub user_access_logging_settings: ::std::option::Option<crate::types::UserAccessLoggingSettings>,
     _request_id: Option<String>,
 }

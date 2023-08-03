@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderType {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The IdP name.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The IdP type.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
     /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
@@ -61,19 +58,14 @@ pub struct IdentityProviderType {
     /// <li> <p>IDPSignout <i>optional</i> </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    #[doc(hidden)]
     pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of IdP identifiers.</p>
-    #[doc(hidden)]
     pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date the IdP was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the IdP was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IdentityProviderType {

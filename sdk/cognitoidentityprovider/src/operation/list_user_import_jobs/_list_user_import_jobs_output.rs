@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserImportJobsOutput {
     /// <p>The user import jobs.</p>
-    #[doc(hidden)]
     pub user_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>>,
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
-    #[doc(hidden)]
     pub pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

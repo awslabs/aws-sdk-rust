@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFolderOutput {
     /// <p>The metadata of the folder.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::FolderMetadata>,
     /// <p>The custom metadata on the folder.</p>
-    #[doc(hidden)]
     pub custom_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

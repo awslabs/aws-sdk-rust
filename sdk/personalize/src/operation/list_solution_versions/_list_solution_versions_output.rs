@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolutionVersionsOutput {
     /// <p>A list of solution versions describing the version properties.</p>
-    #[doc(hidden)]
     pub solution_versions: ::std::option::Option<::std::vec::Vec<crate::types::SolutionVersionSummary>>,
     /// <p>A token for getting the next set of solution versions (if they exist).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -7,16 +7,12 @@ pub struct CreateReplicationSubnetGroupInput {
     /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    #[doc(hidden)]
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description for the subnet group.</p>
-    #[doc(hidden)]
     pub replication_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>One or more subnet IDs to be assigned to the subnet group.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more tags to be assigned to the subnet group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateReplicationSubnetGroupInput {

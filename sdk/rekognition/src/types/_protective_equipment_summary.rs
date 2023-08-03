@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectiveEquipmentSummary {
     /// <p>An array of IDs for persons who are wearing detected personal protective equipment. </p>
-    #[doc(hidden)]
     pub persons_with_required_equipment: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>An array of IDs for persons who are not wearing all of the types of PPE specified in the <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment. </p>
-    #[doc(hidden)]
     pub persons_without_required_equipment: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>An array of IDs for persons where it was not possible to determine if they are wearing personal protective equipment. </p>
-    #[doc(hidden)]
     pub persons_indeterminate: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl ProtectiveEquipmentSummary {

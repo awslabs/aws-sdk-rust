@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcLinkInput {
     /// <p>The name of the VPC link.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC link.</p>
-    #[doc(hidden)]
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVpcLinkInput {

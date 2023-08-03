@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClientVpnRoutesInput {
     /// <p>The ID of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
@@ -12,16 +11,12 @@ pub struct DescribeClientVpnRoutesInput {
     /// <li> <p> <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
     /// <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic is routed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeClientVpnRoutesInput {

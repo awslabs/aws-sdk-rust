@@ -11,12 +11,10 @@ pub struct HistoricalOptions {
     /// <li> <p>For the <code>QUARTERLY</code> granularity, the maximum value is <code>4</code>.</p> </li>
     /// <li> <p>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub budget_adjustment_period: ::std::option::Option<i32>,
     /// <p>The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code> are included in the calculation of your current <code>BudgetLimit</code>. If the first budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that budget period isn’t included in the average that determines your budget limit. </p>
     /// <p>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters, but your account had no cost data in the first quarter, then only the last three quarters are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code> returns <code>3</code>. </p>
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
-    #[doc(hidden)]
     pub look_back_available_periods: ::std::option::Option<i32>,
 }
 impl HistoricalOptions {

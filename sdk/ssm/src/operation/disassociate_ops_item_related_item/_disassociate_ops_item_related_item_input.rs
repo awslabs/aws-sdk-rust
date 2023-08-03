@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItemInput {
     /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateOpsItemRelatedItemInput {

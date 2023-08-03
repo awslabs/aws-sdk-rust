@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildSummary {
     /// <p>The batch build ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>When the build was started, expressed in Unix time format.</p>
-    #[doc(hidden)]
     pub requested_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the build group.</p>
     /// <dl>
@@ -49,13 +47,10 @@ pub struct BuildSummary {
     /// <p>The build group timed out.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub build_status: ::std::option::Option<crate::types::StatusType>,
     /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
-    #[doc(hidden)]
     pub primary_artifact: ::std::option::Option<crate::types::ResolvedArtifact>,
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
-    #[doc(hidden)]
     pub secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>>,
 }
 impl BuildSummary {

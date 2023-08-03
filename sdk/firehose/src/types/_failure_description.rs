@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureDescription {
     /// <p>The type of error that caused the failure.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DeliveryStreamFailureType>,
     /// <p>A message providing details about the error that caused the failure.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
 }
 impl FailureDescription {

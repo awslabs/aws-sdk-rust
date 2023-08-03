@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully released.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
-    #[doc(hidden)]
     pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
 }

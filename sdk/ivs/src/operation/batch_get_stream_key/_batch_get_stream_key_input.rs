@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetStreamKeyInput {
     /// <p>Array of ARNs, one per stream key.</p>
-    #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetStreamKeyInput {

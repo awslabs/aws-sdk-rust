@@ -26,7 +26,6 @@ pub struct ApiKeyRestrictions {
     /// </ul> <note>
     /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
     /// </note>
-    #[doc(hidden)]
     pub allow_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p>
     /// <ul>
@@ -36,7 +35,6 @@ pub struct ApiKeyRestrictions {
     /// <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    #[doc(hidden)]
     pub allow_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p>
     /// <p>Requirements:</p>
@@ -46,7 +44,6 @@ pub struct ApiKeyRestrictions {
     /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub allow_referers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ApiKeyRestrictions {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInputsInput {
     /// <p>The token that you can use to return the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListInputsInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyUsageLimitOutput {
     /// <p>The identifier of the usage limit.</p>
-    #[doc(hidden)]
     pub usage_limit_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster with a usage limit.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Redshift feature to which the limit applies.</p>
-    #[doc(hidden)]
     pub feature_type: ::std::option::Option<crate::types::UsageLimitFeatureType>,
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
-    #[doc(hidden)]
     pub limit_type: ::std::option::Option<crate::types::UsageLimitLimitType>,
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
-    #[doc(hidden)]
     pub amount: i64,
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::UsageLimitPeriod>,
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
     /// <ul>
@@ -28,10 +22,8 @@ pub struct ModifyUsageLimitOutput {
     /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
     /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub breach_action: ::std::option::Option<crate::types::UsageLimitBreachAction>,
     /// <p>A list of tag instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

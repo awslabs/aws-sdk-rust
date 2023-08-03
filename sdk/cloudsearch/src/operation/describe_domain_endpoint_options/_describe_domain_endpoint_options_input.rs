@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
-    #[doc(hidden)]
     pub deployed: ::std::option::Option<bool>,
 }
 impl DescribeDomainEndpointOptionsInput {

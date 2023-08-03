@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicyVersion {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the policy version.</p>
-    #[doc(hidden)]
     pub policy_version_id: ::std::option::Option<i32>,
     /// <p>Whether a core network policy is the current policy or the most recently submitted policy.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
     /// <p>The description of a core network policy version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when a core network policy version was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the policy version change set.</p>
-    #[doc(hidden)]
     pub change_set_state: ::std::option::Option<crate::types::ChangeSetState>,
 }
 impl CoreNetworkPolicyVersion {

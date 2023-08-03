@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestionDestination {
     /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    #[doc(hidden)]
     pub ingestion_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about how ingested data is processed.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>Contains information about the destination of ingested data.</p>
-    #[doc(hidden)]
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>The state of the ingestion destination.</p>
     /// <p>The following states are possible:</p>
@@ -22,17 +18,13 @@ pub struct IngestionDestination {
     /// <li> <p> <code>Active</code>: The ingestion destination is active and is ready to be used.</p> </li>
     /// <li> <p> <code>Failed</code>: The ingestion destination has failed. If the ingestion destination is in this state, you should verify the ingestion destination configuration and try again.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IngestionDestinationStatus>,
     /// <p>The reason for the current status of the ingestion destination.</p>
     /// <p>Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the ingestion destination was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the ingestion destination was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IngestionDestination {

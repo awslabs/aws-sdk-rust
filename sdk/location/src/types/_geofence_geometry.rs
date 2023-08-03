@@ -12,10 +12,8 @@ pub struct GeofenceGeometry {
     /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
     /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
-    #[doc(hidden)]
     pub polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
     /// <p>A circle on the earth, as defined by a center point and a radius.</p>
-    #[doc(hidden)]
     pub circle: ::std::option::Option<crate::types::Circle>,
 }
 impl GeofenceGeometry {

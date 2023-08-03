@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentStatusInput {
     /// The ID of the deployment.
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// The ID of the Greengrass group.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentStatusInput {

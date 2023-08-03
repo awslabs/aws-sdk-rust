@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRemediationExceptionsInput {
     /// <p>The name of the Config rule for which you want to create remediation exception.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
-    #[doc(hidden)]
     pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
     /// <p>The message contains an explanation of the exception.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The exception is automatically deleted after the expiration date.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PutRemediationExceptionsInput {

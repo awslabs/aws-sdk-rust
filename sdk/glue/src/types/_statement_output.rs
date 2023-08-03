@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatementOutput {
     /// <p>The code execution output.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::StatementOutputData>,
     /// <p>The execution count of the output.</p>
-    #[doc(hidden)]
     pub execution_count: i32,
     /// <p>The status of the code execution output.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatementState>,
     /// <p>The name of the error in the output.</p>
-    #[doc(hidden)]
     pub error_name: ::std::option::Option<::std::string::String>,
     /// <p>The error value of the output.</p>
-    #[doc(hidden)]
     pub error_value: ::std::option::Option<::std::string::String>,
     /// <p>The traceback of the output.</p>
-    #[doc(hidden)]
     pub traceback: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StatementOutput {

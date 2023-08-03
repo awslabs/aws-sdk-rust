@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostProperties {
     /// <p>The number of cores on the Dedicated Host.</p>
-    #[doc(hidden)]
     pub cores: ::std::option::Option<i32>,
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
-    #[doc(hidden)]
     pub instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The number of sockets on the Dedicated Host.</p>
-    #[doc(hidden)]
     pub sockets: ::std::option::Option<i32>,
     /// <p>The total number of vCPUs on the Dedicated Host.</p>
-    #[doc(hidden)]
     pub total_v_cpus: ::std::option::Option<i32>,
 }
 impl HostProperties {

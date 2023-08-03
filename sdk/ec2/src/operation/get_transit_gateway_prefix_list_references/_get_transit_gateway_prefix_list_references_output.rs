@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPrefixListReferencesOutput {
     /// <p>Information about the prefix list references.</p>
-    #[doc(hidden)]
     pub transit_gateway_prefix_list_references: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPrefixListReference>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

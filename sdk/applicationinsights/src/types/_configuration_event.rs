@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationEvent {
     /// <p> The resource monitored by Application Insights. </p>
-    #[doc(hidden)]
     pub monitored_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> The status of the configuration update event. Possible values include INFO, WARN, and ERROR. </p>
-    #[doc(hidden)]
     pub event_status: ::std::option::Option<crate::types::ConfigurationEventStatus>,
     /// <p> The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM. </p>
-    #[doc(hidden)]
     pub event_resource_type: ::std::option::Option<crate::types::ConfigurationEventResourceType>,
     /// <p> The timestamp of the event. </p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The details of the event in plain text. </p>
-    #[doc(hidden)]
     pub event_detail: ::std::option::Option<::std::string::String>,
     /// <p> The name of the resource Application Insights attempted to configure. </p>
-    #[doc(hidden)]
     pub event_resource_name: ::std::option::Option<::std::string::String>,
 }
 impl ConfigurationEvent {

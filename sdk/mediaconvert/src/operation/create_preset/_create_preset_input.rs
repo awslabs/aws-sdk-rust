@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePresetInput {
     /// Optional. A category for the preset you are creating.
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// Optional. A description of the preset you are creating.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The name of the preset you are creating.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Settings for preset
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::PresetSettings>,
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePresetInput {

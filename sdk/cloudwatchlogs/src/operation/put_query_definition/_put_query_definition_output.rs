@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutQueryDefinitionOutput {
     /// <p>The ID of the query definition.</p>
-    #[doc(hidden)]
     pub query_definition_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

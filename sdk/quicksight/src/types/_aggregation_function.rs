@@ -6,14 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationFunction {
     /// <p>Aggregation for numerical values.</p>
-    #[doc(hidden)]
     pub numerical_aggregation_function: ::std::option::Option<crate::types::NumericalAggregationFunction>,
     /// <p>Aggregation for categorical values.</p>
     /// <ul>
     /// <li> <p> <code>COUNT</code>: Aggregate by the total number of values, including duplicates.</p> </li>
     /// <li> <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub categorical_aggregation_function: ::std::option::Option<crate::types::CategoricalAggregationFunction>,
     /// <p>Aggregation for date values.</p>
     /// <ul>
@@ -22,10 +20,8 @@ pub struct AggregationFunction {
     /// <li> <p> <code>MIN</code>: Select the smallest date value.</p> </li>
     /// <li> <p> <code>MAX</code>: Select the largest date value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub date_aggregation_function: ::std::option::Option<crate::types::DateAggregationFunction>,
     /// <p>Aggregation for attributes.</p>
-    #[doc(hidden)]
     pub attribute_aggregation_function: ::std::option::Option<crate::types::AttributeAggregationFunction>,
 }
 impl AggregationFunction {

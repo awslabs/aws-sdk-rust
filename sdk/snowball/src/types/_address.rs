@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Address {
     /// <p>The unique ID for an address.</p>
-    #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a person to receive a Snow device at an address.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the company to receive a Snow device at an address.</p>
-    #[doc(hidden)]
     pub company: ::std::option::Option<::std::string::String>,
     /// <p>The first line in a street address that a Snow device is to be delivered to.</p>
-    #[doc(hidden)]
     pub street1: ::std::option::Option<::std::string::String>,
     /// <p>The second line in a street address that a Snow device is to be delivered to.</p>
-    #[doc(hidden)]
     pub street2: ::std::option::Option<::std::string::String>,
     /// <p>The third line in a street address that a Snow device is to be delivered to.</p>
-    #[doc(hidden)]
     pub street3: ::std::option::Option<::std::string::String>,
     /// <p>The city in an address that a Snow device is to be delivered to.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The state or province in an address that a Snow device is to be delivered to.</p>
-    #[doc(hidden)]
     pub state_or_province: ::std::option::Option<::std::string::String>,
     /// <p>This field is no longer used and the value is ignored.</p>
-    #[doc(hidden)]
     pub prefecture_or_district: ::std::option::Option<::std::string::String>,
     /// <p>This field is no longer used and the value is ignored.</p>
-    #[doc(hidden)]
     pub landmark: ::std::option::Option<::std::string::String>,
     /// <p>The country in an address that a Snow device is to be delivered to.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The postal code in an address that a Snow device is to be delivered to.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The phone number associated with an address that a Snow device is to be delivered to.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>If the address you are creating is a primary address, then set this option to true. This field is not supported in most regions.</p>
-    #[doc(hidden)]
     pub is_restricted: bool,
     /// <p>Differentiates between delivery address and pickup address in the customer account. Provided at job creation.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AddressType>,
 }
 impl Address {

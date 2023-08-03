@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCachediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

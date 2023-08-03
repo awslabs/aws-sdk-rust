@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeDetails {
     /// <p>The node index for the node. Node index numbering starts at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
-    #[doc(hidden)]
     pub node_index: ::std::option::Option<i32>,
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
-    #[doc(hidden)]
     pub is_main_node: ::std::option::Option<bool>,
 }
 impl NodeDetails {

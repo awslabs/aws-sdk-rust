@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RecoveryInstance {
     /// <p>The EC2 instance ID of the Recovery Instance.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the EC2 instance for this Recovery Instance.</p>
-    #[doc(hidden)]
     pub ec2_instance_state: ::std::option::Option<crate::types::Ec2InstanceState>,
     /// <p>The ID of the Job that created the Recovery Instance.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Recovery Instance.</p>
-    #[doc(hidden)]
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Source Server ID that this Recovery Instance is associated with.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Recovery Instance.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags that are associated with the Recovery Instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object representing failback related information of the Recovery Instance.</p>
-    #[doc(hidden)]
     pub failback: ::std::option::Option<crate::types::RecoveryInstanceFailback>,
     /// <p>The Data Replication Info of the Recovery Instance.</p>
-    #[doc(hidden)]
     pub data_replication_info: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInfo>,
     /// <p>Properties of the Recovery Instance machine.</p>
-    #[doc(hidden)]
     pub recovery_instance_properties: ::std::option::Option<crate::types::RecoveryInstanceProperties>,
     /// <p>The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.</p>
-    #[doc(hidden)]
     pub point_in_time_snapshot_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
-    #[doc(hidden)]
     pub is_drill: ::std::option::Option<bool>,
     /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
-    #[doc(hidden)]
     pub origin_environment: ::std::option::Option<crate::types::OriginEnvironment>,
     /// <p>AWS availability zone associated with the recovery instance.</p>
-    #[doc(hidden)]
     pub origin_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstance {

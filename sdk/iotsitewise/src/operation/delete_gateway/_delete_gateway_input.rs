@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayInput {
     /// <p>The ID of the gateway to delete.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGatewayInput {

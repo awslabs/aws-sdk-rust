@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesOutput {
     /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
-    #[doc(hidden)]
     pub discovered_resource_list: ::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>>,
     _request_id: Option<String>,
 }

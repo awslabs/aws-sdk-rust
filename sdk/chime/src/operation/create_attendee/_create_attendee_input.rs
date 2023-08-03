@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    #[doc(hidden)]
     pub external_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The tag key-value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAttendeeInput {

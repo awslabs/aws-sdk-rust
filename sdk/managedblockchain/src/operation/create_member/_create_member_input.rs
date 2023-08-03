@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMemberInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the network in which the member is created.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>Member configuration parameters.</p>
-    #[doc(hidden)]
     pub member_configuration: ::std::option::Option<crate::types::MemberConfiguration>,
 }
 impl CreateMemberInput {

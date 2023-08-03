@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetValue {
     /// <p>Link to the asset object.</p>
-    #[doc(hidden)]
     pub href: ::std::option::Option<::std::string::String>,
 }
 impl AssetValue {

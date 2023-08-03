@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageDetails {
     /// <p>Internal ID of the package.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>User specified name of the package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>Currently supports only TXT-DICTIONARY.</p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<crate::types::PackageType>,
     /// <p>User-specified description of the package.</p>
-    #[doc(hidden)]
     pub package_description: ::std::option::Option<::std::string::String>,
     /// <p>Current state of the package. Values are COPYING/COPY_FAILED/AVAILABLE/DELETING/DELETE_FAILED</p>
-    #[doc(hidden)]
     pub package_status: ::std::option::Option<crate::types::PackageStatus>,
     /// <p>Timestamp which tells creation date of the package.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub available_package_version: ::std::option::Option<::std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl PackageDetails {

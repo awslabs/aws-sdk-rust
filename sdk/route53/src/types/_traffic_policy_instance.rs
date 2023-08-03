@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficPolicyInstance {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<i64>,
     /// <p>The value of <code>State</code> is one of the following values:</p>
     /// <dl>
@@ -37,19 +33,14 @@ pub struct TrafficPolicyInstance {
     /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    #[doc(hidden)]
     pub traffic_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    #[doc(hidden)]
     pub traffic_policy_version: ::std::option::Option<i32>,
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
-    #[doc(hidden)]
     pub traffic_policy_type: ::std::option::Option<crate::types::RrType>,
 }
 impl TrafficPolicyInstance {

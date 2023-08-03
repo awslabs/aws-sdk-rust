@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputNotebookS3LocationForOutput {
     /// <p>The Amazon S3 bucket that stores the notebook execution output.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key to the Amazon S3 location that stores the notebook execution output.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl OutputNotebookS3LocationForOutput {

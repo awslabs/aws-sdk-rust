@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnDemandProvisioningSpecification {
     /// <p>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is <code>lowest-price</code> (the default), which launches the lowest price first.</p>
-    #[doc(hidden)]
     pub allocation_strategy: ::std::option::Option<crate::types::OnDemandProvisioningAllocationStrategy>,
     /// <p>The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.</p>
-    #[doc(hidden)]
     pub capacity_reservation_options: ::std::option::Option<crate::types::OnDemandCapacityReservationOptions>,
 }
 impl OnDemandProvisioningSpecification {

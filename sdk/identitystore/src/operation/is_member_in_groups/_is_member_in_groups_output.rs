@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsMemberInGroupsOutput {
     /// <p>A list containing the results of membership existence checks.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
     _request_id: Option<String>,
 }

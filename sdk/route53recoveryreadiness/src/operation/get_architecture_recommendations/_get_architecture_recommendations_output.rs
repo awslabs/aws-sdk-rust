@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArchitectureRecommendationsOutput {
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
-    #[doc(hidden)]
     pub last_audit_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the recommendations for the customer's application.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     _request_id: Option<String>,
 }

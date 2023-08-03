@@ -11,7 +11,6 @@ pub struct InvokeInput {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>Choose from the following options.</p>
     /// <ul>
@@ -19,20 +18,15 @@ pub struct InvokeInput {
     /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li>
     /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub invocation_type: ::std::option::Option<crate::types::InvocationType>,
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
-    #[doc(hidden)]
     pub log_type: ::std::option::Option<crate::types::LogType>,
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
-    #[doc(hidden)]
     pub client_context: ::std::option::Option<::std::string::String>,
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
-    #[doc(hidden)]
     pub qualifier: ::std::option::Option<::std::string::String>,
 }
 impl InvokeInput {

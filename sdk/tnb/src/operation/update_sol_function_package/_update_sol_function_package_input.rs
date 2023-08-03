@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSolFunctionPackageInput {
     /// <p>ID of the function package.</p>
-    #[doc(hidden)]
     pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
     /// <p>Operational state of the function package.</p>
-    #[doc(hidden)]
     pub operational_state: ::std::option::Option<crate::types::OperationalState>,
 }
 impl UpdateSolFunctionPackageInput {

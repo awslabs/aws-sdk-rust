@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaExecutionParameters {
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
-    #[doc(hidden)]
     pub event_sources: ::std::option::Option<::std::vec::Vec<crate::types::LambdaEventSource>>,
     /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
-    #[doc(hidden)]
     pub max_queue_size: ::std::option::Option<i32>,
     /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same time.</p>
-    #[doc(hidden)]
     pub max_instances_count: ::std::option::Option<i32>,
     /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the IoT Greengrass Core software stops its process.</p>
-    #[doc(hidden)]
     pub max_idle_time_in_seconds: ::std::option::Option<i32>,
     /// <p>The maximum amount of time in seconds that the Lambda function can process a work item.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
-    #[doc(hidden)]
     pub status_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
     /// <ul>
@@ -28,20 +22,15 @@ pub struct LambdaExecutionParameters {
     /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
     /// </ul>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub pinned: ::std::option::Option<bool>,
     /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
-    #[doc(hidden)]
     pub input_payload_encoding_type: ::std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
-    #[doc(hidden)]
     pub exec_args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
-    #[doc(hidden)]
     pub linux_process_params: ::std::option::Option<crate::types::LambdaLinuxProcessParams>,
 }
 impl LambdaExecutionParameters {

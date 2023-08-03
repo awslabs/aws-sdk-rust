@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperimentInput {
     /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateExperimentInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaStorageConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the media storage configuration.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>,
 }
 impl MediaStorageConfiguration {

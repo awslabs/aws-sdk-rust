@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<crate::types::CatalogResource>,
     /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::DatabaseResource>,
     /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::TableResource>,
     /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
-    #[doc(hidden)]
     pub table_with_columns: ::std::option::Option<crate::types::TableWithColumnsResource>,
     /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
-    #[doc(hidden)]
     pub data_location: ::std::option::Option<crate::types::DataLocationResource>,
     /// <p>A data cell filter.</p>
-    #[doc(hidden)]
     pub data_cells_filter: ::std::option::Option<crate::types::DataCellsFilterResource>,
     /// <p>The LF-tag key and values attached to a resource.</p>
-    #[doc(hidden)]
     pub lf_tag: ::std::option::Option<crate::types::LfTagKeyResource>,
     /// <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
-    #[doc(hidden)]
     pub lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
 }
 impl Resource {

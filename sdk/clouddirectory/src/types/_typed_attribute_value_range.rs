@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedAttributeValueRange {
     /// <p>The inclusive or exclusive range start.</p>
-    #[doc(hidden)]
     pub start_mode: ::std::option::Option<crate::types::RangeMode>,
     /// <p>The value to start the range at.</p>
-    #[doc(hidden)]
     pub start_value: ::std::option::Option<crate::types::TypedAttributeValue>,
     /// <p>The inclusive or exclusive range end.</p>
-    #[doc(hidden)]
     pub end_mode: ::std::option::Option<crate::types::RangeMode>,
     /// <p>The attribute value to terminate the range at.</p>
-    #[doc(hidden)]
     pub end_value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl TypedAttributeValueRange {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// <p>The ARN or ID (the ARN suffix) of the channel that you want to update.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
     /// <p> Changes the name of the channel. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelInput {

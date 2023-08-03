@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateRandomInput {
     /// <p>The length of the random byte string. This parameter is required.</p>
-    #[doc(hidden)]
     pub number_of_bytes: ::std::option::Option<i32>,
     /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>External key store IDs are not valid for this parameter. If you specify the ID of an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.</p>
-    #[doc(hidden)]
     pub custom_key_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
     /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
     /// <p>When you use this parameter, instead of returning plaintext bytes, KMS encrypts the plaintext bytes under the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>Plaintext</code> field in the response is null or empty.</p>
     /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub recipient: ::std::option::Option<crate::types::RecipientInfo>,
 }
 impl GenerateRandomInput {

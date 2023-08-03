@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InfrastructureConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the infrastructure configuration was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the infrastructure configuration was last updated.</p>
-    #[doc(hidden)]
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the image created by Image Builder.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tags of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance types of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance profile of the infrastructure configuration.</p>
-    #[doc(hidden)]
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl InfrastructureConfigurationSummary {

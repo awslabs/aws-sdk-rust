@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerRange {
     /// <p>A minimum value.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<i32>,
     /// <p>A maximum value.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<i32>,
 }
 impl IntegerRange {

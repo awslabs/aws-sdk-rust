@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameterRangeSpecification {
     /// <p>The minimum integer value allowed.</p>
-    #[doc(hidden)]
     pub min_value: ::std::option::Option<::std::string::String>,
     /// <p>The maximum integer value allowed.</p>
-    #[doc(hidden)]
     pub max_value: ::std::option::Option<::std::string::String>,
 }
 impl IntegerParameterRangeSpecification {

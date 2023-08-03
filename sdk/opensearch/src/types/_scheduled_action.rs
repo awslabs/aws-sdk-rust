@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledAction {
     /// <p>The unique identifier of the scheduled action.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of action that will be taken on the domain.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ActionType>,
     /// <p>The severity of the action.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::ActionSeverity>,
     /// <p>The time when the change is scheduled to happen.</p>
-    #[doc(hidden)]
     pub scheduled_time: ::std::option::Option<i64>,
     /// <p>A description of the action to be taken.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
-    #[doc(hidden)]
     pub scheduled_by: ::std::option::Option<crate::types::ScheduledBy>,
     /// <p>The current status of the scheduled action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActionStatus>,
     /// <p>Whether the action is required or optional.</p>
-    #[doc(hidden)]
     pub mandatory: ::std::option::Option<bool>,
     /// <p>Whether or not the scheduled action is cancellable.</p>
-    #[doc(hidden)]
     pub cancellable: ::std::option::Option<bool>,
 }
 impl ScheduledAction {

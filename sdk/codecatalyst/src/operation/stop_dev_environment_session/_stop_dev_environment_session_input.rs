@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDevEnvironmentSessionInput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl StopDevEnvironmentSessionInput {

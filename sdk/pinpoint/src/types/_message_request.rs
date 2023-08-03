@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageRequest {
     /// <p>A map of key-value pairs, where each key is an address and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object. An address can be a push notification token, a phone number, or an email address. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object to tailor the message for an address by specifying settings such as content overrides and message variables.</p>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AddressConfiguration>>,
     /// <p>A map of custom attributes to attach to the message. For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of key-value pairs, where each key is an endpoint ID and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for an endpoint by specifying settings such as content overrides and message variables.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EndpointSendConfiguration>>,
     /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
-    #[doc(hidden)]
     pub message_configuration: ::std::option::Option<crate::types::DirectMessageConfiguration>,
     /// <p>The message template to use for the message.</p>
-    #[doc(hidden)]
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
     /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
-    #[doc(hidden)]
     pub trace_id: ::std::option::Option<::std::string::String>,
 }
 impl MessageRequest {

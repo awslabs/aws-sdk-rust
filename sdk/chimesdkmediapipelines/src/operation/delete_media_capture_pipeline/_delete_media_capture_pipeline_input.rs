@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media pipeline being deleted. </p>
-    #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMediaCapturePipelineInput {

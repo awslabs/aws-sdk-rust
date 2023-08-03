@@ -5,62 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
     /// <p> Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network interface. For more information, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP address</a> in the <i>Wavelength Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub associate_carrier_ip_address: bool,
     /// <p> Associates a public IPv4 address with eth0 for a new network interface. </p>
-    #[doc(hidden)]
     pub associate_public_ip_address: bool,
     /// <p> Indicates whether the network interface is deleted when the instance is terminated. </p>
-    #[doc(hidden)]
     pub delete_on_termination: bool,
     /// <p> A description for the network interface. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The device index for the network interface attachment. </p>
-    #[doc(hidden)]
     pub device_index: i32,
     /// <p> The IDs of one or more security groups. </p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The type of network interface. </p>
-    #[doc(hidden)]
     pub interface_type: ::std::option::Option<::std::string::String>,
     /// <p> The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefixes</code> option. </p>
-    #[doc(hidden)]
     pub ipv4_prefix_count: i32,
     /// <p> One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option. </p>
-    #[doc(hidden)]
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>>,
     /// <p> The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>. </p>
-    #[doc(hidden)]
     pub ipv6_address_count: i32,
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if you use <code>Ipv6AddressCount</code>. </p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>>,
     /// <p> The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option. </p>
-    #[doc(hidden)]
     pub ipv6_prefix_count: i32,
     /// <p> One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option. </p>
-    #[doc(hidden)]
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>>,
     /// <p> The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>. </p>
-    #[doc(hidden)]
     pub network_card_index: i32,
     /// <p> The ID of the network interface. </p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p> The primary private IPv4 address of the network interface. </p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p> One or more private IPv4 addresses. </p>
-    #[doc(hidden)]
     pub private_ip_addresses:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>>,
     /// <p> The number of secondary private IPv4 addresses to assign to a network interface. </p>
-    #[doc(hidden)]
     pub secondary_private_ip_address_count: i32,
     /// <p> The ID of the subnet for the network interface. </p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {

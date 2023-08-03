@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContextInput {
     /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub context_name: ::std::option::Option<::std::string::String>,
     /// <p>The source type, ID, and URI.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ContextSource>,
     /// <p>The context type.</p>
-    #[doc(hidden)]
     pub context_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the context.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of properties to add to the context.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of tags to apply to the context.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContextInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveDirectoryIdentityProvider {
     /// <p>The directory ID for an Active Directory identity provider.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
 impl ActiveDirectoryIdentityProvider {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeliverabilityTestReportOutput {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub deliverability_test_report: ::std::option::Option<crate::types::DeliverabilityTestReport>,
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
-    #[doc(hidden)]
     pub overall_placement: ::std::option::Option<crate::types::PlacementStatistics>,
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-    #[doc(hidden)]
     pub isp_placements: ::std::option::Option<::std::vec::Vec<crate::types::IspPlacement>>,
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

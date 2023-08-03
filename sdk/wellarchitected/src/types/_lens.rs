@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Lens {
     /// <p>The ARN of a lens.</p>
-    #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of a lens.</p>
-    #[doc(hidden)]
     pub lens_version: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the lens.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the lens.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the lens.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the share invitation.</p>
-    #[doc(hidden)]
     pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the lens.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Lens {

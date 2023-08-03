@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetManagedPrefixListAssociationsOutput {
     /// <p>Information about the associations.</p>
-    #[doc(hidden)]
     pub prefix_list_associations: ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedResourceType {
     /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl SupportedResourceType {

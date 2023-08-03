@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCollectionOutput {
     /// <p>Details about each collection.</p>
-    #[doc(hidden)]
     pub collection_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionDetail>>,
     /// <p>Error information for the request.</p>
-    #[doc(hidden)]
     pub collection_error_details: ::std::option::Option<::std::vec::Vec<crate::types::CollectionErrorDetail>>,
     _request_id: Option<String>,
 }

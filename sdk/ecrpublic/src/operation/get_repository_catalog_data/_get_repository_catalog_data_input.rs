@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryCatalogDataInput {
     /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to retrieve the catalog metadata for.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRepositoryCatalogDataInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaConnectorProvisioningConfig {
     /// <p>Lambda ARN of the connector being registered.</p>
-    #[doc(hidden)]
     pub lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaConnectorProvisioningConfig {

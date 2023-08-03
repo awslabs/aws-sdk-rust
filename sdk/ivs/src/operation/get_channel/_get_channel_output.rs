@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceActionDetail {
     /// <p>Summary information about the self-service action.</p>
-    #[doc(hidden)]
     pub service_action_summary: ::std::option::Option<crate::types::ServiceActionSummary>,
     /// <p>A map that defines the self-service action.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
 }
 impl ServiceActionDetail {

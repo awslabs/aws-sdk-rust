@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentOutput {
     /// <p>The detailed data of the requested deployment.</p>
-    #[doc(hidden)]
     pub deployment: ::std::option::Option<crate::types::Deployment>,
     _request_id: Option<String>,
 }

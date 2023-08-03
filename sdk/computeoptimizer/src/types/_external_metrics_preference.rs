@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalMetricsPreference {
     /// <p> Contains the source options for external metrics preferences. </p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ExternalMetricsSource>,
 }
 impl ExternalMetricsPreference {

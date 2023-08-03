@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The ARN of the KMS key used to encrypt the enrollment data in a voice profile domain. Asymmetric customer managed keys are not supported.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {

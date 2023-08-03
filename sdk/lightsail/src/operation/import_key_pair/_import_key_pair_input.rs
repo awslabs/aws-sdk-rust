@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportKeyPairInput {
     /// <p>The name of the key pair for which you want to import the public key.</p>
-    #[doc(hidden)]
     pub key_pair_name: ::std::option::Option<::std::string::String>,
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    #[doc(hidden)]
     pub public_key_base64: ::std::option::Option<::std::string::String>,
 }
 impl ImportKeyPairInput {

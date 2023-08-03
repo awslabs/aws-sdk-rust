@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashPackage {
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    #[doc(hidden)]
     pub ad_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AdTriggersElement>>,
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
-    #[doc(hidden)]
     pub ads_on_delivery_restrictions: ::std::option::Option<crate::types::AdsOnDeliveryRestrictions>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::DashEncryption>,
     /// When enabled, an I-Frame only stream will be included in the output.
-    #[doc(hidden)]
     pub include_iframe_only_stream: ::std::option::Option<bool>,
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-    #[doc(hidden)]
     pub manifest_layout: ::std::option::Option<crate::types::ManifestLayout>,
     /// Time window (in seconds) contained in each manifest.
-    #[doc(hidden)]
     pub manifest_window_seconds: ::std::option::Option<i32>,
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
-    #[doc(hidden)]
     pub min_buffer_time_seconds: ::std::option::Option<i32>,
     /// Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).
-    #[doc(hidden)]
     pub min_update_period_seconds: ::std::option::Option<i32>,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
-    #[doc(hidden)]
     pub period_triggers: ::std::option::Option<::std::vec::Vec<crate::types::PeriodTriggersElement>>,
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
-    #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::Profile>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
-    #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    #[doc(hidden)]
     pub segment_template_format: ::std::option::Option<crate::types::SegmentTemplateFormat>,
     /// A StreamSelection configuration.
-    #[doc(hidden)]
     pub stream_selection: ::std::option::Option<crate::types::StreamSelection>,
     /// Duration (in seconds) to delay live content before presentation.
-    #[doc(hidden)]
     pub suggested_presentation_delay_seconds: ::std::option::Option<i32>,
     /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
-    #[doc(hidden)]
     pub utc_timing: ::std::option::Option<crate::types::UtcTiming>,
     /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO, HTTP-HEAD or HTTP-XSDATE
-    #[doc(hidden)]
     pub utc_timing_uri: ::std::option::Option<::std::string::String>,
 }
 impl DashPackage {

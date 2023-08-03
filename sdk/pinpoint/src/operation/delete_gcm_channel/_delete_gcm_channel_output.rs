@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGcmChannelOutput {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    #[doc(hidden)]
     pub gcm_channel_response: ::std::option::Option<crate::types::GcmChannelResponse>,
     _request_id: Option<String>,
 }

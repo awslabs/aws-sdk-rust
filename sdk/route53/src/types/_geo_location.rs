@@ -16,15 +16,12 @@ pub struct GeoLocation {
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
-    #[doc(hidden)]
     pub continent_code: ::std::option::Option<::std::string::String>,
     /// <p>For geolocation resource record sets, the two-letter code for a country.</p>
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
     /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
-    #[doc(hidden)]
     pub subdivision_code: ::std::option::Option<::std::string::String>,
 }
 impl GeoLocation {

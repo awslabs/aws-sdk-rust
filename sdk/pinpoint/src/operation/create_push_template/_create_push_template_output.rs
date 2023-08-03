@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePushTemplateOutput {
     /// <p>Provides information about a request to create a message template.</p>
-    #[doc(hidden)]
     pub create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,
 }

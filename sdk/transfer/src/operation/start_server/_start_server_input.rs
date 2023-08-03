@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartServerInput {
     /// <p>A system-assigned unique identifier for a server that you start.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
 }
 impl StartServerInput {

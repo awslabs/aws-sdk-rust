@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Record {
     /// The key for the record.
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// The value for the record.
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// The server sync count for this record.
-    #[doc(hidden)]
     pub sync_count: ::std::option::Option<i64>,
     /// The date on which the record was last modified.
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The user/device that made the last change to this record.
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// The last modified date of the client device.
-    #[doc(hidden)]
     pub device_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Record {

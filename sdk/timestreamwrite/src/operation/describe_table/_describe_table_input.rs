@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableInput {
     /// <p>The name of the Timestream database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTableInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomLineItemInput {
     /// <p> The ARN of the custom line item to be deleted. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    #[doc(hidden)]
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
 impl DeleteCustomLineItemInput {

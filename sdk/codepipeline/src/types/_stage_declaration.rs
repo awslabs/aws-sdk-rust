@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageDeclaration {
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub blockers: ::std::option::Option<::std::vec::Vec<crate::types::BlockerDeclaration>>,
     /// <p>The actions included in a stage.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionDeclaration>>,
 }
 impl StageDeclaration {

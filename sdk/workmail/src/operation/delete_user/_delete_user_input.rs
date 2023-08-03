@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The organization that contains the user to be deleted.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user to be deleted.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserInput {

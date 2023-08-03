@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
-    #[doc(hidden)]
     pub ledger_name: ::std::option::Option<::std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJournalKinesisStreamInput {

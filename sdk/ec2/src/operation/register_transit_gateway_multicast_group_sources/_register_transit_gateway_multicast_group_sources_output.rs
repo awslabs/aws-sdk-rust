@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTransitGatewayMulticastGroupSourcesOutput {
     /// <p>Information about the transit gateway multicast group sources.</p>
-    #[doc(hidden)]
     pub registered_multicast_group_sources: ::std::option::Option<crate::types::TransitGatewayMulticastRegisteredGroupSources>,
     _request_id: Option<String>,
 }

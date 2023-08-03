@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorProfileProperties {
     /// <p> The connector-specific properties required by Amplitude. </p>
-    #[doc(hidden)]
     pub amplitude: ::std::option::Option<crate::types::AmplitudeConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Datadog. </p>
-    #[doc(hidden)]
     pub datadog: ::std::option::Option<crate::types::DatadogConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Dynatrace. </p>
-    #[doc(hidden)]
     pub dynatrace: ::std::option::Option<crate::types::DynatraceConnectorProfileProperties>,
     /// <p> The connector-specific properties required Google Analytics. </p>
-    #[doc(hidden)]
     pub google_analytics: ::std::option::Option<crate::types::GoogleAnalyticsConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Amazon Honeycode. </p>
-    #[doc(hidden)]
     pub honeycode: ::std::option::Option<crate::types::HoneycodeConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Infor Nexus. </p>
-    #[doc(hidden)]
     pub infor_nexus: ::std::option::Option<crate::types::InforNexusConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Marketo. </p>
-    #[doc(hidden)]
     pub marketo: ::std::option::Option<crate::types::MarketoConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Amazon Redshift. </p>
-    #[doc(hidden)]
     pub redshift: ::std::option::Option<crate::types::RedshiftConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Salesforce. </p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceConnectorProfileProperties>,
     /// <p> The connector-specific properties required by serviceNow. </p>
-    #[doc(hidden)]
     pub service_now: ::std::option::Option<crate::types::ServiceNowConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Singular. </p>
-    #[doc(hidden)]
     pub singular: ::std::option::Option<crate::types::SingularConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Slack. </p>
-    #[doc(hidden)]
     pub slack: ::std::option::Option<crate::types::SlackConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Snowflake. </p>
-    #[doc(hidden)]
     pub snowflake: ::std::option::Option<crate::types::SnowflakeConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Trend Micro. </p>
-    #[doc(hidden)]
     pub trendmicro: ::std::option::Option<crate::types::TrendmicroConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Veeva. </p>
-    #[doc(hidden)]
     pub veeva: ::std::option::Option<crate::types::VeevaConnectorProfileProperties>,
     /// <p> The connector-specific properties required by Zendesk. </p>
-    #[doc(hidden)]
     pub zendesk: ::std::option::Option<crate::types::ZendeskConnectorProfileProperties>,
     /// <p> The connector-specific profile properties required when using SAPOData. </p>
-    #[doc(hidden)]
     pub sapo_data: ::std::option::Option<crate::types::SapoDataConnectorProfileProperties>,
     /// <p>The properties required by the custom connector.</p>
-    #[doc(hidden)]
     pub custom_connector: ::std::option::Option<crate::types::CustomConnectorProfileProperties>,
     /// <p>The connector-specific properties required by Salesforce Pardot.</p>
-    #[doc(hidden)]
     pub pardot: ::std::option::Option<crate::types::PardotConnectorProfileProperties>,
 }
 impl ConnectorProfileProperties {

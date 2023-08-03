@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterDeviceInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for this identity.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The push token.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
 }
 impl RegisterDeviceInput {

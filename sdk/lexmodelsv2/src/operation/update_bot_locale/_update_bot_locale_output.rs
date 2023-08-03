@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBotLocaleOutput {
     /// <p>The identifier of the bot that contains the updated locale.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that contains the updated locale.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The language and locale of the updated bot locale.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated locale name for the locale.</p>
-    #[doc(hidden)]
     pub locale_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the locale.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
-    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
-    #[doc(hidden)]
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
-    #[doc(hidden)]
     pub bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A timestamp of the date and time that the locale was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the locale was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    #[doc(hidden)]
     pub recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

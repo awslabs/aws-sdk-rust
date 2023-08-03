@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
     /// <p>Application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Application ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Application name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Application description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Application archival status.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Application aggregated status.</p>
-    #[doc(hidden)]
     pub application_aggregated_status: ::std::option::Option<crate::types::ApplicationAggregatedStatus>,
     /// <p>Application creation dateTime.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Application last modified dateTime.</p>
-    #[doc(hidden)]
     pub last_modified_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Application tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Application wave ID.</p>
-    #[doc(hidden)]
     pub wave_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

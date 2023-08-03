@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobStepsOutput {
     /// <p>A list of all subtask details in Inference Recommender.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
     /// <p>A token that you can specify in your next request to return more results from the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

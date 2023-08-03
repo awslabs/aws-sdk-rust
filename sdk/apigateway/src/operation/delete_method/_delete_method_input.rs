@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The Resource identifier for the Method resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP verb of the Method resource.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMethodInput {

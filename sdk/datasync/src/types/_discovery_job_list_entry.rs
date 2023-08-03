@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoveryJobListEntry {
     /// <p>The Amazon Resource Name (ARN) of a discovery job.</p>
-    #[doc(hidden)]
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DiscoveryJobStatus>,
 }
 impl DiscoveryJobListEntry {

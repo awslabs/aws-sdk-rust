@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelMessageMoveTaskInput {
     /// <p>An identifier associated with a message movement task.</p>
-    #[doc(hidden)]
     pub task_handle: ::std::option::Option<::std::string::String>,
 }
 impl CancelMessageMoveTaskInput {

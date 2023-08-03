@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSimulationApplicationInput {
     /// <p>The name of the simulation application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the simulation application.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
     /// <p>The simulation software suite used by the simulation application.</p>
-    #[doc(hidden)]
     pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
     /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
-    #[doc(hidden)]
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
-    #[doc(hidden)]
     pub rendering_engine: ::std::option::Option<crate::types::RenderingEngine>,
     /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
 }
 impl CreateSimulationApplicationInput {

@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    #[doc(hidden)]
     pub public_access_block: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
 }
 impl CreateMultiRegionAccessPointInput {

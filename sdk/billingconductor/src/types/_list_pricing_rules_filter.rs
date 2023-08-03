@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingRulesFilter {
     /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
-    #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListPricingRulesFilter {

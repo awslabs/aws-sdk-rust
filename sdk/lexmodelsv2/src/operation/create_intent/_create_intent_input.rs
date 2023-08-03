@@ -4,58 +4,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntentInput {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
-    #[doc(hidden)]
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
     /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
     /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
-    #[doc(hidden)]
     pub dialog_code_hook: ::std::option::Option<crate::types::DialogCodeHookSettings>,
     /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
     /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
-    #[doc(hidden)]
     pub fulfillment_code_hook: ::std::option::Option<crate::types::FulfillmentCodeHookSettings>,
     /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
-    #[doc(hidden)]
     pub intent_confirmation_setting: ::std::option::Option<crate::types::IntentConfirmationSetting>,
     /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
-    #[doc(hidden)]
     pub intent_closing_setting: ::std::option::Option<crate::types::IntentClosingSetting>,
     /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
     /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
     /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
     /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
-    #[doc(hidden)]
     pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
     /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
-    #[doc(hidden)]
     pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
-    #[doc(hidden)]
     pub kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
     /// <p>The identifier of the bot associated with this intent.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with this intent.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
-    #[doc(hidden)]
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
 }
 impl CreateIntentInput {

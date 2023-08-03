@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoversBodyPart {
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
-    #[doc(hidden)]
     pub value: bool,
 }
 impl CoversBodyPart {

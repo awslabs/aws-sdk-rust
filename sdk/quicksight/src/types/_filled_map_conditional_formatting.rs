@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapConditionalFormatting {
     /// <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
-    #[doc(hidden)]
     pub conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>>,
 }
 impl FilledMapConditionalFormatting {

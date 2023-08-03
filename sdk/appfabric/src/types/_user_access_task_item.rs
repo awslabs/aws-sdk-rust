@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserAccessTaskItem {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub app: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application tenant.</p>
-    #[doc(hidden)]
     pub tenant_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Error from the task, if any.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::TaskError>,
 }
 impl UserAccessTaskItem {

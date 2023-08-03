@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeFromTemplateJob {
     /// <p>The job's ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The job's template type.</p>
-    #[doc(hidden)]
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The job's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NodeFromTemplateJobStatus>,
     /// <p>The job's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>When the job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The node's name.</p>
-    #[doc(hidden)]
     pub node_name: ::std::option::Option<::std::string::String>,
 }
 impl NodeFromTemplateJob {

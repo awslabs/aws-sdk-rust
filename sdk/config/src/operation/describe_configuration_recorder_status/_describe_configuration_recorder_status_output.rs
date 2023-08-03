@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatusOutput {
     /// <p>A list that contains status of the specified recorders.</p>
-    #[doc(hidden)]
     pub configuration_recorders_status: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
     _request_id: Option<String>,
 }

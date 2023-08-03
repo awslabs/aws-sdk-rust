@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskTemplateDefaultFieldValue {
     /// <p>Identifier of a field. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
     /// <p>Default value for the field.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl TaskTemplateDefaultFieldValue {

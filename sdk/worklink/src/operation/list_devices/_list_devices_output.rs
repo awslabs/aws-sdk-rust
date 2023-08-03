@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesOutput {
     /// <p>Information about the devices.</p>
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

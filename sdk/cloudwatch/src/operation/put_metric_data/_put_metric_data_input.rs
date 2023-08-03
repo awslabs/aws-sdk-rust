@@ -5,10 +5,8 @@
 pub struct PutMetricDataInput {
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    #[doc(hidden)]
     pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl PutMetricDataInput {

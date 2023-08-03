@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPathSort {
     /// <p>Determines the sort direction.</p>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<crate::types::SortDirection>,
     /// <p>The list of data paths that need to be sorted.</p>
-    #[doc(hidden)]
     pub sort_paths: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
 }
 impl DataPathSort {

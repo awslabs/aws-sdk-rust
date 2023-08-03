@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Connection {
     /// <p>The ARN of the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN string that uniquely identifies the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The connection status. This parameter can return one of the following values:</p>
     /// <ul>
@@ -17,16 +15,12 @@ pub struct Connection {
     /// <li> <p> <code>"failed"</code> </p> </li>
     /// <li> <p> <code>"deleting"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The error message when the connection last failed.</p>
-    #[doc(hidden)]
     pub last_failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub replication_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl Connection {

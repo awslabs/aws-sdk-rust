@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ToolchainSource {
     /// <p>The Amazon S3 bucket where the toolchain template file provided with the project request is stored.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3Location>,
 }
 impl ToolchainSource {

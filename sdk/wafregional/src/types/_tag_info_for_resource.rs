@@ -10,10 +10,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagInfoForResource {
     /// <p></p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagInfoForResource {

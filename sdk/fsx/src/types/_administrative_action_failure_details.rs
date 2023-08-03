@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdministrativeActionFailureDetails {
     /// <p>Error message providing details about the failed administrative action.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl AdministrativeActionFailureDetails {

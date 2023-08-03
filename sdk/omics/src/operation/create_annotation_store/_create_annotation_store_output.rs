@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnnotationStoreOutput {
     /// <p>The store's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
-    #[doc(hidden)]
     pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>The annotation file format of the store.</p>
-    #[doc(hidden)]
     pub store_format: ::std::option::Option<crate::types::StoreFormat>,
     /// <p>The store's file parsing options.</p>
-    #[doc(hidden)]
     pub store_options: ::std::option::Option<crate::types::StoreOptions>,
     /// <p>The store's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StoreStatus>,
     /// <p>The store's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>When the store was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

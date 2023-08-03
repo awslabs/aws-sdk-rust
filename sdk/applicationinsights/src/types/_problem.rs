@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Problem {
     /// <p>The ID of the problem.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the problem.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A detailed analysis of the problem using machine learning.</p>
-    #[doc(hidden)]
     pub insights: ::std::option::Option<::std::string::String>,
     /// <p>The status of the problem.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The resource affected by the problem.</p>
-    #[doc(hidden)]
     pub affected_resource: ::std::option::Option<::std::string::String>,
     /// <p>The time when the problem started, in epoch seconds.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A measure of the level of impact of the problem.</p>
-    #[doc(hidden)]
     pub severity_level: ::std::option::Option<crate::types::SeverityLevel>,
     /// <p>The name of the resource group affected by the problem.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Feedback provided by the user about the problem.</p>
-    #[doc(hidden)]
     pub feedback: ::std::option::Option<::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>>,
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
-    #[doc(hidden)]
     pub recurring_count: ::std::option::Option<i64>,
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
-    #[doc(hidden)]
     pub last_recurrence_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Problem {

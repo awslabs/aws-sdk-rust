@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirDatastoreInput {
     /// <p>The AWS-generated data store ID.</p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirDatastoreInput {

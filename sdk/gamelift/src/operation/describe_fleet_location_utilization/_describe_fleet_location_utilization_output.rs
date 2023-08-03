@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationUtilizationOutput {
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
-    #[doc(hidden)]
     pub fleet_utilization: ::std::option::Option<crate::types::FleetUtilization>,
     _request_id: Option<String>,
 }

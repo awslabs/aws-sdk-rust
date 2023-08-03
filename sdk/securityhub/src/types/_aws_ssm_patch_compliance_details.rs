@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSsmPatchComplianceDetails {
     /// <p>Information about the status of a patch.</p>
-    #[doc(hidden)]
     pub patch: ::std::option::Option<crate::types::AwsSsmPatch>,
 }
 impl AwsSsmPatchComplianceDetails {

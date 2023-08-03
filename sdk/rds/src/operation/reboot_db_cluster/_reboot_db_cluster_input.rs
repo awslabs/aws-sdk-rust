@@ -8,7 +8,6 @@ pub struct RebootDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RebootDbClusterInput {

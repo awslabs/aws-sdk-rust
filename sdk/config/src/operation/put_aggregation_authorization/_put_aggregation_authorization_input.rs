@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAggregationAuthorizationInput {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-    #[doc(hidden)]
     pub authorized_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The region authorized to collect aggregated data.</p>
-    #[doc(hidden)]
     pub authorized_aws_region: ::std::option::Option<::std::string::String>,
     /// <p>An array of tag object.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutAggregationAuthorizationInput {

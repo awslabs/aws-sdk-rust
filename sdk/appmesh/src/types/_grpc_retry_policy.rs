@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
-    #[doc(hidden)]
     pub per_retry_timeout: ::std::option::Option<crate::types::Duration>,
     /// <p>The maximum number of retry attempts.</p>
-    #[doc(hidden)]
     pub max_retries: ::std::option::Option<i64>,
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
@@ -17,13 +15,10 @@ pub struct GrpcRetryPolicy {
     /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub http_retry_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    #[doc(hidden)]
     pub tcp_retry_events: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
     /// <p>Specify at least one of the valid values.</p>
-    #[doc(hidden)]
     pub grpc_retry_events: ::std::option::Option<::std::vec::Vec<crate::types::GrpcRetryPolicyEvent>>,
 }
 impl GrpcRetryPolicy {

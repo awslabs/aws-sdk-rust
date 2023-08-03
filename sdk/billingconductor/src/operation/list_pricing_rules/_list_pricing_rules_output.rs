@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingRulesOutput {
     /// <p> The billing period for which the described pricing rules are applicable. </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p> A list containing the described pricing rules. </p>
-    #[doc(hidden)]
     pub pricing_rules: ::std::option::Option<::std::vec::Vec<crate::types::PricingRuleListElement>>,
     /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

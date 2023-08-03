@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlAuthentication {
     /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SamlConfigurationStatus>,
     /// <p>A structure containing details about how this workspace works with SAML. </p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::SamlConfiguration>,
 }
 impl SamlAuthentication {

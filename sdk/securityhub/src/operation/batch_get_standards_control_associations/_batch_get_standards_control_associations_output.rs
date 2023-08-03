@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsOutput {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
-    #[doc(hidden)]
     pub standards_control_association_details: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>,
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
-    #[doc(hidden)]
     pub unprocessed_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>,
     _request_id: Option<String>,
 }

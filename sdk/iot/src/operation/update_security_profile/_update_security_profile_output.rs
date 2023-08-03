@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityProfileOutput {
     /// <p>The name of the security profile that was updated.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the security profile that was updated.</p>
-    #[doc(hidden)]
     pub security_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the security profile.</p>
-    #[doc(hidden)]
     pub security_profile_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    #[doc(hidden)]
     pub behaviors: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
-    #[doc(hidden)]
     pub alert_targets: ::std::option::Option<::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>,
     /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    #[doc(hidden)]
     pub additional_metrics_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    #[doc(hidden)]
     pub additional_metrics_to_retain_v2: ::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>>,
     /// <p>The updated version of the security profile.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The time the security profile was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the security profile was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

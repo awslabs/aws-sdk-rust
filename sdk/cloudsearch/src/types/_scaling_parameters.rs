@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingParameters {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
-    #[doc(hidden)]
     pub desired_instance_type: ::std::option::Option<crate::types::PartitionInstanceType>,
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
-    #[doc(hidden)]
     pub desired_replication_count: i32,
     /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
-    #[doc(hidden)]
     pub desired_partition_count: i32,
 }
 impl ScalingParameters {

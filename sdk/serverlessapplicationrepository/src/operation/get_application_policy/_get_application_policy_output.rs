@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
-    #[doc(hidden)]
     pub statements: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
     _request_id: Option<String>,
 }

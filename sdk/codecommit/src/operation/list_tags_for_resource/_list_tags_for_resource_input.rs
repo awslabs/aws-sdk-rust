@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndpointConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
-    #[doc(hidden)]
     pub endpoint_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

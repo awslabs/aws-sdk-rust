@@ -10,7 +10,6 @@ pub struct DescribePermissionsOutput {
     /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
     /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     _request_id: Option<String>,
 }

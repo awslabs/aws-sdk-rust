@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageClassAnalysisDataExport {
     /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
-    #[doc(hidden)]
     pub output_schema_version: ::std::option::Option<crate::types::StorageClassAnalysisSchemaVersion>,
     /// <p>The place to store the data for an analysis.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::AnalyticsExportDestination>,
 }
 impl StorageClassAnalysisDataExport {

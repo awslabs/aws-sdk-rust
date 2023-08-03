@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The notification that you want to create.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-    #[doc(hidden)]
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
 }
 impl CreateNotificationInput {

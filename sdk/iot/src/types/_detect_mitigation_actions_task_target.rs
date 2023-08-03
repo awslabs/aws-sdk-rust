@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskTarget {
     /// <p> The unique identifiers of the violations. </p>
-    #[doc(hidden)]
     pub violation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The name of the security profile. </p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the behavior. </p>
-    #[doc(hidden)]
     pub behavior_name: ::std::option::Option<::std::string::String>,
 }
 impl DetectMitigationActionsTaskTarget {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUploadInput {
     /// <p>The ARN of the project for the upload.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
@@ -47,10 +45,8 @@ pub struct CreateUploadInput {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UploadType>,
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateUploadInput {

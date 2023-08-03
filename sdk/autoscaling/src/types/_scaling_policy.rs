@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the scaling policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the following policy types: </p>
     /// <ul>
@@ -21,43 +18,30 @@ pub struct ScalingPolicy {
     /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    #[doc(hidden)]
     pub adjustment_type: ::std::option::Option<::std::string::String>,
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
-    #[doc(hidden)]
     pub min_adjustment_step: ::std::option::Option<i32>,
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
-    #[doc(hidden)]
     pub min_adjustment_magnitude: ::std::option::Option<i32>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
-    #[doc(hidden)]
     pub scaling_adjustment: ::std::option::Option<i32>,
     /// <p>The duration of the policy's cooldown period, in seconds.</p>
-    #[doc(hidden)]
     pub cooldown: ::std::option::Option<i32>,
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
-    #[doc(hidden)]
     pub step_adjustments: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
-    #[doc(hidden)]
     pub metric_aggregation_type: ::std::option::Option<::std::string::String>,
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p>
-    #[doc(hidden)]
     pub estimated_instance_warmup: ::std::option::Option<i32>,
     /// <p>The CloudWatch alarms related to the policy.</p>
-    #[doc(hidden)]
     pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     /// <p>A target tracking scaling policy.</p>
-    #[doc(hidden)]
     pub target_tracking_configuration: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A predictive scaling policy.</p>
-    #[doc(hidden)]
     pub predictive_scaling_configuration: ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
 }
 impl ScalingPolicy {

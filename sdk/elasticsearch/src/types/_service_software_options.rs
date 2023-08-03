@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSoftwareOptions {
     /// <p>The current service software version that is present on the domain.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>The new service software version if one is available.</p>
-    #[doc(hidden)]
     pub new_version: ::std::option::Option<::std::string::String>,
     /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>
-    #[doc(hidden)]
     pub update_available: ::std::option::Option<bool>,
     /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>
-    #[doc(hidden)]
     pub cancellable: ::std::option::Option<bool>,
     /// <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The description of the <code>UpdateStatus</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>
-    #[doc(hidden)]
     pub automated_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
-    #[doc(hidden)]
     pub optional_deployment: ::std::option::Option<bool>,
 }
 impl ServiceSoftwareOptions {

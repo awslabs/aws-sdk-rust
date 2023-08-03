@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineVersionInfo {
     /// <p>The engine version</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The patched engine version</p>
-    #[doc(hidden)]
     pub engine_patch_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
-    #[doc(hidden)]
     pub parameter_group_family: ::std::option::Option<::std::string::String>,
 }
 impl EngineVersionInfo {

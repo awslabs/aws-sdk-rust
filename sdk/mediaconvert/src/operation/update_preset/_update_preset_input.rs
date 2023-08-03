@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePresetInput {
     /// The new category for the preset, if you are changing it.
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// The new description for the preset, if you are changing it.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The name of the preset you are modifying.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Settings for preset
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::PresetSettings>,
 }
 impl UpdatePresetInput {

@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MongoDbTarget {
     /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
-    #[doc(hidden)]
     pub scan_all: ::std::option::Option<bool>,
 }
 impl MongoDbTarget {

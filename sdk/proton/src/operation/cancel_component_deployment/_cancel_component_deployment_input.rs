@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelComponentDeploymentInput {
     /// <p>The name of the component with the deployment to cancel.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
 }
 impl CancelComponentDeploymentInput {

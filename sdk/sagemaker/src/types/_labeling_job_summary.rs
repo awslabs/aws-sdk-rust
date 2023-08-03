@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobSummary {
     /// <p>The name of the labeling job.</p>
-    #[doc(hidden)]
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was created.</p>
-    #[doc(hidden)]
     pub labeling_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the job was created (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the job was last modified (timestamp).</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the labeling job. </p>
-    #[doc(hidden)]
     pub labeling_job_status: ::std::option::Option<crate::types::LabelingJobStatus>,
     /// <p>Counts showing the progress of the labeling job.</p>
-    #[doc(hidden)]
     pub label_counters: ::std::option::Option<crate::types::LabelCounters>,
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to the job.</p>
-    #[doc(hidden)]
     pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run before each data object is sent to a worker.</p>
-    #[doc(hidden)]
     pub pre_human_task_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers into a label for a data object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation Consolidation</a>.</p>
-    #[doc(hidden)]
     pub annotation_consolidation_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this field contains a description of the error.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The location of the output produced by the labeling job.</p>
-    #[doc(hidden)]
     pub labeling_job_output: ::std::option::Option<crate::types::LabelingJobOutput>,
     /// <p>Input configuration for the labeling job.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::LabelingJobInputConfig>,
 }
 impl LabelingJobSummary {

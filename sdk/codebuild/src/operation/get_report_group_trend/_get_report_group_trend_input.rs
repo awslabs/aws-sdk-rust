@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReportGroupTrendInput {
     /// <p>The ARN of the report group that contains the reports to analyze.</p>
-    #[doc(hidden)]
     pub report_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
     /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
-    #[doc(hidden)]
     pub num_of_reports: ::std::option::Option<i32>,
     /// <p>The test report value to accumulate. This must be one of the following values:</p>
     /// <dl>
@@ -83,7 +81,6 @@ pub struct GetReportGroupTrendInput {
     /// </dl>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub trend_field: ::std::option::Option<crate::types::ReportGroupTrendFieldType>,
 }
 impl GetReportGroupTrendInput {

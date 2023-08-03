@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TensorBoardOutputConfig {
     /// <p>Path to local storage location for tensorBoard output. Defaults to <code>/opt/ml/output/tensorboard</code>.</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Path to Amazon S3 storage location for TensorBoard output.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl TensorBoardOutputConfig {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVodSourcesInput {
     /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source location associated with this VOD Source list.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl ListVodSourcesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionExecutionOutput {
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
-    #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>>,
     /// <p>Execution result information listed in the output details for an action execution.</p>
-    #[doc(hidden)]
     pub execution_result: ::std::option::Option<crate::types::ActionExecutionResult>,
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-    #[doc(hidden)]
     pub output_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActionExecutionOutput {

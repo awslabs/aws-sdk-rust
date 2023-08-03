@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityOutput {
     /// <p>The origin access identity's information.</p>
-    #[doc(hidden)]
     pub cloud_front_origin_access_identity: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentity>,
     /// <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

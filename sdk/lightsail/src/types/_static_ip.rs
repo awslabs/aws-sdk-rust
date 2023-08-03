@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticIp {
     /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The region and Availability Zone where the static IP was created.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The resource type (usually <code>StaticIp</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The static IP address.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
-    #[doc(hidden)]
     pub attached_to: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the static IP is attached.</p>
-    #[doc(hidden)]
     pub is_attached: ::std::option::Option<bool>,
 }
 impl StaticIp {

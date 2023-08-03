@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalousLogGroup {
     /// <p> The name of the CloudWatch log group. </p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
-    #[doc(hidden)]
     pub impact_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time the anomalous log events stopped. </p>
-    #[doc(hidden)]
     pub impact_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The number of log lines that were scanned for anomalous log events. </p>
-    #[doc(hidden)]
     pub number_of_log_lines_scanned: i32,
     /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
-    #[doc(hidden)]
     pub log_anomaly_showcases: ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyShowcase>>,
 }
 impl AnomalousLogGroup {

@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualInterfaceTestHistoryInput {
     /// <p>The ID of the virtual interface failover test.</p>
-    #[doc(hidden)]
     pub test_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual interface that was tested.</p>
-    #[doc(hidden)]
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
-    #[doc(hidden)]
     pub bgp_peers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the virtual interface failover test.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListVirtualInterfaceTestHistoryInput {

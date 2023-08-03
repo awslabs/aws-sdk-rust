@@ -8,278 +8,188 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
-    #[doc(hidden)]
     pub aws_auto_scaling_auto_scaling_group: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>,
     /// <p>Details for an CodeBuild project.</p>
-    #[doc(hidden)]
     pub aws_code_build_project: ::std::option::Option<crate::types::AwsCodeBuildProjectDetails>,
     /// <p>Details about a CloudFront distribution.</p>
-    #[doc(hidden)]
     pub aws_cloud_front_distribution: ::std::option::Option<crate::types::AwsCloudFrontDistributionDetails>,
     /// <p>Details about an EC2 instance related to a finding.</p>
-    #[doc(hidden)]
     pub aws_ec2_instance: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     /// <p>Details for an EC2 network interface.</p>
-    #[doc(hidden)]
     pub aws_ec2_network_interface: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceDetails>,
     /// <p>Details for an EC2 security group.</p>
-    #[doc(hidden)]
     pub aws_ec2_security_group: ::std::option::Option<crate::types::AwsEc2SecurityGroupDetails>,
     /// <p>Details for an Amazon EC2 volume.</p>
-    #[doc(hidden)]
     pub aws_ec2_volume: ::std::option::Option<crate::types::AwsEc2VolumeDetails>,
     /// <p>Details for an Amazon EC2 VPC.</p>
-    #[doc(hidden)]
     pub aws_ec2_vpc: ::std::option::Option<crate::types::AwsEc2VpcDetails>,
     /// <p>Details about an Elastic IP address.</p>
-    #[doc(hidden)]
     pub aws_ec2_eip: ::std::option::Option<crate::types::AwsEc2EipDetails>,
     /// <p>Details about a subnet in Amazon EC2.</p>
-    #[doc(hidden)]
     pub aws_ec2_subnet: ::std::option::Option<crate::types::AwsEc2SubnetDetails>,
     /// <p>Details about an EC2 network access control list (ACL).</p>
-    #[doc(hidden)]
     pub aws_ec2_network_acl: ::std::option::Option<crate::types::AwsEc2NetworkAclDetails>,
     /// <p>Details about a load balancer.</p>
-    #[doc(hidden)]
     pub aws_elbv2_load_balancer: ::std::option::Option<crate::types::AwsElbv2LoadBalancerDetails>,
     /// <p>Details about an Elastic Beanstalk environment.</p>
-    #[doc(hidden)]
     pub aws_elastic_beanstalk_environment: ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentDetails>,
     /// <p>Details for an Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub aws_elasticsearch_domain: ::std::option::Option<crate::types::AwsElasticsearchDomainDetails>,
     /// <p>Details about an S3 bucket related to a finding.</p>
-    #[doc(hidden)]
     pub aws_s3_bucket: ::std::option::Option<crate::types::AwsS3BucketDetails>,
     /// <p>Details about the Amazon S3 Public Access Block configuration for an account.</p>
-    #[doc(hidden)]
     pub aws_s3_account_public_access_block: ::std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>,
     /// <p>Details about an S3 object related to a finding.</p>
-    #[doc(hidden)]
     pub aws_s3_object: ::std::option::Option<crate::types::AwsS3ObjectDetails>,
     /// <p>Details about a Secrets Manager secret.</p>
-    #[doc(hidden)]
     pub aws_secrets_manager_secret: ::std::option::Option<crate::types::AwsSecretsManagerSecretDetails>,
     /// <p>Details about an IAM access key related to a finding.</p>
-    #[doc(hidden)]
     pub aws_iam_access_key: ::std::option::Option<crate::types::AwsIamAccessKeyDetails>,
     /// <p>Details about an IAM user.</p>
-    #[doc(hidden)]
     pub aws_iam_user: ::std::option::Option<crate::types::AwsIamUserDetails>,
     /// <p>Details about an IAM permissions policy.</p>
-    #[doc(hidden)]
     pub aws_iam_policy: ::std::option::Option<crate::types::AwsIamPolicyDetails>,
     /// <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
-    #[doc(hidden)]
     pub aws_api_gateway_v2_stage: ::std::option::Option<crate::types::AwsApiGatewayV2StageDetails>,
     /// <p>Provides information about a version 2 API in Amazon API Gateway.</p>
-    #[doc(hidden)]
     pub aws_api_gateway_v2_api: ::std::option::Option<crate::types::AwsApiGatewayV2ApiDetails>,
     /// <p>Details about a DynamoDB table.</p>
-    #[doc(hidden)]
     pub aws_dynamo_db_table: ::std::option::Option<crate::types::AwsDynamoDbTableDetails>,
     /// <p>Provides information about a version 1 Amazon API Gateway stage.</p>
-    #[doc(hidden)]
     pub aws_api_gateway_stage: ::std::option::Option<crate::types::AwsApiGatewayStageDetails>,
     /// <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
-    #[doc(hidden)]
     pub aws_api_gateway_rest_api: ::std::option::Option<crate::types::AwsApiGatewayRestApiDetails>,
     /// <p>Provides details about a CloudTrail trail.</p>
-    #[doc(hidden)]
     pub aws_cloud_trail_trail: ::std::option::Option<crate::types::AwsCloudTrailTrailDetails>,
     /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
-    #[doc(hidden)]
     pub aws_ssm_patch_compliance: ::std::option::Option<crate::types::AwsSsmPatchComplianceDetails>,
     /// <p>Provides details about an Certificate Manager certificate.</p>
-    #[doc(hidden)]
     pub aws_certificate_manager_certificate: ::std::option::Option<crate::types::AwsCertificateManagerCertificateDetails>,
     /// <p>Contains details about an Amazon Redshift cluster.</p>
-    #[doc(hidden)]
     pub aws_redshift_cluster: ::std::option::Option<crate::types::AwsRedshiftClusterDetails>,
     /// <p>Contains details about a Classic Load Balancer.</p>
-    #[doc(hidden)]
     pub aws_elb_load_balancer: ::std::option::Option<crate::types::AwsElbLoadBalancerDetails>,
     /// <p>Contains details about an IAM group.</p>
-    #[doc(hidden)]
     pub aws_iam_group: ::std::option::Option<crate::types::AwsIamGroupDetails>,
     /// <p>Details about an IAM role.</p>
-    #[doc(hidden)]
     pub aws_iam_role: ::std::option::Option<crate::types::AwsIamRoleDetails>,
     /// <p>Details about an KMS key.</p>
-    #[doc(hidden)]
     pub aws_kms_key: ::std::option::Option<crate::types::AwsKmsKeyDetails>,
     /// <p>Details about a Lambda function.</p>
-    #[doc(hidden)]
     pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     /// <p>Details for a Lambda layer version.</p>
-    #[doc(hidden)]
     pub aws_lambda_layer_version: ::std::option::Option<crate::types::AwsLambdaLayerVersionDetails>,
     /// <p>Details about an Amazon RDS database instance.</p>
-    #[doc(hidden)]
     pub aws_rds_db_instance: ::std::option::Option<crate::types::AwsRdsDbInstanceDetails>,
     /// <p>Details about an SNS topic.</p>
-    #[doc(hidden)]
     pub aws_sns_topic: ::std::option::Option<crate::types::AwsSnsTopicDetails>,
     /// <p>Details about an SQS queue.</p>
-    #[doc(hidden)]
     pub aws_sqs_queue: ::std::option::Option<crate::types::AwsSqsQueueDetails>,
     /// <p>Details for an WAF web ACL.</p>
-    #[doc(hidden)]
     pub aws_waf_web_acl: ::std::option::Option<crate::types::AwsWafWebAclDetails>,
     /// <p>Details about an Amazon RDS database snapshot.</p>
-    #[doc(hidden)]
     pub aws_rds_db_snapshot: ::std::option::Option<crate::types::AwsRdsDbSnapshotDetails>,
     /// <p>Details about an Amazon RDS database cluster snapshot.</p>
-    #[doc(hidden)]
     pub aws_rds_db_cluster_snapshot: ::std::option::Option<crate::types::AwsRdsDbClusterSnapshotDetails>,
     /// <p>Details about an Amazon RDS database cluster.</p>
-    #[doc(hidden)]
     pub aws_rds_db_cluster: ::std::option::Option<crate::types::AwsRdsDbClusterDetails>,
     /// <p>Details about an Amazon ECS cluster.</p>
-    #[doc(hidden)]
     pub aws_ecs_cluster: ::std::option::Option<crate::types::AwsEcsClusterDetails>,
     /// <p>Provides information about a Docker container that's part of a task. </p>
-    #[doc(hidden)]
     pub aws_ecs_container: ::std::option::Option<crate::types::AwsEcsContainerDetails>,
     /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
-    #[doc(hidden)]
     pub aws_ecs_task_definition: ::std::option::Option<crate::types::AwsEcsTaskDefinitionDetails>,
     /// <p>Details about a container resource related to a finding.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::ContainerDetails>,
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
     /// <li> <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p> </li>
     /// <li> <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub other: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Details about an RDS event notification subscription.</p>
-    #[doc(hidden)]
     pub aws_rds_event_subscription: ::std::option::Option<crate::types::AwsRdsEventSubscriptionDetails>,
     /// <p>Details about a service within an ECS cluster.</p>
-    #[doc(hidden)]
     pub aws_ecs_service: ::std::option::Option<crate::types::AwsEcsServiceDetails>,
     /// <p>Provides details about a launch configuration.</p>
-    #[doc(hidden)]
     pub aws_auto_scaling_launch_configuration: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>,
     /// <p>Details about an Amazon EC2 VPN connection.</p>
-    #[doc(hidden)]
     pub aws_ec2_vpn_connection: ::std::option::Option<crate::types::AwsEc2VpnConnectionDetails>,
     /// <p>Information about an Amazon ECR image.</p>
-    #[doc(hidden)]
     pub aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     /// <p>Details about an Amazon OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub aws_open_search_service_domain: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainDetails>,
     /// <p>Details about the service configuration for a VPC endpoint service.</p>
-    #[doc(hidden)]
     pub aws_ec2_vpc_endpoint_service: ::std::option::Option<crate::types::AwsEc2VpcEndpointServiceDetails>,
     /// <p>Information about the encryption configuration for X-Ray.</p>
-    #[doc(hidden)]
     pub aws_xray_encryption_config: ::std::option::Option<crate::types::AwsXrayEncryptionConfigDetails>,
     /// <p>Details about a rate-based rule for global resources.</p>
-    #[doc(hidden)]
     pub aws_waf_rate_based_rule: ::std::option::Option<crate::types::AwsWafRateBasedRuleDetails>,
     /// <p>Details about a rate-based rule for Regional resources.</p>
-    #[doc(hidden)]
     pub aws_waf_regional_rate_based_rule: ::std::option::Option<crate::types::AwsWafRegionalRateBasedRuleDetails>,
     /// <p>Information about an Amazon Elastic Container Registry repository.</p>
-    #[doc(hidden)]
     pub aws_ecr_repository: ::std::option::Option<crate::types::AwsEcrRepositoryDetails>,
     /// <p>Details about an Amazon EKS cluster.</p>
-    #[doc(hidden)]
     pub aws_eks_cluster: ::std::option::Option<crate::types::AwsEksClusterDetails>,
     /// <p>Details about an Network Firewall firewall policy.</p>
-    #[doc(hidden)]
     pub aws_network_firewall_firewall_policy: ::std::option::Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails>,
     /// <p>Details about an Network Firewall firewall.</p>
-    #[doc(hidden)]
     pub aws_network_firewall_firewall: ::std::option::Option<crate::types::AwsNetworkFirewallFirewallDetails>,
     /// <p>Details about an Network Firewall rule group.</p>
-    #[doc(hidden)]
     pub aws_network_firewall_rule_group: ::std::option::Option<crate::types::AwsNetworkFirewallRuleGroupDetails>,
     /// <p>Details about an Amazon RDS DB security group.</p>
-    #[doc(hidden)]
     pub aws_rds_db_security_group: ::std::option::Option<crate::types::AwsRdsDbSecurityGroupDetails>,
     /// <p>Details about an Amazon Kinesis data stream.</p>
-    #[doc(hidden)]
     pub aws_kinesis_stream: ::std::option::Option<crate::types::AwsKinesisStreamDetails>,
     /// <p>Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises networks.</p>
-    #[doc(hidden)]
     pub aws_ec2_transit_gateway: ::std::option::Option<crate::types::AwsEc2TransitGatewayDetails>,
     /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
-    #[doc(hidden)]
     pub aws_efs_access_point: ::std::option::Option<crate::types::AwsEfsAccessPointDetails>,
     /// <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can manage as a single unit.</p>
-    #[doc(hidden)]
     pub aws_cloud_formation_stack: ::std::option::Option<crate::types::AwsCloudFormationStackDetails>,
     /// <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web Services resources and applications across multiple Regions.</p>
-    #[doc(hidden)]
     pub aws_cloud_watch_alarm: ::std::option::Option<crate::types::AwsCloudWatchAlarmDetails>,
     /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
-    #[doc(hidden)]
     pub aws_ec2_vpc_peering_connection: ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>,
     /// <p>Details about an WAF rule group for Regional resources. </p>
-    #[doc(hidden)]
     pub aws_waf_regional_rule_group: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>,
     /// <p>Details about an WAF rule for Regional resources. </p>
-    #[doc(hidden)]
     pub aws_waf_regional_rule: ::std::option::Option<crate::types::AwsWafRegionalRuleDetails>,
     /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
-    #[doc(hidden)]
     pub aws_waf_regional_web_acl: ::std::option::Option<crate::types::AwsWafRegionalWebAclDetails>,
     /// <p>Details about an WAF rule for global resources. </p>
-    #[doc(hidden)]
     pub aws_waf_rule: ::std::option::Option<crate::types::AwsWafRuleDetails>,
     /// <p>Details about an WAF rule group for global resources. </p>
-    #[doc(hidden)]
     pub aws_waf_rule_group: ::std::option::Option<crate::types::AwsWafRuleGroupDetails>,
     /// <p>Details about a task in a cluster. </p>
-    #[doc(hidden)]
     pub aws_ecs_task: ::std::option::Option<crate::types::AwsEcsTaskDetails>,
     /// <p>Provides details about an Backup backup vault. </p>
-    #[doc(hidden)]
     pub aws_backup_backup_vault: ::std::option::Option<crate::types::AwsBackupBackupVaultDetails>,
     /// <p>Provides details about an Backup backup plan. </p>
-    #[doc(hidden)]
     pub aws_backup_backup_plan: ::std::option::Option<crate::types::AwsBackupBackupPlanDetails>,
     /// <p>Provides details about an Backup backup, or recovery point. </p>
-    #[doc(hidden)]
     pub aws_backup_recovery_point: ::std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
     /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
-    #[doc(hidden)]
     pub aws_ec2_launch_template: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
     /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
-    #[doc(hidden)]
     pub aws_sage_maker_notebook_instance: ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
     /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
-    #[doc(hidden)]
     pub aws_wafv2_web_acl: ::std::option::Option<crate::types::AwsWafv2WebAclDetails>,
     /// <p> Details about an WAFv2 rule group. </p>
-    #[doc(hidden)]
     pub aws_wafv2_rule_group: ::std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
     /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
-    #[doc(hidden)]
     pub aws_ec2_route_table: ::std::option::Option<crate::types::AwsEc2RouteTableDetails>,
     /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
-    #[doc(hidden)]
     pub aws_amazon_mq_broker: ::std::option::Option<crate::types::AwsAmazonMqBrokerDetails>,
     /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
-    #[doc(hidden)]
     pub aws_app_sync_graph_ql_api: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiDetails>,
     /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
-    #[doc(hidden)]
     pub aws_event_schemas_registry: ::std::option::Option<crate::types::AwsEventSchemasRegistryDetails>,
     /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
-    #[doc(hidden)]
     pub aws_guard_duty_detector: ::std::option::Option<crate::types::AwsGuardDutyDetectorDetails>,
     /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
-    #[doc(hidden)]
     pub aws_step_function_state_machine: ::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails>,
     /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
-    #[doc(hidden)]
     pub aws_athena_work_group: ::std::option::Option<crate::types::AwsAthenaWorkGroupDetails>,
 }
 impl ResourceDetails {

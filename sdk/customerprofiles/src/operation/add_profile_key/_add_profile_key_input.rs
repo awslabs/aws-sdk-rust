@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddProfileKeyInput {
     /// <p>The unique identifier of a customer profile.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key values.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl AddProfileKeyInput {

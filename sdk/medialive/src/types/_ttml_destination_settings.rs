@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TtmlDestinationSettings {
     /// This field is not currently supported and will not affect the output styling. Leave the default value.
-    #[doc(hidden)]
     pub style_control: ::std::option::Option<crate::types::TtmlDestinationStyleControl>,
 }
 impl TtmlDestinationSettings {

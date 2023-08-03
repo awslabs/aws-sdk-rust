@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExtensionAssociationsOutput {
     /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ExtensionAssociationSummary>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainValidationRecord {
     /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
-    #[doc(hidden)]
     pub resource_record: ::std::option::Option<crate::types::ResourceRecord>,
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
-    #[doc(hidden)]
     pub dns_record_creation_state: ::std::option::Option<crate::types::DnsRecordCreationState>,
     /// <p>The validation status of the record.</p>
-    #[doc(hidden)]
     pub validation_status: ::std::option::Option<crate::types::CertificateDomainValidationStatus>,
 }
 impl DomainValidationRecord {

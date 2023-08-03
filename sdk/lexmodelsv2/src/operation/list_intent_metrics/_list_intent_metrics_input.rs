@@ -4,36 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIntentMetricsInput {
     /// <p>The identifier for the bot for which you want to retrieve intent metrics.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that marks the beginning of the range of time for which you want to see intent metrics.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that marks the end of the range of time for which you want to see intent metrics.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the order by which to organize the results.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetric>>,
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    #[doc(hidden)]
     pub bin_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
     /// <li> <p> <code>IntentName</code> – The name of the intent.</p> </li>
     /// <li> <p> <code>IntentEndState</code> – The final state of the intent. The possible end states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-intents">Key definitions</a> in the user guide.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupBySpecification>>,
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentFilter>>,
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response from the ListIntentMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListIntentMetrics request to return the next page of results. For a complete set of results, call the ListIntentMetrics operation until the nextToken returned in the response is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIntentMetricsInput {

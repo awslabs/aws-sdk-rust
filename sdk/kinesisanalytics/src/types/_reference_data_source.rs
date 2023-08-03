@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceDataSource {
     /// <p>Name of the in-application table to create.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
-    #[doc(hidden)]
     pub s3_reference_data_source: ::std::option::Option<crate::types::S3ReferenceDataSource>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
-    #[doc(hidden)]
     pub reference_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
 impl ReferenceDataSource {

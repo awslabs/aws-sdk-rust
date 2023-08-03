@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceTableDetails {
     /// <p>The name of the table for which the backup was created. </p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the table for which the backup was created. </p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the table for which backup was created. </p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Size of the table in bytes. Note that this is an approximate value.</p>
-    #[doc(hidden)]
     pub table_size_bytes: ::std::option::Option<i64>,
     /// <p>Schema of the table. </p>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>Time when the source table was created. </p>
-    #[doc(hidden)]
     pub table_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>Number of items in the table. Note that this is an approximate value. </p>
-    #[doc(hidden)]
     pub item_count: ::std::option::Option<i64>,
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
     /// <li> <p> <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
 }
 impl SourceTableDetails {

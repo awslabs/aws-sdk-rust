@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrincipalResourcePermissions {
     /// <p>The Data Lake principal to be granted or revoked permissions.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>The resource where permissions are to be granted or revoked.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The permissions to be granted or revoked on the resource.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
-    #[doc(hidden)]
     pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
-    #[doc(hidden)]
     pub additional_details: ::std::option::Option<crate::types::DetailsMap>,
 }
 impl PrincipalResourcePermissions {

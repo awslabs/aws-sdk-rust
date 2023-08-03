@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub target_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The health check configuration.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
 impl UpdateTargetGroupInput {

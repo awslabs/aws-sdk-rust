@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpAddressBasedRemoteInfo {
     /// <p>The time stamp of the configuration.</p>
-    #[doc(hidden)]
     pub ip_address_configuration_time_stamp: ::std::option::Option<::std::string::String>,
     /// <p>The type of authorization.</p>
-    #[doc(hidden)]
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
     /// <p>The type of the operating system.</p>
-    #[doc(hidden)]
     pub os_type: ::std::option::Option<crate::types::OsType>,
 }
 impl IpAddressBasedRemoteInfo {

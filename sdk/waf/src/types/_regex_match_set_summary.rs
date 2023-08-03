@@ -10,10 +10,8 @@
 pub struct RegexMatchSetSummary {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
     /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    #[doc(hidden)]
     pub regex_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl RegexMatchSetSummary {

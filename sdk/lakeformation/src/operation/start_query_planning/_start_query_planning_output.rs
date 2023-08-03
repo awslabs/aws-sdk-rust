@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryPlanningOutput {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

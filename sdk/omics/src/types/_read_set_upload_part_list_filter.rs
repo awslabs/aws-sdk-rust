@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadSetUploadPartListFilter {
     /// <p> Filters for read set uploads after a specified time. </p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Filters for read set part uploads before a specified time. </p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReadSetUploadPartListFilter {

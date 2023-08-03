@@ -23,7 +23,6 @@ pub struct OnlineStoreSecurityConfig {
     /// <ul>
     /// <li> <p> <code>"kms:Decrypt"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl OnlineStoreSecurityConfig {

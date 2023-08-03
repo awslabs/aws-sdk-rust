@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEbsVolumeRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
-    #[doc(hidden)]
     pub volume_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to advance to the next page of volume recommendations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of volume recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An array of objects to specify a filter that returns a more specific list of volume recommendations.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::EbsFilter>>,
     /// <p>The ID of the Amazon Web Services account for which to return volume recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return volume recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetEbsVolumeRecommendationsInput {

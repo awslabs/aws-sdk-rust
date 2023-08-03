@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Prometheus {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
-    #[doc(hidden)]
     pub jmx_exporter: ::std::option::Option<crate::types::JmxExporter>,
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
-    #[doc(hidden)]
     pub node_exporter: ::std::option::Option<crate::types::NodeExporter>,
 }
 impl Prometheus {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEmailMonitoringConfigurationInput {
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEmailMonitoringConfigurationInput {

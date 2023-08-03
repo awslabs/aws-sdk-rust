@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceActionOutput {
     /// <p>Detailed information about the self-service action.</p>
-    #[doc(hidden)]
     pub service_action_detail: ::std::option::Option<crate::types::ServiceActionDetail>,
     _request_id: Option<String>,
 }

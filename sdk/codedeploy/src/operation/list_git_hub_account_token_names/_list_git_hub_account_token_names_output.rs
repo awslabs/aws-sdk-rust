@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGitHubAccountTokenNamesOutput {
     /// <p>A list of names of connections to GitHub accounts.</p>
-    #[doc(hidden)]
     pub token_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

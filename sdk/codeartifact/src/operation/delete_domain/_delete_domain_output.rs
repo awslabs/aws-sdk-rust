@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainOutput {
     /// <p> Contains information about the deleted domain after processing the request. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainDescription>,
     _request_id: Option<String>,
 }

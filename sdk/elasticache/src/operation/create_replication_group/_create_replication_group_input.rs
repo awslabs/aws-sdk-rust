@@ -11,31 +11,24 @@ pub struct CreateReplicationGroupInput {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-created description for the replication group.</p>
-    #[doc(hidden)]
     pub replication_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster that serves as the primary for this replication group. This cluster must already exist and have a status of <code>available</code>.</p>
     /// <p>This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or <code>ReplicasPerNodeGroup</code> is specified.</p>
-    #[doc(hidden)]
     pub primary_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails.</p>
     /// <p> <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.</p>
     /// <p>Default: false</p>
-    #[doc(hidden)]
     pub automatic_failover_enabled: ::std::option::Option<bool>,
     /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a>.</p>
-    #[doc(hidden)]
     pub multi_az_enabled: ::std::option::Option<bool>,
     /// <p>The number of clusters this replication group initially has.</p>
     /// <p>This parameter is not used if there is more than one node group (shard). You should use <code>ReplicasPerNodeGroup</code> instead.</p>
     /// <p>If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1), or you can explicitly set it to a value between 2 and 6.</p>
     /// <p>The maximum permitted value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).</p>
-    #[doc(hidden)]
     pub num_cache_clusters: ::std::option::Option<i32>,
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
     /// <p>This parameter is not used if there is more than one node group (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
@@ -43,18 +36,14 @@ pub struct CreateReplicationGroupInput {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    #[doc(hidden)]
     pub preferred_cache_cluster_a_zs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
     /// <p>Default: 1</p>
-    #[doc(hidden)]
     pub num_node_groups: ::std::option::Option<i32>,
     /// <p>An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0 to 5.</p>
-    #[doc(hidden)]
     pub replicas_per_node_group: ::std::option::Option<i32>,
     /// <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>
     /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
-    #[doc(hidden)]
     pub node_group_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>,
     /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -85,14 +74,11 @@ pub struct CreateReplicationGroupInput {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache engine to be used for the clusters in this replication group. The value must be set to <code>Redis</code>.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the cache engine to be used for the clusters in this replication group. To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or replication group and create it anew with the earlier engine version. </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group to associate with this replication group. If this argument is omitted, the default cache parameter group for the specified engine is used.</p>
     /// <p>If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter group, we recommend that you specify the parameter group by name. </p>
@@ -100,29 +86,22 @@ pub struct CreateReplicationGroupInput {
     /// <li> <p>To create a Redis (cluster mode disabled) replication group, use <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li>
     /// <li> <p>To create a Redis (cluster mode enabled) replication group, use <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache subnet group to be used for the replication group.</p> <important>
     /// <p>If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache security group names to associate with this replication group.</p>
-    #[doc(hidden)]
     pub cache_security_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
     /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication group will have the number of node groups (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
-    #[doc(hidden)]
     pub snapshot_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -137,27 +116,21 @@ pub struct CreateReplicationGroupInput {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which each member of the replication group accepts connections.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
     /// </note>
-    #[doc(hidden)]
     pub notification_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     /// <p>Default: 0 (i.e., automatic backups are disabled for this cluster).</p>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p> <b>Reserved parameter.</b> The password used to access a password protected server.</p>
     /// <p> <code>AuthToken</code> can be specified only on replication groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p> <important>
@@ -170,7 +143,6 @@ pub struct CreateReplicationGroupInput {
     /// <li> <p>The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special characters cannot be used in the AUTH token.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
-    #[doc(hidden)]
     pub auth_token: ::std::option::Option<::std::string::String>,
     /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
     /// <p>This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created in an Amazon VPC.</p>
@@ -179,40 +151,30 @@ pub struct CreateReplicationGroupInput {
     /// <p>Default: <code>false</code> </p> <important>
     /// <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>, an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The user group to associate with the replication group.</p>
-    #[doc(hidden)]
     pub user_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the destination, format and type of the logs.</p>
-    #[doc(hidden)]
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
-    #[doc(hidden)]
     pub data_tiering_enabled: ::std::option::Option<bool>,
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can modify the value to <code>required</code> to allow encrypted connections only.</p>
     /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.</p>
     /// <p>This process will not trigger the replacement of the replication group.</p>
-    #[doc(hidden)]
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
-    #[doc(hidden)]
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl CreateReplicationGroupInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomVocabularyEntryId {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
-    #[doc(hidden)]
     pub item_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomVocabularyEntryId {

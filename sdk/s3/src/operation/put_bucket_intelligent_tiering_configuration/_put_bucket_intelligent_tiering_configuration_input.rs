@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
-    #[doc(hidden)]
     pub intelligent_tiering_configuration: ::std::option::Option<crate::types::IntelligentTieringConfiguration>,
 }
 impl PutBucketIntelligentTieringConfigurationInput {

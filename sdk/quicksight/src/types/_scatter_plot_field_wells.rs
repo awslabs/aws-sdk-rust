@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScatterPlotFieldWells {
     /// <p>The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with aggregated field wells are aggregated by category, label, or both.</p>
-    #[doc(hidden)]
     pub scatter_plot_categorically_aggregated_field_wells: ::std::option::Option<crate::types::ScatterPlotCategoricallyAggregatedFieldWells>,
     /// <p>The unaggregated field wells of a scatter plot. The x and y-axes of these scatter plots are unaggregated.</p>
-    #[doc(hidden)]
     pub scatter_plot_unaggregated_field_wells: ::std::option::Option<crate::types::ScatterPlotUnaggregatedFieldWells>,
 }
 impl ScatterPlotFieldWells {

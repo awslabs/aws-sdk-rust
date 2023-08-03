@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserProfileInput {
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
-    #[doc(hidden)]
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
-    #[doc(hidden)]
     pub ssh_username: ::std::option::Option<::std::string::String>,
     /// <p>The user's new SSH public key.</p>
-    #[doc(hidden)]
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
-    #[doc(hidden)]
     pub allow_self_management: ::std::option::Option<bool>,
 }
 impl UpdateUserProfileInput {

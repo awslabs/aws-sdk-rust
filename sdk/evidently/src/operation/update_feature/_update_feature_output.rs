@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFeatureOutput {
     /// <p>A structure that contains information about the updated feature.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<crate::types::Feature>,
     _request_id: Option<String>,
 }

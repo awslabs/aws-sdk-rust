@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchedFace {
     /// <p> Unique identifier assigned to the face.</p>
-    #[doc(hidden)]
     pub face_id: ::std::option::Option<::std::string::String>,
 }
 impl SearchedFace {

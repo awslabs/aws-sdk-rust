@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3RecordingDetails {
     /// <p>ARN of the bucket used.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Key template used for the S3 Recording Configuration</p>
-    #[doc(hidden)]
     pub key_template: ::std::option::Option<::std::string::String>,
 }
 impl S3RecordingDetails {

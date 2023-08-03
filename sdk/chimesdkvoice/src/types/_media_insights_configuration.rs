@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaInsightsConfiguration {
     /// <p>Denotes the configration as enabled or disabled.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
     /// <p>The configuration's ARN.</p>
-    #[doc(hidden)]
     pub configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaInsightsConfiguration {

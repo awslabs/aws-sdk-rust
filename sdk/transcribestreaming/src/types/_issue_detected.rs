@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IssueDetected {
     /// <p>Provides the timestamps that identify when in an audio segment the specified issue occurs.</p>
-    #[doc(hidden)]
     pub character_offsets: ::std::option::Option<crate::types::CharacterOffsets>,
 }
 impl IssueDetected {

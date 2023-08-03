@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityConfigInput {
     /// <p>The identity's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigInput {

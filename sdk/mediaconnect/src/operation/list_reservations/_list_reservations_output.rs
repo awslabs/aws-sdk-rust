@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReservationsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of all reservations that have been purchased by this account in the current AWS Region.
-    #[doc(hidden)]
     pub reservations: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>,
     _request_id: Option<String>,
 }

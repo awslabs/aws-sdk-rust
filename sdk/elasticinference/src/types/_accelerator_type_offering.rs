@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorTypeOffering {
     /// <p> The name of the Elastic Inference Accelerator type. </p>
-    #[doc(hidden)]
     pub accelerator_type: ::std::option::Option<::std::string::String>,
     /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
-    #[doc(hidden)]
     pub location_type: ::std::option::Option<crate::types::LocationType>,
     /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl AcceleratorTypeOffering {

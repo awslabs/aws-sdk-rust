@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadSshPublicKeyOutput {
     /// <p>Contains information about the SSH public key.</p>
-    #[doc(hidden)]
     pub ssh_public_key: ::std::option::Option<crate::types::SshPublicKey>,
     _request_id: Option<String>,
 }

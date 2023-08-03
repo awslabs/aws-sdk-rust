@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunGroupListItem {
     /// <p>The group's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The group's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The group's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The group's maximum CPU count setting.</p>
-    #[doc(hidden)]
     pub max_cpus: ::std::option::Option<i32>,
     /// <p>The group's maximum concurrent run setting.</p>
-    #[doc(hidden)]
     pub max_runs: ::std::option::Option<i32>,
     /// <p>The group's maximum duration setting in minutes.</p>
-    #[doc(hidden)]
     pub max_duration: ::std::option::Option<i32>,
     /// <p>When the group was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The maximum GPUs that can be used by a run group. </p>
-    #[doc(hidden)]
     pub max_gpus: ::std::option::Option<i32>,
 }
 impl RunGroupListItem {

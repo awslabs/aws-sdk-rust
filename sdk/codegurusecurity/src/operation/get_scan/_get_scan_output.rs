@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetScanOutput {
     /// <p>The name of the scan.</p>
-    #[doc(hidden)]
     pub scan_name: ::std::option::Option<::std::string::String>,
     /// <p>UUID that identifies the individual scan run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub scan_state: ::std::option::Option<crate::types::ScanState>,
     /// <p>The time the scan was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings.</p>
-    #[doc(hidden)]
     pub analysis_type: ::std::option::Option<crate::types::AnalysisType>,
     /// <p>The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of times a scan has been re-run on a revised resource.</p>
-    #[doc(hidden)]
     pub number_of_revisions: ::std::option::Option<i64>,
     /// <p>The ARN for the scan name.</p>
-    #[doc(hidden)]
     pub scan_name_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

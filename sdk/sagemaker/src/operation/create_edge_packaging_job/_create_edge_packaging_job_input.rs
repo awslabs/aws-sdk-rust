@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    #[doc(hidden)]
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the output location for the packaged model.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::EdgeOutputConfig>,
     /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
-    #[doc(hidden)]
     pub resource_key: ::std::option::Option<::std::string::String>,
     /// <p>Creates tags for the packaging job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEdgePackagingJobInput {

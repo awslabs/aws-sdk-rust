@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreInput {
     /// <p>The store's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to force deletion.</p>
-    #[doc(hidden)]
     pub force: ::std::option::Option<bool>,
 }
 impl DeleteAnnotationStoreInput {

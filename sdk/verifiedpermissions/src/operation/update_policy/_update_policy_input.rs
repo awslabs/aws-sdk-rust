@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePolicyInput {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
@@ -22,7 +20,6 @@ pub struct UpdatePolicyInput {
     /// <li> <p>The <code>principal</code> referenced by the policy.</p> </li>
     /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::UpdatePolicyDefinition>,
 }
 impl UpdatePolicyInput {

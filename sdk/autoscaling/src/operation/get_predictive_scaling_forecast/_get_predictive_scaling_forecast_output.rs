@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPredictiveScalingForecastOutput {
     /// <p>The load forecast.</p>
-    #[doc(hidden)]
     pub load_forecast: ::std::option::Option<::std::vec::Vec<crate::types::LoadForecast>>,
     /// <p>The capacity forecast.</p>
-    #[doc(hidden)]
     pub capacity_forecast: ::std::option::Option<crate::types::CapacityForecast>,
     /// <p>The time the forecast was made.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterInstanceTagAttributeRequest {
     /// <p>Indicates whether to register all tag keys in the current Region. Specify <code>true</code> to register all tag keys.</p>
-    #[doc(hidden)]
     pub include_all_tags_of_instance: ::std::option::Option<bool>,
     /// <p>The tag keys to register.</p>
-    #[doc(hidden)]
     pub instance_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegisterInstanceTagAttributeRequest {

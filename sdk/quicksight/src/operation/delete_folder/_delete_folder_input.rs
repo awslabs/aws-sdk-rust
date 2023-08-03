@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
-    #[doc(hidden)]
     pub folder_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFolderInput {

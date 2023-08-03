@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentHealthOutput {
     /// <p>The environment's name.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<::std::string::String>,
     /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentHealth>,
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
-    #[doc(hidden)]
     pub causes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Application request metrics for the environment.</p>
-    #[doc(hidden)]
     pub application_metrics: ::std::option::Option<crate::types::ApplicationMetrics>,
     /// <p>Summary health information for the instances in the environment.</p>
-    #[doc(hidden)]
     pub instances_health: ::std::option::Option<crate::types::InstanceHealthSummary>,
     /// <p>The date and time that the health information was retrieved.</p>
-    #[doc(hidden)]
     pub refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

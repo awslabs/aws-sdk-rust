@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProgressEvent {
     /// <p>The Progress event details.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::Progress>,
 }
 impl ProgressEvent {

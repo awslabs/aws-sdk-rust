@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPermissionsOutput {
     /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
-    #[doc(hidden)]
     pub principal_resource_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

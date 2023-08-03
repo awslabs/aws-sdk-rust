@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2CreateRouteAction {
     /// <p>A description of CreateRoute action in Amazon EC2.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of a prefix list used for the destination match.</p>
-    #[doc(hidden)]
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv6 CIDR block destination.</p>
-    #[doc(hidden)]
     pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<crate::types::ActionTarget>,
     /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<crate::types::ActionTarget>,
     /// <p>Information about the ID of the route table for the route.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2CreateRouteAction {

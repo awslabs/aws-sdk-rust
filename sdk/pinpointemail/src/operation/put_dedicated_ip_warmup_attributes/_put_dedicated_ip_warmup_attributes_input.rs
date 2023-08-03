@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDedicatedIpWarmupAttributesInput {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
-    #[doc(hidden)]
     pub warmup_percentage: ::std::option::Option<i32>,
 }
 impl PutDedicatedIpWarmupAttributesInput {

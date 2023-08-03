@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionCodeInput {
     /// <p>The calculation execution UUID.</p>
-    #[doc(hidden)]
     pub calculation_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCalculationExecutionCodeInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPullRequestsOutput {
     /// <p>The system-generated IDs of the pull requests.</p>
-    #[doc(hidden)]
     pub pull_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

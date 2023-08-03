@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlOptionsOutput {
     /// <p>True if SAML is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Describes the SAML identity provider's information.</p>
-    #[doc(hidden)]
     pub idp: ::std::option::Option<crate::types::SamlIdp>,
     /// <p>The key used for matching the SAML subject attribute.</p>
-    #[doc(hidden)]
     pub subject_key: ::std::option::Option<::std::string::String>,
     /// <p>The key used for matching the SAML roles attribute.</p>
-    #[doc(hidden)]
     pub roles_key: ::std::option::Option<::std::string::String>,
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
-    #[doc(hidden)]
     pub session_timeout_minutes: ::std::option::Option<i32>,
 }
 impl SamlOptionsOutput {

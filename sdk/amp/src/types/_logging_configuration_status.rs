@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfigurationStatus {
     /// Status code of the logging configuration.
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>,
     /// The reason for failure if any.
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl LoggingConfigurationStatus {

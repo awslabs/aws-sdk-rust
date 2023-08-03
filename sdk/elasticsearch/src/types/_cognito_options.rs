@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CognitoOptions {
     /// <p>Specifies the option to enable Cognito for Kibana authentication.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the role ARN that provides Elasticsearch permissions for accessing Cognito resources.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CognitoOptions {

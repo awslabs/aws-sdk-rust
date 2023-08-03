@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CellOutput {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
-    #[doc(hidden)]
     pub cell_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cell.</p>
-    #[doc(hidden)]
     pub cell_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of cell ARNs.</p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    #[doc(hidden)]
     pub parent_readiness_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags on the resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CellOutput {

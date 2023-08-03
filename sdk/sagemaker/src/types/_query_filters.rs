@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryFilters {
     /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
-    #[doc(hidden)]
     pub lineage_types: ::std::option::Option<::std::vec::Vec<crate::types::LineageType>>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
-    #[doc(hidden)]
     pub modified_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
-    #[doc(hidden)]
     pub modified_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl QueryFilters {

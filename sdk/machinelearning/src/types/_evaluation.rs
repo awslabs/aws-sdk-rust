@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that is used to evaluate the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub evaluation_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The location and name of the data in Amazon Simple Storage Server (Amazon S3) that is used in the evaluation.</p>
-    #[doc(hidden)]
     pub input_data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    #[doc(hidden)]
     pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
     /// <ul>
@@ -37,7 +29,6 @@ pub struct Evaluation {
     /// <li> <p> <code>COMPLETED</code> - The evaluation process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>Measurements of how well the <code>MLModel</code> performed, using observations referenced by the <code>DataSource</code>. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p>
     /// <ul>
@@ -46,19 +37,14 @@ pub struct Evaluation {
     /// <li> <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li>
     /// </ul>
     /// <p> For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p>
-    #[doc(hidden)]
     pub performance_metrics: ::std::option::Option<crate::types::PerformanceMetrics>,
     /// <p>A description of the most recent details about evaluating the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    #[doc(hidden)]
     pub compute_time: ::std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
-    #[doc(hidden)]
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Evaluation {

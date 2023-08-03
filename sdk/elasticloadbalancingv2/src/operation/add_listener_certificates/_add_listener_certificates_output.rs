@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddListenerCertificatesOutput {
     /// <p>Information about the certificates in the certificate list.</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     _request_id: Option<String>,
 }

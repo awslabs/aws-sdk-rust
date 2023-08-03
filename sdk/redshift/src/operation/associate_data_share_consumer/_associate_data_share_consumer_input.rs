@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
-    #[doc(hidden)]
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
-    #[doc(hidden)]
     pub associate_entire_account: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
-    #[doc(hidden)]
     pub consumer_arn: ::std::option::Option<::std::string::String>,
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub consumer_region: ::std::option::Option<::std::string::String>,
 }
 impl AssociateDataShareConsumerInput {

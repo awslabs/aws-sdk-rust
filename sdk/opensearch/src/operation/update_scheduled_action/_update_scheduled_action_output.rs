@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScheduledActionOutput {
     /// <p>Information about the rescheduled action.</p>
-    #[doc(hidden)]
     pub scheduled_action: ::std::option::Option<crate::types::ScheduledAction>,
     _request_id: Option<String>,
 }

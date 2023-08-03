@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpInstanceSummary {
     /// <p>The ID of an instance that matches the values that you specified in the request.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p> <code></code> <code></code> <code></code> </p>
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that you specified when you registered the instance.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::HealthStatus>,
     /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl HttpInstanceSummary {

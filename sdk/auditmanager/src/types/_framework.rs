@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Framework {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the framework. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the framework. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the framework is a standard framework or a custom framework.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FrameworkType>,
     /// <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p> The description of the framework. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The logo that's associated with the framework. </p>
-    #[doc(hidden)]
     pub logo: ::std::option::Option<::std::string::String>,
     /// <p> The control data sources where Audit Manager collects evidence from.</p>
-    #[doc(hidden)]
     pub control_sources: ::std::option::Option<::std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
-    #[doc(hidden)]
     pub control_sets: ::std::option::Option<::std::vec::Vec<crate::types::ControlSet>>,
     /// <p> The time when the framework was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time when the framework was most recently updated. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The user or role that created the framework. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p> The user or role that most recently updated the framework. </p>
-    #[doc(hidden)]
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p> The tags that are associated with the framework. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Framework {

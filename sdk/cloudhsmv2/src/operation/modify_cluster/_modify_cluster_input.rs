@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterInput {
     /// <p>A policy that defines how the service retains backups.</p>
-    #[doc(hidden)]
     pub backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterInput {

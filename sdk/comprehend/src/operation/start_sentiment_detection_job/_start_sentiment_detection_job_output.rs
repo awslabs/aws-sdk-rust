@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSentimentDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -20,7 +19,6 @@ pub struct StartSentimentDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job. </p>
     /// <ul>
@@ -29,7 +27,6 @@ pub struct StartSentimentDetectionJobOutput {
     /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
     /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }

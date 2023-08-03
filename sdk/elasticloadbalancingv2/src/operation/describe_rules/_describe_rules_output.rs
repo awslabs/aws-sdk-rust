@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRulesOutput {
     /// <p>Information about the rules.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

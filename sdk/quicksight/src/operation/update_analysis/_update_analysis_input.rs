@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnalysisInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
-    #[doc(hidden)]
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<crate::types::Parameters>,
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
-    #[doc(hidden)]
     pub source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
-    #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>The definition of an analysis.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::AnalysisDefinition>,
 }
 impl UpdateAnalysisInput {

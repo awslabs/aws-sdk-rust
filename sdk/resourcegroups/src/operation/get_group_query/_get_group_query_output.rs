@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupQueryOutput {
     /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
-    #[doc(hidden)]
     pub group_query: ::std::option::Option<crate::types::GroupQuery>,
     _request_id: Option<String>,
 }

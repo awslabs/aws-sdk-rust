@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTargetedSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
-    #[doc(hidden)]
     pub targeted_sentiment_detection_job_properties: ::std::option::Option<crate::types::TargetedSentimentDetectionJobProperties>,
     _request_id: Option<String>,
 }

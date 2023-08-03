@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MicrosoftSqlServerCatalogTarget {
     /// <p>The name of the data target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the database to write to.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table in the database to write to.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
 }
 impl MicrosoftSqlServerCatalogTarget {

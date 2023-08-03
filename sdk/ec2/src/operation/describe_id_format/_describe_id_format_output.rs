@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdFormatOutput {
     /// <p>Information about the ID format for the resource.</p>
-    #[doc(hidden)]
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
     _request_id: Option<String>,
 }

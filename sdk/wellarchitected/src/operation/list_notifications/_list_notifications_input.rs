@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListNotificationsInput {

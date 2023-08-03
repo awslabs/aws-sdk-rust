@@ -13,16 +13,12 @@ pub struct RefreshFrequency {
     /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
     /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<crate::types::RefreshInterval>,
     /// <p>The day of the week that you want to schedule the refresh on. This value is required for weekly and monthly refresh intervals.</p>
-    #[doc(hidden)]
     pub refresh_on_day: ::std::option::Option<crate::types::ScheduleRefreshOnEntity>,
     /// <p>The timezone that you want the refresh schedule to use. The timezone ID must match a corresponding ID found on <code>java.util.time.getAvailableIDs()</code>.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The time of day that you want the datset to refresh. This value is expressed in HH:MM format. This field is not required for schedules that refresh hourly.</p>
-    #[doc(hidden)]
     pub time_of_the_day: ::std::option::Option<::std::string::String>,
 }
 impl RefreshFrequency {

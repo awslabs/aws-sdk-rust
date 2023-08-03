@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableSharingWithAwsOrganizationOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
-    #[doc(hidden)]
     pub return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

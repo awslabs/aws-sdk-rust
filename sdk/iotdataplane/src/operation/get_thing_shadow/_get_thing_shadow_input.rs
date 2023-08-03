@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetThingShadowInput {
     /// <p>The name of the thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the shadow.</p>
-    #[doc(hidden)]
     pub shadow_name: ::std::option::Option<::std::string::String>,
 }
 impl GetThingShadowInput {

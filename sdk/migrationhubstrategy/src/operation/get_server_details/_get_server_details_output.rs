@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerDetailsOutput {
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Detailed information about the server. </p>
-    #[doc(hidden)]
     pub server_detail: ::std::option::Option<crate::types::ServerDetail>,
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-    #[doc(hidden)]
     pub associated_applications: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
     _request_id: Option<String>,
 }

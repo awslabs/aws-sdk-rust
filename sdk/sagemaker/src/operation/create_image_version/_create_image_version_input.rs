@@ -12,16 +12,12 @@ pub struct CreateImageVersionInput {
     /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
     /// </region>
     /// </acct-id></code> </p>
-    #[doc(hidden)]
     pub base_image: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of aliases created with the image version.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The stability of the image version, specified by the maintainer.</p>
     /// <ul>
@@ -30,7 +26,6 @@ pub struct CreateImageVersionInput {
     /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
     /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
@@ -38,26 +33,20 @@ pub struct CreateImageVersionInput {
     /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
     /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>The machine learning framework vended in the image version.</p>
-    #[doc(hidden)]
     pub ml_framework: ::std::option::Option<::std::string::String>,
     /// <p>The supported programming language and its version.</p>
-    #[doc(hidden)]
     pub programming_lang: ::std::option::Option<::std::string::String>,
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
     /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
     /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub processor: ::std::option::Option<crate::types::Processor>,
     /// <p>Indicates Horovod compatibility.</p>
-    #[doc(hidden)]
     pub horovod: ::std::option::Option<bool>,
     /// <p>The maintainer description of the image version.</p>
-    #[doc(hidden)]
     pub release_notes: ::std::option::Option<::std::string::String>,
 }
 impl CreateImageVersionInput {

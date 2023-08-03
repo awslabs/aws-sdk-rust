@@ -5,10 +5,8 @@
 pub struct DeleteGroupInput {
     /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name or the ARN of the resource group to delete.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGroupInput {

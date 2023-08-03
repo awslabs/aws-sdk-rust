@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOutput {
     /// <p>A list of Reserved Instances.</p>
-    #[doc(hidden)]
     pub reserved_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>>,
     _request_id: Option<String>,
 }

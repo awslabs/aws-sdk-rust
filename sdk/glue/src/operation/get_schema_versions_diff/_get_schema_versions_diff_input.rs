@@ -8,16 +8,12 @@ pub struct GetSchemaVersionsDiffInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>The first of the two schema versions to be compared.</p>
-    #[doc(hidden)]
     pub first_schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
     /// <p>The second of the two schema versions to be compared.</p>
-    #[doc(hidden)]
     pub second_schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
-    #[doc(hidden)]
     pub schema_diff_type: ::std::option::Option<crate::types::SchemaDiffType>,
 }
 impl GetSchemaVersionsDiffInput {

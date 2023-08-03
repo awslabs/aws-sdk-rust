@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectionConfiguration {
     /// <p>The name of the tensor collection. The name must be unique relative to other rule configuration names.</p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameter values for the tensor collection. The allowed parameters are <code>"name"</code>, <code>"include_regex"</code>, <code>"reduction_config"</code>, <code>"save_config"</code>, <code>"tensor_names"</code>, and <code>"save_histogram"</code>.</p>
-    #[doc(hidden)]
     pub collection_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CollectionConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountWithRestoreAccess {
     /// <p>The identifier of an Amazon Web Services account authorized to restore a snapshot.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
-    #[doc(hidden)]
     pub account_alias: ::std::option::Option<::std::string::String>,
 }
 impl AccountWithRestoreAccess {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTextTranslationJobOutput {
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
-    #[doc(hidden)]
     pub text_translation_job_properties: ::std::option::Option<crate::types::TextTranslationJobProperties>,
     _request_id: Option<String>,
 }

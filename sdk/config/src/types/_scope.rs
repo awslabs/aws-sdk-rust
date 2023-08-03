@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scope {
     /// <p>The resource types of only those Amazon Web Services resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>
-    #[doc(hidden)]
     pub compliance_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tag key that is applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule. If you specify a value for <code>TagValue</code>, you must also specify a value for <code>TagKey</code>.</p>
-    #[doc(hidden)]
     pub tag_value: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the only Amazon Web Services resource that you want to trigger an evaluation for the rule. If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.</p>
-    #[doc(hidden)]
     pub compliance_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl Scope {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterTaskDefinitionInput {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a <code>revision</code>.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterTaskDefinitionInput {

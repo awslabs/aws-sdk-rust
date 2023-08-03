@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupRuleOptionsPair {
     /// <p>The ARN of the rule group.</p>
-    #[doc(hidden)]
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rule options.</p>
-    #[doc(hidden)]
     pub rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
 }
 impl RuleGroupRuleOptionsPair {

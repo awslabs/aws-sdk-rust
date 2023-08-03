@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimerDefinition {
     /// <p>The name of the timer.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
-    #[doc(hidden)]
     pub seconds: ::std::option::Option<i32>,
 }
 impl TimerDefinition {

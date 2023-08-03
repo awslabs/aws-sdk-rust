@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeForecastExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    #[doc(hidden)]
     pub forecast_export_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeForecastExportJobInput {

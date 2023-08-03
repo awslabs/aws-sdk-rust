@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Step {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-    #[doc(hidden)]
     pub start_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-    #[doc(hidden)]
     pub end_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
-    #[doc(hidden)]
     pub distance: ::std::option::Option<f64>,
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<f64>,
     /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
-    #[doc(hidden)]
     pub geometry_offset: ::std::option::Option<i32>,
 }
 impl Step {

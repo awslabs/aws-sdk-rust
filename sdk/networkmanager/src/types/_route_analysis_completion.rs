@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteAnalysisCompletion {
     /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
-    #[doc(hidden)]
     pub result_code: ::std::option::Option<crate::types::RouteAnalysisCompletionResultCode>,
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
@@ -19,10 +18,8 @@ pub struct RouteAnalysisCompletion {
     /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
     /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub reason_code: ::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode>,
     /// <p>Additional information about the path. Available only if a connection is not found.</p>
-    #[doc(hidden)]
     pub reason_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RouteAnalysisCompletion {

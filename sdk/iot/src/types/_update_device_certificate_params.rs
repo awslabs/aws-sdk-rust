@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeviceCertificateParams {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::DeviceCertificateUpdateAction>,
 }
 impl UpdateDeviceCertificateParams {

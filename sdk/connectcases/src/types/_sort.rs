@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sort {
     /// <p>Unique identifier of a field.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>A structured set of sort terms</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::Order>,
 }
 impl Sort {

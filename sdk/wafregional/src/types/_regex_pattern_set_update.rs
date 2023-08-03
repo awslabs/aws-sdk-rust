@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegexPatternSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
-    #[doc(hidden)]
     pub regex_pattern_string: ::std::option::Option<::std::string::String>,
 }
 impl RegexPatternSetUpdate {

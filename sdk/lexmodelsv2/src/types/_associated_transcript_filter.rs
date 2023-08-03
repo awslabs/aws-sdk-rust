@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedTranscriptFilter {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>,
     /// <p>The values to use to filter the transcript.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociatedTranscriptFilter {

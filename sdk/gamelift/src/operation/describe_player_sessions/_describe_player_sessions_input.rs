@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePlayerSessionsInput {
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-    #[doc(hidden)]
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player to retrieve player sessions for.</p>
-    #[doc(hidden)]
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player session to retrieve.</p>
-    #[doc(hidden)]
     pub player_session_id: ::std::option::Option<::std::string::String>,
     /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
     /// <p>Possible player session statuses include the following:</p>
@@ -20,13 +17,10 @@ pub struct DescribePlayerSessionsInput {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub player_session_status_filter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribePlayerSessionsInput {

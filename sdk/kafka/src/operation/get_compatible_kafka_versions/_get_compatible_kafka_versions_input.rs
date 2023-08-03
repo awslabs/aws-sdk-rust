@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCompatibleKafkaVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetCompatibleKafkaVersionsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsFilter {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
-    #[doc(hidden)]
     pub billing_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListBillingGroupCostReportsFilter {

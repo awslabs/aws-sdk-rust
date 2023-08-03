@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImpersonationRolesOutput {
     /// <p>The list of impersonation roles under the given WorkMail organization.</p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRole>>,
     /// <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityNotFoundException {
     /// <p>A message describing the problem.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not the exception relates to a federated source.</p>
-    #[doc(hidden)]
     pub from_federation_source: ::std::option::Option<bool>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

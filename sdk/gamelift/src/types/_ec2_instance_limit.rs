@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceLimit {
     /// <p>The name of an Amazon EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions. </p>
-    #[doc(hidden)]
     pub ec2_instance_type: ::std::option::Option<crate::types::Ec2InstanceType>,
     /// <p>The number of instances for the specified type and location that are currently being used by the Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub current_instances: ::std::option::Option<i32>,
     /// <p>The number of instances that is allowed for the specified instance type and location.</p>
-    #[doc(hidden)]
     pub instance_limit: ::std::option::Option<i32>,
     /// <p>An Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl Ec2InstanceLimit {

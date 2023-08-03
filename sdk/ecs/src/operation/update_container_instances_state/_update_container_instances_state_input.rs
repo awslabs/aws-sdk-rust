@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContainerInstancesStateInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-    #[doc(hidden)]
     pub container_instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ContainerInstanceStatus>,
 }
 impl UpdateContainerInstancesStateInput {

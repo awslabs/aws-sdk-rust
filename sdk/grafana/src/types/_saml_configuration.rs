@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlConfiguration {
     /// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace.</p>
-    #[doc(hidden)]
     pub idp_metadata: ::std::option::Option<crate::types::IdpMetadata>,
     /// <p>A structure that defines which attributes in the SAML assertion are to be used to define information about the users authenticated by that IdP to use the workspace.</p>
-    #[doc(hidden)]
     pub assertion_attributes: ::std::option::Option<crate::types::AssertionAttributes>,
     /// <p>A structure containing arrays that map group names in the SAML assertion to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    #[doc(hidden)]
     pub role_values: ::std::option::Option<crate::types::RoleValues>,
     /// <p>Lists which organizations defined in the SAML assertion are allowed to use the Amazon Managed Grafana workspace. If this is empty, all organizations in the assertion attribute have access.</p>
-    #[doc(hidden)]
     pub allowed_organizations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>How long a sign-on session by a SAML user is valid, before the user has to sign on again.</p>
-    #[doc(hidden)]
     pub login_validity_duration: i32,
 }
 impl SamlConfiguration {

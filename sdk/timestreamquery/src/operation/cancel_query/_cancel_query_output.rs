@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQueryOutput {
     /// <p> A <code>CancellationMessage</code> is returned when a <code>CancelQuery</code> request for the query specified by <code>QueryId</code> has already been issued. </p>
-    #[doc(hidden)]
     pub cancellation_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

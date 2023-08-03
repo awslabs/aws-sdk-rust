@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMetricValuesInput {
     /// <p>The name of the thing for which security profile metric values are returned.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security profile metric for which values are returned.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The dimension name.</p>
-    #[doc(hidden)]
     pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The dimension value operator.</p>
-    #[doc(hidden)]
     pub dimension_value_operator: ::std::option::Option<crate::types::DimensionValueOperator>,
     /// <p>The start of the time period for which metric values are returned.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time period for which metric values are returned.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMetricValuesInput {

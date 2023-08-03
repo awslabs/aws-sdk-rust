@@ -11,11 +11,9 @@ pub struct CreateFindingAggregatorInput {
     /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
     /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub region_linking_mode: ::std::option::Option<::std::string::String>,
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region. </p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateFindingAggregatorInput {

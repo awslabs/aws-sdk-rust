@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMessageMoveTasksOutput {
     /// <p>A list of message movement tasks and their attributes.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::ListMessageMoveTasksResultEntry>>,
     _request_id: Option<String>,
 }

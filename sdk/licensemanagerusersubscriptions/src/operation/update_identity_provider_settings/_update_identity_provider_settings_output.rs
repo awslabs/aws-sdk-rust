@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderSettingsOutput {
     /// <p>Describes an identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider_summary: ::std::option::Option<crate::types::IdentityProviderSummary>,
     _request_id: Option<String>,
 }

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainMembership {
     /// <p>The identifier of the Active Directory Domain.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include <code>joined</code>, <code>pending-join</code>, <code>failed</code>, and so on.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
-    #[doc(hidden)]
     pub fqdn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role used when making API calls to the Directory Service.</p>
-    #[doc(hidden)]
     pub iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory organizational unit for the DB instance or cluster.</p>
-    #[doc(hidden)]
     pub ou: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user that's a member of the domain.</p>
-    #[doc(hidden)]
     pub auth_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 DNS IP addresses of the primary and secondary Active Directory domain controllers.</p>
-    #[doc(hidden)]
     pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DomainMembership {

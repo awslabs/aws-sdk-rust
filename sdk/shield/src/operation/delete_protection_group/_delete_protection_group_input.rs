@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    #[doc(hidden)]
     pub protection_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProtectionGroupInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAggregateComplianceByConfigRulesInput {
     /// <p>The name of the configuration aggregator.</p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by ConfigRuleComplianceFilters object. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ConfigRuleComplianceFilters>,
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAggregateComplianceByConfigRulesInput {

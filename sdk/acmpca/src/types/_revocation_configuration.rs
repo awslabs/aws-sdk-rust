@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevocationConfiguration {
     /// <p>Configuration of the certificate revocation list (CRL), if any, maintained by your private CA. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, Amazon Web Services Private CA makes further attempts every 15 minutes.</p>
-    #[doc(hidden)]
     pub crl_configuration: ::std::option::Option<crate::types::CrlConfiguration>,
     /// <p>Configuration of Online Certificate Status Protocol (OCSP) support, if any, maintained by your private CA. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
-    #[doc(hidden)]
     pub ocsp_configuration: ::std::option::Option<crate::types::OcspConfiguration>,
 }
 impl RevocationConfiguration {

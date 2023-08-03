@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceAssociationsStatusInput {
     /// <p>The managed node IDs for which you want association status information.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInstanceAssociationsStatusInput {

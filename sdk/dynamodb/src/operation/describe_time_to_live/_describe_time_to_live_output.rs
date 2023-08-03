@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTimeToLiveOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub time_to_live_description: ::std::option::Option<crate::types::TimeToLiveDescription>,
     _request_id: Option<String>,
 }

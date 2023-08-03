@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculatedLifecycle {
     /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
-    #[doc(hidden)]
     pub move_to_cold_storage_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
-    #[doc(hidden)]
     pub delete_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CalculatedLifecycle {

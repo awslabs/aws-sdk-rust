@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroupRemediationAction {
     /// <p>The remediation action that will be performed.</p>
-    #[doc(hidden)]
     pub remediation_action_type: ::std::option::Option<crate::types::RemediationActionType>,
     /// <p>Brief description of the action that will be performed.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The final state of the rule specified in the <code>ViolationTarget</code> after it is remediated.</p>
-    #[doc(hidden)]
     pub remediation_result: ::std::option::Option<crate::types::SecurityGroupRuleDescription>,
     /// <p>Indicates if the current action is the default action.</p>
-    #[doc(hidden)]
     pub is_default_action: bool,
 }
 impl SecurityGroupRemediationAction {

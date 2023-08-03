@@ -7,19 +7,14 @@ pub struct WorkspaceProperties {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
     /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub running_mode: ::std::option::Option<crate::types::RunningMode>,
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
-    #[doc(hidden)]
     pub running_mode_auto_stop_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
-    #[doc(hidden)]
     pub root_volume_size_gib: ::std::option::Option<i32>,
     /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
-    #[doc(hidden)]
     pub user_volume_size_gib: ::std::option::Option<i32>,
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
-    #[doc(hidden)]
     pub compute_type_name: ::std::option::Option<crate::types::Compute>,
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
     /// <ul>
@@ -28,7 +23,6 @@ pub struct WorkspaceProperties {
     /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
 }
 impl WorkspaceProperties {

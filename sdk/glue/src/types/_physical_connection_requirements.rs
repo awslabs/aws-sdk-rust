@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhysicalConnectionRequirements {
     /// <p>The subnet ID used by the connection.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The security group ID list used by the connection.</p>
-    #[doc(hidden)]
     pub security_group_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalConnectionRequirements {

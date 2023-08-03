@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRotationsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about rotations that meet the filter criteria.</p>
-    #[doc(hidden)]
     pub rotations: ::std::option::Option<::std::vec::Vec<crate::types::Rotation>>,
     _request_id: Option<String>,
 }

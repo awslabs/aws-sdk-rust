@@ -10,10 +10,8 @@ pub struct PackageDependency {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package that this package depends on. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> The type of a package dependency. The possible values depend on the package type.</p>
     /// <ul>
@@ -25,10 +23,8 @@ pub struct PackageDependency {
     /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
     /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dependency_type: ::std::option::Option<::std::string::String>,
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
-    #[doc(hidden)]
     pub version_requirement: ::std::option::Option<::std::string::String>,
 }
 impl PackageDependency {

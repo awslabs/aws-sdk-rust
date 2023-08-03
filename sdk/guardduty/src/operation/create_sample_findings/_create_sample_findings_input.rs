@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSampleFindingsInput {
     /// <p>The ID of the detector to create sample findings for.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The types of sample findings to generate.</p>
-    #[doc(hidden)]
     pub finding_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateSampleFindingsInput {

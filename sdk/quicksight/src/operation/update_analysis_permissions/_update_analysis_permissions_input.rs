@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnalysisPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
-    #[doc(hidden)]
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
-    #[doc(hidden)]
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
-    #[doc(hidden)]
     pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateAnalysisPermissionsInput {

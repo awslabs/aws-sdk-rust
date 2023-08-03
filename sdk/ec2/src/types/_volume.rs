@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
     /// <p>Information about the volume attachments.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>,
     /// <p>The Availability Zone for the volume.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp when volume creation was initiated.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the volume is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The snapshot from which the volume was created, if applicable.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VolumeState>,
     /// <p>The ID of the volume.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Any tags assigned to the volume.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The volume type.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
-    #[doc(hidden)]
     pub fast_restored: ::std::option::Option<bool>,
     /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
-    #[doc(hidden)]
     pub multi_attach_enabled: ::std::option::Option<bool>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<i32>,
 }
 impl Volume {

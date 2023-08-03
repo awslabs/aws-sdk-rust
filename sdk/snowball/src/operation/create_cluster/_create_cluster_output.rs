@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterOutput {
     /// <p>The automatically generated ID for a cluster.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
-    #[doc(hidden)]
     pub job_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
     _request_id: Option<String>,
 }

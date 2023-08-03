@@ -5,24 +5,18 @@
 pub struct StartTableDataImportJobInput {
     /// <p>The ID of the workbook where the rows are being imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub workbook_id: ::std::option::Option<::std::string::String>,
     /// <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::ImportDataSource>,
     /// <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::ImportSourceDataFormat>,
     /// <p>The ID of the table where the rows are being imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    #[doc(hidden)]
     pub destination_table_id: ::std::option::Option<::std::string::String>,
     /// <p> The options for customizing this import request. </p>
-    #[doc(hidden)]
     pub import_options: ::std::option::Option<crate::types::ImportOptions>,
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl StartTableDataImportJobInput {

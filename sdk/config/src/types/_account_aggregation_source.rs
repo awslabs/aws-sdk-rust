@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountAggregationSource {
     /// <p>The 12-digit account ID of the account being aggregated. </p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If true, aggregate existing Config regions and future regions.</p>
-    #[doc(hidden)]
     pub all_aws_regions: bool,
     /// <p>The source regions being aggregated.</p>
-    #[doc(hidden)]
     pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AccountAggregationSource {

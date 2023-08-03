@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSetImportHistoryInput {
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The unique identifier of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl ListDataSetImportHistoryInput {

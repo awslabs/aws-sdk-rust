@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMapInput {
     /// <p>The name of the map resource.</p>
-    #[doc(hidden)]
     pub map_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMapInput {

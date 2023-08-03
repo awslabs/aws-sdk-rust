@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopWorkspacesInput {
     /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
-    #[doc(hidden)]
     pub stop_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::StopRequest>>,
 }
 impl StopWorkspacesInput {

@@ -10,11 +10,9 @@ pub struct Projection {
     /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
     /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub projection_type: ::std::option::Option<crate::types::ProjectionType>,
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
-    #[doc(hidden)]
     pub non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Projection {

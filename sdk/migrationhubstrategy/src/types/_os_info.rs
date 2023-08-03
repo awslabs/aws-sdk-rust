@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OsInfo {
     /// <p> Information about the type of operating system. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OsType>,
     /// <p> Information about the version of operating system. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl OsInfo {

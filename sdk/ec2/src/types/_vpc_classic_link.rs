@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcClassicLink {
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
-    #[doc(hidden)]
     pub classic_link_enabled: ::std::option::Option<bool>,
     /// <p>Any tags assigned to the VPC.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcClassicLink {

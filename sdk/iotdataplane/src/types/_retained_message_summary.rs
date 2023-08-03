@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetainedMessageSummary {
     /// <p>The topic name to which the retained message was published.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The size of the retained message's payload in bytes.</p>
-    #[doc(hidden)]
     pub payload_size: i64,
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
-    #[doc(hidden)]
     pub qos: i32,
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
 }
 impl RetainedMessageSummary {

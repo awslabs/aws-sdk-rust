@@ -5,11 +5,9 @@
 pub struct DeleteResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy that you are deleting.</p>
     /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the response headers policy that you are deleting.</p>
     /// <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResponseHeadersPolicyInput {

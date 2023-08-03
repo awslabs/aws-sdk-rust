@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    #[doc(hidden)]
     pub iot_job_configuration: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    #[doc(hidden)]
     pub deployment_policies: ::std::option::Option<crate::types::DeploymentPolicies>,
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    #[doc(hidden)]
     pub parent_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDeploymentInput {

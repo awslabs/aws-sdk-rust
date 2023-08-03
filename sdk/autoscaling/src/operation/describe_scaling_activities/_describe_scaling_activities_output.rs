@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScalingActivitiesOutput {
     /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
-    #[doc(hidden)]
     pub activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

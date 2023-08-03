@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleOutput {
     /// <p>The firewall rule that you just updated. </p>
-    #[doc(hidden)]
     pub firewall_rule: ::std::option::Option<crate::types::FirewallRule>,
     _request_id: Option<String>,
 }

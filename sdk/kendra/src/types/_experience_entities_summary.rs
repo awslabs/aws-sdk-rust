@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperienceEntitiesSummary {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<crate::types::EntityType>,
     /// <p>Information about the user entity.</p>
-    #[doc(hidden)]
     pub display_data: ::std::option::Option<crate::types::EntityDisplayData>,
 }
 impl ExperienceEntitiesSummary {

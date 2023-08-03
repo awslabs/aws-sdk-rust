@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageAggregation {
     /// <p>The names of packages to aggregate findings on.</p>
-    #[doc(hidden)]
     pub package_names: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The order to sort results by.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::PackageSortBy>,
 }
 impl PackageAggregation {

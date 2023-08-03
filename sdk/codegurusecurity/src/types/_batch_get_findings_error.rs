@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFindingsError {
     /// <p>The name of the scan that generated the finding.</p>
-    #[doc(hidden)]
     pub scan_name: ::std::option::Option<::std::string::String>,
     /// <p>The finding ID of the finding that was not fetched.</p>
-    #[doc(hidden)]
     pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>A code associated with the type of error.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>Describes the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetFindingsError {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevEnvironmentRepositorySummary {
     /// <p>The name of the source repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
 impl DevEnvironmentRepositorySummary {

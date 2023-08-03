@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecution {
     /// <p>The unique identifier you assigned to the job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, CANCELED, or REJECTED).</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
-    #[doc(hidden)]
     pub force_canceled: ::std::option::Option<bool>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<crate::types::JobExecutionStatusDetails>,
     /// <p>The ARN of the thing on which the job execution is running.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
-    #[doc(hidden)]
     pub queued_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used in commands which return or update job execution information. </p>
-    #[doc(hidden)]
     pub execution_number: ::std::option::Option<i64>,
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
-    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.</p>
-    #[doc(hidden)]
     pub approximate_seconds_before_timed_out: ::std::option::Option<i64>,
 }
 impl JobExecution {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopHyperParameterTuningJobInput {
     /// <p>The name of the tuning job to stop.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopHyperParameterTuningJobInput {

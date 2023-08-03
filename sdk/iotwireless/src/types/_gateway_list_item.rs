@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayListItem {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
-    #[doc(hidden)]
     pub downlink_frequency: ::std::option::Option<i32>,
 }
 impl GatewayListItem {

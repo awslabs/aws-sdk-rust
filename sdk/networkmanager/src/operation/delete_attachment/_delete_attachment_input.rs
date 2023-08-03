@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAttachmentInput {
     /// <p>The ID of the attachment to delete.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAttachmentInput {

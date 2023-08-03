@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFederationTokenOutput {
     /// <p>The credentials to use for federation.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>The URL to sign into the user's instance. </p>
-    #[doc(hidden)]
     pub sign_in_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

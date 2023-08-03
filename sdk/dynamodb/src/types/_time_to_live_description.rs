@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeToLiveDescription {
     /// <p> The TTL status for the table.</p>
-    #[doc(hidden)]
     pub time_to_live_status: ::std::option::Option<crate::types::TimeToLiveStatus>,
     /// <p> The name of the TTL attribute for items in the table.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl TimeToLiveDescription {

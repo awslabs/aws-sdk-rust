@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactsConcatenationConfiguration {
     /// <p>The configuration for the audio artifacts concatenation.</p>
-    #[doc(hidden)]
     pub audio: ::std::option::Option<crate::types::AudioConcatenationConfiguration>,
     /// <p>The configuration for the video artifacts concatenation.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::VideoConcatenationConfiguration>,
     /// <p>The configuration for the content artifacts concatenation.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::ContentConcatenationConfiguration>,
     /// <p>The configuration for the data channel artifacts concatenation.</p>
-    #[doc(hidden)]
     pub data_channel: ::std::option::Option<crate::types::DataChannelConcatenationConfiguration>,
     /// <p>The configuration for the transcription messages artifacts concatenation.</p>
-    #[doc(hidden)]
     pub transcription_messages: ::std::option::Option<crate::types::TranscriptionMessagesConcatenationConfiguration>,
     /// <p>The configuration for the meeting events artifacts concatenation.</p>
-    #[doc(hidden)]
     pub meeting_events: ::std::option::Option<crate::types::MeetingEventsConcatenationConfiguration>,
     /// <p>The configuration for the composited video artifacts concatenation.</p>
-    #[doc(hidden)]
     pub composited_video: ::std::option::Option<crate::types::CompositedVideoConcatenationConfiguration>,
 }
 impl ArtifactsConcatenationConfiguration {

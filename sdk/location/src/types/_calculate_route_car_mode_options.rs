@@ -7,12 +7,10 @@ pub struct CalculateRouteCarModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    #[doc(hidden)]
     pub avoid_ferries: ::std::option::Option<bool>,
     /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    #[doc(hidden)]
     pub avoid_tolls: ::std::option::Option<bool>,
 }
 impl CalculateRouteCarModeOptions {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCommandsInput {
     /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
-    #[doc(hidden)]
     pub command_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeCommandsInput {

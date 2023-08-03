@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClusterSessionCredentialsInput {
     /// <p>The unique identifier of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterSessionCredentialsInput {

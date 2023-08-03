@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamChannelDefinition {
     /// <p>The number of channels in a streaming channel.</p>
-    #[doc(hidden)]
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>The definitions of the channels in a streaming channel.</p>
-    #[doc(hidden)]
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl StreamChannelDefinition {

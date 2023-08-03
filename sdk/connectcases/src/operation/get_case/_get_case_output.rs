@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCaseOutput {
     /// <p>A list of detailed field information. </p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     /// <p>A unique identifier of a template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }

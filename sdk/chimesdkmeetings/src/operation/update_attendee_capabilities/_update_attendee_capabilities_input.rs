@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAttendeeCapabilitiesInput {
     /// <p>The ID of the meeting associated with the update request.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attendee associated with the update request.</p>
-    #[doc(hidden)]
     pub attendee_id: ::std::option::Option<::std::string::String>,
     /// <p>The capabilities that you want to update.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
 impl UpdateAttendeeCapabilitiesInput {

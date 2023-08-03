@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetParticipantOutput {
     /// <p>The participant that is returned.</p>
-    #[doc(hidden)]
     pub participant: ::std::option::Option<crate::types::Participant>,
     _request_id: Option<String>,
 }

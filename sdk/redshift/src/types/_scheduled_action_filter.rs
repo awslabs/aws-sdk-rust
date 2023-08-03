@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledActionFilter {
     /// <p>The type of element to filter. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ScheduledActionFilterName>,
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScheduledActionFilter {

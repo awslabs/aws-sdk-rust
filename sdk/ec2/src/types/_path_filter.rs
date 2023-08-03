@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathFilter {
     /// <p>The source IPv4 address.</p>
-    #[doc(hidden)]
     pub source_address: ::std::option::Option<::std::string::String>,
     /// <p>The source port range.</p>
-    #[doc(hidden)]
     pub source_port_range: ::std::option::Option<crate::types::FilterPortRange>,
     /// <p>The destination IPv4 address.</p>
-    #[doc(hidden)]
     pub destination_address: ::std::option::Option<::std::string::String>,
     /// <p>The destination port range.</p>
-    #[doc(hidden)]
     pub destination_port_range: ::std::option::Option<crate::types::FilterPortRange>,
 }
 impl PathFilter {

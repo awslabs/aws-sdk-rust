@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenJobGenericDataSchema {
     /// <p>The type of the data source for the schema. Currently, the only valid value is an Amplify <code>DataStore</code>.</p>
-    #[doc(hidden)]
     pub data_source_type: ::std::option::Option<crate::types::CodegenJobGenericDataSourceType>,
     /// <p>The name of a <code>CodegenGenericDataModel</code>.</p>
-    #[doc(hidden)]
     pub models: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataModel>>,
     /// <p>The name of a <code>CodegenGenericDataEnum</code>.</p>
-    #[doc(hidden)]
     pub enums: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataEnum>>,
     /// <p>The name of a <code>CodegenGenericDataNonModel</code>.</p>
-    #[doc(hidden)]
     pub non_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataNonModel>>,
 }
 impl CodegenJobGenericDataSchema {

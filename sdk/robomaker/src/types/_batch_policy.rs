@@ -6,11 +6,9 @@
 pub struct BatchPolicy {
     /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
     /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
     /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<i32>,
 }
 impl BatchPolicy {

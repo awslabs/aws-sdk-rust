@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateArchiveRuleInput {
     /// <p>The name of the created analyzer.</p>
-    #[doc(hidden)]
     pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule to create.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria for the rule.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>A client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateArchiveRuleInput {

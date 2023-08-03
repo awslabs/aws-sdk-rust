@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PhoneNumber {
     /// <p>The raw value of the phone number.</p>
-    #[doc(hidden)]
     pub number: ::std::option::Option<::std::string::String>,
     /// <p>The type of the phone number.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PhoneNumberType>,
 }
 impl PhoneNumber {

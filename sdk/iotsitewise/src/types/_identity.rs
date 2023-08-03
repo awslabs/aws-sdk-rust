@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Identity {
     /// <p>An IAM Identity Center user identity.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::UserIdentity>,
     /// <p>An IAM Identity Center group identity.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::GroupIdentity>,
     /// <p>An IAM user identity.</p>
-    #[doc(hidden)]
     pub iam_user: ::std::option::Option<crate::types::IamUserIdentity>,
     /// <p>An IAM role identity.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<crate::types::IamRoleIdentity>,
 }
 impl Identity {

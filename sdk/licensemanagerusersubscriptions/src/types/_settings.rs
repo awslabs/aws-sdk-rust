@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Settings {
     /// <p>The subnets defined for the registered identity provider.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
-    #[doc(hidden)]
     pub security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl Settings {

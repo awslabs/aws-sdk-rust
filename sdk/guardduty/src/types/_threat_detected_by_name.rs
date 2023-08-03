@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThreatDetectedByName {
     /// <p>Total number of infected files identified.</p>
-    #[doc(hidden)]
     pub item_count: i32,
     /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
-    #[doc(hidden)]
     pub unique_threat_name_count: i32,
     /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
-    #[doc(hidden)]
     pub shortened: bool,
     /// <p>List of identified threats with details, organized by threat name.</p>
-    #[doc(hidden)]
     pub threat_names: ::std::option::Option<::std::vec::Vec<crate::types::ScanThreatName>>,
 }
 impl ThreatDetectedByName {

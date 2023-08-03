@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveEndpointsInput {
     /// <p>The identifiers of the endpoints that you want to remove.</p>
-    #[doc(hidden)]
     pub endpoint_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::EndpointIdentifier>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveEndpointsInput {

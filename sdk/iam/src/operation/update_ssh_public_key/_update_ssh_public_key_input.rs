@@ -5,14 +5,11 @@
 pub struct UpdateSshPublicKeyInput {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    #[doc(hidden)]
     pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The status to assign to the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
 }
 impl UpdateSshPublicKeyInput {

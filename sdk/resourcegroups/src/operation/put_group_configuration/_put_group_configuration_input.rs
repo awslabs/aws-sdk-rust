@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutGroupConfigurationInput {
     /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an Amazon Web Services service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
     /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
 }
 impl PutGroupConfigurationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VaultNotificationConfig {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub sns_topic: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VaultNotificationConfig {

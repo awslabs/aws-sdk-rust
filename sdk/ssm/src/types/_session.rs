@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Session {
     /// <p>The ID of the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The managed node that the Session Manager session connected to.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SessionStatus>,
     /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services user that started the session.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The reason for connecting to the instance.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub output_url: ::std::option::Option<crate::types::SessionManagerOutputUrl>,
     /// <p>The maximum duration of a session before it terminates.</p>
-    #[doc(hidden)]
     pub max_session_duration: ::std::option::Option<::std::string::String>,
 }
 impl Session {

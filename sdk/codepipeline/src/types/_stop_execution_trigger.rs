@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopExecutionTrigger {
     /// <p>The user-specified reason the pipeline was stopped.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl StopExecutionTrigger {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListPipesInput {
     /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
-    #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The state the pipe should be in.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::RequestedPipeState>,
     /// <p>The state the pipe is in.</p>
-    #[doc(hidden)]
     pub current_state: ::std::option::Option<crate::types::PipeState>,
     /// <p>The prefix matching the pipe source.</p>
-    #[doc(hidden)]
     pub source_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The prefix matching the pipe target.</p>
-    #[doc(hidden)]
     pub target_prefix: ::std::option::Option<::std::string::String>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of pipes to include in the response.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListPipesInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlobInput {
     /// <p>The name of the repository that contains the blob.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
-    #[doc(hidden)]
     pub blob_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBlobInput {

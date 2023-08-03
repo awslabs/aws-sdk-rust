@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DqStopJobOnFailureOptions {
     /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
-    #[doc(hidden)]
     pub stop_job_on_failure_timing: ::std::option::Option<crate::types::DqStopJobOnFailureTiming>,
 }
 impl DqStopJobOnFailureOptions {

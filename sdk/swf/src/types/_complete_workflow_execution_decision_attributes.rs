@@ -13,7 +13,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteWorkflowExecutionDecisionAttributes {
     /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
 }
 impl CompleteWorkflowExecutionDecisionAttributes {

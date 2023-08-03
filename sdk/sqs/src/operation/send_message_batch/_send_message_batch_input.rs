@@ -6,10 +6,8 @@
 pub struct SendMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,
 }
 impl SendMessageBatchInput {

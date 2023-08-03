@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Eirp {
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
     /// <p>Units of an EIRP.</p>
-    #[doc(hidden)]
     pub units: ::std::option::Option<crate::types::EirpUnits>,
 }
 impl Eirp {

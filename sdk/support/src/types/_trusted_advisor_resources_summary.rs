@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorResourcesSummary {
     /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub resources_processed: i64,
     /// <p>The number of Amazon Web Services resources that were flagged (listed) by the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub resources_flagged: i64,
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because information was unavailable.</p>
-    #[doc(hidden)]
     pub resources_ignored: i64,
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
-    #[doc(hidden)]
     pub resources_suppressed: i64,
 }
 impl TrustedAdvisorResourcesSummary {

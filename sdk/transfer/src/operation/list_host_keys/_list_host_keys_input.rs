@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHostKeysInput {
     /// <p>The maximum number of host keys to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListHostKeys</code> to continue listing results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the server that contains the host keys that you want to view.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
 }
 impl ListHostKeysInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActivatedRulesInRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
-    #[doc(hidden)]
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
-    #[doc(hidden)]
     pub limit: i32,
 }
 impl ListActivatedRulesInRuleGroupInput {

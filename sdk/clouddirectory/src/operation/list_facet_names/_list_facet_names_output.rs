@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFacetNamesOutput {
     /// <p>The names of facets that exist within the schema.</p>
-    #[doc(hidden)]
     pub facet_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

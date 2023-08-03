@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The street of the address.</p>
-    #[doc(hidden)]
     pub street_address: ::std::option::Option<::std::string::String>,
     /// <p>A string of the address locality.</p>
-    #[doc(hidden)]
     pub locality: ::std::option::Option<::std::string::String>,
     /// <p>The region of the address.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The postal code of the address.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The country of the address.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>A string containing a formatted version of the address for display.</p>
-    #[doc(hidden)]
     pub formatted: ::std::option::Option<::std::string::String>,
     /// <p>A string representing the type of address. For example, "Home."</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value representing whether this is the primary address for the associated resource.</p>
-    #[doc(hidden)]
     pub primary: bool,
 }
 impl Address {

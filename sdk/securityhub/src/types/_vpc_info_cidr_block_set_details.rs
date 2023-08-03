@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcInfoCidrBlockSetDetails {
     /// <p>The IPv4 CIDR block for the VPC. </p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
 }
 impl VpcInfoCidrBlockSetDetails {

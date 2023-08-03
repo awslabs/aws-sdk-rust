@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Campaign {
     /// <p>The name of the campaign.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
-    #[doc(hidden)]
     pub campaign_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
-    #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
-    #[doc(hidden)]
     pub min_provisioned_tps: ::std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
-    #[doc(hidden)]
     pub campaign_config: ::std::option::Option<crate::types::CampaignConfig>,
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
@@ -25,19 +20,14 @@ pub struct Campaign {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If a campaign fails, the reason behind the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
-    #[doc(hidden)]
     pub latest_campaign_update: ::std::option::Option<crate::types::CampaignUpdateSummary>,
 }
 impl Campaign {

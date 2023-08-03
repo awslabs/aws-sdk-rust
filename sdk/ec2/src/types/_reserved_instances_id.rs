@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstancesId {
     /// <p>The ID of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
 }
 impl ReservedInstancesId {

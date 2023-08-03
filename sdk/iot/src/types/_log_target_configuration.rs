@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogTargetConfiguration {
     /// <p>A log target</p>
-    #[doc(hidden)]
     pub log_target: ::std::option::Option<crate::types::LogTarget>,
     /// <p>The logging level.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl LogTargetConfiguration {

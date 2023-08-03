@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceIdentifierSummary {
     /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
-    #[doc(hidden)]
     pub logical_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
-    #[doc(hidden)]
     pub resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResourceIdentifierSummary {

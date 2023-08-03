@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesJobsInput {
     /// <p>Filter results by the job's target device ID.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of device jobs to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListDevicesJobsInput {

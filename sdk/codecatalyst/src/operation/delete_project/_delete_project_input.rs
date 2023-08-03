@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space. To retrieve a list of project names, use <code>ListProjects</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProjectInput {

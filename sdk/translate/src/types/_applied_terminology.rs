@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppliedTerminology {
     /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
-    #[doc(hidden)]
     pub terms: ::std::option::Option<::std::vec::Vec<crate::types::Term>>,
 }
 impl AppliedTerminology {

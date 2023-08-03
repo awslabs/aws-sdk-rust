@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceObservabilityConfiguration {
     /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
-    #[doc(hidden)]
     pub observability_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the observability configuration that is associated with the service. Specified only when <code>ObservabilityEnabled</code> is <code>true</code>.</p>
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code> </p>
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
-    #[doc(hidden)]
     pub observability_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServiceObservabilityConfiguration {

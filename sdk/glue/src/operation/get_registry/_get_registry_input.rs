@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegistryInput {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<crate::types::RegistryId>,
 }
 impl GetRegistryInput {

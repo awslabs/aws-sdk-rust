@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The identifier for the error.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>Description of the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the resource that was not found.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource that was not found.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

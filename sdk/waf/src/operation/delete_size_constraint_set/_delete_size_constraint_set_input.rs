@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    #[doc(hidden)]
     pub size_constraint_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSizeConstraintSetInput {

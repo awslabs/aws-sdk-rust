@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsFilter {
     /// <p>The billing period range in which the custom line item version is applied.</p>
-    #[doc(hidden)]
     pub billing_period_range: ::std::option::Option<crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>,
 }
 impl ListCustomLineItemVersionsFilter {

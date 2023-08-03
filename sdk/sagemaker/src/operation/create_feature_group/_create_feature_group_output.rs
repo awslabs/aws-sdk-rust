@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFeatureGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
-    #[doc(hidden)]
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

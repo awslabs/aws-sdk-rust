@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyOutput {
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the current revision of the returned policy.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNotebookInstanceLifecycleConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the lifecycle configuration.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The shell script that runs only once, when you create a notebook instance.</p>
-    #[doc(hidden)]
     pub on_create: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance.</p>
-    #[doc(hidden)]
     pub on_start: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

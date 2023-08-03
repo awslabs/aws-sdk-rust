@@ -5,55 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerDescription {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    #[doc(hidden)]
     pub canonical_hosted_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
-    #[doc(hidden)]
     pub canonical_hosted_zone_name_id: ::std::option::Option<::std::string::String>,
     /// <p>The listeners for the load balancer.</p>
-    #[doc(hidden)]
     pub listener_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ListenerDescription>>,
     /// <p>The policies defined for the load balancer.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<crate::types::Policies>,
     /// <p>Information about your EC2 instances.</p>
-    #[doc(hidden)]
     pub backend_server_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::BackendServerDescription>>,
     /// <p>The Availability Zones for the load balancer.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the subnets for the load balancer.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the VPC for the load balancer.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the instances for the load balancer.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     /// <p>Information about the health checks conducted on the load balancer.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
-    #[doc(hidden)]
     pub source_security_group: ::std::option::Option<crate::types::SourceSecurityGroup>,
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time the load balancer was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
-    #[doc(hidden)]
     pub scheme: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerDescription {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyDescription {
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy type.</p>
-    #[doc(hidden)]
     pub policy_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy attributes.</p>
-    #[doc(hidden)]
     pub policy_attribute_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>>,
 }
 impl PolicyDescription {

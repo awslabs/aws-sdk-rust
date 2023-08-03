@@ -9,17 +9,14 @@ pub struct CloudWatchDimensionConfiguration {
     /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
-    #[doc(hidden)]
     pub dimension_value_source: ::std::option::Option<crate::types::DimensionValueSource>,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
     /// <ul>
     /// <li> <p>Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-), at signs (@), and periods (.).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub default_dimension_value: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchDimensionConfiguration {

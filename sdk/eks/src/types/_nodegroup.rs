@@ -5,75 +5,52 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Nodegroup {
     /// <p>The name associated with an Amazon EKS managed node group.</p>
-    #[doc(hidden)]
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the managed node group.</p>
-    #[doc(hidden)]
     pub nodegroup_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster that the managed node group resides in.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes version of the managed node group.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was specified in the launch template. For node groups that weren't deployed using a launch template, this is the version of the Amazon EKS optimized AMI that the node group was deployed with.</p>
-    #[doc(hidden)]
     pub release_version: ::std::option::Option<::std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last modified.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the managed node group.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NodegroupStatus>,
     /// <p>The capacity type of your managed node group.</p>
-    #[doc(hidden)]
     pub capacity_type: ::std::option::Option<crate::types::CapacityTypes>,
     /// <p>The scaling configuration details for the Auto Scaling group that is associated with your node group.</p>
-    #[doc(hidden)]
     pub scaling_config: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the instance type that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    #[doc(hidden)]
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnets that were specified for the Auto Scaling group that is associated with your node group.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the remote access configuration that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    #[doc(hidden)]
     pub remote_access: ::std::option::Option<crate::types::RemoteAccessConfig>,
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node group configuration.</p>
-    #[doc(hidden)]
     pub ami_type: ::std::option::Option<crate::types::AmiTypes>,
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.</p>
-    #[doc(hidden)]
     pub node_role: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
-    #[doc(hidden)]
     pub taints: ::std::option::Option<::std::vec::Vec<crate::types::Taint>>,
     /// <p>The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<crate::types::NodegroupResources>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the disk size in the node group configuration. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    #[doc(hidden)]
     pub disk_size: ::std::option::Option<i32>,
     /// <p>The health status of the node group. If there are issues with your node group's health, they are listed here.</p>
-    #[doc(hidden)]
     pub health: ::std::option::Option<crate::types::NodegroupHealth>,
     /// <p>The node group update configuration.</p>
-    #[doc(hidden)]
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Nodegroup {

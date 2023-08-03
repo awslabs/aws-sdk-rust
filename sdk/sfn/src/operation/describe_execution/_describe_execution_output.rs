@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -19,50 +17,36 @@ pub struct DescribeExecutionOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The date the execution is started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the execution ended, the date the execution stopped.</p>
-    #[doc(hidden)]
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about execution input or output.</p>
-    #[doc(hidden)]
     pub input_details: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
     /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
-    #[doc(hidden)]
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about execution input or output.</p>
-    #[doc(hidden)]
     pub output_details: ::std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     /// <p>The X-Ray trace header that was passed to the execution.</p>
-    #[doc(hidden)]
     pub trace_header: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.</p>
-    #[doc(hidden)]
     pub map_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error string if the state machine execution failed.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The cause string if the state machine execution failed.</p>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request without specifying a state machine version or alias ARN, Step Functions returns a null value.</p>
-    #[doc(hidden)]
     pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the state machine alias associated with the execution. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
     /// <p>If you start an execution from a <code>StartExecution</code> request with a state machine version ARN, this field will be null.</p>
-    #[doc(hidden)]
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

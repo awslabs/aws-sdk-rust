@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
-    #[doc(hidden)]
     pub excluded_column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ColumnWildcard {

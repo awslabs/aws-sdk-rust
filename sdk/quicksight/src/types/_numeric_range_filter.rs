@@ -5,31 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericRangeFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    #[doc(hidden)]
     pub filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that the filter is applied to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
-    #[doc(hidden)]
     pub include_minimum: ::std::option::Option<bool>,
     /// <p>Determines whether the maximum value in the filter value range should be included in the filtered results.</p>
-    #[doc(hidden)]
     pub include_maximum: ::std::option::Option<bool>,
     /// <p>The minimum value for the filter value range.</p>
-    #[doc(hidden)]
     pub range_minimum: ::std::option::Option<crate::types::NumericRangeFilterValue>,
     /// <p>The maximum value for the filter value range.</p>
-    #[doc(hidden)]
     pub range_maximum: ::std::option::Option<crate::types::NumericRangeFilterValue>,
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub select_all_options: ::std::option::Option<crate::types::NumericFilterSelectAllOptions>,
     /// <p>The aggregation function of the filter.</p>
-    #[doc(hidden)]
     pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -37,7 +29,6 @@ pub struct NumericRangeFilter {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
 }
 impl NumericRangeFilter {

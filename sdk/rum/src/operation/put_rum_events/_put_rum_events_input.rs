@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRumEventsInput {
     /// <p>The ID of the app monitor that is sending this data.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for this batch of RUM event data.</p>
-    #[doc(hidden)]
     pub batch_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-    #[doc(hidden)]
     pub app_monitor_details: ::std::option::Option<crate::types::AppMonitorDetails>,
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
-    #[doc(hidden)]
     pub user_details: ::std::option::Option<crate::types::UserDetails>,
     /// <p>An array of structures that contain the telemetry event data.</p>
-    #[doc(hidden)]
     pub rum_events: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>,
 }
 impl PutRumEventsInput {

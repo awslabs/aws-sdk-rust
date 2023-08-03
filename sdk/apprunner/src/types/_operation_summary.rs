@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperationSummary {
     /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation. It indicates a specific action that occured.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The current state of the operation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
-    #[doc(hidden)]
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OperationSummary {

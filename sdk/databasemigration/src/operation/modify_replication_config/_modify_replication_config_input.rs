@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationConfigInput {
     /// <p>The Amazon Resource Name of the replication to modify.</p>
-    #[doc(hidden)]
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new replication config to apply to the replication.</p>
-    #[doc(hidden)]
     pub replication_config_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of replication.</p>
-    #[doc(hidden)]
     pub replication_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     /// <p>Table mappings specified in the replication.</p>
-    #[doc(hidden)]
     pub table_mappings: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the replication.</p>
-    #[doc(hidden)]
     pub replication_settings: ::std::option::Option<::std::string::String>,
     /// <p>Additional settings for the replication.</p>
-    #[doc(hidden)]
     pub supplemental_settings: ::std::option::Option<::std::string::String>,
     /// <p>Configuration parameters for provisioning an DMS Serverless replication.</p>
-    #[doc(hidden)]
     pub compute_config: ::std::option::Option<crate::types::ComputeConfig>,
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS serverless replication configuration.</p>
-    #[doc(hidden)]
     pub source_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
-    #[doc(hidden)]
     pub target_endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl ModifyReplicationConfigInput {

@@ -6,34 +6,25 @@
 pub struct RecommendationJobContainerConfig {
     /// <p>The machine learning domain of the model and its components.</p>
     /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code> </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning task that the model accomplishes.</p>
     /// <p>Valid Values: <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION | IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code> </p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning framework of the container image.</p>
     /// <p>Valid Values: <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code> </p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<::std::string::String>,
     /// <p>The framework version of the container image.</p>
-    #[doc(hidden)]
     pub framework_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
-    #[doc(hidden)]
     pub payload_config: ::std::option::Option<crate::types::RecommendationJobPayloadConfig>,
     /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
     /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code> </p>
-    #[doc(hidden)]
     pub nearest_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    #[doc(hidden)]
     pub supported_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
-    #[doc(hidden)]
     pub data_input_config: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
-    #[doc(hidden)]
     pub supported_endpoint_type: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
 }
 impl RecommendationJobContainerConfig {

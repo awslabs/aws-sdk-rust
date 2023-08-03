@@ -10,19 +10,14 @@ pub struct CreateKeyInput {
     /// <li> <p>Must be a unique API key name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The API key restrictions for the API key resource.</p>
-    #[doc(hidden)]
     pub restrictions: ::std::option::Option<crate::types::ApiKeyRestrictions>,
     /// <p>An optional description for the API key resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
-    #[doc(hidden)]
     pub expire_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
-    #[doc(hidden)]
     pub no_expiry: ::std::option::Option<bool>,
     /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -35,7 +30,6 @@ pub struct CreateKeyInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateKeyInput {

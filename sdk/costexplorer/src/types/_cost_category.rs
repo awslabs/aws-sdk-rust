@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
-    #[doc(hidden)]
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The effective start date of your Cost Category.</p>
-    #[doc(hidden)]
     pub effective_start: ::std::option::Option<::std::string::String>,
     /// <p>The effective end date of your Cost Category.</p>
-    #[doc(hidden)]
     pub effective_end: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
-    #[doc(hidden)]
     pub rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
     /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
-    #[doc(hidden)]
     pub split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-    #[doc(hidden)]
     pub processing_status: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
     /// <p>The default value for the cost category.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl CostCategory {

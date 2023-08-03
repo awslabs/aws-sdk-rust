@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomRoutingEndpointGroup {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
-    #[doc(hidden)]
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    #[doc(hidden)]
     pub destination_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationDescription>>,
     /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    #[doc(hidden)]
     pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointDescription>>,
 }
 impl CustomRoutingEndpointGroup {

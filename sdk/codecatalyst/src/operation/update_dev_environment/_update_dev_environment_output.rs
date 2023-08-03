@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDevEnvironmentOutput {
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-specified alias for the Dev Environment.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
-    #[doc(hidden)]
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
-    #[doc(hidden)]
     pub inactivity_timeout_minutes: i32,
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

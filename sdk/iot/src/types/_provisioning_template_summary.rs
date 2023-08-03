@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningTemplateSummary {
     /// <p>The ARN of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date when the provisioning template summary was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the provisioning template summary was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TemplateType>,
 }
 impl ProvisioningTemplateSummary {

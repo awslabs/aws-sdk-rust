@@ -5,22 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferencedImageDetail {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub image_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The date and time, expressed in standard JavaScript date format, which the current image tag was pushed to the repository at.</p>
-    #[doc(hidden)]
     pub image_pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The media type of the image manifest.</p>
-    #[doc(hidden)]
     pub image_manifest_media_type: ::std::option::Option<::std::string::String>,
     /// <p>The artifact media type of the image.</p>
-    #[doc(hidden)]
     pub artifact_media_type: ::std::option::Option<::std::string::String>,
 }
 impl ReferencedImageDetail {

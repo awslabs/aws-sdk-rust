@@ -4,41 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSlotInput {
     /// <p>The unique identifier for the slot to update.</p>
-    #[doc(hidden)]
     pub slot_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the slot.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description for the slot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the new slot type to associate with this slot. </p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
-    #[doc(hidden)]
     pub value_elicitation_setting: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
     /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
-    #[doc(hidden)]
     pub obfuscation_setting: ::std::option::Option<crate::types::ObfuscationSetting>,
     /// <p>The unique identifier of the bot that contains the slot.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the intent that contains the slot.</p>
-    #[doc(hidden)]
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub multiple_values_setting: ::std::option::Option<crate::types::MultipleValuesSetting>,
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    #[doc(hidden)]
     pub sub_slot_setting: ::std::option::Option<crate::types::SubSlotSetting>,
 }
 impl UpdateSlotInput {

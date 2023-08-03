@@ -5,19 +5,15 @@
 pub struct DeleteAnomalyDetectorInput {
     /// <p>The namespace associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The metric name associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The statistic associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    #[doc(hidden)]
     pub stat: ::std::option::Option<::std::string::String>,
     /// <p>A single metric anomaly detector to be deleted.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
@@ -29,7 +25,6 @@ pub struct DeleteAnomalyDetectorInput {
     /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
-    #[doc(hidden)]
     pub single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
     /// <p>The metric math anomaly detector to be deleted.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
@@ -41,7 +36,6 @@ pub struct DeleteAnomalyDetectorInput {
     /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
-    #[doc(hidden)]
     pub metric_math_anomaly_detector: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
 }
 impl DeleteAnomalyDetectorInput {

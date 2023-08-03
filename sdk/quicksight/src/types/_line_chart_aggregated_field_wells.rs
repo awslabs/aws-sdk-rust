@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartAggregatedFieldWells {
     /// <p>The category field wells of a line chart. Values are grouped by category fields.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field wells of a line chart. Values are aggregated based on categories.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The color field wells of a line chart. Values are grouped by category fields.</p>
-    #[doc(hidden)]
     pub colors: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The small multiples field well of a line chart.</p>
-    #[doc(hidden)]
     pub small_multiples: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl LineChartAggregatedFieldWells {

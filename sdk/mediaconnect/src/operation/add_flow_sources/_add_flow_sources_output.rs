@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowSourcesOutput {
     /// The ARN of the flow that these sources were added to.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The details of the newly added sources.
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
     _request_id: Option<String>,
 }

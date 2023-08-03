@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetPreparedStatementInput {
     /// <p>A list of prepared statement names to return.</p>
-    #[doc(hidden)]
     pub prepared_statement_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetPreparedStatementInput {

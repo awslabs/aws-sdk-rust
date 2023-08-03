@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRevisionOutput {
     /// <p>The ARN for the revision.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional comment about the revision.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
-    #[doc(hidden)]
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the revision.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    #[doc(hidden)]
     pub revocation_comment: ::std::option::Option<::std::string::String>,
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
-    #[doc(hidden)]
     pub revoked: bool,
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorDetail {
     /// <p>The code associated with this error.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>A message describing the error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDetail {

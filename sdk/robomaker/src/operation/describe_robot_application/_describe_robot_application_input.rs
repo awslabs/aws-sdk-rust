@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The version of the robot application to describe.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRobotApplicationInput {

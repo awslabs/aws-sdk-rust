@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutImageScanningConfigurationInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    #[doc(hidden)]
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl PutImageScanningConfigurationInput {

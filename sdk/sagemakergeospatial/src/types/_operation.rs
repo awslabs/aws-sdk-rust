@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operation {
     /// <p>The name of the operation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
-    #[doc(hidden)]
     pub equation: ::std::option::Option<::std::string::String>,
     /// <p>The type of the operation.</p>
-    #[doc(hidden)]
     pub output_type: ::std::option::Option<crate::types::OutputType>,
 }
 impl Operation {

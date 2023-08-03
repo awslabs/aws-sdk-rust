@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Conflict {
     /// <p>Metadata about a conflict in a merge operation.</p>
-    #[doc(hidden)]
     pub conflict_metadata: ::std::option::Option<crate::types::ConflictMetadata>,
     /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
-    #[doc(hidden)]
     pub merge_hunks: ::std::option::Option<::std::vec::Vec<crate::types::MergeHunk>>,
 }
 impl Conflict {

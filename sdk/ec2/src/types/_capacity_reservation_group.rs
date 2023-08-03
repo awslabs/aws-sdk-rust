@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservationGroup {
     /// <p>The ARN of the resource group.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationGroup {

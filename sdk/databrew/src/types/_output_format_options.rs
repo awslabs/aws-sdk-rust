@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputFormatOptions {
     /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
-    #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::CsvOutputOptions>,
 }
 impl OutputFormatOptions {

@@ -4,26 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountSettingsInput {
     /// <p>The name of the account setting you want to list the settings for.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SettingName>,
     /// <p>The value of the account settings to filter results with. You must also specify an account setting name to use this parameter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account settings are listed only for the authenticated user.</p> <note>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to return the effective settings. If <code>true</code>, the account settings for the root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account settings for the <code>principalArn</code> are returned if they're set. Otherwise, no account settings are returned.</p>
-    #[doc(hidden)]
     pub effective_settings: ::std::option::Option<bool>,
     /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of account setting results returned by <code>ListAccountSettings</code> in paginated output. When this parameter is used, <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListAccountSettings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter isn't used, then <code>ListAccountSettings</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAccountSettingsInput {

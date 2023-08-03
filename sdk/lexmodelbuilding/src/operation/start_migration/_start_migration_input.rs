@@ -4,27 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMigrationInput {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
-    #[doc(hidden)]
     pub v1_bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
-    #[doc(hidden)]
     pub v1_bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>
     /// <ul>
     /// <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li>
     /// <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub v2_bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    #[doc(hidden)]
     pub v2_bot_role: ::std::option::Option<::std::string::String>,
     /// <p>The strategy used to conduct the migration.</p>
     /// <ul>
     /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
     /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub migration_strategy: ::std::option::Option<crate::types::MigrationStrategy>,
 }
 impl StartMigrationInput {

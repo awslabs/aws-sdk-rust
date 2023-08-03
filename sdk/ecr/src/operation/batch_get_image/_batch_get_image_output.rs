@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetImageOutput {
     /// <p>A list of image objects corresponding to the image references in the request.</p>
-    #[doc(hidden)]
     pub images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::ImageFailure>>,
     _request_id: Option<String>,
 }

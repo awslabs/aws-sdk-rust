@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultErrorEntry {
     /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ResultErrorEntry {

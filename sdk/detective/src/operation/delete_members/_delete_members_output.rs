@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMembersOutput {
     /// <p>The list of Amazon Web Services account identifiers for the member accounts that Detective successfully removed from the behavior graph.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of member accounts that Detective was not able to remove from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>
-    #[doc(hidden)]
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }

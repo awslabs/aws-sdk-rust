@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackendJobInput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
-    #[doc(hidden)]
     pub backend_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBackendJobInput {

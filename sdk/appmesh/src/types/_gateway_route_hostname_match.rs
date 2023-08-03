@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteHostnameMatch {
     /// <p>The exact host name to match on.</p>
-    #[doc(hidden)]
     pub exact: ::std::option::Option<::std::string::String>,
     /// <p>The specified ending characters of the host name to match on.</p>
-    #[doc(hidden)]
     pub suffix: ::std::option::Option<::std::string::String>,
 }
 impl GatewayRouteHostnameMatch {

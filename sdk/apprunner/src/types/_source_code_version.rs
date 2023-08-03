@@ -6,11 +6,9 @@
 pub struct SourceCodeVersion {
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SourceCodeVersionType>,
     /// <p>A source code version.</p>
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl SourceCodeVersion {

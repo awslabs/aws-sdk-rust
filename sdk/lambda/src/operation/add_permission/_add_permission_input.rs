@@ -11,38 +11,27 @@ pub struct AddPermissionInput {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Service or Amazon Web Services account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>For Amazon Web Services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
     /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>For Amazon Web Service, the ID of the Amazon Web Services account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the specified account owns the resource. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
-    #[doc(hidden)]
     pub source_account: ::std::option::Option<::std::string::String>,
     /// <p>For Alexa Smart Home functions, a token that the invoker must supply.</p>
-    #[doc(hidden)]
     pub event_source_token: ::std::option::Option<::std::string::String>,
     /// <p>Specify a version or alias to add permissions to a published version of the function.</p>
-    #[doc(hidden)]
     pub qualifier: ::std::option::Option<::std::string::String>,
     /// <p>Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for your organization in Organizations. Use this to grant permissions to all the Amazon Web Services accounts under this organization.</p>
-    #[doc(hidden)]
     pub principal_org_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    #[doc(hidden)]
     pub function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
 }
 impl AddPermissionInput {

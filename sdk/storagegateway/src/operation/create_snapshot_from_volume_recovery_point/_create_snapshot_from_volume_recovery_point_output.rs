@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotFromVolumeRecoveryPointOutput {
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the volume was created from the recovery point.</p>
-    #[doc(hidden)]
     pub volume_recovery_point_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

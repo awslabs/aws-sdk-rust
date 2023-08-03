@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDatastoreInput {
     /// <p>The name of the data store to delete.</p>
-    #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDatastoreInput {

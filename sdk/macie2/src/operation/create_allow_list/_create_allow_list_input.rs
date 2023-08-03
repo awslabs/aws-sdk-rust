@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAllowListInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
-    #[doc(hidden)]
     pub criteria: ::std::option::Option<crate::types::AllowListCriteria>,
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A map of key-value pairs that specifies the tags to associate with the allow list.</p>
     /// <p>An allow list can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAllowListInput {

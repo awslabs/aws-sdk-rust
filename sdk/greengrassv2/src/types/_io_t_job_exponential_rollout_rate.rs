@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoTJobExponentialRolloutRate {
     /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
-    #[doc(hidden)]
     pub base_rate_per_minute: i32,
     /// <p>The exponential factor to increase the rollout rate for the job.</p>
     /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
-    #[doc(hidden)]
     pub increment_factor: f64,
     /// <p>The criteria to increase the rollout rate for the job.</p>
-    #[doc(hidden)]
     pub rate_increase_criteria: ::std::option::Option<crate::types::IoTJobRateIncreaseCriteria>,
 }
 impl IoTJobExponentialRolloutRate {

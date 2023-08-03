@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutInventoryInput {
     /// <p>An managed node ID where you want to add or update inventory items.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The inventory items that you want to add or update on managed nodes.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>>,
 }
 impl PutInventoryInput {

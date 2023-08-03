@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeBooleanValue {
     /// <p>The attribute value. The valid values are <code>true</code> or <code>false</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<bool>,
 }
 impl AttributeBooleanValue {

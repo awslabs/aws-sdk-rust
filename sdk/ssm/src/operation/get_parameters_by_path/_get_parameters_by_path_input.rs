@@ -4,27 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetParametersByPathInput {
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Retrieve all parameters within a hierarchy.</p> <important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub recursive: ::std::option::Option<bool>,
     /// <p>Filters to limit the request results.</p> <note>
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub parameter_filters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
-    #[doc(hidden)]
     pub with_decryption: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetParametersByPathInput {

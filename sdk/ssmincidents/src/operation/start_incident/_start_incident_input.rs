@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartIncidentInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    #[doc(hidden)]
     pub response_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
@@ -21,13 +18,10 @@ pub struct StartIncidentInput {
     /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
     /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub impact: ::std::option::Option<i32>,
     /// <p>Details of what created the incident record in Incident Manager.</p>
-    #[doc(hidden)]
     pub trigger_details: ::std::option::Option<crate::types::TriggerDetails>,
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    #[doc(hidden)]
     pub related_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
 }
 impl StartIncidentInput {

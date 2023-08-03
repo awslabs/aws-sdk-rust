@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockDeviceMapping {
     /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
-    #[doc(hidden)]
     pub virtual_name: ::std::option::Option<::std::string::String>,
     /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
     /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Information to attach an EBS volume to an instance at launch.</p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::Ebs>,
     /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
-    #[doc(hidden)]
     pub no_device: ::std::option::Option<bool>,
 }
 impl BlockDeviceMapping {

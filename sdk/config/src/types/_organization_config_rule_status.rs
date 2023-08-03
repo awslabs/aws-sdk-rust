@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConfigRuleStatus {
     /// <p>The name that you assign to organization Config rule.</p>
-    #[doc(hidden)]
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
@@ -20,16 +19,12 @@ pub struct OrganizationConfigRuleStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub organization_rule_status: ::std::option::Option<crate::types::OrganizationRuleStatus>,
     /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the last update.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OrganizationConfigRuleStatus {

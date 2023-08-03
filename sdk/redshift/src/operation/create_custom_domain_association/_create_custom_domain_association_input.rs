@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomDomainAssociationInput {
     /// <p>The custom domain name for a custom domain association.</p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
-    #[doc(hidden)]
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier that the custom domain is associated with.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateCustomDomainAssociationInput {

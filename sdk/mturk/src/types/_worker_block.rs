@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerBlock {
     /// <p> The ID of the Worker who accepted the HIT.</p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p> A message explaining the reason the Worker was blocked. </p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl WorkerBlock {

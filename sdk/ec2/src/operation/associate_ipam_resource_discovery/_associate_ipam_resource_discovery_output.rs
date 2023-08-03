@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateIpamResourceDiscoveryOutput {
     /// <p>A resource discovery association. An associated resource discovery is a resource discovery that has been associated with an IPAM.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_association: ::std::option::Option<crate::types::IpamResourceDiscoveryAssociation>,
     _request_id: Option<String>,
 }

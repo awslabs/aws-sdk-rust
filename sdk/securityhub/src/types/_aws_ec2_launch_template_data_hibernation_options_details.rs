@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataHibernationOptionsDetails {
     /// <p> If you set this parameter to <code>true</code>, the instance is enabled for hibernation. </p>
-    #[doc(hidden)]
     pub configured: bool,
 }
 impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {

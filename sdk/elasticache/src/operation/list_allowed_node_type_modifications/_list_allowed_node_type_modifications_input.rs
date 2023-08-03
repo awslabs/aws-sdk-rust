@@ -7,12 +7,10 @@ pub struct ListAllowedNodeTypeModificationsInput {
     /// <p>The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
 }
 impl ListAllowedNodeTypeModificationsInput {

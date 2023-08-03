@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Function {
     /// The ARN of the Lambda function.
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// The configuration of the Lambda function.
-    #[doc(hidden)]
     pub function_configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl Function {

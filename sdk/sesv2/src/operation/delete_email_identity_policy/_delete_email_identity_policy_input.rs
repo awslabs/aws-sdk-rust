@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEmailIdentityPolicyInput {
     /// <p>The email identity.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEmailIdentityPolicyInput {

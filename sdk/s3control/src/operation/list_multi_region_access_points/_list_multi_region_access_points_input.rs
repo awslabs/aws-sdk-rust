@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultiRegionAccessPointsInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Not currently used. Do not use this parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Not currently used. Do not use this parameter.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListMultiRegionAccessPointsInput {

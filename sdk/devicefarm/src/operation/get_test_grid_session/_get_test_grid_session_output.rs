@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTestGridSessionOutput {
     /// <p>The <code>TestGridSession</code> that was requested.</p>
-    #[doc(hidden)]
     pub test_grid_session: ::std::option::Option<crate::types::TestGridSession>,
     _request_id: Option<String>,
 }

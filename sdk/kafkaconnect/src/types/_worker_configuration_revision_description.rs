@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WorkerConfigurationRevisionDescription {
     /// <p>The time that the worker configuration was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the worker configuration revision.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
-    #[doc(hidden)]
     pub properties_file_content: ::std::option::Option<::std::string::String>,
     /// <p>The description of a revision of the worker configuration.</p>
-    #[doc(hidden)]
     pub revision: i64,
 }
 impl WorkerConfigurationRevisionDescription {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectionOutput {
     /// <p> The ID of the connection. </p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p> Information about the connection. </p>
-    #[doc(hidden)]
     pub connection_details: ::std::option::Option<crate::types::ConnectionDetails>,
     _request_id: Option<String>,
 }

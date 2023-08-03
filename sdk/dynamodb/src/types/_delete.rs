@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delete {
     /// <p>The primary key of the item to be deleted. Each element consists of an attribute name and a value for that attribute.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>Name of the table in which the item to be deleted resides.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
-    #[doc(hidden)]
     pub condition_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    #[doc(hidden)]
     pub expression_attribute_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    #[doc(hidden)]
     pub expression_attribute_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Delete</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
-    #[doc(hidden)]
     pub return_values_on_condition_check_failure: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl Delete {

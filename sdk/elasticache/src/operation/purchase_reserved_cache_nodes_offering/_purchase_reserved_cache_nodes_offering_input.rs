@@ -6,20 +6,16 @@
 pub struct PurchaseReservedCacheNodesOfferingInput {
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    #[doc(hidden)]
     pub reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>A customer-specified identifier to track this reservation.</p> <note>
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
     /// </note>
     /// <p>Example: myreservationID</p>
-    #[doc(hidden)]
     pub reserved_cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of cache node instances to reserve.</p>
     /// <p>Default: <code>1</code> </p>
-    #[doc(hidden)]
     pub cache_node_count: ::std::option::Option<i32>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PurchaseReservedCacheNodesOfferingInput {

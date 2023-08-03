@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEffectivePermissionsForPathOutput {
     /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

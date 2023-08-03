@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolVnfcResourceInfoMetadata {
     /// <p>Information about the node group.</p>
-    #[doc(hidden)]
     pub node_group: ::std::option::Option<::std::string::String>,
     /// <p>Information about the cluster.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>Information about the helm chart.</p>
-    #[doc(hidden)]
     pub helm_chart: ::std::option::Option<::std::string::String>,
 }
 impl GetSolVnfcResourceInfoMetadata {

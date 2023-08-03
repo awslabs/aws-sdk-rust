@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ReferenceDataSourceUpdate {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>The object key name.</p>
-    #[doc(hidden)]
     pub file_key_update: ::std::option::Option<::std::string::String>,
 }
 impl S3ReferenceDataSourceUpdate {

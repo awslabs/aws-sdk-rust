@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointLocation {
     /// <p>The name of the city where the endpoint is located.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
-    #[doc(hidden)]
     pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
-    #[doc(hidden)]
     pub longitude: ::std::option::Option<f64>,
     /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl EndpointLocation {

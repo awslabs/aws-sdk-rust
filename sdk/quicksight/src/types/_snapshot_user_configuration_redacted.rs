@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotUserConfigurationRedacted {
     /// <p> An array of records that describe anonymous users that the dashboard snapshot is generated for. Sensitive user information is excluded. </p>
-    #[doc(hidden)]
     pub anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUserRedacted>>,
 }
 impl SnapshotUserConfigurationRedacted {

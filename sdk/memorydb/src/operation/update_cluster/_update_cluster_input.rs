@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClusterInput {
     /// <p>The name of the cluster to update</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cluster to update</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The SecurityGroupIds to update</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -24,37 +21,26 @@ pub struct UpdateClusterInput {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    #[doc(hidden)]
     pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The SNS topic ARN to update</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
-    #[doc(hidden)]
     pub sns_topic_status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group to update</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>A valid node type that you want to scale this cluster up or down to.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of replicas that will reside in each shard</p>
-    #[doc(hidden)]
     pub replica_configuration: ::std::option::Option<crate::types::ReplicaConfigurationRequest>,
     /// <p>The number of shards in the cluster</p>
-    #[doc(hidden)]
     pub shard_configuration: ::std::option::Option<crate::types::ShardConfigurationRequest>,
     /// <p>The Access Control List that is associated with the cluster</p>
-    #[doc(hidden)]
     pub acl_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterInput {

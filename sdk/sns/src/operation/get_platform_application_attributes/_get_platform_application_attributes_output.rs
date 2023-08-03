@@ -14,7 +14,6 @@ pub struct GetPlatformApplicationAttributesOutput {
     /// <li> <p> <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.</p> </li>
     /// <li> <p> <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

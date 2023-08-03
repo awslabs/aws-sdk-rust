@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeResource {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    #[doc(hidden)]
     pub data_lake_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Regions where Security Lake is enabled.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Amazon Security Lake Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub lifecycle_configuration: ::std::option::Option<crate::types::DataLakeLifecycleConfiguration>,
     /// <p>Provides replication details of Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub replication_configuration: ::std::option::Option<crate::types::DataLakeReplicationConfiguration>,
     /// <p>Retrieves the status of the configuration operation for an account in Amazon Security Lake.</p>
-    #[doc(hidden)]
     pub create_status: ::std::option::Option<crate::types::DataLakeStatus>,
     /// <p>The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code> API request.</p>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<crate::types::DataLakeUpdateStatus>,
 }
 impl DataLakeResource {

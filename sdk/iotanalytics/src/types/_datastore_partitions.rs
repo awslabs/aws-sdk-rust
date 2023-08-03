@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastorePartitions {
     /// <p> A list of partition dimensions in a data store. </p>
-    #[doc(hidden)]
     pub partitions: ::std::option::Option<::std::vec::Vec<crate::types::DatastorePartition>>,
 }
 impl DatastorePartitions {

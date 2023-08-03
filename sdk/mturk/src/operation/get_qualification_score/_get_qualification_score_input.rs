@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQualificationScoreInput {
     /// <p>The ID of the QualificationType.</p>
-    #[doc(hidden)]
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Worker whose Qualification is being updated.</p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQualificationScoreInput {

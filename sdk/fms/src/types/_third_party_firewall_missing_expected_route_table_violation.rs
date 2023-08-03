@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThirdPartyFirewallMissingExpectedRouteTableViolation {
     /// <p>The ID of the third-party firewall or VPC resource that's causing the violation.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the VPC associated with a fireawll subnet that's causing the violation.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of the firewall subnet that's causing the violation.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
-    #[doc(hidden)]
     pub current_route_table: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the route table that should be associated with the subnet.</p>
-    #[doc(hidden)]
     pub expected_route_table: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyFirewallMissingExpectedRouteTableViolation {

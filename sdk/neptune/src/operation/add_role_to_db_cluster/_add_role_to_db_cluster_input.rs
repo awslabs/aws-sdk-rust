@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddRoleToDbClusterInput {
     /// <p>The name of the DB cluster to associate the IAM role with.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
 impl AddRoleToDbClusterInput {

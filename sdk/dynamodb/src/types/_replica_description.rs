@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaDescription {
     /// <p>The name of the Region.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the replica:</p>
     /// <ul>
@@ -20,28 +19,20 @@ pub struct ReplicaDescription {
     /// <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
     /// <p>Detailed information about the replica status.</p>
-    #[doc(hidden)]
     pub replica_status_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a percentage.</p>
-    #[doc(hidden)]
     pub replica_status_percent_progress: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key of the replica that will be used for KMS encryption.</p>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not described, uses the source table's provisioned throughput settings.</p>
-    #[doc(hidden)]
     pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
     /// <p>Replica-specific global secondary index settings.</p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>>,
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
-    #[doc(hidden)]
     pub replica_inaccessible_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains details of the table class.</p>
-    #[doc(hidden)]
     pub replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
 }
 impl ReplicaDescription {

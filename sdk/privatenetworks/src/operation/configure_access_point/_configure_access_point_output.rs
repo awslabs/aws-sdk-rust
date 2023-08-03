@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureAccessPointOutput {
     /// <p>Information about the network resource.</p>
-    #[doc(hidden)]
     pub access_point: ::std::option::Option<crate::types::NetworkResource>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryConfiguration {
     /// Synchronization status of the device reported configuration with the desired configuration.
-    #[doc(hidden)]
     pub configuration_sync_status: ::std::option::Option<crate::types::ConfigurationSyncStatus>,
     /// Configure telemetry to be on or off.
-    #[doc(hidden)]
     pub telemetry: ::std::option::Option<crate::types::Telemetry>,
 }
 impl TelemetryConfiguration {

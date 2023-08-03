@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpcPeeringConnectionOptionsOutput {
     /// <p>Information about the VPC peering connection options for the accepter VPC.</p>
-    #[doc(hidden)]
     pub accepter_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptions>,
     /// <p>Information about the VPC peering connection options for the requester VPC.</p>
-    #[doc(hidden)]
     pub requester_peering_connection_options: ::std::option::Option<crate::types::PeeringConnectionOptions>,
     _request_id: Option<String>,
 }

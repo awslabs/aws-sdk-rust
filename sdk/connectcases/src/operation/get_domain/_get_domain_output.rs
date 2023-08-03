@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainOutput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Cases domain.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the Cases domain was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the Cases domain.</p>
-    #[doc(hidden)]
     pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }

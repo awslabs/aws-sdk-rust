@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccessLogSubscriptionOutput {
     /// <p>The ID of the access log subscription.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

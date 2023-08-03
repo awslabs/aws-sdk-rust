@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArrayProperties {
     /// <p>The size of the array job.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
 }
 impl ArrayProperties {

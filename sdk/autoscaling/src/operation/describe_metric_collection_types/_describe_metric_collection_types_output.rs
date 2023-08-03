@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMetricCollectionTypesOutput {
     /// <p>The metrics.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>>,
     /// <p>The granularities for the metrics.</p>
-    #[doc(hidden)]
     pub granularities: ::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>>,
     _request_id: Option<String>,
 }

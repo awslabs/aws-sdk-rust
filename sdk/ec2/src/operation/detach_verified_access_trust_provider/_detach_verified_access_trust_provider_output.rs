@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachVerifiedAccessTrustProviderOutput {
     /// <p>The ID of the Verified Access trust provider.</p>
-    #[doc(hidden)]
     pub verified_access_trust_provider: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     /// <p>The ID of the Verified Access instance.</p>
-    #[doc(hidden)]
     pub verified_access_instance: ::std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,
 }

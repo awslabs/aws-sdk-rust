@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTeamMemberOutput {
     /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The project role granted to the user.</p>
-    #[doc(hidden)]
     pub project_role: ::std::option::Option<::std::string::String>,
     /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
-    #[doc(hidden)]
     pub remote_access_allowed: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

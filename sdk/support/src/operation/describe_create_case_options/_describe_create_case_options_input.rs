@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCreateCaseOptionsInput {
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
-    #[doc(hidden)]
     pub issue_type: ::std::option::Option<::std::string::String>,
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    #[doc(hidden)]
     pub category_code: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCreateCaseOptionsInput {

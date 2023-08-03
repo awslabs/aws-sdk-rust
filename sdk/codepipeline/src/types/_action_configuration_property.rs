@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionConfigurationProperty {
     /// <p>The name of the action configuration property.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the configuration property is a required value.</p>
-    #[doc(hidden)]
     pub required: bool,
     /// <p>Whether the configuration property is a key.</p>
-    #[doc(hidden)]
     pub key: bool,
     /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
     /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
-    #[doc(hidden)]
     pub secret: bool,
     /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
-    #[doc(hidden)]
     pub queryable: bool,
     /// <p>The description of the action configuration property that is displayed to users.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the configuration property.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ActionConfigurationPropertyType>,
 }
 impl ActionConfigurationProperty {

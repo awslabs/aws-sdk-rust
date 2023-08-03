@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApprovalStateChangedEventMetadata {
     /// <p>The revision ID of the pull request when the approval state changed.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The approval status for the pull request.</p>
-    #[doc(hidden)]
     pub approval_status: ::std::option::Option<crate::types::ApprovalState>,
 }
 impl ApprovalStateChangedEventMetadata {

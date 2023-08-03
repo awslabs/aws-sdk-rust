@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricsSummaryOutput {
     /// <p>The summary metrics from the specified date.</p>
-    #[doc(hidden)]
     pub metrics_summary: ::std::option::Option<crate::types::MetricsSummary>,
     _request_id: Option<String>,
 }

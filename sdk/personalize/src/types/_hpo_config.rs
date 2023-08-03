@@ -7,13 +7,10 @@ pub struct HpoConfig {
     /// <p>The metric to optimize during HPO.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
-    #[doc(hidden)]
     pub hpo_objective: ::std::option::Option<crate::types::HpoObjective>,
     /// <p>Describes the resource configuration for HPO.</p>
-    #[doc(hidden)]
     pub hpo_resource_config: ::std::option::Option<crate::types::HpoResourceConfig>,
     /// <p>The hyperparameters and their allowable ranges.</p>
-    #[doc(hidden)]
     pub algorithm_hyper_parameter_ranges: ::std::option::Option<crate::types::HyperParameterRanges>,
 }
 impl HpoConfig {

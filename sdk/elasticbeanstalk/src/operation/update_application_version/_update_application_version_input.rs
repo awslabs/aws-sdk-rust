@@ -6,14 +6,11 @@
 pub struct UpdateApplicationVersionInput {
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the version to update.</p>
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>A new description for this version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationVersionInput {

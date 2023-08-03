@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingAggregationRequest {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    #[doc(hidden)]
     pub requester_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The region requesting to aggregate data. </p>
-    #[doc(hidden)]
     pub requester_aws_region: ::std::option::Option<::std::string::String>,
 }
 impl PendingAggregationRequest {

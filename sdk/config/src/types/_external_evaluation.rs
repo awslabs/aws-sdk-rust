@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalEvaluation {
     /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
-    #[doc(hidden)]
     pub compliance_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub compliance_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
-    #[doc(hidden)]
     pub annotation: ::std::option::Option<::std::string::String>,
     /// <p>The time when the compliance was recorded. </p>
-    #[doc(hidden)]
     pub ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExternalEvaluation {

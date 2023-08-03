@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInstanceConnectEndpointOutput {
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub instance_connect_endpoint: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
     _request_id: Option<String>,
 }

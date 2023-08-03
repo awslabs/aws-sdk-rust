@@ -13,10 +13,8 @@ pub struct ModifyEbsDefaultKmsKeyIdInput {
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifyEbsDefaultKmsKeyIdInput {

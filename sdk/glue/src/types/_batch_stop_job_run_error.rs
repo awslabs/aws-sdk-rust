@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStopJobRunError {
     /// <p>The name of the job definition that is used in the job run in question.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>JobRunId</code> of the job run in question.</p>
-    #[doc(hidden)]
     pub job_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies details about the error that was encountered.</p>
-    #[doc(hidden)]
     pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl BatchStopJobRunError {

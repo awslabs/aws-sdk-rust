@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
-    #[doc(hidden)]
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
@@ -19,7 +16,6 @@ pub struct ListAssetsInput {
     /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
     /// </ul>
     /// <p>Default: <code>ALL</code> </p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ListAssetsFilter>,
 }
 impl ListAssetsInput {

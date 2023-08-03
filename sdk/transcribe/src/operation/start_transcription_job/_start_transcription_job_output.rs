@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTranscriptionJobOutput {
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
-    #[doc(hidden)]
     pub transcription_job: ::std::option::Option<crate::types::TranscriptionJob>,
     _request_id: Option<String>,
 }

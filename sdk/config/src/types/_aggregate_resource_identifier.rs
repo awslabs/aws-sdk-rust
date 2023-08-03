@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateResourceIdentifier {
     /// <p>The 12-digit account ID of the source account.</p>
-    #[doc(hidden)]
     pub source_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source region where data is aggregated.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The name of the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl AggregateResourceIdentifier {

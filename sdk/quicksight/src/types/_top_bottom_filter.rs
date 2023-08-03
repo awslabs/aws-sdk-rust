@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopBottomFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    #[doc(hidden)]
     pub filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that the filter is applied to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The number of items to include in the top bottom filter results.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The aggregation and sort configuration of the top bottom filter.</p>
-    #[doc(hidden)]
     pub aggregation_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationSortConfiguration>>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The parameter whose value should be used for the filter value.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
 }
 impl TopBottomFilter {

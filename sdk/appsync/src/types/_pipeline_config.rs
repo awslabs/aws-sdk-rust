@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineConfig {
     /// <p>A list of <code>Function</code> objects.</p>
-    #[doc(hidden)]
     pub functions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PipelineConfig {

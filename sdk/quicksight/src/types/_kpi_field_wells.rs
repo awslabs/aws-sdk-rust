@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiFieldWells {
     /// <p>The value field wells of a KPI visual.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The target value field wells of a KPI visual.</p>
-    #[doc(hidden)]
     pub target_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The trend group field wells of a KPI visual.</p>
-    #[doc(hidden)]
     pub trend_groups: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl KpiFieldWells {

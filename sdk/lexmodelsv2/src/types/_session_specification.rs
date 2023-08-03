@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionSpecification {
     /// <p>The identifier of the alias of the bot that the session was held with.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that the session was held with.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the bot that the session was held with.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The channel that is integrated with the bot that the session was held with.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the conversation began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    #[doc(hidden)]
     pub conversation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the conversation ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    #[doc(hidden)]
     pub conversation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the conversation in seconds. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    #[doc(hidden)]
     pub conversation_duration_seconds: ::std::option::Option<i64>,
     /// <p>The final state of the conversation. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    #[doc(hidden)]
     pub conversation_end_state: ::std::option::Option<crate::types::ConversationEndState>,
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
@@ -38,16 +29,12 @@ pub struct SessionSpecification {
     /// <li> <p> <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p> </li>
     /// <li> <p> <code>MultiMode</code> – The session used multiple modes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::AnalyticsModality>,
     /// <p>The number of turns that the session took.</p>
-    #[doc(hidden)]
     pub number_of_turns: ::std::option::Option<i64>,
     /// <p>A list of objects containing the name of an intent that was invoked.</p>
-    #[doc(hidden)]
     pub invoked_intent_samples: ::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>>,
     /// <p>The identifier of the first request in a session.</p>
-    #[doc(hidden)]
     pub originating_request_id: ::std::option::Option<::std::string::String>,
 }
 impl SessionSpecification {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WordCloudChartConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::WordCloudFieldWells>,
     /// <p>The sort configuration of a word cloud visual.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::WordCloudSortConfiguration>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) for the word cloud category.</p>
-    #[doc(hidden)]
     pub category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The options for a word cloud visual.</p>
-    #[doc(hidden)]
     pub word_cloud_options: ::std::option::Option<crate::types::WordCloudOptions>,
 }
 impl WordCloudChartConfiguration {

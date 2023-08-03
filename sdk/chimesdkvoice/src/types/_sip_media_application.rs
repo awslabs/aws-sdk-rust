@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SipMediaApplication {
     /// <p>A SIP media application's ID.</p>
-    #[doc(hidden)]
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region in which the SIP media application is created.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The SIP media application's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the SIP media application was updated.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the SIP media application.</p>
-    #[doc(hidden)]
     pub sip_media_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl SipMediaApplication {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedScalingPolicy {
     /// <p>The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster is not allowed to go above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.</p>
-    #[doc(hidden)]
     pub compute_limits: ::std::option::Option<crate::types::ComputeLimits>,
 }
 impl ManagedScalingPolicy {

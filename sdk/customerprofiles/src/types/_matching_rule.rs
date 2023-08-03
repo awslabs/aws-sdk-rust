@@ -24,7 +24,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchingRule {
     /// <p>A single rule level of the <code>MatchRules</code>. Configures how the rule-based matching process should match profiles.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MatchingRule {

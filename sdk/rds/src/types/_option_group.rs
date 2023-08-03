@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionGroup {
     /// <p>Specifies the name of the option group.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides a description of the option group.</p>
-    #[doc(hidden)]
     pub option_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the name of the engine that this option group can be applied to.</p>
-    #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the major engine version associated with this option group.</p>
-    #[doc(hidden)]
     pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates what options are available in the option group.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
-    #[doc(hidden)]
     pub allows_vpc_and_non_vpc_instance_memberships: bool,
     /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
-    #[doc(hidden)]
     pub option_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the option group from which this option group is copied.</p>
-    #[doc(hidden)]
     pub source_option_group: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
-    #[doc(hidden)]
     pub source_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the option group was copied.</p>
-    #[doc(hidden)]
     pub copy_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OptionGroup {

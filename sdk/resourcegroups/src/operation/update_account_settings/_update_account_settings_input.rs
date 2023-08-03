@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsInput {
     /// <p>Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group lifecycle events</a> on or off.</p>
-    #[doc(hidden)]
     pub group_lifecycle_events_desired_status: ::std::option::Option<crate::types::GroupLifecycleEventsDesiredStatus>,
 }
 impl UpdateAccountSettingsInput {

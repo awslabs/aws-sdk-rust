@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryCompileErrorLocation {
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub start_char_offset: ::std::option::Option<i32>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub end_char_offset: ::std::option::Option<i32>,
 }
 impl QueryCompileErrorLocation {

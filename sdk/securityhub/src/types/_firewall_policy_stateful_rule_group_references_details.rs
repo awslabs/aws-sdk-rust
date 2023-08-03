@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatefulRuleGroupReferencesDetails {
     /// <p>The ARN of the stateful rule group.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatefulRuleGroupReferencesDetails {

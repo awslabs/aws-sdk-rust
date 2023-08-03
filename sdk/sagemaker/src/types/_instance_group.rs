@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceGroup {
     /// <p>Specifies the instance type of the instance group.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>Specifies the number of instances of the instance group.</p>
-    #[doc(hidden)]
     pub instance_count: i32,
     /// <p>Specifies the name of the instance group.</p>
-    #[doc(hidden)]
     pub instance_group_name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroup {

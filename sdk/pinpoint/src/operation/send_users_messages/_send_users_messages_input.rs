@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendUsersMessagesInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
-    #[doc(hidden)]
     pub send_users_message_request: ::std::option::Option<crate::types::SendUsersMessageRequest>,
 }
 impl SendUsersMessagesInput {

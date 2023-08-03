@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItem {
     /// <p> The ID of the catalog item. </p>
-    #[doc(hidden)]
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the line item.</p>
-    #[doc(hidden)]
     pub line_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of the line item.</p>
-    #[doc(hidden)]
     pub quantity: i32,
     /// <p>The status of the line item.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LineItemStatus>,
     /// <p> Information about a line item shipment. </p>
-    #[doc(hidden)]
     pub shipment_information: ::std::option::Option<crate::types::ShipmentInformation>,
     /// <p> Information about assets. </p>
-    #[doc(hidden)]
     pub asset_information_list: ::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>>,
     /// <p>The ID of the previous line item.</p>
-    #[doc(hidden)]
     pub previous_line_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the previous order item.</p>
-    #[doc(hidden)]
     pub previous_order_id: ::std::option::Option<::std::string::String>,
 }
 impl LineItem {

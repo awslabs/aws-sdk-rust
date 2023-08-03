@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FollowModeScheduleActionStartSettings {
     /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
-    #[doc(hidden)]
     pub follow_point: ::std::option::Option<crate::types::FollowPoint>,
     /// The action name of another action that this one refers to.
-    #[doc(hidden)]
     pub reference_action_name: ::std::option::Option<::std::string::String>,
 }
 impl FollowModeScheduleActionStartSettings {

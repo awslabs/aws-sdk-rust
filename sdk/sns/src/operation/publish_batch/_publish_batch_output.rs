@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishBatchOutput {
     /// <p>A list of successful <code>PublishBatch</code> responses.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchResultEntry>>,
     /// <p>A list of failed <code>PublishBatch</code> responses. </p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     _request_id: Option<String>,
 }

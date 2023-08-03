@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be retrieved.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetLoggingConfigurationInput {

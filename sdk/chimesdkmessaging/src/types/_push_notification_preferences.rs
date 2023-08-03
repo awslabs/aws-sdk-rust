@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PushNotificationPreferences {
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
-    #[doc(hidden)]
     pub allow_notifications: ::std::option::Option<crate::types::AllowNotifications>,
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
-    #[doc(hidden)]
     pub filter_rule: ::std::option::Option<::std::string::String>,
 }
 impl PushNotificationPreferences {

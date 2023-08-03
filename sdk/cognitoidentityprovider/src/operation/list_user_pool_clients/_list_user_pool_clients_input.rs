@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserPoolClientsInput {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserPoolClientsInput {

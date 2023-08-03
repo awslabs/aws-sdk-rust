@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobRun {
     /// <p>The ID of the application the job is running on.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job run.</p>
-    #[doc(hidden)]
     pub job_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional job run name. This doesn't have to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The execution role ARN of the job run.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The user who created the job run.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the job run was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the job run was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The execution role ARN of the job run.</p>
-    #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The state of the job run.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::JobRunState>,
     /// <p>The state details of the job run.</p>
-    #[doc(hidden)]
     pub state_details: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EMR release associated with the application your job is running on.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings that are used to override default configuration.</p>
-    #[doc(hidden)]
     pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     /// <p>The job driver for the job run.</p>
-    #[doc(hidden)]
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The tags assigned to the job run.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The aggregate vCPU, memory, and storage resources used from the time the job starts to execute, until the time the job terminates, rounded up to the nearest second.</p>
-    #[doc(hidden)]
     pub total_resource_utilization: ::std::option::Option<crate::types::TotalResourceUtilization>,
     /// <p>The network configuration for customer VPC connectivity.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
-    #[doc(hidden)]
     pub total_execution_duration_seconds: ::std::option::Option<i32>,
     /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout was specified, then it returns the default timeout of 720 minutes.</p>
-    #[doc(hidden)]
     pub execution_timeout_minutes: ::std::option::Option<i64>,
     /// <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized workers.</p>
-    #[doc(hidden)]
     pub billed_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
 }
 impl JobRun {

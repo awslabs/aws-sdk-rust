@@ -7,18 +7,14 @@ pub struct CalculateRouteTruckModeOptions {
     /// <p>Avoids ferries when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    #[doc(hidden)]
     pub avoid_ferries: ::std::option::Option<bool>,
     /// <p>Avoids tolls when calculating routes.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    #[doc(hidden)]
     pub avoid_tolls: ::std::option::Option<bool>,
     /// <p>Specifies the truck's dimension specifications including length, height, width, and unit of measurement. Used to avoid roads that can't support the truck's dimensions.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<crate::types::TruckDimensions>,
     /// <p>Specifies the truck's weight specifications including total weight and unit of measurement. Used to avoid roads that can't support the truck's weight.</p>
-    #[doc(hidden)]
     pub weight: ::std::option::Option<crate::types::TruckWeight>,
 }
 impl CalculateRouteTruckModeOptions {

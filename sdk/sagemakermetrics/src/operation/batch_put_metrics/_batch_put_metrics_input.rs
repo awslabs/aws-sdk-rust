@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutMetricsInput {
     /// <p>The name of the Trial Component to associate with the metrics.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of raw metric values to put.</p>
-    #[doc(hidden)]
     pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>>,
 }
 impl BatchPutMetricsInput {

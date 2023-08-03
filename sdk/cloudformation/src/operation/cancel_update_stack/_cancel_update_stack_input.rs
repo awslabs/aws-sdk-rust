@@ -10,10 +10,8 @@ pub struct CancelUpdateStackInput {
     /// <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</code> </p>
     /// </note>
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CancelUpdateStackInput {

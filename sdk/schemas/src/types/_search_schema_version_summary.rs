@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSchemaVersionSummary {
     /// <p>The date the schema version was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version number of the schema</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of schema.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl SearchSchemaVersionSummary {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteClusterInput {

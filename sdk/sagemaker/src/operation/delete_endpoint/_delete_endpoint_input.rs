@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>The name of the endpoint that you want to delete.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEndpointInput {

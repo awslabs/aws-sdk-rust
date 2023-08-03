@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The power draw, in kVA, available at the hardware placement position for the rack.</p>
-    #[doc(hidden)]
     pub power_draw_kva: ::std::option::Option<crate::types::PowerDrawKva>,
     /// <p>The power option that you can provide for hardware. </p>
     /// <ul>
     /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
     /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub power_phase: ::std::option::Option<crate::types::PowerPhase>,
     /// <p>The power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
     /// <ul>
@@ -29,13 +26,10 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub power_connector: ::std::option::Option<crate::types::PowerConnector>,
     /// <p>Indicates whether the power feed comes above or below the rack. </p>
-    #[doc(hidden)]
     pub power_feed_drop: ::std::option::Option<crate::types::PowerFeedDrop>,
     /// <p>The uplink speed the rack should support for the connection to the Region. </p>
-    #[doc(hidden)]
     pub uplink_gbps: ::std::option::Option<crate::types::UplinkGbps>,
     /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
     /// <ul>
@@ -43,10 +37,8 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
     /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub uplink_count: ::std::option::Option<crate::types::UplinkCount>,
     /// <p>The type of fiber that you will use to attach the Outpost to your network. </p>
-    #[doc(hidden)]
     pub fiber_optic_cable_type: ::std::option::Option<crate::types::FiberOpticCableType>,
     /// <p>The type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     /// <ul>
@@ -64,10 +56,8 @@ pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
     /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub optical_standard: ::std::option::Option<crate::types::OpticalStandard>,
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
-    #[doc(hidden)]
     pub maximum_supported_weight_lbs: ::std::option::Option<crate::types::MaximumSupportedWeightLbs>,
 }
 impl UpdateSiteRackPhysicalPropertiesInput {

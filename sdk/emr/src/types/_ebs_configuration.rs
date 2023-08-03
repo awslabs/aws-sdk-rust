@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsConfiguration {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    #[doc(hidden)]
     pub ebs_block_device_configs: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
 }
 impl EbsConfiguration {

@@ -9,11 +9,9 @@ pub struct Urls {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
-    #[doc(hidden)]
     pub seed_url_configuration: ::std::option::Option<crate::types::SeedUrlConfiguration>,
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
-    #[doc(hidden)]
     pub site_maps_configuration: ::std::option::Option<crate::types::SiteMapsConfiguration>,
 }
 impl Urls {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetJobsInput {
     /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
-    #[doc(hidden)]
     pub job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetJobsInput {

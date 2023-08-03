@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLensReviewOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>A lens review of a question.</p>
-    #[doc(hidden)]
     pub lens_review: ::std::option::Option<crate::types::LensReview>,
     _request_id: Option<String>,
 }

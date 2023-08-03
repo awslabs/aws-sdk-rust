@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessPoliciesInput {
     /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
-    #[doc(hidden)]
     pub iam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAccessPoliciesInput {

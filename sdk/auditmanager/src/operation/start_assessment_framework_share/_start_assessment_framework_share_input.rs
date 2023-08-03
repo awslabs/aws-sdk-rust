@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssessmentFrameworkShareInput {
     /// <p> The unique identifier for the custom framework to be shared. </p>
-    #[doc(hidden)]
     pub framework_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account of the recipient. </p>
-    #[doc(hidden)]
     pub destination_account: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    #[doc(hidden)]
     pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p> An optional comment from the sender about the share request. </p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl StartAssessmentFrameworkShareInput {

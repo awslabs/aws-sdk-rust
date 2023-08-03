@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvaluationInput {
     /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEvaluationInput {

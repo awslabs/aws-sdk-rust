@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsMountPoint {
     /// <p>The name of the volume to mount. Must be a volume name referenced in the <code>name</code> parameter of task definition <code>volume</code>. </p>
-    #[doc(hidden)]
     pub source_volume: ::std::option::Option<::std::string::String>,
     /// <p>The path on the container to mount the host volume at. </p>
-    #[doc(hidden)]
     pub container_path: ::std::option::Option<::std::string::String>,
 }
 impl AwsMountPoint {

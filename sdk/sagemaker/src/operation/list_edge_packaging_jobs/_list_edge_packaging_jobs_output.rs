@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEdgePackagingJobsOutput {
     /// <p>Summaries of edge packaging jobs.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::EdgePackagingJobSummary>>,
     /// <p>Token to use when calling the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

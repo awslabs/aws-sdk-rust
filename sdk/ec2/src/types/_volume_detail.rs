@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeDetail {
     /// <p>The size of the volume, in GiB.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i64>,
 }
 impl VolumeDetail {

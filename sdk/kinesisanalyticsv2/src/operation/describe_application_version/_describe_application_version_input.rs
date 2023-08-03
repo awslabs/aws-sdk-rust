@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationVersionInput {
     /// <p>The name of the application for which you want to get the version description.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application version for which you want to get the description.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
 }
 impl DescribeApplicationVersionInput {

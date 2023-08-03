@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Reservation {
     /// <p>Not supported.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>The instances.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
-    #[doc(hidden)]
     pub requester_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the reservation.</p>
-    #[doc(hidden)]
     pub reservation_id: ::std::option::Option<::std::string::String>,
 }
 impl Reservation {

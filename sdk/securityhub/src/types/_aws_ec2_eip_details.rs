@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2EipDetails {
     /// <p>The identifier of the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A public IP address that is associated with the EC2 instance.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The identifier that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with Amazon VPC.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier that represents the association of the Elastic IP address with an EC2 instance.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain in which to allocate the address.</p>
     /// <p>If the address is for use with EC2 instances in a VPC, then <code>Domain</code> is <code>vpc</code>. Otherwise, <code>Domain</code> is <code>standard</code>. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an IP address pool. This parameter allows Amazon EC2 to select an IP address from the address pool.</p>
-    #[doc(hidden)]
     pub public_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The name of the location from which the Elastic IP address is advertised.</p>
-    #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address that is associated with the Elastic IP address.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2EipDetails {

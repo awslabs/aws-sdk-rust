@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetDestination {
     /// <p>Query result destination details for Timestream data source.</p>
-    #[doc(hidden)]
     pub timestream_destination: ::std::option::Option<crate::types::TimestreamDestination>,
 }
 impl TargetDestination {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineDefaults {
     /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
-    #[doc(hidden)]
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The parameters of a particular cluster parameter group family.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl EngineDefaults {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateIpamResourceDiscoveryOutput {
     /// <p>A resource discovery association.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_association: ::std::option::Option<crate::types::IpamResourceDiscoveryAssociation>,
     _request_id: Option<String>,
 }

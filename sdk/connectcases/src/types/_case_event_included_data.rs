@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
 }
 impl CaseEventIncludedData {

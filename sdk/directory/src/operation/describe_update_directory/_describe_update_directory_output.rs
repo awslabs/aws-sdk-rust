@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUpdateDirectoryOutput {
     /// <p> The list of update activities on a directory for the requested update type. </p>
-    #[doc(hidden)]
     pub update_activities: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>>,
     /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

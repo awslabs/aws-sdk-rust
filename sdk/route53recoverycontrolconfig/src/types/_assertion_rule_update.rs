@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssertionRuleUpdate {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    #[doc(hidden)]
     pub safety_rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    #[doc(hidden)]
     pub wait_period_ms: ::std::option::Option<i32>,
 }
 impl AssertionRuleUpdate {

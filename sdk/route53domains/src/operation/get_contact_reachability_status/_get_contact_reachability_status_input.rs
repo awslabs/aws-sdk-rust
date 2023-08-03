@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactReachabilityStatusInput {
     /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetContactReachabilityStatusInput {

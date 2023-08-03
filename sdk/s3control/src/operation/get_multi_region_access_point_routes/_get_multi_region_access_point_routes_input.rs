@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointRoutesInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Multi-Region Access Point ARN.</p>
-    #[doc(hidden)]
     pub mrap: ::std::option::Option<::std::string::String>,
 }
 impl GetMultiRegionAccessPointRoutesInput {

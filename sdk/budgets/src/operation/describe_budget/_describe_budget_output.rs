@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
-    #[doc(hidden)]
     pub budget: ::std::option::Option<crate::types::Budget>,
     _request_id: Option<String>,
 }

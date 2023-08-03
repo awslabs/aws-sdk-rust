@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VolumeAttachment {
     /// <p>The datetime when the attachment initiated.</p>
-    #[doc(hidden)]
     pub attach_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
-    #[doc(hidden)]
     pub delete_on_termination: bool,
     /// <p>The identifier of the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
@@ -21,7 +18,6 @@ pub struct AwsEc2VolumeAttachment {
     /// <li> <p> <code>detaching</code> </p> </li>
     /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VolumeAttachment {

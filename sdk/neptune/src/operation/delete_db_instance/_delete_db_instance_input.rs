@@ -8,7 +8,6 @@ pub struct DeleteDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p> Determines whether a final DB snapshot is created before the DB instance is deleted. If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code> is specified, a DB snapshot is created before the DB instance is deleted.</p>
     /// <p>Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
@@ -16,7 +15,6 @@ pub struct DeleteDbInstanceInput {
     /// <p>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub skip_final_snapshot: bool,
     /// <p> The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p> <note>
     /// <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>
@@ -28,7 +26,6 @@ pub struct DeleteDbInstanceInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Cannot be specified when deleting a Read Replica.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbInstanceInput {

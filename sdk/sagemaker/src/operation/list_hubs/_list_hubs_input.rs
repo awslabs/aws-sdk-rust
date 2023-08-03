@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHubsInput {
     /// <p>Only list hubs with names that contain the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>Only list hubs that were created before the time specified.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only list hubs that were created after the time specified.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only list hubs that were last modified before the time specified.</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only list hubs that were last modified after the time specified.</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Sort hubs by either name or creation time.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::HubSortBy>,
     /// <p>Sort hubs by ascending or descending order.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The maximum number of hubs to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListHubsInput {

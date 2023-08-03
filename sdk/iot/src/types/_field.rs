@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Field {
     /// <p>The name of the field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the field.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FieldType>,
 }
 impl Field {

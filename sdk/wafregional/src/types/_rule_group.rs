@@ -16,13 +16,10 @@
 pub struct RuleGroup {
     /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    #[doc(hidden)]
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name or description for the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroup {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionLogging {
     /// <p>The S3 bucket to store the access logs in.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>With this field, you can enable or disable the selected distribution.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
-    #[doc(hidden)]
     pub include_cookies: bool,
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionLogging {

@@ -10,10 +10,8 @@ pub struct IntegerValueWhenUnsetConfiguration {
     /// <li> <p> <code>RECOMMENDED</code>: The recommended value.</p> </li>
     /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
-    #[doc(hidden)]
     pub custom_value: ::std::option::Option<i64>,
 }
 impl IntegerValueWhenUnsetConfiguration {

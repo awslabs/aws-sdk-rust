@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelEnvironmentDeploymentInput {
     /// <p>The name of the environment with the deployment to cancel.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl CancelEnvironmentDeploymentInput {

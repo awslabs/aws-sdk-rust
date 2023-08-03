@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTemplateAliasInput {

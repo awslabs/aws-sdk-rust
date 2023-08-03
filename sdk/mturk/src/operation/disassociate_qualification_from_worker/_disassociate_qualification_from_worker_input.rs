@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateQualificationFromWorkerInput {
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
-    #[doc(hidden)]
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateQualificationFromWorkerInput {

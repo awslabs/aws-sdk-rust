@@ -6,16 +6,12 @@
 pub struct PrivateDnsNameConfiguration {
     /// <p>The verification state of the VPC endpoint service.</p>
     /// <p>&gt;Consumers of the endpoint service can use the private name only when the state is <code>verified</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DnsNameState>,
     /// <p>The endpoint service verification type, for example TXT.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The value the service provider adds to the private DNS name domain record before verification.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The name of the record subdomain the service provider needs to create. The service provider adds the <code>value</code> text to the <code>name</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl PrivateDnsNameConfiguration {

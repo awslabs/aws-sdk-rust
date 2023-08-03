@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbClusterEndpointInput {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<::std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    #[doc(hidden)]
     pub static_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. This parameter is relevant only if the list of static members is empty.</p>
-    #[doc(hidden)]
     pub excluded_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to be assigned to the Amazon RDS resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbClusterEndpointInput {

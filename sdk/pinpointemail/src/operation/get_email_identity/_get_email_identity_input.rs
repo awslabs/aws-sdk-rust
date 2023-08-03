@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEmailIdentityInput {
     /// <p>The email identity that you want to retrieve details for.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
 }
 impl GetEmailIdentityInput {

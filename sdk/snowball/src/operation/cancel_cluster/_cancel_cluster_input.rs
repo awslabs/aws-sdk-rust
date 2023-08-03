@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelClusterInput {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelClusterInput {

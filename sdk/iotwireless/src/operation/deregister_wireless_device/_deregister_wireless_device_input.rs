@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterWirelessDeviceInput {
     /// <p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
-    #[doc(hidden)]
     pub wireless_device_type: ::std::option::Option<crate::types::WirelessDeviceType>,
 }
 impl DeregisterWirelessDeviceInput {

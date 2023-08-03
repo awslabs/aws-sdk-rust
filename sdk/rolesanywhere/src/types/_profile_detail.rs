@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfileDetail {
     /// <p>The unique identifier of the profile.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the profile.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
-    #[doc(hidden)]
     pub require_instance_properties: ::std::option::Option<bool>,
     /// <p>Indicates whether the profile is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services account that created the profile.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    #[doc(hidden)]
     pub session_policy: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    #[doc(hidden)]
     pub role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    #[doc(hidden)]
     pub managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ISO-8601 timestamp when the profile was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the profile was last updated. </p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The number of seconds the vended session credentials are valid for. </p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
 }
 impl ProfileDetail {

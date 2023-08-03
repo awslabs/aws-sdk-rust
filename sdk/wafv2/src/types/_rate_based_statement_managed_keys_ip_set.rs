@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateBasedStatementManagedKeysIpSet {
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    #[doc(hidden)]
     pub ip_address_version: ::std::option::Option<crate::types::IpAddressVersion>,
     /// <p>The IP addresses that are currently blocked.</p>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RateBasedStatementManagedKeysIpSet {

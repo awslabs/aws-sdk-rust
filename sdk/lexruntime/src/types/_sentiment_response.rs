@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentResponse {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
-    #[doc(hidden)]
     pub sentiment_label: ::std::option::Option<::std::string::String>,
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
-    #[doc(hidden)]
     pub sentiment_score: ::std::option::Option<::std::string::String>,
 }
 impl SentimentResponse {

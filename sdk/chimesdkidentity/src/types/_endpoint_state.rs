@@ -11,10 +11,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointState {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EndpointStatus>,
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<crate::types::EndpointStatusReason>,
 }
 impl EndpointState {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAuthenticationProfileOutput {
     /// <p>The name of the authentication profile that was deleted.</p>
-    #[doc(hidden)]
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

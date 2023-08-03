@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupMetadata {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupMetadata {

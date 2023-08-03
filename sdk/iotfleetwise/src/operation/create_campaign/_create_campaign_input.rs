@@ -4,63 +4,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCampaignInput {
     /// <p> The name of the campaign to create. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the campaign to help identify its purpose.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
-    #[doc(hidden)]
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the vehicle or fleet to deploy a campaign to. </p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code> </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data isn't collected after the campaign expires. </p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
-    #[doc(hidden)]
     pub expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> (Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code> </p>
-    #[doc(hidden)]
     pub post_trigger_collection_duration: ::std::option::Option<i64>,
     /// <p> (Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code> </p>
-    #[doc(hidden)]
     pub diagnostics_mode: ::std::option::Option<crate::types::DiagnosticsMode>,
     /// <p>(Optional) Whether to store collected data after a vehicle lost a connection with the cloud. After a connection is re-established, the data is automatically forwarded to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified, <code>OFF</code> is used.</p>
     /// <p>Default: <code>OFF</code> </p>
-    #[doc(hidden)]
     pub spooling_mode: ::std::option::Option<crate::types::SpoolingMode>,
     /// <p> (Optional) Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used. </p>
     /// <p>Default: <code>SNAPPY</code> </p>
-    #[doc(hidden)]
     pub compression: ::std::option::Option<crate::types::Compression>,
     /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used. </p>
     /// <p>Default: <code>0</code> </p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>(Optional) A list of information about signals to collect. </p>
-    #[doc(hidden)]
     pub signals_to_collect: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>,
     /// <p> The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
-    #[doc(hidden)]
     pub collection_scheme: ::std::option::Option<crate::types::CollectionScheme>,
     /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
-    #[doc(hidden)]
     pub data_extra_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Metadata that can be used to manage the campaign.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. </p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    #[doc(hidden)]
     pub data_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>,
 }
 impl CreateCampaignInput {

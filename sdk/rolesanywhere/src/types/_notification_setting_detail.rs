@@ -6,21 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationSettingDetail {
     /// <p>Indicates whether the notification setting is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The event to which this notification setting is applied.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::NotificationEvent>,
     /// <p>The number of days before a notification event.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<i32>,
     /// <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch metrics, EventBridge, and Health Dashboard to notify for an event.</p> <note>
     /// <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting to 'ALL' channels.</p>
     /// </note>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::NotificationChannel>,
     /// <p>The principal that configured the notification setting. For default settings configured by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and for customized notifications settings, it is the respective account ID. </p>
-    #[doc(hidden)]
     pub configured_by: ::std::option::Option<::std::string::String>,
 }
 impl NotificationSettingDetail {

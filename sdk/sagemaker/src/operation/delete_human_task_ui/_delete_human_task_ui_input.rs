@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHumanTaskUiInput {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
-    #[doc(hidden)]
     pub human_task_ui_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHumanTaskUiInput {

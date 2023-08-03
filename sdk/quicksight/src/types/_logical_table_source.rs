@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogicalTableSource {
     /// <p>Specifies the result of a join of two logical tables.</p>
-    #[doc(hidden)]
     pub join_instruction: ::std::option::Option<crate::types::JoinInstruction>,
     /// <p>Physical table ID.</p>
-    #[doc(hidden)]
     pub physical_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
-    #[doc(hidden)]
     pub data_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl LogicalTableSource {

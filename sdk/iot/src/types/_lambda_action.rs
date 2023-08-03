@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaAction {
     /// <p>The ARN of the Lambda function.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaAction {

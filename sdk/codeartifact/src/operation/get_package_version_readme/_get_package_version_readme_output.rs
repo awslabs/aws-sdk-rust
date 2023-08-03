@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageVersionReadmeOutput {
     /// <p> The format of the package with the requested readme file. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -12,19 +11,14 @@ pub struct GetPackageVersionReadmeOutput {
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package that contains the returned readme file. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> The version of the package with the requested readme file. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p> The current revision associated with the package version. </p>
-    #[doc(hidden)]
     pub version_revision: ::std::option::Option<::std::string::String>,
     /// <p> The text of the returned readme file. </p>
-    #[doc(hidden)]
     pub readme: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

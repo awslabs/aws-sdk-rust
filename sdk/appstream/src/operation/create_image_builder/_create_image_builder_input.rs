@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageBuilderInput {
     /// <p>A unique name for the image builder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the image used to create the image builder.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the public, private, or shared image to use.</p>
-    #[doc(hidden)]
     pub image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
@@ -48,39 +45,29 @@ pub struct CreateImageBuilderInput {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The description to display.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The image builder name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Enables or disables default internet access for the image builder.</p>
-    #[doc(hidden)]
     pub enable_default_internet_access: ::std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-    #[doc(hidden)]
     pub domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    #[doc(hidden)]
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    #[doc(hidden)]
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
 }
 impl CreateImageBuilderInput {

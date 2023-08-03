@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The case-sensitive name of the group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the group that was generated on creation.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGroupInput {

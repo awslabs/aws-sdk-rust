@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
-    #[doc(hidden)]
     pub admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {

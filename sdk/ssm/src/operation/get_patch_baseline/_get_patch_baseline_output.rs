@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPatchBaselineOutput {
     /// <p>The ID of the retrieved patch baseline.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch baseline.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the operating system specified for the patch baseline.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
-    #[doc(hidden)]
     pub global_filters: ::std::option::Option<crate::types::PatchFilterGroup>,
     /// <p>A set of rules used to include patches in the baseline.</p>
-    #[doc(hidden)]
     pub approval_rules: ::std::option::Option<crate::types::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    #[doc(hidden)]
     pub approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
-    #[doc(hidden)]
     pub approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
-    #[doc(hidden)]
     pub approved_patches_enable_non_security: ::std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    #[doc(hidden)]
     pub rejected_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
-    #[doc(hidden)]
     pub rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
     /// <p>Patch groups included in the patch baseline.</p>
-    #[doc(hidden)]
     pub patch_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date the patch baseline was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the patch baseline was last modified.</p>
-    #[doc(hidden)]
     pub modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description of the patch baseline.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
     _request_id: Option<String>,
 }

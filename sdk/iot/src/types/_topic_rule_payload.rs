@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRulePayload {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The description of the rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The actions associated with the rule.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>Specifies whether the rule is disabled.</p>
-    #[doc(hidden)]
     pub rule_disabled: ::std::option::Option<bool>,
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    #[doc(hidden)]
     pub aws_iot_sql_version: ::std::option::Option<::std::string::String>,
     /// <p>The action to take when an error occurs.</p>
-    #[doc(hidden)]
     pub error_action: ::std::option::Option<crate::types::Action>,
 }
 impl TopicRulePayload {

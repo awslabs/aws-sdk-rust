@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeatureGroupInput {
     /// <p>The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described. </p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by default.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeatureGroupInput {

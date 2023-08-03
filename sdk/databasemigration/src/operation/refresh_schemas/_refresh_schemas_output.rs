@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshSchemasOutput {
     /// <p>The status of the refreshed schema.</p>
-    #[doc(hidden)]
     pub refresh_schemas_status: ::std::option::Option<crate::types::RefreshSchemasStatus>,
     _request_id: Option<String>,
 }

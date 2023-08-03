@@ -5,13 +5,10 @@
 pub struct ListComponentsInput {
     /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::ComponentVisibilityScope>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentsInput {

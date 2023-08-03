@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterSnapshotInput {

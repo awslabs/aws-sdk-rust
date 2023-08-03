@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// The ARN of the CW log group to which the vended log data will be published.
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateLoggingConfigurationInput {

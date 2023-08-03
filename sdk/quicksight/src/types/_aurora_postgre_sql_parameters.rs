@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuroraPostgreSqlParameters {
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
 }
 impl AuroraPostgreSqlParameters {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrialComponentsOutput {
     /// <p>A list of the summaries of your trial components.</p>
-    #[doc(hidden)]
     pub trial_component_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSummary>>,
     /// <p>A token for getting the next set of components, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,48 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectVersionsOutput {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request by using the <code>NextKeyMarker</code> and <code>NextVersionIdMarker</code> response parameters as a starting place in another request to return the rest of the results.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>Marks the last key returned in a truncated response.</p>
-    #[doc(hidden)]
     pub key_marker: ::std::option::Option<::std::string::String>,
     /// <p>Marks the last version of the key returned in a truncated response.</p>
-    #[doc(hidden)]
     pub version_id_marker: ::std::option::Option<::std::string::String>,
     /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub next_key_marker: ::std::option::Option<::std::string::String>,
     /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the <code>version-id-marker</code> request parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub next_version_id_marker: ::std::option::Option<::std::string::String>,
     /// <p>Container for version information.</p>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<crate::types::ObjectVersion>>,
     /// <p>Container for an object that is a delete marker.</p>
-    #[doc(hidden)]
     pub delete_markers: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>>,
     /// <p>The bucket name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Selects objects that start with the value supplied by this parameter.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the <code>max-keys</code> limitation. These keys are not returned elsewhere in the response.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of objects to return.</p>
-    #[doc(hidden)]
     pub max_keys: i32,
     /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
-    #[doc(hidden)]
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
-    #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomVerificationEmailTemplate {
     /// <p>The name of the custom verification email template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address that the custom verification email is sent from.</p>
-    #[doc(hidden)]
     pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
-    #[doc(hidden)]
     pub template_subject: ::std::option::Option<::std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
-    #[doc(hidden)]
     pub success_redirection_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
-    #[doc(hidden)]
     pub failure_redirection_url: ::std::option::Option<::std::string::String>,
 }
 impl CustomVerificationEmailTemplate {

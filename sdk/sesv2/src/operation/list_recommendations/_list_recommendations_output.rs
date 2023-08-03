@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationsOutput {
     /// <p>The recommendations applicable to your account.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

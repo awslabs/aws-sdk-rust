@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamespaceProperties {
     /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
-    #[doc(hidden)]
     pub dns_properties: ::std::option::Option<crate::types::DnsProperties>,
     /// <p>A complex type that contains the name of an HTTP namespace.</p>
-    #[doc(hidden)]
     pub http_properties: ::std::option::Option<crate::types::HttpProperties>,
 }
 impl NamespaceProperties {

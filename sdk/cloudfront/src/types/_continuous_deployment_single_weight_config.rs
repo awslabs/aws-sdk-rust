@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentSingleWeightConfig {
     /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
-    #[doc(hidden)]
     pub weight: ::std::option::Option<f32>,
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
-    #[doc(hidden)]
     pub session_stickiness_config: ::std::option::Option<crate::types::SessionStickinessConfig>,
 }
 impl ContinuousDeploymentSingleWeightConfig {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBucketAccessKeyInput {
     /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateBucketAccessKeyInput {

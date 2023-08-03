@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLocationsOutput {
     /// <p>An array that contains a list of locations.</p>
-    #[doc(hidden)]
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

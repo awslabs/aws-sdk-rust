@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The updated list of Availability Zones for the load balancer.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

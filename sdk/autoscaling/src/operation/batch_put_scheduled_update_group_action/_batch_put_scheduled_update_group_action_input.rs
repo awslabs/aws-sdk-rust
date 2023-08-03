@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutScheduledUpdateGroupActionInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
-    #[doc(hidden)]
     pub scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>>,
 }
 impl BatchPutScheduledUpdateGroupActionInput {

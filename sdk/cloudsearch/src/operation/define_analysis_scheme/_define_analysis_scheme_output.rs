@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
-    #[doc(hidden)]
     pub analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
 }

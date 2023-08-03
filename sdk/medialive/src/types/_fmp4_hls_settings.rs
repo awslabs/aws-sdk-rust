@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Fmp4HlsSettings {
     /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
-    #[doc(hidden)]
     pub audio_rendition_sets: ::std::option::Option<::std::string::String>,
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    #[doc(hidden)]
     pub nielsen_id3_behavior: ::std::option::Option<crate::types::Fmp4NielsenId3Behavior>,
     /// When set to passthrough, timed metadata is passed through from input to output.
-    #[doc(hidden)]
     pub timed_metadata_behavior: ::std::option::Option<crate::types::Fmp4TimedMetadataBehavior>,
 }
 impl Fmp4HlsSettings {

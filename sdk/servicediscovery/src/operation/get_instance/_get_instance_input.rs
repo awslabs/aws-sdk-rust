@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceInput {
     /// <p>The ID of the service that the instance is associated with.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance that you want to get information about.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceInput {

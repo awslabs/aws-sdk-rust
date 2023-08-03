@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailBlanking {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    #[doc(hidden)]
     pub avail_blanking_image: ::std::option::Option<crate::types::InputLocation>,
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AvailBlankingState>,
 }
 impl AvailBlanking {

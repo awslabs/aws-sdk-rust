@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFunctionOutput {
     /// <p>Contains configuration information and metadata about a CloudFront function.</p>
-    #[doc(hidden)]
     pub function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

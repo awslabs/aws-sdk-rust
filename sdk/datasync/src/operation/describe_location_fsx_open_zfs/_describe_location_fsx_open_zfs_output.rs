@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxOpenZfsOutput {
     /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
     /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
-    #[doc(hidden)]
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::FsxProtocol>,
     /// <p>The time that the FSx for OpenZFS location was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

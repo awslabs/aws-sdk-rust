@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionOAuthResponseParameters {
     /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
-    #[doc(hidden)]
     pub client_parameters: ::std::option::Option<crate::types::ConnectionOAuthClientResponseParameters>,
     /// <p>The URL to the HTTP endpoint that authorized the request.</p>
-    #[doc(hidden)]
     pub authorization_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The method used to connect to the HTTP endpoint.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<crate::types::ConnectionOAuthHttpMethod>,
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
-    #[doc(hidden)]
     pub o_auth_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
 impl ConnectionOAuthResponseParameters {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsOutput {
     /// <p>Returns the programmatic credentials.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>Returns the duration in which the credentials will remain valid.</p>
-    #[doc(hidden)]
     pub duration_in_minutes: i64,
     _request_id: Option<String>,
 }

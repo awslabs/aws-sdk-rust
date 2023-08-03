@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetParametersForExportOutput {
     /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
-    #[doc(hidden)]
     pub signing_key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
-    #[doc(hidden)]
     pub signing_key_certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
-    #[doc(hidden)]
     pub signing_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
-    #[doc(hidden)]
     pub export_token: ::std::option::Option<::std::string::String>,
     /// <p>The validity period of the export token.</p>
-    #[doc(hidden)]
     pub parameters_valid_until_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

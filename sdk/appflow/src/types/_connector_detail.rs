@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorDetail {
     /// <p>A description about the registered connector.</p>
-    #[doc(hidden)]
     pub connector_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connector.</p>
-    #[doc(hidden)]
     pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the connector.</p>
-    #[doc(hidden)]
     pub connector_owner: ::std::option::Option<::std::string::String>,
     /// <p>The connector version.</p>
-    #[doc(hidden)]
     pub connector_version: ::std::option::Option<::std::string::String>,
     /// <p>The application type of the connector.</p>
-    #[doc(hidden)]
     pub application_type: ::std::option::Option<::std::string::String>,
     /// <p>The connector type.</p>
-    #[doc(hidden)]
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>A label used for the connector.</p>
-    #[doc(hidden)]
     pub connector_label: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the connector was registered.</p>
-    #[doc(hidden)]
     pub registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user who registered the connector.</p>
-    #[doc(hidden)]
     pub registered_by: ::std::option::Option<::std::string::String>,
     /// <p>The provisioning type that the connector uses.</p>
-    #[doc(hidden)]
     pub connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
     /// <p>The connection mode that the connector supports.</p>
-    #[doc(hidden)]
     pub connector_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The data transfer types that the connector supports.</p>
     /// <dl>
@@ -52,7 +41,6 @@ pub struct ConnectorDetail {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub supported_data_transfer_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
 }
 impl ConnectorDetail {

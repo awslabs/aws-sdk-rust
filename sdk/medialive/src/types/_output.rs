@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Output {
     /// The names of the AudioDescriptions used as audio sources for this output.
-    #[doc(hidden)]
     pub audio_description_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The names of the CaptionDescriptions used as caption sources for this output.
-    #[doc(hidden)]
     pub caption_description_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The name used to identify an output.
-    #[doc(hidden)]
     pub output_name: ::std::option::Option<::std::string::String>,
     /// Output type-specific settings.
-    #[doc(hidden)]
     pub output_settings: ::std::option::Option<crate::types::OutputSettings>,
     /// The name of the VideoDescription used as the source for this output.
-    #[doc(hidden)]
     pub video_description_name: ::std::option::Option<::std::string::String>,
 }
 impl Output {

@@ -5,27 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafWebAclRule {
     /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::WafAction>,
     /// <p>Rules to exclude from a rule group.</p>
-    #[doc(hidden)]
     pub excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>>,
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
     /// <p>However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests are counted.</p>
     /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
-    #[doc(hidden)]
     pub override_action: ::std::option::Option<crate::types::WafOverrideAction>,
     /// <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you add multiple rules to a web ACL, the values do not need to be consecutive.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The identifier for a rule.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule type.</p>
     /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code> </p>
     /// <p>The default is <code>REGULAR</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafWebAclRule {

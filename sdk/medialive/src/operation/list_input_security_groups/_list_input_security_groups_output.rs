@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInputSecurityGroupsOutput {
     /// List of input security groups
-    #[doc(hidden)]
     pub input_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::InputSecurityGroup>>,
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

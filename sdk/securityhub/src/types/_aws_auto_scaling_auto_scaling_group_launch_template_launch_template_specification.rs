@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
     /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
-    #[doc(hidden)]
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
-    #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {

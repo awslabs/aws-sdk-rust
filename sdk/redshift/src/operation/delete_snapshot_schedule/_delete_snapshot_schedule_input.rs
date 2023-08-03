@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotScheduleInput {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
-    #[doc(hidden)]
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotScheduleInput {

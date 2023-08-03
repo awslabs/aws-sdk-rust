@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectRetentionOutput {
     /// <p>The container element for an object's retention settings.</p>
-    #[doc(hidden)]
     pub retention: ::std::option::Option<crate::types::ObjectLockRetention>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

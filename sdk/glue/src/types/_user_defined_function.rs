@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDefinedFunction {
     /// <p>The name of the function.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database that contains the function.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The Java class that contains the function code.</p>
-    #[doc(hidden)]
     pub class_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the function.</p>
-    #[doc(hidden)]
     pub owner_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner type.</p>
-    #[doc(hidden)]
     pub owner_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The time at which the function was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The resource URIs for the function.</p>
-    #[doc(hidden)]
     pub resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
     /// <p>The ID of the Data Catalog in which the function resides.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl UserDefinedFunction {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoTJobExecutionsRolloutConfig {
     /// <p>The exponential rate to increase the job rollout rate.</p>
-    #[doc(hidden)]
     pub exponential_rate: ::std::option::Option<crate::types::IoTJobExponentialRolloutRate>,
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
-    #[doc(hidden)]
     pub maximum_per_minute: ::std::option::Option<i32>,
 }
 impl IoTJobExecutionsRolloutConfig {

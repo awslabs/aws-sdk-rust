@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyGeneration {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the policy generation request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A timestamp of when the policy generation started.</p>
-    #[doc(hidden)]
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of when the policy generation was completed.</p>
-    #[doc(hidden)]
     pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PolicyGeneration {

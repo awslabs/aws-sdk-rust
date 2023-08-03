@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsExportDestination {
     /// <p>A destination signifying output to an S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket_destination: ::std::option::Option<crate::types::AnalyticsS3BucketDestination>,
 }
 impl AnalyticsExportDestination {

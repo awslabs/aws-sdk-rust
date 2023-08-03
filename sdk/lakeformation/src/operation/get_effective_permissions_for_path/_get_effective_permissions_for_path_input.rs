@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEffectivePermissionsForPathInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetEffectivePermissionsForPathInput {

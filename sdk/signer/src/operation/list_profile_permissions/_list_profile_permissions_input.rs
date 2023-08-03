@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfilePermissionsInput {
     /// <p>Name of the signing profile containing the cross-account permissions.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>String for specifying the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListProfilePermissionsInput {

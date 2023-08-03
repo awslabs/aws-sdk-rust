@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRuleStatusesInput {
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    #[doc(hidden)]
     pub organization_config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrganizationConfigRuleStatusesInput {

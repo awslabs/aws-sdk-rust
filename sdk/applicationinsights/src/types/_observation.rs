@@ -5,139 +5,94 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Observation {
     /// <p>The ID of the observation type.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the observation was first detected, in epoch seconds.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the observation ended, in epoch seconds.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The source type of the observation.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The source resource ARN of the observation.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The log group name.</p>
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-    #[doc(hidden)]
     pub line_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The log text of the observation.</p>
-    #[doc(hidden)]
     pub log_text: ::std::option::Option<::std::string::String>,
     /// <p>The log filter of the observation.</p>
-    #[doc(hidden)]
     pub log_filter: ::std::option::Option<crate::types::LogFilter>,
     /// <p>The namespace of the observation metric.</p>
-    #[doc(hidden)]
     pub metric_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the observation metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The unit of the source observation metric.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The value of the source observation metric.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
     /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
-    #[doc(hidden)]
     pub cloud_watch_event_id: ::std::option::Option<::std::string::String>,
     /// <p> The source of the CloudWatch Event. </p>
-    #[doc(hidden)]
     pub cloud_watch_event_source: ::std::option::Option<crate::types::CloudWatchEventSource>,
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-    #[doc(hidden)]
     pub cloud_watch_event_detail_type: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
-    #[doc(hidden)]
     pub health_event_arn: ::std::option::Option<::std::string::String>,
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
-    #[doc(hidden)]
     pub health_service: ::std::option::Option<::std::string::String>,
     /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
-    #[doc(hidden)]
     pub health_event_type_code: ::std::option::Option<::std::string::String>,
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
-    #[doc(hidden)]
     pub health_event_type_category: ::std::option::Option<::std::string::String>,
     /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
-    #[doc(hidden)]
     pub health_event_description: ::std::option::Option<::std::string::String>,
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
-    #[doc(hidden)]
     pub code_deploy_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-    #[doc(hidden)]
     pub code_deploy_deployment_group: ::std::option::Option<::std::string::String>,
     /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
-    #[doc(hidden)]
     pub code_deploy_state: ::std::option::Option<::std::string::String>,
     /// <p> The CodeDeploy application to which the deployment belongs. </p>
-    #[doc(hidden)]
     pub code_deploy_application: ::std::option::Option<::std::string::String>,
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-    #[doc(hidden)]
     pub code_deploy_instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
-    #[doc(hidden)]
     pub ec2_state: ::std::option::Option<::std::string::String>,
     /// <p> The category of an RDS event. </p>
-    #[doc(hidden)]
     pub rds_event_categories: ::std::option::Option<::std::string::String>,
     /// <p> The message of an RDS event. </p>
-    #[doc(hidden)]
     pub rds_event_message: ::std::option::Option<::std::string::String>,
     /// <p> The name of the S3 CloudWatch Event-based observation. </p>
-    #[doc(hidden)]
     pub s3_event_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
-    #[doc(hidden)]
     pub states_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
-    #[doc(hidden)]
     pub states_arn: ::std::option::Option<::std::string::String>,
     /// <p> The status of the step function-related observation. </p>
-    #[doc(hidden)]
     pub states_status: ::std::option::Option<::std::string::String>,
     /// <p> The input to the step function-based observation. </p>
-    #[doc(hidden)]
     pub states_input: ::std::option::Option<::std::string::String>,
     /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
-    #[doc(hidden)]
     pub ebs_event: ::std::option::Option<::std::string::String>,
     /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
-    #[doc(hidden)]
     pub ebs_result: ::std::option::Option<::std::string::String>,
     /// <p> The cause of an EBS CloudWatch event. </p>
-    #[doc(hidden)]
     pub ebs_cause: ::std::option::Option<::std::string::String>,
     /// <p> The request ID of an EBS CloudWatch event. </p>
-    #[doc(hidden)]
     pub ebs_request_id: ::std::option::Option<::std::string::String>,
     /// <p> The X-Ray request fault percentage for this node. </p>
-    #[doc(hidden)]
     pub x_ray_fault_percent: ::std::option::Option<i32>,
     /// <p> The X-Ray request throttle percentage for this node. </p>
-    #[doc(hidden)]
     pub x_ray_throttle_percent: ::std::option::Option<i32>,
     /// <p> The X-Ray request error percentage for this node. </p>
-    #[doc(hidden)]
     pub x_ray_error_percent: ::std::option::Option<i32>,
     /// <p> The X-Ray request count for this node. </p>
-    #[doc(hidden)]
     pub x_ray_request_count: ::std::option::Option<i32>,
     /// <p> The X-Ray node request average latency for this node. </p>
-    #[doc(hidden)]
     pub x_ray_request_average_latency: ::std::option::Option<i64>,
     /// <p> The name of the X-Ray node. </p>
-    #[doc(hidden)]
     pub x_ray_node_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of the X-Ray node. </p>
-    #[doc(hidden)]
     pub x_ray_node_type: ::std::option::Option<::std::string::String>,
 }
 impl Observation {

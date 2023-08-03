@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelExplainabilityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model explainability job.</p>
-    #[doc(hidden)]
     pub job_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the model explainability job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The baseline configuration for a model explainability job.</p>
-    #[doc(hidden)]
     pub model_explainability_baseline_config: ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,
     /// <p>Configures the model explainability job to run a specified Docker container image.</p>
-    #[doc(hidden)]
     pub model_explainability_app_specification: ::std::option::Option<crate::types::ModelExplainabilityAppSpecification>,
     /// <p>Inputs for the model explainability job.</p>
-    #[doc(hidden)]
     pub model_explainability_job_input: ::std::option::Option<crate::types::ModelExplainabilityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
-    #[doc(hidden)]
     pub model_explainability_job_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    #[doc(hidden)]
     pub job_resources: ::std::option::Option<crate::types::MonitoringResources>,
     /// <p>Networking options for a model explainability job.</p>
-    #[doc(hidden)]
     pub network_config: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCaseOutput {
     /// <p>A unique identifier of the case.</p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the case.</p>
-    #[doc(hidden)]
     pub case_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

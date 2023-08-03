@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FastLaunchSnapshotConfigurationResponse {
     /// <p>The number of pre-provisioned snapshots requested to keep on hand for a fast-launch enabled Windows AMI.</p>
-    #[doc(hidden)]
     pub target_resource_count: ::std::option::Option<i32>,
 }
 impl FastLaunchSnapshotConfigurationResponse {

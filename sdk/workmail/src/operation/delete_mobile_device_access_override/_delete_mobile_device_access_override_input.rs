@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessOverrideInput {
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
@@ -12,10 +11,8 @@ pub struct DeleteMobileDeviceAccessOverrideInput {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMobileDeviceAccessOverrideInput {

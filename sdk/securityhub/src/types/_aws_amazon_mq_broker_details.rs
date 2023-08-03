@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerDetails {
     /// <p> The authentication strategy used to secure the broker. The default is <code>SIMPLE</code>. </p>
-    #[doc(hidden)]
     pub authentication_strategy: ::std::option::Option<::std::string::String>,
     /// <p> Whether automatically upgrade new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p> The Amazon Resource Name (ARN) of the broker. </p>
-    #[doc(hidden)]
     pub broker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The broker's name. </p>
-    #[doc(hidden)]
     pub broker_name: ::std::option::Option<::std::string::String>,
     /// <p> The broker's deployment mode. </p>
-    #[doc(hidden)]
     pub deployment_mode: ::std::option::Option<::std::string::String>,
     /// <p> Encryption options for the broker. Doesn’t apply to RabbitMQ brokers. </p>
-    #[doc(hidden)]
     pub encryption_options: ::std::option::Option<crate::types::AwsAmazonMqBrokerEncryptionOptionsDetails>,
     /// <p> The type of broker engine. </p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<::std::string::String>,
     /// <p> The version of the broker engine. </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p> The broker's instance type. </p>
-    #[doc(hidden)]
     pub host_instance_type: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID that Amazon MQ generates for the broker. </p>
-    #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p> The metadata of the Lightweight Directory Access Protocol (LDAP) server used to authenticate and authorize connections to the broker. This is an optional failover server. </p>
-    #[doc(hidden)]
     pub ldap_server_metadata: ::std::option::Option<crate::types::AwsAmazonMqBrokerLdapServerMetadataDetails>,
     /// <p> Turns on Amazon CloudWatch logging for brokers. </p>
-    #[doc(hidden)]
     pub logs: ::std::option::Option<crate::types::AwsAmazonMqBrokerLogsDetails>,
     /// <p> The scheduled time period (UTC) during which Amazon MQ begins to apply pending updates or patches to the broker. </p>
-    #[doc(hidden)]
     pub maintenance_window_start_time: ::std::option::Option<crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails>,
     /// <p> Permits connections from applications outside of the VPC that hosts the broker's subnets. </p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p> The list of rules (one minimum, 125 maximum) that authorize connections to brokers. </p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The broker's storage type. </p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p> The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. </p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The list of all broker usernames for the specified broker. Doesn't apply to RabbitMQ brokers. </p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::AwsAmazonMqBrokerUsersDetails>>,
 }
 impl AwsAmazonMqBrokerDetails {

@@ -7,10 +7,8 @@ pub struct UntagResourceInput {
     /// <p>The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code> </p>
     /// <p>The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code> </p>
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of tag keys to remove from the resource.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

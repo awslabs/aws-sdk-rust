@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UncertaintyRange {
     /// <p> The lower bound value of the area under curve (auc). </p>
-    #[doc(hidden)]
     pub lower_bound_value: ::std::option::Option<f32>,
     /// <p> The upper bound value of the area under curve (auc). </p>
-    #[doc(hidden)]
     pub upper_bound_value: ::std::option::Option<f32>,
 }
 impl UncertaintyRange {

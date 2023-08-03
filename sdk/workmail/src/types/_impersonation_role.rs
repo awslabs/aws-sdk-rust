@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpersonationRole {
     /// <p>The identifier of the impersonation role.</p>
-    #[doc(hidden)]
     pub impersonation_role_id: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
     /// <p>The date when the impersonation role was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the impersonation role was last modified.</p>
-    #[doc(hidden)]
     pub date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImpersonationRole {

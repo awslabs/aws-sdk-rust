@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionStatus {
     /// <p>The date and time that the session started.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent date and time that the session was modified.</p>
-    #[doc(hidden)]
     pub last_modified_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the session ended.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time starting at which the session became idle. Can be empty if the session is not currently idle.</p>
-    #[doc(hidden)]
     pub idle_since_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the session. A description of each state follows.</p>
     /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
@@ -25,10 +21,8 @@ pub struct SessionStatus {
     /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
     /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SessionState>,
     /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<::std::string::String>,
 }
 impl SessionStatus {

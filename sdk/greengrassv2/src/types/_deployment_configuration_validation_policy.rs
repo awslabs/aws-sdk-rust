@@ -6,7 +6,6 @@
 pub struct DeploymentConfigurationValidationPolicy {
     /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
     /// <p>Default: <code>30</code> </p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl DeploymentConfigurationValidationPolicy {

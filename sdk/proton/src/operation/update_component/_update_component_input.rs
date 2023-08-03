@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateComponentInput {
     /// <p>The name of the component to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
     /// <dl>
@@ -19,27 +18,20 @@ pub struct UpdateComponentInput {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::ComponentDeploymentUpdateType>,
     /// <p>An optional customer-provided description of the component.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that you want to attach this component to. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when the component is attached to a service instance.</p>
-    #[doc(hidden)]
     pub service_spec: ::std::option::Option<::std::string::String>,
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    #[doc(hidden)]
     pub template_file: ::std::option::Option<::std::string::String>,
     /// <p>The client token for the updated component.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateComponentInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCostAllocationTagsOutput {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
-    #[doc(hidden)]
     pub cost_allocation_tags: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTag>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

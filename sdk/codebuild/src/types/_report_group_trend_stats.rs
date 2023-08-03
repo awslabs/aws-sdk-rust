@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportGroupTrendStats {
     /// <p>Contains the average of all values analyzed.</p>
-    #[doc(hidden)]
     pub average: ::std::option::Option<::std::string::String>,
     /// <p>Contains the maximum value analyzed.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<::std::string::String>,
     /// <p>Contains the minimum value analyzed.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<::std::string::String>,
 }
 impl ReportGroupTrendStats {

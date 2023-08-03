@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnConfiguration {
     /// <p>The column that provides the document's identifier.</p>
-    #[doc(hidden)]
     pub document_id_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The column that contains the contents of the document.</p>
-    #[doc(hidden)]
     pub document_data_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The column that contains the title of the document.</p>
-    #[doc(hidden)]
     pub document_title_column_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
-    #[doc(hidden)]
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
-    #[doc(hidden)]
     pub change_detecting_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ColumnConfiguration {

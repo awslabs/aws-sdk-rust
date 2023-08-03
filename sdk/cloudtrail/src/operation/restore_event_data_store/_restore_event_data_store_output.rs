@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreEventDataStoreOutput {
     /// <p>The event data store ARN.</p>
-    #[doc(hidden)]
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the event data store.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EventDataStoreStatus>,
     /// <p>The advanced event selectors that were used to select events.</p>
-    #[doc(hidden)]
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     /// <p>Indicates whether the event data store is collecting events from all Regions, or only from the Region in which the event data store was created.</p>
-    #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
-    #[doc(hidden)]
     pub organization_enabled: ::std::option::Option<bool>,
     /// <p>The retention period, in days.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<i32>,
     /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
-    #[doc(hidden)]
     pub termination_protection_enabled: ::std::option::Option<bool>,
     /// <p>The timestamp of an event data store's creation.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

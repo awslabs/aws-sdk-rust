@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectStackDriftInput {
     /// <p>The name of the stack for which you want to detect drift.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical names of any resources you want to use as filters.</p>
-    #[doc(hidden)]
     pub logical_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetectStackDriftInput {

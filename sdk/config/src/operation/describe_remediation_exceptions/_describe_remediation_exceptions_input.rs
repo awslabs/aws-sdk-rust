@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRemediationExceptionsInput {
     /// <p>The name of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
-    #[doc(hidden)]
     pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
     /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRemediationExceptionsInput {

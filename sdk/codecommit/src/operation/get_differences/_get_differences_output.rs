@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDifferencesOutput {
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
-    #[doc(hidden)]
     pub differences: ::std::option::Option<::std::vec::Vec<crate::types::Difference>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

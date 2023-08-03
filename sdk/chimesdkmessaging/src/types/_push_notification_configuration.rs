@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PushNotificationConfiguration {
     /// <p>The title of the push notification.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The body of the push notification.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PushNotificationType>,
 }
 impl PushNotificationConfiguration {

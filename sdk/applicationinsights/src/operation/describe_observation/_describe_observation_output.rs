@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeObservationOutput {
     /// <p>Information about the observation.</p>
-    #[doc(hidden)]
     pub observation: ::std::option::Option<crate::types::Observation>,
     _request_id: Option<String>,
 }

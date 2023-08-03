@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAttribute {
     /// <p>Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).</p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
     /// <p>Specifies the attribute value of relative distinguished name (RDN).</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl CustomAttribute {

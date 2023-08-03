@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHubInput {
     /// <p>The ARN of the Hub resource to retrieve.</p>
-    #[doc(hidden)]
     pub hub_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHubInput {

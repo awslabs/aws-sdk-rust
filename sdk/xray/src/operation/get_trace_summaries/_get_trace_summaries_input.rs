@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTraceSummariesInput {
     /// <p>The start of the time frame for which to retrieve traces.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which to retrieve traces.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-    #[doc(hidden)]
     pub time_range_type: ::std::option::Option<crate::types::TimeRangeType>,
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
-    #[doc(hidden)]
     pub sampling: ::std::option::Option<bool>,
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
-    #[doc(hidden)]
     pub sampling_strategy: ::std::option::Option<crate::types::SamplingStrategy>,
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    #[doc(hidden)]
     pub filter_expression: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetTraceSummariesInput {

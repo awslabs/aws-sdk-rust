@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyBackupInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
-    #[doc(hidden)]
     pub source_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
@@ -20,14 +17,11 @@ pub struct CopyBackupInput {
     /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
     /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the backup copy. This value defaults to <code>false</code>.</p>
     /// <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are merged. If there are tag conflicts (for example, two tags with the same key but different values), the tags created with the <code>Tags</code> parameter take precedence.</p>
-    #[doc(hidden)]
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyBackupInput {

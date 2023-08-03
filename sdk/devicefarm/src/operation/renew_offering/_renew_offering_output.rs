@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewOfferingOutput {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
-    #[doc(hidden)]
     pub offering_transaction: ::std::option::Option<crate::types::OfferingTransaction>,
     _request_id: Option<String>,
 }

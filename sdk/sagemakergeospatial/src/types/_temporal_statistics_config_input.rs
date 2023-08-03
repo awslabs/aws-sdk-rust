@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemporalStatisticsConfigInput {
     /// <p>The input for the temporal statistics grouping by time frequency option.</p>
-    #[doc(hidden)]
     pub group_by: ::std::option::Option<crate::types::GroupBy>,
     /// <p>The list of the statistics method options.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>>,
     /// <p>The list of target band names for the temporal statistic to calculate.</p>
-    #[doc(hidden)]
     pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TemporalStatisticsConfigInput {

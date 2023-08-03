@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLogSourceResource {
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<crate::types::AwsLogSourceName>,
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
 }
 impl AwsLogSourceResource {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionDeadLetterConfig {
     /// <p>The ARN of an SQS queue or SNS topic.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaFunctionDeadLetterConfig {

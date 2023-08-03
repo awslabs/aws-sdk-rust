@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuntimeConfigurationOutput {
     /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
-    #[doc(hidden)]
     pub runtime_configuration: ::std::option::Option<crate::types::RuntimeConfiguration>,
     _request_id: Option<String>,
 }

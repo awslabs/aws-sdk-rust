@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyPairInput {
     /// <p>The name of the key pair to delete.</p>
-    #[doc(hidden)]
     pub key_pair_name: ::std::option::Option<::std::string::String>,
     /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
     /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
     /// </note>
-    #[doc(hidden)]
     pub expected_fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyPairInput {

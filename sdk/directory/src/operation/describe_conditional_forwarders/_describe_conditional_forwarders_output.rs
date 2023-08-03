@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConditionalForwardersOutput {
     /// <p>The list of conditional forwarders that have been created.</p>
-    #[doc(hidden)]
     pub conditional_forwarders: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalForwarder>>,
     _request_id: Option<String>,
 }

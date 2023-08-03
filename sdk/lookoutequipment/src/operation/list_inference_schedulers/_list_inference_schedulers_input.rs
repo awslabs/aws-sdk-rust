@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersInput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the maximum number of inference schedulers to list. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The beginning of the name of the inference schedulers to be listed. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name_begins_with: ::std::option::Option<::std::string::String>,
     /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current status of the inference schedulers to list.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
 }
 impl ListInferenceSchedulersInput {

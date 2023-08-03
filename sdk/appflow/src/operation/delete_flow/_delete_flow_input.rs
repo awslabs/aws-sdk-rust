@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
-    #[doc(hidden)]
     pub force_delete: ::std::option::Option<bool>,
 }
 impl DeleteFlowInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HierarchyLevelUpdate {
     /// <p>The name of the user hierarchy level. Must not be more than 50 characters.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl HierarchyLevelUpdate {

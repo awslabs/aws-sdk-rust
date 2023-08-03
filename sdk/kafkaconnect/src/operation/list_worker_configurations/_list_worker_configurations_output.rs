@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkerConfigurationsOutput {
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of worker configuration descriptions.</p>
-    #[doc(hidden)]
     pub worker_configurations: ::std::option::Option<::std::vec::Vec<crate::types::WorkerConfigurationSummary>>,
     _request_id: Option<String>,
 }

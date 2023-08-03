@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterDetails {
     /// <p>For all database engines except Aurora, specifies the allocated storage size in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of days for which automated backups are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: i32,
     /// <p>The name of the database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of this DB cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The connection endpoint for the primary instance of the DB cluster.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The reader endpoint for the DB cluster.</p>
-    #[doc(hidden)]
     pub reader_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>A list of custom endpoints for the DB cluster.</p>
-    #[doc(hidden)]
     pub custom_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether the DB cluster has instances in multiple Availability Zones.</p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
     /// <ul>
@@ -37,20 +28,15 @@ pub struct AwsRdsDbClusterDetails {
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine to use.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The name of the master user for the DB cluster.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The range of time each day when automated backups are created, if automated backups are enabled.</p>
     /// <p>Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.</p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the format <code>
@@ -62,35 +48,25 @@ pub struct AwsRdsDbClusterDetails {
     /// </day></code>.</p>
     /// <p>For the day values, use <code>mon</code>|<code>tue</code>|<code>wed</code>|<code>thu</code>|<code>fri</code>|<code>sat</code>|<code>sun</code>.</p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code>.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the read replicas that are associated with this DB cluster.</p>
-    #[doc(hidden)]
     pub read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of VPC security groups that the DB cluster belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>,
     /// <p>Specifies the identifier that Amazon Route 53 assigns when you create a hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the DB cluster is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the DB cluster. The identifier must be unique within each Amazon Web Services Region and is immutable.</p>
-    #[doc(hidden)]
     pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the IAM roles that are associated with the DB cluster.</p>
-    #[doc(hidden)]
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>>,
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enabled_cloud_watch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
     /// <ul>
@@ -100,13 +76,10 @@ pub struct AwsRdsDbClusterDetails {
     /// <li> <p> <code>provisioned</code> </p> </li>
     /// <li> <p> <code>serverless</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>Whether the DB cluster has deletion protection enabled.</p>
-    #[doc(hidden)]
     pub deletion_protection: bool,
     /// <p>Whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
-    #[doc(hidden)]
     pub http_endpoint_enabled: bool,
     /// <p>The status of the database activity stream. Valid values are as follows:</p>
     /// <ul>
@@ -115,34 +88,24 @@ pub struct AwsRdsDbClusterDetails {
     /// <li> <p> <code>stopped</code> </p> </li>
     /// <li> <p> <code>stopping</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub activity_stream_status: ::std::option::Option<::std::string::String>,
     /// <p>Whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: bool,
     /// <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub cross_account_clone: bool,
     /// <p>The Active Directory domain membership records that are associated with the DB cluster.</p>
-    #[doc(hidden)]
     pub domain_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbDomainMembership>>,
     /// <p>The name of the DB cluster parameter group for the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group: ::std::option::Option<::std::string::String>,
     /// <p>The subnet group that is associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<::std::string::String>,
     /// <p>The list of option group memberships for this DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterOptionGroupMembership>>,
     /// <p>The DB cluster identifier that the user assigned to the cluster. This identifier is the unique key that identifies a DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of instances that make up the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterMember>>,
     /// <p>Whether the mapping of IAM accounts to database accounts is enabled.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
 }
 impl AwsRdsDbClusterDetails {

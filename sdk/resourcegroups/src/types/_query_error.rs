@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryError {
     /// <p>Specifies the error code that was raised.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::QueryErrorCode>,
     /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFront stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFront stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl QueryError {

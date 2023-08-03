@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeFolderContentsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
-    #[doc(hidden)]
     pub folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The sorting criteria.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::ResourceSortType>,
     /// <p>The order for the contents of the folder.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::OrderType>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The type of items.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FolderContentType>,
     /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFolderContentsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeProgressDetails {
     /// <p>The ID of the configuration change.</p>
-    #[doc(hidden)]
     pub change_id: ::std::option::Option<::std::string::String>,
     /// <p>A message corresponding to the status of the configuration change.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ChangeProgressDetails {

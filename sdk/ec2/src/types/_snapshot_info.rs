@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotInfo {
     /// <p>Description specified by the CreateSnapshotRequest that has been applied to all snapshots.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with this snapshot.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Source volume from which this snapshot was created.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>Current state of the snapshot.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SnapshotState>,
     /// <p>Size of the volume from which this snapshot was created.</p>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
     /// <p>Time this snapshot was started. This is the same for all snapshots initiated by the same request.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Progress this snapshot has made towards completing.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>Account id used when creating this snapshot.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Snapshot id that can be used to describe this snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl SnapshotInfo {

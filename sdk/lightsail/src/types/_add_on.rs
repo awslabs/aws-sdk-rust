@@ -5,30 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddOn {
     /// <p>The name of the add-on.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the add-on.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The daily time when an automatic snapshot is created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    #[doc(hidden)]
     pub snapshot_time_of_day: ::std::option::Option<::std::string::String>,
     /// <p>The next daily time an automatic snapshot will be created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    #[doc(hidden)]
     pub next_snapshot_time_of_day: ::std::option::Option<::std::string::String>,
     /// <p>The trigger threshold of the action.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<::std::string::String>,
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<::std::string::String>,
 }
 impl AddOn {

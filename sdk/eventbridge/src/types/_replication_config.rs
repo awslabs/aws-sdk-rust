@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfig {
     /// <p>The state of event replication.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplicationState>,
 }
 impl ReplicationConfig {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfaceAttributeOutput {
     /// <p>The attachment (if any) of the network interface.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,
     /// <p>The description of the network interface.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The security groups associated with the network interface.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    #[doc(hidden)]
     pub source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     _request_id: Option<String>,
 }

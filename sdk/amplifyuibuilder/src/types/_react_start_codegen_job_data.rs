@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReactStartCodegenJobData {
     /// <p>The JavaScript module type.</p>
-    #[doc(hidden)]
     pub module: ::std::option::Option<crate::types::JsModule>,
     /// <p>The ECMAScript specification to use.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::JsTarget>,
     /// <p>The file type to use for a JavaScript project.</p>
-    #[doc(hidden)]
     pub script: ::std::option::Option<crate::types::JsScript>,
     /// <p>Specifies whether the code generation job should render type declaration files.</p>
-    #[doc(hidden)]
     pub render_type_declarations: bool,
     /// <p>Specifies whether the code generation job should render inline source maps.</p>
-    #[doc(hidden)]
     pub inline_source_map: bool,
 }
 impl ReactStartCodegenJobData {

@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationManagedRuleMetadata {
     /// <p>The description that you provide for your organization Config rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>For organization config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
-    #[doc(hidden)]
     pub rule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
-    #[doc(hidden)]
     pub input_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
     /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub maximum_execution_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_types_scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_id_scope: ::std::option::Option<::std::string::String>,
     /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
-    #[doc(hidden)]
     pub tag_key_scope: ::std::option::Option<::std::string::String>,
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
-    #[doc(hidden)]
     pub tag_value_scope: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationManagedRuleMetadata {

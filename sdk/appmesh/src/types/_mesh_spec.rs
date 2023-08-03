@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
-    #[doc(hidden)]
     pub egress_filter: ::std::option::Option<crate::types::EgressFilter>,
     /// <p>An object that represents the service discovery information for a service mesh.</p>
-    #[doc(hidden)]
     pub service_discovery: ::std::option::Option<crate::types::MeshServiceDiscovery>,
 }
 impl MeshSpec {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPreparedStatementOutput {
     /// <p>The name of the prepared statement that was retrieved.</p>
-    #[doc(hidden)]
     pub prepared_statement: ::std::option::Option<crate::types::PreparedStatement>,
     _request_id: Option<String>,
 }

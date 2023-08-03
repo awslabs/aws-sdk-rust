@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBaiduChannelOutput {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-    #[doc(hidden)]
     pub baidu_channel_response: ::std::option::Option<crate::types::BaiduChannelResponse>,
     _request_id: Option<String>,
 }

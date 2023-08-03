@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleEventConfiguration {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    #[doc(hidden)]
     pub shutdown: ::std::option::Option<crate::types::ShutdownEventConfiguration>,
 }
 impl LifecycleEventConfiguration {

@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventPredictionMetadataInput {
     /// <p> The event ID. </p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p> The event type associated with the detector specified for the prediction. </p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p> The detector ID. </p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p> The detector version ID. </p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
-    #[doc(hidden)]
     pub prediction_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl GetEventPredictionMetadataInput {

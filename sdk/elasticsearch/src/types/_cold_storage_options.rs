@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColdStorageOptions {
     /// <p>Enable cold storage option. Accepted values true or false</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl ColdStorageOptions {

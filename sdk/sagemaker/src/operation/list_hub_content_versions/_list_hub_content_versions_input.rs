@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHubContentVersionsInput {
     /// <p>The name of the hub to list the content versions of.</p>
-    #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of hub content to list versions of.</p>
-    #[doc(hidden)]
     pub hub_content_type: ::std::option::Option<crate::types::HubContentType>,
     /// <p>The name of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_name: ::std::option::Option<::std::string::String>,
     /// <p>The lower bound of the hub content versions to list.</p>
-    #[doc(hidden)]
     pub min_version: ::std::option::Option<::std::string::String>,
     /// <p>The upper bound of the hub content schema version.</p>
-    #[doc(hidden)]
     pub max_schema_version: ::std::option::Option<::std::string::String>,
     /// <p>Only list hub content versions that were created before the time specified.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only list hub content versions that were created after the time specified.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Sort hub content versions by either name or creation time.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::HubContentSortBy>,
     /// <p>Sort hub content versions by ascending or descending order.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The maximum number of hub content versions to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response to a previous <code>ListHubContentVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content versions, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListHubContentVersionsInput {

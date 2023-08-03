@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDatabaseInput {
     /// <p>The name of the data catalog that contains the database to return.</p>
-    #[doc(hidden)]
     pub catalog_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to return.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDatabaseInput {

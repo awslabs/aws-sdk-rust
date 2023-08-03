@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitiveDataResult {
     /// <p>The category of sensitive data that was detected. For example, the category can indicate that the sensitive data involved credentials, financial information, or personal information.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The list of detected instances of sensitive data.</p>
-    #[doc(hidden)]
     pub detections: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>,
     /// <p>The total number of occurrences of sensitive data.</p>
-    #[doc(hidden)]
     pub total_count: i64,
 }
 impl SensitiveDataResult {

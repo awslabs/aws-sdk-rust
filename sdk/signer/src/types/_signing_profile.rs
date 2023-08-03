@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningProfile {
     /// <p>The name of the signing profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of a signing profile.</p>
-    #[doc(hidden)]
     pub profile_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a signing profile, including the profile version.</p>
-    #[doc(hidden)]
     pub profile_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ACM certificate that is available for use by a signing profile.</p>
-    #[doc(hidden)]
     pub signing_material: ::std::option::Option<crate::types::SigningMaterial>,
     /// <p>The validity period for a signing job created using this signing profile.</p>
-    #[doc(hidden)]
     pub signature_validity_period: ::std::option::Option<crate::types::SignatureValidityPeriod>,
     /// <p>The ID of a platform that is available for use by a signing profile.</p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the signing platform.</p>
-    #[doc(hidden)]
     pub platform_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The parameters that are available for use by a code signing user.</p>
-    #[doc(hidden)]
     pub signing_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of a code signing profile.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SigningProfileStatus>,
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the signing profile.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SigningProfile {

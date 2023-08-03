@@ -7,10 +7,8 @@ pub struct AssociationFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated.</p>
     /// </note>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::AssociationFilterKey>,
     /// <p>The filter value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AssociationFilter {

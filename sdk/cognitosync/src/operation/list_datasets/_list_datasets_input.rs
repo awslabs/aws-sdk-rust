@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// A pagination token for obtaining the next page of results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// The maximum number of results to be returned.
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListDatasetsInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportedRuntimeContextState {
     /// <p>The application's desired state.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::DesiredState>,
     /// <p>The device's name.</p>
-    #[doc(hidden)]
     pub runtime_context_name: ::std::option::Option<::std::string::String>,
     /// <p>The application's reported status.</p>
-    #[doc(hidden)]
     pub device_reported_status: ::std::option::Option<crate::types::DeviceReportedStatus>,
     /// <p>When the device reported the application's state.</p>
-    #[doc(hidden)]
     pub device_reported_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportedRuntimeContextState {

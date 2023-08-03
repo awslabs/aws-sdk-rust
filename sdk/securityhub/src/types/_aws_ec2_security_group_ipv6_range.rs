@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2SecurityGroupIpv6Range {
     /// <p>The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv6 address, use the /128 prefix length.</p>
-    #[doc(hidden)]
     pub cidr_ipv6: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2SecurityGroupIpv6Range {

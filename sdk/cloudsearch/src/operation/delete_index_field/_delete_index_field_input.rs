@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-    #[doc(hidden)]
     pub index_field_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIndexFieldInput {

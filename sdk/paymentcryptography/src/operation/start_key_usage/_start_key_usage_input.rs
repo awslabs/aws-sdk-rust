@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartKeyUsageInput {
     /// <p>The <code>KeyArn</code> of the key.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartKeyUsageInput {

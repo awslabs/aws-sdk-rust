@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCacheEngineVersionsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
-    #[doc(hidden)]
     pub cache_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::CacheEngineVersion>>,
     _request_id: Option<String>,
 }

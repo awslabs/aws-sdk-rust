@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Segment {
     /// <p>The duration (in seconds) of each segment. Enter a value equal to, or a multiple of, the input segment duration. If the value that you enter is different from the input segment duration, MediaPackage rounds segments to the nearest multiple of the input segment duration.</p>
-    #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
     /// <p>The name that describes the segment. The name is the base name of the segment used in all content manifests inside of the endpoint. You can't use spaces in the name.</p>
-    #[doc(hidden)]
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>When selected, MediaPackage bundles all audio tracks in a rendition group. All other tracks in the stream can be used with any audio rendition from the group.</p>
-    #[doc(hidden)]
     pub ts_use_audio_rendition_group: ::std::option::Option<bool>,
     /// <p>When selected, the stream set includes an additional I-frame only stream, along with the other tracks. If false, this extra stream is not included. MediaPackage generates an I-frame only stream from the first rendition in the manifest. The service inserts EXT-I-FRAMES-ONLY tags in the output manifest, and then generates and includes an I-frames only playlist in the stream. This playlist permits player functionality like fast forward and rewind.</p>
-    #[doc(hidden)]
     pub include_iframe_only_streams: ::std::option::Option<bool>,
     /// <p>By default, MediaPackage excludes all digital video broadcasting (DVB) subtitles from the output. When selected, MediaPackage passes through DVB subtitles into the output.</p>
-    #[doc(hidden)]
     pub ts_include_dvb_subtitles: ::std::option::Option<bool>,
     /// <p>The SCTE configuration options in the segment settings.</p>
-    #[doc(hidden)]
     pub scte: ::std::option::Option<crate::types::Scte>,
     /// <p>The parameters for encrypting content.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
 impl Segment {

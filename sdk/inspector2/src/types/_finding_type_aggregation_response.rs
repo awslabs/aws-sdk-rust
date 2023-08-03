@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingTypeAggregationResponse {
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The value to sort results by.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl FindingTypeAggregationResponse {

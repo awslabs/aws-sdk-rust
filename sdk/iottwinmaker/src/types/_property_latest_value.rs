@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyLatestValue {
     /// <p>An object that specifies information about a property.</p>
-    #[doc(hidden)]
     pub property_reference: ::std::option::Option<crate::types::EntityPropertyReference>,
     /// <p>The value of the property.</p>
-    #[doc(hidden)]
     pub property_value: ::std::option::Option<crate::types::DataValue>,
 }
 impl PropertyLatestValue {

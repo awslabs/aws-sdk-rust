@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelStepsInput {
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
-    #[doc(hidden)]
     pub step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
-    #[doc(hidden)]
     pub step_cancellation_option: ::std::option::Option<crate::types::StepCancellationOption>,
 }
 impl CancelStepsInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Coverage {
     /// <p>The amount of instance usage that the reservation covered, in hours.</p>
-    #[doc(hidden)]
     pub coverage_hours: ::std::option::Option<crate::types::CoverageHours>,
     /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
-    #[doc(hidden)]
     pub coverage_normalized_units: ::std::option::Option<crate::types::CoverageNormalizedUnits>,
     /// <p>The amount of cost that the reservation covered.</p>
-    #[doc(hidden)]
     pub coverage_cost: ::std::option::Option<crate::types::CoverageCost>,
 }
 impl Coverage {

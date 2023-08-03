@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentPolicyList {
     /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>The total number of continuous deployment policies in your Amazon Web Services account, regardless of the <code>MaxItems</code> value.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>A list of continuous deployment policy items.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
 }
 impl ContinuousDeploymentPolicyList {

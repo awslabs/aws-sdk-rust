@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReactionForComment {
     /// <p>The reaction for a specified comment.</p>
-    #[doc(hidden)]
     pub reaction: ::std::option::Option<crate::types::ReactionValueFormats>,
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    #[doc(hidden)]
     pub reaction_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
-    #[doc(hidden)]
     pub reactions_from_deleted_users_count: ::std::option::Option<i32>,
 }
 impl ReactionForComment {

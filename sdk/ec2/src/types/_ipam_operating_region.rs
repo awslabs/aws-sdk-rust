@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamOperatingRegion {
     /// <p>The name of the operating Region.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
 }
 impl IpamOperatingRegion {

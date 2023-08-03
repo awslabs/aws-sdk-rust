@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDetectMitigationActionsTaskOutput {
     /// <p> The description of a task. </p>
-    #[doc(hidden)]
     pub task_summary: ::std::option::Option<crate::types::DetectMitigationActionsTaskSummary>,
     _request_id: Option<String>,
 }

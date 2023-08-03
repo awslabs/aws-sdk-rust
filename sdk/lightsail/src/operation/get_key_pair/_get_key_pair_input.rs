@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKeyPairInput {
     /// <p>The name of the key pair for which you are requesting information.</p>
-    #[doc(hidden)]
     pub key_pair_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyPairInput {

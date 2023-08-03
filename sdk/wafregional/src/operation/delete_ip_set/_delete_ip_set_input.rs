@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    #[doc(hidden)]
     pub ip_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIpSetInput {

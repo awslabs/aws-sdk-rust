@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstanceExportTaskInput {
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The format and location for an export instance task.</p>
-    #[doc(hidden)]
     pub export_to_s3_task: ::std::option::Option<crate::types::ExportToS3TaskSpecification>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The target virtualization environment.</p>
-    #[doc(hidden)]
     pub target_environment: ::std::option::Option<crate::types::ExportEnvironment>,
     /// <p>The tags to apply to the export instance task during creation.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateInstanceExportTaskInput {

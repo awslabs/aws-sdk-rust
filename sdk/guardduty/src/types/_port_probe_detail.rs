@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortProbeDetail {
     /// <p>The local port information of the connection.</p>
-    #[doc(hidden)]
     pub local_port_details: ::std::option::Option<crate::types::LocalPortDetails>,
     /// <p>The local IP information of the connection.</p>
-    #[doc(hidden)]
     pub local_ip_details: ::std::option::Option<crate::types::LocalIpDetails>,
     /// <p>The remote IP information of the connection.</p>
-    #[doc(hidden)]
     pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
 }
 impl PortProbeDetail {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputVideoGenerator {
     /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
 }
 impl InputVideoGenerator {

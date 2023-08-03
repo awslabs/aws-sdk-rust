@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuleInput {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -15,7 +13,6 @@ pub struct UpdateRuleInput {
     /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
 }
 impl UpdateRuleInput {

@@ -9,11 +9,9 @@ pub struct RebootDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
-    #[doc(hidden)]
     pub force_failover: ::std::option::Option<bool>,
 }
 impl RebootDbInstanceInput {

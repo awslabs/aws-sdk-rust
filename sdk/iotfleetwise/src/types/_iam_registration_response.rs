@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamRegistrationResponse {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to register.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    #[doc(hidden)]
     pub registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>A message associated with a registration error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl IamRegistrationResponse {

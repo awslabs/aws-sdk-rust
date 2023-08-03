@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowOutputsInput {
     /// The flow that you want to add outputs to.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// A list of outputs that you want to add.
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
 }
 impl AddFlowOutputsInput {

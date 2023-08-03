@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryBranch {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The repository branch.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryBranch {

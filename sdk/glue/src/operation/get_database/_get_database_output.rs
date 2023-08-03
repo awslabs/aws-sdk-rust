@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDatabaseOutput {
     /// <p>The definition of the specified database in the Data Catalog.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::Database>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInAppTemplateInput {
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -15,7 +14,6 @@ pub struct DeleteInAppTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInAppTemplateInput {

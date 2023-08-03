@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSkillGroupsOutput {
     /// <p>The skill groups that meet the filter criteria, in sort order.</p>
-    #[doc(hidden)]
     pub skill_groups: ::std::option::Option<::std::vec::Vec<crate::types::SkillGroupData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of skill groups returned.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

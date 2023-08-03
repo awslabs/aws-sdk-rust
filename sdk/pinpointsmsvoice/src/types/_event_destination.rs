@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDestination {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
-    #[doc(hidden)]
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
-    #[doc(hidden)]
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    #[doc(hidden)]
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// A name that identifies the event destination configuration.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// An object that contains information about an event destination that sends data to Amazon SNS.
-    #[doc(hidden)]
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
 impl EventDestination {

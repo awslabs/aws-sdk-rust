@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceFiles {
     /// <p>The location of the first file in Amazon S3.</p>
-    #[doc(hidden)]
     pub source1: ::std::option::Option<::std::string::String>,
     /// <p>The location of the second file in Amazon S3.</p>
-    #[doc(hidden)]
     pub source2: ::std::option::Option<::std::string::String>,
 }
 impl SourceFiles {

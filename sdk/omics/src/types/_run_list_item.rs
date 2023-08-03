@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunListItem {
     /// <p>The run's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The run's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The run's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RunStatus>,
     /// <p>The run's workflow ID.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The run's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The run's priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The run's storage capacity.</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>When the run was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the run started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the run stopped.</p>
-    #[doc(hidden)]
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RunListItem {

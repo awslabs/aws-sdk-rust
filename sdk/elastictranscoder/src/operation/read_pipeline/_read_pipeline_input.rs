@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadPipelineInput {
     /// <p>The identifier of the pipeline to read.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl ReadPipelineInput {

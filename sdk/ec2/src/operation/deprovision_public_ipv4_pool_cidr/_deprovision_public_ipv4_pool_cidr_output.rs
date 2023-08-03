@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeprovisionPublicIpv4PoolCidrOutput {
     /// <p>The ID of the pool that you deprovisioned the CIDR from.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The deprovisioned CIDRs.</p>
-    #[doc(hidden)]
     pub deprovisioned_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

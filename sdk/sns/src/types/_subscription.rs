@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The subscription's ARN.</p>
-    #[doc(hidden)]
     pub subscription_arn: ::std::option::Option<::std::string::String>,
     /// <p>The subscription's owner.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The subscription's protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the subscription's topic.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl Subscription {

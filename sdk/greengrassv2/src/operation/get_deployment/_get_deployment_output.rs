@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision number of the deployment.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
-    #[doc(hidden)]
     pub iot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
-    #[doc(hidden)]
     pub iot_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    #[doc(hidden)]
     pub deployment_policies: ::std::option::Option<crate::types::DeploymentPolicies>,
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    #[doc(hidden)]
     pub iot_job_configuration: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
-    #[doc(hidden)]
     pub is_latest_for_target: bool,
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    #[doc(hidden)]
     pub parent_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

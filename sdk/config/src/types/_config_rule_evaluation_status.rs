@@ -6,53 +6,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigRuleEvaluationStatus {
     /// <p>The name of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub last_successful_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that Config last failed to invoke the Config rule to evaluate your Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub last_failed_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that Config last successfully evaluated your Amazon Web Services resources against the rule.</p>
-    #[doc(hidden)]
     pub last_successful_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that Config last failed to evaluate your Amazon Web Services resources against the rule.</p>
-    #[doc(hidden)]
     pub last_failed_evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that you first activated the Config rule.</p>
-    #[doc(hidden)]
     pub first_activated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that you last turned off the Config rule.</p>
-    #[doc(hidden)]
     pub last_deactivated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error code that Config returned when the rule last failed.</p>
-    #[doc(hidden)]
     pub last_error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message that Config returned when the rule last failed.</p>
-    #[doc(hidden)]
     pub last_error_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Config has evaluated your resources against the rule at least once.</p>
     /// <ul>
     /// <li> <p> <code>true</code> - Config has evaluated your Amazon Web Services resources against the rule at least once.</p> </li>
     /// <li> <p> <code>false</code> - Config has not finished evaluating your Amazon Web Services resources against the rule at least once.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub first_evaluation_started: bool,
     /// <p>The status of the last attempted delivery of a debug log for your Config Custom Policy rules. Either <code>Successful</code> or <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub last_debug_log_delivery_status: ::std::option::Option<::std::string::String>,
     /// <p>The reason Config was not able to deliver a debug log. This is for the last failed attempt to retrieve a debug log for your Config Custom Policy rules.</p>
-    #[doc(hidden)]
     pub last_debug_log_delivery_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time Config last attempted to deliver a debug log for your Config Custom Policy rules.</p>
-    #[doc(hidden)]
     pub last_debug_log_delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigRuleEvaluationStatus {

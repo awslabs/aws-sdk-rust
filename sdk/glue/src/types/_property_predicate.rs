@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyPredicate {
     /// <p>The key of the property.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the property.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The comparator used to compare this property to others.</p>
-    #[doc(hidden)]
     pub comparator: ::std::option::Option<crate::types::Comparator>,
 }
 impl PropertyPredicate {

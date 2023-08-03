@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CelebrityRecognition {
     /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
-    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Information about a recognized celebrity.</p>
-    #[doc(hidden)]
     pub celebrity: ::std::option::Option<crate::types::CelebrityDetail>,
 }
 impl CelebrityRecognition {

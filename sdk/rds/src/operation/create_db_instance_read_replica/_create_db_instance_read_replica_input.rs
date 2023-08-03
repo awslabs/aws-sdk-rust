@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbInstanceReadReplicaInput {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
@@ -17,40 +16,32 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <li> <p>If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier.</p> </li>
     /// <li> <p>If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the read replica, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Default: Inherits from the source DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone (AZ) where the read replica will be created.</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The port number that the DB instance uses for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>A value that indicates whether the read replica is in a Multi-AZ deployment.</p>
     /// <p>You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another Availability Zone for failover support for the replica. Creating your read replica as a Multi-AZ DB instance is independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the read replica during the maintenance window.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: Inherits from the source DB instance</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance or cluster is used.</p> <note>
     /// <p>For SQL Server, you must use the option group associated with the source.</p>
     /// </note>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.</p>
@@ -61,16 +52,13 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
     /// <p>For more information, see <code>CreateDBInstance</code>.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
     /// <p>Constraints:</p>
@@ -84,32 +72,26 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// </ul> </li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon EC2 VPC security groups to associate with the read replica.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the storage type to be associated with the read replica.</p>
     /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to copy all tags from the read replica to snapshots of the read replica. By default, tags are not copied.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the read replica. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
-    #[doc(hidden)]
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -117,7 +99,6 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
     /// <p>You can't create an encrypted read replica from an unencrypted DB instance or Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary replica.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
     /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
@@ -134,23 +115,19 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't support cross-Region read replicas.</p>
     /// </note>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to enable Performance Insights for the read replica.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub enable_performance_insights: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
@@ -167,31 +144,24 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>The list of logs that the new DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub use_default_processor_features: ::std::option::Option<bool>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
@@ -199,7 +169,6 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
     /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
-    #[doc(hidden)]
     pub domain_fqdn: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
@@ -208,11 +177,9 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <li> <p>Can't be longer than 64 characters.</p> </li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code> </p>
-    #[doc(hidden)]
     pub domain_ou: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Secrets Manager secret with the credentials for the user joining the domain.</p>
     /// <p>Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code> </p>
-    #[doc(hidden)]
     pub domain_auth_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
@@ -220,7 +187,6 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <li> <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p> </li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
-    #[doc(hidden)]
     pub domain_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The open mode of the replica database: mounted or read-only.</p> <note>
     /// <p>This parameter is only supported for Oracle DB instances.</p>
@@ -228,11 +194,9 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.</p>
     /// <p>You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default. After replica creation, you can manage the open mode manually.</p>
-    #[doc(hidden)]
     pub replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
-    #[doc(hidden)]
     pub max_allocated_storage: ::std::option::Option<i32>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
@@ -242,7 +206,6 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
-    #[doc(hidden)]
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid values:</p>
@@ -252,22 +215,18 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for read replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage throughput value for the read replica.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    #[doc(hidden)]
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts read replica.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the read replica from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_customer_owned_ip: ::std::option::Option<bool>,
     /// <p>The amount of storage (in gibibytes) to allocate initially for the read replica. Follow the allocation rules specified in <code>CreateDBInstance</code>.</p> <note>
     /// <p>Be sure to allocate enough storage for your read replica so that the create operation can succeed. You can also allocate additional storage for future growth.</p>
     /// </note>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The identifier of the Multi-AZ DB cluster that will act as the source for the read replica. Each DB cluster can have up to 15 read replicas.</p>
     /// <p>Constraints:</p>
@@ -277,7 +236,6 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <li> <p>The specified DB cluster must have automatic backups enabled, that is, its backup retention period must be greater than 0.</p> </li>
     /// <li> <p>The source DB cluster must be in the same Amazon Web Services Region as the read replica. Cross-Region replication isn't supported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceReadReplicaInput {

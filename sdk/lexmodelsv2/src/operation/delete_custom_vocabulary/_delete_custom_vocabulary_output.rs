@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomVocabularyOutput {
     /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that the custom vocabulary was removed from.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of removing the custom vocabulary.</p>
-    #[doc(hidden)]
     pub custom_vocabulary_status: ::std::option::Option<crate::types::CustomVocabularyStatus>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMasterAccountOutput {
     /// <p>A list of details about the Security Hub administrator account for the current member account. </p>
-    #[doc(hidden)]
     pub master: ::std::option::Option<crate::types::Invitation>,
     _request_id: Option<String>,
 }

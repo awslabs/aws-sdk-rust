@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetFromApiGatewayApiResponseDetails {
     /// <p>The API description.</p>
-    #[doc(hidden)]
     pub api_description: ::std::option::Option<::std::string::String>,
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The API key.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>The API name.</p>
-    #[doc(hidden)]
     pub api_name: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
-    #[doc(hidden)]
     pub api_specification_md5_hash: ::std::option::Option<::std::string::String>,
     /// <p>The upload URL of the API specification.</p>
-    #[doc(hidden)]
     pub api_specification_upload_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub api_specification_upload_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data set ID.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The protocol type.</p>
-    #[doc(hidden)]
     pub protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     /// <p>The revision ID.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The API stage.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetFromApiGatewayApiResponseDetails {

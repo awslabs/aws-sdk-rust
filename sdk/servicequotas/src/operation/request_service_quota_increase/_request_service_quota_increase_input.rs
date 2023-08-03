@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestServiceQuotaIncreaseInput {
     /// <p>The service identifier.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The quota identifier.</p>
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The new, increased value for the quota.</p>
-    #[doc(hidden)]
     pub desired_value: ::std::option::Option<f64>,
 }
 impl RequestServiceQuotaIncreaseInput {

@@ -4,30 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationProfileOutput {
     /// <p>The application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URI location of the configuration.</p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    #[doc(hidden)]
     pub retrieval_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
-    #[doc(hidden)]
     pub validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
     /// <p> <code>AWS.Freeform</code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

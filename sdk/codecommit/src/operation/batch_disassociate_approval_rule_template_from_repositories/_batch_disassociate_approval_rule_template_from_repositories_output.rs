@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     /// <p>A list of repository names that have had their association with the template removed.</p>
-    #[doc(hidden)]
     pub disassociated_repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>>,
     _request_id: Option<String>,
 }

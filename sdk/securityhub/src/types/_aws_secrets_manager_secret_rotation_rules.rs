@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSecretsManagerSecretRotationRules {
     /// <p>The number of days after the previous rotation to rotate the secret.</p>
-    #[doc(hidden)]
     pub automatically_after_days: i32,
 }
 impl AwsSecretsManagerSecretRotationRules {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorOutput {
     /// <p>Configuration info of all the connectors that the user requested.</p>
-    #[doc(hidden)]
     pub connector_configuration: ::std::option::Option<crate::types::ConnectorConfiguration>,
     _request_id: Option<String>,
 }

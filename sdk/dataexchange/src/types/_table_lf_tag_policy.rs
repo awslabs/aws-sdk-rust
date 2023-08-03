@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableLfTagPolicy {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
 impl TableLfTagPolicy {

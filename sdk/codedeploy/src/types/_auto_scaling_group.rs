@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroup {
     /// <p>The Auto Scaling group name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An Auto Scaling lifecycle event hook name.</p>
-    #[doc(hidden)]
     pub hook: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingGroup {

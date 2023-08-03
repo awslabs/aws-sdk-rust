@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBackupPolicyInput {
     /// <p>Specifies which EFS file system to update the backup policy for.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
-    #[doc(hidden)]
     pub backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
 }
 impl PutBackupPolicyInput {

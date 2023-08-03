@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditCheckDetails {
     /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
-    #[doc(hidden)]
     pub check_run_status: ::std::option::Option<crate::types::AuditCheckRunStatus>,
     /// <p>True if the check is complete and found all resources compliant.</p>
-    #[doc(hidden)]
     pub check_compliant: ::std::option::Option<bool>,
     /// <p>The number of resources on which the check was performed.</p>
-    #[doc(hidden)]
     pub total_resources_count: ::std::option::Option<i64>,
     /// <p>The number of resources that were found noncompliant during the check.</p>
-    #[doc(hidden)]
     pub non_compliant_resources_count: ::std::option::Option<i64>,
     /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
-    #[doc(hidden)]
     pub suppressed_non_compliant_resources_count: ::std::option::Option<i64>,
     /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl AuditCheckDetails {

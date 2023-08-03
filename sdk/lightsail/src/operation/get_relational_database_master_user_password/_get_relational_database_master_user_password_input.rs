@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseMasterUserPasswordInput {
     /// <p>The name of your database for which to get the master user password.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
-    #[doc(hidden)]
     pub password_version: ::std::option::Option<crate::types::RelationalDatabasePasswordVersion>,
 }
 impl GetRelationalDatabaseMasterUserPasswordInput {

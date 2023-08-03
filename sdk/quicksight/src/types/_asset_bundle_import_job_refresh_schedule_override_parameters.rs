@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobRefreshScheduleOverrideParameters {
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This structure is used together with the <code>ScheduleID</code> structure.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is used together with the <code>DataSetId</code> structure.</p>
-    #[doc(hidden)]
     pub schedule_id: ::std::option::Option<::std::string::String>,
     /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
-    #[doc(hidden)]
     pub start_after_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssetBundleImportJobRefreshScheduleOverrideParameters {

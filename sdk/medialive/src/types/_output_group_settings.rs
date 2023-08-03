@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputGroupSettings {
     /// Archive Group Settings
-    #[doc(hidden)]
     pub archive_group_settings: ::std::option::Option<crate::types::ArchiveGroupSettings>,
     /// Frame Capture Group Settings
-    #[doc(hidden)]
     pub frame_capture_group_settings: ::std::option::Option<crate::types::FrameCaptureGroupSettings>,
     /// Hls Group Settings
-    #[doc(hidden)]
     pub hls_group_settings: ::std::option::Option<crate::types::HlsGroupSettings>,
     /// Media Package Group Settings
-    #[doc(hidden)]
     pub media_package_group_settings: ::std::option::Option<crate::types::MediaPackageGroupSettings>,
     /// Ms Smooth Group Settings
-    #[doc(hidden)]
     pub ms_smooth_group_settings: ::std::option::Option<crate::types::MsSmoothGroupSettings>,
     /// Multiplex Group Settings
-    #[doc(hidden)]
     pub multiplex_group_settings: ::std::option::Option<crate::types::MultiplexGroupSettings>,
     /// Rtmp Group Settings
-    #[doc(hidden)]
     pub rtmp_group_settings: ::std::option::Option<crate::types::RtmpGroupSettings>,
     /// Udp Group Settings
-    #[doc(hidden)]
     pub udp_group_settings: ::std::option::Option<crate::types::UdpGroupSettings>,
 }
 impl OutputGroupSettings {

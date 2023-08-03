@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingGroupIndexingConfiguration {
     /// <p>Thing group indexing mode.</p>
-    #[doc(hidden)]
     pub thing_group_indexing_mode: ::std::option::Option<crate::types::ThingGroupIndexingMode>,
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service. This is an optional field. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub managed_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     /// <p>A list of thing group fields to index. This list cannot contain any managed fields. Use the GetIndexingConfiguration API to get a list of managed fields.</p>
     /// <p>Contains custom field names and their data type.</p>
-    #[doc(hidden)]
     pub custom_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
 }
 impl ThingGroupIndexingConfiguration {

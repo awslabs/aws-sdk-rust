@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDetectorsInput {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
-    #[doc(hidden)]
     pub state_name: ::std::option::Option<::std::string::String>,
     /// <p>The token that you can use to return the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListDetectorsInput {

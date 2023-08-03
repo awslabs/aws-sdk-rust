@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableVgwRoutePropagationInput {
     /// <p>The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to the same VPC that the routing tables are associated with. </p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to. </p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl EnableVgwRoutePropagationInput {

@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterInfo {
     /// <p>Arn of active cluster operation.</p>
-    #[doc(hidden)]
     pub active_operation_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the broker nodes.</p>
-    #[doc(hidden)]
     pub broker_node_group_info: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
     /// <p>Includes all client authentication information.</p>
-    #[doc(hidden)]
     pub client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the cluster was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the version of software currently deployed on the Apache Kafka brokers in the cluster.</p>
-    #[doc(hidden)]
     pub current_broker_software_info: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
     /// <p>The current version of the MSK cluster.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>Includes all encryption-related information.</p>
-    #[doc(hidden)]
     pub encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
     /// <p>Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
-    #[doc(hidden)]
     pub enhanced_monitoring: ::std::option::Option<crate::types::EnhancedMonitoring>,
     /// <p>Settings for open monitoring using Prometheus.</p>
-    #[doc(hidden)]
     pub open_monitoring: ::std::option::Option<crate::types::OpenMonitoring>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
-    #[doc(hidden)]
     pub number_of_broker_nodes: ::std::option::Option<i32>,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ClusterState>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub state_info: ::std::option::Option<crate::types::StateInfo>,
     /// <p>Tags attached to the cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
-    #[doc(hidden)]
     pub zookeeper_connect_string: ::std::option::Option<::std::string::String>,
     /// <p>The connection string to use to connect to zookeeper cluster on Tls port.</p>
-    #[doc(hidden)]
     pub zookeeper_connect_string_tls: ::std::option::Option<::std::string::String>,
     /// <p>This controls storage mode for supported storage tiers.</p>
-    #[doc(hidden)]
     pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
 }
 impl ClusterInfo {

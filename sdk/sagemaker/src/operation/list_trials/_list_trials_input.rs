@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrialsInput {
     /// <p>A filter that returns only trials that are part of the specified experiment.</p>
-    #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only trials created after the specified time.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only trials created before the specified time.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortTrialsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The maximum number of trials to return in the response. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTrialsInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestGridSession {
     /// <p>The ARN of the session.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the session.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TestGridSessionStatus>,
     /// <p>The time that the session was started.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the session ended.</p>
-    #[doc(hidden)]
     pub ended: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of billed minutes that were used for this session. </p>
-    #[doc(hidden)]
     pub billing_minutes: ::std::option::Option<f64>,
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
-    #[doc(hidden)]
     pub selenium_properties: ::std::option::Option<::std::string::String>,
 }
 impl TestGridSession {

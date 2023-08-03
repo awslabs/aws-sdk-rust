@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateTransitGatewayRouteTableOutput {
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub association: ::std::option::Option<crate::types::TransitGatewayAssociation>,
     _request_id: Option<String>,
 }

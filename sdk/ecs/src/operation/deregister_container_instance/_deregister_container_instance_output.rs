@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterContainerInstanceOutput {
     /// <p>The container instance that was deregistered.</p>
-    #[doc(hidden)]
     pub container_instance: ::std::option::Option<crate::types::ContainerInstance>,
     _request_id: Option<String>,
 }

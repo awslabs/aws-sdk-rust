@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBrowserSettingsOutput {
     /// <p>The browser settings.</p>
-    #[doc(hidden)]
     pub browser_settings: ::std::option::Option<crate::types::BrowserSettings>,
     _request_id: Option<String>,
 }

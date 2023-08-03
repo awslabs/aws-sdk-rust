@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SipMediaApplicationAlexaSkillConfiguration {
     /// <p>The status of the Alexa Skill configuration.</p>
-    #[doc(hidden)]
     pub alexa_skill_status: ::std::option::Option<crate::types::AlexaSkillStatus>,
     /// <p>The ID of the Alexa Skill configuration.</p>
-    #[doc(hidden)]
     pub alexa_skill_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SipMediaApplicationAlexaSkillConfiguration {

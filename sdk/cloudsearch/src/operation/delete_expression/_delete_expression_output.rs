@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExpressionOutput {
     /// <p>The status of the expression being deleted.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
-    #[doc(hidden)]
     pub rule_groups_namespace: ::std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
     _request_id: Option<String>,
 }

@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it. For example, <code>LocationId</code> for <code>ListTasks</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::TaskFilterName>,
     /// <p>The values that you want to filter for. For example, you might want to display only tasks for a specific destination location.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl TaskFilter {

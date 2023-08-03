@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopChannelInput {
     /// A request to stop a running channel
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl StopChannelInput {

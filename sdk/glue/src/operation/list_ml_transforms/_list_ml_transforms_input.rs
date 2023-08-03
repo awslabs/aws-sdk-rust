@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMlTransformsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of a list to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::TransformFilterCriteria>,
     /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::TransformSortCriteria>,
     /// <p>Specifies to return only these tagged resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListMlTransformsInput {

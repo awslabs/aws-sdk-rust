@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NormalizedValue {
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
-    #[doc(hidden)]
     pub value_type: ::std::option::Option<crate::types::ValueType>,
 }
 impl NormalizedValue {

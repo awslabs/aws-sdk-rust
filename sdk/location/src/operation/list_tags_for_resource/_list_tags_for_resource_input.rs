@@ -7,7 +7,6 @@ pub struct ListTagsForResourceInput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

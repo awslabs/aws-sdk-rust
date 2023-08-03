@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPointDrillUpDownOption {
     /// <p>The status of the drill down options of data points.</p>
-    #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl DataPointDrillUpDownOption {

@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Destination {
     /// <p>The name of the Amazon S3 bucket used as the destination of an export file.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket key of an export file.</p>
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket key of a metadata file.</p>
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
-    #[doc(hidden)]
     pub metadata_key: ::std::option::Option<::std::string::String>,
 }
 impl S3Destination {

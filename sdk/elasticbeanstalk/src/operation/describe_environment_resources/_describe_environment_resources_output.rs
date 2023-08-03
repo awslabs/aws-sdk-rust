@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesOutput {
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
-    #[doc(hidden)]
     pub environment_resources: ::std::option::Option<crate::types::EnvironmentResourceDescription>,
     _request_id: Option<String>,
 }

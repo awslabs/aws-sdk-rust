@@ -5,7 +5,6 @@
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryAnalysis {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
-    #[doc(hidden)]
     pub repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    #[doc(hidden)]
     pub source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
 }
 impl RepositoryAnalysis {

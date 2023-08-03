@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPlaceOutput {
     /// <p>Details about the result, such as its address and position.</p>
-    #[doc(hidden)]
     pub place: ::std::option::Option<crate::types::Place>,
     _request_id: Option<String>,
 }

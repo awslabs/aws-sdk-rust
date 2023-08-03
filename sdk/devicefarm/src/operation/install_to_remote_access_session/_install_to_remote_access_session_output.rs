@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstallToRemoteAccessSessionOutput {
     /// <p>An app to upload or that has been uploaded.</p>
-    #[doc(hidden)]
     pub app_upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }

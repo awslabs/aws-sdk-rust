@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitoringInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    #[doc(hidden)]
     pub enhanced_monitoring: ::std::option::Option<crate::types::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
-    #[doc(hidden)]
     pub open_monitoring: ::std::option::Option<crate::types::OpenMonitoringInfo>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
 }
 impl UpdateMonitoringInput {

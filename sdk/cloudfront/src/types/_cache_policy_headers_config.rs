@@ -9,10 +9,8 @@ pub struct CachePolicyHeadersConfig {
     /// <li> <p> <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p> </li>
     /// <li> <p> <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub header_behavior: ::std::option::Option<crate::types::CachePolicyHeaderBehavior>,
     /// <p>Contains a list of HTTP header names.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<crate::types::Headers>,
 }
 impl CachePolicyHeadersConfig {

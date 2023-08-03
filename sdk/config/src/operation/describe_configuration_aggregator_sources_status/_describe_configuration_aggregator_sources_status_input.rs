@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     /// <p>The name of the configuration aggregator.</p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the status type.</p>
     /// <ul>
@@ -12,13 +11,10 @@ pub struct DescribeConfigurationAggregatorSourcesStatusInput {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeConfigurationAggregatorSourcesStatusInput {

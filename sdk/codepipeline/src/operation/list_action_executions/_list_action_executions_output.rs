@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActionExecutionsOutput {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    #[doc(hidden)]
     pub action_execution_details: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

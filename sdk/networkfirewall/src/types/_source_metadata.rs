@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceMetadata {
     /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
-    #[doc(hidden)]
     pub source_update_token: ::std::option::Option<::std::string::String>,
 }
 impl SourceMetadata {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanResultDetails {
     /// <p>An enum value representing possible scan results.</p>
-    #[doc(hidden)]
     pub scan_result: ::std::option::Option<crate::types::ScanResult>,
 }
 impl ScanResultDetails {

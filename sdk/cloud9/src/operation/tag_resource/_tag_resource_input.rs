@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags to add to the given Cloud9 development environment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {

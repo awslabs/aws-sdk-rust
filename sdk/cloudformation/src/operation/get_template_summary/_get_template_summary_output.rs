@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateSummaryOutput {
     /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>>,
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    #[doc(hidden)]
     pub capabilities_reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>A list of the transforms that are declared in the template.</p>
-    #[doc(hidden)]
     pub declared_transforms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
-    #[doc(hidden)]
     pub resource_identifier_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifierSummary>>,
     /// <p>An object containing any warnings returned.</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<crate::types::Warnings>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
-    #[doc(hidden)]
     pub location_constraint: ::std::option::Option<crate::types::BucketLocationConstraint>,
 }
 impl CreateBucketConfiguration {

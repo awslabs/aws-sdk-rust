@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MotionImageInsertionOffset {
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
-    #[doc(hidden)]
     pub image_x: ::std::option::Option<i32>,
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
-    #[doc(hidden)]
     pub image_y: ::std::option::Option<i32>,
 }
 impl MotionImageInsertionOffset {

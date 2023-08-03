@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightSummariesInput {
     /// <p>The list of insight states. </p>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::InsightState>>,
     /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to display.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightSummariesInput {

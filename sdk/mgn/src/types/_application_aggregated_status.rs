@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationAggregatedStatus {
     /// <p>Application aggregated status last update dateTime.</p>
-    #[doc(hidden)]
     pub last_update_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Application aggregated status health status.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::ApplicationHealthStatus>,
     /// <p>Application aggregated status progress status.</p>
-    #[doc(hidden)]
     pub progress_status: ::std::option::Option<crate::types::ApplicationProgressStatus>,
     /// <p>Application aggregated status total source servers amount.</p>
-    #[doc(hidden)]
     pub total_source_servers: i64,
 }
 impl ApplicationAggregatedStatus {

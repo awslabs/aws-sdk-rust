@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    #[doc(hidden)]
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Resolver endpoint that you want to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries. </p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
-    #[doc(hidden)]
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
-    #[doc(hidden)]
     pub update_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
 }
 impl UpdateResolverEndpointInput {

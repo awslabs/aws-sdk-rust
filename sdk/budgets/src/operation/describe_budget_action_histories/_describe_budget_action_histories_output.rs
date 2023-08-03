@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesOutput {
     /// <p> The historical record of the budget action resource. </p>
-    #[doc(hidden)]
     pub action_histories: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>,
     /// <p> A generic string.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

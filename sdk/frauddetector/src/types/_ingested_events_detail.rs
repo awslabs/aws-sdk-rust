@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestedEventsDetail {
     /// <p>The start and stop time of the ingested events.</p>
-    #[doc(hidden)]
     pub ingested_events_time_window: ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
 }
 impl IngestedEventsDetail {

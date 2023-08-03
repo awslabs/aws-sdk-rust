@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSourceCredentialsOutput {
     /// <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
-    #[doc(hidden)]
     pub source_credentials_infos: ::std::option::Option<::std::vec::Vec<crate::types::SourceCredentialsInfo>>,
     _request_id: Option<String>,
 }

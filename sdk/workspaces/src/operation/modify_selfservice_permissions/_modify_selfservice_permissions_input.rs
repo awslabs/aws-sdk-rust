@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySelfservicePermissionsInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The permissions to enable or disable self-service capabilities.</p>
-    #[doc(hidden)]
     pub selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,
 }
 impl ModifySelfservicePermissionsInput {

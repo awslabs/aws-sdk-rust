@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAgentInput {
     /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.</p>
-    #[doc(hidden)]
     pub activation_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a name for your agent. You can see this name in the DataSync console.</p>
-    #[doc(hidden)]
     pub agent_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least one tag for your agent.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p> <important>
     /// <p>The VPC endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the subnet where DataSync creates and manages the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for your transfer. You can only specify one ARN.</p>
-    #[doc(hidden)]
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
-    #[doc(hidden)]
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateAgentInput {

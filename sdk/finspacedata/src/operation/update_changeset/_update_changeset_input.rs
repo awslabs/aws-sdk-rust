@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the Changeset to update.</p>
-    #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
     /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
     /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
     /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
-    #[doc(hidden)]
     pub source_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
     /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
@@ -33,7 +29,6 @@ pub struct UpdateChangesetInput {
     /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
     /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
-    #[doc(hidden)]
     pub format_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateChangesetInput {

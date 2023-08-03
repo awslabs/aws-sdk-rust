@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppOutput {
     /// <p>Information about the application.</p>
-    #[doc(hidden)]
     pub app_summary: ::std::option::Option<crate::types::AppSummary>,
     /// <p>The server groups that belong to the application.</p>
-    #[doc(hidden)]
     pub server_groups: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroup>>,
     /// <p>The tags associated with the application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

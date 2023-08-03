@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name for your instance profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description for your instance profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
-    #[doc(hidden)]
     pub package_cleanup: ::std::option::Option<bool>,
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    #[doc(hidden)]
     pub exclude_app_packages_from_cleanup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub reboot_after_use: ::std::option::Option<bool>,
 }
 impl UpdateInstanceProfileInput {

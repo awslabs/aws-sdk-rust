@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketMetadata {
     /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are added to the bucket. Possible values are:</p>
     /// <ul>
@@ -15,59 +14,41 @@ pub struct BucketMetadata {
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
     /// </ul>
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
-    #[doc(hidden)]
     pub allows_unencrypted_object_uploads: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket.</p>
-    #[doc(hidden)]
     pub bucket_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the bucket.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-    #[doc(hidden)]
     pub classifiable_object_count: ::std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
-    #[doc(hidden)]
     pub classifiable_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::BucketMetadataErrorCode>,
     /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
-    #[doc(hidden)]
     pub job_details: ::std::option::Option<crate::types::JobDetails>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
-    #[doc(hidden)]
     pub last_automated_discovery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the bucket.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the bucket.</p>
-    #[doc(hidden)]
     pub object_count: ::std::option::Option<i64>,
     /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
-    #[doc(hidden)]
     pub object_count_by_encryption_type: ::std::option::Option<crate::types::ObjectCountByEncryptionType>,
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket, and provides information about those settings.</p>
-    #[doc(hidden)]
     pub public_access: ::std::option::Option<crate::types::BucketPublicAccess>,
     /// <p>The Amazon Web Services Region that hosts the bucket.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
-    #[doc(hidden)]
     pub replication_details: ::std::option::Option<crate::types::ReplicationDetails>,
     /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
-    #[doc(hidden)]
     pub sensitivity_score: ::std::option::Option<i32>,
     /// <p>The default server-side encryption settings for the bucket.</p>
-    #[doc(hidden)]
     pub server_side_encryption: ::std::option::Option<crate::types::BucketServerSideEncryption>,
     /// <p>Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
     /// <ul>
@@ -77,27 +58,20 @@ pub struct BucketMetadata {
     /// <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.</p></li>
     /// </ul>
     /// <p>An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
-    #[doc(hidden)]
     pub shared_access: ::std::option::Option<crate::types::SharedAccess>,
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
-    #[doc(hidden)]
     pub size_in_bytes: ::std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
-    #[doc(hidden)]
     pub size_in_bytes_compressed: ::std::option::Option<i64>,
     /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-    #[doc(hidden)]
     pub unclassifiable_object_count: ::std::option::Option<crate::types::ObjectLevelStatistics>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-    #[doc(hidden)]
     pub unclassifiable_object_size_in_bytes: ::std::option::Option<crate::types::ObjectLevelStatistics>,
     /// <p>Specifies whether versioning is enabled for the bucket.</p>
-    #[doc(hidden)]
     pub versioning: ::std::option::Option<bool>,
 }
 impl BucketMetadata {

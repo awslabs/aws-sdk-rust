@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAttributeGroupInput {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    #[doc(hidden)]
     pub attribute_group: ::std::option::Option<::std::string::String>,
 }
 impl GetAttributeGroupInput {

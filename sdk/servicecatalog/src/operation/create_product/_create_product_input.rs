@@ -8,48 +8,35 @@ pub struct CreateProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the product.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The description of the product.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The distributor of the product.</p>
-    #[doc(hidden)]
     pub distributor: ::std::option::Option<::std::string::String>,
     /// <p>The support information about the product.</p>
-    #[doc(hidden)]
     pub support_description: ::std::option::Option<::std::string::String>,
     /// <p>The contact email for product support.</p>
-    #[doc(hidden)]
     pub support_email: ::std::option::Option<::std::string::String>,
     /// <p>The contact URL for product support.</p>
     /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
-    #[doc(hidden)]
     pub support_url: ::std::option::Option<::std::string::String>,
     /// <p>The type of product.</p>
-    #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::ProductType>,
     /// <p>One or more tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration of the provisioning artifact. </p>
-    #[doc(hidden)]
     pub provisioning_artifact_parameters: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
     /// <li> <p> <code>Type</code> </p> </li>
     /// <li> <p> <code>ConnectionParamters</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_connection: ::std::option::Option<crate::types::SourceConnection>,
 }
 impl CreateProductInput {

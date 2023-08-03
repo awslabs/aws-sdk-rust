@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeployablePatchSnapshotForInstanceOutput {
     /// <p>The managed node ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined snapshot ID.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_download_url: ::std::option::Option<::std::string::String>,
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyArchiveRuleInput {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
-    #[doc(hidden)]
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule to apply.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ApplyArchiveRuleInput {

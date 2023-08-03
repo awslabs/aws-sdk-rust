@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMitigationActionOutput {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of mitigation action.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::MitigationActionType>,
     /// <p>The ARN that identifies this migration action.</p>
-    #[doc(hidden)]
     pub action_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for this action.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role used to apply this action.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
-    #[doc(hidden)]
     pub action_params: ::std::option::Option<crate::types::MitigationActionParams>,
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the mitigation action was last changed.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

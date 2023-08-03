@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSearchSuggestionsOutput {
     /// <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
-    #[doc(hidden)]
     pub property_name_suggestions: ::std::option::Option<::std::vec::Vec<crate::types::PropertyNameSuggestion>>,
     _request_id: Option<String>,
 }

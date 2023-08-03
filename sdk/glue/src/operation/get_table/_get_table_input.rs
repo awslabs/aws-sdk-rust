@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The transaction ID at which to read the table contents. </p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    #[doc(hidden)]
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetTableInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecordingConfigurationsInput {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListRecordingConfigurationsInput {

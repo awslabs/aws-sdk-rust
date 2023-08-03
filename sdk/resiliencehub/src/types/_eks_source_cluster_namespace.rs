@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksSourceClusterNamespace {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Elastic Kubernetes Service cluster. The format for this ARN is: arn:<code>aws</code>:eks:<code>region</code>:<code>account-id</code>:cluster/<code>cluster-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub eks_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the namespace that is located on your Amazon Elastic Kubernetes Service cluster.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl EksSourceClusterNamespace {

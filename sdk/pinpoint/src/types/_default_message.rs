@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultMessage {
     /// <p>The default body of the message.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
-    #[doc(hidden)]
     pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl DefaultMessage {

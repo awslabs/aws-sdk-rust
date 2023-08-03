@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentClassificationTestResults {
     /// <p>A list of the results for the intent classification test.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::IntentClassificationTestResultItem>>,
 }
 impl IntentClassificationTestResults {

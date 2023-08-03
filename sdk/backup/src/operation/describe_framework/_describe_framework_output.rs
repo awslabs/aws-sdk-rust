@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFrameworkOutput {
     /// <p>The unique name of a framework.</p>
-    #[doc(hidden)]
     pub framework_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    #[doc(hidden)]
     pub framework_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the framework.</p>
-    #[doc(hidden)]
     pub framework_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    #[doc(hidden)]
     pub framework_controls: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<::std::string::String>,
     /// <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>
     /// <ul>
@@ -29,10 +23,8 @@ pub struct DescribeFrameworkOutput {
     /// <li> <p> <code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub framework_status: ::std::option::Option<::std::string::String>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

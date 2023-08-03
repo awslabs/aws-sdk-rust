@@ -13,16 +13,12 @@ pub struct ActionTypeIdentifier {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::ActionCategory>,
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>A string that describes the action type version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl ActionTypeIdentifier {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerformanceInsightsStat {
     /// <p>The statistic type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The value of the statistic.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl PerformanceInsightsStat {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateInput {
     /// <p>The name of the template you want to retrieve.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
 }
 impl GetTemplateInput {

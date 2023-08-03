@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateMemberFromGroupInput {
     /// <p>The identifier for the organization under which the group exists.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the group from which members are removed.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the member to be removed to the group.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMemberFromGroupInput {

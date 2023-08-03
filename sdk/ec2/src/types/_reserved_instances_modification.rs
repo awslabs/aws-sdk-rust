@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstancesModification {
     /// <p>A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The time when the modification request was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time for the modification to become effective.</p>
-    #[doc(hidden)]
     pub effective_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains target configurations along with their corresponding new Reserved Instance IDs.</p>
-    #[doc(hidden)]
     pub modification_results: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModificationResult>>,
     /// <p>The IDs of one or more Reserved Instances.</p>
-    #[doc(hidden)]
     pub reserved_instances_ids: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesId>>,
     /// <p>A unique ID for the Reserved Instance modification.</p>
-    #[doc(hidden)]
     pub reserved_instances_modification_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Reserved Instances modification request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the status.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time when the modification request was last updated.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReservedInstancesModification {

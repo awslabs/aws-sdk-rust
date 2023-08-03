@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpekeKeyProviderCmaf {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// Specify the DRM system IDs that you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF package. The DASH manifest can currently signal up to three system IDs. For more information, see https://dashif.org/identifiers/content_protection/.
-    #[doc(hidden)]
     pub dash_signaled_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
-    #[doc(hidden)]
     pub hls_signaled_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl SpekeKeyProviderCmaf {

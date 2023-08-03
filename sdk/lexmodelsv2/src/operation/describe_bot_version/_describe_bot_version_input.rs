@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBotVersionInput {
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to return metadata for.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBotVersionInput {

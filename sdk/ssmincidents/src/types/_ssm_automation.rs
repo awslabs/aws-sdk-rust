@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmAutomation {
     /// <p>The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The automation document's name.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The automation document's version to use when running.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The account that the automation document will be run in. This can be in either the management account or an application account.</p>
-    #[doc(hidden)]
     pub target_account: ::std::option::Option<crate::types::SsmTargetAccount>,
     /// <p>The key-value pair parameters to use when running the automation document.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.</p>
-    #[doc(hidden)]
     pub dynamic_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DynamicSsmParameterValue>>,
 }
 impl SsmAutomation {

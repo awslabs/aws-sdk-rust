@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceIdentifier {
     /// <p>The ID of the certificate attached to the resource.</p>
-    #[doc(hidden)]
     pub device_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the CA certificate used to authorize the certificate.</p>
-    #[doc(hidden)]
     pub ca_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Cognito identity pool.</p>
-    #[doc(hidden)]
     pub cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The client ID.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the policy associated with the resource.</p>
-    #[doc(hidden)]
     pub policy_version_identifier: ::std::option::Option<crate::types::PolicyVersionIdentifier>,
     /// <p>The account with which the resource is associated.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that has overly permissive actions.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role alias that has overly permissive actions.</p>
-    #[doc(hidden)]
     pub role_alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>The issuer certificate identifier.</p>
-    #[doc(hidden)]
     pub issuer_certificate_identifier: ::std::option::Option<crate::types::IssuerCertificateIdentifier>,
     /// <p>The ARN of the identified device certificate.</p>
-    #[doc(hidden)]
     pub device_certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceIdentifier {

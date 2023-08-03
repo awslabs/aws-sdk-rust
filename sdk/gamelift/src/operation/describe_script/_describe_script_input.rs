@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScriptInput {
     /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
-    #[doc(hidden)]
     pub script_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScriptInput {

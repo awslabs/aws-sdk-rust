@@ -6,7 +6,6 @@ pub struct ListTagsForResourceInput {
     /// <p>The ARN of the canary or group that you want to view tags for.</p>
     /// <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
     /// <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

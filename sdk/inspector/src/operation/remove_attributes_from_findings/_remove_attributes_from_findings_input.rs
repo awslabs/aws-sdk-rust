@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAttributesFromFindingsInput {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    #[doc(hidden)]
     pub finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    #[doc(hidden)]
     pub attribute_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveAttributesFromFindingsInput {

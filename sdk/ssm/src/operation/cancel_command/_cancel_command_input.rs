@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelCommandInput {
     /// <p>The ID of the command you want to cancel.</p>
-    #[doc(hidden)]
     pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CancelCommandInput {

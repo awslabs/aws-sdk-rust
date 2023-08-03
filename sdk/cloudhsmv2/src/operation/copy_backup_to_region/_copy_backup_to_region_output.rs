@@ -5,7 +5,6 @@
 pub struct CopyBackupToRegionOutput {
     /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
     /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
-    #[doc(hidden)]
     pub destination_backup: ::std::option::Option<crate::types::DestinationBackup>,
     _request_id: Option<String>,
 }

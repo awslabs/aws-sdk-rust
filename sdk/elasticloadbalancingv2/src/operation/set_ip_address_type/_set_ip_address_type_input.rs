@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIpAddressTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
 impl SetIpAddressTypeInput {

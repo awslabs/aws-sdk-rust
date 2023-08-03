@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedNodeConfigurationOption {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
-    #[doc(hidden)]
     pub source_reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     /// <p>The target reserved-node count.</p>
-    #[doc(hidden)]
     pub target_reserved_node_count: i32,
     /// <p>Describes a reserved node offering.</p>
-    #[doc(hidden)]
     pub target_reserved_node_offering: ::std::option::Option<crate::types::ReservedNodeOffering>,
 }
 impl ReservedNodeConfigurationOption {

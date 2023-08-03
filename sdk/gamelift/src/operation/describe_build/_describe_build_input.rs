@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBuildInput {
     /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
-    #[doc(hidden)]
     pub build_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBuildInput {

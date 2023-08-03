@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
-    #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    #[doc(hidden)]
     pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
 }
 impl UpdateCustomRoutingListenerInput {

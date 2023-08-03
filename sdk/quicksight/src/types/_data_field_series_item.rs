@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataFieldSeriesItem {
     /// <p>The field ID of the field that you are setting the axis binding to.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The field value of the field that you are setting the axis binding to.</p>
-    #[doc(hidden)]
     pub field_value: ::std::option::Option<::std::string::String>,
     /// <p>The axis that you are binding the field to.</p>
-    #[doc(hidden)]
     pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
     /// <p>The options that determine the presentation of line series associated to the field.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::LineChartSeriesSettings>,
 }
 impl DataFieldSeriesItem {

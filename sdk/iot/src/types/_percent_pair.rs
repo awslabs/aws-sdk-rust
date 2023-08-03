@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PercentPair {
     /// <p>The percentile.</p>
-    #[doc(hidden)]
     pub percent: f64,
     /// <p>The value of the percentile.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl PercentPair {

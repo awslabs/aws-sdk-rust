@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBuildsForProjectInput {
     /// <p>The name of the CodeBuild project.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
     /// <p>Valid values include:</p>
@@ -13,10 +12,8 @@ pub struct ListBuildsForProjectInput {
     /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
     /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListBuildsForProjectInput {

@@ -11,14 +11,12 @@ pub struct LustreRootSquashConfiguration {
     /// <li> <p>A value of <code>0</code> (zero) for UID and GID indicates root, and therefore disables root squash.</p> </li>
     /// </ul>
     /// <p>When root squash is enabled, the user ID and group ID of a root user accessing the file system are re-mapped to the UID and GID you provide.</p>
-    #[doc(hidden)]
     pub root_squash: ::std::option::Option<::std::string::String>,
     /// <p>When root squash is enabled, you can optionally specify an array of NIDs of clients for which root squash does not apply. A client NID is a Lustre Network Identifier used to uniquely identify a client. You can specify the NID as either a single address or a range of addresses:</p>
     /// <ul>
     /// <li> <p>A single address is described in standard Lustre NID format by specifying the client’s IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).</p> </li>
     /// <li> <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub no_squash_nids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LustreRootSquashConfiguration {

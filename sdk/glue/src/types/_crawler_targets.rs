@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrawlerTargets {
     /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
-    #[doc(hidden)]
     pub s3_targets: ::std::option::Option<::std::vec::Vec<crate::types::S3Target>>,
     /// <p>Specifies JDBC targets.</p>
-    #[doc(hidden)]
     pub jdbc_targets: ::std::option::Option<::std::vec::Vec<crate::types::JdbcTarget>>,
     /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
-    #[doc(hidden)]
     pub mongo_db_targets: ::std::option::Option<::std::vec::Vec<crate::types::MongoDbTarget>>,
     /// <p>Specifies Amazon DynamoDB targets.</p>
-    #[doc(hidden)]
     pub dynamo_db_targets: ::std::option::Option<::std::vec::Vec<crate::types::DynamoDbTarget>>,
     /// <p>Specifies Glue Data Catalog targets.</p>
-    #[doc(hidden)]
     pub catalog_targets: ::std::option::Option<::std::vec::Vec<crate::types::CatalogTarget>>,
     /// <p>Specifies Delta data store targets.</p>
-    #[doc(hidden)]
     pub delta_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeltaTarget>>,
     /// <p>Specifies Apache Iceberg data store targets.</p>
-    #[doc(hidden)]
     pub iceberg_targets: ::std::option::Option<::std::vec::Vec<crate::types::IcebergTarget>>,
     /// <p>Specifies Apache Hudi data store targets.</p>
-    #[doc(hidden)]
     pub hudi_targets: ::std::option::Option<::std::vec::Vec<crate::types::HudiTarget>>,
 }
 impl CrawlerTargets {

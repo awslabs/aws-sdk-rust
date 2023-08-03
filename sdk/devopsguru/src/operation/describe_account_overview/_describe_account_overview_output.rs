@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountOverviewOutput {
     /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
-    #[doc(hidden)]
     pub reactive_insights: i32,
     /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
-    #[doc(hidden)]
     pub proactive_insights: i32,
     /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
-    #[doc(hidden)]
     pub mean_time_to_recover_in_milliseconds: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

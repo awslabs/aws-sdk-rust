@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetGraphMemberDatasourcesInput {
     /// <p>The ARN of the behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetGraphMemberDatasourcesInput {

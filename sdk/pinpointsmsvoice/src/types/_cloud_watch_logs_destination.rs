@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogsDestination {
     /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// The name of the Amazon CloudWatch Log Group that you want to record events in.
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogsDestination {

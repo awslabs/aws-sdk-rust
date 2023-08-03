@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Environment {
     /// <p>The name of the FinSpace environment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the FinSpace environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AWS account in which the FinSpace environment is created.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of creation of the FinSpace environment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>The sign-in URL for the web application of your FinSpace environment.</p>
-    #[doc(hidden)]
     pub environment_url: ::std::option::Option<::std::string::String>,
     /// <p>The description of the FinSpace environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of your FinSpace environment.</p>
-    #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the integrated FinSpace notebook environment in your web application.</p>
-    #[doc(hidden)]
     pub sage_maker_studio_domain_url: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key id used to encrypt in the FinSpace environment.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the dedicated service account associated with your FinSpace environment.</p>
-    #[doc(hidden)]
     pub dedicated_service_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication mode for the environment.</p>
-    #[doc(hidden)]
     pub federation_mode: ::std::option::Option<crate::types::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    #[doc(hidden)]
     pub federation_parameters: ::std::option::Option<crate::types::FederationParameters>,
 }
 impl Environment {

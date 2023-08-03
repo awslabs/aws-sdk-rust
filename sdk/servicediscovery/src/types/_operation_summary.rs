@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperationSummary {
     /// <p>The ID for an operation.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct OperationSummary {
     /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
     /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OperationStatus>,
 }
 impl OperationSummary {

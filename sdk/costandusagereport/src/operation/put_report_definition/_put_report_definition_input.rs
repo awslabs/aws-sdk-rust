@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutReportDefinitionInput {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
-    #[doc(hidden)]
     pub report_definition: ::std::option::Option<crate::types::ReportDefinition>,
 }
 impl PutReportDefinitionInput {

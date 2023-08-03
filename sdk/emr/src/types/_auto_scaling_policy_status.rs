@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingPolicyStatus {
     /// <p>Indicates the status of the automatic scaling policy.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AutoScalingPolicyState>,
     /// <p>The reason for a change in status.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<crate::types::AutoScalingPolicyStateChangeReason>,
 }
 impl AutoScalingPolicyStatus {

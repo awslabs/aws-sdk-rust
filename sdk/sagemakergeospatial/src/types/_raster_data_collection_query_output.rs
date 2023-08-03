@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RasterDataCollectionQueryOutput {
     /// <p>The ARN of the Raster Data Collection against which the search is done.</p>
-    #[doc(hidden)]
     pub raster_data_collection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the raster data collection.</p>
-    #[doc(hidden)]
     pub raster_data_collection_name: ::std::option::Option<::std::string::String>,
     /// <p>The TimeRange filter used in the search.</p>
-    #[doc(hidden)]
     pub time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterOutput>,
     /// <p>The Area of Interest used in the search.</p>
-    #[doc(hidden)]
     pub area_of_interest: ::std::option::Option<crate::types::AreaOfInterest>,
     /// <p>Property filters used in the search.</p>
-    #[doc(hidden)]
     pub property_filters: ::std::option::Option<crate::types::PropertyFilters>,
 }
 impl RasterDataCollectionQueryOutput {

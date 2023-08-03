@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleasePhoneNumberInput {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl ReleasePhoneNumberInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingListenerOutput {
     /// <p>The listener that you've created for a custom routing accelerator.</p>
-    #[doc(hidden)]
     pub listener: ::std::option::Option<crate::types::CustomRoutingListener>,
     _request_id: Option<String>,
 }

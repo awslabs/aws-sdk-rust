@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthForgotPasswordConfig {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
-    #[doc(hidden)]
     pub delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     /// <p><b>(DEPRECATED)</b> The configuration for the email sent when an app user forgets their password.</p>
-    #[doc(hidden)]
     pub email_settings: ::std::option::Option<crate::types::EmailSettings>,
     /// <p><b>(DEPRECATED)</b> The configuration for the SMS message sent when an app user forgets their password.</p>
-    #[doc(hidden)]
     pub sms_settings: ::std::option::Option<crate::types::SmsSettings>,
 }
 impl CreateBackendAuthForgotPasswordConfig {

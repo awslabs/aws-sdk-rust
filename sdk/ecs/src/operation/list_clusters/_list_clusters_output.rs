@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClustersOutput {
     /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
-    #[doc(hidden)]
     pub cluster_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

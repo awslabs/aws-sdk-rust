@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotOutput {
     /// <p>Properties that provide details of the created snapshot.</p>
-    #[doc(hidden)]
     pub snapshot: ::std::option::Option<crate::types::SnapshotDetails>,
     _request_id: Option<String>,
 }

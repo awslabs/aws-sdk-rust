@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowTypesOutput {
     /// <p>The list of workflow type information.</p>
-    #[doc(hidden)]
     pub type_infos: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowTypeInfo>>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

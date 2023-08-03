@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMappingInput {
     /// <p>Specifies the source table.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::CatalogEntry>,
     /// <p>A list of target tables.</p>
-    #[doc(hidden)]
     pub sinks: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>,
     /// <p>Parameters for the mapping.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
 }
 impl GetMappingInput {

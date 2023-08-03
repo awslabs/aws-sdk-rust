@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotLocaleExportSpecification {
     /// <p>The identifier of the bot to create the locale for.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to export.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
 }
 impl BotLocaleExportSpecification {

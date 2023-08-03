@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionPageBreakConfiguration {
     /// <p>The configuration of a page break after a section.</p>
-    #[doc(hidden)]
     pub after: ::std::option::Option<crate::types::SectionAfterPageBreak>,
 }
 impl SectionPageBreakConfiguration {

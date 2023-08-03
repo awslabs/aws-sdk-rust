@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeSigningProfileInput {
     /// <p>The name of the signing profile to be revoked.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the signing profile to be revoked.</p>
-    #[doc(hidden)]
     pub profile_version: ::std::option::Option<::std::string::String>,
     /// <p>The reason for revoking a signing profile.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
-    #[doc(hidden)]
     pub effective_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RevokeSigningProfileInput {

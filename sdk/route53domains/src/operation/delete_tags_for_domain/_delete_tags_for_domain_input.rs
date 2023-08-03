@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTagsForDomainInput {
     /// <p>The domain for which you want to delete one or more tags.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag keys to delete.</p>
-    #[doc(hidden)]
     pub tags_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteTagsForDomainInput {

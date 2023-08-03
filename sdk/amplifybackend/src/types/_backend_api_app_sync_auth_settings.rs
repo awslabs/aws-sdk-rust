@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendApiAppSyncAuthSettings {
     /// <p>The Amazon Cognito user pool ID, if Amazon Cognito was used as an authentication setting to access your data models.</p>
-    #[doc(hidden)]
     pub cognito_user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The API key description for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<f64>,
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    #[doc(hidden)]
     pub open_id_auth_ttl: ::std::option::Option<::std::string::String>,
     /// <p>The clientID for openID, if openID was used as an authentication setting to access your data models.</p>
-    #[doc(hidden)]
     pub open_id_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
-    #[doc(hidden)]
     pub open_id_iat_ttl: ::std::option::Option<::std::string::String>,
     /// <p>The openID issuer URL, if openID was used as an authentication setting to access your data models.</p>
-    #[doc(hidden)]
     pub open_id_issue_url: ::std::option::Option<::std::string::String>,
     /// <p>The OpenID provider name, if OpenID was used as an authentication mechanism to access your data models.</p>
-    #[doc(hidden)]
     pub open_id_provider_name: ::std::option::Option<::std::string::String>,
 }
 impl BackendApiAppSyncAuthSettings {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNodeAssociationStatusInput {
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
-    #[doc(hidden)]
     pub node_association_status_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the server from which to disassociate the node. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNodeAssociationStatusInput {

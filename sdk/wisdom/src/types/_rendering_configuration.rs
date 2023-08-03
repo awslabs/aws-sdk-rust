@@ -11,7 +11,6 @@ pub struct RenderingConfiguration {
     /// <li> <p>Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code> </p> </li>
     /// </ul>
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
-    #[doc(hidden)]
     pub template_uri: ::std::option::Option<::std::string::String>,
 }
 impl RenderingConfiguration {

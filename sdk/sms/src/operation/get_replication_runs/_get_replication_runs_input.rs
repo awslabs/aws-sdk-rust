@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReplicationRunsInput {
     /// <p>The ID of the replication job.</p>
-    #[doc(hidden)]
     pub replication_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetReplicationRunsInput {

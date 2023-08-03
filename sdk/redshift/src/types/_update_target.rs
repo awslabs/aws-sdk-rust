@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTarget {
     /// <p>The name of the new maintenance track.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The cluster version for the new maintenance track.</p>
-    #[doc(hidden)]
     pub database_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of operations supported by the maintenance track.</p>
-    #[doc(hidden)]
     pub supported_operations: ::std::option::Option<::std::vec::Vec<crate::types::SupportedOperation>>,
 }
 impl UpdateTarget {

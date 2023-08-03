@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegionOptStatusOutput {
     /// <p>The Region code that was passed in.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>One of the potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
-    #[doc(hidden)]
     pub region_opt_status: ::std::option::Option<crate::types::RegionOptStatus>,
     _request_id: Option<String>,
 }

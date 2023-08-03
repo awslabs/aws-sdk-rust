@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SseConfig {
     /// <p>The encryption type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>An encryption key ARN.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl SseConfig {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventsOutput {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
-    #[doc(hidden)]
     pub events_response: ::std::option::Option<crate::types::EventsResponse>,
     _request_id: Option<String>,
 }

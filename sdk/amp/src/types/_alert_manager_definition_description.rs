@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     /// The alert manager definition.
-    #[doc(hidden)]
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// The time when the alert manager definition was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The time when the alert manager definition was modified.
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AlertManagerDefinitionDescription {

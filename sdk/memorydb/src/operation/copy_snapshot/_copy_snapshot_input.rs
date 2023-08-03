@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopySnapshotInput {
     /// <p>The name of an existing snapshot from which to make a copy.</p>
-    #[doc(hidden)]
     pub source_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
-    #[doc(hidden)]
     pub target_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
-    #[doc(hidden)]
     pub target_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopySnapshotInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationsInput {
     /// <p>Configuration ID of an application to be deleted.</p>
-    #[doc(hidden)]
     pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteApplicationsInput {

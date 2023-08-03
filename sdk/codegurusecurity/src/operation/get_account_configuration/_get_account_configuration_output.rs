@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountConfigurationOutput {
     /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption. By default, CodeGuru Security uses an AWS-managed key for encryption. To specify your own key, call <code>UpdateAccountConfiguration</code>.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     _request_id: Option<String>,
 }

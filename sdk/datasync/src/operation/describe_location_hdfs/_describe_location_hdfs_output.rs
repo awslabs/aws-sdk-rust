@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationHdfsOutput {
     /// <p>The ARN of the HDFS cluster location.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the HDFS cluster location.</p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The NameNode that manage the HDFS namespace. </p>
-    #[doc(hidden)]
     pub name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
     /// <p>The size of the data blocks to write into the HDFS cluster. </p>
-    #[doc(hidden)]
     pub block_size: ::std::option::Option<i32>,
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
-    #[doc(hidden)]
     pub replication_factor: ::std::option::Option<i32>,
     /// <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    #[doc(hidden)]
     pub kms_key_provider_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
-    #[doc(hidden)]
     pub qop_configuration: ::std::option::Option<crate::types::QopConfiguration>,
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::HdfsAuthenticationType>,
     /// <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
-    #[doc(hidden)]
     pub simple_user: ::std::option::Option<::std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
-    #[doc(hidden)]
     pub kerberos_principal: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the HDFS location was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

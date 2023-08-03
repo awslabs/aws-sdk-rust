@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Pipeline {
     /// <p>The name of the pipeline.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the pipeline.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The activities that perform transformations on the messages.</p>
-    #[doc(hidden)]
     pub activities: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
     /// <p>A summary of information about the pipeline reprocessing.</p>
-    #[doc(hidden)]
     pub reprocessing_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReprocessingSummary>>,
     /// <p>When the pipeline was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the pipeline was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Pipeline {

@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileShareInfo {
     /// <p>The type of the file share.</p>
-    #[doc(hidden)]
     pub file_share_type: ::std::option::Option<crate::types::FileShareType>,
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    #[doc(hidden)]
     pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the file share.</p>
-    #[doc(hidden)]
     pub file_share_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the file share.</p>
     /// <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-    #[doc(hidden)]
     pub file_share_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl FileShareInfo {

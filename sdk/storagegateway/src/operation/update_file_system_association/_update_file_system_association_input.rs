@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateFileSystemAssociationInput {
     /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
-    #[doc(hidden)]
     pub file_system_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password of the user credential.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    #[doc(hidden)]
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    #[doc(hidden)]
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
 }
 impl UpdateFileSystemAssociationInput {

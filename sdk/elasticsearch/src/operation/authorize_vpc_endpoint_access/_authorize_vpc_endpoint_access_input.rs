@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeVpcEndpointAccessInput {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to grant access to.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizeVpcEndpointAccessInput {

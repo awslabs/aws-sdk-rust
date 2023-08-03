@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway.</p>
-    #[doc(hidden)]
     pub virtual_gateway: ::std::option::Option<crate::types::VirtualGatewayData>,
     _request_id: Option<String>,
 }

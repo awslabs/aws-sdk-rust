@@ -4,28 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of a service template version to update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service template minor version to update.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateVersionStatus>,
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    #[doc(hidden)]
     pub compatible_environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
     /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
     /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub supported_component_sources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
 }
 impl UpdateServiceTemplateVersionInput {

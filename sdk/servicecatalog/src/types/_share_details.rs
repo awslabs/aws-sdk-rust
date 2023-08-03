@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShareDetails {
     /// <p>List of accounts for whom the operation succeeded.</p>
-    #[doc(hidden)]
     pub successful_shares: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of errors.</p>
-    #[doc(hidden)]
     pub share_errors: ::std::option::Option<::std::vec::Vec<crate::types::ShareError>>,
 }
 impl ShareDetails {

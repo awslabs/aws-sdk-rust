@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchUsersByImageOutput {
     /// <p>An array of UserID objects that matched the input face, along with the confidence in the match. The returned structure will be empty if there are no matches. Returned if the SearchUsersByImageResponse action is successful.</p>
-    #[doc(hidden)]
     pub user_matches: ::std::option::Option<::std::vec::Vec<crate::types::UserMatch>>,
     /// <p>Version number of the face detection model associated with the input collection CollectionId.</p>
-    #[doc(hidden)]
     pub face_model_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of FaceDetail objects containing the BoundingBox for the largest face in image, as well as the confidence in the bounding box, that was searched for matches. If no valid face is detected in the image the response will contain no SearchedFace object.</p>
-    #[doc(hidden)]
     pub searched_face: ::std::option::Option<crate::types::SearchedFaceDetails>,
     /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
-    #[doc(hidden)]
     pub unsearched_faces: ::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFace>>,
     _request_id: Option<String>,
 }

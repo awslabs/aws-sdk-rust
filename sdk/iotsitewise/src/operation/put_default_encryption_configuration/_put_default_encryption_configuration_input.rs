@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDefaultEncryptionConfigurationInput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl PutDefaultEncryptionConfigurationInput {

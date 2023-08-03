@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct M3u8Settings {
     /// The number of audio frames to insert for each PES packet.
-    #[doc(hidden)]
     pub audio_frames_per_pes: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
-    #[doc(hidden)]
     pub audio_pids: ::std::option::Option<::std::string::String>,
     /// This parameter is unused and deprecated.
-    #[doc(hidden)]
     pub ecm_pid: ::std::option::Option<::std::string::String>,
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    #[doc(hidden)]
     pub nielsen_id3_behavior: ::std::option::Option<crate::types::M3u8NielsenId3Behavior>,
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-    #[doc(hidden)]
     pub pat_interval: ::std::option::Option<i32>,
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-    #[doc(hidden)]
     pub pcr_control: ::std::option::Option<crate::types::M3u8PcrControl>,
     /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
-    #[doc(hidden)]
     pub pcr_period: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
-    #[doc(hidden)]
     pub pcr_pid: ::std::option::Option<::std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-    #[doc(hidden)]
     pub pmt_interval: ::std::option::Option<i32>,
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
-    #[doc(hidden)]
     pub pmt_pid: ::std::option::Option<::std::string::String>,
     /// The value of the program number field in the Program Map Table.
-    #[doc(hidden)]
     pub program_num: ::std::option::Option<i32>,
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
-    #[doc(hidden)]
     pub scte35_behavior: ::std::option::Option<crate::types::M3u8Scte35Behavior>,
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-    #[doc(hidden)]
     pub scte35_pid: ::std::option::Option<::std::string::String>,
     /// When set to passthrough, timed metadata is passed through from input to output.
-    #[doc(hidden)]
     pub timed_metadata_behavior: ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    #[doc(hidden)]
     pub timed_metadata_pid: ::std::option::Option<::std::string::String>,
     /// The value of the transport stream ID field in the Program Map Table.
-    #[doc(hidden)]
     pub transport_stream_id: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-    #[doc(hidden)]
     pub video_pid: ::std::option::Option<::std::string::String>,
 }
 impl M3u8Settings {

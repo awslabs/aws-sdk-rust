@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionConfiguration {
     /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
-    #[doc(hidden)]
     pub multi_region_key_type: ::std::option::Option<crate::types::MultiRegionKeyType>,
     /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
-    #[doc(hidden)]
     pub primary_key: ::std::option::Option<crate::types::MultiRegionKey>,
     /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
-    #[doc(hidden)]
     pub replica_keys: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionKey>>,
 }
 impl MultiRegionConfiguration {

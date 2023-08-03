@@ -6,10 +6,8 @@
 pub struct OffPeakWindowOptions {
     /// <p>Whether to enable an off-peak window.</p>
     /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Off-peak window settings for the domain.</p>
-    #[doc(hidden)]
     pub off_peak_window: ::std::option::Option<crate::types::OffPeakWindow>,
 }
 impl OffPeakWindowOptions {

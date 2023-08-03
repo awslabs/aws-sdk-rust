@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

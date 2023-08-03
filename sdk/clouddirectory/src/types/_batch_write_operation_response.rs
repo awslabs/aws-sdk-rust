@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchWriteOperationResponse {
     /// <p>Creates an object in a <code>Directory</code>.</p>
-    #[doc(hidden)]
     pub create_object: ::std::option::Option<crate::types::BatchCreateObjectResponse>,
     /// <p>Attaches an object to a <code>Directory</code>.</p>
-    #[doc(hidden)]
     pub attach_object: ::std::option::Option<crate::types::BatchAttachObjectResponse>,
     /// <p>Detaches an object from a <code>Directory</code>.</p>
-    #[doc(hidden)]
     pub detach_object: ::std::option::Option<crate::types::BatchDetachObjectResponse>,
     /// <p>Updates a given object’s attributes.</p>
-    #[doc(hidden)]
     pub update_object_attributes: ::std::option::Option<crate::types::BatchUpdateObjectAttributesResponse>,
     /// <p>Deletes an object in a <code>Directory</code>.</p>
-    #[doc(hidden)]
     pub delete_object: ::std::option::Option<crate::types::BatchDeleteObjectResponse>,
     /// <p>The result of an add facet to object batch operation.</p>
-    #[doc(hidden)]
     pub add_facet_to_object: ::std::option::Option<crate::types::BatchAddFacetToObjectResponse>,
     /// <p>The result of a batch remove facet from object operation.</p>
-    #[doc(hidden)]
     pub remove_facet_from_object: ::std::option::Option<crate::types::BatchRemoveFacetFromObjectResponse>,
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
-    #[doc(hidden)]
     pub attach_policy: ::std::option::Option<crate::types::BatchAttachPolicyResponse>,
     /// <p>Detaches a policy from a <code>Directory</code>.</p>
-    #[doc(hidden)]
     pub detach_policy: ::std::option::Option<crate::types::BatchDetachPolicyResponse>,
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
-    #[doc(hidden)]
     pub create_index: ::std::option::Option<crate::types::BatchCreateIndexResponse>,
     /// <p>Attaches the specified object to the specified index.</p>
-    #[doc(hidden)]
     pub attach_to_index: ::std::option::Option<crate::types::BatchAttachToIndexResponse>,
     /// <p>Detaches the specified object from the specified index.</p>
-    #[doc(hidden)]
     pub detach_from_index: ::std::option::Option<crate::types::BatchDetachFromIndexResponse>,
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[doc(hidden)]
     pub attach_typed_link: ::std::option::Option<crate::types::BatchAttachTypedLinkResponse>,
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    #[doc(hidden)]
     pub detach_typed_link: ::std::option::Option<crate::types::BatchDetachTypedLinkResponse>,
     /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
-    #[doc(hidden)]
     pub update_link_attributes: ::std::option::Option<crate::types::BatchUpdateLinkAttributesResponse>,
 }
 impl BatchWriteOperationResponse {

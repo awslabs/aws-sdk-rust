@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SourceNetwork {
     /// <p>Source Network ID.</p>
-    #[doc(hidden)]
     pub source_network_id: ::std::option::Option<::std::string::String>,
     /// <p>VPC ID protected by the Source Network.</p>
-    #[doc(hidden)]
     pub source_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Source Network.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the Source Network.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Status of Source Network Replication. Possible values: (a) STOPPED - Source Network is not replicating. (b) IN_PROGRESS - Source Network is being replicated. (c) PROTECTED - Source Network was replicated successfully and is being synchronized for changes. (d) ERROR - Source Network replication has failed</p>
-    #[doc(hidden)]
     pub replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
     /// <p>Error details in case Source Network replication status is ERROR.</p>
-    #[doc(hidden)]
     pub replication_status_details: ::std::option::Option<::std::string::String>,
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
-    #[doc(hidden)]
     pub cfn_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>Region containing the VPC protected by the Source Network.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>Account ID containing the VPC protected by the Source Network.</p>
-    #[doc(hidden)]
     pub source_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object containing information regarding the last recovery of the Source Network.</p>
-    #[doc(hidden)]
     pub last_recovery: ::std::option::Option<crate::types::RecoveryLifeCycle>,
     /// <p>ID of the recovered VPC following Source Network recovery.</p>
-    #[doc(hidden)]
     pub launched_vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl SourceNetwork {

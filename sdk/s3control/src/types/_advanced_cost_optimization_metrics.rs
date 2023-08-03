@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedCostOptimizationMetrics {
     /// <p>A container that indicates whether advanced cost-optimization metrics are enabled.</p>
-    #[doc(hidden)]
     pub is_enabled: bool,
 }
 impl AdvancedCostOptimizationMetrics {

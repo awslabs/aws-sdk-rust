@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficRoute {
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
-    #[doc(hidden)]
     pub listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TrafficRoute {

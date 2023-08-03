@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The unique identifier for a data set.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results returned by a single call.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a revision.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ListJobsInput {

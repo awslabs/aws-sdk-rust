@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoverInstancesInput {
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that you specified when you registered the instance.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
-    #[doc(hidden)]
     pub query_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
-    #[doc(hidden)]
     pub optional_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
     /// <dl>
@@ -45,7 +40,6 @@ pub struct DiscoverInstancesInput {
     /// <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::HealthStatusFilter>,
 }
 impl DiscoverInstancesInput {

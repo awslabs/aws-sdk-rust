@@ -13,7 +13,6 @@ pub struct TimeSeriesTransformations {
     /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
-    #[doc(hidden)]
     pub filling: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
     >,
@@ -21,7 +20,6 @@ pub struct TimeSeriesTransformations {
     /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p> <note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
-    #[doc(hidden)]
     pub aggregation: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>>,
 }
 impl TimeSeriesTransformations {

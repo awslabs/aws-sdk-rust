@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchFacesByImageInput {
     /// <p>ID of the collection to search.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
-    #[doc(hidden)]
     pub max_faces: ::std::option::Option<i32>,
     /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
-    #[doc(hidden)]
     pub face_match_threshold: ::std::option::Option<f32>,
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-    #[doc(hidden)]
     pub quality_filter: ::std::option::Option<crate::types::QualityFilter>,
 }
 impl SearchFacesByImageInput {

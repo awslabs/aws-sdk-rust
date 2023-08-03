@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppOutput {
     /// <p>The name of the app.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the simulation of the app.</p>
-    #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain of the app.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The current lifecycle state of the custom app.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SimulationAppStatus>,
     /// <p>The desired lifecycle state of the custom app.</p>
-    #[doc(hidden)]
     pub target_status: ::std::option::Option<crate::types::SimulationAppTargetStatus>,
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
-    #[doc(hidden)]
     pub launch_overrides: ::std::option::Option<crate::types::LaunchOverrides>,
     /// <p>The description of the app.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
-    #[doc(hidden)]
     pub endpoint_info: ::std::option::Option<crate::types::SimulationAppEndpointInfo>,
     _request_id: Option<String>,
 }

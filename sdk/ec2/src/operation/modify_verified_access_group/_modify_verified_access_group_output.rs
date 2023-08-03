@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessGroupOutput {
     /// <p>Details of Verified Access group.</p>
-    #[doc(hidden)]
     pub verified_access_group: ::std::option::Option<crate::types::VerifiedAccessGroup>,
     _request_id: Option<String>,
 }

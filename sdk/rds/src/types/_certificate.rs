@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The unique key that identifies a certificate.</p>
-    #[doc(hidden)]
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_type: ::std::option::Option<::std::string::String>,
     /// <p>The thumbprint of the certificate.</p>
-    #[doc(hidden)]
     pub thumbprint: ::std::option::Option<::std::string::String>,
     /// <p>The starting date from which the certificate is valid.</p>
-    #[doc(hidden)]
     pub valid_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The final date that the certificate continues to be valid.</p>
-    #[doc(hidden)]
     pub valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether there is an override for the default certificate identifier.</p>
-    #[doc(hidden)]
     pub customer_override: ::std::option::Option<bool>,
     /// <p>If there is an override for the default certificate identifier, when the override expires.</p>
-    #[doc(hidden)]
     pub customer_override_valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Certificate {

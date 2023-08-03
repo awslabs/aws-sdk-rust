@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMapRunInput {
     /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
-    #[doc(hidden)]
     pub map_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMapRunInput {

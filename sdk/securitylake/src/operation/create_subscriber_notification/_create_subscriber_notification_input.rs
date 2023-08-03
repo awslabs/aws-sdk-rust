@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubscriberNotificationInput {
     /// <p>The subscriber ID for the notification subscription.</p>
-    #[doc(hidden)]
     pub subscriber_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the configuration using which you want to create the subscriber notification.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
 impl CreateSubscriberNotificationInput {

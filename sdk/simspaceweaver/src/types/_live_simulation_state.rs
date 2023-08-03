@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveSimulationState {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-    #[doc(hidden)]
     pub domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
     /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
-    #[doc(hidden)]
     pub clocks: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>,
 }
 impl LiveSimulationState {

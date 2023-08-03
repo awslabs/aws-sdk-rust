@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericSeparatorConfiguration {
     /// <p>Determines the decimal separator.</p>
-    #[doc(hidden)]
     pub decimal_separator: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     /// <p>The options that determine the thousands separator configuration.</p>
-    #[doc(hidden)]
     pub thousands_separator: ::std::option::Option<crate::types::ThousandSeparatorOptions>,
 }
 impl NumericSeparatorConfiguration {

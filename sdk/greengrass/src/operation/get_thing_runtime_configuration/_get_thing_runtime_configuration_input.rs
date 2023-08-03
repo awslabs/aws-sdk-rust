@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetThingRuntimeConfigurationInput {
     /// The thing name.
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl GetThingRuntimeConfigurationInput {

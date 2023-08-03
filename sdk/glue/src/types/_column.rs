@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Column {
     /// <p>The name of the <code>Column</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the <code>Column</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>A free-form text comment.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define properties associated with the column.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Column {

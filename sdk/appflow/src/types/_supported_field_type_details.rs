@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedFieldTypeDetails {
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
-    #[doc(hidden)]
     pub v1: ::std::option::Option<crate::types::FieldTypeDetails>,
 }
 impl SupportedFieldTypeDetails {

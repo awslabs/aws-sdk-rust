@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResult {
     /// <p>Values for fields generated during the request.</p>
-    #[doc(hidden)]
     pub generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
 }
 impl UpdateResult {

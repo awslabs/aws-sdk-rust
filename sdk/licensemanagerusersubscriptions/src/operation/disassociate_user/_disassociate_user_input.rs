@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateUserInput {
     /// <p>The user name from the identity provider for the user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The domain name of the user.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateUserInput {

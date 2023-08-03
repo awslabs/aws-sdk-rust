@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Account {
     /// <p>The ID of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of Amazon Inspector for the account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Details of the status of Amazon Inspector scans by resource type.</p>
-    #[doc(hidden)]
     pub resource_status: ::std::option::Option<crate::types::ResourceStatus>,
 }
 impl Account {

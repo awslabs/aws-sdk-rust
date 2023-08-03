@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkInput {
     /// <p> The identifier for the custom framework. </p>
-    #[doc(hidden)]
     pub framework_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssessmentFrameworkInput {

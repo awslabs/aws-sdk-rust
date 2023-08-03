@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user: ::std::option::Option<crate::types::AppInstanceUser>,
     _request_id: Option<String>,
 }

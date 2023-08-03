@@ -18,21 +18,16 @@ pub struct PutObjectInput {
     /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
     /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
     /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the object.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
-    #[doc(hidden)]
     pub cache_control: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
     /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
-    #[doc(hidden)]
     pub upload_availability: ::std::option::Option<crate::types::UploadAvailability>,
 }
 impl PutObjectInput {

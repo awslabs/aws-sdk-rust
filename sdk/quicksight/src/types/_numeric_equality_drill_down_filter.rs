@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericEqualityDrillDownFilter {
     /// <p>The column that the filter is applied to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The value of the double input numeric drill down filter.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl NumericEqualityDrillDownFilter {

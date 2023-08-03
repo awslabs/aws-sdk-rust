@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

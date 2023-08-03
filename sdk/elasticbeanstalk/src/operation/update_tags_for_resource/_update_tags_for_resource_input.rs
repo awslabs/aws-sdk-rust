@@ -5,15 +5,12 @@
 pub struct UpdateTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    #[doc(hidden)]
     pub tags_to_add: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    #[doc(hidden)]
     pub tags_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateTagsForResourceInput {

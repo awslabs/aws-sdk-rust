@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSampledRequestsInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p> <code>RuleId</code> is one of three values:</p>
     /// <ul>
     /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
     /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-    #[doc(hidden)]
     pub time_window: ::std::option::Option<crate::types::TimeWindow>,
     /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
-    #[doc(hidden)]
     pub max_items: i64,
 }
 impl GetSampledRequestsInput {

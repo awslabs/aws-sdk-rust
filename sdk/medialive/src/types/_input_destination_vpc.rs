@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDestinationVpc {
     /// The availability zone of the Input destination.
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// The network interface ID of the Input destination in the VPC.
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl InputDestinationVpc {

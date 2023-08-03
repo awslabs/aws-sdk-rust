@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveBridgeSourceInput {
     /// The ARN of the bridge that you want to update.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The name of the bridge source that you want to remove.
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveBridgeSourceInput {

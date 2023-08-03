@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyAuthRequestCryptogramInput {
     /// <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub transaction_data: ::std::option::Option<::std::string::String>,
     /// <p>The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.</p>
-    #[doc(hidden)]
     pub auth_request_cryptogram: ::std::option::Option<::std::string::String>,
     /// <p>The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub major_key_derivation_mode: ::std::option::Option<crate::types::MajorKeyDerivationMode>,
     /// <p>The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub session_key_derivation_attributes: ::std::option::Option<crate::types::SessionKeyDerivation>,
     /// <p>The attributes and values for auth request cryptogram verification. These parameters are required in case using ARPC Method 1 or Method 2 for ARQC verification.</p>
-    #[doc(hidden)]
     pub auth_response_attributes: ::std::option::Option<crate::types::CryptogramAuthResponse>,
 }
 impl VerifyAuthRequestCryptogramInput {

@@ -5,27 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Input {
     /// <p>Name prefix to use when creating an in-application stream. Suppose that you specify a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with names "MyInApplicationStream_001," "MyInApplicationStream_002," and so on. </p>
-    #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html">InputLambdaProcessor</a>.</p>
-    #[doc(hidden)]
     pub input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
     /// <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
     /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
-    #[doc(hidden)]
     pub kinesis_streams_input: ::std::option::Option<crate::types::KinesisStreamsInput>,
     /// <p>If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
     /// <p>Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_input: ::std::option::Option<crate::types::KinesisFirehoseInput>,
     /// <p>Describes the number of in-application streams to create. </p>
     /// <p>Data from your source is routed to these in-application input streams.</p>
     /// <p> (see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application Input</a>.</p>
-    #[doc(hidden)]
     pub input_parallelism: ::std::option::Option<crate::types::InputParallelism>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
-    #[doc(hidden)]
     pub input_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
 impl Input {

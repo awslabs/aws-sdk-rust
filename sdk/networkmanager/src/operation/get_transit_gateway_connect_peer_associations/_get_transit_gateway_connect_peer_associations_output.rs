@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransitGatewayConnectPeerAssociationsOutput {
     /// <p>Information about the transit gateway Connect peer associations.</p>
-    #[doc(hidden)]
     pub transit_gateway_connect_peer_associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>,
     /// <p>The token to use for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the theme.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the theme.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
-    #[doc(hidden)]
     pub base_theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
-    #[doc(hidden)]
     pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>The theme configuration, which contains the theme display properties.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ThemeConfiguration>,
 }
 impl UpdateThemeInput {

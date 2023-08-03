@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyGroup {
     /// <p>Describes the key of an application execution property key-value pair.</p>
-    #[doc(hidden)]
     pub property_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    #[doc(hidden)]
     pub property_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PropertyGroup {

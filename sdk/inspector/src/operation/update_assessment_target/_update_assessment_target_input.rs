@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentTargetInput {
     /// <p>The ARN of the assessment target that you want to update.</p>
-    #[doc(hidden)]
     pub assessment_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assessment target that you want to update.</p>
-    #[doc(hidden)]
     pub assessment_target_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
-    #[doc(hidden)]
     pub resource_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssessmentTargetInput {

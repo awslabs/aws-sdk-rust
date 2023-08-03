@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub add_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub remove_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
 }
 impl CreateDirectConnectGatewayAssociationProposalInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResourceShareInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
-    #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want to add only resources.</p>
     /// <p>What the principals can do with the resources in the share is determined by the RAM permissions that you associate with the resource share. See <code>AssociateResourceSharePermission</code>.</p>
@@ -21,15 +19,12 @@ pub struct AssociateResourceShareInput {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociateResourceShareInput {

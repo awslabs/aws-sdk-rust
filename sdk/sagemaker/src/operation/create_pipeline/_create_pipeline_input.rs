@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePipelineInput {
     /// <p>The name of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_definition: ::std::option::Option<::std::string::String>,
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
-    #[doc(hidden)]
     pub pipeline_definition_s3_location: ::std::option::Option<crate::types::PipelineDefinitionS3Location>,
     /// <p>A description of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_description: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to apply to the created pipeline.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
-    #[doc(hidden)]
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
 impl CreatePipelineInput {

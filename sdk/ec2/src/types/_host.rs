@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Host {
     /// <p>Whether auto-placement is on or off.</p>
-    #[doc(hidden)]
     pub auto_placement: ::std::option::Option<crate::types::AutoPlacement>,
     /// <p>The Availability Zone of the Dedicated Host.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Information about the instances running on the Dedicated Host.</p>
-    #[doc(hidden)]
     pub available_capacity: ::std::option::Option<crate::types::AvailableCapacity>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Dedicated Host.</p>
-    #[doc(hidden)]
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The hardware specifications of the Dedicated Host.</p>
-    #[doc(hidden)]
     pub host_properties: ::std::option::Option<crate::types::HostProperties>,
     /// <p>The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't have an associated reservation.</p>
-    #[doc(hidden)]
     pub host_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs and instance type that are currently running on the Dedicated Host.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::HostInstance>>,
     /// <p>The Dedicated Host's state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AllocationState>,
     /// <p>The time that the Dedicated Host was allocated.</p>
-    #[doc(hidden)]
     pub allocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the Dedicated Host was released.</p>
-    #[doc(hidden)]
     pub release_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any tags assigned to the Dedicated Host.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether host recovery is enabled or disabled for the Dedicated Host.</p>
-    #[doc(hidden)]
     pub host_recovery: ::std::option::Option<crate::types::HostRecovery>,
     /// <p>Indicates whether the Dedicated Host supports multiple instance types of the same instance family. If the value is <code>on</code>, the Dedicated Host supports multiple instance types in the instance family. If the value is <code>off</code>, the Dedicated Host supports a single instance type only.</p>
-    #[doc(hidden)]
     pub allows_multiple_instance_types: ::std::option::Option<crate::types::AllowsMultipleInstanceTypes>,
     /// <p>The ID of the Amazon Web Services account that owns the Dedicated Host.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone in which the Dedicated Host is allocated.</p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a host resource group; otherwise, it is not.</p>
-    #[doc(hidden)]
     pub member_of_service_linked_resource_group: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which the Dedicated Host is allocated.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether host maintenance is enabled or disabled for the Dedicated Host.</p>
-    #[doc(hidden)]
     pub host_maintenance: ::std::option::Option<crate::types::HostMaintenance>,
     /// <p>The ID of the Outpost hardware asset on which the Dedicated Host is allocated.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
 }
 impl Host {

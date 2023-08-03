@@ -4,35 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateServiceInput {
     /// <p>The service name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the Proton service.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template that's used to create the service.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The major version of the service template that was used to create the service.</p>
-    #[doc(hidden)]
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of the service template that was used to create the service.</p>
-    #[doc(hidden)]
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    #[doc(hidden)]
     pub repository_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    #[doc(hidden)]
     pub repository_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateServiceInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverallTestResults {
     /// <p>A list of the overall test results.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::OverallTestResultItem>>,
 }
 impl OverallTestResults {

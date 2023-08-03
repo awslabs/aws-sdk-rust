@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLabelGroupsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> A summary of the label groups. </p>
-    #[doc(hidden)]
     pub label_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>>,
     _request_id: Option<String>,
 }

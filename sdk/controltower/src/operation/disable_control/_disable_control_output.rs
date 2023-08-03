@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    #[doc(hidden)]
     pub operation_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepOutput {
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
     pub step_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

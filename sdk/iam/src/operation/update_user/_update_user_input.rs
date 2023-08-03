@@ -5,15 +5,12 @@
 pub struct UpdateUserInput {
     /// <p>Name of the user to update. If you're changing the name of the user, this is the original user name.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>New path for the IAM user. Include this parameter only if you're changing the user's path.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
-    #[doc(hidden)]
     pub new_path: ::std::option::Option<::std::string::String>,
     /// <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
-    #[doc(hidden)]
     pub new_user_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateUserInput {

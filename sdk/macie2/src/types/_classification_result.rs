@@ -6,22 +6,16 @@
 pub struct ClassificationResult {
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).</p>
-    #[doc(hidden)]
     pub additional_occurrences: ::std::option::Option<bool>,
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
-    #[doc(hidden)]
     pub custom_data_identifiers: ::std::option::Option<crate::types::CustomDataIdentifiers>,
     /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
-    #[doc(hidden)]
     pub mime_type: ::std::option::Option<::std::string::String>,
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-    #[doc(hidden)]
     pub sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>>,
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
-    #[doc(hidden)]
     pub size_classified: ::std::option::Option<i64>,
     /// <p>The status of the finding.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClassificationResultStatus>,
 }
 impl ClassificationResult {

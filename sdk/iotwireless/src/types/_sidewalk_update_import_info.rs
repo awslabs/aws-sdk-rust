@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkUpdateImportInfo {
     /// <p>The CSV file contained in an S3 bucket that's used for appending devices to an existing import task.</p>
-    #[doc(hidden)]
     pub device_creation_file: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkUpdateImportInfo {

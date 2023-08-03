@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypesOutput {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_types: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeInfo>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVehicleOutput {
     /// <p>The ID of the vehicle.</p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the vehicle to retrieve information about. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of a vehicle model (model manifest) associated with the vehicle. </p>
-    #[doc(hidden)]
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of a decoder manifest associated with the vehicle. </p>
-    #[doc(hidden)]
     pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

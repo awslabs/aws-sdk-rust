@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamStartSelector {
     /// <p> The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format. </p>
-    #[doc(hidden)]
     pub producer_timestamp: ::std::option::Option<i64>,
     /// <p> The unique identifier of the fragment. This value monotonically increases based on the ingestion order. </p>
-    #[doc(hidden)]
     pub fragment_number: ::std::option::Option<::std::string::String>,
 }
 impl KinesisVideoStreamStartSelector {

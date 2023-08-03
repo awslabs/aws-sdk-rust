@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGameServerGroupInput {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of delete to perform. Options include the following:</p>
     /// <ul>
@@ -12,7 +11,6 @@ pub struct DeleteGameServerGroupInput {
     /// <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the Amazon EC2 Auto Scaling group. </p> </li>
     /// <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the Amazon EC2 Auto Scaling group as is.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub delete_option: ::std::option::Option<crate::types::GameServerGroupDeleteOption>,
 }
 impl DeleteGameServerGroupInput {

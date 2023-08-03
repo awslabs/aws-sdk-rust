@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The name of the dataset being created. </p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
-    #[doc(hidden)]
     pub dataset_schema: ::std::option::Option<crate::types::DatasetSchema>,
     /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-    #[doc(hidden)]
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Any tags associated with the ingested data described in the dataset. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDatasetInput {

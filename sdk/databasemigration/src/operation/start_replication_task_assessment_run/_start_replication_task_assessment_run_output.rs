@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentRunOutput {
     /// <p>The premigration assessment run that was started.</p>
-    #[doc(hidden)]
     pub replication_task_assessment_run: ::std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
     _request_id: Option<String>,
 }

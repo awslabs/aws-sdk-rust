@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClusterSnapshotsInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The nextToken which is used the get the next page of data.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of entries to recieve in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListClusterSnapshotsInput {

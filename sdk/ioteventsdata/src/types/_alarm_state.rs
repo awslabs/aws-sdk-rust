@@ -13,16 +13,12 @@ pub struct AlarmState {
     /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state_name: ::std::option::Option<crate::types::AlarmStateName>,
     /// <p>Information needed to evaluate data.</p>
-    #[doc(hidden)]
     pub rule_evaluation: ::std::option::Option<crate::types::RuleEvaluation>,
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
-    #[doc(hidden)]
     pub customer_action: ::std::option::Option<crate::types::CustomerAction>,
     /// <p>Contains information about alarm state changes.</p>
-    #[doc(hidden)]
     pub system_event: ::std::option::Option<crate::types::SystemEvent>,
 }
 impl AlarmState {

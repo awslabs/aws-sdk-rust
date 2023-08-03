@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PercentVisibleRange {
     /// <p>The lower bound of the range.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<f64>,
     /// <p>The top bound of the range.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<f64>,
 }
 impl PercentVisibleRange {

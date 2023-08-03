@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// <p>A name for the group that you want to create.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the group that you want to create.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace that you want the group to be a part of.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl CreateGroupInput {

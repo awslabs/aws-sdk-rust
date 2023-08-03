@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scram {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl Scram {

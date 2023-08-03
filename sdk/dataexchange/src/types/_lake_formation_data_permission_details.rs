@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LakeFormationDataPermissionDetails {
     /// <p>Details about the LF-tag policy.</p>
-    #[doc(hidden)]
     pub lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyDetails>,
 }
 impl LakeFormationDataPermissionDetails {

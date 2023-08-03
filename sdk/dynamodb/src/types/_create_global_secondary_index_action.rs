@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The key schema for the global secondary index.</p>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
-    #[doc(hidden)]
     pub projection: ::std::option::Option<crate::types::Projection>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
 }
 impl CreateGlobalSecondaryIndexAction {

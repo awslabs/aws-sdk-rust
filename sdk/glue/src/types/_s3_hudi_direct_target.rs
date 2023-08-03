@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3HudiDirectTarget {
     /// <p>The name of the data target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    #[doc(hidden)]
     pub compression: ::std::option::Option<crate::types::HudiTargetCompressionType>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>Specifies the data output format for the target.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TargetFormat>,
     /// <p>Specifies additional connection options for the connector.</p>
-    #[doc(hidden)]
     pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    #[doc(hidden)]
     pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3HudiDirectTarget {

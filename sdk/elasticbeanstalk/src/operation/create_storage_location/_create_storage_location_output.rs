@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStorageLocationOutput {
     /// <p>The name of the Amazon S3 bucket created.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

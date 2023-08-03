@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to delete.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-    #[doc(hidden)]
     pub base_path: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBasePathMappingInput {

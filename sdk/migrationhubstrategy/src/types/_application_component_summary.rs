@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationComponentSummary {
     /// <p> Contains the name of application types. </p>
-    #[doc(hidden)]
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p> Contains the count of application type. </p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl ApplicationComponentSummary {

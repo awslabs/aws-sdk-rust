@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAddFacetToObject {
     /// <p>Represents the facet being added to the object.</p>
-    #[doc(hidden)]
     pub schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     /// <p>The attributes to set on the object.</p>
-    #[doc(hidden)]
     pub object_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>A reference to the object being mutated.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchAddFacetToObject {

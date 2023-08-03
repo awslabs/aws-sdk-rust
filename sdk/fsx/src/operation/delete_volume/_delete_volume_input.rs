@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that you are deleting.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
-    #[doc(hidden)]
     pub ontap_configuration: ::std::option::Option<crate::types::DeleteVolumeOntapConfiguration>,
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
-    #[doc(hidden)]
     pub open_zfs_configuration: ::std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>,
 }
 impl DeleteVolumeInput {

@@ -9,10 +9,8 @@ pub struct ConflictResolution {
     /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
     /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub conflict_resolving_model: ::std::option::Option<crate::types::ConflictResolvingModel>,
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
 }
 impl ConflictResolution {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStorageVirtualMachineOutput {
     /// <p>The ID of the SVM Amazon FSx is deleting.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the lifecycle state of the SVM being deleted.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::StorageVirtualMachineLifecycle>,
     _request_id: Option<String>,
 }

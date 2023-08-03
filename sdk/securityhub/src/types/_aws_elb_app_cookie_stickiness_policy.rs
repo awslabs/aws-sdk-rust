@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbAppCookieStickinessPolicy {
     /// <p>The name of the application cookie used for stickiness.</p>
-    #[doc(hidden)]
     pub cookie_name: ::std::option::Option<::std::string::String>,
     /// <p>The mnemonic name for the policy being created. The name must be unique within the set of policies for the load balancer.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbAppCookieStickinessPolicy {

@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstancesOffering {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the Reserved Instance, in seconds.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i64>,
     /// <p>The purchase price of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub fixed_price: ::std::option::Option<f32>,
     /// <p>The instance type on which the Reserved Instance can be used.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The Reserved Instance product platform description.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>The ID of the Reserved Instance offering. This is the offering ID used in <code>GetReservedInstancesExchangeQuote</code> to confirm that an exchange can be made.</p>
-    #[doc(hidden)]
     pub reserved_instances_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The usage price of the Reserved Instance, per hour.</p>
-    #[doc(hidden)]
     pub usage_price: ::std::option::Option<f32>,
     /// <p>The currency of the Reserved Instance offering you are purchasing. It's specified using ISO 4217 standard currency codes. At this time, the only supported currency is <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>The tenancy of the instance.</p>
-    #[doc(hidden)]
     pub instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or Amazon Web Services. If it's a Reserved Instance Marketplace offering, this is <code>true</code>.</p>
-    #[doc(hidden)]
     pub marketplace: ::std::option::Option<bool>,
     /// <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary value, with different configurations. If <code>standard</code>, it is not possible to perform an exchange.</p>
-    #[doc(hidden)]
     pub offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     /// <p>The Reserved Instance offering type.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<crate::types::OfferingTypeValues>,
     /// <p>The pricing details of the Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub pricing_details: ::std::option::Option<::std::vec::Vec<crate::types::PricingDetail>>,
     /// <p>The recurring charge tag assigned to the resource.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     /// <p>Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
 }
 impl ReservedInstancesOffering {

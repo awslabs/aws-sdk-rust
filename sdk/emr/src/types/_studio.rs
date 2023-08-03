@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Studio {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub studio_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
-    #[doc(hidden)]
     pub auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of IDs of the subnets associated with the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the IAM role assumed by the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio only requires a <code>UserRole</code> when you use IAM authentication.</p>
-    #[doc(hidden)]
     pub user_role: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Workspace security group associated with the Amazon EMR Studio. The Workspace security group allows outbound network traffic to resources in the Engine security group and to the internet.</p>
-    #[doc(hidden)]
     pub workspace_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Engine security group associated with the Amazon EMR Studio. The Engine security group allows inbound network traffic from resources in the Workspace security group.</p>
-    #[doc(hidden)]
     pub engine_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The time the Amazon EMR Studio was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-    #[doc(hidden)]
     pub default_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects federated users to this endpoint for authentication when logging in to a Studio with the Studio URL.</p>
-    #[doc(hidden)]
     pub idp_auth_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
-    #[doc(hidden)]
     pub idp_relay_state_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Studio {

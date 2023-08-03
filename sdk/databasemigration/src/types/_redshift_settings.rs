@@ -6,108 +6,77 @@
 pub struct RedshiftSettings {
     /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
     /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
-    #[doc(hidden)]
     pub accept_any_date: ::std::option::Option<bool>,
     /// <p>Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.</p>
-    #[doc(hidden)]
     pub after_connect_script: ::std::option::Option<::std::string::String>,
     /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
     /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
-    #[doc(hidden)]
     pub bucket_folder: ::std::option::Option<::std::string::String>,
     /// <p>The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to <code>true</code>. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub case_sensitive_names: ::std::option::Option<bool>,
     /// <p>If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if the table is empty. This applies even if the table columns already have encodings other than <code>RAW</code>. If you set <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled and existing column encodings aren't changed. The default is <code>true</code>.</p>
-    #[doc(hidden)]
     pub comp_update: ::std::option::Option<bool>,
     /// <p>A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially establish a connection.</p>
-    #[doc(hidden)]
     pub connection_timeout: ::std::option::Option<i32>,
     /// <p>The name of the Amazon Redshift data warehouse (service) that you are working with.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
     /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
-    #[doc(hidden)]
     pub date_format: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub empty_as_null: ::std::option::Option<bool>,
     /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
     /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
     /// </note>
     /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionModeValue>,
     /// <p>This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded from the source data files used to populate the tables. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub explicit_ids: ::std::option::Option<bool>,
     /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
     /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
     /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
-    #[doc(hidden)]
     pub file_transfer_upload_streams: ::std::option::Option<i32>,
     /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
-    #[doc(hidden)]
     pub load_timeout: ::std::option::Option<i32>,
     /// <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
-    #[doc(hidden)]
     pub max_file_size: ::std::option::Option<i32>,
     /// <p>The password for the user named in the <code>username</code> property.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The port number for Amazon Redshift. The default value is 5439.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>A value that specifies to remove surrounding quotation marks from strings in the incoming data. All characters within the quotation marks, including delimiters, are retained. Choose <code>true</code> to remove quotation marks. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub remove_quotes: ::std::option::Option<bool>,
     /// <p>A list of characters that you want to replace. Use with <code>ReplaceChars</code>.</p>
-    #[doc(hidden)]
     pub replace_invalid_chars: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified characters instead. The default is <code>"?"</code>.</p>
-    #[doc(hidden)]
     pub replace_chars: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Redshift cluster you are using.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
-    #[doc(hidden)]
     pub server_side_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
     /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
-    #[doc(hidden)]
     pub time_format: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub trim_blanks: ::std::option::Option<bool>,
     /// <p>A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub truncate_columns: ::std::option::Option<bool>,
     /// <p>An Amazon Redshift user name for a registered user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS replication instance. The default value is 1000 (buffer size is 1000KB).</p>
-    #[doc(hidden)]
     pub write_buffer_size: ::std::option::Option<i32>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
-    #[doc(hidden)]
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
-    #[doc(hidden)]
     pub map_boolean_as_boolean: ::std::option::Option<bool>,
 }
 impl RedshiftSettings {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildBatchFilter {
     /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
 }
 impl BuildBatchFilter {

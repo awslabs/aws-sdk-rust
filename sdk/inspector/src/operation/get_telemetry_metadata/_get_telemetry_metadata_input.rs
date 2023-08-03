@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTelemetryMetadataInput {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
-    #[doc(hidden)]
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTelemetryMetadataInput {

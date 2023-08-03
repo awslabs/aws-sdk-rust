@@ -5,17 +5,13 @@
 pub struct UpdateSecretVersionStageInput {
     /// <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The staging label to add to this version.</p>
-    #[doc(hidden)]
     pub version_stage: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
-    #[doc(hidden)]
     pub remove_from_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>
     /// <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
-    #[doc(hidden)]
     pub move_to_version_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecretVersionStageInput {

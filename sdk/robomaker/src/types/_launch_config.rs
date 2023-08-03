@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchConfig {
     /// <p>The package name.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The launch file name.</p>
-    #[doc(hidden)]
     pub launch_file: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables for the application launch.</p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The port forwarding configuration.</p>
-    #[doc(hidden)]
     pub port_forwarding_config: ::std::option::Option<crate::types::PortForwardingConfig>,
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
-    #[doc(hidden)]
     pub stream_ui: bool,
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchConfig {

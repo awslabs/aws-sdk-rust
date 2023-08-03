@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEvaluationResultsInput {
     /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEvaluationResultsInput {

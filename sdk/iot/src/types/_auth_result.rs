@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthResult {
     /// <p>Authorization information.</p>
-    #[doc(hidden)]
     pub auth_info: ::std::option::Option<crate::types::AuthInfo>,
     /// <p>The policies and statements that allowed the specified action.</p>
-    #[doc(hidden)]
     pub allowed: ::std::option::Option<crate::types::Allowed>,
     /// <p>The policies and statements that denied the specified action.</p>
-    #[doc(hidden)]
     pub denied: ::std::option::Option<crate::types::Denied>,
     /// <p>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</p>
-    #[doc(hidden)]
     pub auth_decision: ::std::option::Option<crate::types::AuthDecision>,
     /// <p>Contains any missing context values found while evaluating policy.</p>
-    #[doc(hidden)]
     pub missing_context_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthResult {

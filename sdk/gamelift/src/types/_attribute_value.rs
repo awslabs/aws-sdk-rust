@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeValue {
     /// <p>For single string values. Maximum string length is 100 characters.</p>
-    #[doc(hidden)]
     pub s: ::std::option::Option<::std::string::String>,
     /// <p>For number values, expressed as double.</p>
-    #[doc(hidden)]
     pub n: ::std::option::Option<f64>,
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
-    #[doc(hidden)]
     pub sl: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
-    #[doc(hidden)]
     pub sdm: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl AttributeValue {

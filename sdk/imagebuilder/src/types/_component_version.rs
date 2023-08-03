@@ -18,10 +18,8 @@ pub struct ComponentVersion {
     /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
     /// </ol>
     /// </note>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the component.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -40,25 +38,18 @@ pub struct ComponentVersion {
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the component.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    #[doc(hidden)]
     pub supported_os_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ComponentType>,
     /// <p>The owner of the component.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date that the component was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
 }
 impl ComponentVersion {

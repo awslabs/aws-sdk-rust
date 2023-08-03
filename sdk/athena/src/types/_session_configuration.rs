@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionConfiguration {
     /// <p>The ARN of the execution role used for the session.</p>
-    #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location that stores information for the notebook.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The idle timeout in seconds for the session.</p>
-    #[doc(hidden)]
     pub idle_timeout_seconds: ::std::option::Option<i64>,
     /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl SessionConfiguration {

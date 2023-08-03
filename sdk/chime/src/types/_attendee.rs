@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Attendee {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    #[doc(hidden)]
     pub external_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    #[doc(hidden)]
     pub attendee_id: ::std::option::Option<::std::string::String>,
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
-    #[doc(hidden)]
     pub join_token: ::std::option::Option<::std::string::String>,
 }
 impl Attendee {

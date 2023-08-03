@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkRoutesOutput {
     /// <p>The ARN of the route table.</p>
-    #[doc(hidden)]
     pub route_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes a core network segment edge.</p>
-    #[doc(hidden)]
     pub core_network_segment_edge: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
     /// <p>The route table type.</p>
-    #[doc(hidden)]
     pub route_table_type: ::std::option::Option<crate::types::RouteTableType>,
     /// <p>The route table creation time.</p>
-    #[doc(hidden)]
     pub route_table_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The network routes.</p>
-    #[doc(hidden)]
     pub network_routes: ::std::option::Option<::std::vec::Vec<crate::types::NetworkRoute>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceFreeTrial {
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
-    #[doc(hidden)]
     pub free_trial_days_remaining: i32,
 }
 impl DataSourceFreeTrial {

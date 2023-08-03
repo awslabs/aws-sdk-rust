@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointsAsyncResponse {
     /// <p>A collection of status information for the different Regions that a Multi-Region Access Point supports.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRegionalResponse>>,
 }
 impl MultiRegionAccessPointsAsyncResponse {

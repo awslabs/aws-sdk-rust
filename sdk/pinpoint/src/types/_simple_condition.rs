@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleCondition {
     /// <p>The dimension settings for the event that's associated with the activity.</p>
-    #[doc(hidden)]
     pub event_condition: ::std::option::Option<crate::types::EventCondition>,
     /// <p>The segment that's associated with the activity.</p>
-    #[doc(hidden)]
     pub segment_condition: ::std::option::Option<crate::types::SegmentCondition>,
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
-    #[doc(hidden)]
     pub segment_dimensions: ::std::option::Option<crate::types::SegmentDimensions>,
 }
 impl SimpleCondition {

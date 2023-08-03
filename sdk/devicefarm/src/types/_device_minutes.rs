@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceMinutes {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<f64>,
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
-    #[doc(hidden)]
     pub metered: ::std::option::Option<f64>,
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
-    #[doc(hidden)]
     pub unmetered: ::std::option::Option<f64>,
 }
 impl DeviceMinutes {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIngestionDestinationInput {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    #[doc(hidden)]
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
-    #[doc(hidden)]
     pub ingestion_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.</p>
-    #[doc(hidden)]
     pub ingestion_destination_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the destination of ingested data.</p>
-    #[doc(hidden)]
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
 }
 impl UpdateIngestionDestinationInput {

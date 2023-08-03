@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPlatformVersionsOutput {
     /// <p>Summary information about the platform versions.</p>
-    #[doc(hidden)]
     pub platform_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>>,
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

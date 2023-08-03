@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContributorInsightsOutput {
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the global secondary index, if applicable.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of contributor insights</p>
-    #[doc(hidden)]
     pub contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
     _request_id: Option<String>,
 }

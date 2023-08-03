@@ -10,10 +10,8 @@
 pub struct SizeConstraintSetSummary {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    #[doc(hidden)]
     pub size_constraint_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl SizeConstraintSetSummary {

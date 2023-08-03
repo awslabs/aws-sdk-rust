@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesForWebAclOutput {
     /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

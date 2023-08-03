@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDatabaseOutput {
     /// <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::Database>,
     /// <p>The tags of a database.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

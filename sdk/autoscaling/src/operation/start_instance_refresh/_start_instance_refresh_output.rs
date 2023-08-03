@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInstanceRefreshOutput {
     /// <p>A unique ID for tracking the progress of the instance refresh.</p>
-    #[doc(hidden)]
     pub instance_refresh_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

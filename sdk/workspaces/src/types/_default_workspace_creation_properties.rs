@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultWorkspaceCreationProperties {
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
-    #[doc(hidden)]
     pub enable_work_docs: ::std::option::Option<bool>,
     /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
-    #[doc(hidden)]
     pub enable_internet_access: ::std::option::Option<bool>,
     /// <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>
-    #[doc(hidden)]
     pub default_ou: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
-    #[doc(hidden)]
     pub custom_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
-    #[doc(hidden)]
     pub user_enabled_as_local_administrator: ::std::option::Option<bool>,
     /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
-    #[doc(hidden)]
     pub enable_maintenance_mode: ::std::option::Option<bool>,
 }
 impl DefaultWorkspaceCreationProperties {

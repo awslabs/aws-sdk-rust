@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingTypeAggregation {
     /// <p>The finding type to aggregate.</p>
-    #[doc(hidden)]
     pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     /// <p>The resource type to aggregate.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
     /// <p>The order to sort results by.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::FindingTypeSortBy>,
 }
 impl FindingTypeAggregation {

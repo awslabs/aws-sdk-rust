@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceEventNotificationAttributesOutput {
     /// <p>Information about the registered tag keys.</p>
-    #[doc(hidden)]
     pub instance_tag_attribute: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
     _request_id: Option<String>,
 }

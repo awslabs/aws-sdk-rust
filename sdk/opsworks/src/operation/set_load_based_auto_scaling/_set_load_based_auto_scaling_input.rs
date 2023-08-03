@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetLoadBasedAutoScalingInput {
     /// <p>The layer ID.</p>
-    #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>Enables load-based auto scaling for the layer.</p>
-    #[doc(hidden)]
     pub enable: ::std::option::Option<bool>,
     /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
-    #[doc(hidden)]
     pub up_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
     /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
-    #[doc(hidden)]
     pub down_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
 }
 impl SetLoadBasedAutoScalingInput {

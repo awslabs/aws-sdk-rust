@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The content type of the message string.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>The text of the message.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
-    #[doc(hidden)]
     pub group_number: ::std::option::Option<i32>,
 }
 impl Message {

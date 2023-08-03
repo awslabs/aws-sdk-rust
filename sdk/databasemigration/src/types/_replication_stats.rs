@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationStats {
     /// <p>The percent complete for the full load serverless replication.</p>
-    #[doc(hidden)]
     pub full_load_progress_percent: i32,
     /// <p>The elapsed time of the replication, in milliseconds.</p>
-    #[doc(hidden)]
     pub elapsed_time_millis: i64,
     /// <p>The number of tables loaded for this replication.</p>
-    #[doc(hidden)]
     pub tables_loaded: i32,
     /// <p>The number of tables currently loading for this replication.</p>
-    #[doc(hidden)]
     pub tables_loading: i32,
     /// <p>The number of tables queued for this replication.</p>
-    #[doc(hidden)]
     pub tables_queued: i32,
     /// <p>The number of errors that have occured for this replication.</p>
-    #[doc(hidden)]
     pub tables_errored: i32,
     /// <p>The date the replication was started either with a fresh start or a target reload.</p>
-    #[doc(hidden)]
     pub fresh_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication is scheduled to start.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication was stopped.</p>
-    #[doc(hidden)]
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication full load was started.</p>
-    #[doc(hidden)]
     pub full_load_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication full load was finished.</p>
-    #[doc(hidden)]
     pub full_load_finish_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationStats {

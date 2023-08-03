@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskStatistics {
     /// <p> The actions that were performed. </p>
-    #[doc(hidden)]
     pub actions_executed: ::std::option::Option<i64>,
     /// <p> The actions that were skipped. </p>
-    #[doc(hidden)]
     pub actions_skipped: ::std::option::Option<i64>,
     /// <p> The actions that failed. </p>
-    #[doc(hidden)]
     pub actions_failed: ::std::option::Option<i64>,
 }
 impl DetectMitigationActionsTaskStatistics {

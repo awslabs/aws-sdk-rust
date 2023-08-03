@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionInput {
     /// <p>The name of the connection. Connection will not function as expected without a name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the connection.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the connection. Currently, these types are supported:</p>
     /// <ul>
@@ -43,16 +41,12 @@ pub struct ConnectionInput {
     /// <p> <code>SFTP</code> is not supported.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue, consult <a href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue connection properties</a>.</p>
     /// <p>For more information about how optional ConnectionProperties are used to configure features in Glue Studio, consult <a href="https://docs.aws.amazon.com/glue/latest/ug/connectors-chapter.html">Using connectors and connections</a>.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    #[doc(hidden)]
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection.</p>
-    #[doc(hidden)]
     pub connection_properties: ::std::option::Option<::std::collections::HashMap<crate::types::ConnectionPropertyKey, ::std::string::String>>,
     /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
-    #[doc(hidden)]
     pub physical_connection_requirements: ::std::option::Option<crate::types::PhysicalConnectionRequirements>,
 }
 impl ConnectionInput {

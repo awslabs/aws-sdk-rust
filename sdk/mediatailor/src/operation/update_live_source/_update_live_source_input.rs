@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLiveSourceInput {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    #[doc(hidden)]
     pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The name of the live source.</p>
-    #[doc(hidden)]
     pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source location associated with this Live Source.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLiveSourceInput {

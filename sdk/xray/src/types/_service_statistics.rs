@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
-    #[doc(hidden)]
     pub ok_count: ::std::option::Option<i64>,
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-    #[doc(hidden)]
     pub error_statistics: ::std::option::Option<crate::types::ErrorStatistics>,
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-    #[doc(hidden)]
     pub fault_statistics: ::std::option::Option<crate::types::FaultStatistics>,
     /// <p>The total number of completed requests.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i64>,
     /// <p>The aggregate response time of completed requests.</p>
-    #[doc(hidden)]
     pub total_response_time: ::std::option::Option<f64>,
 }
 impl ServiceStatistics {

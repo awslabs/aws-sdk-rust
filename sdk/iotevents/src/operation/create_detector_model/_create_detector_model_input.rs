@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDetectorModelInput {
     /// <p>The name of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>Information that defines how the detectors operate.</p>
-    #[doc(hidden)]
     pub detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
     /// <p>A brief description of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_description: ::std::option::Option<::std::string::String>,
     /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the detector model.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    #[doc(hidden)]
     pub evaluation_method: ::std::option::Option<crate::types::EvaluationMethod>,
 }
 impl CreateDetectorModelInput {

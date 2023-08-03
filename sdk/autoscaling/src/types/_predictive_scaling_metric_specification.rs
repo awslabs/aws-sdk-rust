@@ -17,25 +17,18 @@ pub struct PredictiveScalingMetricSpecification {
     /// <p>Specifies the target utilization.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
-    #[doc(hidden)]
     pub target_value: ::std::option::Option<f64>,
     /// <p>The predefined metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling metric and load metric to use.</p>
-    #[doc(hidden)]
     pub predefined_metric_pair_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedMetricPair>,
     /// <p>The predefined scaling metric specification.</p>
-    #[doc(hidden)]
     pub predefined_scaling_metric_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedScalingMetric>,
     /// <p>The predefined load metric specification.</p>
-    #[doc(hidden)]
     pub predefined_load_metric_specification: ::std::option::Option<crate::types::PredictiveScalingPredefinedLoadMetric>,
     /// <p>The customized scaling metric specification.</p>
-    #[doc(hidden)]
     pub customized_scaling_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedScalingMetric>,
     /// <p>The customized load metric specification.</p>
-    #[doc(hidden)]
     pub customized_load_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedLoadMetric>,
     /// <p>The customized capacity metric specification.</p>
-    #[doc(hidden)]
     pub customized_capacity_metric_specification: ::std::option::Option<crate::types::PredictiveScalingCustomizedCapacityMetric>,
 }
 impl PredictiveScalingMetricSpecification {

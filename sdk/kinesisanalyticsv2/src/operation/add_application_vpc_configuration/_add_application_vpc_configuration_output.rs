@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationVpcConfigurationOutput {
     /// <p>The ARN of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The parameters of the new VPC configuration.</p>
-    #[doc(hidden)]
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
     _request_id: Option<String>,
 }

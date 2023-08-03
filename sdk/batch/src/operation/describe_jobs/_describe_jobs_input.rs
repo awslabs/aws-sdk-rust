@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobsInput {
     /// <p>A list of up to 100 job IDs.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeJobsInput {

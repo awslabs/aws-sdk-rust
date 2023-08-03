@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectResourceConfigOutput {
     /// <p>Returns the results for the SQL query.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Returns the <code>QueryInfo</code> object.</p>
-    #[doc(hidden)]
     pub query_info: ::std::option::Option<crate::types::QueryInfo>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

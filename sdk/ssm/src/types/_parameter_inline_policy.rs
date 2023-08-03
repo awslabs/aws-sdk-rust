@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterInlinePolicy {
     /// <p>The JSON text of the policy.</p>
-    #[doc(hidden)]
     pub policy_text: ::std::option::Option<::std::string::String>,
     /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
-    #[doc(hidden)]
     pub policy_status: ::std::option::Option<::std::string::String>,
 }
 impl ParameterInlinePolicy {

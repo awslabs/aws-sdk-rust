@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelSummary {
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The mode of the channel.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ChannelMode>,
     /// <p>The privacy setting of the channel.</p>
-    #[doc(hidden)]
     pub privacy: ::std::option::Option<crate::types::ChannelPrivacy>,
     /// <p>The metadata of the channel.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the last message in a channel was sent.</p>
-    #[doc(hidden)]
     pub last_message_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ChannelSummary {

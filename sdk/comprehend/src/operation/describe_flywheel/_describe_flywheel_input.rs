@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlywheelInput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFlywheelInput {

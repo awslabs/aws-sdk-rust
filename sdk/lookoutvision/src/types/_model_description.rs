@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDescription {
     /// <p>The version of the model</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unix timestamp for the date and time that the model was created. </p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description for the model.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the model.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelStatus>,
     /// <p>The status message for the model.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Performance metrics for the model. Created during training.</p>
-    #[doc(hidden)]
     pub performance: ::std::option::Option<crate::types::ModelPerformance>,
     /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
-    #[doc(hidden)]
     pub evaluation_manifest: ::std::option::Option<crate::types::OutputS3Object>,
     /// <p>The S3 location where Amazon Lookout for Vision saves the performance metrics.</p>
-    #[doc(hidden)]
     pub evaluation_result: ::std::option::Option<crate::types::OutputS3Object>,
     /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
-    #[doc(hidden)]
     pub evaluation_end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
-    #[doc(hidden)]
     pub min_inference_units: ::std::option::Option<i32>,
     /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
-    #[doc(hidden)]
     pub max_inference_units: ::std::option::Option<i32>,
 }
 impl ModelDescription {

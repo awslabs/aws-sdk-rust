@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLimitsOutput {
     /// <p>The maximum number of shards.</p>
-    #[doc(hidden)]
     pub shard_limit: ::std::option::Option<i32>,
     /// <p>The number of open shards.</p>
-    #[doc(hidden)]
     pub open_shard_count: ::std::option::Option<i32>,
     /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
-    #[doc(hidden)]
     pub on_demand_stream_count: ::std::option::Option<i32>,
     /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
-    #[doc(hidden)]
     pub on_demand_stream_count_limit: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

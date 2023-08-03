@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetScheduleInput {
     /// <p>The name of the schedule to retrieve.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetScheduleInput {

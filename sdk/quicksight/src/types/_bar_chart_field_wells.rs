@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BarChartFieldWells {
     /// <p>The aggregated field wells of a bar chart.</p>
-    #[doc(hidden)]
     pub bar_chart_aggregated_field_wells: ::std::option::Option<crate::types::BarChartAggregatedFieldWells>,
 }
 impl BarChartFieldWells {

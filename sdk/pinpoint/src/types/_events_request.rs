@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventsRequest {
     /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
-    #[doc(hidden)]
     pub batch_item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EventsBatch>>,
 }
 impl EventsRequest {

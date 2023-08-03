@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
-    #[doc(hidden)]
     pub container_port: i32,
     /// <p>The port number on the container instance to reserve for the container.</p>
-    #[doc(hidden)]
     pub host_port: i32,
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {

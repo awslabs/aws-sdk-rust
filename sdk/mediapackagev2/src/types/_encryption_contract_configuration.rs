@@ -13,7 +13,6 @@ pub struct EncryptionContractConfiguration {
     /// <li> <p>SHARED - Use the same content key for all of the audio and video tracks in your stream.</p> </li>
     /// <li> <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preset_speke20_audio: ::std::option::Option<crate::types::PresetSpeke20Audio>,
     /// <p>A collection of video encryption presets.</p>
     /// <p>Value description: </p>
@@ -29,7 +28,6 @@ pub struct EncryptionContractConfiguration {
     /// <li> <p>SHARED - Use the same content key for all of the video and audio tracks in your stream.</p> </li>
     /// <li> <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preset_speke20_video: ::std::option::Option<crate::types::PresetSpeke20Video>,
 }
 impl EncryptionContractConfiguration {

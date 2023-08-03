@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestConfiguration {
     /// <p>Encoder settings for video.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::VideoConfiguration>,
     /// <p>Encoder settings for audio.</p>
-    #[doc(hidden)]
     pub audio: ::std::option::Option<crate::types::AudioConfiguration>,
 }
 impl IngestConfiguration {

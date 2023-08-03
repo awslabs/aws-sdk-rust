@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataProtectionPolicyInput {
     /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
-    #[doc(hidden)]
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDataProtectionPolicyInput {

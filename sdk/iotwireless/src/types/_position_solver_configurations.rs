@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PositionSolverConfigurations {
     /// <p>The Semtech GNSS solver configuration object.</p>
-    #[doc(hidden)]
     pub semtech_gnss: ::std::option::Option<crate::types::SemtechGnssConfiguration>,
 }
 impl PositionSolverConfigurations {

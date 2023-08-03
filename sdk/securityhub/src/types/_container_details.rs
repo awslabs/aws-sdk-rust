@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerDetails {
     /// <p>The runtime of the container. </p>
-    #[doc(hidden)]
     pub container_runtime: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container related to a finding.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the container image related to a finding.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container image related to a finding.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the container started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub launched_at: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the mounting of a volume in a container. </p>
-    #[doc(hidden)]
     pub volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
-    #[doc(hidden)]
     pub privileged: bool,
 }
 impl ContainerDetails {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutomationStepExecutionsInput {
     /// <p>The Automation execution ID for which you want step execution descriptions.</p>
-    #[doc(hidden)]
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters to limit the number of step executions returned by the request.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::StepExecutionFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
-    #[doc(hidden)]
     pub reverse_order: ::std::option::Option<bool>,
 }
 impl DescribeAutomationStepExecutionsInput {

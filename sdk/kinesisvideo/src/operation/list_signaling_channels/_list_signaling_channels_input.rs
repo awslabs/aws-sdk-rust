@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSignalingChannelsInput {
     /// <p>The maximum number of channels to return in the response. The default is 500.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
-    #[doc(hidden)]
     pub channel_name_condition: ::std::option::Option<crate::types::ChannelNameCondition>,
 }
 impl ListSignalingChannelsInput {

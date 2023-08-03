@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::User>,
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::Role>,
 }
 impl PermissionEntry {

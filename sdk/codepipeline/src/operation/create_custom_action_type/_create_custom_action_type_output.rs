@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomActionTypeOutput {
     /// <p>Returns information about the details of an action type.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>Specifies the tags applied to the custom action.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

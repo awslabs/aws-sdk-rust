@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
-    #[doc(hidden)]
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetContainerRecipePolicyInput {

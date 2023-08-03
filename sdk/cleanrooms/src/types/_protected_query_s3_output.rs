@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryS3Output {
     /// <p>The S3 location of the result.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQueryS3Output {

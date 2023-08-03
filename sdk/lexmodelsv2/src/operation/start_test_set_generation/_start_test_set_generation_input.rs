@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTestSetGenerationInput {
     /// <p>The test set name for the test set generation request.</p>
-    #[doc(hidden)]
     pub test_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The test set description for the test set generation request.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 storage location for the test set generation.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p>The data source for the test set generation.</p>
-    #[doc(hidden)]
     pub generation_data_source: ::std::option::Option<crate::types::TestSetGenerationDataSource>,
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    #[doc(hidden)]
     pub test_set_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartTestSetGenerationInput {

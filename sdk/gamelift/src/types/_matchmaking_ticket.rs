@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchmakingTicket {
     /// <p>A unique identifier for a matchmaking ticket.</p>
-    #[doc(hidden)]
     pub ticket_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how players are grouped into a match and how a new game session is created for the match.</p>
-    #[doc(hidden)]
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift matchmaking configuration resource that is used with this ticket.</p>
-    #[doc(hidden)]
     pub configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the matchmaking request.</p>
     /// <ul>
@@ -26,28 +23,20 @@ pub struct MatchmakingTicket {
     /// </ul> <note>
     /// <p>Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with new ticket IDs.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MatchmakingConfigurationStatus>,
     /// <p>Code to explain the current status. For example, a status reason may indicate when a ticket has returned to <code>SEARCHING</code> status after a proposed match fails to receive player acceptances.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the current status.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A set of <code>Player</code> objects, each representing a player to find matches for. Players are identified by a unique player ID and may include latency data for use during matchmaking. If the ticket is in status <code>COMPLETED</code>, the <code>Player</code> objects include the team the players were assigned to in the resulting match.</p>
-    #[doc(hidden)]
     pub players: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
     /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
-    #[doc(hidden)]
     pub game_session_connection_info: ::std::option::Option<crate::types::GameSessionConnectionInfo>,
     /// <p>Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent data, this property may be empty.</p>
-    #[doc(hidden)]
     pub estimated_wait_time: ::std::option::Option<i32>,
 }
 impl MatchmakingTicket {

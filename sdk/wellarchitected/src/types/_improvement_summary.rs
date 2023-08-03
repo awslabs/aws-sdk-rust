@@ -5,25 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImprovementSummary {
     /// <p>The ID of the question.</p>
-    #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the question.</p>
-    #[doc(hidden)]
     pub question_title: ::std::option::Option<::std::string::String>,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    #[doc(hidden)]
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    #[doc(hidden)]
     pub improvement_plan_url: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan details.</p>
-    #[doc(hidden)]
     pub improvement_plans: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
 }
 impl ImprovementSummary {

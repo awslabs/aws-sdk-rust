@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOpsSummaryInput {
     /// <p>Specify the name of a resource data sync to get.</p>
-    #[doc(hidden)]
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional filters used to scope down the returned OpsData. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    #[doc(hidden)]
     pub aggregators: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>,
     /// <p>The OpsData data type to return.</p>
-    #[doc(hidden)]
     pub result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetOpsSummaryInput {

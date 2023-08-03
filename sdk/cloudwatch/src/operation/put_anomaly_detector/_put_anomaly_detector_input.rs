@@ -5,23 +5,18 @@
 pub struct PutAnomalyDetectorInput {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The statistic to use for the metric and the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    #[doc(hidden)]
     pub stat: ::std::option::Option<::std::string::String>,
     /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
     /// <p>The configuration can also include the time zone to use for the metric.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
     /// <p>A single metric anomaly detector to be created.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
@@ -33,7 +28,6 @@ pub struct PutAnomalyDetectorInput {
     /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
-    #[doc(hidden)]
     pub single_metric_anomaly_detector: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
     /// <p>The metric math anomaly detector to be created.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
@@ -45,7 +39,6 @@ pub struct PutAnomalyDetectorInput {
     /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
-    #[doc(hidden)]
     pub metric_math_anomaly_detector: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
 }
 impl PutAnomalyDetectorInput {

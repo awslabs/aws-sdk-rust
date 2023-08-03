@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
-    #[doc(hidden)]
     pub applications_info: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
     _request_id: Option<String>,
 }

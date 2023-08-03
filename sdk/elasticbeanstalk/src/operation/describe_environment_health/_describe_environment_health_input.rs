@@ -6,14 +6,11 @@
 pub struct DescribeEnvironmentHealthInput {
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
-    #[doc(hidden)]
     pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>>,
 }
 impl DescribeEnvironmentHealthInput {

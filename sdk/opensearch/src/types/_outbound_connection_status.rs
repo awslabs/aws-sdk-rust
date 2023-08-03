@@ -17,10 +17,8 @@ pub struct OutboundConnectionStatus {
     /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::OutboundConnectionStatusCode>,
     /// <p>Verbose information for the outbound connection.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl OutboundConnectionStatus {

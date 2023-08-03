@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDetectorErrorEntry {
     /// <p>The ID of the message that caused the error. (See the value of the <code>"messageId"</code> in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a> object of the <code>DeleteDetectorRequest</code>.)</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>A message that describes the error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchDeleteDetectorErrorEntry {

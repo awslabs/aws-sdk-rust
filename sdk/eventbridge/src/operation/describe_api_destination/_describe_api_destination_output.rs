@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApiDestinationOutput {
     /// <p>The ARN of the API destination retrieved.</p>
-    #[doc(hidden)]
     pub api_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API destination retrieved.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the API destination retrieved.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state of the API destination retrieved.</p>
-    #[doc(hidden)]
     pub api_destination_state: ::std::option::Option<crate::types::ApiDestinationState>,
     /// <p>The ARN of the connection specified for the API destination retrieved.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL to use to connect to the HTTP endpoint.</p>
-    #[doc(hidden)]
     pub invocation_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The method to use to connect to the HTTP endpoint.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
     /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
-    #[doc(hidden)]
     pub invocation_rate_limit_per_second: ::std::option::Option<i32>,
     /// <p>A time stamp for the time that the API destination was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

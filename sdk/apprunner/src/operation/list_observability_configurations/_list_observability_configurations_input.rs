@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObservabilityConfigurationsInput {
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
-    #[doc(hidden)]
     pub observability_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub latest_only: ::std::option::Option<bool>,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListObservabilityConfigurationsInput {

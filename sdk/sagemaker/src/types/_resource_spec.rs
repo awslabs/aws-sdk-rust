@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSpec {
     /// <p>The ARN of the SageMaker image that the image version belongs to.</p>
-    #[doc(hidden)]
     pub sage_maker_image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image version created on the instance.</p>
-    #[doc(hidden)]
     pub sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type that the image version runs on.</p> <note>
     /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::AppInstanceType>,
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
-    #[doc(hidden)]
     pub lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSpec {

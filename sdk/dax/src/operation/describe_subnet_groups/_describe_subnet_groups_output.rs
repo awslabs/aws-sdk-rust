@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
-    #[doc(hidden)]
     pub subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::SubnetGroup>>,
     _request_id: Option<String>,
 }

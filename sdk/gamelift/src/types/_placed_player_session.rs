@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacedPlayerSession {
     /// <p>A unique identifier for a player that is associated with this player session.</p>
-    #[doc(hidden)]
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player session.</p>
-    #[doc(hidden)]
     pub player_session_id: ::std::option::Option<::std::string::String>,
 }
 impl PlacedPlayerSession {

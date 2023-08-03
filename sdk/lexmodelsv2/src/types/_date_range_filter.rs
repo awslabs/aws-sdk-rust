@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateRangeFilter {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating the end date for the date range filter.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DateRangeFilter {

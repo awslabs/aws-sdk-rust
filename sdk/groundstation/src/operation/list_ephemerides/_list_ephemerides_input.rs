@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEphemeridesInput {
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
-    #[doc(hidden)]
     pub satellite_id: ::std::option::Option<::std::string::String>,
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of ephemeris status to return.</p>
-    #[doc(hidden)]
     pub status_list: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>,
     /// <p>Maximum number of ephemerides to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListEphemeridesInput {

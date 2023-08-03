@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Activity {
     /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
-    #[doc(hidden)]
     pub custom: ::std::option::Option<crate::types::CustomMessageActivity>,
     /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
-    #[doc(hidden)]
     pub conditional_split: ::std::option::Option<crate::types::ConditionalSplitActivity>,
     /// <p>The custom description of the activity.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The settings for an email activity. This type of activity sends an email message to participants.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<crate::types::EmailMessageActivity>,
     /// <p>The settings for a holdout activity. This type of activity stops a journey for a specified percentage of participants.</p>
-    #[doc(hidden)]
     pub holdout: ::std::option::Option<crate::types::HoldoutActivity>,
     /// <p>The settings for a multivariate split activity. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p>
-    #[doc(hidden)]
     pub multi_condition: ::std::option::Option<crate::types::MultiConditionalSplitActivity>,
     /// <p>The settings for a push notification activity. This type of activity sends a push notification to participants.</p>
-    #[doc(hidden)]
     pub push: ::std::option::Option<crate::types::PushMessageActivity>,
     /// <p>The settings for a random split activity. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
-    #[doc(hidden)]
     pub random_split: ::std::option::Option<crate::types::RandomSplitActivity>,
     /// <p>The settings for an SMS activity. This type of activity sends a text message to participants.</p>
-    #[doc(hidden)]
     pub sms: ::std::option::Option<crate::types::SmsMessageActivity>,
     /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
-    #[doc(hidden)]
     pub wait: ::std::option::Option<crate::types::WaitActivity>,
     /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
-    #[doc(hidden)]
     pub contact_center: ::std::option::Option<crate::types::ContactCenterActivity>,
 }
 impl Activity {

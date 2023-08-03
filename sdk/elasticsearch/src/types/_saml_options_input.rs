@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SamlOptionsInput {
     /// <p>True if SAML is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Specifies the SAML Identity Provider's information.</p>
-    #[doc(hidden)]
     pub idp: ::std::option::Option<crate::types::SamlIdp>,
     /// <p>The SAML master username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    #[doc(hidden)]
     pub master_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The backend role to which the SAML master user is mapped to.</p>
-    #[doc(hidden)]
     pub master_backend_role: ::std::option::Option<::std::string::String>,
     /// <p>The key to use for matching the SAML Subject attribute.</p>
-    #[doc(hidden)]
     pub subject_key: ::std::option::Option<::std::string::String>,
     /// <p>The key to use for matching the SAML Roles attribute.</p>
-    #[doc(hidden)]
     pub roles_key: ::std::option::Option<::std::string::String>,
     /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60.</p>
-    #[doc(hidden)]
     pub session_timeout_minutes: ::std::option::Option<i32>,
 }
 impl SamlOptionsInput {

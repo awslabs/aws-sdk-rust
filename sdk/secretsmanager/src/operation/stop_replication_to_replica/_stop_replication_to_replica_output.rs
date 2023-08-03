@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaOutput {
     /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

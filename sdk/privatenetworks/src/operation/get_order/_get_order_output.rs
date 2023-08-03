@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetOrderOutput {
     /// <p>Information about the order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::Order>,
     /// <p> The order tags. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

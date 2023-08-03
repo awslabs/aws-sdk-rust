@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkflowInput {
     /// <p>A unique identifier for the workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkflowInput {

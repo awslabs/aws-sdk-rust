@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenditionConfiguration {
     /// <p>Indicates which set of renditions are recorded for a stream. For <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified, a set of renditions must be specified in the <code>renditions</code> field. Default: <code>ALL</code>.</p>
-    #[doc(hidden)]
     pub rendition_selection: ::std::option::Option<crate::types::RenditionConfigurationRenditionSelection>,
     /// <p>Indicates which renditions are recorded for a stream, if <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions are recorded if they are available during the stream. If a selected rendition is unavailable, the best available rendition is recorded. For details on the resolution dimensions of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>.</p>
-    #[doc(hidden)]
     pub renditions: ::std::option::Option<::std::vec::Vec<crate::types::RenditionConfigurationRendition>>,
 }
 impl RenditionConfiguration {

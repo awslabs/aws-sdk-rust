@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckoutLicenseInput {
     /// <p>Product SKU.</p>
-    #[doc(hidden)]
     pub product_sku: ::std::option::Option<::std::string::String>,
     /// <p>Checkout type.</p>
-    #[doc(hidden)]
     pub checkout_type: ::std::option::Option<crate::types::CheckoutType>,
     /// <p>Key fingerprint identifying the license.</p>
-    #[doc(hidden)]
     pub key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>License entitlements.</p>
-    #[doc(hidden)]
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>License beneficiary.</p>
-    #[doc(hidden)]
     pub beneficiary: ::std::option::Option<::std::string::String>,
     /// <p>Node ID.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
 }
 impl CheckoutLicenseInput {

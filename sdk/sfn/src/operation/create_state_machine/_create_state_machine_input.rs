@@ -13,35 +13,26 @@ pub struct CreateStateMachineInput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StateMachineType>,
     /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
     /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>Tags to be added when creating a state machine.</p>
     /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    #[doc(hidden)]
     pub tracing_configuration: ::std::option::Option<crate::types::TracingConfiguration>,
     /// <p>Set to <code>true</code> to publish the first version of the state machine during creation. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub publish: ::std::option::Option<bool>,
     /// <p>Sets description about the state machine version. You can only set the description if the <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.</p>
-    #[doc(hidden)]
     pub version_description: ::std::option::Option<::std::string::String>,
 }
 impl CreateStateMachineInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetSchemaSummary {
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::Domain>,
 }
 impl DatasetSchemaSummary {

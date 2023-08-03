@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>If true, message data is kept indefinitely.</p>
-    #[doc(hidden)]
     pub unlimited: bool,
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
-    #[doc(hidden)]
     pub number_of_days: ::std::option::Option<i32>,
 }
 impl RetentionPeriod {

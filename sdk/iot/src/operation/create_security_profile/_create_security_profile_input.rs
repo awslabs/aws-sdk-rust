@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSecurityProfileInput {
     /// <p>The name you are giving to the security profile.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the security profile.</p>
-    #[doc(hidden)]
     pub security_profile_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    #[doc(hidden)]
     pub behaviors: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
     /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
-    #[doc(hidden)]
     pub alert_targets: ::std::option::Option<::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>,
     /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    #[doc(hidden)]
     pub additional_metrics_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    #[doc(hidden)]
     pub additional_metrics_to_retain_v2: ::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>>,
     /// <p>Metadata that can be used to manage the security profile.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSecurityProfileInput {

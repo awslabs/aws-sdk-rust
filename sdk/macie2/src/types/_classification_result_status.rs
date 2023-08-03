@@ -10,7 +10,6 @@ pub struct ClassificationResultStatus {
     /// <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file that uses an unsupported format.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the status of the finding. This value is null if the status (code) of the finding is COMPLETE.</p>
     /// <p>Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding and the affected S3 object. Possible values are:</p>
@@ -38,7 +37,6 @@ pub struct ClassificationResultStatus {
     /// <li><p>UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.</p></li>
     /// </ul>
     /// <p>For information about quotas, supported storage classes, and supported file and storage formats, see <a href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage classes and formats</a> in the <i>Amazon Macie User Guide</i>.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ClassificationResultStatus {

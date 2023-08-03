@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerProfilesDestinationProperties {
     /// <p> The unique name of the Amazon Connect Customer Profiles domain. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p> The object specified in the Amazon Connect Customer Profiles flow destination. </p>
-    #[doc(hidden)]
     pub object_type_name: ::std::option::Option<::std::string::String>,
 }
 impl CustomerProfilesDestinationProperties {

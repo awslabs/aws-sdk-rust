@@ -4,27 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlacementGroupInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The placement strategy.</p>
-    #[doc(hidden)]
     pub strategy: ::std::option::Option<crate::types::PlacementStrategy>,
     /// <p>The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.</p>
-    #[doc(hidden)]
     pub partition_count: ::std::option::Option<i32>,
     /// <p>The tags to apply to the new placement group.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Determines how placement groups spread instances. </p>
     /// <ul>
     /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
     /// <li> <p>Rack – No usage restrictions.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
 }
 impl CreatePlacementGroupInput {

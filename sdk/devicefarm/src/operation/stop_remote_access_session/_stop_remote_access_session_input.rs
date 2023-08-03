@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl StopRemoteAccessSessionInput {

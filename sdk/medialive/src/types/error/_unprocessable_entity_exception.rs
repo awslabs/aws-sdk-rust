@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessableEntityException {
     /// The error message.
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// A collection of validation error responses.
-    #[doc(hidden)]
     pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

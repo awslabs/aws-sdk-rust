@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileCache {
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The system-generated, unique ID of the cache.</p>
-    #[doc(hidden)]
     pub file_cache_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
-    #[doc(hidden)]
     pub file_cache_type: ::std::option::Option<crate::types::FileCacheType>,
     /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
-    #[doc(hidden)]
     pub file_cache_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
     /// <ul>
@@ -27,37 +22,26 @@ pub struct FileCache {
     /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
     /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::FileCacheLifecycle>,
     /// <p>A structure providing details of any failures that occurred.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::FileCacheFailureDetails>,
     /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of network interface IDs.</p>
-    #[doc(hidden)]
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Domain Name System (DNS) name for the cache.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the Amazon File Cache resource.</p>
-    #[doc(hidden)]
     pub lustre_configuration: ::std::option::Option<crate::types::FileCacheLustreConfiguration>,
     /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
-    #[doc(hidden)]
     pub data_repository_association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FileCache {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceIdentifier {
     /// <p>The ARN of a resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl ResourceIdentifier {

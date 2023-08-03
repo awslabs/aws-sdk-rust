@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteActionOutput {
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
-    #[doc(hidden)]
     pub action_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

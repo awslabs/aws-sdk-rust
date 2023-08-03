@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SourceConfig {
     /// <p>The ARN of an IAM role that has read and write access permissions to the source S3 bucket.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of templated paths to the source files.</p>
-    #[doc(hidden)]
     pub templated_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of paths to the historical data files.</p>
-    #[doc(hidden)]
     pub historical_data_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains information about a source file's formatting.</p>
-    #[doc(hidden)]
     pub file_format_descriptor: ::std::option::Option<crate::types::FileFormatDescriptor>,
 }
 impl S3SourceConfig {

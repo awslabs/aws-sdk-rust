@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RawEmail {
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RawEmail {

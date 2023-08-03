@@ -7,34 +7,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeCoverage {
     /// <p>The identifier of the code coverage report.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the report.</p>
-    #[doc(hidden)]
     pub report_arn: ::std::option::Option<::std::string::String>,
     /// <p>The path of the test report file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of lines that are covered by your tests.</p>
-    #[doc(hidden)]
     pub line_coverage_percentage: ::std::option::Option<f64>,
     /// <p>The number of lines that are covered by your tests.</p>
-    #[doc(hidden)]
     pub lines_covered: ::std::option::Option<i32>,
     /// <p>The number of lines that are not covered by your tests.</p>
-    #[doc(hidden)]
     pub lines_missed: ::std::option::Option<i32>,
     /// <p>The percentage of branches that are covered by your tests.</p>
-    #[doc(hidden)]
     pub branch_coverage_percentage: ::std::option::Option<f64>,
     /// <p>The number of conditional branches that are covered by your tests.</p>
-    #[doc(hidden)]
     pub branches_covered: ::std::option::Option<i32>,
     /// <p>The number of conditional branches that are not covered by your tests.</p>
-    #[doc(hidden)]
     pub branches_missed: ::std::option::Option<i32>,
     /// <p>The date and time that the tests were run.</p>
-    #[doc(hidden)]
     pub expired: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CodeCoverage {

@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp of the creation time.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
-    #[doc(hidden)]
     pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the plan.</p>
-    #[doc(hidden)]
     pub plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The plan identifier.</p>
-    #[doc(hidden)]
     pub plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub provision_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
-    #[doc(hidden)]
     pub provision_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The plan type.</p>
-    #[doc(hidden)]
     pub plan_type: ::std::option::Option<crate::types::ProvisionedProductPlanType>,
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>,
     /// <p>The UTC time stamp when the plan was last updated.</p>
-    #[doc(hidden)]
     pub updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    #[doc(hidden)]
     pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    #[doc(hidden)]
     pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     /// <p>One or more tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedProductPlanDetails {

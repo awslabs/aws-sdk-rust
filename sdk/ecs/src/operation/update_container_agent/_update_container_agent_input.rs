@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContainerAgentInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
-    #[doc(hidden)]
     pub container_instance: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContainerAgentInput {

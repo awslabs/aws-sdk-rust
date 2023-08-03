@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallPolicyModifiedViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The policy that's currently in use in the individual account. </p>
-    #[doc(hidden)]
     pub current_policy_description: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
     /// <p>The policy that should be in use in the individual account in order to be compliant. </p>
-    #[doc(hidden)]
     pub expected_policy_description: ::std::option::Option<crate::types::NetworkFirewallPolicyDescription>,
 }
 impl NetworkFirewallPolicyModifiedViolation {

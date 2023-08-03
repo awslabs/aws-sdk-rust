@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificatesOutput {
     /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of ACM certificates.</p>
-    #[doc(hidden)]
     pub certificate_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
     _request_id: Option<String>,
 }

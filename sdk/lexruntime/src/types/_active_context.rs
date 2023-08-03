@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The length of time or number of turns that a context remains active.</p>
-    #[doc(hidden)]
     pub time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ActiveContext {

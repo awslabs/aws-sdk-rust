@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOptOutListOutput {
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
-    #[doc(hidden)]
     pub opt_out_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new OptOutList.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

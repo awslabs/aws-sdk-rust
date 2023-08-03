@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginDetails {
     /// <p>The product ID of the origin of the data set.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
 }
 impl OriginDetails {

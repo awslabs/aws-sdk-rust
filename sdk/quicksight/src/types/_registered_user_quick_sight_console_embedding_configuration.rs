@@ -14,10 +14,8 @@ pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
     /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub initial_path: ::std::option::Option<::std::string::String>,
     /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
-    #[doc(hidden)]
     pub feature_configurations: ::std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
 }
 impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {

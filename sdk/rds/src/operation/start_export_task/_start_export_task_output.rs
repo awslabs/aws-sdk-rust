@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExportTaskOutput {
     /// <p>A unique identifier for the snapshot or cluster export task. This ID isn't an identifier for the Amazon S3 bucket where the data is exported.</p>
-    #[doc(hidden)]
     pub export_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data exported from the snapshot or cluster. Valid values are the following:</p>
     /// <ul>
@@ -18,28 +16,20 @@ pub struct StartExportTaskOutput {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub export_only: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the snapshot was created.</p>
-    #[doc(hidden)]
     pub snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot or cluster export task started.</p>
-    #[doc(hidden)]
     pub task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the snapshot or cluster export task ended.</p>
-    #[doc(hidden)]
     pub task_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported data.</p>
-    #[doc(hidden)]
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot or cluster.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the data when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the export must have encryption and decryption permissions to use this KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The progress status of the export task. The status can be one of the following:</p>
     /// <ul>
@@ -50,22 +40,16 @@ pub struct StartExportTaskOutput {
     /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
     /// <li> <p> <code>STARTING</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the snapshot or cluster export task as a percentage.</p>
-    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>The total amount of data exported, in gigabytes.</p>
-    #[doc(hidden)]
     pub total_extracted_data_in_gb: i32,
     /// <p>The reason the export failed, if it failed.</p>
-    #[doc(hidden)]
     pub failure_cause: ::std::option::Option<::std::string::String>,
     /// <p>A warning about the snapshot or cluster export task.</p>
-    #[doc(hidden)]
     pub warning_message: ::std::option::Option<::std::string::String>,
     /// <p>The type of source for the export.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::ExportSourceType>,
     _request_id: Option<String>,
 }

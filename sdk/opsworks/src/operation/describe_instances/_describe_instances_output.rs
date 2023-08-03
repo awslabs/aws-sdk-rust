@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstancesOutput {
     /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,
 }

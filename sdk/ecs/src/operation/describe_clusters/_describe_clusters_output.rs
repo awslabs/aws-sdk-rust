@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClustersOutput {
     /// <p>The list of clusters.</p>
-    #[doc(hidden)]
     pub clusters: ::std::option::Option<::std::vec::Vec<crate::types::Cluster>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }

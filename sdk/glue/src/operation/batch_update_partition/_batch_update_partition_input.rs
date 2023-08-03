@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdatePartitionInput {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>,
 }
 impl BatchUpdatePartitionInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SampleChannelDataOutput {
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
-    #[doc(hidden)]
     pub payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     _request_id: Option<String>,
 }

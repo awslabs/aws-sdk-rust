@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    #[doc(hidden)]
     pub health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    #[doc(hidden)]
     pub health_check_port: ::std::option::Option<::std::string::String>,
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    #[doc(hidden)]
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
-    #[doc(hidden)]
     pub health_check_enabled: ::std::option::Option<bool>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
-    #[doc(hidden)]
     pub health_check_interval_seconds: ::std::option::Option<i32>,
     /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
-    #[doc(hidden)]
     pub health_check_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
-    #[doc(hidden)]
     pub healthy_threshold_count: ::std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
-    #[doc(hidden)]
     pub unhealthy_threshold_count: ::std::option::Option<i32>,
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
-    #[doc(hidden)]
     pub matcher: ::std::option::Option<crate::types::Matcher>,
 }
 impl ModifyTargetGroupInput {

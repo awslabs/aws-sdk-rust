@@ -8,43 +8,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StreamingImage {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of the streaming image.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
-    #[doc(hidden)]
     pub ec2_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption configuration.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
-    #[doc(hidden)]
     pub eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A friendly name for a streaming image resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the streaming image, either Windows or Linux.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The current state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StreamingImageState>,
     /// <p>The status code.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::StreamingImageStatusCode>,
     /// <p>The status message for the streaming image.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the streaming image.</p>
-    #[doc(hidden)]
     pub streaming_image_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StreamingImage {

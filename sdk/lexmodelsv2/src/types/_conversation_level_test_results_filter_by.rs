@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelTestResultsFilterBy {
     /// <p>The selection of matched or mismatched end-to-end status to filter test set results data at the conversation level.</p>
-    #[doc(hidden)]
     pub end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
 }
 impl ConversationLevelTestResultsFilterBy {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseCard {
     /// <p>The version of the response card format.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the response.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>An array of attachment objects representing options.</p>
-    #[doc(hidden)]
     pub generic_attachments: ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
 }
 impl ResponseCard {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource that is exceeding the quota limit.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource that is exceeding the quota limit for Amazon Web Services Mainframe Modernization.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A code that identifies the service that the exceeded quota belongs to.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the exceeded quota.</p>
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

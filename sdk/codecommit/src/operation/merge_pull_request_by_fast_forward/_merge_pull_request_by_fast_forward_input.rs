@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergePullRequestByFastForwardInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository where the pull request was created.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    #[doc(hidden)]
     pub source_commit_id: ::std::option::Option<::std::string::String>,
 }
 impl MergePullRequestByFastForwardInput {

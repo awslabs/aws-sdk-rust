@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorOriginationOutput {
     /// <p>The updated origination settings.</p>
-    #[doc(hidden)]
     pub origination: ::std::option::Option<crate::types::Origination>,
     _request_id: Option<String>,
 }

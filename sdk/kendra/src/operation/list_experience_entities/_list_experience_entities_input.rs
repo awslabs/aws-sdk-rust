@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExperienceEntitiesInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListExperienceEntitiesInput {

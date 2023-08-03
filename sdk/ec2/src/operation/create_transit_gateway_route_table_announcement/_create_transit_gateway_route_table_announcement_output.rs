@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayRouteTableAnnouncementOutput {
     /// <p>Provides details about the transit gateway route table announcement.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_announcement: ::std::option::Option<crate::types::TransitGatewayRouteTableAnnouncement>,
     _request_id: Option<String>,
 }

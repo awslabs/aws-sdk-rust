@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct User {
     /// <p>The name of the user</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Access permissions string used for this user.</p>
-    #[doc(hidden)]
     pub access_string: ::std::option::Option<::std::string::String>,
     /// <p>The names of the Access Control Lists to which the user belongs</p>
-    #[doc(hidden)]
     pub acl_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The minimum engine version supported for the user</p>
-    #[doc(hidden)]
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<crate::types::Authentication>,
     /// <p>The Amazon Resource Name (ARN) of the user. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl User {

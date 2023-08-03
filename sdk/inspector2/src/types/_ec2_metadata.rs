@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2Metadata {
     /// <p>The tags attached to the instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the Amazon Machine Image (AMI) used to launch the instance.</p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the instance.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Ec2Platform>,
 }
 impl Ec2Metadata {

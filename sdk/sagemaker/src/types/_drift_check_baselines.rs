@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DriftCheckBaselines {
     /// <p>Represents the drift check bias baselines that can be used when the model monitor is set using the model package. </p>
-    #[doc(hidden)]
     pub bias: ::std::option::Option<crate::types::DriftCheckBias>,
     /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using the model package. </p>
-    #[doc(hidden)]
     pub explainability: ::std::option::Option<crate::types::DriftCheckExplainability>,
     /// <p>Represents the drift check model quality baselines that can be used when the model monitor is set using the model package.</p>
-    #[doc(hidden)]
     pub model_quality: ::std::option::Option<crate::types::DriftCheckModelQuality>,
     /// <p>Represents the drift check model data quality baselines that can be used when the model monitor is set using the model package.</p>
-    #[doc(hidden)]
     pub model_data_quality: ::std::option::Option<crate::types::DriftCheckModelDataQuality>,
 }
 impl DriftCheckBaselines {

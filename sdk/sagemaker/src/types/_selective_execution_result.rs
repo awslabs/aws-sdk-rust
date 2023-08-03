@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectiveExecutionResult {
     /// <p>The ARN from an execution of the current pipeline.</p>
-    #[doc(hidden)]
     pub source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl SelectiveExecutionResult {

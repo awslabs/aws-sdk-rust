@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSlotTypeInput {
     /// <p>The name of the slot type. The name is case sensitive. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the slot type. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl GetSlotTypeInput {

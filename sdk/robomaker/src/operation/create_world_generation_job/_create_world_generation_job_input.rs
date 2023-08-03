@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorldGenerationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>Information about the world count.</p>
-    #[doc(hidden)]
     pub world_count: ::std::option::Option<crate::types::WorldCount>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    #[doc(hidden)]
     pub world_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorldGenerationJobInput {

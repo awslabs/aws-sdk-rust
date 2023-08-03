@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendersOutput {
     /// <p>A list of the recommenders.</p>
-    #[doc(hidden)]
     pub recommenders: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>>,
     /// <p>A token for getting the next set of recommenders (if they exist).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

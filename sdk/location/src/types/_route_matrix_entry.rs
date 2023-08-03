@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteMatrixEntry {
     /// <p>The total distance of travel for the route.</p>
-    #[doc(hidden)]
     pub distance: ::std::option::Option<f64>,
     /// <p>The expected duration of travel for the route.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<f64>,
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::RouteMatrixEntryError>,
 }
 impl RouteMatrixEntry {

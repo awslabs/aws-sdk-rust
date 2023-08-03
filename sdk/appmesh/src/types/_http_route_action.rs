@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    #[doc(hidden)]
     pub weighted_targets: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
 }
 impl HttpRouteAction {

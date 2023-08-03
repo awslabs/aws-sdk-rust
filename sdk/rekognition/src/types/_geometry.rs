@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Geometry {
     /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
-    #[doc(hidden)]
     pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
 }
 impl Geometry {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentDimensions {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
-    #[doc(hidden)]
     pub behavior: ::std::option::Option<crate::types::SegmentBehaviors>,
     /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
-    #[doc(hidden)]
     pub demographic: ::std::option::Option<crate::types::SegmentDemographics>,
     /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::SegmentLocation>,
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>>,
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
-    #[doc(hidden)]
     pub user_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
 }
 impl SegmentDimensions {

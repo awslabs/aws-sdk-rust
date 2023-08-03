@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateParallelDataOutput {
     /// <p>The name of the parallel data resource being updated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parallel data resource that you are attempting to update. Your update request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ParallelDataStatus>,
     /// <p>The status of the parallel data update attempt. When the updated parallel data resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    #[doc(hidden)]
     pub latest_update_attempt_status: ::std::option::Option<crate::types::ParallelDataStatus>,
     /// <p>The time that the most recent update was attempted.</p>
-    #[doc(hidden)]
     pub latest_update_attempt_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

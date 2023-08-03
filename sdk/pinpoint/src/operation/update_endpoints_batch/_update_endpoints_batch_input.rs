@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEndpointsBatchInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_batch_request: ::std::option::Option<crate::types::EndpointBatchRequest>,
 }
 impl UpdateEndpointsBatchInput {

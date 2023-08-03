@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessorConfiguration {
     /// <p>Indicates that the processor is of type Lambda.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
 impl ProcessorConfiguration {

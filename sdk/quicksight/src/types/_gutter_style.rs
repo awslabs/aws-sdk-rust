@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GutterStyle {
     /// <p>This Boolean value controls whether to display a gutter space between sheet tiles. </p>
-    #[doc(hidden)]
     pub show: ::std::option::Option<bool>,
 }
 impl GutterStyle {

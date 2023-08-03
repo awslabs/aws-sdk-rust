@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTemplateFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    #[doc(hidden)]
     pub name_pattern: ::std::option::Option<::std::string::String>,
     /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    #[doc(hidden)]
     pub duration_range: ::std::option::Option<crate::types::DurationRange>,
     /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    #[doc(hidden)]
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssessmentTemplateFilter {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {

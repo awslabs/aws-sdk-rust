@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerlessClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
-    #[doc(hidden)]
     pub sasl: ::std::option::Option<crate::types::ServerlessSasl>,
 }
 impl ServerlessClientAuthentication {

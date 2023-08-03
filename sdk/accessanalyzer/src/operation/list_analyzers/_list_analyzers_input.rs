@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnalyzersInput {
     /// <p>A token used for pagination of results returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The type of analyzer.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl ListAnalyzersInput {

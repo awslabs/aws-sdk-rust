@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedUser {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the user that was requested to be described.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-    #[doc(hidden)]
     pub home_directory: ::std::option::Option<::std::string::String>,
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
-    #[doc(hidden)]
     pub home_directory_mappings: ::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>>,
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
-    #[doc(hidden)]
     pub home_directory_type: ::std::option::Option<crate::types::HomeDirectoryType>,
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File System (Amazon EFS) file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
-    #[doc(hidden)]
     pub posix_profile: ::std::option::Option<crate::types::PosixProfile>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
-    #[doc(hidden)]
     pub ssh_public_keys: ::std::option::Option<::std::vec::Vec<crate::types::SshPublicKey>>,
     /// <p>Specifies the key-value pairs for the user requested. Tag can be used to search for and group users for a variety of purposes.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the name of the user that was requested to be described. User names are used for authentication purposes. This is the string that will be used by your user when they log in to your server.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribedUser {

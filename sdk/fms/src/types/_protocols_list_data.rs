@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
-    #[doc(hidden)]
     pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Firewall Manager protocols list.</p>
-    #[doc(hidden)]
     pub list_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
-    #[doc(hidden)]
     pub list_update_token: ::std::option::Option<::std::string::String>,
     /// <p>The time that the Firewall Manager protocols list was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    #[doc(hidden)]
     pub protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
-    #[doc(hidden)]
     pub previous_protocols_list: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl ProtocolsListData {

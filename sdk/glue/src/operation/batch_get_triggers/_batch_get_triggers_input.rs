@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetTriggersInput {
     /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-    #[doc(hidden)]
     pub trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetTriggersInput {

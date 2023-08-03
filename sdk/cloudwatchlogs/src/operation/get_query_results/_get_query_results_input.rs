@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryResultsInput {
     /// <p>The ID number of the query.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryResultsInput {

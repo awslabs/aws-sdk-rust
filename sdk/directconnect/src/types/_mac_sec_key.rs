@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MacSecKey {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
-    #[doc(hidden)]
     pub ckn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
@@ -18,10 +16,8 @@ pub struct MacSecKey {
     /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
     /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
-    #[doc(hidden)]
     pub start_on: ::std::option::Option<::std::string::String>,
 }
 impl MacSecKey {

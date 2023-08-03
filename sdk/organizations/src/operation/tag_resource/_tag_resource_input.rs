@@ -11,13 +11,11 @@ pub struct TagResourceInput {
     /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
     /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add to the specified resource.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagResourceInput {

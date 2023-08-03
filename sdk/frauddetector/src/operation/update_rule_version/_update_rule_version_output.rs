@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuleVersionOutput {
     /// <p>The new rule version that was created.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,
 }

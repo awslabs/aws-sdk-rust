@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePermissionGroupInput {
     /// <p>The name of the permission group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description for the permission group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The option to indicate FinSpace application permissions that are granted to a specific group.</p> <important>
     /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
@@ -21,10 +19,8 @@ pub struct CreatePermissionGroupInput {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub application_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePermissionGroupInput {

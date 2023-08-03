@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentLevelSlotResolutionTestResults {
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>>,
 }
 impl IntentLevelSlotResolutionTestResults {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DmsTransferSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the S3 bucket to use. </p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl DmsTransferSettings {

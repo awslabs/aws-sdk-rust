@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAlarmsInput {
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
-    #[doc(hidden)]
     pub alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteAlarmsInput {

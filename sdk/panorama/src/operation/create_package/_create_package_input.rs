@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePackageInput {
     /// <p>A name for the package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the package.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePackageInput {

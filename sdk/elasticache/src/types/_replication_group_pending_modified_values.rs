@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationGroupPendingModifiedValues {
     /// <p>The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
-    #[doc(hidden)]
     pub primary_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
-    #[doc(hidden)]
     pub automatic_failover_status: ::std::option::Option<crate::types::PendingAutomaticFailoverStatus>,
     /// <p>The status of an online resharding operation.</p>
-    #[doc(hidden)]
     pub resharding: ::std::option::Option<crate::types::ReshardingStatus>,
     /// <p>The auth token status</p>
-    #[doc(hidden)]
     pub auth_token_status: ::std::option::Option<crate::types::AuthTokenUpdateStatus>,
     /// <p>The user group being modified.</p>
-    #[doc(hidden)]
     pub user_groups: ::std::option::Option<crate::types::UserGroupsUpdateStatus>,
     /// <p>The log delivery configurations being modified </p>
-    #[doc(hidden)]
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    #[doc(hidden)]
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
-    #[doc(hidden)]
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
-    #[doc(hidden)]
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
 }
 impl ReplicationGroupPendingModifiedValues {

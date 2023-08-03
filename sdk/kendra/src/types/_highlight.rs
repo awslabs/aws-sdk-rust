@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Highlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based location in the response string where the highlight ends.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
-    #[doc(hidden)]
     pub top_answer: bool,
     /// <p>The highlight type. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HighlightType>,
 }
 impl Highlight {

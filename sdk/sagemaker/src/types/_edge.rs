@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Edge {
     /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>, <code>Produced</code>, or <code>DerivedFrom</code>.</p>
-    #[doc(hidden)]
     pub association_type: ::std::option::Option<crate::types::AssociationEdgeType>,
 }
 impl Edge {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCapacityProviderInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
-    #[doc(hidden)]
     pub capacity_provider: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCapacityProviderInput {

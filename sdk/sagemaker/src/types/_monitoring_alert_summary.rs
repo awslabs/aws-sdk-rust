@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringAlertSummary {
     /// <p>The name of a monitoring alert.</p>
-    #[doc(hidden)]
     pub monitoring_alert_name: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that indicates when a monitor alert was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when a monitor alert was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of an alert.</p>
-    #[doc(hidden)]
     pub alert_status: ::std::option::Option<crate::types::MonitoringAlertStatus>,
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
-    #[doc(hidden)]
     pub datapoints_to_alert: ::std::option::Option<i32>,
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
-    #[doc(hidden)]
     pub evaluation_period: ::std::option::Option<i32>,
     /// <p>A list of alert actions taken in response to an alert going into <code>InAlert</code> status.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<crate::types::MonitoringAlertActions>,
 }
 impl MonitoringAlertSummary {

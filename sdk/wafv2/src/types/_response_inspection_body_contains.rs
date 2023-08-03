@@ -8,11 +8,9 @@
 pub struct ResponseInspectionBodyContains {
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings. </p>
     /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code> </p>
-    #[doc(hidden)]
     pub success_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings. </p>
     /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code> </p>
-    #[doc(hidden)]
     pub failure_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResponseInspectionBodyContains {

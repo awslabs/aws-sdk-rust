@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimitsInput {
     /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::EsPartitionInstanceType>,
     /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
-    #[doc(hidden)]
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeElasticsearchInstanceTypeLimitsInput {

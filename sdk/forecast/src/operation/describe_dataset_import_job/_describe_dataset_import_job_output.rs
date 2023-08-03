@@ -4,42 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetImportJobOutput {
     /// <p>The name of the dataset import job.</p>
-    #[doc(hidden)]
     pub dataset_import_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dataset import job.</p>
-    #[doc(hidden)]
     pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
     /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
     /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>The single time zone applied to every item in the dataset</p>
-    #[doc(hidden)]
     pub time_zone: ::std::option::Option<::std::string::String>,
     /// <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
-    #[doc(hidden)]
     pub use_geolocation_for_time_zone: bool,
     /// <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
-    #[doc(hidden)]
     pub geolocation_format: ::std::option::Option<::std::string::String>,
     /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>Statistical information about each field in the input data.</p>
-    #[doc(hidden)]
     pub field_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Statistics>>,
     /// <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
-    #[doc(hidden)]
     pub data_size: ::std::option::Option<f64>,
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
@@ -48,13 +37,10 @@ pub struct DescribeDatasetImportJobOutput {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the dataset import job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -64,13 +50,10 @@ pub struct DescribeDatasetImportJobOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The format of the imported data, CSV or PARQUET.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::ImportMode>,
     _request_id: Option<String>,
 }

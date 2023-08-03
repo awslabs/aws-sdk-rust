@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationPlan {
     /// The length of the term of your reserved queue pricing plan commitment.
-    #[doc(hidden)]
     pub commitment: ::std::option::Option<crate::types::Commitment>,
     /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
-    #[doc(hidden)]
     pub purchased_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
-    #[doc(hidden)]
     pub renewal_type: ::std::option::Option<crate::types::RenewalType>,
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
-    #[doc(hidden)]
     pub reserved_slots: ::std::option::Option<i32>,
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReservationPlanStatus>,
 }
 impl ReservationPlan {

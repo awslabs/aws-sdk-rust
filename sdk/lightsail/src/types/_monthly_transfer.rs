@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonthlyTransfer {
     /// <p>The amount allocated per month (in GB).</p>
-    #[doc(hidden)]
     pub gb_per_month_allocated: ::std::option::Option<i32>,
 }
 impl MonthlyTransfer {

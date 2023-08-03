@@ -12,13 +12,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the origin request policy was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The origin request policy configuration.</p>
-    #[doc(hidden)]
     pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
 }
 impl OriginRequestPolicy {

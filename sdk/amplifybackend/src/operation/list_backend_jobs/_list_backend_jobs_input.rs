@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBackendJobsInput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
-    #[doc(hidden)]
     pub backend_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that you want in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl ListBackendJobsInput {

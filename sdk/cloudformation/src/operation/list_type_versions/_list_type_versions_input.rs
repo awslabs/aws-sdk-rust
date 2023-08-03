@@ -5,21 +5,16 @@
 pub struct ListTypeVersionsInput {
     /// <p>The kind of the extension.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
@@ -28,11 +23,9 @@ pub struct ListTypeVersionsInput {
     /// <li> <p> <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
-    #[doc(hidden)]
     pub deprecated_status: ::std::option::Option<crate::types::DeprecatedStatus>,
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID.</p>
-    #[doc(hidden)]
     pub publisher_id: ::std::option::Option<::std::string::String>,
 }
 impl ListTypeVersionsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoSelectorColorSpaceSettings {
     /// Hdr10 Settings
-    #[doc(hidden)]
     pub hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
 }
 impl VideoSelectorColorSpaceSettings {

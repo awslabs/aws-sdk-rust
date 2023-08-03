@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolVnfcResourceInfo {
     /// <p>The metadata of the network function compute.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
 }
 impl GetSolVnfcResourceInfo {

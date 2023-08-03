@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConnectDirectoryInput {
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
-    #[doc(hidden)]
     pub short_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for your self-managed user account.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>A description for the directory.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The size of the directory.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<crate::types::DirectorySize>,
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    #[doc(hidden)]
     pub connect_settings: ::std::option::Option<crate::types::DirectoryConnectSettings>,
     /// <p>The tags to be assigned to AD Connector.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ConnectDirectoryInput {

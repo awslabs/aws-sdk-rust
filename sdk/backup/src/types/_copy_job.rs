@@ -5,67 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyJob {
     /// <p>The account ID that owns the copy job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a copy job.</p>
-    #[doc(hidden)]
     pub copy_job_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
-    #[doc(hidden)]
     pub source_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a source recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    #[doc(hidden)]
     pub source_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    #[doc(hidden)]
     pub destination_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    #[doc(hidden)]
     pub destination_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of a copy job.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CopyJobState>,
     /// <p>A detailed message explaining the status of the job to copy a resource.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of a copy job.</p>
-    #[doc(hidden)]
     pub backup_size_in_bytes: ::std::option::Option<i64>,
     /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::RecoveryPointCreator>,
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job ID.</p>
-    #[doc(hidden)]
     pub parent_job_id: ::std::option::Option<::std::string::String>,
     /// <p>This is a boolean value indicating this is a parent (composite) copy job.</p>
-    #[doc(hidden)]
     pub is_parent: bool,
     /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
-    #[doc(hidden)]
     pub composite_member_identifier: ::std::option::Option<::std::string::String>,
     /// <p>This is the number of child (nested) copy jobs.</p>
-    #[doc(hidden)]
     pub number_of_child_jobs: ::std::option::Option<i64>,
     /// <p>This returns the statistics of the included child (nested) copy jobs.</p>
-    #[doc(hidden)]
     pub child_jobs_in_state: ::std::option::Option<::std::collections::HashMap<crate::types::CopyJobState, i64>>,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl CopyJob {

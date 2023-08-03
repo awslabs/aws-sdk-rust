@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseInput {
     /// <p>ARN of the input delivery stream.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to make sure that the role has the necessary permissions to access the stream.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseInput {

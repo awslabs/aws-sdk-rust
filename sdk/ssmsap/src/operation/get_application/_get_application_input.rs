@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application. </p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the application registry.</p>
-    #[doc(hidden)]
     pub app_registry_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationInput {

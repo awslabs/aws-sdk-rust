@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityPolicyStats {
     /// <p>The number of encryption policies in the current account.</p>
-    #[doc(hidden)]
     pub encryption_policy_count: ::std::option::Option<i64>,
     /// <p>The number of network policies in the current account.</p>
-    #[doc(hidden)]
     pub network_policy_count: ::std::option::Option<i64>,
 }
 impl SecurityPolicyStats {

@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWhatIfForecastInput {
     /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
-    #[doc(hidden)]
     pub what_if_forecast_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
-    #[doc(hidden)]
     pub what_if_analysis_arn: ::std::option::Option<::std::string::String>,
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
-    #[doc(hidden)]
     pub time_series_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesTransformation>>,
     /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
     /// <p>This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.</p>
     /// <p>Timestamps and item_ids not included in this dataset are not included in the what-if analysis. </p>
-    #[doc(hidden)]
     pub time_series_replacements_data_source: ::std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWhatIfForecastInput {

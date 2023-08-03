@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentitySourceFilter {
     /// <p>The Cedar entity type of the principals returned by the identity provider (IdP) associated with this identity source.</p>
-    #[doc(hidden)]
     pub principal_entity_type: ::std::option::Option<::std::string::String>,
 }
 impl IdentitySourceFilter {

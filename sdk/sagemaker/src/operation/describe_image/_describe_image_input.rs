@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImageInput {
     /// <p>The name of the image to describe.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImageInput {

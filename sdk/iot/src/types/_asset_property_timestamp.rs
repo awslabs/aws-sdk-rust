@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetPropertyTimestamp {
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
-    #[doc(hidden)]
     pub time_in_seconds: ::std::option::Option<::std::string::String>,
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
-    #[doc(hidden)]
     pub offset_in_nanos: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyTimestamp {

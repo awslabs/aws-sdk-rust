@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeData {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual node.</p>
-    #[doc(hidden)]
     pub virtual_node_name: ::std::option::Option<::std::string::String>,
     /// <p>The specifications of the virtual node.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::VirtualNodeSpec>,
     /// <p>The associated metadata for the virtual node.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The current status for the virtual node.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VirtualNodeStatus>,
 }
 impl VirtualNodeData {

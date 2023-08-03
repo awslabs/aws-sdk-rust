@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopFleetActionsInput {
     /// <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>List of actions to suspend on the fleet. </p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
     /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl StopFleetActionsInput {

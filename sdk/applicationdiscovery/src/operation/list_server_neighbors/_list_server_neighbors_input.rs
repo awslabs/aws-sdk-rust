@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServerNeighborsInput {
     /// <p>Configuration ID of the server for which neighbors are being listed.</p>
-    #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
-    #[doc(hidden)]
     pub port_information_needed: ::std::option::Option<bool>,
     /// <p>List of configuration IDs to test for one-hop-away.</p>
-    #[doc(hidden)]
     pub neighbor_configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum number of results to return in a single page of output.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListServerNeighborsInput {

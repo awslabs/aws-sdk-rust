@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbSnapshotDetails {
     /// <p>The name or ARN of the DB snapshot that is used to restore the DB instance.</p>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A name for the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>When the snapshot was taken in Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub snapshot_create_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
     /// <ul>
@@ -30,52 +27,36 @@ pub struct AwsRdsDbSnapshotDetails {
     /// <li> <p> <code>sqlserver-se</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>The status of this DB snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port that the database engine was listening on at the time of the snapshot.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID associated with the DB snapshot.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken, was created.</p>
-    #[doc(hidden)]
     pub instance_create_time: ::std::option::Option<::std::string::String>,
     /// <p>The master user name for the DB snapshot.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>License model information for the restored DB instance.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The type of the DB snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
-    #[doc(hidden)]
     pub iops: i32,
     /// <p>The option group name for the DB snapshot.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the estimated data that has been transferred.</p>
-    #[doc(hidden)]
     pub percent_progress: i32,
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
-    #[doc(hidden)]
     pub source_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
     /// <ul>
@@ -83,28 +64,20 @@ pub struct AwsRdsDbSnapshotDetails {
     /// <li> <p> <code>io1</code> </p> </li>
     /// <li> <p> <code>standard</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the DB snapshot is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for the encrypted DB snapshot.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of the DB snapshot.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
     /// <p>The identifier for the source DB instance.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSnapshotDetails {

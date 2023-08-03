@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfilesOutput {
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    #[doc(hidden)]
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>>,
     _request_id: Option<String>,
 }

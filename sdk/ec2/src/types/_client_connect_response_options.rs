@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientConnectResponseOptions {
     /// <p>Indicates whether client connect options are enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    #[doc(hidden)]
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of any updates to the client connect options.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>,
 }
 impl ClientConnectResponseOptions {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateExportInput {
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     /// <p>The file format of the bot or bot locale definition files.</p>
-    #[doc(hidden)]
     pub file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
-    #[doc(hidden)]
     pub file_password: ::std::option::Option<::std::string::String>,
 }
 impl CreateExportInput {

@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcConnectorInput {
     /// <p>A name for the VPC connector.</p>
-    #[doc(hidden)]
     pub vpc_connector_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of IDs of subnets that App Runner should use when it associates your service with a custom Amazon VPC. Specify IDs of subnets of a single Amazon VPC. App Runner determines the Amazon VPC from the subnets you specify.</p> <note>
     /// <p> App Runner currently only provides support for IPv4. </p>
     /// </note>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IDs of security groups that App Runner should use for access to Amazon Web Services resources under the specified subnets. If not specified, App Runner uses the default security group of the Amazon VPC. The default security group allows all outbound traffic.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of metadata items that you can associate with your VPC connector resource. A tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateVpcConnectorInput {

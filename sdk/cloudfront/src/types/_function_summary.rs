@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionSummary {
     /// <p>The name of the CloudFront function.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the CloudFront function.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Contains configuration information about a CloudFront function.</p>
-    #[doc(hidden)]
     pub function_config: ::std::option::Option<crate::types::FunctionConfig>,
     /// <p>Contains metadata about a CloudFront function.</p>
-    #[doc(hidden)]
     pub function_metadata: ::std::option::Option<crate::types::FunctionMetadata>,
 }
 impl FunctionSummary {

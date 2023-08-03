@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MixedInstancesPolicy {
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     /// <p>The instances distribution.</p>
-    #[doc(hidden)]
     pub instances_distribution: ::std::option::Option<crate::types::InstancesDistribution>,
 }
 impl MixedInstancesPolicy {

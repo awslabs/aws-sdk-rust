@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDescriptor {
     /// <p>The ID for the specified job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether confirmation is required before Amazon S3 begins running the specified job. Confirmation is required only for jobs created through the Amazon S3 console.</p>
-    #[doc(hidden)]
     pub confirmation_required: ::std::option::Option<bool>,
     /// <p>The description for this job, if one was provided in this job's <code>Create Job</code> request.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for this job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the specified job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The configuration information for the specified job's manifest object.</p>
-    #[doc(hidden)]
     pub manifest: ::std::option::Option<crate::types::JobManifest>,
     /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::JobOperation>,
     /// <p>The priority of the specified job.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
-    #[doc(hidden)]
     pub progress_summary: ::std::option::Option<crate::types::JobProgressSummary>,
     /// <p>The reason for updating the job.</p>
-    #[doc(hidden)]
     pub status_update_reason: ::std::option::Option<::std::string::String>,
     /// <p>If the specified job failed, this field contains information describing the failure.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::JobFailure>>,
     /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
-    #[doc(hidden)]
     pub report: ::std::option::Option<crate::types::JobReport>,
     /// <p>A timestamp indicating when this job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
-    #[doc(hidden)]
     pub termination_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for this job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
-    #[doc(hidden)]
     pub suspended_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
-    #[doc(hidden)]
     pub suspended_cause: ::std::option::Option<::std::string::String>,
     /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
-    #[doc(hidden)]
     pub manifest_generator: ::std::option::Option<crate::types::JobManifestGenerator>,
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
-    #[doc(hidden)]
     pub generated_manifest_descriptor: ::std::option::Option<crate::types::S3GeneratedManifestDescriptor>,
 }
 impl JobDescriptor {

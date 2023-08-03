@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceRecord {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RecordType>,
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceRecord {

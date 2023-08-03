@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionFailedEventAttributes {
     /// <p>The descriptive reason provided for the failure.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The details of the failure.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl WorkflowExecutionFailedEventAttributes {

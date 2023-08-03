@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePullRequestApprovalRuleInput {
     /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the approval rule you want to delete.</p>
-    #[doc(hidden)]
     pub approval_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl DeletePullRequestApprovalRuleInput {

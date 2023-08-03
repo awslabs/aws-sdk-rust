@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMlTransformOutput {
     /// <p>A unique identifier that is generated for the transform.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

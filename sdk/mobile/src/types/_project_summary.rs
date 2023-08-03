@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p> Name of the project. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Unique project identifier. </p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
 }
 impl ProjectSummary {

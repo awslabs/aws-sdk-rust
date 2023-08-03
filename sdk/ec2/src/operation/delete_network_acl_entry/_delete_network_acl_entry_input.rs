@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkAclEntryInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether the rule is an egress rule.</p>
-    #[doc(hidden)]
     pub egress: ::std::option::Option<bool>,
     /// <p>The ID of the network ACL.</p>
-    #[doc(hidden)]
     pub network_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule number of the entry to delete.</p>
-    #[doc(hidden)]
     pub rule_number: ::std::option::Option<i32>,
 }
 impl DeleteNetworkAclEntryInput {

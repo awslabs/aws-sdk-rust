@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFunctionInput {
     /// <p>The GraphQL API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Function</code> name. The function name does not have to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Function</code> description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
-    #[doc(hidden)]
     pub data_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.</p>
-    #[doc(hidden)]
     pub request_mapping_template: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Function</code> response mapping template.</p>
-    #[doc(hidden)]
     pub response_mapping_template: ::std::option::Option<::std::string::String>,
     /// <p>The <code>version</code> of the request mapping template. Currently, the supported value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code> is required.</p>
-    #[doc(hidden)]
     pub function_version: ::std::option::Option<::std::string::String>,
     /// <p>Describes a Sync configuration for a resolver.</p>
     /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
-    #[doc(hidden)]
     pub sync_config: ::std::option::Option<crate::types::SyncConfig>,
     /// <p>The maximum batching size for a resolver.</p>
-    #[doc(hidden)]
     pub max_batch_size: ::std::option::Option<i32>,
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::AppSyncRuntime>,
     /// <p>The <code>function</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl CreateFunctionInput {

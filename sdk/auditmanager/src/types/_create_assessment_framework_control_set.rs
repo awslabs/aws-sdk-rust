@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkControlSet {
     /// <p> The name of the control set. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
-    #[doc(hidden)]
     pub controls: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl CreateAssessmentFrameworkControlSet {

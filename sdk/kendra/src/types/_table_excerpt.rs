@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableExcerpt {
     /// <p>A list of rows in the table excerpt.</p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::TableRow>>,
     /// <p>A count of the number of rows in the original table within the document.</p>
-    #[doc(hidden)]
     pub total_number_of_rows: ::std::option::Option<i32>,
 }
 impl TableExcerpt {

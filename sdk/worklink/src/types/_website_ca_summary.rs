@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebsiteCaSummary {
     /// <p>A unique identifier for the CA.</p>
-    #[doc(hidden)]
     pub website_ca_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the CA was added.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl WebsiteCaSummary {

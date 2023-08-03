@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMapInput {
     /// <p>The name of the map resource to update.</p>
-    #[doc(hidden)]
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>Updates the description for the map resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
-    #[doc(hidden)]
     pub configuration_update: ::std::option::Option<crate::types::MapConfigurationUpdate>,
 }
 impl UpdateMapInput {

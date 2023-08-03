@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChannelsInput {
     /// Placeholder documentation for MaxResults
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// Placeholder documentation for __string
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListChannelsInput {

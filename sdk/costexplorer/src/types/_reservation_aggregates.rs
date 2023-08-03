@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationAggregates {
     /// <p>The percentage of reservation time that you used.</p>
-    #[doc(hidden)]
     pub utilization_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-    #[doc(hidden)]
     pub utilization_percentage_in_units: ::std::option::Option<::std::string::String>,
     /// <p>How many reservation hours that you purchased.</p>
-    #[doc(hidden)]
     pub purchased_hours: ::std::option::Option<::std::string::String>,
     /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-    #[doc(hidden)]
     pub purchased_units: ::std::option::Option<::std::string::String>,
     /// <p>The total number of reservation hours that you used.</p>
-    #[doc(hidden)]
     pub total_actual_hours: ::std::option::Option<::std::string::String>,
     /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-    #[doc(hidden)]
     pub total_actual_units: ::std::option::Option<::std::string::String>,
     /// <p>The number of reservation hours that you didn't use.</p>
-    #[doc(hidden)]
     pub unused_hours: ::std::option::Option<::std::string::String>,
     /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>
-    #[doc(hidden)]
     pub unused_units: ::std::option::Option<::std::string::String>,
     /// <p>How much your reservation costs if charged On-Demand rates.</p>
-    #[doc(hidden)]
     pub on_demand_cost_of_ri_hours_used: ::std::option::Option<::std::string::String>,
     /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.</p>
-    #[doc(hidden)]
     pub net_ri_savings: ::std::option::Option<::std::string::String>,
     /// <p>How much you might save if you use your entire reservation.</p>
-    #[doc(hidden)]
     pub total_potential_ri_savings: ::std::option::Option<::std::string::String>,
     /// <p>The upfront cost of your reservation. It's amortized over the reservation period.</p>
-    #[doc(hidden)]
     pub amortized_upfront_fee: ::std::option::Option<::std::string::String>,
     /// <p>The monthly cost of your reservation. It's amortized over the reservation period.</p>
-    #[doc(hidden)]
     pub amortized_recurring_fee: ::std::option::Option<::std::string::String>,
     /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
-    #[doc(hidden)]
     pub total_amortized_fee: ::std::option::Option<::std::string::String>,
     /// <p>The cost of unused hours for your reservation.</p>
-    #[doc(hidden)]
     pub ri_cost_for_unused_hours: ::std::option::Option<::std::string::String>,
     /// <p>The realized savings because of purchasing and using a reservation.</p>
-    #[doc(hidden)]
     pub realized_savings: ::std::option::Option<::std::string::String>,
     /// <p>The unrealized savings because of purchasing and using a reservation.</p>
-    #[doc(hidden)]
     pub unrealized_savings: ::std::option::Option<::std::string::String>,
 }
 impl ReservationAggregates {

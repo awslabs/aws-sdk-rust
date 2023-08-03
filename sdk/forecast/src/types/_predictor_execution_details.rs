@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictorExecutionDetails {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    #[doc(hidden)]
     pub predictor_executions: ::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>>,
 }
 impl PredictorExecutionDetails {

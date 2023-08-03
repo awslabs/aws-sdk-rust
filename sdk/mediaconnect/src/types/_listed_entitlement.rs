@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedEntitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     /// The ARN of the entitlement.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// The name of the entitlement.
-    #[doc(hidden)]
     pub entitlement_name: ::std::option::Option<::std::string::String>,
 }
 impl ListedEntitlement {

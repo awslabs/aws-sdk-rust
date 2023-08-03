@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeProgressStatusDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
-    #[doc(hidden)]
     pub change_id: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the configuration change is made on the domain.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The overall status of the domain configuration change.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OverallChangeStatus>,
     /// <p>The list of properties in the domain configuration change that are still pending.</p>
-    #[doc(hidden)]
     pub pending_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of properties in the domain configuration change that have completed.</p>
-    #[doc(hidden)]
     pub completed_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The total number of stages required for the configuration change.</p>
-    #[doc(hidden)]
     pub total_number_of_stages: i32,
     /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
-    #[doc(hidden)]
     pub change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
 }
 impl ChangeProgressStatusDetails {

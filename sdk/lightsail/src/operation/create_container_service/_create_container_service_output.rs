@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContainerServiceOutput {
     /// <p>An object that describes a container service.</p>
-    #[doc(hidden)]
     pub container_service: ::std::option::Option<crate::types::ContainerService>,
     _request_id: Option<String>,
 }

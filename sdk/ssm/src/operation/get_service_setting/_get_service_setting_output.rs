@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
-    #[doc(hidden)]
     pub service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCatalogEncryptionSettings {
     /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
-    #[doc(hidden)]
     pub encryption_at_rest: ::std::option::Option<crate::types::EncryptionAtRest>,
     /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
-    #[doc(hidden)]
     pub connection_password_encryption: ::std::option::Option<crate::types::ConnectionPasswordEncryption>,
 }
 impl DataCatalogEncryptionSettings {

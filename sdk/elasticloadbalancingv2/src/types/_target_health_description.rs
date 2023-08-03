@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetHealthDescription {
     /// <p>The description of the target.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TargetDescription>,
     /// <p>The port to use to connect with the target.</p>
-    #[doc(hidden)]
     pub health_check_port: ::std::option::Option<::std::string::String>,
     /// <p>The health information for the target.</p>
-    #[doc(hidden)]
     pub target_health: ::std::option::Option<crate::types::TargetHealth>,
 }
 impl TargetHealthDescription {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferSnomedctInput {
     /// <p>The input text to be analyzed using InferSNOMEDCT.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl InferSnomedctInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
-    #[doc(hidden)]
     pub admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisableOrganizationAdminAccountInput {

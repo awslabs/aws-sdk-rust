@@ -5,38 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledUpdateGroupAction {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the scheduled action.</p>
-    #[doc(hidden)]
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    #[doc(hidden)]
     pub scheduled_action_arn: ::std::option::Option<::std::string::String>,
     /// <p>This property is no longer used.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<::std::string::String>,
     /// <p>The minimum size of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub min_size: ::std::option::Option<i32>,
     /// <p>The maximum size of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub max_size: ::std::option::Option<i32>,
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain.</p>
-    #[doc(hidden)]
     pub desired_capacity: ::std::option::Option<i32>,
     /// <p>The time zone for the cron expression.</p>
-    #[doc(hidden)]
     pub time_zone: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledUpdateGroupAction {

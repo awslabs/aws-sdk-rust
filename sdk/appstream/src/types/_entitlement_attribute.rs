@@ -16,10 +16,8 @@ pub struct EntitlementAttribute {
     /// <li> <p>userType</p> </li>
     /// </ul>
     /// <p> </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A value that is matched to a supported SAML attribute name when a user identity federates into an Amazon AppStream 2.0 SAML application. </p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl EntitlementAttribute {

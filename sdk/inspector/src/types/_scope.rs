@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scope {
     /// <p>The type of the scope.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::ScopeType>,
     /// <p>The resource identifier for the specified scope type.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Scope {

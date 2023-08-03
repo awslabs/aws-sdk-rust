@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketLevelPermissions {
     /// <p>Contains information on how Access Control Policies are applied to the bucket.</p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<crate::types::AccessControlList>,
     /// <p>Contains information on the bucket policies for the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_policy: ::std::option::Option<crate::types::BucketPolicy>,
     /// <p>Contains information on which account level S3 Block Public Access settings are applied to the S3 bucket.</p>
-    #[doc(hidden)]
     pub block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
 }
 impl BucketLevelPermissions {

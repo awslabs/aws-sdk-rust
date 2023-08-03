@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainDescriptionType {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services ID for the user pool owner.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
-    #[doc(hidden)]
     pub cloud_front_distribution: ::std::option::Option<::std::string::String>,
     /// <p>The app version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The domain status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DomainStatusType>,
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
-    #[doc(hidden)]
     pub custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
 }
 impl DomainDescriptionType {

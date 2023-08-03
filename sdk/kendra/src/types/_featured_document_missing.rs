@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeaturedDocumentMissing {
     /// <p>The identifier of the document that doesn't exist but you have specified as a featured document.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl FeaturedDocumentMissing {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscribedWorkteam {
     /// <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
-    #[doc(hidden)]
     pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The title of the service provided by the vendor in the Amazon Marketplace.</p>
-    #[doc(hidden)]
     pub marketplace_title: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vendor in the Amazon Marketplace.</p>
-    #[doc(hidden)]
     pub seller_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the vendor from the Amazon Marketplace.</p>
-    #[doc(hidden)]
     pub marketplace_description: ::std::option::Option<::std::string::String>,
     /// <p>Marketplace product listing ID.</p>
-    #[doc(hidden)]
     pub listing_id: ::std::option::Option<::std::string::String>,
 }
 impl SubscribedWorkteam {

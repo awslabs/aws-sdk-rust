@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationKubernetesConfigurationResult {
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
-    #[doc(hidden)]
     pub audit_logs: ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult>,
 }
 impl OrganizationKubernetesConfigurationResult {

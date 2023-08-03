@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerlessRequest {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
-    #[doc(hidden)]
     pub vpc_configs: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfig>>,
     /// <p>Includes all client authentication information.</p>
-    #[doc(hidden)]
     pub client_authentication: ::std::option::Option<crate::types::ServerlessClientAuthentication>,
 }
 impl ServerlessRequest {

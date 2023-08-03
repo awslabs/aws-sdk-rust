@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InitiateDocumentVersionUploadInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the content of the document was originally created.</p>
-    #[doc(hidden)]
     pub content_created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was modified.</p>
-    #[doc(hidden)]
     pub content_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The content type of the document.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The size of the document, in bytes.</p>
-    #[doc(hidden)]
     pub document_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The ID of the parent folder.</p>
-    #[doc(hidden)]
     pub parent_folder_id: ::std::option::Option<::std::string::String>,
 }
 impl InitiateDocumentVersionUploadInput {

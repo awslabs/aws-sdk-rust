@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnomalyDetectorInput {
     /// <p>The ARN of the detector to update.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated detector description.</p>
-    #[doc(hidden)]
     pub anomaly_detector_description: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
-    #[doc(hidden)]
     pub anomaly_detector_config: ::std::option::Option<crate::types::AnomalyDetectorConfig>,
 }
 impl UpdateAnomalyDetectorInput {

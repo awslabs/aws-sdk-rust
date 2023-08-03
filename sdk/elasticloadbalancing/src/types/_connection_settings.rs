@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionSettings {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
-    #[doc(hidden)]
     pub idle_timeout: ::std::option::Option<i32>,
 }
 impl ConnectionSettings {

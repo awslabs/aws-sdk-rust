@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMembershipOutput {
     /// <p>The membership object.</p>
-    #[doc(hidden)]
     pub membership: ::std::option::Option<crate::types::Membership>,
     _request_id: Option<String>,
 }

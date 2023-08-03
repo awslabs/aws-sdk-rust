@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEntitlementOutput {
     /// <p>The entitlement.</p>
-    #[doc(hidden)]
     pub entitlement: ::std::option::Option<crate::types::Entitlement>,
     _request_id: Option<String>,
 }

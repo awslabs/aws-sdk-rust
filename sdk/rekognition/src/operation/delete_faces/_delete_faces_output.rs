@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFacesOutput {
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
-    #[doc(hidden)]
     pub deleted_faces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of any faces that weren't deleted.</p>
-    #[doc(hidden)]
     pub unsuccessful_face_deletions: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletion>>,
     _request_id: Option<String>,
 }

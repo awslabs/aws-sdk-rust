@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignInput {
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
-    #[doc(hidden)]
     pub campaign_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainDeliverabilityCampaignInput {

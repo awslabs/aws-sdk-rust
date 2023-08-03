@@ -4,30 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTextTranslationJobInput {
     /// <p>The name of the batch translation job to be performed.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the format and location of the input documents for the translation job.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>Specifies the S3 folder to which your job output will be saved. </p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access management </a>.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.</p>
     /// <p>Each language code is 2 or 5 characters long. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.</p>
     /// <p>This parameter accepts only one custom terminology resource.</p>
     /// <p>If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.</p>
     /// <p>For a list of available custom terminology resources, use the <code>ListTerminologies</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    #[doc(hidden)]
     pub terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
     /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job. </p>
@@ -36,13 +29,10 @@ pub struct StartTextTranslationJobInput {
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing your translations with parallel data</a>.</p>
-    #[doc(hidden)]
     pub parallel_data_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::TranslationSettings>,
 }
 impl StartTextTranslationJobInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConnectionOutput {
     /// <p> The ID of the connection. </p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p> The underlay IP address. </p>
-    #[doc(hidden)]
     pub underlay_ip_address: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

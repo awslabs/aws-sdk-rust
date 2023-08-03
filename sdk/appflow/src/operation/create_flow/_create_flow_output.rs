@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the current status of the flow. </p>
-    #[doc(hidden)]
     pub flow_status: ::std::option::Option<crate::types::FlowStatus>,
     _request_id: Option<String>,
 }

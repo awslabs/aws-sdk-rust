@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerificationResponse {
     /// <p>Specifies whether the OTP is valid or not.</p>
-    #[doc(hidden)]
     pub valid: ::std::option::Option<bool>,
 }
 impl VerificationResponse {

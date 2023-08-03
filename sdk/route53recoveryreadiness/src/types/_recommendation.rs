@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
-    #[doc(hidden)]
     pub recommendation_text: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {

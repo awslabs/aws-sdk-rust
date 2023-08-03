@@ -5,100 +5,68 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsGroupSettings {
     /// Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear in the outputs themselves.
-    #[doc(hidden)]
     pub ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdMarkers>>,
     /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    #[doc(hidden)]
     pub additional_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsAdditionalManifest>>,
     /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your audio segments.
-    #[doc(hidden)]
     pub audio_only_header: ::std::option::Option<crate::types::HlsAudioOnlyHeader>,
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
-    #[doc(hidden)]
     pub base_url: ::std::option::Option<::std::string::String>,
     /// Language to be used on Caption outputs
-    #[doc(hidden)]
     pub caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::HlsCaptionLanguageMapping>>,
     /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
-    #[doc(hidden)]
     pub caption_language_setting: ::std::option::Option<crate::types::HlsCaptionLanguageSetting>,
     /// Set Caption segment length control to Match video to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are 300 seconds long.
-    #[doc(hidden)]
     pub caption_segment_length_control: ::std::option::Option<crate::types::HlsCaptionSegmentLengthControl>,
     /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
-    #[doc(hidden)]
     pub client_cache: ::std::option::Option<crate::types::HlsClientCache>,
     /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
-    #[doc(hidden)]
     pub codec_specification: ::std::option::Option<crate::types::HlsCodecSpecification>,
     /// Use Destination to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// Settings associated with the destination. Will vary based on the type of destination
-    #[doc(hidden)]
     pub destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
     /// Indicates whether segments should be placed in subdirectories.
-    #[doc(hidden)]
     pub directory_structure: ::std::option::Option<crate::types::HlsDirectoryStructure>,
     /// DRM settings.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::HlsEncryptionSettings>,
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
-    #[doc(hidden)]
     pub image_based_trick_play: ::std::option::Option<crate::types::HlsImageBasedTrickPlay>,
     /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
-    #[doc(hidden)]
     pub image_based_trick_play_settings: ::std::option::Option<crate::types::HlsImageBasedTrickPlaySettings>,
     /// When set to GZIP, compresses HLS playlist.
-    #[doc(hidden)]
     pub manifest_compression: ::std::option::Option<crate::types::HlsManifestCompression>,
     /// Indicates whether the output manifest should use floating point values for segment duration.
-    #[doc(hidden)]
     pub manifest_duration_format: ::std::option::Option<crate::types::HlsManifestDurationFormat>,
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
-    #[doc(hidden)]
     pub min_final_segment_length: ::std::option::Option<f64>,
     /// When set, Minimum Segment Size is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
-    #[doc(hidden)]
     pub min_segment_length: ::std::option::Option<i32>,
     /// Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
-    #[doc(hidden)]
     pub output_selection: ::std::option::Option<crate::types::HlsOutputSelection>,
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestamp_offset.
-    #[doc(hidden)]
     pub program_date_time: ::std::option::Option<crate::types::HlsProgramDateTime>,
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
-    #[doc(hidden)]
     pub program_date_time_period: ::std::option::Option<i32>,
     /// Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
-    #[doc(hidden)]
     pub progressive_write_hls_manifest: ::std::option::Option<crate::types::HlsProgressiveWriteHlsManifest>,
     /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
-    #[doc(hidden)]
     pub segment_control: ::std::option::Option<crate::types::HlsSegmentControl>,
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
-    #[doc(hidden)]
     pub segment_length: ::std::option::Option<i32>,
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
-    #[doc(hidden)]
     pub segment_length_control: ::std::option::Option<crate::types::HlsSegmentLengthControl>,
     /// Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory structure to Subdirectory per stream for this setting to have an effect.
-    #[doc(hidden)]
     pub segments_per_subdirectory: ::std::option::Option<i32>,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
-    #[doc(hidden)]
     pub stream_inf_resolution: ::std::option::Option<crate::types::HlsStreamInfResolution>,
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (&gt;= 0.5) and rounded down if less than 0.5 (&lt; 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
-    #[doc(hidden)]
     pub target_duration_compatibility_mode: ::std::option::Option<crate::types::HlsTargetDurationCompatibilityMode>,
     /// Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
-    #[doc(hidden)]
     pub timed_metadata_id3_frame: ::std::option::Option<crate::types::HlsTimedMetadataId3Frame>,
     /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.
-    #[doc(hidden)]
     pub timed_metadata_id3_period: ::std::option::Option<i32>,
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
-    #[doc(hidden)]
     pub timestamp_delta_milliseconds: ::std::option::Option<i32>,
 }
 impl HlsGroupSettings {

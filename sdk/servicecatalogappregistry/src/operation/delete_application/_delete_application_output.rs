@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationOutput {
     /// <p>Information about the deleted application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<crate::types::ApplicationSummary>,
     _request_id: Option<String>,
 }

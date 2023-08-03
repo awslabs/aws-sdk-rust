@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupMembersInput {
     /// <p>The identifier for the organization under which the group exists.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListGroupMembersInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventCategoriesMap {
     /// <p>The source type, such as cluster or cluster-snapshot, that the returned categories belong to.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The events in the event category.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventInfoMap>>,
 }
 impl EventCategoriesMap {

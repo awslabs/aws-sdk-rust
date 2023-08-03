@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSpecification {
     /// The amount of outbound bandwidth that is discounted in the offering.
-    #[doc(hidden)]
     pub reserved_bitrate: ::std::option::Option<i32>,
     /// The type of resource and the unit that is being billed for.
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl ResourceSpecification {

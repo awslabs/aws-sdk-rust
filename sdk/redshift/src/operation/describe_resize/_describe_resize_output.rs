@@ -5,58 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResizeOutput {
     /// <p>The node type that the cluster will have after the resize operation is complete.</p>
-    #[doc(hidden)]
     pub target_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
-    #[doc(hidden)]
     pub target_number_of_nodes: ::std::option::Option<i32>,
     /// <p>The cluster type after the resize operation is complete.</p>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
-    #[doc(hidden)]
     pub target_cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the resize operation.</p>
     /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The names of tables that have been completely imported .</p>
     /// <p>Valid Values: List of table names.</p>
-    #[doc(hidden)]
     pub import_tables_completed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of tables that are being currently imported.</p>
     /// <p>Valid Values: List of table names.</p>
-    #[doc(hidden)]
     pub import_tables_in_progress: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of tables that have not been yet imported.</p>
     /// <p>Valid Values: List of table names</p>
-    #[doc(hidden)]
     pub import_tables_not_started: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
-    #[doc(hidden)]
     pub avg_resize_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
-    #[doc(hidden)]
     pub total_resize_data_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
-    #[doc(hidden)]
     pub progress_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
-    #[doc(hidden)]
     pub elapsed_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
-    #[doc(hidden)]
     pub estimated_time_to_completion_in_seconds: ::std::option::Option<i64>,
     /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
-    #[doc(hidden)]
     pub resize_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional string to provide additional details about the resize action.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
     /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
-    #[doc(hidden)]
     pub target_encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>The percent of data transferred from source cluster to target cluster.</p>
-    #[doc(hidden)]
     pub data_transfer_progress_percent: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }

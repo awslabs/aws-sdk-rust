@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMailboxQuotaInput {
     /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated mailbox quota, in MB, for the specified user.</p>
-    #[doc(hidden)]
     pub mailbox_quota: ::std::option::Option<i32>,
 }
 impl UpdateMailboxQuotaInput {

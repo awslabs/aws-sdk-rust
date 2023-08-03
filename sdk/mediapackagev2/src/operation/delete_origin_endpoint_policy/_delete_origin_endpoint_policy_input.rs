@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOriginEndpointPolicyInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    #[doc(hidden)]
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    #[doc(hidden)]
     pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOriginEndpointPolicyInput {

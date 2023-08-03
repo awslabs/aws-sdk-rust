@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupInformation {
     /// The ARN of the group.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the group was created.
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::std::string::String>,
     /// The ID of the group.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the group was last updated.
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::std::string::String>,
     /// The ID of the latest version associated with the group.
-    #[doc(hidden)]
     pub latest_version: ::std::option::Option<::std::string::String>,
     /// The ARN of the latest version associated with the group.
-    #[doc(hidden)]
     pub latest_version_arn: ::std::option::Option<::std::string::String>,
     /// The name of the group.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GroupInformation {

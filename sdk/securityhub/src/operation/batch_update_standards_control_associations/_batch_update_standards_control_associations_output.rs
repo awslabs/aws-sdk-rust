@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateStandardsControlAssociationsOutput {
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard couldn't be updated. </p>
-    #[doc(hidden)]
     pub unprocessed_association_updates: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociationUpdate>>,
     _request_id: Option<String>,
 }

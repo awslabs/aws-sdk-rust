@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

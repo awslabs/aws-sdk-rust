@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxDatabaseListEntry {
     /// <p>The name of the kdb database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the database was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KxDatabaseListEntry {

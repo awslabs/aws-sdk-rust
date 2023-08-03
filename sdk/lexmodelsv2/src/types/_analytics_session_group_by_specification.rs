@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsSessionGroupBySpecification {
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsSessionField>,
 }
 impl AnalyticsSessionGroupBySpecification {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpnGatewaysOutput {
     /// <p>Information about one or more virtual private gateways.</p>
-    #[doc(hidden)]
     pub vpn_gateways: ::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>>,
     _request_id: Option<String>,
 }

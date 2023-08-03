@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrContainerAggregationResponse {
     /// <p>The resource ID of the container.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The SHA value of the container image.</p>
-    #[doc(hidden)]
     pub image_sha: ::std::option::Option<::std::string::String>,
     /// <p>The container repository.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the container.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The container image stags.</p>
-    #[doc(hidden)]
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of finding by severity.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl AwsEcrContainerAggregationResponse {

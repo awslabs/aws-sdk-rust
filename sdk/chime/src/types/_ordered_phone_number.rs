@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OrderedPhoneNumber {
     /// <p>The phone number, in E.164 format.</p>
-    #[doc(hidden)]
     pub e164_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The phone number status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OrderedPhoneNumberStatus>,
 }
 impl OrderedPhoneNumber {

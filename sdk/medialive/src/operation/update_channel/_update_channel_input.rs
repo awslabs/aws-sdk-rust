@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// Specification of CDI inputs for this channel
-    #[doc(hidden)]
     pub cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
     /// channel ID
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// A list of output destinations for this channel.
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
     /// The encoder settings for this channel.
-    #[doc(hidden)]
     pub encoder_settings: ::std::option::Option<crate::types::EncoderSettings>,
     /// Placeholder documentation for __listOfInputAttachment
-    #[doc(hidden)]
     pub input_attachments: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
     /// Specification of network and file inputs for this channel
-    #[doc(hidden)]
     pub input_specification: ::std::option::Option<crate::types::InputSpecification>,
     /// The log level to write to CloudWatch Logs.
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
     /// Maintenance settings for this channel.
-    #[doc(hidden)]
     pub maintenance: ::std::option::Option<crate::types::MaintenanceUpdateSettings>,
     /// The name of the channel.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopFlowInput {
     /// The ARN of the flow that you want to stop.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopFlowInput {

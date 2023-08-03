@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BinWidthOptions {
     /// <p>The options that determine the bin width value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
     /// <p>The options that determine the bin count limit.</p>
-    #[doc(hidden)]
     pub bin_count_limit: ::std::option::Option<i64>,
 }
 impl BinWidthOptions {

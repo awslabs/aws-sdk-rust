@@ -6,13 +6,10 @@
 pub struct AssociateVpcWithHostedZoneInput {
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::Vpc>,
     /// <p> <i>Optional:</i> A comment about the association request.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl AssociateVpcWithHostedZoneInput {

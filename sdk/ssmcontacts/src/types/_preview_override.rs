@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreviewOverride {
     /// <p>Information about contacts to add to an on-call rotation override.</p>
-    #[doc(hidden)]
     pub new_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the time a rotation override would begin.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the time a rotation override would end.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PreviewOverride {

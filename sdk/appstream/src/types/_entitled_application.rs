@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitledApplication {
     /// <p>The identifier of the application.</p>
-    #[doc(hidden)]
     pub application_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EntitledApplication {

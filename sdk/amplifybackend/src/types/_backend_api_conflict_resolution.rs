@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendApiConflictResolution {
     /// <p>The strategy for conflict resolution.</p>
-    #[doc(hidden)]
     pub resolution_strategy: ::std::option::Option<crate::types::ResolutionStrategy>,
 }
 impl BackendApiConflictResolution {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamFile {
     /// <p>The file ID.</p>
-    #[doc(hidden)]
     pub file_id: ::std::option::Option<i32>,
     /// <p>The location of the file in S3.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl StreamFile {

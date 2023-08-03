@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetInstance {
     /// <p>The expected cost to operate this instance type on a monthly basis.</p>
-    #[doc(hidden)]
     pub estimated_monthly_cost: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
-    #[doc(hidden)]
     pub default_target_instance: bool,
     /// <p>Details on the target instance type. </p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>The expected utilization metrics for target instance type.</p>
-    #[doc(hidden)]
     pub expected_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
     /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
-    #[doc(hidden)]
     pub platform_differences: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>>,
 }
 impl TargetInstance {

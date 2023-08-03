@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventTimeRange {
     /// <p> The time when the event started. </p>
-    #[doc(hidden)]
     pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time when the event ended. </p>
-    #[doc(hidden)]
     pub to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventTimeRange {

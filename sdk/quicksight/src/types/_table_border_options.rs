@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableBorderOptions {
     /// <p>The color of a table border.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>The thickness of a table border.</p>
-    #[doc(hidden)]
     pub thickness: ::std::option::Option<i32>,
     /// <p>The style (none, solid) of a table border.</p>
-    #[doc(hidden)]
     pub style: ::std::option::Option<crate::types::TableBorderStyle>,
 }
 impl TableBorderOptions {

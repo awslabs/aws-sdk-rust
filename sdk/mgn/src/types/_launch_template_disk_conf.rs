@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateDiskConf {
     /// <p>Launch template disk volume type configuration.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>Launch template disk iops configuration.</p>
-    #[doc(hidden)]
     pub iops: i64,
     /// <p>Launch template disk throughput configuration.</p>
-    #[doc(hidden)]
     pub throughput: i64,
 }
 impl LaunchTemplateDiskConf {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataQualityRulesetInput {
     /// <p>A unique name for the data quality ruleset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the data quality ruleset.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
-    #[doc(hidden)]
     pub ruleset: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags applied to the data quality ruleset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A target table associated with the data quality ruleset.</p>
-    #[doc(hidden)]
     pub target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDataQualityRulesetInput {

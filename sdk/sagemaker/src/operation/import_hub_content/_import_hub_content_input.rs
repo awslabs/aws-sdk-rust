@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportHubContentInput {
     /// <p>The name of the hub content to import.</p>
-    #[doc(hidden)]
     pub hub_content_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the hub content to import.</p>
-    #[doc(hidden)]
     pub hub_content_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of hub content to import.</p>
-    #[doc(hidden)]
     pub hub_content_type: ::std::option::Option<crate::types::HubContentType>,
     /// <p>The version of the hub content schema to import.</p>
-    #[doc(hidden)]
     pub document_schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the hub to import content into.</p>
-    #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the hub content to import.</p>
-    #[doc(hidden)]
     pub hub_content_display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the hub content to import.</p>
-    #[doc(hidden)]
     pub hub_content_description: ::std::option::Option<::std::string::String>,
     /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
-    #[doc(hidden)]
     pub hub_content_markdown: ::std::option::Option<::std::string::String>,
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
-    #[doc(hidden)]
     pub hub_content_document: ::std::option::Option<::std::string::String>,
     /// <p>The searchable keywords of the hub content.</p>
-    #[doc(hidden)]
     pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Any tags associated with the hub content.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportHubContentInput {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FolderMetadata {
     /// <p>The ID of the folder.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the folder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the creator.</p>
-    #[doc(hidden)]
     pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent folder.</p>
-    #[doc(hidden)]
     pub parent_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the folder was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the folder was updated.</p>
-    #[doc(hidden)]
     pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The resource state of the folder.</p>
-    #[doc(hidden)]
     pub resource_state: ::std::option::Option<crate::types::ResourceStateType>,
     /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
     /// <p>List of labels on the folder.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The size of the folder metadata.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i64>,
     /// <p>The size of the latest version of the folder metadata.</p>
-    #[doc(hidden)]
     pub latest_version_size: ::std::option::Option<i64>,
 }
 impl FolderMetadata {

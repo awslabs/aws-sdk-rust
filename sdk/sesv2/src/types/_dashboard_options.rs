@@ -9,7 +9,6 @@ pub struct DashboardOptions {
     /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for the configuration set.</p> </li>
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engagement_metrics: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl DashboardOptions {

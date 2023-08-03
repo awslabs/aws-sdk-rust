@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The ARN of the Amazon Braket job to cancel.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
 }
 impl CancelJobInput {

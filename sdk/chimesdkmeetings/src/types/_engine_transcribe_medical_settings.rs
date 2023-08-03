@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineTranscribeMedicalSettings {
     /// <p>The language code specified for the Amazon Transcribe Medical engine.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::TranscribeMedicalLanguageCode>,
     /// <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
-    #[doc(hidden)]
     pub specialty: ::std::option::Option<crate::types::TranscribeMedicalSpecialty>,
     /// <p>The type of transcription.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TranscribeMedicalType>,
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region. </p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<crate::types::TranscribeMedicalRegion>,
     /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
-    #[doc(hidden)]
     pub content_identification_type: ::std::option::Option<crate::types::TranscribeMedicalContentIdentificationType>,
 }
 impl EngineTranscribeMedicalSettings {

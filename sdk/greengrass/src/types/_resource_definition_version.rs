@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDefinitionVersion {
     /// A list of resources.
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
 }
 impl ResourceDefinitionVersion {

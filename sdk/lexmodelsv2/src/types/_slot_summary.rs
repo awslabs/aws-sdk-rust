@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotSummary {
     /// <p>The unique identifier of the slot.</p>
-    #[doc(hidden)]
     pub slot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name given to the slot.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the slot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
-    #[doc(hidden)]
     pub slot_constraint: ::std::option::Option<crate::types::SlotConstraint>,
     /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
-    #[doc(hidden)]
     pub value_elicitation_prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SlotSummary {

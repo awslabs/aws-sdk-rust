@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KernelSpec {
     /// <p>The name of the Jupyter kernel in the image. This value is case sensitive.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the kernel.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl KernelSpec {

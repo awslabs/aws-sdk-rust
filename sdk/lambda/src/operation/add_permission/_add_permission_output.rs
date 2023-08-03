@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddPermissionOutput {
     /// <p>The permission statement that's added to the function policy.</p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

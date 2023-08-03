@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to enable.</p>
-    #[doc(hidden)]
     pub enable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of log types to disable.</p>
-    #[doc(hidden)]
     pub disable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudwatchLogsExportConfiguration {

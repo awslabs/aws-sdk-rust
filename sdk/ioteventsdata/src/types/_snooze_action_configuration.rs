@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnoozeActionConfiguration {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
-    #[doc(hidden)]
     pub snooze_duration: ::std::option::Option<i32>,
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    #[doc(hidden)]
     pub note: ::std::option::Option<::std::string::String>,
 }
 impl SnoozeActionConfiguration {

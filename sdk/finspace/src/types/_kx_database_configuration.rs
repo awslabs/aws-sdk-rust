@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxDatabaseConfiguration {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    #[doc(hidden)]
     pub cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
-    #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
 }
 impl KxDatabaseConfiguration {

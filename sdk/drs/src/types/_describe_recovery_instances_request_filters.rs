@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesRequestFilters {
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
-    #[doc(hidden)]
     pub recovery_instance_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
-    #[doc(hidden)]
     pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeRecoveryInstancesRequestFilters {

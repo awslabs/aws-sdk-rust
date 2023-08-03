@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRequestValidatorInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the to-be-created RequestValidator.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
-    #[doc(hidden)]
     pub validate_request_body: bool,
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
-    #[doc(hidden)]
     pub validate_request_parameters: bool,
 }
 impl CreateRequestValidatorInput {

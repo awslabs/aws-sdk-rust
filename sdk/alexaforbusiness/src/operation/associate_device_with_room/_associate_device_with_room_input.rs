@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithRoomInput {
     /// <p>The ARN of the device to associate to a room. Required.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the room with which to associate the device. Required.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateDeviceWithRoomInput {

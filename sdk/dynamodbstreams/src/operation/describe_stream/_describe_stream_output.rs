@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamOutput {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
-    #[doc(hidden)]
     pub stream_description: ::std::option::Option<crate::types::StreamDescription>,
     _request_id: Option<String>,
 }

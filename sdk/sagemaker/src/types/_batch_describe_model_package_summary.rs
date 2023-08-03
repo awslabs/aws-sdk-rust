@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeModelPackageSummary {
     /// <p>The group name for the model package</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of a versioned model.</p>
-    #[doc(hidden)]
     pub model_package_version: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    #[doc(hidden)]
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the model package.</p>
-    #[doc(hidden)]
     pub model_package_description: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the mortgage package summary.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Defines how to perform inference generation after a training job is run.</p>
-    #[doc(hidden)]
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>The status of the mortgage package.</p>
-    #[doc(hidden)]
     pub model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     /// <p>The approval status of the model.</p>
-    #[doc(hidden)]
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
 }
 impl BatchDescribeModelPackageSummary {

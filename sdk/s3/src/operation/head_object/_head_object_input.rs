@@ -6,50 +6,35 @@ pub struct HeadObjectInput {
     /// <p>The name of the bucket containing the object.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
     /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
-    #[doc(hidden)]
     pub if_modified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
-    #[doc(hidden)]
     pub if_none_match: ::std::option::Option<::std::string::String>,
     /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
-    #[doc(hidden)]
     pub if_unmodified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The object key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>HeadObject returns only the metadata for an object. If the Range is satisfiable, only the <code>ContentLength</code> is affected in the response. If the Range is not satisfiable, S3 returns a <code>416 - Requested Range Not Satisfiable</code> error.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<::std::string::String>,
     /// <p>VersionId used to reference a specific version of the object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
-    #[doc(hidden)]
     pub sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-    #[doc(hidden)]
     pub sse_customer_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    #[doc(hidden)]
     pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub request_payer: ::std::option::Option<crate::types::RequestPayer>,
     /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
-    #[doc(hidden)]
     pub part_number: ::std::option::Option<i32>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>To retrieve the checksum, this parameter must be enabled.</p>
     /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
-    #[doc(hidden)]
     pub checksum_mode: ::std::option::Option<crate::types::ChecksumMode>,
 }
 impl HeadObjectInput {

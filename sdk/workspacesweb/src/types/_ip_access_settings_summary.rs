@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IpAccessSettingsSummary {
     /// <p>The ARN of IP access settings.</p>
-    #[doc(hidden)]
     pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the IP access settings.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IP access settings.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The creation date timestamp of the IP access settings.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IpAccessSettingsSummary {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModificationState {
     /// <p>The resource.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::ModificationResourceEnum>,
     /// <p>The modification state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ModificationStateEnum>,
 }
 impl ModificationState {

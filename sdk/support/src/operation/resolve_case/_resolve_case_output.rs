@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveCaseOutput {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
-    #[doc(hidden)]
     pub initial_case_status: ::std::option::Option<::std::string::String>,
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
-    #[doc(hidden)]
     pub final_case_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

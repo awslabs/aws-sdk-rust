@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSnsTopicDetails {
     /// <p>The ID of an Amazon Web Services managed key for Amazon SNS or a customer managed key.</p>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub subscription: ::std::option::Option<::std::vec::Vec<crate::types::AwsSnsTopicSubscription>>,
     /// <p>The name of the Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
     /// <p>The subscription's owner.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint. </p>
-    #[doc(hidden)]
     pub sqs_success_feedback_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon SQS endpoint. </p>
-    #[doc(hidden)]
     pub sqs_failure_feedback_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to a platform application endpoint. </p>
-    #[doc(hidden)]
     pub application_success_feedback_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </p>
-    #[doc(hidden)]
     pub firehose_success_feedback_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an Amazon Kinesis Data Firehose endpoint. </p>
-    #[doc(hidden)]
     pub firehose_failure_feedback_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates successful message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-    #[doc(hidden)]
     pub http_success_feedback_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates failed message delivery status for an Amazon SNS topic that is subscribed to an HTTP endpoint. </p>
-    #[doc(hidden)]
     pub http_failure_feedback_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsSnsTopicDetails {

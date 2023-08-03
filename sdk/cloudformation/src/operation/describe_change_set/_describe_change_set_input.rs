@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChangeSetInput {

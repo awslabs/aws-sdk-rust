@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsFilterOutput {
     /// <p>The action that's performed on findings that match the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::FindingsFilterAction>,
     /// <p>The Amazon Resource Name (ARN) of the filter.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The custom description of the filter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that's used to filter findings.</p>
-    #[doc(hidden)]
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>The unique identifier for the filter.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the filter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<i32>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

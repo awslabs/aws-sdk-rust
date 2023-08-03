@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMobileDeviceAccessOverrideInput {
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
     /// <ul>
@@ -12,16 +11,12 @@ pub struct PutMobileDeviceAccessOverrideInput {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
     /// <p>A description of the override.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl PutMobileDeviceAccessOverrideInput {

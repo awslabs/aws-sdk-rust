@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableRow {
     /// <p>A list of table cells in a row.</p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<crate::types::TableCell>>,
 }
 impl TableRow {

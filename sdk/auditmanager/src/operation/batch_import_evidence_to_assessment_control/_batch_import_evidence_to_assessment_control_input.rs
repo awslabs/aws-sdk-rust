@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlInput {
     /// <p> The identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the control set. </p>
-    #[doc(hidden)]
     pub control_set_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the control. </p>
-    #[doc(hidden)]
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p> The list of manual evidence objects. </p>
-    #[doc(hidden)]
     pub manual_evidence: ::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>>,
 }
 impl BatchImportEvidenceToAssessmentControlInput {

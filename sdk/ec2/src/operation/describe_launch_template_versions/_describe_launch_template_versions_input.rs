@@ -4,34 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLaunchTemplateVersionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    #[doc(hidden)]
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template.</p>
     /// <p>To describe one or more versions of a specified launch template, you must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     /// <p>To describe all the latest or default launch template versions in your account, you must omit this parameter.</p>
-    #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more versions of the launch template. Valid values depend on whether you are describing a specified launch template (by ID or name) or all launch templates in your account.</p>
     /// <p>To describe one or more versions of a specified launch template, valid values are <code>$Latest</code>, <code>$Default</code>, and numbers.</p>
     /// <p>To describe all launch templates in your account that are defined as the latest version, the valid value is <code>$Latest</code>. To describe all launch templates in your account that are defined as the default version, the valid value is <code>$Default</code>. You can specify <code>$Latest</code> and <code>$Default</code> in the same request. You cannot specify numbers.</p>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version number after which to describe launch template versions.</p>
-    #[doc(hidden)]
     pub min_version: ::std::option::Option<::std::string::String>,
     /// <p>The version number up to which to describe launch template versions.</p>
-    #[doc(hidden)]
     pub max_version: ::std::option::Option<::std::string::String>,
     /// <p>The token to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. This value can be between 1 and 200.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>One or more filters.</p>
     /// <ul>
@@ -50,13 +42,11 @@ pub struct DescribeLaunchTemplateVersionsInput {
     /// <li> <p> <code>network-card-index</code> - The index of the network card.</p> </li>
     /// <li> <p> <code>ram-disk-id</code> - The RAM disk ID.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageId</code>.</p>
     /// <p>If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is displayed in the response for <code>imageId</code>.</p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub resolve_alias: ::std::option::Option<bool>,
 }
 impl DescribeLaunchTemplateVersionsInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCoverageStatisticsInput {
     /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents the criteria used to filter the coverage statistics</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::CoverageFilterCriteria>,
     /// <p>Represents the statistics type used to aggregate the coverage details.</p>
-    #[doc(hidden)]
     pub statistics_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>>,
 }
 impl GetCoverageStatisticsInput {

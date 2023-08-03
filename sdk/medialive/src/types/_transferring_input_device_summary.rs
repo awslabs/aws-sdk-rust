@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransferringInputDeviceSummary {
     /// The unique ID of the input device.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The optional message that the sender has attached to the transfer.
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// The AWS account ID for the recipient of the input device transfer.
-    #[doc(hidden)]
     pub target_customer_id: ::std::option::Option<::std::string::String>,
     /// The type (direction) of the input device transfer.
-    #[doc(hidden)]
     pub transfer_type: ::std::option::Option<crate::types::InputDeviceTransferType>,
 }
 impl TransferringInputDeviceSummary {

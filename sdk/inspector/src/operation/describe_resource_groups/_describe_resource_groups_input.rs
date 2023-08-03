@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourceGroupsInput {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
-    #[doc(hidden)]
     pub resource_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeResourceGroupsInput {

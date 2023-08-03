@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageType {
     /// <p>The name of the storage type.</p>
-    #[doc(hidden)]
     pub storage_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The storage sub-type, such as <code>gp3</code> or <code>io1</code>.</p>
-    #[doc(hidden)]
     pub storage_sub_type_name: ::std::option::Option<::std::string::String>,
     /// <p>Limits that are applicable for the given storage type.</p>
-    #[doc(hidden)]
     pub storage_type_limits: ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>,
 }
 impl StorageType {

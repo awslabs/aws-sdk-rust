@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestExecutionResultFilterBy {
     /// <p>Specifies which results to filter. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test result details"&gt;Test results details</a> for details about different types of results.</p>
-    #[doc(hidden)]
     pub result_type_filter: ::std::option::Option<crate::types::TestResultTypeFilter>,
     /// <p>Contains information about the method for filtering Conversation level test results.</p>
-    #[doc(hidden)]
     pub conversation_level_test_results_filter_by: ::std::option::Option<crate::types::ConversationLevelTestResultsFilterBy>,
 }
 impl TestExecutionResultFilterBy {

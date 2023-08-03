@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBonusPaymentsOutput {
     /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
-    #[doc(hidden)]
     pub num_results: ::std::option::Option<i32>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
-    #[doc(hidden)]
     pub bonus_payments: ::std::option::Option<::std::vec::Vec<crate::types::BonusPayment>>,
     _request_id: Option<String>,
 }

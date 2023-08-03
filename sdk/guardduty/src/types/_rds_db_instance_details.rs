@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsDbInstanceDetails {
     /// <p>The identifier associated to the database instance that was involved in the finding.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The database engine of the database instance involved in the finding.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine that was involved in the finding.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the database cluster that contains the database instance ID involved in the finding.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
-    #[doc(hidden)]
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RdsDbInstanceDetails {

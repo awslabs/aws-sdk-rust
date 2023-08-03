@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeSecurityGroupEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
-    #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
     /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
-    #[doc(hidden)]
     pub unknown_ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     _request_id: Option<String>,
 }

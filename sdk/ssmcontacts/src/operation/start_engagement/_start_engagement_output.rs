@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartEngagementOutput {
     /// <p>The ARN of the engagement.</p>
-    #[doc(hidden)]
     pub engagement_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

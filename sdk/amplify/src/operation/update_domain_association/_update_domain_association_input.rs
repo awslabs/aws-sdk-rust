@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainAssociationInput {
     /// <p> The unique ID for an Amplify app. </p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the domain. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p> Enables the automated creation of subdomains for branches. </p>
-    #[doc(hidden)]
     pub enable_auto_sub_domain: ::std::option::Option<bool>,
     /// <p> Describes the settings for the subdomain. </p>
-    #[doc(hidden)]
     pub sub_domain_settings: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-    #[doc(hidden)]
     pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    #[doc(hidden)]
     pub auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDomainAssociationInput {

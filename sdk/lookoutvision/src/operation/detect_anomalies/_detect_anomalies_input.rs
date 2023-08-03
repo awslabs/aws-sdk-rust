@@ -4,15 +4,12 @@
 #[derive(::std::fmt::Debug)]
 pub struct DetectAnomaliesInput {
     /// <p>The name of the project that contains the model version that you want to use.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model that you want to use.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The unencrypted image bytes that you want to analyze. </p>
     pub body: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl DetectAnomaliesInput {

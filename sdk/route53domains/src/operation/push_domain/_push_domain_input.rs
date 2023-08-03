@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PushDomainInput {
     /// <p> Name of the domain. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p> New IPS tag for the domain. </p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
 }
 impl PushDomainInput {

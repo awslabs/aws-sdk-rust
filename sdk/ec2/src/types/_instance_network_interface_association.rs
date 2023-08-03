@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceNetworkInterfaceAssociation {
     /// <p>The carrier IP address associated with the network interface.</p>
-    #[doc(hidden)]
     pub carrier_ip: ::std::option::Option<::std::string::String>,
     /// <p>The customer-owned IP address associated with the network interface.</p>
-    #[doc(hidden)]
     pub customer_owned_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the owner of the Elastic IP address.</p>
-    #[doc(hidden)]
     pub ip_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The public DNS name.</p>
-    #[doc(hidden)]
     pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The public IP address or Elastic IP address bound to the network interface.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
 }
 impl InstanceNetworkInterfaceAssociation {

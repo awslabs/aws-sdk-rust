@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStatisticsOutput {
     /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::Statistics>,
     _request_id: Option<String>,
 }

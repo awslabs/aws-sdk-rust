@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHitTypeOfHitInput {
     /// <p>The HIT to update.</p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the new HIT type.</p>
-    #[doc(hidden)]
     pub hit_type_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateHitTypeOfHitInput {

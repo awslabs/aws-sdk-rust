@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopPhiDetectionJobOutput {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

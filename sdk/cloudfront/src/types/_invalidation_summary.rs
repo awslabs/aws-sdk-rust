@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time that an invalidation request was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of an invalidation request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl InvalidationSummary {

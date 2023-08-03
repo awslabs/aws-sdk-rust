@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub authorization_config: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails>,
     /// <p>The Amazon EFS file system identifier to use.</p>
-    #[doc(hidden)]
     pub filesystem_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host.</p>
-    #[doc(hidden)]
     pub root_directory: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
-    #[doc(hidden)]
     pub transit_encryption: ::std::option::Option<::std::string::String>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
-    #[doc(hidden)]
     pub transit_encryption_port: i32,
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpPackageConfiguration {
     /// <p>The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.</p>
-    #[doc(hidden)]
     pub source_group: ::std::option::Option<::std::string::String>,
     /// <p>The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl HttpPackageConfiguration {

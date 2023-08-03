@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelSimulationJobBatchInput {
     /// <p>The id of the batch to cancel.</p>
-    #[doc(hidden)]
     pub batch: ::std::option::Option<::std::string::String>,
 }
 impl CancelSimulationJobBatchInput {

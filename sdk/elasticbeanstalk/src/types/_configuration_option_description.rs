@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationOptionDescription {
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration option.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The default value for this configuration option.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
@@ -19,7 +16,6 @@ pub struct ConfigurationOptionDescription {
     /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
     /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub change_severity: ::std::option::Option<::std::string::String>,
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
@@ -28,7 +24,6 @@ pub struct ConfigurationOptionDescription {
     /// </ul>
     /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub user_defined: ::std::option::Option<bool>,
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
@@ -37,22 +32,16 @@ pub struct ConfigurationOptionDescription {
     /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
     /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value_type: ::std::option::Option<crate::types::ConfigurationOptionValueType>,
     /// <p>If specified, values for the configuration option are selected from this list.</p>
-    #[doc(hidden)]
     pub value_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
-    #[doc(hidden)]
     pub min_value: ::std::option::Option<i32>,
     /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
-    #[doc(hidden)]
     pub max_value: ::std::option::Option<i32>,
     /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
-    #[doc(hidden)]
     pub max_length: ::std::option::Option<i32>,
     /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
-    #[doc(hidden)]
     pub regex: ::std::option::Option<crate::types::OptionRestrictionRegex>,
 }
 impl ConfigurationOptionDescription {

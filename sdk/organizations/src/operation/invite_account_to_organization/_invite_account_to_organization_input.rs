@@ -9,17 +9,14 @@ pub struct InviteAccountToOrganizationInput {
     /// <p> <code>--target Id=123456789012,Type=ACCOUNT</code> </p>
     /// <p>If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, you must specify the email address that is associated with the account.</p>
     /// <p> <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::HandshakeParty>,
     /// <p>Additional information that you want to include in the generated email to the recipient account owner.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags that you want to attach to the account when it becomes a member of the organization. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p> <important>
     /// <p>Any tags in the request are checked for compliance with any applicable tag policies when the request is made. The request is rejected if the tags in the request don't match the requirements of the policy at that time. Tag policy compliance is <i> <b>not</b> </i> checked again when the invitation is accepted and the tags are actually attached to the account. That means that if the tag policy changes between the invitation and the acceptance, then that tags could potentially be non-compliant.</p>
     /// </important> <note>
     /// <p>If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire request fails and invitations are not sent.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InviteAccountToOrganizationInput {

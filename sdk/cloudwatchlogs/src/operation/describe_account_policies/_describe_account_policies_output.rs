@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountPoliciesOutput {
     /// <p>An array of structures that contain information about the CloudWatch Logs account policies that match the specified filters.</p>
-    #[doc(hidden)]
     pub account_policies: ::std::option::Option<::std::vec::Vec<crate::types::AccountPolicy>>,
     _request_id: Option<String>,
 }

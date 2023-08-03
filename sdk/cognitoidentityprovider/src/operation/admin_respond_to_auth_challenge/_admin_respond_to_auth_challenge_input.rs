@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminRespondToAuthChallengeInput {
     /// <p>The ID of the Amazon Cognito user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
-    #[doc(hidden)]
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p>
     /// <ul>
@@ -26,16 +23,12 @@ pub struct AdminRespondToAuthChallengeInput {
     /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as an email address or phone number). To make this simpler, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
-    #[doc(hidden)]
     pub challenge_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If an <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, it returns a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<::std::string::String>,
     /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
-    #[doc(hidden)]
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    #[doc(hidden)]
     pub context_data: ::std::option::Option<crate::types::ContextDataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that you have assigned to the following triggers: </p>
@@ -58,7 +51,6 @@ pub struct AdminRespondToAuthChallengeInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AdminRespondToAuthChallengeInput {

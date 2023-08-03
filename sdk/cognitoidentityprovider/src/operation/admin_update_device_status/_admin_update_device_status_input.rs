@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminUpdateDeviceStatusInput {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The device key.</p>
-    #[doc(hidden)]
     pub device_key: ::std::option::Option<::std::string::String>,
     /// <p>The status indicating whether a device has been remembered or not.</p>
-    #[doc(hidden)]
     pub device_remembered_status: ::std::option::Option<crate::types::DeviceRememberedStatusType>,
 }
 impl AdminUpdateDeviceStatusInput {

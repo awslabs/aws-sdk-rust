@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerDescription {
     /// <p>The name of the LoadBalancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the LoadBalancer.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>A list of Listeners used by the LoadBalancer.</p>
-    #[doc(hidden)]
     pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
 }
 impl LoadBalancerDescription {

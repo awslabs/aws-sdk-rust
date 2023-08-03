@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerStateChange {
     /// <p>The name of the container.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The container image SHA 256 digest.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Docker container.</p>
-    #[doc(hidden)]
     pub runtime_id: ::std::option::Option<::std::string::String>,
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
-    #[doc(hidden)]
     pub exit_code: ::std::option::Option<i32>,
     /// <p>Any network bindings that are associated with the container.</p>
-    #[doc(hidden)]
     pub network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
     /// <p>The reason for the state change.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The status of the container.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl ContainerStateChange {

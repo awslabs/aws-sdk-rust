@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TraceConfiguration {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
-    #[doc(hidden)]
     pub vendor: ::std::option::Option<crate::types::TracingVendor>,
 }
 impl TraceConfiguration {

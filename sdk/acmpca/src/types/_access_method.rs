@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessMethod {
     /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
-    #[doc(hidden)]
     pub custom_object_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>AccessMethod</code>.</p>
-    #[doc(hidden)]
     pub access_method_type: ::std::option::Option<crate::types::AccessMethodType>,
 }
 impl AccessMethod {

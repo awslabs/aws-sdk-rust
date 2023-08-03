@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVersionsOutput {
     /// <p>The token to use in a subsequent <code>ListVersions</code> operation to return the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
-    #[doc(hidden)]
     pub grafana_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

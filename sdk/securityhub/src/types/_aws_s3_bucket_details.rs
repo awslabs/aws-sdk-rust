@@ -5,44 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketDetails {
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the owner of the S3 bucket.</p>
-    #[doc(hidden)]
     pub owner_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account identifier of the account that owns the S3 bucket.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the S3 bucket was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
-    #[doc(hidden)]
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::AwsS3BucketServerSideEncryptionConfiguration>,
     /// <p>The lifecycle configuration for objects in the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_lifecycle_configuration: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationDetails>,
     /// <p>Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.</p>
-    #[doc(hidden)]
     pub public_access_block_configuration: ::std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>,
     /// <p>The access control list for the S3 bucket.</p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration for the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_logging_configuration: ::std::option::Option<crate::types::AwsS3BucketLoggingConfiguration>,
     /// <p>The website configuration parameters for the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_website_configuration: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfiguration>,
     /// <p>The notification configuration for the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_notification_configuration: ::std::option::Option<crate::types::AwsS3BucketNotificationConfiguration>,
     /// <p>The versioning state of an S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_versioning_configuration: ::std::option::Option<crate::types::AwsS3BucketBucketVersioningConfiguration>,
     /// <p> Specifies which rule Amazon S3 applies by default to every new object placed in the specified bucket. </p>
-    #[doc(hidden)]
     pub object_lock_configuration: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration>,
 }
 impl AwsS3BucketDetails {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePolicyOutput {
     /// <p>The resource policy document.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

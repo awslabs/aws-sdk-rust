@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContributorInsightsOutput {
     /// <p>The name of the table being described.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the global secondary index being described.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>List of names of the associated contributor insights rules.</p>
-    #[doc(hidden)]
     pub contributor_insights_rule_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Current status of contributor insights.</p>
-    #[doc(hidden)]
     pub contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
     /// <p>Timestamp of the last time the status was changed.</p>
-    #[doc(hidden)]
     pub last_update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
@@ -26,7 +21,6 @@ pub struct DescribeContributorInsightsOutput {
     /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
     /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failure_exception: ::std::option::Option<crate::types::FailureException>,
     _request_id: Option<String>,
 }

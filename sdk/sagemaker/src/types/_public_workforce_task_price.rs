@@ -115,7 +115,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicWorkforceTaskPrice {
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
-    #[doc(hidden)]
     pub amount_in_usd: ::std::option::Option<crate::types::Usd>,
 }
 impl PublicWorkforceTaskPrice {

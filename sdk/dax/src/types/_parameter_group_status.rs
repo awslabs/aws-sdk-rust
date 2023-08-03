@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterGroupStatus {
     /// <p>The name of the parameter group.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of parameter updates. </p>
-    #[doc(hidden)]
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The node IDs of one or more nodes to be rebooted.</p>
-    #[doc(hidden)]
     pub node_ids_to_reboot: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ParameterGroupStatus {

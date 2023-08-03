@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledAuditMetadata {
     /// <p>The name of the scheduled audit.</p>
-    #[doc(hidden)]
     pub scheduled_audit_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the scheduled audit.</p>
-    #[doc(hidden)]
     pub scheduled_audit_arn: ::std::option::Option<::std::string::String>,
     /// <p>How often the scheduled audit occurs.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<crate::types::AuditFrequency>,
     /// <p>The day of the month on which the scheduled audit is run (if the <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
-    #[doc(hidden)]
     pub day_of_month: ::std::option::Option<::std::string::String>,
     /// <p>The day of the week on which the scheduled audit is run (if the <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
 }
 impl ScheduledAuditMetadata {

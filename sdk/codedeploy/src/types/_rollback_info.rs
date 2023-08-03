@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollbackInfo {
     /// <p>The ID of the deployment rollback.</p>
-    #[doc(hidden)]
     pub rollback_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped.</p>
-    #[doc(hidden)]
     pub rollback_triggering_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
-    #[doc(hidden)]
     pub rollback_message: ::std::option::Option<::std::string::String>,
 }
 impl RollbackInfo {

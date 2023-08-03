@@ -11,7 +11,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelativeAggregationDuration {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
-    #[doc(hidden)]
     pub time_dimension: ::std::option::Option<crate::types::TimeDimension>,
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
@@ -19,7 +18,6 @@ pub struct RelativeAggregationDuration {
     /// <li> <p> <code>Days</code> - 3</p> </li>
     /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub time_value: i32,
 }
 impl RelativeAggregationDuration {

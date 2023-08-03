@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentLocation {
     /// <p>The Amazon S3 bucket that contains the input document.</p>
-    #[doc(hidden)]
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl DocumentLocation {

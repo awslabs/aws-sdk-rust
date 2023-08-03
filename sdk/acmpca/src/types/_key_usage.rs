@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyUsage {
     /// <p> Key can be used for digital signing.</p>
-    #[doc(hidden)]
     pub digital_signature: bool,
     /// <p>Key can be used for non-repudiation.</p>
-    #[doc(hidden)]
     pub non_repudiation: bool,
     /// <p>Key can be used to encipher data.</p>
-    #[doc(hidden)]
     pub key_encipherment: bool,
     /// <p>Key can be used to decipher data.</p>
-    #[doc(hidden)]
     pub data_encipherment: bool,
     /// <p>Key can be used in a key-agreement protocol.</p>
-    #[doc(hidden)]
     pub key_agreement: bool,
     /// <p>Key can be used to sign certificates.</p>
-    #[doc(hidden)]
     pub key_cert_sign: bool,
     /// <p>Key can be used to sign CRLs.</p>
-    #[doc(hidden)]
     pub crl_sign: bool,
     /// <p>Key can be used only to encipher data.</p>
-    #[doc(hidden)]
     pub encipher_only: bool,
     /// <p>Key can be used only to decipher data.</p>
-    #[doc(hidden)]
     pub decipher_only: bool,
 }
 impl KeyUsage {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationVersionSummary {
     /// <p>The application version.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<i32>,
     /// <p>The status of the application.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApplicationVersionLifecycle>,
     /// <p>The reason for the reported status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the application version was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ApplicationVersionSummary {

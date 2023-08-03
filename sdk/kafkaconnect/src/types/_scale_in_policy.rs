@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScaleInPolicy {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
-    #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
 }
 impl ScaleInPolicy {

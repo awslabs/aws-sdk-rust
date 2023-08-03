@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDestinationInput {
     /// <p>The name of the new resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of value in <code>Expression</code>.</p>
-    #[doc(hidden)]
     pub expression_type: ::std::option::Option<crate::types::ExpressionType>,
     /// <p>The rule name or topic rule to send messages to.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The description of the new resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDestinationInput {

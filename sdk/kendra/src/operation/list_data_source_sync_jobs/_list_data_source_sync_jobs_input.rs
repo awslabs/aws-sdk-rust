@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSourceSyncJobsInput {
     /// <p>The identifier of the data source connector.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index used with the data source connector.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
-    #[doc(hidden)]
     pub start_time_filter: ::std::option::Option<crate::types::TimeRange>,
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
-    #[doc(hidden)]
     pub status_filter: ::std::option::Option<crate::types::DataSourceSyncJobStatus>,
 }
 impl ListDataSourceSyncJobsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAlarmModelVersionsOutput {
     /// <p>A list that summarizes each alarm model version.</p>
-    #[doc(hidden)]
     pub alarm_model_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AlarmModelVersionSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

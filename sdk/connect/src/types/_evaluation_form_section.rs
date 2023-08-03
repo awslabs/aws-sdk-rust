@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSection {
     /// <p>The title of the section.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
-    #[doc(hidden)]
     pub ref_id: ::std::option::Option<::std::string::String>,
     /// <p>The instructions of the section.</p>
-    #[doc(hidden)]
     pub instructions: ::std::option::Option<::std::string::String>,
     /// <p>The items of the section.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     /// <p>The scoring weight of the section.</p>
-    #[doc(hidden)]
     pub weight: f64,
 }
 impl EvaluationFormSection {

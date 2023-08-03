@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationAdditionalConfiguration {
     /// <p>The name of the additional configuration that will be configured for the organization.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     /// <p>The status of the additional configuration that will be configured for the organization.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
 }
 impl OrganizationAdditionalConfiguration {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCommentInput {
     /// <p>The system-generated ID of the comment you want to update. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
-    #[doc(hidden)]
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated content to replace the existing content of the comment.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCommentInput {

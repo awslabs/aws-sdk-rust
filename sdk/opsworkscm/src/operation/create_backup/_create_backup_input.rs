@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackupInput {
     /// <p>The name of the server that you want to back up. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p> A user-defined description of the backup. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct CreateBackupInput {
     /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
     /// <li> <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBackupInput {

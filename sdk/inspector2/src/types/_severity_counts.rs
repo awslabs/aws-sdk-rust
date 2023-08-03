@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SeverityCounts {
     /// <p>The total count of findings from all severities.</p>
-    #[doc(hidden)]
     pub all: ::std::option::Option<i64>,
     /// <p>The total count of medium severity findings.</p>
-    #[doc(hidden)]
     pub medium: ::std::option::Option<i64>,
     /// <p>The total count of high severity findings.</p>
-    #[doc(hidden)]
     pub high: ::std::option::Option<i64>,
     /// <p>The total count of critical severity findings.</p>
-    #[doc(hidden)]
     pub critical: ::std::option::Option<i64>,
 }
 impl SeverityCounts {

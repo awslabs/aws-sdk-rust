@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionConfigOutput {
     /// <p>Return the field-level encryption configuration information.</p>
-    #[doc(hidden)]
     pub field_level_encryption_config: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

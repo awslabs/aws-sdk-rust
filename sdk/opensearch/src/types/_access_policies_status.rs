@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPoliciesStatus {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::string::String>,
     /// <p>The status of the access policy for the domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AccessPoliciesStatus {

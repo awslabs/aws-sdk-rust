@@ -11,25 +11,18 @@ pub struct ReplicationTask {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replication_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
-    #[doc(hidden)]
     pub source_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN that uniquely identifies the endpoint.</p>
-    #[doc(hidden)]
     pub target_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of migration.</p>
-    #[doc(hidden)]
     pub migration_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     /// <p>Table mappings specified in the task.</p>
-    #[doc(hidden)]
     pub table_mappings: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the replication task.</p>
-    #[doc(hidden)]
     pub replication_task_settings: ::std::option::Option<::std::string::String>,
     /// <p>The status of the replication task. This response parameter can return one of the following values:</p>
     /// <ul>
@@ -48,10 +41,8 @@ pub struct ReplicationTask {
     /// <p> <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"> <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration task assessment operation. The <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html"> <code>StartReplicationTaskAssessment</code> </a> operation assesses data type compatibility only between the source and target database of a given migration task. In contrast, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"> <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a variety of premigration task assessments in addition to data type compatibility. These assessments include ones for the validity of primary key definitions and likely issues with database migration performance, among others.</p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The last error (failure) message generated for the replication task.</p>
-    #[doc(hidden)]
     pub last_failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
@@ -70,40 +61,30 @@ pub struct ReplicationTask {
     /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
     /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stop_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date the replication task was created.</p>
-    #[doc(hidden)]
     pub replication_task_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication task is scheduled to start.</p>
-    #[doc(hidden)]
     pub replication_task_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    #[doc(hidden)]
     pub cdc_start_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    #[doc(hidden)]
     pub cdc_stop_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
-    #[doc(hidden)]
     pub recovery_checkpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The statistics for the task, including elapsed time, tables loaded, and table errors.</p>
-    #[doc(hidden)]
     pub replication_task_stats: ::std::option::Option<crate::types::ReplicationTaskStats>,
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    #[doc(hidden)]
     pub task_data: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.</p>
-    #[doc(hidden)]
     pub target_replication_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationTask {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    #[doc(hidden)]
     pub field_arn: ::std::option::Option<::std::string::String>,
     /// <p>Description of the field.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Type of the field.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FieldType>,
     /// <p>Namespace of the field.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<crate::types::FieldNamespace>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl GetFieldResponse {

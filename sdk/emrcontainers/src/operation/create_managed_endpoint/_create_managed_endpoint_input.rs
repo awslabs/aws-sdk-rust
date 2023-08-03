@@ -4,32 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateManagedEndpointInput {
     /// <p>The name of the managed endpoint.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-    #[doc(hidden)]
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the managed endpoint.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EMR release version.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the execution role.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.</p>
     #[deprecated(note = "Customer provided certificate-arn is deprecated and would be removed in future.")]
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings that will be used to override existing configurations.</p>
-    #[doc(hidden)]
     pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     /// <p>The client idempotency token for this create call.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the managed endpoint. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateManagedEndpointInput {

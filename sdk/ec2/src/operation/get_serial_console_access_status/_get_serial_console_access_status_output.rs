@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSerialConsoleAccessStatusOutput {
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
-    #[doc(hidden)]
     pub serial_console_access_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

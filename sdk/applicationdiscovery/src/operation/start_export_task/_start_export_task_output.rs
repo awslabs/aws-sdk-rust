@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExportTaskOutput {
     /// <p>A unique identifier used to query the status of an export request.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

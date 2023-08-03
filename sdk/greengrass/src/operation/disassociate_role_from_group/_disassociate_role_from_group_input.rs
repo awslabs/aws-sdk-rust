@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateRoleFromGroupInput {
     /// The ID of the Greengrass group.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateRoleFromGroupInput {

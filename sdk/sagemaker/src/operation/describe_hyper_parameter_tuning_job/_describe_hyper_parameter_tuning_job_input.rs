@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHyperParameterTuningJobInput {
     /// <p>The name of the tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHyperParameterTuningJobInput {

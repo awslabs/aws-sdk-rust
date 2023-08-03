@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntennaDownlinkDemodDecodeConfig {
     /// <p>Information about the spectral <code>Config</code>.</p>
-    #[doc(hidden)]
     pub spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
     /// <p>Information about the demodulation <code>Config</code>.</p>
-    #[doc(hidden)]
     pub demodulation_config: ::std::option::Option<crate::types::DemodulationConfig>,
     /// <p>Information about the decode <code>Config</code>.</p>
-    #[doc(hidden)]
     pub decode_config: ::std::option::Option<crate::types::DecodeConfig>,
 }
 impl AntennaDownlinkDemodDecodeConfig {

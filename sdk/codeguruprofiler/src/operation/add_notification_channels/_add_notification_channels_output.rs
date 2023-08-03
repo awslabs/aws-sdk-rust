@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddNotificationChannelsOutput {
     /// <p>The new notification configuration for this profiling group.</p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,
 }

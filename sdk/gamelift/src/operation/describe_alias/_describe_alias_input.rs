@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAliasInput {
     /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
-    #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAliasInput {

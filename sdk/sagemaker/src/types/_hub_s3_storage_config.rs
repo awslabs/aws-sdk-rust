@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HubS3StorageConfig {
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl HubS3StorageConfig {

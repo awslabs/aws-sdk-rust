@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountSendingEnabledOutput {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     _request_id: Option<String>,
 }

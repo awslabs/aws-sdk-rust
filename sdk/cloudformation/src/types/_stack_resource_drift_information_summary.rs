@@ -11,10 +11,8 @@ pub struct StackResourceDriftInformationSummary {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the resource differs from its expected configuration.</p> <p>Any resources that don't currently support drift detection have a status of <code>NOT_CHECKED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>. If you performed an <code>ContinueUpdateRollback</code> operation on a stack, any resources included in <code>ResourcesToSkip</code> will also have a status of <code>NOT_CHECKED</code>. For more information about skipping resources during rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li>
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
-    #[doc(hidden)]
     pub last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackResourceDriftInformationSummary {

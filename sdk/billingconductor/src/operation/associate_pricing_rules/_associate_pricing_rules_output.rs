@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatePricingRulesOutput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

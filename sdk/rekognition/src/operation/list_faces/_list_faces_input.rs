@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFacesInput {
     /// <p>ID of the collection from which to list the faces.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of faces to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An array of user IDs to match when listing faces in a collection.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of face IDs to match when listing faces in a collection.</p>
-    #[doc(hidden)]
     pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListFacesInput {

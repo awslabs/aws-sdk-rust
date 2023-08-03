@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginAccessControlList {
     /// <p>The value of the <code>Marker</code> field that was provided in the request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value to use in the <code>Marker</code> field of another request to continue listing origin access controls.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of origin access controls requested.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>If there are more items in the list than are in this response, this value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>The number of origin access controls returned in the response.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>Contains the origin access controls in the list.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::OriginAccessControlSummary>>,
 }
 impl OriginAccessControlList {

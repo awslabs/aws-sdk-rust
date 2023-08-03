@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageImportJobInput {
     /// <p>The job's ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePackageImportJobInput {

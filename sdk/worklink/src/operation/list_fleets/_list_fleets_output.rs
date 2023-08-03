@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFleetsOutput {
     /// <p>The summary list of the fleets.</p>
-    #[doc(hidden)]
     pub fleet_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FleetSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
     /// <p>Configures the OpenSearch index logs publishing.</p>
-    #[doc(hidden)]
     pub index_slow_logs: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     /// <p>Configures the OpenSearch search slow log publishing.</p>
-    #[doc(hidden)]
     pub search_slow_logs: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     /// <p>Configures the OpenSearch audit logs publishing.</p>
-    #[doc(hidden)]
     pub audit_logs: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
 }
 impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {

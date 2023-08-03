@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotFilter {
     /// <p>The name of the filter to use. You can filter by the <code>file-system-id</code> or by <code>volume-id</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SnapshotFilterName>,
     /// <p>The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnapshotFilter {

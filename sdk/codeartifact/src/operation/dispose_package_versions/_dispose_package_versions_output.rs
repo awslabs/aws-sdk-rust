@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisposePackageVersionsOutput {
     /// <p> A list of the package versions that were successfully disposed. </p>
-    #[doc(hidden)]
     pub successful_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
     /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct DisposePackageVersionsOutput {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failed_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>>,
     _request_id: Option<String>,
 }

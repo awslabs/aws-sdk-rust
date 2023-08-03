@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyWorkersInput {
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
-    #[doc(hidden)]
     pub message_text: ::std::option::Option<::std::string::String>,
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    #[doc(hidden)]
     pub worker_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NotifyWorkersInput {

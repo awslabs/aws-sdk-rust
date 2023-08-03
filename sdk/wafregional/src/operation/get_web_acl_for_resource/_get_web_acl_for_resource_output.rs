@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWebAclForResourceOutput {
     /// <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
-    #[doc(hidden)]
     pub web_acl_summary: ::std::option::Option<crate::types::WebAclSummary>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComboChartAggregatedFieldWells {
     /// <p>The aggregated category field wells of a combo chart.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The aggregated <code>BarValues</code> field well of a combo chart.</p>
-    #[doc(hidden)]
     pub bar_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The aggregated colors field well of a combo chart.</p>
-    #[doc(hidden)]
     pub colors: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The aggregated <code>LineValues</code> field well of a combo chart.</p>
-    #[doc(hidden)]
     pub line_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl ComboChartAggregatedFieldWells {

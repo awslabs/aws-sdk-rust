@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Deployment resource to get information about.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
-    #[doc(hidden)]
     pub embed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetDeploymentInput {

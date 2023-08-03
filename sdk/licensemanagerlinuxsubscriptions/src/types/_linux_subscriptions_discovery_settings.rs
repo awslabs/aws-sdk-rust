@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LinuxSubscriptionsDiscoverySettings {
     /// <p>The Regions in which to discover data for Linux subscriptions.</p>
-    #[doc(hidden)]
     pub source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-    #[doc(hidden)]
     pub organization_integration: ::std::option::Option<crate::types::OrganizationIntegration>,
 }
 impl LinuxSubscriptionsDiscoverySettings {

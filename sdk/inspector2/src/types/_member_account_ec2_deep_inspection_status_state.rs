@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberAccountEc2DeepInspectionStatusState {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of Amazon Inspector deep inspection in the member account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Ec2DeepInspectionStatus>,
     /// <p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl MemberAccountEc2DeepInspectionStatusState {

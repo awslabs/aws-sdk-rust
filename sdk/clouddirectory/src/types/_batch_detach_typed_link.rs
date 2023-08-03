@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
-    #[doc(hidden)]
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
 }
 impl BatchDetachTypedLink {

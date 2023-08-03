@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPhoneConfig {
     /// <p>The phone type.</p>
-    #[doc(hidden)]
     pub phone_type: ::std::option::Option<crate::types::PhoneType>,
     /// <p>The Auto accept setting.</p>
-    #[doc(hidden)]
     pub auto_accept: bool,
     /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
     /// </note>
-    #[doc(hidden)]
     pub after_contact_work_time_limit: i32,
     /// <p>The phone number for the user's desk phone.</p>
-    #[doc(hidden)]
     pub desk_phone_number: ::std::option::Option<::std::string::String>,
 }
 impl UserPhoneConfig {

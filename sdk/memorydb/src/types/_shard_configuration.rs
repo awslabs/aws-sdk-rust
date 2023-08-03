@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShardConfiguration {
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format startkey-endkey.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::string::String>,
     /// <p>The number of read replica nodes in this shard.</p>
-    #[doc(hidden)]
     pub replica_count: ::std::option::Option<i32>,
 }
 impl ShardConfiguration {

@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryAlias {
     /// <p>The name of the registry alias.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the registry alias.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RegistryAliasStatus>,
     /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
-    #[doc(hidden)]
     pub primary_registry_alias: bool,
     /// <p>Indicates whether the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
-    #[doc(hidden)]
     pub default_registry_alias: bool,
 }
 impl RegistryAlias {

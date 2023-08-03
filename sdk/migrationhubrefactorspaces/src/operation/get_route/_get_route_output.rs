@@ -6,58 +6,40 @@ pub struct GetRouteOutput {
     /// <p>The unique identifier of the route.</p>
     /// <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>
     /// <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
-    #[doc(hidden)]
     pub route_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the route.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the route owner.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the route creator.</p>
-    #[doc(hidden)]
     pub created_by_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of route.</p>
-    #[doc(hidden)]
     pub route_type: ::std::option::Option<crate::types::RouteType>,
     /// <p>The unique identifier of the service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application that the route belongs to. </p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier of the environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
-    #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    #[doc(hidden)]
     pub methods: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>,
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
-    #[doc(hidden)]
     pub include_child_paths: ::std::option::Option<bool>,
     /// <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
-    #[doc(hidden)]
     pub path_resource_to_id: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The current state of the route. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RouteState>,
     /// <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Any error associated with the route resource. </p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorResponse>,
     /// <p>A timestamp that indicates when the route was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the route is created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
-    #[doc(hidden)]
     pub append_source_path: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

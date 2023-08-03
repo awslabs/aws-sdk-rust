@@ -5,49 +5,34 @@
 pub struct ListPartsOutput {
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
     /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p>
-    #[doc(hidden)]
     pub abort_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
-    #[doc(hidden)]
     pub abort_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>part-number-marker</code> request parameter in a subsequent request.</p>
-    #[doc(hidden)]
     pub next_part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of parts that were allowed in the response.</p>
-    #[doc(hidden)]
     pub max_parts: i32,
     /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
-    #[doc(hidden)]
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::Part>>,
     /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
-    #[doc(hidden)]
     pub initiator: ::std::option::Option<crate::types::Initiator>,
     /// <p> Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded object.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

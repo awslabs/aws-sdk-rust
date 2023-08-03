@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilePaths {
     /// <p>Path to the infected or suspicious file on the resource it was detected on. </p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the infected or suspicious file corresponding to the hash. </p>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource on which the threat was detected. </p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The hash value for the infected or suspicious file. </p>
-    #[doc(hidden)]
     pub hash: ::std::option::Option<::std::string::String>,
 }
 impl FilePaths {

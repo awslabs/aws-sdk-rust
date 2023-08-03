@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterInput {
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group associated with the cluster.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the cluster.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of shards the cluster will contain. The default value is 1. </p>
-    #[doc(hidden)]
     pub num_shards: ::std::option::Option<i32>,
     /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
-    #[doc(hidden)]
     pub num_replicas_per_shard: ::std::option::Option<i32>,
     /// <p>The name of the subnet group to be used for the cluster.</p>
-    #[doc(hidden)]
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of security group names to associate with this cluster.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -39,48 +31,34 @@ pub struct CreateClusterInput {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    #[doc(hidden)]
     pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which each of the nodes accepts connections.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>A flag to enable in-transit encryption on the cluster.</p>
-    #[doc(hidden)]
     pub tls_enabled: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-    #[doc(hidden)]
     pub snapshot_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p> Example: 05:00-09:00</p>
     /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Access Control List to associate with the cluster.</p>
-    #[doc(hidden)]
     pub acl_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the Redis engine to be used for the cluster.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
-    #[doc(hidden)]
     pub data_tiering: ::std::option::Option<bool>,
 }
 impl CreateClusterInput {

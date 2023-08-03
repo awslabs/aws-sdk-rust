@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledTriggerProperties {
     /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run.</p>
-    #[doc(hidden)]
     pub data_pull_mode: ::std::option::Option<crate::types::DataPullMode>,
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
-    #[doc(hidden)]
     pub schedule_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
-    #[doc(hidden)]
     pub schedule_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as America/New_York.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the optional offset that is added to the time interval for a schedule-triggered flow.</p>
-    #[doc(hidden)]
     pub schedule_offset: ::std::option::Option<i64>,
     /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
-    #[doc(hidden)]
     pub first_execution_from: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ScheduledTriggerProperties {

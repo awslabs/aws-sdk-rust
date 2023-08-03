@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateSecurityKeyOutput {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

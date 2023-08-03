@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourceOutput {
     /// <p>A structure containing information about an Lake Formation resource.</p>
-    #[doc(hidden)]
     pub resource_info: ::std::option::Option<crate::types::ResourceInfo>,
     _request_id: Option<String>,
 }

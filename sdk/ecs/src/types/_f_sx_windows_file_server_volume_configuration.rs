@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FSxWindowsFileServerVolumeConfiguration {
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
-    #[doc(hidden)]
     pub root_directory: ::std::option::Option<::std::string::String>,
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
-    #[doc(hidden)]
     pub authorization_config: ::std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>,
 }
 impl FSxWindowsFileServerVolumeConfiguration {

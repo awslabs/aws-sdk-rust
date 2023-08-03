@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct User {
     /// <p>The identifier of the user account.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user account.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The user name assigned to the user account.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>Information about the user identity.</p>
-    #[doc(hidden)]
     pub identity_info: ::std::option::Option<crate::types::UserIdentityInfo>,
     /// <p>Information about the phone configuration for the user.</p>
-    #[doc(hidden)]
     pub phone_config: ::std::option::Option<crate::types::UserPhoneConfig>,
     /// <p>The identifier of the user account in the directory used for identity management.</p>
-    #[doc(hidden)]
     pub directory_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the security profiles for the user.</p>
-    #[doc(hidden)]
     pub security_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the routing profile for the user.</p>
-    #[doc(hidden)]
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the hierarchy group for the user.</p>
-    #[doc(hidden)]
     pub hierarchy_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl User {

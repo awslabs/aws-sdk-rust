@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Configuration {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the configuration was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
-    #[doc(hidden)]
     pub kafka_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Latest revision of the configuration.</p>
-    #[doc(hidden)]
     pub latest_revision: ::std::option::Option<crate::types::ConfigurationRevision>,
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ConfigurationState>,
 }
 impl Configuration {

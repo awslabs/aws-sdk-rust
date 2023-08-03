@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableAllFeaturesOutput {
     /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
-    #[doc(hidden)]
     pub handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,
 }

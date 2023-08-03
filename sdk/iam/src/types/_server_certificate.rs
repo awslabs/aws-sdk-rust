@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerCertificate {
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
-    #[doc(hidden)]
     pub server_certificate_metadata: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     /// <p>The contents of the public key certificate.</p>
-    #[doc(hidden)]
     pub certificate_body: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the public key certificate chain.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ServerCertificate {

@@ -5,22 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementOutput {
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    #[doc(hidden)]
     pub column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
     /// <p>The number of records updated by the request.</p>
-    #[doc(hidden)]
     pub number_of_records_updated: i64,
     /// <p>Values for fields generated during a DML request.</p> <note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
-    #[doc(hidden)]
     pub generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
-    #[doc(hidden)]
     pub formatted_records: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

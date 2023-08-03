@@ -6,34 +6,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Computation {
     /// <p>The top ranked and bottom ranked computation configuration.</p>
-    #[doc(hidden)]
     pub top_bottom_ranked: ::std::option::Option<crate::types::TopBottomRankedComputation>,
     /// <p>The top movers and bottom movers computation configuration.</p>
-    #[doc(hidden)]
     pub top_bottom_movers: ::std::option::Option<crate::types::TopBottomMoversComputation>,
     /// <p>The total aggregation computation configuration.</p>
-    #[doc(hidden)]
     pub total_aggregation: ::std::option::Option<crate::types::TotalAggregationComputation>,
     /// <p>The maximum and minimum computation configuration.</p>
-    #[doc(hidden)]
     pub maximum_minimum: ::std::option::Option<crate::types::MaximumMinimumComputation>,
     /// <p>The metric comparison computation configuration.</p>
-    #[doc(hidden)]
     pub metric_comparison: ::std::option::Option<crate::types::MetricComparisonComputation>,
     /// <p>The period over period computation configuration.</p>
-    #[doc(hidden)]
     pub period_over_period: ::std::option::Option<crate::types::PeriodOverPeriodComputation>,
     /// <p>The period to <code>DataSetIdentifier</code> computation configuration.</p>
-    #[doc(hidden)]
     pub period_to_date: ::std::option::Option<crate::types::PeriodToDateComputation>,
     /// <p>The growth rate computation configuration.</p>
-    #[doc(hidden)]
     pub growth_rate: ::std::option::Option<crate::types::GrowthRateComputation>,
     /// <p>The unique values computation configuration.</p>
-    #[doc(hidden)]
     pub unique_values: ::std::option::Option<crate::types::UniqueValuesComputation>,
     /// <p>The forecast computation configuration.</p>
-    #[doc(hidden)]
     pub forecast: ::std::option::Option<crate::types::ForecastComputation>,
 }
 impl Computation {

@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Websocket {
     /// <p>The URL of the websocket.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The URL expiration timestamp in ISO date format.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    #[doc(hidden)]
     pub connection_expiry: ::std::option::Option<::std::string::String>,
 }
 impl Websocket {

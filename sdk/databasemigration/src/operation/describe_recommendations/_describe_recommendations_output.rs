@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecommendationsOutput {
     /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     _request_id: Option<String>,
 }

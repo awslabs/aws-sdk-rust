@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScriptOutput {
     /// <p>A set of properties describing the requested script.</p>
-    #[doc(hidden)]
     pub script: ::std::option::Option<crate::types::Script>,
     _request_id: Option<String>,
 }

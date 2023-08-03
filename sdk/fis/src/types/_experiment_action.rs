@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentAction {
     /// <p>The ID of the action.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The description for the action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the action.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The targets for the action.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the action that must be completed before this action starts.</p>
-    #[doc(hidden)]
     pub start_after: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the action.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ExperimentActionState>,
     /// <p>The time that the action started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the action ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExperimentAction {

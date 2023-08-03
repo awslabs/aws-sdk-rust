@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Esam {
     /// Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS.
-    #[doc(hidden)]
     pub acquisition_point_id: ::std::option::Option<::std::string::String>,
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
-    #[doc(hidden)]
     pub ad_avail_offset: ::std::option::Option<i32>,
     /// Documentation update needed
-    #[doc(hidden)]
     pub password_param: ::std::option::Option<::std::string::String>,
     /// The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read.
-    #[doc(hidden)]
     pub pois_endpoint: ::std::option::Option<::std::string::String>,
     /// Documentation update needed
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS.
-    #[doc(hidden)]
     pub zone_identity: ::std::option::Option<::std::string::String>,
 }
 impl Esam {

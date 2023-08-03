@@ -6,35 +6,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PasswordPolicy {
     /// <p>Minimum length to require for IAM user passwords.</p>
-    #[doc(hidden)]
     pub minimum_password_length: ::std::option::Option<i32>,
     /// <p>Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
     /// <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>
-    #[doc(hidden)]
     pub require_symbols: bool,
     /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
-    #[doc(hidden)]
     pub require_numbers: bool,
     /// <p>Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).</p>
-    #[doc(hidden)]
     pub require_uppercase_characters: bool,
     /// <p>Specifies whether IAM user passwords must contain at least one lowercase character (a to z).</p>
-    #[doc(hidden)]
     pub require_lowercase_characters: bool,
     /// <p>Specifies whether IAM users are allowed to change their own password. Gives IAM users permissions to <code>iam:ChangePassword</code> for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This option does not attach a permissions policy to each user, rather the permissions are applied at the account-level for all users by IAM.</p>
-    #[doc(hidden)]
     pub allow_users_to_change_password: bool,
     /// <p>Indicates whether passwords in the account expire. Returns true if <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if MaxPasswordAge is 0 or not present.</p>
-    #[doc(hidden)]
     pub expire_passwords: bool,
     /// <p>The number of days that an IAM user password is valid.</p>
-    #[doc(hidden)]
     pub max_password_age: ::std::option::Option<i32>,
     /// <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>
-    #[doc(hidden)]
     pub password_reuse_prevention: ::std::option::Option<i32>,
     /// <p>Specifies whether IAM users are prevented from setting a new password via the Amazon Web Services Management Console after their password has expired. The IAM user cannot access the console until an administrator resets the password. IAM users with <code>iam:ChangePassword</code> permission and active access keys can reset their own expired console password using the CLI or API.</p>
-    #[doc(hidden)]
     pub hard_expiry: ::std::option::Option<bool>,
 }
 impl PasswordPolicy {

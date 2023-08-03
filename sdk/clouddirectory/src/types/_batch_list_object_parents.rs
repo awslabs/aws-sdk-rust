@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListObjectParents {
     /// <p>The reference that identifies an object.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl BatchListObjectParents {

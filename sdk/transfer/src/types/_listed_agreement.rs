@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedAgreement {
     /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    #[doc(hidden)]
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgreementStatusType>,
     /// <p>The unique identifier for the agreement.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the AS2 local profile.</p>
-    #[doc(hidden)]
     pub local_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the partner profile.</p>
-    #[doc(hidden)]
     pub partner_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl ListedAgreement {

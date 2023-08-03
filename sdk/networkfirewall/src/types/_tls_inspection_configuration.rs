@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsInspectionConfiguration {
     /// <p>Lists the server certificate configurations that are associated with the TLS configuration.</p>
-    #[doc(hidden)]
     pub server_certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateConfiguration>>,
 }
 impl TlsInspectionConfiguration {

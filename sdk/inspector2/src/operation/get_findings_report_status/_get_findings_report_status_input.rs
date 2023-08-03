@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsReportStatusInput {
     /// <p>The ID of the report to retrieve the status of.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFindingsReportStatusInput {

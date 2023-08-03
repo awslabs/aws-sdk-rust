@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTransitGatewayInput {
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The description for the transit gateway.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The options to modify.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::ModifyTransitGatewayOptions>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifyTransitGatewayInput {

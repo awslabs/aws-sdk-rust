@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlgorithmImage {
     /// <p>The name of the algorithm image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    #[doc(hidden)]
     pub docker_uri: ::std::option::Option<::std::string::String>,
 }
 impl AlgorithmImage {

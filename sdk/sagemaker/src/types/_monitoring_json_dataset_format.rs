@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringJsonDatasetFormat {
     /// <p>Indicates if the file should be read as a json object per line. </p>
-    #[doc(hidden)]
     pub line: bool,
 }
 impl MonitoringJsonDatasetFormat {

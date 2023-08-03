@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioSilenceFailoverSettings {
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
-    #[doc(hidden)]
     pub audio_selector_name: ::std::option::Option<::std::string::String>,
     /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
-    #[doc(hidden)]
     pub audio_silence_threshold_msec: ::std::option::Option<i32>,
 }
 impl AudioSilenceFailoverSettings {

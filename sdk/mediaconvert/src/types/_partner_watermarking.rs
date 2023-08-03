@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartnerWatermarking {
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
-    #[doc(hidden)]
     pub nexguard_file_marker_settings: ::std::option::Option<crate::types::NexGuardFileMarkerSettings>,
 }
 impl PartnerWatermarking {

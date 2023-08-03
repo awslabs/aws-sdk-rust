@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeModelPackageOutput {
     /// <p>The summaries for the model package versions</p>
-    #[doc(hidden)]
     pub model_package_summaries:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageSummary>>,
     /// <p>A map of the resource and BatchDescribeModelPackageError objects reporting the error associated with describing the model package.</p>
-    #[doc(hidden)]
     pub batch_describe_model_package_error_map:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BatchDescribeModelPackageError>>,
     _request_id: Option<String>,

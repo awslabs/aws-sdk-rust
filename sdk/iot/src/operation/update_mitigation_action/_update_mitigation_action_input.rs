@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMitigationActionInput {
     /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Defines the type of action and the parameters for that action.</p>
-    #[doc(hidden)]
     pub action_params: ::std::option::Option<crate::types::MitigationActionParams>,
 }
 impl UpdateMitigationActionInput {

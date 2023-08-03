@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendAnnouncementInput {
     /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
-    #[doc(hidden)]
     pub room_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::Content>,
     /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
-    #[doc(hidden)]
     pub time_to_live_in_seconds: ::std::option::Option<i32>,
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl SendAnnouncementInput {

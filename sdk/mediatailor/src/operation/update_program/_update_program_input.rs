@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProgramInput {
     /// <p>The ad break configuration settings.</p>
-    #[doc(hidden)]
     pub ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     /// <p>The name of the channel for this Program.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Program.</p>
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
     /// <p>The schedule configuration settings.</p>
-    #[doc(hidden)]
     pub schedule_configuration: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
 }
 impl UpdateProgramInput {

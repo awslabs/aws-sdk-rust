@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the access control configuration you want to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the access control configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the access control configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    #[doc(hidden)]
     pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
 }
 impl UpdateAccessControlConfigurationInput {

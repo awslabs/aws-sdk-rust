@@ -4,35 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAlarmModelInput {
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A description that tells you what the alarm model detects.</p>
-    #[doc(hidden)]
     pub alarm_model_description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<i32>,
     /// <p>Defines when your alarm is invoked.</p>
-    #[doc(hidden)]
     pub alarm_rule: ::std::option::Option<crate::types::AlarmRule>,
     /// <p>Contains information about one or more notification actions.</p>
-    #[doc(hidden)]
     pub alarm_notification: ::std::option::Option<crate::types::AlarmNotification>,
     /// <p>Contains information about one or more alarm actions.</p>
-    #[doc(hidden)]
     pub alarm_event_actions: ::std::option::Option<crate::types::AlarmEventActions>,
     /// <p>Contains the configuration information of alarm state changes.</p>
-    #[doc(hidden)]
     pub alarm_capabilities: ::std::option::Option<crate::types::AlarmCapabilities>,
 }
 impl CreateAlarmModelInput {

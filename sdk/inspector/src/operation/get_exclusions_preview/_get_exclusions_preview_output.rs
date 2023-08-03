@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExclusionsPreviewOutput {
     /// <p>Specifies the status of the request to generate an exclusions preview.</p>
-    #[doc(hidden)]
     pub preview_status: ::std::option::Option<crate::types::PreviewStatus>,
     /// <p>Information about the exclusions included in the preview.</p>
-    #[doc(hidden)]
     pub exclusion_previews: ::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>>,
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

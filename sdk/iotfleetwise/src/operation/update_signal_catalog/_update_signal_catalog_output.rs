@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSignalCatalogOutput {
     /// <p> The name of the updated signal catalog. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the updated signal catalog. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringInput {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the transit gateway for the peering request.</p>
-    #[doc(hidden)]
     pub transit_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value tags associated with the request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTransitGatewayPeeringInput {

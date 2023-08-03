@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCoreDefinitionVersionOutput {
     /// The ARN of the core definition version.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the core definition version was created.
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::std::string::String>,
     /// Information about the core definition version.
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::CoreDefinitionVersion>,
     /// The ID of the core definition version.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// The version of the core definition version.
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

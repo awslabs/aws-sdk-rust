@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTransactionOutput {
     /// <p>An opaque identifier for the transaction.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

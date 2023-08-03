@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsOutput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of Lifecycle Configurations and their properties.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_configs: ::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>>,
     _request_id: Option<String>,
 }

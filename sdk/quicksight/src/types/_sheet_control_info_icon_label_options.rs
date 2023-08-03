@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetControlInfoIconLabelOptions {
     /// <p>The visibility configuration of info icon label options.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p> The text content of info icon.</p>
-    #[doc(hidden)]
     pub info_icon_text: ::std::option::Option<::std::string::String>,
 }
 impl SheetControlInfoIconLabelOptions {

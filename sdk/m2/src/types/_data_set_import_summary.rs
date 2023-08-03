@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetImportSummary {
     /// <p>The total number of data set imports.</p>
-    #[doc(hidden)]
     pub total: i32,
     /// <p>The number of data set imports that have succeeded.</p>
-    #[doc(hidden)]
     pub succeeded: i32,
     /// <p>The number of data set imports that have failed.</p>
-    #[doc(hidden)]
     pub failed: i32,
     /// <p>The number of data set imports that are pending.</p>
-    #[doc(hidden)]
     pub pending: i32,
     /// <p>The number of data set imports that are in progress.</p>
-    #[doc(hidden)]
     pub in_progress: i32,
 }
 impl DataSetImportSummary {

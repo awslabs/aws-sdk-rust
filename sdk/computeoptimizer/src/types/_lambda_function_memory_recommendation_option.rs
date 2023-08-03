@@ -6,16 +6,12 @@
 pub struct LambdaFunctionMemoryRecommendationOption {
     /// <p>The rank of the function recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
-    #[doc(hidden)]
     pub rank: i32,
     /// <p>The memory size, in MB, of the function recommendation option.</p>
-    #[doc(hidden)]
     pub memory_size: i32,
     /// <p>An array of objects that describe the projected utilization metrics of the function recommendation option.</p>
-    #[doc(hidden)]
     pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>,
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    #[doc(hidden)]
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
 }
 impl LambdaFunctionMemoryRecommendationOption {

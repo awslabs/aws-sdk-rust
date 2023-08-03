@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorEntityField {
     /// <p> The unique identifier of the connector field. </p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The parent identifier of the connector field.</p>
-    #[doc(hidden)]
     pub parent_identifier: ::std::option::Option<::std::string::String>,
     /// <p> The label applied to a connector entity field. </p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Booelan value that indicates whether this field can be used as a primary key.</p>
-    #[doc(hidden)]
     pub is_primary_key: bool,
     /// <p>Default value that can be assigned to this field.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>Booelan value that indicates whether this field is deprecated or not.</p>
-    #[doc(hidden)]
     pub is_deprecated: bool,
     /// <p> Contains details regarding the supported <code>FieldType</code>, including the corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
-    #[doc(hidden)]
     pub supported_field_type_details: ::std::option::Option<crate::types::SupportedFieldTypeDetails>,
     /// <p> A description of the connector entity field. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
-    #[doc(hidden)]
     pub source_properties: ::std::option::Option<crate::types::SourceFieldProperties>,
     /// <p> The properties applied to a field when the connector is being used as a destination. </p>
-    #[doc(hidden)]
     pub destination_properties: ::std::option::Option<crate::types::DestinationFieldProperties>,
     /// <p>A map that has specific properties related to the ConnectorEntityField.</p>
-    #[doc(hidden)]
     pub custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ConnectorEntityField {

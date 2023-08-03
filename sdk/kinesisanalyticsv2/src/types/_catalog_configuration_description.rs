@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogConfigurationDescription {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
-    #[doc(hidden)]
     pub glue_data_catalog_configuration_description: ::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription>,
 }
 impl CatalogConfigurationDescription {

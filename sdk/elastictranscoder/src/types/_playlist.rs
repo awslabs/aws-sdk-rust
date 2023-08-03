@@ -7,10 +7,8 @@ pub struct Playlist {
     /// <p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>
     /// </note>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the output playlist. Valid formats include <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>For each output in this job that you want to include in a master playlist, the value of the Outputs:Key object.</p>
     /// <ul>
@@ -20,19 +18,14 @@ pub struct Playlist {
     /// </ul>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name. If you include a file extension in Output Key, the file name will have two extensions.</p>
     /// <p>If you include more than one output in a playlist, any segment duration settings, clip settings, or caption settings must be the same for all outputs in the playlist. For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>, and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must be the same for all outputs.</p>
-    #[doc(hidden)]
     pub output_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
-    #[doc(hidden)]
     pub hls_content_protection: ::std::option::Option<crate::types::HlsContentProtection>,
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
-    #[doc(hidden)]
     pub play_ready_drm: ::std::option::Option<crate::types::PlayReadyDrm>,
     /// <p>The status of the job with which the playlist is associated.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Information that further explains the status.</p>
-    #[doc(hidden)]
     pub status_detail: ::std::option::Option<::std::string::String>,
 }
 impl Playlist {

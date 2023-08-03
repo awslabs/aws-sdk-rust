@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
-    #[doc(hidden)]
     pub tdt_interval: ::std::option::Option<i32>,
 }
 impl DvbTdtSettings {

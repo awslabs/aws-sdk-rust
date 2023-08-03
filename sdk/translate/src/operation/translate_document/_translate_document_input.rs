@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranslateDocumentInput {
     /// <p>The content and content type for the document to be translated. The document size must not exceed 100 KB.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<crate::types::Document>,
     /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
     /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
     /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
-    #[doc(hidden)]
     pub terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language code requested for the translated document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub target_language_code: ::std::option::Option<::std::string::String>,
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::TranslationSettings>,
 }
 impl TranslateDocumentInput {

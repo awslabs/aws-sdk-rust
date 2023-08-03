@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyComplianceDetail {
     /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
-    #[doc(hidden)]
     pub policy_owner: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Firewall Manager policy.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub member_account: ::std::option::Option<::std::string::String>,
     /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance with the security group policy.</p>
-    #[doc(hidden)]
     pub violators: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceViolator>>,
     /// <p>Indicates if over 100 resources are noncompliant with the Firewall Manager policy.</p>
-    #[doc(hidden)]
     pub evaluation_limit_exceeded: bool,
     /// <p>A timestamp that indicates when the returned information should be considered out of date.</p>
-    #[doc(hidden)]
     pub expired_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
-    #[doc(hidden)]
     pub issue_info_map: ::std::option::Option<::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>>,
 }
 impl PolicyComplianceDetail {

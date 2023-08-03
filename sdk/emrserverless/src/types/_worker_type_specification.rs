@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerTypeSpecification {
     /// <p>The image configuration for a worker type.</p>
-    #[doc(hidden)]
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
 }
 impl WorkerTypeSpecification {

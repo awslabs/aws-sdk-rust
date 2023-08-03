@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
-    #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents that were found to match the query string.</p>
-    #[doc(hidden)]
     pub found: i64,
     /// <p>The documents that match the query string.</p>
-    #[doc(hidden)]
     pub suggestions: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>>,
 }
 impl SuggestModel {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStopJobRunInput {
     /// <p>The name of the job definition for which to stop job runs.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
-    #[doc(hidden)]
     pub job_run_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchStopJobRunInput {

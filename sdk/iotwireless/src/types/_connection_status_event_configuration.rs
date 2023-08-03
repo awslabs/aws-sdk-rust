@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionStatusEventConfiguration {
     /// <p>Connection status event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanConnectionStatusEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless gateway ID connection status event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub wireless_gateway_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl ConnectionStatusEventConfiguration {

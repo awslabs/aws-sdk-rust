@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeContentUpdate {
     /// <p>Describes an update to the text code for an application.</p>
-    #[doc(hidden)]
     pub text_content_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes an update to the zipped code for an application.</p>
-    #[doc(hidden)]
     pub zip_file_content_update: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Describes an update to the location of code for an application.</p>
-    #[doc(hidden)]
     pub s3_content_location_update: ::std::option::Option<crate::types::S3ContentLocationUpdate>,
 }
 impl CodeContentUpdate {

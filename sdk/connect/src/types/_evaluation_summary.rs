@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationSummary {
     /// <p>A unique identifier for the contact evaluation.</p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    #[doc(hidden)]
     pub evaluation_arn: ::std::option::Option<::std::string::String>,
     /// <p>A title of the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_title: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the contact evaluation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EvaluationStatus>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    #[doc(hidden)]
     pub evaluator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The overall score of the contact evaluation.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<crate::types::EvaluationScore>,
     /// <p>The timestamp for when the evaluation was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EvaluationSummary {

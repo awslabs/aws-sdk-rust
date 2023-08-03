@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TranslatedDocument {
     /// <p>The document containing the translated content.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl TranslatedDocument {

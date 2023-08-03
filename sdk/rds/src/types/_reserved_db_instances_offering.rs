@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedDbInstancesOffering {
     /// <p>The offering identifier.</p>
-    #[doc(hidden)]
     pub reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance class for the reserved DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the offering in seconds.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed price charged for this offering.</p>
-    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The hourly price charged for this offering.</p>
-    #[doc(hidden)]
     pub usage_price: f64,
     /// <p>The currency code for the reserved DB instance offering.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The database engine used by the offering.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the offering applies to Multi-AZ deployments.</p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedDbInstancesOffering {

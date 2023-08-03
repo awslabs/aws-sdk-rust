@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutChannelExpirationSettingsOutput {
     /// <p>The channel ARN.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Settings that control the interval after which a channel is deleted.</p>
-    #[doc(hidden)]
     pub expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,
     _request_id: Option<String>,
 }

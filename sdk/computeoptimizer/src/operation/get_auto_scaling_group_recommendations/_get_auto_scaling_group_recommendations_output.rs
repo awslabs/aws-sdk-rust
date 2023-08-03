@@ -5,14 +5,11 @@
 pub struct GetAutoScalingGroupRecommendationsOutput {
     /// <p>The token to use to advance to the next page of Auto Scaling group recommendations.</p>
     /// <p>This value is null when there are no more pages of Auto Scaling group recommendations to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe Auto Scaling group recommendations.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }

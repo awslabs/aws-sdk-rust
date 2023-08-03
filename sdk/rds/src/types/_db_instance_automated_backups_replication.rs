@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbInstanceAutomatedBackupsReplication {
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
-    #[doc(hidden)]
     pub db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceAutomatedBackupsReplication {

@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstancesCount {
     /// <p>The number of instances in the Assigning state.</p>
-    #[doc(hidden)]
     pub assigning: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>booting</code> status.</p>
-    #[doc(hidden)]
     pub booting: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>connection_lost</code> status.</p>
-    #[doc(hidden)]
     pub connection_lost: ::std::option::Option<i32>,
     /// <p>The number of instances in the Deregistering state.</p>
-    #[doc(hidden)]
     pub deregistering: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>online</code> status.</p>
-    #[doc(hidden)]
     pub online: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>pending</code> status.</p>
-    #[doc(hidden)]
     pub pending: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>rebooting</code> status.</p>
-    #[doc(hidden)]
     pub rebooting: ::std::option::Option<i32>,
     /// <p>The number of instances in the Registered state.</p>
-    #[doc(hidden)]
     pub registered: ::std::option::Option<i32>,
     /// <p>The number of instances in the Registering state.</p>
-    #[doc(hidden)]
     pub registering: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>requested</code> status.</p>
-    #[doc(hidden)]
     pub requested: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>running_setup</code> status.</p>
-    #[doc(hidden)]
     pub running_setup: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>setup_failed</code> status.</p>
-    #[doc(hidden)]
     pub setup_failed: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>shutting_down</code> status.</p>
-    #[doc(hidden)]
     pub shutting_down: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>start_failed</code> status.</p>
-    #[doc(hidden)]
     pub start_failed: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>stop_failed</code> status.</p>
-    #[doc(hidden)]
     pub stop_failed: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>stopped</code> status.</p>
-    #[doc(hidden)]
     pub stopped: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>stopping</code> status.</p>
-    #[doc(hidden)]
     pub stopping: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>terminated</code> status.</p>
-    #[doc(hidden)]
     pub terminated: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>terminating</code> status.</p>
-    #[doc(hidden)]
     pub terminating: ::std::option::Option<i32>,
     /// <p>The number of instances in the Unassigning state.</p>
-    #[doc(hidden)]
     pub unassigning: ::std::option::Option<i32>,
 }
 impl InstancesCount {

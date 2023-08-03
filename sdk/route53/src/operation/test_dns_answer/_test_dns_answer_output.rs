@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestDnsAnswerOutput {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
-    #[doc(hidden)]
     pub nameserver: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource record set that you submitted a request for.</p>
-    #[doc(hidden)]
     pub record_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource record set that you submitted a request for.</p>
-    #[doc(hidden)]
     pub record_type: ::std::option::Option<crate::types::RrType>,
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    #[doc(hidden)]
     pub record_data: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
-    #[doc(hidden)]
     pub response_code: ::std::option::Option<::std::string::String>,
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

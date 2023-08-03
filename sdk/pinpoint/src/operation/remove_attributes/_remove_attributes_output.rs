@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAttributesOutput {
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
-    #[doc(hidden)]
     pub attributes_resource: ::std::option::Option<crate::types::AttributesResource>,
     _request_id: Option<String>,
 }

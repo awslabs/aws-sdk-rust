@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetwork {
     /// <p>The ID of the global network that your core network is a part of. </p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a core network.</p>
-    #[doc(hidden)]
     pub core_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of a core network.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when a core network was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of a core network.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CoreNetworkState>,
     /// <p>The segments within a core network.</p>
-    #[doc(hidden)]
     pub segments: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>>,
     /// <p>The edges within a core network.</p>
-    #[doc(hidden)]
     pub edges: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEdge>>,
     /// <p>The list of key-value tags associated with a core network.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CoreNetwork {

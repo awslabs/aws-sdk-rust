@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunStatementInput {
     /// <p>The Session Id of the statement to be run.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The statement code to be run.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The origin of the request.</p>
-    #[doc(hidden)]
     pub request_origin: ::std::option::Option<::std::string::String>,
 }
 impl RunStatementInput {

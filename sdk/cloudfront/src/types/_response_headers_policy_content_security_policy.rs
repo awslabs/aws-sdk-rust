@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentSecurityPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    #[doc(hidden)]
     pub r#override: ::std::option::Option<bool>,
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
-    #[doc(hidden)]
     pub content_security_policy: ::std::option::Option<::std::string::String>,
 }
 impl ResponseHeadersPolicyContentSecurityPolicy {

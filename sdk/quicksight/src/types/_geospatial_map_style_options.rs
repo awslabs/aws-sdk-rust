@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialMapStyleOptions {
     /// <p>The base map style of the geospatial map.</p>
-    #[doc(hidden)]
     pub base_map_style: ::std::option::Option<crate::types::BaseMapStyleType>,
 }
 impl GeospatialMapStyleOptions {

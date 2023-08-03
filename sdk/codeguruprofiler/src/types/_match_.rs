@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Match {
     /// <p>The target frame that triggered a match.</p>
-    #[doc(hidden)]
     pub target_frames_index: ::std::option::Option<i32>,
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
-    #[doc(hidden)]
     pub frame_address: ::std::option::Option<::std::string::String>,
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
-    #[doc(hidden)]
     pub threshold_breach_value: ::std::option::Option<f64>,
 }
 impl Match {

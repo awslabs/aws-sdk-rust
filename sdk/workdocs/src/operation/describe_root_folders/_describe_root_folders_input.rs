@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeRootFoldersInput {
     /// <p>Amazon WorkDocs authentication token.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRootFoldersInput {

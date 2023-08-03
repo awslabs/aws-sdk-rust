@@ -13,19 +13,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentFilter {
     /// <p>Specify the sentiments that you want to flag.</p>
-    #[doc(hidden)]
     pub sentiments: ::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>>,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
-    #[doc(hidden)]
     pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
-    #[doc(hidden)]
     pub relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to <code>FALSE</code> to flag the sentiments that you specified in your request.</p>
-    #[doc(hidden)]
     pub negate: ::std::option::Option<bool>,
 }
 impl SentimentFilter {

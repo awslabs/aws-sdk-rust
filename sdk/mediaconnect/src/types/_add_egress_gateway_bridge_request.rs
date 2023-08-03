@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddEgressGatewayBridgeRequest {
     /// The maximum expected bitrate (in bps).
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
 }
 impl AddEgressGatewayBridgeRequest {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResiliencyPoliciesOutput {
     /// <p>The resiliency policies for the Resilience Hub applications.</p>
-    #[doc(hidden)]
     pub resiliency_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResiliencyPolicy>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

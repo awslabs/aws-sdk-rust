@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingGroupInput {
     /// <p>The thing group to update.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing group properties.</p>
-    #[doc(hidden)]
     pub thing_group_properties: ::std::option::Option<crate::types::ThingGroupProperties>,
     /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
-    #[doc(hidden)]
     pub expected_version: ::std::option::Option<i64>,
 }
 impl UpdateThingGroupInput {

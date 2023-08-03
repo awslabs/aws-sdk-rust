@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptchaConfig {
     /// <p>Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
-    #[doc(hidden)]
     pub immunity_time_property: ::std::option::Option<crate::types::ImmunityTimeProperty>,
 }
 impl CaptchaConfig {

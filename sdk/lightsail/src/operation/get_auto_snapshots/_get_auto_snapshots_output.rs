@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutoSnapshotsOutput {
     /// <p>The name of the source instance or disk for the automatic snapshots.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
-    #[doc(hidden)]
     pub auto_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::AutoSnapshotDetails>>,
     _request_id: Option<String>,
 }

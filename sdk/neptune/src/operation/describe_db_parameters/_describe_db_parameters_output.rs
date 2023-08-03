@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbParametersOutput {
     /// <p>A list of <code>Parameter</code> values.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachFromIndexInput {
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the index object.</p>
-    #[doc(hidden)]
     pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>A reference to the object being detached from the index.</p>
-    #[doc(hidden)]
     pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl DetachFromIndexInput {

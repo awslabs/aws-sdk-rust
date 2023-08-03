@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetChannelInput {
     /// <p>Array of ARNs, one per channel.</p>
-    #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetChannelInput {

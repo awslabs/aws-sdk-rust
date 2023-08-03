@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDashboardOverrideParameters {
     /// <p>The ID of the dashboard that you want to apply overrides to.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the dashboard.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobDashboardOverrideParameters {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBulkTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailDestinationStatus>>,
     _request_id: Option<String>,
 }

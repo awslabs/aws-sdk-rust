@@ -15,7 +15,6 @@ pub struct CalculateRouteSummary {
     /// <li> <p>The third <code>bbox</code> position is the X coordinate, or longitude of the upper northeast corner. </p> </li>
     /// <li> <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper northeast corner. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub route_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The data provider of traffic and road network data used to calculate the route. Indicates one of the available providers:</p>
     /// <ul>
@@ -24,18 +23,14 @@ pub struct CalculateRouteSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>The total distance covered by the route. The sum of the distance travelled between every stop on the route.</p> <note>
     /// <p>If Esri is the data source for the route calculator, the route distance can’t be greater than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    #[doc(hidden)]
     pub distance: ::std::option::Option<f64>,
     /// <p>The total travel time for the route measured in seconds. The sum of the travel time between every stop on the route.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<f64>,
     /// <p>The unit of measurement for route distances.</p>
-    #[doc(hidden)]
     pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
 }
 impl CalculateRouteSummary {

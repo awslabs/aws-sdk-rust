@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExportConfigurationsOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub exports_info: ::std::option::Option<::std::vec::Vec<crate::types::ExportInfo>>,
     /// <p>The token from the previous call to describe-export-tasks.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

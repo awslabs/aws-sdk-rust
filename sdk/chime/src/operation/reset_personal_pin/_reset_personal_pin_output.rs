@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetPersonalPinOutput {
     /// <p>The user details and new personal meeting PIN.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,
 }

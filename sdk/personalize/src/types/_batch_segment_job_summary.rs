@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchSegmentJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-    #[doc(hidden)]
     pub batch_segment_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the batch segment job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the batch segment job. The status is one of the following values:</p>
     /// <ul>
@@ -17,19 +15,14 @@ pub struct BatchSegmentJobSummary {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the batch segment job was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the batch segment job was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the batch segment job failed, the reason for the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version used by the batch segment job to generate batch segments.</p>
-    #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl BatchSegmentJobSummary {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The service template major version to delete.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>The service template minor version to delete.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceTemplateVersionInput {

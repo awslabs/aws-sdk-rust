@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionDescription {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Region is the primary Region or an additional Region.</p>
-    #[doc(hidden)]
     pub region_type: ::std::option::Option<crate::types::RegionType>,
     /// <p>The status of the replication process for the specified Region.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DirectoryStage>,
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    #[doc(hidden)]
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettings>,
     /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
-    #[doc(hidden)]
     pub desired_number_of_domain_controllers: i32,
     /// <p>Specifies when the Region replication began.</p>
-    #[doc(hidden)]
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Region status was last updated.</p>
-    #[doc(hidden)]
     pub status_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Region description was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RegionDescription {

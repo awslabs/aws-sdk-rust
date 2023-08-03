@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePublicKeyInput {
     /// <p>A CloudFront public key configuration.</p>
-    #[doc(hidden)]
     pub public_key_config: ::std::option::Option<crate::types::PublicKeyConfig>,
 }
 impl CreatePublicKeyInput {

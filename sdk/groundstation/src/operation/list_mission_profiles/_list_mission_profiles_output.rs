@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMissionProfilesOutput {
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of mission profiles.</p>
-    #[doc(hidden)]
     pub mission_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
     _request_id: Option<String>,
 }

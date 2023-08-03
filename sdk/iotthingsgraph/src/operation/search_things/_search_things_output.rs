@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchThingsOutput {
     /// <p>An array of things in the result set.</p>
-    #[doc(hidden)]
     pub things: ::std::option::Option<::std::vec::Vec<crate::types::Thing>>,
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

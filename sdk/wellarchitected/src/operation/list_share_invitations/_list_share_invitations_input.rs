@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListShareInvitationsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    #[doc(hidden)]
     pub workload_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-    #[doc(hidden)]
     pub lens_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The type of share invitations to be returned.</p>
-    #[doc(hidden)]
     pub share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Profile name prefix.</p>
-    #[doc(hidden)]
     pub profile_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListShareInvitationsInput {

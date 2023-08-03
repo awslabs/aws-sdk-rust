@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeaderMatchPattern {
     /// <p>Inspect all headers. </p>
-    #[doc(hidden)]
     pub all: ::std::option::Option<crate::types::All>,
     /// <p>Inspect only the headers that have a key that matches one of the strings specified here. </p>
-    #[doc(hidden)]
     pub included_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Inspect only the headers whose keys don't match any of the strings specified here. </p>
-    #[doc(hidden)]
     pub excluded_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl HeaderMatchPattern {

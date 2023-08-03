@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePath {
     /// <p>The components of the resource path.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePathComponent>>,
 }
 impl ResourcePath {

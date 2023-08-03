@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkControlSet {
     /// <p> The unique identifier for the control set. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the control set. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The list of controls that are contained within the control set. </p>
-    #[doc(hidden)]
     pub controls: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl UpdateAssessmentFrameworkControlSet {

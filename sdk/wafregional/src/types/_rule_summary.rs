@@ -10,10 +10,8 @@
 pub struct RuleSummary {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl RuleSummary {

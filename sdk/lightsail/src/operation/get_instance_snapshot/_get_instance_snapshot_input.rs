@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceSnapshotInput {
     /// <p>The name of the snapshot for which you are requesting information.</p>
-    #[doc(hidden)]
     pub instance_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceSnapshotInput {

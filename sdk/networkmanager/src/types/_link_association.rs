@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LinkAssociation {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The device ID for the link association.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link.</p>
-    #[doc(hidden)]
     pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association.</p>
-    #[doc(hidden)]
     pub link_association_state: ::std::option::Option<crate::types::LinkAssociationState>,
 }
 impl LinkAssociation {

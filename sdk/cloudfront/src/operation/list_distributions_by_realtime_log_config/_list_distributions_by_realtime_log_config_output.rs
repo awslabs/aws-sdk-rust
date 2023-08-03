@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDistributionsByRealtimeLogConfigOutput {
     /// <p>A distribution list.</p>
-    #[doc(hidden)]
     pub distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,
 }

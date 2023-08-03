@@ -6,7 +6,6 @@
 pub struct Filter {
     /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
     /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
     /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
@@ -19,7 +18,6 @@ pub struct Filter {
     /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
     /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filter {

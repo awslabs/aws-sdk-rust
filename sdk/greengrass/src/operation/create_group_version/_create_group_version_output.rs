@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupVersionOutput {
     /// The ARN of the version.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::std::string::String>,
     /// The ID of the parent definition that the version is associated with.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The ID of the version.
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

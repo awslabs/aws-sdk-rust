@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetViewOutput {
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
-    #[doc(hidden)]
     pub views: ::std::option::Option<::std::vec::Vec<crate::types::View>>,
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>>,
     _request_id: Option<String>,
 }

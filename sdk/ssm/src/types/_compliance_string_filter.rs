@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceStringFilter {
     /// <p>The name of the filter.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value for which to search.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith, LessThan, or GreaterThan.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ComplianceQueryOperatorType>,
 }
 impl ComplianceStringFilter {

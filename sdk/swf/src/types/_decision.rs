@@ -61,48 +61,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Decision {
     /// <p>Specifies the type of the decision.</p>
-    #[doc(hidden)]
     pub decision_type: ::std::option::Option<crate::types::DecisionType>,
     /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub schedule_activity_task_decision_attributes: ::std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,
     /// <p>Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub request_cancel_activity_task_decision_attributes: ::std::option::Option<crate::types::RequestCancelActivityTaskDecisionAttributes>,
     /// <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub complete_workflow_execution_decision_attributes: ::std::option::Option<crate::types::CompleteWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub fail_workflow_execution_decision_attributes: ::std::option::Option<crate::types::FailWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub cancel_workflow_execution_decision_attributes: ::std::option::Option<crate::types::CancelWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub continue_as_new_workflow_execution_decision_attributes: ::std::option::Option<crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub record_marker_decision_attributes: ::std::option::Option<crate::types::RecordMarkerDecisionAttributes>,
     /// <p>Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub start_timer_decision_attributes: ::std::option::Option<crate::types::StartTimerDecisionAttributes>,
     /// <p>Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub cancel_timer_decision_attributes: ::std::option::Option<crate::types::CancelTimerDecisionAttributes>,
     /// <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub signal_external_workflow_execution_decision_attributes:
         ::std::option::Option<crate::types::SignalExternalWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub request_cancel_external_workflow_execution_decision_attributes:
         ::std::option::Option<crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub start_child_workflow_execution_decision_attributes: ::std::option::Option<crate::types::StartChildWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.</p>
-    #[doc(hidden)]
     pub schedule_lambda_function_decision_attributes: ::std::option::Option<crate::types::ScheduleLambdaFunctionDecisionAttributes>,
 }
 impl Decision {

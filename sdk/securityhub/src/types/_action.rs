@@ -17,19 +17,14 @@ pub struct Action {
     /// <li> <p> <code>DNS_REQUEST</code> </p> </li>
     /// <li> <p> <code>PORT_PROBE</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<::std::string::String>,
     /// <p>Included if <code>ActionType</code> is <code>NETWORK_CONNECTION</code>. Provides details about the network connection that was detected.</p>
-    #[doc(hidden)]
     pub network_connection_action: ::std::option::Option<crate::types::NetworkConnectionAction>,
     /// <p>Included if <code>ActionType</code> is <code>AWS_API_CALL</code>. Provides details about the API call that was detected. </p>
-    #[doc(hidden)]
     pub aws_api_call_action: ::std::option::Option<crate::types::AwsApiCallAction>,
     /// <p>Included if <code>ActionType</code> is <code>DNS_REQUEST</code>. Provides details about the DNS request that was detected. </p>
-    #[doc(hidden)]
     pub dns_request_action: ::std::option::Option<crate::types::DnsRequestAction>,
     /// <p>Included if <code>ActionType</code> is <code>PORT_PROBE</code>. Provides details about the port probe that was detected. </p>
-    #[doc(hidden)]
     pub port_probe_action: ::std::option::Option<crate::types::PortProbeAction>,
 }
 impl Action {

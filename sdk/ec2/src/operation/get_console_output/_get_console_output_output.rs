@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConsoleOutputOutput {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the output was last updated.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

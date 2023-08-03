@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePullThroughCacheRuleInput {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    #[doc(hidden)]
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePullThroughCacheRuleInput {

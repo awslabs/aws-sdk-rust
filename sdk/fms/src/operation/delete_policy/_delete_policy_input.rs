@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePolicyInput {
     /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
     /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
@@ -19,7 +18,6 @@ pub struct DeletePolicyInput {
     /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
     /// </ul>
     /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
-    #[doc(hidden)]
     pub delete_all_policy_resources: ::std::option::Option<bool>,
 }
 impl DeletePolicyInput {

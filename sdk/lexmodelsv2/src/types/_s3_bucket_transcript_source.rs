@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketTranscriptSource {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub path_format: ::std::option::Option<crate::types::PathFormat>,
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
-    #[doc(hidden)]
     pub transcript_format: ::std::option::Option<crate::types::TranscriptFormat>,
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
-    #[doc(hidden)]
     pub transcript_filter: ::std::option::Option<crate::types::TranscriptFilter>,
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketTranscriptSource {

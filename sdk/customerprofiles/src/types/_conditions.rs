@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Conditions {
     /// <p>The relative time period over which data is included in the aggregation.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<crate::types::Range>,
     /// <p>The number of profile objects used for the calculated attribute.</p>
-    #[doc(hidden)]
     pub object_count: ::std::option::Option<i32>,
     /// <p>The threshold for the calculated attribute.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<crate::types::Threshold>,
 }
 impl Conditions {

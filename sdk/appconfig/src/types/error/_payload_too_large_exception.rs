@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PayloadTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub measure: ::std::option::Option<crate::types::BytesMeasure>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub limit: f32,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub size: f32,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

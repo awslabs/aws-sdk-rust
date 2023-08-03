@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetModelProperty {
     /// <p>The ID of the asset model property.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the asset model property.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the asset model property.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    #[doc(hidden)]
     pub data_type_spec: ::std::option::Option<::std::string::String>,
     /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The property type (see <code>PropertyType</code>).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PropertyType>,
 }
 impl AssetModelProperty {

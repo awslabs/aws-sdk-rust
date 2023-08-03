@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageImportJobInputConfig {
     /// <p>The package version's input configuration.</p>
-    #[doc(hidden)]
     pub package_version_input_config: ::std::option::Option<crate::types::PackageVersionInputConfig>,
 }
 impl PackageImportJobInputConfig {

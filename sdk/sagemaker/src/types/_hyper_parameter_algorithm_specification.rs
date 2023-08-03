@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterAlgorithmSpecification {
     /// <p> The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms Provided by Amazon SageMaker: Common Parameters</a>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p>
-    #[doc(hidden)]
     pub training_image: ::std::option::Option<::std::string::String>,
     /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
     /// <p> <b>Pipe mode</b> </p>
@@ -17,13 +16,10 @@ pub struct HyperParameterAlgorithmSpecification {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    #[doc(hidden)]
     pub training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
     /// <p>The name of the resource algorithm to use for the hyperparameter tuning job. If you specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a> objects that specify the metrics that the algorithm emits.</p>
-    #[doc(hidden)]
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
 }
 impl HyperParameterAlgorithmSpecification {

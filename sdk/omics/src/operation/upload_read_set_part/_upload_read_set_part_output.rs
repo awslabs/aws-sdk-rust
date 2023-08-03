@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadReadSetPartOutput {
     /// <p> An identifier used to confirm that parts are being added to the intended upload. </p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

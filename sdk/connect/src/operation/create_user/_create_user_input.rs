@@ -4,35 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserInput {
     /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The information about the identity of the user.</p>
-    #[doc(hidden)]
     pub identity_info: ::std::option::Option<crate::types::UserIdentityInfo>,
     /// <p>The phone settings for the user.</p>
-    #[doc(hidden)]
     pub phone_config: ::std::option::Option<crate::types::UserPhoneConfig>,
     /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
     /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
-    #[doc(hidden)]
     pub directory_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the security profile for the user.</p>
-    #[doc(hidden)]
     pub security_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the routing profile for the user.</p>
-    #[doc(hidden)]
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the hierarchy group for the user.</p>
-    #[doc(hidden)]
     pub hierarchy_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateUserInput {

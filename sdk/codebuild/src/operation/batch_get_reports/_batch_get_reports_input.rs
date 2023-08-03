@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetReportsInput {
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-    #[doc(hidden)]
     pub report_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetReportsInput {

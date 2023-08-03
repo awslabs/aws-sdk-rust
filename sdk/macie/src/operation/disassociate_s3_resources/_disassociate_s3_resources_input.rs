@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateS3ResourcesInput {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
-    #[doc(hidden)]
     pub member_account_id: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
-    #[doc(hidden)]
     pub associated_s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
 }
 impl DisassociateS3ResourcesInput {

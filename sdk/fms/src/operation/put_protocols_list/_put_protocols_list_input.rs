@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutProtocolsListInput {
     /// <p>The details of the Firewall Manager protocols list to be created.</p>
-    #[doc(hidden)]
     pub protocols_list: ::std::option::Option<crate::types::ProtocolsListData>,
     /// <p>The tags associated with the resource.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutProtocolsListInput {

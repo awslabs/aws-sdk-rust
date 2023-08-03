@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name you configured for your gateway.</p>
-    #[doc(hidden)]
     pub gateway_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

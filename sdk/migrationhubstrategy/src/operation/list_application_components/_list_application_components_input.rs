@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationComponentsInput {
     /// <p> Criteria for filtering the list of application components. </p>
-    #[doc(hidden)]
     pub application_component_criteria: ::std::option::Option<crate::types::ApplicationComponentCriteria>,
     /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
-    #[doc(hidden)]
     pub filter_value: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::SortOrder>,
     /// <p> The group ID specified in to filter on. </p>
-    #[doc(hidden)]
     pub group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListApplicationComponentsInput {

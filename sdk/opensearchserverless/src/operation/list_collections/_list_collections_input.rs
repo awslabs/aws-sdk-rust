@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCollectionsInput {
     /// <p>List of filter names and values that you can use for requests.</p>
-    #[doc(hidden)]
     pub collection_filters: ::std::option::Option<crate::types::CollectionFilters>,
     /// <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return. Default is 20. You can use <code>nextToken</code> to get the next page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListCollectionsInput {

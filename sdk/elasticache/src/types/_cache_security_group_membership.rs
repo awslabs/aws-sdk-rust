@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheSecurityGroupMembership {
     /// <p>The name of the cache security group.</p>
-    #[doc(hidden)]
     pub cache_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl CacheSecurityGroupMembership {

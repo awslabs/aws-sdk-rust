@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    #[doc(hidden)]
     pub dataset_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset export job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset export job was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset export job status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a dataset export job fails, the reason behind the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl DatasetExportJobSummary {

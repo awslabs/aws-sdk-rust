@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidParameterDetail {
     /// <p>The reason the parameter is invalid.</p>
-    #[doc(hidden)]
     pub problem: ::std::option::Option<crate::types::InvalidParameterProblem>,
 }
 impl InvalidParameterDetail {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointEniOptions {
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     /// <p>The IP port number.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl CreateVerifiedAccessEndpointEniOptions {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityDocument {
     /// <p>Denotes the placement of a document in the IdentityDocument list. The first document is marked 1, the second 2 and so on.</p>
-    #[doc(hidden)]
     pub document_index: ::std::option::Option<i32>,
     /// <p>The structure used to record information extracted from identity documents. Contains both normalized field and value of the extracted text.</p>
-    #[doc(hidden)]
     pub identity_document_fields: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocumentField>>,
     /// <p>Individual word recognition, as returned by document detection.</p>
-    #[doc(hidden)]
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
 }
 impl IdentityDocument {

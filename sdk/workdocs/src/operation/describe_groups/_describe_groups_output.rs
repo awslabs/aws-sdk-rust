@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGroupsOutput {
     /// <p>The list of groups.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

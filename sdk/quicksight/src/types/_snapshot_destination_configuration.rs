@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotDestinationConfiguration {
     /// <p> A list of <code>SnapshotS3DestinationConfiguration</code> objects that contain Amazon S3 destination configurations. This structure can hold a maximum of 1 <code>S3DestinationConfiguration</code>. </p>
-    #[doc(hidden)]
     pub s3_destinations: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotS3DestinationConfiguration>>,
 }
 impl SnapshotDestinationConfiguration {

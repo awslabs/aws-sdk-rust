@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetReference {
     /// <p>Dataset placeholder.</p>
-    #[doc(hidden)]
     pub data_set_placeholder: ::std::option::Option<::std::string::String>,
     /// <p>Dataset Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub data_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSetReference {

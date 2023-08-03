@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GaugeChartConditionalFormattingOption {
     /// <p>The conditional formatting for the primary value of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub primary_value: ::std::option::Option<crate::types::GaugeChartPrimaryValueConditionalFormatting>,
     /// <p>The options that determine the presentation of the arc of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub arc: ::std::option::Option<crate::types::GaugeChartArcConditionalFormatting>,
 }
 impl GaugeChartConditionalFormattingOption {

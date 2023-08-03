@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeaderFooterSectionConfiguration {
     /// <p>The unique identifier of the header or footer section.</p>
-    #[doc(hidden)]
     pub section_id: ::std::option::Option<::std::string::String>,
     /// <p>The layout configuration of the header or footer section.</p>
-    #[doc(hidden)]
     pub layout: ::std::option::Option<crate::types::SectionLayoutConfiguration>,
     /// <p>The style options of a header or footer section.</p>
-    #[doc(hidden)]
     pub style: ::std::option::Option<crate::types::SectionStyle>,
 }
 impl HeaderFooterSectionConfiguration {

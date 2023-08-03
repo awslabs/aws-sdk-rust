@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Workteam {
     /// <p>The name of the work team.</p>
-    #[doc(hidden)]
     pub workteam_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
-    #[doc(hidden)]
     pub member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
     /// <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
-    #[doc(hidden)]
     pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
-    #[doc(hidden)]
     pub workforce_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Marketplace identifier for a vendor's work team.</p>
-    #[doc(hidden)]
     pub product_listing_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A description of the work team.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the labeling job's user interface. Workers open this URI to start labeling your data objects.</p>
-    #[doc(hidden)]
     pub sub_domain: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the work team was created (timestamp).</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the work team was last updated (timestamp).</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configures SNS notifications of available or expiring work items for work teams.</p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
 impl Workteam {

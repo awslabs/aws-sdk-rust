@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<crate::types::Transcript>,
     /// <p>The matched category rules.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<crate::types::Categories>,
 }
 impl RealtimeContactAnalysisSegment {

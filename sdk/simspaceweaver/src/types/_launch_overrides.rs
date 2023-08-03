@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchOverrides {
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-    #[doc(hidden)]
     pub launch_commands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchOverrides {

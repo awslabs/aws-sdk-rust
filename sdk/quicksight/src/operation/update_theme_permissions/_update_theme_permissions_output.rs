@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThemePermissionsOutput {
     /// <p>The ID for the theme.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
-    #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resulting list of resource permissions for the theme.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

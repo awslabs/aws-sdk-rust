@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppBlockBuilderStreamingUrlInput {
     /// <p>The name of the app block builder.</p>
-    #[doc(hidden)]
     pub app_block_builder_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
-    #[doc(hidden)]
     pub validity: ::std::option::Option<i64>,
 }
 impl CreateAppBlockBuilderStreamingUrlInput {

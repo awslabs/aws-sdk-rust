@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBotsOutput {
     /// <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
-    #[doc(hidden)]
     pub lex_bots: ::std::option::Option<::std::vec::Vec<crate::types::LexBotConfig>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

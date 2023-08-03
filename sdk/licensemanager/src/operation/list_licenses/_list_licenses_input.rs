@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    #[doc(hidden)]
     pub license_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
@@ -13,13 +12,10 @@ pub struct ListLicensesInput {
     /// <li> <p> <code>Fingerprint</code> </p> </li>
     /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListLicensesInput {

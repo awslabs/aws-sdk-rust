@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tenant {
     /// <p>The ID of the application tenant.</p>
-    #[doc(hidden)]
     pub tenant_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the tenant.</p>
-    #[doc(hidden)]
     pub tenant_display_name: ::std::option::Option<::std::string::String>,
 }
 impl Tenant {

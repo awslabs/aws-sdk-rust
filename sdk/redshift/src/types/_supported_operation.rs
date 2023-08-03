@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedOperation {
     /// <p>A list of the supported operations.</p>
-    #[doc(hidden)]
     pub operation_name: ::std::option::Option<::std::string::String>,
 }
 impl SupportedOperation {

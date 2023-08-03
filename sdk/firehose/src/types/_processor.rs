@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Processor {
     /// <p>The type of processor.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ProcessorType>,
     /// <p>The processor parameters.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,
 }
 impl Processor {

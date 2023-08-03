@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The list of resources referenced with this failed request.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceConflict>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

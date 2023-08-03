@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
-    #[doc(hidden)]
     pub primary_region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the primary replication group</p>
-    #[doc(hidden)]
     pub primary_replication_group_id: ::std::option::Option<::std::string::String>,
 }
 impl FailoverGlobalReplicationGroupInput {

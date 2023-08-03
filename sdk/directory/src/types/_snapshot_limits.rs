@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotLimits {
     /// <p>The maximum number of manual snapshots allowed.</p>
-    #[doc(hidden)]
     pub manual_snapshots_limit: ::std::option::Option<i32>,
     /// <p>The current number of manual snapshots of the directory.</p>
-    #[doc(hidden)]
     pub manual_snapshots_current_count: ::std::option::Option<i32>,
     /// <p>Indicates if the manual snapshot limit has been reached.</p>
-    #[doc(hidden)]
     pub manual_snapshots_limit_reached: bool,
 }
 impl SnapshotLimits {

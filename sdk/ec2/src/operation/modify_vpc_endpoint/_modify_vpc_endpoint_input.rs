@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>(Gateway endpoint) Specify <code>true</code> to reset the policy document to the default policy. The default policy allows full access to the service.</p>
-    #[doc(hidden)]
     pub reset_policy: ::std::option::Option<bool>,
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
-    #[doc(hidden)]
     pub add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
-    #[doc(hidden)]
     pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    #[doc(hidden)]
     pub add_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
-    #[doc(hidden)]
     pub remove_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
-    #[doc(hidden)]
     pub add_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
-    #[doc(hidden)]
     pub remove_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type for the endpoint.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The DNS options for the endpoint.</p>
-    #[doc(hidden)]
     pub dns_options: ::std::option::Option<crate::types::DnsOptionsSpecification>,
     /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
-    #[doc(hidden)]
     pub private_dns_enabled: ::std::option::Option<bool>,
 }
 impl ModifyVpcEndpointInput {

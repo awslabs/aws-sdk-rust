@@ -9,7 +9,6 @@ pub struct CopyOptionGroupInput {
     /// <ul>
     /// <li> <p>Must specify a valid option group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_option_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
@@ -20,13 +19,10 @@ pub struct CopyOptionGroupInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code> </p>
-    #[doc(hidden)]
     pub target_option_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description for the copied option group.</p>
-    #[doc(hidden)]
     pub target_option_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyOptionGroupInput {

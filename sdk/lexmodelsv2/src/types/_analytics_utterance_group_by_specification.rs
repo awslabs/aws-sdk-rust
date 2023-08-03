@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceGroupBySpecification {
     /// <p>Specifies whether to group the utterances by their text or their state.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
 }
 impl AnalyticsUtteranceGroupBySpecification {

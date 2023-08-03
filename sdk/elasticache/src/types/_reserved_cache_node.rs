@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedCacheNode {
     /// <p>The unique identifier for the reservation.</p>
-    #[doc(hidden)]
     pub reserved_cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The offering identifier.</p>
-    #[doc(hidden)]
     pub reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The cache node type for the reserved cache nodes.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -39,38 +37,27 @@ pub struct ReservedCacheNode {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The time the reservation started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the reservation in seconds.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed price charged for this reserved cache node.</p>
-    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The hourly price charged for this reserved cache node.</p>
-    #[doc(hidden)]
     pub usage_price: f64,
     /// <p>The number of cache nodes that have been reserved.</p>
-    #[doc(hidden)]
     pub cache_node_count: i32,
     /// <p>The description of the reserved cache node.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type of this reserved cache node.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>The state of the reserved cache node.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The recurring price charged to run this reserved cache node.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
     /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code> </p>
-    #[doc(hidden)]
     pub reservation_arn: ::std::option::Option<::std::string::String>,
 }
 impl ReservedCacheNode {

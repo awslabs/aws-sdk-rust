@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPoliciesInput {
     /// <p>The marker for the next set of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The result page size.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
-    #[doc(hidden)]
     pub ascending_order: ::std::option::Option<bool>,
 }
 impl ListPoliciesInput {

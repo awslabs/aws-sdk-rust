@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedProperties {
     /// <p>The detected width of the input file, in pixels.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<i32>,
     /// <p>The detected height of the input file, in pixels.</p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
     /// <p>The detected frame rate of the input file, in frames per second.</p>
-    #[doc(hidden)]
     pub frame_rate: ::std::option::Option<::std::string::String>,
     /// <p>The detected file size of the input file, in bytes.</p>
-    #[doc(hidden)]
     pub file_size: ::std::option::Option<i64>,
     /// <p>The detected duration of the input file, in milliseconds.</p>
-    #[doc(hidden)]
     pub duration_millis: ::std::option::Option<i64>,
 }
 impl DetectedProperties {

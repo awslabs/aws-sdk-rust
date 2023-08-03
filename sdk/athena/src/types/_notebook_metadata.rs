@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotebookMetadata {
     /// <p>The notebook ID.</p>
-    #[doc(hidden)]
     pub notebook_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the notebook.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Spark enabled workgroup to which the notebook belongs.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The time when the notebook was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of notebook. Currently, the only valid type is <code>IPYNB</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>The time when the notebook was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NotebookMetadata {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainMetadataInput {
     /// <p>The ARN of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDomainMetadataInput {

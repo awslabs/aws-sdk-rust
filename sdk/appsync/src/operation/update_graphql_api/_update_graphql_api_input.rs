@@ -4,38 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGraphqlApiInput {
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the <code>GraphqlApi</code> object.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
-    #[doc(hidden)]
     pub log_config: ::std::option::Option<crate::types::LogConfig>,
     /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
-    #[doc(hidden)]
     pub user_pool_config: ::std::option::Option<crate::types::UserPoolConfig>,
     /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
-    #[doc(hidden)]
     pub open_id_connect_config: ::std::option::Option<crate::types::OpenIdConnectConfig>,
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    #[doc(hidden)]
     pub additional_authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
-    #[doc(hidden)]
     pub xray_enabled: ::std::option::Option<bool>,
     /// <p>Configuration for Lambda function authorization.</p>
-    #[doc(hidden)]
     pub lambda_authorizer_config: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
-    #[doc(hidden)]
     pub merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
-    #[doc(hidden)]
     pub owner_contact: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGraphqlApiInput {

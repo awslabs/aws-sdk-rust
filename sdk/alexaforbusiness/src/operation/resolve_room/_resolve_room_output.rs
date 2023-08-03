@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveRoomOutput {
     /// <p>The ARN of the room from which the skill request was invoked.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the room from which the skill request was invoked.</p>
-    #[doc(hidden)]
     pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>Response to get the room profile request. Required.</p>
-    #[doc(hidden)]
     pub room_skill_parameters: ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>,
     _request_id: Option<String>,
 }

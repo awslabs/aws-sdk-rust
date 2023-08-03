@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The address street, such as <code>8th Avenue</code>.</p>
-    #[doc(hidden)]
     pub street_name: ::std::option::Option<::std::string::String>,
     /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
-    #[doc(hidden)]
     pub street_suffix: ::std::option::Option<::std::string::String>,
     /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
-    #[doc(hidden)]
     pub post_directional: ::std::option::Option<::std::string::String>,
     /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code> </p>
-    #[doc(hidden)]
     pub pre_directional: ::std::option::Option<::std::string::String>,
     /// <p>The numeric portion of an address.</p>
-    #[doc(hidden)]
     pub street_number: ::std::option::Option<::std::string::String>,
     /// <p>The city of an address.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The state of an address.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The postal code of an address.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The zip + 4 or postal code + 4 of an address.</p>
-    #[doc(hidden)]
     pub postal_code_plus4: ::std::option::Option<::std::string::String>,
     /// <p>The country of an address.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
 }
 impl Address {

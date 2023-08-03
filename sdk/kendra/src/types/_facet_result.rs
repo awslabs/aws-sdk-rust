@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FacetResult {
     /// <p>The key for the facet values. This is the same as the <code>DocumentAttributeKey</code> provided in the query.</p>
-    #[doc(hidden)]
     pub document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the facet value. This is the same as the type defined for the index field when it was created.</p>
-    #[doc(hidden)]
     pub document_attribute_value_type: ::std::option::Option<crate::types::DocumentAttributeValueType>,
     /// <p>An array of key/value pairs, where the key is the value of the attribute and the count is the number of documents that share the key value.</p>
-    #[doc(hidden)]
     pub document_attribute_value_count_pairs: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeValueCountPair>>,
 }
 impl FacetResult {

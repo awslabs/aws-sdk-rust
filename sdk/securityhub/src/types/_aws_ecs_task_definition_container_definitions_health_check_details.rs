@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
     /// <p>The command that the container runs to determine whether it is healthy.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
-    #[doc(hidden)]
     pub interval: i32,
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. The default value is 3.</p>
-    #[doc(hidden)]
     pub retries: i32,
     /// <p>The optional grace period in seconds that allows containers time to bootstrap before failed health checks count towards the maximum number of retries.</p>
-    #[doc(hidden)]
     pub start_period: i32,
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. The default value is 5.</p>
-    #[doc(hidden)]
     pub timeout: i32,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {

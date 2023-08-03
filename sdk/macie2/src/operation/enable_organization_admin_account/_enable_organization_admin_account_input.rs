@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableOrganizationAdminAccountInput {
     /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
-    #[doc(hidden)]
     pub admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {

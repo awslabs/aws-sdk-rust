@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a cross-account permission statement.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>The signing profile version that a permission applies to.</p>
-    #[doc(hidden)]
     pub profile_version: ::std::option::Option<::std::string::String>,
 }
 impl Permission {

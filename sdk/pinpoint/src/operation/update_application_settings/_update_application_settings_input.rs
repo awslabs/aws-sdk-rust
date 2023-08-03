@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the default settings for an application.</p>
-    #[doc(hidden)]
     pub write_application_settings_request: ::std::option::Option<crate::types::WriteApplicationSettingsRequest>,
 }
 impl UpdateApplicationSettingsInput {

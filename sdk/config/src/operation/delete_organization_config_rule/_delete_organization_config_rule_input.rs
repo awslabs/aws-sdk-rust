@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOrganizationConfigRuleInput {
     /// <p>The name of organization Config rule that you want to delete.</p>
-    #[doc(hidden)]
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOrganizationConfigRuleInput {

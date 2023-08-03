@@ -17,10 +17,8 @@ pub struct EncryptionSpecification {
     /// </ul>
     /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.</p>
-    #[doc(hidden)]
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionSpecification {

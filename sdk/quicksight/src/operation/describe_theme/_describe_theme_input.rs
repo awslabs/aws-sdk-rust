@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the theme.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
     /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThemeInput {

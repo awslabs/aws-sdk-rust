@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSiteInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSiteInput {

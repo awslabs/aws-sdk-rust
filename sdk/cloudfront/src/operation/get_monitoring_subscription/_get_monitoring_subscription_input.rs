@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMonitoringSubscriptionInput {
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
-    #[doc(hidden)]
     pub distribution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMonitoringSubscriptionInput {

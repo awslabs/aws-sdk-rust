@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEndpointWeightsAndCapacitiesInput {
     /// <p>The name of an existing SageMaker endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that provides new capacity and weight values for a variant.</p>
-    #[doc(hidden)]
     pub desired_weights_and_capacities: ::std::option::Option<::std::vec::Vec<crate::types::DesiredWeightAndCapacity>>,
 }
 impl UpdateEndpointWeightsAndCapacitiesInput {

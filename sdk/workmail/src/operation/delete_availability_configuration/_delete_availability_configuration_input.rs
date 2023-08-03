@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAvailabilityConfigurationInput {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAvailabilityConfigurationInput {

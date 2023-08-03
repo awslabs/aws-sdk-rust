@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWebAclOutput {
     /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::WebAclSummary>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KeyPair {
     /// <p>The public key.</p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::std::string::String>,
     /// <p>The private key.</p>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::std::string::String>,
 }
 impl KeyPair {

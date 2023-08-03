@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTurnSlotOutput {
     /// <p>The value output by the slot recognition.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Values that are output by the slot recognition.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::UserTurnSlotOutput>>,
     /// <p>A list of items mapping the name of the subslots to information about those subslots.</p>
-    #[doc(hidden)]
     pub sub_slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
 impl UserTurnSlotOutput {

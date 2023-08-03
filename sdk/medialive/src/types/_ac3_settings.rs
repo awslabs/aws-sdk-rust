@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ac3Settings {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<f64>,
     /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
-    #[doc(hidden)]
     pub bitstream_mode: ::std::option::Option<crate::types::Ac3BitstreamMode>,
     /// Dolby Digital coding mode. Determines number of channels.
-    #[doc(hidden)]
     pub coding_mode: ::std::option::Option<crate::types::Ac3CodingMode>,
     /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
-    #[doc(hidden)]
     pub dialnorm: ::std::option::Option<i32>,
     /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
-    #[doc(hidden)]
     pub drc_profile: ::std::option::Option<crate::types::Ac3DrcProfile>,
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
-    #[doc(hidden)]
     pub lfe_filter: ::std::option::Option<crate::types::Ac3LfeFilter>,
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    #[doc(hidden)]
     pub metadata_control: ::std::option::Option<crate::types::Ac3MetadataControl>,
 }
 impl Ac3Settings {

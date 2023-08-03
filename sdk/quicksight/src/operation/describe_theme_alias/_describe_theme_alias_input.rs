@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThemeAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're describing.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the theme.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the theme alias that you want to describe.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThemeAliasInput {

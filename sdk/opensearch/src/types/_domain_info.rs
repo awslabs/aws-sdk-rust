@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainInfo {
     /// <p>Name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
 }
 impl DomainInfo {

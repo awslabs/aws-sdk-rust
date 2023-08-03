@@ -7,19 +7,14 @@ pub struct LifecycleRuleFilter {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A container for a key-value name pair.</p>
-    #[doc(hidden)]
     pub tag: ::std::option::Option<crate::types::S3Tag>,
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
-    #[doc(hidden)]
     pub and: ::std::option::Option<crate::types::LifecycleRuleAndOperator>,
     /// <p>Minimum object size to which the rule applies.</p>
-    #[doc(hidden)]
     pub object_size_greater_than: ::std::option::Option<i64>,
     /// <p>Maximum object size to which the rule applies.</p>
-    #[doc(hidden)]
     pub object_size_less_than: ::std::option::Option<i64>,
 }
 impl LifecycleRuleFilter {

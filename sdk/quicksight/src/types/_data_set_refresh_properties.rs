@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetRefreshProperties {
     /// <p>The refresh configuration for a dataset.</p>
-    #[doc(hidden)]
     pub refresh_configuration: ::std::option::Option<crate::types::RefreshConfiguration>,
 }
 impl DataSetRefreshProperties {

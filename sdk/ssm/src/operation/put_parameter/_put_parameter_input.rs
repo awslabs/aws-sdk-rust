@@ -16,17 +16,14 @@ pub struct PutParameterInput {
     /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
     /// <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>
     /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>
     /// </note>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter that you want to add to the system.</p> <note>
     /// <p> <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
@@ -34,20 +31,16 @@ pub struct PutParameterInput {
     /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>
     /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>
     /// </important>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
     /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
     /// <ul>
     /// <li> <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub overwrite: ::std::option::Option<bool>,
     /// <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
-    #[doc(hidden)]
     pub allowed_pattern: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -57,7 +50,6 @@ pub struct PutParameterInput {
     /// </ul> <note>
     /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The parameter tier to assign to a parameter.</p>
     /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account. Standard parameters are offered at no additional cost. </p>
@@ -78,14 +70,12 @@ pub struct PutParameterInput {
     /// <li> <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p> </li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::ParameterTier>,
     /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
     /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the expiration date. You can update the expiration date and time by updating the policy. Updating the <i>parameter</i> doesn't affect the expiration date and time. When the expiration time is reached, Parameter Store deletes the parameter.</p>
     /// <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the expiration. By using this policy, you can receive notification before or after the expiration time is reached, in units of days or hours.</p>
     /// <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a specified period of time. This policy type is useful when, for example, a secret needs to be changed within a period of time, but it hasn't been changed.</p>
     /// <p>All existing policies are preserved until you send new policies or an empty policy. For more information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a>. </p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::string::String>,
     /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
     /// <p> <b>The following data type values are supported.</b> </p>
@@ -97,7 +87,6 @@ pub struct PutParameterInput {
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p> <note>
     /// <p>If the action is successful, the service sends back an HTTP 200 response which indicates a successful <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code> parameters are created successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format validation , see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a>. </p>
     /// </note>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl PutParameterInput {

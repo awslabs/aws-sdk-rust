@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// A short text description of the Channel.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// A collection of tags associated with a resource
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateChannelInput {

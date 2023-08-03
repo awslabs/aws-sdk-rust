@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>If specified, limits the events returned from this call to include only those with the specified severity or higher.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::EventSeverity>,
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the maximum number of events that can be returned, beginning with the most recent event.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>Pagination token. If specified, the events return the next batch of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventsInput {

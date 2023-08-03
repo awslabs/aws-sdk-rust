@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBotOutput {
     /// <p>A unique identifier for a particular bot. You use this to identify the bot when you call other Amazon Lex API operations.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name specified for the bot.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The description specified for the bot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role specified for the bot.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data privacy settings specified for the bot.</p>
-    #[doc(hidden)]
     pub data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
     /// <p>The session idle time specified for the bot.</p>
-    #[doc(hidden)]
     pub idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
-    #[doc(hidden)]
     pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     /// <p>A timestamp indicating the date and time that the bot was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the bot.</p>
-    #[doc(hidden)]
     pub bot_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of tags associated with the test alias for the bot.</p>
-    #[doc(hidden)]
     pub test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of a bot that was created.</p>
-    #[doc(hidden)]
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The list of bots in a network that was created.</p>
-    #[doc(hidden)]
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
     _request_id: Option<String>,
 }

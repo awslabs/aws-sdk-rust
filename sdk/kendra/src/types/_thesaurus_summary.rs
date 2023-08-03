@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThesaurusSummary {
     /// <p>The identifier of the thesaurus.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thesaurus.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the thesaurus.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ThesaurusStatus>,
     /// <p>The Unix timestamp when the thesaurus was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ThesaurusSummary {

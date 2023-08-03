@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCertificateBasedAuthPropertiesInput {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the certificate-based authentication.</p>
-    #[doc(hidden)]
     pub certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
     /// <p>The properties of the certificate-based authentication you want to delete.</p>
-    #[doc(hidden)]
     pub properties_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>>,
 }
 impl ModifyCertificateBasedAuthPropertiesInput {

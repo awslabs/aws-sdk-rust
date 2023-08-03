@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStudioMemberInput {
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStudioMemberInput {

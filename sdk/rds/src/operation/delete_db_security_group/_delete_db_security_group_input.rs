@@ -14,7 +14,6 @@ pub struct DeleteDbSecurityGroupInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSecurityGroupInput {

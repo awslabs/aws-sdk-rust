@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLdapsSettingsOutput {
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
-    #[doc(hidden)]
     pub ldaps_settings_info: ::std::option::Option<::std::vec::Vec<crate::types::LdapsSettingInfo>>,
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

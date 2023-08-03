@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectDocumentTextOutput {
     /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
-    #[doc(hidden)]
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
     /// <p></p>
-    #[doc(hidden)]
     pub detect_document_text_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

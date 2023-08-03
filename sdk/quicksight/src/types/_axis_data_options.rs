@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisDataOptions {
     /// <p>The options for an axis with a numeric field.</p>
-    #[doc(hidden)]
     pub numeric_axis_options: ::std::option::Option<crate::types::NumericAxisOptions>,
     /// <p>The options for an axis with a date field.</p>
-    #[doc(hidden)]
     pub date_axis_options: ::std::option::Option<crate::types::DateAxisOptions>,
 }
 impl AxisDataOptions {

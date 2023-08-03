@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringCondition {
     /// <p>The name of the field in the string condition.</p>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the string.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
-    #[doc(hidden)]
     pub comparison_type: ::std::option::Option<crate::types::StringComparisonType>,
 }
 impl StringCondition {

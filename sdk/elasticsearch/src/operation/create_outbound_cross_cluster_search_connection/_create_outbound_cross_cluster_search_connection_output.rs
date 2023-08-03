@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOutboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub source_domain_info: ::std::option::Option<crate::types::DomainInformation>,
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub destination_domain_info: ::std::option::Option<crate::types::DomainInformation>,
     /// <p>Specifies the connection alias provided during the create connection request.</p>
-    #[doc(hidden)]
     pub connection_alias: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the newly created connection.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatus>,
     /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
-    #[doc(hidden)]
     pub cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

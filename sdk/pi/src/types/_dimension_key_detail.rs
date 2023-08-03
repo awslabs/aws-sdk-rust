@@ -9,14 +9,12 @@ pub struct DimensionKeyDetail {
     /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
     /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the dimension. The full name includes the group name and key name. The following values are valid:</p>
     /// <ul>
     /// <li> <p> <code>db.query.statement</code> (Amazon DocumentDB)</p> </li>
     /// <li> <p> <code>db.sql.statement</code> (Amazon RDS and Aurora)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dimension detail data. Possible values include the following:</p>
     /// <ul>
@@ -24,7 +22,6 @@ pub struct DimensionKeyDetail {
     /// <li> <p> <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is required. If the requested detail data has the status <code>PROCESSING</code>, Performance Insights returns the truncated query.</p> </li>
     /// <li> <p> <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetailStatus>,
 }
 impl DimensionKeyDetail {

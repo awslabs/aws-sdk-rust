@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationCodeConfigurationUpdate {
     /// <p>Describes updates to the code content type.</p>
-    #[doc(hidden)]
     pub code_content_type_update: ::std::option::Option<crate::types::CodeContentType>,
     /// <p>Describes updates to the code content of an application.</p>
-    #[doc(hidden)]
     pub code_content_update: ::std::option::Option<crate::types::CodeContentUpdate>,
 }
 impl ApplicationCodeConfigurationUpdate {

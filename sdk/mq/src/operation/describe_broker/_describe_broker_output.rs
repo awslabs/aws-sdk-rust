@@ -4,103 +4,70 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBrokerOutput {
     /// <p>Actions required for a broker.</p>
-    #[doc(hidden)]
     pub actions_required: ::std::option::Option<::std::vec::Vec<crate::types::ActionRequired>>,
     /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    #[doc(hidden)]
     pub authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The broker's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub broker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of information about allocated brokers.</p>
-    #[doc(hidden)]
     pub broker_instances: ::std::option::Option<::std::vec::Vec<crate::types::BrokerInstance>>,
     /// <p>The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-    #[doc(hidden)]
     pub broker_name: ::std::option::Option<::std::string::String>,
     /// <p>The broker's status.</p>
-    #[doc(hidden)]
     pub broker_state: ::std::option::Option<crate::types::BrokerState>,
     /// <p>The list of all revisions for the specified configuration.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<crate::types::Configurations>,
     /// <p>The time when the broker was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The broker's deployment mode.</p>
-    #[doc(hidden)]
     pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     /// <p>Encryption options for the broker.</p>
-    #[doc(hidden)]
     pub encryption_options: ::std::option::Option<crate::types::EncryptionOptions>,
     /// <p>The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The broker's instance type.</p>
-    #[doc(hidden)]
     pub host_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p>
-    #[doc(hidden)]
     pub ldap_server_metadata: ::std::option::Option<crate::types::LdapServerMetadataOutput>,
     /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
-    #[doc(hidden)]
     pub logs: ::std::option::Option<crate::types::LogsSummary>,
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    #[doc(hidden)]
     pub maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
     /// <p>The authentication strategy that will be applied when the broker is rebooted. The default is SIMPLE.</p>
-    #[doc(hidden)]
     pub pending_authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>The broker engine version to upgrade to. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    #[doc(hidden)]
     pub pending_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    #[doc(hidden)]
     pub pending_host_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker after it is rebooted.</p>
-    #[doc(hidden)]
     pub pending_ldap_server_metadata: ::std::option::Option<crate::types::LdapServerMetadataOutput>,
     /// <p>The list of pending security groups to authorize connections to brokers.</p>
-    #[doc(hidden)]
     pub pending_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The broker's storage type.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<crate::types::BrokerStorageType>,
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of all tags associated with this broker.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of all broker usernames for the specified broker.</p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>,
     /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
-    #[doc(hidden)]
     pub data_replication_metadata: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
     /// <p>Describes whether this broker is a part of a data replication pair.</p>
-    #[doc(hidden)]
     pub data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     /// <p>The pending replication details of the data replication-enabled broker. Only returned if pendingDataReplicationMode is set to CRDR.</p>
-    #[doc(hidden)]
     pub pending_data_replication_metadata: ::std::option::Option<crate::types::DataReplicationMetadataOutput>,
     /// <p>Describes whether this broker will be a part of a data replication pair after reboot.</p>
-    #[doc(hidden)]
     pub pending_data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     _request_id: Option<String>,
 }

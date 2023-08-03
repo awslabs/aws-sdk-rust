@@ -6,10 +6,8 @@
 pub struct CloudWatchOutputConfig {
     /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
     /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_output_enabled: bool,
 }
 impl CloudWatchOutputConfig {

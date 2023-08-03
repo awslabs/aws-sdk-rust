@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemFilter {
     /// <p>The name of the filter.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::OpsItemFilterKey>,
     /// <p>The filter value.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator used by the filter call.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::OpsItemFilterOperator>,
 }
 impl OpsItemFilter {

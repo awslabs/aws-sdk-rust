@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySyncEvent {
     /// <p>The type of event.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The external ID of the sync event.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the sync event occurred.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Event detail for a repository sync attempt.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<::std::string::String>,
 }
 impl RepositorySyncEvent {

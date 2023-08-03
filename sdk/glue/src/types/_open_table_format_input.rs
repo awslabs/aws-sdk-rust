@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenTableFormatInput {
     /// <p>Specifies an <code>IcebergInput</code> structure that defines an Apache Iceberg metadata table.</p>
-    #[doc(hidden)]
     pub iceberg_input: ::std::option::Option<crate::types::IcebergInput>,
 }
 impl OpenTableFormatInput {

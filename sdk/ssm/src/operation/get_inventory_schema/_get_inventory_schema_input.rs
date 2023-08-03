@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInventorySchemaInput {
     /// <p>The type of inventory item to return.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
-    #[doc(hidden)]
     pub aggregator: ::std::option::Option<bool>,
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
-    #[doc(hidden)]
     pub sub_type: ::std::option::Option<bool>,
 }
 impl GetInventorySchemaInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementGroup {
     /// <p>The name of the placement group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the placement group.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::PlacementGroupState>,
     /// <p>The placement strategy.</p>
-    #[doc(hidden)]
     pub strategy: ::std::option::Option<crate::types::PlacementStrategy>,
     /// <p>The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.</p>
-    #[doc(hidden)]
     pub partition_count: ::std::option::Option<i32>,
     /// <p>The ID of the placement group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags applied to the placement group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the placement group.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.</p>
-    #[doc(hidden)]
     pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
 }
 impl PlacementGroup {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamSummaryInput {
     /// <p>The name of the stream to describe.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStreamSummaryInput {

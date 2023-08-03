@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetQueryExecutionOutput {
     /// <p>Information about a query execution.</p>
-    #[doc(hidden)]
     pub query_executions: ::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>>,
     /// <p>Information about the query executions that failed to run.</p>
-    #[doc(hidden)]
     pub unprocessed_query_execution_ids: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInferenceRecommendationsJobInput {
     /// <p>The name of the job you want to stop.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopInferenceRecommendationsJobInput {

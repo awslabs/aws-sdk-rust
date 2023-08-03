@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMeshOutput {
     /// <p>The full description of your service mesh following the create call.</p>
-    #[doc(hidden)]
     pub mesh: ::std::option::Option<crate::types::MeshData>,
     _request_id: Option<String>,
 }

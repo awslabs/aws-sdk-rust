@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterPendingUpdates {
     /// <p>The status of an online resharding operation.</p>
-    #[doc(hidden)]
     pub resharding: ::std::option::Option<crate::types::ReshardingStatus>,
     /// <p>A list of ACLs associated with the cluster that are being updated</p>
-    #[doc(hidden)]
     pub ac_ls: ::std::option::Option<crate::types::AcLsUpdateStatus>,
     /// <p>A list of service updates being applied to the cluster</p>
-    #[doc(hidden)]
     pub service_updates: ::std::option::Option<::std::vec::Vec<crate::types::PendingModifiedServiceUpdate>>,
 }
 impl ClusterPendingUpdates {

@@ -7,7 +7,6 @@ pub struct RefreshTrustedAdvisorCheckInput {
     /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
     /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
     /// </note>
-    #[doc(hidden)]
     pub check_id: ::std::option::Option<::std::string::String>,
 }
 impl RefreshTrustedAdvisorCheckInput {

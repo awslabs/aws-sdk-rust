@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobListEntry {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this job.</p>
-    #[doc(hidden)]
     pub job_state: ::std::option::Option<crate::types::JobState>,
     /// <p>A value that indicates that this job is a main job. A main job represents a successful request to create an export job. Main jobs aren't associated with any Snowballs. Instead, each main job will have at least one job part, and each job part is associated with a Snowball. It might take some time before the job parts associated with a particular main job are listed, because they are created after the main job is created.</p>
-    #[doc(hidden)]
     pub is_master: bool,
     /// <p>The type of job.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>The type of device used with this job.</p>
-    #[doc(hidden)]
     pub snowball_type: ::std::option::Option<crate::types::SnowballType>,
     /// <p>The creation date for this job.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl JobListEntry {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Criterion {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
-    #[doc(hidden)]
     pub eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
-    #[doc(hidden)]
     pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
-    #[doc(hidden)]
     pub contains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
-    #[doc(hidden)]
     pub exists: ::std::option::Option<bool>,
 }
 impl Criterion {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
-    #[doc(hidden)]
     pub category_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCallAnalyticsCategoryInput {

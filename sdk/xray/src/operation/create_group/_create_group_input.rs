@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupInput {
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The filter expression defining criteria by which to group traces.</p>
-    #[doc(hidden)]
     pub filter_expression: ::std::option::Option<::std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub insights_configuration: ::std::option::Option<crate::types::InsightsConfiguration>,
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -26,7 +23,6 @@ pub struct CreateGroupInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGroupInput {

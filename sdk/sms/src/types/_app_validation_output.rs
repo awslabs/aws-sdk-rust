@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppValidationOutput {
     /// <p>Output from using SSM to validate the application.</p>
-    #[doc(hidden)]
     pub ssm_output: ::std::option::Option<crate::types::SsmOutput>,
 }
 impl AppValidationOutput {

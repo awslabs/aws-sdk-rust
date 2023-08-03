@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSamplingStatisticSummariesOutput {
     /// <p>Information about the number of requests instrumented for each sampling rule.</p>
-    #[doc(hidden)]
     pub sampling_statistic_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticSummary>>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

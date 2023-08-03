@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CallAnalyticsEntity {
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified entity.</p>
-    #[doc(hidden)]
     pub begin_offset_millis: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified entity.</p>
-    #[doc(hidden)]
     pub end_offset_millis: ::std::option::Option<i64>,
     /// <p>The category of information identified. For example, <code>PII</code>.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The word or words that represent the identified entity.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score associated with the identification of an entity in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f64>,
 }
 impl CallAnalyticsEntity {

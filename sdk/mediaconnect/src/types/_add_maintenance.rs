@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddMaintenance {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    #[doc(hidden)]
     pub maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    #[doc(hidden)]
     pub maintenance_start_hour: ::std::option::Option<::std::string::String>,
 }
 impl AddMaintenance {

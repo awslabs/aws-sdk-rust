@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerState {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>One of the following load balancer states:</p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct LoadBalancerState {
     /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the instances.</p> </li>
     /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerState {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
-    #[doc(hidden)]
     pub configured_input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
     /// The Link device's buffer size (latency) in milliseconds (ms).
-    #[doc(hidden)]
     pub latency_ms: ::std::option::Option<i32>,
 }
 impl InputDeviceConfigurableSettings {

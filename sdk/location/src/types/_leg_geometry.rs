@@ -9,7 +9,6 @@ pub struct LegGeometry {
     /// <ul>
     /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub line_string: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
 }
 impl LegGeometry {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteParametersInput {
     /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteParametersInput {

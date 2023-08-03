@@ -5,7 +5,6 @@
 pub struct UpdateCertificateAuthorityInput {
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p> <note>
     /// <p>The following requirements apply to revocation configurations.</p>
@@ -16,10 +15,8 @@ pub struct UpdateCertificateAuthorityInput {
     /// <li> <p>In a CRL or OCSP configuration, the value of a CNAME parameter must not include a protocol prefix such as "http://" or "https://".</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,
     /// <p>Status of your private CA.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateAuthorityStatus>,
 }
 impl UpdateCertificateAuthorityInput {

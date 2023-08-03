@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateAutomationRulesInput {
     /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
-    #[doc(hidden)]
     pub update_automation_rules_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>>,
 }
 impl BatchUpdateAutomationRulesInput {

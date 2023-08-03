@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMergeOptionsOutput {
     /// <p>The merge option or strategy used to merge the code.</p>
-    #[doc(hidden)]
     pub merge_options: ::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>>,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    #[doc(hidden)]
     pub source_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    #[doc(hidden)]
     pub destination_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the merge base.</p>
-    #[doc(hidden)]
     pub base_commit_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

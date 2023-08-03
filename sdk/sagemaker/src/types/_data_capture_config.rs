@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCaptureConfig {
     /// <p>Whether data capture should be enabled or disabled (defaults to enabled).</p>
-    #[doc(hidden)]
     pub enable_capture: bool,
     /// <p>The percentage of requests SageMaker will capture. A lower value is recommended for Endpoints with high traffic.</p>
-    #[doc(hidden)]
     pub initial_sampling_percentage: ::std::option::Option<i32>,
     /// <p>The Amazon S3 location used to capture the data.</p>
-    #[doc(hidden)]
     pub destination_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
@@ -21,13 +18,10 @@ pub struct DataCaptureConfig {
     /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies data Model Monitor will capture. You can configure whether to collect only input, only output, or both</p>
-    #[doc(hidden)]
     pub capture_options: ::std::option::Option<::std::vec::Vec<crate::types::CaptureOption>>,
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
-    #[doc(hidden)]
     pub capture_content_type_header: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
 }
 impl DataCaptureConfig {

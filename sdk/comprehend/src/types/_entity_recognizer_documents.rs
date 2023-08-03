@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerDocuments {
     /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the Amazon S3 location where the test documents for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling.</p>
-    #[doc(hidden)]
     pub test_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
-    #[doc(hidden)]
     pub input_format: ::std::option::Option<crate::types::InputFormat>,
 }
 impl EntityRecognizerDocuments {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscriptionDefinitionVersion {
     /// A list of subscriptions.
-    #[doc(hidden)]
     pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
 }
 impl SubscriptionDefinitionVersion {

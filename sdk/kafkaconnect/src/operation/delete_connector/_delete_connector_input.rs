@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
-    #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the connector that you want to delete.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectorInput {

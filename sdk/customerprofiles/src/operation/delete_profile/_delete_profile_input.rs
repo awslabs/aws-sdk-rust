@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProfileInput {
     /// <p>The unique identifier of a customer profile.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProfileInput {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViolationEvent {
     /// <p>The ID of the violation event.</p>
-    #[doc(hidden)]
     pub violation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing responsible for the violation event.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security profile whose behavior was violated.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The behavior that was violated.</p>
-    #[doc(hidden)]
     pub behavior: ::std::option::Option<crate::types::Behavior>,
     /// <p>The value of the metric (the measurement).</p>
-    #[doc(hidden)]
     pub metric_value: ::std::option::Option<crate::types::MetricValue>,
     /// <p> The details of a violation event. </p>
-    #[doc(hidden)]
     pub violation_event_additional_info: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
     /// <p>The type of violation event.</p>
-    #[doc(hidden)]
     pub violation_event_type: ::std::option::Option<crate::types::ViolationEventType>,
     /// <p>The verification state of the violation (detect alarm).</p>
-    #[doc(hidden)]
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
     /// <p>The description of the verification state of the violation.</p>
-    #[doc(hidden)]
     pub verification_state_description: ::std::option::Option<::std::string::String>,
     /// <p>The time the violation event occurred.</p>
-    #[doc(hidden)]
     pub violation_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ViolationEvent {

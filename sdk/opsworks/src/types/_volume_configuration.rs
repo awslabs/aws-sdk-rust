@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeConfiguration {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
-    #[doc(hidden)]
     pub mount_point: ::std::option::Option<::std::string::String>,
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
-    #[doc(hidden)]
     pub raid_level: ::std::option::Option<i32>,
     /// <p>The number of disks in the volume.</p>
-    #[doc(hidden)]
     pub number_of_disks: ::std::option::Option<i32>,
     /// <p>The volume size.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
@@ -24,13 +20,10 @@ pub struct VolumeConfiguration {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
 }
 impl VolumeConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteJobOutput {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
-    #[doc(hidden)]
     pub job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,
 }

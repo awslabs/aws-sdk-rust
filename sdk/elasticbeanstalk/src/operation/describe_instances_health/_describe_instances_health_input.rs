@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstancesHealthInput {
     /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    #[doc(hidden)]
     pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>>,
     /// <p>Specify the pagination token returned by a previous call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInstancesHealthInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Required. A list of key names of tags to be removed. Number of strings allowed: 0-256.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

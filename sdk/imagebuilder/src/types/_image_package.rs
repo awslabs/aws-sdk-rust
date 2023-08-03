@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImagePackage {
     /// <p>The name of the package as reported to the operating system package manager.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the package as reported to the operating system package manager.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
 }
 impl ImagePackage {

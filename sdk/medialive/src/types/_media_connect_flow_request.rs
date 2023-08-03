@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaConnectFlowRequest {
     /// The ARN of the MediaConnect Flow that you want to use as a source.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaConnectFlowRequest {

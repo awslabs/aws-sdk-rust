@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportJobProperties {
     /// <p>The AWS-generated id number for the Import job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-generated name for an Import job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The time that the Import job was submitted for processing.</p>
-    #[doc(hidden)]
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the Import job was completed.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The datastore id used when the Import job was created. </p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    #[doc(hidden)]
     pub job_output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input data.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobProperties {

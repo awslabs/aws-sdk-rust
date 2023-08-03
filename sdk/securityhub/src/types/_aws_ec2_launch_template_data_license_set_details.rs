@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataLicenseSetDetails {
     /// <p> The Amazon Resource Name (ARN) of the license configuration. </p>
-    #[doc(hidden)]
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataLicenseSetDetails {

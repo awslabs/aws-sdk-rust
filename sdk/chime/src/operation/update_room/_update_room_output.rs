@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoomOutput {
     /// <p>The room details.</p>
-    #[doc(hidden)]
     pub room: ::std::option::Option<crate::types::Room>,
     _request_id: Option<String>,
 }

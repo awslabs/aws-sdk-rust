@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceConnectorGroup {
     /// <p>The ID of a Voice Connector group.</p>
-    #[doc(hidden)]
     pub voice_connector_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a Voice Connector group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Voice Connectors to which you route inbound calls.</p>
-    #[doc(hidden)]
     pub voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
     /// <p>The Voice Connector group's creation time stamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Voice Connector group's creation time stamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the Voice Connector group.</p>
-    #[doc(hidden)]
     pub voice_connector_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl VoiceConnectorGroup {

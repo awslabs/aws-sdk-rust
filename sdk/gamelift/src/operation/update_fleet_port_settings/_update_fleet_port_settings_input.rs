@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFleetPortSettingsInput {
     /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of port settings to be added to the fleet resource.</p>
-    #[doc(hidden)]
     pub inbound_permission_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>A collection of port settings to be removed from the fleet resource.</p>
-    #[doc(hidden)]
     pub inbound_permission_revocations: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
 }
 impl UpdateFleetPortSettingsInput {

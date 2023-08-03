@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetDeploymentsOutput {
     /// The ARN of the deployment.
-    #[doc(hidden)]
     pub deployment_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the deployment.
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

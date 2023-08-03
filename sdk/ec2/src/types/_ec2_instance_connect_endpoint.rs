@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceConnectEndpoint {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub instance_connect_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub instance_connect_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::Ec2InstanceConnectEndpointState>,
     /// <p>The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message.</p>
-    #[doc(hidden)]
     pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub fips_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the EC2 Instance Connect Endpoint was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
@@ -46,13 +34,10 @@ pub struct Ec2InstanceConnectEndpoint {
     /// <li> <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p> </li>
     /// </ul>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub preserve_client_ip: ::std::option::Option<bool>,
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Ec2InstanceConnectEndpoint {

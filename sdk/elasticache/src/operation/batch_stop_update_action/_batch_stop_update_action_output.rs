@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStopUpdateActionOutput {
     /// <p>Update actions that have been processed successfully</p>
-    #[doc(hidden)]
     pub processed_update_actions: ::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>>,
     /// <p>Update actions that haven't been processed successfully</p>
-    #[doc(hidden)]
     pub unprocessed_update_actions: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>>,
     _request_id: Option<String>,
 }

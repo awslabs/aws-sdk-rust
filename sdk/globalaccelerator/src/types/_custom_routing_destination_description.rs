@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomRoutingDestinationDescription {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
 }
 impl CustomRoutingDestinationDescription {

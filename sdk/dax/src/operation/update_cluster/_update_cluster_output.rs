@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClusterOutput {
     /// <p>A description of the DAX cluster, after it has been modified.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }

@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
-    #[doc(hidden)]
     pub default_expiration_days: ::std::option::Option<i32>,
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
-    #[doc(hidden)]
     pub default_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
-    #[doc(hidden)]
     pub dead_letter_queue_url: ::std::option::Option<::std::string::String>,
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
-    #[doc(hidden)]
     pub matching: ::std::option::Option<crate::types::MatchingRequest>,
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
-    #[doc(hidden)]
     pub rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateDomainInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommentMetadata {
     /// <p>The ID of the comment.</p>
-    #[doc(hidden)]
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>The user who made the comment.</p>
-    #[doc(hidden)]
     pub contributor: ::std::option::Option<crate::types::User>,
     /// <p>The timestamp that the comment was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the comment.</p>
-    #[doc(hidden)]
     pub comment_status: ::std::option::Option<crate::types::CommentStatusType>,
     /// <p>The ID of the user being replied to.</p>
-    #[doc(hidden)]
     pub recipient_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user who made the comment.</p>
-    #[doc(hidden)]
     pub contributor_id: ::std::option::Option<::std::string::String>,
 }
 impl CommentMetadata {

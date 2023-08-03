@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerLdapServerMetadataDetails {
     /// <p> Specifies the location of the LDAP server, such as Amazon Web Services Directory Service for Microsoft Active Directory. </p>
-    #[doc(hidden)]
     pub hosts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. </p>
-    #[doc(hidden)]
     pub role_base: ::std::option::Option<::std::string::String>,
     /// <p> The group name attribute in a role entry whose value is the name of that role. </p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p> The LDAP search filter used to find roles within the <code>roleBase</code>. </p>
-    #[doc(hidden)]
     pub role_search_matching: ::std::option::Option<::std::string::String>,
     /// <p> The directory search scope for the role. If set to <code>true</code>, the scope is to search the entire subtree. </p>
-    #[doc(hidden)]
     pub role_search_subtree: bool,
     /// <p> A username for the service account, which is an account in your LDAP server that has access to initiate a connection. </p>
-    #[doc(hidden)]
     pub service_account_username: ::std::option::Option<::std::string::String>,
     /// <p> Selects a particular subtree of the directory information tree (DIT) to search for user entries. </p>
-    #[doc(hidden)]
     pub user_base: ::std::option::Option<::std::string::String>,
     /// <p> The name of the LDAP attribute in the user's directory entry for the user's group membership. </p>
-    #[doc(hidden)]
     pub user_role_name: ::std::option::Option<::std::string::String>,
     /// <p> The LDAP search filter used to find users within the <code>userBase</code>. </p>
-    #[doc(hidden)]
     pub user_search_matching: ::std::option::Option<::std::string::String>,
     /// <p> The directory search scope for the user. If set to true, the scope is to search the entire subtree. </p>
-    #[doc(hidden)]
     pub user_search_subtree: bool,
 }
 impl AwsAmazonMqBrokerLdapServerMetadataDetails {

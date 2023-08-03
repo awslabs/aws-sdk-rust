@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficMirrorPortRangeRequest {
     /// <p>The first port in the Traffic Mirror port range. This applies to the TCP and UDP protocols.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>The last port in the Traffic Mirror port range. This applies to the TCP and UDP protocols.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
 }
 impl TrafficMirrorPortRangeRequest {

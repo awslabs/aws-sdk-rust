@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3OutputLocation {
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
-    #[doc(hidden)]
     pub output_s3_region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket.</p>
-    #[doc(hidden)]
     pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket subfolder.</p>
-    #[doc(hidden)]
     pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3OutputLocation {

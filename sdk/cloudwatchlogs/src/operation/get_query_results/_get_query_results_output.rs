@@ -5,17 +5,13 @@
 pub struct GetQueryResultsOutput {
     /// <p>The log events that matched the query criteria during the most recent time it ran.</p>
     /// <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::ResultField>>>,
     /// <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::QueryStatistics>,
     /// <p>The status of the most recent running of the query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and <code>Unknown</code>.</p>
     /// <p>Queries time out after 60 minutes of runtime. To avoid having your queries time out, reduce the time range being searched or partition your query into a number of queries.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QueryStatus>,
     /// <p>If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays the ARN of the key that's used to encrypt the query results when <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a> stores them.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

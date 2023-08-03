@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInsightInput {
     /// <p> The ID of the insight. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the member account in the organization.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInsightInput {

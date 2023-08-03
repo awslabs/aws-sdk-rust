@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListIndexResponse {
     /// <p>The objects and indexed values attached to the index.</p>
-    #[doc(hidden)]
     pub index_attachments: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListIndexResponse {

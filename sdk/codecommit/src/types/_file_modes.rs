@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileModes {
     /// <p>The file mode of a file in the source of a merge or pull request.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::FileModeTypeEnum>,
     /// <p>The file mode of a file in the destination of a merge or pull request.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::FileModeTypeEnum>,
     /// <p>The file mode of a file in the base of a merge or pull request.</p>
-    #[doc(hidden)]
     pub base: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
 impl FileModes {

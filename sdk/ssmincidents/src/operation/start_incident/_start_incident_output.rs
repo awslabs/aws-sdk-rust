@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartIncidentOutput {
     /// <p>The ARN of the newly created incident record.</p>
-    #[doc(hidden)]
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

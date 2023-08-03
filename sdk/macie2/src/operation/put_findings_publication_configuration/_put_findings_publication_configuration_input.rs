@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFindingsPublicationConfigurationInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
-    #[doc(hidden)]
     pub security_hub_configuration: ::std::option::Option<crate::types::SecurityHubConfiguration>,
 }
 impl PutFindingsPublicationConfigurationInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchAlarmAction {
     /// <p>The IAM role that allows access to the CloudWatch alarm.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch alarm name.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the alarm change.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
-    #[doc(hidden)]
     pub state_value: ::std::option::Option<::std::string::String>,
 }
 impl CloudwatchAlarmAction {

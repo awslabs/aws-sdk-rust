@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomLogSourceInput {
     /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
@@ -41,10 +39,8 @@ pub struct CreateCustomLogSourceInput {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration for the third-party custom source.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::CustomLogSourceConfiguration>,
 }
 impl CreateCustomLogSourceInput {

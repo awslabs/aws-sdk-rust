@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTransactionInput {
     /// <p>The transaction for which to return status.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTransactionInput {

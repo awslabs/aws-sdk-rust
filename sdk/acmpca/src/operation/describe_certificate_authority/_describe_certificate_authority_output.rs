@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCertificateAuthorityOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
-    #[doc(hidden)]
     pub certificate_authority: ::std::option::Option<crate::types::CertificateAuthority>,
     _request_id: Option<String>,
 }

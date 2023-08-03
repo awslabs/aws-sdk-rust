@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceInventory {
     /// <p>ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Platform of the resource.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>Platform version of the resource in the inventory.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>ID of the account that owns the resource.</p>
-    #[doc(hidden)]
     pub resource_owning_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceInventory {

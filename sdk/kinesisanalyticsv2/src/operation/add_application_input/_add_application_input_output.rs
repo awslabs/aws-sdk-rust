@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationInputOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the current application version.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>Describes the application input configuration. </p>
-    #[doc(hidden)]
     pub input_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::InputDescription>>,
     _request_id: Option<String>,
 }

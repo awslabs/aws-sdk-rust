@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReadinessCheckInput {
     /// <p>The name of the readiness check to create.</p>
-    #[doc(hidden)]
     pub readiness_check_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource set to check.</p>
-    #[doc(hidden)]
     pub resource_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateReadinessCheckInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInstanceCustomHealthStatusInput {
     /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance that you want to change the health status for.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CustomHealthStatus>,
 }
 impl UpdateInstanceCustomHealthStatusInput {

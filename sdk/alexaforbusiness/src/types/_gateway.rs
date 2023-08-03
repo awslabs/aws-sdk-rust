@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Gateway {
     /// <p>The ARN of the gateway.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the gateway.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the gateway.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
-    #[doc(hidden)]
     pub gateway_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    #[doc(hidden)]
     pub software_version: ::std::option::Option<::std::string::String>,
 }
 impl Gateway {

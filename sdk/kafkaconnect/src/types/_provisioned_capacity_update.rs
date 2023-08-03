@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedCapacityUpdate {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
-    #[doc(hidden)]
     pub mcu_count: i32,
     /// <p>The number of workers that are allocated to the connector.</p>
-    #[doc(hidden)]
     pub worker_count: i32,
 }
 impl ProvisionedCapacityUpdate {

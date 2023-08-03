@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
     /// <p> The maximum amount of total local storage, in GB. </p>
-    #[doc(hidden)]
     pub max: f64,
     /// <p> The minimum amount of total local storage, in GB. </p>
-    #[doc(hidden)]
     pub min: f64,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {

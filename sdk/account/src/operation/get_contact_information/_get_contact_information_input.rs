@@ -7,7 +7,6 @@ pub struct GetContactInformationInput {
     /// <p>The management account can't specify its own <code>AccountId</code>. It must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
     /// </note>
     /// <p>To call this operation on an account that is not a member of an organization, don't specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetContactInformationInput {

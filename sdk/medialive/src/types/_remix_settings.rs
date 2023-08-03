@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemixSettings {
     /// Mapping of input channels to output channels, with appropriate gain adjustments.
-    #[doc(hidden)]
     pub channel_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AudioChannelMapping>>,
     /// Number of input channels to be used.
-    #[doc(hidden)]
     pub channels_in: ::std::option::Option<i32>,
     /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
-    #[doc(hidden)]
     pub channels_out: ::std::option::Option<i32>,
 }
 impl RemixSettings {

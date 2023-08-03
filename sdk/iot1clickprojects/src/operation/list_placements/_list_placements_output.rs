@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPlacementsOutput {
     /// <p>An object listing the requested placements.</p>
-    #[doc(hidden)]
     pub placements: ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>>,
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

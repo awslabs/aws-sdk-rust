@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateRangeType {
     /// <p>Timestamp range start value (in epochs)</p>
-    #[doc(hidden)]
     pub start_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp range end value (in epochs).</p>
-    #[doc(hidden)]
     pub end_value: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DateRangeType {

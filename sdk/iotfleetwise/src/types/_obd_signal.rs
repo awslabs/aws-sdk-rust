@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObdSignal {
     /// <p>The length of the requested data.</p>
-    #[doc(hidden)]
     pub pid_response_length: i32,
     /// <p>The mode of operation (diagnostic service) in a message.</p>
-    #[doc(hidden)]
     pub service_mode: i32,
     /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
-    #[doc(hidden)]
     pub pid: i32,
     /// <p>A multiplier used to decode the message.</p>
-    #[doc(hidden)]
     pub scaling: ::std::option::Option<f64>,
     /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
-    #[doc(hidden)]
     pub offset: ::std::option::Option<f64>,
     /// <p>Indicates the beginning of the message.</p>
-    #[doc(hidden)]
     pub start_byte: i32,
     /// <p>The length of a message.</p>
-    #[doc(hidden)]
     pub byte_length: ::std::option::Option<i32>,
     /// <p>The number of positions to shift bits in the message.</p>
-    #[doc(hidden)]
     pub bit_right_shift: i32,
     /// <p>The number of bits to mask in a message.</p>
-    #[doc(hidden)]
     pub bit_mask_length: ::std::option::Option<i32>,
 }
 impl ObdSignal {

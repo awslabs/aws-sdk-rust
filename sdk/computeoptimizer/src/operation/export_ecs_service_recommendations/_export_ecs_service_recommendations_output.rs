@@ -5,10 +5,8 @@
 pub struct ExportEcsServiceRecommendationsOutput {
     /// <p> The identification number of the export job. </p>
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
     _request_id: Option<String>,
 }

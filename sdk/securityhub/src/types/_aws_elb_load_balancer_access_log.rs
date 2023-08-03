@@ -6,17 +6,13 @@
 pub struct AwsElbLoadBalancerAccessLog {
     /// <p>The interval in minutes for publishing the access logs.</p>
     /// <p>You can publish access logs either every 5 minutes or every 60 minutes.</p>
-    #[doc(hidden)]
     pub emit_interval: i32,
     /// <p>Indicates whether access logs are enabled for the load balancer.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
     /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbLoadBalancerAccessLog {

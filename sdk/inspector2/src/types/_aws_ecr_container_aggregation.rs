@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrContainerAggregation {
     /// <p>The container resource IDs.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The image SHA values.</p>
-    #[doc(hidden)]
     pub image_shas: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The container repositories.</p>
-    #[doc(hidden)]
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The architecture of the containers.</p>
-    #[doc(hidden)]
     pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The image tags.</p>
-    #[doc(hidden)]
     pub image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The sort order (ascending or descending).</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort by.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::AwsEcrContainerSortBy>,
 }
 impl AwsEcrContainerAggregation {

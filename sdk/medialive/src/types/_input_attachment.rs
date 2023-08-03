@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputAttachment {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
-    #[doc(hidden)]
     pub automatic_input_failover_settings: ::std::option::Option<crate::types::AutomaticInputFailoverSettings>,
     /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
-    #[doc(hidden)]
     pub input_attachment_name: ::std::option::Option<::std::string::String>,
     /// The ID of the input
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
     /// Settings of an input (caption selector, etc.)
-    #[doc(hidden)]
     pub input_settings: ::std::option::Option<crate::types::InputSettings>,
 }
 impl InputAttachment {

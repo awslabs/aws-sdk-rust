@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    #[doc(hidden)]
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-    #[doc(hidden)]
     pub firewall_policy: ::std::option::Option<crate::types::FirewallPolicy>,
     /// <p>A description of the firewall policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateFirewallPolicyInput {

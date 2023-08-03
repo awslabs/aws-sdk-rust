@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkEventNotificationConfigurations {
     /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub amazon_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl SidewalkEventNotificationConfigurations {

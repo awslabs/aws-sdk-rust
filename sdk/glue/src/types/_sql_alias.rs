@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlAlias {
     /// <p>A table, or a column in a table.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>A temporary name given to a table, or a column in a table.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
 }
 impl SqlAlias {

@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance for the runtime environment.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the runtime environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The engine type for the runtime environment.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The version of the engine type for the runtime environment.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Optional. The storage configurations for this runtime environment.</p>
-    #[doc(hidden)]
     pub storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
     /// <p>Specifies whether the runtime environment is publicly accessible.</p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The details of a high availability configuration for this runtime environment.</p>
-    #[doc(hidden)]
     pub high_availability_config: ::std::option::Option<crate::types::HighAvailabilityConfig>,
     /// <p>The tags for the runtime environment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a customer managed key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInput {

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelOptions {
     /// <p>The time zone to use for metric data return in this operation. The format is <code>+</code> or <code>-</code> followed by four digits. The first two digits indicate the number of hours ahead or behind of UTC, and the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour and 30 minutes ahead of UTC. The default is +0000. </p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
 }
 impl LabelOptions {

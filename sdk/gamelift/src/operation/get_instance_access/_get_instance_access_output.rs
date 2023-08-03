@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceAccessOutput {
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
-    #[doc(hidden)]
     pub instance_access: ::std::option::Option<crate::types::InstanceAccess>,
     _request_id: Option<String>,
 }

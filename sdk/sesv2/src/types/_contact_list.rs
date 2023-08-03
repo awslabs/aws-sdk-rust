@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactList {
     /// <p>The name of the contact list.</p>
-    #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContactList {

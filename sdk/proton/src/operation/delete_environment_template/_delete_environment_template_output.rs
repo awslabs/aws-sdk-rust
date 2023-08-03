@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateOutput {
     /// <p>The detailed data of the environment template being deleted.</p>
-    #[doc(hidden)]
     pub environment_template: ::std::option::Option<crate::types::EnvironmentTemplate>,
     _request_id: Option<String>,
 }

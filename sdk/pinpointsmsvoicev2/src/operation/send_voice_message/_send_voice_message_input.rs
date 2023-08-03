@@ -4,38 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendVoiceMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    #[doc(hidden)]
     pub destination_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The text to convert to a voice message.</p>
-    #[doc(hidden)]
     pub message_body: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
     /// <ul>
     /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
     /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub message_body_text_type: ::std::option::Option<crate::types::VoiceMessageBodyTextType>,
     /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
-    #[doc(hidden)]
     pub voice_id: ::std::option::Option<crate::types::VoiceId>,
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum amount to spend per voice message, in US dollars.</p>
-    #[doc(hidden)]
     pub max_price_per_minute: ::std::option::Option<::std::string::String>,
     /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
-    #[doc(hidden)]
     pub time_to_live: ::std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl SendVoiceMessageInput {

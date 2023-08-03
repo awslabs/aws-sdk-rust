@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaSettingsDescription {
     /// <p>The Region name of the replica.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the Region:</p>
     /// <ul>
@@ -14,28 +13,20 @@ pub struct ReplicaSettingsDescription {
     /// <li> <p> <code>DELETING</code> - The Region is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The Region is ready for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
     /// <p>The read/write capacity mode of the replica.</p>
-    #[doc(hidden)]
     pub replica_billing_mode_summary: ::std::option::Option<crate::types::BillingModeSummary>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub replica_provisioned_read_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
-    #[doc(hidden)]
     pub replica_provisioned_read_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub replica_provisioned_write_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
-    #[doc(hidden)]
     pub replica_provisioned_write_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     /// <p>Replica global secondary index settings for the global table.</p>
-    #[doc(hidden)]
     pub replica_global_secondary_index_settings: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>>,
     /// <p>Contains details of the table class.</p>
-    #[doc(hidden)]
     pub replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
 }
 impl ReplicaSettingsDescription {

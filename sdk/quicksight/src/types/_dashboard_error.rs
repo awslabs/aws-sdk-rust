@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardError {
     /// <p>Type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DashboardErrorType>,
     /// <p>Message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Lists the violated entities that caused the dashboard error.</p>
-    #[doc(hidden)]
     pub violated_entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
 }
 impl DashboardError {

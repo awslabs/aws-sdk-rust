@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Name {
     /// <p>A string containing a formatted version of the name for display.</p>
-    #[doc(hidden)]
     pub formatted: ::std::option::Option<::std::string::String>,
     /// <p>The family name of the user.</p>
-    #[doc(hidden)]
     pub family_name: ::std::option::Option<::std::string::String>,
     /// <p>The given name of the user.</p>
-    #[doc(hidden)]
     pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>The middle name of the user.</p>
-    #[doc(hidden)]
     pub middle_name: ::std::option::Option<::std::string::String>,
     /// <p>The honorific prefix of the user. For example, "Dr."</p>
-    #[doc(hidden)]
     pub honorific_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The honorific suffix of the user. For example, "M.D."</p>
-    #[doc(hidden)]
     pub honorific_suffix: ::std::option::Option<::std::string::String>,
 }
 impl Name {

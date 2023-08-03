@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingTypeProperties {
     /// <p>The description of the thing type.</p>
-    #[doc(hidden)]
     pub thing_type_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of searchable thing attribute names.</p>
-    #[doc(hidden)]
     pub searchable_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ThingTypeProperties {

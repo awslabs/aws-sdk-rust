@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTimeSeriesServiceStatisticsOutput {
     /// <p>The collection of statistics.</p>
-    #[doc(hidden)]
     pub time_series_service_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesServiceStatistics>>,
     /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
-    #[doc(hidden)]
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

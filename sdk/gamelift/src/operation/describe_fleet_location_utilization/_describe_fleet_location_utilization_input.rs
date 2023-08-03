@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationUtilizationInput {
     /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFleetLocationUtilizationInput {

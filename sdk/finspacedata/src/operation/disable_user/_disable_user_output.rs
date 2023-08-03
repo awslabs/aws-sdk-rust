@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableUserOutput {
     /// <p>The unique identifier for the disabled user account.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

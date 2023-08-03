@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceOutput {
     /// <p>The full description of your service following the update call.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::Service>,
     _request_id: Option<String>,
 }

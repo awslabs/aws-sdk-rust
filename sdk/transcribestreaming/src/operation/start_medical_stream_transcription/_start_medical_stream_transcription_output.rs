@@ -4,31 +4,22 @@
 #[derive(::std::fmt::Debug)]
 pub struct StartMedicalStreamTranscriptionOutput {
     /// <p>Provides the identifier for your streaming request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the language code that you specified in your request. This must be <code>en-US</code>.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Provides the sample rate that you specified in your request.</p>
-    #[doc(hidden)]
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>Provides the media encoding you specified in your request.</p>
-    #[doc(hidden)]
     pub media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the medical specialty that you specified in your request.</p>
-    #[doc(hidden)]
     pub specialty: ::std::option::Option<crate::types::Specialty>,
     /// <p>Provides the type of audio you specified in your request.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub show_speaker_label: bool,
     /// <p>Provides the identifier for your transcription session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed information about your streaming session.</p>
     pub transcript_result_stream: ::aws_smithy_http::event_stream::Receiver<
@@ -36,13 +27,10 @@ pub struct StartMedicalStreamTranscriptionOutput {
         crate::types::error::MedicalTranscriptResultStreamError,
     >,
     /// <p>Shows whether channel identification was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub enable_channel_identification: bool,
     /// <p>Provides the number of channels that you specified in your request.</p>
-    #[doc(hidden)]
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
     _request_id: Option<String>,
 }

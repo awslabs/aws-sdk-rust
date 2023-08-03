@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceNetworkVpcAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    #[doc(hidden)]
     pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceNetworkVpcAssociationInput {

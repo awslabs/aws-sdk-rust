@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAllBackendsOutput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>If the request fails, this error is returned.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the operation.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceRouteTableAssociationInput {
     /// <p>The association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the new route table to associate with the subnet.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplaceRouteTableAssociationInput {

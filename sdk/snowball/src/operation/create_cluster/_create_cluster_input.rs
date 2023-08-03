@@ -5,31 +5,23 @@
 pub struct CreateClusterInput {
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<crate::types::JobResource>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    #[doc(hidden)]
     pub on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
     /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the address that you want the cluster shipped to.</p>
-    #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    #[doc(hidden)]
     pub snowball_type: ::std::option::Option<crate::types::SnowballType>,
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
     /// <ul>
@@ -44,32 +36,23 @@ pub struct CreateClusterInput {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
-    #[doc(hidden)]
     pub forwarding_address_id: ::std::option::Option<::std::string::String>,
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
     /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-    #[doc(hidden)]
     pub remote_management: ::std::option::Option<crate::types::RemoteManagement>,
     /// <p>If provided, each job will be automatically created and associated with the new cluster. If not provided, will be treated as 0.</p>
-    #[doc(hidden)]
     pub initial_cluster_size: ::std::option::Option<i32>,
     /// <p>Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less (underprovisioned) than what needed to meet capacity requirement specified with <code>OnDeviceServiceConfiguration</code>.</p>
-    #[doc(hidden)]
     pub force_create_jobs: ::std::option::Option<bool>,
     /// <p>Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.</p>
-    #[doc(hidden)]
     pub long_term_pricing_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    #[doc(hidden)]
     pub snowball_capacity_preference: ::std::option::Option<crate::types::SnowballCapacity>,
 }
 impl CreateClusterInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsOutput {
     /// <p>An analyzed transcript or category.</p>
-    #[doc(hidden)]
     pub segments: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
     /// <ul>
@@ -12,7 +11,6 @@ pub struct ListRealtimeContactAnalysisSegmentsOutput {
     /// <li> <p>There are no more segments at this time, but more may be available later (real-time analysis is in progress) so the client should call the operation again to get new segments.</p> </li>
     /// </ul>
     /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

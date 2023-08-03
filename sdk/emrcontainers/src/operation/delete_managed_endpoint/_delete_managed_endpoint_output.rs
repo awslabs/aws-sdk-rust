@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteManagedEndpointOutput {
     /// <p>The output displays the ID of the managed endpoint.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
-    #[doc(hidden)]
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

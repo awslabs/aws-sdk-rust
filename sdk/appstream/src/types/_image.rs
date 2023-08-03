@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>The name of the image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image from which this image was created.</p>
-    #[doc(hidden)]
     pub base_image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The image name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>Indicates whether the image is public or private.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::VisibilityType>,
     /// <p>Indicates whether an image builder can be launched from this image.</p>
-    #[doc(hidden)]
     pub image_builder_supported: bool,
     /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
-    #[doc(hidden)]
     pub image_builder_name: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the image.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The description to display.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the last state change occurred.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<crate::types::ImageStateChangeReason>,
     /// <p>The applications associated with the image.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     /// <p>The time the image was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
-    #[doc(hidden)]
     pub public_base_image_released_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
-    #[doc(hidden)]
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
-    #[doc(hidden)]
     pub image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
-    #[doc(hidden)]
     pub image_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
 }
 impl Image {

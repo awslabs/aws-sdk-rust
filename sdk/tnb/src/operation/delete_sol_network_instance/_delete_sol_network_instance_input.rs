@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSolNetworkInstanceInput {
     /// <p>Network instance ID.</p>
-    #[doc(hidden)]
     pub ns_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSolNetworkInstanceInput {

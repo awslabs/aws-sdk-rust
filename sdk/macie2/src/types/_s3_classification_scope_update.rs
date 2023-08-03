@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ClassificationScopeUpdate {
     /// <p>The names of the S3 buckets to add or remove from the list.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<crate::types::S3ClassificationScopeExclusionUpdate>,
 }
 impl S3ClassificationScopeUpdate {

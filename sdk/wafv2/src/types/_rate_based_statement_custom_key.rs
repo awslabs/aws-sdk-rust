@@ -7,36 +7,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateBasedStatementCustomKey {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance. </p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<crate::types::RateLimitHeader>,
     /// <p>Use the value of a cookie in the request as an aggregate key. Each distinct value in the cookie contributes to the aggregation instance. If you use a single cookie as your custom key, then each value fully defines an aggregation instance. </p>
-    #[doc(hidden)]
     pub cookie: ::std::option::Option<crate::types::RateLimitCookie>,
     /// <p>Use the specified query argument as an aggregate key. Each distinct value for the named query argument contributes to the aggregation instance. If you use a single query argument as your custom key, then each value fully defines an aggregation instance. </p>
-    #[doc(hidden)]
     pub query_argument: ::std::option::Option<crate::types::RateLimitQueryArgument>,
     /// <p>Use the request's query string as an aggregate key. Each distinct string contributes to the aggregation instance. If you use just the query string as your custom key, then each string fully defines an aggregation instance. </p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<crate::types::RateLimitQueryString>,
     /// <p>Use the request's HTTP method as an aggregate key. Each distinct HTTP method contributes to the aggregation instance. If you use just the HTTP method as your custom key, then each method fully defines an aggregation instance. </p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<crate::types::RateLimitHttpMethod>,
     /// <p>Use the first IP address in an HTTP header as an aggregate key. Each distinct forwarded IP address contributes to the aggregation instance.</p>
     /// <p>When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the forwarded IP address by specifying <code>FORWARDED_IP</code> in your rate-based statement's <code>AggregateKeyType</code>. </p>
     /// <p>With this option, you must specify the header to use in the rate-based rule's <code>ForwardedIPConfig</code> property. </p>
-    #[doc(hidden)]
     pub forwarded_ip: ::std::option::Option<crate::types::RateLimitForwardedIp>,
     /// <p>Use the request's originating IP address as an aggregate key. Each distinct IP address contributes to the aggregation instance.</p>
     /// <p>When you specify an IP or forwarded IP in the custom key settings, you must also specify at least one other key to use. You can aggregate on only the IP address by specifying <code>IP</code> in your rate-based statement's <code>AggregateKeyType</code>. </p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<crate::types::RateLimitIp>,
     /// <p>Use the specified label namespace as an aggregate key. Each distinct fully qualified label name that has the specified label namespace contributes to the aggregation instance. If you use just one label namespace as your custom key, then each label name fully defines an aggregation instance. </p>
     /// <p>This uses only labels that have been added to the request by rules that are evaluated before this rate-based rule in the web ACL. </p>
     /// <p>For information about label namespaces and names, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-label-requirements.html">Label syntax and naming requirements</a> in the <i>WAF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub label_namespace: ::std::option::Option<crate::types::RateLimitLabelNamespace>,
     /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance. </p>
-    #[doc(hidden)]
     pub uri_path: ::std::option::Option<crate::types::RateLimitUriPath>,
 }
 impl RateBasedStatementCustomKey {

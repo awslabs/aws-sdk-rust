@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApnsVoipSandboxChannelRequest {
     /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment for this channel, key or certificate.</p>
-    #[doc(hidden)]
     pub default_authentication_method: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the APNs VoIP sandbox channel is enabled for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
-    #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication key to use for APNs tokens.</p>
-    #[doc(hidden)]
     pub token_key: ::std::option::Option<::std::string::String>,
     /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
-    #[doc(hidden)]
     pub token_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ApnsVoipSandboxChannelRequest {

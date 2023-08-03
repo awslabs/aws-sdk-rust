@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Characters {
     /// <p> The number of characters present in the input text document as processed by Amazon Comprehend Medical. </p>
-    #[doc(hidden)]
     pub original_text_characters: ::std::option::Option<i32>,
 }
 impl Characters {

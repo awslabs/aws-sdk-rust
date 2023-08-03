@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppInstanceRetentionSettings {
     /// <p>The length of time in days to retain the messages in a channel.</p>
-    #[doc(hidden)]
     pub channel_retention_settings: ::std::option::Option<crate::types::ChannelRetentionSettings>,
 }
 impl AppInstanceRetentionSettings {

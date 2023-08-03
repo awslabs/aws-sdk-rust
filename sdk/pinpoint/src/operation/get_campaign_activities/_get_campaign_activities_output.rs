@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignActivitiesOutput {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
-    #[doc(hidden)]
     pub activities_response: ::std::option::Option<crate::types::ActivitiesResponse>,
     _request_id: Option<String>,
 }

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDataQualityRuleRecommendationRunInput {
     /// <p>The data source (Glue table) associated with this run.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
-    #[doc(hidden)]
     pub number_of_workers: ::std::option::Option<i32>,
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p>A name for the ruleset.</p>
-    #[doc(hidden)]
     pub created_ruleset_name: ::std::option::Option<::std::string::String>,
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartDataQualityRuleRecommendationRunInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScalingInput {
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
-    #[doc(hidden)]
     pub global_secondary_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>>,
     /// <p>The name of the global table to be updated.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
-    #[doc(hidden)]
     pub provisioned_write_capacity_auto_scaling_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
     /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
-    #[doc(hidden)]
     pub replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>>,
 }
 impl UpdateTableReplicaAutoScalingInput {

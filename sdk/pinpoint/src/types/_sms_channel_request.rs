@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsChannelRequest {
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
-    #[doc(hidden)]
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
-    #[doc(hidden)]
     pub short_code: ::std::option::Option<::std::string::String>,
 }
 impl SmsChannelRequest {

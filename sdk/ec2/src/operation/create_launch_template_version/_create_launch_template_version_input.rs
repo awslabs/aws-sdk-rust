@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLaunchTemplateVersionInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    #[doc(hidden)]
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template.</p>
     /// <p>You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new version unless they are explicitly included.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>A description for the version of the launch template.</p>
-    #[doc(hidden)]
     pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>The information for the launch template.</p>
-    #[doc(hidden)]
     pub launch_template_data: ::std::option::Option<crate::types::RequestLaunchTemplateData>,
     /// <p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageID</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub resolve_alias: ::std::option::Option<bool>,
 }
 impl CreateLaunchTemplateVersionInput {

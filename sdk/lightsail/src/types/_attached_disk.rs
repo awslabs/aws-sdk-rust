@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachedDisk {
     /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in GB.</p>
-    #[doc(hidden)]
     pub size_in_gb: ::std::option::Option<i32>,
 }
 impl AttachedDisk {

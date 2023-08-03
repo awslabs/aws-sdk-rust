@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVersionsInput {
     /// <p>The maximum number of results to include in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You receive this token from a previous <code>ListVersions</code> operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workspace to list the available upgrade versions. If not included, lists all versions of Grafana that are supported for <code>CreateWorkspace</code>.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl ListVersionsInput {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ValidateE911AddressInput {
     /// <p>The AWS account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
-    #[doc(hidden)]
     pub street_number: ::std::option::Option<::std::string::String>,
     /// <p>The address street information, such as <code>8th Avenue</code>.</p>
-    #[doc(hidden)]
     pub street_info: ::std::option::Option<::std::string::String>,
     /// <p>The address city, such as <code>Portland</code>.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The address state, such as <code>ME</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The address country, such as <code>US</code>. </p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The address postal code, such as <code>04352</code>.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
 }
 impl ValidateE911AddressInput {

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMlModelOutput {
     /// <p>The ID assigned to the <code>MLModel</code> during creation. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The unique ID of the publishing destination.</p>
-    #[doc(hidden)]
     pub destination_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.</p>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<crate::types::DestinationType>,
     /// <p>The status of the publishing destination.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PublishingStatus>,
 }
 impl Destination {

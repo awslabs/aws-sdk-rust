@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-    #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightInput {

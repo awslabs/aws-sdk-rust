@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaUnion {
     /// <p>The configuration for a schema on a tabular Dataset.</p>
-    #[doc(hidden)]
     pub tabular_schema_config: ::std::option::Option<crate::types::SchemaDefinition>,
 }
 impl SchemaUnion {

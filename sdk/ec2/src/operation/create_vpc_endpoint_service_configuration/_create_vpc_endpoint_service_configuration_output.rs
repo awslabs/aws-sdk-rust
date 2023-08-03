@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointServiceConfigurationOutput {
     /// <p>Information about the service configuration.</p>
-    #[doc(hidden)]
     pub service_configuration: ::std::option::Option<crate::types::ServiceConfiguration>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

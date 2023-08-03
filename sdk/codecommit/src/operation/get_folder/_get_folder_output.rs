@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFolderOutput {
     /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path of the folder whose contents are returned.</p>
-    #[doc(hidden)]
     pub folder_path: ::std::option::Option<::std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
-    #[doc(hidden)]
     pub tree_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of folders that exist under the specified folder, if any.</p>
-    #[doc(hidden)]
     pub sub_folders: ::std::option::Option<::std::vec::Vec<crate::types::Folder>>,
     /// <p>The list of files in the specified folder, if any.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
     /// <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
-    #[doc(hidden)]
     pub symbolic_links: ::std::option::Option<::std::vec::Vec<crate::types::SymbolicLink>>,
     /// <p>The list of submodules in the specified folder, if any.</p>
-    #[doc(hidden)]
     pub sub_modules: ::std::option::Option<::std::vec::Vec<crate::types::SubModule>>,
     _request_id: Option<String>,
 }

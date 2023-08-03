@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrialComponentInput {
     /// <p>The name of the component to delete.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrialComponentInput {

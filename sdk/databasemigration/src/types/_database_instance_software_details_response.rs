@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseInstanceSoftwareDetailsResponse {
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
-    #[doc(hidden)]
     pub engine_edition: ::std::option::Option<::std::string::String>,
     /// <p>The service pack level of the database.</p>
-    #[doc(hidden)]
     pub service_pack: ::std::option::Option<::std::string::String>,
     /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
-    #[doc(hidden)]
     pub support_level: ::std::option::Option<::std::string::String>,
     /// <p>The operating system architecture of the database.</p>
-    #[doc(hidden)]
     pub os_architecture: ::std::option::Option<i32>,
     /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseInstanceSoftwareDetailsResponse {

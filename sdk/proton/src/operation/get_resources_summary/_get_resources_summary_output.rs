@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcesSummaryOutput {
     /// <p>Summary counts of each Proton resource type.</p>
-    #[doc(hidden)]
     pub counts: ::std::option::Option<crate::types::CountsSummary>,
     _request_id: Option<String>,
 }

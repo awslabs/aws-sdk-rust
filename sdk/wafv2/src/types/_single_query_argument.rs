@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleQueryArgument {
     /// <p>The name of the query argument to inspect.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl SingleQueryArgument {

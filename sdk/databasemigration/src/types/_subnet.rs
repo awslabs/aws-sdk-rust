@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The subnet identifier.</p>
-    #[doc(hidden)]
     pub subnet_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
     /// <p>The status of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_status: ::std::option::Option<::std::string::String>,
 }
 impl Subnet {

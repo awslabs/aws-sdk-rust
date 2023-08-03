@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventSourcesConfigInput {
     /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
-    #[doc(hidden)]
     pub event_sources: ::std::option::Option<crate::types::EventSourcesConfig>,
 }
 impl UpdateEventSourcesConfigInput {

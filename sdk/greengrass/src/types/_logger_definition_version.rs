@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggerDefinitionVersion {
     /// A list of loggers.
-    #[doc(hidden)]
     pub loggers: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
 }
 impl LoggerDefinitionVersion {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPluginRevisionSummary {
     /// <p>The format of the plugin file.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::CustomPluginContentType>,
     /// <p>The time that the custom plugin was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the custom plugin.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Details about the custom plugin file.</p>
-    #[doc(hidden)]
     pub file_description: ::std::option::Option<crate::types::CustomPluginFileDescription>,
     /// <p>Information about the location of the custom plugin.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::CustomPluginLocationDescription>,
     /// <p>The revision of the custom plugin.</p>
-    #[doc(hidden)]
     pub revision: i64,
 }
 impl CustomPluginRevisionSummary {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterDbRevisionsOutput {
     /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of revisions.</p>
-    #[doc(hidden)]
     pub cluster_db_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>>,
     _request_id: Option<String>,
 }

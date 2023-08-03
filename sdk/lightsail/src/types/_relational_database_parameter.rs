@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseParameter {
     /// <p>Specifies the valid range of values for the parameter.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
-    #[doc(hidden)]
     pub apply_method: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the engine-specific parameter type.</p>
-    #[doc(hidden)]
     pub apply_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the valid data type for the parameter.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>Provides a description of the parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
-    #[doc(hidden)]
     pub is_modifiable: ::std::option::Option<bool>,
     /// <p>Specifies the name of the parameter.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the value of the parameter.</p>
-    #[doc(hidden)]
     pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl RelationalDatabaseParameter {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsStatus {
     /// <p>Auto-Tune settings for updating a domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::AutoTuneOptions>,
     /// <p>The current status of Auto-Tune for a domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AutoTuneStatus>,
 }
 impl AutoTuneOptionsStatus {

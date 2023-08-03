@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormButton {
     /// <p>Specifies whether the button is visible on the form.</p>
-    #[doc(hidden)]
     pub excluded: ::std::option::Option<bool>,
     /// <p>Describes the button's properties.</p>
-    #[doc(hidden)]
     pub children: ::std::option::Option<::std::string::String>,
     /// <p>The position of the button.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::FieldPosition>,
 }
 impl FormButton {

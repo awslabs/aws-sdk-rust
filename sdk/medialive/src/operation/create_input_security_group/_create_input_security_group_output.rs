@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInputSecurityGroupOutput {
     /// An Input Security Group
-    #[doc(hidden)]
     pub security_group: ::std::option::Option<crate::types::InputSecurityGroup>,
     _request_id: Option<String>,
 }

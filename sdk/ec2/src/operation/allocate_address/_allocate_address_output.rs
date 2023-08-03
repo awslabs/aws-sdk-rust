@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateAddressOutput {
     /// <p>The Elastic IP address.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID that represents the allocation of the Elastic IP address.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an address pool.</p>
-    #[doc(hidden)]
     pub public_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
-    #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The network (<code>vpc</code>).</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainType>,
     /// <p>The customer-owned IP address.</p>
-    #[doc(hidden)]
     pub customer_owned_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer-owned address pool.</p>
-    #[doc(hidden)]
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The carrier IP address. This option is only available for network interfaces that reside in a subnet in a Wavelength Zone.</p>
-    #[doc(hidden)]
     pub carrier_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

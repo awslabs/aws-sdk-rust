@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Impact {
     /// <p>The maximum dollar value that's observed for an anomaly.</p>
-    #[doc(hidden)]
     pub max_impact: f64,
     /// <p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>
-    #[doc(hidden)]
     pub total_impact: f64,
     /// <p>The cumulative dollar amount that was actually spent during the anomaly.</p>
-    #[doc(hidden)]
     pub total_actual_spend: ::std::option::Option<f64>,
     /// <p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>
-    #[doc(hidden)]
     pub total_expected_spend: ::std::option::Option<f64>,
     /// <p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>
-    #[doc(hidden)]
     pub total_impact_percentage: ::std::option::Option<f64>,
 }
 impl Impact {

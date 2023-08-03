@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeneratedPolicyResult {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<crate::types::GeneratedPolicyProperties>,
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-    #[doc(hidden)]
     pub generated_policies: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>,
 }
 impl GeneratedPolicyResult {

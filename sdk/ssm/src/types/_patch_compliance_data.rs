@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchComplianceData {
     /// <p>The title of the patch.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The operating system-specific ID of the patch.</p>
-    #[doc(hidden)]
     pub kb_id: ::std::option::Option<::std::string::String>,
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
-    #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::PatchComplianceDataState>,
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
-    #[doc(hidden)]
     pub installed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
-    #[doc(hidden)]
     pub cve_ids: ::std::option::Option<::std::string::String>,
 }
 impl PatchComplianceData {

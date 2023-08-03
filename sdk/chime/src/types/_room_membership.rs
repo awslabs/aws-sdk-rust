@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoomMembership {
     /// <p>The room ID.</p>
-    #[doc(hidden)]
     pub room_id: ::std::option::Option<::std::string::String>,
     /// <p>The member details, such as email address, name, member ID, and member type.</p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::Member>,
     /// <p>The membership role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::RoomMembershipRole>,
     /// <p>The identifier of the user that invited the room member.</p>
-    #[doc(hidden)]
     pub invited_by: ::std::option::Option<::std::string::String>,
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RoomMembership {

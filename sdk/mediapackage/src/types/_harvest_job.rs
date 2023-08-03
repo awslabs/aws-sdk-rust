@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HarvestJob {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The ID of the Channel that the HarvestJob will harvest from.
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// The date and time the HarvestJob was submitted.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// The end of the time-window which will be harvested.
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    #[doc(hidden)]
     pub origin_endpoint_id: ::std::option::Option<::std::string::String>,
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
     /// The start of the time-window which will be harvested.
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
 }
 impl HarvestJob {

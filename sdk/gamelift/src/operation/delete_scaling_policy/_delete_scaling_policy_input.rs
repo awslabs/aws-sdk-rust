@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScalingPolicyInput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScalingPolicyInput {

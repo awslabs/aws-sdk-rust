@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterIssue {
     /// <p>The error code of the issue.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ClusterIssueCode>,
     /// <p>A description of the issue.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The resource IDs that the issue relates to.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ClusterIssue {

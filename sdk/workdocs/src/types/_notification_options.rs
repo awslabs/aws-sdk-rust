@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NotificationOptions {
     /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
-    #[doc(hidden)]
     pub send_email: bool,
     /// <p>Text value to be included in the email body.</p>
-    #[doc(hidden)]
     pub email_message: ::std::option::Option<::std::string::String>,
 }
 impl NotificationOptions {

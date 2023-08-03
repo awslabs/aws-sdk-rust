@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRelatedItemsInput {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
-    #[doc(hidden)]
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
-    #[doc(hidden)]
     pub related_items_update: ::std::option::Option<crate::types::RelatedItemsUpdate>,
 }
 impl UpdateRelatedItemsInput {

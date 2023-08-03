@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicyOutput {
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
-    #[doc(hidden)]
     pub firewall_rule_group_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

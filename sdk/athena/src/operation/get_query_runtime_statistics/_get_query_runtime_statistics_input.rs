@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryRuntimeStatisticsInput {
     /// <p>The unique ID of the query execution.</p>
-    #[doc(hidden)]
     pub query_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetQueryRuntimeStatisticsInput {

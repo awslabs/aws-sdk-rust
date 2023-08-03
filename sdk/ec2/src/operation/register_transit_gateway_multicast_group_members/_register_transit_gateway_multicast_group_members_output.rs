@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTransitGatewayMulticastGroupMembersOutput {
     /// <p>Information about the registered transit gateway multicast group members.</p>
-    #[doc(hidden)]
     pub registered_multicast_group_members: ::std::option::Option<crate::types::TransitGatewayMulticastRegisteredGroupMembers>,
     _request_id: Option<String>,
 }

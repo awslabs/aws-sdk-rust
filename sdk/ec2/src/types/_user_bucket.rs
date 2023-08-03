@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserBucket {
     /// <p>The name of the Amazon S3 bucket where the disk image is located.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The file name of the disk image.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl UserBucket {

@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrackersResponseEntry {
     /// <p>The name of the tracker resource.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the tracker resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan_data_source: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListTrackersResponseEntry {

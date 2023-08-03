@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConfiguration {
     /// <p>Enables Organizations integration.</p>
-    #[doc(hidden)]
     pub enable_integration: bool,
 }
 impl OrganizationConfiguration {

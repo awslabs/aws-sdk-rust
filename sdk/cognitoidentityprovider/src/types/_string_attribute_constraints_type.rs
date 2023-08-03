@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringAttributeConstraintsType {
     /// <p>The minimum length.</p>
-    #[doc(hidden)]
     pub min_length: ::std::option::Option<::std::string::String>,
     /// <p>The maximum length.</p>
-    #[doc(hidden)]
     pub max_length: ::std::option::Option<::std::string::String>,
 }
 impl StringAttributeConstraintsType {

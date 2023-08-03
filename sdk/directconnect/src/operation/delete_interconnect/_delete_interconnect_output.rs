@@ -13,7 +13,6 @@ pub struct DeleteInterconnectOutput {
     /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub interconnect_state: ::std::option::Option<crate::types::InterconnectState>,
     _request_id: Option<String>,
 }

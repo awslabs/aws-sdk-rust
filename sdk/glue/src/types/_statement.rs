@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statement {
     /// <p>The ID of the statement.</p>
-    #[doc(hidden)]
     pub id: i32,
     /// <p>The execution code of the statement.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The state while request is actioned.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StatementState>,
     /// <p>The output in JSON.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::StatementOutput>,
     /// <p>The code execution progress.</p>
-    #[doc(hidden)]
     pub progress: f64,
     /// <p>The unix time and date that the job definition was started.</p>
-    #[doc(hidden)]
     pub started_on: i64,
     /// <p>The unix time and date that the job definition was completed.</p>
-    #[doc(hidden)]
     pub completed_on: i64,
 }
 impl Statement {

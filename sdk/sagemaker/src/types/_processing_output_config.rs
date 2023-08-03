@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingOutputConfig {
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ProcessingOutputConfig {

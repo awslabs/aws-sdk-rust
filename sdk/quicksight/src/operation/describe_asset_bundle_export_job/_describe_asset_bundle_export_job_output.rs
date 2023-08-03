@@ -5,47 +5,34 @@
 pub struct DescribeAssetBundleExportJobOutput {
     /// <p>Indicates the status of a job through its queuing and execution.</p>
     /// <p>Poll this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::AssetBundleExportJobStatus>,
     /// <p>The URL to download the exported asset bundle data from.</p>
     /// <p>This URL is available only after the job has succeeded. This URL is valid for 5 minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed.</p>
     /// <p>The downloaded asset bundle is a zip file named <code>assetbundle-{jobId}.qs</code>. The file has a <code>.qs</code> extension.</p>
     /// <p>This URL can't be used in a <code>StartAssetBundleImportJob</code> API call and should only be used for download purposes.</p>
-    #[doc(hidden)]
     pub download_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
     /// <p>Error records accumulate while the job runs. The complete set of error records is available after the job has completed and failed.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobError>>,
     /// <p>The Amazon Resource Name (ARN) for the export job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the export job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
-    #[doc(hidden)]
     pub asset_bundle_export_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that the export job was executed in. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource ARNs that exported with the job.</p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The include dependencies flag.</p>
-    #[doc(hidden)]
     pub include_all_dependencies: bool,
     /// <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the CloudFormation console and with the CloudFormation APIs.</p>
-    #[doc(hidden)]
     pub export_format: ::std::option::Option<crate::types::AssetBundleExportFormat>,
     /// <p>The CloudFormation override property configuration for the export job.</p>
-    #[doc(hidden)]
     pub cloud_formation_override_property_configuration: ::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the response.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

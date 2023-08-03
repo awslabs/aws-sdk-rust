@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociatedGroupsOutput {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

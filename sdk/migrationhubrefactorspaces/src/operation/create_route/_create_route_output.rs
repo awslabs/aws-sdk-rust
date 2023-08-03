@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateRouteOutput {
     /// <p>The unique identifier of the route.</p>
-    #[doc(hidden)]
     pub route_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the route owner.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the route creator.</p>
-    #[doc(hidden)]
     pub created_by_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The route type of the route.</p>
-    #[doc(hidden)]
     pub route_type: ::std::option::Option<crate::types::RouteType>,
     /// <p>The ID of service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application in which the route is created.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for the URI path route type. </p>
-    #[doc(hidden)]
     pub uri_path_route: ::std::option::Option<crate::types::UriPathRouteInput>,
     /// <p>The current state of the route. Activation state only allows <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is system generated.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RouteState>,
     /// <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A timestamp that indicates when the route was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the route is created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

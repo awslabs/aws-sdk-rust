@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelCapacityReservationFleetsOutput {
     /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
-    #[doc(hidden)]
     pub successful_fleet_cancellations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationFleetCancellationState>>,
     /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
-    #[doc(hidden)]
     pub failed_fleet_cancellations: ::std::option::Option<::std::vec::Vec<crate::types::FailedCapacityReservationFleetCancellationResult>>,
     _request_id: Option<String>,
 }

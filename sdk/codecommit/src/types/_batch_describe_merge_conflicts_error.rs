@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeMergeConflictsError {
     /// <p>The path to the file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the exception.</p>
-    #[doc(hidden)]
     pub exception_name: ::std::option::Option<::std::string::String>,
     /// <p>The message provided by the exception.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl BatchDescribeMergeConflictsError {

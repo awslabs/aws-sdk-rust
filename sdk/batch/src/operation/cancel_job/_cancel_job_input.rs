@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The Batch job ID of the job to cancel.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl CancelJobInput {

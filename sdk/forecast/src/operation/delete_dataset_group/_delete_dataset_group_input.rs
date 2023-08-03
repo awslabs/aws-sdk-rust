@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDatasetGroupInput {

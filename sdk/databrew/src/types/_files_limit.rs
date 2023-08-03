@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilesLimit {
     /// <p>The number of Amazon S3 files to select.</p>
-    #[doc(hidden)]
     pub max_files: i32,
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
-    #[doc(hidden)]
     pub ordered_by: ::std::option::Option<crate::types::OrderedBy>,
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::Order>,
 }
 impl FilesLimit {

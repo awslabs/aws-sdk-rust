@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppOutput {
     /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
-    #[doc(hidden)]
     pub app: ::std::option::Option<crate::types::App>,
     _request_id: Option<String>,
 }

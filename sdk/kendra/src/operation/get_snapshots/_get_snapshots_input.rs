@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSnapshotsInput {
     /// <p>The identifier of the index to get search metrics data.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
     /// <ul>
@@ -15,17 +14,13 @@ pub struct GetSnapshotsInput {
     /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
     /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<crate::types::Interval>,
     /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
-    #[doc(hidden)]
     pub metric_type: ::std::option::Option<crate::types::MetricType>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned data for the metric.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetSnapshotsInput {

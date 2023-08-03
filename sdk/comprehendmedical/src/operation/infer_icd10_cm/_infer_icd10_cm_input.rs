@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferIcd10CmInput {
     /// <p>The input text used for analysis.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl InferIcd10CmInput {

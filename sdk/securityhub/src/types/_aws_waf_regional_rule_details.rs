@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRegionalRuleDetails {
     /// <p>A name for the metrics for the rule. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for the rule. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
-    #[doc(hidden)]
     pub predicate_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRulePredicateListDetails>>,
     /// <p>The ID of the rule. </p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalRuleDetails {

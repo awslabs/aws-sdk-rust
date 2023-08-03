@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentFrameworkShareRequest {
     /// <p> The unique identifier for the share request. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the shared custom framework. </p>
-    #[doc(hidden)]
     pub framework_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the custom framework that the share request is for. </p>
-    #[doc(hidden)]
     pub framework_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the shared custom framework.</p>
-    #[doc(hidden)]
     pub framework_description: ::std::option::Option<::std::string::String>,
     /// <p> The status of the share request. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareRequestStatus>,
     /// <p> The Amazon Web Services account of the sender. </p>
-    #[doc(hidden)]
     pub source_account: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account of the recipient. </p>
-    #[doc(hidden)]
     pub destination_account: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    #[doc(hidden)]
     pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p> The time when the share request expires. </p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time when the share request was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies when the share request was last updated. </p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> An optional comment from the sender about the share request. </p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The number of standard controls that are part of the shared custom framework. </p>
-    #[doc(hidden)]
     pub standard_controls_count: ::std::option::Option<i32>,
     /// <p>The number of custom controls that are part of the shared custom framework.</p>
-    #[doc(hidden)]
     pub custom_controls_count: ::std::option::Option<i32>,
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
 }
 impl AssessmentFrameworkShareRequest {

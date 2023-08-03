@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogAnomalyClass {
     /// <p> The name of the Amazon CloudWatch log stream that the anomalous log event belongs to. A log stream is a sequence of log events that share the same source. </p>
-    #[doc(hidden)]
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of log anomaly that has been detected. </p>
-    #[doc(hidden)]
     pub log_anomaly_type: ::std::option::Option<crate::types::LogAnomalyType>,
     /// <p> The token where the anomaly was detected. This may refer to an exception or another location, or it may be blank for log anomalies such as format anomalies. </p>
-    #[doc(hidden)]
     pub log_anomaly_token: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the log event. </p>
-    #[doc(hidden)]
     pub log_event_id: ::std::option::Option<::std::string::String>,
     /// <p> The explanation for why the log event is considered an anomaly. </p>
-    #[doc(hidden)]
     pub explanation: ::std::option::Option<::std::string::String>,
     /// <p> The number of log lines where this anomalous log event occurs. </p>
-    #[doc(hidden)]
     pub number_of_log_lines_occurrences: i32,
     /// <p> The time of the first occurrence of the anomalous log event. </p>
-    #[doc(hidden)]
     pub log_event_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LogAnomalyClass {

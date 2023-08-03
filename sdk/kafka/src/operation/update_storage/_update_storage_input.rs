@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume provisioned throughput information.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>Controls storage mode for supported storage tiers.</p>
-    #[doc(hidden)]
     pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
     /// <p>size of the EBS volume to update.</p>
-    #[doc(hidden)]
     pub volume_size_gb: ::std::option::Option<i32>,
 }
 impl UpdateStorageInput {

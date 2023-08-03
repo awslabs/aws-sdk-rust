@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotInput {
     /// <p>The name of the game.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the snapshot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl CreateSnapshotInput {

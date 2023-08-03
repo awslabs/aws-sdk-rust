@@ -5,56 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BarChartConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::BarChartFieldWells>,
     /// <p>The sort configuration of a <code>BarChartVisual</code>.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::BarChartSortConfiguration>,
     /// <p>The orientation of the bars in a bar chart visual. There are two valid values in this structure:</p>
     /// <ul>
     /// <li> <p> <code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked 100% bar charts.</p> </li>
     /// <li> <p> <code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use this value are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar charts.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub orientation: ::std::option::Option<crate::types::BarChartOrientation>,
     /// <p>Determines the arrangement of the bars. The orientation and arrangement of bars determine the type of bar that is used in the visual.</p>
-    #[doc(hidden)]
     pub bars_arrangement: ::std::option::Option<crate::types::BarsArrangement>,
     /// <p>The palette (chart color) display setup of the visual.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
     /// <p>The small multiples setup for the visual.</p>
-    #[doc(hidden)]
     pub small_multiples_options: ::std::option::Option<crate::types::SmallMultiplesOptions>,
     /// <p>The label display options (grid line, range, scale, axis step) for bar chart category.</p>
-    #[doc(hidden)]
     pub category_axis: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options (label text, label visibility and sort icon visibility) for a bar chart.</p>
-    #[doc(hidden)]
     pub category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label display options (grid line, range, scale, axis step) for a bar chart value.</p>
-    #[doc(hidden)]
     pub value_axis: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options (label text, label visibility and sort icon visibility) for a bar chart value.</p>
-    #[doc(hidden)]
     pub value_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label options (label text, label visibility and sort icon visibility) for a color that is used in a bar chart.</p>
-    #[doc(hidden)]
     pub color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The options that determine if visual data labels are displayed.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip display setup of the visual.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The reference line setup of the visual.</p>
-    #[doc(hidden)]
     pub reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    #[doc(hidden)]
     pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
 }
 impl BarChartConfiguration {

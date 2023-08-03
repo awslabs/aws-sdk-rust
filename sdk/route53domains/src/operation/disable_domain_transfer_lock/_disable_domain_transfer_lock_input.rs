@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableDomainTransferLockInput {
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DisableDomainTransferLockInput {

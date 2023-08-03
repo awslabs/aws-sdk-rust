@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedGraph {
     /// <p>The ARN of the organization behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason data source package information could not be processed for a behavior graph.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedGraph {

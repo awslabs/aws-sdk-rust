@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NielsenConfiguration {
     /// Enter the Distributor ID assigned to your organization by Nielsen.
-    #[doc(hidden)]
     pub distributor_id: ::std::option::Option<::std::string::String>,
     /// Enables Nielsen PCM to ID3 tagging
-    #[doc(hidden)]
     pub nielsen_pcm_to_id3_tagging: ::std::option::Option<crate::types::NielsenPcmToId3TaggingState>,
 }
 impl NielsenConfiguration {

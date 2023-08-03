@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotChartConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::BoxPlotFieldWells>,
     /// <p>The sort configuration of a <code>BoxPlotVisual</code>.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::BoxPlotSortConfiguration>,
     /// <p>The box plot chart options for a box plot visual</p>
-    #[doc(hidden)]
     pub box_plot_options: ::std::option::Option<crate::types::BoxPlotOptions>,
     /// <p>The label display options (grid line, range, scale, axis step) of a box plot category.</p>
-    #[doc(hidden)]
     pub category_axis: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options (label text, label visibility and sort Icon visibility) of a box plot category.</p>
-    #[doc(hidden)]
     pub category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label display options (grid line, range, scale, axis step) of a box plot category.</p>
-    #[doc(hidden)]
     pub primary_y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options (label text, label visibility and sort icon visibility) of a box plot value.</p>
-    #[doc(hidden)]
     pub primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The options for the legend setup of a visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The tooltip display setup of the visual.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The reference line setup of the visual.</p>
-    #[doc(hidden)]
     pub reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     /// <p>The palette (chart color) display setup of the visual.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl BoxPlotChartConfiguration {

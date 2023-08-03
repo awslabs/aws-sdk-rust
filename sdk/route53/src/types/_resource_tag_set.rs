@@ -9,13 +9,10 @@ pub struct ResourceTagSet {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TagResourceType>,
     /// <p>The ID for the specified resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the specified resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ResourceTagSet {

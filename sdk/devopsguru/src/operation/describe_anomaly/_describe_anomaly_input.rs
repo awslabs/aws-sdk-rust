@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnomalyInput {
     /// <p> The ID of the anomaly. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the member account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAnomalyInput {

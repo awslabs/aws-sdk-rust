@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobExecutionOutput {
     /// <p>A JobExecutionState object.</p>
-    #[doc(hidden)]
     pub execution_state: ::std::option::Option<crate::types::JobExecutionState>,
     /// <p>The contents of the Job Documents.</p>
-    #[doc(hidden)]
     pub job_document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 public address of the network interface.</p>
-    #[doc(hidden)]
     pub public_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterface {

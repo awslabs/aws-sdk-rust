@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcInterface {
     /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// IDs of the network interfaces created in customer's account by MediaConnect.
-    #[doc(hidden)]
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The type of network interface.
-    #[doc(hidden)]
     pub network_interface_type: ::std::option::Option<crate::types::NetworkInterfaceType>,
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// Security Group IDs to be used on ENI.
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Subnet must be in the AZ of the Flow
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcInterface {

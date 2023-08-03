@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaVersionListItem {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the schema version.</p>
-    #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The status of the schema version.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
 }
 impl SchemaVersionListItem {

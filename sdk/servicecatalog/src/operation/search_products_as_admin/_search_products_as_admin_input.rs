@@ -8,28 +8,20 @@ pub struct SearchProductsAsAdminInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::ProductViewFilterBy, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ProductViewSortBy>,
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>Access level of the source of the product.</p>
-    #[doc(hidden)]
     pub product_source: ::std::option::Option<crate::types::ProductSource>,
 }
 impl SearchProductsAsAdminInput {

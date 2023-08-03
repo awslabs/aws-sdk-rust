@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricSetDataQualityMetric {
     /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
-    #[doc(hidden)]
     pub metric_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The array of data quality metrics contained in the data quality metric set.</p>
-    #[doc(hidden)]
     pub data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>>,
 }
 impl MetricSetDataQualityMetric {

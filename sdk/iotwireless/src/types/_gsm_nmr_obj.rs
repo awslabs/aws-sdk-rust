@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GsmNmrObj {
     /// <p>GSM base station identity code (BSIC).</p>
-    #[doc(hidden)]
     pub bsic: ::std::option::Option<i32>,
     /// <p>GSM broadcast control channel.</p>
-    #[doc(hidden)]
     pub bcch: ::std::option::Option<i32>,
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
-    #[doc(hidden)]
     pub rx_level: ::std::option::Option<i32>,
     /// <p>Global identity information of the GSM object.</p>
-    #[doc(hidden)]
     pub global_identity: ::std::option::Option<crate::types::GlobalIdentity>,
 }
 impl GsmNmrObj {

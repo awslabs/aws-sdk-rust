@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotDefaultValueSpecification {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    #[doc(hidden)]
     pub default_value_list: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpecification {

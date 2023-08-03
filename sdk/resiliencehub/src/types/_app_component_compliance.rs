@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppComponentCompliance {
     /// <p>The cost for the application.</p>
-    #[doc(hidden)]
     pub cost: ::std::option::Option<crate::types::Cost>,
     /// <p>The name of the Application Component.</p>
-    #[doc(hidden)]
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
-    #[doc(hidden)]
     pub compliance: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     /// <p>The compliance message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The current resiliency score for the application.</p>
-    #[doc(hidden)]
     pub resiliency_score: ::std::option::Option<crate::types::ResiliencyScore>,
 }
 impl AppComponentCompliance {

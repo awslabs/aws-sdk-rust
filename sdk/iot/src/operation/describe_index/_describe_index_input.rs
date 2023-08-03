@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIndexInput {
     /// <p>The index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIndexInput {

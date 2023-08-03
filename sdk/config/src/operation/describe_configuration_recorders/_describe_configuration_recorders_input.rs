@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersInput {
     /// <p>A list of configuration recorder names.</p>
-    #[doc(hidden)]
     pub configuration_recorder_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeConfigurationRecordersInput {

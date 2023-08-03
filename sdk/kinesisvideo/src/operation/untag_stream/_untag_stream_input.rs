@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stream that you want to remove tags from.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the keys of the tags that you want to remove.</p>
-    #[doc(hidden)]
     pub tag_key_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagStreamInput {

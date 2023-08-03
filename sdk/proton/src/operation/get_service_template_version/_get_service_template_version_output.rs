@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceTemplateVersionOutput {
     /// <p>The detailed data of the requested service template version.</p>
-    #[doc(hidden)]
     pub service_template_version: ::std::option::Option<crate::types::ServiceTemplateVersion>,
     _request_id: Option<String>,
 }

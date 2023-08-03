@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DownlinkQueueMessage {
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
-    #[doc(hidden)]
     pub transmit_mode: ::std::option::Option<i32>,
     /// <p>The time at which Iot Wireless received the downlink message.</p>
-    #[doc(hidden)]
     pub received_at: ::std::option::Option<::std::string::String>,
     /// <p>LoRaWAN router info.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
 }
 impl DownlinkQueueMessage {

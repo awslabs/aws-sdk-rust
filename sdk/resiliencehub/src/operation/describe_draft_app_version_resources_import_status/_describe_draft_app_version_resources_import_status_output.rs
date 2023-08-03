@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDraftAppVersionResourcesImportStatusOutput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
-    #[doc(hidden)]
     pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>The status of the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceImportStatusType>,
     /// <p>The timestamp for when the status last changed.</p>
-    #[doc(hidden)]
     pub status_change_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The returned error message for the request.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

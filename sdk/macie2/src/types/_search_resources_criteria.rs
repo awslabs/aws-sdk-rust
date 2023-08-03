@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesCriteria {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
-    #[doc(hidden)]
     pub simple_criterion: ::std::option::Option<crate::types::SearchResourcesSimpleCriterion>,
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
-    #[doc(hidden)]
     pub tag_criterion: ::std::option::Option<crate::types::SearchResourcesTagCriterion>,
 }
 impl SearchResourcesCriteria {

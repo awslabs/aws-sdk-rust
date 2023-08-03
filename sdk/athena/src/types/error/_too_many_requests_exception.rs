@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ThrottleReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

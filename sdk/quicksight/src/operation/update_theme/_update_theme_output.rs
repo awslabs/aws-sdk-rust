@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThemeOutput {
     /// <p>The ID for the theme.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the theme.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the new version of the theme.</p>
-    #[doc(hidden)]
     pub version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation status of the theme.</p>
-    #[doc(hidden)]
     pub creation_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

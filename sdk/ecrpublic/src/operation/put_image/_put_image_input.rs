@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutImageInput {
     /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains the repository where the image is put. If you do not specify a registry, the default public registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository where the image is put.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The image manifest that corresponds to the image to be uploaded.</p>
-    #[doc(hidden)]
     pub image_manifest: ::std::option::Option<::std::string::String>,
     /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-    #[doc(hidden)]
     pub image_manifest_media_type: ::std::option::Option<::std::string::String>,
     /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
-    #[doc(hidden)]
     pub image_tag: ::std::option::Option<::std::string::String>,
     /// <p>The image digest of the image manifest that corresponds to the image.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
 }
 impl PutImageInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlComment {
     /// <p> The name of the user who authored the comment. </p>
-    #[doc(hidden)]
     pub author_name: ::std::option::Option<::std::string::String>,
     /// <p> The body text of a control comment. </p>
-    #[doc(hidden)]
     pub comment_body: ::std::option::Option<::std::string::String>,
     /// <p> The time when the comment was posted. </p>
-    #[doc(hidden)]
     pub posted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlComment {

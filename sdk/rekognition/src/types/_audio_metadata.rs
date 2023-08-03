@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioMetadata {
     /// <p>The audio codec used to encode or decode the audio stream. </p>
-    #[doc(hidden)]
     pub codec: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the audio stream in milliseconds.</p>
-    #[doc(hidden)]
     pub duration_millis: ::std::option::Option<i64>,
     /// <p>The sample rate for the audio stream.</p>
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<i64>,
     /// <p>The number of audio channels in the segment.</p>
-    #[doc(hidden)]
     pub number_of_channels: ::std::option::Option<i64>,
 }
 impl AudioMetadata {

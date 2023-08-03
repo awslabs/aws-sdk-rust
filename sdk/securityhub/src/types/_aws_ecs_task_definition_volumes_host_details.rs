@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesHostDetails {
     /// <p>The path on the host container instance that is presented to the container.</p>
-    #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesHostDetails {

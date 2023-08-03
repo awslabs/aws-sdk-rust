@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotS3DestinationConfiguration {
     /// <p>A structure that contains details about the Amazon S3 bucket that the generated dashboard snapshot is saved in.</p>
-    #[doc(hidden)]
     pub bucket_configuration: ::std::option::Option<crate::types::S3BucketConfiguration>,
 }
 impl SnapshotS3DestinationConfiguration {

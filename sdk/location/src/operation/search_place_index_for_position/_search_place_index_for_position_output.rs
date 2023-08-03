@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchPlaceIndexForPositionOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForPositionSummary>,
     /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForPositionResult>>,
     _request_id: Option<String>,
 }

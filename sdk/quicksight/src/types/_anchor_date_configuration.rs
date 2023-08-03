@@ -8,10 +8,8 @@ pub struct AnchorDateConfiguration {
     /// <ul>
     /// <li> <p> <code>NOW</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub anchor_option: ::std::option::Option<crate::types::AnchorOption>,
     /// <p>The name of the parameter that is used for the anchor date configuration.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
 }
 impl AnchorDateConfiguration {

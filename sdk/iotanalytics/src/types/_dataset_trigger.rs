@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetTrigger {
     /// <p>The Schedule when the trigger is initiated.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::Schedule>,
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
-    #[doc(hidden)]
     pub dataset: ::std::option::Option<crate::types::TriggeringDataset>,
 }
 impl DatasetTrigger {

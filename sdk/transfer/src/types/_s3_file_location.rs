@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3FileLocation {
     /// <p>Specifies the S3 bucket that contains the file being used.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file version.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
-    #[doc(hidden)]
     pub etag: ::std::option::Option<::std::string::String>,
 }
 impl S3FileLocation {

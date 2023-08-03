@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageInput {
     /// <p>The name of the target package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPackageInput {

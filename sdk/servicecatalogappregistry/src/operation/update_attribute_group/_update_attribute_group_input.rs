@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAttributeGroupInput {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    #[doc(hidden)]
     pub attribute_group: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for attribute group is deprecated.")]
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the attribute group that the user provides.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAttributeGroupInput {

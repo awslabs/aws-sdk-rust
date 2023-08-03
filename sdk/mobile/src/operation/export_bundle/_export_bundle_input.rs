@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportBundleInput {
     /// <p> Unique bundle identifier. </p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p> Unique project identifier. </p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p> Developer desktop or target application platform. </p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
 }
 impl ExportBundleInput {

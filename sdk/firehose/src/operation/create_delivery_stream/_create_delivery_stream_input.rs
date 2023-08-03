@@ -4,49 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeliveryStreamInput {
     /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
     /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub delivery_stream_type: ::std::option::Option<crate::types::DeliveryStreamType>,
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
-    #[doc(hidden)]
     pub kinesis_stream_source_configuration: ::std::option::Option<crate::types::KinesisStreamSourceConfiguration>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    #[doc(hidden)]
     pub delivery_stream_encryption_configuration_input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub s3_destination_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
-    #[doc(hidden)]
     pub extended_s3_destination_configuration: ::std::option::Option<crate::types::ExtendedS3DestinationConfiguration>,
     /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
-    #[doc(hidden)]
     pub redshift_destination_configuration: ::std::option::Option<crate::types::RedshiftDestinationConfiguration>,
     /// <p>The destination in Amazon ES. You can specify only one destination.</p>
-    #[doc(hidden)]
     pub elasticsearch_destination_configuration: ::std::option::Option<crate::types::ElasticsearchDestinationConfiguration>,
     /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
-    #[doc(hidden)]
     pub amazonopensearchservice_destination_configuration: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationConfiguration>,
     /// <p>The destination in Splunk. You can specify only one destination.</p>
-    #[doc(hidden)]
     pub splunk_destination_configuration: ::std::option::Option<crate::types::SplunkDestinationConfiguration>,
     /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-    #[doc(hidden)]
     pub http_endpoint_destination_configuration: ::std::option::Option<crate::types::HttpEndpointDestinationConfiguration>,
     /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
-    #[doc(hidden)]
     pub amazon_open_search_serverless_destination_configuration:
         ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>,
 }

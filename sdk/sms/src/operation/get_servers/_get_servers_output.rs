@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServersOutput {
     /// <p>The time when the server was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the server catalog.</p>
-    #[doc(hidden)]
     pub server_catalog_status: ::std::option::Option<crate::types::ServerCatalogStatus>,
     /// <p>Information about the servers.</p>
-    #[doc(hidden)]
     pub server_list: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

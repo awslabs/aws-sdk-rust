@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservation {
     /// <p>The name of the capacity reservation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the capacity reservation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CapacityReservationStatus>,
     /// <p>The number of data processing units requested.</p>
-    #[doc(hidden)]
     pub target_dpus: ::std::option::Option<i32>,
     /// <p>The number of data processing units currently allocated.</p>
-    #[doc(hidden)]
     pub allocated_dpus: ::std::option::Option<i32>,
     /// <p>Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation.</p>
-    #[doc(hidden)]
     pub last_allocation: ::std::option::Option<crate::types::CapacityAllocation>,
     /// <p>The time of the most recent capacity allocation that succeeded.</p>
-    #[doc(hidden)]
     pub last_successful_allocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time in UTC epoch millis when the capacity reservation was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CapacityReservation {

@@ -8,13 +8,10 @@ pub struct BundleInstanceInput {
     /// <p>Type: String</p>
     /// <p>Default: None</p>
     /// <p>Required: Yes</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
-    #[doc(hidden)]
     pub storage: ::std::option::Option<crate::types::Storage>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl BundleInstanceInput {

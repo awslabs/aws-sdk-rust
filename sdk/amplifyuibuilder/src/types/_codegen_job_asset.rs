@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenJobAsset {
     /// <p>The URL to use to access the asset.</p>
-    #[doc(hidden)]
     pub download_url: ::std::option::Option<::std::string::String>,
 }
 impl CodegenJobAsset {

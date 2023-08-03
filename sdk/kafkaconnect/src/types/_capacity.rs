@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capacity {
     /// <p>Information about the auto scaling parameters for the connector.</p>
-    #[doc(hidden)]
     pub auto_scaling: ::std::option::Option<crate::types::AutoScaling>,
     /// <p>Details about a fixed capacity allocated to a connector.</p>
-    #[doc(hidden)]
     pub provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacity>,
 }
 impl Capacity {

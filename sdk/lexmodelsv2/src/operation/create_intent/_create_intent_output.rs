@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntentOutput {
     /// <p>A unique identifier for the intent.</p>
-    #[doc(hidden)]
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The name specified for the intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The description specified for the intent.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The signature of the parent intent specified for the intent.</p>
-    #[doc(hidden)]
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
     /// <p>The sample utterances specified for the intent.</p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     /// <p>The dialog Lambda function specified for the intent.</p>
-    #[doc(hidden)]
     pub dialog_code_hook: ::std::option::Option<crate::types::DialogCodeHookSettings>,
     /// <p>The fulfillment Lambda function specified for the intent.</p>
-    #[doc(hidden)]
     pub fulfillment_code_hook: ::std::option::Option<crate::types::FulfillmentCodeHookSettings>,
     /// <p>The confirmation setting specified for the intent.</p>
-    #[doc(hidden)]
     pub intent_confirmation_setting: ::std::option::Option<crate::types::IntentConfirmationSetting>,
     /// <p>The closing setting specified for the intent.</p>
-    #[doc(hidden)]
     pub intent_closing_setting: ::std::option::Option<crate::types::IntentClosingSetting>,
     /// <p>The list of input contexts specified for the intent.</p>
-    #[doc(hidden)]
     pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     /// <p>The list of output contexts specified for the intent.</p>
-    #[doc(hidden)]
     pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     /// <p>Configuration for searching a Amazon Kendra index specified for the intent.</p>
-    #[doc(hidden)]
     pub kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
     /// <p>The identifier of the bot associated with the intent.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the intent.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale that the intent is specified to use.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the intent was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
-    #[doc(hidden)]
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
     _request_id: Option<String>,
 }

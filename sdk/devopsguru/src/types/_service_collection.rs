@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceCollection {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    #[doc(hidden)]
     pub service_names: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>,
 }
 impl ServiceCollection {

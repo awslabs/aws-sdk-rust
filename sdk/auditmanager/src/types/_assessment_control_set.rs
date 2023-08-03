@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentControlSet {
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The description for the control set. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the control set. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ControlSetStatus>,
     /// <p> The roles that are associated with the control set. </p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p> The list of controls that's contained with the control set. </p>
-    #[doc(hidden)]
     pub controls: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentControl>>,
     /// <p> The delegations that are associated with the control set. </p>
-    #[doc(hidden)]
     pub delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
     /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
-    #[doc(hidden)]
     pub system_evidence_count: i32,
     /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
-    #[doc(hidden)]
     pub manual_evidence_count: i32,
 }
 impl AssessmentControlSet {

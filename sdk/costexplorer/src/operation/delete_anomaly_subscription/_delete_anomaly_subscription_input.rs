@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnomalySubscriptionInput {
     /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
-    #[doc(hidden)]
     pub subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnomalySubscriptionInput {

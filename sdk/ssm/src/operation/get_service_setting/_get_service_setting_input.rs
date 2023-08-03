@@ -15,7 +15,6 @@ pub struct GetServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub setting_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceSettingInput {

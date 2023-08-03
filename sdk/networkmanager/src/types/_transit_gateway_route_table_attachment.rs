@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTableAttachment {
     /// <p>Describes a core network attachment.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The ID of the peering attachment.</p>
-    #[doc(hidden)]
     pub peering_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the transit gateway attachment route table. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayRouteTableAttachment {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowTypeInfo {
     /// <p>The workflow type this information is about.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The current status of the workflow type.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The description of the type registered through <code>RegisterWorkflowType</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date when this type was registered.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
-    #[doc(hidden)]
     pub deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl WorkflowTypeInfo {

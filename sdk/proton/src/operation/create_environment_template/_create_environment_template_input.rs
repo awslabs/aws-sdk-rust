@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateInput {
     /// <p>The name of the environment template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The environment template name as displayed in the developer interface.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    #[doc(hidden)]
     pub provisioning: ::std::option::Option<crate::types::Provisioning>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEnvironmentTemplateInput {

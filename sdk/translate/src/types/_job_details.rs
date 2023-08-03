@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDetails {
     /// <p>The number of documents successfully processed during a translation job.</p>
-    #[doc(hidden)]
     pub translated_documents_count: ::std::option::Option<i32>,
     /// <p>The number of documents that could not be processed during a translation job.</p>
-    #[doc(hidden)]
     pub documents_with_errors_count: ::std::option::Option<i32>,
     /// <p>The number of documents used as input in a translation job.</p>
-    #[doc(hidden)]
     pub input_documents_count: ::std::option::Option<i32>,
 }
 impl JobDetails {

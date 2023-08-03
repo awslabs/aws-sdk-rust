@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnshareTarget {
     /// <p>Identifier of the directory consumer account.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TargetType>,
 }
 impl UnshareTarget {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReferenceImportJobSourceItem {
     /// <p>The source file's location in Amazon S3.</p>
-    #[doc(hidden)]
     pub source_file: ::std::option::Option<::std::string::String>,
     /// <p>The source's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The source's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The source's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartReferenceImportJobSourceItem {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMetricAttributionOutput {
     /// <p>The details of the metric attribution.</p>
-    #[doc(hidden)]
     pub metric_attribution: ::std::option::Option<crate::types::MetricAttribution>,
     _request_id: Option<String>,
 }

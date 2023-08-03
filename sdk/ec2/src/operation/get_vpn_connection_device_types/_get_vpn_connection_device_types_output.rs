@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVpnConnectionDeviceTypesOutput {
     /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
-    #[doc(hidden)]
     pub vpn_connection_device_types: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>>,
     /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

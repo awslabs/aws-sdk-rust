@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformSortCriteria {
     /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::TransformSortColumnType>,
     /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
-    #[doc(hidden)]
     pub sort_direction: ::std::option::Option<crate::types::SortDirectionType>,
 }
 impl TransformSortCriteria {

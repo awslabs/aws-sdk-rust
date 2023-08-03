@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterAccountInput {
     /// <p> The KMS key details. </p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p> The delegated administrator account for Audit Manager. </p>
-    #[doc(hidden)]
     pub delegated_admin_account: ::std::option::Option<::std::string::String>,
 }
 impl RegisterAccountInput {

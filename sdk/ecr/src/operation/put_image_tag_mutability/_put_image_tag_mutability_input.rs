@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutImageTagMutabilityInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    #[doc(hidden)]
     pub image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
 }
 impl PutImageTagMutabilityInput {

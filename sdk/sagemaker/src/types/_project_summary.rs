@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project.</p>
-    #[doc(hidden)]
     pub project_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project.</p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the project was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the project.</p>
-    #[doc(hidden)]
     pub project_status: ::std::option::Option<crate::types::ProjectStatus>,
 }
 impl ProjectSummary {

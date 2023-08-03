@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingResult {
     /// <p>The page number for a page, with regard to whole submission.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
     /// <p>The classifier result for a given page.</p>
-    #[doc(hidden)]
     pub page_classification: ::std::option::Option<crate::types::PageClassification>,
     /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
-    #[doc(hidden)]
     pub extractions: ::std::option::Option<::std::vec::Vec<crate::types::Extraction>>,
 }
 impl LendingResult {

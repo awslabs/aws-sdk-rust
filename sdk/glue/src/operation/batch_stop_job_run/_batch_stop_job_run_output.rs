@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStopJobRunOutput {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    #[doc(hidden)]
     pub successful_submissions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>>,
     _request_id: Option<String>,
 }

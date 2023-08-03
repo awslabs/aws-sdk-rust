@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainControllersInput {
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    #[doc(hidden)]
     pub domain_controller_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeDomainControllersInput {

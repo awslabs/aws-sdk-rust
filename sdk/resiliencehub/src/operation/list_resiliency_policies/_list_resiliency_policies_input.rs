@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResiliencyPoliciesInput {
     /// <p>The name of the policy</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListResiliencyPoliciesInput {

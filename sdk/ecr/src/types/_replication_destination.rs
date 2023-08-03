@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationDestination {
     /// <p>The Region to replicate to.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationDestination {

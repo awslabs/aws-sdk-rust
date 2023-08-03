@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAssetPropertyValueEntry {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
-    #[doc(hidden)]
     pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset to update.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property for this entry.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
-    #[doc(hidden)]
     pub property_values: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntry {

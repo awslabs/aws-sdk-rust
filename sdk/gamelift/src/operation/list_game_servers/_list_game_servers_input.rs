@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGameServersInput {
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListGameServersInput {

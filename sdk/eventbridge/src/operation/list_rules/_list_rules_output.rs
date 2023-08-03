@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRulesOutput {
     /// <p>The rules that match the specified criteria.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

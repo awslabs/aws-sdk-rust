@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorEvent {
     /// <p>A string that contains an <code>Event</code> message describing changes or errors when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp for when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack to IPv4.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AcceleratorEvent {

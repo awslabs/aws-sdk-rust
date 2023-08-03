@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayerVersionsListItem {
     /// <p>The ARN of the layer version.</p>
-    #[doc(hidden)]
     pub layer_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The description of the version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date that the version was created, in ISO 8601 format. For example, <code>2018-11-27T15:10:45.123+0000</code>.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The layer's compatible runtimes.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    #[doc(hidden)]
     pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
     /// <p>The layer's open-source license.</p>
-    #[doc(hidden)]
     pub license_info: ::std::option::Option<::std::string::String>,
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    #[doc(hidden)]
     pub compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
 }
 impl LayerVersionsListItem {

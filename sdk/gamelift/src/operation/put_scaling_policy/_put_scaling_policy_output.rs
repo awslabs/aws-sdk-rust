@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutScalingPolicyOutput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

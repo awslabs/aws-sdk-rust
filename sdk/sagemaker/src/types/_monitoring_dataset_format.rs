@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringDatasetFormat {
     /// <p>The CSV dataset used in the monitoring job.</p>
-    #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::MonitoringCsvDatasetFormat>,
     /// <p>The JSON dataset used in the monitoring job</p>
-    #[doc(hidden)]
     pub json: ::std::option::Option<crate::types::MonitoringJsonDatasetFormat>,
     /// <p>The Parquet dataset used in the monitoring job</p>
-    #[doc(hidden)]
     pub parquet: ::std::option::Option<crate::types::MonitoringParquetDatasetFormat>,
 }
 impl MonitoringDatasetFormat {

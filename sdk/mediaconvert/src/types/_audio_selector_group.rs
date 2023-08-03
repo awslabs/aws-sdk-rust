@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioSelectorGroup {
     /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
-    #[doc(hidden)]
     pub audio_selector_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AudioSelectorGroup {

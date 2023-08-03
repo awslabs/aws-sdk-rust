@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogSetup {
     /// <p>The available cluster control plane log types.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl LogSetup {

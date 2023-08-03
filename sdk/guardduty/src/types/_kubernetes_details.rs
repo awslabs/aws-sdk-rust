@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesDetails {
     /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
-    #[doc(hidden)]
     pub kubernetes_user_details: ::std::option::Option<crate::types::KubernetesUserDetails>,
     /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-    #[doc(hidden)]
     pub kubernetes_workload_details: ::std::option::Option<crate::types::KubernetesWorkloadDetails>,
 }
 impl KubernetesDetails {

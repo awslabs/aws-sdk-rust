@@ -5,14 +5,11 @@
 pub struct DescribeAccountAuditConfigurationOutput {
     /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the targets to which audit notifications are sent for this account.</p>
-    #[doc(hidden)]
     pub audit_notification_target_configurations:
         ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
     /// <p>Which audit checks are enabled and disabled for this account.</p>
-    #[doc(hidden)]
     pub audit_check_configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
     _request_id: Option<String>,
 }

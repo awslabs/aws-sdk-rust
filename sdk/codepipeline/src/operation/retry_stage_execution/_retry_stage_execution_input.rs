@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryStageExecutionInput {
     /// <p>The name of the pipeline that contains the failed stage.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the failed stage to be retried.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
-    #[doc(hidden)]
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
-    #[doc(hidden)]
     pub retry_mode: ::std::option::Option<crate::types::StageRetryMode>,
 }
 impl RetryStageExecutionInput {

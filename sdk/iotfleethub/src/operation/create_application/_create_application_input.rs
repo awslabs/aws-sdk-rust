@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the web application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the web application.</p>
-    #[doc(hidden)]
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInput {

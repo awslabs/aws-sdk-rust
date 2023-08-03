@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Offering {
     /// <p>The ID that corresponds to a device offering.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A string that describes the offering.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OfferingType>,
     /// <p>The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::DevicePlatform>,
     /// <p>Specifies whether there are recurring charges for the offering.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl Offering {

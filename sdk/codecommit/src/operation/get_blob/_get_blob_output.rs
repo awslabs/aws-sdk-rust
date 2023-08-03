@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlobOutput {
     /// <p>The content of the blob, usually a file.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnGroup {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
-    #[doc(hidden)]
     pub geo_spatial_column_group: ::std::option::Option<crate::types::GeoSpatialColumnGroup>,
 }
 impl ColumnGroup {

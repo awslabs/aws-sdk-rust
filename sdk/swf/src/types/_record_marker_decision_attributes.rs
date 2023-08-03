@@ -13,10 +13,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordMarkerDecisionAttributes {
     /// <p> The name of the marker.</p>
-    #[doc(hidden)]
     pub marker_name: ::std::option::Option<::std::string::String>,
     /// <p> The details of the marker.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
 }
 impl RecordMarkerDecisionAttributes {

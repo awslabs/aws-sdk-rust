@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyPairInfo {
     /// <p>The ID of the key pair.</p>
-    #[doc(hidden)]
     pub key_pair_id: ::std::option::Option<::std::string::String>,
     /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p>
     /// <ul>
@@ -17,23 +16,17 @@ pub struct KeyPairInfo {
     /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li>
     /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of key pair.</p>
-    #[doc(hidden)]
     pub key_type: ::std::option::Option<crate::types::KeyType>,
     /// <p>Any tags applied to the key pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The public key material.</p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::std::string::String>,
     /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KeyPairInfo {

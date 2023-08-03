@@ -10,13 +10,10 @@ pub struct FailoverState {
     /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas.</p> </li>
     /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FailoverStatus>,
     /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state.</p>
-    #[doc(hidden)]
     pub from_db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being promoted, and which is associated with this state.</p>
-    #[doc(hidden)]
     pub to_db_cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl FailoverState {

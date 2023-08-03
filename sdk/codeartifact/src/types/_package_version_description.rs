@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionDescription {
     /// <p> The format of the package version. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -14,40 +13,28 @@ pub struct PackageVersionDescription {
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the requested package. </p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package that is displayed. The <code>displayName</code> varies depending on the package version's format. For example, if an npm package is named <code>ui</code>, is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the <code>displayName</code> is <code>@vue/ui</code>. </p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p> The version of the package. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p> A summary of the package version. The summary is extracted from the package. The information in and detail level of the summary depends on the package version's format. </p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p> The homepage associated with the package. </p>
-    #[doc(hidden)]
     pub home_page: ::std::option::Option<::std::string::String>,
     /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
-    #[doc(hidden)]
     pub source_code_repository: ::std::option::Option<::std::string::String>,
     /// <p> A timestamp that contains the date and time the package version was published. </p>
-    #[doc(hidden)]
     pub published_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Information about licenses associated with the package version. </p>
-    #[doc(hidden)]
     pub licenses: ::std::option::Option<::std::vec::Vec<crate::types::LicenseInfo>>,
     /// <p> The revision of the package version. </p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the status of the package version. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<crate::types::PackageVersionOrigin>,
 }
 impl PackageVersionDescription {

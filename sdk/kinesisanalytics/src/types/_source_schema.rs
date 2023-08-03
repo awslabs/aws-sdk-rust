@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceSchema {
     /// <p>Specifies the format of the records on the streaming source.</p>
-    #[doc(hidden)]
     pub record_format: ::std::option::Option<crate::types::RecordFormat>,
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
-    #[doc(hidden)]
     pub record_encoding: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>RecordColumn</code> objects.</p>
-    #[doc(hidden)]
     pub record_columns: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>,
 }
 impl SourceSchema {

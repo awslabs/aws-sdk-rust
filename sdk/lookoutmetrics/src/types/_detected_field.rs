@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedField {
     /// <p>The field's value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The field's confidence.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<crate::types::Confidence>,
     /// <p>The field's message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DetectedField {

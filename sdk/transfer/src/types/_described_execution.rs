@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
-    #[doc(hidden)]
     pub initial_file_location: ::std::option::Option<crate::types::FileLocation>,
     /// <p>A container object for the session details that are associated with a workflow.</p>
-    #[doc(hidden)]
     pub service_metadata: ::std::option::Option<crate::types::ServiceMetadata>,
     /// <p>The IAM role associated with the execution.</p>
-    #[doc(hidden)]
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The IAM logging role associated with the execution.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
-    #[doc(hidden)]
     pub posix_profile: ::std::option::Option<crate::types::PosixProfile>,
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<crate::types::ExecutionResults>,
 }
 impl DescribedExecution {

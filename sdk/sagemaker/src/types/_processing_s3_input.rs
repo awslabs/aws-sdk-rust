@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingS3Input {
     /// <p>The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The local path in your container where you want Amazon SageMaker to write input data to. <code>LocalPath</code> is an absolute path to the input data and must begin with <code>/opt/ml/processing/</code>. <code>LocalPath</code> is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether you use an <code>S3Prefix</code> or a <code>ManifestFile</code> for the data type. If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for the processing job. If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for the processing job.</p>
-    #[doc(hidden)]
     pub s3_data_type: ::std::option::Option<crate::types::ProcessingS3DataType>,
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data from the input source onto the local ML storage volume before starting your processing container. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your processing container into named pipes without using the ML storage volume.</p>
-    #[doc(hidden)]
     pub s3_input_mode: ::std::option::Option<crate::types::ProcessingS3InputMode>,
     /// <p>Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing instance.</p>
-    #[doc(hidden)]
     pub s3_data_distribution_type: ::std::option::Option<crate::types::ProcessingS3DataDistributionType>,
     /// <p>Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container. <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without using the EBS volume.</p>
-    #[doc(hidden)]
     pub s3_compression_type: ::std::option::Option<crate::types::ProcessingS3CompressionType>,
 }
 impl ProcessingS3Input {

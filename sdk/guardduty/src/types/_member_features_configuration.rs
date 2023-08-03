@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberFeaturesConfiguration {
     /// <p>The name of the feature.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OrgFeature>,
     /// <p>The status of the feature.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>Additional configuration of the feature for the member account.</p>
-    #[doc(hidden)]
     pub additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfiguration>>,
 }
 impl MemberFeaturesConfiguration {

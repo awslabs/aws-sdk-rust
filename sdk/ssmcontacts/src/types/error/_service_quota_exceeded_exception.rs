@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// Identifier of the resource affected
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// Type of the resource affected
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// Service Quotas requirement to identify originating service
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// Service Quotas requirement to identify originating quota
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

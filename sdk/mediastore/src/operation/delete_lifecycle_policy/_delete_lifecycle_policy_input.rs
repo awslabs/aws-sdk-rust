@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLifecyclePolicyInput {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLifecyclePolicyInput {

@@ -5,85 +5,58 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbInstance {
     /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains the name of the compute and memory capacity class of the instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Provides the name of the database engine to be used for this instance.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current state of this database.</p>
-    #[doc(hidden)]
     pub db_instance_status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the connection endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>Provides the date and time that the instance was created.</p>
-    #[doc(hidden)]
     pub instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: i32,
     /// <p>Provides a list of VPC security group elements that the instance belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>Specifies the name of the Availability Zone that the instance is located in.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Specifies information on the subnet group that is associated with the instance, including the name, description, and subnets in the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that changes to the instance are pending. This element is included only when changes are pending. Specific changes are identified by subelements.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-    #[doc(hidden)]
     pub latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
-    #[doc(hidden)]
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
     /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not the instance is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
-    #[doc(hidden)]
     pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
-    #[doc(hidden)]
     pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the instance.</p>
-    #[doc(hidden)]
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that this instance is configured to export to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DbInstance {

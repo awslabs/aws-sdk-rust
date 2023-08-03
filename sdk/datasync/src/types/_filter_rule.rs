@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterRule {
     /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule type.</p>
-    #[doc(hidden)]
     pub filter_type: ::std::option::Option<crate::types::FilterType>,
     /// <p>A single filter string that consists of the patterns to include or exclude. The patterns are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code> </p>
     /// <p> </p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl FilterRule {

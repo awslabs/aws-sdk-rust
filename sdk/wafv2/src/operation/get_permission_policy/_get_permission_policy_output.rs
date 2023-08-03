@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPermissionPolicyOutput {
     /// <p>The IAM policy that is attached to the specified rule group.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

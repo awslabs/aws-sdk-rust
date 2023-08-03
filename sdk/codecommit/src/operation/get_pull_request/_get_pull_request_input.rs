@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPullRequestInput {

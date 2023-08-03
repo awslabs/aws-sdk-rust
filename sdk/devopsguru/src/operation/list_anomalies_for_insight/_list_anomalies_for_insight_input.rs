@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomaliesForInsightInput {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
-    #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
-    #[doc(hidden)]
     pub start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies one or more service names that are used to list anomalies. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
 }
 impl ListAnomaliesForInsightInput {

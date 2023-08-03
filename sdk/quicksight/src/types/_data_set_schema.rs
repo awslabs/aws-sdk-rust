@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetSchema {
     /// <p>A structure containing the list of column schemas.</p>
-    #[doc(hidden)]
     pub column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSchema>>,
 }
 impl DataSetSchema {

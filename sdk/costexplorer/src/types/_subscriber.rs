@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscriber {
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The notification delivery channel. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SubscriberType>,
     /// <p>Indicates if the subscriber accepts the notifications. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SubscriberStatus>,
 }
 impl Subscriber {

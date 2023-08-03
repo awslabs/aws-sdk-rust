@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be deleted.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLoggingConfigurationInput {

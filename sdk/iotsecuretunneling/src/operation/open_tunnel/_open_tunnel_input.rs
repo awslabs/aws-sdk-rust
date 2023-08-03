@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenTunnelInput {
     /// <p>A short text description of the tunnel. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A collection of tag metadata.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The destination configuration for the OpenTunnel request.</p>
-    #[doc(hidden)]
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     /// <p>Timeout configuration for a tunnel.</p>
-    #[doc(hidden)]
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
 }
 impl OpenTunnelInput {

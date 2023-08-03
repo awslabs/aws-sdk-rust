@@ -6,10 +6,8 @@
 pub struct BufferingHints {
     /// <p>Buffer incoming data to the specified size, in MiBs, before delivering it to the destination. The default value is 5. This parameter is optional but if you specify a value for it, you must also specify a value for <code>IntervalInSeconds</code>, and vice versa.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MiB/sec, the value should be 10 MiB or higher.</p>
-    #[doc(hidden)]
     pub size_in_m_bs: ::std::option::Option<i32>,
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300. This parameter is optional but if you specify a value for it, you must also specify a value for <code>SizeInMBs</code>, and vice versa.</p>
-    #[doc(hidden)]
     pub interval_in_seconds: ::std::option::Option<i32>,
 }
 impl BufferingHints {

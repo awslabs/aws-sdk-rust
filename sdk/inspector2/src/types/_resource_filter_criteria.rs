@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceFilterCriteria {
     /// <p>The account IDs used as resource filter criteria.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The resource IDs used as resource filter criteria.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The resource types used as resource filter criteria.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The ECR repository names used as resource filter criteria.</p>
-    #[doc(hidden)]
     pub ecr_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The AWS Lambda function name used as resource filter criteria.</p>
-    #[doc(hidden)]
     pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The ECR image tags used as resource filter criteria.</p>
-    #[doc(hidden)]
     pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The EC2 instance tags used as resource filter criteria.</p>
-    #[doc(hidden)]
     pub ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
     /// <p>The AWS Lambda function tags used as resource filter criteria.</p>
-    #[doc(hidden)]
     pub lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
 }
 impl ResourceFilterCriteria {

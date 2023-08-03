@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionThreshold {
     /// <p> The threshold of a notification.</p>
-    #[doc(hidden)]
     pub action_threshold_value: f64,
     /// <p> The type of threshold for a notification.</p>
-    #[doc(hidden)]
     pub action_threshold_type: ::std::option::Option<crate::types::ThresholdType>,
 }
 impl ActionThreshold {

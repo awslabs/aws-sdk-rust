@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSigningProfileInput {
     /// <p>The name of the signing profile to be created.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
-    #[doc(hidden)]
     pub signing_material: ::std::option::Option<crate::types::SigningMaterial>,
     /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
-    #[doc(hidden)]
     pub signature_validity_period: ::std::option::Option<crate::types::SignatureValidityPeriod>,
     /// <p>The ID of the signing platform to be created.</p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<crate::types::SigningPlatformOverrides>,
     /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
-    #[doc(hidden)]
     pub signing_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Tags to be associated with the signing profile that is being created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutSigningProfileInput {

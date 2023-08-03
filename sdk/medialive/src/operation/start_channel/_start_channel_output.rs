@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChannelOutput {
     /// The unique arn of the channel.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// Specification of CDI inputs for this channel
-    #[doc(hidden)]
     pub cdi_input_specification: ::std::option::Option<crate::types::CdiInputSpecification>,
     /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
-    #[doc(hidden)]
     pub channel_class: ::std::option::Option<crate::types::ChannelClass>,
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
     /// The endpoints where outgoing connections initiate from
-    #[doc(hidden)]
     pub egress_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
     /// Encoder Settings
-    #[doc(hidden)]
     pub encoder_settings: ::std::option::Option<crate::types::EncoderSettings>,
     /// The unique id of the channel.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// List of input attachments for channel.
-    #[doc(hidden)]
     pub input_attachments: ::std::option::Option<::std::vec::Vec<crate::types::InputAttachment>>,
     /// Specification of network and file inputs for this channel
-    #[doc(hidden)]
     pub input_specification: ::std::option::Option<crate::types::InputSpecification>,
     /// The log level being written to CloudWatch Logs.
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
     /// Maintenance settings for this channel.
-    #[doc(hidden)]
     pub maintenance: ::std::option::Option<crate::types::MaintenanceStatus>,
     /// The name of the channel. (user-mutable)
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Runtime details for the pipelines of a running channel.
-    #[doc(hidden)]
     pub pipeline_details: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDetail>>,
     /// The number of currently healthy pipelines.
-    #[doc(hidden)]
     pub pipelines_running_count: ::std::option::Option<i32>,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// Placeholder documentation for ChannelState
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ChannelState>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Settings for VPC output
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     _request_id: Option<String>,
 }

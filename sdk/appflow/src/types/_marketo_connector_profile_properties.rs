@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarketoConnectorProfileProperties {
     /// <p> The location of the Marketo resource. </p>
-    #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
 }
 impl MarketoConnectorProfileProperties {

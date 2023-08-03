@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OemEphemeris {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
-    #[doc(hidden)]
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.</p>
-    #[doc(hidden)]
     pub oem_data: ::std::option::Option<::std::string::String>,
 }
 impl OemEphemeris {

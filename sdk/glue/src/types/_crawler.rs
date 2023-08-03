@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Crawler {
     /// <p>The name of the crawler.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>A collection of targets to crawl.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<crate::types::CrawlerTargets>,
     /// <p>The name of the database in which the crawler's output is stored.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the crawler.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
-    #[doc(hidden)]
     pub classifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-    #[doc(hidden)]
     pub recrawl_policy: ::std::option::Option<crate::types::RecrawlPolicy>,
     /// <p>The policy that specifies update and delete behaviors for the crawler.</p>
-    #[doc(hidden)]
     pub schema_change_policy: ::std::option::Option<crate::types::SchemaChangePolicy>,
     /// <p>A configuration that specifies whether data lineage is enabled for the crawler.</p>
-    #[doc(hidden)]
     pub lineage_configuration: ::std::option::Option<crate::types::LineageConfiguration>,
     /// <p>Indicates whether the crawler is running, or whether a run is pending.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CrawlerState>,
     /// <p>The prefix added to the names of tables that are created.</p>
-    #[doc(hidden)]
     pub table_prefix: ::std::option::Option<::std::string::String>,
     /// <p>For scheduled crawlers, the schedule when the crawler runs.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::Schedule>,
     /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
-    #[doc(hidden)]
     pub crawl_elapsed_time: i64,
     /// <p>The time that the crawler was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the crawler was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
-    #[doc(hidden)]
     pub last_crawl: ::std::option::Option<crate::types::LastCrawlInfo>,
     /// <p>The version of the crawler.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
-    #[doc(hidden)]
     pub crawler_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
-    #[doc(hidden)]
     pub lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
 }
 impl Crawler {

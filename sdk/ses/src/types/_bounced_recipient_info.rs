@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BouncedRecipientInfo {
     /// <p>The email address of the recipient of the bounced email.</p>
-    #[doc(hidden)]
     pub recipient: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to receive email for the recipient of the bounced email. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub recipient_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.</p>
-    #[doc(hidden)]
     pub bounce_type: ::std::option::Option<crate::types::BounceType>,
     /// <p>Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.</p>
-    #[doc(hidden)]
     pub recipient_dsn_fields: ::std::option::Option<crate::types::RecipientDsnFields>,
 }
 impl BouncedRecipientInfo {

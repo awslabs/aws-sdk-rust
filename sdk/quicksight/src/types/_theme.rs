@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Theme {
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that the user gives to the theme.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier that the user gives to the theme.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>A version of a theme.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<crate::types::ThemeVersion>,
     /// <p>The date and time that the theme was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the theme was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThemeType>,
 }
 impl Theme {

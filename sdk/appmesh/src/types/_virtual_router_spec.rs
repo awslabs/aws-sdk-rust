@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
-    #[doc(hidden)]
     pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterListener>>,
 }
 impl VirtualRouterSpec {

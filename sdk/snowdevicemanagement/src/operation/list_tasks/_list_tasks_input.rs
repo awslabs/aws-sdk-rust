@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTasksInput {
     /// <p>A structure used to filter the list of tasks.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TaskState>,
     /// <p>The maximum number of tasks per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token to continue to the next page of tasks.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTasksInput {

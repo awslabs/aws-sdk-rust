@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSessionInput {
     /// <p>The identifier of the bot that receives the session data.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias identifier of the bot that receives the session data.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale where the session is in use.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session that receives the session data.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-    #[doc(hidden)]
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    #[doc(hidden)]
     pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>
     /// <ul>
     /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub response_content_type: ::std::option::Option<::std::string::String>,
 }
 impl PutSessionInput {

@@ -16,7 +16,6 @@ pub struct CreateContainerOutput {
     /// <p>CreationTime: Unix time stamp.</p>
     /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
     /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::Container>,
     _request_id: Option<String>,
 }

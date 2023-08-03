@@ -5,10 +5,8 @@
 pub struct UpdateAccessInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-    #[doc(hidden)]
     pub home_directory: ::std::option::Option<::std::string::String>,
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
-    #[doc(hidden)]
     pub home_directory_type: ::std::option::Option<crate::types::HomeDirectoryType>,
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
@@ -16,7 +14,6 @@ pub struct UpdateAccessInput {
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
-    #[doc(hidden)]
     pub home_directory_mappings: ::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>>,
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
@@ -24,22 +21,17 @@ pub struct UpdateAccessInput {
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
-    #[doc(hidden)]
     pub posix_profile: ::std::option::Option<crate::types::PosixProfile>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAccessInput {

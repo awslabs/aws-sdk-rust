@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactChannelsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of contact channels related to the specified contact.</p>
-    #[doc(hidden)]
     pub contact_channels: ::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>>,
     _request_id: Option<String>,
 }

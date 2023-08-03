@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageMetricBasis {
     /// <p> A utilization metric that is used by the recommendations. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the percentage of the specified utilization metric that is used by the recommendations. </p>
-    #[doc(hidden)]
     pub percentage_adjust: ::std::option::Option<f64>,
 }
 impl UsageMetricBasis {

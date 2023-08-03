@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapFilter {
     /// <p>The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the filter value, then there's no match.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The condition to apply to the key value when filtering Security Hub findings with a map filter.</p>
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
@@ -26,7 +24,6 @@ pub struct MapFilter {
     /// <p> <code>CONTAINS</code> filters can only be used with other <code>CONTAINS</code> filters. <code>NOT_CONTAINS</code> filters can only be used with other <code>NOT_CONTAINS</code> filters.</p>
     /// <p>You can’t have both a <code>CONTAINS</code> filter and a <code>NOT_CONTAINS</code> filter on the same field. Similarly, you can’t have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field. Combining filters in this way returns an error. </p>
     /// <p> <code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::MapFilterComparison>,
 }
 impl MapFilter {

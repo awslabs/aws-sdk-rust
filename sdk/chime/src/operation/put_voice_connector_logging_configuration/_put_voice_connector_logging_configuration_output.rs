@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfigurationOutput {
     /// <p>The updated logging configuration details.</p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
 }

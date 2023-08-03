@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PromoteReadReplicaDbClusterInput {
     /// <p>Not supported.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl PromoteReadReplicaDbClusterInput {

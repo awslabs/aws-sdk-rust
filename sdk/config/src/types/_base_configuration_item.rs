@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaseConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the configuration recording was initiated.</p>
-    #[doc(hidden)]
     pub configuration_item_capture_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration item status. The valid values are:</p>
     /// <ul>
@@ -23,37 +20,26 @@ pub struct BaseConfigurationItem {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    #[doc(hidden)]
     pub configuration_item_status: ::std::option::Option<crate::types::ConfigurationItemStatus>,
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
-    #[doc(hidden)]
     pub configuration_state_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the resource, if available.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The region where the resource resides.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone associated with the resource.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp when the resource was created.</p>
-    #[doc(hidden)]
     pub resource_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the resource configuration.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the configuration parameter.</p>
-    #[doc(hidden)]
     pub supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl BaseConfigurationItem {

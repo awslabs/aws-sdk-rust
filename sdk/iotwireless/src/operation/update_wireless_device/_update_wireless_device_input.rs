@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWirelessDeviceInput {
     /// <p>The ID of the resource to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new destination for the device.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The new name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A new description of the resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated wireless device's configuration.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanUpdateDevice>,
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    #[doc(hidden)]
     pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
 }
 impl UpdateWirelessDeviceInput {

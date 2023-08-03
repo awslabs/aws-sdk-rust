@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyWorkspacePropertiesInput {
     /// <p>The identifier of the WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
 }
 impl ModifyWorkspacePropertiesInput {

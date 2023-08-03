@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishMetricAction {
     /// <p></p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
 }
 impl PublishMetricAction {

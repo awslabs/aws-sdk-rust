@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineSummary {
     /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that the pipeline used to execute.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the pipeline.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the pipeline was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that a pipeline execution began.</p>
-    #[doc(hidden)]
     pub last_execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {

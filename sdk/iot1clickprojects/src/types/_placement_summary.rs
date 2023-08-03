@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementSummary {
     /// <p>The name of the project containing the placement.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement being summarized.</p>
-    #[doc(hidden)]
     pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    #[doc(hidden)]
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PlacementSummary {

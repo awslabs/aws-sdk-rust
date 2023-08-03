@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VariableValue {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub hierarchy_id: ::std::option::Option<::std::string::String>,
 }
 impl VariableValue {

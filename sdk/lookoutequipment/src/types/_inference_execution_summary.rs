@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceExecutionSummary {
     /// <p>The name of the ML model being used for the inference execution. </p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference scheduler being used for the inference execution. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference execution. </p>
-    #[doc(hidden)]
     pub inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start time at which the inference scheduler began the specific inference execution. </p>
-    #[doc(hidden)]
     pub scheduled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset at which the inference execution began. </p>
-    #[doc(hidden)]
     pub data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped. </p>
-    #[doc(hidden)]
     pub data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    #[doc(hidden)]
     pub data_input_configuration: ::std::option::Option<crate::types::InferenceInputConfiguration>,
     /// <p> Specifies configuration information for the output results from for the inference execution, including the output Amazon S3 location. </p>
-    #[doc(hidden)]
     pub data_output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
     /// <p> </p>
-    #[doc(hidden)]
     pub customer_result_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>Indicates the status of the inference execution. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InferenceExecutionStatus>,
     /// <p> Specifies the reason for failure when an inference execution has failed. </p>
-    #[doc(hidden)]
     pub failed_reason: ::std::option::Option<::std::string::String>,
 }
 impl InferenceExecutionSummary {

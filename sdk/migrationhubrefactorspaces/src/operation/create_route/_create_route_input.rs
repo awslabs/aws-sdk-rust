@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateRouteInput {
     /// <p>The ID of the environment in which the route is created.</p>
-    #[doc(hidden)]
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application within which the route is being created.</p>
-    #[doc(hidden)]
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
-    #[doc(hidden)]
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
-    #[doc(hidden)]
     pub route_type: ::std::option::Option<crate::types::RouteType>,
     /// <p> Configuration for the default route type. </p>
-    #[doc(hidden)]
     pub default_route: ::std::option::Option<crate::types::DefaultRouteInput>,
     /// <p>The configuration for the URI path route type. </p>
-    #[doc(hidden)]
     pub uri_path_route: ::std::option::Option<crate::types::UriPathRouteInput>,
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateRouteInput {

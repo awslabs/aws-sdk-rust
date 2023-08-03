@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsInput {
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
-    #[doc(hidden)]
     pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::MetricDestination>,
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
-    #[doc(hidden)]
     pub metric_definition_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteRumMetricDefinitionsInput {

@@ -6,20 +6,15 @@
 pub struct ScatterPlotUnaggregatedFieldWells {
     /// <p>The x-axis field well of a scatter plot.</p>
     /// <p>The x-axis is a dimension field and cannot be aggregated.</p>
-    #[doc(hidden)]
     pub x_axis: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The y-axis field well of a scatter plot.</p>
     /// <p>The y-axis is a dimension field and cannot be aggregated.</p>
-    #[doc(hidden)]
     pub y_axis: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The size field well of a scatter plot.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The category field well of a scatter plot.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The label field well of a scatter plot.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl ScatterPlotUnaggregatedFieldWells {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottleSettings {
     /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
-    #[doc(hidden)]
     pub burst_limit: i32,
     /// <p>The API target request rate limit.</p>
-    #[doc(hidden)]
     pub rate_limit: f64,
 }
 impl ThrottleSettings {

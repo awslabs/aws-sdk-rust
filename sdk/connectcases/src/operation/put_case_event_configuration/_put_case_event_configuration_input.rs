@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
-    #[doc(hidden)]
     pub event_bridge: ::std::option::Option<crate::types::EventBridgeConfiguration>,
 }
 impl PutCaseEventConfigurationInput {

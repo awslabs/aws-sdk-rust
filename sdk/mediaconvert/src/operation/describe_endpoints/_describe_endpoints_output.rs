@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointsOutput {
     /// List of endpoints
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     /// Use this string to request the next batch of endpoints.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

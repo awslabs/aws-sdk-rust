@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDashboardDefinitionInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
     /// <p>The alias name.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDashboardDefinitionInput {

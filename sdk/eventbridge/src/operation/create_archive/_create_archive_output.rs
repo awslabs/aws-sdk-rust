@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateArchiveOutput {
     /// <p>The ARN of the archive that was created.</p>
-    #[doc(hidden)]
     pub archive_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the archive that was created.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArchiveState>,
     /// <p>The reason that the archive is in the state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the archive was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

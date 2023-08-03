@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RegisterAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
@@ -16,19 +14,14 @@ pub struct RegisterAppInstanceUserEndpointInput {
     /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AppInstanceUserEndpointType>,
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes of an <code>Endpoint</code>.</p>
-    #[doc(hidden)]
     pub endpoint_attributes: ::std::option::Option<crate::types::EndpointAttributes>,
     /// <p>The unique ID assigned to the request. Use different tokens to register other endpoints.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
-    #[doc(hidden)]
     pub allow_messages: ::std::option::Option<crate::types::AllowMessages>,
 }
 impl RegisterAppInstanceUserEndpointInput {

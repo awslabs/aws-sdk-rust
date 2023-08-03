@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodegroupHealth {
     /// <p>Any issues that are associated with the node group. </p>
-    #[doc(hidden)]
     pub issues: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>,
 }
 impl NodegroupHealth {

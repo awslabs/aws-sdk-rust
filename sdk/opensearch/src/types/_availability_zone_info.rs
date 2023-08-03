@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZoneInfo {
     /// <p>The name of the Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the Availability Zone. Current options are <code>Active</code> and <code>StandBy</code>.</p>
     /// <ul>
@@ -13,19 +12,14 @@ pub struct AvailabilityZoneInfo {
     /// <li> <p> <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.</p> </li>
     /// <li> <p> <code>NotAvailable</code> - Unable to retrieve information.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub zone_status: ::std::option::Option<crate::types::ZoneStatus>,
     /// <p>The total number of data nodes configured in the Availability Zone.</p>
-    #[doc(hidden)]
     pub configured_data_node_count: ::std::option::Option<::std::string::String>,
     /// <p>The number of data nodes active in the Availability Zone.</p>
-    #[doc(hidden)]
     pub available_data_node_count: ::std::option::Option<::std::string::String>,
     /// <p>The total number of primary and replica shards in the Availability Zone.</p>
-    #[doc(hidden)]
     pub total_shards: ::std::option::Option<::std::string::String>,
     /// <p>The total number of primary and replica shards that aren't allocated to any of the nodes in the Availability Zone.</p>
-    #[doc(hidden)]
     pub total_un_assigned_shards: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZoneInfo {

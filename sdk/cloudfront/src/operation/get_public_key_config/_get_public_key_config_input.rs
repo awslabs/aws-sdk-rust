@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPublicKeyConfigInput {
     /// <p>The identifier of the public key whose configuration you are getting.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetPublicKeyConfigInput {

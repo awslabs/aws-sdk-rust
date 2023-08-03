@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
-    #[doc(hidden)]
     pub replication_task_assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationTaskAssessmentRunInput {

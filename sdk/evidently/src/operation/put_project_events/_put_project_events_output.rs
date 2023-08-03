@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutProjectEventsOutput {
     /// <p>The number of events in the operation that could not be used by Evidently.</p>
-    #[doc(hidden)]
     pub failed_event_count: ::std::option::Option<i32>,
     /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
-    #[doc(hidden)]
     pub event_results: ::std::option::Option<::std::vec::Vec<crate::types::PutProjectEventsResultEntry>>,
     _request_id: Option<String>,
 }

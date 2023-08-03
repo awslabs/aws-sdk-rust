@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAssociationStatusInfo {
     /// <p>The association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the association.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The association document versions.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the association applied to the managed node.</p>
-    #[doc(hidden)]
     pub association_version: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID where the association was created.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The date the association ran. </p>
-    #[doc(hidden)]
     pub execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status information about the association.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Detailed status information about the association.</p>
-    #[doc(hidden)]
     pub detailed_status: ::std::option::Option<::std::string::String>,
     /// <p>Summary information about association execution.</p>
-    #[doc(hidden)]
     pub execution_summary: ::std::option::Option<::std::string::String>,
     /// <p>An error code returned by the request to create the association.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-    #[doc(hidden)]
     pub output_url: ::std::option::Option<crate::types::InstanceAssociationOutputUrl>,
     /// <p>The name of the association applied to the managed node.</p>
-    #[doc(hidden)]
     pub association_name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceAssociationStatusInfo {

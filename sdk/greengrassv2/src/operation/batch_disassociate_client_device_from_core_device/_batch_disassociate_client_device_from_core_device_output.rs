@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateClientDeviceFromCoreDeviceOutput {
     /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
-    #[doc(hidden)]
     pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry>>,
     _request_id: Option<String>,
 }

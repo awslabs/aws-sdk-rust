@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedHour {
     /// <p> Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p> End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
 }
 impl SupportedHour {

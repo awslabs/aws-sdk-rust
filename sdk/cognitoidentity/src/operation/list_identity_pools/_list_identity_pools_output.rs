@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityPoolsOutput {
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
-    #[doc(hidden)]
     pub identity_pools: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
     /// <p>A pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

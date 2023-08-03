@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalGatewayRouteTable {
     /// <p>The ID of the local gateway route table.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway.</p>
-    #[doc(hidden)]
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the local gateway route table.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the local gateway route table.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the local gateway route table.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The mode of the local gateway route table.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::LocalGatewayRouteTableMode>,
     /// <p>Information about the state change.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<crate::types::StateReason>,
 }
 impl LocalGatewayRouteTable {

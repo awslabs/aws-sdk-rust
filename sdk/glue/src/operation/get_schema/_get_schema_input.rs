@@ -8,7 +8,6 @@ pub struct GetSchemaInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
 }
 impl GetSchemaInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSmsChannelOutput {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
-    #[doc(hidden)]
     pub sms_channel_response: ::std::option::Option<crate::types::SmsChannelResponse>,
     _request_id: Option<String>,
 }

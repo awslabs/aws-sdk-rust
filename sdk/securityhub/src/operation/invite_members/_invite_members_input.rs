@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InviteMembersInput {
     /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InviteMembersInput {

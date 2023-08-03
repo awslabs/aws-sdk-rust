@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Experiment {
     /// <p>The name of the experiment.</p>
-    #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    #[doc(hidden)]
     pub experiment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The source of the experiment.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ExperimentSource>,
     /// <p>The description of the experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>When the experiment was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who created the experiment.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the experiment was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The list of tags that are associated with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Experiment {

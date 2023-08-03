@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    #[doc(hidden)]
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to determine if the target routing control states can be changed.</p>
-    #[doc(hidden)]
     pub gating_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that you set for gating routing controls that designate how many of the routing control states must be ON to allow you to update target routing control states.</p>
-    #[doc(hidden)]
     pub rule_config: ::std::option::Option<crate::types::RuleConfig>,
     /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-    #[doc(hidden)]
     pub safety_rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status of a gating rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can use this to manually override automated failover, for example.</p>
-    #[doc(hidden)]
     pub target_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    #[doc(hidden)]
     pub wait_period_ms: ::std::option::Option<i32>,
 }
 impl GatingRule {

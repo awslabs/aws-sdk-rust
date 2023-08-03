@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowStepAutomationConfiguration {
     /// <p>The Amazon S3 bucket where the script is located.</p>
-    #[doc(hidden)]
     pub script_location_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 key for the script location.</p>
-    #[doc(hidden)]
     pub script_location_s3_key: ::std::option::Option<crate::types::PlatformScriptKey>,
     /// <p>The command required to run the script.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<crate::types::PlatformCommand>,
     /// <p>The source or target environment.</p>
-    #[doc(hidden)]
     pub run_environment: ::std::option::Option<crate::types::RunEnvironment>,
     /// <p>The servers on which to run the script.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::TargetType>,
 }
 impl WorkflowStepAutomationConfiguration {

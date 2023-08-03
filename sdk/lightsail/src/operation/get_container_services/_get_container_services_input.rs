@@ -5,7 +5,6 @@
 pub struct GetContainerServicesInput {
     /// <p>The name of the container service for which to return information.</p>
     /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl GetContainerServicesInput {

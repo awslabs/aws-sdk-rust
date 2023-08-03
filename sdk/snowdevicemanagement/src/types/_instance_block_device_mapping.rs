@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceBlockDeviceMapping {
     /// <p>The block device name.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDevice>,
 }
 impl InstanceBlockDeviceMapping {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowTemplateDescription {
     /// <p>An object that contains summary information about a workflow.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::FlowTemplateSummary>,
     /// <p>A workflow's definition document.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
-    #[doc(hidden)]
     pub validated_namespace_version: ::std::option::Option<i64>,
 }
 impl FlowTemplateDescription {

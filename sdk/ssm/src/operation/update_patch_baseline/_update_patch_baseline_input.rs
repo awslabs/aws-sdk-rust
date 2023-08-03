@@ -4,46 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePatchBaselineInput {
     /// <p>The ID of the patch baseline to update.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch baseline.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A set of global filters used to include patches in the baseline.</p>
-    #[doc(hidden)]
     pub global_filters: ::std::option::Option<crate::types::PatchFilterGroup>,
     /// <p>A set of rules used to include patches in the baseline.</p>
-    #[doc(hidden)]
     pub approval_rules: ::std::option::Option<crate::types::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Assigns a new compliance severity level to an existing patch baseline.</p>
-    #[doc(hidden)]
     pub approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
-    #[doc(hidden)]
     pub approved_patches_enable_non_security: ::std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub rejected_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
     /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
     /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
     /// <p>A description of the patch baseline.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
     /// <p>If True, then all fields that are required by the <code>CreatePatchBaseline</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
-    #[doc(hidden)]
     pub replace: ::std::option::Option<bool>,
 }
 impl UpdatePatchBaselineInput {

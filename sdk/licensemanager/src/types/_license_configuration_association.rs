@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LicenseConfigurationAssociation {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Type of server resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
-    #[doc(hidden)]
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Time when the license configuration was associated with the resource.</p>
-    #[doc(hidden)]
     pub association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    #[doc(hidden)]
     pub ami_association_scope: ::std::option::Option<::std::string::String>,
 }
 impl LicenseConfigurationAssociation {

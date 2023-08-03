@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportOptions {
     /// <p>Options relating to the destination of the import request.</p>
-    #[doc(hidden)]
     pub destination_options: ::std::option::Option<crate::types::DestinationOptions>,
     /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
-    #[doc(hidden)]
     pub delimited_text_options: ::std::option::Option<crate::types::DelimitedTextImportOptions>,
 }
 impl ImportOptions {

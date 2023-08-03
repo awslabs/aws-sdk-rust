@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileValidationMessage {
     /// <p>The message title.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The message content.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The message type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl FileValidationMessage {

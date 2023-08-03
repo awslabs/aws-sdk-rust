@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSourceLocationInput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    #[doc(hidden)]
     pub access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     /// <p>The optional configuration for the host server that serves segments.</p>
-    #[doc(hidden)]
     pub default_segment_delivery_configuration: ::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP configuration for the source location.</p>
-    #[doc(hidden)]
     pub http_configuration: ::std::option::Option<crate::types::HttpConfiguration>,
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    #[doc(hidden)]
     pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSourceLocationInput {

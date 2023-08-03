@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessTrustProviderInput {
     /// <p>The type of trust provider.</p>
-    #[doc(hidden)]
     pub trust_provider_type: ::std::option::Option<crate::types::TrustProviderType>,
     /// <p>The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.</p>
-    #[doc(hidden)]
     pub user_trust_provider_type: ::std::option::Option<crate::types::UserTrustProviderType>,
     /// <p>The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
-    #[doc(hidden)]
     pub device_trust_provider_type: ::std::option::Option<crate::types::DeviceTrustProviderType>,
     /// <p>The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the provider type is <code>user</code>.</p>
-    #[doc(hidden)]
     pub oidc_options: ::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderOidcOptions>,
     /// <p>The options for a device-based trust provider. This parameter is required when the provider type is <code>device</code>.</p>
-    #[doc(hidden)]
     pub device_options: ::std::option::Option<crate::types::CreateVerifiedAccessTrustProviderDeviceOptions>,
     /// <p>The identifier to be used when working with policy rules.</p>
-    #[doc(hidden)]
     pub policy_reference_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the Verified Access trust provider.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the Verified Access trust provider.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateVerifiedAccessTrustProviderInput {

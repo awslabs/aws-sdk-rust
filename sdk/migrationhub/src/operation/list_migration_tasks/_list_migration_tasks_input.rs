@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMigrationTasksInput {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Value to specify how many results are returned per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filter migration tasks by discovered resource name.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl ListMigrationTasksInput {

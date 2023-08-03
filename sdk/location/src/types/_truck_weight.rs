@@ -8,11 +8,9 @@ pub struct TruckWeight {
     /// <ul>
     /// <li> <p>For example, <code>3500</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub total: ::std::option::Option<f64>,
     /// <p>The unit of measurement to use for the truck weight.</p>
     /// <p>Default Value: <code>Kilograms</code> </p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::VehicleWeightUnit>,
 }
 impl TruckWeight {

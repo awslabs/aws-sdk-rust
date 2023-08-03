@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeclineInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeclineInvitationsInput {

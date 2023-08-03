@@ -7,60 +7,42 @@ pub struct CertificateSummary {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
-    #[doc(hidden)]
     pub subject_alternative_name_summaries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
-    #[doc(hidden)]
     pub has_additional_subject_alternative_names: ::std::option::Option<bool>,
     /// <p>The status of the certificate.</p>
     /// <p>A certificate enters status PENDING_VALIDATION upon being requested, unless it fails for any of the reasons given in the troubleshooting topic <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate request fails</a>. ACM makes repeated attempts to validate a certificate for 72 hours and then times out. If a certificate shows status FAILED or VALIDATION_TIMED_OUT, delete the request, correct the issue with <a href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email validation</a>, and try again. If validation succeeds, the certificate enters status ISSUED. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateStatus>,
     /// <p>The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <code>ImportCertificate</code>, this value is <code>IMPORTED</code>. ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CertificateType>,
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
-    #[doc(hidden)]
     pub key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
-    #[doc(hidden)]
     pub key_usages: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
-    #[doc(hidden)]
     pub extended_key_usages: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub in_use: ::std::option::Option<bool>,
     /// <p>Indicates whether the certificate has been exported. This value exists only when the certificate type is <code>PRIVATE</code>.</p>
-    #[doc(hidden)]
     pub exported: ::std::option::Option<bool>,
     /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported private certificates can be renewed with the <code>RenewCertificate</code> command.</p>
-    #[doc(hidden)]
     pub renewal_eligibility: ::std::option::Option<crate::types::RenewalEligibility>,
     /// <p>The time before which the certificate is not valid.</p>
-    #[doc(hidden)]
     pub not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time after which the certificate is not valid.</p>
-    #[doc(hidden)]
     pub not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the certificate was requested.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
-    #[doc(hidden)]
     pub issued_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>. </p>
-    #[doc(hidden)]
     pub imported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>. </p>
-    #[doc(hidden)]
     pub revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CertificateSummary {

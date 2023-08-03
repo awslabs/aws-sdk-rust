@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContinuousExportsOutput {
     /// <p>A list of continuous export descriptions.</p>
-    #[doc(hidden)]
     pub descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousExportDescription>>,
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

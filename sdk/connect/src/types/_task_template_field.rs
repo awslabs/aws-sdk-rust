@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskTemplateField {
     /// <p>The unique identifier for the field.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
     /// <p>The description of the field.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of field.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TaskTemplateFieldType>,
     /// <p>A list of options for a single select field.</p>
-    #[doc(hidden)]
     pub single_select_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TaskTemplateField {

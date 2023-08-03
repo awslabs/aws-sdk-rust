@@ -5,7 +5,6 @@
 pub struct GetManagedResourceInput {
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetManagedResourceInput {

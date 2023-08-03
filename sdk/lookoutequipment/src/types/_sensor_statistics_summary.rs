@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensorStatisticsSummary {
     /// <p> Name of the component to which the particular sensor belongs for which the statistics belong to. </p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p> Name of the sensor that the statistics belong to. </p>
-    #[doc(hidden)]
     pub sensor_name: ::std::option::Option<::std::string::String>,
     /// <p> Parameter that indicates whether data exists for the sensor that the statistics belong to. </p>
-    #[doc(hidden)]
     pub data_exists: bool,
     /// <p> Parameter that describes the total number of, and percentage of, values that are missing for the sensor that the statistics belong to. </p>
-    #[doc(hidden)]
     pub missing_values: ::std::option::Option<crate::types::CountPercent>,
     /// <p> Parameter that describes the total number of, and percentage of, values that are invalid for the sensor that the statistics belong to. </p>
-    #[doc(hidden)]
     pub invalid_values: ::std::option::Option<crate::types::CountPercent>,
     /// <p> Parameter that describes the total number of invalid date entries associated with the sensor that the statistics belong to. </p>
-    #[doc(hidden)]
     pub invalid_date_entries: ::std::option::Option<crate::types::CountPercent>,
     /// <p> Parameter that describes the total number of duplicate timestamp records associated with the sensor that the statistics belong to. </p>
-    #[doc(hidden)]
     pub duplicate_timestamps: ::std::option::Option<crate::types::CountPercent>,
     /// <p> Parameter that describes potential risk about whether data associated with the sensor is categorical. </p>
-    #[doc(hidden)]
     pub categorical_values: ::std::option::Option<crate::types::CategoricalValues>,
     /// <p> Parameter that describes potential risk about whether data associated with the sensor has more than one operating mode. </p>
-    #[doc(hidden)]
     pub multiple_operating_modes: ::std::option::Option<crate::types::MultipleOperatingModes>,
     /// <p> Parameter that describes potential risk about whether data associated with the sensor contains one or more large gaps between consecutive timestamps. </p>
-    #[doc(hidden)]
     pub large_timestamp_gaps: ::std::option::Option<crate::types::LargeTimestampGaps>,
     /// <p> Parameter that describes potential risk about whether data associated with the sensor is mostly monotonic. </p>
-    #[doc(hidden)]
     pub monotonic_values: ::std::option::Option<crate::types::MonotonicValues>,
     /// <p> Indicates the time reference to indicate the beginning of valid data associated with the sensor that the statistics belong to. </p>
-    #[doc(hidden)]
     pub data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates the time reference to indicate the end of valid data associated with the sensor that the statistics belong to. </p>
-    #[doc(hidden)]
     pub data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SensorStatisticsSummary {

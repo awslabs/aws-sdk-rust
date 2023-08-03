@@ -4,26 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobExecutionsForThingInput {
     /// <p>The thing name.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
-    #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl ListJobExecutionsForThingInput {

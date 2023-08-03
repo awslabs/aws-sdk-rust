@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCollectionOutput {
     /// <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
-    #[doc(hidden)]
     pub face_count: ::std::option::Option<i64>,
     /// <p>The version of the face model that's used by the collection for face detection.</p>
     /// <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>
-    #[doc(hidden)]
     pub face_model_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    #[doc(hidden)]
     pub collection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of UserIDs assigned to the specified colleciton.</p>
-    #[doc(hidden)]
     pub user_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

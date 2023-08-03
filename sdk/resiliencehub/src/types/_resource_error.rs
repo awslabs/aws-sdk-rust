@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceError {
     /// <p> This is the identifier of the resource. </p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p> This is the identifier of the physical resource. </p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p> This is the error message. </p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ResourceError {

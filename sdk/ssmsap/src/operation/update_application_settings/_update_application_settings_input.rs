@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The credentials to be added or updated.</p>
-    #[doc(hidden)]
     pub credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>The credentials to be removed.</p>
-    #[doc(hidden)]
     pub credentials_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
-    #[doc(hidden)]
     pub backint: ::std::option::Option<crate::types::BackintConfig>,
 }
 impl UpdateApplicationSettingsInput {

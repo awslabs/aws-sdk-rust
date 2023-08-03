@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUtterancesViewInput {
     /// <p>The name of the bot for which utterance information should be returned.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
-    #[doc(hidden)]
     pub bot_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
-    #[doc(hidden)]
     pub status_type: ::std::option::Option<crate::types::StatusType>,
 }
 impl GetUtterancesViewInput {

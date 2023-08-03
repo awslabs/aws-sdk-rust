@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateRoomInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The room ID.</p>
-    #[doc(hidden)]
     pub room_id: ::std::option::Option<::std::string::String>,
     /// <p>The room name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRoomInput {

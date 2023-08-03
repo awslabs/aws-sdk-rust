@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataSource {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl S3DataSource {

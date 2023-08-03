@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignedObject {
     /// <p>The <code>S3SignedObject</code>.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3SignedObject>,
 }
 impl SignedObject {

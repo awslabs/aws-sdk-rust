@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformDataSource {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
-    #[doc(hidden)]
     pub s3_data_source: ::std::option::Option<crate::types::TransformS3DataSource>,
 }
 impl TransformDataSource {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkloadsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    #[doc(hidden)]
     pub workload_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListWorkloadsInput {

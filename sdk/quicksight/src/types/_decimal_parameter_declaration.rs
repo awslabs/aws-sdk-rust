@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    #[doc(hidden)]
     pub parameter_value_type: ::std::option::Option<crate::types::ParameterValueType>,
     /// <p>The name of the parameter that is being declared.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    #[doc(hidden)]
     pub default_values: ::std::option::Option<crate::types::DecimalDefaultValues>,
     /// <p>The configuration that defines the default value of a <code>Decimal</code> parameter when a value has not been set.</p>
-    #[doc(hidden)]
     pub value_when_unset: ::std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration>,
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    #[doc(hidden)]
     pub mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl DecimalParameterDeclaration {

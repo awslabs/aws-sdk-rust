@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Shipment {
     /// <p>Status information for a shipment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The tracking number for this job. Using this tracking number with your region's carrier's website, you can track a Snow device as the carrier transports it.</p>
     /// <p>For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.</p>
-    #[doc(hidden)]
     pub tracking_number: ::std::option::Option<::std::string::String>,
 }
 impl Shipment {

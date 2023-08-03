@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProtectionOutput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
-    #[doc(hidden)]
     pub protection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

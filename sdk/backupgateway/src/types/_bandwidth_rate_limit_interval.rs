@@ -7,24 +7,18 @@ pub struct BandwidthRateLimitInterval {
     /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
     /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
     /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
-    #[doc(hidden)]
     pub start_hour_of_day: ::std::option::Option<i32>,
     /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
-    #[doc(hidden)]
     pub end_hour_of_day: ::std::option::Option<i32>,
     /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
-    #[doc(hidden)]
     pub start_minute_of_hour: ::std::option::Option<i32>,
     /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub end_minute_of_hour: ::std::option::Option<i32>,
     /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
-    #[doc(hidden)]
     pub days_of_week: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl BandwidthRateLimitInterval {

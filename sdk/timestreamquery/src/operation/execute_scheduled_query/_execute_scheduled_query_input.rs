@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExecuteScheduledQueryInput {
     /// <p>ARN of the scheduled query.</p>
-    #[doc(hidden)]
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
-    #[doc(hidden)]
     pub invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Not used. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteScheduledQueryInput {

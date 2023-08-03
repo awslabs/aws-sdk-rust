@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateForecastExportJobInput {
     /// <p>The name for the forecast export job.</p>
-    #[doc(hidden)]
     pub forecast_export_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
-    #[doc(hidden)]
     pub forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -24,10 +21,8 @@ pub struct CreateForecastExportJobInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
 }
 impl CreateForecastExportJobInput {

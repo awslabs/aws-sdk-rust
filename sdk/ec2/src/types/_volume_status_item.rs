@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusItem {
     /// <p>The details of the operation.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>>,
     /// <p>The Availability Zone of the volume.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of events associated with the volume.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>>,
     /// <p>The volume ID.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume status.</p>
-    #[doc(hidden)]
     pub volume_status: ::std::option::Option<crate::types::VolumeStatusInfo>,
     /// <p>Information about the instances to which the volume is attached.</p>
-    #[doc(hidden)]
     pub attachment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
 }
 impl VolumeStatusItem {

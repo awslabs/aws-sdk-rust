@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetRequestHistoryOutput {
     /// <p>Information about the events in the history of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub history_records: ::std::option::Option<::std::vec::Vec<crate::types::HistoryRecord>>,
     /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
-    #[doc(hidden)]
     pub last_evaluated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

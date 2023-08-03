@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationKubernetesConfiguration {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
-    #[doc(hidden)]
     pub audit_logs: ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfiguration>,
 }
 impl OrganizationKubernetesConfiguration {

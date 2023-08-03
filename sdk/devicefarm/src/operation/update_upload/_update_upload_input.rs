@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUploadInput {
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
-    #[doc(hidden)]
     pub edit_content: ::std::option::Option<bool>,
 }
 impl UpdateUploadInput {

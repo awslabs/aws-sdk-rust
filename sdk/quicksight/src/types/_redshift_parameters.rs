@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftParameters {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftParameters {

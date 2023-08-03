@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingImageConfig {
     /// <p>The method that your training job will use to gain access to the images in your private Docker registry. For access to an image in a private Docker registry, set to <code>Vpc</code>.</p>
-    #[doc(hidden)]
     pub training_repository_access_mode: ::std::option::Option<crate::types::TrainingRepositoryAccessMode>,
     /// <p>An object containing authentication information for a private Docker registry containing your training images.</p>
-    #[doc(hidden)]
     pub training_repository_auth_config: ::std::option::Option<crate::types::TrainingRepositoryAuthConfig>,
 }
 impl TrainingImageConfig {

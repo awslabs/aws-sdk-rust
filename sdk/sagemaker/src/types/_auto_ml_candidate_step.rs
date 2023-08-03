@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlCandidateStep {
     /// <p>Whether the candidate is at the transform, training, or processing step.</p>
-    #[doc(hidden)]
     pub candidate_step_type: ::std::option::Option<crate::types::CandidateStepType>,
     /// <p>The ARN for the candidate's step.</p>
-    #[doc(hidden)]
     pub candidate_step_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the candidate's step.</p>
-    #[doc(hidden)]
     pub candidate_step_name: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlCandidateStep {

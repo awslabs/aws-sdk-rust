@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool to retrieve.</p>
-    #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDedicatedIpPoolInput {

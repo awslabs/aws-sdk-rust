@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyWorkspaceImageInput {
     /// <p>The name of the image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the image.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the source image.</p>
-    #[doc(hidden)]
     pub source_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the source Region.</p>
-    #[doc(hidden)]
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the image.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyWorkspaceImageInput {

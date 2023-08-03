@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the data source. This type indicates which database engine the data source connects to.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The time that this data source was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this data source was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
-    #[doc(hidden)]
     pub data_source_parameters: ::std::option::Option<crate::types::DataSourceParameters>,
     /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
-    #[doc(hidden)]
     pub alternate_data_source_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
-    #[doc(hidden)]
     pub vpc_connection_properties: ::std::option::Option<crate::types::VpcConnectionProperties>,
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
-    #[doc(hidden)]
     pub ssl_properties: ::std::option::Option<crate::types::SslProperties>,
     /// <p>Error information from the last update or the creation of the data source.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::DataSourceErrorInfo>,
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSource {

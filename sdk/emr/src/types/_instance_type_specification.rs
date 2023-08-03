@@ -7,28 +7,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTypeSpecification {
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
-    #[doc(hidden)]
     pub weighted_capacity: ::std::option::Option<i32>,
     /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
-    #[doc(hidden)]
     pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
-    #[doc(hidden)]
     pub bid_price_as_percentage_of_on_demand_price: ::std::option::Option<f64>,
     /// <p>A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance as defined by <code>InstanceType</code>.</p>
-    #[doc(hidden)]
     pub ebs_block_devices: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDevice>>,
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The custom AMI ID to use for the instance type.</p>
-    #[doc(hidden)]
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceTypeSpecification {

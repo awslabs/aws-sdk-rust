@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectorsOutput {
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of a connector.</p>
-    #[doc(hidden)]
     pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::ListedConnector>>,
     _request_id: Option<String>,
 }

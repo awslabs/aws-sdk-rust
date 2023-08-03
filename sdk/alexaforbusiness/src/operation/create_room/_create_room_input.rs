@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRoomInput {
     /// <p>The name for the room.</p>
-    #[doc(hidden)]
     pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the room.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The profile ARN for the room. This is required.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The calendar ARN for the room.</p>
-    #[doc(hidden)]
     pub provider_calendar_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the room.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRoomInput {

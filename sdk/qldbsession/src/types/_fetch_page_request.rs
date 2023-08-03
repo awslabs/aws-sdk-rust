@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FetchPageRequest {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the next page token of the page to be fetched.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
 impl FetchPageRequest {

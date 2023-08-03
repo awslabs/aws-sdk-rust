@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrRoutingConfig {
     /// <p>The CIDR collection ID.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR collection location name.</p>
-    #[doc(hidden)]
     pub location_name: ::std::option::Option<::std::string::String>,
 }
 impl CidrRoutingConfig {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostedZoneSummary {
     /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::HostedZoneOwner>,
 }
 impl HostedZoneSummary {

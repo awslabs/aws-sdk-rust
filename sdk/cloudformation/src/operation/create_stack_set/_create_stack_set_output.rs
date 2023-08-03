@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStackSetOutput {
     /// <p>The ID of the stack set that you're creating.</p>
-    #[doc(hidden)]
     pub stack_set_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

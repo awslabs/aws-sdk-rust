@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
-    #[doc(hidden)]
     pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
-    #[doc(hidden)]
     pub visible_to_all_users: ::std::option::Option<bool>,
 }
 impl SetVisibleToAllUsersInput {

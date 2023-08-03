@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopInput {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
-    #[doc(hidden)]
     pub input_content: ::std::option::Option<::std::string::String>,
 }
 impl HumanLoopInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique label of the statement you want to remove.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
 }
 impl RemovePermissionInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBuiltinIntentOutput {
     /// <p>The unique identifier for a built-in intent.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
     /// <p>A list of locales that the intent supports.</p>
-    #[doc(hidden)]
     pub supported_locales: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,
     /// <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentSlot>>,
     _request_id: Option<String>,
 }

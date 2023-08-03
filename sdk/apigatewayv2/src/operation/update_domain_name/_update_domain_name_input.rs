@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainNameInput {
     /// <p>The domain name.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name configurations.</p>
-    #[doc(hidden)]
     pub domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    #[doc(hidden)]
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
 }
 impl UpdateDomainNameInput {

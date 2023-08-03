@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterInstancesFromLoadBalancerOutput {
     /// <p>The remaining instances registered with the load balancer.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,
 }

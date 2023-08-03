@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneStatus {
     /// <p>Date and time when Auto-Tune was enabled for the domain.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date and time when the Auto-Tune options were last updated for the domain.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest version of the Auto-Tune options.</p>
-    #[doc(hidden)]
     pub update_version: i32,
     /// <p>The current state of Auto-Tune on the domain.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AutoTuneState>,
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the domain is being deleted.</p>
-    #[doc(hidden)]
     pub pending_deletion: ::std::option::Option<bool>,
 }
 impl AutoTuneStatus {

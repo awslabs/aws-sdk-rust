@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterConnectorOutput {
     /// <p>The ARN of the connector being registered.</p>
-    #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

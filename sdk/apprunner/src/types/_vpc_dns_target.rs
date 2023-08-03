@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcDnsTarget {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection that is associated with your service.</p>
-    #[doc(hidden)]
     pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon VPC that is associated with the custom domain name of the target DNS.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of your target DNS that is associated with the Amazon VPC.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl VpcDnsTarget {

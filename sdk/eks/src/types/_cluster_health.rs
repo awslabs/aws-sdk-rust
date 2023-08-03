@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterHealth {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    #[doc(hidden)]
     pub issues: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>,
 }
 impl ClusterHealth {

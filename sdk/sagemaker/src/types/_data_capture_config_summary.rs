@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCaptureConfigSummary {
     /// <p>Whether data capture is enabled or disabled.</p>
-    #[doc(hidden)]
     pub enable_capture: bool,
     /// <p>Whether data capture is currently functional.</p>
-    #[doc(hidden)]
     pub capture_status: ::std::option::Option<crate::types::CaptureStatus>,
     /// <p>The percentage of requests being captured by your Endpoint.</p>
-    #[doc(hidden)]
     pub current_sampling_percentage: ::std::option::Option<i32>,
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    #[doc(hidden)]
     pub destination_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DataCaptureConfigSummary {

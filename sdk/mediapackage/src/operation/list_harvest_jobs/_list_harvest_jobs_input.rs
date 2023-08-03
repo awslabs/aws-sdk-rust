@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHarvestJobsInput {
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
-    #[doc(hidden)]
     pub include_channel_id: ::std::option::Option<::std::string::String>,
     /// When specified, the request will return only HarvestJobs in the given status.
-    #[doc(hidden)]
     pub include_status: ::std::option::Option<::std::string::String>,
     /// The upper bound on the number of records to return.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// A token used to resume pagination from the end of a previous request.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListHarvestJobsInput {

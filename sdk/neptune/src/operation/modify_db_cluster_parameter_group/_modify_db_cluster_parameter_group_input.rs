@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to modify.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ModifyDbClusterParameterGroupInput {

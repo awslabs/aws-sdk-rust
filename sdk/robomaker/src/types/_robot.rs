@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Robot {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the robot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the robot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RobotStatus>,
     /// <p>The Greengrass group associated with the robot.</p>
-    #[doc(hidden)]
     pub green_grass_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The architecture of the robot.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    #[doc(hidden)]
     pub last_deployment_job: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last deployment.</p>
-    #[doc(hidden)]
     pub last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Robot {

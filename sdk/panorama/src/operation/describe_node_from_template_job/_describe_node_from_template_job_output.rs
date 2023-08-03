@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNodeFromTemplateJobOutput {
     /// <p>The job's ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The job's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NodeFromTemplateJobStatus>,
     /// <p>The job's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>When the job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the job was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job's output package name.</p>
-    #[doc(hidden)]
     pub output_package_name: ::std::option::Option<::std::string::String>,
     /// <p>The job's output package version.</p>
-    #[doc(hidden)]
     pub output_package_version: ::std::option::Option<::std::string::String>,
     /// <p>The node's name.</p>
-    #[doc(hidden)]
     pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>The node's description.</p>
-    #[doc(hidden)]
     pub node_description: ::std::option::Option<::std::string::String>,
     /// <p>The job's template type.</p>
-    #[doc(hidden)]
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The job's template parameters.</p>
-    #[doc(hidden)]
     pub template_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The job's tags.</p>
-    #[doc(hidden)]
     pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
     _request_id: Option<String>,
 }

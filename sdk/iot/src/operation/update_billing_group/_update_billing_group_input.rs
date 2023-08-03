@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBillingGroupInput {
     /// <p>The name of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_properties: ::std::option::Option<crate::types::BillingGroupProperties>,
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
-    #[doc(hidden)]
     pub expected_version: ::std::option::Option<i64>,
 }
 impl UpdateBillingGroupInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterTargetsOutput {
     /// <p>The targets that were successfully deregistered.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The targets that the operation couldn't deregister.</p>
-    #[doc(hidden)]
     pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubscribersForNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The notification whose subscribers you want to list.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSubscribersForNotificationInput {

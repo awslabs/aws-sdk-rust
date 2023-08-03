@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsuccessfulFaceAssociation {
     /// <p>A unique identifier assigned to the face. </p>
-    #[doc(hidden)]
     pub face_id: ::std::option::Option<::std::string::String>,
     /// <p>A provided ID for the UserID. Unique within the collection. </p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Match confidence with the UserID, provides information regarding if a face association was unsuccessful because it didn't meet UserMatchThreshold.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p> The reason why the association was unsuccessful. </p>
-    #[doc(hidden)]
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociationReason>>,
 }
 impl UnsuccessfulFaceAssociation {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
-    #[doc(hidden)]
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImagePipelineInput {

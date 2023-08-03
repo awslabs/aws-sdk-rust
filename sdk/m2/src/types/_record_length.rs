@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordLength {
     /// <p>The minimum record length of a record.</p>
-    #[doc(hidden)]
     pub min: i32,
     /// <p>The maximum record length. In case of fixed, both minimum and maximum are the same.</p>
-    #[doc(hidden)]
     pub max: i32,
 }
 impl RecordLength {

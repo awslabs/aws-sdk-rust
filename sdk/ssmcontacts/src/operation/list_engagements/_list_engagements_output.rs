@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEngagementsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    #[doc(hidden)]
     pub engagements: ::std::option::Option<::std::vec::Vec<crate::types::Engagement>>,
     _request_id: Option<String>,
 }

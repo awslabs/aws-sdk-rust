@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageEksClusterDetails {
     /// <p>Name of the EKS cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
-    #[doc(hidden)]
     pub covered_nodes: i64,
     /// <p>Represents all the nodes within the EKS cluster in your account.</p>
-    #[doc(hidden)]
     pub compatible_nodes: i64,
     /// <p>Information about the installed EKS add-on.</p>
-    #[doc(hidden)]
     pub addon_details: ::std::option::Option<crate::types::AddonDetails>,
 }
 impl CoverageEksClusterDetails {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BillingDetails {
     /// <p>Billed memory consumption of your workflow, in MB.</p>
-    #[doc(hidden)]
     pub billed_memory_used_in_mb: i64,
     /// <p>Billed duration of your workflow, in milliseconds.</p>
-    #[doc(hidden)]
     pub billed_duration_in_milliseconds: i64,
 }
 impl BillingDetails {

@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceOutput {
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the device.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet the device belongs to.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
-    #[doc(hidden)]
     pub iot_thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the last registration or de-reregistration.</p>
-    #[doc(hidden)]
     pub registration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last heartbeat received from the device.</p>
-    #[doc(hidden)]
     pub latest_heartbeat: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Models on the device.</p>
-    #[doc(hidden)]
     pub models: ::std::option::Option<::std::vec::Vec<crate::types::EdgeModel>>,
     /// <p>The maximum number of models.</p>
-    #[doc(hidden)]
     pub max_models: i32,
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Edge Manager agent version.</p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

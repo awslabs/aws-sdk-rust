@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceUtilization {
     /// <p>The utilization of current Amazon EC2 instance. </p>
-    #[doc(hidden)]
     pub ec2_resource_utilization: ::std::option::Option<crate::types::Ec2ResourceUtilization>,
 }
 impl ResourceUtilization {

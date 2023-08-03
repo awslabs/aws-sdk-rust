@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRouteResponseInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The route ID.</p>
-    #[doc(hidden)]
     pub route_id: ::std::option::Option<::std::string::String>,
     /// <p>The route response ID.</p>
-    #[doc(hidden)]
     pub route_response_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRouteResponseInput {

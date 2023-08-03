@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSamlProvidersOutput {
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub saml_provider_list: ::std::option::Option<::std::vec::Vec<crate::types::SamlProviderListEntry>>,
     _request_id: Option<String>,
 }

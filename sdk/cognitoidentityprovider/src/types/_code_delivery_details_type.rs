@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeDeliveryDetailsType {
     /// <p>The email address or phone number destination where Amazon Cognito sent the code.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The method that Amazon Cognito used to send the code.</p>
-    #[doc(hidden)]
     pub delivery_medium: ::std::option::Option<crate::types::DeliveryMediumType>,
     /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl CodeDeliveryDetailsType {

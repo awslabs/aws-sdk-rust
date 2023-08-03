@@ -5,7 +5,6 @@
 pub struct DescribePolicyInput {
     /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePolicyInput {

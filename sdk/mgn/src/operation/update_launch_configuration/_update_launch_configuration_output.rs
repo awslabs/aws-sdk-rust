@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationOutput {
     /// <p>Launch configuration Source Server ID.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Launch configuration name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Launch configuration EC2 Launch template ID.</p>
-    #[doc(hidden)]
     pub ec2_launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Launch disposition for launch configuration.</p>
-    #[doc(hidden)]
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Launch configuration Target instance type right sizing method.</p>
-    #[doc(hidden)]
     pub target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy Private IP during Launch Configuration.</p>
-    #[doc(hidden)]
     pub copy_private_ip: ::std::option::Option<bool>,
     /// <p>Copy Tags during Launch Configuration.</p>
-    #[doc(hidden)]
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>Launch configuration OS licensing.</p>
-    #[doc(hidden)]
     pub licensing: ::std::option::Option<crate::types::Licensing>,
     /// <p>Launch configuration boot mode.</p>
-    #[doc(hidden)]
     pub boot_mode: ::std::option::Option<crate::types::BootMode>,
     /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    #[doc(hidden)]
     pub post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     /// <p>Enable map auto tagging.</p>
-    #[doc(hidden)]
     pub enable_map_auto_tagging: ::std::option::Option<bool>,
     /// <p>Map auto tagging MPE ID.</p>
-    #[doc(hidden)]
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

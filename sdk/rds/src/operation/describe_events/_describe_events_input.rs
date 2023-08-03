@@ -17,36 +17,27 @@ pub struct DescribeEventsInput {
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
     /// <p>Example: 2009-07-08T18:00Z</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of minutes to retrieve events for.</p>
     /// <p>Default: 60</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// <p>A list of event categories that trigger notifications for a event notification subscription.</p>
-    #[doc(hidden)]
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This parameter isn't currently supported.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventsInput {

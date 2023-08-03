@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceRegistrationOutput {
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-    #[doc(hidden)]
     pub device_registration: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
-    #[doc(hidden)]
     pub cache_ttl: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

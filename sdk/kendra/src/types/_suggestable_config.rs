@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestableConfig {
     /// <p>The name of the document field/attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
-    #[doc(hidden)]
     pub suggestable: ::std::option::Option<bool>,
 }
 impl SuggestableConfig {

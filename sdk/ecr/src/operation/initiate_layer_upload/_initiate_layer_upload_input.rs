@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateLayerUploadInput {
     /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to which you intend to upload layers.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl InitiateLayerUploadInput {

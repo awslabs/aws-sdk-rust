@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Object {
     /// <p> The S3 bucket name. </p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon S3 key name. </p>
-    #[doc(hidden)]
     pub s3key: ::std::option::Option<::std::string::String>,
 }
 impl S3Object {

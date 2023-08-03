@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEntityAggregatesOutput {
     /// <p>The number of entities that are affected by each of the specified events.</p>
-    #[doc(hidden)]
     pub entity_aggregates: ::std::option::Option<::std::vec::Vec<crate::types::EntityAggregate>>,
     _request_id: Option<String>,
 }

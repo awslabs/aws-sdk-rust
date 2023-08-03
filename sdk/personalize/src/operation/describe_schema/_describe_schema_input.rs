@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the schema to retrieve.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSchemaInput {

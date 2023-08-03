@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DeltaSource {
     /// <p>The name of the Delta Lake source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    #[doc(hidden)]
     pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies additional connection options.</p>
-    #[doc(hidden)]
     pub additional_delta_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies additional options for the connector.</p>
-    #[doc(hidden)]
     pub additional_options: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     /// <p>Specifies the data schema for the Delta Lake source.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3DeltaSource {

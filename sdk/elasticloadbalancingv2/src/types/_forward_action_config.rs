@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForwardActionConfig {
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
-    #[doc(hidden)]
     pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>>,
     /// <p>The target group stickiness for the rule.</p>
-    #[doc(hidden)]
     pub target_group_stickiness_config: ::std::option::Option<crate::types::TargetGroupStickinessConfig>,
 }
 impl ForwardActionConfig {

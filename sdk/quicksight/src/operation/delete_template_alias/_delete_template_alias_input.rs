@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the template that the specified alias is for.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTemplateAliasInput {

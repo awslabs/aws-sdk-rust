@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentModel {
     /// <p>The unique handle of the model.</p>
-    #[doc(hidden)]
     pub model_handle: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The desired state of the model.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::ModelState>,
     /// <p>Returns the current state of the model.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ModelState>,
     /// <p>Returns the deployment status of the model.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>Returns the error message for the deployment status result.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns the error message if there is a rollback.</p>
-    #[doc(hidden)]
     pub rollback_failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentModel {

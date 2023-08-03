@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsGrantConfiguration {
     /// <p>A list of operations that the grant permits.</p>
-    #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>>,
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
-    #[doc(hidden)]
     pub grantee_principal: ::std::option::Option<::std::string::String>,
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
-    #[doc(hidden)]
     pub retiring_principal: ::std::option::Option<::std::string::String>,
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
-    #[doc(hidden)]
     pub constraints: ::std::option::Option<crate::types::KmsGrantConstraints>,
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
-    #[doc(hidden)]
     pub issuing_account: ::std::option::Option<::std::string::String>,
 }
 impl KmsGrantConfiguration {

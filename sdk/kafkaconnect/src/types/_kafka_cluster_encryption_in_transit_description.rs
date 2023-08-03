@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaClusterEncryptionInTransitDescription {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
 }
 impl KafkaClusterEncryptionInTransitDescription {

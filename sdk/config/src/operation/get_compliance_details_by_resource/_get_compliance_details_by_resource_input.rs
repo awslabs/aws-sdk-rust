@@ -5,22 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceDetailsByResourceInput {
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    #[doc(hidden)]
     pub compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl GetComplianceDetailsByResourceInput {

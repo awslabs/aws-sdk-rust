@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KernelGatewayImageConfig {
     /// <p>The specification of the Jupyter kernels in the image.</p>
-    #[doc(hidden)]
     pub kernel_specs: ::std::option::Option<::std::vec::Vec<crate::types::KernelSpec>>,
     /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
-    #[doc(hidden)]
     pub file_system_config: ::std::option::Option<crate::types::FileSystemConfig>,
 }
 impl KernelGatewayImageConfig {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMatchingWorkflowInput {
     /// <p>The name of the workflow to be retrieved.</p>
-    #[doc(hidden)]
     pub workflow_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMatchingWorkflowInput {

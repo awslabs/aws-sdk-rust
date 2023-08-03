@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Id3Insertion {
     /// Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
-    #[doc(hidden)]
     pub id3: ::std::option::Option<::std::string::String>,
     /// Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
-    #[doc(hidden)]
     pub timecode: ::std::option::Option<::std::string::String>,
 }
 impl Id3Insertion {

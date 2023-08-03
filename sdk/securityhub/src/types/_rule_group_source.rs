@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSource {
     /// <p>Stateful inspection criteria for a domain list rule group. A domain list rule group determines access by specific protocols to specific domains.</p>
-    #[doc(hidden)]
     pub rules_source_list: ::std::option::Option<crate::types::RuleGroupSourceListDetails>,
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.</p>
-    #[doc(hidden)]
     pub rules_string: ::std::option::Option<::std::string::String>,
     /// <p>Suricata rule specifications.</p>
-    #[doc(hidden)]
     pub stateful_rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesDetails>>,
     /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
-    #[doc(hidden)]
     pub stateless_rules_and_custom_actions: ::std::option::Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>,
 }
 impl RuleGroupSource {

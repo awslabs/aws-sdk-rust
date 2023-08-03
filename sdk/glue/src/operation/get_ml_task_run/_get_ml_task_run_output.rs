@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMlTaskRunOutput {
     /// <p>The unique identifier of the task run.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique run identifier associated with this run.</p>
-    #[doc(hidden)]
     pub task_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The status for this task run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatusType>,
     /// <p>The names of the log groups that are associated with the task run.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of properties that are associated with the task run.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<crate::types::TaskRunProperties>,
     /// <p>The error strings that are associated with the task run.</p>
-    #[doc(hidden)]
     pub error_string: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when this task run started.</p>
-    #[doc(hidden)]
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when this task run was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when this task run was completed.</p>
-    #[doc(hidden)]
     pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
-    #[doc(hidden)]
     pub execution_time: i32,
     _request_id: Option<String>,
 }

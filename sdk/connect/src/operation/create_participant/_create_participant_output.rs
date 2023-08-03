@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateParticipantOutput {
     /// <p>The token used by the chat participant to call <code>CreateParticipantConnection</code>. The participant token is valid for the lifetime of a chat participant.</p>
-    #[doc(hidden)]
     pub participant_credentials: ::std::option::Option<crate::types::ParticipantTokenCredentials>,
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
-    #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

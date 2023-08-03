@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExtensionVersionOutput {
     /// <p>The version of the extension.</p>
-    #[doc(hidden)]
     pub extension_version: ::std::option::Option<crate::types::ExtensionVersionDetails>,
     _request_id: Option<String>,
 }

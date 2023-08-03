@@ -5,25 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesEbs {
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support them.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     /// <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p>
     /// <p>Default: <code>gp2</code> </p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesEbs {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVoiceProfileDomainOutput {
     /// <p>The updated details of the voice profile domain.</p>
-    #[doc(hidden)]
     pub voice_profile_domain: ::std::option::Option<crate::types::VoiceProfileDomain>,
     _request_id: Option<String>,
 }

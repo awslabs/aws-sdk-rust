@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTaskInput {
     /// <p>A list of managed device IDs.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<crate::types::Command>,
     /// <p>A description of the task and its targets.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTaskInput {

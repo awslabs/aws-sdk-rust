@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModuleLoggingConfiguration {
     /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LoggingLevel>,
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl ModuleLoggingConfiguration {

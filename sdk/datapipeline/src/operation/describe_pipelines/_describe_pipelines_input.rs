@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePipelinesInput {
     /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
-    #[doc(hidden)]
     pub pipeline_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribePipelinesInput {

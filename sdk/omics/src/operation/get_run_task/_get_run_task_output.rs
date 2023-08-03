@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRunTaskOutput {
     /// <p>The task's ID.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The task's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>The task's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The task's CPU usage.</p>
-    #[doc(hidden)]
     pub cpus: ::std::option::Option<i32>,
     /// <p>The task's memory use in gigabytes.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<i32>,
     /// <p>When the task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The task's start time.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The task's stop time.</p>
-    #[doc(hidden)]
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The task's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The task's log stream.</p>
-    #[doc(hidden)]
     pub log_stream: ::std::option::Option<::std::string::String>,
     /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
-    #[doc(hidden)]
     pub gpus: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

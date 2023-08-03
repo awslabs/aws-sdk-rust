@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryInfo {
     /// <p>The size of the memory, in MiB.</p>
-    #[doc(hidden)]
     pub size_in_mi_b: ::std::option::Option<i64>,
 }
 impl MemoryInfo {

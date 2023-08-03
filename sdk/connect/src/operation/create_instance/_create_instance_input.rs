@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateInstanceInput {
     /// <p>The idempotency token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The type of identity management for your Amazon Connect users.</p>
-    #[doc(hidden)]
     pub identity_management_type: ::std::option::Option<crate::types::DirectoryType>,
     /// <p>The name for your instance.</p>
-    #[doc(hidden)]
     pub instance_alias: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the directory.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>Your contact center handles incoming contacts.</p>
-    #[doc(hidden)]
     pub inbound_calls_enabled: ::std::option::Option<bool>,
     /// <p>Your contact center allows outbound calls.</p>
-    #[doc(hidden)]
     pub outbound_calls_enabled: ::std::option::Option<bool>,
 }
 impl CreateInstanceInput {

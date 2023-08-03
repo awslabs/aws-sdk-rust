@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterObject {
     /// <p>The ID of the parameter object. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The attributes of the parameter object.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
 }
 impl ParameterObject {

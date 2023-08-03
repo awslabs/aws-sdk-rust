@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsRequestFilters {
     /// <p>List imports request filters import IDs.</p>
-    #[doc(hidden)]
     pub import_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListImportsRequestFilters {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointFilter {
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready, Updating, Deleting, Failed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EndpointStatus>,
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EndpointFilter {

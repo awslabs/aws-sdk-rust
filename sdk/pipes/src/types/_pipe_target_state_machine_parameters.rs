@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeTargetStateMachineParameters {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
-    #[doc(hidden)]
     pub invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetStateMachineParameters {

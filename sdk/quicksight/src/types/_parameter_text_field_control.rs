@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterTextFieldControl {
     /// <p>The ID of the <code>ParameterTextFieldControl</code>.</p>
-    #[doc(hidden)]
     pub parameter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>ParameterTextFieldControl</code>.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source parameter name of the <code>ParameterTextFieldControl</code>.</p>
-    #[doc(hidden)]
     pub source_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
-    #[doc(hidden)]
     pub display_options: ::std::option::Option<crate::types::TextFieldControlDisplayOptions>,
 }
 impl ParameterTextFieldControl {

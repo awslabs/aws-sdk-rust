@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThreatIntelSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-    #[doc(hidden)]
     pub threat_intel_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
-    #[doc(hidden)]
     pub activate: ::std::option::Option<bool>,
 }
 impl UpdateThreatIntelSetInput {

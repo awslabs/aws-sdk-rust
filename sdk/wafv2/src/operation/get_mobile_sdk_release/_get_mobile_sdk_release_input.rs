@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMobileSdkReleaseInput {
     /// <p>The device platform.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
-    #[doc(hidden)]
     pub release_version: ::std::option::Option<::std::string::String>,
 }
 impl GetMobileSdkReleaseInput {

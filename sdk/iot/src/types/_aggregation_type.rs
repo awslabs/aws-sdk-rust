@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationType {
     /// <p>The name of the aggregation type.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AggregationTypeName>,
     /// <p>A list of the values of aggregation types.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AggregationType {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// Data checksum used
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm used
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

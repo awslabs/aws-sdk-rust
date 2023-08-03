@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSetSummary {
     /// <p>The ID of the stack with which the change set is associated.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack with which the change set is associated.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the change set.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the change set.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
-    #[doc(hidden)]
     pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangeSetStatus>,
     /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The start time when the change set was created, in UTC.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Descriptive information about the change set.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.</p>
-    #[doc(hidden)]
     pub include_nested_stacks: ::std::option::Option<bool>,
     /// <p>The parent change set ID.</p>
-    #[doc(hidden)]
     pub parent_change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The root change set ID.</p>
-    #[doc(hidden)]
     pub root_change_set_id: ::std::option::Option<::std::string::String>,
 }
 impl ChangeSetSummary {

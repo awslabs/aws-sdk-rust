@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchingResource {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-    #[doc(hidden)]
     pub matching_bucket: ::std::option::Option<crate::types::MatchingBucket>,
 }
 impl MatchingResource {

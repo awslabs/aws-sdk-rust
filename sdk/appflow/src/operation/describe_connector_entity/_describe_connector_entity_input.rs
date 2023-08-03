@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorEntityInput {
     /// <p> The entity name for that connector. </p>
-    #[doc(hidden)]
     pub connector_entity_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the API that's used by the connector.</p>
-    #[doc(hidden)]
     pub api_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConnectorEntityInput {

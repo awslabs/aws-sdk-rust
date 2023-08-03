@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
-    #[doc(hidden)]
     pub package_version_history_list: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

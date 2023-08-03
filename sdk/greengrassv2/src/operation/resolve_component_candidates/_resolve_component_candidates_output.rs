@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveComponentCandidatesOutput {
     /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
-    #[doc(hidden)]
     pub resolved_component_versions: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedComponentVersion>>,
     _request_id: Option<String>,
 }

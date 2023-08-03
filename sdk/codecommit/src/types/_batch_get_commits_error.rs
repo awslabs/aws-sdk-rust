@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCommitsError {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetCommitsError {

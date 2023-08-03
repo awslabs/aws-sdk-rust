@@ -10,10 +10,8 @@ pub struct ListStackResourcesInput {
     /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListStackResourcesInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryInput {
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetRepositoryInput {

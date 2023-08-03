@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSortBy {
     /// <p>The export field to use for sorting.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::ExportSortAttribute>,
     /// <p>The order to sort the list.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ExportSortBy {

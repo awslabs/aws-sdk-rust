@@ -9,7 +9,6 @@ pub struct TumblingWindow {
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<::std::string::String>,
     /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
     /// <ul>
@@ -30,7 +29,6 @@ pub struct TumblingWindow {
     /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub offset: ::std::option::Option<::std::string::String>,
 }
 impl TumblingWindow {

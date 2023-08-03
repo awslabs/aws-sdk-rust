@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobFromSourceControlOutput {
     /// <p>The name of the Glue job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

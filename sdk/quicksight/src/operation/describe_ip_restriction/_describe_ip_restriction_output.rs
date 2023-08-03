@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIpRestrictionOutput {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
-    #[doc(hidden)]
     pub ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A value that specifies whether IP rules are turned on.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request. </p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

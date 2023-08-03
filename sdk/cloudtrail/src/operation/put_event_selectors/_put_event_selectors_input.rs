@@ -13,13 +13,10 @@ pub struct PutEventSelectorsInput {
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the following format.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    #[doc(hidden)]
     pub trail_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
-    #[doc(hidden)]
     pub event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::EventSelector>>,
     /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>. </p>
-    #[doc(hidden)]
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
 }
 impl PutEventSelectorsInput {

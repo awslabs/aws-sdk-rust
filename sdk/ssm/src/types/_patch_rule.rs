@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchRule {
     /// <p>The patch filter group that defines the criteria for the rule.</p>
-    #[doc(hidden)]
     pub patch_filter_group: ::std::option::Option<crate::types::PatchFilterGroup>,
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
-    #[doc(hidden)]
     pub compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
-    #[doc(hidden)]
     pub approve_after_days: ::std::option::Option<i32>,
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
-    #[doc(hidden)]
     pub approve_until_date: ::std::option::Option<::std::string::String>,
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
-    #[doc(hidden)]
     pub enable_non_security: ::std::option::Option<bool>,
 }
 impl PatchRule {

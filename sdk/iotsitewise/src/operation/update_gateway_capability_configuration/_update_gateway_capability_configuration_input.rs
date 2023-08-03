@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway to be updated.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    #[doc(hidden)]
     pub capability_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub capability_configuration: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGatewayCapabilityConfigurationInput {

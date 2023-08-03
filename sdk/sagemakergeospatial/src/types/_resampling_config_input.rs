@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResamplingConfigInput {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
-    #[doc(hidden)]
     pub output_resolution: ::std::option::Option<crate::types::OutputResolutionResamplingInput>,
     /// <p>The name of the algorithm used for resampling.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<crate::types::AlgorithmNameResampling>,
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
-    #[doc(hidden)]
     pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResamplingConfigInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PagerDutyIncidentDetail {
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
-    #[doc(hidden)]
     pub auto_resolve: ::std::option::Option<bool>,
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl PagerDutyIncidentDetail {

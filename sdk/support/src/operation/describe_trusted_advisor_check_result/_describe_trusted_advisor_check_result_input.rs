@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckResultInput {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub check_id: ::std::option::Option<::std::string::String>,
     /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
     /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
@@ -22,7 +21,6 @@ pub struct DescribeTrustedAdvisorCheckResultInput {
     /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
     /// <li> <p>Spanish - <code>es</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTrustedAdvisorCheckResultInput {

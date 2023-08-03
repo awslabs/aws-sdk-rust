@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateRange {
     /// <p>A date range value for the date filter.</p>
-    #[doc(hidden)]
     pub value: i32,
     /// <p>A date range unit for the date filter.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::DateRangeUnit>,
 }
 impl DateRange {

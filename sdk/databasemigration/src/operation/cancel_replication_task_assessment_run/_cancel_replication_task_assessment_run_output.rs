@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelReplicationTaskAssessmentRunOutput {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
-    #[doc(hidden)]
     pub replication_task_assessment_run: ::std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
     _request_id: Option<String>,
 }

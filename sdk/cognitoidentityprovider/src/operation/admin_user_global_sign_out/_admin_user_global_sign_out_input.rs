@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminUserGlobalSignOutInput {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl AdminUserGlobalSignOutInput {

@@ -6,7 +6,6 @@
 pub struct AnonymousUserQSearchBarEmbeddingConfiguration {
     /// <p>The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic pre-selected.</p>
     /// <p>The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    #[doc(hidden)]
     pub initial_topic_id: ::std::option::Option<::std::string::String>,
 }
 impl AnonymousUserQSearchBarEmbeddingConfiguration {

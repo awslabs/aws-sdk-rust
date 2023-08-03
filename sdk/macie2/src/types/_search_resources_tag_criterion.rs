@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesTagCriterion {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    #[doc(hidden)]
     pub comparator: ::std::option::Option<crate::types::SearchResourcesComparator>,
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    #[doc(hidden)]
     pub tag_values: ::std::option::Option<::std::vec::Vec<crate::types::SearchResourcesTagCriterionPair>>,
 }
 impl SearchResourcesTagCriterion {

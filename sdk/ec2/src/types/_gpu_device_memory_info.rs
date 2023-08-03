@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpuDeviceMemoryInfo {
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
-    #[doc(hidden)]
     pub size_in_mi_b: ::std::option::Option<i32>,
 }
 impl GpuDeviceMemoryInfo {

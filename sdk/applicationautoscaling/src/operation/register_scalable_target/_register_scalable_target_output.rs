@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterScalableTargetOutput {
     /// <p>The ARN of the scalable target.</p>
-    #[doc(hidden)]
     pub scalable_target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

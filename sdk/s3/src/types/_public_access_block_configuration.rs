@@ -11,19 +11,15 @@ pub struct PublicAccessBlockConfiguration {
     /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
-    #[doc(hidden)]
     pub block_public_acls: bool,
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
-    #[doc(hidden)]
     pub ignore_public_acls: bool,
     /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
-    #[doc(hidden)]
     pub block_public_policy: bool,
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
-    #[doc(hidden)]
     pub restrict_public_buckets: bool,
 }
 impl PublicAccessBlockConfiguration {

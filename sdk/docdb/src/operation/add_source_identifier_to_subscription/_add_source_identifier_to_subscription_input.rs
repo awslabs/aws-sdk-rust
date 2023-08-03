@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddSourceIdentifierToSubscriptionInput {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to.</p>
-    #[doc(hidden)]
     pub subscription_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the event source to be added:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct AddSourceIdentifierToSubscriptionInput {
     /// <li> <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p> </li>
     /// <li> <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl AddSourceIdentifierToSubscriptionInput {

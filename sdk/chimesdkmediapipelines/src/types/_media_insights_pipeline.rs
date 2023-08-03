@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaInsightsPipeline {
     /// <p>The ID of a media insights pipeline.</p>
-    #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a media insights pipeline.</p>
-    #[doc(hidden)]
     pub media_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a media insight pipeline's configuration settings.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a media insights pipeline.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MediaPipelineStatus>,
     /// <p>The configuration settings for a Kinesis runtime video stream in a media insights pipeline.</p>
-    #[doc(hidden)]
     pub kinesis_video_stream_source_runtime_configuration: ::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration>,
     /// <p>The runtime metadata of a media insights pipeline.</p>
-    #[doc(hidden)]
     pub media_insights_runtime_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The runtime configuration settings for a Kinesis recording video stream in a media insights pipeline.</p>
-    #[doc(hidden)]
     pub kinesis_video_stream_recording_source_runtime_configuration:
         ::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>,
     /// <p>The runtime configuration of the Amazon S3 bucket that stores recordings in a media insights pipeline.</p>
-    #[doc(hidden)]
     pub s3_recording_sink_runtime_configuration: ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
     /// <p>The time at which the media insights pipeline was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MediaInsightsPipeline {

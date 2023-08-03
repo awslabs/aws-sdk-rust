@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheNodeUpdateStatus {
     /// <p>The node ID of the cache cluster</p>
-    #[doc(hidden)]
     pub cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The update status of the node</p>
-    #[doc(hidden)]
     pub node_update_status: ::std::option::Option<crate::types::NodeUpdateStatus>,
     /// <p>The deletion date of the node</p>
-    #[doc(hidden)]
     pub node_deletion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The start date of the update for a node</p>
-    #[doc(hidden)]
     pub node_update_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date of the update for a node</p>
-    #[doc(hidden)]
     pub node_update_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Reflects whether the update was initiated by the customer or automatically applied</p>
-    #[doc(hidden)]
     pub node_update_initiated_by: ::std::option::Option<crate::types::NodeUpdateInitiatedBy>,
     /// <p>The date when the update is triggered</p>
-    #[doc(hidden)]
     pub node_update_initiated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the NodeUpdateStatus was last modified&gt;</p>
-    #[doc(hidden)]
     pub node_update_status_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CacheNodeUpdateStatus {

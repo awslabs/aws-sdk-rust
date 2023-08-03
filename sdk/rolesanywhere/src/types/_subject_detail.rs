@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubjectDetail {
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
     pub subject_arn: ::std::option::Option<::std::string::String>,
     /// <p>The id of the resource</p>
-    #[doc(hidden)]
     pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p>The enabled status of the subject.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
-    #[doc(hidden)]
     pub x509_subject: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
-    #[doc(hidden)]
     pub last_seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the subject was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>>,
     /// <p>The specified instance properties associated with the request.</p>
-    #[doc(hidden)]
     pub instance_properties: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>,
 }
 impl SubjectDetail {

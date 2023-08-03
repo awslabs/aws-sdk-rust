@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegrationAssociationSummary {
     /// <p>The identifier for the AppIntegration association.</p>
-    #[doc(hidden)]
     pub integration_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
-    #[doc(hidden)]
     pub integration_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The integration type.</p>
-    #[doc(hidden)]
     pub integration_type: ::std::option::Option<crate::types::IntegrationType>,
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
-    #[doc(hidden)]
     pub integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the external application.</p>
-    #[doc(hidden)]
     pub source_application_url: ::std::option::Option<::std::string::String>,
     /// <p>The user-provided, friendly name for the external application.</p>
-    #[doc(hidden)]
     pub source_application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
 }
 impl IntegrationAssociationSummary {

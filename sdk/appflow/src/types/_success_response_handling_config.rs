@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuccessResponseHandlingConfig {
     /// <p>The Amazon S3 bucket prefix.</p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl SuccessResponseHandlingConfig {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaOutput {
     /// <p>The entire schema object.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSchemaInput {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
 }
 impl DeleteSchemaInput {

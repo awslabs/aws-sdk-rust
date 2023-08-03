@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAdminScopeOutput {
     /// <p>Contains details about the administrative scope of the requested account.</p>
-    #[doc(hidden)]
     pub admin_scope: ::std::option::Option<crate::types::AdminScope>,
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct GetAdminScopeOutput {
     /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
     /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OrganizationStatus>,
     _request_id: Option<String>,
 }

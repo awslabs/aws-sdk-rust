@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotLocaleSummary {
     /// <p>The language and locale of the bot locale.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot locale.</p>
-    #[doc(hidden)]
     pub locale_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the bot locale.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the bot locale. When the status is <code>Built</code> the locale is ready for use.</p>
-    #[doc(hidden)]
     pub bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     /// <p>A timestamp of the date and time that the bot locale was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot locale was last built.</p>
-    #[doc(hidden)]
     pub last_build_submitted_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotLocaleSummary {

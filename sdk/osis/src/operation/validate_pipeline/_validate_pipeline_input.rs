@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidatePipelineInput {
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    #[doc(hidden)]
     pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
 }
 impl ValidatePipelineInput {

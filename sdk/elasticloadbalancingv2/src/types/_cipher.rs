@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cipher {
     /// <p>The name of the cipher.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the cipher.</p>
-    #[doc(hidden)]
     pub priority: i32,
 }
 impl Cipher {

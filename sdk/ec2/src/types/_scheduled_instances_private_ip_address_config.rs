@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesPrivateIpAddressConfig {
     /// <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.</p>
-    #[doc(hidden)]
     pub primary: ::std::option::Option<bool>,
     /// <p>The IPv4 address.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesPrivateIpAddressConfig {

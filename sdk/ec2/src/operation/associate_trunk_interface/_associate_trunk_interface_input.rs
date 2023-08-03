@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateTrunkInterfaceInput {
     /// <p>The ID of the branch network interface.</p>
-    #[doc(hidden)]
     pub branch_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the trunk network interface.</p>
-    #[doc(hidden)]
     pub trunk_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VLAN. This applies to the VLAN protocol.</p>
-    #[doc(hidden)]
     pub vlan_id: ::std::option::Option<i32>,
     /// <p>The application key. This applies to the GRE protocol.</p>
-    #[doc(hidden)]
     pub gre_key: ::std::option::Option<i32>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl AssociateTrunkInterfaceInput {

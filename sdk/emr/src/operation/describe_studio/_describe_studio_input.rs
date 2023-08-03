@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStudioInput {
     /// <p>The Amazon EMR Studio ID.</p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStudioInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LicenseSpecification {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    #[doc(hidden)]
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
-    #[doc(hidden)]
     pub ami_association_scope: ::std::option::Option<::std::string::String>,
 }
 impl LicenseSpecification {

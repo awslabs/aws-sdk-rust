@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCapacityReservationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Capacity Reservations.</p>
-    #[doc(hidden)]
     pub capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }

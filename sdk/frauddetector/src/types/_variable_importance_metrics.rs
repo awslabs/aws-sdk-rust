@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VariableImportanceMetrics {
     /// <p>List of variable metrics.</p>
-    #[doc(hidden)]
     pub log_odds_metrics: ::std::option::Option<::std::vec::Vec<crate::types::LogOddsMetric>>,
 }
 impl VariableImportanceMetrics {

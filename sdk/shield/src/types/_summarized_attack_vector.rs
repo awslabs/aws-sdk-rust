@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SummarizedAttackVector {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-    #[doc(hidden)]
     pub vector_type: ::std::option::Option<::std::string::String>,
     /// <p>The list of counters that describe the details of the attack.</p>
-    #[doc(hidden)]
     pub vector_counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
 }
 impl SummarizedAttackVector {

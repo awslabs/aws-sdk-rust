@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableSideBorderOptions {
     /// <p>The table border options of the inner vertical border.</p>
-    #[doc(hidden)]
     pub inner_vertical: ::std::option::Option<crate::types::TableBorderOptions>,
     /// <p>The table border options of the inner horizontal border.</p>
-    #[doc(hidden)]
     pub inner_horizontal: ::std::option::Option<crate::types::TableBorderOptions>,
     /// <p>The table border options of the left border.</p>
-    #[doc(hidden)]
     pub left: ::std::option::Option<crate::types::TableBorderOptions>,
     /// <p>The table border options of the right border.</p>
-    #[doc(hidden)]
     pub right: ::std::option::Option<crate::types::TableBorderOptions>,
     /// <p>The table border options of the top border.</p>
-    #[doc(hidden)]
     pub top: ::std::option::Option<crate::types::TableBorderOptions>,
     /// <p>The table border options of the bottom border.</p>
-    #[doc(hidden)]
     pub bottom: ::std::option::Option<crate::types::TableBorderOptions>,
 }
 impl TableSideBorderOptions {

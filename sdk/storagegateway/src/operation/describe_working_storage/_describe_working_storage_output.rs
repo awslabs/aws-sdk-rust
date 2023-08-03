@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkingStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    #[doc(hidden)]
     pub disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
-    #[doc(hidden)]
     pub working_storage_used_in_bytes: i64,
     /// <p>The total working storage in bytes allocated for the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
-    #[doc(hidden)]
     pub working_storage_allocated_in_bytes: i64,
     _request_id: Option<String>,
 }

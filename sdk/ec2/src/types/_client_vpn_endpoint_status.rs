@@ -11,10 +11,8 @@ pub struct ClientVpnEndpointStatus {
     /// <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li>
     /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
     /// <p>A message about the status of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnEndpointStatus {

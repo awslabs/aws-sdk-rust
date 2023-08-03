@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopSolutionVersionCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
-    #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopSolutionVersionCreationInput {

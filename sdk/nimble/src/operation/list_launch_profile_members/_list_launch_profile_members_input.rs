@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLaunchProfileMembersInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The max number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl ListLaunchProfileMembersInput {

@@ -6,31 +6,24 @@
 pub struct Organization {
     /// <p>The unique identifier (ID) of an organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an organization.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-    #[doc(hidden)]
     pub feature_set: ::std::option::Option<crate::types::OrganizationFeatureSet>,
     /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    #[doc(hidden)]
     pub master_account_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier (ID) of the management account of an organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    #[doc(hidden)]
     pub master_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
-    #[doc(hidden)]
     pub master_account_email: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
     /// </important>
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
-    #[doc(hidden)]
     pub available_policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
 }
 impl Organization {

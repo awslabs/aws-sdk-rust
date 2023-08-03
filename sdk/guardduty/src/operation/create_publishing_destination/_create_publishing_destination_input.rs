@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePublishingDestinationInput {
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<crate::types::DestinationType>,
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
-    #[doc(hidden)]
     pub destination_properties: ::std::option::Option<crate::types::DestinationProperties>,
     /// <p>The idempotency token for the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePublishingDestinationInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitFeedbackInput {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    #[doc(hidden)]
     pub anomaly_instance_id: ::std::option::Option<::std::string::String>,
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FeedbackType>,
     /// <p>Optional feedback about this anomaly.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl SubmitFeedbackInput {

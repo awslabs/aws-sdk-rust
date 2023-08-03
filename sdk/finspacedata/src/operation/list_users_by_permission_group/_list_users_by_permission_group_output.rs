@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUsersByPermissionGroupOutput {
     /// <p>Lists details of all users in a specific permission group.</p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::UserByPermissionGroup>>,
     /// <p>A token that indicates where a results page should begin.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

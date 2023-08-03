@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpnConnection {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The current date and time.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the client who established the client connection. This information is only provided if Active Directory client authentication is used.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the client connection was established.</p>
-    #[doc(hidden)]
     pub connection_established_time: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes sent by the client.</p>
-    #[doc(hidden)]
     pub ingress_bytes: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes received by the client.</p>
-    #[doc(hidden)]
     pub egress_bytes: ::std::option::Option<::std::string::String>,
     /// <p>The number of packets sent by the client.</p>
-    #[doc(hidden)]
     pub ingress_packets: ::std::option::Option<::std::string::String>,
     /// <p>The number of packets received by the client.</p>
-    #[doc(hidden)]
     pub egress_packets: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the client.</p>
-    #[doc(hidden)]
     pub client_ip: ::std::option::Option<::std::string::String>,
     /// <p>The common name associated with the client. This is either the name of the client certificate, or the Active Directory user name.</p>
-    #[doc(hidden)]
     pub common_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the client connection.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnConnectionStatus>,
     /// <p>The date and time the client connection was terminated.</p>
-    #[doc(hidden)]
     pub connection_end_time: ::std::option::Option<::std::string::String>,
     /// <p>The statuses returned by the client connect handler for posture compliance, if applicable.</p>
-    #[doc(hidden)]
     pub posture_compliance_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ClientVpnConnection {

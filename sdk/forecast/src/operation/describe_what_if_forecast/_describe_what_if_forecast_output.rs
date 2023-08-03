@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWhatIfForecastOutput {
     /// <p>The name of the what-if forecast.</p>
-    #[doc(hidden)]
     pub what_if_forecast_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
-    #[doc(hidden)]
     pub what_if_forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that contains this forecast.</p>
-    #[doc(hidden)]
     pub what_if_analysis_arn: ::std::option::Option<::std::string::String>,
     /// <p>The approximate time remaining to complete the what-if forecast, in minutes.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
@@ -24,13 +20,10 @@ pub struct DescribeWhatIfForecastOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if forecast must be <code>ACTIVE</code> before you can access the forecast.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the what-if forecast was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -40,16 +33,12 @@ pub struct DescribeWhatIfForecastOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of <code>Action</code> and <code>TimeSeriesConditions</code> elements that describe what transformations were applied to which time series.</p>
-    #[doc(hidden)]
     pub time_series_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesTransformation>>,
     /// <p>An array of <code>S3Config</code>, <code>Schema</code>, and <code>Format</code> elements that describe the replacement time series.</p>
-    #[doc(hidden)]
     pub time_series_replacements_data_source: ::std::option::Option<crate::types::TimeSeriesReplacementsDataSource>,
     /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
-    #[doc(hidden)]
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

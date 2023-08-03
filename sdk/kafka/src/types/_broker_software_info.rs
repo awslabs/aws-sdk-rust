@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerSoftwareInfo {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
-    #[doc(hidden)]
     pub configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
-    #[doc(hidden)]
     pub configuration_revision: ::std::option::Option<i64>,
     /// <p>The version of Apache Kafka.</p>
-    #[doc(hidden)]
     pub kafka_version: ::std::option::Option<::std::string::String>,
 }
 impl BrokerSoftwareInfo {

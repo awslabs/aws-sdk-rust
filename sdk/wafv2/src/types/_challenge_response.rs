@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChallengeResponse {
     /// <p>The HTTP response code indicating the status of the challenge token in the web request. If the token is missing, invalid, or expired, this code is <code>202 Request Accepted</code>.</p>
-    #[doc(hidden)]
     pub response_code: ::std::option::Option<i32>,
     /// <p>The time that the challenge was last solved for the supplied token. </p>
-    #[doc(hidden)]
     pub solve_timestamp: ::std::option::Option<i64>,
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<crate::types::FailureReason>,
 }
 impl ChallengeResponse {

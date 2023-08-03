@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQuerySummary {
     /// <p>The unique ID of the protected query.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the membership that initiated the protected query.</p>
-    #[doc(hidden)]
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
-    #[doc(hidden)]
     pub membership_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the protected query was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
 }
 impl ProtectedQuerySummary {

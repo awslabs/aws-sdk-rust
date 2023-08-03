@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForJobsInput {
     /// <p>Represents information about an action type.</p>
-    #[doc(hidden)]
     pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
-    #[doc(hidden)]
     pub max_batch_size: ::std::option::Option<i32>,
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
-    #[doc(hidden)]
     pub query_param: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PollForJobsInput {

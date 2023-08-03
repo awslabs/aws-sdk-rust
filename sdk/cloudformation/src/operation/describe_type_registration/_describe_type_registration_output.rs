@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTypeRegistrationOutput {
     /// <p>The current status of the extension registration request.</p>
-    #[doc(hidden)]
     pub progress_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The description of the extension registration request.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-    #[doc(hidden)]
     pub type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-    #[doc(hidden)]
     pub type_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

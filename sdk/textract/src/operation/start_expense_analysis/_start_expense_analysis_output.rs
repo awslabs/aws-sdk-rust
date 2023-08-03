@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExpenseAnalysisOutput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorFilterRuleOutput {
     /// <p>Modifies a Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_rule: ::std::option::Option<crate::types::TrafficMirrorFilterRule>,
     _request_id: Option<String>,
 }

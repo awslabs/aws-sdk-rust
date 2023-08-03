@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSamplingRuleInput {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSamplingRuleInput {

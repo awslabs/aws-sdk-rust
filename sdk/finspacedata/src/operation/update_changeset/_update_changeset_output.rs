@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChangesetOutput {
     /// <p>The unique identifier for the Changeset to update.</p>
-    #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterLogEventsOutput {
     /// <p>The matched events.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::FilteredLogEvent>>,
     /// <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.</p>
     /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
-    #[doc(hidden)]
     pub searched_log_streams: ::std::option::Option<::std::vec::Vec<crate::types::SearchedLogStream>>,
     /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

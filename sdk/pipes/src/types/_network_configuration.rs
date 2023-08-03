@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
-    #[doc(hidden)]
     pub awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
 impl NetworkConfiguration {

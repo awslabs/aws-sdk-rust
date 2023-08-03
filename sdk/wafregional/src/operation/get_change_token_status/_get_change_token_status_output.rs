@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangeTokenStatusOutput {
     /// <p>The status of the change token.</p>
-    #[doc(hidden)]
     pub change_token_status: ::std::option::Option<crate::types::ChangeTokenStatus>,
     _request_id: Option<String>,
 }

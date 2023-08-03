@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]
     pub fleet: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    #[doc(hidden)]
     pub robot: ::std::option::Option<::std::string::String>,
 }
 impl RegisterRobotInput {

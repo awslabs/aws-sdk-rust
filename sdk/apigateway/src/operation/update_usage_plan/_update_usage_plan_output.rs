@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUsagePlanOutput {
     /// <p>The identifier of a UsagePlan resource.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a usage plan.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of a usage plan.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The associated API stages of a usage plan.</p>
-    #[doc(hidden)]
     pub api_stages: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>,
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
-    #[doc(hidden)]
     pub throttle: ::std::option::Option<crate::types::ThrottleSettings>,
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
-    #[doc(hidden)]
     pub quota: ::std::option::Option<crate::types::QuotaSettings>,
     /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
-    #[doc(hidden)]
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

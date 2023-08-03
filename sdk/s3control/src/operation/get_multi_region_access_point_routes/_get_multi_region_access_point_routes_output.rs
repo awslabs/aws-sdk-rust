@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointRoutesOutput {
     /// <p>The Multi-Region Access Point ARN.</p>
-    #[doc(hidden)]
     pub mrap: ::std::option::Option<::std::string::String>,
     /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    #[doc(hidden)]
     pub routes: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelMembershipOutput {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN and metadata of the member being added.</p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::Identity>,
     _request_id: Option<String>,
 }

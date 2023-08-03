@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVehicleInput {
     /// <p> The unique ID of the vehicle to create. </p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
-    #[doc(hidden)]
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of a decoder manifest. </p>
-    #[doc(hidden)]
     pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
     /// <p>Default: <code></code> </p>
-    #[doc(hidden)]
     pub association_behavior: ::std::option::Option<crate::types::VehicleAssociationBehavior>,
     /// <p>Metadata that can be used to manage the vehicle.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateVehicleInput {

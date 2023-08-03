@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddClientIdToOpenIdConnectProviderInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    #[doc(hidden)]
     pub open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl AddClientIdToOpenIdConnectProviderInput {

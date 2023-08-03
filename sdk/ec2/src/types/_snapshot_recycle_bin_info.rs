@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotRecycleBinInfo {
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
-    #[doc(hidden)]
     pub recycle_bin_enter_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the snapshot is to be permanently deleted from the Recycle Bin.</p>
-    #[doc(hidden)]
     pub recycle_bin_exit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description for the snapshot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume from which the snapshot was created.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
 }
 impl SnapshotRecycleBinInfo {

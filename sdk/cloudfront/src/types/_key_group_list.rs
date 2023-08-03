@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyGroupList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing key groups.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of key groups requested.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>The number of key groups returned in the response.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>A list of key groups.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::KeyGroupSummary>>,
 }
 impl KeyGroupList {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

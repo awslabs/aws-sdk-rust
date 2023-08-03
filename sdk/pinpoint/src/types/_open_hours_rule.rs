@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenHoursRule {
     /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
 }
 impl OpenHoursRule {

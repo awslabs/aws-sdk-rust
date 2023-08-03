@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplayDestination {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of ARNs for rules to replay events to.</p>
-    #[doc(hidden)]
     pub filter_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReplayDestination {

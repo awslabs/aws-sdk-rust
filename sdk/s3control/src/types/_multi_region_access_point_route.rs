@@ -6,17 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointRoute {
     /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
     /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
     /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
     /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
     /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
-    #[doc(hidden)]
     pub traffic_dial_percentage: ::std::option::Option<i32>,
 }
 impl MultiRegionAccessPointRoute {

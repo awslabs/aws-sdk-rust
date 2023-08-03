@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationshipsListItem {
     /// <p>Identifers of the child blocks.</p>
-    #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Only supported relationship is a child relationship.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RelationshipType>,
 }
 impl RelationshipsListItem {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LicenseUsage {
     /// <p>License entitlement usages.</p>
-    #[doc(hidden)]
     pub entitlement_usages: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementUsage>>,
 }
 impl LicenseUsage {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPeeringsInput {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of a peering requests.</p>
-    #[doc(hidden)]
     pub peering_type: ::std::option::Option<crate::types::PeeringType>,
     /// <p>Returns a list edge locations for the </p>
-    #[doc(hidden)]
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of the peering request states.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::PeeringState>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPeeringsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrincipalIdFormat {
     /// <p>PrincipalIdFormatARN description</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>PrincipalIdFormatStatuses description</p>
-    #[doc(hidden)]
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
 }
 impl PrincipalIdFormat {

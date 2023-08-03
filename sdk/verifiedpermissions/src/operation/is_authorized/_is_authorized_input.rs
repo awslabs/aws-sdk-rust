@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsAuthorizedInput {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ActionIdentifier>,
     /// <p>Specifies the resource for which the authorization decision is to be made.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<crate::types::ContextDefinition>,
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
     /// </note>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<crate::types::EntitiesDefinition>,
 }
 impl IsAuthorizedInput {

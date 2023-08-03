@@ -8,43 +8,30 @@ pub struct UpdateProvisionedProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    #[doc(hidden)]
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-    #[doc(hidden)]
     pub path_name: ::std::option::Option<::std::string::String>,
     /// <p>The new parameters.</p>
-    #[doc(hidden)]
     pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    #[doc(hidden)]
     pub provisioning_preferences: ::std::option::Option<crate::types::UpdateProvisioningPreferences>,
     /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
-    #[doc(hidden)]
     pub update_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProvisionedProductInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationDescription {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl ZeppelinMonitoringConfigurationDescription {

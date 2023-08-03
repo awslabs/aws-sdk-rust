@@ -8,10 +8,8 @@ pub struct KxDatabaseCacheConfiguration {
     /// <ul>
     /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the portions of database that will be loaded into the cache for access.</p>
-    #[doc(hidden)]
     pub db_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KxDatabaseCacheConfiguration {

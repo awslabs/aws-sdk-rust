@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>The beginning of the time range to retrieve performance events from.</p>
-    #[doc(hidden)]
     pub after: i64,
     /// <p>The end of the time range to retrieve performance events from. If you omit this, the time range extends to the time that this operation is performed.</p>
-    #[doc(hidden)]
     pub before: i64,
 }
 impl TimeRange {

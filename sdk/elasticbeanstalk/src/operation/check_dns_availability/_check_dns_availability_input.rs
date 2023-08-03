@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
-    #[doc(hidden)]
     pub cname_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CheckDnsAvailabilityInput {

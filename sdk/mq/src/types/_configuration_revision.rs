@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the configuration revision.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Required. The revision number of the configuration.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<i32>,
 }
 impl ConfigurationRevision {

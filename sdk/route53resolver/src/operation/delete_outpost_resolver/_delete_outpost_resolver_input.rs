@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOutpostResolverInput {
     /// <p>A unique string that identifies the Resolver on the Outpost.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOutpostResolverInput {

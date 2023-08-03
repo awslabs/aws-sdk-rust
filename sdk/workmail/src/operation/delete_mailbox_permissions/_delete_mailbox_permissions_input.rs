@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the member (user or group) exists.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
-    #[doc(hidden)]
     pub grantee_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMailboxPermissionsInput {

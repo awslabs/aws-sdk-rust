@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationOutput {
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<crate::types::AuthenticationDescription>,
     _request_id: Option<String>,
 }

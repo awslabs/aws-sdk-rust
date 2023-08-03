@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JiraParameters {
     /// <p>The base URL of the Jira site.</p>
-    #[doc(hidden)]
     pub site_base_url: ::std::option::Option<::std::string::String>,
 }
 impl JiraParameters {

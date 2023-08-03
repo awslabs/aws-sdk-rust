@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GaugeChartVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    #[doc(hidden)]
     pub visual_id: ::std::option::Option<::std::string::String>,
     /// <p>The title that is displayed on the visual.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     /// <p>The subtitle that is displayed on the visual.</p>
-    #[doc(hidden)]
     pub subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     /// <p>The configuration of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub chart_configuration: ::std::option::Option<crate::types::GaugeChartConfiguration>,
     /// <p>The conditional formatting of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub conditional_formatting: ::std::option::Option<crate::types::GaugeChartConditionalFormatting>,
     /// <p>The list of custom actions that are configured for a visual.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl GaugeChartVisual {

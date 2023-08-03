@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectionStatusOutput {
     /// <p>The ID of the managed node to check connection status. </p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ConnectionStatus>,
     _request_id: Option<String>,
 }

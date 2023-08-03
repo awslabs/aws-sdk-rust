@@ -5,36 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct As2ConnectorConfig {
     /// <p>A unique identifier for the AS2 local profile.</p>
-    #[doc(hidden)]
     pub local_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the partner profile for the connector.</p>
-    #[doc(hidden)]
     pub partner_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
-    #[doc(hidden)]
     pub message_subject: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the AS2 file is compressed.</p>
-    #[doc(hidden)]
     pub compression: ::std::option::Option<crate::types::CompressionEnum>,
     /// <p>The algorithm that is used to encrypt the file.</p> <note>
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
-    #[doc(hidden)]
     pub encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlg>,
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
-    #[doc(hidden)]
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlg>,
     /// <p>The signing algorithm for the MDN response.</p> <note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
-    #[doc(hidden)]
     pub mdn_signing_algorithm: ::std::option::Option<crate::types::MdnSigningAlg>,
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
     /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mdn_response: ::std::option::Option<crate::types::MdnResponse>,
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
     /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
@@ -48,7 +40,6 @@ pub struct As2ConnectorConfig {
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p> <code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code> </p>
-    #[doc(hidden)]
     pub basic_auth_secret_id: ::std::option::Option<::std::string::String>,
 }
 impl As2ConnectorConfig {

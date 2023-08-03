@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeConfigurationOptionsFilter {
     /// <p>The name of the element to filter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::NodeConfigurationOptionsFilterName>,
     /// <p>The filter operator. If filter Name is NodeType only the 'in' operator is supported. Provide one value to evaluate for 'eq', 'lt', 'le', 'gt', and 'ge'. Provide two values to evaluate for 'between'. Provide a list of values for 'in'.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::OperatorType>,
     /// <p>List of values. Compare Name using Operator to Values. If filter Name is NumberOfNodes, then values can range from 0 to 200. If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100. For example, filter NumberOfNodes (name) GT (operator) 3 (values).</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NodeConfigurationOptionsFilter {

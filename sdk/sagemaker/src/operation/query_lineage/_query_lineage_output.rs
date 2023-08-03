@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryLineageOutput {
     /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
-    #[doc(hidden)]
     pub vertices: ::std::option::Option<::std::vec::Vec<crate::types::Vertex>>,
     /// <p>A list of edges that connect vertices in the response.</p>
-    #[doc(hidden)]
     pub edges: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>,
     /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

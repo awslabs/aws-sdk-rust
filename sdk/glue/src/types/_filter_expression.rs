@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterExpression {
     /// <p>The type of operation to perform in the expression.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::FilterOperation>,
     /// <p>Whether the expression is to be negated.</p>
-    #[doc(hidden)]
     pub negated: ::std::option::Option<bool>,
     /// <p>A list of filter values.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::FilterValue>>,
 }
 impl FilterExpression {

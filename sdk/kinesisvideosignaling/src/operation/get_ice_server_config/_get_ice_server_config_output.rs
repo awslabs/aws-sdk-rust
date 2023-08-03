@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIceServerConfigOutput {
     /// <p>The list of ICE server information objects.</p>
-    #[doc(hidden)]
     pub ice_server_list: ::std::option::Option<::std::vec::Vec<crate::types::IceServer>>,
     _request_id: Option<String>,
 }

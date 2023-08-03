@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateTeamMemberInput {
     /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateTeamMemberInput {

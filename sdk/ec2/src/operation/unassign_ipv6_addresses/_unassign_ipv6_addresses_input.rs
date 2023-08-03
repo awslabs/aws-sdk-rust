@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnassignIpv6AddressesInput {
     /// <p>The IPv6 addresses to unassign from the network interface.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IPv6 prefixes to unassign from the network interface.</p>
-    #[doc(hidden)]
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl UnassignIpv6AddressesInput {

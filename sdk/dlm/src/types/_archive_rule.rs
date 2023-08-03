@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveRule {
     /// <p>Information about the retention period for the snapshot archiving rule.</p>
-    #[doc(hidden)]
     pub retain_rule: ::std::option::Option<crate::types::ArchiveRetainRule>,
 }
 impl ArchiveRule {

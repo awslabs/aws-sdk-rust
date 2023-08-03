@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnfilteredPartition {
     /// <p>The partition object.</p>
-    #[doc(hidden)]
     pub partition: ::std::option::Option<crate::types::Partition>,
     /// <p>The list of columns the user has permissions to access.</p>
-    #[doc(hidden)]
     pub authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean value indicating that the partition location is registered with Lake Formation.</p>
-    #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
 }
 impl UnfilteredPartition {

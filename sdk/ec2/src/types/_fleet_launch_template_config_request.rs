@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetLaunchTemplateConfigRequest {
     /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request. </p>
-    #[doc(hidden)]
     pub launch_template_specification: ::std::option::Option<crate::types::FleetLaunchTemplateSpecificationRequest>,
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     /// <p>For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all launch templates.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateOverridesRequest>>,
 }
 impl FleetLaunchTemplateConfigRequest {

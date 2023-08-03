@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameworkMetadata {
     /// <p> The name of the framework. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the framework. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The logo that's associated with the framework. </p>
-    #[doc(hidden)]
     pub logo: ::std::option::Option<::std::string::String>,
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
 }
 impl FrameworkMetadata {

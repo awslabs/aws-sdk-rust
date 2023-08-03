@@ -5,36 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaPlacement {
     /// <p>The audio host URL.</p>
-    #[doc(hidden)]
     pub audio_host_url: ::std::option::Option<::std::string::String>,
     /// <p>The audio fallback URL.</p>
-    #[doc(hidden)]
     pub audio_fallback_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen data URL.</p> <important>
     /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
     /// </important>
-    #[doc(hidden)]
     pub screen_data_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen sharing URL.</p> <important>
     /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b>.</p>
     /// </important>
-    #[doc(hidden)]
     pub screen_sharing_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen viewing URL.</p> <important>
     /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
     /// </important>
-    #[doc(hidden)]
     pub screen_viewing_url: ::std::option::Option<::std::string::String>,
     /// <p>The signaling URL.</p>
-    #[doc(hidden)]
     pub signaling_url: ::std::option::Option<::std::string::String>,
     /// <p>The turn control URL.</p> <important>
     /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
     /// </important>
-    #[doc(hidden)]
     pub turn_control_url: ::std::option::Option<::std::string::String>,
     /// <p>The event ingestion URL to which you send client meeting events.</p>
-    #[doc(hidden)]
     pub event_ingestion_url: ::std::option::Option<::std::string::String>,
 }
 impl MediaPlacement {

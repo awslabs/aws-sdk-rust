@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails {
     /// <p> The maximum amount of memory, in MiB. If this parameter isn't specified, there's no maximum limit. </p>
-    #[doc(hidden)]
     pub max: i32,
     /// <p> The minimum amount of memory, in MiB. If <code>0</code> is specified, there's no maximum limit. </p>
-    #[doc(hidden)]
     pub min: i32,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails {

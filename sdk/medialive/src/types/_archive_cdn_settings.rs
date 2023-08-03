@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveCdnSettings {
     /// Archive S3 Settings
-    #[doc(hidden)]
     pub archive_s3_settings: ::std::option::Option<crate::types::ArchiveS3Settings>,
 }
 impl ArchiveCdnSettings {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorEmergencyCallingConfigurationOutput {
     /// <p>The details of the emergency calling configuration.</p>
-    #[doc(hidden)]
     pub emergency_calling_configuration: ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
     _request_id: Option<String>,
 }

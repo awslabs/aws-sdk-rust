@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrammarSlotTypeSource {
     /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the grammar in the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_object_key: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl GrammarSlotTypeSource {

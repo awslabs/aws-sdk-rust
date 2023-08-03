@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOrganizationalUnitOutput {
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
-    #[doc(hidden)]
     pub organizational_unit: ::std::option::Option<crate::types::OrganizationalUnit>,
     _request_id: Option<String>,
 }

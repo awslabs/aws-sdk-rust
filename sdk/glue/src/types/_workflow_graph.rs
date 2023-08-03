@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowGraph {
     /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
-    #[doc(hidden)]
     pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
-    #[doc(hidden)]
     pub edges: ::std::option::Option<::std::vec::Vec<crate::types::Edge>>,
 }
 impl WorkflowGraph {

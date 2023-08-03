@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyCommentInput {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
     /// <p>The new comment for the specified traffic policy and version.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl UpdateTrafficPolicyCommentInput {

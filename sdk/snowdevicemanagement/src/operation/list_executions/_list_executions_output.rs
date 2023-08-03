@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExecutionsOutput {
     /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
-    #[doc(hidden)]
     pub executions: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>>,
     /// <p>A pagination token to continue to the next page of executions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

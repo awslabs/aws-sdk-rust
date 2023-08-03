@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtendLicenseConsumptionOutput {
     /// <p>License consumption token.</p>
-    #[doc(hidden)]
     pub license_consumption_token: ::std::option::Option<::std::string::String>,
     /// <p>Date and time at which the license consumption expires.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

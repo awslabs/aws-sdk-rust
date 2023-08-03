@@ -6,7 +6,6 @@ pub struct DeleteConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectionInput {

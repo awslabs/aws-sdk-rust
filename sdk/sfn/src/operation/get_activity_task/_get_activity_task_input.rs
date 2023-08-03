@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetActivityTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
-    #[doc(hidden)]
     pub activity_arn: ::std::option::Option<::std::string::String>,
     /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
-    #[doc(hidden)]
     pub worker_name: ::std::option::Option<::std::string::String>,
 }
 impl GetActivityTaskInput {

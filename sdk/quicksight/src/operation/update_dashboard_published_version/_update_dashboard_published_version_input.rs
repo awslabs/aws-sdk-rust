@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDashboardPublishedVersionInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the dashboard.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
 }
 impl UpdateDashboardPublishedVersionInput {

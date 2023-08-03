@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelQualityJobDefinitionsOutput {
     /// <p>A list of summaries of model quality monitoring job definitions.</p>
-    #[doc(hidden)]
     pub job_definition_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>>,
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of model quality monitoring job definitions, use it in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

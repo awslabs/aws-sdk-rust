@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProgramTransition {
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
-    #[doc(hidden)]
     pub scheduled_start_time_millis: i64,
     /// <p>The duration of the live program in seconds.</p>
-    #[doc(hidden)]
     pub duration_millis: i64,
 }
 impl UpdateProgramTransition {

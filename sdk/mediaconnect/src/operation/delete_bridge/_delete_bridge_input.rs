@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBridgeInput {
     /// The ARN of the bridge that you want to delete.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBridgeInput {

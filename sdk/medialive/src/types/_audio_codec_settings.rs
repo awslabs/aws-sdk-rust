@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioCodecSettings {
     /// Aac Settings
-    #[doc(hidden)]
     pub aac_settings: ::std::option::Option<crate::types::AacSettings>,
     /// Ac3 Settings
-    #[doc(hidden)]
     pub ac3_settings: ::std::option::Option<crate::types::Ac3Settings>,
     /// Eac3 Atmos Settings
-    #[doc(hidden)]
     pub eac3_atmos_settings: ::std::option::Option<crate::types::Eac3AtmosSettings>,
     /// Eac3 Settings
-    #[doc(hidden)]
     pub eac3_settings: ::std::option::Option<crate::types::Eac3Settings>,
     /// Mp2 Settings
-    #[doc(hidden)]
     pub mp2_settings: ::std::option::Option<crate::types::Mp2Settings>,
     /// Pass Through Settings
-    #[doc(hidden)]
     pub pass_through_settings: ::std::option::Option<crate::types::PassThroughSettings>,
     /// Wav Settings
-    #[doc(hidden)]
     pub wav_settings: ::std::option::Option<crate::types::WavSettings>,
 }
 impl AudioCodecSettings {

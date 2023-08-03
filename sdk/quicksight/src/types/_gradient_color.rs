@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GradientColor {
     /// <p>The list of gradient color stops.</p>
-    #[doc(hidden)]
     pub stops: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>,
 }
 impl GradientColor {

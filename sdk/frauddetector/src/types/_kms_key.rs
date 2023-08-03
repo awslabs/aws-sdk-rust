@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsKey {
     /// <p>The encryption key ARN.</p>
-    #[doc(hidden)]
     pub kms_encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KmsKey {

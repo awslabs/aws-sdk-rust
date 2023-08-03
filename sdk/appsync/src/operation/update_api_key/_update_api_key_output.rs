@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApiKeyOutput {
     /// <p>The API key.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<crate::types::ApiKey>,
     _request_id: Option<String>,
 }

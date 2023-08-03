@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoggingOptionsOutput {
     /// <p>The ARN of the IAM role that grants access.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The logging level.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSourceApiAssociationsInput {
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSourceApiAssociationsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDedicatedIpInPoolInput {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    #[doc(hidden)]
     pub destination_pool_name: ::std::option::Option<::std::string::String>,
 }
 impl PutDedicatedIpInPoolInput {

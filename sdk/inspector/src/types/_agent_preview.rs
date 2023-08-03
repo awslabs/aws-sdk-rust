@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentPreview {
     /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
-    #[doc(hidden)]
     pub auto_scaling_group: ::std::option::Option<::std::string::String>,
     /// <p>The health status of the Amazon Inspector Agent.</p>
-    #[doc(hidden)]
     pub agent_health: ::std::option::Option<crate::types::AgentHealth>,
     /// <p>The version of the Amazon Inspector Agent.</p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<::std::string::String>,
     /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    #[doc(hidden)]
     pub kernel_version: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    #[doc(hidden)]
     pub ipv4_address: ::std::option::Option<::std::string::String>,
 }
 impl AgentPreview {

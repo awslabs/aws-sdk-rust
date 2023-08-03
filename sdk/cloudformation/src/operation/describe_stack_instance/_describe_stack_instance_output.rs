@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackInstanceOutput {
     /// <p>The stack instance that matches the specified request parameters.</p>
-    #[doc(hidden)]
     pub stack_instance: ::std::option::Option<crate::types::StackInstance>,
     _request_id: Option<String>,
 }

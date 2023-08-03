@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainInformation {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl DomainInformation {

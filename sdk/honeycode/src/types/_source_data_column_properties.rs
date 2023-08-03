@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceDataColumnProperties {
     /// <p>The index of the column in the input file.</p>
-    #[doc(hidden)]
     pub column_index: i32,
 }
 impl SourceDataColumnProperties {

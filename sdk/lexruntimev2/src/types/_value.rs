@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Value {
     /// <p>The text of the utterance from the user that was entered for the slot.</p>
-    #[doc(hidden)]
     pub original_value: ::std::option::Option<::std::string::String>,
     /// <p>The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.</p>
-    #[doc(hidden)]
     pub interpreted_value: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional values that have been recognized for the slot.</p>
-    #[doc(hidden)]
     pub resolved_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Value {

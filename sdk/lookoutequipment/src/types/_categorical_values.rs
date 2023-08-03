@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     /// <p> Indicates the number of categories in the data. </p>
-    #[doc(hidden)]
     pub number_of_category: ::std::option::Option<i32>,
 }
 impl CategoricalValues {

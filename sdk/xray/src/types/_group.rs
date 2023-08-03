@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Group {
     /// <p>The unique case-sensitive name of the group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The filter expression defining the parameters to include traces.</p>
-    #[doc(hidden)]
     pub filter_expression: ::std::option::Option<::std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
     /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
     /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub insights_configuration: ::std::option::Option<crate::types::InsightsConfiguration>,
 }
 impl Group {

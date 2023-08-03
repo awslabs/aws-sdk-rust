@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShotSegment {
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i64>,
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl ShotSegment {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateStorageVirtualMachineInput {
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
-    #[doc(hidden)]
     pub active_directory_configuration: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a new SvmAdminPassword.</p>
-    #[doc(hidden)]
     pub svm_admin_password: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStorageVirtualMachineInput {

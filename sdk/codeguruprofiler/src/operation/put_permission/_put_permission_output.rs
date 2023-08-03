@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

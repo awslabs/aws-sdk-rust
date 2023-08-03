@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportInstanceTaskDetails {
     /// <p>A description of the task.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance operating system.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
     /// <p>The volumes.</p>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>>,
 }
 impl ImportInstanceTaskDetails {

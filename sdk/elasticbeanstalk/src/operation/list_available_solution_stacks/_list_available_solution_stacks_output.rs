@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableSolutionStacksOutput {
     /// <p>A list of available solution stacks.</p>
-    #[doc(hidden)]
     pub solution_stacks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
-    #[doc(hidden)]
     pub solution_stack_details: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>,
     _request_id: Option<String>,
 }

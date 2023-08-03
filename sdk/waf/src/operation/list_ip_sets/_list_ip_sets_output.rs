@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIpSetsOutput {
     /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request, and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>IPSetSummary</code> objects.</p>
-    #[doc(hidden)]
     pub ip_sets: ::std::option::Option<::std::vec::Vec<crate::types::IpSetSummary>>,
     _request_id: Option<String>,
 }

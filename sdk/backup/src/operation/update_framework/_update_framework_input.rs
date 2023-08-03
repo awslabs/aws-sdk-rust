@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFrameworkInput {
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    #[doc(hidden)]
     pub framework_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    #[doc(hidden)]
     pub framework_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    #[doc(hidden)]
     pub framework_controls: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFrameworkInput {

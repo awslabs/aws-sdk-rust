@@ -5,79 +5,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchDomainStatus {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain creation status. <code>True</code> if the creation of an Elasticsearch domain is complete. <code>False</code> if domain creation is still in progress.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<bool>,
     /// <p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned.</p>
-    #[doc(hidden)]
     pub deleted: ::std::option::Option<bool>,
     /// <p>The Elasticsearch domain endpoint that you use to submit index and search requests.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.</p>
-    #[doc(hidden)]
     pub processing: ::std::option::Option<bool>,
     /// <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active.</p>
-    #[doc(hidden)]
     pub upgrade_processing: ::std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
     /// <p>The type and number of instances in the domain cluster.</p>
-    #[doc(hidden)]
     pub elasticsearch_cluster_config: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
     /// <p>The <code>EBSOptions</code> for the specified domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.</p>
-    #[doc(hidden)]
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p> IAM access policy as a JSON-formatted string.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of the <code>SnapshotOptions</code></p>
-    #[doc(hidden)]
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcDerivedInfo>,
     /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
-    #[doc(hidden)]
     pub cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>Specifies the status of the <code>AdvancedOptions</code></p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Log publishing options for the given domain.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>The current status of the Elasticsearch domain's service software.</p>
-    #[doc(hidden)]
     pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     /// <p>The current status of the Elasticsearch domain's endpoint options.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>The current status of the Elasticsearch domain's advanced security options.</p>
-    #[doc(hidden)]
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     /// <p>The current status of the Elasticsearch domain's Auto-Tune options.</p>
-    #[doc(hidden)]
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
     /// <p>Specifies change details of the domain configuration change.</p>
-    #[doc(hidden)]
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
 }
 impl ElasticsearchDomainStatus {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategorySplitChargeRuleParameter {
     /// <p>The parameter type. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CostCategorySplitChargeRuleParameterType>,
     /// <p>The parameter values. </p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CostCategorySplitChargeRuleParameter {

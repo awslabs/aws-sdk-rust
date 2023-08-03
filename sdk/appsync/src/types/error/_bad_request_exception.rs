@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Provides context for the cause of the bad request. The only supported value is <code>CODE_ERROR</code>.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::BadRequestReason>,
     /// <p>Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>, the detail will contain a list of code errors.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<crate::types::BadRequestDetail>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

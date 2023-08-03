@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SizeConstraintSetUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>SizeConstraintSetUpdate</code> to a <code>SizeConstraintSet</code>. Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-    #[doc(hidden)]
     pub size_constraint: ::std::option::Option<crate::types::SizeConstraint>,
 }
 impl SizeConstraintSetUpdate {

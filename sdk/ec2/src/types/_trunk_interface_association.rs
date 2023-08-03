@@ -8,25 +8,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrunkInterfaceAssociation {
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the branch network interface.</p>
-    #[doc(hidden)]
     pub branch_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the trunk network interface.</p>
-    #[doc(hidden)]
     pub trunk_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p>
-    #[doc(hidden)]
     pub interface_protocol: ::std::option::Option<crate::types::InterfaceProtocolType>,
     /// <p>The ID of the VLAN when you use the VLAN protocol.</p>
-    #[doc(hidden)]
     pub vlan_id: ::std::option::Option<i32>,
     /// <p>The application key when you use the GRE protocol.</p>
-    #[doc(hidden)]
     pub gre_key: ::std::option::Option<i32>,
     /// <p>The tags for the trunk interface association.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TrunkInterfaceAssociation {

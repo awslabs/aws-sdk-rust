@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRotationOverrideInput {
     /// <p>The Amazon Resource Name (ARN) of the rotation to create an override for.</p>
-    #[doc(hidden)]
     pub rotation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
     /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
-    #[doc(hidden)]
     pub new_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time when the override goes into effect.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the override ends.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateRotationOverrideInput {

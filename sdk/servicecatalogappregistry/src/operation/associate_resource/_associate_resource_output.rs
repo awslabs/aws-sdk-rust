@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResourceOutput {
     /// <p>The Amazon resource name (ARN) of the application that was augmented with attributes.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

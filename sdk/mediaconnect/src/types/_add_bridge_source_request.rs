@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeSourceRequest {
     /// Add a flow source to an existing bridge.
-    #[doc(hidden)]
     pub flow_source: ::std::option::Option<crate::types::AddBridgeFlowSourceRequest>,
     /// Add a network source to an existing bridge.
-    #[doc(hidden)]
     pub network_source: ::std::option::Option<crate::types::AddBridgeNetworkSourceRequest>,
 }
 impl AddBridgeSourceRequest {

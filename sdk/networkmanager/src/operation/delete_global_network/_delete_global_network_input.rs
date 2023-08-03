@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGlobalNetworkInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGlobalNetworkInput {

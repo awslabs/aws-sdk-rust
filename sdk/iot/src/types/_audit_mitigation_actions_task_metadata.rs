@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditMitigationActionsTaskMetadata {
     /// <p>The unique identifier for the task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the audit mitigation actions task was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of the audit mitigation actions task.</p>
-    #[doc(hidden)]
     pub task_status: ::std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
 }
 impl AuditMitigationActionsTaskMetadata {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchedulesInput {
     /// <p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>Schedule name prefix to return the filtered list of resources.</p>
-    #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>If specified, only lists the schedules whose current state matches the given filter.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ScheduleState>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSchedulesInput {

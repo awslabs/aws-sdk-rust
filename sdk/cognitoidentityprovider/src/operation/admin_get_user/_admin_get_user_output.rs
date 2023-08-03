@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminGetUserOutput {
     /// <p>The user name of the user about whom you're receiving information.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
-    #[doc(hidden)]
     pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p>The date the user was created.</p>
-    #[doc(hidden)]
     pub user_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the user was last modified.</p>
-    #[doc(hidden)]
     pub user_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates that the status is <code>enabled</code>.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
@@ -28,16 +23,12 @@ pub struct AdminGetUserOutput {
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub user_status: ::std::option::Option<crate::types::UserStatusType>,
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    #[doc(hidden)]
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
-    #[doc(hidden)]
     pub preferred_mfa_setting: ::std::option::Option<::std::string::String>,
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    #[doc(hidden)]
     pub user_mfa_setting_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

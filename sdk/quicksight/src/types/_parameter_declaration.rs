@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterDeclaration {
     /// <p>A parameter declaration for the <code>String</code> data type.</p>
-    #[doc(hidden)]
     pub string_parameter_declaration: ::std::option::Option<crate::types::StringParameterDeclaration>,
     /// <p>A parameter declaration for the <code>Decimal</code> data type.</p>
-    #[doc(hidden)]
     pub decimal_parameter_declaration: ::std::option::Option<crate::types::DecimalParameterDeclaration>,
     /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
-    #[doc(hidden)]
     pub integer_parameter_declaration: ::std::option::Option<crate::types::IntegerParameterDeclaration>,
     /// <p>A parameter declaration for the <code>DateTime</code> data type.</p>
-    #[doc(hidden)]
     pub date_time_parameter_declaration: ::std::option::Option<crate::types::DateTimeParameterDeclaration>,
 }
 impl ParameterDeclaration {

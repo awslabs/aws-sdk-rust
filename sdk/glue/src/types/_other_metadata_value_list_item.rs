@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtherMetadataValueListItem {
     /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
-    #[doc(hidden)]
     pub metadata_value: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the entry was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
 }
 impl OtherMetadataValueListItem {

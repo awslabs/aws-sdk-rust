@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Node {
     /// <p>The unique identifier of the network that the node is on.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member to which the node belongs.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the node.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the node.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Attributes of the blockchain framework being used.</p>
-    #[doc(hidden)]
     pub framework_attributes: ::std::option::Option<crate::types::NodeFrameworkAttributes>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
-    #[doc(hidden)]
     pub log_publishing_configuration: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub state_db: ::std::option::Option<crate::types::StateDbType>,
     /// <p>The status of the node.</p>
     /// <ul>
@@ -42,22 +34,17 @@ pub struct Node {
     /// <li> <p> <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.</p> </li>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it cannot access the specified customer managed key in KMS for encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.</p> <p>The effect of disabling or deleting a key or of revoking a grant isn't immediate. It might take some time for the node resource to discover that the key is inaccessible. When a resource is in this state, we recommend deleting and recreating the resource.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NodeStatus>,
     /// <p>The date and time that the node was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the node. Each tag consists of a key and optional value.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management Service (KMS) that the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl Node {

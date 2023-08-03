@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProposedSegmentChange {
     /// <p>The list of key-value tags that changed for the segment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The rule number in the policy document that applies to this change.</p>
-    #[doc(hidden)]
     pub attachment_policy_rule_number: ::std::option::Option<i32>,
     /// <p>The name of the segment to change.</p>
-    #[doc(hidden)]
     pub segment_name: ::std::option::Option<::std::string::String>,
 }
 impl ProposedSegmentChange {

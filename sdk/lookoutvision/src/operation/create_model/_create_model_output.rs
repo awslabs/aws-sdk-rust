@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelOutput {
     /// <p>The response from a call to <code>CreateModel</code>.</p>
-    #[doc(hidden)]
     pub model_metadata: ::std::option::Option<crate::types::ModelMetadata>,
     _request_id: Option<String>,
 }

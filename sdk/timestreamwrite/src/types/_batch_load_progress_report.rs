@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchLoadProgressReport {
     /// <p></p>
-    #[doc(hidden)]
     pub records_processed: i64,
     /// <p></p>
-    #[doc(hidden)]
     pub records_ingested: i64,
     /// <p></p>
-    #[doc(hidden)]
     pub parse_failures: i64,
     /// <p></p>
-    #[doc(hidden)]
     pub record_ingestion_failures: i64,
     /// <p></p>
-    #[doc(hidden)]
     pub file_failures: i64,
     /// <p></p>
-    #[doc(hidden)]
     pub bytes_metered: i64,
 }
 impl BatchLoadProgressReport {

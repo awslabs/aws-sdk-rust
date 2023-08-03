@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteColumnStatisticsForTableInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partitions' table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteColumnStatisticsForTableInput {

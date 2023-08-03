@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLunaClientOutput {
     /// <p>The ARN of the client.</p>
-    #[doc(hidden)]
     pub client_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate installed on the HSMs used by this client.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The certificate fingerprint.</p>
-    #[doc(hidden)]
     pub certificate_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the client was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The label of the client.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

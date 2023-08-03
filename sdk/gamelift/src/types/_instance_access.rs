@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstanceAccess {
     /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the instance being accessed.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address that is assigned to the instance.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Operating system that is running on the instance.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>Credentials required to access the instance.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::InstanceCredentials>,
 }
 impl InstanceAccess {

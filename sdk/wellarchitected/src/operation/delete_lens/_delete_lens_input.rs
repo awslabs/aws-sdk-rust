@@ -7,16 +7,13 @@ pub struct DeleteLensInput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    #[doc(hidden)]
     pub lens_alias: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The status of the lens to be deleted.</p>
-    #[doc(hidden)]
     pub lens_status: ::std::option::Option<crate::types::LensStatusType>,
 }
 impl DeleteLensInput {

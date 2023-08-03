@@ -11,13 +11,10 @@
 pub struct IpSet {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p>
     /// <p> <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    #[doc(hidden)]
     pub ip_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.</p>
-    #[doc(hidden)]
     pub ip_set_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::IpSetDescriptor>>,
 }
 impl IpSet {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The service code.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service quota that was exceeded.</p>
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds to wait before retrying.</p>
-    #[doc(hidden)]
     pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

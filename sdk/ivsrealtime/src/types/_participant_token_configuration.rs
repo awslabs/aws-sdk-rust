@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantTokenConfiguration {
     /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 720 (12 hours).</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided attributes to encode into the corresponding participant token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
 }
 impl ParticipantTokenConfiguration {

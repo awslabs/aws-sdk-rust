@@ -9,10 +9,8 @@ pub struct ImageConfig {
     /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
     /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub repository_access_mode: ::std::option::Option<crate::types::RepositoryAccessMode>,
     /// <p>(Optional) Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires authentication.</p>
-    #[doc(hidden)]
     pub repository_auth_config: ::std::option::Option<crate::types::RepositoryAuthConfig>,
 }
 impl ImageConfig {

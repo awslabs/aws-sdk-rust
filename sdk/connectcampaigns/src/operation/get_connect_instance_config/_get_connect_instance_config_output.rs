@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectInstanceConfigOutput {
     /// Instance config object
-    #[doc(hidden)]
     pub connect_instance_config: ::std::option::Option<crate::types::InstanceConfig>,
     _request_id: Option<String>,
 }

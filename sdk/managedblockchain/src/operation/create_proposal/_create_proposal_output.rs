@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProposalOutput {
     /// <p>The unique identifier of the proposal.</p>
-    #[doc(hidden)]
     pub proposal_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

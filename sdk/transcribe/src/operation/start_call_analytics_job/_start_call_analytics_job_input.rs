@@ -5,10 +5,8 @@
 pub struct StartCallAnalyticsJobInput {
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
-    #[doc(hidden)]
     pub call_analytics_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.</p>
-    #[doc(hidden)]
     pub media: ::std::option::Option<crate::types::Media>,
     /// <p>The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of the following formats to specify the output location:</p>
     /// <ol>
@@ -19,7 +17,6 @@ pub struct StartCallAnalyticsJobInput {
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
     /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
     /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key you want to use to encrypt your Call Analytics output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -37,18 +34,14 @@ pub struct StartCallAnalyticsJobInput {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    #[doc(hidden)]
     pub output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    #[doc(hidden)]
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
 }
 impl StartCallAnalyticsJobInput {

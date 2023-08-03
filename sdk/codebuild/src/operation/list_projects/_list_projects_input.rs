@@ -10,7 +10,6 @@ pub struct ListProjectsInput {
     /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
     /// </ul>
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ProjectSortByType>,
     /// <p>The order in which to list build projects. Valid values include:</p>
     /// <ul>
@@ -18,10 +17,8 @@ pub struct ListProjectsInput {
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListProjectsInput {

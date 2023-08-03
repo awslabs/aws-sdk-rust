@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MotionGraphicsSettings {
     /// Html Motion Graphics Settings
-    #[doc(hidden)]
     pub html_motion_graphics_settings: ::std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
 }
 impl MotionGraphicsSettings {

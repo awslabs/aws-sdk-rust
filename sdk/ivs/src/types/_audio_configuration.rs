@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioConfiguration {
     /// <p>Codec used for the audio encoding.</p>
-    #[doc(hidden)]
     pub codec: ::std::option::Option<::std::string::String>,
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
-    #[doc(hidden)]
     pub target_bitrate: i64,
     /// <p>Number of audio samples recorded per second.</p>
-    #[doc(hidden)]
     pub sample_rate: i64,
     /// <p>Number of audio channels.</p>
-    #[doc(hidden)]
     pub channels: i64,
 }
 impl AudioConfiguration {

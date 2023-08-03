@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackupPlanFromTemplateOutput {
     /// <p>Returns the body of a backup plan based on the target template, including the name, rules, and backup vault of the plan.</p>
-    #[doc(hidden)]
     pub backup_plan_document: ::std::option::Option<crate::types::BackupPlan>,
     _request_id: Option<String>,
 }

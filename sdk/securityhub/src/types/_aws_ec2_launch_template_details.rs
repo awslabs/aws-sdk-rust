@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDetails {
     /// <p> A name for the launch template. </p>
-    #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p> An ID for the launch template. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The information to include in the launch template. </p>
-    #[doc(hidden)]
     pub launch_template_data: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataDetails>,
     /// <p> The default version of the launch template. </p>
-    #[doc(hidden)]
     pub default_version_number: i64,
     /// <p> The latest version of the launch template. </p>
-    #[doc(hidden)]
     pub latest_version_number: i64,
 }
 impl AwsEc2LaunchTemplateDetails {

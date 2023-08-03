@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
-    #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
 }
 impl BucketInfo {

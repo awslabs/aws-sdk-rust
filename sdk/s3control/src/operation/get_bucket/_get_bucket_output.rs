@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketOutput {
     /// <p>The Outposts bucket requested.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the Outposts bucket.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

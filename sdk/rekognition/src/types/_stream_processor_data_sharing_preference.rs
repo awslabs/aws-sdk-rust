@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessorDataSharingPreference {
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
-    #[doc(hidden)]
     pub opt_in: bool,
 }
 impl StreamProcessorDataSharingPreference {

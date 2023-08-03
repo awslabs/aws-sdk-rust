@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlApplicationConfigurationUpdate {
     /// <p>The array of <code>InputUpdate</code> objects describing the new input streams used by the application.</p>
-    #[doc(hidden)]
     pub input_updates: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>,
     /// <p>The array of <code>OutputUpdate</code> objects describing the new destination streams used by the application.</p>
-    #[doc(hidden)]
     pub output_updates: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>,
     /// <p>The array of <code>ReferenceDataSourceUpdate</code> objects describing the new reference data sources used by the application.</p>
-    #[doc(hidden)]
     pub reference_data_source_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
 }
 impl SqlApplicationConfigurationUpdate {

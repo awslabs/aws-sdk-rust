@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerInstance {
     /// <p>The instance identifier.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbLoadBalancerInstance {

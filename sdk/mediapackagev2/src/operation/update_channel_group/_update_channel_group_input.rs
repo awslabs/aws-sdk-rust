@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelGroupInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    #[doc(hidden)]
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Any descriptive information that you want to add to the channel group for future identification purposes.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelGroupInput {

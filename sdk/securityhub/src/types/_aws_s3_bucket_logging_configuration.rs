@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketLoggingConfiguration {
     /// <p>The name of the S3 bucket where log files for the S3 bucket are stored.</p>
-    #[doc(hidden)]
     pub destination_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix added to log files for the S3 bucket.</p>
-    #[doc(hidden)]
     pub log_file_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketLoggingConfiguration {

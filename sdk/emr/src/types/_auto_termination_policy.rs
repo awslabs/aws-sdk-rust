@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTerminationPolicy {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
-    #[doc(hidden)]
     pub idle_timeout: i64,
 }
 impl AutoTerminationPolicy {

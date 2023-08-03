@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetSummary {
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the target is listening.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The status of the target.</p>
     /// <ul>
@@ -19,10 +17,8 @@ pub struct TargetSummary {
     /// <li> <p> <code>Initial</code>: Initial health checks on the target are being performed.</p> </li>
     /// <li> <p> <code>Unused</code>: Target group is not used in a service.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TargetStatus>,
     /// <p>The code for why the target status is what it is.</p>
-    #[doc(hidden)]
     pub reason_code: ::std::option::Option<::std::string::String>,
 }
 impl TargetSummary {

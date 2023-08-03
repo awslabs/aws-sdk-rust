@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelReservedInstancesListingInput {
     /// <p>The ID of the Reserved Instance listing.</p>
-    #[doc(hidden)]
     pub reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelReservedInstancesListingInput {

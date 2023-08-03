@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Distribution {
     /// <p>The Amazon Web Services Region where the traffic is distributed.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the traffic that is distributed, in increments of 10.</p>
-    #[doc(hidden)]
     pub percentage: i32,
 }
 impl Distribution {

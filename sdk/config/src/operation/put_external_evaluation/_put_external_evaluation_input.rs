@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutExternalEvaluationInput {
     /// <p>The name of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
-    #[doc(hidden)]
     pub external_evaluation: ::std::option::Option<crate::types::ExternalEvaluation>,
 }
 impl PutExternalEvaluationInput {

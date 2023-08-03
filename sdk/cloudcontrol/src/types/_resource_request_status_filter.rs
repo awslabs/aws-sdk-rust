@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceRequestStatusFilter {
     /// <p>The operation types to include in the filter.</p>
-    #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
@@ -16,7 +15,6 @@ pub struct ResourceRequestStatusFilter {
     /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
 }
 impl ResourceRequestStatusFilter {

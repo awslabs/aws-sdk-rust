@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscriptionFilter {
     /// <p>The name of the subscription filter.</p>
-    #[doc(hidden)]
     pub filter_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    #[doc(hidden)]
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
-    #[doc(hidden)]
     pub distribution: ::std::option::Option<crate::types::Distribution>,
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<i64>,
 }
 impl SubscriptionFilter {

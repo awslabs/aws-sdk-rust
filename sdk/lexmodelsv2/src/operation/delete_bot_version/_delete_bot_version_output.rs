@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBotVersionOutput {
     /// <p>The identifier of the bot that is being deleted.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that is being deleted.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the bot. </p>
-    #[doc(hidden)]
     pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpSetInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the IPSet to retrieve.</p>
-    #[doc(hidden)]
     pub ip_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetIpSetInput {

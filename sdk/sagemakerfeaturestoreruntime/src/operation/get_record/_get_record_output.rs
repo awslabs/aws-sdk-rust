@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordOutput {
     /// <p>The record you requested. A list of <code>FeatureValues</code>.</p>
-    #[doc(hidden)]
     pub record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

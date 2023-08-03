@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReportDefinitionsOutput {
     /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
-    #[doc(hidden)]
     pub report_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
     /// <p>A generic string.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

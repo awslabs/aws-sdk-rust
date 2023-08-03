@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberCountry {
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The supported phone number types. </p>
-    #[doc(hidden)]
     pub supported_phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
 }
 impl PhoneNumberCountry {

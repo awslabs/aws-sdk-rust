@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLabelingJobsForWorkteamInput {
     /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
-    #[doc(hidden)]
     pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
-    #[doc(hidden)]
     pub job_reference_code_contains: ::std::option::Option<::std::string::String>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListLabelingJobsForWorkteamSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListLabelingJobsForWorkteamInput {

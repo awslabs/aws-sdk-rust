@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProtectionInput {
     /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
     /// <p>The ARN should be in one of the following formats:</p>
@@ -16,10 +15,8 @@ pub struct CreateProtectionInput {
     /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
     /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProtectionInput {

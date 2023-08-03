@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateParallelDataInput {
     /// <p>The name of the parallel data resource being updated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    #[doc(hidden)]
     pub parallel_data_config: ::std::option::Option<crate::types::ParallelDataConfig>,
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateParallelDataInput {

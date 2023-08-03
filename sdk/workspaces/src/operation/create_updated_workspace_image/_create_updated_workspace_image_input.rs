@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUpdatedWorkspaceImageInput {
     /// <p>The name of the new updated WorkSpace image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of whether updates for the WorkSpace image are available.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the source WorkSpace image.</p>
-    #[doc(hidden)]
     pub source_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
     /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateUpdatedWorkspaceImageInput {

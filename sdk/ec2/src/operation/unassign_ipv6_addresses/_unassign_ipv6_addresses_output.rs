@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnassignIpv6AddressesOutput {
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
-    #[doc(hidden)]
     pub unassigned_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
-    #[doc(hidden)]
     pub unassigned_ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

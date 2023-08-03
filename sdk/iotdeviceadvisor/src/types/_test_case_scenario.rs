@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestCaseScenario {
     /// <p>Provides test case scenario ID.</p>
-    #[doc(hidden)]
     pub test_case_scenario_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides test case scenario type. Type is one of the following:</p>
     /// <ul>
     /// <li> <p>Advanced</p> </li>
     /// <li> <p>Basic</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub test_case_scenario_type: ::std::option::Option<crate::types::TestCaseScenarioType>,
     /// <p>Provides the test case scenario status. Status is one of the following:</p>
     /// <ul>
@@ -25,13 +23,10 @@ pub struct TestCaseScenario {
     /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TestCaseScenarioStatus>,
     /// <p>Provides test case scenario failure result.</p>
-    #[doc(hidden)]
     pub failure: ::std::option::Option<::std::string::String>,
     /// <p>Provides test case scenario system messages if any.</p>
-    #[doc(hidden)]
     pub system_message: ::std::option::Option<::std::string::String>,
 }
 impl TestCaseScenario {

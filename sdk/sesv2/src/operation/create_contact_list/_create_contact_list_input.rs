@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContactListInput {
     /// <p>The name of the contact list.</p>
-    #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    #[doc(hidden)]
     pub topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
     /// <p>A description of what the contact list is about.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with a contact list.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContactListInput {

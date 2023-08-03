@@ -5,16 +5,12 @@
 pub struct GetConsolidatedReportInput {
     /// <p>The format of the consolidated report.</p>
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::ReportFormat>,
     /// <p>Set to <code>true</code> to have shared resources included in the report.</p>
-    #[doc(hidden)]
     pub include_shared_resources: ::std::option::Option<bool>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetConsolidatedReportInput {

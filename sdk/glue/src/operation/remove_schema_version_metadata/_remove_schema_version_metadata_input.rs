@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveSchemaVersionMetadataInput {
     /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
     /// <p>The unique version ID of the schema version.</p>
-    #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the metadata key.</p>
-    #[doc(hidden)]
     pub metadata_key_value: ::std::option::Option<crate::types::MetadataKeyValuePair>,
 }
 impl RemoveSchemaVersionMetadataInput {

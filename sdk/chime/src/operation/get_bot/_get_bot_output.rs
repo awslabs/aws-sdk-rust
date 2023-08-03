@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBotOutput {
     /// <p>The chat bot details.</p>
-    #[doc(hidden)]
     pub bot: ::std::option::Option<crate::types::Bot>,
     _request_id: Option<String>,
 }

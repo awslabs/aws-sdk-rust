@@ -9,13 +9,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The average upload bandwidth rate limit in bits per second.</p>
-    #[doc(hidden)]
     pub average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
     /// <p>The average download bandwidth rate limit in bits per second.</p>
-    #[doc(hidden)]
     pub average_download_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
 }
 impl UpdateBandwidthRateLimitInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadForecast {
     /// <p>The timestamps for the data points, in UTC format.</p>
-    #[doc(hidden)]
     pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>The values of the data points.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The metric specification for the load forecast.</p>
-    #[doc(hidden)]
     pub metric_specification: ::std::option::Option<crate::types::PredictiveScalingMetricSpecification>,
 }
 impl LoadForecast {

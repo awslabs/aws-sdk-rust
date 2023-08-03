@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedQueuedPurchaseDeletion {
     /// <p>The error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
     /// <p>The ID of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
 }
 impl FailedQueuedPurchaseDeletion {

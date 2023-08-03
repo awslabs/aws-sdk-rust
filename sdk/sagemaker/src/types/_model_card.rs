@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ModelCard {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    #[doc(hidden)]
     pub model_card_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the model card.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card.</p>
-    #[doc(hidden)]
     pub model_card_version: i32,
     /// <p>The content of the model card. Content uses the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -23,34 +19,24 @@ pub struct ModelCard {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>The security configuration used to protect model card data.</p>
-    #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
     /// <p>The date and time that the model card was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The date and time that the model card was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Key-value pairs used to manage metadata for the model card.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The unique name (ID) of the model.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The risk rating of the model. Different organizations might have different criteria for model card risk ratings. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-risk-rating.html">Risk ratings</a>.</p>
-    #[doc(hidden)]
     pub risk_rating: ::std::option::Option<::std::string::String>,
     /// <p>The model package group that contains the model package. Only relevant for model cards created for model packages in the Amazon SageMaker Model Registry. </p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelCard {

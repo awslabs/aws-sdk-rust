@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDocumentationPartsInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DocumentationPartType>,
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
-    #[doc(hidden)]
     pub name_query: ::std::option::Option<::std::string::String>,
     /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The current pagination position in the paged result set.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
-    #[doc(hidden)]
     pub location_status: ::std::option::Option<crate::types::LocationStatusType>,
 }
 impl GetDocumentationPartsInput {

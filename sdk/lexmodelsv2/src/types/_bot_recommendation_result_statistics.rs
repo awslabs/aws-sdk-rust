@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotRecommendationResultStatistics {
     /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
-    #[doc(hidden)]
     pub intents: ::std::option::Option<crate::types::IntentStatistics>,
     /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
-    #[doc(hidden)]
     pub slot_types: ::std::option::Option<crate::types::SlotTypeStatistics>,
 }
 impl BotRecommendationResultStatistics {

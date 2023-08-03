@@ -6,17 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedVariablesImpactExplanation {
     /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
-    #[doc(hidden)]
     pub event_variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
-    #[doc(hidden)]
     pub relative_impact: ::std::option::Option<::std::string::String>,
     /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
     /// <li> <p>A positive value indicates that the variables drove the risk score up.</p> </li>
     /// <li> <p>A negative value indicates that the variables drove the risk score down.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub log_odds_impact: ::std::option::Option<f32>,
 }
 impl AggregatedVariablesImpactExplanation {

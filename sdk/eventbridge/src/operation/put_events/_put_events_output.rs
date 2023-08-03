@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventsOutput {
     /// <p>The number of failed entries.</p>
-    #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
     /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>,
     _request_id: Option<String>,
 }

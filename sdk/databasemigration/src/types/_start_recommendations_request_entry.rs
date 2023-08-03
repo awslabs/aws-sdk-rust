@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRecommendationsRequestEntry {
     /// <p>The identifier of the source database.</p>
-    #[doc(hidden)]
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The required target engine settings.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::RecommendationSettings>,
 }
 impl StartRecommendationsRequestEntry {

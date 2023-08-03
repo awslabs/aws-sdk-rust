@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnalyzerInput {
     /// <p>The name of the analyzer to delete.</p>
-    #[doc(hidden)]
     pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>A client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnalyzerInput {

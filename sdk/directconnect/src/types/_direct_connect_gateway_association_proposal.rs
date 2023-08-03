@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectConnectGatewayAssociationProposal {
     /// <p>The ID of the association proposal.</p>
-    #[doc(hidden)]
     pub proposal_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
@@ -19,16 +16,12 @@ pub struct DirectConnectGatewayAssociationProposal {
     /// <li> <p> <code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// <li> <p> <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub proposal_state: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>,
     /// <p>Information about the associated gateway.</p>
-    #[doc(hidden)]
     pub associated_gateway: ::std::option::Option<crate::types::AssociatedGateway>,
     /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub existing_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub requested_allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
 }
 impl DirectConnectGatewayAssociationProposal {

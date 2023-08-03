@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrustStoreCertificatesOutput {
     /// <p>The certificate list.</p>
-    #[doc(hidden)]
     pub certificate_list: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
     /// <p>The ARN of the trust store.</p>
-    #[doc(hidden)]
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.&gt;</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

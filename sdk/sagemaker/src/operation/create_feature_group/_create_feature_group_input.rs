@@ -8,7 +8,6 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p>
     /// <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p>
@@ -17,7 +16,6 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub record_identifier_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>
     /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>
@@ -26,18 +24,15 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>
     /// <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_time_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>. </p>
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
     /// <p>The default value is <code>False</code>.</p>
-    #[doc(hidden)]
     pub online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
     /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>
     /// <ul>
@@ -47,16 +42,12 @@ pub struct CreateFeatureGroupInput {
     /// <li> <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p> </li>
     /// </ul>
     /// <p>To learn more about this parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
-    #[doc(hidden)]
     pub offline_store_config: ::std::option::Option<crate::types::OfflineStoreConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFeatureGroupInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRobotApplicationInput {
     /// <p>The application information for the robot application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the robot application.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    #[doc(hidden)]
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>The revision id for the robot application.</p>
-    #[doc(hidden)]
     pub current_revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The object that contains the Docker image URI for your robot application.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
 }
 impl UpdateRobotApplicationInput {

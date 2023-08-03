@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementOutput {
     /// <p>The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering of the request statements.</p>
-    #[doc(hidden)]
     pub responses: ::std::option::Option<::std::vec::Vec<crate::types::BatchStatementResponse>>,
     /// <p>The capacity units consumed by the entire operation. The values of the list are ordered according to the ordering of the statements.</p>
-    #[doc(hidden)]
     pub consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     _request_id: Option<String>,
 }

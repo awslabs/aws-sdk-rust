@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LdapsSettingInfo {
     /// <p>The state of the LDAPS settings.</p>
-    #[doc(hidden)]
     pub ldaps_status: ::std::option::Option<crate::types::LdapsStatus>,
     /// <p>Describes a state change for LDAPS.</p>
-    #[doc(hidden)]
     pub ldaps_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the LDAPS settings were last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LdapsSettingInfo {

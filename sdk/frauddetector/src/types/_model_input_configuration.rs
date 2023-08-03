@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelInputConfiguration {
     /// <p>The event type name.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::ModelInputDataFormat>,
     /// <p>The event variables.</p>
-    #[doc(hidden)]
     pub use_event_variables: ::std::option::Option<bool>,
     /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for variable names in the template will be replaced with the variable values before being sent to SageMaker. </p>
-    #[doc(hidden)]
     pub json_input_template: ::std::option::Option<::std::string::String>,
     /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation, the placeholders for variable-names in the template will be replaced with the variable values before being sent to SageMaker. </p>
-    #[doc(hidden)]
     pub csv_input_template: ::std::option::Option<::std::string::String>,
 }
 impl ModelInputConfiguration {

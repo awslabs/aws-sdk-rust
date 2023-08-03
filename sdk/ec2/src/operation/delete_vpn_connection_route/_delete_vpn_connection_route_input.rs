@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpnConnectionRouteInput {
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpnConnectionRouteInput {

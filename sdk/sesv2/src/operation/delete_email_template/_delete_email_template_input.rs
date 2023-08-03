@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEmailTemplateInput {
     /// <p>The name of the template to be deleted.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEmailTemplateInput {

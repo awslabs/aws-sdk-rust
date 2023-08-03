@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedNodeOfferingInput {
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
-    #[doc(hidden)]
     pub reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of reserved nodes that you want to purchase.</p>
     /// <p>Default: <code>1</code> </p>
-    #[doc(hidden)]
     pub node_count: ::std::option::Option<i32>,
 }
 impl PurchaseReservedNodeOfferingInput {

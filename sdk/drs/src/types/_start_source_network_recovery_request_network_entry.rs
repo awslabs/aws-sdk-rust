@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartSourceNetworkRecoveryRequestNetworkEntry {
     /// <p>The ID of the Source Network you want to recover.</p>
-    #[doc(hidden)]
     pub source_network_id: ::std::option::Option<::std::string::String>,
     /// <p>CloudFormation stack name to be used for recovering the network.</p>
-    #[doc(hidden)]
     pub cfn_stack_name: ::std::option::Option<::std::string::String>,
 }
 impl StartSourceNetworkRecoveryRequestNetworkEntry {

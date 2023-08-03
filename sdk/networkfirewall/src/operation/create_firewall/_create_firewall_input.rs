@@ -4,35 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    #[doc(hidden)]
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
-    #[doc(hidden)]
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
     /// <p>You can't change this setting after you create the firewall. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
-    #[doc(hidden)]
     pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub delete_protection: ::std::option::Option<bool>,
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub subnet_change_protection: ::std::option::Option<bool>,
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub firewall_policy_change_protection: ::std::option::Option<bool>,
     /// <p>A description of the firewall.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateFirewallInput {

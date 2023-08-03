@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FinalAutoMlJobObjectiveMetric {
     /// <p>The type of metric with the best result.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AutoMlJobObjectiveType>,
     /// <p>The name of the metric with the best result. For a description of the possible objective metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
     /// <p>The value of the metric with the best result.</p>
-    #[doc(hidden)]
     pub value: f32,
     /// <p>The name of the standard metric. For a description of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot candidate metrics</a>.</p>
-    #[doc(hidden)]
     pub standard_metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
 }
 impl FinalAutoMlJobObjectiveMetric {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartStreamingSessionOutput {
     /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<crate::types::StreamingSession>,
     _request_id: Option<String>,
 }

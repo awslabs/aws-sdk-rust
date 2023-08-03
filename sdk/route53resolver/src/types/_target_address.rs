@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetAddress {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p> One IPv6 address that you want to forward DNS queries to. </p>
-    #[doc(hidden)]
     pub ipv6: ::std::option::Option<::std::string::String>,
 }
 impl TargetAddress {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageFile {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The file type of the image.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImageFileType>,
 }
 impl ImageFile {

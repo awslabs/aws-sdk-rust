@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProposalsInput {
     /// <p> The unique identifier of the network. </p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of proposals to return. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListProposalsInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityPoolUsageOutput {
     /// Usage information for the identity pools.
-    #[doc(hidden)]
     pub identity_pool_usages: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>,
     /// The maximum number of results to be returned.
-    #[doc(hidden)]
     pub max_results: i32,
     /// Total number of identities for the identity pool.
-    #[doc(hidden)]
     pub count: i32,
     /// A pagination token for obtaining the next page of results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

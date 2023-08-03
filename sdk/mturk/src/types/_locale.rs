@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Locale {
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
-    #[doc(hidden)]
     pub subdivision: ::std::option::Option<::std::string::String>,
 }
 impl Locale {

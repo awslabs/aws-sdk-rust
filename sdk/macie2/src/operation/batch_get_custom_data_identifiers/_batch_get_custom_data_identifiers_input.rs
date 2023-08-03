@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCustomDataIdentifiersInput {
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
-    #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetCustomDataIdentifiersInput {

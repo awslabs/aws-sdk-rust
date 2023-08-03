@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
-    #[doc(hidden)]
     pub blacklist_report: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::BlacklistEntry>>>,
     _request_id: Option<String>,
 }

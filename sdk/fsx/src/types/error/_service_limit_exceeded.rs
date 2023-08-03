@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceLimitExceeded {
     /// <p>Enumeration of the service limit that was exceeded. </p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<crate::types::ServiceLimit>,
     /// <p>A detailed error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

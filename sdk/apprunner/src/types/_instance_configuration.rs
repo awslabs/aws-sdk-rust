@@ -6,14 +6,11 @@
 pub struct InstanceConfiguration {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code> </p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code> </p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
-    #[doc(hidden)]
     pub instance_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl InstanceConfiguration {

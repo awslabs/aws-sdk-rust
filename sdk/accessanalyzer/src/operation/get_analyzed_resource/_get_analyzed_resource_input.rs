@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnalyzedResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
-    #[doc(hidden)]
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource to retrieve information about.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAnalyzedResourceInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was modified.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>,
     _request_id: Option<String>,
 }

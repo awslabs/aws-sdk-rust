@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Object {
     /// <p>The bucket containing the object.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key of the object.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The etag of the object.</p>
-    #[doc(hidden)]
     pub etag: ::std::option::Option<::std::string::String>,
 }
 impl S3Object {

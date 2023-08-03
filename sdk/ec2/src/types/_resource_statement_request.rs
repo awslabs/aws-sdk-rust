@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceStatementRequest {
     /// <p>The resources.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The resource types.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResourceStatementRequest {

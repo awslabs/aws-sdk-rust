@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanDevice {
     /// <p>The DevEUI value.</p>
-    #[doc(hidden)]
     pub dev_eui: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the device profile for the new wireless device.</p>
-    #[doc(hidden)]
     pub device_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service profile.</p>
-    #[doc(hidden)]
     pub service_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>OTAA device object for v1.1 for create APIs</p>
-    #[doc(hidden)]
     pub otaa_v1_1: ::std::option::Option<crate::types::OtaaV11>,
     /// <p>OTAA device object for create APIs for v1.0.x</p>
-    #[doc(hidden)]
     pub otaa_v1_0_x: ::std::option::Option<crate::types::OtaaV10X>,
     /// <p>ABP device object for create APIs for v1.1</p>
-    #[doc(hidden)]
     pub abp_v1_1: ::std::option::Option<crate::types::AbpV11>,
     /// <p>LoRaWAN object for create APIs</p>
-    #[doc(hidden)]
     pub abp_v1_0_x: ::std::option::Option<crate::types::AbpV10X>,
     /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
-    #[doc(hidden)]
     pub f_ports: ::std::option::Option<crate::types::FPorts>,
 }
 impl LoRaWanDevice {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataflowEndpointGroupsOutput {
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of dataflow endpoint groups.</p>
-    #[doc(hidden)]
     pub dataflow_endpoint_group_list: ::std::option::Option<::std::vec::Vec<crate::types::DataflowEndpointListItem>>,
     _request_id: Option<String>,
 }

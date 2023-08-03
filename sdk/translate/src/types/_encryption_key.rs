@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionKey {
     /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EncryptionKeyType>,
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionKey {

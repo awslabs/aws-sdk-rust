@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveAliasInput {
     /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
-    #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
 }
 impl ResolveAliasInput {

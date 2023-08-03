@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
-    #[doc(hidden)]
     pub tag_key_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

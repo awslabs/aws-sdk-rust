@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTestExecutionOutput {
     /// <p>The unique identifier of the test set execution.</p>
-    #[doc(hidden)]
     pub test_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time for the test set execution.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test set Id for the test set execution.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The target bot for the test set execution.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TestExecutionTarget>,
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Amazon Lex Runtime API is used. Whereas for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
-    #[doc(hidden)]
     pub api_mode: ::std::option::Option<crate::types::TestExecutionApiMode>,
     /// <p>Indicates whether audio or text is used.</p>
-    #[doc(hidden)]
     pub test_execution_modality: ::std::option::Option<crate::types::TestExecutionModality>,
     _request_id: Option<String>,
 }

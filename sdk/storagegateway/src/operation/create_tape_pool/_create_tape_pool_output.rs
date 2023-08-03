@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTapePoolOutput {
     /// <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of tape pools for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

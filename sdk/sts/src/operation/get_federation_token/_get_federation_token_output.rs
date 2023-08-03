@@ -7,13 +7,10 @@ pub struct GetFederationTokenOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy. </p>
-    #[doc(hidden)]
     pub federated_user: ::std::option::Option<crate::types::FederatedUser>,
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
-    #[doc(hidden)]
     pub packed_policy_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

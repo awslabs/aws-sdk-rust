@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginGroup {
     /// <p>Provides the criteria for an origin group to fail over.</p>
-    #[doc(hidden)]
     pub failover_criteria: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailover>,
 }
 impl AwsCloudFrontDistributionOriginGroup {

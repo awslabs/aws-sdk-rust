@@ -14,13 +14,10 @@ pub struct ShardFilter {
     /// <li> <p> <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp is less than or equal to the given timestamp and end timestamp is greater than or equal to the given timestamp or still open. </p> </li>
     /// <li> <p> <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ShardFilterType>,
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
-    #[doc(hidden)]
     pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ShardFilter {

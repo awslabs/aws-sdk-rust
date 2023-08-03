@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInputInput {
     /// Unique ID of the input
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInputInput {

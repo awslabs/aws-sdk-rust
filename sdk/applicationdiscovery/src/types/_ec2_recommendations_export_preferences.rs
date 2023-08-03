@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2RecommendationsExportPreferences {
     /// <p> If set to true, the export <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestSyntax">preferences</a> is set to <code>Ec2RecommendationsExportPreferences</code>. </p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p> The recommended EC2 instance type that matches the CPU usage metric of server performance data. </p>
-    #[doc(hidden)]
     pub cpu_performance_metric_basis: ::std::option::Option<crate::types::UsageMetricBasis>,
     /// <p> The recommended EC2 instance type that matches the Memory usage metric of server performance data. </p>
-    #[doc(hidden)]
     pub ram_performance_metric_basis: ::std::option::Option<crate::types::UsageMetricBasis>,
     /// <p> The target tenancy to use for your recommended EC2 instances. </p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p> An array of instance types to exclude from recommendations. </p>
-    #[doc(hidden)]
     pub excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    #[doc(hidden)]
     pub preferred_region: ::std::option::Option<::std::string::String>,
     /// <p> The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred. </p>
-    #[doc(hidden)]
     pub reserved_instance_options: ::std::option::Option<crate::types::ReservedInstanceOptions>,
 }
 impl Ec2RecommendationsExportPreferences {

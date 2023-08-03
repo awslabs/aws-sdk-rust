@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrialOutput {
     /// <p>The name of the trial.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
-    #[doc(hidden)]
     pub trial_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment the trial is part of.</p>
-    #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the job type.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::TrialSource>,
     /// <p>When the trial was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who created the trial.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the trial was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who last modified the trial.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     _request_id: Option<String>,
 }

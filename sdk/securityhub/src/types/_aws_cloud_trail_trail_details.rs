@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudTrailTrailDetails {
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the trail has custom event selectors.</p>
-    #[doc(hidden)]
     pub has_custom_event_selectors: bool,
     /// <p>The Region where the trail was created.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
-    #[doc(hidden)]
     pub include_global_service_events: bool,
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
-    #[doc(hidden)]
     pub is_multi_region_trail: bool,
     /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub is_organization_trail: bool,
     /// <p>The KMS key ID to use to encrypt the logs.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
-    #[doc(hidden)]
     pub log_file_validation_enabled: bool,
     /// <p>The name of the trail.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket where the log files are published.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
-    #[doc(hidden)]
     pub sns_topic_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the trail.</p>
-    #[doc(hidden)]
     pub trail_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudTrailTrailDetails {

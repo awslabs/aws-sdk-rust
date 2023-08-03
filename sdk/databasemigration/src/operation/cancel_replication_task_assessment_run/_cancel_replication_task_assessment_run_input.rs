@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelReplicationTaskAssessmentRunInput {
     /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
-    #[doc(hidden)]
     pub replication_task_assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl CancelReplicationTaskAssessmentRunInput {

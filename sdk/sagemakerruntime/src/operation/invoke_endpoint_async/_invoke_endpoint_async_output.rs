@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokeEndpointAsyncOutput {
     /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
-    #[doc(hidden)]
     pub inference_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
-    #[doc(hidden)]
     pub failure_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

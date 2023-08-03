@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectProtectiveEquipmentOutput {
     /// <p>The version number of the PPE detection model used to detect PPE in the image.</p>
-    #[doc(hidden)]
     pub protective_equipment_model_version: ::std::option::Option<::std::string::String>,
     /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
-    #[doc(hidden)]
     pub persons: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentPerson>>,
     /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::ProtectiveEquipmentSummary>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegistryPolicyOutput {
     /// <p>The ID of the registry.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON text of the permissions policy for a registry.</p>
-    #[doc(hidden)]
     pub policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

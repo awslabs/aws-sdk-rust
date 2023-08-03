@@ -8,35 +8,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>AutoScalingConfigurationName</code>.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_revision: i32,
     /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>AutoScalingConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
-    #[doc(hidden)]
     pub latest: bool,
     /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AutoScalingConfigurationStatus>,
     /// <p>The maximum number of concurrent requests that an instance processes. If the number of concurrent requests exceeds this limit, App Runner scales the service up.</p>
-    #[doc(hidden)]
     pub max_concurrency: i32,
     /// <p>The minimum number of instances that App Runner provisions for a service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-    #[doc(hidden)]
     pub min_size: i32,
     /// <p>The maximum number of instances that a service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-    #[doc(hidden)]
     pub max_size: i32,
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
-    #[doc(hidden)]
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AutoScalingConfiguration {

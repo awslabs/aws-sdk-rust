@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2Capacity {
     /// <p> The family of the EC2 capacity. </p>
-    #[doc(hidden)]
     pub family: ::std::option::Option<::std::string::String>,
     /// <p> The maximum size of the EC2 capacity. </p>
-    #[doc(hidden)]
     pub max_size: ::std::option::Option<::std::string::String>,
     /// <p> The quantity of the EC2 capacity. </p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<::std::string::String>,
 }
 impl Ec2Capacity {

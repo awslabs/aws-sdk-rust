@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DvbNitSettings {
     /// The numeric value placed in the Network Information Table (NIT).
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<i32>,
     /// The network name text placed in the network_name_descriptor inside the Network Information Table. Maximum length is 256 characters.
-    #[doc(hidden)]
     pub network_name: ::std::option::Option<::std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream.
-    #[doc(hidden)]
     pub nit_interval: ::std::option::Option<i32>,
 }
 impl DvbNitSettings {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldLabelType {
     /// <p>Indicates the field that is targeted by the field label.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of the field label.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl FieldLabelType {

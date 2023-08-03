@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeInferenceConfig {
     /// <p>The instance type the model is deployed to.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
 }
 impl RealTimeInferenceConfig {

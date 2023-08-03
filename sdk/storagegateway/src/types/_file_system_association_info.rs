@@ -5,33 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemAssociationInfo {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-    #[doc(hidden)]
     pub file_system_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the backend Amazon FSx file system used for storing file data. For information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a> in the <i>Amazon FSx API Reference</i>.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the file system association. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-    #[doc(hidden)]
     pub file_system_association_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
-    #[doc(hidden)]
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The refresh cache information for the file share or FSx file systems.</p>
-    #[doc(hidden)]
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
     /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>
     /// </note>
-    #[doc(hidden)]
     pub endpoint_network_configuration: ::std::option::Option<crate::types::EndpointNetworkConfiguration>,
     /// <p>An array containing the FileSystemAssociationStatusDetail data type, which provides detailed information on file system association status.</p>
-    #[doc(hidden)]
     pub file_system_association_status_details: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationStatusDetail>>,
 }
 impl FileSystemAssociationInfo {

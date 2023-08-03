@@ -5,15 +5,12 @@
 pub struct DescribeRuleGroupOutput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]
     pub update_token: ::std::option::Option<::std::string::String>,
     /// <p>The object that defines the rules in a rule group. This, along with <code>RuleGroupResponse</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
     /// <p>Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. </p>
     /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall. </p>
-    #[doc(hidden)]
     pub rule_group: ::std::option::Option<crate::types::RuleGroup>,
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
-    #[doc(hidden)]
     pub rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,
 }

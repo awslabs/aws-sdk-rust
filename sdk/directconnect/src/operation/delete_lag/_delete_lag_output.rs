@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    #[doc(hidden)]
     pub connections_bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
-    #[doc(hidden)]
     pub number_of_connections: i32,
     /// <p>The ID of the LAG.</p>
-    #[doc(hidden)]
     pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the LAG.</p>
-    #[doc(hidden)]
     pub lag_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
@@ -29,53 +24,37 @@ pub struct DeleteLagOutput {
     /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lag_state: ::std::option::Option<crate::types::LagState>,
     /// <p>The location of the LAG.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
-    #[doc(hidden)]
     pub minimum_links: i32,
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    #[doc(hidden)]
     pub aws_device: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    #[doc(hidden)]
     pub aws_device_v2: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    #[doc(hidden)]
     pub aws_logical_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
-    #[doc(hidden)]
     pub connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     /// <p>Indicates whether the LAG can host other connections.</p>
-    #[doc(hidden)]
     pub allows_hosted_connections: bool,
     /// <p>Indicates whether jumbo frames are supported.</p>
-    #[doc(hidden)]
     pub jumbo_frame_capable: ::std::option::Option<bool>,
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    #[doc(hidden)]
     pub has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
     /// <p>The tags associated with the LAG.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the LAG.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
-    #[doc(hidden)]
     pub mac_sec_capable: ::std::option::Option<bool>,
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    #[doc(hidden)]
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     _request_id: Option<String>,
 }

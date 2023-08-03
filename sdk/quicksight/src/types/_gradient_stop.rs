@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GradientStop {
     /// <p>Determines gradient offset value.</p>
-    #[doc(hidden)]
     pub gradient_offset: f64,
     /// <p>Determines the data value.</p>
-    #[doc(hidden)]
     pub data_value: ::std::option::Option<f64>,
     /// <p>Determines the color.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
 }
 impl GradientStop {

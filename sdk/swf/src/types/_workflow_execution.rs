@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecution {
     /// <p>The user defined identifier associated with the workflow execution.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>A system-generated unique identifier for the workflow execution.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecution {

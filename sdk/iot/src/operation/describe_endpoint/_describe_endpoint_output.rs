@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointOutput {
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
-    #[doc(hidden)]
     pub endpoint_address: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

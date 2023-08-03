@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelMlTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the task run.</p>
-    #[doc(hidden)]
     pub task_run_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelMlTaskRunInput {

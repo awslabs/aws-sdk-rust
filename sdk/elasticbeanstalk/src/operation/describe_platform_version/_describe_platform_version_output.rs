@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePlatformVersionOutput {
     /// <p>Detailed information about the platform version.</p>
-    #[doc(hidden)]
     pub platform_description: ::std::option::Option<crate::types::PlatformDescription>,
     _request_id: Option<String>,
 }

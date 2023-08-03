@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VocabularySummary {
     /// <p>A unique name of the custom vocabulary.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::VocabularyLanguageCode>,
     /// <p>The current state of the custom vocabulary.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VocabularyState>,
     /// <p>The timestamp when the custom vocabulary was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason why the custom vocabulary was not created.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl VocabularySummary {

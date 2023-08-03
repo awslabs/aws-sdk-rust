@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceInput {
     /// <p>The ARN of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a registered user's device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeviceInput {

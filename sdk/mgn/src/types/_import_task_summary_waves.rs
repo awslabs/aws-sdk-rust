@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTaskSummaryWaves {
     /// <p>Import task summery waves created count.</p>
-    #[doc(hidden)]
     pub created_count: i64,
     /// <p>Import task summery waves modified count.</p>
-    #[doc(hidden)]
     pub modified_count: i64,
 }
 impl ImportTaskSummaryWaves {

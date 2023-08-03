@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegrateServices {
     /// <p>Information about the integration with Amazon Athena.</p>
-    #[doc(hidden)]
     pub athena_integrations: ::std::option::Option<::std::vec::Vec<crate::types::AthenaIntegration>>,
 }
 impl IntegrateServices {

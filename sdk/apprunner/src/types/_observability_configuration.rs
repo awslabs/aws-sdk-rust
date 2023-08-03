@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObservabilityConfiguration {
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
-    #[doc(hidden)]
     pub observability_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided observability configuration name. It can be used in multiple revisions of a configuration.</p>
-    #[doc(hidden)]
     pub observability_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the tracing feature within this observability configuration. If not specified, tracing isn't enabled.</p>
-    #[doc(hidden)]
     pub trace_configuration: ::std::option::Option<crate::types::TraceConfiguration>,
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
-    #[doc(hidden)]
     pub observability_configuration_revision: i32,
     /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>ObservabilityConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
-    #[doc(hidden)]
     pub latest: bool,
     /// <p>The current state of the observability configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ObservabilityConfigurationStatus>,
     /// <p>The time when the observability configuration was created. It's in Unix time stamp format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
-    #[doc(hidden)]
     pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ObservabilityConfiguration {

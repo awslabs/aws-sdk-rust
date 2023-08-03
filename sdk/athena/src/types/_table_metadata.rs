@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableMetadata {
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the table was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the table was accessed.</p>
-    #[doc(hidden)]
     pub last_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
-    #[doc(hidden)]
     pub table_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of the columns in the table.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>A list of the partition keys in the table.</p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>A set of custom key/value pairs for table properties.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TableMetadata {

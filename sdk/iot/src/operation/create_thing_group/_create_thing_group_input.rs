@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThingGroupInput {
     /// <p>The thing group name to create.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parent thing group.</p>
-    #[doc(hidden)]
     pub parent_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing group properties.</p>
-    #[doc(hidden)]
     pub thing_group_properties: ::std::option::Option<crate::types::ThingGroupProperties>,
     /// <p>Metadata which can be used to manage the thing group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateThingGroupInput {

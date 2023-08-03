@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupsOlderThanOrderingIdInput {
     /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
-    #[doc(hidden)]
     pub ordering_id: ::std::option::Option<i64>,
     /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListGroupsOlderThanOrderingIdInput {

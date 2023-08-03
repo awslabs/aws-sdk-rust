@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateCustomerGatewayOutput {
     /// <p>The customer gateway association.</p>
-    #[doc(hidden)]
     pub customer_gateway_association: ::std::option::Option<crate::types::CustomerGatewayAssociation>,
     _request_id: Option<String>,
 }

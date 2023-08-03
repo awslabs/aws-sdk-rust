@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetRelationalDatabaseMasterUserPasswordOutput {
     /// <p>The master user password for the <code>password version</code> specified.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the specified version of the master user password was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

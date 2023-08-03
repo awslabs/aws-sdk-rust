@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetMetricDataInput {
     /// <p>A list of queries for metrics to be retrieved.</p>
-    #[doc(hidden)]
     pub queries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
 }
 impl BatchGetMetricDataInput {

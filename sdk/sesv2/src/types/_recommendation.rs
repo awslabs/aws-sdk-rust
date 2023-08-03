@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RecommendationType>,
     /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecommendationStatus>,
     /// <p>The first time this issue was encountered and the recommendation was generated.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the recommendation was updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
-    #[doc(hidden)]
     pub impact: ::std::option::Option<crate::types::RecommendationImpact>,
 }
 impl Recommendation {

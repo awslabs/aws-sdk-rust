@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePolicyTemplateInput {
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy template that you want to update.</p>
-    #[doc(hidden)]
     pub policy_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a new description to apply to the policy template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
@@ -24,7 +21,6 @@ pub struct UpdatePolicyTemplateInput {
     /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
     /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePolicyTemplateInput {

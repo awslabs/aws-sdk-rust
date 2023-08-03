@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootCacheClusterInput {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    #[doc(hidden)]
     pub cache_node_ids_to_reboot: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RebootCacheClusterInput {

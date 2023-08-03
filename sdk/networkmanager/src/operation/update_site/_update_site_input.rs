@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateSiteInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of your site.</p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The site location:</p>
     /// <ul>
@@ -19,7 +16,6 @@ pub struct UpdateSiteInput {
     /// <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>
     /// <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
 }
 impl UpdateSiteInput {

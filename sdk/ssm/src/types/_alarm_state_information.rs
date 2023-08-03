@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmStateInformation {
     /// <p>The name of your CloudWatch alarm.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of your CloudWatch alarm.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ExternalAlarmState>,
 }
 impl AlarmStateInformation {

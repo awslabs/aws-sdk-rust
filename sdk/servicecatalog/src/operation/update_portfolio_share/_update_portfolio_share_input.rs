@@ -8,22 +8,16 @@ pub struct UpdatePortfolioShareInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the organization node.</p>
-    #[doc(hidden)]
     pub organization_node: ::std::option::Option<crate::types::OrganizationNode>,
     /// <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
-    #[doc(hidden)]
     pub share_tag_options: ::std::option::Option<bool>,
     /// <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
-    #[doc(hidden)]
     pub share_principals: ::std::option::Option<bool>,
 }
 impl UpdatePortfolioShareInput {

@@ -13,10 +13,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailWorkflowExecutionDecisionAttributes {
     /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p> Details of the failure.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
 }
 impl FailWorkflowExecutionDecisionAttributes {

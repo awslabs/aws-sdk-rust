@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorAdditionalConfigurationResult {
     /// <p>Name of the additional configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>,
     /// <p>Status of the additional configuration.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The timestamp at which the additional configuration was last updated. This is in UTC format.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DetectorAdditionalConfigurationResult {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksInfo {
     /// <p>The namespaces of the Amazon EKS cluster.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl EksInfo {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReorderReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to reorder.</p>
-    #[doc(hidden)]
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
-    #[doc(hidden)]
     pub rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReorderReceiptRuleSetInput {

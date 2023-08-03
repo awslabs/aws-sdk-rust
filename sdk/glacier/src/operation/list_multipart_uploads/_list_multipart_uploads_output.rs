@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultipartUploadsOutput {
     /// <p>A list of in-progress multipart uploads.</p>
-    #[doc(hidden)]
     pub uploads_list: ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>>,
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

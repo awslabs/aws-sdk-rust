@@ -5,211 +5,142 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
-    #[doc(hidden)]
     pub athena_connector_source: ::std::option::Option<crate::types::AthenaConnectorSource>,
     /// <p>Specifies a connector to a JDBC data source.</p>
-    #[doc(hidden)]
     pub jdbc_connector_source: ::std::option::Option<crate::types::JdbcConnectorSource>,
     /// <p>Specifies a connector to an Apache Spark data source.</p>
-    #[doc(hidden)]
     pub spark_connector_source: ::std::option::Option<crate::types::SparkConnectorSource>,
     /// <p>Specifies a data store in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub catalog_source: ::std::option::Option<crate::types::CatalogSource>,
     /// <p>Specifies an Amazon Redshift data store.</p>
-    #[doc(hidden)]
     pub redshift_source: ::std::option::Option<crate::types::RedshiftSource>,
     /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub s3_catalog_source: ::std::option::Option<crate::types::S3CatalogSource>,
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_csv_source: ::std::option::Option<crate::types::S3CsvSource>,
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_json_source: ::std::option::Option<crate::types::S3JsonSource>,
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_parquet_source: ::std::option::Option<crate::types::S3ParquetSource>,
     /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub relational_catalog_source: ::std::option::Option<crate::types::RelationalCatalogSource>,
     /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub dynamo_db_catalog_source: ::std::option::Option<crate::types::DynamoDbCatalogSource>,
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
-    #[doc(hidden)]
     pub jdbc_connector_target: ::std::option::Option<crate::types::JdbcConnectorTarget>,
     /// <p>Specifies a target that uses an Apache Spark connector.</p>
-    #[doc(hidden)]
     pub spark_connector_target: ::std::option::Option<crate::types::SparkConnectorTarget>,
     /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
-    #[doc(hidden)]
     pub catalog_target: ::std::option::Option<crate::types::BasicCatalogTarget>,
     /// <p>Specifies a target that uses Amazon Redshift.</p>
-    #[doc(hidden)]
     pub redshift_target: ::std::option::Option<crate::types::RedshiftTarget>,
     /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub s3_catalog_target: ::std::option::Option<crate::types::S3CatalogTarget>,
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
-    #[doc(hidden)]
     pub s3_glue_parquet_target: ::std::option::Option<crate::types::S3GlueParquetTarget>,
     /// <p>Specifies a data target that writes to Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_direct_target: ::std::option::Option<crate::types::S3DirectTarget>,
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
-    #[doc(hidden)]
     pub apply_mapping: ::std::option::Option<crate::types::ApplyMapping>,
     /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
-    #[doc(hidden)]
     pub select_fields: ::std::option::Option<crate::types::SelectFields>,
     /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
-    #[doc(hidden)]
     pub drop_fields: ::std::option::Option<crate::types::DropFields>,
     /// <p>Specifies a transform that renames a single data property key.</p>
-    #[doc(hidden)]
     pub rename_field: ::std::option::Option<crate::types::RenameField>,
     /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub spigot: ::std::option::Option<crate::types::Spigot>,
     /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
-    #[doc(hidden)]
     pub join: ::std::option::Option<crate::types::Join>,
     /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
-    #[doc(hidden)]
     pub split_fields: ::std::option::Option<crate::types::SplitFields>,
     /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
-    #[doc(hidden)]
     pub select_from_collection: ::std::option::Option<crate::types::SelectFromCollection>,
     /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
-    #[doc(hidden)]
     pub fill_missing_values: ::std::option::Option<crate::types::FillMissingValues>,
     /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
-    #[doc(hidden)]
     pub custom_code: ::std::option::Option<crate::types::CustomCode>,
     /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
-    #[doc(hidden)]
     pub spark_sql: ::std::option::Option<crate::types::SparkSql>,
     /// <p>Specifies a direct Amazon Kinesis data source.</p>
-    #[doc(hidden)]
     pub direct_kinesis_source: ::std::option::Option<crate::types::DirectKinesisSource>,
     /// <p>Specifies an Apache Kafka data store.</p>
-    #[doc(hidden)]
     pub direct_kafka_source: ::std::option::Option<crate::types::DirectKafkaSource>,
     /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub catalog_kinesis_source: ::std::option::Option<crate::types::CatalogKinesisSource>,
     /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
-    #[doc(hidden)]
     pub catalog_kafka_source: ::std::option::Option<crate::types::CatalogKafkaSource>,
     /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
-    #[doc(hidden)]
     pub drop_null_fields: ::std::option::Option<crate::types::DropNullFields>,
     /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
-    #[doc(hidden)]
     pub merge: ::std::option::Option<crate::types::Merge>,
     /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
-    #[doc(hidden)]
     pub union: ::std::option::Option<crate::types::Union>,
     /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
-    #[doc(hidden)]
     pub pii_detection: ::std::option::Option<crate::types::PiiDetection>,
     /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
-    #[doc(hidden)]
     pub aggregate: ::std::option::Option<crate::types::Aggregate>,
     /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
-    #[doc(hidden)]
     pub drop_duplicates: ::std::option::Option<crate::types::DropDuplicates>,
     /// <p>Specifies a data target that writes to a goverened catalog.</p>
-    #[doc(hidden)]
     pub governed_catalog_target: ::std::option::Option<crate::types::GovernedCatalogTarget>,
     /// <p>Specifies a data source in a goverened Data Catalog.</p>
-    #[doc(hidden)]
     pub governed_catalog_source: ::std::option::Option<crate::types::GovernedCatalogSource>,
     /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub microsoft_sql_server_catalog_source: ::std::option::Option<crate::types::MicrosoftSqlServerCatalogSource>,
     /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub my_sql_catalog_source: ::std::option::Option<crate::types::MySqlCatalogSource>,
     /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub oracle_sql_catalog_source: ::std::option::Option<crate::types::OracleSqlCatalogSource>,
     /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub postgre_sql_catalog_source: ::std::option::Option<crate::types::PostgreSqlCatalogSource>,
     /// <p>Specifies a target that uses Microsoft SQL.</p>
-    #[doc(hidden)]
     pub microsoft_sql_server_catalog_target: ::std::option::Option<crate::types::MicrosoftSqlServerCatalogTarget>,
     /// <p>Specifies a target that uses MySQL.</p>
-    #[doc(hidden)]
     pub my_sql_catalog_target: ::std::option::Option<crate::types::MySqlCatalogTarget>,
     /// <p>Specifies a target that uses Oracle SQL.</p>
-    #[doc(hidden)]
     pub oracle_sql_catalog_target: ::std::option::Option<crate::types::OracleSqlCatalogTarget>,
     /// <p>Specifies a target that uses Postgres SQL.</p>
-    #[doc(hidden)]
     pub postgre_sql_catalog_target: ::std::option::Option<crate::types::PostgreSqlCatalogTarget>,
     /// <p>Specifies a custom visual transform created by a user.</p>
-    #[doc(hidden)]
     pub dynamic_transform: ::std::option::Option<crate::types::DynamicTransform>,
     /// <p>Specifies your data quality evaluation criteria.</p>
-    #[doc(hidden)]
     pub evaluate_data_quality: ::std::option::Option<crate::types::EvaluateDataQuality>,
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_catalog_hudi_source: ::std::option::Option<crate::types::S3CatalogHudiSource>,
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub catalog_hudi_source: ::std::option::Option<crate::types::CatalogHudiSource>,
     /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_hudi_source: ::std::option::Option<crate::types::S3HudiSource>,
     /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub s3_hudi_catalog_target: ::std::option::Option<crate::types::S3HudiCatalogTarget>,
     /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_hudi_direct_target: ::std::option::Option<crate::types::S3HudiDirectTarget>,
     /// <p>Specifies the direct JDBC source connection.</p>
-    #[doc(hidden)]
     pub direct_jdbc_source: ::std::option::Option<crate::types::DirectJdbcSource>,
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_catalog_delta_source: ::std::option::Option<crate::types::S3CatalogDeltaSource>,
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub catalog_delta_source: ::std::option::Option<crate::types::CatalogDeltaSource>,
     /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_delta_source: ::std::option::Option<crate::types::S3DeltaSource>,
     /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub s3_delta_catalog_target: ::std::option::Option<crate::types::S3DeltaCatalogTarget>,
     /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_delta_direct_target: ::std::option::Option<crate::types::S3DeltaDirectTarget>,
     /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
-    #[doc(hidden)]
     pub amazon_redshift_source: ::std::option::Option<crate::types::AmazonRedshiftSource>,
     /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
-    #[doc(hidden)]
     pub amazon_redshift_target: ::std::option::Option<crate::types::AmazonRedshiftTarget>,
     /// <p>Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic Frames.</p>
-    #[doc(hidden)]
     pub evaluate_data_quality_multi_frame: ::std::option::Option<crate::types::EvaluateDataQualityMultiFrame>,
     /// <p>Specifies a Glue DataBrew recipe node.</p>
-    #[doc(hidden)]
     pub recipe: ::std::option::Option<crate::types::Recipe>,
     /// <p>Specifies a Snowflake data source.</p>
-    #[doc(hidden)]
     pub snowflake_source: ::std::option::Option<crate::types::SnowflakeSource>,
     /// <p>Specifies a target that writes to a Snowflake data source.</p>
-    #[doc(hidden)]
     pub snowflake_target: ::std::option::Option<crate::types::SnowflakeTarget>,
 }
 impl CodeGenConfigurationNode {

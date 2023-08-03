@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaultStatistics {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
-    #[doc(hidden)]
     pub other_count: ::std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i64>,
 }
 impl FaultStatistics {

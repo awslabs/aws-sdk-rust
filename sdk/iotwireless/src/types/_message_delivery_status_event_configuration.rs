@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageDeliveryStatusEventConfiguration {
     /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkEventNotificationConfigurations>,
     /// <p>Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.</p>
-    #[doc(hidden)]
     pub wireless_device_id_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl MessageDeliveryStatusEventConfiguration {

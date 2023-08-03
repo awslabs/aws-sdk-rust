@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlayerSessionsOutput {
     /// <p>A collection of player session objects created for the added players.</p>
-    #[doc(hidden)]
     pub player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::PlayerSession>>,
     _request_id: Option<String>,
 }

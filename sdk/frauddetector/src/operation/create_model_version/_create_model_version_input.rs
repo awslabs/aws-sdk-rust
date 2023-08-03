@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelVersionInput {
     /// <p>The model ID. </p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The training data source location in Amazon S3. </p>
-    #[doc(hidden)]
     pub training_data_source: ::std::option::Option<crate::types::TrainingDataSourceEnum>,
     /// <p>The training data schema.</p>
-    #[doc(hidden)]
     pub training_data_schema: ::std::option::Option<crate::types::TrainingDataSchema>,
     /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
-    #[doc(hidden)]
     pub external_events_detail: ::std::option::Option<crate::types::ExternalEventsDetail>,
     /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-    #[doc(hidden)]
     pub ingested_events_detail: ::std::option::Option<crate::types::IngestedEventsDetail>,
     /// <p>A collection of key and value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelVersionInput {

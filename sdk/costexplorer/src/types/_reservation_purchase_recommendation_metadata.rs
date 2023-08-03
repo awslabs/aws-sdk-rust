@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    #[doc(hidden)]
     pub generation_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl ReservationPurchaseRecommendationMetadata {

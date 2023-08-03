@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesOutput {
     /// <p>A list of the individual resource policies and the account-level resource policy.</p>
-    #[doc(hidden)]
     pub get_resource_policies_response_list: ::std::option::Option<::std::vec::Vec<crate::types::GluePolicy>>,
     /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

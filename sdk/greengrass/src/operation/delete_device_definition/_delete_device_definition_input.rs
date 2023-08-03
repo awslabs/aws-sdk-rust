@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeviceDefinitionInput {
     /// The ID of the device definition.
-    #[doc(hidden)]
     pub device_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeviceDefinitionInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClientVpnAuthorizationRulesOutput {
     /// <p>Information about the authorization rules.</p>
-    #[doc(hidden)]
     pub authorization_rules: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationRule>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

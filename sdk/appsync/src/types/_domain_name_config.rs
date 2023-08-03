@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainNameConfig {
     /// <p>The domain name.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the <code>DomainName</code> configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain name that AppSync provides.</p>
-    #[doc(hidden)]
     pub appsync_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl DomainNameConfig {

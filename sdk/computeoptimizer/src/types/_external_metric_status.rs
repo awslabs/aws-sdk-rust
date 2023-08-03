@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalMetricStatus {
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl ExternalMetricStatus {

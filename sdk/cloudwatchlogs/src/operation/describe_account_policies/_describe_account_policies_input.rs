@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountPoliciesInput {
     /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>Use this parameter to limit the returned policies to only the policy with the name that you specify.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
     /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
-    #[doc(hidden)]
     pub account_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAccountPoliciesInput {

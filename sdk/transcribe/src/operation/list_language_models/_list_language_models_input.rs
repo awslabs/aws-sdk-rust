@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLanguageModelsInput {
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::ModelStatus>,
     /// <p>Returns only the custom language models that contain the specified string. The search is not case sensitive.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>If your <code>ListLanguageModels</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListLanguageModelsInput {

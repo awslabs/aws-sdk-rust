@@ -5,10 +5,8 @@
 pub struct GetParametersInput {
     /// <p>Names of the parameters for which you want to query information.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
-    #[doc(hidden)]
     pub with_decryption: ::std::option::Option<bool>,
 }
 impl GetParametersInput {

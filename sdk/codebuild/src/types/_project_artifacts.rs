@@ -12,7 +12,6 @@ pub struct ProjectArtifacts {
     /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ArtifactsType>,
     /// <p>Information about the build output artifact location:</p>
     /// <ul>
@@ -20,7 +19,6 @@ pub struct ProjectArtifacts {
     /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
     /// <ul>
@@ -29,7 +27,6 @@ pub struct ProjectArtifacts {
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
     /// </ul>
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
     /// <ul>
@@ -45,7 +42,6 @@ pub struct ProjectArtifacts {
     /// <build-id>
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
-    #[doc(hidden)]
     pub namespace_type: ::std::option::Option<crate::types::ArtifactNamespace>,
     /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
     /// <ul>
@@ -63,7 +59,6 @@ pub struct ProjectArtifacts {
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
     /// <build-id></build-id></code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of build output artifact to create:</p>
     /// <ul>
@@ -75,16 +70,12 @@ pub struct ProjectArtifacts {
     /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub packaging: ::std::option::Option<crate::types::ArtifactPackaging>,
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
-    #[doc(hidden)]
     pub override_artifact_name: ::std::option::Option<bool>,
     /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown. </p>
-    #[doc(hidden)]
     pub encryption_disabled: ::std::option::Option<bool>,
     /// <p> An identifier for this artifact definition. </p>
-    #[doc(hidden)]
     pub artifact_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -115,7 +106,6 @@ pub struct ProjectArtifacts {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub bucket_owner_access: ::std::option::Option<crate::types::BucketOwnerAccess>,
 }
 impl ProjectArtifacts {

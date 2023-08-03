@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub hosted_zone_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

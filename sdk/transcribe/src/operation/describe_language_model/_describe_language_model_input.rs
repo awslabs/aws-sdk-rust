@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLanguageModelInput {
     /// <p>The name of the custom language model you want information about. Model names are case sensitive.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLanguageModelInput {

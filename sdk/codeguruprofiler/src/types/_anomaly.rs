@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Anomaly {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::Metric>,
     /// <p>The reason for which metric was flagged as anomalous.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>>,
 }
 impl Anomaly {

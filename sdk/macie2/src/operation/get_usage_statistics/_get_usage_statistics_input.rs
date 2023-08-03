@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsageStatisticsInput {
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-    #[doc(hidden)]
     pub filter_by: ::std::option::Option<::std::vec::Vec<crate::types::UsageStatisticsFilter>>,
     /// <p>The maximum number of items to include in each page of the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The criteria to use to sort the query results.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::UsageStatisticsSortBy>,
     /// <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
-    #[doc(hidden)]
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
 }
 impl GetUsageStatisticsInput {

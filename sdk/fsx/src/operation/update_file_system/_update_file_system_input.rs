@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFileSystemInput {
     /// <p>The ID of the file system that you are updating.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to increase the storage capacity of an FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
     /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
@@ -23,19 +21,14 @@ pub struct UpdateFileSystemInput {
     /// <p>For FSx for OpenZFS file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>FSx for OpenZFS User Guide</i>.</p>
     /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSxfor Windows File Server User Guide</i>.</p>
     /// <p>For ONTAP file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
-    #[doc(hidden)]
     pub windows_configuration: ::std::option::Option<crate::types::UpdateFileSystemWindowsConfiguration>,
     /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
-    #[doc(hidden)]
     pub lustre_configuration: ::std::option::Option<crate::types::UpdateFileSystemLustreConfiguration>,
     /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
-    #[doc(hidden)]
     pub ontap_configuration: ::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration>,
     /// <p>The configuration updates for an FSx for OpenZFS file system.</p>
-    #[doc(hidden)]
     pub open_zfs_configuration: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>,
 }
 impl UpdateFileSystemInput {

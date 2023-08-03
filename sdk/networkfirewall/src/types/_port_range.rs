@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The lower limit of the port range. This must be less than or equal to the <code>ToPort</code> specification. </p>
-    #[doc(hidden)]
     pub from_port: i32,
     /// <p>The upper limit of the port range. This must be greater than or equal to the <code>FromPort</code> specification. </p>
-    #[doc(hidden)]
     pub to_port: i32,
 }
 impl PortRange {

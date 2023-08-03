@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVolumeOutput {
     /// <p>The ID of the volume that's being deleted.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,
     /// <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
-    #[doc(hidden)]
     pub ontap_response: ::std::option::Option<crate::types::DeleteVolumeOntapResponse>,
     _request_id: Option<String>,
 }

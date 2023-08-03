@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromS3Input {
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    #[doc(hidden)]
     pub data_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
@@ -16,10 +14,8 @@ pub struct CreateDataSourceFromS3Input {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub data_spec: ::std::option::Option<crate::types::S3DataSpec>,
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
-    #[doc(hidden)]
     pub compute_statistics: bool,
 }
 impl CreateDataSourceFromS3Input {

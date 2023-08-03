@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicy {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MigrateWorkspaceInput {
     /// <p>The identifier of the WorkSpace to migrate from.</p>
-    #[doc(hidden)]
     pub source_workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
 }
 impl MigrateWorkspaceInput {

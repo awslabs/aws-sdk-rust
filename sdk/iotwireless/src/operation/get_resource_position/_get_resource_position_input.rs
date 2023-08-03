@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePositionInput {
     /// <p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
 }
 impl GetResourcePositionInput {

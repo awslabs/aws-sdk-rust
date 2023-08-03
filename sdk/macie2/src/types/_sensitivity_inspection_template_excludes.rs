@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitivityInspectionTemplateExcludes {
     /// <p>An array of unique identifiers, one for each managed data identifier to exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers operation.</p>
-    #[doc(hidden)]
     pub managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SensitivityInspectionTemplateExcludes {

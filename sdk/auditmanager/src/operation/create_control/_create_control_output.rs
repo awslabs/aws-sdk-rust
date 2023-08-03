@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateControlOutput {
     /// <p> The new control that the <code>CreateControl</code> API returned. </p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<crate::types::Control>,
     _request_id: Option<String>,
 }

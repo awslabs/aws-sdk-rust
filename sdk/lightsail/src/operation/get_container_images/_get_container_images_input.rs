@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerImagesInput {
     /// <p>The name of the container service for which to return registered container images.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl GetContainerImagesInput {

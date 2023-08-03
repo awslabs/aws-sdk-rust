@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TtmlDestinationSettings {
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
-    #[doc(hidden)]
     pub style_passthrough: ::std::option::Option<crate::types::TtmlStylePassthrough>,
 }
 impl TtmlDestinationSettings {

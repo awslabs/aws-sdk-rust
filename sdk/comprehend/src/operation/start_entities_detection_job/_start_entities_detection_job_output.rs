@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
@@ -20,7 +19,6 @@ pub struct StartEntitiesDetectionJobOutput {
     /// </partition></code> </p>
     /// <p>The following is an example job ARN:</p>
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job. </p>
     /// <ul>
@@ -31,10 +29,8 @@ pub struct StartEntitiesDetectionJobOutput {
     /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
     /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The ARN of the custom entity recognition model.</p>
-    #[doc(hidden)]
     pub entity_recognizer_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

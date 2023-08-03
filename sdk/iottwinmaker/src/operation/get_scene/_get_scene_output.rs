@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSceneOutput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scene.</p>
-    #[doc(hidden)]
     pub scene_id: ::std::option::Option<::std::string::String>,
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    #[doc(hidden)]
     pub content_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the scene.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the scene was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the scene was last updated.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the scene.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of capabilities that the scene uses to render.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The response metadata.</p>
-    #[doc(hidden)]
     pub scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The generated scene metadata.</p>
-    #[doc(hidden)]
     pub generated_scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The SceneResponse error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::SceneError>,
     _request_id: Option<String>,
 }

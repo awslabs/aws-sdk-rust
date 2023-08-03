@@ -11,7 +11,6 @@ pub struct CrawlsFilter {
     /// <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li>
     /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<crate::types::FieldName>,
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
@@ -22,10 +21,8 @@ pub struct CrawlsFilter {
     /// <li> <p> <code>EQ</code>: Equal to.</p> </li>
     /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filter_operator: ::std::option::Option<crate::types::FilterOperator>,
     /// <p>The value provided for comparison on the crawl field. </p>
-    #[doc(hidden)]
     pub field_value: ::std::option::Option<::std::string::String>,
 }
 impl CrawlsFilter {

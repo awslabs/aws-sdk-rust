@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcOutputSettingsDescription {
     /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
-    #[doc(hidden)]
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcOutputSettingsDescription {

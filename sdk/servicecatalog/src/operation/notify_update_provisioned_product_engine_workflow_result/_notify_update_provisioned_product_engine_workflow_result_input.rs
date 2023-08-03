@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyUpdateProvisionedProductEngineWorkflowResultInput {
     /// <p> The encrypted contents of the update engine execution payload that Service Catalog sends after the Terraform product update workflow starts. </p>
-    #[doc(hidden)]
     pub workflow_token: ::std::option::Option<::std::string::String>,
     /// <p> The identifier of the record. </p>
-    #[doc(hidden)]
     pub record_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the update engine execution. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EngineWorkflowStatus>,
     /// <p> The reason why the update engine execution failed. </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p> The output of the update engine execution. </p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
     /// <p> The idempotency token that identifies the update engine execution. </p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl NotifyUpdateProvisionedProductEngineWorkflowResultInput {

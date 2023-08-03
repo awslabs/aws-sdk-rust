@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledQueryInput {
     /// <p>The ARN of the scheduled query.</p>
-    #[doc(hidden)]
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScheduledQueryInput {

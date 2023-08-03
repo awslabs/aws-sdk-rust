@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentGroupOutput {
     /// <p>Information about the deployment group.</p>
-    #[doc(hidden)]
     pub deployment_group_info: ::std::option::Option<crate::types::DeploymentGroupInfo>,
     _request_id: Option<String>,
 }

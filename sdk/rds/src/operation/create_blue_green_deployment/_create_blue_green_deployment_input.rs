@@ -8,26 +8,20 @@ pub struct CreateBlueGreenDeploymentInput {
     /// <ul>
     /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub blue_green_deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
-    #[doc(hidden)]
     pub target_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
-    #[doc(hidden)]
     pub target_db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-    #[doc(hidden)]
     pub target_db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the blue/green deployment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBlueGreenDeploymentInput {

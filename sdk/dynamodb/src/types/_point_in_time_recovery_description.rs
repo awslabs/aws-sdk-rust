@@ -9,13 +9,10 @@ pub struct PointInTimeRecoveryDescription {
     /// <li> <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li>
     /// <li> <p> <code>DISABLED</code> - Point in time recovery is disabled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub point_in_time_recovery_status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
     /// <p>Specifies the earliest point in time you can restore your table to. You can restore your table to any point in time during the last 35 days. </p>
-    #[doc(hidden)]
     pub earliest_restorable_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
-    #[doc(hidden)]
     pub latest_restorable_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PointInTimeRecoveryDescription {

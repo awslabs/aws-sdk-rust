@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetPropertyValue {
     /// <p>The value of the asset property.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::AssetPropertyVariant>,
     /// <p>The asset property value timestamp.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<crate::types::AssetPropertyTimestamp>,
     /// <p>Optional. A string that describes the quality of the value. Accepts substitution templates. Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.</p>
-    #[doc(hidden)]
     pub quality: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyValue {

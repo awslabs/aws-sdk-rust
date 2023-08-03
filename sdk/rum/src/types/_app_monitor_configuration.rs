@@ -5,29 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppMonitorConfiguration {
     /// <p>The ID of the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of URLs in your website or application to exclude from RUM data collection.</p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    #[doc(hidden)]
     pub excluded_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If this app monitor is to collect data from only certain pages in your application, this structure lists those pages. </p>
     /// <p>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.</p>
-    #[doc(hidden)]
     pub included_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM console.</p>
-    #[doc(hidden)]
     pub favorite_pages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more data but also incurs more costs.</p>
     /// <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are sampled.</p>
     /// <p>If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.</p>
-    #[doc(hidden)]
     pub session_sample_rate: f64,
     /// <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
-    #[doc(hidden)]
     pub guest_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>If you set this to <code>true</code>, the RUM web client sets two cookies, a session cookie and a user cookie. The cookies allow the RUM web client to collect data relating to the number of users an application has and the behavior of the application across a sequence of events. Cookies are stored in the top-level domain of the current page.</p>
-    #[doc(hidden)]
     pub allow_cookies: ::std::option::Option<bool>,
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
@@ -35,10 +28,8 @@ pub struct AppMonitorConfiguration {
     /// <li> <p> <code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p> </li>
     /// <li> <p> <code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub telemetries: ::std::option::Option<::std::vec::Vec<crate::types::Telemetry>>,
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
-    #[doc(hidden)]
     pub enable_x_ray: ::std::option::Option<bool>,
 }
 impl AppMonitorConfiguration {

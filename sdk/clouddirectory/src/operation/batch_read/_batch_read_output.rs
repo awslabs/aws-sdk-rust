@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchReadOutput {
     /// <p>A list of all the responses for each batch read.</p>
-    #[doc(hidden)]
     pub responses: ::std::option::Option<::std::vec::Vec<crate::types::BatchReadOperationResponse>>,
     _request_id: Option<String>,
 }

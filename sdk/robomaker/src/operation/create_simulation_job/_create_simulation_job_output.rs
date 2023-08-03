@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSimulationJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the simulation job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SimulationJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
-    #[doc(hidden)]
     pub last_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>the failure behavior for the simulation job.</p>
-    #[doc(hidden)]
     pub failure_behavior: ::std::option::Option<crate::types::FailureBehavior>,
     /// <p>The failure code of the simulation job if it failed:</p>
     /// <dl>
@@ -105,43 +100,30 @@ pub struct CreateSimulationJobOutput {
     /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::SimulationJobErrorCode>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Simulation job output files location.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
     /// <p>The logging configuration.</p>
-    #[doc(hidden)]
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     /// <p>The maximum simulation job duration in seconds. </p>
-    #[doc(hidden)]
     pub max_job_duration_in_seconds: i64,
     /// <p>The simulation job execution duration in milliseconds.</p>
-    #[doc(hidden)]
     pub simulation_time_millis: i64,
     /// <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The robot application used by the simulation job.</p>
-    #[doc(hidden)]
     pub robot_applications: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationConfig>>,
     /// <p>The simulation application used by the simulation job.</p>
-    #[doc(hidden)]
     pub simulation_applications: ::std::option::Option<::std::vec::Vec<crate::types::SimulationApplicationConfig>>,
     /// <p>The data sources for the simulation job.</p>
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     /// <p>The list of all tags added to the simulation job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about the vpc configuration.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     /// <p>Compute information for the simulation job.</p>
-    #[doc(hidden)]
     pub compute: ::std::option::Option<crate::types::ComputeResponse>,
     _request_id: Option<String>,
 }

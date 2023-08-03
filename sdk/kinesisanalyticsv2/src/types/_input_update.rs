@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputUpdate {
     /// <p>The input ID of the application input to be updated.</p>
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
     /// <p>The name prefix for in-application streams that Kinesis Data Analytics creates for the specific streaming source.</p>
-    #[doc(hidden)]
     pub name_prefix_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes updates to an <code>InputProcessingConfiguration</code>.</p>
-    #[doc(hidden)]
     pub input_processing_configuration_update: ::std::option::Option<crate::types::InputProcessingConfigurationUpdate>,
     /// <p>If a Kinesis data stream is the streaming source to be updated, provides an updated stream Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub kinesis_streams_input_update: ::std::option::Option<crate::types::KinesisStreamsInputUpdate>,
     /// <p>If a Kinesis Data Firehose delivery stream is the streaming source to be updated, provides an updated stream ARN.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_input_update: ::std::option::Option<crate::types::KinesisFirehoseInputUpdate>,
     /// <p>Describes the data format on the streaming source, and how record elements on the streaming source map to columns of the in-application stream that is created.</p>
-    #[doc(hidden)]
     pub input_schema_update: ::std::option::Option<crate::types::InputSchemaUpdate>,
     /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
-    #[doc(hidden)]
     pub input_parallelism_update: ::std::option::Option<crate::types::InputParallelismUpdate>,
 }
 impl InputUpdate {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateDomainValidationRecord {
     /// <p>A fully qualified domain name in the certificate. For example, <code>example.com</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of validation record. For example, <code>CNAME</code> for domain validation.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The value for that type.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The validation status. Valid values are listed below.</p>
-    #[doc(hidden)]
     pub validation_status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
     /// <p>The domain name against which your SSL/TLS certificate was validated.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
-    #[doc(hidden)]
     pub dns_record_creation_state: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationState>,
 }
 impl LoadBalancerTlsCertificateDomainValidationRecord {

@@ -11,28 +11,20 @@ pub struct S3Bucket {
     /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li>
     /// </ul>
     /// <p>Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
-    #[doc(hidden)]
     pub allows_unencrypted_object_uploads: ::std::option::Option<crate::types::AllowsUnencryptedObjectUploads>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the finding was created or last updated.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The default server-side encryption settings for the bucket.</p>
-    #[doc(hidden)]
     pub default_server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>The name of the bucket.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The display name and canonical user ID for the Amazon Web Services account that owns the bucket.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::S3BucketOwner>,
     /// <p>The permissions settings that determine whether the bucket is publicly accessible.</p>
-    #[doc(hidden)]
     pub public_access: ::std::option::Option<crate::types::BucketPublicAccess>,
     /// <p>The tags that are associated with the bucket.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl S3Bucket {

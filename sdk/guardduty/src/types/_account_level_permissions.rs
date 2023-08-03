@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLevelPermissions {
     /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
-    #[doc(hidden)]
     pub block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
 }
 impl AccountLevelPermissions {

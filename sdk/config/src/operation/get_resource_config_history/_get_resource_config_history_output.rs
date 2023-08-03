@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceConfigHistoryOutput {
     /// <p>A list that contains the configuration history of one or more resources.</p>
-    #[doc(hidden)]
     pub configuration_items: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

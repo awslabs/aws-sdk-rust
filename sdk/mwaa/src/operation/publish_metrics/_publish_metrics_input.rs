@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishMetricsInput {
     /// <p> <b>Internal only</b>. The name of the environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    #[doc(hidden)]
     pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl PublishMetricsInput {

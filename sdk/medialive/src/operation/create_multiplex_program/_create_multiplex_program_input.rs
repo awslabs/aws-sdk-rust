@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMultiplexProgramInput {
     /// ID of the multiplex where the program is to be created.
-    #[doc(hidden)]
     pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The settings for this multiplex program.
-    #[doc(hidden)]
     pub multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     /// Name of multiplex program.
-    #[doc(hidden)]
     pub program_name: ::std::option::Option<::std::string::String>,
     /// Unique request ID. This prevents retries from creating multiple resources.
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateMultiplexProgramInput {

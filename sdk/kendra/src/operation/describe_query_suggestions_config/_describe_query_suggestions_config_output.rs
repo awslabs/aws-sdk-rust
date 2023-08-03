@@ -5,39 +5,29 @@
 pub struct DescribeQuerySuggestionsConfigOutput {
     /// <p>Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>
     /// <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::Mode>,
     /// <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QuerySuggestionsStatus>,
     /// <p>How recent your queries are in your query log time window (in days).</p>
-    #[doc(hidden)]
     pub query_log_look_back_window_in_days: ::std::option::Option<i32>,
     /// <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
-    #[doc(hidden)]
     pub include_queries_without_user_information: ::std::option::Option<bool>,
     /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
-    #[doc(hidden)]
     pub minimum_number_of_querying_users: ::std::option::Option<i32>,
     /// <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
-    #[doc(hidden)]
     pub minimum_query_count: ::std::option::Option<i32>,
     /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
     /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
-    #[doc(hidden)]
     pub last_suggestions_build_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
     /// <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
-    #[doc(hidden)]
     pub last_clear_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
     /// <p>If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query history to learn from or your current query suggestions settings are too strict.</p>
-    #[doc(hidden)]
     pub total_suggestions_count: ::std::option::Option<i32>,
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    #[doc(hidden)]
     pub attribute_suggestions_config: ::std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
     _request_id: Option<String>,
 }

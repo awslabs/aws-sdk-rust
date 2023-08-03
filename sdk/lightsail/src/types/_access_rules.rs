@@ -12,11 +12,9 @@ pub struct AccessRules {
     /// <li> <p> <code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p> <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p> </li>
     /// <li> <p> <code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p> <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub get_object: ::std::option::Option<crate::types::AccessType>,
     /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are applied to individual objects override the <code>getObject</code> option that is currently specified.</p>
     /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set individual objects to public (read-only) using the <code>public-read</code> ACL, or to private using the <code>private</code> ACL.</p>
-    #[doc(hidden)]
     pub allow_public_overrides: ::std::option::Option<bool>,
 }
 impl AccessRules {

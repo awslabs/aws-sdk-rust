@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteData {
     /// <p>The name of the service mesh that the route resides in.</p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual router that the route is associated with.</p>
-    #[doc(hidden)]
     pub virtual_router_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the route.</p>
-    #[doc(hidden)]
     pub route_name: ::std::option::Option<::std::string::String>,
     /// <p>The specifications of the route.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::RouteSpec>,
     /// <p>The associated metadata for the route.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The status of the route.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RouteStatus>,
 }
 impl RouteData {

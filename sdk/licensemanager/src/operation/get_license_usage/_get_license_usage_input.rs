@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLicenseUsageInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetLicenseUsageInput {

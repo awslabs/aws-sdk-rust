@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmergencyContact {
     /// <p>The email address for the contact.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The phone number for the contact.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>Additional notes regarding the contact. </p>
-    #[doc(hidden)]
     pub contact_notes: ::std::option::Option<::std::string::String>,
 }
 impl EmergencyContact {

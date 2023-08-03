@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutReplicationConfigurationOutput {
     /// <p>The contents of the replication configuration for the registry.</p>
-    #[doc(hidden)]
     pub replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
     _request_id: Option<String>,
 }

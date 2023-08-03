@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHapgsOutput {
     /// <p>The list of high-availability partition groups.</p>
-    #[doc(hidden)]
     pub hapg_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

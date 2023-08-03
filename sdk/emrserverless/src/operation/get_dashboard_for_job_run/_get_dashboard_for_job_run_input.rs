@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDashboardForJobRunInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job run.</p>
-    #[doc(hidden)]
     pub job_run_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDashboardForJobRunInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemTemplateDescription {
     /// <p>An object that contains summary information about a system.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     /// <p>The definition document of a system.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
-    #[doc(hidden)]
     pub validated_namespace_version: ::std::option::Option<i64>,
 }
 impl SystemTemplateDescription {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallMissingSubnetViolation {
     /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the VPC associated with a violating subnet.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of a violating subnet. </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The reason the resource has this violation, if one is available. </p>
-    #[doc(hidden)]
     pub target_violation_reason: ::std::option::Option<::std::string::String>,
 }
 impl NetworkFirewallMissingSubnetViolation {

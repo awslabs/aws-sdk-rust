@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputGroup {
     /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
-    #[doc(hidden)]
     pub automated_encoding_settings: ::std::option::Option<crate::types::AutomatedEncodingSettings>,
     /// Use Custom Group Name to specify a name for the output group. This value is displayed on the console and can make your job settings JSON more human-readable. It does not affect your outputs. Use up to twelve characters that are either letters, numbers, spaces, or underscores.
-    #[doc(hidden)]
     pub custom_name: ::std::option::Option<::std::string::String>,
     /// Name of the output group
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Output Group settings, including type
-    #[doc(hidden)]
     pub output_group_settings: ::std::option::Option<crate::types::OutputGroupSettings>,
     /// This object holds groups of encoding settings, one group of settings per output.
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
 }
 impl OutputGroup {

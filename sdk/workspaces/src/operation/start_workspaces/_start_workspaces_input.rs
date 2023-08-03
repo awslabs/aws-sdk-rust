@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartWorkspacesInput {
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-    #[doc(hidden)]
     pub start_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::StartRequest>>,
 }
 impl StartWorkspacesInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCellInput {
     /// <p>The name of the cell.</p>
-    #[doc(hidden)]
     pub cell_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCellInput {

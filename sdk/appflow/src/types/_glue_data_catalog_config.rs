@@ -8,15 +8,12 @@
 pub struct GlueDataCatalogConfig {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
     /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
     /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
     /// </note>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
-    #[doc(hidden)]
     pub table_prefix: ::std::option::Option<::std::string::String>,
 }
 impl GlueDataCatalogConfig {

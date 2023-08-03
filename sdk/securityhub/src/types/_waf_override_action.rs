@@ -6,7 +6,6 @@
 pub struct WafOverrideAction {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .</p>
     /// <p>If set to <code>NONE</code>, the rule's action takes place.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl WafOverrideAction {

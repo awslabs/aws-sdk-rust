@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleConfiguration {
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub first_execution_from: ::std::option::Option<::std::string::String>,
     /// <p>The name of the object to pull from the data source.</p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
     /// <p>How often the data should be pulled from data source.</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleConfiguration {

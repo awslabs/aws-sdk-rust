@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopMultiplexInput {
     /// The ID of the multiplex.
-    #[doc(hidden)]
     pub multiplex_id: ::std::option::Option<::std::string::String>,
 }
 impl StopMultiplexInput {

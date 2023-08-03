@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePipelineInput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    #[doc(hidden)]
     pub pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     /// <p>The tags for the pipeline.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreatePipelineInput {

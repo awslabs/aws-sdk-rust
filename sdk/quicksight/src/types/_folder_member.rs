@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FolderMember {
     /// <p>The ID of an asset in the folder.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of asset that it is.</p>
-    #[doc(hidden)]
     pub member_type: ::std::option::Option<crate::types::MemberType>,
 }
 impl FolderMember {

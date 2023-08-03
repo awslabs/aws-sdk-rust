@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptReservedNodeExchangeInput {
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
-    #[doc(hidden)]
     pub reserved_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    #[doc(hidden)]
     pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptReservedNodeExchangeInput {

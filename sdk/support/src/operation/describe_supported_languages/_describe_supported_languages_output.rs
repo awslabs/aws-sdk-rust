@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSupportedLanguagesOutput {
     /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
-    #[doc(hidden)]
     pub supported_languages: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
     _request_id: Option<String>,
 }

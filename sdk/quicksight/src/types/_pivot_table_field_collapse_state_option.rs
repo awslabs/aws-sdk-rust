@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableFieldCollapseStateOption {
     /// <p>A tagged-union object that sets the collapse state.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::PivotTableFieldCollapseStateTarget>,
     /// <p>The state of the field target of a pivot table. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>COLLAPSED</code> </p> </li>
     /// <li> <p> <code>EXPANDED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::PivotTableFieldCollapseState>,
 }
 impl PivotTableFieldCollapseStateOption {

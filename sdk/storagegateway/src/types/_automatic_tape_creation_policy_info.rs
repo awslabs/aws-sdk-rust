@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomaticTapeCreationPolicyInfo {
     /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. This returns the rules that determine when and how to automatically create new tapes.</p>
-    #[doc(hidden)]
     pub automatic_tape_creation_rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl AutomaticTapeCreationPolicyInfo {

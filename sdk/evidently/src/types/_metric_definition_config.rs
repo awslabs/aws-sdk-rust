@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDefinitionConfig {
     /// <p>A name for the metric.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
-    #[doc(hidden)]
     pub entity_id_key: ::std::option::Option<::std::string::String>,
     /// <p>The value that is tracked to produce the metric.</p>
-    #[doc(hidden)]
     pub value_key: ::std::option::Option<::std::string::String>,
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
-    #[doc(hidden)]
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>A label for the units that the metric is measuring.</p>
-    #[doc(hidden)]
     pub unit_label: ::std::option::Option<::std::string::String>,
 }
 impl MetricDefinitionConfig {

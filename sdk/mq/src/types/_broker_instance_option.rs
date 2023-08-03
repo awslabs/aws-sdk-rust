@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerInstanceOption {
     /// <p>The list of available az.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>The broker's engine type.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The broker's instance type.</p>
-    #[doc(hidden)]
     pub host_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The broker's storage type.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<crate::types::BrokerStorageType>,
     /// <p>The list of supported deployment modes.</p>
-    #[doc(hidden)]
     pub supported_deployment_modes: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentMode>>,
     /// <p>The list of supported engine versions.</p>
-    #[doc(hidden)]
     pub supported_engine_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BrokerInstanceOption {

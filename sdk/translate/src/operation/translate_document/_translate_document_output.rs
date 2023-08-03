@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranslateDocumentOutput {
     /// <p>The document containing the translated content. The document format matches the source document format.</p>
-    #[doc(hidden)]
     pub translated_document: ::std::option::Option<crate::types::TranslatedDocument>,
     /// <p>The language code of the source document.</p>
-    #[doc(hidden)]
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the translated document. </p>
-    #[doc(hidden)]
     pub target_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate to produce the translated text document.</p>
-    #[doc(hidden)]
     pub applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    #[doc(hidden)]
     pub applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
 }

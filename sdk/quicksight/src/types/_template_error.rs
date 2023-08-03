@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateError {
     /// <p>Type of error.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TemplateErrorType>,
     /// <p>Description of the error type.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>An error path that shows which entities caused the template error.</p>
-    #[doc(hidden)]
     pub violated_entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
 }
 impl TemplateError {

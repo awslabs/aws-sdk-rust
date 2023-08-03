@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlarmHistoryInput {
     /// <p>The name of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    #[doc(hidden)]
     pub alarm_types: ::std::option::Option<::std::vec::Vec<crate::types::AlarmType>>,
     /// <p>The type of alarm histories to retrieve.</p>
-    #[doc(hidden)]
     pub history_item_type: ::std::option::Option<crate::types::HistoryItemType>,
     /// <p>The starting date to retrieve alarm history.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ending date to retrieve alarm history.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum number of alarm history records to retrieve.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
-    #[doc(hidden)]
     pub scan_by: ::std::option::Option<crate::types::ScanBy>,
 }
 impl DescribeAlarmHistoryInput {

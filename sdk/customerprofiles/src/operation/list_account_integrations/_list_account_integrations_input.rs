@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountIntegrationsInput {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
-    #[doc(hidden)]
     pub include_hidden: ::std::option::Option<bool>,
 }
 impl ListAccountIntegrationsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSampleDataOutput {
     /// <p>A list of header labels for the records.</p>
-    #[doc(hidden)]
     pub header_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of records.</p>
-    #[doc(hidden)]
     pub sample_rows: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     _request_id: Option<String>,
 }

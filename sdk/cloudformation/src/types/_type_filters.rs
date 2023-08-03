@@ -15,14 +15,11 @@ pub struct TypeFilters {
     /// </ul> </li>
     /// <li> <p> <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::Category>,
     /// <p>The id of the publisher of the extension.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category to specify a list of types published by Amazon.</p>
-    #[doc(hidden)]
     pub publisher_id: ::std::option::Option<::std::string::String>,
     /// <p>A prefix to use as a filter for results.</p>
-    #[doc(hidden)]
     pub type_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl TypeFilters {

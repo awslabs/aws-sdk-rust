@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTargetGroupOutput {
     /// <p>The ID of the target group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The target group type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TargetGroupType>,
     /// <p>The target group configuration.</p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<crate::types::TargetGroupConfig>,
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TargetGroupStatus>,
     /// <p>The Amazon Resource Names (ARNs) of the service.</p>
-    #[doc(hidden)]
     pub service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The failure message.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

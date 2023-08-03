@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>A configuration for an Amazon SNS channel.</p>
-    #[doc(hidden)]
     pub sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
     /// <p>A configuration for an AWS Lambda channel.</p>
-    #[doc(hidden)]
     pub lambda_configuration: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
 impl Action {

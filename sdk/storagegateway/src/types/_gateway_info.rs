@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayInfo {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_type: ::std::option::Option<::std::string::String>,
     /// <p>The state of the gateway.</p>
     /// <p>Valid Values: <code>DISABLED</code> | <code>ACTIVE</code> </p>
-    #[doc(hidden)]
     pub gateway_operational_state: ::std::option::Option<::std::string::String>,
     /// <p>The name of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
-    #[doc(hidden)]
     pub ec2_instance_region: ::std::option::Option<::std::string::String>,
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
-    #[doc(hidden)]
     pub host_environment: ::std::option::Option<crate::types::HostEnvironment>,
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
-    #[doc(hidden)]
     pub host_environment_id: ::std::option::Option<::std::string::String>,
 }
 impl GatewayInfo {

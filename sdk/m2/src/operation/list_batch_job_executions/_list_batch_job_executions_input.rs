@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBatchJobExecutionsInput {
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of batch job executions to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The unique identifier of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of each batch job execution.</p>
-    #[doc(hidden)]
     pub execution_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of each batch job execution.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the batch job executions.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BatchJobExecutionStatus>,
     /// <p>The time after which the batch job executions started.</p>
-    #[doc(hidden)]
     pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time before the batch job executions started.</p>
-    #[doc(hidden)]
     pub started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListBatchJobExecutionsInput {

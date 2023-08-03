@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPermissionGroupsOutput {
     /// <p>A list of all the permission groups.</p>
-    #[doc(hidden)]
     pub permission_groups: ::std::option::Option<::std::vec::Vec<crate::types::PermissionGroup>>,
     /// <p>A token that indicates where a results page should begin.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

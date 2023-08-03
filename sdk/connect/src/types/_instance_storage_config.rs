@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStorageConfig {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>A valid storage type.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The S3 bucket configuration.</p>
-    #[doc(hidden)]
     pub s3_config: ::std::option::Option<crate::types::S3Config>,
     /// <p>The configuration of the Kinesis video stream.</p>
-    #[doc(hidden)]
     pub kinesis_video_stream_config: ::std::option::Option<crate::types::KinesisVideoStreamConfig>,
     /// <p>The configuration of the Kinesis data stream.</p>
-    #[doc(hidden)]
     pub kinesis_stream_config: ::std::option::Option<crate::types::KinesisStreamConfig>,
     /// <p>The configuration of the Kinesis Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_config: ::std::option::Option<crate::types::KinesisFirehoseConfig>,
 }
 impl InstanceStorageConfig {

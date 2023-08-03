@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A summary description of the application.</p>
-    #[doc(hidden)]
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>The runtime environment for the application.</p>
-    #[doc(hidden)]
     pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
-    #[doc(hidden)]
     pub service_execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to configure the application.</p>
-    #[doc(hidden)]
     pub application_configuration: ::std::option::Option<crate::types::ApplicationConfiguration>,
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>,
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
-    #[doc(hidden)]
     pub application_mode: ::std::option::Option<crate::types::ApplicationMode>,
 }
 impl CreateApplicationInput {

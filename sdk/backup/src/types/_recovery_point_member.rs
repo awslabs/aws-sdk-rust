@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryPointMember {
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
-    #[doc(hidden)]
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is the Amazon Web Services resource type that is saved as a recovery point.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>This is the name of the backup vault (the logical container in which backups are stored).</p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryPointMember {

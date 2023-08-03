@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventStreamInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event stream</p>
-    #[doc(hidden)]
     pub event_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventStreamInput {

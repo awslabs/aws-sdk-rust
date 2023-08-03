@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserMatch {
     /// <p> Describes the UserID metadata.</p>
-    #[doc(hidden)]
     pub similarity: ::std::option::Option<f32>,
     /// <p> Confidence in the match of this UserID with the input face. </p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::MatchedUser>,
 }
 impl UserMatch {

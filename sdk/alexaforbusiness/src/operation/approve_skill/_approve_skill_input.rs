@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApproveSkillInput {
     /// <p>The unique identifier of the skill.</p>
-    #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
 }
 impl ApproveSkillInput {

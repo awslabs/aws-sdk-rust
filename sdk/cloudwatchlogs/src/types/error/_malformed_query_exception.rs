@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MalformedQueryException {
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub query_compile_error: ::std::option::Option<crate::types::QueryCompileError>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

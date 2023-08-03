@@ -6,36 +6,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDetail {
     /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name identifying the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the inline policies embedded in the user.</p>
-    #[doc(hidden)]
     pub user_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDetail>>,
     /// <p>A list of IAM groups that the user is in.</p>
-    #[doc(hidden)]
     pub group_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the managed policies attached to the user.</p>
-    #[doc(hidden)]
     pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AttachedPolicy>>,
     /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub permissions_boundary: ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
     /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UserDetail {

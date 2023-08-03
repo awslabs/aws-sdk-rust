@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuditFindingOutput {
     /// <p>The findings (results) of the audit.</p>
-    #[doc(hidden)]
     pub finding: ::std::option::Option<crate::types::AuditFinding>,
     _request_id: Option<String>,
 }

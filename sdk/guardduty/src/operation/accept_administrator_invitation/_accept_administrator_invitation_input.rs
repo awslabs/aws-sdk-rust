@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptAdministratorInvitationInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
-    #[doc(hidden)]
     pub administrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The value that is used to validate the administrator account to the member account.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptAdministratorInvitationInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationInput {
     /// <p>The ARN of the organization behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrganizationConfigurationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeprecateThingTypeInput {
     /// <p>The name of the thing type to deprecate.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
-    #[doc(hidden)]
     pub undo_deprecate: ::std::option::Option<bool>,
 }
 impl DeprecateThingTypeInput {

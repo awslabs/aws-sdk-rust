@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DoubleRange {
     /// <p>The minimum value in the range.</p>
-    #[doc(hidden)]
     pub from: f64,
     /// <p>The maximum value in the range.</p>
-    #[doc(hidden)]
     pub to: f64,
 }
 impl DoubleRange {

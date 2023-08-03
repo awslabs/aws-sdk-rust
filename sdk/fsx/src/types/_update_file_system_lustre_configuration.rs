@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
-    #[doc(hidden)]
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
-    #[doc(hidden)]
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this property to choose how Amazon FSx keeps your file and directory listing up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
@@ -21,7 +18,6 @@ pub struct UpdateFileSystemLustreConfiguration {
     /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
     /// </ul>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
-    #[doc(hidden)]
     pub auto_import_policy: ::std::option::Option<crate::types::AutoImportPolicyType>,
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
@@ -30,13 +26,10 @@ pub struct UpdateFileSystemLustreConfiguration {
     /// </ul>
     /// <p>If you don't use <code>DataCompressionType</code>, the file system retains its current data compression configuration.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
-    #[doc(hidden)]
     pub data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
     /// <p>The Lustre logging configuration used when updating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     /// <p>The Lustre root squash configuration used when updating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
-    #[doc(hidden)]
     pub root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
 }
 impl UpdateFileSystemLustreConfiguration {

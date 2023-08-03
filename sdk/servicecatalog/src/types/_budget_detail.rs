@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BudgetDetail {
     /// <p>Name of the associated budget.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
 }
 impl BudgetDetail {

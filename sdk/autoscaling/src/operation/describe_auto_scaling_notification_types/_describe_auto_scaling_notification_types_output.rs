@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingNotificationTypesOutput {
     /// <p>The notification types.</p>
-    #[doc(hidden)]
     pub auto_scaling_notification_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

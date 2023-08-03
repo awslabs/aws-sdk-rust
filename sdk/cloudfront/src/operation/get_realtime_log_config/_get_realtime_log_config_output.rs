@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRealtimeLogConfigOutput {
     /// <p>A real-time log configuration.</p>
-    #[doc(hidden)]
     pub realtime_log_config: ::std::option::Option<crate::types::RealtimeLogConfig>,
     _request_id: Option<String>,
 }

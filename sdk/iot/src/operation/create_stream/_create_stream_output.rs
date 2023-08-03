@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStreamOutput {
     /// <p>The stream ID.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The stream ARN.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the stream.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version of the stream.</p>
-    #[doc(hidden)]
     pub stream_version: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedCapacityDescription {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
-    #[doc(hidden)]
     pub capacity_id: ::std::option::Option<::std::string::String>,
     /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedCapacityDescription {

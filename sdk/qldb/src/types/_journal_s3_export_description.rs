@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
-    #[doc(hidden)]
     pub ledger_name: ::std::option::Option<::std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    #[doc(hidden)]
     pub export_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of the journal export job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
-    #[doc(hidden)]
     pub inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
-    #[doc(hidden)]
     pub exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
-    #[doc(hidden)]
     pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output format of the exported journal data.</p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl JournalS3ExportDescription {

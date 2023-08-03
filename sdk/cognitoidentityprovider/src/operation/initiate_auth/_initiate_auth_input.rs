@@ -18,7 +18,6 @@ pub struct InitiateAuthInput {
     /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user name in the user pool. </p> </li>
     /// </ul>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
-    #[doc(hidden)]
     pub auth_flow: ::std::option::Option<crate::types::AuthFlowType>,
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
@@ -26,7 +25,6 @@ pub struct InitiateAuthInput {
     /// <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
     /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auth_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
@@ -53,16 +51,12 @@ pub struct InitiateAuthInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The app client ID.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
-    #[doc(hidden)]
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    #[doc(hidden)]
     pub user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
 }
 impl InitiateAuthInput {

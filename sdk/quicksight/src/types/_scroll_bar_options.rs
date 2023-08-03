@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScrollBarOptions {
     /// <p>The visibility of the data zoom scroll bar.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility range for the data zoom scroll bar.</p>
-    #[doc(hidden)]
     pub visible_range: ::std::option::Option<crate::types::VisibleRangeOptions>,
 }
 impl ScrollBarOptions {

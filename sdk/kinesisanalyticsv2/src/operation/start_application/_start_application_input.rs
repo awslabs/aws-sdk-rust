@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartApplicationInput {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub run_configuration: ::std::option::Option<crate::types::RunConfiguration>,
 }
 impl StartApplicationInput {

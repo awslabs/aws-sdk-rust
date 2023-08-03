@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceCountFilters {
     /// <p>The type of the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The 12-digit ID of the account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The region where the account is located.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl ResourceCountFilters {

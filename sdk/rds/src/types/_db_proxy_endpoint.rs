@@ -6,37 +6,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbProxyEndpoint {
     /// <p>The name for the DB proxy endpoint. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB proxy endpoint.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the DB proxy that is associated with this DB proxy endpoint.</p>
-    #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of this DB proxy endpoint. A status of <code>available</code> means the endpoint is ready to handle requests. Other values indicate that you must wait for the endpoint to be ready, or take some action to resolve an issue.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DbProxyEndpointStatus>,
     /// <p>Provides the VPC ID of the DB proxy endpoint.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of VPC security groups that the DB proxy endpoint belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The EC2 subnet IDs for the DB proxy endpoint.</p>
-    #[doc(hidden)]
     pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the DB proxy endpoint was first created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.</p>
-    #[doc(hidden)]
     pub target_role: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
     /// <p>A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write or read-only.</p>
-    #[doc(hidden)]
     pub is_default: bool,
 }
 impl DbProxyEndpoint {

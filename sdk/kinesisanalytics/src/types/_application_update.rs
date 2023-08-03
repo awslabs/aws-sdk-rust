@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationUpdate {
     /// <p>Describes application input configuration updates.</p>
-    #[doc(hidden)]
     pub input_updates: ::std::option::Option<::std::vec::Vec<crate::types::InputUpdate>>,
     /// <p>Describes application code updates.</p>
-    #[doc(hidden)]
     pub application_code_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes application output configuration updates.</p>
-    #[doc(hidden)]
     pub output_updates: ::std::option::Option<::std::vec::Vec<crate::types::OutputUpdate>>,
     /// <p>Describes application reference data source updates.</p>
-    #[doc(hidden)]
     pub reference_data_source_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceUpdate>>,
     /// <p>Describes application CloudWatch logging option updates.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_updates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
 }
 impl ApplicationUpdate {

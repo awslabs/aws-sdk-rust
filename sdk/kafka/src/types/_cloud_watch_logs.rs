@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogs {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogs {

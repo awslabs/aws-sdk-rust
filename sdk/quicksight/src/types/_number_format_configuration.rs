@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumberFormatConfiguration {
     /// <p>The options that determine the numeric format configuration.</p>
-    #[doc(hidden)]
     pub format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl NumberFormatConfiguration {

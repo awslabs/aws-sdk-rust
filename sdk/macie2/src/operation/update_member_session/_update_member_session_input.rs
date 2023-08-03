@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMemberSessionInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MacieStatus>,
 }
 impl UpdateMemberSessionInput {

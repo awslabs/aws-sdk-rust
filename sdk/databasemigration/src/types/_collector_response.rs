@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectorResponse {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub collector_referenced_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Fleet Advisor collector .</p>
-    #[doc(hidden)]
     pub collector_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code> </p>
-    #[doc(hidden)]
     pub collector_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether the collector version is up to date.</p>
-    #[doc(hidden)]
     pub version_status: ::std::option::Option<crate::types::VersionStatus>,
     /// <p>A summary description of the Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes the last Fleet Advisor collector health check.</p>
-    #[doc(hidden)]
     pub collector_health_check: ::std::option::Option<crate::types::CollectorHealthCheck>,
     /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
-    #[doc(hidden)]
     pub last_data_received: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
-    #[doc(hidden)]
     pub registered_date: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code> </p>
-    #[doc(hidden)]
     pub modified_date: ::std::option::Option<::std::string::String>,
     /// <p>Describes a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub inventory_data: ::std::option::Option<crate::types::InventoryData>,
 }
 impl CollectorResponse {

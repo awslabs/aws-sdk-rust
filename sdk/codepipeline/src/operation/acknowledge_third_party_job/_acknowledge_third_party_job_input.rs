@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJobInput {
     /// <p>The unique system-generated ID of the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
-    #[doc(hidden)]
     pub nonce: ::std::option::Option<::std::string::String>,
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl AcknowledgeThirdPartyJobInput {

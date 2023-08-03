@@ -6,10 +6,8 @@
 pub struct DeleteMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>The receipt handle associated with the message to delete.</p>
-    #[doc(hidden)]
     pub receipt_handle: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMessageInput {

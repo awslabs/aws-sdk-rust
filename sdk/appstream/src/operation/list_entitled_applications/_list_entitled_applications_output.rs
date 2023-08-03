@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEntitledApplicationsOutput {
     /// <p>The entitled applications.</p>
-    #[doc(hidden)]
     pub entitled_applications: ::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

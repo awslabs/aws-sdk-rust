@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2VisibilityConfigDetails {
     /// <p> A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF metrics and dimensions</a> in the <i>WAF Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub cloud_watch_metrics_enabled: bool,
     /// <p> A name of the Amazon CloudWatch metric. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p> A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
-    #[doc(hidden)]
     pub sampled_requests_enabled: bool,
 }
 impl AwsWafv2VisibilityConfigDetails {

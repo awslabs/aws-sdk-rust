@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfilePermissionsOutput {
     /// <p>The identifier for the current revision of profile permissions.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>Total size of the policy associated with the Signing Profile in bytes.</p>
-    #[doc(hidden)]
     pub policy_size_bytes: i32,
     /// <p>List of permissions associated with the Signing Profile.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     /// <p>String for specifying the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

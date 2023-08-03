@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableInput {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    #[doc(hidden)]
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the configured table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the configured table.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConfiguredTableInput {

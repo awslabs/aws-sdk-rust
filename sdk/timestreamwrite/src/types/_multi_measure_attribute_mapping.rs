@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiMeasureAttributeMapping {
     /// <p></p>
-    #[doc(hidden)]
     pub source_column: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub target_multi_measure_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub measure_value_type: ::std::option::Option<crate::types::ScalarMeasureValueType>,
 }
 impl MultiMeasureAttributeMapping {

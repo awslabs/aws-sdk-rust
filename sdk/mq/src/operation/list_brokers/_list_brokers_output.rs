@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBrokersOutput {
     /// <p>A list of information about all brokers.</p>
-    #[doc(hidden)]
     pub broker_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BrokerSummary>>,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

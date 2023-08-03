@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderableClusterOption {
     /// <p>The version of the orderable cluster.</p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The cluster type, for example <code>multi-node</code>. </p>
-    #[doc(hidden)]
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the orderable cluster.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of availability zones for the orderable cluster.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl OrderableClusterOption {

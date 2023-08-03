@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainPackageDetails {
     /// <p>Internal ID of the package.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>User specified name of the package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>Currently supports only TXT-DICTIONARY.</p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<crate::types::PackageType>,
     /// <p>Timestamp of the most-recent update to the association status.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Name of the domain you've associated a package with.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
-    #[doc(hidden)]
     pub domain_package_status: ::std::option::Option<crate::types::DomainPackageStatus>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>
-    #[doc(hidden)]
     pub reference_path: ::std::option::Option<::std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl DomainPackageDetails {

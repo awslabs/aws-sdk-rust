@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
-    #[doc(hidden)]
     pub node_group_count: i32,
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
-    #[doc(hidden)]
     pub global_node_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster. </p>
-    #[doc(hidden)]
     pub global_node_groups_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<bool>,
     /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
-    #[doc(hidden)]
     pub max_account_limit_reached: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

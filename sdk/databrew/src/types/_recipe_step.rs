@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeStep {
     /// <p>The particular action to be performed in the recipe step.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RecipeAction>,
     /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
     /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
-    #[doc(hidden)]
     pub condition_expressions: ::std::option::Option<::std::vec::Vec<crate::types::ConditionExpression>>,
 }
 impl RecipeStep {

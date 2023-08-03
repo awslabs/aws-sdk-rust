@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentVersion {
     /// <p>Component type.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>List of versions.</p>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ComponentVersion {

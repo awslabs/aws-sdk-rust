@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedDataSourcesResult {
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
-    #[doc(hidden)]
     pub malware_protection: ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
 }
 impl UnprocessedDataSourcesResult {

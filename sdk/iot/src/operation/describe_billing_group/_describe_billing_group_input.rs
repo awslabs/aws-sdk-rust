@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBillingGroupInput {
     /// <p>The name of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBillingGroupInput {

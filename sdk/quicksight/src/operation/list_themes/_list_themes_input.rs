@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThemesInput {
     /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned per request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The type of themes that you want to list. Valid options include the following:</p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct ListThemesInput {
     /// <li> <p> <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.</p> </li>
     /// <li> <p> <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThemeType>,
 }
 impl ListThemesInput {

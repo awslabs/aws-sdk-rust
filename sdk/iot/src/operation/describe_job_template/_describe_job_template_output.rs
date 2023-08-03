@@ -4,44 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobTemplateOutput {
     /// <p>The ARN of the job template.</p>
-    #[doc(hidden)]
     pub job_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the job template.</p>
-    #[doc(hidden)]
     pub job_template_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the job template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An S3 link to the job document.</p>
-    #[doc(hidden)]
     pub document_source: ::std::option::Option<::std::string::String>,
     /// <p>The job document.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration for pre-signed S3 URLs.</p>
-    #[doc(hidden)]
     pub presigned_url_config: ::std::option::Option<crate::types::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of a job.</p>
-    #[doc(hidden)]
     pub job_executions_rollout_config: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
-    #[doc(hidden)]
     pub abort_config: ::std::option::Option<crate::types::AbortConfig>,
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    #[doc(hidden)]
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
     /// <p>The configuration that determines how many retries are allowed for each failure type for a job.</p>
-    #[doc(hidden)]
     pub job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
-    #[doc(hidden)]
     pub maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    #[doc(hidden)]
     pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

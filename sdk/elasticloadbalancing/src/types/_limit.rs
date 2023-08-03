@@ -10,10 +10,8 @@ pub struct Limit {
     /// <li> <p>classic-load-balancers</p> </li>
     /// <li> <p>classic-registered-instances</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the limit.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<::std::string::String>,
 }
 impl Limit {

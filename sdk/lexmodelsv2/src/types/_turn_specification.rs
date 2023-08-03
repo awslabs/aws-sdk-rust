@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TurnSpecification {
     /// <p>Contains information about the agent messages in the turn.</p>
-    #[doc(hidden)]
     pub agent_turn: ::std::option::Option<crate::types::AgentTurnSpecification>,
     /// <p>Contains information about the user messages in the turn.</p>
-    #[doc(hidden)]
     pub user_turn: ::std::option::Option<crate::types::UserTurnSpecification>,
 }
 impl TurnSpecification {

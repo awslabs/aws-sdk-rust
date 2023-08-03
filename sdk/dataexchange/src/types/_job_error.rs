@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobError {
     /// <p>The code for the job error.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::Code>,
     /// <p>The details about the job error.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::Details>,
     /// <p>The name of the limit that was reached.</p>
-    #[doc(hidden)]
     pub limit_name: ::std::option::Option<crate::types::JobErrorLimitName>,
     /// <p>The value of the exceeded limit.</p>
-    #[doc(hidden)]
     pub limit_value: f64,
     /// <p>The message related to the job error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the resource related to the error.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource related to the error.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::JobErrorResourceTypes>,
 }
 impl JobError {

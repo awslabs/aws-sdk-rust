@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPluginsInput {
     /// <p>The maximum number of plugins that can be returned.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPluginsInput {

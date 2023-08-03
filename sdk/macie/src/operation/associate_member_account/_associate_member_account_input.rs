@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
-    #[doc(hidden)]
     pub member_account_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateMemberAccountInput {

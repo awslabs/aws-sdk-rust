@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordBatchInput {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more records.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl PutRecordBatchInput {

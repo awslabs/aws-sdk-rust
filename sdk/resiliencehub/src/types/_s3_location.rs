@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {

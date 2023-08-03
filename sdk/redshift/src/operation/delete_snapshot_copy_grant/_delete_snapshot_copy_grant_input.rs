@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotCopyGrantInput {
     /// <p>The name of the snapshot copy grant to delete.</p>
-    #[doc(hidden)]
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotCopyGrantInput {

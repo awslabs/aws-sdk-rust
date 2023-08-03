@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template to delete.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApprovalRuleTemplateInput {

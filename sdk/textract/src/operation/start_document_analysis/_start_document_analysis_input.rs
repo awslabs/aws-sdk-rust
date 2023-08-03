@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDocumentAnalysisInput {
     /// <p>The location of the document to be processed.</p>
-    #[doc(hidden)]
     pub document_location: ::std::option::Option<crate::types::DocumentLocation>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    #[doc(hidden)]
     pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    #[doc(hidden)]
     pub job_tag: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    #[doc(hidden)]
     pub notification_channel: ::std::option::Option<crate::types::NotificationChannel>,
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub queries_config: ::std::option::Option<crate::types::QueriesConfig>,
 }
 impl StartDocumentAnalysisInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDocumentMetadataHistoryOutput {
     /// <p>The name of the change template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the change template.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the person in the organization who requested the review of the change template.</p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<::std::string::String>,
     /// <p>Information about the response to the change template approval request.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::DocumentMetadataResponseInfo>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeAlertRule {
     /// <p>The type of alert rule.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RealTimeAlertRuleType>,
     /// <p>Specifies the settings for matching the keywords in a real-time alert rule.</p>
-    #[doc(hidden)]
     pub keyword_match_configuration: ::std::option::Option<crate::types::KeywordMatchConfiguration>,
     /// <p>Specifies the settings for predicting sentiment in a real-time alert rule.</p>
-    #[doc(hidden)]
     pub sentiment_configuration: ::std::option::Option<crate::types::SentimentConfiguration>,
     /// <p>Specifies the issue detection settings for a real-time alert rule.</p>
-    #[doc(hidden)]
     pub issue_detection_configuration: ::std::option::Option<crate::types::IssueDetectionConfiguration>,
 }
 impl RealTimeAlertRule {

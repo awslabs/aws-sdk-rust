@@ -12,7 +12,6 @@ pub struct CreateOptionGroupInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the engine that this option group should be associated with.</p>
     /// <p>Valid Values:</p>
@@ -29,16 +28,12 @@ pub struct CreateOptionGroupInput {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    #[doc(hidden)]
     pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the option group.</p>
-    #[doc(hidden)]
     pub option_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the option group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOptionGroupInput {

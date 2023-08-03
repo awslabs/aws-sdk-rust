@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceProperties {
     /// <p>The date and time the Source Properties were last updated on.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
-    #[doc(hidden)]
     pub recommended_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Hints used to uniquely identify a machine.</p>
-    #[doc(hidden)]
     pub identification_hints: ::std::option::Option<crate::types::IdentificationHints>,
     /// <p>An array of network interfaces.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>An array of disks.</p>
-    #[doc(hidden)]
     pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     /// <p>An array of CPUs.</p>
-    #[doc(hidden)]
     pub cpus: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
     /// <p>The amount of RAM in bytes.</p>
-    #[doc(hidden)]
     pub ram_bytes: i64,
     /// <p>Operating system.</p>
-    #[doc(hidden)]
     pub os: ::std::option::Option<crate::types::Os>,
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
-    #[doc(hidden)]
     pub supports_nitro_instances: ::std::option::Option<bool>,
 }
 impl SourceProperties {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Relationship {
     /// <p>The ID of the target component type associated with this relationship.</p>
-    #[doc(hidden)]
     pub target_component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the relationship.</p>
-    #[doc(hidden)]
     pub relationship_type: ::std::option::Option<::std::string::String>,
 }
 impl Relationship {

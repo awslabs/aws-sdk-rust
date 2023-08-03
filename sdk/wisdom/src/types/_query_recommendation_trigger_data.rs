@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct QueryRecommendationTriggerData {
     /// <p>The text associated with the recommendation trigger.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl QueryRecommendationTriggerData {

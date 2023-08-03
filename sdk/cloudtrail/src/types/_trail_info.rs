@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrailInfo {
     /// <p>The ARN of a trail.</p>
-    #[doc(hidden)]
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a trail.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
 }
 impl TrailInfo {

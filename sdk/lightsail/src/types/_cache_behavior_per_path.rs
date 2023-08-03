@@ -13,7 +13,6 @@ pub struct CacheBehaviorPerPath {
     /// <li> <p>Specify the following to cache only the .html files in the document root of an Apache web server.</p> <p> <code>var/www/html/*.html</code> </p> </li>
     /// <li> <p>Specify the following to cache only the .jpg, .png, and .gif files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/*.jpg</code> </p> <p> <code>var/www/html/images/*.png</code> </p> <p> <code>var/www/html/images/*.gif</code> </p> <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p> <p> <code>var/www/html/images/</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The cache behavior for the specified path.</p>
     /// <p>You can specify one of the following per-path cache behaviors:</p>
@@ -21,7 +20,6 @@ pub struct CacheBehaviorPerPath {
     /// <li> <p> <b> <code>cache</code> </b> - This behavior caches the specified path. </p> </li>
     /// <li> <p> <b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub behavior: ::std::option::Option<crate::types::BehaviorEnum>,
 }
 impl CacheBehaviorPerPath {

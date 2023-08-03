@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DNS response type for the virtual node.</p>
-    #[doc(hidden)]
     pub response_type: ::std::option::Option<crate::types::DnsResponseType>,
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-    #[doc(hidden)]
     pub ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl DnsServiceDiscovery {

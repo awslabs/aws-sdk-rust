@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDefaultRetentionPolicyOutput {
     /// <p>The retention policy ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The retention policy name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The retention policy description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The retention policy folder configurations.</p>
-    #[doc(hidden)]
     pub folder_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>>,
     _request_id: Option<String>,
 }

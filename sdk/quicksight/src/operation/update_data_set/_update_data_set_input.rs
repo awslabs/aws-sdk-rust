@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name for the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
-    #[doc(hidden)]
     pub physical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>>,
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
-    #[doc(hidden)]
     pub logical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
     /// <p>Indicates whether you want to import the data into SPICE.</p>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    #[doc(hidden)]
     pub column_groups: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    #[doc(hidden)]
     pub field_folders: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
     /// <p>The row-level security configuration for the data you want to create.</p>
-    #[doc(hidden)]
     pub row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
-    #[doc(hidden)]
     pub row_level_permission_tag_configuration: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    #[doc(hidden)]
     pub column_level_permission_rules: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
-    #[doc(hidden)]
     pub data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     /// <p>The parameter declarations of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
 }
 impl UpdateDataSetInput {

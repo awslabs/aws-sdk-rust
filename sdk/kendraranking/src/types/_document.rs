@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Document {
     /// <p>The identifier of the document from the search service.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The optional group identifier of the document from the search service. Documents with the same group identifier are grouped together and processed as one document within the service.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the search service's document.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The body text of the search service's document.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The title of the search service's document represented as a list of tokens or words. You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You cannot provide both.</p>
-    #[doc(hidden)]
     pub tokenized_title: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The body text of the search service's document represented as a list of tokens or words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>. You cannot provide both.</p>
-    #[doc(hidden)]
     pub tokenized_body: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The original document score or rank from the search service. Amazon Kendra Intelligent Ranking gives the document a new score or rank based on its intelligent search algorithms.</p>
-    #[doc(hidden)]
     pub original_score: ::std::option::Option<f32>,
 }
 impl Document {

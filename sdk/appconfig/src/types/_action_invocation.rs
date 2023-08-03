@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionInvocation {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    #[doc(hidden)]
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error message when an extension invocation fails.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error code when an extension invocation fails.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>A system-generated ID for this invocation.</p>
-    #[doc(hidden)]
     pub invocation_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionInvocation {

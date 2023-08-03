@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitionsInput {
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
-    #[doc(hidden)]
     pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::MetricDestination>,
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetRumMetricDefinitionsInput {

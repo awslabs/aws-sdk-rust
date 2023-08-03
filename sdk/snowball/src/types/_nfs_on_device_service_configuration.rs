@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NfsOnDeviceServiceConfiguration {
     /// <p>The maximum NFS storage for one Snow Family device.</p>
-    #[doc(hidden)]
     pub storage_limit: i32,
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
-    #[doc(hidden)]
     pub storage_unit: ::std::option::Option<crate::types::StorageUnit>,
 }
 impl NfsOnDeviceServiceConfiguration {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDataIdentifiers {
     /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
-    #[doc(hidden)]
     pub detections: ::std::option::Option<::std::vec::Vec<crate::types::CustomDetection>>,
     /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i64>,
 }
 impl CustomDataIdentifiers {

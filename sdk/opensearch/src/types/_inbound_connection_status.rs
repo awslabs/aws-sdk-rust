@@ -15,10 +15,8 @@ pub struct InboundConnectionStatus {
     /// <li> <p> <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::InboundConnectionStatusCode>,
     /// <p>Information about the connection.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl InboundConnectionStatus {

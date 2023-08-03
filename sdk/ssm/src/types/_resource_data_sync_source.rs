@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncSource {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>SingleAccountMultiRegions</code>.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations.</p>
-    #[doc(hidden)]
     pub aws_organizations_source: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    #[doc(hidden)]
     pub source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
-    #[doc(hidden)]
     pub include_future_regions: bool,
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_all_ops_data_sources: bool,
 }
 impl ResourceDataSyncSource {

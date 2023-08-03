@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionsRolloutConfig {
     /// <p>The maximum number of things that will be notified of a pending job, per minute. This parameter allows you to create a staged rollout.</p>
-    #[doc(hidden)]
     pub maximum_per_minute: ::std::option::Option<i32>,
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job rollout.</p>
-    #[doc(hidden)]
     pub exponential_rate: ::std::option::Option<crate::types::ExponentialRolloutRate>,
 }
 impl JobExecutionsRolloutConfig {

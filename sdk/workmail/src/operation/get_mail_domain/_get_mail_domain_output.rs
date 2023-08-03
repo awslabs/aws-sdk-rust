@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMailDomainOutput {
     /// <p>A list of the DNS records that WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
     /// <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
-    #[doc(hidden)]
     pub is_test_domain: bool,
     /// <p>Specifies whether the domain is the default domain for your organization.</p>
-    #[doc(hidden)]
     pub is_default: bool,
     /// <p> Indicates the status of the domain ownership verification.</p>
-    #[doc(hidden)]
     pub ownership_verification_status: ::std::option::Option<crate::types::DnsRecordVerificationStatus>,
     /// <p>Indicates the status of a DKIM verification.</p>
-    #[doc(hidden)]
     pub dkim_verification_status: ::std::option::Option<crate::types::DnsRecordVerificationStatus>,
     _request_id: Option<String>,
 }

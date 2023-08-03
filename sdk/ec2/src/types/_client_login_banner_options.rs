@@ -7,10 +7,8 @@ pub struct ClientLoginBannerOptions {
     /// <p>Enable or disable a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     /// <p>Valid values: <code>true | false</code> </p>
     /// <p>Default value: <code>false</code> </p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established. UTF-8 encoded characters only. Maximum of 1400 characters.</p>
-    #[doc(hidden)]
     pub banner_text: ::std::option::Option<::std::string::String>,
 }
 impl ClientLoginBannerOptions {

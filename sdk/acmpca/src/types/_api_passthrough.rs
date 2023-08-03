@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiPassthrough {
     /// <p>Specifies X.509 extension information for a certificate.</p>
-    #[doc(hidden)]
     pub extensions: ::std::option::Option<crate::types::Extensions>,
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<crate::types::Asn1Subject>,
 }
 impl ApiPassthrough {

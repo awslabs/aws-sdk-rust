@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsRequestFilters {
     /// <p>Filter applications list by application ID.</p>
-    #[doc(hidden)]
     pub application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter applications list by archival status.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Filter applications list by wave ID.</p>
-    #[doc(hidden)]
     pub wave_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListApplicationsRequestFilters {

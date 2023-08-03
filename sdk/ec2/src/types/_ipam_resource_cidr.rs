@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamResourceCidr {
     /// <p>The IPAM ID for an IPAM resource.</p>
-    #[doc(hidden)]
     pub ipam_id: ::std::option::Option<::std::string::String>,
     /// <p>The scope ID for an IPAM resource.</p>
-    #[doc(hidden)]
     pub ipam_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The pool ID for an IPAM resource.</p>
-    #[doc(hidden)]
     pub ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for an IPAM resource.</p>
-    #[doc(hidden)]
     pub resource_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account number of the owner of an IPAM resource.</p>
-    #[doc(hidden)]
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an IPAM resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of an IPAM resource.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR for an IPAM resource.</p>
-    #[doc(hidden)]
     pub resource_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The type of IPAM resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::IpamResourceType>,
     /// <p>The tags for an IPAM resource.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
@@ -40,19 +30,14 @@ pub struct IpamResourceCidr {
     /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li>
     /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ip_usage: ::std::option::Option<f64>,
     /// <p>The compliance status of the IPAM resource. For more information on compliance statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub compliance_status: ::std::option::Option<crate::types::IpamComplianceStatus>,
     /// <p>The management state of the resource. For more information about management states, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub management_state: ::std::option::Option<crate::types::IpamManagementState>,
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub overlap_status: ::std::option::Option<crate::types::IpamOverlapStatus>,
     /// <p>The ID of a VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamResourceCidr {

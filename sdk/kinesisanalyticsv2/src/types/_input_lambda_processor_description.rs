@@ -7,12 +7,10 @@ pub struct InputLambdaProcessorDescription {
     /// <p>The ARN of the Amazon Lambda function that is used to preprocess the records in the stream.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is used to access the Amazon Lambda function.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl InputLambdaProcessorDescription {

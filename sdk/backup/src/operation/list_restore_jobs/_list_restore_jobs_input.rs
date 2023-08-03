@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRestoreJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
-    #[doc(hidden)]
     pub by_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns only restore jobs that were created before the specified date.</p>
-    #[doc(hidden)]
     pub by_created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only restore jobs that were created after the specified date.</p>
-    #[doc(hidden)]
     pub by_created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only restore jobs associated with the specified job status.</p>
-    #[doc(hidden)]
     pub by_status: ::std::option::Option<crate::types::RestoreJobStatus>,
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub by_complete_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListRestoreJobsInput {

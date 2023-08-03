@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentImportResource {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
-    #[doc(hidden)]
     pub channel_counts: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The format of the files that were imported to create the segment. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that the endpoint definitions were imported from to create the segment.</p>
-    #[doc(hidden)]
     pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
 }
 impl SegmentImportResource {

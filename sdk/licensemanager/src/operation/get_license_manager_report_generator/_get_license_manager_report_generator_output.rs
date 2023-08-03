@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLicenseManagerReportGeneratorOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
-    #[doc(hidden)]
     pub report_generator: ::std::option::Option<crate::types::ReportGenerator>,
     _request_id: Option<String>,
 }

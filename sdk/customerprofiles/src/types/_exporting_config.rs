@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportingConfig {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
-    #[doc(hidden)]
     pub s3_exporting: ::std::option::Option<crate::types::S3ExportingConfig>,
 }
 impl ExportingConfig {

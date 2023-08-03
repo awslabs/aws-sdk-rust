@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteTableVersionInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
-    #[doc(hidden)]
     pub version_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteTableVersionInput {

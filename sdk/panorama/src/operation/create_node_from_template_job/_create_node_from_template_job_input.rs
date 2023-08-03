@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNodeFromTemplateJobInput {
     /// <p>The type of node.</p>
-    #[doc(hidden)]
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>An output package name for the node.</p>
-    #[doc(hidden)]
     pub output_package_name: ::std::option::Option<::std::string::String>,
     /// <p>An output package version for the node.</p>
-    #[doc(hidden)]
     pub output_package_version: ::std::option::Option<::std::string::String>,
     /// <p>A name for the node.</p>
-    #[doc(hidden)]
     pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the node.</p>
-    #[doc(hidden)]
     pub node_description: ::std::option::Option<::std::string::String>,
     /// <p>Template parameters for the node.</p>
-    #[doc(hidden)]
     pub template_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Tags for the job.</p>
-    #[doc(hidden)]
     pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
 }
 impl CreateNodeFromTemplateJobInput {

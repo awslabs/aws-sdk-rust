@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Correction {
     /// <p>The zero-based location in the response string or text where the corrected word starts.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based location in the response string or text where the corrected word ends.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p>The string or text of a misspelled word in a query.</p>
-    #[doc(hidden)]
     pub term: ::std::option::Option<::std::string::String>,
     /// <p>The string or text of a corrected misspelled word in a query.</p>
-    #[doc(hidden)]
     pub corrected_term: ::std::option::Option<::std::string::String>,
 }
 impl Correction {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListAppInstanceAdminsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of administrators that you want to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAppInstanceAdminsInput {

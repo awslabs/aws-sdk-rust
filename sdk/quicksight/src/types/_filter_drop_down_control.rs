@@ -5,29 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterDropDownControl {
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
-    #[doc(hidden)]
     pub filter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source filter ID of the <code>FilterDropDownControl</code>.</p>
-    #[doc(hidden)]
     pub source_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The display options of the <code>FilterDropDownControl</code>.</p>
-    #[doc(hidden)]
     pub display_options: ::std::option::Option<crate::types::DropDownControlDisplayOptions>,
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p> </li>
     /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SheetControlListType>,
     /// <p>A list of selectable values that are used in a control.</p>
-    #[doc(hidden)]
     pub selectable_values: ::std::option::Option<crate::types::FilterSelectableValues>,
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
-    #[doc(hidden)]
     pub cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
 }
 impl FilterDropDownControl {

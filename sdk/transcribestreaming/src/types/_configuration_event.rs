@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationEvent {
     /// <p>Indicates which speaker is on which audio channel.</p>
-    #[doc(hidden)]
     pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
     /// <p>Provides additional optional settings for your Call Analytics post-call request, including encryption and output locations for your redacted and unredacted transcript.</p>
-    #[doc(hidden)]
     pub post_call_analytics_settings: ::std::option::Option<crate::types::PostCallAnalyticsSettings>,
 }
 impl ConfigurationEvent {

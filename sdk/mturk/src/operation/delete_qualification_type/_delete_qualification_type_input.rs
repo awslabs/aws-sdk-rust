@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteQualificationTypeInput {
     /// <p>The ID of the QualificationType to dispose.</p>
-    #[doc(hidden)]
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteQualificationTypeInput {

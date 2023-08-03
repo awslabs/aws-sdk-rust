@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedResourceSummary {
     /// <p>Type of resource associated with a license.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Number of resources associated with licenses.</p>
-    #[doc(hidden)]
     pub association_count: ::std::option::Option<i64>,
 }
 impl ManagedResourceSummary {

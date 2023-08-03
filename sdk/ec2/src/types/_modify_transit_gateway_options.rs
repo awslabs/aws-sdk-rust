@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTransitGatewayOptions {
     /// <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
-    #[doc(hidden)]
     pub add_transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Removes CIDR blocks for the transit gateway.</p>
-    #[doc(hidden)]
     pub remove_transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Enable or disable Equal Cost Multipath Protocol support.</p>
-    #[doc(hidden)]
     pub vpn_ecmp_support: ::std::option::Option<crate::types::VpnEcmpSupportValue>,
     /// <p>Enable or disable DNS support.</p>
-    #[doc(hidden)]
     pub dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     /// <p>Enable or disable automatic acceptance of attachment requests.</p>
-    #[doc(hidden)]
     pub auto_accept_shared_attachments: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
     /// <p>Enable or disable automatic association with the default association route table.</p>
-    #[doc(hidden)]
     pub default_route_table_association: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
     /// <p>The ID of the default association route table.</p>
-    #[doc(hidden)]
     pub association_default_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>Enable or disable automatic propagation of routes to the default propagation route table.</p>
-    #[doc(hidden)]
     pub default_route_table_propagation: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
     /// <p>The ID of the default propagation route table.</p>
-    #[doc(hidden)]
     pub propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
     /// <p>The modify ASN operation is not allowed on a transit gateway with active BGP sessions. You must first delete all transit gateway attachments that have BGP configured prior to modifying the ASN on the transit gateway.</p>
-    #[doc(hidden)]
     pub amazon_side_asn: ::std::option::Option<i64>,
 }
 impl ModifyTransitGatewayOptions {

@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyResponse {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    #[doc(hidden)]
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
-    #[doc(hidden)]
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the firewall policy. </p>
-    #[doc(hidden)]
     pub firewall_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the firewall policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy by calling <code>DescribeFirewallPolicy</code> and providing the firewall policy's name or ARN.</p>
-    #[doc(hidden)]
     pub firewall_policy_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
-    #[doc(hidden)]
     pub consumed_stateless_rule_capacity: ::std::option::Option<i32>,
     /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
-    #[doc(hidden)]
     pub consumed_stateful_rule_capacity: ::std::option::Option<i32>,
     /// <p>The number of firewalls that are associated with this firewall policy.</p>
-    #[doc(hidden)]
     pub number_of_associations: ::std::option::Option<i32>,
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>The last time that the firewall policy was changed.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FirewallPolicyResponse {

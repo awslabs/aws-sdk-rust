@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutPropertyErrorEntry {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>>,
 }
 impl BatchPutPropertyErrorEntry {

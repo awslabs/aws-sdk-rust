@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Vpc {
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-    #[doc(hidden)]
     pub vpc_region: ::std::option::Option<crate::types::VpcRegion>,
     /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl Vpc {

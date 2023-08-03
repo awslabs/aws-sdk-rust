@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositorySyncStatusInput {
     /// <p>The repository name.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository branch.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The repository sync type.</p>
-    #[doc(hidden)]
     pub sync_type: ::std::option::Option<crate::types::SyncType>,
 }
 impl GetRepositorySyncStatusInput {

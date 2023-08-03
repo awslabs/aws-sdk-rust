@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetImportResourceSpecification {
     /// <p>The name of the test set.</p>
-    #[doc(hidden)]
     pub test_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the test set.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the test set.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the location that Amazon Lex uses to store the test-set.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p>Contains information about the input location from where test-set should be imported.</p>
-    #[doc(hidden)]
     pub import_input_location: ::std::option::Option<crate::types::TestSetImportInputLocation>,
     /// <p>Specifies whether the test-set being imported contains written or spoken data.</p>
-    #[doc(hidden)]
     pub modality: ::std::option::Option<crate::types::TestSetModality>,
     /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    #[doc(hidden)]
     pub test_set_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestSetImportResourceSpecification {

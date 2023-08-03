@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotSiteWiseAction {
     /// <p>A list of asset property value entries.</p>
-    #[doc(hidden)]
     pub put_asset_property_value_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
     /// <p>The ARN of the role that grants IoT permission to send an asset property value to IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict access to specific asset hierarchy paths.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IotSiteWiseAction {

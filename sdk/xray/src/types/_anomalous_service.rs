@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalousService {
     /// <p></p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<crate::types::ServiceId>,
 }
 impl AnomalousService {

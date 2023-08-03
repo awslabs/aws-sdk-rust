@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccessPointsInput {
     /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
-    #[doc(hidden)]
     pub access_point_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAccessPointsInput {

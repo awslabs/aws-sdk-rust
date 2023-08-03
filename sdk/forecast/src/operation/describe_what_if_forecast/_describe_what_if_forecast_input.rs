@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWhatIfForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
-    #[doc(hidden)]
     pub what_if_forecast_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWhatIfForecastInput {

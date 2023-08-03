@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resolution {
     /// <p>The screen resolution's width, expressed in pixels.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<i32>,
     /// <p>The screen resolution's height, expressed in pixels.</p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
 }
 impl Resolution {

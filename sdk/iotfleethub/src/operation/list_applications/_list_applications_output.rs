@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
     /// <p>An array of objects that provide summaries of information about the web applications in the list.</p>
-    #[doc(hidden)]
     pub application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
     /// <p>A token used to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

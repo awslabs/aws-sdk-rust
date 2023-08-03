@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkloadDiscoveryConfig {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
-    #[doc(hidden)]
     pub trusted_advisor_integration_status: ::std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
     /// <p>The mode to use for identifying resources associated with the workload.</p>
     /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
-    #[doc(hidden)]
     pub workload_resource_definition: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionType>>,
 }
 impl WorkloadDiscoveryConfig {

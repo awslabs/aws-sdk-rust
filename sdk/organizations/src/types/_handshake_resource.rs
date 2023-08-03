@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HandshakeResource {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
     /// <ul>
@@ -16,10 +15,8 @@ pub struct HandshakeResource {
     /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
     /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HandshakeResourceType>,
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
 }
 impl HandshakeResource {

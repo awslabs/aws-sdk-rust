@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSet {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the IP set that helps with identification. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    #[doc(hidden)]
     pub ip_address_version: ::std::option::Option<crate::types::IpAddressVersion>,
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
     /// <p>Example address strings: </p>
@@ -36,7 +31,6 @@ pub struct IpSet {
     /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
     /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IpSet {

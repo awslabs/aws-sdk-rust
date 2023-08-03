@@ -14,7 +14,6 @@ pub struct ProjectEnvironment {
     /// <li> <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EnvironmentType>,
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
@@ -42,7 +41,6 @@ pub struct ProjectEnvironment {
     /// </registry></code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
@@ -58,10 +56,8 @@ pub struct ProjectEnvironment {
     /// <li> <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> </p>
-    #[doc(hidden)]
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
@@ -71,13 +67,10 @@ pub struct ProjectEnvironment {
     /// <p>If the operating system's base image is Alpine Linux and the previous command does not work, add the <code>-t</code> argument to <code>timeout</code>:</p>
     /// <p> <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p>
     /// <p> <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
-    #[doc(hidden)]
     pub privileged_mode: ::std::option::Option<bool>,
     /// <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a> in the <i>CodeBuild User Guide</i>.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p> The credentials for access to a private registry.</p>
-    #[doc(hidden)]
     pub registry_credential: ::std::option::Option<crate::types::RegistryCredential>,
     /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <ul>
@@ -85,7 +78,6 @@ pub struct ProjectEnvironment {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role. </p> </li>
     /// </ul>
     /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials. </p>
-    #[doc(hidden)]
     pub image_pull_credentials_type: ::std::option::Option<crate::types::ImagePullCredentialsType>,
 }
 impl ProjectEnvironment {

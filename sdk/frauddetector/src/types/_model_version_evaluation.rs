@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelVersionEvaluation {
     /// <p> The output variable name. </p>
-    #[doc(hidden)]
     pub output_variable_name: ::std::option::Option<::std::string::String>,
     /// <p> The evaluation score generated for the model version. </p>
-    #[doc(hidden)]
     pub evaluation_score: ::std::option::Option<::std::string::String>,
     /// <p> The prediction explanations generated for the model version. </p>
-    #[doc(hidden)]
     pub prediction_explanations: ::std::option::Option<crate::types::PredictionExplanations>,
 }
 impl ModelVersionEvaluation {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelComponentDeploymentOutput {
     /// <p>The detailed data of the component with the deployment that is being canceled.</p>
-    #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,
 }

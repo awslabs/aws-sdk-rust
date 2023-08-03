@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsInput {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of custom line item versions to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListCustomLineItemVersionsFilter>,
 }
 impl ListCustomLineItemVersionsInput {

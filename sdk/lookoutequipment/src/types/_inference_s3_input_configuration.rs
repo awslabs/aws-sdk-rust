@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceS3InputConfiguration {
     /// <p>The bucket containing the input dataset for the inference. </p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl InferenceS3InputConfiguration {

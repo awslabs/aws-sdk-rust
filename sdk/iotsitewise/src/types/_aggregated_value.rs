@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The quality of the aggregated data.</p>
-    #[doc(hidden)]
     pub quality: ::std::option::Option<crate::types::Quality>,
     /// <p>The value of the aggregates.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::Aggregates>,
 }
 impl AggregatedValue {

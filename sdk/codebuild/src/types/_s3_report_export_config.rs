@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ReportExportConfig {
     /// <p> The name of the S3 bucket where the raw data of a report are exported. </p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an Amazon S3 bucket that is owned by an account other than the account running the build.</p>
-    #[doc(hidden)]
     pub bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p> The path to the exported report's raw data results. </p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p> The type of build output artifact to create. Valid values include: </p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified. </p> </li>
     /// <li> <p> <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub packaging: ::std::option::Option<crate::types::ReportPackagingType>,
     /// <p> The encryption key for the report's encrypted raw data. </p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p> A boolean value that specifies if the results of a report are encrypted. </p>
-    #[doc(hidden)]
     pub encryption_disabled: ::std::option::Option<bool>,
 }
 impl S3ReportExportConfig {

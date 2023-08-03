@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeeklySetting {
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
-    #[doc(hidden)]
     pub hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
 }
 impl WeeklySetting {

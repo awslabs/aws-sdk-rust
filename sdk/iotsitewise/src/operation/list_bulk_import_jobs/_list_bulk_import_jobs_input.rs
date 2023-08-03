@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBulkImportJobsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ListBulkImportJobsFilter>,
 }
 impl ListBulkImportJobsInput {

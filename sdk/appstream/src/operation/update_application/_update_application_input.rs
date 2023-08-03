@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The icon S3 location of the application.</p>
-    #[doc(hidden)]
     pub icon_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The launch path of the application.</p>
-    #[doc(hidden)]
     pub launch_path: ::std::option::Option<::std::string::String>,
     /// <p>The working directory of the application.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The launch parameters of the application.</p>
-    #[doc(hidden)]
     pub launch_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the app block.</p>
-    #[doc(hidden)]
     pub app_block_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes to delete for an application.</p>
-    #[doc(hidden)]
     pub attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>>,
 }
 impl UpdateApplicationInput {

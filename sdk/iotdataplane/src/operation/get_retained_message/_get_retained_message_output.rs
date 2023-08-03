@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRetainedMessageOutput {
     /// <p>The topic name to which the retained message was published.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded message payload of the retained message body.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
-    #[doc(hidden)]
     pub qos: i32,
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    #[doc(hidden)]
     pub user_properties: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpSetInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::IpSetFormat>,
     /// <p>The URI of the file that contains the IPSet. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
-    #[doc(hidden)]
     pub activate: ::std::option::Option<bool>,
     /// <p>The idempotency token for the create request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be added to a new IP set resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIpSetInput {

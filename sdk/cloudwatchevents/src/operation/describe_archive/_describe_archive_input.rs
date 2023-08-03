@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeArchiveInput {
     /// <p>The name of the archive to retrieve.</p>
-    #[doc(hidden)]
     pub archive_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeArchiveInput {

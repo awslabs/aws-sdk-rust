@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateStudioInput {
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
-    #[doc(hidden)]
     pub admin_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name for the studio.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The studio encryption configuration.</p>
-    #[doc(hidden)]
     pub studio_encryption_configuration: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
-    #[doc(hidden)]
     pub studio_name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
-    #[doc(hidden)]
     pub user_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateStudioInput {

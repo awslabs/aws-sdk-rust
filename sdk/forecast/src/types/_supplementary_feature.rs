@@ -12,7 +12,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupplementaryFeature {
     /// <p>The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> <b>Weather Index</b> </p>
     /// <p>To enable the Weather Index, set the value to <code>"true"</code> </p>
@@ -86,7 +85,6 @@ pub struct SupplementaryFeature {
     /// <li> <p>"UY" - URUGUAY</p> </li>
     /// <li> <p>"VE" - VENEZUELA</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl SupplementaryFeature {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbSubnetGroupSubnet {
     /// <p>The identifier of a subnet in the subnet group.</p>
-    #[doc(hidden)]
     pub subnet_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Availability Zone for a subnet in the subnet group.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone: ::std::option::Option<crate::types::AwsRdsDbSubnetGroupSubnetAvailabilityZone>,
     /// <p>The status of a subnet in the subnet group.</p>
-    #[doc(hidden)]
     pub subnet_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSubnetGroupSubnet {

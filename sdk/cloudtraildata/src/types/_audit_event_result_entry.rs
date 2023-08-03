@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditEventResultEntry {
     /// <p>The original event ID from the source event.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The event ID assigned by CloudTrail.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
 }
 impl AuditEventResultEntry {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHomeRegionControlInput {
     /// <p>The name of the home region of the calling account.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::Target>,
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
-    #[doc(hidden)]
     pub dry_run: bool,
 }
 impl CreateHomeRegionControlInput {

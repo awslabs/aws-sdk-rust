@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionAssociations {
     /// <p>The number of CloudFront functions in the list.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
 }
 impl FunctionAssociations {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChunksInput {
     /// Storage job id
-    #[doc(hidden)]
     pub storage_job_id: ::std::option::Option<::std::string::String>,
     /// Object token
-    #[doc(hidden)]
     pub object_token: ::std::option::Option<::std::string::String>,
     /// Maximum number of chunks
-    #[doc(hidden)]
     pub max_results: i32,
     /// Pagination token
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListChunksInput {

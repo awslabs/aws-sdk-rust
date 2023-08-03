@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRuleListItem {
     /// <p>The rule ARN.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The pattern for the topic names that apply.</p>
-    #[doc(hidden)]
     pub topic_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the rule was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the rule is disabled.</p>
-    #[doc(hidden)]
     pub rule_disabled: ::std::option::Option<bool>,
 }
 impl TopicRuleListItem {

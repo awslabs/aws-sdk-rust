@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BooleanColumnStatisticsData {
     /// <p>The number of true values in the column.</p>
-    #[doc(hidden)]
     pub number_of_trues: i64,
     /// <p>The number of false values in the column.</p>
-    #[doc(hidden)]
     pub number_of_falses: i64,
     /// <p>The number of null values in the column.</p>
-    #[doc(hidden)]
     pub number_of_nulls: i64,
 }
 impl BooleanColumnStatisticsData {

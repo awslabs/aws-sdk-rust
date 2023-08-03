@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPolicyVersionsInput {
     /// <p>The policy name.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
 impl ListPolicyVersionsInput {

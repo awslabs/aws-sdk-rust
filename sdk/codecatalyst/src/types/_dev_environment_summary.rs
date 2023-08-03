@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevEnvironmentSummary {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID for the Dev Environment. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
-    #[doc(hidden)]
     pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Dev Environment. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DevEnvironmentStatus>,
     /// <p>The reason for the status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
-    #[doc(hidden)]
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>,
     /// <p>The user-specified alias for the Dev Environment.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    #[doc(hidden)]
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::Ide>>,
     /// <p>The Amazon EC2 instace type used for the Dev Environment. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Dev Environments consume compute minutes when running.</p>
-    #[doc(hidden)]
     pub inactivity_timeout_minutes: i32,
     /// <p>Information about the configuration of persistent storage for the Dev Environment.</p>
-    #[doc(hidden)]
     pub persistent_storage: ::std::option::Option<crate::types::PersistentStorage>,
 }
 impl DevEnvironmentSummary {

@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImportOutput {
     /// <p>The unique identifier of the described import.</p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ImportResourceSpecification>,
     /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
-    #[doc(hidden)]
     pub imported_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the imported resource.</p>
-    #[doc(hidden)]
     pub imported_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    #[doc(hidden)]
     pub merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
     /// <p>The status of the import process. When the status is <code>Completed</code> the resource is imported and ready for use.</p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time that the import was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the import was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

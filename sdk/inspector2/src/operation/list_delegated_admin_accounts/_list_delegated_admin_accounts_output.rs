@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDelegatedAdminAccountsOutput {
     /// <p>Details of the Amazon Inspector delegated administrator of your organization.</p>
-    #[doc(hidden)]
     pub delegated_admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::DelegatedAdminAccount>>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

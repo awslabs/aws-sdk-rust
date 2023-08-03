@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScheduledActionInput {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    #[doc(hidden)]
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The name of the scheduled action.</p>
-    #[doc(hidden)]
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource associated with the scheduled action. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -29,7 +27,6 @@ pub struct DeleteScheduledActionInput {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -55,7 +52,6 @@ pub struct DeleteScheduledActionInput {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
 }
 impl DeleteScheduledActionInput {

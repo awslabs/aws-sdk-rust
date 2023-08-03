@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayoutConfiguration {
     /// <p> Unique identifier of a layout. </p>
-    #[doc(hidden)]
     pub default_layout: ::std::option::Option<::std::string::String>,
 }
 impl LayoutConfiguration {

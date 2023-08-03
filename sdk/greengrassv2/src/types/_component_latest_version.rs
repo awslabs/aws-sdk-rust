@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentLatestVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
-    #[doc(hidden)]
     pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the component version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The publisher of the component version.</p>
-    #[doc(hidden)]
     pub publisher: ::std::option::Option<::std::string::String>,
     /// <p>The platforms that the component version supports.</p>
-    #[doc(hidden)]
     pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>,
 }
 impl ComponentLatestVersion {

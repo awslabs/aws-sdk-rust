@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddAttachmentsToSetOutput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
-    #[doc(hidden)]
     pub attachment_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The time and date when the attachment set expires.</p>
-    #[doc(hidden)]
     pub expiry_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

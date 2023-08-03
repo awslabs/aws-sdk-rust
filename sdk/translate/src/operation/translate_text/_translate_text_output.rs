@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranslateTextOutput {
     /// <p>The translated text.</p>
-    #[doc(hidden)]
     pub translated_text: ::std::option::Option<::std::string::String>,
     /// <p>The language code for the language of the source text.</p>
-    #[doc(hidden)]
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language code for the language of the target text. </p>
-    #[doc(hidden)]
     pub target_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The names of the custom terminologies applied to the input text by Amazon Translate for the translated text response.</p>
-    #[doc(hidden)]
     pub applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
     /// <p>Optional settings that modify the translation output.</p>
-    #[doc(hidden)]
     pub applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
 }

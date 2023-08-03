@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollaborationSummary {
     /// <p>The identifier for the collaboration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the collaboration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the collaboration creator.</p>
-    #[doc(hidden)]
     pub creator_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the collaboration was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the collaboration metadata was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of a member in a collaboration.</p>
-    #[doc(hidden)]
     pub member_status: ::std::option::Option<crate::types::MemberStatus>,
     /// <p>The identifier of a member in a collaboration.</p>
-    #[doc(hidden)]
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a member in a collaboration.</p>
-    #[doc(hidden)]
     pub membership_arn: ::std::option::Option<::std::string::String>,
 }
 impl CollaborationSummary {

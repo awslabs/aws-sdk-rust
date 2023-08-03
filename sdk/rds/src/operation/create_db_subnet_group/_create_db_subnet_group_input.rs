@@ -12,16 +12,12 @@ pub struct CreateDbSubnetGroupInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the DB subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags to assign to the DB subnet group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbSubnetGroupInput {

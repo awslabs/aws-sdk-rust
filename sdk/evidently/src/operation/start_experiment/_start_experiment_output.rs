@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExperimentOutput {
     /// <p>A timestamp that indicates when the experiment started.</p>
-    #[doc(hidden)]
     pub started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UndeploySystemInstanceInput {
     /// <p>The ID of the system instance to remove from its target.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl UndeploySystemInstanceInput {

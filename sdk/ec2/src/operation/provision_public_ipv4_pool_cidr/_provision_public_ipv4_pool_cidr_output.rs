@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionPublicIpv4PoolCidrOutput {
     /// <p>The ID of the pool that you want to provision the CIDR to.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the address range of the public IPv4 pool.</p>
-    #[doc(hidden)]
     pub pool_address_range: ::std::option::Option<crate::types::PublicIpv4PoolRange>,
     _request_id: Option<String>,
 }

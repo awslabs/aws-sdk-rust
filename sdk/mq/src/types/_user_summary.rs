@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserSummary {
     /// <p>The type of change pending for the broker user.</p>
-    #[doc(hidden)]
     pub pending_change: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl UserSummary {

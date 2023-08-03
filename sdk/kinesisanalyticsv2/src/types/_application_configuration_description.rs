@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationConfigurationDescription {
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub sql_application_configuration_description: ::std::option::Option<crate::types::SqlApplicationConfigurationDescription>,
     /// <p>The details about the application code for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub application_code_configuration_description: ::std::option::Option<crate::types::ApplicationCodeConfigurationDescription>,
     /// <p>The details about the starting properties for a Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub run_configuration_description: ::std::option::Option<crate::types::RunConfigurationDescription>,
     /// <p>The details about a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub flink_application_configuration_description: ::std::option::Option<crate::types::FlinkApplicationConfigurationDescription>,
     /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub environment_property_descriptions: ::std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub application_snapshot_configuration_description: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
-    #[doc(hidden)]
     pub vpc_configuration_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationDescription>>,
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
-    #[doc(hidden)]
     pub zeppelin_application_configuration_description: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
 }
 impl ApplicationConfigurationDescription {

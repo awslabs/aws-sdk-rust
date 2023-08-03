@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicateSecretToRegionsOutput {
     /// <p>The ARN of the primary secret.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of replication.</p>
-    #[doc(hidden)]
     pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }

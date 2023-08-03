@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabasePreferences {
     /// <p> Specifies whether you're interested in self-managed databases or databases managed by AWS. </p>
-    #[doc(hidden)]
     pub database_management_preference: ::std::option::Option<crate::types::DatabaseManagementPreference>,
     /// <p> Specifies your preferred migration path. </p>
-    #[doc(hidden)]
     pub database_migration_preference: ::std::option::Option<crate::types::DatabaseMigrationPreference>,
 }
 impl DatabasePreferences {

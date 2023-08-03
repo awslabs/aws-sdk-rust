@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupObject {
     /// Object name
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Number of chunks in object
-    #[doc(hidden)]
     pub chunks_count: ::std::option::Option<i64>,
     /// Metadata string associated with the Object
-    #[doc(hidden)]
     pub metadata_string: ::std::option::Option<::std::string::String>,
     /// Object checksum
-    #[doc(hidden)]
     pub object_checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm
-    #[doc(hidden)]
     pub object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     /// Object token
-    #[doc(hidden)]
     pub object_token: ::std::option::Option<::std::string::String>,
 }
 impl BackupObject {

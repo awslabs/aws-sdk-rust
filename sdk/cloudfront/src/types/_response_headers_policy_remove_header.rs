@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyRemoveHeader {
     /// <p>The HTTP header name.</p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<::std::string::String>,
 }
 impl ResponseHeadersPolicyRemoveHeader {

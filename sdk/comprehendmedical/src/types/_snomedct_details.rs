@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnomedctDetails {
     /// <p> The edition of SNOMED-CT used. The edition used for the InferSNOMEDCT editions is the US edition. </p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<::std::string::String>,
     /// <p> The language used in the SNOMED-CT ontology. All Amazon Comprehend Medical operations are US English (en). </p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p> The version date of the SNOMED-CT ontology used. </p>
-    #[doc(hidden)]
     pub version_date: ::std::option::Option<::std::string::String>,
 }
 impl SnomedctDetails {

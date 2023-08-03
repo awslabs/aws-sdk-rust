@@ -5,70 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorMetadata {
     /// <p> The connector metadata specific to Amplitude. </p>
-    #[doc(hidden)]
     pub amplitude: ::std::option::Option<crate::types::AmplitudeMetadata>,
     /// <p> The connector metadata specific to Datadog. </p>
-    #[doc(hidden)]
     pub datadog: ::std::option::Option<crate::types::DatadogMetadata>,
     /// <p> The connector metadata specific to Dynatrace. </p>
-    #[doc(hidden)]
     pub dynatrace: ::std::option::Option<crate::types::DynatraceMetadata>,
     /// <p> The connector metadata specific to Google Analytics. </p>
-    #[doc(hidden)]
     pub google_analytics: ::std::option::Option<crate::types::GoogleAnalyticsMetadata>,
     /// <p> The connector metadata specific to Infor Nexus. </p>
-    #[doc(hidden)]
     pub infor_nexus: ::std::option::Option<crate::types::InforNexusMetadata>,
     /// <p> The connector metadata specific to Marketo. </p>
-    #[doc(hidden)]
     pub marketo: ::std::option::Option<crate::types::MarketoMetadata>,
     /// <p> The connector metadata specific to Amazon Redshift. </p>
-    #[doc(hidden)]
     pub redshift: ::std::option::Option<crate::types::RedshiftMetadata>,
     /// <p> The connector metadata specific to Amazon S3. </p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3Metadata>,
     /// <p> The connector metadata specific to Salesforce. </p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceMetadata>,
     /// <p> The connector metadata specific to ServiceNow. </p>
-    #[doc(hidden)]
     pub service_now: ::std::option::Option<crate::types::ServiceNowMetadata>,
     /// <p> The connector metadata specific to Singular. </p>
-    #[doc(hidden)]
     pub singular: ::std::option::Option<crate::types::SingularMetadata>,
     /// <p> The connector metadata specific to Slack. </p>
-    #[doc(hidden)]
     pub slack: ::std::option::Option<crate::types::SlackMetadata>,
     /// <p> The connector metadata specific to Snowflake. </p>
-    #[doc(hidden)]
     pub snowflake: ::std::option::Option<crate::types::SnowflakeMetadata>,
     /// <p> The connector metadata specific to Trend Micro. </p>
-    #[doc(hidden)]
     pub trendmicro: ::std::option::Option<crate::types::TrendmicroMetadata>,
     /// <p> The connector metadata specific to Veeva. </p>
-    #[doc(hidden)]
     pub veeva: ::std::option::Option<crate::types::VeevaMetadata>,
     /// <p> The connector metadata specific to Zendesk. </p>
-    #[doc(hidden)]
     pub zendesk: ::std::option::Option<crate::types::ZendeskMetadata>,
     /// <p> The connector metadata specific to Amazon EventBridge. </p>
-    #[doc(hidden)]
     pub event_bridge: ::std::option::Option<crate::types::EventBridgeMetadata>,
     /// <p> The connector metadata specific to Upsolver. </p>
-    #[doc(hidden)]
     pub upsolver: ::std::option::Option<crate::types::UpsolverMetadata>,
     /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
-    #[doc(hidden)]
     pub customer_profiles: ::std::option::Option<crate::types::CustomerProfilesMetadata>,
     /// <p> The connector metadata specific to Amazon Honeycode. </p>
-    #[doc(hidden)]
     pub honeycode: ::std::option::Option<crate::types::HoneycodeMetadata>,
     /// <p> The connector metadata specific to SAPOData. </p>
-    #[doc(hidden)]
     pub sapo_data: ::std::option::Option<crate::types::SapoDataMetadata>,
     /// <p>The connector metadata specific to Salesforce Pardot.</p>
-    #[doc(hidden)]
     pub pardot: ::std::option::Option<crate::types::PardotMetadata>,
 }
 impl ConnectorMetadata {

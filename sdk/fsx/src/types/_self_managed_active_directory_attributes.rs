@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelfManagedActiveDirectoryAttributes {
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    #[doc(hidden)]
     pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
-    #[doc(hidden)]
     pub file_system_administrators_group: ::std::option::Option<::std::string::String>,
     /// <p>The user name for the service account on your self-managed AD domain that FSx uses to join to your AD domain.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    #[doc(hidden)]
     pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SelfManagedActiveDirectoryAttributes {

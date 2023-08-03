@@ -5,66 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceNetworkInterfaceSpecification {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>If set to <code>true</code>, the interface is deleted when the instance is terminated. You can specify <code>true</code> only if creating a new network interface when launching an instance.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The description of the network interface. Applies only if creating a network interface when launching an instance.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The position of the network interface in the attachment order. A primary network interface has a device index of 0.</p>
     /// <p>If you specify a network interface when launching an instance, you must specify the device index.</p>
-    #[doc(hidden)]
     pub device_index: ::std::option::Option<i32>,
     /// <p>The IDs of the security groups for the network interface. Applies only if creating a network interface when launching an instance.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses the IPv6 addresses from the range of the subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
-    #[doc(hidden)]
     pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p>The IPv6 addresses to assign to the network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
     /// <p>The ID of the network interface.</p>
     /// <p>If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a launch specification.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address of the network interface. Applies only if creating a network interface when launching an instance. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be designated as primary. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    #[doc(hidden)]
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
     /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    #[doc(hidden)]
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
     /// <p>The ID of the subnet associated with the network interface. Applies only if creating a network interface when launching an instance.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to assign a carrier IP address to the network interface.</p>
     /// <p>You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For more information about carrier IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP address</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub associate_carrier_ip_address: ::std::option::Option<bool>,
     /// <p>The type of network interface.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> </p>
-    #[doc(hidden)]
     pub interface_type: ::std::option::Option<::std::string::String>,
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     /// <p>If you are using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a> to create Spot Instances, omit this parameter because you can’t specify the network card index when using this API. To specify the network card index, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
-    #[doc(hidden)]
     pub network_card_index: ::std::option::Option<i32>,
     /// <p>The IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    #[doc(hidden)]
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
     /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
-    #[doc(hidden)]
     pub ipv4_prefix_count: ::std::option::Option<i32>,
     /// <p>The IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    #[doc(hidden)]
     pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
-    #[doc(hidden)]
     pub ipv6_prefix_count: ::std::option::Option<i32>,
 }
 impl InstanceNetworkInterfaceSpecification {

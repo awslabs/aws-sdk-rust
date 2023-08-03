@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {
     /// <p> The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda. </p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<::std::string::String>,
     /// <p> The configuration for Lambda function authorization. </p>
-    #[doc(hidden)]
     pub lambda_authorizer_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
     /// <p> The OpenID Connect configuration. </p>
-    #[doc(hidden)]
     pub open_id_connect_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>,
     /// <p> The Amazon Cognito user pools configuration. </p>
-    #[doc(hidden)]
     pub user_pool_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>,
 }
 impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails {

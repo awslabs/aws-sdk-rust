@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformEncryption {
     /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
-    #[doc(hidden)]
     pub ml_user_data_encryption: ::std::option::Option<crate::types::MlUserDataEncryption>,
     /// <p>The name of the security configuration.</p>
-    #[doc(hidden)]
     pub task_run_security_configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl TransformEncryption {

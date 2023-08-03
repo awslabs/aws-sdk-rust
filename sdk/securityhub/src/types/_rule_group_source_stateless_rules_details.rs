@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRulesDetails {
     /// <p>Indicates the order in which to run this rule relative to all of the rules in the stateless rule group.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>Provides the definition of the stateless rule.</p>
-    #[doc(hidden)]
     pub rule_definition: ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,
 }
 impl RuleGroupSourceStatelessRulesDetails {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     _request_id: Option<String>,
 }

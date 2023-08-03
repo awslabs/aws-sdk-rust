@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to create.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_content: ::std::option::Option<::std::string::String>,
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateStudioLifecycleConfigInput {

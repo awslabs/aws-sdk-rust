@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExperiencesOutput {
     /// <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    #[doc(hidden)]
     pub summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ExperiencesSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

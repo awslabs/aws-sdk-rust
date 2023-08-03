@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDeviceStatusInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The device key.</p>
-    #[doc(hidden)]
     pub device_key: ::std::option::Option<::std::string::String>,
     /// <p>The status of whether a device is remembered.</p>
-    #[doc(hidden)]
     pub device_remembered_status: ::std::option::Option<crate::types::DeviceRememberedStatusType>,
 }
 impl UpdateDeviceStatusInput {

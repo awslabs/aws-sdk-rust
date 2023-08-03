@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialMapAggregatedFieldWells {
     /// <p>The geospatial field wells of a geospatial map. Values are grouped by geospatial fields.</p>
-    #[doc(hidden)]
     pub geospatial: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The size field wells of a geospatial map. Values are aggregated based on geospatial fields.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The color field wells of a geospatial map.</p>
-    #[doc(hidden)]
     pub colors: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl GeospatialMapAggregatedFieldWells {

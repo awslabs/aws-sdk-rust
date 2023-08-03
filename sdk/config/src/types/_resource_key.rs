@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceKey {
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceKey {

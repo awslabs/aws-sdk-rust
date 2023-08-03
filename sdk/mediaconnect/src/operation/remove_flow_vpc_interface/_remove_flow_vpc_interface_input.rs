@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveFlowVpcInterfaceInput {
     /// The flow that you want to remove a VPC interface from.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The name of the VPC interface that you want to remove.
-    #[doc(hidden)]
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveFlowVpcInterfaceInput {

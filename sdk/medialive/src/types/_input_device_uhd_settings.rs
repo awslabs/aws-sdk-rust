@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDeviceUhdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
-    #[doc(hidden)]
     pub active_input: ::std::option::Option<crate::types::InputDeviceActiveInput>,
     /// The source at the input device that is currently active. You can specify this source.
-    #[doc(hidden)]
     pub configured_input: ::std::option::Option<crate::types::InputDeviceConfiguredInput>,
     /// The state of the input device.
-    #[doc(hidden)]
     pub device_state: ::std::option::Option<crate::types::InputDeviceState>,
     /// The frame rate of the video source.
-    #[doc(hidden)]
     pub framerate: ::std::option::Option<f64>,
     /// The height of the video source, in pixels.
-    #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
     /// The scan type of the video source.
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::InputDeviceScanType>,
     /// The width of the video source, in pixels.
-    #[doc(hidden)]
     pub width: ::std::option::Option<i32>,
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
-    #[doc(hidden)]
     pub latency_ms: ::std::option::Option<i32>,
 }
 impl InputDeviceUhdSettings {

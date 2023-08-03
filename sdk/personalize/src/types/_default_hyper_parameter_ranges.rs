@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultHyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
-    #[doc(hidden)]
     pub integer_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultIntegerHyperParameterRange>>,
     /// <p>The continuous hyperparameters and their default ranges.</p>
-    #[doc(hidden)]
     pub continuous_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultContinuousHyperParameterRange>>,
     /// <p>The categorical hyperparameters and their default ranges.</p>
-    #[doc(hidden)]
     pub categorical_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultCategoricalHyperParameterRange>>,
 }
 impl DefaultHyperParameterRanges {

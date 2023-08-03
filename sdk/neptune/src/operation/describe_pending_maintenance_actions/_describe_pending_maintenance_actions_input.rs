@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsInput {
     /// <p>The ARN of a resource to return pending maintenance actions for.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>
     /// <p>Supported filters:</p>
@@ -12,15 +11,12 @@ pub struct DescribePendingMaintenanceActionsInput {
     /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>
     /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only include pending maintenance actions for the DB instances identified by these ARNs.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribePendingMaintenanceActionsInput {

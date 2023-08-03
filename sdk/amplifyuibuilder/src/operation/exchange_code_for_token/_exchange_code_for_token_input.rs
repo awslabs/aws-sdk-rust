@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExchangeCodeForTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::TokenProviders>,
     /// <p>Describes the configuration of the request.</p>
-    #[doc(hidden)]
     pub request: ::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody>,
 }
 impl ExchangeCodeForTokenInput {

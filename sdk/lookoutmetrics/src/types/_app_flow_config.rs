@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> name of the flow.</p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
 }
 impl AppFlowConfig {

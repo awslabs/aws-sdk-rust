@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The container for the exception message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The container for the reason for the exception</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     /// <p>The container for the <code>fieldList</code> of the exception.</p>
-    #[doc(hidden)]
     pub field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

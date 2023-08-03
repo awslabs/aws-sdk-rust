@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryResultEntity {
     /// <p>ID of the inventory result entity. For example, for managed node inventory the result will be the managed node ID. For EC2 instance inventory, the result will be the instance ID. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data section in the inventory result entity JSON.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InventoryResultItem>>,
 }
 impl InventoryResultEntity {

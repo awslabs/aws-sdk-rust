@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterComputeInput {
     /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
-    #[doc(hidden)]
     pub compute_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the TLS certificate on your compute resource. The path and certificate are not validated by Amazon GameLift.</p>
-    #[doc(hidden)]
     pub certificate_path: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The name of the custom location you added to the fleet you are registering this compute resource to.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl RegisterComputeInput {

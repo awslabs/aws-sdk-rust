@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePlaceIndexInput {
     /// <p>The name of the place index resource to update.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>Updates the description for the place index resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Updates the data storage option for the place index resource.</p>
-    #[doc(hidden)]
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
 }
 impl UpdatePlaceIndexInput {

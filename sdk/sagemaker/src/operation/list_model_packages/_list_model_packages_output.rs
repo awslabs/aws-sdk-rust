@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelPackagesOutput {
     /// <p>An array of <code>ModelPackageSummary</code> objects, each of which lists a model package.</p>
-    #[doc(hidden)]
     pub model_package_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model packages, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

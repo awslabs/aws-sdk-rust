@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomPluginInput {
     /// <p>The type of the plugin file.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::CustomPluginContentType>,
     /// <p>A summary description of the custom plugin.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location of a custom plugin.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::CustomPluginLocation>,
     /// <p>The name of the custom plugin.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl CreateCustomPluginInput {

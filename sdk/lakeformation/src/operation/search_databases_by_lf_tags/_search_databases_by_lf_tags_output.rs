@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchDatabasesByLfTagsOutput {
     /// <p>A continuation token, present if the current list segment is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of databases that meet the LF-tag conditions.</p>
-    #[doc(hidden)]
     pub database_list: ::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>>,
     _request_id: Option<String>,
 }

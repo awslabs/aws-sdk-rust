@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayConnectOptions {
     /// <p>The tunnel protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ProtocolValue>,
 }
 impl TransitGatewayConnectOptions {

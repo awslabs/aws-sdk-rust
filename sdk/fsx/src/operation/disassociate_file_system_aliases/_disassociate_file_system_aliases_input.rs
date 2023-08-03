@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateFileSystemAliasesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConditionalForwarderInput {
     /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
-    #[doc(hidden)]
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
-    #[doc(hidden)]
     pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateConditionalForwarderInput {

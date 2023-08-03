@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountFreeTrialInfo {
     /// <p>The account identifier of the GuardDuty member account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the data source enabled for the GuardDuty member account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<crate::types::DataSourcesFreeTrial>,
     /// <p>A list of features enabled for the GuardDuty account.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialFeatureConfigurationResult>>,
 }
 impl AccountFreeTrialInfo {

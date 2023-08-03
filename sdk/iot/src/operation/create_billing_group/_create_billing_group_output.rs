@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBillingGroupOutput {
     /// <p>The name you gave to the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkerBlockInput {
     /// <p>The ID of the Worker to unblock.</p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkerBlockInput {

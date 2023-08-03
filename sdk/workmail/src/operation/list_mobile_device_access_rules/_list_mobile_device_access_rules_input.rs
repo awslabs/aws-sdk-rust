@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMobileDeviceAccessRulesInput {
     /// <p>The WorkMail organization for which to list the rules.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
 impl ListMobileDeviceAccessRulesInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceSyncJobMetrics {
     /// <p>The number of documents added from the data source up to now in the data source sync.</p>
-    #[doc(hidden)]
     pub documents_added: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents modified in the data source up to now in the data source sync run.</p>
-    #[doc(hidden)]
     pub documents_modified: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents deleted from the data source up to now in the data source sync run.</p>
-    #[doc(hidden)]
     pub documents_deleted: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents that failed to sync from the data source up to now in the data source sync run.</p>
-    #[doc(hidden)]
     pub documents_failed: ::std::option::Option<::std::string::String>,
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
-    #[doc(hidden)]
     pub documents_scanned: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceSyncJobMetrics {

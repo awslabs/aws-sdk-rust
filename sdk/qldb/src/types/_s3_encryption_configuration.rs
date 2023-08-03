@@ -6,12 +6,10 @@
 pub struct S3EncryptionConfiguration {
     /// <p>The Amazon S3 object encryption type.</p>
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub object_encryption_type: ::std::option::Option<crate::types::S3ObjectEncryptionType>,
     /// <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3EncryptionConfiguration {

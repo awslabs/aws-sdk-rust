@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDataV2 {
     /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::MetricV2>,
     /// <p>The corresponding value of the metric returned in the response.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl MetricDataV2 {

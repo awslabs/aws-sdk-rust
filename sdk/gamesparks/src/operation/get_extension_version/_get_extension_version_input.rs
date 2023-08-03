@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExtensionVersionInput {
     /// <p>The namespace (qualifier) of the extension.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the extension.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the extension.</p>
-    #[doc(hidden)]
     pub extension_version: ::std::option::Option<::std::string::String>,
 }
 impl GetExtensionVersionInput {

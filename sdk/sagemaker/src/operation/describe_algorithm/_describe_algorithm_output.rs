@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlgorithmOutput {
     /// <p>The name of the algorithm being described.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>A brief summary about the algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_description: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp specifying when the algorithm was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about training jobs run by this algorithm.</p>
-    #[doc(hidden)]
     pub training_specification: ::std::option::Option<crate::types::TrainingSpecification>,
     /// <p>Details about inference jobs that the algorithm runs.</p>
-    #[doc(hidden)]
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Details about configurations for one or more training jobs that SageMaker runs to test the algorithm.</p>
-    #[doc(hidden)]
     pub validation_specification: ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
     /// <p>The current status of the algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_status: ::std::option::Option<crate::types::AlgorithmStatus>,
     /// <p>Details about the current status of the algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_status_details: ::std::option::Option<crate::types::AlgorithmStatusDetails>,
     /// <p>The product identifier of the algorithm.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub certify_for_marketplace: bool,
     _request_id: Option<String>,
 }

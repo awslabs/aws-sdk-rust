@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    #[doc(hidden)]
     pub db_cluster: ::std::option::Option<crate::types::DbCluster>,
     _request_id: Option<String>,
 }

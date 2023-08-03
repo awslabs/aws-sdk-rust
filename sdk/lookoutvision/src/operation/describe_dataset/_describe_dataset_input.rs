@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetInput {
     /// <p>The name of the project that contains the dataset that you want to describe.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetInput {

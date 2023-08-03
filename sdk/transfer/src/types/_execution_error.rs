@@ -17,10 +17,8 @@ pub struct ExecutionError {
     /// </note> </li>
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ExecutionErrorType>,
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionError {

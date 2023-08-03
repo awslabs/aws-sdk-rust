@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingModifiedServiceUpdate {
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
 }
 impl PendingModifiedServiceUpdate {

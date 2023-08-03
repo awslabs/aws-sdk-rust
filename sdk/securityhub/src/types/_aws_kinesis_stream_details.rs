@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsKinesisStreamDetails {
     /// <p>The name of the Kinesis stream. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the stream name. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>When specified, enables or updates server-side encryption using an KMS key for a specified stream. Removing this property from your stack template and updating your stack disables encryption. </p>
-    #[doc(hidden)]
     pub stream_encryption: ::std::option::Option<crate::types::AwsKinesisStreamStreamEncryptionDetails>,
     /// <p>The number of shards that the stream uses. </p>
-    #[doc(hidden)]
     pub shard_count: i32,
     /// <p>The number of hours for the data records that are stored in shards to remain accessible. </p>
-    #[doc(hidden)]
     pub retention_period_hours: i32,
 }
 impl AwsKinesisStreamDetails {

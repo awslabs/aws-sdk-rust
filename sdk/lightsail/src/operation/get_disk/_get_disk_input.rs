@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiskInput {
     /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
-    #[doc(hidden)]
     pub disk_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDiskInput {

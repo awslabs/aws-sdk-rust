@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingTypeMetadata {
     /// <p>Whether the thing type is deprecated. If <b>true</b>, no new things could be associated with this type.</p>
-    #[doc(hidden)]
     pub deprecated: bool,
     /// <p>The date and time when the thing type was deprecated.</p>
-    #[doc(hidden)]
     pub deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the thing type was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ThingTypeMetadata {

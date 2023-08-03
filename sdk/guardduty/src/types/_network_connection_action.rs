@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConnectionAction {
     /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
-    #[doc(hidden)]
     pub blocked: bool,
     /// <p>The network connection direction.</p>
-    #[doc(hidden)]
     pub connection_direction: ::std::option::Option<::std::string::String>,
     /// <p>The local port information of the connection.</p>
-    #[doc(hidden)]
     pub local_port_details: ::std::option::Option<crate::types::LocalPortDetails>,
     /// <p>The network connection protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The local IP information of the connection.</p>
-    #[doc(hidden)]
     pub local_ip_details: ::std::option::Option<crate::types::LocalIpDetails>,
     /// <p>The remote IP information of the connection.</p>
-    #[doc(hidden)]
     pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
     /// <p>The remote port information of the connection.</p>
-    #[doc(hidden)]
     pub remote_port_details: ::std::option::Option<crate::types::RemotePortDetails>,
 }
 impl NetworkConnectionAction {

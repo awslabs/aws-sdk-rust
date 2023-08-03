@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyOutput {
     /// <p>The ARN of the secret that the resource-based policy was deleted for.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret that the resource-based policy was deleted for.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

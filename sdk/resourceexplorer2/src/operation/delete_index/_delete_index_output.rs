@@ -6,13 +6,10 @@ pub struct DeleteIndexOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>
     /// <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>
     /// </note>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the current state of the index. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IndexState>,
     /// <p>The date and time when you last updated this index.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

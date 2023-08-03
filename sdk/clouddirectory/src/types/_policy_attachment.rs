@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyAttachment {
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<::std::string::String>,
 }
 impl PolicyAttachment {

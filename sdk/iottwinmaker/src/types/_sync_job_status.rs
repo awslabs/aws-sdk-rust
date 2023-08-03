@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncJobStatus {
     /// <p>The SyncJob status state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SyncJobState>,
     /// <p>The SyncJob error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl SyncJobStatus {

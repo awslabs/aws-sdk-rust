@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FacetAttributeDefinition {
     /// <p>The type of the attribute.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FacetAttributeType>,
     /// <p>The default value of the attribute (if configured).</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<crate::types::TypedAttributeValue>,
     /// <p>Whether the attribute is mutable or not.</p>
-    #[doc(hidden)]
     pub is_immutable: bool,
     /// <p>Validation rules attached to the attribute definition.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>,
 }
 impl FacetAttributeDefinition {

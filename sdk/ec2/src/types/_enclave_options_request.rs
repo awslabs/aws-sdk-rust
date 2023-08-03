@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnclaveOptionsRequest {
     /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl EnclaveOptionsRequest {

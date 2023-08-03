@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCreatedArtifactsOutput {
     /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
-    #[doc(hidden)]
     pub created_artifact_list: ::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>>,
     _request_id: Option<String>,
 }

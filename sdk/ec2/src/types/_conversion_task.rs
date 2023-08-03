@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversionTask {
     /// <p>The ID of the conversion task.</p>
-    #[doc(hidden)]
     pub conversion_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::std::string::String>,
     /// <p>If the task is for importing an instance, this contains information about the import instance task.</p>
-    #[doc(hidden)]
     pub import_instance: ::std::option::Option<crate::types::ImportInstanceTaskDetails>,
     /// <p>If the task is for importing a volume, this contains information about the import volume task.</p>
-    #[doc(hidden)]
     pub import_volume: ::std::option::Option<crate::types::ImportVolumeTaskDetails>,
     /// <p>The state of the conversion task.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ConversionTaskState>,
     /// <p>The status message related to the conversion task.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ConversionTask {

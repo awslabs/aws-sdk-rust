@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClientVpnConnectionsOutput {
     /// <p>Information about the active and terminated client connections.</p>
-    #[doc(hidden)]
     pub connections: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnConnection>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

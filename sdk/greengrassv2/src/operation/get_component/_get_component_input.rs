@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentInput {
     /// <p>The format of the recipe.</p>
-    #[doc(hidden)]
     pub recipe_output_format: ::std::option::Option<crate::types::RecipeOutputFormat>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetComponentInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineDetail {
     /// The name of the active input attachment currently being ingested by this pipeline.
-    #[doc(hidden)]
     pub active_input_attachment_name: ::std::option::Option<::std::string::String>,
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
-    #[doc(hidden)]
     pub active_input_switch_action_name: ::std::option::Option<::std::string::String>,
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
-    #[doc(hidden)]
     pub active_motion_graphics_action_name: ::std::option::Option<::std::string::String>,
     /// The current URI being used for HTML5 motion graphics for this pipeline.
-    #[doc(hidden)]
     pub active_motion_graphics_uri: ::std::option::Option<::std::string::String>,
     /// Pipeline ID
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl PipelineDetail {

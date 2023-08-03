@@ -6,10 +6,8 @@
 pub struct GitHubLocation {
     /// <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p>
     /// <p>Specified as account/repository.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
 }
 impl GitHubLocation {

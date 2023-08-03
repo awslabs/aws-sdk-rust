@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChatParticipantRoleConfig {
     /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
-    #[doc(hidden)]
     pub participant_timer_config_list: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>>,
 }
 impl ChatParticipantRoleConfig {

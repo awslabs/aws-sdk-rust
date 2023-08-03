@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingConfig {
     /// <p>Current setting for autotrack.</p>
-    #[doc(hidden)]
     pub autotrack: ::std::option::Option<crate::types::Criticality>,
 }
 impl TrackingConfig {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPlaybackKeyPairOutput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<crate::types::PlaybackKeyPair>,
     _request_id: Option<String>,
 }

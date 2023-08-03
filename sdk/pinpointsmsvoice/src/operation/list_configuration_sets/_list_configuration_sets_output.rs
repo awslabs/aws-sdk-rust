@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationSetsOutput {
     /// An object that contains a list of configuration sets for your account in the current region.
-    #[doc(hidden)]
     pub configuration_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

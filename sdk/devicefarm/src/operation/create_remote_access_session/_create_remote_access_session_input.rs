@@ -5,37 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    #[doc(hidden)]
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    #[doc(hidden)]
     pub remote_debug_enabled: ::std::option::Option<bool>,
     /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
-    #[doc(hidden)]
     pub remote_record_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    #[doc(hidden)]
     pub remote_record_app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the remote access session to create.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration information for the remote access session request.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>,
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
@@ -43,11 +33,9 @@ pub struct CreateRemoteAccessSessionInput {
     /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
     /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
-    #[doc(hidden)]
     pub skip_app_resign: ::std::option::Option<bool>,
 }
 impl CreateRemoteAccessSessionInput {

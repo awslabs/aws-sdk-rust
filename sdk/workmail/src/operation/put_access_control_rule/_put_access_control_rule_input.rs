@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccessControlRuleInput {
     /// <p>The rule name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule effect.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::AccessControlRuleEffect>,
     /// <p>The rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>IPv4 CIDR ranges to include in the rule.</p>
-    #[doc(hidden)]
     pub ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
-    #[doc(hidden)]
     pub not_ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    #[doc(hidden)]
     pub not_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>User IDs to include in the rule.</p>
-    #[doc(hidden)]
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>User IDs to exclude from the rule.</p>
-    #[doc(hidden)]
     pub not_user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>Impersonation role IDs to include in the rule.</p>
-    #[doc(hidden)]
     pub impersonation_role_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Impersonation role IDs to exclude from the rule.</p>
-    #[doc(hidden)]
     pub not_impersonation_role_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutAccessControlRuleInput {

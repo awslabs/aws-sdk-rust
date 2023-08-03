@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobOutput {
     /// <p>The ARN of the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job cancellation request.</p>
-    #[doc(hidden)]
     pub cancellation_status: ::std::option::Option<crate::types::CancellationStatus>,
     _request_id: Option<String>,
 }

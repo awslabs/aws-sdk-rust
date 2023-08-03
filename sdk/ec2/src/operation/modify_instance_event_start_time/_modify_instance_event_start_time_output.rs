@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceEventStartTimeOutput {
     /// <p>Information about the event.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::InstanceStatusEvent>,
     _request_id: Option<String>,
 }

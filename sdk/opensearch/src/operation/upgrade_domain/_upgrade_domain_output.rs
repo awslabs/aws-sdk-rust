@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeDomainOutput {
     /// <p>The unique identifier of the domain upgrade.</p>
-    #[doc(hidden)]
     pub upgrade_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain that was upgraded.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
-    #[doc(hidden)]
     pub target_version: ::std::option::Option<::std::string::String>,
     /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
-    #[doc(hidden)]
     pub perform_check_only: ::std::option::Option<bool>,
     /// <p>The advanced options configuration for the domain.</p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Container for information about a configuration change happening on a domain.</p>
-    #[doc(hidden)]
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }

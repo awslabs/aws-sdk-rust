@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWavesInput {
     /// <p>Waves list filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListWavesRequestFilters>,
     /// <p>Maximum results to return when listing waves.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Request next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Request account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListWavesInput {

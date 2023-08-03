@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringAlertActions {
     /// <p>An alert action taken to light up an icon on the Model Dashboard when an alert goes into <code>InAlert</code> status.</p>
-    #[doc(hidden)]
     pub model_dashboard_indicator: ::std::option::Option<crate::types::ModelDashboardIndicatorAction>,
 }
 impl MonitoringAlertActions {

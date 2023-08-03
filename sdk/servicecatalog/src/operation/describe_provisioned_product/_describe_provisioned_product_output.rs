@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProvisionedProductOutput {
     /// <p>Information about the provisioned product.</p>
-    #[doc(hidden)]
     pub provisioned_product_detail: ::std::option::Option<crate::types::ProvisionedProductDetail>,
     /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-    #[doc(hidden)]
     pub cloud_watch_dashboards: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>>,
     _request_id: Option<String>,
 }

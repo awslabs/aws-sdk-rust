@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the theme that you want to delete.</p>
-    #[doc(hidden)]
     pub theme_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the theme that you want to delete. </p>
     /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
 }
 impl DeleteThemeInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InternetGateway {
     /// <p>Any VPCs attached to the internet gateway.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
     /// <p>The ID of the internet gateway.</p>
-    #[doc(hidden)]
     pub internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the internet gateway.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InternetGateway {

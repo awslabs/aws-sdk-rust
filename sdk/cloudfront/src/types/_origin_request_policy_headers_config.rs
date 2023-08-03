@@ -12,10 +12,8 @@ pub struct OriginRequestPolicyHeadersConfig {
     /// <li> <p> <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p> </li>
     /// <li> <p> <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub header_behavior: ::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
     /// <p>Contains a list of HTTP header names.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<crate::types::Headers>,
 }
 impl OriginRequestPolicyHeadersConfig {

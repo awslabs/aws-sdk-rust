@@ -4,42 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePricingRuleInput {
     /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The pricing rule description. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::PricingRuleScope>,
     /// <p> The type of pricing rule. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PricingRuleType>,
     /// <p> A percentage modifier that's applied on the public pricing rates. </p>
-    #[doc(hidden)]
     pub modifier_percentage: ::std::option::Option<f64>,
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    #[doc(hidden)]
     pub billing_entity: ::std::option::Option<::std::string::String>,
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    #[doc(hidden)]
     pub tiering: ::std::option::Option<crate::types::CreateTieringInput>,
     /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
-    #[doc(hidden)]
     pub usage_type: ::std::option::Option<::std::string::String>,
     /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
 }
 impl CreatePricingRuleInput {

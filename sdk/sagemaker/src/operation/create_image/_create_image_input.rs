@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageInput {
     /// <p>The description of the image.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the image. Must be unique to your account.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to apply to the image.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateImageInput {

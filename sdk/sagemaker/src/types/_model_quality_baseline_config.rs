@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelQualityBaselineConfig {
     /// <p>The name of the job that performs baselining for the monitoring job.</p>
-    #[doc(hidden)]
     pub baselining_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The constraints resource for a monitoring job.</p>
-    #[doc(hidden)]
     pub constraints_resource: ::std::option::Option<crate::types::MonitoringConstraintsResource>,
 }
 impl ModelQualityBaselineConfig {

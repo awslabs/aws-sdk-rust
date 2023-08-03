@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Entity {
     /// <p>The entity type.</p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
 }
 impl Entity {

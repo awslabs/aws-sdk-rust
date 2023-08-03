@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRoleAliasesOutput {
     /// <p>The role aliases.</p>
-    #[doc(hidden)]
     pub role_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A marker used to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

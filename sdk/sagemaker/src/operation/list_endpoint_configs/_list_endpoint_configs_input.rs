@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEndpointConfigsInput {
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::EndpointConfigSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::OrderKey>,
     /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of training jobs to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListEndpointConfigsInput {

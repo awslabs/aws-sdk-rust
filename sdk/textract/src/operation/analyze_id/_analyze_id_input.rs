@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzeIdInput {
     /// <p>The document being passed to AnalyzeID.</p>
-    #[doc(hidden)]
     pub document_pages: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
 }
 impl AnalyzeIdInput {

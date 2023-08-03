@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBonusInput {
     /// <p>The ID of the Worker being paid the bonus.</p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
-    #[doc(hidden)]
     pub bonus_amount: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the assignment for which this bonus is paid.</p>
-    #[doc(hidden)]
     pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
-    #[doc(hidden)]
     pub unique_request_token: ::std::option::Option<::std::string::String>,
 }
 impl SendBonusInput {

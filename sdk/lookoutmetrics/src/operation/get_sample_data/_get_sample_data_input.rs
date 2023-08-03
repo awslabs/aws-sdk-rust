@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSampleDataInput {
     /// <p>A datasource bucket in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_source_config: ::std::option::Option<crate::types::SampleDataS3SourceConfig>,
 }
 impl GetSampleDataInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelFlowOutput {
     /// <p>The channel flow details.</p>
-    #[doc(hidden)]
     pub channel_flow: ::std::option::Option<crate::types::ChannelFlow>,
     _request_id: Option<String>,
 }

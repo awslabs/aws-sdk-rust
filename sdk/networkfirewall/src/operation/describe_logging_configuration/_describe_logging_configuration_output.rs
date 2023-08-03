@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    #[doc(hidden)]
     pub firewall_arn: ::std::option::Option<::std::string::String>,
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     _request_id: Option<String>,
 }

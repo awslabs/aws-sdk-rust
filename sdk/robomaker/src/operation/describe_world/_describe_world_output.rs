@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorldOutput {
     /// <p>The Amazon Resource Name (arn) of the world.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
-    #[doc(hidden)]
     pub generation_job: ::std::option::Option<::std::string::String>,
     /// <p>The world template.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map that contains tag keys and tag values that are attached to the world.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Returns the JSON formatted string that describes the contents of your world.</p>
-    #[doc(hidden)]
     pub world_description_body: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetBlueprintsOutput {
     /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
-    #[doc(hidden)]
     pub blueprints: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>,
     /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
-    #[doc(hidden)]
     pub missing_blueprints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIncidentRecordInput {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the incident.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A longer description of what occurred during the incident.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it overwrites the impact provided by the response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
@@ -24,17 +20,13 @@ pub struct UpdateIncidentRecordInput {
     /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
     /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub impact: ::std::option::Option<i32>,
     /// <p>The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IncidentRecordStatus>,
     /// <p>The Chatbot chat channel where responders can collaborate.</p>
-    #[doc(hidden)]
     pub chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
-    #[doc(hidden)]
     pub notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
 }
 impl UpdateIncidentRecordInput {

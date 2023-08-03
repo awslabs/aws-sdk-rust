@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLabelInput {
     /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the label that you want to delete. </p>
-    #[doc(hidden)]
     pub label_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLabelInput {

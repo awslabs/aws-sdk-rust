@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFormsOutput {
     /// <p>The list of forms for the Amplify app.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::FormSummary>>,
     /// <p>The pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

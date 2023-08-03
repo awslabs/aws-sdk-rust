@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subnet {
     /// <p>Specifies the identifier of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
     /// <p>Specifies the status of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_status: ::std::option::Option<::std::string::String>,
 }
 impl Subnet {

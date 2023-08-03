@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SendProjectSessionActionInput {
     /// <p>If true, the result of the recipe step will be returned, but not applied.</p>
-    #[doc(hidden)]
     pub preview: bool,
     /// <p>The name of the project to apply the action to.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
-    #[doc(hidden)]
     pub recipe_step: ::std::option::Option<crate::types::RecipeStep>,
     /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
-    #[doc(hidden)]
     pub step_index: ::std::option::Option<i32>,
     /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
-    #[doc(hidden)]
     pub client_session_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents the data being transformed during an action.</p>
-    #[doc(hidden)]
     pub view_frame: ::std::option::Option<crate::types::ViewFrame>,
 }
 impl SendProjectSessionActionInput {

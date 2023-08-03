@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalFormattingIconDisplayConfiguration {
     /// <p>Determines the icon display configuration.</p>
-    #[doc(hidden)]
     pub icon_display_option: ::std::option::Option<crate::types::ConditionalFormattingIconDisplayOption>,
 }
 impl ConditionalFormattingIconDisplayConfiguration {

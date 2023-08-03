@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsVolumesResult {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl EbsVolumesResult {

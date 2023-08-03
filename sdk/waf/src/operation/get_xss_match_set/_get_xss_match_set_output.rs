@@ -10,7 +10,6 @@ pub struct GetXssMatchSetOutput {
     /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub xss_match_set: ::std::option::Option<crate::types::XssMatchSet>,
     _request_id: Option<String>,
 }

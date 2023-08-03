@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGroupOutput {
     /// <p>A full description of the deleted resource group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::Group>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelOutput {
     /// Placeholder documentation for Channel
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
     _request_id: Option<String>,
 }

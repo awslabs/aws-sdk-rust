@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job being exported.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role with permission to upload to the location in OutputConfig.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the results the Vector Enrichment job being exported.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::VectorEnrichmentJobExportStatus>,
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
     _request_id: Option<String>,
 }

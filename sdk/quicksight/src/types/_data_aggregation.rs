@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataAggregation {
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    #[doc(hidden)]
     pub dataset_row_date_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     /// <p>The column name for the default date.</p>
-    #[doc(hidden)]
     pub default_date_column_name: ::std::option::Option<::std::string::String>,
 }
 impl DataAggregation {

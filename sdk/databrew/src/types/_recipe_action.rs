@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>Contextual parameters for the transformation.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RecipeAction {

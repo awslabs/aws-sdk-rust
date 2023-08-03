@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioHlsRenditionSelection {
     /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AudioHlsRenditionSelection {

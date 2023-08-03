@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerGroupValidationConfiguration {
     /// <p>The ID of the server group.</p>
-    #[doc(hidden)]
     pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The validation configuration.</p>
-    #[doc(hidden)]
     pub server_validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerValidationConfiguration>>,
 }
 impl ServerGroupValidationConfiguration {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionMemoryProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricName>,
     /// <p>The statistic of the projected utilization metric.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricStatistic>,
     /// <p>The values of the projected utilization metrics.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl LambdaFunctionMemoryProjectedMetric {

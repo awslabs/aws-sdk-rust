@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomRoutingAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
-    #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomRoutingAcceleratorInput {

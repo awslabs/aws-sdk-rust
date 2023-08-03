@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveSpeakerOnlyConfiguration {
     /// <p>The position of the <code>ActiveSpeakerOnly</code> video tile.</p>
-    #[doc(hidden)]
     pub active_speaker_position: ::std::option::Option<crate::types::ActiveSpeakerPosition>,
 }
 impl ActiveSpeakerOnlyConfiguration {

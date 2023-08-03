@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackagingJobMetadata {
     /// <p> The name of the model packaging job. </p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p> The project that contains the model that is in the model package. </p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p> The version of the model that is in the model package. </p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p> The description for the model packaging job. </p>
-    #[doc(hidden)]
     pub model_packaging_job_description: ::std::option::Option<::std::string::String>,
     /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
-    #[doc(hidden)]
     pub model_packaging_method: ::std::option::Option<::std::string::String>,
     /// <p>The status of the model packaging job. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelPackagingJobStatus>,
     /// <p>The status message for the model packaging job. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ModelPackagingJobMetadata {

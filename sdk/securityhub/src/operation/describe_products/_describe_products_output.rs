@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProductsOutput {
     /// <p>A list of products, including details for each product.</p>
-    #[doc(hidden)]
     pub products: ::std::option::Option<::std::vec::Vec<crate::types::Product>>,
     /// <p>The pagination token to use to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

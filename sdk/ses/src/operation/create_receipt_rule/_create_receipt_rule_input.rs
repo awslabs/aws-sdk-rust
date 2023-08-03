@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReceiptRuleInput {
     /// <p>The name of the rule set that the receipt rule will be added to.</p>
-    #[doc(hidden)]
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
-    #[doc(hidden)]
     pub after: ::std::option::Option<::std::string::String>,
     /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::ReceiptRule>,
 }
 impl CreateReceiptRuleInput {

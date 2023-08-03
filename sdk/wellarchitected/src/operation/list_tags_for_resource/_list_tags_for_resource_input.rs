@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN for the workload.</p>
-    #[doc(hidden)]
     pub workload_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

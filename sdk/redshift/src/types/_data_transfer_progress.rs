@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataTransferProgress {
     /// <p>Describes the status of the cluster. While the transfer is in progress the status is <code>transferringdata</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Describes the data transfer rate in MB's per second.</p>
-    #[doc(hidden)]
     pub current_rate_in_mega_bytes_per_second: ::std::option::Option<f64>,
     /// <p>Describes the total amount of data to be transfered in megabytes.</p>
-    #[doc(hidden)]
     pub total_data_in_mega_bytes: i64,
     /// <p>Describes the total amount of data that has been transfered in MB's.</p>
-    #[doc(hidden)]
     pub data_transferred_in_mega_bytes: i64,
     /// <p>Describes the estimated number of seconds remaining to complete the transfer.</p>
-    #[doc(hidden)]
     pub estimated_time_to_completion_in_seconds: ::std::option::Option<i64>,
     /// <p>Describes the number of seconds that have elapsed during the data transfer.</p>
-    #[doc(hidden)]
     pub elapsed_time_in_seconds: ::std::option::Option<i64>,
 }
 impl DataTransferProgress {

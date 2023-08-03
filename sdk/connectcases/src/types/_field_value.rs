@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldValue {
     /// <p>Unique identifier of a field.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Union of potential field value types.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::FieldValueUnion>,
 }
 impl FieldValue {

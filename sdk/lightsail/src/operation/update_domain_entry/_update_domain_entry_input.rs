@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainEntryInput {
     /// <p>The name of the domain recordset to update.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs containing information about the domain entry.</p>
-    #[doc(hidden)]
     pub domain_entry: ::std::option::Option<crate::types::DomainEntry>,
 }
 impl UpdateDomainEntryInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAlternateContactInput {
     /// <p>Specifies which of the alternate contacts to delete. </p>
-    #[doc(hidden)]
     pub alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
     /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
@@ -12,7 +11,6 @@ pub struct DeleteAlternateContactInput {
     /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
     /// </note>
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlternateContactInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template for which you want to get information.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
 }
 impl GetApprovalRuleTemplateInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateParameterGroupInput {
     /// <p>The name of the parameter group.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group family that the parameter group can be used with.</p>
-    #[doc(hidden)]
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the parameter group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateParameterGroupInput {

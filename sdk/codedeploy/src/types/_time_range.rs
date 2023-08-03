@@ -7,12 +7,10 @@ pub struct TimeRange {
     /// <p>The start time of the time range.</p> <note>
     /// <p>Specify null to leave the start time open-ended.</p>
     /// </note>
-    #[doc(hidden)]
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the time range.</p> <note>
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimeRange {

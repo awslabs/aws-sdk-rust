@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSyncJobOutput {
     /// <p>The SyncJob ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time for the SyncJob creation.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The SyncJob response state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SyncJobState>,
     _request_id: Option<String>,
 }

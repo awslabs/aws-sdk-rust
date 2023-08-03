@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationsInput {
     /// <p> The name of the profiling group to get analysis data about. </p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
     /// <ul>
@@ -27,7 +24,6 @@ pub struct GetRecommendationsInput {
     /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
     /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
 }
 impl GetRecommendationsInput {

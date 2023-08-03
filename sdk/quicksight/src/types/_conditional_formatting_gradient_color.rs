@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingGradientColor {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Determines the color.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<crate::types::GradientColor>,
 }
 impl ConditionalFormattingGradientColor {

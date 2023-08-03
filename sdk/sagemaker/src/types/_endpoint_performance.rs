@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointPerformance {
     /// <p>The metrics for an existing endpoint.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::InferenceMetrics>,
     /// <p>Details about a customer endpoint that was compared in an Inference Recommender job.</p>
-    #[doc(hidden)]
     pub endpoint_info: ::std::option::Option<crate::types::EndpointInfo>,
 }
 impl EndpointPerformance {

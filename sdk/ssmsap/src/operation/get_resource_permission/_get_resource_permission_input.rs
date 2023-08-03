@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePermissionInput {
     /// <p></p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::PermissionActionType>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetResourcePermissionInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDefaultBranchInput {
     /// <p>The name of the repository to set or change the default branch for.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch to set as the default.</p>
-    #[doc(hidden)]
     pub default_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultBranchInput {

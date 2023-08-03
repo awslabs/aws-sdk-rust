@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBucketsInput {
     /// <p>The criteria to use to filter the query results.</p>
-    #[doc(hidden)]
     pub criteria: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketCriteriaAdditionalProperties>>,
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The criteria to use to sort the query results.</p>
-    #[doc(hidden)]
     pub sort_criteria: ::std::option::Option<crate::types::BucketSortCriteria>,
 }
 impl DescribeBucketsInput {

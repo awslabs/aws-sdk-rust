@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket to which an analytics configuration is stored.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID that identifies the analytics configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration and any analyses for the analytics filter.</p>
-    #[doc(hidden)]
     pub analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl PutBucketAnalyticsConfigurationInput {

@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryTrigger {
     /// <p>The name of the trigger.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
-    #[doc(hidden)]
     pub custom_data: ::std::option::Option<::std::string::String>,
     /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
     /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
-    #[doc(hidden)]
     pub branches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>,
 }
 impl RepositoryTrigger {

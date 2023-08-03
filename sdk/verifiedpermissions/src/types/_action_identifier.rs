@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionIdentifier {
     /// <p>The type of an action.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an action.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionIdentifier {

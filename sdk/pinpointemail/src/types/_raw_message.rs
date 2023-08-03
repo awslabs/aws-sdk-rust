@@ -14,7 +14,6 @@ pub struct RawMessage {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RawMessage {

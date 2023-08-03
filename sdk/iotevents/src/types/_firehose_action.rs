@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirehoseAction {
     /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
-    #[doc(hidden)]
     pub separator: ::std::option::Option<::std::string::String>,
     /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl FirehoseAction {

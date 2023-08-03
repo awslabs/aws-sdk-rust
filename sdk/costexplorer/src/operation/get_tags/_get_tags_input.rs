@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTagsInput {
     /// <p>The value that you want to search for.</p>
-    #[doc(hidden)]
     pub search_string: ::std::option::Option<::std::string::String>,
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The key of the tag that you want to return values for.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -49,7 +46,6 @@ pub struct GetTagsInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
@@ -64,14 +60,11 @@ pub struct GetTagsInput {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetTagsInput {

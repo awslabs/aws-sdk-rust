@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAgentConfigurationInput {
     /// <p>UUID of agent to get configuration information for.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAgentConfigurationInput {

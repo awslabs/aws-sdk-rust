@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutVoiceConnectorProxyInput {
     /// <p>The Amazon Chime voice connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The default number of minutes allowed for proxy sessions.</p>
-    #[doc(hidden)]
     pub default_session_expiry_minutes: ::std::option::Option<i32>,
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    #[doc(hidden)]
     pub phone_number_pool_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    #[doc(hidden)]
     pub fall_back_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
 }
 impl PutVoiceConnectorProxyInput {

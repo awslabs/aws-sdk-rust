@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSolNetworkPackageInput {
     /// <p>ID of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_operational_state: ::std::option::Option<crate::types::NsdOperationalState>,
 }
 impl UpdateSolNetworkPackageInput {

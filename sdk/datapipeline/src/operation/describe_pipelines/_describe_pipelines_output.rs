@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
-    #[doc(hidden)]
     pub pipeline_description_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
     _request_id: Option<String>,
 }

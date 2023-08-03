@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiLayerStorage {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub customer_managed_s3_storage: ::std::option::Option<crate::types::CustomerManagedS3Storage>,
 }
 impl MultiLayerStorage {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportVmImageInput {
     /// <p>The name of the base image that is created by the import process.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -22,25 +21,18 @@ pub struct ImportVmImageInput {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>The description for the base image that is created by the import process.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform for the imported VM.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The operating system version for the imported VM.</p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<::std::string::String>,
     /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
-    #[doc(hidden)]
     pub vm_import_task_id: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the import resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ImportVmImageInput {

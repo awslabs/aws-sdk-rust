@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ResourceClassificationUpdate {
     /// <p>(Discontinued) The name of the S3 bucket whose classification types you want to update.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) The prefix of the S3 bucket whose classification types you want to update.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) The classification type that you want to update for the resource associated with Amazon Macie Classic. </p>
-    #[doc(hidden)]
     pub classification_type_update: ::std::option::Option<crate::types::ClassificationTypeUpdate>,
 }
 impl S3ResourceClassificationUpdate {

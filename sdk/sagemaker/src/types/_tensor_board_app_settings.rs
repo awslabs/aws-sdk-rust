@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TensorBoardAppSettings {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    #[doc(hidden)]
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl TensorBoardAppSettings {

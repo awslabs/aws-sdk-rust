@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCommentContentOutput {
     /// <p>Information about the comment you just deleted.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<crate::types::Comment>,
     _request_id: Option<String>,
 }

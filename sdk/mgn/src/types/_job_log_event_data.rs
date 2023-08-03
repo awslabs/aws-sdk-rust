@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobLogEventData {
     /// <p>Job Event Source Server ID.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Job Event conversion Server ID.</p>
-    #[doc(hidden)]
     pub conversion_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Job Event Target instance ID.</p>
-    #[doc(hidden)]
     pub target_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Job error.</p>
-    #[doc(hidden)]
     pub raw_error: ::std::option::Option<::std::string::String>,
 }
 impl JobLogEventData {

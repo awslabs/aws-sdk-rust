@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainSettingsForUpdate {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
-    #[doc(hidden)]
     pub r_studio_server_pro_domain_settings_for_update: ::std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
-    #[doc(hidden)]
     pub execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DomainSettingsForUpdate {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkInput {
     /// <p> The name of the new custom framework. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> An optional description for the new custom framework. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
-    #[doc(hidden)]
     pub control_sets: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>,
     /// <p> The tags that are associated with the framework. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAssessmentFrameworkInput {

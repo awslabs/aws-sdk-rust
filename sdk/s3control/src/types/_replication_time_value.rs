@@ -8,7 +8,6 @@
 pub struct ReplicationTimeValue {
     /// <p>Contains an integer that specifies the time period in minutes. </p>
     /// <p>Valid value: 15</p>
-    #[doc(hidden)]
     pub minutes: ::std::option::Option<i32>,
 }
 impl ReplicationTimeValue {

@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobConfig {
     /// <p>Specifies the ranges of valid values for the hyperparameters.</p>
-    #[doc(hidden)]
     pub parameter_ranges: ::std::option::Option<crate::types::ParameterRanges>,
 }
 impl HyperParameterTuningJobConfig {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterEcsClusterInput {
     /// <p>The cluster's ARN.</p>
-    #[doc(hidden)]
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterEcsClusterInput {

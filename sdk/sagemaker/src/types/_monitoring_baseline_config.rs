@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringBaselineConfig {
     /// <p>The name of the job that performs baselining for the monitoring job.</p>
-    #[doc(hidden)]
     pub baselining_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The baseline constraint file in Amazon S3 that the current monitoring job should validated against.</p>
-    #[doc(hidden)]
     pub constraints_resource: ::std::option::Option<crate::types::MonitoringConstraintsResource>,
     /// <p>The baseline statistics file in Amazon S3 that the current monitoring job should be validated against.</p>
-    #[doc(hidden)]
     pub statistics_resource: ::std::option::Option<crate::types::MonitoringStatisticsResource>,
 }
 impl MonitoringBaselineConfig {

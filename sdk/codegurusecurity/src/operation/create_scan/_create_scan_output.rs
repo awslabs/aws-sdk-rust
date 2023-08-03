@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScanOutput {
     /// <p>The name of the scan.</p>
-    #[doc(hidden)]
     pub scan_name: ::std::option::Option<::std::string::String>,
     /// <p>UUID that identifies the individual scan run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the resource object that contains resources that were scanned.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<crate::types::ResourceId>,
     /// <p>The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub scan_state: ::std::option::Option<crate::types::ScanState>,
     /// <p>The ARN for the scan name.</p>
-    #[doc(hidden)]
     pub scan_name_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

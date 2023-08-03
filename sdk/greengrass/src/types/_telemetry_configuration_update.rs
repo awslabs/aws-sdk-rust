@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryConfigurationUpdate {
     /// Configure telemetry to be on or off.
-    #[doc(hidden)]
     pub telemetry: ::std::option::Option<crate::types::Telemetry>,
 }
 impl TelemetryConfigurationUpdate {

@@ -7,7 +7,6 @@ pub struct TagResourceInput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -20,7 +19,6 @@ pub struct TagResourceInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {

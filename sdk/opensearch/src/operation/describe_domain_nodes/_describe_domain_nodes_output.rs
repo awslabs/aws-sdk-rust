@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainNodesOutput {
     /// <p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>
-    #[doc(hidden)]
     pub domain_nodes_status_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainNodesStatus>>,
     _request_id: Option<String>,
 }

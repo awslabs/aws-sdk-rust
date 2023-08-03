@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SshPublicKey {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the SSH public key.</p>
-    #[doc(hidden)]
     pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The MD5 message digest of the SSH public key.</p>
-    #[doc(hidden)]
     pub fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The SSH public key.</p>
-    #[doc(hidden)]
     pub ssh_public_key_body: ::std::option::Option<::std::string::String>,
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
-    #[doc(hidden)]
     pub upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SshPublicKey {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdHocFilteringOption {
     /// <p>Availability status.</p>
-    #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl AdHocFilteringOption {

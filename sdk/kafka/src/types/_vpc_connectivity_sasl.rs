@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectivitySasl {
     /// <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>
-    #[doc(hidden)]
     pub scram: ::std::option::Option<crate::types::VpcConnectivityScram>,
     /// <p>Details for SASL/IAM client authentication for VPC connectivity.</p>
-    #[doc(hidden)]
     pub iam: ::std::option::Option<crate::types::VpcConnectivityIam>,
 }
 impl VpcConnectivitySasl {

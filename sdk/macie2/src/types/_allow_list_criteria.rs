@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowListCriteria {
     /// <p>The regular expression (<i>regex</i>) that defines the text pattern to ignore. The expression can contain as many as 512 characters.</p>
-    #[doc(hidden)]
     pub regex: ::std::option::Option<::std::string::String>,
     /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
-    #[doc(hidden)]
     pub s3_words_list: ::std::option::Option<crate::types::S3WordsList>,
 }
 impl AllowListCriteria {

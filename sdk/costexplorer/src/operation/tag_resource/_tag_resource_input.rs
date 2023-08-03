@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> A list of tag key-value pairs to be added to the resource.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -17,7 +16,6 @@ pub struct TagResourceInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl TagResourceInput {

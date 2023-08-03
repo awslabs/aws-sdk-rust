@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {

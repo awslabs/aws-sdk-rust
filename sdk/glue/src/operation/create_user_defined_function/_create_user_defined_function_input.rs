@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database in which to create the function.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
-    #[doc(hidden)]
     pub function_input: ::std::option::Option<crate::types::UserDefinedFunctionInput>,
 }
 impl CreateUserDefinedFunctionInput {

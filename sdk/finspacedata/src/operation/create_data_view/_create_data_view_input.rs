@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataViewInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
-    #[doc(hidden)]
     pub auto_update: bool,
     /// <p>Columns to be used for sorting the data.</p>
-    #[doc(hidden)]
     pub sort_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Ordered set of column names used to partition data.</p>
-    #[doc(hidden)]
     pub partition_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub as_of_timestamp: ::std::option::Option<i64>,
     /// <p>Options that define the destination type for the Dataview.</p>
-    #[doc(hidden)]
     pub destination_type_params: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
 }
 impl CreateDataViewInput {

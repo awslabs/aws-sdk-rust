@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCostCategoriesOutput {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The names of the Cost Categories.</p>
-    #[doc(hidden)]
     pub cost_category_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Cost Category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned. </p>
-    #[doc(hidden)]
     pub cost_category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of objects that are returned.</p>
-    #[doc(hidden)]
     pub return_size: ::std::option::Option<i32>,
     /// <p>The total number of objects.</p>
-    #[doc(hidden)]
     pub total_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

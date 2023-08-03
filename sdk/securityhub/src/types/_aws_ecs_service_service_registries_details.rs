@@ -7,18 +7,14 @@ pub struct AwsEcsServiceServiceRegistriesDetails {
     /// <p>The container name value to use for the service discovery service.</p>
     /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The port value to use for the service discovery service.</p>
     /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
-    #[doc(hidden)]
     pub container_port: i32,
     /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The ARN of the service registry.</p>
-    #[doc(hidden)]
     pub registry_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsServiceServiceRegistriesDetails {

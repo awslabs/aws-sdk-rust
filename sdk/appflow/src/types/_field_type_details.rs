@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldTypeDetails {
     /// <p> The type of field, such as string, integer, date, and so on. </p>
-    #[doc(hidden)]
     pub field_type: ::std::option::Option<::std::string::String>,
     /// <p> The list of operators supported by a field. </p>
-    #[doc(hidden)]
     pub filter_operators: ::std::option::Option<::std::vec::Vec<crate::types::Operator>>,
     /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
-    #[doc(hidden)]
     pub supported_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The regular expression pattern for the field name.</p>
-    #[doc(hidden)]
     pub value_regex_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The date format that the field supports.</p>
-    #[doc(hidden)]
     pub supported_date_format: ::std::option::Option<::std::string::String>,
     /// <p>The range of values this field can hold.</p>
-    #[doc(hidden)]
     pub field_value_range: ::std::option::Option<crate::types::Range>,
     /// <p>This is the allowable length range for this field's value.</p>
-    #[doc(hidden)]
     pub field_length_range: ::std::option::Option<crate::types::Range>,
 }
 impl FieldTypeDetails {

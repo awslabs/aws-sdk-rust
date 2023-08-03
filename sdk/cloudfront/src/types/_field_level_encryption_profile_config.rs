@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileConfig {
     /// <p>Profile name for the field-level encryption profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique number that ensures that the request can't be replayed.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
-    #[doc(hidden)]
     pub encryption_entities: ::std::option::Option<crate::types::EncryptionEntities>,
 }
 impl FieldLevelEncryptionProfileConfig {

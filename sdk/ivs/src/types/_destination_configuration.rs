@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfiguration {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
 impl DestinationConfiguration {

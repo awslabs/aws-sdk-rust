@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQuickConnectOutput {
     /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
-    #[doc(hidden)]
     pub quick_connect_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the quick connect. </p>
-    #[doc(hidden)]
     pub quick_connect_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

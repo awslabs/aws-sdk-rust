@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationFeatureConfiguration {
     /// <p>The name of the feature that will be configured for the organization.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OrgFeature>,
     /// <p>The status of the feature that will be configured for the organization.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
     /// <p>The additional information that will be configured for the organization.</p>
-    #[doc(hidden)]
     pub additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>>,
 }
 impl OrganizationFeatureConfiguration {

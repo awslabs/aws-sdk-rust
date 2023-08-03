@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the permission set.</p>
-    #[doc(hidden)]
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity type for which the assignment will be created.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::ProvisionTargetType>,
 }
 impl ProvisionPermissionSetInput {

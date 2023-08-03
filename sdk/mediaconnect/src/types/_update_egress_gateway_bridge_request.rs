@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEgressGatewayBridgeRequest {
     /// Update an existing egress-type bridge.
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
 }
 impl UpdateEgressGatewayBridgeRequest {

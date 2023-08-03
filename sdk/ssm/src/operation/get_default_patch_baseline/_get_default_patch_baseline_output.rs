@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The operating system for the returned patch baseline. </p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     _request_id: Option<String>,
 }

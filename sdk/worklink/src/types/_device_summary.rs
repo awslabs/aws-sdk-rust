@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSummary {
     /// <p>The ID of the device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the device.</p>
-    #[doc(hidden)]
     pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
 }
 impl DeviceSummary {

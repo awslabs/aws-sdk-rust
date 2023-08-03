@@ -8,7 +8,6 @@ pub struct UpdateFileCacheLustreConfiguration {
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFileCacheLustreConfiguration {

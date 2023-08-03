@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReservationCoverageOutput {
     /// <p>The amount of time that your reservations covered.</p>
-    #[doc(hidden)]
     pub coverages_by_time: ::std::option::Option<::std::vec::Vec<crate::types::CoverageByTime>>,
     /// <p>The total amount of instance usage that a reservation covered.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::Coverage>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

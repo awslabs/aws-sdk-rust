@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPoolDescriptionType {
     /// <p>The ID in a user pool description.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name in a user pool description.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Lambda configuration information in a user pool description.</p>
-    #[doc(hidden)]
     pub lambda_config: ::std::option::Option<crate::types::LambdaConfigType>,
     /// <p>The user pool status in a user pool description.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The date the user pool description was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the user pool description was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UserPoolDescriptionType {

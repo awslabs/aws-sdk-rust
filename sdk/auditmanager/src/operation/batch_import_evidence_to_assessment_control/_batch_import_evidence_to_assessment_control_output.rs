@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlOutput {
     /// <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>>,
     _request_id: Option<String>,
 }

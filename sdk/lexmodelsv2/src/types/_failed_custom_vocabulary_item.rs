@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCustomVocabularyItem {
     /// <p>The unique item identifer for the failed custom vocabulary item from the custom vocabulary list.</p>
-    #[doc(hidden)]
     pub item_id: ::std::option::Option<::std::string::String>,
     /// <p>The error message for the failed custom vocabulary item from the custom vocabulary list.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The unique error code for the failed custom vocabulary item from the custom vocabulary list.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
 }
 impl FailedCustomVocabularyItem {

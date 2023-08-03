@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleMetricAnomalyDetector {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric to create the anomaly detection model for.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
-    #[doc(hidden)]
     pub stat: ::std::option::Option<::std::string::String>,
 }
 impl SingleMetricAnomalyDetector {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlueprintRunOutput {
     /// <p>Returns a <code>BlueprintRun</code> object.</p>
-    #[doc(hidden)]
     pub blueprint_run: ::std::option::Option<crate::types::BlueprintRun>,
     _request_id: Option<String>,
 }

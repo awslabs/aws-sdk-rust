@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchForPositionResult {
     /// <p>Details about the search result, such as its address and position.</p>
-    #[doc(hidden)]
     pub place: ::std::option::Option<crate::types::Place>,
     /// <p>The distance in meters of a great-circle arc between the query position and the result.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
-    #[doc(hidden)]
     pub distance: ::std::option::Option<f64>,
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
-    #[doc(hidden)]
     pub place_id: ::std::option::Option<::std::string::String>,
 }
 impl SearchForPositionResult {

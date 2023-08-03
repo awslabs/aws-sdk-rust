@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppsInput {
     /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
-    #[doc(hidden)]
     pub app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAppsInput {

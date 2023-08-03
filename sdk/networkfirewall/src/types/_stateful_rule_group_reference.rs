@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatefulRuleGroupReference {
     /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An integer setting that indicates the order in which to run the stateful rule groups in a single <code>FirewallPolicy</code>. This setting only applies to firewall policies that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
     /// <p>Network Firewall evalutes each stateful rule group against a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     /// <p>You can change the priority settings of your rule groups at any time. To make it easier to insert rule groups later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The action that allows the policy owner to override the behavior of the rule group within a policy.</p>
-    #[doc(hidden)]
     pub r#override: ::std::option::Option<crate::types::StatefulRuleGroupOverride>,
 }
 impl StatefulRuleGroupReference {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledJobRollout {
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledJobRollout {

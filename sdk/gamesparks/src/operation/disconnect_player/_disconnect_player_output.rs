@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisconnectPlayerOutput {
     /// <p>The list of the connection ids that were disconnected.</p>
-    #[doc(hidden)]
     pub disconnect_successes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of the connection ids that could not be disconnected.</p>
-    #[doc(hidden)]
     pub disconnect_failures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

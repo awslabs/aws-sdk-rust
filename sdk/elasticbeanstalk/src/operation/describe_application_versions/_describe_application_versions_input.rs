@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationVersionsInput {
     /// <p>Specify an application name to show only application versions for that application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify a version label to show a specific application version.</p>
-    #[doc(hidden)]
     pub version_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p>
     /// <p>If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single response.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeApplicationVersionsInput {

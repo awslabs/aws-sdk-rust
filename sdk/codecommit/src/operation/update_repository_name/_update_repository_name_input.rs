@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRepositoryNameInput {
     /// <p>The current name of the repository.</p>
-    #[doc(hidden)]
     pub old_name: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the repository.</p>
-    #[doc(hidden)]
     pub new_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRepositoryNameInput {

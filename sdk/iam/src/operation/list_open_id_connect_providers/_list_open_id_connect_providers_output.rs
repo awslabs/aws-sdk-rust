@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOpenIdConnectProvidersOutput {
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub open_id_connect_provider_list: ::std::option::Option<::std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>>,
     _request_id: Option<String>,
 }

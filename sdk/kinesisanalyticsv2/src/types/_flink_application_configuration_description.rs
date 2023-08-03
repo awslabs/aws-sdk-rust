@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlinkApplicationConfigurationDescription {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
-    #[doc(hidden)]
     pub checkpoint_configuration_description: ::std::option::Option<crate::types::CheckpointConfigurationDescription>,
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
-    #[doc(hidden)]
     pub monitoring_configuration_description: ::std::option::Option<crate::types::MonitoringConfigurationDescription>,
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
-    #[doc(hidden)]
     pub parallelism_configuration_description: ::std::option::Option<crate::types::ParallelismConfigurationDescription>,
     /// <p>The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. To retrieve the job plan for the application, use the <code>DescribeApplicationRequest$IncludeAdditionalDetails</code> parameter of the <code>DescribeApplication</code> operation.</p>
-    #[doc(hidden)]
     pub job_plan_description: ::std::option::Option<::std::string::String>,
 }
 impl FlinkApplicationConfigurationDescription {

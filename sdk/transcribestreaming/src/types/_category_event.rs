@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryEvent {
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    #[doc(hidden)]
     pub matched_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    #[doc(hidden)]
     pub matched_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>>,
 }
 impl CategoryEvent {

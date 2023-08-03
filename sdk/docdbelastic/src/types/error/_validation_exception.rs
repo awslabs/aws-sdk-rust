@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>An error message describing the validation exception.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the validation exception occurred (one of <code>unknownOperation</code>, <code>cannotParse</code>, <code>fieldValidationFailed</code>, or <code>other</code>).</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     /// <p>A list of the fields in which the validation exception occurred.</p>
-    #[doc(hidden)]
     pub field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

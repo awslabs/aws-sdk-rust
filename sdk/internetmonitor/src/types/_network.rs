@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Network {
     /// <p>The internet provider name or network name.</p>
-    #[doc(hidden)]
     pub as_name: ::std::option::Option<::std::string::String>,
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
-    #[doc(hidden)]
     pub as_number: ::std::option::Option<i64>,
 }
 impl Network {

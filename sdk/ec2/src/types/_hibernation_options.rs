@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HibernationOptions {
     /// <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
-    #[doc(hidden)]
     pub configured: ::std::option::Option<bool>,
 }
 impl HibernationOptions {

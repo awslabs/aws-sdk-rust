@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectOutput {
     /// <p>The current status of the delete project operation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProjectStatus>,
     _request_id: Option<String>,
 }

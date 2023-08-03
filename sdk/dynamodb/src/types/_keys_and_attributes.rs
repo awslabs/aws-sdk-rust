@@ -6,18 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeysAndAttributes {
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
-    #[doc(hidden)]
     pub consistent_read: ::std::option::Option<bool>,
     /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the <code>ProjectionExpression</code> must be separated by commas.</p>
     /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub projection_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -40,7 +36,6 @@ pub struct KeysAndAttributes {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub expression_attribute_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl KeysAndAttributes {

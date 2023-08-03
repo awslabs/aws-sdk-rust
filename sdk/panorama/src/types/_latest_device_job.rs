@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LatestDeviceJob {
     /// <p>The target version of the device software.</p>
-    #[doc(hidden)]
     pub image_version: ::std::option::Option<::std::string::String>,
     /// <p>Status of the latest device job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UpdateProgress>,
     /// <p>The job's type.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
 }
 impl LatestDeviceJob {

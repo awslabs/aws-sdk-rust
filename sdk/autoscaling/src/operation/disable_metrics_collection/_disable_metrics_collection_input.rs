@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableMetricsCollectionInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the metrics to disable.</p>
     /// <p>You can specify one or more of the following metrics:</p>
@@ -32,7 +31,6 @@ pub struct DisableMetricsCollectionInput {
     /// </ul>
     /// <p>If you omit this property, all metrics are disabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisableMetricsCollectionInput {

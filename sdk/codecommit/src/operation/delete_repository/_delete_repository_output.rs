@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRepositoryOutput {
     /// <p>The ID of the repository that was deleted.</p>
-    #[doc(hidden)]
     pub repository_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

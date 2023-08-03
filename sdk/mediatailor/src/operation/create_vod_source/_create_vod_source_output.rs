@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVodSourceOutput {
     /// <p>The ARN to assign to this VOD source.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the VOD source was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
-    #[doc(hidden)]
     pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The time the VOD source was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name to assign to the source location for this VOD source.</p>
-    #[doc(hidden)]
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name to assign to the VOD source.</p>
-    #[doc(hidden)]
     pub vod_source_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

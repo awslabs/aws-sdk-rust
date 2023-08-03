@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatadogConnectorProfileProperties {
     /// <p> The location of the Datadog resource. </p>
-    #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
 }
 impl DatadogConnectorProfileProperties {

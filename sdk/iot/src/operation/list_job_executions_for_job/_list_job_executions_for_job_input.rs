@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobExecutionsForJobInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>The maximum number of results to be returned per request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListJobExecutionsForJobInput {

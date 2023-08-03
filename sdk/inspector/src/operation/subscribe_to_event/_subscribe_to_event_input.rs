@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscribeToEventInput {
     /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event for which you want to receive SNS notifications.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::InspectorEvent>,
     /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl SubscribeToEventInput {

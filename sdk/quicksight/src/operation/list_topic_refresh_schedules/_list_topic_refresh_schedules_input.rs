@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTopicRefreshSchedulesInput {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub topic_id: ::std::option::Option<::std::string::String>,
 }
 impl ListTopicRefreshSchedulesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSourceNetworksRequestFilters {
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    #[doc(hidden)]
     pub source_network_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
-    #[doc(hidden)]
     pub origin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
-    #[doc(hidden)]
     pub origin_region: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSourceNetworksRequestFilters {

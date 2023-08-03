@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VgwTelemetry {
     /// <p>The number of accepted routes.</p>
-    #[doc(hidden)]
     pub accepted_route_count: ::std::option::Option<i32>,
     /// <p>The date and time of the last change in status.</p>
-    #[doc(hidden)]
     pub last_status_change: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    #[doc(hidden)]
     pub outside_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The status of the VPN tunnel.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TelemetryStatus>,
     /// <p>If an error occurs, a description of the error.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the VPN tunnel endpoint certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl VgwTelemetry {

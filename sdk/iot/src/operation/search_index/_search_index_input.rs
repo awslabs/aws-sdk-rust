@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchIndexInput {
     /// <p>The search index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The search query string. For more information about the search query syntax, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query syntax</a>.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The query version.</p>
-    #[doc(hidden)]
     pub query_version: ::std::option::Option<::std::string::String>,
 }
 impl SearchIndexInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWirelessDeviceImportTaskInput {
     /// <p>The identifier of the import task to be updated.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkUpdateImportInfo>,
 }
 impl UpdateWirelessDeviceImportTaskInput {

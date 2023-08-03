@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkgroupsOutput {
     /// <p> If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The returned array of workgroups.</p>
-    #[doc(hidden)]
     pub workgroups: ::std::option::Option<::std::vec::Vec<crate::types::Workgroup>>,
     _request_id: Option<String>,
 }

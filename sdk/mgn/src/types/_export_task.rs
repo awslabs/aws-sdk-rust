@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTask {
     /// <p>Export task id.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>Export task s3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Export task s3 key.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>Export task s3 bucket owner.</p>
-    #[doc(hidden)]
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>Export task creation datetime.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Export task end datetime.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Export task status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>Export task progress percentage.</p>
-    #[doc(hidden)]
     pub progress_percentage: ::std::option::Option<f32>,
     /// <p>Export task summary.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::ExportTaskSummary>,
 }
 impl ExportTask {

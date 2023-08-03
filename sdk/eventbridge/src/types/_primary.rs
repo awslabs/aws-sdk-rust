@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Primary {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<::std::string::String>,
 }
 impl Primary {

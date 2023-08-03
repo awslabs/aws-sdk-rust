@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingCloudwatchLogsExports {
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_types_to_enable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_types_to_disable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PendingCloudwatchLogsExports {

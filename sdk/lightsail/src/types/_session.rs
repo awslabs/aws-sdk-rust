@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Session {
     /// <p>The session name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The session URL.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>When true, this Boolean value indicates the primary session for the specified resource.</p>
-    #[doc(hidden)]
     pub is_primary: ::std::option::Option<bool>,
 }
 impl Session {

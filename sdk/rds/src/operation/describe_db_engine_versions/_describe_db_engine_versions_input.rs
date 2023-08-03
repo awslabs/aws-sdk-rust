@@ -21,18 +21,15 @@ pub struct DescribeDbEngineVersionsInput {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The database engine version to return.</p>
     /// <p>Example: <code>5.1.49</code> </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more DB engine versions to describe.</p>
     /// <p>Supported filters:</p>
@@ -54,31 +51,24 @@ pub struct DescribeDbEngineVersionsInput {
     /// <li> <p> <code>deprecated</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
-    #[doc(hidden)]
     pub default_only: bool,
     /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
     /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code> to <code>true</code>, RDS Custom returns no results.</p>
-    #[doc(hidden)]
     pub list_supported_character_sets: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
     /// <p>If this parameter is enabled and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
     /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code> to <code>true</code>, RDS Custom returns no results.</p>
-    #[doc(hidden)]
     pub list_supported_timezones: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
-    #[doc(hidden)]
     pub include_all: ::std::option::Option<bool>,
 }
 impl DescribeDbEngineVersionsInput {

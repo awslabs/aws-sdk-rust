@@ -5,10 +5,8 @@
 pub struct TagMfaDeviceInput {
     /// <p>The unique identifier for the IAM virtual MFA device to which you want to add tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that you want to attach to the IAM virtual MFA device. Each tag consists of a key name and an associated value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagMfaDeviceInput {

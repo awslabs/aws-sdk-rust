@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartVoiceToneAnalysisTaskInput {
     /// <p>The Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The transaction ID.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The language code.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The unique identifier for the client request. Use a different token for different voice tone analysis tasks.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl StartVoiceToneAnalysisTaskInput {

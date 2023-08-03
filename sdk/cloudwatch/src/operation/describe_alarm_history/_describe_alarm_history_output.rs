@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlarmHistoryOutput {
     /// <p>The alarm histories, in JSON format.</p>
-    #[doc(hidden)]
     pub alarm_history_items: ::std::option::Option<::std::vec::Vec<crate::types::AlarmHistoryItem>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Category {
     /// <p>The ID of the skill store category.</p>
-    #[doc(hidden)]
     pub category_id: ::std::option::Option<i64>,
     /// <p>The name of the skill store category.</p>
-    #[doc(hidden)]
     pub category_name: ::std::option::Option<::std::string::String>,
 }
 impl Category {

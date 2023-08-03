@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSnapshotInput {
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-    #[doc(hidden)]
     pub source_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl ExportSnapshotInput {

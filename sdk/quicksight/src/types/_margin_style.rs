@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarginStyle {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
-    #[doc(hidden)]
     pub show: ::std::option::Option<bool>,
 }
 impl MarginStyle {

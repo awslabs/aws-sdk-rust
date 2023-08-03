@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardVersion {
     /// <p>The time that this dashboard version was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Errors associated with this dashboard version.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::DashboardError>>,
     /// <p>Version number for this version of the dashboard.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Source entity ARN.</p>
-    #[doc(hidden)]
     pub source_entity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
-    #[doc(hidden)]
     pub data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the theme associated with a version of the dashboard.</p>
-    #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    #[doc(hidden)]
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
 }
 impl DashboardVersion {

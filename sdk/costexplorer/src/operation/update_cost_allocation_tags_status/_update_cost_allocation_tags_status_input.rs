@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusInput {
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
-    #[doc(hidden)]
     pub cost_allocation_tags_status: ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagStatusEntry>>,
 }
 impl UpdateCostAllocationTagsStatusInput {

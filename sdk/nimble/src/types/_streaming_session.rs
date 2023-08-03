@@ -5,83 +5,57 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingSession {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the streaming session.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 Instance type used for the streaming session.</p>
-    #[doc(hidden)]
     pub ec2_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
-    #[doc(hidden)]
     pub owned_by: ::std::option::Option<::std::string::String>,
     /// <p>The session ID.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StreamingSessionState>,
     /// <p>The status code.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::StreamingSessionStatusCode>,
     /// <p>The status message for the streaming session.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the streaming image.</p>
-    #[doc(hidden)]
     pub streaming_image_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The time the streaming session will automatically terminate if not terminated by the user.</p>
-    #[doc(hidden)]
     pub terminate_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
-    #[doc(hidden)]
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
-    #[doc(hidden)]
     pub stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that stopped the streaming session.</p>
-    #[doc(hidden)]
     pub stopped_by: ::std::option::Option<::std::string::String>,
     /// <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that started the streaming session.</p>
-    #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The time the streaming session will automatically be stopped if the user doesn’t stop the session themselves. </p>
-    #[doc(hidden)]
     pub stop_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The backup ID used to restore a streaming session.</p>
-    #[doc(hidden)]
     pub started_from_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the current backup setting of the session.</p>
-    #[doc(hidden)]
     pub backup_mode: ::std::option::Option<crate::types::SessionBackupMode>,
     /// <p>The maximum number of backups of a streaming session that you can have. When the maximum number of backups is reached, the oldest backup is deleted.</p>
-    #[doc(hidden)]
     pub max_backups_to_retain: i32,
     /// <p>Determine if an EBS volume created from this streaming session will be backed up.</p>
-    #[doc(hidden)]
     pub volume_retention_mode: ::std::option::Option<crate::types::VolumeRetentionMode>,
     /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
-    #[doc(hidden)]
     pub session_persistence_mode: ::std::option::Option<crate::types::SessionPersistenceMode>,
     /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
-    #[doc(hidden)]
     pub volume_configuration: ::std::option::Option<crate::types::VolumeConfiguration>,
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
@@ -89,7 +63,6 @@ pub struct StreamingSession {
     /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
     /// </ul>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
-    #[doc(hidden)]
     pub automatic_termination_mode: ::std::option::Option<crate::types::AutomaticTerminationMode>,
 }
 impl StreamingSession {

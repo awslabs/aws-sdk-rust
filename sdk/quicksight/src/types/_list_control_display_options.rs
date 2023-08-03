@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListControlDisplayOptions {
     /// <p>The configuration of the search options in a list control.</p>
-    #[doc(hidden)]
     pub search_options: ::std::option::Option<crate::types::ListControlSearchOptions>,
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
-    #[doc(hidden)]
     pub select_all_options: ::std::option::Option<crate::types::ListControlSelectAllOptions>,
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    #[doc(hidden)]
     pub title_options: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>The configuration of info icon label options.</p>
-    #[doc(hidden)]
     pub info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
 impl ListControlDisplayOptions {

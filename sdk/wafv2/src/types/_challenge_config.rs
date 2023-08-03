@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChallengeConfig {
     /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
-    #[doc(hidden)]
     pub immunity_time_property: ::std::option::Option<crate::types::ImmunityTimeProperty>,
 }
 impl ChallengeConfig {

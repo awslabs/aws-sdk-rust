@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserImportJobType {
     /// <p>The job name for the user import job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job ID for the user import job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
-    #[doc(hidden)]
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
     /// <p>The date the user import job was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the user import job was started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the user import job was completed.</p>
-    #[doc(hidden)]
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the user import job. One of the following:</p>
     /// <ul>
@@ -36,22 +29,16 @@ pub struct UserImportJobType {
     /// <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li>
     /// <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job can't be started.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UserImportJobStatusType>,
     /// <p>The role Amazon Resource Name (ARN) for the Amazon CloudWatch Logging role for the user import job. For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon Cognito Developer Guide.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of users that were successfully imported.</p>
-    #[doc(hidden)]
     pub imported_users: i64,
     /// <p>The number of users that were skipped.</p>
-    #[doc(hidden)]
     pub skipped_users: i64,
     /// <p>The number of users that couldn't be imported.</p>
-    #[doc(hidden)]
     pub failed_users: i64,
     /// <p>The message returned when the user import job is completed.</p>
-    #[doc(hidden)]
     pub completion_message: ::std::option::Option<::std::string::String>,
 }
 impl UserImportJobType {

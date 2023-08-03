@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MethodSnapshot {
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-    #[doc(hidden)]
     pub authorization_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the method requires a valid ApiKey.</p>
-    #[doc(hidden)]
     pub api_key_required: bool,
 }
 impl MethodSnapshot {

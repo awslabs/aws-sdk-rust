@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoleInfo {
     /// <p>The friendly name of the role that is assigned to the user.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the AWS account assigned to the user.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RoleInfo {

@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataRepositoryConfiguration {
     /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically imported from the linked S3 bucket to your file system.</p>
-    #[doc(hidden)]
     pub auto_import_policy: ::std::option::Option<crate::types::AutoImportPolicy>,
     /// <p>Specifies the type of updated objects (new, changed, deleted) that will be automatically exported from your file system to the linked S3 bucket.</p>
-    #[doc(hidden)]
     pub auto_export_policy: ::std::option::Option<crate::types::AutoExportPolicy>,
 }
 impl S3DataRepositoryConfiguration {

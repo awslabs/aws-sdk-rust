@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35InputScheduleActionSettings {
     /// In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)"
-    #[doc(hidden)]
     pub input_attachment_name_reference: ::std::option::Option<::std::string::String>,
     /// Whether the SCTE-35 input should be the active input or a fixed input.
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::Scte35InputMode>,
 }
 impl Scte35InputScheduleActionSettings {

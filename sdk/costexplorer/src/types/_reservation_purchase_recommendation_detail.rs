@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationDetail {
     /// <p>The account that this Reserved Instance (RI) recommendation is for.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
-    #[doc(hidden)]
     pub instance_details: ::std::option::Option<crate::types::InstanceDetails>,
     /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
-    #[doc(hidden)]
     pub recommended_number_of_instances_to_purchase: ::std::option::Option<::std::string::String>,
     /// <p>The number of normalized units that Amazon Web Services recommends that you purchase.</p>
-    #[doc(hidden)]
     pub recommended_normalized_units_to_purchase: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    #[doc(hidden)]
     pub minimum_number_of_instances_used_per_hour: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    #[doc(hidden)]
     pub minimum_normalized_units_used_per_hour: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    #[doc(hidden)]
     pub maximum_number_of_instances_used_per_hour: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    #[doc(hidden)]
     pub maximum_normalized_units_used_per_hour: ::std::option::Option<::std::string::String>,
     /// <p>The average number of instances that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    #[doc(hidden)]
     pub average_number_of_instances_used_per_hour: ::std::option::Option<::std::string::String>,
     /// <p>The average number of normalized units that you used in an hour during the historical period. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    #[doc(hidden)]
     pub average_normalized_units_used_per_hour: ::std::option::Option<::std::string::String>,
     /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate your recommended reservation purchases.</p>
-    #[doc(hidden)]
     pub average_utilization: ::std::option::Option<::std::string::String>,
     /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving you money, in months.</p>
-    #[doc(hidden)]
     pub estimated_break_even_in_months: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>How much Amazon Web Services estimates that this specific recommendation might save you in a month, as a percentage of your overall costs.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings_percentage: ::std::option::Option<::std::string::String>,
     /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a month.</p>
-    #[doc(hidden)]
     pub estimated_monthly_on_demand_cost: ::std::option::Option<::std::string::String>,
     /// <p>How much Amazon Web Services estimates that you might spend for all usage during the specified historical period if you had a reservation.</p>
-    #[doc(hidden)]
     pub estimated_reservation_cost_for_lookback_period: ::std::option::Option<::std::string::String>,
     /// <p>How much purchasing this instance costs you upfront.</p>
-    #[doc(hidden)]
     pub upfront_cost: ::std::option::Option<::std::string::String>,
     /// <p>How much purchasing this instance costs you on a monthly basis.</p>
-    #[doc(hidden)]
     pub recurring_standard_monthly_cost: ::std::option::Option<::std::string::String>,
 }
 impl ReservationPurchaseRecommendationDetail {

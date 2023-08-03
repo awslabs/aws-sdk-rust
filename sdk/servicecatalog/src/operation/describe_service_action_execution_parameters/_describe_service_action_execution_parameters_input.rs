@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceActionExecutionParametersInput {
     /// <p>The identifier of the provisioned product.</p>
-    #[doc(hidden)]
     pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The self-service action identifier.</p>
-    #[doc(hidden)]
     pub service_action_id: ::std::option::Option<::std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
 }
 impl DescribeServiceActionExecutionParametersInput {

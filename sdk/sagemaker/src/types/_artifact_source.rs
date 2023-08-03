@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactSource {
     /// <p>The URI of the source.</p>
-    #[doc(hidden)]
     pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>A list of source types.</p>
-    #[doc(hidden)]
     pub source_types: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
 }
 impl ArtifactSource {

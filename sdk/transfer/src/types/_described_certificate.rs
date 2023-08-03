@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribedCertificate {
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    #[doc(hidden)]
     pub usage: ::std::option::Option<crate::types::CertificateUsageType>,
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateStatusType>,
     /// <p>The file name for the certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The list of certificates that make up the chain for the certificate.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    #[doc(hidden)]
     pub active_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    #[doc(hidden)]
     pub inactive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The serial number for the certificate.</p>
-    #[doc(hidden)]
     pub serial: ::std::option::Option<::std::string::String>,
     /// <p>The earliest date that the certificate is valid.</p>
-    #[doc(hidden)]
     pub not_before_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The final date that the certificate is valid.</p>
-    #[doc(hidden)]
     pub not_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CertificateType>,
     /// <p>The name or description that's used to identity the certificate. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DescribedCertificate {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointServiceConfigurationsOutput {
     /// <p>Information about the service configurations that were not deleted, if applicable.</p>
-    #[doc(hidden)]
     pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
 }

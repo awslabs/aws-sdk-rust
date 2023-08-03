@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMobileDeviceAccessRuleInput {
     /// <p>The WorkMail organization under which the rule will be created.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The idempotency token for the client request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The rule name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
     /// <p>Device types that the rule will match.</p>
-    #[doc(hidden)]
     pub device_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
-    #[doc(hidden)]
     pub not_device_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device models that the rule will match.</p>
-    #[doc(hidden)]
     pub device_models: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
-    #[doc(hidden)]
     pub not_device_models: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device operating systems that the rule will match.</p>
-    #[doc(hidden)]
     pub device_operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
-    #[doc(hidden)]
     pub not_device_operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device user agents that the rule will match.</p>
-    #[doc(hidden)]
     pub device_user_agents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
-    #[doc(hidden)]
     pub not_device_user_agents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateMobileDeviceAccessRuleInput {

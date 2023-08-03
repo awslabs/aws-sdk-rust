@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeSimulationJobInput {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDescribeSimulationJobInput {

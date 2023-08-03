@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsOutput {
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
-    #[doc(hidden)]
     pub custom_line_item_versions: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemVersionListElement>>,
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

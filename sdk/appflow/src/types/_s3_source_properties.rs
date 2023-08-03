@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SourceProperties {
     /// <p> The Amazon S3 bucket name where the source files are stored. </p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> The object key for the Amazon S3 bucket in which the source files are stored. </p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
-    #[doc(hidden)]
     pub s3_input_format_config: ::std::option::Option<crate::types::S3InputFormatConfig>,
 }
 impl S3SourceProperties {

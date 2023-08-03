@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentVersionInfo {
     /// <p>The document name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The document version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The date the document was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An identifier for the default version of the document.</p>
-    #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The document format, either JSON or YAML.</p>
-    #[doc(hidden)]
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DocumentStatus>,
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    #[doc(hidden)]
     pub status_information: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the approval review for the latest version of the document.</p>
-    #[doc(hidden)]
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
 }
 impl DocumentVersionInfo {

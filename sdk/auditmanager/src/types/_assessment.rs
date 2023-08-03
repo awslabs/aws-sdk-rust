@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Assessment {
     /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account that's associated with the assessment. </p>
-    #[doc(hidden)]
     pub aws_account: ::std::option::Option<crate::types::AwsAccount>,
     /// <p> The metadata for the assessment. </p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::AssessmentMetadata>,
     /// <p> The framework that the assessment was created from. </p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<crate::types::AssessmentFramework>,
     /// <p> The tags that are associated with the assessment. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Assessment {

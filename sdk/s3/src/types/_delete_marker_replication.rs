@@ -10,7 +10,6 @@ pub struct DeleteMarkerReplication {
     /// <p>Indicates whether to replicate delete markers.</p> <note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
 }
 impl DeleteMarkerReplication {

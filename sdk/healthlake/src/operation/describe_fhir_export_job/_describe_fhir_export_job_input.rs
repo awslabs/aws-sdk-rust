@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirExportJobInput {
     /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS generated ID for an export job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFhirExportJobInput {

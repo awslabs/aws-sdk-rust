@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallDomainListInput {
     /// <p>The ID of the domain list that you want to delete. </p>
-    #[doc(hidden)]
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallDomainListInput {

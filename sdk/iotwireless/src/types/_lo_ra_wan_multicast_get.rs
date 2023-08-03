@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastGet {
     /// <p>Supported RfRegions</p>
-    #[doc(hidden)]
     pub rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
-    #[doc(hidden)]
     pub dl_class: ::std::option::Option<crate::types::DlClass>,
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
-    #[doc(hidden)]
     pub number_of_devices_requested: ::std::option::Option<i32>,
     /// <p>Number of devices that are associated to the multicast group.</p>
-    #[doc(hidden)]
     pub number_of_devices_in_group: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastGet {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessagesResponse {
     /// <p>List of targeted in-app message campaigns.</p>
-    #[doc(hidden)]
     pub in_app_message_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>>,
 }
 impl InAppMessagesResponse {

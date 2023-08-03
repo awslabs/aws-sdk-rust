@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSnapshotsOutput {
     /// <p> A list of snapshot summaries. You can use the returned snapshot IDs in the <code>UpdateSnapshot</code> and <code>GetSnapshot</code> operations. </p>
-    #[doc(hidden)]
     pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotSummary>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

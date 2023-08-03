@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SenderIdAndCountry {
     /// <p>The unique identifier of the sender.</p>
-    #[doc(hidden)]
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdAndCountry {

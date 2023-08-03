@@ -9,10 +9,8 @@ pub struct MlUserDataEncryption {
     /// <li> <p>DISABLED: encryption is disabled</p> </li>
     /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ml_user_data_encryption_mode: ::std::option::Option<crate::types::MlUserDataEncryptionModeString>,
     /// <p>The ID for the customer-provided KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl MlUserDataEncryption {

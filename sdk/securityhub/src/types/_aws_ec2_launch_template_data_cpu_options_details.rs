@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataCpuOptionsDetails {
     /// <p> The number of CPU cores for the instance. </p>
-    #[doc(hidden)]
     pub core_count: i32,
     /// <p> The number of threads per CPU core. A value of <code>1</code> disables multithreading for the instance, The default value is <code>2</code>. </p>
-    #[doc(hidden)]
     pub threads_per_core: i32,
 }
 impl AwsEc2LaunchTemplateDataCpuOptionsDetails {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeRiskConfigurationInput {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRiskConfigurationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameMetricDatum {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
-    #[doc(hidden)]
     pub frame_metric: ::std::option::Option<crate::types::FrameMetric>,
     /// <p> A list of values that are associated with a frame metric. </p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl FrameMetricDatum {

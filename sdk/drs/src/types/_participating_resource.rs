@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipatingResource {
     /// <p>The ID of a participating resource.</p>
-    #[doc(hidden)]
     pub participating_resource_id: ::std::option::Option<crate::types::ParticipatingResourceId>,
     /// <p>The launch status of a participating resource.</p>
-    #[doc(hidden)]
     pub launch_status: ::std::option::Option<crate::types::LaunchStatus>,
 }
 impl ParticipatingResource {

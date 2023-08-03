@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkArtifactMeta {
     /// <p>Lists network package overrides.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
 }
 impl NetworkArtifactMeta {

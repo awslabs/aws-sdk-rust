@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcAttachment {
     /// <p>Provides details about the VPC attachment.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The subnet ARNs.</p>
-    #[doc(hidden)]
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Provides details about the VPC attachment.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::VpcOptions>,
 }
 impl VpcAttachment {

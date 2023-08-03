@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGovCloudAccountOutput {
     /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
-    #[doc(hidden)]
     pub create_account_status: ::std::option::Option<crate::types::CreateAccountStatus>,
     _request_id: Option<String>,
 }

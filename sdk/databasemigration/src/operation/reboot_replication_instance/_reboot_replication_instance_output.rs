@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootReplicationInstanceOutput {
     /// <p>The replication instance that is being rebooted. </p>
-    #[doc(hidden)]
     pub replication_instance: ::std::option::Option<crate::types::ReplicationInstance>,
     _request_id: Option<String>,
 }

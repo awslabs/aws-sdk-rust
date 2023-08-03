@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutProfileObjectTypeOutput {
     /// <p>The name of the profile object type.</p>
-    #[doc(hidden)]
     pub object_type_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the profile object type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the object template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
-    #[doc(hidden)]
     pub expiration_days: ::std::option::Option<i32>,
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
-    #[doc(hidden)]
     pub allow_profile_creation: bool,
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up in fields that were parsed using <a href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>. If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set up <code>sourceLastUpdatedTimestampFormat</code>.</p>
-    #[doc(hidden)]
     pub source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     /// <p>The timestamp of when the domain was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

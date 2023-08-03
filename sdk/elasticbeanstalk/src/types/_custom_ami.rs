@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAmi {
     /// <p>The type of virtualization used to create the custom AMI.</p>
-    #[doc(hidden)]
     pub virtualization_type: ::std::option::Option<::std::string::String>,
     /// <p>THe ID of the image used to create the custom AMI.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomAmi {

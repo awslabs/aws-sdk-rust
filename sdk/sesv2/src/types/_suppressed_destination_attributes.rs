@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuppressedDestinationAttributes {
     /// <p>The unique identifier of the email message that caused the email address to be added to the suppression list for your account.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that's generated when an email address is added to the suppression list for your account.</p>
-    #[doc(hidden)]
     pub feedback_id: ::std::option::Option<::std::string::String>,
 }
 impl SuppressedDestinationAttributes {

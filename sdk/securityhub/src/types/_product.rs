@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Product {
     /// <p>The ARN assigned to the product.</p>
-    #[doc(hidden)]
     pub product_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product.</p>
-    #[doc(hidden)]
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the company that provides the product.</p>
-    #[doc(hidden)]
     pub company_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the product.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The categories assigned to the product.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
@@ -25,17 +20,13 @@ pub struct Product {
     /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li>
     /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub integration_types: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>>,
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
-    #[doc(hidden)]
     pub marketplace_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
-    #[doc(hidden)]
     pub activation_url: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy associated with the product.</p>
-    #[doc(hidden)]
     pub product_subscription_resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl Product {

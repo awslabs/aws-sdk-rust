@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformJobDefinition {
     /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. The default value is 1.</p>
-    #[doc(hidden)]
     pub max_concurrent_transforms: ::std::option::Option<i32>,
     /// <p>The maximum payload size allowed, in MB. A payload is the data portion of a record (without metadata).</p>
-    #[doc(hidden)]
     pub max_payload_in_mb: ::std::option::Option<i32>,
     /// <p>A string that determines the number of records included in a single mini-batch.</p>
     /// <p> <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
-    #[doc(hidden)]
     pub batch_strategy: ::std::option::Option<crate::types::BatchStrategy>,
     /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A description of the input source and the way the transform job consumes it.</p>
-    #[doc(hidden)]
     pub transform_input: ::std::option::Option<crate::types::TransformInput>,
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
-    #[doc(hidden)]
     pub transform_output: ::std::option::Option<crate::types::TransformOutput>,
     /// <p>Identifies the ML compute instances for the transform job.</p>
-    #[doc(hidden)]
     pub transform_resources: ::std::option::Option<crate::types::TransformResources>,
 }
 impl TransformJobDefinition {

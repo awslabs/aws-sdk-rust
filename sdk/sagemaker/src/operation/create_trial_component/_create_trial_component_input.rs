@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrialComponentInput {
     /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the component. States include:</p>
     /// <ul>
@@ -15,28 +13,20 @@ pub struct CreateTrialComponentInput {
     /// <li> <p>Completed</p> </li>
     /// <li> <p>Failed</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TrialComponentStatus>,
     /// <p>When the component started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the component ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The hyperparameters for the component.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>>,
     /// <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
-    #[doc(hidden)]
     pub input_artifacts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     /// <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
-    #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>A list of tags to associate with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTrialComponentInput {

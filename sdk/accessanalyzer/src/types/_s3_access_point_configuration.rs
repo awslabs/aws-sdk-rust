@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3AccessPointConfiguration {
     /// <p>The access point or multi-region access point policy.</p>
-    #[doc(hidden)]
     pub access_point_policy: ::std::option::Option<::std::string::String>,
     /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
-    #[doc(hidden)]
     pub public_access_block: ::std::option::Option<crate::types::S3PublicAccessBlockConfiguration>,
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
-    #[doc(hidden)]
     pub network_origin: ::std::option::Option<crate::types::NetworkOriginConfiguration>,
 }
 impl S3AccessPointConfiguration {

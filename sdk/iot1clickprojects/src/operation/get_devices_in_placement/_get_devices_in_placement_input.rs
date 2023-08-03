@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicesInPlacementInput {
     /// <p>The name of the project containing the placement.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement to get the devices from.</p>
-    #[doc(hidden)]
     pub placement_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDevicesInPlacementInput {

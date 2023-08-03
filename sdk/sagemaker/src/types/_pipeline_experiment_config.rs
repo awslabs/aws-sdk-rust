@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineExperimentConfig {
     /// <p>The name of the experiment.</p>
-    #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trial.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
 }
 impl PipelineExperimentConfig {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyAggregatesSuccessEntry {
     /// <p>The ID of the entry.</p>
-    #[doc(hidden)]
     pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The requested aggregated asset property values (for example, average, minimum, and maximum).</p>
-    #[doc(hidden)]
     pub aggregated_values: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>>,
 }
 impl BatchGetAssetPropertyAggregatesSuccessEntry {

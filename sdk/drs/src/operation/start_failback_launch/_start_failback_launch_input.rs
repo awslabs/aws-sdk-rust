@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartFailbackLaunchInput {
     /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-    #[doc(hidden)]
     pub recovery_instance_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to be associated with the failback launch Job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartFailbackLaunchInput {

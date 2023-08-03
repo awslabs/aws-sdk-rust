@@ -6,20 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetCapacitySpecification {
     /// <p>The number of units to request, filled using <code>DefaultTargetCapacityType</code>.</p>
-    #[doc(hidden)]
     pub total_target_capacity: ::std::option::Option<i32>,
     /// <p>The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a target capacity for On-Demand units.</p>
-    #[doc(hidden)]
     pub on_demand_target_capacity: ::std::option::Option<i32>,
     /// <p>The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot specify a target capacity for Spot units.</p>
-    #[doc(hidden)]
     pub spot_target_capacity: ::std::option::Option<i32>,
     /// <p>The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.</p>
-    #[doc(hidden)]
     pub default_target_capacity_type: ::std::option::Option<crate::types::DefaultTargetCapacityType>,
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    #[doc(hidden)]
     pub target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
 }
 impl TargetCapacitySpecification {

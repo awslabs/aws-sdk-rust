@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateIpamPoolCidrOutput {
     /// <p>Information about the allocation created.</p>
-    #[doc(hidden)]
     pub ipam_pool_allocation: ::std::option::Option<crate::types::IpamPoolAllocation>,
     _request_id: Option<String>,
 }

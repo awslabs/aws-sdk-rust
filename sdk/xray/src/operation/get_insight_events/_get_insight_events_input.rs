@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightEventsInput {
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-    #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>Used to retrieve at most the specified value of events.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightEventsInput {

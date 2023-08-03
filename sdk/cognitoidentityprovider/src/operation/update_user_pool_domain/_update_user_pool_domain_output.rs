@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
-    #[doc(hidden)]
     pub cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -6,34 +6,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuiteRunInformation {
     /// <p>Suite definition ID of the suite run.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite definition version of the suite run.</p>
-    #[doc(hidden)]
     pub suite_definition_version: ::std::option::Option<::std::string::String>,
     /// <p>Suite definition name of the suite run.</p>
-    #[doc(hidden)]
     pub suite_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Suite run ID of the suite run.</p>
-    #[doc(hidden)]
     pub suite_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-    #[doc(hidden)]
     pub end_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status of the suite run.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SuiteRunStatus>,
     /// <p>Number of test cases that passed in the suite run.</p>
-    #[doc(hidden)]
     pub passed: i32,
     /// <p>Number of test cases that failed in the suite run.</p>
-    #[doc(hidden)]
     pub failed: i32,
 }
 impl SuiteRunInformation {

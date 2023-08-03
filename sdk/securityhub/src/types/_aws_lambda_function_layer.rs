@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionLayer {
     /// <p>The ARN of the function layer.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the layer archive in bytes.</p>
-    #[doc(hidden)]
     pub code_size: i32,
 }
 impl AwsLambdaFunctionLayer {

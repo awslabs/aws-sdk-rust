@@ -13,19 +13,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InterruptionFilter {
     /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<i64>,
     /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
-    #[doc(hidden)]
     pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
-    #[doc(hidden)]
     pub relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
     /// <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
-    #[doc(hidden)]
     pub negate: ::std::option::Option<bool>,
 }
 impl InterruptionFilter {

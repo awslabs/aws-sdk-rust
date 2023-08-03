@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerInstance {
     /// <p>The brokers web console URL.</p>
-    #[doc(hidden)]
     pub console_url: ::std::option::Option<::std::string::String>,
     /// <p>The broker's wire-level protocol endpoints.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
 }
 impl BrokerInstance {

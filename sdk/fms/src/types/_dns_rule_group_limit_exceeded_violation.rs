@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRuleGroupLimitExceededViolation {
     /// <p>Information about the VPC ID. </p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
-    #[doc(hidden)]
     pub violation_target_description: ::std::option::Option<::std::string::String>,
     /// <p>The number of rule groups currently associated with the VPC. </p>
-    #[doc(hidden)]
     pub number_of_rule_groups_already_associated: i32,
 }
 impl DnsRuleGroupLimitExceededViolation {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHoursOfOperationOutput {
     /// <p>The hours of operation.</p>
-    #[doc(hidden)]
     pub hours_of_operation: ::std::option::Option<crate::types::HoursOfOperation>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeCapacityStatus {
     /// <p>The desired number of streaming instances.</p>
-    #[doc(hidden)]
     pub desired: ::std::option::Option<i32>,
     /// <p>The total number of simultaneous streaming instances that are running.</p>
-    #[doc(hidden)]
     pub running: ::std::option::Option<i32>,
     /// <p>The number of instances in use for streaming.</p>
-    #[doc(hidden)]
     pub in_use: ::std::option::Option<i32>,
     /// <p>The number of currently available instances that can be used to stream sessions.</p>
-    #[doc(hidden)]
     pub available: ::std::option::Option<i32>,
 }
 impl ComputeCapacityStatus {

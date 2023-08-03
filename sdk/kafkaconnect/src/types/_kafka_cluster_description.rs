@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaClusterDescription {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    #[doc(hidden)]
     pub apache_kafka_cluster: ::std::option::Option<crate::types::ApacheKafkaClusterDescription>,
 }
 impl KafkaClusterDescription {

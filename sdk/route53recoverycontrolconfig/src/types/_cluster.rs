@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
-    #[doc(hidden)]
     pub cluster_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>>,
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
 }
 impl Cluster {

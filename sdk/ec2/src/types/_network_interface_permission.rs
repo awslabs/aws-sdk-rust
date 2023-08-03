@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfacePermission {
     /// <p>The ID of the network interface permission.</p>
-    #[doc(hidden)]
     pub network_interface_permission_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Service.</p>
-    #[doc(hidden)]
     pub aws_service: ::std::option::Option<::std::string::String>,
     /// <p>The type of permission.</p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::InterfacePermissionType>,
     /// <p>Information about the state of the permission.</p>
-    #[doc(hidden)]
     pub permission_state: ::std::option::Option<crate::types::NetworkInterfacePermissionState>,
 }
 impl NetworkInterfacePermission {

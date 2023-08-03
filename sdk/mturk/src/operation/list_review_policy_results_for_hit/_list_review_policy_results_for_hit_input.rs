@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReviewPolicyResultsForHitInput {
     /// <p>The unique identifier of the HIT to retrieve review results for.</p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
-    #[doc(hidden)]
     pub policy_levels: ::std::option::Option<::std::vec::Vec<crate::types::ReviewPolicyLevel>>,
     /// <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
-    #[doc(hidden)]
     pub retrieve_actions: ::std::option::Option<bool>,
     /// <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
-    #[doc(hidden)]
     pub retrieve_results: ::std::option::Option<bool>,
     /// <p>Pagination token</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Limit the number of results returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListReviewPolicyResultsForHitInput {

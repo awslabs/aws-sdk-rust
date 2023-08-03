@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncInferenceConfig {
     /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
-    #[doc(hidden)]
     pub client_config: ::std::option::Option<crate::types::AsyncInferenceClientConfig>,
     /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::AsyncInferenceOutputConfig>,
 }
 impl AsyncInferenceConfig {

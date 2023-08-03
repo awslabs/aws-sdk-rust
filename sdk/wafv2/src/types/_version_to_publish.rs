@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionToPublish {
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
-    #[doc(hidden)]
     pub associated_rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
-    #[doc(hidden)]
     pub forecasted_lifetime: ::std::option::Option<i32>,
 }
 impl VersionToPublish {

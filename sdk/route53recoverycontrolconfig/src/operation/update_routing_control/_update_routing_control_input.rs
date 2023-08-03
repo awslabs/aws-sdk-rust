@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    #[doc(hidden)]
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing control.</p>
-    #[doc(hidden)]
     pub routing_control_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRoutingControlInput {

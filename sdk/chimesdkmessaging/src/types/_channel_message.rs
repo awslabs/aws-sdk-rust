@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelMessage {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a message.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The message metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The message type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMessageType>,
     /// <p>The time at which the message was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a message was edited.</p>
-    #[doc(hidden)]
     pub last_edited_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a message was updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
-    #[doc(hidden)]
     pub sender: ::std::option::Option<crate::types::Identity>,
     /// <p>Hides the content of a message.</p>
-    #[doc(hidden)]
     pub redacted: bool,
     /// <p>The persistence setting for a channel message.</p>
-    #[doc(hidden)]
     pub persistence: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
     /// <p>The status of the channel message.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The ID of the SubChannel.</p>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the channel message. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl ChannelMessage {

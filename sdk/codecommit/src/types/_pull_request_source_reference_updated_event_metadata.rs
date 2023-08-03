@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullRequestSourceReferenceUpdatedEventMetadata {
     /// <p>The name of the repository where the pull request was updated.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was updated.</p>
-    #[doc(hidden)]
     pub before_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>
-    #[doc(hidden)]
     pub after_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
-    #[doc(hidden)]
     pub merge_base: ::std::option::Option<::std::string::String>,
 }
 impl PullRequestSourceReferenceUpdatedEventMetadata {

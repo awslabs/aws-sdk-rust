@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the job whose information you want to retrieve.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobInput {

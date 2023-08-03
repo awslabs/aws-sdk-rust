@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlanningStatistics {
     /// <p>An estimate of the data that was scanned in bytes.</p>
-    #[doc(hidden)]
     pub estimated_data_to_scan_bytes: i64,
     /// <p>The time that it took to process the request.</p>
-    #[doc(hidden)]
     pub planning_time_millis: i64,
     /// <p>The time the request was in queue to be processed.</p>
-    #[doc(hidden)]
     pub queue_time_millis: i64,
     /// <p>The number of work units generated.</p>
-    #[doc(hidden)]
     pub work_units_generated_count: i64,
 }
 impl PlanningStatistics {

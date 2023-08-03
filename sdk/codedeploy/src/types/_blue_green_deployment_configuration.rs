@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlueGreenDeploymentConfiguration {
     /// <p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>
-    #[doc(hidden)]
     pub terminate_blue_instances_on_deployment_success: ::std::option::Option<crate::types::BlueInstanceTerminationOption>,
     /// <p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>
-    #[doc(hidden)]
     pub deployment_ready_option: ::std::option::Option<crate::types::DeploymentReadyOption>,
     /// <p>Information about how instances are provisioned for a replacement environment in a blue/green deployment.</p>
-    #[doc(hidden)]
     pub green_fleet_provisioning_option: ::std::option::Option<crate::types::GreenFleetProvisioningOption>,
 }
 impl BlueGreenDeploymentConfiguration {

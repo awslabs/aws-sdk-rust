@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChangeSetOutput {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    #[doc(hidden)]
     pub change_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the change request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangeStatus>,
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::FailureCode>,
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-    #[doc(hidden)]
     pub failure_description: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
-    #[doc(hidden)]
     pub change_set: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSummary>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeyOutput {
     /// <p>Metadata associated with the key.</p>
-    #[doc(hidden)]
     pub key_metadata: ::std::option::Option<crate::types::KeyMetadata>,
     _request_id: Option<String>,
 }

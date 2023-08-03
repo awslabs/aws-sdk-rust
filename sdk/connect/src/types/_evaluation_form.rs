@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationForm {
     /// <p>The unique identifier for the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>A version of the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_version: ::std::option::Option<i32>,
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
-    #[doc(hidden)]
     pub locked: bool,
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    #[doc(hidden)]
     pub evaluation_form_arn: ::std::option::Option<::std::string::String>,
     /// <p>A title of the evaluation form.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the evaluation form.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the evaluation form.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EvaluationFormVersionStatus>,
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     /// <p>A scoring strategy of the evaluation form.</p>
-    #[doc(hidden)]
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     /// <p>The timestamp for when the evaluation form was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the evaluation form was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EvaluationForm {

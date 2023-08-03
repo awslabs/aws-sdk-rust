@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDetectorInput {
     /// <p>The unique ID of the detector that you want to delete.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDetectorInput {

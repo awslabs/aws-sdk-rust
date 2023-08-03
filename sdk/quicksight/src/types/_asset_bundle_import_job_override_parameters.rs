@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobOverrideParameters {
     /// <p>An optional structure that configures resource ID overrides to be applied within the import job.</p>
-    #[doc(hidden)]
     pub resource_id_override_configuration: ::std::option::Option<crate::types::AssetBundleImportJobResourceIdOverrideConfiguration>,
     /// <p>A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
-    #[doc(hidden)]
     pub vpc_connections: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>>,
     /// <p>A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is imported.</p>
-    #[doc(hidden)]
     pub refresh_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters>>,
     /// <p> A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSourceOverrideParameters>>,
     /// <p>A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.</p>
-    #[doc(hidden)]
     pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDataSetOverrideParameters>>,
     /// <p>A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.</p>
-    #[doc(hidden)]
     pub themes: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobThemeOverrideParameters>>,
     /// <p>A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is imported.</p>
-    #[doc(hidden)]
     pub analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideParameters>>,
     /// <p>A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is imported.</p>
-    #[doc(hidden)]
     pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideParameters>>,
 }
 impl AssetBundleImportJobOverrideParameters {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldGroup {
     /// <p>Name of the field group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents an ordered list containing field related information.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,
 }
 impl FieldGroup {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
-    #[doc(hidden)]
     pub global_cluster: ::std::option::Option<crate::types::GlobalCluster>,
     _request_id: Option<String>,
 }

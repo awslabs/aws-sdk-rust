@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
-    #[doc(hidden)]
     pub max_video_bits_per_second: ::std::option::Option<i32>,
     /// The minimum video bitrate (bps) to include in output.
-    #[doc(hidden)]
     pub min_video_bits_per_second: ::std::option::Option<i32>,
     /// A directive that determines the order of streams in the output.
-    #[doc(hidden)]
     pub stream_order: ::std::option::Option<crate::types::StreamOrder>,
 }
 impl StreamSelection {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketAclGrantConfiguration {
     /// <p>The permissions being granted.</p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::AclPermission>,
     /// <p>The grantee to whom you’re assigning access rights.</p>
-    #[doc(hidden)]
     pub grantee: ::std::option::Option<crate::types::AclGrantee>,
 }
 impl S3BucketAclGrantConfiguration {

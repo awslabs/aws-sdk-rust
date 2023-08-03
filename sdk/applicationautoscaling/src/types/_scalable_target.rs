@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalableTarget {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    #[doc(hidden)]
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -27,7 +26,6 @@ pub struct ScalableTarget {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -53,25 +51,18 @@ pub struct ScalableTarget {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
-    #[doc(hidden)]
     pub min_capacity: ::std::option::Option<i32>,
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
-    #[doc(hidden)]
     pub suspended_state: ::std::option::Option<crate::types::SuspendedState>,
     /// <p>The ARN of the scalable target.</p>
-    #[doc(hidden)]
     pub scalable_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl ScalableTarget {

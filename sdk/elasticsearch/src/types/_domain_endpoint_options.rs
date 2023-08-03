@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainEndpointOptions {
     /// <p>Specify if only HTTPS endpoint should be enabled for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub enforce_https: ::std::option::Option<bool>,
     /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
     /// <ul>
@@ -13,16 +12,12 @@ pub struct DomainEndpointOptions {
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
     /// </ul>
     /// <p></p>
-    #[doc(hidden)]
     pub tls_security_policy: ::std::option::Option<crate::types::TlsSecurityPolicy>,
     /// <p>Specify if custom endpoint should be enabled for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub custom_endpoint_enabled: ::std::option::Option<bool>,
     /// <p>Specify the fully qualified domain for your custom endpoint.</p>
-    #[doc(hidden)]
     pub custom_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specify ACM certificate ARN for your custom endpoint.</p>
-    #[doc(hidden)]
     pub custom_endpoint_certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl DomainEndpointOptions {

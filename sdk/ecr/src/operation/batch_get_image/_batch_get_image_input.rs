@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetImageInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository that contains the images to describe.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    #[doc(hidden)]
     pub image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
     /// <p>The accepted media types for the request.</p>
     /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
-    #[doc(hidden)]
     pub accepted_media_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetImageInput {

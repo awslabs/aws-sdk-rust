@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
-    #[doc(hidden)]
     pub mount_target_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of up to five VPC security group IDs.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyMountTargetSecurityGroupsInput {

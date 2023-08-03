@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageVersion {
     /// <p>When the version was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When a create or delete operation fails, the reason for the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image the version is based on.</p>
-    #[doc(hidden)]
     pub image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the version.</p>
-    #[doc(hidden)]
     pub image_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the version.</p>
-    #[doc(hidden)]
     pub image_version_status: ::std::option::Option<crate::types::ImageVersionStatus>,
     /// <p>When the version was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version number.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl ImageVersion {

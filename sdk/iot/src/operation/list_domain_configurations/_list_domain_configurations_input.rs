@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainConfigurationsInput {
     /// <p>The marker for the next set of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The result page size.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The type of service delivered by the endpoint.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
 }
 impl ListDomainConfigurationsInput {

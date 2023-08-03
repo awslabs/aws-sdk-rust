@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageSortCriteria {
     /// <p>Represents the field name used to sort the coverage details.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<crate::types::CoverageSortKey>,
     /// <p>The order in which the sorted findings are to be displayed.</p>
-    #[doc(hidden)]
     pub order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl CoverageSortCriteria {

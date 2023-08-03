@@ -6,11 +6,9 @@
 pub struct EndpointIdentifier {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. </p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
-    #[doc(hidden)]
     pub client_ip_preservation_enabled: ::std::option::Option<bool>,
 }
 impl EndpointIdentifier {

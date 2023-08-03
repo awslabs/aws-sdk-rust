@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectCustomLabelsOutput {
     /// <p>An array of custom labels detected in the input image.</p>
-    #[doc(hidden)]
     pub custom_labels: ::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>>,
     _request_id: Option<String>,
 }

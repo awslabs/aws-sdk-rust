@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthPasswordPolicyConfig {
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
-    #[doc(hidden)]
     pub additional_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
-    #[doc(hidden)]
     pub minimum_length: ::std::option::Option<f64>,
 }
 impl CreateBackendAuthPasswordPolicyConfig {

@@ -9,14 +9,12 @@ pub struct AlgorithmSpecification {
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
     /// </note>
-    #[doc(hidden)]
     pub training_image: ::std::option::Option<::std::string::String>,
     /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
     /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
     /// </note>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
     /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
     /// <p> <b>Pipe mode</b> </p>
@@ -28,10 +26,8 @@ pub struct AlgorithmSpecification {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
-    #[doc(hidden)]
     pub training_input_mode: ::std::option::Option<crate::types::TrainingInputMode>,
     /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.</p>
-    #[doc(hidden)]
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
@@ -44,16 +40,12 @@ pub struct AlgorithmSpecification {
     /// </ul> </li>
     /// <li> <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub enable_sage_maker_metrics_time_series: bool,
     /// <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used to run a training job. This script takes precedence over the default train processing instructions. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for more information.</p>
-    #[doc(hidden)]
     pub container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The arguments for a container used to run a training job. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
-    #[doc(hidden)]
     pub container_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration to use an image from a private Docker registry for a training job.</p>
-    #[doc(hidden)]
     pub training_image_config: ::std::option::Option<crate::types::TrainingImageConfig>,
 }
 impl AlgorithmSpecification {

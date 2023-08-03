@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreeMapFieldWells {
     /// <p>The aggregated field wells of a tree map.</p>
-    #[doc(hidden)]
     pub tree_map_aggregated_field_wells: ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
 }
 impl TreeMapFieldWells {

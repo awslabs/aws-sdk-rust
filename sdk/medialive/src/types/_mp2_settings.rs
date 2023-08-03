@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mp2Settings {
     /// Average bitrate in bits/second.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<f64>,
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
-    #[doc(hidden)]
     pub coding_mode: ::std::option::Option<crate::types::Mp2CodingMode>,
     /// Sample rate in Hz.
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<f64>,
 }
 impl Mp2Settings {

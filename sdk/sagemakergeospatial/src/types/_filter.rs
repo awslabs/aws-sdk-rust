@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the filter being used.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The minimum value of the filter.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<f32>,
     /// <p>The maximum value of the filter.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<f32>,
 }
 impl Filter {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkAttributeRange {
     /// <p>The unique name of the typed link attribute.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The range of attribute values that are being selected.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<crate::types::TypedAttributeValueRange>,
 }
 impl TypedLinkAttributeRange {

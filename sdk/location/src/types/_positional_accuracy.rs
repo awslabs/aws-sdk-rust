@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PositionalAccuracy {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
-    #[doc(hidden)]
     pub horizontal: ::std::option::Option<f64>,
 }
 impl PositionalAccuracy {

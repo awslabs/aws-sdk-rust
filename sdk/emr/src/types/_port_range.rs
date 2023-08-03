@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The smallest port number in a specified range of port numbers.</p>
-    #[doc(hidden)]
     pub min_range: ::std::option::Option<i32>,
     /// <p>The smallest port number in a specified range of port numbers.</p>
-    #[doc(hidden)]
     pub max_range: ::std::option::Option<i32>,
 }
 impl PortRange {

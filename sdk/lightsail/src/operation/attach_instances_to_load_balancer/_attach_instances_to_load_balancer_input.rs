@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachInstancesToLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
     /// <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>
     /// <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
-    #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttachInstancesToLoadBalancerInput {

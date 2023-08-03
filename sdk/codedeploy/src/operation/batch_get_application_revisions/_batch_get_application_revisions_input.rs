@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsInput {
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-    #[doc(hidden)]
     pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
 }
 impl BatchGetApplicationRevisionsInput {

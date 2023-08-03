@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecommendationFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    #[doc(hidden)]
     pub code_review_arn: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.</p>
-    #[doc(hidden)]
     pub reactions: ::std::option::Option<::std::vec::Vec<crate::types::Reaction>>,
 }
 impl PutRecommendationFeedbackInput {

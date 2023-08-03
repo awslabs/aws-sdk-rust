@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetsFromLakeFormationTagPolicyRequestDetails {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure for the database object.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions>,
     /// <p>A structure for the table object.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::TableLfTagPolicyAndPermissions>,
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {

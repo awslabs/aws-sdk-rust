@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkteamsInput {
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListWorkteamsSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of work teams to return in each page of the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListWorkteamsInput {

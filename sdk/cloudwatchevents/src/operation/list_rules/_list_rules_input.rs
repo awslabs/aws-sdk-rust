@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRulesInput {
     /// <p>The prefix matching the rule name.</p>
-    #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
-    #[doc(hidden)]
     pub event_bus_name: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListRulesInput {

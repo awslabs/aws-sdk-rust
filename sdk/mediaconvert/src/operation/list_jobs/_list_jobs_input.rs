@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsInput {
     /// Optional. Number of jobs, up to twenty, that will be returned at one time.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::Order>,
     /// Optional. Provide a queue name to get back only jobs from that queue.
-    #[doc(hidden)]
     pub queue: ::std::option::Option<::std::string::String>,
     /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
 }
 impl ListJobsInput {

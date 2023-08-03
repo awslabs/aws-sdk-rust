@@ -5,40 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The name of the schedule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.</p>
-    #[doc(hidden)]
     pub copy_tags: bool,
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
-    #[doc(hidden)]
     pub tags_to_add: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
-    #[doc(hidden)]
     pub variable_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The creation rule.</p>
-    #[doc(hidden)]
     pub create_rule: ::std::option::Option<crate::types::CreateRule>,
     /// <p>The retention rule for snapshots or AMIs created by the policy.</p>
-    #[doc(hidden)]
     pub retain_rule: ::std::option::Option<crate::types::RetainRule>,
     /// <p> <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.</p>
-    #[doc(hidden)]
     pub fast_restore_rule: ::std::option::Option<crate::types::FastRestoreRule>,
     /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
     /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
-    #[doc(hidden)]
     pub cross_region_copy_rules: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyRule>>,
     /// <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.</p>
-    #[doc(hidden)]
     pub share_rules: ::std::option::Option<::std::vec::Vec<crate::types::ShareRule>>,
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
-    #[doc(hidden)]
     pub deprecate_rule: ::std::option::Option<crate::types::DeprecateRule>,
     /// <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention period that you specify. </p>
     /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
-    #[doc(hidden)]
     pub archive_rule: ::std::option::Option<crate::types::ArchiveRule>,
 }
 impl Schedule {

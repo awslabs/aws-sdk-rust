@@ -5,21 +5,17 @@
 pub struct RetireGrantInput {
     /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency.</p>
     /// <p>Only the <code>CreateGrant</code> operation returns a grant token. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub grant_token: ::std::option::Option<::std::string::String>,
     /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <code>ListKeys</code> operation.</p>
     /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
     /// <li> <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub grant_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl RetireGrantInput {

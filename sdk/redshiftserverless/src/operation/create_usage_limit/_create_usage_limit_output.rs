@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUsageLimitOutput {
     /// <p>The returned usage limit object.</p>
-    #[doc(hidden)]
     pub usage_limit: ::std::option::Option<crate::types::UsageLimit>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEndpointsByPlatformApplicationInput {
     /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
-    #[doc(hidden)]
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListEndpointsByPlatformApplicationInput {

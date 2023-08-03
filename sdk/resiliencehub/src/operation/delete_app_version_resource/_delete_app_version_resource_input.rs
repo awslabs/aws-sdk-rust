@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppVersionResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical identifier of the resource.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     /// <p>The physical identifier of the resource.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services region that owns the physical resource.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppVersionResourceInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the to-be-deleted documentation part.</p>
-    #[doc(hidden)]
     pub documentation_part_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDocumentationPartInput {

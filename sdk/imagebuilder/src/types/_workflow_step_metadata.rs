@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowStepMetadata {
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
-    #[doc(hidden)]
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the workflow step.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The step action name.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>Runtime status for the workflow step.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>,
     /// <p>Reports on the rollback status of the step, if applicable.</p>
-    #[doc(hidden)]
     pub rollback_status: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
     /// <p>Detailed output message that the workflow step provides at runtime.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Input parameters that Image Builder provides for the workflow step.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::string::String>,
     /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the workflow step started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the workflow step finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowStepMetadata {

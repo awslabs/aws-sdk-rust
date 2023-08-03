@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNamedQueryInput {
     /// <p>The unique ID of the query to delete.</p>
-    #[doc(hidden)]
     pub named_query_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNamedQueryInput {

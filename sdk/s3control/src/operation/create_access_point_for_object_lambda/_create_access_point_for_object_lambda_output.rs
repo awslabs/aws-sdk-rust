@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPointForObjectLambdaOutput {
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub object_lambda_access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
     _request_id: Option<String>,
 }

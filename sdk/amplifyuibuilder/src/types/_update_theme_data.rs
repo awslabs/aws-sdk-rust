@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThemeData {
     /// <p>The unique ID of the theme to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the theme to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
 }
 impl UpdateThemeData {

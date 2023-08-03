@@ -8,13 +8,10 @@
 pub struct Artwork {
     /// <p>The name of the file to be used as album art. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>; the <code>InputBucket</code> object in that pipeline identifies the bucket.</p>
     /// <p>If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
-    #[doc(hidden)]
     pub input_key: ::std::option::Option<::std::string::String>,
     /// <p>The maximum width of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 4096, inclusive.</p>
-    #[doc(hidden)]
     pub max_width: ::std::option::Option<::std::string::String>,
     /// <p>The maximum height of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 3072, inclusive.</p>
-    #[doc(hidden)]
     pub max_height: ::std::option::Option<::std::string::String>,
     /// <p>Specify one of the following values to control scaling of the output album art:</p>
     /// <ul>
@@ -25,16 +22,12 @@ pub struct Artwork {
     /// <li> <p> <code>ShrinkToFit:</code> Elastic Transcoder scales the output art down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the art up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code> Elastic Transcoder scales the output art down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the art up.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sizing_policy: ::std::option::Option<::std::string::String>,
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add white bars to the top and bottom and/or left and right sides of the output album art to make the total size of the output art match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
-    #[doc(hidden)]
     pub padding_policy: ::std::option::Option<::std::string::String>,
     /// <p>The format of album art, if any. Valid formats are <code>.jpg</code> and <code>.png</code>.</p>
-    #[doc(hidden)]
     pub album_art_format: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your artwork.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
 impl Artwork {

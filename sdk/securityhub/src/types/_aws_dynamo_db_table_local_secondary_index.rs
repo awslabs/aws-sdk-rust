@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableLocalSecondaryIndex {
     /// <p>The ARN of the index.</p>
-    #[doc(hidden)]
     pub index_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The complete key schema for the index.</p>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     /// <p>Attributes that are copied from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
-    #[doc(hidden)]
     pub projection: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>,
 }
 impl AwsDynamoDbTableLocalSecondaryIndex {

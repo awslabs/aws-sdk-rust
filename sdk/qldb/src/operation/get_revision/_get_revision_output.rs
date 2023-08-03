@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetRevisionOutput {
     /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
-    #[doc(hidden)]
     pub proof: ::std::option::Option<crate::types::ValueHolder>,
     /// <p>The document revision data object in Amazon Ion format.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<crate::types::ValueHolder>,
     _request_id: Option<String>,
 }

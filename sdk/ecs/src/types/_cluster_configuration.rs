@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterConfiguration {
     /// <p>The details of the execute command configuration.</p>
-    #[doc(hidden)]
     pub execute_command_configuration: ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
 }
 impl ClusterConfiguration {

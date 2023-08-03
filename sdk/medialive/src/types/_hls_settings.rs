@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsSettings {
     /// Audio Only Hls Settings
-    #[doc(hidden)]
     pub audio_only_hls_settings: ::std::option::Option<crate::types::AudioOnlyHlsSettings>,
     /// Fmp4 Hls Settings
-    #[doc(hidden)]
     pub fmp4_hls_settings: ::std::option::Option<crate::types::Fmp4HlsSettings>,
     /// Frame Capture Hls Settings
-    #[doc(hidden)]
     pub frame_capture_hls_settings: ::std::option::Option<crate::types::FrameCaptureHlsSettings>,
     /// Standard Hls Settings
-    #[doc(hidden)]
     pub standard_hls_settings: ::std::option::Option<crate::types::StandardHlsSettings>,
 }
 impl HlsSettings {

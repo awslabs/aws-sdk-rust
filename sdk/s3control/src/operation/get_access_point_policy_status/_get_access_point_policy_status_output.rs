@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPointPolicyStatusOutput {
     /// <p>Indicates the current policy status of the specified access point.</p>
-    #[doc(hidden)]
     pub policy_status: ::std::option::Option<crate::types::PolicyStatus>,
     _request_id: Option<String>,
 }

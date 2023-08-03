@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlywheelIterationHistoryInput {
     /// <p>The ARN of the flywheel.</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filter the flywheel iteration history based on creation time.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::FlywheelIterationFilter>,
     /// <p>Next token</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of iteration history results to return</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListFlywheelIterationHistoryInput {

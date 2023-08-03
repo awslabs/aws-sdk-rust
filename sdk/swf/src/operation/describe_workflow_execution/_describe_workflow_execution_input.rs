@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The workflow execution to describe.</p>
-    #[doc(hidden)]
     pub execution: ::std::option::Option<crate::types::WorkflowExecution>,
 }
 impl DescribeWorkflowExecutionInput {

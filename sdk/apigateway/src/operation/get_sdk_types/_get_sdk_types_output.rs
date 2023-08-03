@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSdkTypesOutput {
     /// <p>The current page of elements from this collection.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::SdkType>>,
     _request_id: Option<String>,
 }

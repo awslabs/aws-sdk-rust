@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvidedContext {
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub context_assertion: ::std::option::Option<::std::string::String>,
 }
 impl ProvidedContext {

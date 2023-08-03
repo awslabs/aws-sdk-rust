@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The Amazon QuickSight user name that you want to update.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user that you want to update.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight role of the user. The role can be one of the following default security cohorts:</p>
     /// <ul>
@@ -22,7 +18,6 @@ pub struct UpdateUserInput {
     /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
     /// </ul>
     /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::UserRole>,
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
@@ -34,10 +29,8 @@ pub struct UpdateUserInput {
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p>
     /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-    #[doc(hidden)]
     pub custom_permissions_name: ::std::option::Option<::std::string::String>,
     /// <p>A flag that you use to indicate that you want to remove all custom permissions from this user. Using this parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter defaults to NULL and it doesn't accept any other value.</p>
-    #[doc(hidden)]
     pub unapply_custom_permissions: ::std::option::Option<bool>,
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
@@ -45,13 +38,10 @@ pub struct UpdateUserInput {
     /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p> </li>
     /// <li> <p> <code>NONE</code>: This clears all the previously saved external login information for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a> </code> API operation to check the external login information.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub external_login_federation_provider_type: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
-    #[doc(hidden)]
     pub custom_federation_provider_url: ::std::option::Option<::std::string::String>,
     /// <p>The identity ID for a user in the external login provider.</p>
-    #[doc(hidden)]
     pub external_login_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateUserInput {

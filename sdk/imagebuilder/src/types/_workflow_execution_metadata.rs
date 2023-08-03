@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
-    #[doc(hidden)]
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier that Image Builder assigns to keep track of runtime resources each time it runs a workflow.</p>
-    #[doc(hidden)]
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates what type of workflow that Image Builder ran for this runtime instance of the workflow.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The current runtime status for this workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
     /// <p>The runtime output message from the workflow, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
-    #[doc(hidden)]
     pub total_step_count: i32,
     /// <p>A runtime count for the number of steps in the workflow that ran successfully.</p>
-    #[doc(hidden)]
     pub total_steps_succeeded: i32,
     /// <p>A runtime count for the number of steps in the workflow that failed.</p>
-    #[doc(hidden)]
     pub total_steps_failed: i32,
     /// <p>A runtime count for the number of steps in the workflow that were skipped.</p>
-    #[doc(hidden)]
     pub total_steps_skipped: i32,
     /// <p>The timestamp when the runtime instance of this workflow started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when this runtime instance of the workflow finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionMetadata {

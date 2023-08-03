@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Shard {
     /// <p>The system-generated identifier for this shard.</p>
-    #[doc(hidden)]
     pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>The range of possible sequence numbers for the shard.</p>
-    #[doc(hidden)]
     pub sequence_number_range: ::std::option::Option<crate::types::SequenceNumberRange>,
     /// <p>The shard ID of the current shard's parent.</p>
-    #[doc(hidden)]
     pub parent_shard_id: ::std::option::Option<::std::string::String>,
 }
 impl Shard {

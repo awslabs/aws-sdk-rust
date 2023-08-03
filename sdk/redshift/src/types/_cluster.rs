@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The unique identifier of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the nodes in the cluster.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p> The current state of the cluster. Possible values are the following:</p>
     /// <ul>
@@ -33,7 +31,6 @@ pub struct Cluster {
     /// <li> <p> <code>storage-full</code> </p> </li>
     /// <li> <p> <code>updating-hsm</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
@@ -43,173 +40,121 @@ pub struct Cluster {
     /// <li> <p>Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
     /// <li> <p>Failed - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_availability_status: ::std::option::Option<::std::string::String>,
     /// <p>The status of a modify operation, if any, initiated for the cluster.</p>
-    #[doc(hidden)]
     pub modify_status: ::std::option::Option<::std::string::String>,
     /// <p>The admin user name for the cluster. This name is used to connect to the database that is specified in the <b>DBName</b> parameter. </p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the initial database that was created when the cluster was created. This same name is returned for the life of the cluster. If an initial database was not specified, a database named <code>dev</code>dev was created by default. </p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The connection endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The date and time that the cluster was created.</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
-    #[doc(hidden)]
     pub automated_snapshot_retention_period: i32,
     /// <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: i32,
     /// <p>A list of cluster security group that are associated with the cluster. Each security group is represented by an element that contains <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code> subelements. </p>
     /// <p>Cluster security groups are used when the cluster is not created in an Amazon Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b> parameter. </p>
-    #[doc(hidden)]
     pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSecurityGroupMembership>>,
     /// <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated with the cluster. This parameter is returned only if the cluster is in a VPC.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>The list of cluster parameter groups that are associated with this cluster. Each parameter group in the list is returned with its status.</p>
-    #[doc(hidden)]
     pub cluster_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroupStatus>>,
     /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
-    #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Availability Zone in which the cluster is located.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>A value that, if present, indicates that changes to the cluster are pending. Specific pending changes are identified by subelements.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically to the cluster during the maintenance window. </p>
-    #[doc(hidden)]
     pub allow_version_upgrade: bool,
     /// <p>The number of compute nodes in the cluster.</p>
-    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.</p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.</p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p>A value that describes the status of a cluster restore action. This parameter returns null if the cluster was not created by restoring a snapshot.</p>
-    #[doc(hidden)]
     pub restore_status: ::std::option::Option<crate::types::RestoreStatus>,
     /// <p></p>
-    #[doc(hidden)]
     pub data_transfer_progress: ::std::option::Option<crate::types::DataTransferProgress>,
     /// <p>A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM) settings changes specified in a modify cluster command.</p>
     /// <p>Values: active, applying</p>
-    #[doc(hidden)]
     pub hsm_status: ::std::option::Option<crate::types::HsmStatus>,
     /// <p>A value that returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
-    #[doc(hidden)]
     pub cluster_snapshot_copy_status: ::std::option::Option<crate::types::ClusterSnapshotCopyStatus>,
     /// <p>The public key for the cluster.</p>
-    #[doc(hidden)]
     pub cluster_public_key: ::std::option::Option<::std::string::String>,
     /// <p>The nodes in the cluster.</p>
-    #[doc(hidden)]
     pub cluster_nodes: ::std::option::Option<::std::vec::Vec<crate::types::ClusterNode>>,
     /// <p>The status of the elastic IP (EIP) address.</p>
-    #[doc(hidden)]
     pub elastic_ip_status: ::std::option::Option<crate::types::ElasticIpStatus>,
     /// <p>The specific revision number of the database in the cluster.</p>
-    #[doc(hidden)]
     pub cluster_revision_number: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt data in the cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    #[doc(hidden)]
     pub enhanced_vpc_routing: bool,
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIamRole>>,
     /// <p>Cluster operations that are waiting to be started.</p>
-    #[doc(hidden)]
     pub pending_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the maintenance track for the cluster.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes that you can resize the cluster to with the elastic resize method. </p>
-    #[doc(hidden)]
     pub elastic_resize_number_of_node_options: ::std::option::Option<::std::string::String>,
     /// <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
-    #[doc(hidden)]
     pub deferred_maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::DeferredMaintenanceWindow>>,
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
-    #[doc(hidden)]
     pub snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the cluster snapshot schedule.</p>
-    #[doc(hidden)]
     pub snapshot_schedule_state: ::std::option::Option<crate::types::ScheduleState>,
     /// <p>The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and backups enabled. </p>
-    #[doc(hidden)]
     pub expected_next_snapshot_schedule_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible values are the following:</p>
     /// <ul>
     /// <li> <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li>
     /// <li> <p>Pending - The next snapshot is pending to be taken. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub expected_next_snapshot_schedule_time_status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time in UTC when system maintenance can begin.</p>
-    #[doc(hidden)]
     pub next_maintenance_window_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the following:</p>
     /// <ul>
     /// <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li>
     /// <li> <p>ResizeType: Returns ClassicResize</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resize_info: ::std::option::Option<crate::types::ResizeInfo>,
     /// <p>Describes the status of the Availability Zone relocation operation.</p>
-    #[doc(hidden)]
     pub availability_zone_relocation_status: ::std::option::Option<::std::string::String>,
     /// <p>The namespace Amazon Resource Name (ARN) of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_namespace_arn: ::std::option::Option<::std::string::String>,
     /// <p>The total storage capacity of the cluster in megabytes. </p>
-    #[doc(hidden)]
     pub total_storage_capacity_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    #[doc(hidden)]
     pub aqua_configuration: ::std::option::Option<crate::types::AquaConfiguration>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.</p>
-    #[doc(hidden)]
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>
-    #[doc(hidden)]
     pub reserved_node_exchange_status: ::std::option::Option<crate::types::ReservedNodeExchangeStatus>,
     /// <p>The custom domain name associated with the cluster.</p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
-    #[doc(hidden)]
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The expiration date for the certificate associated with the custom domain name.</p>
-    #[doc(hidden)]
     pub custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Cluster {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityProfileInput {
     /// <p>The description of the security profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier for the security profle.</p>
-    #[doc(hidden)]
     pub security_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    #[doc(hidden)]
     pub allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    #[doc(hidden)]
     pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateSecurityProfileInput {

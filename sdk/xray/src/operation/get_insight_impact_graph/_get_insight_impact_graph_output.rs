@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightImpactGraphOutput {
     /// <p>The insight's unique identifier.</p>
-    #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The provided start time.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The provided end time. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
-    #[doc(hidden)]
     pub service_graph_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
-    #[doc(hidden)]
     pub service_graph_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphService>>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

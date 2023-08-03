@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudTrailConfigurationResult {
     /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl CloudTrailConfigurationResult {

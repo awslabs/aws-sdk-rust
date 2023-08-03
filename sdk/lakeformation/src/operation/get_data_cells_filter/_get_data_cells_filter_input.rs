@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataCellsFilterInput {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    #[doc(hidden)]
     pub table_catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A database in the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A table in the database.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name given by the user to the data filter cell.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetDataCellsFilterInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignupResponse {
     /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
-    #[doc(hidden)]
     pub iam_user: bool,
     /// <p>The user login name for your Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub user_login_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of your Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
-    #[doc(hidden)]
     pub directory_type: ::std::option::Option<::std::string::String>,
 }
 impl SignupResponse {

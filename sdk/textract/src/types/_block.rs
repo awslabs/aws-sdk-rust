@@ -28,37 +28,26 @@ pub struct Block {
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub block_type: ::std::option::Option<crate::types::BlockType>,
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>The word or line of text that's recognized by Amazon Textract. </p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
-    #[doc(hidden)]
     pub text_type: ::std::option::Option<crate::types::TextType>,
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    #[doc(hidden)]
     pub row_index: ::std::option::Option<i32>,
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    #[doc(hidden)]
     pub column_index: ::std::option::Option<i32>,
     /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    #[doc(hidden)]
     pub row_span: ::std::option::Option<i32>,
     /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
-    #[doc(hidden)]
     pub column_span: ::std::option::Option<i32>,
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information. </p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    #[doc(hidden)]
     pub relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
     /// <p>The type of entity. </p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
@@ -77,16 +66,12 @@ pub struct Block {
     /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
-    #[doc(hidden)]
     pub selection_status: ::std::option::Option<crate::types::SelectionStatus>,
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
-    #[doc(hidden)]
     pub page: ::std::option::Option<i32>,
     /// <p></p>
-    #[doc(hidden)]
     pub query: ::std::option::Option<crate::types::Query>,
 }
 impl Block {

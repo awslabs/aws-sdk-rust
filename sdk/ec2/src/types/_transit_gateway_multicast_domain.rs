@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastDomain {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub transit_gateway_multicast_domain_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The options for the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::TransitGatewayMulticastDomainOptions>,
     /// <p>The state of the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayMulticastDomainState>,
     /// <p>The time the transit gateway multicast domain was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags for the transit gateway multicast domain.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGatewayMulticastDomain {

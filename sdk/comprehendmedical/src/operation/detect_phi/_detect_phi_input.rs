@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectPhiInput {
     /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl DetectPhiInput {

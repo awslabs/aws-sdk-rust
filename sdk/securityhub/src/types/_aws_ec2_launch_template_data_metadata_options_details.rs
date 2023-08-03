@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataMetadataOptionsDetails {
     /// <p> Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is enabled, and you won't be able to access your instance metadata. </p>
-    #[doc(hidden)]
     pub http_endpoint: ::std::option::Option<::std::string::String>,
     /// <p> Enables or disables the IPv6 endpoint for the instance metadata service. </p>
-    #[doc(hidden)]
     pub http_protocol_ipv6: ::std::option::Option<::std::string::String>,
     /// <p> The state of token usage for your instance metadata requests. </p>
-    #[doc(hidden)]
     pub http_tokens: ::std::option::Option<::std::string::String>,
     /// <p> The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
-    #[doc(hidden)]
     pub http_put_response_hop_limit: i32,
     /// <p> When set to <code>enabled</code>, this parameter allows access to instance tags from the instance metadata. When set to <code>disabled</code>, it turns off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>. </p>
-    #[doc(hidden)]
     pub instance_metadata_tags: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {

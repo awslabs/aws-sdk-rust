@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFacesInput {
     /// <p>The ID of an existing collection containing the UserID.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the existing UserID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of FaceIDs to associate with the UserID.</p>
-    #[doc(hidden)]
     pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
-    #[doc(hidden)]
     pub user_match_threshold: ::std::option::Option<f32>,
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateFacesInput {

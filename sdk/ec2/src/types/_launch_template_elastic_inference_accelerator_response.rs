@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateElasticInferenceAcceleratorResponse {
     /// <p> The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p> The number of elastic inference accelerators to attach to the instance. </p>
     /// <p>Default: 1</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl LaunchTemplateElasticInferenceAcceleratorResponse {

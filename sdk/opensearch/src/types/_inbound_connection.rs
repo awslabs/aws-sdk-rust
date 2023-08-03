@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InboundConnection {
     /// <p>Information about the source (local) domain.</p>
-    #[doc(hidden)]
     pub local_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     /// <p>Information about the destination (remote) domain.</p>
-    #[doc(hidden)]
     pub remote_domain_info: ::std::option::Option<crate::types::DomainInformationContainer>,
     /// <p>The unique identifier of the connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the connection.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::InboundConnectionStatus>,
     /// <p>The connection mode.</p>
-    #[doc(hidden)]
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
 }
 impl InboundConnection {

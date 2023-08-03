@@ -7,47 +7,36 @@
 pub struct CostTypes {
     /// <p>Specifies whether a budget includes taxes.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_tax: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget includes subscriptions.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_subscription: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget uses a blended rate.</p>
     /// <p>The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub use_blended: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget includes refunds.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_refund: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget includes credits.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_credit: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget includes upfront RI costs.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_upfront: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_recurring: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget includes non-RI subscription costs.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_other_subscription: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget includes support subscription fees.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_support: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget includes discounts.</p>
     /// <p>The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub include_discount: ::std::option::Option<bool>,
     /// <p>Specifies whether a budget uses the amortized rate.</p>
     /// <p>The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub use_amortized: ::std::option::Option<bool>,
 }
 impl CostTypes {

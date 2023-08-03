@@ -5,7 +5,6 @@
 pub struct ModifyDbSubnetGroupOutput {
     /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     _request_id: Option<String>,
 }

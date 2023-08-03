@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGlobalClusterInput {
     /// <p>The cluster identifier of the new global database cluster.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
-    #[doc(hidden)]
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used in the global database.</p>
     /// <p>Valid values: <code>neptune</code> </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The Neptune engine version to be used by the global database.</p>
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The storage encryption setting for the new global database cluster.</p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
 }
 impl CreateGlobalClusterInput {

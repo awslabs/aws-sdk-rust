@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetMetricDataOutput {
     /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>>,
     /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataError>>,
     _request_id: Option<String>,
 }

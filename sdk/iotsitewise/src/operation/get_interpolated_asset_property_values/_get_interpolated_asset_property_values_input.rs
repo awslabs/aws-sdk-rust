@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <p>The ID of the asset.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
-    #[doc(hidden)]
     pub start_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
-    #[doc(hidden)]
     pub start_time_offset_in_nanos: ::std::option::Option<i32>,
     /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
-    #[doc(hidden)]
     pub end_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
-    #[doc(hidden)]
     pub end_time_offset_in_nanos: ::std::option::Option<i32>,
     /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
-    #[doc(hidden)]
     pub quality: ::std::option::Option<crate::types::Quality>,
     /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
-    #[doc(hidden)]
     pub interval_in_seconds: ::std::option::Option<i64>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The interpolation type.</p>
     /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p>
@@ -42,7 +31,6 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
     /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note>
     /// <ul>
@@ -51,7 +39,6 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     /// </ul>
     /// </note>
     /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
-    #[doc(hidden)]
     pub interval_window_in_seconds: ::std::option::Option<i64>,
 }
 impl GetInterpolatedAssetPropertyValuesInput {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RuleDetail {
     /// <p>The rule ID.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The detector for which the rule is associated.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule version.</p>
-    #[doc(hidden)]
     pub rule_version: ::std::option::Option<::std::string::String>,
     /// <p>The rule expression.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The rule language.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<crate::types::Language>,
     /// <p>The rule outcomes.</p>
-    #[doc(hidden)]
     pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Timestamp of the last time the rule was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the rule was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The rule ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RuleDetail {

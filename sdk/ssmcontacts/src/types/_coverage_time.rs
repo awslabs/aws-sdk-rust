@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageTime {
     /// <p>Information about when the on-call rotation shift begins.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<crate::types::HandOffTime>,
     /// <p>Information about when the on-call rotation shift ends.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<crate::types::HandOffTime>,
 }
 impl CoverageTime {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssociationOutput {
     /// <p>Information about the association.</p>
-    #[doc(hidden)]
     pub association_description: ::std::option::Option<crate::types::AssociationDescription>,
     _request_id: Option<String>,
 }

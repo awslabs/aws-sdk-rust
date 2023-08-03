@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyAquaConfigurationInput {
     /// <p>The identifier of the cluster to be modified.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    #[doc(hidden)]
     pub aqua_configuration_status: ::std::option::Option<crate::types::AquaConfigurationStatus>,
 }
 impl ModifyAquaConfigurationInput {

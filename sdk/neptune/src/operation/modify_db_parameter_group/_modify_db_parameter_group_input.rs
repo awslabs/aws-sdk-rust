@@ -8,13 +8,11 @@ pub struct ModifyDbParameterGroupInput {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
     /// <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>
     /// </note>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ModifyDbParameterGroupInput {

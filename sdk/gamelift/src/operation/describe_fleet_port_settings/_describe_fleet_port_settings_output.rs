@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was requested. </p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port settings for the requested fleet ID.</p>
-    #[doc(hidden)]
     pub inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<crate::types::LocationUpdateStatus>,
     /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

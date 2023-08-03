@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetMetadata {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_description: ::std::option::Option<::std::string::String>,
     /// <p>The definition of a data aggregation.</p>
-    #[doc(hidden)]
     pub data_aggregation: ::std::option::Option<crate::types::DataAggregation>,
     /// <p>The list of filter definitions.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::TopicFilter>>,
     /// <p>The list of column definitions.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::TopicColumn>>,
     /// <p>The list of calculated field definitions.</p>
-    #[doc(hidden)]
     pub calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>>,
     /// <p>The list of named entities definitions.</p>
-    #[doc(hidden)]
     pub named_entities: ::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>>,
 }
 impl DatasetMetadata {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EffectivePatch {
     /// <p>Provides metadata for a patch, including information such as the KB ID, severity, classification and a URL for where more information can be obtained about the patch.</p>
-    #[doc(hidden)]
     pub patch: ::std::option::Option<crate::types::Patch>,
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
-    #[doc(hidden)]
     pub patch_status: ::std::option::Option<crate::types::PatchStatus>,
 }
 impl EffectivePatch {

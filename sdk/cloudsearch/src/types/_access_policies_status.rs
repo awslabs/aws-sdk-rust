@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPoliciesStatus {
     /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::string::String>,
     /// <p>The status of domain configuration option.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AccessPoliciesStatus {

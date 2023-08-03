@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
-    #[doc(hidden)]
     pub component_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy to apply.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutComponentPolicyInput {

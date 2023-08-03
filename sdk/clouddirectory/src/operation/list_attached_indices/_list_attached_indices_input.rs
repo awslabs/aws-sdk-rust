@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAttachedIndicesInput {
     /// <p>The ARN of the directory.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the object that has indices attached.</p>
-    #[doc(hidden)]
     pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The consistency level to use for this operation.</p>
-    #[doc(hidden)]
     pub consistency_level: ::std::option::Option<crate::types::ConsistencyLevel>,
 }
 impl ListAttachedIndicesInput {

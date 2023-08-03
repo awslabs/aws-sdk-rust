@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to update.</p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the vehicle model (model manifest) associated with the vehicle to update.</p>
-    #[doc(hidden)]
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
-    #[doc(hidden)]
     pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
-    #[doc(hidden)]
     pub attribute_update_mode: ::std::option::Option<crate::types::UpdateMode>,
 }
 impl UpdateVehicleRequestItem {

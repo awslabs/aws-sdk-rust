@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipientDetail {
     /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
-    #[doc(hidden)]
     pub sso_identity: ::std::option::Option<crate::types::SsoIdentity>,
 }
 impl RecipientDetail {

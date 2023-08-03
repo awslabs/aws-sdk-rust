@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlatformApplicationOutput {
     /// <p>PlatformApplicationArn is returned.</p>
-    #[doc(hidden)]
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

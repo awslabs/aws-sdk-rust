@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSession {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The properties of the channel at the time of going live.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>The properties of the incoming RTMP stream for the stream.</p>
-    #[doc(hidden)]
     pub ingest_configuration: ::std::option::Option<crate::types::IngestConfiguration>,
     /// <p>The properties of recording the live stream.</p>
-    #[doc(hidden)]
     pub recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
-    #[doc(hidden)]
     pub truncated_events: ::std::option::Option<::std::vec::Vec<crate::types::StreamEvent>>,
 }
 impl StreamSession {

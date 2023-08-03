@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigInput {
     /// <p>Name of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_data: ::std::option::Option<crate::types::ConfigTypeData>,
     /// <p>Tags assigned to a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfigInput {

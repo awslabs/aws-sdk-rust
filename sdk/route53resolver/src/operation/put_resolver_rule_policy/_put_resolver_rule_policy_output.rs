@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResolverRulePolicyOutput {
     /// <p>Whether the <code>PutResolverRulePolicy</code> request was successful.</p>
-    #[doc(hidden)]
     pub return_value: bool,
     _request_id: Option<String>,
 }

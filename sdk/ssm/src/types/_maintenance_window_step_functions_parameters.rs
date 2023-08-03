@@ -10,10 +10,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowStepFunctionsParameters {
     /// <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceWindowStepFunctionsParameters {

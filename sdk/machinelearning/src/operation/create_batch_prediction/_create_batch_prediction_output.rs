@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
-    #[doc(hidden)]
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

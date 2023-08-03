@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationJobBatchSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the simulation job batch.</p>
     /// <dl>
@@ -71,16 +68,12 @@ pub struct SimulationJobBatchSummary {
     /// <p>The simulation batch job timed out.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SimulationJobBatchStatus>,
     /// <p>The number of failed simulation job requests.</p>
-    #[doc(hidden)]
     pub failed_request_count: i32,
     /// <p>The number of pending simulation job requests.</p>
-    #[doc(hidden)]
     pub pending_request_count: i32,
     /// <p>The number of created simulation job requests.</p>
-    #[doc(hidden)]
     pub created_request_count: i32,
 }
 impl SimulationJobBatchSummary {

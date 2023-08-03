@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectoryServiceAuthentication {
     /// <p>The ID of the Active Directory used for authentication.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
 impl DirectoryServiceAuthentication {

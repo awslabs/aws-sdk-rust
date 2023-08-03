@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompromisedCredentialsActionsType {
     /// <p>The event action.</p>
-    #[doc(hidden)]
     pub event_action: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
 }
 impl CompromisedCredentialsActionsType {

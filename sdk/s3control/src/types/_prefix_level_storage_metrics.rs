@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefixLevelStorageMetrics {
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
-    #[doc(hidden)]
     pub is_enabled: bool,
     /// <p></p>
-    #[doc(hidden)]
     pub selection_criteria: ::std::option::Option<crate::types::SelectionCriteria>,
 }
 impl PrefixLevelStorageMetrics {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferSnomedctOutput {
     /// <p> The collection of medical concept entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctEntity>>,
     /// <p> If the result of the request is truncated, the pagination token can be used to fetch the next page of entities. </p>
-    #[doc(hidden)]
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p> The version of the model used to analyze the documents, in the format n.n.n You can use this information to track the model used for a particular batch of documents. </p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p> The details of the SNOMED-CT revision, including the edition, language, and version date. </p>
-    #[doc(hidden)]
     pub snomedct_details: ::std::option::Option<crate::types::SnomedctDetails>,
     /// <p> The number of characters in the input request documentation. </p>
-    #[doc(hidden)]
     pub characters: ::std::option::Option<crate::types::Characters>,
     _request_id: Option<String>,
 }

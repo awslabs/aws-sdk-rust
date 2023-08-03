@@ -6,22 +6,17 @@
 pub struct Occurrences {
     /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p>
     /// <p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
-    #[doc(hidden)]
     pub line_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub offset_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p>
     /// <p>Each Page object specifies a page that contains the sensitive data.</p>
-    #[doc(hidden)]
     pub pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p>
     /// <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl Occurrences {

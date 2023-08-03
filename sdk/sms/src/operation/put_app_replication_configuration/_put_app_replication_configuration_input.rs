@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAppReplicationConfigurationInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the replication configurations for server groups in the application.</p>
-    #[doc(hidden)]
     pub server_group_replication_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
 }
 impl PutAppReplicationConfigurationInput {

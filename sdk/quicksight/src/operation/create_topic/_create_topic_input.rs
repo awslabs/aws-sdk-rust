@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTopicInput {
     /// <p>The ID of the Amazon Web Services account that you want to create a topic in.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the topic that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The definition of a topic to create.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<crate::types::TopicDetails>,
     /// <p>Contains a map of the key-value pairs for the resource tag or tags that are assigned to the dataset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTopicInput {

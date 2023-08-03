@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessKeyDetails {
     /// <p>The access key ID of the user.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The principal ID of the user.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the user.</p>
-    #[doc(hidden)]
     pub user_type: ::std::option::Option<::std::string::String>,
 }
 impl AccessKeyDetails {

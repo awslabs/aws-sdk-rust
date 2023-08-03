@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetResourceConfigInput {
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
-    #[doc(hidden)]
     pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
 }
 impl BatchGetResourceConfigInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfigOutput {
     /// <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
-    #[doc(hidden)]
     pub identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfigResponse>,
     _request_id: Option<String>,
 }

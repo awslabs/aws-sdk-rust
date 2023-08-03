@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledWindowExecution {
     /// <p>The ID of the maintenance window to be run.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the maintenance window to be run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
-    #[doc(hidden)]
     pub execution_time: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledWindowExecution {

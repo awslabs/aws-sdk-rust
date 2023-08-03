@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application. Must be unique within your account.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Your description of the application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
-    #[doc(hidden)]
     pub resource_lifecycle_config: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
     /// <p>Specifies the tags applied to the application.</p>
     /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateApplicationInput {

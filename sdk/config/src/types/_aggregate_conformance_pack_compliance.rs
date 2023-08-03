@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateConformancePackCompliance {
     /// <p>The compliance status of the conformance pack.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>The number of compliant Config Rules.</p>
-    #[doc(hidden)]
     pub compliant_rule_count: i32,
     /// <p>The number of noncompliant Config Rules.</p>
-    #[doc(hidden)]
     pub non_compliant_rule_count: i32,
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
-    #[doc(hidden)]
     pub total_rule_count: i32,
 }
 impl AggregateConformancePackCompliance {

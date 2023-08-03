@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameter {
     /// <p>The name of the integer parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values for the integer parameter.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl IntegerParameter {

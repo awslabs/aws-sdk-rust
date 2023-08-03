@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SidewalkGetDeviceProfile {
     /// <p>The Sidewalk application server public key.</p>
-    #[doc(hidden)]
     pub application_server_public_key: ::std::option::Option<::std::string::String>,
     /// <p>Gets information about the certification status of a Sidewalk device profile.</p>
-    #[doc(hidden)]
     pub qualification_status: ::std::option::Option<bool>,
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
-    #[doc(hidden)]
     pub dak_certificate_metadata: ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
 }
 impl SidewalkGetDeviceProfile {

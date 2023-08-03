@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecretsInput {
     /// <p>Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't included.</p>
-    #[doc(hidden)]
     pub include_planned_deletion: ::std::option::Option<bool>,
     /// <p>The number of results to include in the response.</p>
     /// <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>ListSecrets</code> again with this value.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The filters to apply to the list of secrets.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
 }
 impl ListSecretsInput {

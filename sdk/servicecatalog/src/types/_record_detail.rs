@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordDetail {
     /// <p>The identifier of the record.</p>
-    #[doc(hidden)]
     pub record_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
-    #[doc(hidden)]
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the provisioned product.</p>
     /// <ul>
@@ -18,16 +16,12 @@ pub struct RecordDetail {
     /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
     /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecordStatus>,
     /// <p>The UTC time stamp of the creation time.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the record was last updated.</p>
-    #[doc(hidden)]
     pub updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    #[doc(hidden)]
     pub provisioned_product_type: ::std::option::Option<::std::string::String>,
     /// <p>The record type.</p>
     /// <ul>
@@ -35,28 +29,20 @@ pub struct RecordDetail {
     /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub record_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
-    #[doc(hidden)]
     pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The path identifier.</p>
-    #[doc(hidden)]
     pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>The errors that occurred.</p>
-    #[doc(hidden)]
     pub record_errors: ::std::option::Option<::std::vec::Vec<crate::types::RecordError>>,
     /// <p>One or more tags.</p>
-    #[doc(hidden)]
     pub record_tags: ::std::option::Option<::std::vec::Vec<crate::types::RecordTag>>,
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    #[doc(hidden)]
     pub launch_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecordDetail {

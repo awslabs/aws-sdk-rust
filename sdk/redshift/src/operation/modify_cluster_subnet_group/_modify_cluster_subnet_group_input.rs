@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterSubnetGroupInput {
     /// <p>The name of the subnet group to be modified.</p>
-    #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A text description of the subnet group to be modified.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyClusterSubnetGroupInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStatementError {
     /// <p> The error code associated with the failed PartiQL batch statement. </p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::BatchStatementErrorCodeEnum>,
     /// <p> The error message associated with the PartiQL batch response. </p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
 }
 impl BatchStatementError {

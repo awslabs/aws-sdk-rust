@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestMetadata {
     /// <p>The ID of the request. This is required for a pull request code review.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.</p>
-    #[doc(hidden)]
     pub requester: ::std::option::Option<::std::string::String>,
     /// <p>Information about the event associated with a code review.</p>
-    #[doc(hidden)]
     pub event_info: ::std::option::Option<crate::types::EventInfo>,
     /// <p>The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.</p>
-    #[doc(hidden)]
     pub vendor_name: ::std::option::Option<crate::types::VendorName>,
 }
 impl RequestMetadata {

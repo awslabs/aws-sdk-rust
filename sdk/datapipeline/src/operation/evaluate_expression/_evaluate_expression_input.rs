@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the object.</p>
-    #[doc(hidden)]
     pub object_id: ::std::option::Option<::std::string::String>,
     /// <p>The expression to evaluate.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateExpressionInput {

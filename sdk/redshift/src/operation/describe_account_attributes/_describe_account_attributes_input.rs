@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesInput {
     /// <p>A list of attribute names.</p>
-    #[doc(hidden)]
     pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAccountAttributesInput {

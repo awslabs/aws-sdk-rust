@@ -6,13 +6,10 @@
 pub struct PillarMetric {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     /// <p>The questions that have been identified as risks in the pillar.</p>
-    #[doc(hidden)]
     pub questions: ::std::option::Option<::std::vec::Vec<crate::types::QuestionMetric>>,
 }
 impl PillarMetric {

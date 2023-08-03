@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeAppliedSchemaInput {
     /// <p>The revision of the published schema to upgrade the directory to.</p>
-    #[doc(hidden)]
     pub published_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl UpgradeAppliedSchemaInput {

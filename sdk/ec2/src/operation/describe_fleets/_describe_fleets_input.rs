@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the EC2 Fleets.</p> <note>
     /// <p>If a fleet is of type <code>instant</code>, you must specify the fleet ID, otherwise it does not appear in the response.</p>
     /// </note>
-    #[doc(hidden)]
     pub fleet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
@@ -25,7 +21,6 @@ pub struct DescribeFleetsInput {
     /// <li> <p> <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>type</code> - The type of request (<code>instant</code> | <code>request</code> | <code>maintain</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeFleetsInput {

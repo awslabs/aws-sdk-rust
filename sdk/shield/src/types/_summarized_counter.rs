@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SummarizedCounter {
     /// <p>The counter name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the counter for a specified time period.</p>
-    #[doc(hidden)]
     pub max: f64,
     /// <p>The average value of the counter for a specified time period.</p>
-    #[doc(hidden)]
     pub average: f64,
     /// <p>The total of counter values for a specified time period.</p>
-    #[doc(hidden)]
     pub sum: f64,
     /// <p>The number of counters for a specified time period.</p>
-    #[doc(hidden)]
     pub n: i32,
     /// <p>The unit of the counters.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl SummarizedCounter {

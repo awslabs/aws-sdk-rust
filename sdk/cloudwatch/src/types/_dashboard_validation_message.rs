@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardValidationMessage {
     /// <p>The data path related to the message.</p>
-    #[doc(hidden)]
     pub data_path: ::std::option::Option<::std::string::String>,
     /// <p>A message describing the error or warning.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DashboardValidationMessage {

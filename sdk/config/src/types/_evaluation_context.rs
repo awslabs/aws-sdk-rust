@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationContext {
     /// <p>A unique EvaluationContextIdentifier ID for an EvaluationContext.</p>
-    #[doc(hidden)]
     pub evaluation_context_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationContext {

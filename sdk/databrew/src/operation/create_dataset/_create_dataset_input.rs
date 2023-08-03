@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::InputFormat>,
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
-    #[doc(hidden)]
     pub format_options: ::std::option::Option<crate::types::FormatOptions>,
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::Input>,
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    #[doc(hidden)]
     pub path_options: ::std::option::Option<crate::types::PathOptions>,
     /// <p>Metadata tags to apply to this dataset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDatasetInput {

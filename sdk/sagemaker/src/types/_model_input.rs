@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelInput {
     /// <p>The input configuration object for the model.</p>
-    #[doc(hidden)]
     pub data_input_config: ::std::option::Option<::std::string::String>,
 }
 impl ModelInput {

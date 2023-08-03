@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseInputDescription {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics assumes to access the stream.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseInputDescription {

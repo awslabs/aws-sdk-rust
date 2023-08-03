@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExitStandbyInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
 }
 impl ExitStandbyInput {

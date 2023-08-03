@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AthenaDatasetDefinition {
     /// <p>The name of the data catalog used in Athena query execution.</p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database used in the Athena query execution.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The SQL query statements, to be executed.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup in which the Athena query is being started.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The location in Amazon S3 where Athena query results are stored.</p>
-    #[doc(hidden)]
     pub output_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data generated from an Athena query execution.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The data storage format for Athena query results.</p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::AthenaResultFormat>,
     /// <p>The compression used for Athena query results.</p>
-    #[doc(hidden)]
     pub output_compression: ::std::option::Option<crate::types::AthenaResultCompressionType>,
 }
 impl AthenaDatasetDefinition {

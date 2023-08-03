@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLbCookieStickinessPolicy {
     /// <p>The amount of time, in seconds, after which the cookie is considered stale. If an expiration period is not specified, the stickiness session lasts for the duration of the browser session.</p>
-    #[doc(hidden)]
     pub cookie_expiration_period: i64,
     /// <p>The name of the policy. The name must be unique within the set of policies for the load balancer.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbLbCookieStickinessPolicy {

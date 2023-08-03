@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableObjectsInput {
     /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database containing the governed table to update.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The governed table to update.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The transaction at which to do the write.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
-    #[doc(hidden)]
     pub write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>>,
 }
 impl UpdateTableObjectsInput {

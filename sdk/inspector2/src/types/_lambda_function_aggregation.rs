@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionAggregation {
     /// <p>The resource IDs to include in the aggregation results.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The AWS Lambda function names to include in the aggregation results.</p>
-    #[doc(hidden)]
     pub function_names: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
-    #[doc(hidden)]
     pub runtimes: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The tags to include in the aggregation results.</p>
-    #[doc(hidden)]
     pub function_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p>The order to use for sorting the results.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The finding severity to use for sorting the results.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::LambdaFunctionSortBy>,
 }
 impl LambdaFunctionAggregation {

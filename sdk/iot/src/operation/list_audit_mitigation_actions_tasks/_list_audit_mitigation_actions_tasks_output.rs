@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditMitigationActionsTasksOutput {
     /// <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionsTaskMetadata>>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

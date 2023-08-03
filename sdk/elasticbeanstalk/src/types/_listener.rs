@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Listener {
     /// <p>The protocol that is used by the Listener.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port that is used by the Listener.</p>
-    #[doc(hidden)]
     pub port: i32,
 }
 impl Listener {

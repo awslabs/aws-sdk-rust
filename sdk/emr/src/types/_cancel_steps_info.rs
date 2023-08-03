@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelStepsInfo {
     /// <p>The encrypted StepId of a step.</p>
-    #[doc(hidden)]
     pub step_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CancelStepsRequestStatus>,
     /// <p>The reason for the failure if the CancelSteps request fails.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl CancelStepsInfo {

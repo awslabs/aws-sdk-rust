@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchProfileMemberOutput {
     /// <p>The updated member. </p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::LaunchProfileMembership>,
     _request_id: Option<String>,
 }

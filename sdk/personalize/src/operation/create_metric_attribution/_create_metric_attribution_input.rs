@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMetricAttributionInput {
     /// <p>A name for the metric attribution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>,
     /// <p>The output configuration details for the metric attribution.</p>
-    #[doc(hidden)]
     pub metrics_output_config: ::std::option::Option<crate::types::MetricAttributionOutput>,
 }
 impl CreateMetricAttributionInput {

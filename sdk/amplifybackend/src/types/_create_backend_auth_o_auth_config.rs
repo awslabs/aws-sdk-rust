@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthOAuthConfig {
     /// <p>The domain prefix for your Amplify app.</p>
-    #[doc(hidden)]
     pub domain_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth grant type that you use to allow app users to authenticate from your Amplify app.</p>
-    #[doc(hidden)]
     pub o_auth_grant_type: ::std::option::Option<crate::types::OAuthGrantType>,
     /// <p>List of OAuth-related flows used to allow your app users to authenticate from your Amplify app.</p>
-    #[doc(hidden)]
     pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>>,
     /// <p>The redirected URI for signing in to your Amplify app.</p>
-    #[doc(hidden)]
     pub redirect_sign_in_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    #[doc(hidden)]
     pub redirect_sign_out_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The settings for using social providers to access your Amplify app.</p>
-    #[doc(hidden)]
     pub social_provider_settings: ::std::option::Option<crate::types::SocialProviderSettings>,
 }
 impl CreateBackendAuthOAuthConfig {

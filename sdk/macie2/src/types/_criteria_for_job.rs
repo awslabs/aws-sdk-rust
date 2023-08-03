@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CriteriaForJob {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
-    #[doc(hidden)]
     pub simple_criterion: ::std::option::Option<crate::types::SimpleCriterionForJob>,
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
-    #[doc(hidden)]
     pub tag_criterion: ::std::option::Option<crate::types::TagCriterionForJob>,
 }
 impl CriteriaForJob {

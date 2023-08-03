@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceQuotaIncreaseRequestFromTemplateInput {
     /// <p>The service identifier.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The quota identifier.</p>
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceQuotaIncreaseRequestFromTemplateInput {

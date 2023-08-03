@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointInput {
     /// <p>The unique identifier of the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpcEndpointInput {

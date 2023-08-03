@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterSnapshotAttributesResult {
     /// <p>The identifier of the manual DB cluster snapshot that the attributes apply to.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of attributes and values for the manual DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
 }
 impl DbClusterSnapshotAttributesResult {

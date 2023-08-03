@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuthenticationProfilesInput {
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
-    #[doc(hidden)]
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAuthenticationProfilesInput {

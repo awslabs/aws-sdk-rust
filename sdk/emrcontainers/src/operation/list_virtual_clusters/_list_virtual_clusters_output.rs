@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualClustersOutput {
     /// <p>This output lists the specified virtual clusters.</p>
-    #[doc(hidden)]
     pub virtual_clusters: ::std::option::Option<::std::vec::Vec<crate::types::VirtualCluster>>,
     /// <p>This output displays the token for the next set of virtual clusters.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

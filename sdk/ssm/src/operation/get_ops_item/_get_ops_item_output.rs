@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOpsItemOutput {
     /// <p>The OpsItem.</p>
-    #[doc(hidden)]
     pub ops_item: ::std::option::Option<crate::types::OpsItem>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InternalFailureException {
     /// <p>500</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The 500 error message returned by the web server.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

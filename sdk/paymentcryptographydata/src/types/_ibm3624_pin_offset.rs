@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ibm3624PinOffset {
     /// <p>The encrypted PIN block data. According to ISO 9564 standard, a PIN Block is an encoded representation of a payment card Personal Account Number (PAN) and the cardholder Personal Identification Number (PIN).</p>
-    #[doc(hidden)]
     pub encrypted_pin_block: ::std::option::Option<::std::string::String>,
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
-    #[doc(hidden)]
     pub decimalization_table: ::std::option::Option<::std::string::String>,
     /// <p>The padding character for validation data.</p>
-    #[doc(hidden)]
     pub pin_validation_data_pad_character: ::std::option::Option<::std::string::String>,
     /// <p>The unique data for cardholder identification.</p>
-    #[doc(hidden)]
     pub pin_validation_data: ::std::option::Option<::std::string::String>,
 }
 impl Ibm3624PinOffset {

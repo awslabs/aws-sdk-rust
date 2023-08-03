@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaModifications {
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReplicaModificationsStatus>,
 }
 impl ReplicaModifications {

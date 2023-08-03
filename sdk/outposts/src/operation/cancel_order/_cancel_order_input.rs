@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelOrderInput {
     /// <p> The ID of the order. </p>
-    #[doc(hidden)]
     pub order_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelOrderInput {

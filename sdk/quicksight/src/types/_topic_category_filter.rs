@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicCategoryFilter {
     /// <p>The category filter function. Valid values for this structure are <code>EXACT</code> and <code>CONTAINS</code>.</p>
-    #[doc(hidden)]
     pub category_filter_function: ::std::option::Option<crate::types::CategoryFilterFunction>,
     /// <p>The category filter type. This element is used to specify whether a filter is a simple category filter or an inverse category filter.</p>
-    #[doc(hidden)]
     pub category_filter_type: ::std::option::Option<crate::types::CategoryFilterType>,
     /// <p>The constant used in a category filter.</p>
-    #[doc(hidden)]
     pub constant: ::std::option::Option<crate::types::TopicCategoryFilterConstant>,
     /// <p>A Boolean value that indicates if the filter is inverse.</p>
-    #[doc(hidden)]
     pub inverse: bool,
 }
 impl TopicCategoryFilter {

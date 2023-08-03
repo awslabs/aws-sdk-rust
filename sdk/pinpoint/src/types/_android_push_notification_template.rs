@@ -10,31 +10,22 @@ pub struct AndroidPushNotificationTemplate {
     /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The message body to use in a push notification that's based on the message template.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
-    #[doc(hidden)]
     pub image_icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an image to display in a push notification that's based on the message template.</p>
-    #[doc(hidden)]
     pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>The raw, JSON-formatted string to use as the payload for a push notification that's based on the message template. If specified, this value overrides all other content for the message template.</p>
-    #[doc(hidden)]
     pub raw_content: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
-    #[doc(hidden)]
     pub small_image_icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
-    #[doc(hidden)]
     pub sound: ::std::option::Option<::std::string::String>,
     /// <p>The title to use in a push notification that's based on the message template. This title appears above the notification message on a recipient's device.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl AndroidPushNotificationTemplate {

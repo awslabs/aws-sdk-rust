@@ -19,10 +19,8 @@ pub struct EksEmptyDir {
     /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub medium: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
-    #[doc(hidden)]
     pub size_limit: ::std::option::Option<::std::string::String>,
 }
 impl EksEmptyDir {

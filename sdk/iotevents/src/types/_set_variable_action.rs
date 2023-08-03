@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetVariableAction {
     /// <p>The name of the variable.</p>
-    #[doc(hidden)]
     pub variable_name: ::std::option::Option<::std::string::String>,
     /// <p>The new value of the variable.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl SetVariableAction {

@@ -5,44 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
-    #[doc(hidden)]
     pub server_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.</p>
     /// <p>You can also provide authentication credentials in the form of a personal access token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data source</a>.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version or the type of Confluence installation to connect to.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<crate::types::ConfluenceVersion>,
     /// <p>Configuration information for indexing Confluence spaces.</p>
-    #[doc(hidden)]
     pub space_configuration: ::std::option::Option<crate::types::ConfluenceSpaceConfiguration>,
     /// <p>Configuration information for indexing Confluence pages.</p>
-    #[doc(hidden)]
     pub page_configuration: ::std::option::Option<crate::types::ConfluencePageConfiguration>,
     /// <p>Configuration information for indexing Confluence blogs.</p>
-    #[doc(hidden)]
     pub blog_configuration: ::std::option::Option<crate::types::ConfluenceBlogConfiguration>,
     /// <p>Configuration information for indexing attachments to Confluence blogs and pages.</p>
-    #[doc(hidden)]
     pub attachment_configuration: ::std::option::Option<crate::types::ConfluenceAttachmentConfiguration>,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Confluence. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>A list of regular expression patterns to include certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are included in the index. Content that doesn't match the patterns is excluded from the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    #[doc(hidden)]
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain blog posts, pages, spaces, or attachments in your Confluence. Content that matches the patterns are excluded from the index. Content that doesn't match the patterns is included in the index. If content matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the content isn't included in the index.</p>
-    #[doc(hidden)]
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Configuration information to connect to your Confluence URL instance via a web proxy. You can use this option for Confluence Server.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
     /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
     /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
-    #[doc(hidden)]
     pub proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
     /// <p>Whether you want to connect to Confluence using basic authentication of user name and password, or a personal access token. You can use a personal access token for Confluence Server.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::ConfluenceAuthenticationType>,
 }
 impl ConfluenceConfiguration {

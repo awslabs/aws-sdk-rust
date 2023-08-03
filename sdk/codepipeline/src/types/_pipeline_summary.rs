@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineSummary {
     /// <p>The name of the pipeline.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
-    #[doc(hidden)]
     pub updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectAttachmentOptions {
     /// <p>The protocol used for the attachment connection.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::TunnelProtocol>,
 }
 impl ConnectAttachmentOptions {

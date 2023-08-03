@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WordCloudSortConfiguration {
     /// <p>The limit on the number of groups that are displayed in a word cloud.</p>
-    #[doc(hidden)]
     pub category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The sort configuration of group by fields.</p>
-    #[doc(hidden)]
     pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
 }
 impl WordCloudSortConfiguration {

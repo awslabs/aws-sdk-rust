@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackendAuthMfaConfig {
     /// <p>The MFA mode for the backend of your Amplify project.</p>
-    #[doc(hidden)]
     pub mfa_mode: ::std::option::Option<crate::types::MfaMode>,
     /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::Settings>,
 }
 impl UpdateBackendAuthMfaConfig {

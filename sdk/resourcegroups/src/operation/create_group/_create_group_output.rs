@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupOutput {
     /// <p>The description of the resource group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::Group>,
     /// <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
-    #[doc(hidden)]
     pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
     /// <p>The tags associated with the group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-    #[doc(hidden)]
     pub group_configuration: ::std::option::Option<crate::types::GroupConfiguration>,
     _request_id: Option<String>,
 }

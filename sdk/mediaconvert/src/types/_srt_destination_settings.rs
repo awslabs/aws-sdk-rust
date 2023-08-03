@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SrtDestinationSettings {
     /// Set Style passthrough to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
-    #[doc(hidden)]
     pub style_passthrough: ::std::option::Option<crate::types::SrtStylePassthrough>,
 }
 impl SrtDestinationSettings {

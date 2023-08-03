@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapRunListItem {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
-    #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
-    #[doc(hidden)]
     pub map_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the Map Run started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date on which the Map Run stopped.</p>
-    #[doc(hidden)]
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MapRunListItem {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyEnvironmentManagedActionInput {
     /// <p>The name of the target environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID of the target environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The action ID of the scheduled managed action to execute.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
 }
 impl ApplyEnvironmentManagedActionInput {

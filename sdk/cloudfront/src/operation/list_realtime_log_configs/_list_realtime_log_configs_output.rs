@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRealtimeLogConfigsOutput {
     /// <p>A list of real-time log configurations.</p>
-    #[doc(hidden)]
     pub realtime_log_configs: ::std::option::Option<crate::types::RealtimeLogConfigs>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketInventoryConfigurationInput {
     /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify the inventory configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl GetBucketInventoryConfigurationInput {

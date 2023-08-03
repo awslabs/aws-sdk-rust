@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifySmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to verify.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
-    #[doc(hidden)]
     pub one_time_password: ::std::option::Option<::std::string::String>,
 }
 impl VerifySmsSandboxPhoneNumberInput {

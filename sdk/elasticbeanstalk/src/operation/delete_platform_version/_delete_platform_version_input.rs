@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePlatformVersionInput {
     /// <p>The ARN of the version of the custom platform.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePlatformVersionInput {

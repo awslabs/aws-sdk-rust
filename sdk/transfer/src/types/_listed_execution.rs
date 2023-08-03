@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
-    #[doc(hidden)]
     pub initial_file_location: ::std::option::Option<crate::types::FileLocation>,
     /// <p>A container object for the session details that are associated with a workflow.</p>
-    #[doc(hidden)]
     pub service_metadata: ::std::option::Option<crate::types::ServiceMetadata>,
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
 }
 impl ListedExecution {

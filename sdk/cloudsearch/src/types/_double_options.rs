@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DoubleOptions {
     /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<f64>,
     /// <p>The name of the source field to map to the field. </p>
-    #[doc(hidden)]
     pub source_field: ::std::option::Option<::std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
-    #[doc(hidden)]
     pub facet_enabled: ::std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
-    #[doc(hidden)]
     pub search_enabled: ::std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
-    #[doc(hidden)]
     pub return_enabled: ::std::option::Option<bool>,
     /// <p>Whether the field can be used to sort the search results.</p>
-    #[doc(hidden)]
     pub sort_enabled: ::std::option::Option<bool>,
 }
 impl DoubleOptions {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutActionRevisionInput {
     /// <p>The name of the pipeline that starts processing the revision to the source.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action that processes the revision.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about the version (or revision) of an action.</p>
-    #[doc(hidden)]
     pub action_revision: ::std::option::Option<crate::types::ActionRevision>,
 }
 impl PutActionRevisionInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryChannelsOutput {
     /// <p>A list that contains the descriptions of the specified delivery channel.</p>
-    #[doc(hidden)]
     pub delivery_channels: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannel>>,
     _request_id: Option<String>,
 }

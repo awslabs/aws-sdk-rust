@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisteredUserDashboardFeatureConfigurations {
     /// <p>The state persistence settings of an embedded dashboard.</p>
-    #[doc(hidden)]
     pub state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
-    #[doc(hidden)]
     pub bookmarks: ::std::option::Option<crate::types::BookmarksConfigurations>,
 }
 impl RegisteredUserDashboardFeatureConfigurations {

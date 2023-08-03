@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessLog {
     /// <p>Specifies whether access logs are enabled for the load balancer.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
     /// <p>Default: 60 minutes</p>
-    #[doc(hidden)]
     pub emit_interval: ::std::option::Option<i32>,
     /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AccessLog {

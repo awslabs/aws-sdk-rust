@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionState {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
-    #[doc(hidden)]
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
-    #[doc(hidden)]
     pub intent: ::std::option::Option<crate::types::Intent>,
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-    #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
-    #[doc(hidden)]
     pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique identifier for a specific request.</p>
-    #[doc(hidden)]
     pub originating_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
-    #[doc(hidden)]
     pub runtime_hints: ::std::option::Option<crate::types::RuntimeHints>,
 }
 impl SessionState {

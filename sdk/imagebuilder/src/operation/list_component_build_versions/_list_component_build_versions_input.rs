@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentBuildVersionsInput {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-    #[doc(hidden)]
     pub component_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum items to return in a request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentBuildVersionsInput {

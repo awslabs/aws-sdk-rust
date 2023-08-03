@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListS3ResourcesOutput {
     /// <p>(Discontinued) A list of the associated S3 resources returned by the action.</p>
-    #[doc(hidden)]
     pub s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>>,
     /// <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

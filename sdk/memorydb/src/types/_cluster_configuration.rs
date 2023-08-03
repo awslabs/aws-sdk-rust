@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterConfiguration {
     /// <p>The name of the cluster</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cluster configuration</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The node type used for the cluster</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The Redis engine version used by the cluster</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The specified maintenance window for the cluster</p>
-    #[doc(hidden)]
     pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic for the cluster</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port used by the cluster</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The name of parameter group used by the cluster</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the subnet group used by the cluster</p>
-    #[doc(hidden)]
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC the cluster belongs to</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot retention limit set by the cluster</p>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The snapshot window set by the cluster</p>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The number of shards in the cluster</p>
-    #[doc(hidden)]
     pub num_shards: ::std::option::Option<i32>,
     /// <p>The list of shards in the cluster</p>
-    #[doc(hidden)]
     pub shards: ::std::option::Option<::std::vec::Vec<crate::types::ShardDetail>>,
 }
 impl ClusterConfiguration {

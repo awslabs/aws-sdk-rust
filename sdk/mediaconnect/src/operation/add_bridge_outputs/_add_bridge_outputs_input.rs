@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeOutputsInput {
     /// The ARN of the bridge that you want to update.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The outputs that you want to add to this bridge.
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>,
 }
 impl AddBridgeOutputsInput {

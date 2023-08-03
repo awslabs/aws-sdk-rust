@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMultiplexProgramOutput {
     /// The updated multiplex program.
-    #[doc(hidden)]
     pub multiplex_program: ::std::option::Option<crate::types::MultiplexProgram>,
     _request_id: Option<String>,
 }

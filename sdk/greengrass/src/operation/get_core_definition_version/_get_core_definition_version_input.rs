@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCoreDefinitionVersionInput {
     /// The ID of the core definition.
-    #[doc(hidden)]
     pub core_definition_id: ::std::option::Option<::std::string::String>,
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    #[doc(hidden)]
     pub core_definition_version_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCoreDefinitionVersionInput {

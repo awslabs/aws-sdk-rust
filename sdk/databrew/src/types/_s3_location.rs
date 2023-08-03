@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The Amazon S3 bucket name.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the object in the bucket.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
-    #[doc(hidden)]
     pub bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {

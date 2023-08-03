@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityAssignment {
     /// <p>The list of workgroup names for the capacity assignment.</p>
-    #[doc(hidden)]
     pub work_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CapacityAssignment {

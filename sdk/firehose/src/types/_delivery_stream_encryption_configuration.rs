@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryStreamEncryptionConfiguration {
     /// <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of customer master key (CMK) that is used for encryption. The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>.</p>
-    #[doc(hidden)]
     pub key_type: ::std::option::Option<crate::types::KeyType>,
     /// <p>This is the server-side encryption (SSE) status for the delivery stream. For a full description of the different values of this status, see <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code>. If this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable or disable SSE, respectively.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeliveryStreamEncryptionStatus>,
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
-    #[doc(hidden)]
     pub failure_description: ::std::option::Option<crate::types::FailureDescription>,
 }
 impl DeliveryStreamEncryptionConfiguration {

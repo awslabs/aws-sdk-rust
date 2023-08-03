@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultReuseByAgeConfiguration {
     /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
-    #[doc(hidden)]
     pub max_age_in_minutes: ::std::option::Option<i32>,
 }
 impl ResultReuseByAgeConfiguration {

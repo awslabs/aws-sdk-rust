@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageInput {
     /// <p>The encoded message that was returned with the response.</p>
-    #[doc(hidden)]
     pub encoded_message: ::std::option::Option<::std::string::String>,
 }
 impl DecodeAuthorizationMessageInput {

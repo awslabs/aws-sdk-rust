@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesOutput {
     /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
-    #[doc(hidden)]
     pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
     /// <p>Possible values for <code>ErrorCode</code>:</p>
@@ -15,7 +13,6 @@ pub struct SearchResourcesOutput {
     /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
     /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub query_errors: ::std::option::Option<::std::vec::Vec<crate::types::QueryError>>,
     _request_id: Option<String>,
 }

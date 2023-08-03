@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointAccess {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-    #[doc(hidden)]
     pub resource_owner: ::std::option::Option<::std::string::String>,
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
-    #[doc(hidden)]
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The time (UTC) that the endpoint was created.</p>
-    #[doc(hidden)]
     pub endpoint_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The port number on which the cluster accepts incoming connections.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The DNS address of the endpoint.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The security groups associated with the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
-    #[doc(hidden)]
     pub vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
 }
 impl EndpointAccess {

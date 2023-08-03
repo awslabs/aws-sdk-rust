@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterOrganizationDelegatedAdminInput {
     /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
-    #[doc(hidden)]
     pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterOrganizationDelegatedAdminInput {

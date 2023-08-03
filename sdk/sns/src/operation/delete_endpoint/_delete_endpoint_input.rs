@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>EndpointArn of endpoint to delete.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEndpointInput {

@@ -24,11 +24,9 @@ pub struct Filter {
     /// <li> <p> <code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values. </p> </li>
     /// <li> <p> <code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more filter values. Filter values are case-sensitive. </p>
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filter {

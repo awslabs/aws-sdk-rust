@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignSummary {
     /// <p>The name of the campaign.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-    #[doc(hidden)]
     pub campaign_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
@@ -16,16 +14,12 @@ pub struct CampaignSummary {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the campaign was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a campaign fails, the reason behind the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl CampaignSummary {

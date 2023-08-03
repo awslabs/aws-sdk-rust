@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceMethodsOutput {
     /// <p>List of available device APIs.</p>
-    #[doc(hidden)]
     pub device_methods: ::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>>,
     _request_id: Option<String>,
 }

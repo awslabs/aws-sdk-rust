@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamedEntityDefinitionMetric {
     /// <p>The aggregation of a named entity. Valid values for this structure are <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>AVERAGE</code>, <code>DISTINCT_COUNT</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, <code>PERCENTILE</code>, <code>MEDIAN</code>, and <code>CUSTOM</code>.</p>
-    #[doc(hidden)]
     pub aggregation: ::std::option::Option<crate::types::NamedEntityAggType>,
     /// <p>The additional parameters for an aggregation function.</p>
-    #[doc(hidden)]
     pub aggregation_function_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl NamedEntityDefinitionMetric {

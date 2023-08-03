@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
@@ -19,13 +17,10 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// </ul>
     /// <p>For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
@@ -34,14 +29,11 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
     /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
     /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<i32>,
 }
 impl LaunchTemplateEbsBlockDeviceRequest {

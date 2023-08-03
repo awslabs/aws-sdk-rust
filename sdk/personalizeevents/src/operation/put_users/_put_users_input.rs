@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutUsersInput {
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of user data.</p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
 }
 impl PutUsersInput {

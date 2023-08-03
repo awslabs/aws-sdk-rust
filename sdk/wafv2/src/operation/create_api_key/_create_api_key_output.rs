@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApiKeyOutput {
     /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

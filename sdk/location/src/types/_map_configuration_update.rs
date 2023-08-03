@@ -7,7 +7,6 @@ pub struct MapConfigurationUpdate {
     /// <p>Specifies the political view for the style. Set to an empty string to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p> <note>
     /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
-    #[doc(hidden)]
     pub political_view: ::std::option::Option<::std::string::String>,
 }
 impl MapConfigurationUpdate {

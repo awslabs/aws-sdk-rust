@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataQualityMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector that you want to investigate.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a specific data quality metric set.</p>
-    #[doc(hidden)]
     pub metric_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetDataQualityMetricsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationInput {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
-    #[doc(hidden)]
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
 }
 impl UpdateConfigurationInput {

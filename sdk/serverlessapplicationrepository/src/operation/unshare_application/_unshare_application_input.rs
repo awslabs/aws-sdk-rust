@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnshareApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Organization ID to unshare the application from.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
 impl UnshareApplicationInput {

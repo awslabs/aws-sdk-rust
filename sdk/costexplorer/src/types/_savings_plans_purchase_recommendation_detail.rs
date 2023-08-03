@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationDetail {
     /// <p>Details for your recommended Savings Plans.</p>
-    #[doc(hidden)]
     pub savings_plans_details: ::std::option::Option<crate::types::SavingsPlansDetails>,
     /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The upfront cost of the recommended Savings Plans, based on the selected payment option.</p>
-    #[doc(hidden)]
     pub upfront_cost: ::std::option::Option<::std::string::String>,
     /// <p>The estimated return on investment that's based on the recommended Savings Plans that you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.</p>
-    #[doc(hidden)]
     pub estimated_roi: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to generate the recommendations and present potential savings.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The cost of the recommended Savings Plans over the length of the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_sp_cost: ::std::option::Option<::std::string::String>,
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plans, over the length of the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_on_demand_cost: ::std::option::Option<::std::string::String>,
     /// <p> The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plans you own. </p>
-    #[doc(hidden)]
     pub estimated_on_demand_cost_with_current_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings amount that's based on the recommended Savings Plans over the length of the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_savings_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The recommended hourly commitment level for the Savings Plans type and the configuration that's based on the usage during the lookback period.</p>
-    #[doc(hidden)]
     pub hourly_commitment_to_purchase: ::std::option::Option<::std::string::String>,
     /// <p>The estimated utilization of the recommended Savings Plans.</p>
-    #[doc(hidden)]
     pub estimated_average_utilization: ::std::option::Option<::std::string::String>,
     /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    #[doc(hidden)]
     pub current_minimum_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
     /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    #[doc(hidden)]
     pub current_maximum_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    #[doc(hidden)]
     pub current_average_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_detail_id: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationDetail {

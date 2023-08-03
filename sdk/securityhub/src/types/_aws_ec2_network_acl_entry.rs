@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkAclEntry {
     /// <p>The IPV4 network range for which to deny or allow access.</p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
-    #[doc(hidden)]
     pub egress: bool,
     /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
-    #[doc(hidden)]
     pub icmp_type_code: ::std::option::Option<crate::types::IcmpTypeCode>,
     /// <p>The IPV6 network range for which to deny or allow access.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>For TCP or UDP protocols, the range of ports that the rule applies to.</p>
-    #[doc(hidden)]
     pub port_range: ::std::option::Option<crate::types::PortRangeFromTo>,
     /// <p>The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Whether the rule is used to allow access or deny access.</p>
-    #[doc(hidden)]
     pub rule_action: ::std::option::Option<::std::string::String>,
     /// <p>The rule number. The rules are processed in order by their number.</p>
-    #[doc(hidden)]
     pub rule_number: i32,
 }
 impl AwsEc2NetworkAclEntry {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Replay {
     /// <p>The name of the replay.</p>
-    #[doc(hidden)]
     pub replay_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the archive to replay event from.</p>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the replay.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplayState>,
     /// <p>A description of why the replay is in the current state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp for the time to start replaying events. This is determined by the time in the event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
-    #[doc(hidden)]
     pub event_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior to the <code>EventEndTime</code> specified is replayed.</p>
-    #[doc(hidden)]
     pub event_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the last event was replayed.</p>
-    #[doc(hidden)]
     pub event_last_replayed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay started.</p>
-    #[doc(hidden)]
     pub replay_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the replay completed.</p>
-    #[doc(hidden)]
     pub replay_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Replay {

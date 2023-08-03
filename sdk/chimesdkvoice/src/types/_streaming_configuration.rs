@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingConfiguration {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
-    #[doc(hidden)]
     pub data_retention_in_hours: ::std::option::Option<i32>,
     /// <p>When true, streaming to Kinesis is off.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
     /// <p>The streaming notification targets.</p>
-    #[doc(hidden)]
     pub streaming_notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
     /// <p>The call analytics configuration.</p>
-    #[doc(hidden)]
     pub media_insights_configuration: ::std::option::Option<crate::types::MediaInsightsConfiguration>,
 }
 impl StreamingConfiguration {

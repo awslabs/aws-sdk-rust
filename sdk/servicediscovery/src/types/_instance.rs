@@ -13,10 +13,8 @@ pub struct Instance {
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
@@ -83,7 +81,6 @@ pub struct Instance {
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Instance {

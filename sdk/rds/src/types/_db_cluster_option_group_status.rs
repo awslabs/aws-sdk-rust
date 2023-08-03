@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterOptionGroupStatus {
     /// <p>Specifies the name of the DB cluster option group.</p>
-    #[doc(hidden)]
     pub db_cluster_option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of the DB cluster option group.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterOptionGroupStatus {

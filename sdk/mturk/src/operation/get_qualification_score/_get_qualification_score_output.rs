@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQualificationScoreOutput {
     /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
-    #[doc(hidden)]
     pub qualification: ::std::option::Option<crate::types::Qualification>,
     _request_id: Option<String>,
 }

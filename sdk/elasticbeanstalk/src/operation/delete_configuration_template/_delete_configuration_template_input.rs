@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationTemplateInput {
     /// <p>The name of the application to delete the configuration template from.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration template to delete.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationTemplateInput {

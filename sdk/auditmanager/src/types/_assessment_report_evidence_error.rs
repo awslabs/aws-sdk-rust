@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentReportEvidenceError {
     /// <p> The identifier for the evidence. </p>
-    #[doc(hidden)]
     pub evidence_id: ::std::option::Option<::std::string::String>,
     /// <p> The error code that was returned. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p> The error message that was returned. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl AssessmentReportEvidenceError {

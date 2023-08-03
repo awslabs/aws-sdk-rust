@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectAnomalyResult {
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ImageSource>,
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
-    #[doc(hidden)]
     pub is_anomalous: bool,
     /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
-    #[doc(hidden)]
     pub anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
-    #[doc(hidden)]
     pub anomaly_mask: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl DetectAnomalyResult {

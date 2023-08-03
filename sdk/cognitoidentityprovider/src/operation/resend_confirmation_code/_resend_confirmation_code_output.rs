@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResendConfirmationCodeOutput {
     /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
-    #[doc(hidden)]
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,
 }

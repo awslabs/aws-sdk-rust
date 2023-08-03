@@ -6,10 +6,8 @@
 pub struct InstanceEntry {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
     /// <p>The following configuration options are available:</p>
@@ -21,15 +19,12 @@ pub struct InstanceEntry {
     /// </ul> <note>
     /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect to your instance, that configuration is not carried over to your new Amazon EC2 instance.</p>
     /// </note>
-    #[doc(hidden)]
     pub port_info_source: ::std::option::Option<crate::types::PortInfoSourceType>,
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl InstanceEntry {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkteamOutput {
     /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
-    #[doc(hidden)]
     pub success: bool,
     _request_id: Option<String>,
 }

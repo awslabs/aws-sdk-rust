@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogDeliveryOptions {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_type: ::std::option::Option<crate::types::LogType>,
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogDeliveryOptions {

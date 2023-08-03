@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMlTaskRunsInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>A token for pagination of the results. The default is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::TaskRunFilterCriteria>,
     /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::TaskRunSortCriteria>,
 }
 impl GetMlTaskRunsInput {

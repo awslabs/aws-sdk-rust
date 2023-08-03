@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PaginationConfiguration {
     /// <p>Indicates how many items render in one page.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i64>,
     /// <p>Indicates the page number.</p>
-    #[doc(hidden)]
     pub page_number: ::std::option::Option<i64>,
 }
 impl PaginationConfiguration {

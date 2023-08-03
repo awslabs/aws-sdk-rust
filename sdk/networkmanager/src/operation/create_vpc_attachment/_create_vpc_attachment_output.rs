@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcAttachmentOutput {
     /// <p>Provides details about the VPC attachment.</p>
-    #[doc(hidden)]
     pub vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,
 }

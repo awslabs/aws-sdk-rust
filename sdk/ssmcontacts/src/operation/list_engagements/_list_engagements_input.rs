@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEngagementsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of engagements per page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
-    #[doc(hidden)]
     pub incident_id: ::std::option::Option<::std::string::String>,
     /// <p>The time range to lists engagements for an incident.</p>
-    #[doc(hidden)]
     pub time_range_value: ::std::option::Option<crate::types::TimeRange>,
 }
 impl ListEngagementsInput {

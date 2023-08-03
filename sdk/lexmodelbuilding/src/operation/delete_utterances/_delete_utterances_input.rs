@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUtterancesInput {
     /// <p>The name of the bot that stored the utterances.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUtterancesInput {

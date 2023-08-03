@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageImportJobOutput {
     /// <p>The package's ID.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The package's version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The package's patch version.</p>
-    #[doc(hidden)]
     pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The package's output location.</p>
-    #[doc(hidden)]
     pub output_s3_location: ::std::option::Option<crate::types::OutPutS3Location>,
 }
 impl PackageImportJobOutput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionConfigOutput {
     /// <p>Return the results of updating the configuration.</p>
-    #[doc(hidden)]
     pub field_level_encryption: ::std::option::Option<crate::types::FieldLevelEncryption>,
     /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

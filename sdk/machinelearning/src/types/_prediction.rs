@@ -11,16 +11,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Prediction {
     /// <p>The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub predicted_label: ::std::option::Option<::std::string::String>,
     /// <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub predicted_value: ::std::option::Option<f32>,
     /// <p>Provides the raw classification score corresponding to each label.</p>
-    #[doc(hidden)]
     pub predicted_scores: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
     /// <p>Provides any additional details regarding the prediction.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::collections::HashMap<crate::types::DetailsAttributes, ::std::string::String>>,
 }
 impl Prediction {

@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains this feature.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature being evaluated.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<::std::string::String>,
     /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
-    #[doc(hidden)]
     pub evaluation_context: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateFeatureInput {

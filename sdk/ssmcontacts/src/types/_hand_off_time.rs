@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HandOffTime {
     /// <p>The hour when an on-call rotation shift begins or ends.</p>
-    #[doc(hidden)]
     pub hour_of_day: i32,
     /// <p>The minute when an on-call rotation shift begins or ends.</p>
-    #[doc(hidden)]
     pub minute_of_hour: i32,
 }
 impl HandOffTime {

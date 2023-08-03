@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkteamInput {
     /// <p>The name of the work team to update.</p>
-    #[doc(hidden)]
     pub workteam_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
-    #[doc(hidden)]
     pub member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
     /// <p>An updated description for the work team.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
 impl UpdateWorkteamInput {

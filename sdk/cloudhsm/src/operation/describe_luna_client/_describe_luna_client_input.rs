@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLunaClientInput {
     /// <p>The ARN of the client.</p>
-    #[doc(hidden)]
     pub client_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate fingerprint.</p>
-    #[doc(hidden)]
     pub certificate_fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLunaClientInput {

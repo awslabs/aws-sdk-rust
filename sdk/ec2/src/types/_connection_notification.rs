@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionNotification {
     /// <p>The ID of the notification.</p>
-    #[doc(hidden)]
     pub connection_notification_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the endpoint service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of notification.</p>
-    #[doc(hidden)]
     pub connection_notification_type: ::std::option::Option<crate::types::ConnectionNotificationType>,
     /// <p>The ARN of the SNS topic for the notification.</p>
-    #[doc(hidden)]
     pub connection_notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>The events for the notification. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    #[doc(hidden)]
     pub connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the notification.</p>
-    #[doc(hidden)]
     pub connection_notification_state: ::std::option::Option<crate::types::ConnectionNotificationState>,
 }
 impl ConnectionNotification {

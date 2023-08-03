@@ -4,7 +4,6 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetMediaForFragmentListOutput {
     /// <p>The content type of the requested media.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The payload that Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code> call also include the following additional Matroska (MKV) tags: </p>
     /// <ul>

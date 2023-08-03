@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemWindowsConfiguration {
     /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>
-    #[doc(hidden)]
     pub skip_final_backup: ::std::option::Option<bool>,
     /// <p>A set of tags for your final backup.</p>
-    #[doc(hidden)]
     pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteFileSystemWindowsConfiguration {

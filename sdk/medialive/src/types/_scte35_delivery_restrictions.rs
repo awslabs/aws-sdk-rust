@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35DeliveryRestrictions {
     /// Corresponds to SCTE-35 archive_allowed_flag.
-    #[doc(hidden)]
     pub archive_allowed_flag: ::std::option::Option<crate::types::Scte35ArchiveAllowedFlag>,
     /// Corresponds to SCTE-35 device_restrictions parameter.
-    #[doc(hidden)]
     pub device_restrictions: ::std::option::Option<crate::types::Scte35DeviceRestrictions>,
     /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-    #[doc(hidden)]
     pub no_regional_blackout_flag: ::std::option::Option<crate::types::Scte35NoRegionalBlackoutFlag>,
     /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-    #[doc(hidden)]
     pub web_delivery_allowed_flag: ::std::option::Option<crate::types::Scte35WebDeliveryAllowedFlag>,
 }
 impl Scte35DeliveryRestrictions {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelRotateSecretOutput {
     /// <p>The ARN of the secret.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. We recommend that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation can block you from starting future rotations.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCertificateAuthorityCsrOutput {
     /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
-    #[doc(hidden)]
     pub csr: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

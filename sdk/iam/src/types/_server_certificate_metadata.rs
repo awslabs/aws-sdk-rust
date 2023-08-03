@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerCertificateMetadata {
     /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The name that identifies the server certificate.</p>
-    #[doc(hidden)]
     pub server_certificate_name: ::std::option::Option<::std::string::String>,
     /// <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub server_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date when the server certificate was uploaded.</p>
-    #[doc(hidden)]
     pub upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date on which the certificate is set to expire.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ServerCertificateMetadata {

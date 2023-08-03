@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContentSummaryOutput {
     /// <p>The content summary.</p>
-    #[doc(hidden)]
     pub content_summary: ::std::option::Option<crate::types::ContentSummary>,
     _request_id: Option<String>,
 }

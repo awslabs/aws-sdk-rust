@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImageInput {
     /// <p>The name of the image to delete.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImageInput {

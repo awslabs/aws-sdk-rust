@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionSummary {
     /// <p>The status of the job execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>The time, in seconds since the epoch, when the job execution was queued.</p>
-    #[doc(hidden)]
     pub queued_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job execution was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.</p>
-    #[doc(hidden)]
     pub execution_number: ::std::option::Option<i64>,
     /// <p>The number that indicates how many retry attempts have been completed for this job on this device.</p>
-    #[doc(hidden)]
     pub retry_attempt: ::std::option::Option<i32>,
 }
 impl JobExecutionSummary {

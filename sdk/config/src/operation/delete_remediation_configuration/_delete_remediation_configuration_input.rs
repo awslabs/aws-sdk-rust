@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRemediationConfigurationInput {
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of a resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRemediationConfigurationInput {

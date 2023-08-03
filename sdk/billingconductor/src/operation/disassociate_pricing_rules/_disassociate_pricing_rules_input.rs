@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociatePricingRulesInput {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    #[doc(hidden)]
     pub pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociatePricingRulesInput {

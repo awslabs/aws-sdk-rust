@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
-    #[doc(hidden)]
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceDefinitionVersion {
     /// A list of devices in the definition version.
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
 }
 impl DeviceDefinitionVersion {

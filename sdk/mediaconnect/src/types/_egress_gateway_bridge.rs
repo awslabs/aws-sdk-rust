@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EgressGatewayBridge {
     /// The ID of the instance running this bridge.
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// The maximum expected bitrate (in bps) of the egress bridge.
-    #[doc(hidden)]
     pub max_bitrate: ::std::option::Option<i32>,
 }
 impl EgressGatewayBridge {

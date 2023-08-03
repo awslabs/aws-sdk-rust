@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPresetsInput {
     /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
-    #[doc(hidden)]
     pub ascending: ::std::option::Option<::std::string::String>,
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPresetsInput {

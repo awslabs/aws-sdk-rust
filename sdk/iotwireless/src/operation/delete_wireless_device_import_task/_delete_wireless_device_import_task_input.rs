@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWirelessDeviceImportTaskInput {
     /// <p>The unique identifier of the import task to be deleted.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWirelessDeviceImportTaskInput {

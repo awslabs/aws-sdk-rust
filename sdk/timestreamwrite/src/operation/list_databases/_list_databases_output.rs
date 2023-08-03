@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatabasesOutput {
     /// <p>A list of database names.</p>
-    #[doc(hidden)]
     pub databases: ::std::option::Option<::std::vec::Vec<crate::types::Database>>,
     /// <p>The pagination token. This parameter is returned when the response is truncated.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

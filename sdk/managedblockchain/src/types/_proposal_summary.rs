@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProposalSummary {
     /// <p> The unique identifier of the proposal. </p>
-    #[doc(hidden)]
     pub proposal_id: ::std::option::Option<::std::string::String>,
     /// <p> The description of the proposal. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the member that created the proposal. </p>
-    #[doc(hidden)]
     pub proposed_by_member_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the member that created the proposal. </p>
-    #[doc(hidden)]
     pub proposed_by_member_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
@@ -25,16 +21,12 @@ pub struct ProposalSummary {
     /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
     /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProposalStatus>,
     /// <p> The date and time that the proposal was created. </p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ProposalSummary {

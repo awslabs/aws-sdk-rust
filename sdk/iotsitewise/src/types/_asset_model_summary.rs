@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetModelSummary {
     /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the asset model.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The asset model description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date the asset model was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the asset model.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AssetModelStatus>,
 }
 impl AssetModelSummary {

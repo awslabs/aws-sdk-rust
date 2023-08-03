@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ShareResult {
     /// <p>The ID of the principal.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the invited user.</p>
-    #[doc(hidden)]
     pub invitee_principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::RoleType>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareStatusType>,
     /// <p>The ID of the resource that was shared.</p>
-    #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ShareResult {

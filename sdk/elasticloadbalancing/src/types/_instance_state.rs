@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceState {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the instance.</p>
     /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
     /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
-    #[doc(hidden)]
     pub reason_code: ::std::option::Option<::std::string::String>,
     /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
     /// <ul>
@@ -30,7 +27,6 @@ pub struct InstanceState {
     /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
     /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl InstanceState {

@@ -13,13 +13,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the external workflow execution to cancel.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<::std::string::String>,
 }
 impl RequestCancelExternalWorkflowExecutionDecisionAttributes {

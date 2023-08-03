@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReleaseLabelInput {
     /// <p>The target release label to be described.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use. Currently set to null.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeReleaseLabelInput {

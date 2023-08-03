@@ -6,37 +6,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameter {
     /// <p>Specifies the name of the parameter.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the value of the parameter.</p>
-    #[doc(hidden)]
     pub parameter_value: ::std::option::Option<::std::string::String>,
     /// <p>Provides a description of the parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the source of the parameter value.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the engine specific parameters type.</p>
-    #[doc(hidden)]
     pub apply_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the valid data type for the parameter.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the valid range of values for the parameter.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
-    #[doc(hidden)]
     pub is_modifiable: bool,
     /// <p>The earliest engine version to which the parameter can apply.</p>
-    #[doc(hidden)]
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when to apply parameter updates.</p>
-    #[doc(hidden)]
     pub apply_method: ::std::option::Option<crate::types::ApplyMethod>,
     /// <p>The valid DB engine modes.</p>
-    #[doc(hidden)]
     pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Parameter {

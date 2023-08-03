@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The identifier of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the certificate.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CertificateState>,
     /// <p>Describes a state change for the certificate.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The common name for the certificate.</p>
-    #[doc(hidden)]
     pub common_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the certificate was registered.</p>
-    #[doc(hidden)]
     pub registered_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the certificate will expire.</p>
-    #[doc(hidden)]
     pub expiry_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CertificateType>,
     /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
-    #[doc(hidden)]
     pub client_cert_auth_settings: ::std::option::Option<crate::types::ClientCertAuthSettings>,
 }
 impl Certificate {

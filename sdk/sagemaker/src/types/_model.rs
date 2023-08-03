@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Model {
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the container, as part of model definition.</p>
-    #[doc(hidden)]
     pub primary_container: ::std::option::Option<crate::types::ContainerDefinition>,
     /// <p>The containers in the inference pipeline.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
     /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
-    #[doc(hidden)]
     pub inference_execution_config: ::std::option::Option<crate::types::InferenceExecutionConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>A timestamp that indicates when the model was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
-    #[doc(hidden)]
     pub enable_network_isolation: bool,
     /// <p>A list of key-value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A set of recommended deployment configurations for the model.</p>
-    #[doc(hidden)]
     pub deployment_recommendation: ::std::option::Option<crate::types::DeploymentRecommendation>,
 }
 impl Model {

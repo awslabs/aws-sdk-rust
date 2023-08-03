@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaCapturePipeline {
     /// <p>The ID of a media pipeline.</p>
-    #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the media capture pipeline</p>
-    #[doc(hidden)]
     pub media_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::MediaPipelineSourceType>,
     /// <p>ARN of the source from which the media artifacts are saved.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the media pipeline.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MediaPipelineStatus>,
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 Bucket.</p>
-    #[doc(hidden)]
     pub sink_type: ::std::option::Option<crate::types::MediaPipelineSinkType>,
     /// <p>ARN of the destination to which the media artifacts are saved.</p>
-    #[doc(hidden)]
     pub sink_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the pipeline was created, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the pipeline was updated, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    #[doc(hidden)]
     pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
 }
 impl MediaCapturePipeline {

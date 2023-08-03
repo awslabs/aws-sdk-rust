@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunAgent {
     /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the assessment run that is associated with the agent.</p>
-    #[doc(hidden)]
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current health state of the agent.</p>
-    #[doc(hidden)]
     pub agent_health: ::std::option::Option<crate::types::AgentHealth>,
     /// <p>The detailed health state of the agent.</p>
-    #[doc(hidden)]
     pub agent_health_code: ::std::option::Option<crate::types::AgentHealthCode>,
     /// <p>The description for the agent health code.</p>
-    #[doc(hidden)]
     pub agent_health_details: ::std::option::Option<::std::string::String>,
     /// <p>The Auto Scaling group of the EC2 instance that is specified by the agent ID.</p>
-    #[doc(hidden)]
     pub auto_scaling_group: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
-    #[doc(hidden)]
     pub telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
 }
 impl AssessmentRunAgent {

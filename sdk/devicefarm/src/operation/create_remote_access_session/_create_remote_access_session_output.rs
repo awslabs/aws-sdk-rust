@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionOutput {
     /// <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
-    #[doc(hidden)]
     pub remote_access_session: ::std::option::Option<crate::types::RemoteAccessSession>,
     _request_id: Option<String>,
 }

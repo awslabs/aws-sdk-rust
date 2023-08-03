@@ -4,35 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResolverEndpointInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of one or more security groups that you want to use to control access to this VPC. The security group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify the applicable value:</p>
     /// <ul>
     /// <li> <p> <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p> </li>
     /// <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<crate::types::ResolverEndpointDirection>,
     /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p>
-    #[doc(hidden)]
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>>,
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is applied to all IP addresses. </p>
-    #[doc(hidden)]
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>. </p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
-    #[doc(hidden)]
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateResolverEndpointInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConnectionInput {
     /// <p> The serial number of the dongle. </p>
-    #[doc(hidden)]
     pub device_serial_number: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Outpost server. </p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p> The public key of the client. </p>
-    #[doc(hidden)]
     pub client_public_key: ::std::option::Option<::std::string::String>,
     /// <p> The device index of the network interface on the Outpost server. </p>
-    #[doc(hidden)]
     pub network_interface_device_index: ::std::option::Option<i32>,
 }
 impl StartConnectionInput {

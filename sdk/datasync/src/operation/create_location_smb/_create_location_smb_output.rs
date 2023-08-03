@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationSmbOutput {
     /// <p>The ARN of the SMB location that you created.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

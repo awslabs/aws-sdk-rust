@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceExecutionsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
-    #[doc(hidden)]
     pub inference_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
     _request_id: Option<String>,
 }

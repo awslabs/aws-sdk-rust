@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProtectedQueriesInput {
     /// <p>The identifier for the membership in the collaboration.</p>
-    #[doc(hidden)]
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter on the status of the protected query.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListProtectedQueriesInput {

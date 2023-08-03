@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLfTagsOutput {
     /// <p>A list of LF-tags that the requested has permission to view.</p>
-    #[doc(hidden)]
     pub lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

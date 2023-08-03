@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopEventsDetectionJobOutput {
     /// <p>The identifier of the events detection job to stop.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the events detection job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }

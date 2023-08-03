@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutJobTaggingInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
 }
 impl PutJobTaggingInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Validator {
     /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ValidatorType>,
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl Validator {

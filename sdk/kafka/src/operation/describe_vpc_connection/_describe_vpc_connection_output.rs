@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpcConnectionOutput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.</p>
-    #[doc(hidden)]
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK cluster.</p>
-    #[doc(hidden)]
     pub target_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of VPC connection.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VpcConnectionState>,
     /// <p>The authentication type of VPC connection.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<::std::string::String>,
     /// <p>The VPC Id for the VPC connection.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of subnets for the VPC connection.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of security groups for the VPC connection.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The creation time of the VPC connection.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map of tags for the VPC connection.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunInProgressException {
     /// <p>Details of the exception error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    #[doc(hidden)]
     pub assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
-    #[doc(hidden)]
     pub assessment_run_arns_truncated: ::std::option::Option<bool>,
     /// <p>You can immediately retry your request.</p>
-    #[doc(hidden)]
     pub can_retry: ::std::option::Option<bool>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

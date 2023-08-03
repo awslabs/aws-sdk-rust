@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutReportDefinitionInput {
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>Required. Description of the report.</p>
-    #[doc(hidden)]
     pub report_description: ::std::option::Option<::std::string::String>,
     /// <p>Required. The cadence to generate the report.</p>
-    #[doc(hidden)]
     pub report_frequency: ::std::option::Option<crate::types::ReportFrequency>,
     /// <p>Required. The format to use for the generated report.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    #[doc(hidden)]
     pub destination_s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl PutReportDefinitionInput {

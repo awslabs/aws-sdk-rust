@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorOAuthRequest {
     /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
-    #[doc(hidden)]
     pub auth_code: ::std::option::Option<::std::string::String>,
     /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
-    #[doc(hidden)]
     pub redirect_uri: ::std::option::Option<::std::string::String>,
 }
 impl ConnectorOAuthRequest {

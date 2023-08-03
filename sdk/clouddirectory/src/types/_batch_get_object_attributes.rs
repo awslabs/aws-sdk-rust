@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetObjectAttributes {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-    #[doc(hidden)]
     pub schema_facet: ::std::option::Option<crate::types::SchemaFacet>,
     /// <p>List of attribute names whose values will be retrieved.</p>
-    #[doc(hidden)]
     pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetObjectAttributes {

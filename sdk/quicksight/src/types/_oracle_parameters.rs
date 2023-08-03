@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OracleParameters {
     /// <p>An Oracle host.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The port.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
 }
 impl OracleParameters {

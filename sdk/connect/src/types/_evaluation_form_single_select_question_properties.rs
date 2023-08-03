@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionProperties {
     /// <p>The answer options of the single select question.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>>,
     /// <p>The display mode of the single select question.</p>
-    #[doc(hidden)]
     pub display_as: ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,
     /// <p>The display mode of the single select question.</p>
-    #[doc(hidden)]
     pub automation: ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>,
 }
 impl EvaluationFormSingleSelectQuestionProperties {

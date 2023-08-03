@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbProcessorFeature {
     /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the processor feature.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbProcessorFeature {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerAgentInfo {
     /// <p>Number of active discovery agents.</p>
-    #[doc(hidden)]
     pub active_agents: i32,
     /// <p>Number of healthy discovery agents</p>
-    #[doc(hidden)]
     pub healthy_agents: i32,
     /// <p>Number of blacklisted discovery agents.</p>
-    #[doc(hidden)]
     pub black_listed_agents: i32,
     /// <p>Number of discovery agents with status SHUTDOWN.</p>
-    #[doc(hidden)]
     pub shutdown_agents: i32,
     /// <p>Number of unhealthy discovery agents.</p>
-    #[doc(hidden)]
     pub unhealthy_agents: i32,
     /// <p>Total number of discovery agents.</p>
-    #[doc(hidden)]
     pub total_agents: i32,
     /// <p>Number of unknown discovery agents.</p>
-    #[doc(hidden)]
     pub unknown_agents: i32,
 }
 impl CustomerAgentInfo {

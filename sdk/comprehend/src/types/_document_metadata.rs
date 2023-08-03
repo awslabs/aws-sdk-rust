@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentMetadata {
     /// <p>Number of pages in the document.</p>
-    #[doc(hidden)]
     pub pages: ::std::option::Option<i32>,
     /// <p>List of pages in the document, with the number of characters extracted from each page.</p>
-    #[doc(hidden)]
     pub extracted_characters: ::std::option::Option<::std::vec::Vec<crate::types::ExtractedCharactersListItem>>,
 }
 impl DocumentMetadata {

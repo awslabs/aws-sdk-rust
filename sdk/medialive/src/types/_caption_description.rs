@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
-    #[doc(hidden)]
     pub accessibility: ::std::option::Option<crate::types::AccessibilityType>,
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
-    #[doc(hidden)]
     pub caption_selector_name: ::std::option::Option<::std::string::String>,
     /// Additional settings for captions destination that depend on the destination type.
-    #[doc(hidden)]
     pub destination_settings: ::std::option::Option<crate::types::CaptionDestinationSettings>,
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-    #[doc(hidden)]
     pub language_description: ::std::option::Option<::std::string::String>,
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl CaptionDescription {

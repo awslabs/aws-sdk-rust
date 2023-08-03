@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLifecycleConfigurationInput {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLifecycleConfigurationInput {

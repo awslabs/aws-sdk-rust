@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchStatus {
     /// <p>The approval status of a patch.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::PatchDeploymentStatus>,
     /// <p>The compliance severity level for a patch.</p>
-    #[doc(hidden)]
     pub compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     /// <p>The date the patch was approved (or will be approved if the status is <code>PENDING_APPROVAL</code>).</p>
-    #[doc(hidden)]
     pub approval_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PatchStatus {

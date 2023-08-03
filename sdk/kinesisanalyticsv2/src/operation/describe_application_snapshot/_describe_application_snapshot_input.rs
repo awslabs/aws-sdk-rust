@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationSnapshotInput {
     /// <p>The name of an existing application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeApplicationSnapshotInput {

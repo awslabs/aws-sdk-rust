@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigRuleComplianceFilters {
     /// <p>The name of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The rule compliance status.</p>
     /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>The 12-digit account ID of the source account. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source region where the data is aggregated. </p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
 impl ConfigRuleComplianceFilters {

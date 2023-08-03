@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionProfileOutput {
     /// <p>Return the results of updating the profile.</p>
-    #[doc(hidden)]
     pub field_level_encryption_profile: ::std::option::Option<crate::types::FieldLevelEncryptionProfile>,
     /// <p>The result of the field-level encryption profile request.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

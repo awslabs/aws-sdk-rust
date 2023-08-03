@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePipelineInput {

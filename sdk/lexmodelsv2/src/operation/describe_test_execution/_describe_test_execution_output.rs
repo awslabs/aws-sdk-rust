@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTestExecutionOutput {
     /// <p>The execution Id for the test set execution.</p>
-    #[doc(hidden)]
     pub test_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The execution creation date and time for the test set execution.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last update for the execution.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test execution status for the test execution.</p>
-    #[doc(hidden)]
     pub test_execution_status: ::std::option::Option<crate::types::TestExecutionStatus>,
     /// <p>The test set Id for the test set execution.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The test set name of the test set execution.</p>
-    #[doc(hidden)]
     pub test_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The target bot for the test set execution details.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TestExecutionTarget>,
     /// <p>Indicates whether we use streaming or non-streaming APIs are used for the test set execution. For streaming, <code>StartConversation</code> Amazon Lex Runtime API is used. Whereas for non-streaming, <code>RecognizeUtterance</code> and <code>RecognizeText</code> Amazon Lex Runtime API is used.</p>
-    #[doc(hidden)]
     pub api_mode: ::std::option::Option<crate::types::TestExecutionApiMode>,
     /// <p>Indicates whether test set is audio or text.</p>
-    #[doc(hidden)]
     pub test_execution_modality: ::std::option::Option<crate::types::TestExecutionModality>,
     /// <p>Reasons for the failure of the test set execution.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

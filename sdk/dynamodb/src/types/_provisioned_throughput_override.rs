@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedThroughputOverride {
     /// <p>Replica-specific read capacity units. If not specified, uses the source table's read capacity settings.</p>
-    #[doc(hidden)]
     pub read_capacity_units: ::std::option::Option<i64>,
 }
 impl ProvisionedThroughputOverride {

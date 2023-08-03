@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullRequestStatusChangedEventMetadata {
     /// <p>The changed status of the pull request.</p>
-    #[doc(hidden)]
     pub pull_request_status: ::std::option::Option<crate::types::PullRequestStatusEnum>,
 }
 impl PullRequestStatusChangedEventMetadata {

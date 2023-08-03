@@ -5,85 +5,62 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateDetails {
     /// <p>The ARN of the private certificate authority (CA) that will be used to issue the certificate.</p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the certificate was requested.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN), such as www.example.com, that is secured by the certificate.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request.</p>
     /// <p>Only provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    #[doc(hidden)]
     pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID).</p>
-    #[doc(hidden)]
     pub extended_key_usages: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>>,
     /// <p>For a failed certificate request, the reason for the failure.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub imported_at: ::std::option::Option<::std::string::String>,
     /// <p>The list of ARNs for the Amazon Web Services resources that use the certificate.</p>
-    #[doc(hidden)]
     pub in_use_by: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub issued_at: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate authority that issued and signed the certificate.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
     /// <p>Valid values: <code>RSA_2048</code> | <code>RSA_1024</code> |<code> RSA_4096</code> | <code>EC_prime256v1</code> | <code>EC_secp384r1</code> | <code>EC_secp521r1</code> </p>
-    #[doc(hidden)]
     pub key_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>A list of key usage X.509 v3 extension objects.</p>
-    #[doc(hidden)]
     pub key_usages: ::std::option::Option<::std::vec::Vec<crate::types::AwsCertificateManagerCertificateKeyUsage>>,
     /// <p>The time after which the certificate becomes invalid.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub not_after: ::std::option::Option<::std::string::String>,
     /// <p>The time before which the certificate is not valid.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub not_before: ::std::option::Option<::std::string::String>,
     /// <p>Provides a value that specifies whether to add the certificate to a transparency log.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::AwsCertificateManagerCertificateOptions>,
     /// <p>Whether the certificate is eligible for renewal.</p>
     /// <p>Valid values: <code>ELIGIBLE</code> | <code>INELIGIBLE</code> </p>
-    #[doc(hidden)]
     pub renewal_eligibility: ::std::option::Option<::std::string::String>,
     /// <p>Information about the status of the Certificate Manager managed renewal for the certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
-    #[doc(hidden)]
     pub renewal_summary: ::std::option::Option<crate::types::AwsCertificateManagerCertificateRenewalSummary>,
     /// <p>The serial number of the certificate.</p>
-    #[doc(hidden)]
     pub serial: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm that was used to sign the certificate.</p>
-    #[doc(hidden)]
     pub signature_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>The status of the certificate.</p>
     /// <p>Valid values: <code>PENDING_VALIDATION</code> | <code>ISSUED</code> | <code>INACTIVE</code> | <code>EXPIRED</code> | <code>VALIDATION_TIMED_OUT</code> | <code>REVOKED</code> | <code>FAILED</code> </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate.</p>
     /// <p>The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>
-    #[doc(hidden)]
     pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The source of the certificate. For certificates that Certificate Manager provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported with <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.</p>
     /// <p>Valid values: <code>IMPORTED</code> | <code>AMAZON_ISSUED</code> | <code>PRIVATE</code> </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateDetails {

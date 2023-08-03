@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersioningConfiguration {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
-    #[doc(hidden)]
     pub unlimited: bool,
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
-    #[doc(hidden)]
     pub max_versions: ::std::option::Option<i32>,
 }
 impl VersioningConfiguration {

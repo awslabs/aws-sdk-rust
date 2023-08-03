@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteWorldsInput {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-    #[doc(hidden)]
     pub worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteWorldsInput {

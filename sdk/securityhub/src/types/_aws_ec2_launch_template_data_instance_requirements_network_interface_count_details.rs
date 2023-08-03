@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
     /// <p> The maximum number of network interfaces. </p>
-    #[doc(hidden)]
     pub max: i32,
     /// <p> The minimum number of network interfaces. </p>
-    #[doc(hidden)]
     pub min: i32,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {

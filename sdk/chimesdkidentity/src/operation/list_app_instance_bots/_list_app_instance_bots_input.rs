@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListAppInstanceBotsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of requests to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested bots are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAppInstanceBotsInput {

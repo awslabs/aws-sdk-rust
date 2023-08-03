@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomLineItemOutput {
     /// <p> Then ARN of the deleted custom line item. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

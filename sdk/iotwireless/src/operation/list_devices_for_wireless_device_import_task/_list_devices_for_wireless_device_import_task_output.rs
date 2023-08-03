@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesForWirelessDeviceImportTaskOutput {
     /// <p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages received from devices in an import task that are onboarded to AWS IoT Wireless.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>List of wireless devices in an import task and their onboarding status.</p>
-    #[doc(hidden)]
     pub imported_wireless_device_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportedWirelessDevice>>,
     _request_id: Option<String>,
 }

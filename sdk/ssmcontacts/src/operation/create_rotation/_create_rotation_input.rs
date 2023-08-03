@@ -4,28 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRotationInput {
     /// <p>The name of the rotation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p>
     /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
-    #[doc(hidden)]
     pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time that the rotation goes into effect.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the rule that specifies when a shift's team members rotate.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
     /// <p>Optional metadata to assign to the rotation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html">Tagging Incident Manager resources</a> in the <i>Incident Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateRotationInput {

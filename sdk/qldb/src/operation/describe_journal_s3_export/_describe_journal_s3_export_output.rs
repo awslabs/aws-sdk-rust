@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJournalS3ExportOutput {
     /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
-    #[doc(hidden)]
     pub export_description: ::std::option::Option<crate::types::JournalS3ExportDescription>,
     _request_id: Option<String>,
 }

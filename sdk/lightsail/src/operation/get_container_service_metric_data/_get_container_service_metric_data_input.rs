@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerServiceMetricDataInput {
     /// <p>The name of the container service for which to get metric data.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
@@ -12,17 +11,13 @@ pub struct GetContainerServiceMetricDataInput {
     /// <li> <p> <code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
     /// <li> <p> <code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::ContainerServiceMetricName>,
     /// <p>The start time of the time period.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the time period.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -33,7 +28,6 @@ pub struct GetContainerServiceMetricDataInput {
     /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
 }
 impl GetContainerServiceMetricDataInput {

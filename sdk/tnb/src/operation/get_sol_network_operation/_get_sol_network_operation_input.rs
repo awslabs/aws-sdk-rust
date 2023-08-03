@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolNetworkOperationInput {
     /// <p>The identifier of the network operation.</p>
-    #[doc(hidden)]
     pub ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSolNetworkOperationInput {

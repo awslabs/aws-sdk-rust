@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrailOutput {
     /// <p>The settings for a trail.</p>
-    #[doc(hidden)]
     pub trail: ::std::option::Option<crate::types::Trail>,
     _request_id: Option<String>,
 }

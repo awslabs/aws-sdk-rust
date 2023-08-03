@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceOutput {
     /// <p>A full description of the App Runner service that you specified in this request.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::Service>,
     _request_id: Option<String>,
 }

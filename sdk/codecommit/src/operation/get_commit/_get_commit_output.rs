@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommitOutput {
     /// <p>A commit data type object that contains information about the specified commit.</p>
-    #[doc(hidden)]
     pub commit: ::std::option::Option<crate::types::Commit>,
     _request_id: Option<String>,
 }

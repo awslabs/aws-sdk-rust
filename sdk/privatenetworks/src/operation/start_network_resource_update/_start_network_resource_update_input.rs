@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartNetworkResourceUpdateInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    #[doc(hidden)]
     pub network_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The update type.</p>
     /// <ul>
@@ -12,13 +11,10 @@ pub struct StartNetworkResourceUpdateInput {
     /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::UpdateType>,
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
-    #[doc(hidden)]
     pub shipping_address: ::std::option::Option<crate::types::Address>,
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
-    #[doc(hidden)]
     pub return_reason: ::std::option::Option<::std::string::String>,
     /// <p>Use this action to extend and automatically renew the commitment period for the radio unit. You can do the following:</p>
     /// <ul>
@@ -29,7 +25,6 @@ pub struct StartNetworkResourceUpdateInput {
     /// <li> <p>Turn off a previously-enabled automatic renewal on a 1-year or 3-year commitment. You cannot use the automatic-renewal option for a 60-day commitment.</p> </li>
     /// </ul>
     /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
-    #[doc(hidden)]
     pub commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
 }
 impl StartNetworkResourceUpdateInput {

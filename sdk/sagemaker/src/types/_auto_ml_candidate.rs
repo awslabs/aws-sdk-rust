@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlCandidate {
     /// <p>The name of the candidate.</p>
-    #[doc(hidden)]
     pub candidate_name: ::std::option::Option<::std::string::String>,
     /// <p>The best candidate result from an AutoML training job.</p>
-    #[doc(hidden)]
     pub final_auto_ml_job_objective_metric: ::std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric>,
     /// <p>The objective's status.</p>
-    #[doc(hidden)]
     pub objective_status: ::std::option::Option<crate::types::ObjectiveStatus>,
     /// <p>Information about the candidate's steps.</p>
-    #[doc(hidden)]
     pub candidate_steps: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlCandidateStep>>,
     /// <p>The candidate's status.</p>
-    #[doc(hidden)]
     pub candidate_status: ::std::option::Option<crate::types::CandidateStatus>,
     /// <p>Information about the recommended inference container definitions.</p>
-    #[doc(hidden)]
     pub inference_containers: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified time.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure reason.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The properties of an AutoML candidate job.</p>
-    #[doc(hidden)]
     pub candidate_properties: ::std::option::Option<crate::types::CandidateProperties>,
     /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.</p>
-    #[doc(hidden)]
     pub inference_container_definitions: ::std::option::Option<
         ::std::collections::HashMap<crate::types::AutoMlProcessingUnit, ::std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
     >,

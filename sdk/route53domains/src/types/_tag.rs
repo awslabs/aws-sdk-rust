@@ -7,12 +7,10 @@ pub struct Tag {
     /// <p>The key (name) of a tag.</p>
     /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each key can be 1-128 characters long.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of a tag.</p>
     /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each value can be 0-256 characters long.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {

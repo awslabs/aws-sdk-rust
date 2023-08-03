@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorDetail {
     /// <p>The name or code associated with the error.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>A list of key value pairs that provides contextual information about why an error occured.</p>
-    #[doc(hidden)]
     pub error_data: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>A message that describes the error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDetail {

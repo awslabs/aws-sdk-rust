@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationRelatedAnomaly {
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
-    #[doc(hidden)]
     pub source_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>>,
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
-    #[doc(hidden)]
     pub anomaly_id: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationRelatedAnomaly {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBundleInput {
     /// <p> Unique bundle identifier. </p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBundleInput {

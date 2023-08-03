@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>An ARN of a CloudFront resource.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<crate::types::Tags>,
 }
 impl TagResourceInput {

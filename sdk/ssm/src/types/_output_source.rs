@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputSource {
     /// <p>The ID of the output source, for example the URL of an S3 bucket.</p>
-    #[doc(hidden)]
     pub output_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
-    #[doc(hidden)]
     pub output_source_type: ::std::option::Option<::std::string::String>,
 }
 impl OutputSource {

@@ -7,7 +7,6 @@
 pub struct DeltaTimeSessionWindowConfiguration {
     /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
-    #[doc(hidden)]
     pub timeout_in_minutes: ::std::option::Option<i32>,
 }
 impl DeltaTimeSessionWindowConfiguration {

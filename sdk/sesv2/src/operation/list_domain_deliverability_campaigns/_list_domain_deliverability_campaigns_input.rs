@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsInput {
     /// <p>The first day that you want to obtain deliverability data for.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The domain to obtain deliverability data for.</p>
-    #[doc(hidden)]
     pub subscribed_domain: ::std::option::Option<::std::string::String>,
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListDomainDeliverabilityCampaignsInput {

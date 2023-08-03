@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetTextBox {
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
-    #[doc(hidden)]
     pub sheet_text_box_id: ::std::option::Option<::std::string::String>,
     /// <p>The content that is displayed in the text box.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl SheetTextBox {

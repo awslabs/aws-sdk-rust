@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactsInput {
     /// <p>The name of the contact list.</p>
-    #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that can be applied to a list of contacts.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ListContactsFilter>,
     /// <p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListContactsInput {

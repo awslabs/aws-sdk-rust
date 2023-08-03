@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImagesInput {
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -14,19 +13,14 @@ pub struct ListImagesInput {
     /// <li> <p> <code>type</code> </p> </li>
     /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Requests a list of images with a specific recipe name.</p>
-    #[doc(hidden)]
     pub by_name: ::std::option::Option<bool>,
     /// <p>The maximum items to return in a request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Includes deprecated images in the response list.</p>
-    #[doc(hidden)]
     pub include_deprecated: ::std::option::Option<bool>,
 }
 impl ListImagesInput {

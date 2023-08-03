@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobPriorityInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the job whose priority you want to update.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The priority you want to assign to this job.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
 }
 impl UpdateJobPriorityInput {

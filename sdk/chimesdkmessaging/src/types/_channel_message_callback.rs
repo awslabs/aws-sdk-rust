@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelMessageCallback {
     /// <p>The message ID.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The message metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The push notification configuration of the message.</p>
-    #[doc(hidden)]
     pub push_notification: ::std::option::Option<crate::types::PushNotificationConfiguration>,
     /// <p>The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The ID of the SubChannel.</p>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl ChannelMessageCallback {

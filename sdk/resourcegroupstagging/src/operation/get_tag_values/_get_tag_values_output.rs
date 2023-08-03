@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTagValuesOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
-    #[doc(hidden)]
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
-    #[doc(hidden)]
     pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

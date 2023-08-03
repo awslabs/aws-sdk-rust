@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReportJobInput {
     /// <p>The unique name of a report plan.</p>
-    #[doc(hidden)]
     pub report_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl StartReportJobInput {

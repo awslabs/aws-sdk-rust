@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProtectedQueryInput {
     /// <p>The identifier for a member of a protected query instance.</p>
-    #[doc(hidden)]
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a protected query instance.</p>
-    #[doc(hidden)]
     pub protected_query_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-    #[doc(hidden)]
     pub target_status: ::std::option::Option<crate::types::TargetProtectedQueryStatus>,
 }
 impl UpdateProtectedQueryInput {

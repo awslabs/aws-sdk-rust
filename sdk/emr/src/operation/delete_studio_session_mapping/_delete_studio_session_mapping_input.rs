@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    #[doc(hidden)]
     pub identity_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
 }
 impl DeleteStudioSessionMappingInput {

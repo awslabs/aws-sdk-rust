@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SequenceNumberRange {
     /// <p>The starting sequence number for the range.</p>
-    #[doc(hidden)]
     pub starting_sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    #[doc(hidden)]
     pub ending_sequence_number: ::std::option::Option<::std::string::String>,
 }
 impl SequenceNumberRange {

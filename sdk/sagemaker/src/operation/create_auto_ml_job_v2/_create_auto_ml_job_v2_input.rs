@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAutoMlJobV2Input {
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case insensitive.</p>
-    #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of channel objects describing the input data and their location. Each channel is a named input source. Similar to the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats depend on the problem type:</p>
     /// <ul>
@@ -13,36 +12,27 @@ pub struct CreateAutoMlJobV2Input {
     /// <li> <p>For text classification: <code>S3Prefix</code>.</p> </li>
     /// <li> <p>For time-series forecasting: <code>S3Prefix</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auto_ml_job_input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>>,
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
     /// <p>Defines the configuration settings of one of the supported problem types.</p>
-    #[doc(hidden)]
     pub auto_ml_problem_type_config: ::std::option::Option<crate::types::AutoMlProblemTypeConfig>,
     /// <p>The ARN of the role that is used to access the data.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
-    #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
     /// <p>For tabular problem types, you must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p>
     /// </note>
-    #[doc(hidden)]
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
-    #[doc(hidden)]
     pub model_deploy_config: ::std::option::Option<crate::types::ModelDeployConfig>,
     /// <p>This structure specifies how to split the data into train and validation datasets.</p>
     /// <p>The validation and training datasets must contain the same headers. For jobs created by calling <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.</p> <note>
     /// <p>This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits the input dataset into training and validation sets.</p>
     /// </note>
-    #[doc(hidden)]
     pub data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
 }
 impl CreateAutoMlJobV2Input {

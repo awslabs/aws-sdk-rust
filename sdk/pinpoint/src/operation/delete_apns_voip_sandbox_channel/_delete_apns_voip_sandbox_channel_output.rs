@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApnsVoipSandboxChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    #[doc(hidden)]
     pub apns_voip_sandbox_channel_response: ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
     _request_id: Option<String>,
 }

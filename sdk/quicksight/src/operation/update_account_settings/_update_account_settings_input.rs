@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
-    #[doc(hidden)]
     pub default_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
-    #[doc(hidden)]
     pub notification_email: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
-    #[doc(hidden)]
     pub termination_protection_enabled: ::std::option::Option<bool>,
 }
 impl UpdateAccountSettingsInput {

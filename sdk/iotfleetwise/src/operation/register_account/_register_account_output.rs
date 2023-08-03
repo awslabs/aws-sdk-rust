@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterAccountOutput {
     /// <p> The status of registering your Amazon Web Services account, IAM role, and Timestream resources. </p>
-    #[doc(hidden)]
     pub register_account_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
-    #[doc(hidden)]
     pub timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,
     /// <p> The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. </p>
-    #[doc(hidden)]
     pub iam_resources: ::std::option::Option<crate::types::IamResources>,
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

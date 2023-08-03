@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteConnectionInput {
     /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of names of the connections to delete.</p>
-    #[doc(hidden)]
     pub connection_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteConnectionInput {

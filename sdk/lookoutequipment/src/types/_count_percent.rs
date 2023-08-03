@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CountPercent {
     /// <p> Indicates the count of occurences of the given statistic. </p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
-    #[doc(hidden)]
     pub percentage: f32,
 }
 impl CountPercent {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetResourcePolicyInput {

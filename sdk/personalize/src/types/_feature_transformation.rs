@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureTransformation {
     /// <p>The name of the feature transformation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
-    #[doc(hidden)]
     pub feature_transformation_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the default parameters for feature transformation.</p>
-    #[doc(hidden)]
     pub default_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the feature transformation.</p>
     /// <p>A feature transformation can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl FeatureTransformation {

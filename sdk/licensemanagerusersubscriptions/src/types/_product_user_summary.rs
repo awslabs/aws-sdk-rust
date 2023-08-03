@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductUserSummary {
     /// <p>The user name from the identity provider of the user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user-based subscription product.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The status of a product for a user.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The status message for a product for a user.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the user.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The start date of a subscription.</p>
-    #[doc(hidden)]
     pub subscription_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The end date of a subscription.</p>
-    #[doc(hidden)]
     pub subscription_end_date: ::std::option::Option<::std::string::String>,
 }
 impl ProductUserSummary {

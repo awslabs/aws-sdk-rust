@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemResourceMetricsInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    #[doc(hidden)]
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the kind of storage system resource that you want information about.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::DiscoveryResourceType>,
     /// <p>Specifies the universally unique identifier (UUID) of the storage system resource that you want information about.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>EndTime</code>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>StartTime</code>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies how many results that you want in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStorageSystemResourceMetricsInput {

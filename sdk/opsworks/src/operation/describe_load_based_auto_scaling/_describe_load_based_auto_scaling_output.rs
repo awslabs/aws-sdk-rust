@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBasedAutoScalingOutput {
     /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
-    #[doc(hidden)]
     pub load_based_auto_scaling_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoadBasedAutoScalingConfiguration>>,
     _request_id: Option<String>,
 }

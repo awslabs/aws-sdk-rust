@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch Service software update.</p>
-    #[doc(hidden)]
     pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,
 }

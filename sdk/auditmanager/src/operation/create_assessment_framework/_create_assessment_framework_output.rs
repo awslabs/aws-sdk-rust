@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkOutput {
     /// <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<crate::types::Framework>,
     _request_id: Option<String>,
 }

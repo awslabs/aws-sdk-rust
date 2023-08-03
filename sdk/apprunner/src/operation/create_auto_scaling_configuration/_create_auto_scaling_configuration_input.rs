@@ -7,23 +7,18 @@ pub struct CreateAutoScalingConfigurationInput {
     /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    #[doc(hidden)]
     pub auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
     /// <p>Default: <code>100</code> </p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<i32>,
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
     /// <p>Default: <code>1</code> </p>
-    #[doc(hidden)]
     pub min_size: ::std::option::Option<i32>,
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     /// <p>Default: <code>25</code> </p>
-    #[doc(hidden)]
     pub max_size: ::std::option::Option<i32>,
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAutoScalingConfigurationInput {

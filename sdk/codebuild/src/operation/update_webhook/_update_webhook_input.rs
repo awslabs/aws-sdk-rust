@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub branch_filter: ::std::option::Option<::std::string::String>,
     /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
-    #[doc(hidden)]
     pub rotate_secret: bool,
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    #[doc(hidden)]
     pub filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    #[doc(hidden)]
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
 }
 impl UpdateWebhookInput {

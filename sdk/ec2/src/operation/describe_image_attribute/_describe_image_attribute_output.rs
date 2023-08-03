@@ -5,45 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImageAttributeOutput {
     /// <p>The block device mapping entries.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>The ID of the AMI.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The launch permissions.</p>
-    #[doc(hidden)]
     pub launch_permissions: ::std::option::Option<::std::vec::Vec<crate::types::LaunchPermission>>,
     /// <p>The product codes.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>A description for the AMI.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The kernel ID.</p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The RAM disk ID.</p>
-    #[doc(hidden)]
     pub ramdisk_id: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-    #[doc(hidden)]
     pub sriov_net_support: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The boot mode.</p>
-    #[doc(hidden)]
     pub boot_mode: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>.</p>
-    #[doc(hidden)]
     pub tpm_support: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub uefi_data: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
     /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_launched_time: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub imds_support: ::std::option::Option<crate::types::AttributeValue>,
     _request_id: Option<String>,
 }

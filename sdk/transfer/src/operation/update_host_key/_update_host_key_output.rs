@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHostKeyOutput {
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the host key identifier for the updated host key.</p>
-    #[doc(hidden)]
     pub host_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

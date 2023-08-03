@@ -5,11 +5,9 @@
 pub struct DescribeTlsInspectionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub tls_inspection_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub tls_inspection_configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTlsInspectionConfigurationInput {

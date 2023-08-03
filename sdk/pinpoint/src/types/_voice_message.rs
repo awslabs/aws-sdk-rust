@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceMessage {
     /// <p>The text of the script to use for the voice message.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The code for the language to use when synthesizing the text of the message script. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
     /// <p>The long code to send the voice message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.</p>
-    #[doc(hidden)]
     pub origination_number: ::std::option::Option<::std::string::String>,
     /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
-    #[doc(hidden)]
     pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub voice_id: ::std::option::Option<::std::string::String>,
 }
 impl VoiceMessage {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveFlowOutputInput {
     /// The flow that you want to remove an output from.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the output that you want to remove.
-    #[doc(hidden)]
     pub output_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveFlowOutputInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutTelemetryRecordsInput {
     /// <p></p>
-    #[doc(hidden)]
     pub telemetry_records: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>,
     /// <p></p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutTelemetryRecordsInput {

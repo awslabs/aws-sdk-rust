@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesCondition {
     /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
-    #[doc(hidden)]
     pub attribute_value: ::std::option::Option<::std::string::String>,
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::Condition>,
 }
 impl TimeSeriesCondition {

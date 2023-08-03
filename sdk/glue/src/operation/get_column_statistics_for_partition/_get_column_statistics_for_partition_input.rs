@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetColumnStatisticsForPartitionInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partitions' table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of partition values identifying the partition.</p>
-    #[doc(hidden)]
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the column names.</p>
-    #[doc(hidden)]
     pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetColumnStatisticsForPartitionInput {

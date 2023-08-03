@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlywheelInput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel to update.</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    #[doc(hidden)]
     pub active_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Flywheel data security configuration.</p>
-    #[doc(hidden)]
     pub data_security_config: ::std::option::Option<crate::types::UpdateDataSecurityConfig>,
 }
 impl UpdateFlywheelInput {

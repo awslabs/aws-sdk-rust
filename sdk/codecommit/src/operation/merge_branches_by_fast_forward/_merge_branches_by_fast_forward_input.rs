@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeBranchesByFastForwardInput {
     /// <p>The name of the repository where you want to merge two branches.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub source_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub destination_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch where the merge is applied.</p>
-    #[doc(hidden)]
     pub target_branch: ::std::option::Option<::std::string::String>,
 }
 impl MergeBranchesByFastForwardInput {

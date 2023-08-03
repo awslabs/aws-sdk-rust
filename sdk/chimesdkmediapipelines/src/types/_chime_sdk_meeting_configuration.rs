@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChimeSdkMeetingConfiguration {
     /// <p>The source configuration for a specified media pipeline.</p>
-    #[doc(hidden)]
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
-    #[doc(hidden)]
     pub artifacts_configuration: ::std::option::Option<crate::types::ArtifactsConfiguration>,
 }
 impl ChimeSdkMeetingConfiguration {

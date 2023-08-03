@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpendLimit {
     /// <p>The name for the SpendLimit.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SpendLimitName>,
     /// <p>The maximum amount of money, in US dollars, that you want to be able to spend sending messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>. To use this custom limit, <code>Overridden</code> must be set to true.</p>
-    #[doc(hidden)]
     pub enforced_limit: i64,
     /// <p> The maximum amount of money that you are able to spend to send messages each month, in US dollars.</p>
-    #[doc(hidden)]
     pub max_limit: i64,
     /// <p>When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code> is used to determine the maximum amount in US dollars that can be spent to send messages each month, in US dollars.</p>
-    #[doc(hidden)]
     pub overridden: bool,
 }
 impl SpendLimit {

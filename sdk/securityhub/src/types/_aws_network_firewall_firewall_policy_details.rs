@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallPolicyDetails {
     /// <p>The firewall policy configuration.</p>
-    #[doc(hidden)]
     pub firewall_policy: ::std::option::Option<crate::types::FirewallPolicyDetails>,
     /// <p>The ARN of the firewall policy.</p>
-    #[doc(hidden)]
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the firewall policy.</p>
-    #[doc(hidden)]
     pub firewall_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the firewall policy.</p>
-    #[doc(hidden)]
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the firewall policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallFirewallPolicyDetails {

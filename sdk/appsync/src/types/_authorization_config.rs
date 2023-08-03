@@ -8,10 +8,8 @@ pub struct AuthorizationConfig {
     /// <ul>
     /// <li> <p> <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub authorization_type: ::std::option::Option<crate::types::AuthorizationType>,
     /// <p>The Identity and Access Management (IAM) settings.</p>
-    #[doc(hidden)]
     pub aws_iam_config: ::std::option::Option<crate::types::AwsIamConfig>,
 }
 impl AuthorizationConfig {

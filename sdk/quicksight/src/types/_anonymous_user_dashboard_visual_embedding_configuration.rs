@@ -6,7 +6,6 @@
 pub struct AnonymousUserDashboardVisualEmbeddingConfiguration {
     /// <p>The visual ID for the visual that you want the user to see. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this visual.</p>
     /// <p>The Amazon Resource Name (ARN) of the dashboard that the visual belongs to must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    #[doc(hidden)]
     pub initial_dashboard_visual_id: ::std::option::Option<crate::types::DashboardVisualId>,
 }
 impl AnonymousUserDashboardVisualEmbeddingConfiguration {

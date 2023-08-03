@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOpsMetadataInput {
     /// <p>A resource ID for a new Application Manager application.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Metadata for a new Application Manager application. </p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOpsMetadataInput {

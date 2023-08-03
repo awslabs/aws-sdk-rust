@@ -11,10 +11,8 @@ pub struct AwsBackupBackupVaultNotificationsDetails {
     /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
     /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_vault_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsBackupBackupVaultNotificationsDetails {

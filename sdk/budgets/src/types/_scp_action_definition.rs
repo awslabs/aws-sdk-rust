@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScpActionDefinition {
     /// <p>The policy ID attached. </p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of target IDs. </p>
-    #[doc(hidden)]
     pub target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScpActionDefinition {

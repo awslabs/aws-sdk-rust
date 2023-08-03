@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotebookInstanceLifecycleConfigSummary {
     /// <p>The name of the lifecycle configuration.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NotebookInstanceLifecycleConfigSummary {

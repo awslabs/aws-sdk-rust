@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchAlarmDefinition {
     /// <p>Determines how the metric specified by <code>MetricName</code> is compared to the value specified by <code>Threshold</code>.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity. The default value is <code>1</code>.</p>
-    #[doc(hidden)]
     pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>The name of the CloudWatch metric that is watched to determine an alarm condition.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::Statistic>,
     /// <p>The value against which the specified statistic is compared.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<f64>,
     /// <p>The unit of measure associated with the CloudWatch metric being watched. The value specified for <code>Unit</code> must correspond to the units specified in the CloudWatch metric.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::Unit>,
     /// <p>A CloudWatch metric dimension.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
 }
 impl CloudWatchAlarmDefinition {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterDetails {
     /// <p>Indicates whether major version upgrades are applied automatically to the cluster during the maintenance window.</p>
-    #[doc(hidden)]
     pub allow_version_upgrade: bool,
     /// <p>The number of days that automatic cluster snapshots are retained.</p>
-    #[doc(hidden)]
     pub automated_snapshot_retention_period: i32,
     /// <p>The name of the Availability Zone in which the cluster is located.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
@@ -21,110 +18,78 @@ pub struct AwsRedshiftClusterDetails {
     /// <li> <p> <code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p> </li>
     /// <li> <p> <code>Failed</code> - The cluster failed and is not available for queries.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cluster_availability_status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the cluster was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The nodes in the cluster.</p>
-    #[doc(hidden)]
     pub cluster_nodes: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>>,
     /// <p>The list of cluster parameter groups that are associated with this cluster.</p>
-    #[doc(hidden)]
     pub cluster_parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>>,
     /// <p>The public key for the cluster.</p>
-    #[doc(hidden)]
     pub cluster_public_key: ::std::option::Option<::std::string::String>,
     /// <p>The specific revision number of the database in the cluster.</p>
-    #[doc(hidden)]
     pub cluster_revision_number: ::std::option::Option<::std::string::String>,
     /// <p>A list of cluster security groups that are associated with the cluster.</p>
-    #[doc(hidden)]
     pub cluster_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>>,
     /// <p>Information about the destination Region and retention period for the cross-Region snapshot copy.</p>
-    #[doc(hidden)]
     pub cluster_snapshot_copy_status: ::std::option::Option<crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus>,
     /// <p>The current status of the cluster.</p>
     /// <p>Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available, resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code> | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code> |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code> | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code> | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> | <code>updating-hsm</code> </p>
-    #[doc(hidden)]
     pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the subnet group that is associated with the cluster. This parameter is valid only when the cluster is in a VPC.</p>
-    #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the Amazon Redshift engine that runs on the cluster.</p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the initial database that was created when the cluster was created.</p>
     /// <p>The same name is returned for the life of the cluster.</p>
     /// <p>If an initial database is not specified, a database named <code>devdev</code> is created by default.</p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>List of time windows during which maintenance was deferred.</p>
-    #[doc(hidden)]
     pub deferred_maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>>,
     /// <p>Information about the status of the Elastic IP (EIP) address.</p>
-    #[doc(hidden)]
     pub elastic_ip_status: ::std::option::Option<crate::types::AwsRedshiftClusterElasticIpStatus>,
     /// <p>The number of nodes that you can use the elastic resize method to resize the cluster to.</p>
-    #[doc(hidden)]
     pub elastic_resize_number_of_node_options: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the data in the cluster is encrypted at rest.</p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p>The connection endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::AwsRedshiftClusterEndpoint>,
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
-    #[doc(hidden)]
     pub enhanced_vpc_routing: bool,
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub expected_next_snapshot_schedule_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the next expected snapshot.</p>
     /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code> </p>
-    #[doc(hidden)]
     pub expected_next_snapshot_schedule_time_status: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether the Amazon Redshift cluster finished applying any changes to hardware security module (HSM) settings that were specified in a modify cluster command.</p>
-    #[doc(hidden)]
     pub hsm_status: ::std::option::Option<crate::types::AwsRedshiftClusterHsmStatus>,
     /// <p>A list of IAM roles that the cluster can use to access other Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterIamRole>>,
     /// <p>The identifier of the KMS encryption key that is used to encrypt data in the cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the maintenance track for the cluster.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The default number of days to retain a manual snapshot.</p>
     /// <p>If the value is <code>-1</code>, the snapshot is retained indefinitely.</p>
     /// <p>This setting doesn't change the retention period of existing snapshots.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: i32,
     /// <p>The master user name for the cluster. This name is used to connect to the database that is specified in as the value of <code>DBName</code>.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start of the next maintenance window.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub next_maintenance_window_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the nodes in the cluster.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of compute nodes in the cluster.</p>
-    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>A list of cluster operations that are waiting to start.</p>
-    #[doc(hidden)]
     pub pending_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of changes to the cluster that are currently pending.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>,
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
     /// <p>Format: <code> <i>
@@ -132,32 +97,23 @@ pub struct AwsRedshiftClusterDetails {
     /// <day></day></i>:HH:MM</code> </p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code> </p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code> </p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Whether the cluster can be accessed from a public network.</p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
     /// <p>Information about the resize operation for the cluster.</p>
-    #[doc(hidden)]
     pub resize_info: ::std::option::Option<crate::types::AwsRedshiftClusterResizeInfo>,
     /// <p>Information about the status of a cluster restore action. Only applies to a cluster that was created by restoring a snapshot.</p>
-    #[doc(hidden)]
     pub restore_status: ::std::option::Option<crate::types::AwsRedshiftClusterRestoreStatus>,
     /// <p>A unique identifier for the cluster snapshot schedule.</p>
-    #[doc(hidden)]
     pub snapshot_schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the cluster snapshot schedule.</p>
     /// <p>Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> </p>
-    #[doc(hidden)]
     pub snapshot_schedule_state: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC that the cluster is in, if the cluster is in a VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of VPC security groups that the cluster belongs to, if the cluster is in a VPC.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRedshiftClusterVpcSecurityGroup>>,
     /// <p>Information about the logging status of the cluster.</p>
-    #[doc(hidden)]
     pub logging_status: ::std::option::Option<crate::types::AwsRedshiftClusterLoggingStatus>,
 }
 impl AwsRedshiftClusterDetails {

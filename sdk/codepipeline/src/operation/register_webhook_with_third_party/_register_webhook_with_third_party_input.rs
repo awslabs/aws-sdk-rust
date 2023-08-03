@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdPartyInput {
     /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
-    #[doc(hidden)]
     pub webhook_name: ::std::option::Option<::std::string::String>,
 }
 impl RegisterWebhookWithThirdPartyInput {

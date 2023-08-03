@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsInput {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortPipelineExecutionsBy>,
     /// <p>The sort order for results.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of pipeline executions to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListPipelineExecutionsInput {

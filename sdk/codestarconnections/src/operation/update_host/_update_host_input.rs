@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHostInput {
     /// <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
-    #[doc(hidden)]
     pub host_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL or endpoint of the host to be updated.</p>
-    #[doc(hidden)]
     pub provider_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl UpdateHostInput {

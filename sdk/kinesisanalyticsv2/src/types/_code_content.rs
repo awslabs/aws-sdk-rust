@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeContent {
     /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub text_content: ::std::option::Option<::std::string::String>,
     /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub zip_file_content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
-    #[doc(hidden)]
     pub s3_content_location: ::std::option::Option<crate::types::S3ContentLocation>,
 }
 impl CodeContent {

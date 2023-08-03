@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGroupInput {
     /// <p>The organization that contains the group.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the group to be deleted.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGroupInput {

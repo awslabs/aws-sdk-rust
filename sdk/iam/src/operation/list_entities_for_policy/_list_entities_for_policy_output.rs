@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEntitiesForPolicyOutput {
     /// <p>A list of IAM groups that the policy is attached to.</p>
-    #[doc(hidden)]
     pub policy_groups: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGroup>>,
     /// <p>A list of IAM users that the policy is attached to.</p>
-    #[doc(hidden)]
     pub policy_users: ::std::option::Option<::std::vec::Vec<crate::types::PolicyUser>>,
     /// <p>A list of IAM roles that the policy is attached to.</p>
-    #[doc(hidden)]
     pub policy_roles: ::std::option::Option<::std::vec::Vec<crate::types::PolicyRole>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

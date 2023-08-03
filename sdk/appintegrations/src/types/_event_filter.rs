@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventFilter {
     /// <p>The source of the events.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
 }
 impl EventFilter {

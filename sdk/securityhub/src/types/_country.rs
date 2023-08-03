@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Country {
     /// <p>The 2-letter ISO 3166 country code for the country.</p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the country.</p>
-    #[doc(hidden)]
     pub country_name: ::std::option::Option<::std::string::String>,
 }
 impl Country {

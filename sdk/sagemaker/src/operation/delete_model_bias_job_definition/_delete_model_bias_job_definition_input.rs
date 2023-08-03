@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteModelBiasJobDefinitionInput {
     /// <p>The name of the model bias job definition to delete.</p>
-    #[doc(hidden)]
     pub job_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteModelBiasJobDefinitionInput {

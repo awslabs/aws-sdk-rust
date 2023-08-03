@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobStats {
     /// <p>The number of profiles reviewed.</p>
-    #[doc(hidden)]
     pub number_of_profiles_reviewed: i64,
     /// <p>The number of matches found.</p>
-    #[doc(hidden)]
     pub number_of_matches_found: i64,
     /// <p>The number of merges completed.</p>
-    #[doc(hidden)]
     pub number_of_merges_done: i64,
 }
 impl JobStats {

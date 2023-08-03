@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationErrorsEntry {
     /// <p>Checks the name of the policy.</p>
-    #[doc(hidden)]
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>Displays error messages if validation encounters problems during validation of the resource policy.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ValidationErrorsEntry {

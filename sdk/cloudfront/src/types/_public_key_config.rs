@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicKeyConfig {
     /// <p>A string included in the request to help make sure that the request can't be replayed.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>A name to help identify the public key.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
-    #[doc(hidden)]
     pub encoded_key: ::std::option::Option<::std::string::String>,
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl PublicKeyConfig {

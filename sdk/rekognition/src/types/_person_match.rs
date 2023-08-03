@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PersonMatch {
     /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
-    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Information about the matched person.</p>
-    #[doc(hidden)]
     pub person: ::std::option::Option<crate::types::PersonDetail>,
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
-    #[doc(hidden)]
     pub face_matches: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
 }
 impl PersonMatch {

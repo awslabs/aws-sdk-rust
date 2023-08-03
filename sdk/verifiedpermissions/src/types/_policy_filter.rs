@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyFilter {
     /// <p>Filters the output to only policies that reference the specified principal.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<crate::types::EntityReference>,
     /// <p>Filters the output to only policies that reference the specified resource.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::EntityReference>,
     /// <p>Filters the output to only policies of the specified type.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>Filters the output to only template-linked policies that were instantiated from the specified policy template.</p>
-    #[doc(hidden)]
     pub policy_template_id: ::std::option::Option<::std::string::String>,
 }
 impl PolicyFilter {

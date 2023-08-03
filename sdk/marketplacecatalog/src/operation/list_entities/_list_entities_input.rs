@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The type of entities to retrieve.</p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
-    #[doc(hidden)]
     pub filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::Sort>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub ownership_type: ::std::option::Option<crate::types::OwnershipType>,
 }
 impl ListEntitiesInput {

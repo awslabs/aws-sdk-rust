@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceAction {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl SalesforceAction {

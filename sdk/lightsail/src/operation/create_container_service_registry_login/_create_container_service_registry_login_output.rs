@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContainerServiceRegistryLoginOutput {
     /// <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
-    #[doc(hidden)]
     pub registry_login: ::std::option::Option<crate::types::ContainerServiceRegistryLogin>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTraceSummariesOutput {
     /// <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
-    #[doc(hidden)]
     pub trace_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TraceSummary>>,
     /// <p>The start time of this page of results.</p>
-    #[doc(hidden)]
     pub approximate_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
-    #[doc(hidden)]
     pub traces_processed_count: ::std::option::Option<i64>,
     /// <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

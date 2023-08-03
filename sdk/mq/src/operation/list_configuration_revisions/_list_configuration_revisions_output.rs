@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationRevisionsOutput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of all revisions for the specified configuration.</p>
-    #[doc(hidden)]
     pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>>,
     _request_id: Option<String>,
 }

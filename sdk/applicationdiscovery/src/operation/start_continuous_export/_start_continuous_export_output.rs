@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartContinuousExportOutput {
     /// <p>The unique ID assigned to this export.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp representing when the continuous export was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
     /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

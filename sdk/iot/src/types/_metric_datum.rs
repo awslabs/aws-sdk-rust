@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDatum {
     /// <p>The time the metric value was reported.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The value reported for the metric.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MetricValue>,
 }
 impl MetricDatum {

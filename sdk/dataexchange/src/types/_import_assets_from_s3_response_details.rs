@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetsFromS3ResponseDetails {
     /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
-    #[doc(hidden)]
     pub asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision associated with this import response.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetsFromS3ResponseDetails {

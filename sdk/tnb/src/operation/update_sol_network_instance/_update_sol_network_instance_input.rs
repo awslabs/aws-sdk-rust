@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateSolNetworkInstanceInput {
     /// <p>ID of the network instance.</p>
-    #[doc(hidden)]
     pub ns_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of update.</p>
-    #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::UpdateSolNetworkType>,
     /// <p>Identifies the network function information parameters and/or the configurable properties of the network function to be modified.</p>
-    #[doc(hidden)]
     pub modify_vnf_info_data: ::std::option::Option<crate::types::UpdateSolNetworkModify>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateSolNetworkInstanceInput {

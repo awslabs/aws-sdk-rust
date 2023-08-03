@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryOutput {
     /// <p> A unique ID for the given query. </p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The result set rows returned by the query. </p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
     /// <p> The column data types of the returned result set. </p>
-    #[doc(hidden)]
     pub column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
-    #[doc(hidden)]
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
     _request_id: Option<String>,
 }

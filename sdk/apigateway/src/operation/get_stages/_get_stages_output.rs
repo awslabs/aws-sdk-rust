@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStagesOutput {
     /// <p>The current page of elements from this collection.</p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     _request_id: Option<String>,
 }

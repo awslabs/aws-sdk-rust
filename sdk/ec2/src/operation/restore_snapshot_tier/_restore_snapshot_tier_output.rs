@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreSnapshotTierOutput {
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the snapshot restore process started.</p>
-    #[doc(hidden)]
     pub restore_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
-    #[doc(hidden)]
     pub restore_duration: ::std::option::Option<i32>,
     /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
-    #[doc(hidden)]
     pub is_permanent_restore: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

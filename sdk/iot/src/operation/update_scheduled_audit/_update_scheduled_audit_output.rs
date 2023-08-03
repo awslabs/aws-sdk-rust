@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScheduledAuditOutput {
     /// <p>The ARN of the scheduled audit.</p>
-    #[doc(hidden)]
     pub scheduled_audit_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

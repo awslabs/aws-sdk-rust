@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputParallelism {
     /// <p>The number of in-application streams to create.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl InputParallelism {

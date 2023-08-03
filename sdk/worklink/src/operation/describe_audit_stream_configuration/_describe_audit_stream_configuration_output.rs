@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuditStreamConfigurationOutput {
     /// <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
-    #[doc(hidden)]
     pub audit_stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

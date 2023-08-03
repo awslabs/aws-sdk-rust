@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct XksProxyConfigurationType {
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
-    #[doc(hidden)]
     pub connectivity: ::std::option::Option<crate::types::XksProxyConnectivityType>,
     /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The URI endpoint for the external key store proxy.</p>
     /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
     /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
-    #[doc(hidden)]
     pub uri_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The path to the external key store proxy APIs.</p>
-    #[doc(hidden)]
     pub uri_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
 }
 impl XksProxyConfigurationType {

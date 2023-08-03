@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWirelessDeviceOutput {
     /// <p>The wireless device type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the destination to which the device is assigned.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless device.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with the device.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the thing associated with the wireless device.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the wireless device.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDevice>,
     /// <p>Sidewalk device object.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkDevice>,
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    #[doc(hidden)]
     pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     _request_id: Option<String>,
 }

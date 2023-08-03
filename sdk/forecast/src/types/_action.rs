@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>The related time series that you are modifying. This value is case insensitive.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
@@ -14,10 +13,8 @@ pub struct Action {
     /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
     /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::Operation>,
     /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl Action {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBranchInput {
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch for which you want to retrieve information.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
 impl GetBranchInput {

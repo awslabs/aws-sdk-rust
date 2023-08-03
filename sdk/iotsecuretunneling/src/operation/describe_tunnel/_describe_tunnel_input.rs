@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTunnelInput {
     /// <p>The tunnel to describe.</p>
-    #[doc(hidden)]
     pub tunnel_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTunnelInput {

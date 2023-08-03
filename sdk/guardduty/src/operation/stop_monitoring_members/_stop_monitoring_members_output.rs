@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopMonitoringMembersOutput {
     /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
-    #[doc(hidden)]
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }

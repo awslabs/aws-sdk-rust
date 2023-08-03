@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationInput {
     /// <p>The AWS Region assigned to the SIP media application.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The SIP media application's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
     /// <p>The tags assigned to the SIP media application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSipMediaApplicationInput {

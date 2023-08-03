@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociatedAssetsInput {
     /// <p>The ID of the asset to query.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub hierarchy_id: ::std::option::Option<::std::string::String>,
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
@@ -16,14 +14,11 @@ pub struct ListAssociatedAssetsInput {
     /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
     /// </ul>
     /// <p>Default: <code>CHILD</code> </p>
-    #[doc(hidden)]
     pub traversal_direction: ::std::option::Option<crate::types::TraversalDirection>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAssociatedAssetsInput {

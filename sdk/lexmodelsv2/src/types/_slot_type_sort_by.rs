@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeSortBy {
     /// <p>The attribute to use to sort the list of slot types.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::SlotTypeSortAttribute>,
     /// <p>The order to sort the list. You can say ascending or descending.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SlotTypeSortBy {

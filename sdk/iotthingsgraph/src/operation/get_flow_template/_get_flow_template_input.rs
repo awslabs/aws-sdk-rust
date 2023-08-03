@@ -6,10 +6,8 @@ pub struct GetFlowTemplateInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The number of the workflow revision to retrieve.</p>
-    #[doc(hidden)]
     pub revision_number: ::std::option::Option<i64>,
 }
 impl GetFlowTemplateInput {

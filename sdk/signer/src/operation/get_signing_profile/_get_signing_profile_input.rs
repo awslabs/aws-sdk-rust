@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSigningProfileInput {
     /// <p>The name of the target signing profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the profile owner.</p>
-    #[doc(hidden)]
     pub profile_owner: ::std::option::Option<::std::string::String>,
 }
 impl GetSigningProfileInput {

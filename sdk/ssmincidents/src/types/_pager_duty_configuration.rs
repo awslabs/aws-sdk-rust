@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PagerDutyConfiguration {
     /// <p>The name of the PagerDuty configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the PagerDuty service associated with the configuration.</p>
-    #[doc(hidden)]
     pub pager_duty_incident_configuration: ::std::option::Option<crate::types::PagerDutyIncidentConfiguration>,
 }
 impl PagerDutyConfiguration {

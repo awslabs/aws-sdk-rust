@@ -6,87 +6,63 @@
 pub struct PostgreSqlSettings {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
     /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code> </p>
-    #[doc(hidden)]
     pub after_connect_script: ::std::option::Option<::std::string::String>,
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
-    #[doc(hidden)]
     pub capture_ddls: ::std::option::Option<bool>,
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
     /// <p>Example: <code>maxFileSize=512</code> </p>
-    #[doc(hidden)]
     pub max_file_size: ::std::option::Option<i32>,
     /// <p>Database name for the endpoint.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
-    #[doc(hidden)]
     pub ddl_artifacts_schema: ::std::option::Option<::std::string::String>,
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
     /// <p>Example: <code>executeTimeout=100;</code> </p>
-    #[doc(hidden)]
     pub execute_timeout: ::std::option::Option<i32>,
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
-    #[doc(hidden)]
     pub fail_tasks_on_lob_truncation: ::std::option::Option<bool>,
     /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this, it prevents idle logical replication slots from holding onto old WAL logs, which can result in storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
-    #[doc(hidden)]
     pub heartbeat_enable: ::std::option::Option<bool>,
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
-    #[doc(hidden)]
     pub heartbeat_schema: ::std::option::Option<::std::string::String>,
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
-    #[doc(hidden)]
     pub heartbeat_frequency: ::std::option::Option<i32>,
     /// <p>Endpoint connection password.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint TCP port. The default is 5432.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The host name of the endpoint database. </p>
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint connection user name.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance. </p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the plugin to use to create a replication slot.</p>
-    #[doc(hidden)]
     pub plugin_name: ::std::option::Option<crate::types::PluginNameValue>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint connection details.</p>
-    #[doc(hidden)]
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub trim_space_in_char: ::std::option::Option<bool>,
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>.</p>
-    #[doc(hidden)]
     pub map_boolean_as_boolean: ::std::option::Option<bool>,
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
-    #[doc(hidden)]
     pub map_jsonb_as_clob: ::std::option::Option<bool>,
     /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
-    #[doc(hidden)]
     pub map_long_varchar_as: ::std::option::Option<crate::types::LongVarcharMappingType>,
     /// <p>Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use this setting to specify replication behavior for endpoints that require additional configuration, such as Babelfish endpoints.</p>
-    #[doc(hidden)]
     pub database_mode: ::std::option::Option<crate::types::DatabaseMode>,
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
-    #[doc(hidden)]
     pub babelfish_database_name: ::std::option::Option<::std::string::String>,
 }
 impl PostgreSqlSettings {

@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobRun {
     /// <p>The ID of the job run.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the job run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job run's virtual cluster.</p>
-    #[doc(hidden)]
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of job run.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the job run. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::JobRunState>,
     /// <p>The client token used to start a job run.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The execution role ARN of the job run.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The release version of Amazon EMR.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings that are used to override default configuration.</p>
-    #[doc(hidden)]
     pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     /// <p>Parameters of job driver for the job run.</p>
-    #[doc(hidden)]
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The date and time when the job run was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user who created the job run.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the job run has finished.</p>
-    #[doc(hidden)]
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Additional details of the job run state.</p>
-    #[doc(hidden)]
     pub state_details: ::std::option::Option<::std::string::String>,
     /// <p>The reasons why the job run has failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<crate::types::FailureReason>,
     /// <p>The assigned tags of the job run.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration of the retry policy that the job runs on.</p>
-    #[doc(hidden)]
     pub retry_policy_configuration: ::std::option::Option<crate::types::RetryPolicyConfiguration>,
     /// <p>The current status of the retry policy executed on the job.</p>
-    #[doc(hidden)]
     pub retry_policy_execution: ::std::option::Option<crate::types::RetryPolicyExecution>,
 }
 impl JobRun {

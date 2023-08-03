@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyRequest {
     /// <p>An object that specifies information about a property.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::PropertyDefinitionRequest>,
     /// <p>The value of the property.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::DataValue>,
     /// <p>The update type of the update property request.</p>
-    #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::PropertyUpdateType>,
 }
 impl PropertyRequest {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceIamInstanceProfileAssociationInput {
     /// <p>The IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     /// <p>The ID of the existing IAM instance profile association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplaceIamInstanceProfileAssociationInput {

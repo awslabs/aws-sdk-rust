@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionDefinitionInput {
     /// The name of the definition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The ID of the subscription definition.
-    #[doc(hidden)]
     pub subscription_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSubscriptionDefinitionInput {

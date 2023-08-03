@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityHubConfiguration {
     /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
-    #[doc(hidden)]
     pub publish_classification_findings: ::std::option::Option<bool>,
     /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
-    #[doc(hidden)]
     pub publish_policy_findings: ::std::option::Option<bool>,
 }
 impl SecurityHubConfiguration {

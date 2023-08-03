@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
     /// <p>The document type specified in the Veeva document extract flow.</p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
-    #[doc(hidden)]
     pub include_source_files: bool,
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
-    #[doc(hidden)]
     pub include_renditions: bool,
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
-    #[doc(hidden)]
     pub include_all_versions: bool,
 }
 impl VeevaSourceProperties {

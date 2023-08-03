@@ -5,40 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
-    #[doc(hidden)]
     pub ad_hoc_filtering_option: ::std::option::Option<crate::types::AdHocFilteringOption>,
     /// <p>Export to .csv option.</p>
-    #[doc(hidden)]
     pub export_to_csv_option: ::std::option::Option<crate::types::ExportToCsvOption>,
     /// <p>Sheet controls option.</p>
-    #[doc(hidden)]
     pub sheet_controls_option: ::std::option::Option<crate::types::SheetControlsOption>,
     /// <p>The visual publish options of a visual in a dashboard.</p>
     #[deprecated(
         note = "VisualPublishOptions property will reach its end of standard support in a future release. To perform this action, use ExportWithHiddenFields."
     )]
-    #[doc(hidden)]
     pub visual_publish_options: ::std::option::Option<crate::types::DashboardVisualPublishOptions>,
     /// <p>The sheet layout maximization options of a dashbaord.</p>
-    #[doc(hidden)]
     pub sheet_layout_element_maximization_option: ::std::option::Option<crate::types::SheetLayoutElementMaximizationOption>,
     /// <p>The menu options of a visual in a dashboard.</p>
-    #[doc(hidden)]
     pub visual_menu_option: ::std::option::Option<crate::types::VisualMenuOption>,
     /// <p>The axis sort options of a dashboard.</p>
-    #[doc(hidden)]
     pub visual_axis_sort_option: ::std::option::Option<crate::types::VisualAxisSortOption>,
     /// <p>Determines if hidden fields are exported with a dashboard.</p>
-    #[doc(hidden)]
     pub export_with_hidden_fields_option: ::std::option::Option<crate::types::ExportWithHiddenFieldsOption>,
     /// <p>The drill-down options of data points in a dashboard.</p>
-    #[doc(hidden)]
     pub data_point_drill_up_down_option: ::std::option::Option<crate::types::DataPointDrillUpDownOption>,
     /// <p>The data point menu label options of a dashboard.</p>
-    #[doc(hidden)]
     pub data_point_menu_label_option: ::std::option::Option<crate::types::DataPointMenuLabelOption>,
     /// <p>The data point tool tip options of a dashboard.</p>
-    #[doc(hidden)]
     pub data_point_tooltip_option: ::std::option::Option<crate::types::DataPointTooltipOption>,
 }
 impl DashboardPublishOptions {

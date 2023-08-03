@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableFastLaunchOutput {
     /// <p>The image ID that identifies the Windows AMI for which faster launching was enabled.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::FastLaunchResourceType>,
     /// <p>Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
-    #[doc(hidden)]
     pub snapshot_configuration: ::std::option::Option<crate::types::FastLaunchSnapshotConfigurationResponse>,
     /// <p>The launch template that is used when launching Windows instances from pre-provisioned snapshots.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationResponse>,
     /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
-    #[doc(hidden)]
     pub max_parallel_launches: ::std::option::Option<i32>,
     /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of faster launching for the specified Windows AMI.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::FastLaunchStateCode>,
     /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
-    #[doc(hidden)]
     pub state_transition_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
-    #[doc(hidden)]
     pub state_transition_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRegexPatternSetOutput {
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
-    #[doc(hidden)]
     pub regex_pattern_set: ::std::option::Option<crate::types::RegexPatternSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

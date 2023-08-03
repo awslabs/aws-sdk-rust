@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// <p>The Amazon S3 location of the object to delete.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
-    #[doc(hidden)]
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteObjectInput {

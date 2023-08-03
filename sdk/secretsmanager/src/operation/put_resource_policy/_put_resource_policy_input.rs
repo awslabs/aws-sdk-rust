@@ -5,13 +5,10 @@
 pub struct PutResourcePolicyInput {
     /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
-    #[doc(hidden)]
     pub block_public_policy: ::std::option::Option<bool>,
 }
 impl PutResourcePolicyInput {

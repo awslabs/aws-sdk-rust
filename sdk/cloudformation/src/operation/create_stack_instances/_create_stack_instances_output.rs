@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStackInstancesOutput {
     /// <p>The unique identifier for this stack set operation.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

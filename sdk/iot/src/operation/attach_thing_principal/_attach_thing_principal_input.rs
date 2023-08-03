@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachThingPrincipalInput {
     /// <p>The name of the thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
 }
 impl AttachThingPrincipalInput {

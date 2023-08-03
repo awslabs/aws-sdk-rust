@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainOutput {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
-    #[doc(hidden)]
     pub domain_info: ::std::option::Option<crate::types::DomainInfo>,
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::DomainConfiguration>,
     _request_id: Option<String>,
 }

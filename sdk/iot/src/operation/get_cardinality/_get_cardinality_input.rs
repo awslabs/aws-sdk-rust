@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCardinalityInput {
     /// <p>The name of the index to search.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The search query string.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The field to aggregate.</p>
-    #[doc(hidden)]
     pub aggregation_field: ::std::option::Option<::std::string::String>,
     /// <p>The query version.</p>
-    #[doc(hidden)]
     pub query_version: ::std::option::Option<::std::string::String>,
 }
 impl GetCardinalityInput {

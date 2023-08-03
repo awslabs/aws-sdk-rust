@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tag keys for the tags to remove.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsInput {

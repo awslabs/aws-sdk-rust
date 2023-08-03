@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobWorkerExecutorConfiguration {
     /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    #[doc(hidden)]
     pub polling_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    #[doc(hidden)]
     pub polling_service_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl JobWorkerExecutorConfiguration {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateClientVpnTargetNetworkInput {
     /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the target network association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DisassociateClientVpnTargetNetworkInput {

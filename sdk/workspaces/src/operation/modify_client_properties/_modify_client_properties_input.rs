@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClientPropertiesInput {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Amazon WorkSpaces client.</p>
-    #[doc(hidden)]
     pub client_properties: ::std::option::Option<crate::types::ClientProperties>,
 }
 impl ModifyClientPropertiesInput {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The package name of the app that's recording the event.</p>
-    #[doc(hidden)]
     pub app_package_name: ::std::option::Option<::std::string::String>,
     /// <p>The title of the app that's recording the event.</p>
-    #[doc(hidden)]
     pub app_title: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the app that's recording the event.</p>
-    #[doc(hidden)]
     pub app_version_code: ::std::option::Option<::std::string::String>,
     /// <p>One or more custom attributes that are associated with the event.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the SDK that's running on the client device.</p>
-    #[doc(hidden)]
     pub client_sdk_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>One or more custom metrics that are associated with the event.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     /// <p>The name of the SDK that's being used to record the event.</p>
-    #[doc(hidden)]
     pub sdk_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the session in which the event occurred.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<crate::types::Session>,
     /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
 }
 impl Event {

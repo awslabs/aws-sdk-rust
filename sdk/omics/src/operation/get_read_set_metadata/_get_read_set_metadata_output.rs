@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReadSetMetadataOutput {
     /// <p>The read set's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The read set's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The read set's sequence store ID.</p>
-    #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The read set's subject ID.</p>
-    #[doc(hidden)]
     pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p>The read set's sample ID.</p>
-    #[doc(hidden)]
     pub sample_id: ::std::option::Option<::std::string::String>,
     /// <p>The read set's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReadSetStatus>,
     /// <p>The read set's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The read set's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The read set's file type.</p>
-    #[doc(hidden)]
     pub file_type: ::std::option::Option<crate::types::FileType>,
     /// <p>When the read set was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The read set's sequence information.</p>
-    #[doc(hidden)]
     pub sequence_information: ::std::option::Option<crate::types::SequenceInformation>,
     /// <p>The read set's genome reference ARN.</p>
-    #[doc(hidden)]
     pub reference_arn: ::std::option::Option<::std::string::String>,
     /// <p>The read set's files.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<crate::types::ReadSetFiles>,
     /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

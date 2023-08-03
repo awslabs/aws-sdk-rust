@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOnPremisesInstanceInput {
     /// <p> The name of the on-premises instance about which to get information. </p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
 impl GetOnPremisesInstanceInput {

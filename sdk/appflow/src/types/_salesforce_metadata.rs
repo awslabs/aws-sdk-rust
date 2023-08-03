@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceMetadata {
     /// <p> The desired authorization scope for the Salesforce account. </p>
-    #[doc(hidden)]
     pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
-    #[doc(hidden)]
     pub data_transfer_apis: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceDataTransferApi>>,
     /// <p>The OAuth 2.0 grant types that Amazon AppFlow can use when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p>
     /// <dl>
@@ -31,7 +29,6 @@ pub struct SalesforceMetadata {
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub oauth2_grant_types_supported: ::std::option::Option<::std::vec::Vec<crate::types::OAuth2GrantType>>,
 }
 impl SalesforceMetadata {

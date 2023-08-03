@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointConnectionNotificationsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the notifications.</p>
-    #[doc(hidden)]
     pub connection_notification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteVpcEndpointConnectionNotificationsInput {

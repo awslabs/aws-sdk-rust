@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArrayPropertiesDetail {
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
-    #[doc(hidden)]
     pub status_summary: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The job index within the array that's associated with this job. This parameter is returned for array job children.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
 }
 impl ArrayPropertiesDetail {

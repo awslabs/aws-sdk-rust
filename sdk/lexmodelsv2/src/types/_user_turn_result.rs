@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTurnResult {
     /// <p>Contains information about the user messages in the turn in the input.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::UserTurnInputSpecification>,
     /// <p>Contains information about the expected output for the user turn.</p>
-    #[doc(hidden)]
     pub expected_output: ::std::option::Option<crate::types::UserTurnOutputSpecification>,
     /// <p>Contains information about the actual output for the user turn.</p>
-    #[doc(hidden)]
     pub actual_output: ::std::option::Option<crate::types::UserTurnOutputSpecification>,
     /// <p>Details about an error in an execution of a test set.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ExecutionErrorDetails>,
     /// <p>Specifies whether the expected and actual outputs match or not, or if there is an error in execution.</p>
-    #[doc(hidden)]
     pub end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     /// <p>Specifies whether the expected and actual intents match or not.</p>
-    #[doc(hidden)]
     pub intent_match_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     /// <p>Specifies whether the expected and actual slots match or not.</p>
-    #[doc(hidden)]
     pub slot_match_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     /// <p>Specifies whether the expected and actual speech transcriptions match or not, or if there is an error in execution.</p>
-    #[doc(hidden)]
     pub speech_transcription_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     /// <p>Contains information about the results related to the conversation associated with the user turn.</p>
-    #[doc(hidden)]
     pub conversation_level_result: ::std::option::Option<crate::types::ConversationLevelResultDetail>,
 }
 impl UserTurnResult {

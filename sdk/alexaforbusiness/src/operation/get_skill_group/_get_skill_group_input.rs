@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSkillGroupInput {
     /// <p>The ARN of the skill group for which to get details. Required.</p>
-    #[doc(hidden)]
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSkillGroupInput {

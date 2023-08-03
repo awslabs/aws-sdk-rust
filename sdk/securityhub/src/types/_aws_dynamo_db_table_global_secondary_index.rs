@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     /// <p>Whether the index is currently backfilling.</p>
-    #[doc(hidden)]
     pub backfilling: bool,
     /// <p>The ARN of the index.</p>
-    #[doc(hidden)]
     pub index_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The total size in bytes of the index.</p>
-    #[doc(hidden)]
     pub index_size_bytes: i64,
     /// <p>The current status of the index.</p>
     /// <ul>
@@ -23,19 +19,14 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     /// <li> <p> <code>DELETING</code> </p> </li>
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub index_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of items in the index.</p>
-    #[doc(hidden)]
     pub item_count: i32,
     /// <p>The key schema for the index.</p>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     /// <p>Attributes that are copied from the table into an index.</p>
-    #[doc(hidden)]
     pub projection: ::std::option::Option<crate::types::AwsDynamoDbTableProjection>,
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
 }
 impl AwsDynamoDbTableGlobalSecondaryIndex {

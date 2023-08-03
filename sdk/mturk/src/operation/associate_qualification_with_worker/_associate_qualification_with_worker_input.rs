@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateQualificationWithWorkerInput {
     /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
-    #[doc(hidden)]
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the Qualification to assign.</p>
-    #[doc(hidden)]
     pub integer_value: ::std::option::Option<i32>,
     /// <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
-    #[doc(hidden)]
     pub send_notification: ::std::option::Option<bool>,
 }
 impl AssociateQualificationWithWorkerInput {

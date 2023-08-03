@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessEndpointStatus {
     /// <p>The status code of the Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::VerifiedAccessEndpointStatusCode>,
     /// <p>The status message of the Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessEndpointStatus {

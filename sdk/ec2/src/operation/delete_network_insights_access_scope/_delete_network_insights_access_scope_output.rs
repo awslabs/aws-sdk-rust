@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsAccessScopeOutput {
     /// <p>The ID of the Network Access Scope.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

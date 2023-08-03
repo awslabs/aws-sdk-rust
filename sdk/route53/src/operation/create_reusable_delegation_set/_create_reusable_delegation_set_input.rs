@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReusableDelegationSetInput {
     /// <p>A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateReusableDelegationSetInput {

@@ -5,79 +5,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignResponse {
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
-    #[doc(hidden)]
     pub additional_treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentResource>>,
     /// <p>The unique identifier for the application that the campaign applies to.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date, in ISO 8601 format, when the campaign was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The delivery configuration settings for sending the campaign through a custom channel.</p>
-    #[doc(hidden)]
     pub custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     /// <p>The current status of the campaign's default treatment. This value exists only for campaigns that have more than one treatment.</p>
-    #[doc(hidden)]
     pub default_state: ::std::option::Option<crate::types::CampaignState>,
     /// <p>The custom description of the campaign.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
-    #[doc(hidden)]
     pub holdout_percent: ::std::option::Option<i32>,
     /// <p>The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
-    #[doc(hidden)]
     pub hook: ::std::option::Option<crate::types::CampaignHook>,
     /// <p>The unique identifier for the campaign.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
-    #[doc(hidden)]
     pub is_paused: ::std::option::Option<bool>,
     /// <p>The date, in ISO 8601 format, when the campaign was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The messaging limits for the campaign.</p>
-    #[doc(hidden)]
     pub limits: ::std::option::Option<crate::types::CampaignLimits>,
     /// <p>The message configuration settings for the campaign.</p>
-    #[doc(hidden)]
     pub message_configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     /// <p>The name of the campaign.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The schedule settings for the campaign.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::Schedule>,
     /// <p>The unique identifier for the segment that's associated with the campaign.</p>
-    #[doc(hidden)]
     pub segment_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the segment that's associated with the campaign.</p>
-    #[doc(hidden)]
     pub segment_version: ::std::option::Option<i32>,
     /// <p>The current status of the campaign.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CampaignState>,
     /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The message template that’s used for the campaign.</p>
-    #[doc(hidden)]
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
     /// <p>The custom description of the default treatment for the campaign.</p>
-    #[doc(hidden)]
     pub treatment_description: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
-    #[doc(hidden)]
     pub treatment_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the campaign.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
 }
 impl CampaignResponse {

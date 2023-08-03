@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationOutput {
     /// <p>Information about the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     _request_id: Option<String>,
 }

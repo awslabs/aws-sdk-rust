@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeInferenceRecommendation {
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The recommended instance type for Real-Time Inference.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The recommended environment variables to set in the model container for Real-Time Inference.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RealTimeInferenceRecommendation {

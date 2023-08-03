@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResumeGameServerGroupOutput {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
-    #[doc(hidden)]
     pub game_server_group: ::std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
 }

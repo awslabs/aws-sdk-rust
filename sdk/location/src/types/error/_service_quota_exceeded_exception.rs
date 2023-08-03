@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     /// <p>A message with the reason for the service quota exceeded exception error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

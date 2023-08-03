@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableVpcAssociationOutput {
     /// <p>Information about the association.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_vpc_association: ::std::option::Option<crate::types::LocalGatewayRouteTableVpcAssociation>,
     _request_id: Option<String>,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PricingPlanListElement {
     /// <p>The name of a pricing plan.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The pricing plan Amazon Resource Names (ARN). This can be used to uniquely identify a pricing plan.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The pricing plan description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The pricing rules count that's currently associated with this pricing plan list element.</p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p>The time when the pricing plan was created.</p>
-    #[doc(hidden)]
     pub creation_time: i64,
     /// <p>The most recent time when the pricing plan was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
 }
 impl PricingPlanListElement {

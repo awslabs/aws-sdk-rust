@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoveryData {
     /// <p>List of public IP addresses to associate with agent.</p>
-    #[doc(hidden)]
     pub public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of private IP addresses to associate with agent.</p>
-    #[doc(hidden)]
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of capabilities to associate with agent.</p>
-    #[doc(hidden)]
     pub capability_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DiscoveryData {

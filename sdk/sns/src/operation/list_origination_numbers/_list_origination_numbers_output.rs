@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOriginationNumbersOutput {
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListOriginationNumbers</code> operation if additional pages of records are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the calling account's verified and pending origination numbers.</p>
-    #[doc(hidden)]
     pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>>,
     _request_id: Option<String>,
 }

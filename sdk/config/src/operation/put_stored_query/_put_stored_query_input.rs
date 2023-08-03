@@ -6,10 +6,8 @@ pub struct PutStoredQueryInput {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub stored_query: ::std::option::Option<crate::types::StoredQuery>,
     /// <p>A list of <code>Tags</code> object.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutStoredQueryInput {

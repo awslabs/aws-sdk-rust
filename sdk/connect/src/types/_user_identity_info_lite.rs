@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserIdentityInfoLite {
     /// <p>The user's first name.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The user's last name.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentityInfoLite {

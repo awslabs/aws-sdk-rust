@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFargateProfileOutput {
     /// <p>The full description of your Fargate profile.</p>
-    #[doc(hidden)]
     pub fargate_profile: ::std::option::Option<crate::types::FargateProfile>,
     _request_id: Option<String>,
 }

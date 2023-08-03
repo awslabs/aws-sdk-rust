@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRevealConfigurationInput {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::RevealConfiguration>,
 }
 impl UpdateRevealConfigurationInput {

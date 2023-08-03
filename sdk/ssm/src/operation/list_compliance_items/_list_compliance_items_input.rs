@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComplianceItemsInput {
     /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>>,
     /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListComplianceItemsInput {

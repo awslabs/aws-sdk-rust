@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouterType {
     /// <p>The vendor for the virtual interface's router.</p>
-    #[doc(hidden)]
     pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The virtual interface router platform.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The router software. </p>
-    #[doc(hidden)]
     pub software: ::std::option::Option<::std::string::String>,
     /// <p>The template for the virtual interface's router.</p>
-    #[doc(hidden)]
     pub xslt_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) template for the virtual interface's router.</p>
-    #[doc(hidden)]
     pub xslt_template_name_for_mac_sec: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
-    #[doc(hidden)]
     pub router_type_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RouterType {

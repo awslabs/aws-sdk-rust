@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFPorts {
     /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
-    #[doc(hidden)]
     pub positioning: ::std::option::Option<crate::types::Positioning>,
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
 }
 impl UpdateFPorts {

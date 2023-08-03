@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The name of a snapshot. For an automatic snapshot, the name is system-generated. For a manual snapshot, this is the user-provided name.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the source replication group.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the source replication group.</p>
-    #[doc(hidden)]
     pub replication_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied identifier of the source cluster.</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the snapshot. Valid values: <code>creating</code> | <code>available</code> | <code>restoring</code> | <code>copying</code> | <code>deleting</code>.</p>
-    #[doc(hidden)]
     pub snapshot_status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the snapshot is from an automatic backup (<code>automated</code>) or was created manually (<code>manual</code>).</p>
-    #[doc(hidden)]
     pub snapshot_source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the compute and memory capacity node type for the source cluster.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -51,26 +45,19 @@ pub struct Snapshot {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by the source cluster.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the cache engine version that is used by the source cluster.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of cache nodes in the source cluster.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
-    #[doc(hidden)]
     pub num_cache_nodes: ::std::option::Option<i32>,
     /// <p>The name of the Availability Zone in which the source cluster is located.</p>
-    #[doc(hidden)]
     pub preferred_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the preferred outpost.</p>
-    #[doc(hidden)]
     pub preferred_outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the source cluster was created.</p>
-    #[doc(hidden)]
     pub cache_cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -84,51 +71,36 @@ pub struct Snapshot {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the topic used by the source cluster for publishing notifications.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port number used by each cache nodes in the source cluster.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The cache parameter group that is associated with the source cluster.</p>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache subnet group associated with the source cluster.</p>
-    #[doc(hidden)]
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group for the source cluster.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
     /// <p>For an automatic snapshot, the number of days for which ElastiCache retains the snapshot before deleting it.</p>
     /// <p>For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code> for the source cluster when the snapshot was created. This field is otherwise ignored: Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code> operation. </p>
     /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time range during which ElastiCache takes daily snapshots of the source cluster.</p>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The number of node groups (shards) in this snapshot. When restoring from a snapshot, the number of node groups (shards) in the snapshot and in the restored replication group must be the same.</p>
-    #[doc(hidden)]
     pub num_node_groups: ::std::option::Option<i32>,
     /// <p>Indicates the status of automatic failover for the source Redis replication group.</p>
-    #[doc(hidden)]
     pub automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
     /// <p>A list of the cache nodes in the source cluster.</p>
-    #[doc(hidden)]
     pub node_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::NodeSnapshot>>,
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
-    #[doc(hidden)]
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
 }
 impl Snapshot {

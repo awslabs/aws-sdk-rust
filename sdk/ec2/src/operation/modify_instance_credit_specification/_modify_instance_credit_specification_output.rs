@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceCreditSpecificationOutput {
     /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
-    #[doc(hidden)]
     pub successful_instance_credit_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulInstanceCreditSpecificationItem>>,
     /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
-    #[doc(hidden)]
     pub unsuccessful_instance_credit_specifications:
         ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulInstanceCreditSpecificationItem>>,
     _request_id: Option<String>,

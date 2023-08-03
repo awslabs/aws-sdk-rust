@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateConfigurationItemsToApplicationInput {
     /// <p>The configuration ID of an application with which items are to be associated.</p>
-    #[doc(hidden)]
     pub application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    #[doc(hidden)]
     pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociateConfigurationItemsToApplicationInput {

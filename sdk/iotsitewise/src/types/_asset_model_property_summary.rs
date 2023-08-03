@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetModelPropertySummary {
     /// <p>The ID of the property.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the property.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the property.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    #[doc(hidden)]
     pub data_type_spec: ::std::option::Option<::std::string::String>,
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PropertyType>,
     /// <p> The ID of the composite model that contains the asset model property. </p>
-    #[doc(hidden)]
     pub asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelPropertySummary {

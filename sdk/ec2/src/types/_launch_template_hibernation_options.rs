@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateHibernationOptions {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
-    #[doc(hidden)]
     pub configured: ::std::option::Option<bool>,
 }
 impl LaunchTemplateHibernationOptions {

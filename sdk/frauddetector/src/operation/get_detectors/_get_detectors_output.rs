@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDetectorsOutput {
     /// <p>The detectors.</p>
-    #[doc(hidden)]
     pub detectors: ::std::option::Option<::std::vec::Vec<crate::types::Detector>>,
     /// <p>The next page token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

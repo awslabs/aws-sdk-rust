@@ -6,51 +6,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbProxy {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the proxy.</p>
-    #[doc(hidden)]
     pub db_proxy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of this proxy. A status of <code>available</code> means the proxy is ready to handle requests. Other values indicate that you must wait for the proxy to be ready, or take some action to resolve an issue.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DbProxyStatus>,
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
-    #[doc(hidden)]
     pub engine_family: ::std::option::Option<::std::string::String>,
     /// <p>Provides the VPC ID of the DB proxy.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    #[doc(hidden)]
     pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
-    #[doc(hidden)]
     pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Transport Layer Security (TLS) encryption is required for connections to the proxy.</p>
-    #[doc(hidden)]
     pub require_tls: bool,
     /// <p>The number of seconds a connection to the proxy can have no activity before the proxy drops the client connection. The proxy keeps the underlying database connection open and puts it back into the connection pool for reuse by later connection requests.</p>
     /// <p>Default: 1800 (30 minutes)</p>
     /// <p>Constraints: 1 to 28,800</p>
-    #[doc(hidden)]
     pub idle_client_timeout: i32,
     /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
-    #[doc(hidden)]
     pub debug_logging: bool,
     /// <p>The date and time when the proxy was first created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the proxy was last updated.</p>
-    #[doc(hidden)]
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DbProxy {

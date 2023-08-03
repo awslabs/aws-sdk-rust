@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Option {
     /// <p>Specifies the value of the option.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the label of the option.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the description of the option.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl Option {

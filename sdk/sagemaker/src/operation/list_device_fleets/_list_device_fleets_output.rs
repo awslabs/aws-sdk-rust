@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeviceFleetsOutput {
     /// <p>Summary of the device fleet.</p>
-    #[doc(hidden)]
     pub device_fleet_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFleetSummary>>,
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

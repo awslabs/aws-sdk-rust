@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteSqlOutput {
     /// <p>The results of the SQL statement or statements.</p>
-    #[doc(hidden)]
     pub sql_statement_results: ::std::option::Option<::std::vec::Vec<crate::types::SqlStatementResult>>,
     _request_id: Option<String>,
 }

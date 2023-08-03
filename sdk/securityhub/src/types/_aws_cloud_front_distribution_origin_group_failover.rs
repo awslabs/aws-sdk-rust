@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginGroupFailover {
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
-    #[doc(hidden)]
     pub status_codes: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>,
 }
 impl AwsCloudFrontDistributionOriginGroupFailover {

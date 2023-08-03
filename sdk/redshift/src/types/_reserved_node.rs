@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedNode {
     /// <p>The unique identifier for the reservation.</p>
-    #[doc(hidden)]
     pub reserved_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the reserved node offering.</p>
-    #[doc(hidden)]
     pub reserved_node_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The node type of the reserved node.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the node reservation in seconds.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
-    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
-    #[doc(hidden)]
     pub usage_price: f64,
     /// <p>The currency code for the reserved cluster.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of reserved compute nodes.</p>
-    #[doc(hidden)]
     pub node_count: i32,
     /// <p>The state of the reserved compute node.</p>
     /// <p>Possible Values:</p>
@@ -40,16 +31,12 @@ pub struct ReservedNode {
     /// <li> <p>retired-The reserved node is no longer available. </p> </li>
     /// <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The anticipated utilization of the reserved node, as defined in the reserved node offering.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>The recurring charges for the reserved node.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     /// <p></p>
-    #[doc(hidden)]
     pub reserved_node_offering_type: ::std::option::Option<crate::types::ReservedNodeOfferingType>,
 }
 impl ReservedNode {

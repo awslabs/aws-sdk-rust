@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRuleInput {
     /// <p>A rule.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::Rule>,
 }
 impl DeleteRuleInput {

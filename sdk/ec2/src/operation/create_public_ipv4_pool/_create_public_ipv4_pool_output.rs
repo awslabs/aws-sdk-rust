@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePublicIpv4PoolOutput {
     /// <p>The ID of the public IPv4 pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

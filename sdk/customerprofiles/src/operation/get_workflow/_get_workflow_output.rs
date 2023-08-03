@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>Status of workflow execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Workflow error messages during execution (if any).</p>
-    #[doc(hidden)]
     pub error_description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that represents when workflow execution started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that represents when workflow execution last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Attributes provided for workflow execution.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<crate::types::WorkflowAttributes>,
     /// <p>Workflow specific execution metrics.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::WorkflowMetrics>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrailInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetTrailInput {

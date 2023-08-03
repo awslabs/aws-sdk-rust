@@ -8,10 +8,8 @@ pub struct CloudFrontOriginAccessIdentityConfig {
     /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.</p>
     /// <p>If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white space), the response includes the same information returned to the original request.</p>
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>A comment to describe the origin access identity. The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl CloudFrontOriginAccessIdentityConfig {

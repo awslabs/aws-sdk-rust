@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinInstruction {
     /// <p>The operand on the left side of a join.</p>
-    #[doc(hidden)]
     pub left_operand: ::std::option::Option<::std::string::String>,
     /// <p>The operand on the right side of a join.</p>
-    #[doc(hidden)]
     pub right_operand: ::std::option::Option<::std::string::String>,
     /// <p>Join key properties of the left operand.</p>
-    #[doc(hidden)]
     pub left_join_key_properties: ::std::option::Option<crate::types::JoinKeyProperties>,
     /// <p>Join key properties of the right operand.</p>
-    #[doc(hidden)]
     pub right_join_key_properties: ::std::option::Option<crate::types::JoinKeyProperties>,
     /// <p>The type of join that it is.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::JoinType>,
     /// <p>The join instructions provided in the <code>ON</code> clause of a join.</p>
-    #[doc(hidden)]
     pub on_clause: ::std::option::Option<::std::string::String>,
 }
 impl JoinInstruction {

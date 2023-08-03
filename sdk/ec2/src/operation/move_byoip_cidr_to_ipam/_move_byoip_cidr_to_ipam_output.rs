@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MoveByoipCidrToIpamOutput {
     /// <p>The BYOIP CIDR.</p>
-    #[doc(hidden)]
     pub byoip_cidr: ::std::option::Option<crate::types::ByoipCidr>,
     _request_id: Option<String>,
 }

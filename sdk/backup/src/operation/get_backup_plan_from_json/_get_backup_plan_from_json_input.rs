@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackupPlanFromJsonInput {
     /// <p>A customer-supplied backup plan document in JSON format.</p>
-    #[doc(hidden)]
     pub backup_plan_template_json: ::std::option::Option<::std::string::String>,
 }
 impl GetBackupPlanFromJsonInput {

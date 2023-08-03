@@ -5,29 +5,22 @@
 pub struct UpdateFirewallPolicyInput {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    #[doc(hidden)]
     pub update_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated firewall policy to use for the firewall. </p>
-    #[doc(hidden)]
     pub firewall_policy: ::std::option::Option<crate::types::FirewallPolicy>,
     /// <p>A description of the firewall policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateFirewallPolicyInput {

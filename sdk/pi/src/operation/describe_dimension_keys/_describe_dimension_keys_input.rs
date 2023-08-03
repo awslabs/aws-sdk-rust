@@ -8,19 +8,15 @@ pub struct DescribeDimensionKeysInput {
     /// <li> <p> <code>RDS</code> </p> </li>
     /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -29,7 +25,6 @@ pub struct DescribeDimensionKeysInput {
     /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are: </p>
     /// <ul>
@@ -40,29 +35,22 @@ pub struct DescribeDimensionKeysInput {
     /// <li> <p> <code>86400</code> (twenty-four hours)</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response. </p>
-    #[doc(hidden)]
     pub period_in_seconds: ::std::option::Option<i32>,
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
-    #[doc(hidden)]
     pub group_by: ::std::option::Option<crate::types::DimensionGroup>,
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-    #[doc(hidden)]
     pub additional_metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
-    #[doc(hidden)]
     pub partition_by: ::std::option::Option<crate::types::DimensionGroup>,
     /// <p>One or more filters to apply in the request. Restrictions:</p>
     /// <ul>
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDimensionKeysInput {

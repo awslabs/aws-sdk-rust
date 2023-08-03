@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment that you want to see the details of.</p>
-    #[doc(hidden)]
     pub experiment: ::std::option::Option<::std::string::String>,
 }
 impl GetExperimentInput {

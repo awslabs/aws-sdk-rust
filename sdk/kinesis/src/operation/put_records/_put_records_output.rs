@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordsOutput {
     /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
-    #[doc(hidden)]
     pub failed_record_count: ::std::option::Option<i32>,
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>>,
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Do not encrypt the records.</p> </li>
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchScheduleActionDeleteRequest {
     /// A list of schedule actions to delete.
-    #[doc(hidden)]
     pub action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchScheduleActionDeleteRequest {

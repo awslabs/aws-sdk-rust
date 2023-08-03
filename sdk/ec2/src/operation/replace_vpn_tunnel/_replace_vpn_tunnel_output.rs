@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceVpnTunnelOutput {
     /// <p>Confirmation of replace tunnel operation.</p>
-    #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

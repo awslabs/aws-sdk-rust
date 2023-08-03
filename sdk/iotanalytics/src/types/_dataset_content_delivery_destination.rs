@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetContentDeliveryDestination {
     /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
-    #[doc(hidden)]
     pub iot_events_destination_configuration: ::std::option::Option<crate::types::IotEventsDestinationConfiguration>,
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_destination_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
 impl DatasetContentDeliveryDestination {

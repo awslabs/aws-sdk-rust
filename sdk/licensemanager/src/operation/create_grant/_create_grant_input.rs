@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGrantInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Grant name.</p>
-    #[doc(hidden)]
     pub grant_name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
     /// <ul>
@@ -22,13 +19,10 @@ pub struct CreateGrantInput {
     /// <ul>
     /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Home Region of the grant.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Allowed operations for the grant.</p>
-    #[doc(hidden)]
     pub allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
 }
 impl CreateGrantInput {

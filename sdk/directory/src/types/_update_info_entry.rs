@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInfoEntry {
     /// <p> The name of the Region. </p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p> The status of the update performed on the directory. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UpdateStatus>,
     /// <p> The reason for the current status of the update type activity. </p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p> This specifies if the update was initiated by the customer or by the service team. </p>
-    #[doc(hidden)]
     pub initiated_by: ::std::option::Option<::std::string::String>,
     /// <p> The new value of the target setting. </p>
-    #[doc(hidden)]
     pub new_value: ::std::option::Option<crate::types::UpdateValue>,
     /// <p> The old value of the target setting. </p>
-    #[doc(hidden)]
     pub previous_value: ::std::option::Option<crate::types::UpdateValue>,
     /// <p> The start time of the <code>UpdateDirectorySetup</code> for the particular type. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The last updated date and time of a particular directory setting. </p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UpdateInfoEntry {

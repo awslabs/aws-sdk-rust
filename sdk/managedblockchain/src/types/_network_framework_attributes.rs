@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub fabric: ::std::option::Option<crate::types::NetworkFabricAttributes>,
     /// <p>Attributes of an Ethereum network for Managed Blockchain resources participating in an Ethereum network. </p>
-    #[doc(hidden)]
     pub ethereum: ::std::option::Option<crate::types::NetworkEthereumAttributes>,
 }
 impl NetworkFrameworkAttributes {

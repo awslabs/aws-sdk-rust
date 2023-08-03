@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelExplainabilityJobDefinitionInput {
     /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The baseline configuration for a model explainability job.</p>
-    #[doc(hidden)]
     pub model_explainability_baseline_config: ::std::option::Option<crate::types::ModelExplainabilityBaselineConfig>,
     /// <p>Configures the model explainability job to run a specified Docker container image.</p>
-    #[doc(hidden)]
     pub model_explainability_app_specification: ::std::option::Option<crate::types::ModelExplainabilityAppSpecification>,
     /// <p>Inputs for the model explainability job.</p>
-    #[doc(hidden)]
     pub model_explainability_job_input: ::std::option::Option<crate::types::ModelExplainabilityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
-    #[doc(hidden)]
     pub model_explainability_job_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    #[doc(hidden)]
     pub job_resources: ::std::option::Option<crate::types::MonitoringResources>,
     /// <p>Networking options for a model explainability job.</p>
-    #[doc(hidden)]
     pub network_config: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelExplainabilityJobDefinitionInput {

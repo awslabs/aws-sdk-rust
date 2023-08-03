@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RiskExceptionConfigurationType {
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
-    #[doc(hidden)]
     pub blocked_ip_range_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
-    #[doc(hidden)]
     pub skipped_ip_range_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RiskExceptionConfigurationType {

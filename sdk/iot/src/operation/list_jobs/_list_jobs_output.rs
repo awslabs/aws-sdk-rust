@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p>A list of jobs.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

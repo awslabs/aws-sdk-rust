@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelSpecification {
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the channel.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the channel is required by the algorithm.</p>
-    #[doc(hidden)]
     pub is_required: bool,
     /// <p>The supported MIME types for the data.</p>
-    #[doc(hidden)]
     pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The allowed compression types, if data compression is used.</p>
-    #[doc(hidden)]
     pub supported_compression_types: ::std::option::Option<::std::vec::Vec<crate::types::CompressionType>>,
     /// <p>The allowed input mode, either FILE or PIPE.</p>
     /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p>
     /// <p>In PIPE mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
-    #[doc(hidden)]
     pub supported_input_modes: ::std::option::Option<::std::vec::Vec<crate::types::TrainingInputMode>>,
 }
 impl ChannelSpecification {

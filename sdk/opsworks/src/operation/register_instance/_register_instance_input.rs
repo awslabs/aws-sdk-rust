@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterInstanceInput {
     /// <p>The ID of the stack that the instance is to be registered with.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance's hostname.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The instance's public IP address.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The instance's private IP address.</p>
-    #[doc(hidden)]
     pub private_ip: ::std::option::Option<::std::string::String>,
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
-    #[doc(hidden)]
     pub rsa_public_key: ::std::option::Option<::std::string::String>,
     /// <p>The instances public RSA key fingerprint.</p>
-    #[doc(hidden)]
     pub rsa_public_key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
-    #[doc(hidden)]
     pub instance_identity: ::std::option::Option<crate::types::InstanceIdentity>,
 }
 impl RegisterInstanceInput {

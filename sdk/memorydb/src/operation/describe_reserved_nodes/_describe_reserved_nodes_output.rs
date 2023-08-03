@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedNodesOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
-    #[doc(hidden)]
     pub reserved_nodes: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNode>>,
     _request_id: Option<String>,
 }

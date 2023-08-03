@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResolverDnssecConfigOutput {
     /// <p>The information about a configuration for DNSSEC validation.</p>
-    #[doc(hidden)]
     pub resolver_dnssec_config: ::std::option::Option<crate::types::ResolverDnssecConfig>,
     _request_id: Option<String>,
 }

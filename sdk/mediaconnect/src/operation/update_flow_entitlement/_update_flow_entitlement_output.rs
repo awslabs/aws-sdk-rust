@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowEntitlementOutput {
     /// The new configuration of the entitlement that you updated.
-    #[doc(hidden)]
     pub entitlement: ::std::option::Option<crate::types::Entitlement>,
     /// The ARN of the flow that this entitlement was granted on.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetUserPoolMfaConfigInput {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The SMS text message MFA configuration.</p>
-    #[doc(hidden)]
     pub sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
     /// <p>The software token MFA configuration.</p>
-    #[doc(hidden)]
     pub software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct SetUserPoolMfaConfigInput {
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
 }
 impl SetUserPoolMfaConfigInput {

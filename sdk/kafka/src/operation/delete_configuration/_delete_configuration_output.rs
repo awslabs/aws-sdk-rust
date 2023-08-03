@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ConfigurationState>,
     _request_id: Option<String>,
 }

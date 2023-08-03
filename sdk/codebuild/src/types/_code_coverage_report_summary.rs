@@ -7,22 +7,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeCoverageReportSummary {
     /// <p>The percentage of lines that are covered by your tests.</p>
-    #[doc(hidden)]
     pub line_coverage_percentage: ::std::option::Option<f64>,
     /// <p>The number of lines that are covered by your tests.</p>
-    #[doc(hidden)]
     pub lines_covered: ::std::option::Option<i32>,
     /// <p>The number of lines that are not covered by your tests.</p>
-    #[doc(hidden)]
     pub lines_missed: ::std::option::Option<i32>,
     /// <p>The percentage of branches that are covered by your tests.</p>
-    #[doc(hidden)]
     pub branch_coverage_percentage: ::std::option::Option<f64>,
     /// <p>The number of conditional branches that are covered by your tests.</p>
-    #[doc(hidden)]
     pub branches_covered: ::std::option::Option<i32>,
     /// <p>The number of conditional branches that are not covered by your tests.</p>
-    #[doc(hidden)]
     pub branches_missed: ::std::option::Option<i32>,
 }
 impl CodeCoverageReportSummary {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDescription {
     /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application. </p>
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
     /// <p>The in-application name prefix.</p>
-    #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Returns the in-application stream names that are mapped to the stream source. </p>
-    #[doc(hidden)]
     pub in_app_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run. </p>
-    #[doc(hidden)]
     pub input_processing_configuration_description: ::std::option::Option<crate::types::InputProcessingConfigurationDescription>,
     /// <p>If a Kinesis data stream is configured as a streaming source, provides the Kinesis data stream's Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub kinesis_streams_input_description: ::std::option::Option<crate::types::KinesisStreamsInputDescription>,
     /// <p>If a Kinesis Data Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN. </p>
-    #[doc(hidden)]
     pub kinesis_firehose_input_description: ::std::option::Option<crate::types::KinesisFirehoseInputDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created. </p>
-    #[doc(hidden)]
     pub input_schema: ::std::option::Option<crate::types::SourceSchema>,
     /// <p>Describes the configured parallelism (number of in-application streams mapped to the streaming source). </p>
-    #[doc(hidden)]
     pub input_parallelism: ::std::option::Option<crate::types::InputParallelism>,
     /// <p>The point at which the application is configured to read from the input stream.</p>
-    #[doc(hidden)]
     pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl InputDescription {

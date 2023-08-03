@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportedOs {
     /// <p>The operating system family.</p>
-    #[doc(hidden)]
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The operating system name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The operating system version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl ReportedOs {

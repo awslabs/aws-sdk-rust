@@ -9,22 +9,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheSubnetGroup {
     /// <p>The name of the cache subnet group.</p>
-    #[doc(hidden)]
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cache subnet group.</p>
-    #[doc(hidden)]
     pub cache_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the cache subnet group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnets associated with the cache subnet group.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
 }
 impl CacheSubnetGroup {

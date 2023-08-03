@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTriggersOutput {
     /// <p>A list of triggers for the specified job.</p>
-    #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     /// <p>A continuation token, if not all the requested triggers have yet been returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

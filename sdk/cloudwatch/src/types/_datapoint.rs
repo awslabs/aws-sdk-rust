@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Datapoint {
     /// <p>The time stamp used for the data point.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of metric values that contributed to the aggregate value of this data point.</p>
-    #[doc(hidden)]
     pub sample_count: ::std::option::Option<f64>,
     /// <p>The average of the metric values that correspond to the data point.</p>
-    #[doc(hidden)]
     pub average: ::std::option::Option<f64>,
     /// <p>The sum of the metric values for the data point.</p>
-    #[doc(hidden)]
     pub sum: ::std::option::Option<f64>,
     /// <p>The minimum metric value for the data point.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<f64>,
     /// <p>The maximum metric value for the data point.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<f64>,
     /// <p>The standard unit for the data point.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::StandardUnit>,
     /// <p>The percentile statistic for the data point.</p>
-    #[doc(hidden)]
     pub extended_statistics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl Datapoint {

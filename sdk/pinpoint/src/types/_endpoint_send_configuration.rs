@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointSendConfiguration {
     /// <p>The body of the message. If specified, this value overrides the default message body.</p>
-    #[doc(hidden)]
     pub body_override: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
-    #[doc(hidden)]
     pub raw_content: ::std::option::Option<::std::string::String>,
     /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
-    #[doc(hidden)]
     pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
-    #[doc(hidden)]
     pub title_override: ::std::option::Option<::std::string::String>,
 }
 impl EndpointSendConfiguration {

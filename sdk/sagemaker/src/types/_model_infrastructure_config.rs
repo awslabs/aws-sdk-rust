@@ -8,10 +8,8 @@ pub struct ModelInfrastructureConfig {
     /// <ul>
     /// <li> <p> <code>RealTime</code>: Deploy to real-time inference.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub infrastructure_type: ::std::option::Option<crate::types::ModelInfrastructureType>,
     /// <p>The infrastructure configuration for deploying the model to real-time inference.</p>
-    #[doc(hidden)]
     pub real_time_inference_config: ::std::option::Option<crate::types::RealTimeInferenceConfig>,
 }
 impl ModelInfrastructureConfig {

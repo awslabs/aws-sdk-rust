@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProfileInput {
     /// <p>The unique identifier of the profile.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProfileInput {

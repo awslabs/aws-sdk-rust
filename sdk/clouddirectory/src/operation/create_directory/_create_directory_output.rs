@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDirectoryOutput {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>Directory</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The root object node of the created directory.</p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub applied_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

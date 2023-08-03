@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
-    #[doc(hidden)]
     pub policy_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescription>>,
     _request_id: Option<String>,
 }

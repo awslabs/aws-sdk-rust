@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHypervisorOutput {
     /// <p>Details about the requested hypervisor.</p>
-    #[doc(hidden)]
     pub hypervisor: ::std::option::Option<crate::types::HypervisorDetails>,
     _request_id: Option<String>,
 }

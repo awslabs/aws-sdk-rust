@@ -11,13 +11,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>Specifies the DNS address of the DB instance.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that the database engine is listening on.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl Endpoint {

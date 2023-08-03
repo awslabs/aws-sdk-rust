@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlgorithmValidationSpecification {
     /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
-    #[doc(hidden)]
     pub validation_role: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
-    #[doc(hidden)]
     pub validation_profiles: ::std::option::Option<::std::vec::Vec<crate::types::AlgorithmValidationProfile>>,
 }
 impl AlgorithmValidationSpecification {

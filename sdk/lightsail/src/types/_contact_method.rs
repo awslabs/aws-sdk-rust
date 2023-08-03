@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactMethod {
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
-    #[doc(hidden)]
     pub contact_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the contact method.</p>
     /// <p>A contact method has the following possible status:</p>
@@ -15,28 +14,20 @@ pub struct ContactMethod {
     /// <li> <p> <code>Valid</code> - The contact method has been verified.</p> </li>
     /// <li> <p> <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ContactMethodStatus>,
     /// <p>The protocol of the contact method, such as email or SMS (text messaging).</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ContactProtocol>,
     /// <p>The name of the contact method.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the contact method.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the contact method was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that describes the location of the contact method, such as the Amazon Web Services Region and Availability Zone.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>ContactMethod</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail contact method. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
 }
 impl ContactMethod {

@@ -6,10 +6,8 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// <p>Specify the language code that represents the language spoken in your audio.</p> <important>
     /// <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p>
     /// </important>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The sample rate of the input audio (in hertz). Amazon Transcribe Medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
-    #[doc(hidden)]
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>Specify the encoding used for the input audio. Supported formats are:</p>
     /// <ul>
@@ -18,24 +16,18 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
-    #[doc(hidden)]
     pub media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the medical specialty contained in your audio.</p>
-    #[doc(hidden)]
     pub specialty: ::std::option::Option<crate::types::Specialty>,
     /// <p>Specify the type of input audio. For example, choose <code>DICTATION</code> for a provider dictating patient notes and <code>CONVERSATION</code> for a dialogue between a patient and a medical professional.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
-    #[doc(hidden)]
     pub show_speaker_label: bool,
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
@@ -44,15 +36,12 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
-    #[doc(hidden)]
     pub enable_channel_identification: bool,
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
-    #[doc(hidden)]
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
     /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    #[doc(hidden)]
     pub content_identification_type: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
 }
 impl StartMedicalStreamTranscriptionInput {

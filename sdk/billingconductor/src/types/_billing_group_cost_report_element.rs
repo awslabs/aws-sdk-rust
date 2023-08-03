@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BillingGroupCostReportElement {
     /// <p>The Amazon Resource Name (ARN) of a billing group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The actual Amazon Web Services charges for the billing group.</p>
-    #[doc(hidden)]
     pub aws_cost: ::std::option::Option<::std::string::String>,
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
-    #[doc(hidden)]
     pub proforma_cost: ::std::option::Option<::std::string::String>,
     /// <p>The billing group margin.</p>
-    #[doc(hidden)]
     pub margin: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of billing group margin.</p>
-    #[doc(hidden)]
     pub margin_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The displayed currency.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<::std::string::String>,
 }
 impl BillingGroupCostReportElement {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesOutput {
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    #[doc(hidden)]
     pub game_session_queues: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueue>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

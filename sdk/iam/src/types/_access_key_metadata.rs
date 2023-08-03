@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessKeyMetadata {
     /// <p>The name of the IAM user that the key is associated with.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for this access key.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the access key. <code>Active</code> means that the key is valid for API calls; <code>Inactive</code> means it is not.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The date when the access key was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AccessKeyMetadata {

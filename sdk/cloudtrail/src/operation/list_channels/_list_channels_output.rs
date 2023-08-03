@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChannelsOutput {
     /// <p> The list of channels in the account. </p>
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>The token to use to get the next page of results after a previous API call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

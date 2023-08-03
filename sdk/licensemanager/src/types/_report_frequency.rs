@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportFrequency {
     /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::ReportFrequencyType>,
 }
 impl ReportFrequency {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssertionAttributes {
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for SAML users.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute within the SAML assertion to use as the login names for SAML users.</p>
-    #[doc(hidden)]
     pub login: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute within the SAML assertion to use as the email names for SAML users.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for user groups.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute within the SAML assertion to use as the user roles.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute within the SAML assertion to use as the user full "friendly" names for the users' organizations.</p>
-    #[doc(hidden)]
     pub org: ::std::option::Option<::std::string::String>,
 }
 impl AssertionAttributes {

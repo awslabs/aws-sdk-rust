@@ -7,7 +7,6 @@
 pub struct SiteMapsConfiguration {
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
-    #[doc(hidden)]
     pub site_maps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SiteMapsConfiguration {

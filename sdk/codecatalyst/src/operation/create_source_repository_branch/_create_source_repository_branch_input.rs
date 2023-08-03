@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSourceRepositoryBranchInput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository where you want to create a branch.</p>
-    #[doc(hidden)]
     pub source_repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name for the branch you're creating.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
-    #[doc(hidden)]
     pub head_commit_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateSourceRepositoryBranchInput {

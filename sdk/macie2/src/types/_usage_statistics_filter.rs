@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageStatisticsFilter {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
-    #[doc(hidden)]
     pub comparator: ::std::option::Option<crate::types::UsageStatisticsFilterComparator>,
     /// <p>The field to use in the condition.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::UsageStatisticsFilterKey>,
     /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
     /// <p>Valid values for each supported field are:</p>
@@ -18,7 +16,6 @@ pub struct UsageStatisticsFilter {
     /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
     /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UsageStatisticsFilter {

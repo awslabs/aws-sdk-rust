@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackagingConfiguration {
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
-    #[doc(hidden)]
     pub greengrass: ::std::option::Option<crate::types::GreengrassConfiguration>,
 }
 impl ModelPackagingConfiguration {

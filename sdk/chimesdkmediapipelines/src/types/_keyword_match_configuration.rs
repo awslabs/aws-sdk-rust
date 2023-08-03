@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeywordMatchConfiguration {
     /// <p>The name of the keyword match rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The keywords or phrases that you want to match.</p>
-    #[doc(hidden)]
     pub keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
-    #[doc(hidden)]
     pub negate: bool,
 }
 impl KeywordMatchConfiguration {

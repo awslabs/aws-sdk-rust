@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateSkillGroupFromRoomInput {
     /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
-    #[doc(hidden)]
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSkillGroupFromRoomInput {

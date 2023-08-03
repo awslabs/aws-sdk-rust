@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReadSetsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of read sets.</p>
-    #[doc(hidden)]
     pub read_sets: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>>,
     _request_id: Option<String>,
 }

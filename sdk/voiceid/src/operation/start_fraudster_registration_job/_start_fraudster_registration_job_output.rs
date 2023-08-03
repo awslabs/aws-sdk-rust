@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFraudsterRegistrationJobOutput {
     /// <p>Details about the started fraudster registration job.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::FraudsterRegistrationJob>,
     _request_id: Option<String>,
 }

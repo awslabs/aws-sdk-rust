@@ -6,7 +6,6 @@
 pub struct CapacityUnitsConfiguration {
     /// <p>The amount of extra capacity for your rescore execution plan.</p>
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
-    #[doc(hidden)]
     pub rescore_capacity_units: ::std::option::Option<i32>,
 }
 impl CapacityUnitsConfiguration {

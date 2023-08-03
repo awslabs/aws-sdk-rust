@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
-    #[doc(hidden)]
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpcLinkInput {

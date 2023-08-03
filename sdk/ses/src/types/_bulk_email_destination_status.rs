@@ -22,13 +22,10 @@ pub struct BulkEmailDestinationStatus {
     /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
     /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BulkEmailStatus>,
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
 }
 impl BulkEmailDestinationStatus {

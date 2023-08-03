@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionAggregationResponse {
     /// <p>The resource IDs included in the aggregation results.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Lambda function names included in the aggregation results.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The runtimes included in the aggregation results.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The tags included in the aggregation results.</p>
-    #[doc(hidden)]
     pub lambda_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     /// <p>The date that the AWS Lambda function included in the aggregation results was last changed.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LambdaFunctionAggregationResponse {

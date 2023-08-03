@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>The Amazon Chime Business Calling settings.</p>
-    #[doc(hidden)]
     pub business_calling: ::std::option::Option<crate::types::BusinessCallingSettings>,
     /// <p>The Amazon Chime Voice Connector settings.</p>
-    #[doc(hidden)]
     pub voice_connector: ::std::option::Option<crate::types::VoiceConnectorSettings>,
 }
 impl UpdateGlobalSettingsInput {

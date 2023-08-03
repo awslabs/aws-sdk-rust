@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessControlEffectInput {
     /// <p>The identifier for the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The user ID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role ID.</p>
-    #[doc(hidden)]
     pub impersonation_role_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessControlEffectInput {

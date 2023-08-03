@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessGroupPolicyOutput {
     /// <p>The status of the Verified Access policy.</p>
-    #[doc(hidden)]
     pub policy_enabled: ::std::option::Option<bool>,
     /// <p>The Verified Access policy document.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

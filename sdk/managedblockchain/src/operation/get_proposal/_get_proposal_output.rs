@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProposalOutput {
     /// <p>Information about a proposal.</p>
-    #[doc(hidden)]
     pub proposal: ::std::option::Option<crate::types::Proposal>,
     _request_id: Option<String>,
 }

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestInvokeAuthorizerInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
-    #[doc(hidden)]
     pub authorizer_id: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.</p>
-    #[doc(hidden)]
     pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.</p>
-    #[doc(hidden)]
     pub multi_value_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-    #[doc(hidden)]
     pub path_with_query_string: ::std::option::Option<::std::string::String>,
     /// <p>The simulated request body of an incoming invocation request.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
-    #[doc(hidden)]
     pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A key-value map of additional context variables.</p>
-    #[doc(hidden)]
     pub additional_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TestInvokeAuthorizerInput {

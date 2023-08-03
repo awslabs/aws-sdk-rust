@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightResultValue {
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    #[doc(hidden)]
     pub group_by_attribute_value: ::std::option::Option<::std::string::String>,
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
-    #[doc(hidden)]
     pub count: i32,
 }
 impl InsightResultValue {

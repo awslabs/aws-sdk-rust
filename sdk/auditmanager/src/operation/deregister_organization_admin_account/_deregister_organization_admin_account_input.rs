@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterOrganizationAdminAccountInput {
     /// <p> The identifier for the administrator account. </p>
-    #[doc(hidden)]
     pub admin_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterOrganizationAdminAccountInput {

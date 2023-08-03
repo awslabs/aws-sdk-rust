@@ -5,22 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayV2RouteSettings {
     /// <p>Indicates whether detailed metrics are enabled.</p>
-    #[doc(hidden)]
     pub detailed_metrics_enabled: bool,
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> </p>
-    #[doc(hidden)]
     pub logging_level: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether data trace logging is enabled. Data trace logging affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
-    #[doc(hidden)]
     pub data_trace_enabled: bool,
     /// <p>The throttling burst limit.</p>
-    #[doc(hidden)]
     pub throttling_burst_limit: i32,
     /// <p>The throttling rate limit.</p>
-    #[doc(hidden)]
     pub throttling_rate_limit: f64,
 }
 impl AwsApiGatewayV2RouteSettings {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSource {
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub s3_data_source: ::std::option::Option<crate::types::S3DataSource>,
 }
 impl DataSource {

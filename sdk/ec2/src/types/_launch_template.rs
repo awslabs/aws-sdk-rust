@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplate {
     /// <p>The ID of the launch template.</p>
-    #[doc(hidden)]
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template.</p>
-    #[doc(hidden)]
     pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The time launch template was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The principal that created the launch template. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the default version of the launch template.</p>
-    #[doc(hidden)]
     pub default_version_number: ::std::option::Option<i64>,
     /// <p>The version number of the latest version of the launch template.</p>
-    #[doc(hidden)]
     pub latest_version_number: ::std::option::Option<i64>,
     /// <p>The tags for the launch template.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LaunchTemplate {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactAttributesInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the initial contact.</p>
-    #[doc(hidden)]
     pub initial_contact_id: ::std::option::Option<::std::string::String>,
 }
 impl GetContactAttributesInput {

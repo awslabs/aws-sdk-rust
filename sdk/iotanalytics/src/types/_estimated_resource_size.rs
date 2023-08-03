@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EstimatedResourceSize {
     /// <p>The estimated size of the resource, in bytes.</p>
-    #[doc(hidden)]
     pub estimated_size_in_bytes: ::std::option::Option<f64>,
     /// <p>The time when the estimate of the size of the resource was made.</p>
-    #[doc(hidden)]
     pub estimated_on: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EstimatedResourceSize {

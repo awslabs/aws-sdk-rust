@@ -7,7 +7,6 @@ pub struct SendEmailOutput {
     /// <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the message.</p> <note>
     /// <p>It is possible for Amazon Pinpoint to accept a message without sending it. This can happen when the message you're trying to send has an attachment doesn't pass a virus check, or when you send a templated email that contains invalid personalization content, for example.</p>
     /// </note>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

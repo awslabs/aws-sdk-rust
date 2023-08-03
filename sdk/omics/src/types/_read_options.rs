@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadOptions {
     /// <p>The file's field separator.</p>
-    #[doc(hidden)]
     pub sep: ::std::option::Option<::std::string::String>,
     /// <p>The file's encoding.</p>
-    #[doc(hidden)]
     pub encoding: ::std::option::Option<::std::string::String>,
     /// <p>The file's quote character.</p>
-    #[doc(hidden)]
     pub quote: ::std::option::Option<::std::string::String>,
     /// <p>Whether all values need to be quoted, or just those that contain quotes.</p>
-    #[doc(hidden)]
     pub quote_all: bool,
     /// <p>A character for escaping quotes in the file.</p>
-    #[doc(hidden)]
     pub escape: ::std::option::Option<::std::string::String>,
     /// <p>Whether quotes need to be escaped in the file.</p>
-    #[doc(hidden)]
     pub escape_quotes: bool,
     /// <p>The file's comment character.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>Whether the file has a header row.</p>
-    #[doc(hidden)]
     pub header: bool,
     /// <p>A line separator for the file.</p>
-    #[doc(hidden)]
     pub line_sep: ::std::option::Option<::std::string::String>,
 }
 impl ReadOptions {

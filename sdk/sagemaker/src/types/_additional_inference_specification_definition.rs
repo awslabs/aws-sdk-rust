@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalInferenceSpecificationDefinition {
     /// <p>A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the additional Inference specification</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
-    #[doc(hidden)]
     pub supported_transform_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    #[doc(hidden)]
     pub supported_realtime_inference_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
     /// <p>The supported MIME types for the input data.</p>
-    #[doc(hidden)]
     pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported MIME types for the output data.</p>
-    #[doc(hidden)]
     pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdditionalInferenceSpecificationDefinition {

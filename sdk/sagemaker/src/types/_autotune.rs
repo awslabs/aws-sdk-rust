@@ -13,7 +13,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Autotune {
     /// <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::AutotuneMode>,
 }
 impl Autotune {

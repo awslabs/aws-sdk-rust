@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeQueryOutput {
     /// <p>The ID of the query.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The SQL code of a query.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> </p>
-    #[doc(hidden)]
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
     /// <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
-    #[doc(hidden)]
     pub query_statistics: ::std::option::Option<crate::types::QueryStatisticsForDescribeQuery>,
     /// <p>The error message returned if a query failed.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The URI for the S3 bucket where CloudTrail delivered query results, if applicable.</p>
-    #[doc(hidden)]
     pub delivery_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The delivery status.</p>
-    #[doc(hidden)]
     pub delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
     _request_id: Option<String>,
 }

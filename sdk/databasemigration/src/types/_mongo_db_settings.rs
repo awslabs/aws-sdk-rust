@@ -5,57 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MongoDbSettings {
     /// <p>The user name you use to access the MongoDB source endpoint. </p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p> The password for the user account you use to access the MongoDB source endpoint. </p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p> The name of the server on the MongoDB source endpoint. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p> The port value for the MongoDB source endpoint. </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p> The database name on the MongoDB source endpoint. </p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p> The authentication type you use to access the MongoDB source endpoint.</p>
     /// <p>When when set to <code>"no"</code>, user name and password parameters are not used and can be empty. </p>
-    #[doc(hidden)]
     pub auth_type: ::std::option::Option<crate::types::AuthTypeValue>,
     /// <p> The authentication mechanism you use to access the MongoDB source endpoint.</p>
     /// <p>For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
-    #[doc(hidden)]
     pub auth_mechanism: ::std::option::Option<crate::types::AuthMechanismValue>,
     /// <p> Specifies either document or table mode. </p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
-    #[doc(hidden)]
     pub nesting_level: ::std::option::Option<crate::types::NestingLevelValue>,
     /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
     /// <p>Default value is <code>"false"</code>. </p>
-    #[doc(hidden)]
     pub extract_doc_id: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
-    #[doc(hidden)]
     pub docs_to_investigate: ::std::option::Option<::std::string::String>,
     /// <p> The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>. </p>
     /// <p>The default is <code>"admin"</code>.</p>
-    #[doc(hidden)]
     pub auth_source: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MongoDB endpoint connection details.</p>
-    #[doc(hidden)]
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, DMS retrieves the entire document from the MongoDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
-    #[doc(hidden)]
     pub use_update_look_up: ::std::option::Option<bool>,
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
@@ -63,7 +48,6 @@ pub struct MongoDbSettings {
     /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
     /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replicate_shard_collections: ::std::option::Option<bool>,
 }
 impl MongoDbSettings {

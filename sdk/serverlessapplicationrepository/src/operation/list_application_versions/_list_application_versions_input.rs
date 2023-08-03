@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The total number of items to return.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationVersionsInput {

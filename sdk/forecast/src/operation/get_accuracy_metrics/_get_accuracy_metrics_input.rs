@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccuracyMetricsInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-    #[doc(hidden)]
     pub predictor_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAccuracyMetricsInput {

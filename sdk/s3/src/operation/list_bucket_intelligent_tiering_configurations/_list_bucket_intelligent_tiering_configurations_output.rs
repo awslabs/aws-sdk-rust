@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBucketIntelligentTieringConfigurationsOutput {
     /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
-    #[doc(hidden)]
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
-    #[doc(hidden)]
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of S3 Intelligent-Tiering configurations for a bucket.</p>
-    #[doc(hidden)]
     pub intelligent_tiering_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::IntelligentTieringConfiguration>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

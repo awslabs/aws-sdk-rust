@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyTemplateItem {
     /// <p>The unique identifier of the policy store that contains the template.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the policy template.</p>
-    #[doc(hidden)]
     pub policy_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The description attached to the policy template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the policy template was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the policy template was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PolicyTemplateItem {

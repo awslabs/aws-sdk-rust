@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapStateStartedEventDetails {
     /// <p>The size of the array for Map state iterations.</p>
-    #[doc(hidden)]
     pub length: i32,
 }
 impl MapStateStartedEventDetails {

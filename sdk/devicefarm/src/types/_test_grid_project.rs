@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestGridProject {
     /// <p>The ARN for the project.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable name for the project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description for the project.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::TestGridVpcConfig>,
     /// <p>When the project was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TestGridProject {

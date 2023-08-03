@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMembersOutput {
     /// <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
-    #[doc(hidden)]
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::MemberSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

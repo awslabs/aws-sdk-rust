@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDomain {
     /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is associated with the App Runner service in addition to the base domain.</p>
-    #[doc(hidden)]
     pub enable_www_subdomain: ::std::option::Option<bool>,
     /// <p>A list of certificate CNAME records that's used for this domain name.</p>
-    #[doc(hidden)]
     pub certificate_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>>,
     /// <p>The current state of the domain name association.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CustomDomainAssociationStatus>,
 }
 impl CustomDomain {

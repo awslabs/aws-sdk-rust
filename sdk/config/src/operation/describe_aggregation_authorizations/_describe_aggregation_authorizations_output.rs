@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAggregationAuthorizationsOutput {
     /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
-    #[doc(hidden)]
     pub aggregation_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationAuthorization>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

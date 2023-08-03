@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceGraphInput {
     /// <p>The start of the time frame for which to generate a graph.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the timeframe for which to generate a graph.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of a group based on which you want to generate a graph.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceGraphInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVehicleResponseItem {
     /// <p>The unique ID of the vehicle to create.</p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the created vehicle.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateVehicleResponseItem {

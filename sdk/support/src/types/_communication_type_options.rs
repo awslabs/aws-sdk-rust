@@ -10,13 +10,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommunicationTypeOptions {
     /// <p> A string value indicating the communication type. At the moment the type value can assume one of 3 values at the moment chat, web and call. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p> A JSON-formatted list containing time ranges when support is available. </p>
-    #[doc(hidden)]
     pub supported_hours: ::std::option::Option<::std::vec::Vec<crate::types::SupportedHour>>,
     /// <p> A JSON-formatted list containing date and time ranges for periods without support </p>
-    #[doc(hidden)]
     pub dates_without_support: ::std::option::Option<::std::vec::Vec<crate::types::DateInterval>>,
 }
 impl CommunicationTypeOptions {

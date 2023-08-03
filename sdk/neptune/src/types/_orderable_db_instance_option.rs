@@ -6,67 +6,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The engine version of a DB instance.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance class for a DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The license model for a DB instance.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>A list of Availability Zones for a DB instance.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
-    #[doc(hidden)]
     pub multi_az_capable: bool,
     /// <p>Indicates whether a DB instance can have a Read Replica.</p>
-    #[doc(hidden)]
     pub read_replica_capable: bool,
     /// <p>Indicates whether a DB instance is in a VPC.</p>
-    #[doc(hidden)]
     pub vpc: bool,
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
-    #[doc(hidden)]
     pub supports_storage_encryption: bool,
     /// <p>Indicates the storage type for a DB instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
-    #[doc(hidden)]
     pub supports_iops: bool,
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
-    #[doc(hidden)]
     pub supports_enhanced_monitoring: bool,
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
-    #[doc(hidden)]
     pub supports_iam_database_authentication: bool,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub supports_performance_insights: bool,
     /// <p>Minimum storage size for a DB instance.</p>
-    #[doc(hidden)]
     pub min_storage_size: ::std::option::Option<i32>,
     /// <p>Maximum storage size for a DB instance.</p>
-    #[doc(hidden)]
     pub max_storage_size: ::std::option::Option<i32>,
     /// <p>Minimum total provisioned IOPS for a DB instance.</p>
-    #[doc(hidden)]
     pub min_iops_per_db_instance: ::std::option::Option<i32>,
     /// <p>Maximum total provisioned IOPS for a DB instance.</p>
-    #[doc(hidden)]
     pub max_iops_per_db_instance: ::std::option::Option<i32>,
     /// <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
-    #[doc(hidden)]
     pub min_iops_per_gib: ::std::option::Option<f64>,
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
-    #[doc(hidden)]
     pub max_iops_per_gib: ::std::option::Option<f64>,
     /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
-    #[doc(hidden)]
     pub supports_global_databases: bool,
 }
 impl OrderableDbInstanceOption {

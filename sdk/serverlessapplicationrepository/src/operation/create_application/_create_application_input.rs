@@ -6,66 +6,51 @@ pub struct CreateApplicationInput {
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    #[doc(hidden)]
     pub home_page_url: ::std::option::Option<::std::string::String>,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-    #[doc(hidden)]
     pub license_body: ::std::option::Option<::std::string::String>,
     /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-    #[doc(hidden)]
     pub license_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application that you want to publish.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-    #[doc(hidden)]
     pub readme_body: ::std::option::Option<::std::string::String>,
     /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
     /// <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-    #[doc(hidden)]
     pub readme_url: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    #[doc(hidden)]
     pub source_code_archive_url: ::std::option::Option<::std::string::String>,
     /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    #[doc(hidden)]
     pub source_code_url: ::std::option::Option<::std::string::String>,
     /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-    #[doc(hidden)]
     pub spdx_license_id: ::std::option::Option<::std::string::String>,
     /// <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p>
     /// <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-    #[doc(hidden)]
     pub template_url: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInput {

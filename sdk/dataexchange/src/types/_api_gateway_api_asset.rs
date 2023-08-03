@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiGatewayApiAsset {
     /// <p>The API description of the API asset.</p>
-    #[doc(hidden)]
     pub api_description: ::std::option::Option<::std::string::String>,
     /// <p>The API endpoint of the API asset.</p>
-    #[doc(hidden)]
     pub api_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the API asset.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The API key of the API asset.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>The API name of the API asset.</p>
-    #[doc(hidden)]
     pub api_name: ::std::option::Option<::std::string::String>,
     /// <p>The download URL of the API specification of the API asset.</p>
-    #[doc(hidden)]
     pub api_specification_download_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub api_specification_download_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The protocol type of the API asset.</p>
-    #[doc(hidden)]
     pub protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     /// <p>The stage of the API asset.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
 }
 impl ApiGatewayApiAsset {

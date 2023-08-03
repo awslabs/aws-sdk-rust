@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditTasksOutput {
     /// <p>The audits that were performed during the specified time period.</p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

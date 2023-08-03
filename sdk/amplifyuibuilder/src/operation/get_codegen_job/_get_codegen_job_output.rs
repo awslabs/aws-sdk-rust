@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCodegenJobOutput {
     /// <p>The configuration settings for the code generation job.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::CodegenJob>,
     _request_id: Option<String>,
 }

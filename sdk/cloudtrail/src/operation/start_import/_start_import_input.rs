@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportInput {
     /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
-    #[doc(hidden)]
     pub import_source: ::std::option::Option<crate::types::ImportSource>,
     /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
-    #[doc(hidden)]
     pub start_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
-    #[doc(hidden)]
     pub end_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The ID of the import. Use this parameter when you are retrying an import. </p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
 }
 impl StartImportInput {

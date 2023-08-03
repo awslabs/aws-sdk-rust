@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterOperationStepInfo {
     /// <p>The steps current status.</p>
-    #[doc(hidden)]
     pub step_status: ::std::option::Option<::std::string::String>,
 }
 impl ClusterOperationStepInfo {

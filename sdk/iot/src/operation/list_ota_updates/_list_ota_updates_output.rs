@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOtaUpdatesOutput {
     /// <p>A list of OTA update jobs.</p>
-    #[doc(hidden)]
     pub ota_updates: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateSummary>>,
     /// <p>A token to use to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

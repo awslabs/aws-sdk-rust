@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscribeInput {
     /// <p>The ARN of the topic you want to subscribe to.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The protocol that you want to use. Supported protocols include:</p>
     /// <ul>
@@ -19,7 +18,6 @@ pub struct SubscribeInput {
     /// <li> <p> <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p> </li>
     /// <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
     /// <ul>
@@ -33,7 +31,6 @@ pub struct SubscribeInput {
     /// <li> <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p> </li>
     /// <li> <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
@@ -56,13 +53,11 @@ pub struct SubscribeInput {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the subscription is not yet confirmed.</p>
     /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p>
     /// <p></p>
     /// <p>The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub return_subscription_arn: ::std::option::Option<bool>,
 }
 impl SubscribeInput {

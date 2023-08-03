@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInstance {
     /// <p>The instance's ID.</p>
-    #[doc(hidden)]
     pub node_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The node's ID.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance's package name.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance's package version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The instance's package patch version.</p>
-    #[doc(hidden)]
     pub package_patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The instance's name.</p>
-    #[doc(hidden)]
     pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance's current status.</p>
-    #[doc(hidden)]
     pub current_status: ::std::option::Option<crate::types::NodeInstanceStatus>,
 }
 impl NodeInstance {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAddressBookInput {
     /// <p>The ARN of the room to update.</p>
-    #[doc(hidden)]
     pub address_book_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the room.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the room.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAddressBookInput {

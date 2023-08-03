@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SocialProviderSettings {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    #[doc(hidden)]
     pub facebook: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    #[doc(hidden)]
     pub google: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    #[doc(hidden)]
     pub login_with_amazon: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-    #[doc(hidden)]
     pub sign_in_with_apple: ::std::option::Option<crate::types::BackendAuthAppleProviderConfig>,
 }
 impl SocialProviderSettings {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionDetail {
     /// <p>The identifier of a dimension.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DimensionDetail {

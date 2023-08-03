@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deployment {
     /// <p>The ID of the deployment.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the deployment. The following describes each state.</p>
     /// <dl>
@@ -28,63 +27,46 @@ pub struct Deployment {
     /// <p>A deployment that has been completely replaced.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The most recent task definition that was specified for the tasks in the service to use.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>The most recent desired count of tasks that was specified for the service to deploy or maintain.</p>
-    #[doc(hidden)]
     pub desired_count: i32,
     /// <p>The number of tasks in the deployment that are in the <code>PENDING</code> status.</p>
-    #[doc(hidden)]
     pub pending_count: i32,
     /// <p>The number of tasks in the deployment that are in the <code>RUNNING</code> status.</p>
-    #[doc(hidden)]
     pub running_count: i32,
     /// <p>The number of consecutively failed tasks in the deployment. A task is considered a failure if the service scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it fails any of its defined health checks and is stopped.</p> <note>
     /// <p>Once a service deployment has one or more successfully running tasks, the failed task count resets to zero and stops being evaluated.</p>
     /// </note>
-    #[doc(hidden)]
     pub failed_tasks: i32,
     /// <p>The Unix timestamp for the time when the service deployment was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the service deployment was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The capacity provider strategy that the deployment is using.</p>
-    #[doc(hidden)]
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
-    #[doc(hidden)]
     pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <note>
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
     /// </note>
     /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is turned on, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
-    #[doc(hidden)]
     pub rollout_state: ::std::option::Option<crate::types::DeploymentRolloutState>,
     /// <p>A description of the rollout state of a deployment.</p>
-    #[doc(hidden)]
     pub rollout_state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
     /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
-    #[doc(hidden)]
     pub service_connect_resources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
 }
 impl Deployment {

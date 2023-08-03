@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The name of the repository that contains the pull request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    #[doc(hidden)]
     pub source_reference: ::std::option::Option<::std::string::String>,
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
-    #[doc(hidden)]
     pub destination_reference: ::std::option::Option<::std::string::String>,
 }
 impl Target {

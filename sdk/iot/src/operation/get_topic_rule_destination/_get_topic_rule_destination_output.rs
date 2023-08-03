@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTopicRuleDestinationOutput {
     /// <p>The topic rule destination.</p>
-    #[doc(hidden)]
     pub topic_rule_destination: ::std::option::Option<crate::types::TopicRuleDestination>,
     _request_id: Option<String>,
 }

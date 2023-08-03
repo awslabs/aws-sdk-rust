@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentFrameworkInput {
     /// <p> The identifier for the framework. </p>
-    #[doc(hidden)]
     pub framework_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentFrameworkInput {

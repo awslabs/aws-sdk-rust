@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelAssociatedWithFlowSummary {
     /// <p>The name of the channel flow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The mode of the channel.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ChannelMode>,
     /// <p>The channel's privacy setting.</p>
-    #[doc(hidden)]
     pub privacy: ::std::option::Option<crate::types::ChannelPrivacy>,
     /// <p>The channel's metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
 }
 impl ChannelAssociatedWithFlowSummary {

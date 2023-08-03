@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
-    #[doc(hidden)]
     pub exception_message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

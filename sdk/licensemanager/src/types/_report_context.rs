@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    #[doc(hidden)]
     pub license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportContext {

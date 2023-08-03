@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopAutomationExecutionInput {
     /// <p>The execution ID of the Automation to stop.</p>
-    #[doc(hidden)]
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::StopType>,
 }
 impl StopAutomationExecutionInput {

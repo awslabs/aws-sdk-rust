@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
     /// <p> Deprecated. </p>
-    #[doc(hidden)]
     pub block_duration_minutes: i32,
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    #[doc(hidden)]
     pub instance_interruption_behavior: ::std::option::Option<::std::string::String>,
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
-    #[doc(hidden)]
     pub max_price: ::std::option::Option<::std::string::String>,
     /// <p> The Spot Instance request type. </p>
-    #[doc(hidden)]
     pub spot_instance_type: ::std::option::Option<::std::string::String>,
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
-    #[doc(hidden)]
     pub valid_until: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {

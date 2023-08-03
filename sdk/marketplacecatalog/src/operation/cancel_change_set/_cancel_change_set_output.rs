@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelChangeSetOutput {
     /// <p>The unique identifier for the change set referenced in this request.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN associated with the change set referenced in this request.</p>
-    #[doc(hidden)]
     pub change_set_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

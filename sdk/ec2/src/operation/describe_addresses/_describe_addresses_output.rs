@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAddressesOutput {
     /// <p>Information about the Elastic IP addresses.</p>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     _request_id: Option<String>,
 }

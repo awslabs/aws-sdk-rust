@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksOnDeviceServiceConfiguration {
     /// <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-    #[doc(hidden)]
     pub kubernetes_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of EKS Anywhere on the Snow Family device.</p>
-    #[doc(hidden)]
     pub eks_anywhere_version: ::std::option::Option<::std::string::String>,
 }
 impl EksOnDeviceServiceConfiguration {

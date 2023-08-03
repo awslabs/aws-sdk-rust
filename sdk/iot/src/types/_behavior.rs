@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Behavior {
     /// <p>The name you've given to the behavior.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>What is measured by the behavior.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
-    #[doc(hidden)]
     pub metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
-    #[doc(hidden)]
     pub criteria: ::std::option::Option<crate::types::BehaviorCriteria>,
     /// <p> Suppresses alerts. </p>
-    #[doc(hidden)]
     pub suppress_alerts: ::std::option::Option<bool>,
 }
 impl Behavior {

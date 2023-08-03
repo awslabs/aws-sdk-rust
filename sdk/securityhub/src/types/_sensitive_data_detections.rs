@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitiveDataDetections {
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
-    #[doc(hidden)]
     pub count: i64,
     /// <p>The type of sensitive data that was detected. For example, the type might indicate that the data is an email address.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Details about the sensitive data that was detected.</p>
-    #[doc(hidden)]
     pub occurrences: ::std::option::Option<crate::types::Occurrences>,
 }
 impl SensitiveDataDetections {

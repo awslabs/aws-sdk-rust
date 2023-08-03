@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ReferenceDataSource {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Object key name containing reference data.</p>
-    #[doc(hidden)]
     pub file_key: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that the service can assume to read data on your behalf. This role must have permission for the <code>s3:GetObject</code> action on the object and trust policy that allows Amazon Kinesis Analytics service principal to assume this role.</p>
-    #[doc(hidden)]
     pub reference_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ReferenceDataSource {

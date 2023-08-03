@@ -22,17 +22,13 @@ pub struct DescribeAddressesInput {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>One or more Elastic IP addresses.</p>
     /// <p>Default: Describes all your Elastic IP addresses.</p>
-    #[doc(hidden)]
     pub public_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the allocation IDs.</p>
-    #[doc(hidden)]
     pub allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAddressesInput {

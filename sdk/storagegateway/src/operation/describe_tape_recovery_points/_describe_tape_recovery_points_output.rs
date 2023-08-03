@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    #[doc(hidden)]
     pub tape_recovery_point_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

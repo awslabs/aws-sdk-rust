@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SamlOptionsInput {
     /// <p>True to enable SAML authentication for a domain.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The SAML Identity Provider's information.</p>
-    #[doc(hidden)]
     pub idp: ::std::option::Option<crate::types::SamlIdp>,
     /// <p>The SAML master user name, which is stored in the domain's internal user database.</p>
-    #[doc(hidden)]
     pub master_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The backend role that the SAML master user is mapped to.</p>
-    #[doc(hidden)]
     pub master_backend_role: ::std::option::Option<::std::string::String>,
     /// <p>Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.</p>
-    #[doc(hidden)]
     pub subject_key: ::std::option::Option<::std::string::String>,
     /// <p>Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.</p>
-    #[doc(hidden)]
     pub roles_key: ::std::option::Option<::std::string::String>,
     /// <p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60.</p>
-    #[doc(hidden)]
     pub session_timeout_minutes: ::std::option::Option<i32>,
 }
 impl SamlOptionsInput {

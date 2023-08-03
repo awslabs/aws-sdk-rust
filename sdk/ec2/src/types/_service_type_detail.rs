@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceTypeDetail {
     /// <p>The type of service.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
 }
 impl ServiceTypeDetail {

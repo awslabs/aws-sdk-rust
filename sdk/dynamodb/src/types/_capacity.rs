@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capacity {
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
-    #[doc(hidden)]
     pub read_capacity_units: ::std::option::Option<f64>,
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
-    #[doc(hidden)]
     pub write_capacity_units: ::std::option::Option<f64>,
     /// <p>The total number of capacity units consumed on a table or an index.</p>
-    #[doc(hidden)]
     pub capacity_units: ::std::option::Option<f64>,
 }
 impl Capacity {

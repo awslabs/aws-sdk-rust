@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VerifySoftwareTokenInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<::std::string::String>,
     /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
-    #[doc(hidden)]
     pub user_code: ::std::option::Option<::std::string::String>,
     /// <p>The friendly device name.</p>
-    #[doc(hidden)]
     pub friendly_device_name: ::std::option::Option<::std::string::String>,
 }
 impl VerifySoftwareTokenInput {

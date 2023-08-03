@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedLinear {
     /// <p>The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.</p>
-    #[doc(hidden)]
     pub linear_percentage: i32,
     /// <p>The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.</p>
-    #[doc(hidden)]
     pub linear_interval: i32,
 }
 impl TimeBasedLinear {

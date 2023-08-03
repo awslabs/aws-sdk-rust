@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigRecommendation {
     /// <p>The cost for the application.</p>
-    #[doc(hidden)]
     pub cost: ::std::option::Option<crate::types::Cost>,
     /// <p>The name of the Application Component.</p>
-    #[doc(hidden)]
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
-    #[doc(hidden)]
     pub compliance: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
-    #[doc(hidden)]
     pub recommendation_compliance:
         ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::RecommendationDisruptionCompliance>>,
     /// <p>The type of optimization.</p>
-    #[doc(hidden)]
     pub optimization_type: ::std::option::Option<crate::types::ConfigRecommendationOptimizationType>,
     /// <p>The name of the recommendation configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The optional description for an app.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of the suggested configuration changes.</p>
-    #[doc(hidden)]
     pub suggested_changes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The architecture type.</p>
-    #[doc(hidden)]
     pub ha_architecture: ::std::option::Option<crate::types::HaArchitecture>,
     /// <p>The reference identifier for the recommendation configuration.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
 }
 impl ConfigRecommendation {

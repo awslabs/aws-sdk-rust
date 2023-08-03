@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WiFiAccessPoint {
     /// <p>Wi-Fi MAC Address.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
-    #[doc(hidden)]
     pub rss: ::std::option::Option<i32>,
 }
 impl WiFiAccessPoint {

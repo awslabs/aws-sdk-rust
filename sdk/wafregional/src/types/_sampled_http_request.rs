@@ -9,19 +9,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SampledHttpRequest {
     /// <p>A complex type that contains detailed information about the request.</p>
-    #[doc(hidden)]
     pub request: ::std::option::Option<crate::types::HttpRequest>,
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
-    #[doc(hidden)]
     pub weight: i64,
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
-    #[doc(hidden)]
     pub rule_within_rule_group: ::std::option::Option<::std::string::String>,
 }
 impl SampledHttpRequest {

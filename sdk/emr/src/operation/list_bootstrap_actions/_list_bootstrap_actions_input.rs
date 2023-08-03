@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBootstrapActionsInput {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl ListBootstrapActionsInput {

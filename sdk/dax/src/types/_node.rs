@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Node {
     /// <p>A system-generated identifier for the node.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint for the node, consisting of a DNS name and a port number. Client applications can connect directly to a node endpoint, if desired (as an alternative to allowing DAX client software to intelligently route requests and responses to nodes in the DAX cluster.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
-    #[doc(hidden)]
     pub node_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the node. For example: <code>available</code>.</p>
-    #[doc(hidden)]
     pub node_status: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter group associated with this node. For example, <code>in-sync</code>.</p>
-    #[doc(hidden)]
     pub parameter_group_status: ::std::option::Option<::std::string::String>,
 }
 impl Node {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLfTagInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    #[doc(hidden)]
     pub tag_values_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    #[doc(hidden)]
     pub tag_values_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateLfTagInput {

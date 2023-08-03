@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppValidationConfiguration {
     /// <p>The ID of the validation.</p>
-    #[doc(hidden)]
     pub validation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The validation strategy.</p>
-    #[doc(hidden)]
     pub app_validation_strategy: ::std::option::Option<crate::types::AppValidationStrategy>,
     /// <p>The validation parameters.</p>
-    #[doc(hidden)]
     pub ssm_validation_parameters: ::std::option::Option<crate::types::SsmValidationParameters>,
 }
 impl AppValidationConfiguration {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemOpenZfsConfiguration {
     /// <p>By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip taking a final backup, set this value to <code>true</code>.</p>
-    #[doc(hidden)]
     pub skip_final_backup: ::std::option::Option<bool>,
     /// <p>A list of tags to apply to the file system's final backup.</p>
-    #[doc(hidden)]
     pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::DeleteFileSystemOpenZfsOption>>,
 }
 impl DeleteFileSystemOpenZfsConfiguration {

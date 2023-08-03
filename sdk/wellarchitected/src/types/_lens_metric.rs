@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LensMetric {
     /// <p>The lens ARN.</p>
-    #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metrics for the pillars in a lens.</p>
-    #[doc(hidden)]
     pub pillars: ::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensMetric {

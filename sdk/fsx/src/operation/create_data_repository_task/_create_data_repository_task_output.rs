@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskOutput {
     /// <p>The description of the data repository task that you just created.</p>
-    #[doc(hidden)]
     pub data_repository_task: ::std::option::Option<crate::types::DataRepositoryTask>,
     _request_id: Option<String>,
 }

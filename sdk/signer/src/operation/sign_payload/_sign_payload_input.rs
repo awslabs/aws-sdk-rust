@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignPayloadInput {
     /// <p>The name of the signing profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the profile owner.</p>
-    #[doc(hidden)]
     pub profile_owner: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the object digest (hash) to sign.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Payload content type</p>
-    #[doc(hidden)]
     pub payload_format: ::std::option::Option<::std::string::String>,
 }
 impl SignPayloadInput {

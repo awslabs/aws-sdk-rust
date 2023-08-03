@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlConfig {
     /// <p>The metric to optimize.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of candidate recipes.</p>
-    #[doc(hidden)]
     pub recipe_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AutoMlConfig {

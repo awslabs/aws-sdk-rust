@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtaJobConfig {
     /// <p>The target version of the device software.</p>
-    #[doc(hidden)]
     pub image_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether to apply the update if it is a major version change.</p>
-    #[doc(hidden)]
     pub allow_major_version_update: bool,
 }
 impl OtaJobConfig {

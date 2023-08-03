@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MissionProfileListItem {
     /// <p>UUID of a mission profile.</p>
-    #[doc(hidden)]
     pub mission_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a mission profile.</p>
-    #[doc(hidden)]
     pub mission_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>Region of a mission profile.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Name of a mission profile.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl MissionProfileListItem {

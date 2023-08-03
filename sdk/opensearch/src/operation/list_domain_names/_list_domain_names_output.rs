@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainNamesOutput {
     /// <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
-    #[doc(hidden)]
     pub domain_names: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
     _request_id: Option<String>,
 }

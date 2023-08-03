@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsInput {
     /// <p>The list of identifiers for the desired extension configurations.</p>
-    #[doc(hidden)]
     pub type_configuration_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
 }
 impl BatchDescribeTypeConfigurationsInput {

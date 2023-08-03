@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the migration workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The input parameters required to update a migration workflow.</p>
-    #[doc(hidden)]
     pub input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
-    #[doc(hidden)]
     pub step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateWorkflowInput {

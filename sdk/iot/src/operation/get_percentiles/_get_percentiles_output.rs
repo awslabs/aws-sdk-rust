@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPercentilesOutput {
     /// <p>The percentile values of the aggregated fields.</p>
-    #[doc(hidden)]
     pub percentiles: ::std::option::Option<::std::vec::Vec<crate::types::PercentPair>>,
     _request_id: Option<String>,
 }

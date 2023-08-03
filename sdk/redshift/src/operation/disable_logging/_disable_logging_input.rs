@@ -6,7 +6,6 @@
 pub struct DisableLoggingInput {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DisableLoggingInput {

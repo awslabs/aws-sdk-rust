@@ -5,47 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppBlockBuilder {
     /// <p>The ARN of the app block builder.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app block builder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the app block builder.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the app block builder.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
     /// <p>The instance type of the app block builder.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether default internet access is enabled for the app block builder.</p>
-    #[doc(hidden)]
     pub enable_default_internet_access: ::std::option::Option<bool>,
     /// <p>The ARN of the IAM role that is applied to the app block builder.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration for the app block builder.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The state of the app block builder.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AppBlockBuilderState>,
     /// <p>The creation time of the app block builder.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The app block builder errors.</p>
-    #[doc(hidden)]
     pub app_block_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     /// <p>The state change reason.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReason>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    #[doc(hidden)]
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
 }
 impl AppBlockBuilder {

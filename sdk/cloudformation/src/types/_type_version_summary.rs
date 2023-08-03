@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypeVersionSummary {
     /// <p>The kind of extension.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it's registered.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub is_default_version: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>When the version was registered.</p>
-    #[doc(hidden)]
     pub time_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the extension version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub public_version_number: ::std::option::Option<::std::string::String>,
 }
 impl TypeVersionSummary {

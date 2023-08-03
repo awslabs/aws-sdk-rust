@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictorExecution {
     /// <p>The ARN of the algorithm used to test the predictor.</p>
-    #[doc(hidden)]
     pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    #[doc(hidden)]
     pub test_windows: ::std::option::Option<::std::vec::Vec<crate::types::TestWindowSummary>>,
 }
 impl PredictorExecution {

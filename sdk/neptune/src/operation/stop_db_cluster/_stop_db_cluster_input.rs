@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDbClusterInput {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StopDbClusterInput {

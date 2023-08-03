@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentControl {
     /// <p> The identifier for the control. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the control. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the control. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The status of the control. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ControlStatus>,
     /// <p> The response of the control. </p>
-    #[doc(hidden)]
     pub response: ::std::option::Option<crate::types::ControlResponse>,
     /// <p> The list of comments that's attached to the control. </p>
-    #[doc(hidden)]
     pub comments: ::std::option::Option<::std::vec::Vec<crate::types::ControlComment>>,
     /// <p> The list of data sources for the evidence. </p>
-    #[doc(hidden)]
     pub evidence_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The amount of evidence that's collected for the control. </p>
-    #[doc(hidden)]
     pub evidence_count: i32,
     /// <p> The amount of evidence in the assessment report. </p>
-    #[doc(hidden)]
     pub assessment_report_evidence_count: i32,
 }
 impl AssessmentControl {

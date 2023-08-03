@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConnectorProperties {
     /// <p> The properties required to query Amazon Redshift. </p>
-    #[doc(hidden)]
     pub redshift: ::std::option::Option<crate::types::RedshiftDestinationProperties>,
     /// <p> The properties required to query Amazon S3. </p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3DestinationProperties>,
     /// <p> The properties required to query Salesforce. </p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceDestinationProperties>,
     /// <p> The properties required to query Snowflake. </p>
-    #[doc(hidden)]
     pub snowflake: ::std::option::Option<crate::types::SnowflakeDestinationProperties>,
     /// <p> The properties required to query Amazon EventBridge. </p>
-    #[doc(hidden)]
     pub event_bridge: ::std::option::Option<crate::types::EventBridgeDestinationProperties>,
     /// <p> The properties required to query Amazon Lookout for Metrics. </p>
-    #[doc(hidden)]
     pub lookout_metrics: ::std::option::Option<crate::types::LookoutMetricsDestinationProperties>,
     /// <p> The properties required to query Upsolver. </p>
-    #[doc(hidden)]
     pub upsolver: ::std::option::Option<crate::types::UpsolverDestinationProperties>,
     /// <p> The properties required to query Amazon Honeycode. </p>
-    #[doc(hidden)]
     pub honeycode: ::std::option::Option<crate::types::HoneycodeDestinationProperties>,
     /// <p> The properties required to query Amazon Connect Customer Profiles. </p>
-    #[doc(hidden)]
     pub customer_profiles: ::std::option::Option<crate::types::CustomerProfilesDestinationProperties>,
     /// <p>The properties required to query Zendesk.</p>
-    #[doc(hidden)]
     pub zendesk: ::std::option::Option<crate::types::ZendeskDestinationProperties>,
     /// <p>The properties required to query Marketo.</p>
-    #[doc(hidden)]
     pub marketo: ::std::option::Option<crate::types::MarketoDestinationProperties>,
     /// <p>The properties that are required to query the custom Connector.</p>
-    #[doc(hidden)]
     pub custom_connector: ::std::option::Option<crate::types::CustomConnectorDestinationProperties>,
     /// <p>The properties required to query SAPOData.</p>
-    #[doc(hidden)]
     pub sapo_data: ::std::option::Option<crate::types::SapoDataDestinationProperties>,
 }
 impl DestinationConnectorProperties {

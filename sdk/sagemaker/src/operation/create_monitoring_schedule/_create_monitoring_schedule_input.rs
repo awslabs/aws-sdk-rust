@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_config: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMonitoringScheduleInput {

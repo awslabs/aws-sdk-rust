@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
-    #[doc(hidden)]
     pub auc: ::std::option::Option<f32>,
     /// <p> Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
-    #[doc(hidden)]
     pub uncertainty_range: ::std::option::Option<crate::types::UncertaintyRange>,
 }
 impl TfiModelPerformance {

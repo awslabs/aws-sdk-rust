@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobOutput {
     /// <p>The ARN for the job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about the job.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::ResponseDetails>,
     /// <p>The errors associated with jobs.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>,
     /// <p>The unique identifier for the job.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the job.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
     /// <p>The job type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

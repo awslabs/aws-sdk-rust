@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpSetOutput {
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
-    #[doc(hidden)]
     pub ip_set: ::std::option::Option<crate::types::IpSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

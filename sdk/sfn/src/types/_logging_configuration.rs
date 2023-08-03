@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>Defines which category of execution history events are logged.</p>
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::LogLevel>,
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
-    #[doc(hidden)]
     pub include_execution_data: bool,
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>,
 }
 impl LoggingConfiguration {

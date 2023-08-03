@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitorContactOutput {
     /// <p>The identifier of the contact.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the contact.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

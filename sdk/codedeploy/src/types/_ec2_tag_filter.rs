@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2TagFilter {
     /// <p>The tag filter key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag filter value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The tag filter type:</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct Ec2TagFilter {
     /// <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li>
     /// <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Ec2TagFilterType>,
 }
 impl Ec2TagFilter {

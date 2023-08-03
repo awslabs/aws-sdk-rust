@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsOutput {
     /// <p>Information about the environment members for the environment.</p>
-    #[doc(hidden)]
     pub memberships: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentMember>>,
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

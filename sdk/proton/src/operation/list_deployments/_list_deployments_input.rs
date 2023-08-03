@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentsInput {
     /// <p>A token that indicates the location of the next deployment in the array of deployment, after the list of deployment that was previously requested.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of an environment for result list filtering. Proton returns deployments associated with the environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a service for result list filtering. Proton returns deployments associated with service instances of the service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a service instance for result list filtering. Proton returns the deployments associated with the service instance.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a component for result list filtering. Proton returns deployments associated with that component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of deployments to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListDeploymentsInput {

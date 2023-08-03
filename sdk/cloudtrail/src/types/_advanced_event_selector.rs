@@ -14,10 +14,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedEventSelector {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    #[doc(hidden)]
     pub field_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,
 }
 impl AdvancedEventSelector {

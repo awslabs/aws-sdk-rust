@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Session {
     /// <p>The ID of the session.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time and date when the session was created.</p>
-    #[doc(hidden)]
     pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The session status. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SessionStatus>,
     /// <p>The error message displayed during the session.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The description of the session.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The command object.See SessionCommand.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<crate::types::SessionCommand>,
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
-    #[doc(hidden)]
     pub default_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of connections used for the session.</p>
-    #[doc(hidden)]
     pub connections: ::std::option::Option<crate::types::ConnectionsList>,
     /// <p>The code execution progress of the session.</p>
-    #[doc(hidden)]
     pub progress: f64,
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<f64>,
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
-    #[doc(hidden)]
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.</p>
-    #[doc(hidden)]
     pub glue_version: ::std::option::Option<::std::string::String>,
 }
 impl Session {

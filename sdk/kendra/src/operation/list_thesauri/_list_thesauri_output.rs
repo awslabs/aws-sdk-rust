@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThesauriOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of thesauri. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
-    #[doc(hidden)]
     pub thesaurus_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ThesaurusSummary>>,
     _request_id: Option<String>,
 }

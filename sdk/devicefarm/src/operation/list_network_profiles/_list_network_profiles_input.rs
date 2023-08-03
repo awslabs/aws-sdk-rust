@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNetworkProfilesInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NetworkProfileType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListNetworkProfilesInput {

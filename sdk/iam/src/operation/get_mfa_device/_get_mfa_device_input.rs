@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMfaDeviceInput {
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name identifying the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
 }
 impl GetMfaDeviceInput {

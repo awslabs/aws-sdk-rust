@@ -7,14 +7,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tmpfs {
     /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
-    #[doc(hidden)]
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The list of <code>tmpfs</code> volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Tmpfs {

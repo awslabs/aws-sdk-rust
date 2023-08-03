@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriberNotificationOutput {
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
-    #[doc(hidden)]
     pub subscriber_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

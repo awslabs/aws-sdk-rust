@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionNavigationOperation {
     /// <p>The configuration that chooses the navigation target.</p>
-    #[doc(hidden)]
     pub local_navigation_configuration: ::std::option::Option<crate::types::LocalNavigationConfiguration>,
 }
 impl CustomActionNavigationOperation {

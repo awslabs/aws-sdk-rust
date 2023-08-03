@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeDocumentVersionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of versions to return with this call.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<::std::string::String>,
     /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDocumentVersionsInput {

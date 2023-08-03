@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageGroup {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<crate::types::Message>,
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    #[doc(hidden)]
     pub variations: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
 }
 impl MessageGroup {

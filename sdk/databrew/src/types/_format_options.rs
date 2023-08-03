@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormatOptions {
     /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
-    #[doc(hidden)]
     pub json: ::std::option::Option<crate::types::JsonOptions>,
     /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
-    #[doc(hidden)]
     pub excel: ::std::option::Option<crate::types::ExcelOptions>,
     /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
-    #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::CsvOptions>,
 }
 impl FormatOptions {

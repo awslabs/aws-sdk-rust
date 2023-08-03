@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuiteOutput {
     /// <p>A collection of one or more tests.</p>
-    #[doc(hidden)]
     pub suite: ::std::option::Option<crate::types::Suite>,
     _request_id: Option<String>,
 }

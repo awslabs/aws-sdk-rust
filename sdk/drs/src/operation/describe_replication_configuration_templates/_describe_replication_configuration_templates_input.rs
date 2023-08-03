@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesInput {
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-    #[doc(hidden)]
     pub replication_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token of the next Replication Configuration Template to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReplicationConfigurationTemplatesInput {

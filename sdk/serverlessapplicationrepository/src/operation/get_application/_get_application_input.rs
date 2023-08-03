@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the application to get.</p>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationInput {

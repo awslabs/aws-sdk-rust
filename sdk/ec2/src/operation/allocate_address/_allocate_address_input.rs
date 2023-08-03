@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateAddressInput {
     /// <p>The network (<code>vpc</code>).</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainType>,
     /// <p>The Elastic IP address to recover or an IPv4 address from an address pool.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</p>
-    #[doc(hidden)]
     pub public_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
     /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
     /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an <code>InvalidParameterCombination</code> error.</p>
-    #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a customer-owned address pool. Use this parameter to let Amazon EC2 select an address from the address pool. Alternatively, specify a specific address from the address pool.</p>
-    #[doc(hidden)]
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to assign to the Elastic IP address.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl AllocateAddressInput {

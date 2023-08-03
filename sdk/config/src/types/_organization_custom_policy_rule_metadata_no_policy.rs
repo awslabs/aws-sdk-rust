@@ -5,38 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationCustomPolicyRuleMetadataNoPolicy {
     /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
     /// <ul>
     /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
     /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub organization_config_rule_trigger_types: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConfigRuleTriggerTypeNoSn>>,
     /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
-    #[doc(hidden)]
     pub input_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
-    #[doc(hidden)]
     pub maximum_execution_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_types_scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_id_scope: ::std::option::Option<::std::string::String>,
     /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
-    #[doc(hidden)]
     pub tag_key_scope: ::std::option::Option<::std::string::String>,
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
-    #[doc(hidden)]
     pub tag_value_scope: ::std::option::Option<::std::string::String>,
     /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    #[doc(hidden)]
     pub policy_runtime: ::std::option::Option<::std::string::String>,
     /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
-    #[doc(hidden)]
     pub debug_log_delivery_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OrganizationCustomPolicyRuleMetadataNoPolicy {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BillingGroupProperties {
     /// <p>The description of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_description: ::std::option::Option<::std::string::String>,
 }
 impl BillingGroupProperties {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceOutput {
     /// <p>The name of the resource type.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about a provisioned resource.</p>
-    #[doc(hidden)]
     pub resource_description: ::std::option::Option<crate::types::ResourceDescription>,
     _request_id: Option<String>,
 }

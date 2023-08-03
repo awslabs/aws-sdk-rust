@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSlotTypeOutput {
     /// <p>The name of the slot type.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the slot type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
-    #[doc(hidden)]
     pub enumeration_values: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>,
     /// <p>The date that the slot type was updated. When you create a slot type, the creation date and last update date are the same.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the slot type was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
-    #[doc(hidden)]
     pub value_selection_strategy: ::std::option::Option<crate::types::SlotValueSelectionStrategy>,
     /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
-    #[doc(hidden)]
     pub create_version: ::std::option::Option<bool>,
     /// <p>The built-in slot type used as the parent of the slot type.</p>
-    #[doc(hidden)]
     pub parent_slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information that extends the parent built-in slot type.</p>
-    #[doc(hidden)]
     pub slot_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlertTarget {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    #[doc(hidden)]
     pub alert_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AlertTarget {

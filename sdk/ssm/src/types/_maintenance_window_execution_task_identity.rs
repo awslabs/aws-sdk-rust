@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindowExecutionTaskIdentity {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
-    #[doc(hidden)]
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-    #[doc(hidden)]
     pub task_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status of the task execution. Not available for all status values.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The time the task execution started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the task execution finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of task that ran.</p>
-    #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
     /// <p>The details for the CloudWatch alarm applied to your maintenance window task.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
-    #[doc(hidden)]
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
 }
 impl MaintenanceWindowExecutionTaskIdentity {

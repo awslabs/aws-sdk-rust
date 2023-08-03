@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingProviderSeverity {
     /// <p>The severity label assigned to the finding by the finding provider.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<crate::types::SeverityLabel>,
     /// <p>The finding provider's original value for the severity.</p>
-    #[doc(hidden)]
     pub original: ::std::option::Option<::std::string::String>,
 }
 impl FindingProviderSeverity {

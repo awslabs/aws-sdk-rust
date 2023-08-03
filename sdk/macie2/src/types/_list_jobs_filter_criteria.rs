@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsFilterCriteria {
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
 }
 impl ListJobsFilterCriteria {

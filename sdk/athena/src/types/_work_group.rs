@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkGroup {
     /// <p>The workgroup name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkGroupState>,
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::WorkGroupConfiguration>,
     /// <p>The workgroup description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the workgroup was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl WorkGroup {

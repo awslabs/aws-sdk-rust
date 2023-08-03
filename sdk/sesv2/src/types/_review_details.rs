@@ -11,10 +11,8 @@ pub struct ReviewDetails {
     /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
     /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReviewStatus>,
     /// <p>The associated support center case ID (if any).</p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
 }
 impl ReviewDetails {

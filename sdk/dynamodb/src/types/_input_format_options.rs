@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputFormatOptions {
     /// <p> The options for imported source files in CSV format. The values are Delimiter and HeaderList. </p>
-    #[doc(hidden)]
     pub csv: ::std::option::Option<crate::types::CsvOptions>,
 }
 impl InputFormatOptions {

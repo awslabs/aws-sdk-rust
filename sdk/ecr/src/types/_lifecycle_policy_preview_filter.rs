@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicyPreviewFilter {
     /// <p>The tag status of the image.</p>
-    #[doc(hidden)]
     pub tag_status: ::std::option::Option<crate::types::TagStatus>,
 }
 impl LifecyclePolicyPreviewFilter {

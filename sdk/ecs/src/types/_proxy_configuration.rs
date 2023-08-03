@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProxyConfiguration {
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ProxyConfigurationType>,
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
     /// <ul>
@@ -21,7 +19,6 @@ pub struct ProxyConfiguration {
     /// <li> <p> <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p> </li>
     /// <li> <p> <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl ProxyConfiguration {

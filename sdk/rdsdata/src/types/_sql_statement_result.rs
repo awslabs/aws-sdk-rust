@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlStatementResult {
     /// <p>The result set of the SQL statement.</p>
-    #[doc(hidden)]
     pub result_frame: ::std::option::Option<crate::types::ResultFrame>,
     /// <p>The number of records updated by a SQL statement.</p>
-    #[doc(hidden)]
     pub number_of_records_updated: i64,
 }
 impl SqlStatementResult {

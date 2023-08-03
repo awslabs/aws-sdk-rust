@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateDelegationByAssessmentError {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
-    #[doc(hidden)]
     pub create_delegation_request: ::std::option::Option<crate::types::CreateDelegationRequest>,
     /// <p> The error code that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p> The error message that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateDelegationByAssessmentError {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelismConfigurationDescription {
     /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. </p>
-    #[doc(hidden)]
     pub configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
-    #[doc(hidden)]
     pub parallelism: ::std::option::Option<i32>,
     /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit (KPU) used by the application.</p>
-    #[doc(hidden)]
     pub parallelism_per_kpu: ::std::option::Option<i32>,
     /// <p>Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to application load. The service can increase this value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
-    #[doc(hidden)]
     pub current_parallelism: ::std::option::Option<i32>,
     /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
-    #[doc(hidden)]
     pub auto_scaling_enabled: ::std::option::Option<bool>,
 }
 impl ParallelismConfigurationDescription {

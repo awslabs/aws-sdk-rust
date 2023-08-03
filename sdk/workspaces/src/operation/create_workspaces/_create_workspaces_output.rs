@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be created.</p>
-    #[doc(hidden)]
     pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateWorkspaceRequest>>,
     /// <p>Information about the WorkSpaces that were created.</p>
     /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
-    #[doc(hidden)]
     pub pending_requests: ::std::option::Option<::std::vec::Vec<crate::types::Workspace>>,
     _request_id: Option<String>,
 }

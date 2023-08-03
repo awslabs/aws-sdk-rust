@@ -12,7 +12,6 @@ pub struct Condition {
     /// <p>For type Number, value comparisons are numeric.</p>
     /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
-    #[doc(hidden)]
     pub attribute_value_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
     /// <p>The following comparison operators are available:</p>
@@ -38,7 +37,6 @@ pub struct Condition {
     /// <li> <p> <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value. </p> <p> <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code> </p> </li>
     /// </ul>
     /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
 impl Condition {

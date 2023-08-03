@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OriginCustomHeader {
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub header_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
-    #[doc(hidden)]
     pub header_value: ::std::option::Option<::std::string::String>,
 }
 impl OriginCustomHeader {

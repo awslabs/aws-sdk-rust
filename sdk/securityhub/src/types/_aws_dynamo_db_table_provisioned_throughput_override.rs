@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableProvisionedThroughputOverride {
     /// <p>The read capacity units for the replica.</p>
-    #[doc(hidden)]
     pub read_capacity_units: i32,
 }
 impl AwsDynamoDbTableProvisionedThroughputOverride {

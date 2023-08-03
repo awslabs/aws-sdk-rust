@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchAlarmConfiguration {
     /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
-    #[doc(hidden)]
     pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<f64>,
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::Statistic>,
     /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
 }
 impl CloudWatchAlarmConfiguration {

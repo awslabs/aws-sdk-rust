@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityPoolsInput {
     /// <p>The maximum number of identities to return.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>A pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIdentityPoolsInput {

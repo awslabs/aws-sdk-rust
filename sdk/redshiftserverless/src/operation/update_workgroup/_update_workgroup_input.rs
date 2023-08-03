@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkgroupInput {
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The new base data warehouse capacity in Redshift Processing Units (RPUs).</p>
-    #[doc(hidden)]
     pub base_capacity: ::std::option::Option<i32>,
     /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
-    #[doc(hidden)]
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    #[doc(hidden)]
     pub config_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
     /// <p>A value that specifies whether the workgroup can be accessible from a public network.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl UpdateWorkgroupInput {

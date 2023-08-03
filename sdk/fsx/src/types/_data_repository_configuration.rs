@@ -13,17 +13,13 @@ pub struct DataRepositoryConfiguration {
     /// <li> <p> <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be impacted.</p> </li>
     /// <li> <p> <code>FAILED</code> - The data repository is in a terminal state that cannot be recovered.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
     /// <p>The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p>
-    #[doc(hidden)]
     pub import_path: ::std::option::Option<::std::string::String>,
     /// <p>The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre file system files in S3.</p>
-    #[doc(hidden)]
     pub export_path: ::std::option::Option<::std::string::String>,
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
-    #[doc(hidden)]
     pub imported_file_chunk_size: ::std::option::Option<i32>,
     /// <p>Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The AutoImportPolicy configures how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
@@ -32,10 +28,8 @@ pub struct DataRepositoryConfiguration {
     /// <li> <p> <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket and any existing objects that are changed in the S3 bucket after you choose this option.</p> </li>
     /// <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports file and directory listings of any new objects added to the S3 bucket, any existing objects that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auto_import_policy: ::std::option::Option<crate::types::AutoImportPolicyType>,
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::DataRepositoryFailureDetails>,
 }
 impl DataRepositoryConfiguration {

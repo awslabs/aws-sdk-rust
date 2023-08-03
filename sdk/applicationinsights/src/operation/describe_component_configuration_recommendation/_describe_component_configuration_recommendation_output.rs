@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComponentConfigurationRecommendationOutput {
     /// <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
-    #[doc(hidden)]
     pub component_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

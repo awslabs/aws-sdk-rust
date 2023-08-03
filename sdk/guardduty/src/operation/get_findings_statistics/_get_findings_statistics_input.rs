@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsStatisticsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The types of finding statistics to retrieve.</p>
-    #[doc(hidden)]
     pub finding_statistic_types: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
     /// <p>Represents the criteria that is used for querying findings.</p>
-    #[doc(hidden)]
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
 }
 impl GetFindingsStatisticsInput {

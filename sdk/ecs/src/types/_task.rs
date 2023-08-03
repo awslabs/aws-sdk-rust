@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Task {
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     /// <p>The attributes of the task</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The Availability Zone for the task.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The capacity provider that's associated with the task.</p>
-    #[doc(hidden)]
     pub capacity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the cluster that hosts the task.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The connectivity status of a task.</p>
-    #[doc(hidden)]
     pub connectivity: ::std::option::Option<crate::types::Connectivity>,
     /// <p>The Unix timestamp for the time when the task last went into <code>CONNECTED</code> status.</p>
-    #[doc(hidden)]
     pub connectivity_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the container instances that host the task.</p>
-    #[doc(hidden)]
     pub container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The containers that's associated with the task.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
     /// <p>If you use the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
@@ -44,36 +35,26 @@ pub struct Task {
     /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    #[doc(hidden)]
     pub desired_status: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
-    #[doc(hidden)]
     pub enable_execute_command: bool,
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-    #[doc(hidden)]
     pub execution_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the task group that's associated with the task.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::HealthStatus>,
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    #[doc(hidden)]
     pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    #[doc(hidden)]
     pub last_status: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure where your task runs on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The amount of memory (in MiB) that the task uses as expressed in a task definition. It can be expressed as an integer using MiB (for example, <code>1024</code>). If it's expressed as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>), it's converted to an integer indicating the MiB when the task definition is registered.</p>
     /// <p>If you use the EC2 launch type, this field is optional.</p>
@@ -87,29 +68,21 @@ pub struct Task {
     /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>One or more container overrides.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<crate::types::TaskOverride>,
     /// <p>The platform version where your task runs on. A platform version is only specified for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
-    #[doc(hidden)]
     pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the container image pull began.</p>
-    #[doc(hidden)]
     pub pull_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-    #[doc(hidden)]
     pub pull_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service.</p>
-    #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
     /// <p>The following are valid values:</p>
@@ -121,16 +94,12 @@ pub struct Task {
     /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
     /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stop_code: ::std::option::Option<crate::types::TaskStopCode>,
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
-    #[doc(hidden)]
     pub stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason that the task was stopped.</p>
-    #[doc(hidden)]
     pub stopped_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
-    #[doc(hidden)]
     pub stopping_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -143,19 +112,14 @@ pub struct Task {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task definition that creates the task.</p>
-    #[doc(hidden)]
     pub task_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version counter for the task. Every time a task experiences a change that starts a CloudWatch event, the version counter is incremented. If you replicate your Amazon ECS task state with CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The ephemeral storage settings for the task.</p>
-    #[doc(hidden)]
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
 }
 impl Task {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingConfiguration {
     /// <p>The lowest number of nodes to scale. This value must be at least 1 and less than the <code>maxNodeCount</code>. If the nodes in a cluster belong to multiple availability zones, then <code>minNodeCount</code> must be at least 3.</p>
-    #[doc(hidden)]
     pub min_node_count: ::std::option::Option<i32>,
     /// <p>The highest number of nodes to scale. This value cannot be greater than 5.</p>
-    #[doc(hidden)]
     pub max_node_count: ::std::option::Option<i32>,
     /// <p> The metric your cluster will track in order to scale in and out. For example, <code>CPU_UTILIZATION_PERCENTAGE</code> is the average CPU usage across all the nodes in a cluster.</p>
-    #[doc(hidden)]
     pub auto_scaling_metric: ::std::option::Option<crate::types::AutoScalingMetric>,
     /// <p>The desired value of the chosen <code>autoScalingMetric</code>. When the metric drops below this value, the cluster will scale in. When the metric goes above this value, the cluster will scale out. You can set the target value between 1 and 100 percent.</p>
-    #[doc(hidden)]
     pub metric_target: ::std::option::Option<f64>,
     /// <p>The duration in seconds that FinSpace will wait after a scale in event before initiating another scaling event.</p>
-    #[doc(hidden)]
     pub scale_in_cooldown_seconds: ::std::option::Option<f64>,
     /// <p>The duration in seconds that FinSpace will wait after a scale out event before initiating another scaling event.</p>
-    #[doc(hidden)]
     pub scale_out_cooldown_seconds: ::std::option::Option<f64>,
 }
 impl AutoScalingConfiguration {

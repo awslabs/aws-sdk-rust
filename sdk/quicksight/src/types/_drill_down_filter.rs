@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DrillDownFilter {
     /// <p>The numeric equality type drill down filter. This filter is used for number type columns.</p>
-    #[doc(hidden)]
     pub numeric_equality_filter: ::std::option::Option<crate::types::NumericEqualityDrillDownFilter>,
     /// <p>The category type drill down filter. This filter is used for string type columns.</p>
-    #[doc(hidden)]
     pub category_filter: ::std::option::Option<crate::types::CategoryDrillDownFilter>,
     /// <p>The time range drill down filter. This filter is used for date time columns.</p>
-    #[doc(hidden)]
     pub time_range_filter: ::std::option::Option<crate::types::TimeRangeDrillDownFilter>,
 }
 impl DrillDownFilter {

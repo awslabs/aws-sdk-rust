@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceLimit {
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
-    #[doc(hidden)]
     pub is_service_limited: ::std::option::Option<bool>,
     /// <p>The unit of measurement for the value specified by the value field.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::Unit>,
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i64>,
 }
 impl ServiceLimit {

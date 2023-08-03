@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryResultConfiguration {
     /// <p>Configuration for protected query results.</p>
-    #[doc(hidden)]
     pub output_configuration: ::std::option::Option<crate::types::ProtectedQueryOutputConfiguration>,
 }
 impl ProtectedQueryResultConfiguration {

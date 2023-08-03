@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsResultAttribute {
     /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
 }
 impl OpsResultAttribute {

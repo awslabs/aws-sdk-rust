@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the transform node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
-    #[doc(hidden)]
     pub logical_operator: ::std::option::Option<crate::types::FilterLogicalOperator>,
     /// <p>Specifies a filter expression.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>,
 }
 impl Filter {

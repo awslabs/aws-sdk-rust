@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProductViewOutput {
     /// <p>Summary information about the product.</p>
-    #[doc(hidden)]
     pub product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     /// <p>Information about the provisioning artifacts for the product.</p>
-    #[doc(hidden)]
     pub provisioning_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>>,
     _request_id: Option<String>,
 }

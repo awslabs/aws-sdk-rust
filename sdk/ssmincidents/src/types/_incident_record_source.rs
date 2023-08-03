@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncidentRecordSource {
     /// <p>The principal that started the incident.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.</p>
-    #[doc(hidden)]
     pub invoked_by: ::std::option::Option<::std::string::String>,
     /// <p>The resource that caused the incident to be created.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
 }
 impl IncidentRecordSource {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserPoolClientOutput {
     /// <p>The user pool client value from the response from the server when you request to update the user pool client.</p>
-    #[doc(hidden)]
     pub user_pool_client: ::std::option::Option<crate::types::UserPoolClientType>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSourceNetworkCfnTemplateOutput {
     /// <p>S3 bucket URL where the Source Network CloudFormation template was exported to.</p>
-    #[doc(hidden)]
     pub s3_destination_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

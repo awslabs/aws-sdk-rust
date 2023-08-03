@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PersonDetection {
     /// <p>The time, in milliseconds from the start of the video, that the person's path was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the person's path first appears.</p>
-    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about a person whose path was tracked in a video.</p>
-    #[doc(hidden)]
     pub person: ::std::option::Option<crate::types::PersonDetail>,
 }
 impl PersonDetection {

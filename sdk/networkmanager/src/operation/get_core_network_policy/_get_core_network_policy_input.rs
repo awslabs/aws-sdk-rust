@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCoreNetworkPolicyInput {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network policy version.</p>
-    #[doc(hidden)]
     pub policy_version_id: ::std::option::Option<i32>,
     /// <p>The alias of a core network policy </p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
 }
 impl GetCoreNetworkPolicyInput {

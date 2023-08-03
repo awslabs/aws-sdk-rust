@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTargetsInput {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    #[doc(hidden)]
     pub assessment_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAssessmentTargetsInput {

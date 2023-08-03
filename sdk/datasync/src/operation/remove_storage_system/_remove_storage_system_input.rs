@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveStorageSystemInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
-    #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveStorageSystemInput {

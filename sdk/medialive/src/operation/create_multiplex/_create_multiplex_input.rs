@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMultiplexInput {
     /// A list of availability zones for the multiplex. You must specify exactly two.
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Configuration for a multiplex event.
-    #[doc(hidden)]
     pub multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     /// Name of multiplex.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Unique request ID. This prevents retries from creating multiple resources.
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMultiplexInput {

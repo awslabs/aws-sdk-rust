@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
-    #[doc(hidden)]
     pub configuration_status: ::std::option::Option<crate::types::ConfigurationStatus>,
     _request_id: Option<String>,
 }

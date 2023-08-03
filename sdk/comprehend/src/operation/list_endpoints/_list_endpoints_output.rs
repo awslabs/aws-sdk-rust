@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEndpointsOutput {
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
-    #[doc(hidden)]
     pub endpoint_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EndpointProperties>>,
     /// <p>Identifies the next page of results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpnTunnelOptionsOutput {
     /// <p>Information about the VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_connection: ::std::option::Option<crate::types::VpnConnection>,
     _request_id: Option<String>,
 }

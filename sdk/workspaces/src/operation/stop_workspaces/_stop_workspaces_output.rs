@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be stopped.</p>
-    #[doc(hidden)]
     pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedWorkspaceChangeRequest>>,
     _request_id: Option<String>,
 }

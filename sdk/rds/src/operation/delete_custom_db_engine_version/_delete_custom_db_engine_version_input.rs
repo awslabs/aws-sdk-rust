@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomDbEngineVersionInput {
     /// <p>The database engine. The only supported engines are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomDbEngineVersionInput {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataSourceOutput {
     /// <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    #[doc(hidden)]
     pub data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
-    #[doc(hidden)]
     pub data_rearrangement: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    #[doc(hidden)]
     pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total size of observations in the data files.</p>
-    #[doc(hidden)]
     pub data_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub number_of_files: ::std::option::Option<i64>,
     /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
@@ -39,38 +30,27 @@ pub struct GetDataSourceOutput {
     /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
-    #[doc(hidden)]
     pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied description of the most recent details about creating the <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
-    #[doc(hidden)]
     pub redshift_metadata: ::std::option::Option<crate::types::RedshiftMetadata>,
     /// <p>The datasource details that are specific to Amazon RDS.</p>
-    #[doc(hidden)]
     pub rds_metadata: ::std::option::Option<crate::types::RdsMetadata>,
     /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
-    #[doc(hidden)]
     pub compute_statistics: bool,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
-    #[doc(hidden)]
     pub compute_time: ::std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    #[doc(hidden)]
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
-    #[doc(hidden)]
     pub data_source_schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

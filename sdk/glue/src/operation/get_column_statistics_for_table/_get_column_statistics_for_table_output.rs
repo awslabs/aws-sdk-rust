@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatistics.</p>
-    #[doc(hidden)]
     pub column_statistics_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>>,
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnError>>,
     _request_id: Option<String>,
 }

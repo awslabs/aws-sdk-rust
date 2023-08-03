@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTlsInspectionConfigurationOutput {
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
-    #[doc(hidden)]
     pub tls_inspection_configuration_response: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
     _request_id: Option<String>,
 }

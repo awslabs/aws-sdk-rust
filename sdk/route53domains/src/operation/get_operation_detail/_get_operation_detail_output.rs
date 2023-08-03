@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the requested operation in the system.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>Detailed information on the status including possible errors.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The name of a domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation that was requested.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The date when the request was submitted.</p>
-    #[doc(hidden)]
     pub submitted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date when the operation was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
     /// <ul>
@@ -33,7 +26,6 @@ pub struct GetOperationDetailOutput {
     /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
     /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_flag: ::std::option::Option<crate::types::StatusFlag>,
     _request_id: Option<String>,
 }

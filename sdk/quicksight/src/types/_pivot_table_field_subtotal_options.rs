@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableFieldSubtotalOptions {
     /// <p>The field ID of the subtotal options.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableFieldSubtotalOptions {

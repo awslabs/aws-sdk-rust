@@ -6,20 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageAttributeValue {
     /// <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.</p>
-    #[doc(hidden)]
     pub binary_value: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Not implemented. Reserved for future use.</p>
-    #[doc(hidden)]
     pub string_list_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Not implemented. Reserved for future use.</p>
-    #[doc(hidden)]
     pub binary_list_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
     /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl MessageAttributeValue {

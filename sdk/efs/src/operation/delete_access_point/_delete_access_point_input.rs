@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccessPointInput {
     /// <p>The ID of the access point that you want to delete.</p>
-    #[doc(hidden)]
     pub access_point_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccessPointInput {

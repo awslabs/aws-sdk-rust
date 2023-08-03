@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstancesConfiguration {
     /// <p>The Availability Zone for the modified Reserved Instances.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The number of modified Reserved Instances.</p> <note>
     /// <p>This is a required field for a request.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The instance type for the modified Reserved Instances.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The network platform of the modified Reserved Instances.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
 }
 impl ReservedInstancesConfiguration {

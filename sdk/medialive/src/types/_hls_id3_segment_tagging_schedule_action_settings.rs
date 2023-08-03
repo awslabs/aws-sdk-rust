@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsId3SegmentTaggingScheduleActionSettings {
     /// ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers: https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
-    #[doc(hidden)]
     pub tag: ::std::option::Option<::std::string::String>,
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
-    #[doc(hidden)]
     pub id3: ::std::option::Option<::std::string::String>,
 }
 impl HlsId3SegmentTaggingScheduleActionSettings {

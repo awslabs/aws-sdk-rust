@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceActionInput {
     /// <p>The self-service action name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    #[doc(hidden)]
     pub definition_type: ::std::option::Option<crate::types::ServiceActionDefinitionType>,
     /// <p>The self-service action definition. Can be one of the following:</p>
     /// <dl>
@@ -39,20 +37,16 @@ pub struct CreateServiceActionInput {
     /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::collections::HashMap<crate::types::ServiceActionDefinitionKey, ::std::string::String>>,
     /// <p>The self-service action description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateServiceActionInput {

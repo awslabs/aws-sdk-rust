@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ibm3624PinFromOffset {
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
-    #[doc(hidden)]
     pub decimalization_table: ::std::option::Option<::std::string::String>,
     /// <p>The padding character for validation data.</p>
-    #[doc(hidden)]
     pub pin_validation_data_pad_character: ::std::option::Option<::std::string::String>,
     /// <p>The unique data for cardholder identification.</p>
-    #[doc(hidden)]
     pub pin_validation_data: ::std::option::Option<::std::string::String>,
     /// <p>The PIN offset value.</p>
-    #[doc(hidden)]
     pub pin_offset: ::std::option::Option<::std::string::String>,
 }
 impl Ibm3624PinFromOffset {

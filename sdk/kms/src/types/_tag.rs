@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the tag.</p>
-    #[doc(hidden)]
     pub tag_value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {

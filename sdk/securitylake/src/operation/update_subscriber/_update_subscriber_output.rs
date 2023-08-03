@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriberOutput {
     /// <p>The updated subscriber information.</p>
-    #[doc(hidden)]
     pub subscriber: ::std::option::Option<crate::types::SubscriberResource>,
     _request_id: Option<String>,
 }

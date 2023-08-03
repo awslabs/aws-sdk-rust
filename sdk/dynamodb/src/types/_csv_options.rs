@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvOptions {
     /// <p> The delimiter used for separating items in the CSV file being imported. </p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p> List of the headers used to specify a common header for all source CSV files being imported. If this field is specified then the first line of each CSV file is treated as data instead of the header. If this field is not specified the the first line of each CSV file is treated as the header. </p>
-    #[doc(hidden)]
     pub header_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CsvOptions {

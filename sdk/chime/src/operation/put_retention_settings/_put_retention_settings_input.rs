@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRetentionSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The retention settings.</p>
-    #[doc(hidden)]
     pub retention_settings: ::std::option::Option<crate::types::RetentionSettings>,
 }
 impl PutRetentionSettingsInput {

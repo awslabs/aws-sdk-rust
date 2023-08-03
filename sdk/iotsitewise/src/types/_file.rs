@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct File {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl File {

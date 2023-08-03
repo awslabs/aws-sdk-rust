@@ -10,32 +10,23 @@ pub struct OntapVolumeConfiguration {
     /// <li> <p> <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p> </li>
     /// <li> <p> <code>CACHE</code> specifies that the volume is a FlexCache volume.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub flex_cache_endpoint_type: ::std::option::Option<crate::types::FlexCacheEndpointType>,
     /// <p>Specifies the directory that network-attached storage (NAS) clients use to mount the volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name or IP address. You can create a <code>JunctionPath</code> directly below a parent volume junction or on a directory within a volume. A <code>JunctionPath</code> for a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even <code>/dir1/dir2/vol3</code>.</p>
-    #[doc(hidden)]
     pub junction_path: ::std::option::Option<::std::string::String>,
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
-    #[doc(hidden)]
     pub security_style: ::std::option::Option<crate::types::SecurityStyle>,
     /// <p>The configured size of the volume, in megabytes (MBs).</p>
-    #[doc(hidden)]
     pub size_in_megabytes: ::std::option::Option<i32>,
     /// <p>The volume's storage efficiency setting.</p>
-    #[doc(hidden)]
     pub storage_efficiency_enabled: ::std::option::Option<bool>,
     /// <p>The ID of the volume's storage virtual machine.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean flag indicating whether this volume is the root volume for its storage virtual machine (SVM). Only one volume on an SVM can be the root volume. This value defaults to <code>false</code>. If this value is <code>true</code>, then this is the SVM root volume.</p>
     /// <p>This flag is useful when you're deleting an SVM, because you must first delete all non-root volumes. This flag, when set to <code>false</code>, helps you identify which volumes to delete before you can delete the SVM.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine_root: ::std::option::Option<bool>,
     /// <p>The volume's <code>TieringPolicy</code> setting.</p>
-    #[doc(hidden)]
     pub tiering_policy: ::std::option::Option<crate::types::TieringPolicy>,
     /// <p>The volume's universally unique identifier (UUID).</p>
-    #[doc(hidden)]
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of volume. Valid values are the following:</p>
     /// <ul>
@@ -43,7 +34,6 @@ pub struct OntapVolumeConfiguration {
     /// <li> <p> <code>DP</code> specifies a data-protection volume. You can protect data by replicating it to data-protection mirror copies. If a disaster occurs, you can use these data-protection mirror copies to recover data.</p> </li>
     /// <li> <p> <code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ontap_volume_type: ::std::option::Option<crate::types::OntapVolumeType>,
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
@@ -53,13 +43,10 @@ pub struct OntapVolumeConfiguration {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    #[doc(hidden)]
     pub snapshot_policy: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
-    #[doc(hidden)]
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
-    #[doc(hidden)]
     pub snaplock_configuration: ::std::option::Option<crate::types::SnaplockConfiguration>,
 }
 impl OntapVolumeConfiguration {

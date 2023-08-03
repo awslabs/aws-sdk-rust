@@ -4,45 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDocumentOutput {
     /// <p>The name of the SSM document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date the SSM document was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The document version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DocumentStatus>,
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
-    #[doc(hidden)]
     pub status_information: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the SSM document.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The document type.</p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<crate::types::DocumentType>,
     /// <p>The document format, either JSON or YAML.</p>
-    #[doc(hidden)]
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    #[doc(hidden)]
     pub requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
     /// <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
-    #[doc(hidden)]
     pub attachments_content: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentContent>>,
     /// <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>
     /// <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
-    #[doc(hidden)]
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
     _request_id: Option<String>,
 }

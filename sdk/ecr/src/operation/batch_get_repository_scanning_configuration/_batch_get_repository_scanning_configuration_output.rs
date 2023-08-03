@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRepositoryScanningConfigurationOutput {
     /// <p>The scanning configuration for the requested repositories.</p>
-    #[doc(hidden)]
     pub scanning_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfiguration>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryScanningConfigurationFailure>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestMetricFilterInput {
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    #[doc(hidden)]
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The log event messages to test.</p>
-    #[doc(hidden)]
     pub log_event_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TestMetricFilterInput {

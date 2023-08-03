@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Document {
     /// <p>The <code>Content</code>field type is Binary large object (blob). This object contains the document content converted into base64-encoded binary data. If you use one of the AWS SDKs, the SDK performs the Base64-encoding on this field before sending the request. </p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Describes the format of the document. You can specify one of the following:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct Document {
     /// <li> <p> <code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content. </p> </li>
     /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl Document {

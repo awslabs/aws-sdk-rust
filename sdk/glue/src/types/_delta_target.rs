@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeltaTarget {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    #[doc(hidden)]
     pub delta_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
-    #[doc(hidden)]
     pub write_manifest: ::std::option::Option<bool>,
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
-    #[doc(hidden)]
     pub create_native_delta_table: ::std::option::Option<bool>,
 }
 impl DeltaTarget {

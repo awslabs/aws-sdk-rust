@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project.</p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project.</p>
-    #[doc(hidden)]
     pub project_description: ::std::option::Option<::std::string::String>,
     /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
-    #[doc(hidden)]
     pub service_catalog_provisioning_details: ::std::option::Option<crate::types::ServiceCatalogProvisioningDetails>,
     /// <p>Information about a provisioned service catalog product.</p>
-    #[doc(hidden)]
     pub service_catalog_provisioned_product_details: ::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails>,
     /// <p>The status of the project.</p>
-    #[doc(hidden)]
     pub project_status: ::std::option::Option<crate::types::ProjectStatus>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The time when the project was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when project was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     _request_id: Option<String>,
 }

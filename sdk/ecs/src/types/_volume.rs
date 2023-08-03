@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. If the <code>host</code> parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p>
     /// <p>Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows containers can't mount directories on a different drive, and mount point can't be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<crate::types::HostVolumeProperties>,
     /// <p>This parameter is specified when you use Docker volumes.</p>
     /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the <code>host</code> parameter instead.</p> <note>
     /// <p>Docker volumes aren't supported by tasks run on Fargate.</p>
     /// </note>
-    #[doc(hidden)]
     pub docker_volume_configuration: ::std::option::Option<crate::types::DockerVolumeConfiguration>,
     /// <p>This parameter is specified when you use an Amazon Elastic File System file system for task storage.</p>
-    #[doc(hidden)]
     pub efs_volume_configuration: ::std::option::Option<crate::types::EfsVolumeConfiguration>,
     /// <p>This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.</p>
-    #[doc(hidden)]
     pub fsx_windows_file_server_volume_configuration: ::std::option::Option<crate::types::FSxWindowsFileServerVolumeConfiguration>,
 }
 impl Volume {

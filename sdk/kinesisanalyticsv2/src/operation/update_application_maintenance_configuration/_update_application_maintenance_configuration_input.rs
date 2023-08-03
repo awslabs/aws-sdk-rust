@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationMaintenanceConfigurationInput {
     /// <p>The name of the application for which you want to update the maintenance configuration.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the application maintenance configuration update.</p>
-    #[doc(hidden)]
     pub application_maintenance_configuration_update: ::std::option::Option<crate::types::ApplicationMaintenanceConfigurationUpdate>,
 }
 impl UpdateApplicationMaintenanceConfigurationInput {

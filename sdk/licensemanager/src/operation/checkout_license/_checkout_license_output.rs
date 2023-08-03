@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckoutLicenseOutput {
     /// <p>Checkout type.</p>
-    #[doc(hidden)]
     pub checkout_type: ::std::option::Option<crate::types::CheckoutType>,
     /// <p>License consumption token.</p>
-    #[doc(hidden)]
     pub license_consumption_token: ::std::option::Option<::std::string::String>,
     /// <p>Allowed license entitlements.</p>
-    #[doc(hidden)]
     pub entitlements_allowed: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
     /// <p>Signed token.</p>
-    #[doc(hidden)]
     pub signed_token: ::std::option::Option<::std::string::String>,
     /// <p>Node ID.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>Date and time at which the license checkout is issued.</p>
-    #[doc(hidden)]
     pub issued_at: ::std::option::Option<::std::string::String>,
     /// <p>Date and time at which the license checkout expires.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the checkout license.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

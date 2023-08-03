@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSecurityControlsInput {
     /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-    #[doc(hidden)]
     pub security_control_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetSecurityControlsInput {

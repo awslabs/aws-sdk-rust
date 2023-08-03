@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagOptionsFilters {
     /// <p>The TagOption key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The TagOption value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The active state.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
 }
 impl ListTagOptionsFilters {

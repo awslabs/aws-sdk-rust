@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlertSummary {
     /// <p>The ARN of the alert.</p>
-    #[doc(hidden)]
     pub alert_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the detector to which the alert is attached.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alert.</p>
-    #[doc(hidden)]
     pub alert_name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
-    #[doc(hidden)]
     pub alert_sensitivity_threshold: i32,
     /// <p>The type of the alert.</p>
-    #[doc(hidden)]
     pub alert_type: ::std::option::Option<crate::types::AlertType>,
     /// <p>The status of the alert.</p>
-    #[doc(hidden)]
     pub alert_status: ::std::option::Option<crate::types::AlertStatus>,
     /// <p>The time at which the alert was last modified.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the alert was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AlertSummary {

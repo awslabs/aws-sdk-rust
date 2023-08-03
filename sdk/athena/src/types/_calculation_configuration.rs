@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculationConfiguration {
     /// <p>A string that contains the code for the calculation.</p>
-    #[doc(hidden)]
     pub code_block: ::std::option::Option<::std::string::String>,
 }
 impl CalculationConfiguration {

@@ -4,61 +4,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIntentOutput {
     /// <p>The unique identifier assigned to the intent when it was created.</p>
-    #[doc(hidden)]
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The name specified for the intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the intent.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the built-in intent that this intent is derived from, if any.</p>
-    #[doc(hidden)]
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
     /// <p>User utterances that trigger this intent.</p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     /// <p>The Lambda function called during each turn of a conversation with the intent.</p>
-    #[doc(hidden)]
     pub dialog_code_hook: ::std::option::Option<crate::types::DialogCodeHookSettings>,
     /// <p>The Lambda function called when the intent is complete and ready for fulfillment.</p>
-    #[doc(hidden)]
     pub fulfillment_code_hook: ::std::option::Option<crate::types::FulfillmentCodeHookSettings>,
     /// <p>The list that determines the priority that slots should be elicited from the user.</p>
-    #[doc(hidden)]
     pub slot_priorities: ::std::option::Option<::std::vec::Vec<crate::types::SlotPriority>>,
     /// <p>Prompts that Amazon Lex sends to the user to confirm completion of an intent.</p>
-    #[doc(hidden)]
     pub intent_confirmation_setting: ::std::option::Option<crate::types::IntentConfirmationSetting>,
     /// <p>The response that Amazon Lex sends to when the intent is closed.</p>
-    #[doc(hidden)]
     pub intent_closing_setting: ::std::option::Option<crate::types::IntentClosingSetting>,
     /// <p>A list of contexts that must be active for the intent to be considered for sending to the user.</p>
-    #[doc(hidden)]
     pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     /// <p>A list of contexts that are activated when the intent is fulfilled.</p>
-    #[doc(hidden)]
     pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    #[doc(hidden)]
     pub kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
     /// <p>The identifier of the bot associated with the intent.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the intent.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The language and locale specified for the intent.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the intent was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the intent was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.</p>
-    #[doc(hidden)]
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
     _request_id: Option<String>,
 }

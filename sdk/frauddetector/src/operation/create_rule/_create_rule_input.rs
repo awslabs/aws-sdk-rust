@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateRuleInput {
     /// <p>The rule ID.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector ID for the rule's parent detector.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The rule expression.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The language of the rule.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<crate::types::Language>,
     /// <p>The outcome or outcomes returned when the rule expression matches.</p>
-    #[doc(hidden)]
     pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A collection of key and value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRuleInput {

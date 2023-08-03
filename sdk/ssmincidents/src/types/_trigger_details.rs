@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerDetails {
     /// <p>Identifies the service that sourced the event. All events sourced from within Amazon Web Services begin with "<code>aws.</code>" Customer-generated events can have any value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the use of Java package-name style reverse domain-name strings. </p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source that detected the incident.</p>
-    #[doc(hidden)]
     pub trigger_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the incident was detected.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager when an incident is created.</p>
-    #[doc(hidden)]
     pub raw_data: ::std::option::Option<::std::string::String>,
 }
 impl TriggerDetails {

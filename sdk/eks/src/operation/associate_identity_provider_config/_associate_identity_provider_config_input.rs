@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateIdentityProviderConfigInput {
     /// <p>The name of the cluster to associate the configuration to.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
-    #[doc(hidden)]
     pub oidc: ::std::option::Option<crate::types::OidcIdentityProviderConfigRequest>,
     /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIdentityProviderConfigInput {

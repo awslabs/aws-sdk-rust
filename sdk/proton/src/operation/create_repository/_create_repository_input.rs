@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRepositoryInput {
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRepositoryInput {

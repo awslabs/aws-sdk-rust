@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateDelegationByAssessmentOutput {
     /// <p> The delegations that are associated with the assessment. </p>
-    #[doc(hidden)]
     pub delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
     /// <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateDelegationByAssessmentError>>,
     _request_id: Option<String>,
 }

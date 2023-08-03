@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateMacSecKeyOutput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
-    #[doc(hidden)]
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     _request_id: Option<String>,
 }

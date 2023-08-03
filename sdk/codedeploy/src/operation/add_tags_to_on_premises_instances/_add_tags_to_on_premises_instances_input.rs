@@ -6,10 +6,8 @@
 pub struct AddTagsToOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
     /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The names of the on-premises instances to which to add tags.</p>
-    #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddTagsToOnPremisesInstancesInput {

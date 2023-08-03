@@ -42,7 +42,6 @@ pub struct StartExecutionInput {
     /// </region>
     /// </partition></code> </p> <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -54,17 +53,14 @@ pub struct StartExecutionInput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
     /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
     /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
-    #[doc(hidden)]
     pub trace_header: ::std::option::Option<::std::string::String>,
 }
 impl StartExecutionInput {

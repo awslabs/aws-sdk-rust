@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRunInput {
     /// <p>The run's workflow ID.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The run's workflows type.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The run's ID.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>A service role for the run.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A name for the run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The run's group ID.</p>
-    #[doc(hidden)]
     pub run_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A priority for the run.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>Parameters for the run.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>A storage capacity for the run in gigabytes.</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>An output URI for the run.</p>
-    #[doc(hidden)]
     pub output_uri: ::std::option::Option<::std::string::String>,
     /// <p>A log level for the run.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::RunLogLevel>,
     /// <p>Tags for the run.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl StartRunInput {

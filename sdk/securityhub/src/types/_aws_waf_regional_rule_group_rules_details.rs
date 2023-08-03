@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRegionalRuleGroupRulesDetails {
     /// <p>The action that WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails>,
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>. </p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The ID for a rule. </p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of rule in the rule group. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalRuleGroupRulesDetails {

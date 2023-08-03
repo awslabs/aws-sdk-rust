@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RStudioServerProDomainSettings {
     /// <p>The ARN of the execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
-    #[doc(hidden)]
     pub domain_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A URL pointing to an RStudio Connect server.</p>
-    #[doc(hidden)]
     pub r_studio_connect_url: ::std::option::Option<::std::string::String>,
     /// <p>A URL pointing to an RStudio Package Manager server.</p>
-    #[doc(hidden)]
     pub r_studio_package_manager_url: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    #[doc(hidden)]
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl RStudioServerProDomainSettings {

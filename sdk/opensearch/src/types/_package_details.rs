@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageDetails {
     /// <p>The unique identifier of the package.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-specified name of the package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of package.</p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<crate::types::PackageType>,
     /// <p>User-specified description of the package.</p>
-    #[doc(hidden)]
     pub package_description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
-    #[doc(hidden)]
     pub package_status: ::std::option::Option<crate::types::PackageStatus>,
     /// <p>The timestamp when the package was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date and time when the package was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The package version.</p>
-    #[doc(hidden)]
     pub available_package_version: ::std::option::Option<::std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl PackageDetails {

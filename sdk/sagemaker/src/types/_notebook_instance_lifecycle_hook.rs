@@ -10,7 +10,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotebookInstanceLifecycleHook {
     /// <p>A base64-encoded string that contains a shell script for a notebook instance lifecycle configuration.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl NotebookInstanceLifecycleHook {

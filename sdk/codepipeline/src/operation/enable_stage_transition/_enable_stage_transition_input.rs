@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableStageTransitionInput {
     /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
-    #[doc(hidden)]
     pub transition_type: ::std::option::Option<crate::types::StageTransitionType>,
 }
 impl EnableStageTransitionInput {

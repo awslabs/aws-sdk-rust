@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingsInput {
     /// <p>The IDs of the offerings.</p>
-    #[doc(hidden)]
     pub offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The payment options.</p>
-    #[doc(hidden)]
     pub payment_options: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
     /// <p>The product type.</p>
-    #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::SavingsPlanProductType>,
     /// <p>The plan type.</p>
-    #[doc(hidden)]
     pub plan_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanType>>,
     /// <p>The durations, in seconds.</p>
-    #[doc(hidden)]
     pub durations: ::std::option::Option<::std::vec::Vec<i64>>,
     /// <p>The currencies.</p>
-    #[doc(hidden)]
     pub currencies: ::std::option::Option<::std::vec::Vec<crate::types::CurrencyCode>>,
     /// <p>The descriptions.</p>
-    #[doc(hidden)]
     pub descriptions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The services.</p>
-    #[doc(hidden)]
     pub service_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The usage details of the line item in the billing report.</p>
-    #[doc(hidden)]
     pub usage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingFilterElement>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeSavingsPlansOfferingsInput {

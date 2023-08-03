@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStaticIpOutput {
     /// <p>An array of key-value pairs containing information about the requested static IP.</p>
-    #[doc(hidden)]
     pub static_ip: ::std::option::Option<crate::types::StaticIp>,
     _request_id: Option<String>,
 }

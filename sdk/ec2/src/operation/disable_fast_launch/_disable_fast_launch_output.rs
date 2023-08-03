@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableFastLaunchOutput {
     /// <p>The ID of the image for which faster-launching has been turned off.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI. Supported values include: <code>snapshot</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::FastLaunchResourceType>,
     /// <p>Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This informs the clean-up process.</p>
-    #[doc(hidden)]
     pub snapshot_configuration: ::std::option::Option<crate::types::FastLaunchSnapshotConfigurationResponse>,
     /// <p>The launch template that was used to launch Windows instances from pre-provisioned snapshots.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationResponse>,
     /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
-    #[doc(hidden)]
     pub max_parallel_launches: ::std::option::Option<i32>,
     /// <p>The owner of the Windows AMI for which faster launching was turned off.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of faster launching for the specified Windows AMI.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::FastLaunchStateCode>,
     /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
-    #[doc(hidden)]
     pub state_transition_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
-    #[doc(hidden)]
     pub state_transition_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

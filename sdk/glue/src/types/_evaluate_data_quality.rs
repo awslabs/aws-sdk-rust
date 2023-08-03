@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateDataQuality {
     /// <p>The name of the data quality evaluation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The inputs of your data quality evaluation.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ruleset for your data quality evaluation.</p>
-    #[doc(hidden)]
     pub ruleset: ::std::option::Option<::std::string::String>,
     /// <p>The output of your data quality evaluation.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::DqTransformOutput>,
     /// <p>Options to configure how your results are published.</p>
-    #[doc(hidden)]
     pub publishing_options: ::std::option::Option<crate::types::DqResultsPublishingOptions>,
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
-    #[doc(hidden)]
     pub stop_job_on_failure_options: ::std::option::Option<crate::types::DqStopJobOnFailureOptions>,
 }
 impl EvaluateDataQuality {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMediaInsightsPipelineStatusInput {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The requested status of the media insights pipeline.</p>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<crate::types::MediaPipelineStatusUpdate>,
 }
 impl UpdateMediaInsightsPipelineStatusInput {

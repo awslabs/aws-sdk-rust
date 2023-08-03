@@ -8,25 +8,18 @@ pub struct UpdatePortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name to use for display purposes.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the portfolio.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the portfolio provider.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add.</p>
-    #[doc(hidden)]
     pub add_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The tags to remove.</p>
-    #[doc(hidden)]
     pub remove_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdatePortfolioInput {

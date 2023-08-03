@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConnectionParameters {
     /// <p>Provides <code>ConnectionType</code> details.</p>
-    #[doc(hidden)]
     pub code_star: ::std::option::Option<crate::types::CodeStarParameters>,
 }
 impl SourceConnectionParameters {

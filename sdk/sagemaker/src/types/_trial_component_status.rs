@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponentStatus {
     /// <p>The status of the trial component.</p>
-    #[doc(hidden)]
     pub primary_status: ::std::option::Option<crate::types::TrialComponentPrimaryStatus>,
     /// <p>If the component failed, a message describing why.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl TrialComponentStatus {

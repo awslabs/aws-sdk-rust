@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
-    #[doc(hidden)]
     pub resource_quotas: ::std::option::Option<crate::types::ResourceQuotas>,
     _request_id: Option<String>,
 }

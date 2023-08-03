@@ -6,22 +6,18 @@
 pub struct SendMessageInput {
     /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
     /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
     /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub message_body: ::std::option::Option<::std::string::String>,
     /// <p> The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue applies. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
-    #[doc(hidden)]
     pub delay_seconds: ::std::option::Option<i32>,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
     /// <ul>
@@ -29,7 +25,6 @@ pub struct SendMessageInput {
     /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
     /// </ul>
     /// </important>
-    #[doc(hidden)]
     pub message_system_attributes: ::std::option::Option<
         ::std::collections::HashMap<crate::types::MessageSystemAttributeNameForSends, crate::types::MessageSystemAttributeValue>,
     >,
@@ -52,7 +47,6 @@ pub struct SendMessageInput {
     /// </note>
     /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub message_deduplication_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
@@ -64,7 +58,6 @@ pub struct SendMessageInput {
     /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
     /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
     /// </important>
-    #[doc(hidden)]
     pub message_group_id: ::std::option::Option<::std::string::String>,
 }
 impl SendMessageInput {

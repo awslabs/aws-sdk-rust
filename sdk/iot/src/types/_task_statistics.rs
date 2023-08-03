@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskStatistics {
     /// <p>The number of checks in this audit.</p>
-    #[doc(hidden)]
     pub total_checks: ::std::option::Option<i32>,
     /// <p>The number of checks in progress.</p>
-    #[doc(hidden)]
     pub in_progress_checks: ::std::option::Option<i32>,
     /// <p>The number of checks waiting for data collection.</p>
-    #[doc(hidden)]
     pub waiting_for_data_collection_checks: ::std::option::Option<i32>,
     /// <p>The number of checks that found compliant resources.</p>
-    #[doc(hidden)]
     pub compliant_checks: ::std::option::Option<i32>,
     /// <p>The number of checks that found noncompliant resources.</p>
-    #[doc(hidden)]
     pub non_compliant_checks: ::std::option::Option<i32>,
     /// <p>The number of checks.</p>
-    #[doc(hidden)]
     pub failed_checks: ::std::option::Option<i32>,
     /// <p>The number of checks that did not run because the audit was canceled.</p>
-    #[doc(hidden)]
     pub canceled_checks: ::std::option::Option<i32>,
 }
 impl TaskStatistics {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Categories {
     /// <p>The category rules that have been matched in the analyzed segment.</p>
-    #[doc(hidden)]
     pub matched_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The category rule that was matched and when it occurred in the transcript.</p>
-    #[doc(hidden)]
     pub matched_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CategoryDetails>>,
 }
 impl Categories {

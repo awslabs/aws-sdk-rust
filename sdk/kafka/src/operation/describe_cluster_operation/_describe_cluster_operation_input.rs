@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterOperationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
-    #[doc(hidden)]
     pub cluster_operation_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterOperationInput {

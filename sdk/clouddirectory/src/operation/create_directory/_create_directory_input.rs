@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDirectoryInput {
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateDirectoryInput {

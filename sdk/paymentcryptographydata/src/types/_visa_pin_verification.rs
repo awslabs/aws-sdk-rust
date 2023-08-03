@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisaPinVerification {
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
-    #[doc(hidden)]
     pub pin_verification_key_index: ::std::option::Option<i32>,
     /// <p>Parameters that are required to generate or verify Visa PVV (PIN Verification Value).</p>
-    #[doc(hidden)]
     pub verification_value: ::std::option::Option<::std::string::String>,
 }
 impl VisaPinVerification {

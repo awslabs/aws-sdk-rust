@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecipeInput {
     /// <p>The name of the recipe to be described.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
-    #[doc(hidden)]
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRecipeInput {

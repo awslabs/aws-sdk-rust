@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInstalledComponentsInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    #[doc(hidden)]
     pub core_device_thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct ListInstalledComponentsInput {
     /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
     /// </ul>
     /// <p>Default: <code>ROOT</code> </p>
-    #[doc(hidden)]
     pub topology_filter: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>,
 }
 impl ListInstalledComponentsInput {

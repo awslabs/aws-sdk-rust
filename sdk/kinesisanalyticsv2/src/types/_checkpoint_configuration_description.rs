@@ -12,22 +12,18 @@ pub struct CheckpointConfigurationDescription {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
-    #[doc(hidden)]
     pub checkpointing_enabled: ::std::option::Option<bool>,
     /// <p>Describes the interval in milliseconds between checkpoint operations. </p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
     /// </note>
-    #[doc(hidden)]
     pub checkpoint_interval: ::std::option::Option<i64>,
     /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start. </p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
     /// </note>
-    #[doc(hidden)]
     pub min_pause_between_checkpoints: ::std::option::Option<i64>,
 }
 impl CheckpointConfigurationDescription {

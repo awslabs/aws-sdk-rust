@@ -5,14 +5,11 @@
 pub struct GetClipInput {
     /// <p>The name of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p>
     /// <p>You must specify either the StreamName or the StreamARN. </p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    #[doc(hidden)]
     pub clip_fragment_selector: ::std::option::Option<crate::types::ClipFragmentSelector>,
 }
 impl GetClipInput {

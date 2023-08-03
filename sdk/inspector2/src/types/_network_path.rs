@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkPath {
     /// <p>The details on the steps in the network path.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
 }
 impl NetworkPath {

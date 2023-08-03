@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendUsersMessageResponse {
     /// <p>The unique identifier for the application that was used to send the message.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that was assigned to the message request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an EndpointMessageResult object.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>>,
     >,

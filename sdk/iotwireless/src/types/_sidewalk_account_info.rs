@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SidewalkAccountInfo {
     /// <p>The Sidewalk Amazon ID.</p>
-    #[doc(hidden)]
     pub amazon_id: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk application server private key.</p>
-    #[doc(hidden)]
     pub app_server_private_key: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkAccountInfo {

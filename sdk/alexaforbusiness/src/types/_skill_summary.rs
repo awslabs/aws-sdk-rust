@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SkillSummary {
     /// <p>The ARN of the skill summary.</p>
-    #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the skill.</p>
-    #[doc(hidden)]
     pub skill_name: ::std::option::Option<::std::string::String>,
     /// <p>Linking support for a skill.</p>
-    #[doc(hidden)]
     pub supports_linking: bool,
     /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
-    #[doc(hidden)]
     pub enablement_type: ::std::option::Option<crate::types::EnablementType>,
     /// <p>Whether the skill is publicly available or is a private skill.</p>
-    #[doc(hidden)]
     pub skill_type: ::std::option::Option<crate::types::SkillType>,
 }
 impl SkillSummary {

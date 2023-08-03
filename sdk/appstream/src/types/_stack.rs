@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stack {
     /// <p>The ARN of the stack.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description to display.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The stack name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the stack was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The storage connectors to enable.</p>
-    #[doc(hidden)]
     pub storage_connectors: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
-    #[doc(hidden)]
     pub redirect_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    #[doc(hidden)]
     pub feedback_url: ::std::option::Option<::std::string::String>,
     /// <p>The errors for the stack.</p>
-    #[doc(hidden)]
     pub stack_errors: ::std::option::Option<::std::vec::Vec<crate::types::StackError>>,
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
-    #[doc(hidden)]
     pub user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
     /// <p>The persistent application settings for users of the stack.</p>
-    #[doc(hidden)]
     pub application_settings: ::std::option::Option<crate::types::ApplicationSettingsResponse>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
-    #[doc(hidden)]
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    #[doc(hidden)]
     pub embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
-    #[doc(hidden)]
     pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
 }
 impl Stack {

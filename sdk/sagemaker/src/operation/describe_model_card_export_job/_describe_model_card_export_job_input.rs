@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelCardExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
-    #[doc(hidden)]
     pub model_card_export_job_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelCardExportJobInput {

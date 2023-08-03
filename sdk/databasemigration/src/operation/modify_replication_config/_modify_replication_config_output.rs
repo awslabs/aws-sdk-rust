@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationConfigOutput {
     /// <p>Information about the serverless replication config that was modified.</p>
-    #[doc(hidden)]
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     _request_id: Option<String>,
 }

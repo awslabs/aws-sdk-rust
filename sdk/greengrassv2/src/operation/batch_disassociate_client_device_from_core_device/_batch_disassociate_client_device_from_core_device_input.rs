@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateClientDeviceFromCoreDeviceInput {
     /// <p>The list of client devices to disassociate.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::DisassociateClientDeviceFromCoreDeviceEntry>>,
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    #[doc(hidden)]
     pub core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchDisassociateClientDeviceFromCoreDeviceInput {

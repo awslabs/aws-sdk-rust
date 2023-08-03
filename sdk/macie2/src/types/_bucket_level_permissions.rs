@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketLevelPermissions {
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
-    #[doc(hidden)]
     pub access_control_list: ::std::option::Option<crate::types::AccessControlList>,
     /// <p>The block public access settings for the bucket.</p>
-    #[doc(hidden)]
     pub block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
-    #[doc(hidden)]
     pub bucket_policy: ::std::option::Option<crate::types::BucketPolicy>,
 }
 impl BucketLevelPermissions {

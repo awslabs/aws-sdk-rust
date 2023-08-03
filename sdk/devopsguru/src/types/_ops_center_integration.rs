@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsCenterIntegration {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
-    #[doc(hidden)]
     pub opt_in_status: ::std::option::Option<crate::types::OptInStatus>,
 }
 impl OpsCenterIntegration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShippingLabelStatus>,
     _request_id: Option<String>,
 }

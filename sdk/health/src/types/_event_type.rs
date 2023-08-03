@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventType {
     /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::EventTypeCategory>,
 }
 impl EventType {

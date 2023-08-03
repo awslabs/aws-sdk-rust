@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDetectorModelInput {
     /// <p>The name of the detector model that is updated.</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>Information that defines how a detector operates.</p>
-    #[doc(hidden)]
     pub detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
     /// <p>A brief description of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    #[doc(hidden)]
     pub evaluation_method: ::std::option::Option<crate::types::EvaluationMethod>,
 }
 impl UpdateDetectorModelInput {

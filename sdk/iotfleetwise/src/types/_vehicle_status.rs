@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VehicleStatus {
     /// <p>The name of a campaign.</p>
-    #[doc(hidden)]
     pub campaign_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the vehicle.</p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
@@ -18,7 +16,6 @@ pub struct VehicleStatus {
     /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
     /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VehicleState>,
 }
 impl VehicleStatus {

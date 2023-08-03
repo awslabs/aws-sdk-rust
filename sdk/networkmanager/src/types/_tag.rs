@@ -6,11 +6,9 @@
 pub struct Tag {
     /// <p>The tag key.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {

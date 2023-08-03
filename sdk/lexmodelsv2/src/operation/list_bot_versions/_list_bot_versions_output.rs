@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBotVersionsOutput {
     /// <p>The identifier of the bot to list versions for.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for the bot versions that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more versions available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    #[doc(hidden)]
     pub bot_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotVersionSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBotVersions</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code> operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

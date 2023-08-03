@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceScanMetadata {
     /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
-    #[doc(hidden)]
     pub ecr_repository: ::std::option::Option<crate::types::EcrRepositoryMetadata>,
     /// <p>An object that contains details about the container metadata for an Amazon ECR image.</p>
-    #[doc(hidden)]
     pub ecr_image: ::std::option::Option<crate::types::EcrContainerImageMetadata>,
     /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub ec2: ::std::option::Option<crate::types::Ec2Metadata>,
     /// <p>An object that contains metadata details for an AWS Lambda function.</p>
-    #[doc(hidden)]
     pub lambda_function: ::std::option::Option<crate::types::LambdaFunctionMetadata>,
 }
 impl ResourceScanMetadata {

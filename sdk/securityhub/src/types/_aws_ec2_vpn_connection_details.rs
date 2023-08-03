@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionDetails {
     /// <p>The identifier of the VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the VPN connection. Valid values are as follows:</p>
     /// <ul>
@@ -14,34 +13,24 @@ pub struct AwsEc2VpnConnectionDetails {
     /// <li> <p> <code>deleting</code> </p> </li>
     /// <li> <p> <code>pending</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the customer gateway that is at your end of the VPN connection.</p>
-    #[doc(hidden)]
     pub customer_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration information for the VPN connection's customer gateway, in the native XML format.</p>
-    #[doc(hidden)]
     pub customer_gateway_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The type of VPN connection.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the virtual private gateway that is at the Amazon Web Services side of the VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The category of the VPN connection. <code>VPN</code> indicates an Amazon Web Services VPN connection. <code>VPN-Classic</code> indicates an Amazon Web Services Classic VPN connection.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPN tunnel.</p>
-    #[doc(hidden)]
     pub vgw_telemetry: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionVgwTelemetryDetails>>,
     /// <p>The VPN connection options.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::AwsEc2VpnConnectionOptionsDetails>,
     /// <p>The static routes that are associated with the VPN connection.</p>
-    #[doc(hidden)]
     pub routes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpnConnectionRoutesDetails>>,
     /// <p>The identifier of the transit gateway that is associated with the VPN connection.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpnConnectionDetails {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListObjectAttributes {
     /// <p>Reference of the object whose attributes need to be listed.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-    #[doc(hidden)]
     pub facet_filter: ::std::option::Option<crate::types::SchemaFacet>,
 }
 impl BatchListObjectAttributes {

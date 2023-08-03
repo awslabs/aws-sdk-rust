@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributionIdList {
     /// <p>The value provided in the <code>Marker</code> request field.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing distribution IDs where you left off.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of distribution IDs requested.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     /// <p>A flag that indicates whether more distribution IDs remain to be listed. If your results were truncated, you can make a subsequent request using the <code>Marker</code> request field to retrieve more distribution IDs in the list.</p>
-    #[doc(hidden)]
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>The total number of distribution IDs returned in the response.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>Contains the distribution IDs in the list.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DistributionIdList {

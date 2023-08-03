@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Policy {
     /// <p>The policy name.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy ARN.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl Policy {

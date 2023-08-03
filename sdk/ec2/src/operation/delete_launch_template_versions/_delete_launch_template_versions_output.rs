@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions that were successfully deleted.</p>
-    #[doc(hidden)]
     pub successfully_deleted_launch_template_versions:
         ::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>>,
     /// <p>Information about the launch template versions that could not be deleted.</p>
-    #[doc(hidden)]
     pub unsuccessfully_deleted_launch_template_versions:
         ::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>>,
     _request_id: Option<String>,

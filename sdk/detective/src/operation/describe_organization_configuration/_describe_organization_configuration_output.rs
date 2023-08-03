@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
-    #[doc(hidden)]
     pub auto_enable: bool,
     _request_id: Option<String>,
 }

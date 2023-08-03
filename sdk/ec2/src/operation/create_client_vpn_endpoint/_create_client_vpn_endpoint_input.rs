@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClientVpnEndpointInput {
     /// <p>The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. Client CIDR range must have a size of at least /22 and must not be greater than /12.</p>
-    #[doc(hidden)]
     pub client_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the server certificate. For more information, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager User Guide</a>.</p>
-    #[doc(hidden)]
     pub server_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the authentication method to be used to authenticate clients.</p>
-    #[doc(hidden)]
     pub authentication_options: ::std::option::Option<::std::vec::Vec<crate::types::ClientVpnAuthenticationRequest>>,
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
@@ -20,57 +17,42 @@ pub struct CreateClientVpnEndpointInput {
     /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
     /// <li> <p>Client connection termination time</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub connection_log_options: ::std::option::Option<crate::types::ConnectionLogOptions>,
     /// <p>Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.</p>
-    #[doc(hidden)]
     pub dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The transport protocol to be used by the VPN session.</p>
     /// <p>Default value: <code>udp</code> </p>
-    #[doc(hidden)]
     pub transport_protocol: ::std::option::Option<crate::types::TransportProtocol>,
     /// <p>The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
     /// <p>Valid Values: <code>443</code> | <code>1194</code> </p>
     /// <p>Default Value: <code>443</code> </p>
-    #[doc(hidden)]
     pub vpn_port: ::std::option::Option<i32>,
     /// <p>A brief description of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether split-tunnel is enabled on the Client VPN endpoint.</p>
     /// <p>By default, split-tunnel on a VPN endpoint is disabled.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
-    #[doc(hidden)]
     pub split_tunnel: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the Client VPN endpoint during creation.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC that contains the security groups.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the request, the default security group for the VPC is applied.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify whether to enable the self-service portal for the Client VPN endpoint.</p>
     /// <p>Default Value: <code>enabled</code> </p>
-    #[doc(hidden)]
     pub self_service_portal: ::std::option::Option<crate::types::SelfServicePortal>,
     /// <p>The options for managing connection authorization for new client connections.</p>
-    #[doc(hidden)]
     pub client_connect_options: ::std::option::Option<crate::types::ClientConnectOptions>,
     /// <p>The maximum VPN session duration time in hours.</p>
     /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
     /// <p>Default value: <code>24</code> </p>
-    #[doc(hidden)]
     pub session_timeout_hours: ::std::option::Option<i32>,
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
-    #[doc(hidden)]
     pub client_login_banner_options: ::std::option::Option<crate::types::ClientLoginBannerOptions>,
 }
 impl CreateClientVpnEndpointInput {

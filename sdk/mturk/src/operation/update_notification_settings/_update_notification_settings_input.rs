@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNotificationSettingsInput {
     /// <p> The ID of the HIT type whose notification specification is being updated. </p>
-    #[doc(hidden)]
     pub hit_type_id: ::std::option::Option<::std::string::String>,
     /// <p> The notification specification for the HIT type. </p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::NotificationSpecification>,
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
 }
 impl UpdateNotificationSettingsInput {

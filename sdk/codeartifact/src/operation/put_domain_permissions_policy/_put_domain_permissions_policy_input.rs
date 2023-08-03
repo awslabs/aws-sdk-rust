@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDomainPermissionsPolicyInput {
     /// <p> The name of the domain on which to set the resource policy. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
-    #[doc(hidden)]
     pub policy_revision: ::std::option::Option<::std::string::String>,
     /// <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PutDomainPermissionsPolicyInput {

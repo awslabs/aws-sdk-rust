@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDetectorModelAnalysisOutput {
     /// <p>The ID that you can use to retrieve the analysis result.</p>
-    #[doc(hidden)]
     pub analysis_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

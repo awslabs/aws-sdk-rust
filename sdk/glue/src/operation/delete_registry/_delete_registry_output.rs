@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRegistryOutput {
     /// <p>The name of the registry being deleted.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>
-    #[doc(hidden)]
     pub registry_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RegistryStatus>,
     _request_id: Option<String>,
 }

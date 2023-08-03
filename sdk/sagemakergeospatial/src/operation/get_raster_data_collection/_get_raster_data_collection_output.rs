@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRasterDataCollectionOutput {
     /// <p>The name of the raster data collection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The raster data collection type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataCollectionType>,
     /// <p>A description of the raster data collection.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the description page.</p>
-    #[doc(hidden)]
     pub description_page_url: ::std::option::Option<::std::string::String>,
     /// <p>The filters supported by the raster data collection.</p>
-    #[doc(hidden)]
     pub supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The list of image source bands in the raster data collection.</p>
-    #[doc(hidden)]
     pub image_source_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Each tag consists of a key and a value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

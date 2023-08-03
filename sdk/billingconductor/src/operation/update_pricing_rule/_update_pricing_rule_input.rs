@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The new description for the pricing rule. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The new pricing rule type. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PricingRuleType>,
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
-    #[doc(hidden)]
     pub modifier_percentage: ::std::option::Option<f64>,
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    #[doc(hidden)]
     pub tiering: ::std::option::Option<crate::types::UpdateTieringInput>,
 }
 impl UpdatePricingRuleInput {

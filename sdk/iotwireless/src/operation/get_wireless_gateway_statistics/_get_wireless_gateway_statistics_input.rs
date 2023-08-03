@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayStatisticsInput {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
-    #[doc(hidden)]
     pub wireless_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWirelessGatewayStatisticsInput {

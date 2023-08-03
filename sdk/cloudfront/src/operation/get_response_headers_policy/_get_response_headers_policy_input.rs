@@ -5,7 +5,6 @@
 pub struct GetResponseHeadersPolicyInput {
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetResponseHeadersPolicyInput {

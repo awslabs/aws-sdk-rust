@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetOnDeviceService {
     /// <p>Specifies the name of the service on the Snow Family device that your transferred data will be exported from or imported into.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<crate::types::DeviceServiceName>,
     /// <p>Specifies whether the data is being imported or exported. You can import or export the data, or use it locally on the device.</p>
-    #[doc(hidden)]
     pub transfer_option: ::std::option::Option<crate::types::TransferOption>,
 }
 impl TargetOnDeviceService {

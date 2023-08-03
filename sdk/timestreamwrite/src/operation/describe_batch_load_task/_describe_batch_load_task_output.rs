@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBatchLoadTaskOutput {
     /// <p>Description of the batch load task.</p>
-    #[doc(hidden)]
     pub batch_load_task_description: ::std::option::Option<crate::types::BatchLoadTaskDescription>,
     _request_id: Option<String>,
 }

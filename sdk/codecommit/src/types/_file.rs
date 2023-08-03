@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct File {
     /// <p>The blob ID that contains the file information.</p>
-    #[doc(hidden)]
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path to the file in the repository.</p>
-    #[doc(hidden)]
     pub absolute_path: ::std::option::Option<::std::string::String>,
     /// <p>The relative path of the file from the folder where the query originated.</p>
-    #[doc(hidden)]
     pub relative_path: ::std::option::Option<::std::string::String>,
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    #[doc(hidden)]
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
 impl File {

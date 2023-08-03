@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokeAsyncOutput {
     /// <p>The status code.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBillingGroupOutput {
     /// <p>The name of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the billing group.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The properties of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_properties: ::std::option::Option<crate::types::BillingGroupProperties>,
     /// <p>Additional information about the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_metadata: ::std::option::Option<crate::types::BillingGroupMetadata>,
     _request_id: Option<String>,
 }

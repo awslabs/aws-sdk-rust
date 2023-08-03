@@ -12,13 +12,10 @@ pub struct ExecutionStepResult {
     /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
     /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub step_type: ::std::option::Option<crate::types::WorkflowStepType>,
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ExecutionError>,
 }
 impl ExecutionStepResult {

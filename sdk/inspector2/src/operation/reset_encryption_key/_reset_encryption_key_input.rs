@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetEncryptionKeyInput {
     /// <p>The scan type the key encrypts.</p>
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
     /// <p>The resource type the key encrypts.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl ResetEncryptionKeyInput {

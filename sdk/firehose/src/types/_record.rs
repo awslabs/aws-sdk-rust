@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Record {
     /// <p>The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl Record {

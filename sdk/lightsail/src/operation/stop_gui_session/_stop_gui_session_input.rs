@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopGuiSessionInput {
     /// <p>The resource name.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl StopGuiSessionInput {

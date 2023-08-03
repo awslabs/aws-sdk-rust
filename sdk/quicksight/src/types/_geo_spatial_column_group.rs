@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoSpatialColumnGroup {
     /// <p>A display name for the hierarchy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Country code.</p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<crate::types::GeoSpatialCountryCode>,
     /// <p>Columns in this hierarchy.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GeoSpatialColumnGroup {

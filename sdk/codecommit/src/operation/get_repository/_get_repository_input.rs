@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryInput {
     /// <p>The name of the repository to get information about.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRepositoryInput {

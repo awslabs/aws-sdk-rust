@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerReplicationParameters {
     /// <p>The seed time for creating a replication job for the server.</p>
-    #[doc(hidden)]
     pub seed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The frequency of creating replication jobs for the server.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
-    #[doc(hidden)]
     pub run_once: ::std::option::Option<bool>,
     /// <p>The license type for creating a replication job for the server.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::LicenseType>,
     /// <p>The number of recent AMIs to keep when creating a replication job for this server.</p>
-    #[doc(hidden)]
     pub number_of_recent_amis_to_keep: ::std::option::Option<i32>,
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -30,7 +24,6 @@ pub struct ServerReplicationParameters {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ServerReplicationParameters {

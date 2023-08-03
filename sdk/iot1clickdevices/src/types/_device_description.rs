@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceDescription {
     /// <p>The ARN of the device.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unique identifier of the device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
-    #[doc(hidden)]
     pub remaining_life: ::std::option::Option<f64>,
     /// <p>The type of the device, such as "button".</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DeviceDescription {

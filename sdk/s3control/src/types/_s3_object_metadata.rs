@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ObjectMetadata {
     /// <p></p>
-    #[doc(hidden)]
     pub cache_control: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub content_disposition: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub content_encoding: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub content_language: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p></p>
-    #[doc(hidden)]
     pub content_length: ::std::option::Option<i64>,
     /// <p></p>
-    #[doc(hidden)]
     pub content_md5: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub http_expires_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p></p>
-    #[doc(hidden)]
     pub requester_charged: bool,
     /// <p></p>
-    #[doc(hidden)]
     pub sse_algorithm: ::std::option::Option<crate::types::S3SseAlgorithm>,
 }
 impl S3ObjectMetadata {

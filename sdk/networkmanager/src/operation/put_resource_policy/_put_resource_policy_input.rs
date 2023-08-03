@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The JSON resource policy document.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource policy. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {

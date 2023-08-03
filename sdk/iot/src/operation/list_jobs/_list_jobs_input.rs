@@ -4,31 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
     /// <p>The maximum number of results to return per request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
-    #[doc(hidden)]
     pub thing_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
-    #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
 }
 impl ListJobsInput {

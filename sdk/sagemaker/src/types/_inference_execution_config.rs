@@ -9,7 +9,6 @@ pub struct InferenceExecutionConfig {
     /// <li> <p> <code>SERIAL</code> - Containers run as a serial pipeline.</p> </li>
     /// <li> <p> <code>DIRECT</code> - Only the individual container that you specify is run.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::InferenceExecutionMode>,
 }
 impl InferenceExecutionConfig {

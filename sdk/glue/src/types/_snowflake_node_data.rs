@@ -5,67 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeNodeData {
     /// <p>Specifies how retrieved data is specified. Valid values: <code>"table"</code>, <code> "query"</code>.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a Glue Data Catalog Connection to a Snowflake endpoint.</p>
-    #[doc(hidden)]
     pub connection: ::std::option::Option<crate::types::Option>,
     /// <p>Specifies a Snowflake database schema for your node to use.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a Snowflake table for your node to use.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a Snowflake database for your node to use.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>Not currently used.</p>
-    #[doc(hidden)]
     pub temp_dir: ::std::option::Option<::std::string::String>,
     /// <p>Not currently used.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<crate::types::Option>,
     /// <p>Specifies additional options passed to the Snowflake connector. If options are specified elsewhere in this node, this will take precedence.</p>
-    #[doc(hidden)]
     pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A SQL string used to retrieve data with the <code>query</code> sourcetype.</p>
-    #[doc(hidden)]
     pub sample_query: ::std::option::Option<::std::string::String>,
     /// <p>A SQL string run before the Snowflake connector performs its standard actions.</p>
-    #[doc(hidden)]
     pub pre_action: ::std::option::Option<::std::string::String>,
     /// <p>A SQL string run after the Snowflake connector performs its standard actions.</p>
-    #[doc(hidden)]
     pub post_action: ::std::option::Option<::std::string::String>,
     /// <p>Specifies what action to take when writing to a table with preexisting data. Valid values: <code> append</code>, <code>merge</code>, <code>truncate</code>, <code>drop</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>Used when Action is <code>append</code>. Specifies the resolution behavior when a row already exists. If true, preexisting rows will be updated. If false, those rows will be inserted.</p>
-    #[doc(hidden)]
     pub upsert: bool,
     /// <p>Specifies a merge action. Valid values: <code>simple</code>, <code>custom</code>. If simple, merge behavior is defined by <code>MergeWhenMatched</code> and <code> MergeWhenNotMatched</code>. If custom, defined by <code>MergeClause</code>.</p>
-    #[doc(hidden)]
     pub merge_action: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how to resolve records that match preexisting data when merging. Valid values: <code> update</code>, <code>delete</code>.</p>
-    #[doc(hidden)]
     pub merge_when_matched: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how to process records that do not match preexisting data when merging. Valid values: <code>insert</code>, <code>none</code>.</p>
-    #[doc(hidden)]
     pub merge_when_not_matched: ::std::option::Option<::std::string::String>,
     /// <p>A SQL statement that specifies a custom merge behavior.</p>
-    #[doc(hidden)]
     pub merge_clause: ::std::option::Option<::std::string::String>,
     /// <p>The name of a staging table used when performing <code>merge</code> or upsert <code>append</code> actions. Data is written to this table, then moved to <code>table</code> by a generated postaction.</p>
-    #[doc(hidden)]
     pub staging_table: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the columns combined to identify a record when detecting matches for merges and upserts. A list of structures with <code>value</code>, <code>label</code> and <code> description</code> keys. Each structure describes a column.</p>
-    #[doc(hidden)]
     pub selected_columns: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
     /// <p>Specifies whether automatic query pushdown is enabled. If pushdown is enabled, then when a query is run on Spark, if part of the query can be "pushed down" to the Snowflake server, it is pushed down. This improves performance of some queries.</p>
-    #[doc(hidden)]
     pub auto_pushdown: bool,
     /// <p>Manually defines the target schema for the node. A list of structures with <code>value</code> , <code>label</code> and <code>description</code> keys. Each structure defines a column.</p>
-    #[doc(hidden)]
     pub table_schema: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
 }
 impl SnowflakeNodeData {

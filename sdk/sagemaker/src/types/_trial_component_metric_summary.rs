@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponentMetricSummary {
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>When the metric was last updated.</p>
-    #[doc(hidden)]
     pub time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum value of the metric.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<f64>,
     /// <p>The minimum value of the metric.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
     /// <p>The most recent value of the metric.</p>
-    #[doc(hidden)]
     pub last: ::std::option::Option<f64>,
     /// <p>The number of samples used to generate the metric.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>The average value of the metric.</p>
-    #[doc(hidden)]
     pub avg: ::std::option::Option<f64>,
     /// <p>The standard deviation of the metric.</p>
-    #[doc(hidden)]
     pub std_dev: ::std::option::Option<f64>,
 }
 impl TrialComponentMetricSummary {

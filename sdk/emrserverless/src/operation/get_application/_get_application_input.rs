@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The ID of the application that will be described.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationInput {

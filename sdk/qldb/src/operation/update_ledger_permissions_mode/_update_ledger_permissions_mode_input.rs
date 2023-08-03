@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLedgerPermissionsModeInput {
     /// <p>The name of the ledger.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct UpdateLedgerPermissionsModeInput {
     /// </ul> <note>
     /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>
     /// </note>
-    #[doc(hidden)]
     pub permissions_mode: ::std::option::Option<crate::types::PermissionsMode>,
 }
 impl UpdateLedgerPermissionsModeInput {

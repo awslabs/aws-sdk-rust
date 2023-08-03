@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeRangeProperty {
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
-    #[doc(hidden)]
     pub target_nodes: ::std::option::Option<::std::string::String>,
     /// <p>The container details for the node range.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::ContainerProperties>,
 }
 impl NodeRangeProperty {

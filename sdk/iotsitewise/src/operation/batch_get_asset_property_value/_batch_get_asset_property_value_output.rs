@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    #[doc(hidden)]
     pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueErrorEntry>>,
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-    #[doc(hidden)]
     pub success_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueSuccessEntry>>,
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-    #[doc(hidden)]
     pub skipped_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueSkippedEntry>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

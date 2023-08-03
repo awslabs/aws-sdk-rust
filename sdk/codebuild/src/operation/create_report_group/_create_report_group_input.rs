@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReportGroupInput {
     /// <p> The name of the report group. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The type of report group. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ReportType>,
     /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
-    #[doc(hidden)]
     pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     /// <p> A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateReportGroupInput {

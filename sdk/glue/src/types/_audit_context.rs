@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditContext {
     /// <p>A string containing the additional audit context information.</p>
-    #[doc(hidden)]
     pub additional_audit_context: ::std::option::Option<::std::string::String>,
     /// <p>The requested columns for audit.</p>
-    #[doc(hidden)]
     pub requested_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>All columns request for audit.</p>
-    #[doc(hidden)]
     pub all_columns_requested: ::std::option::Option<bool>,
 }
 impl AuditContext {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceHardware {
     /// <p>The number of vCPUs the instance has.</p>
-    #[doc(hidden)]
     pub cpu_count: ::std::option::Option<i32>,
     /// <p>The disks attached to the instance.</p>
-    #[doc(hidden)]
     pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
-    #[doc(hidden)]
     pub ram_size_in_gb: ::std::option::Option<f32>,
 }
 impl InstanceHardware {

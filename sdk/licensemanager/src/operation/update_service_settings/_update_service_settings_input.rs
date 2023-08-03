@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceSettingsInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
-    #[doc(hidden)]
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Enables integration with Organizations for cross-account discovery.</p>
-    #[doc(hidden)]
     pub organization_configuration: ::std::option::Option<crate::types::OrganizationConfiguration>,
     /// <p>Activates cross-account discovery.</p>
-    #[doc(hidden)]
     pub enable_cross_accounts_discovery: ::std::option::Option<bool>,
 }
 impl UpdateServiceSettingsInput {

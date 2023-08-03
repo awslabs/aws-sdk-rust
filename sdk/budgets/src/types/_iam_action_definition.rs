@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamActionDefinition {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of roles to be attached. There must be at least one role. </p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of groups to be attached. There must be at least one group. </p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of users to be attached. There must be at least one user. </p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IamActionDefinition {

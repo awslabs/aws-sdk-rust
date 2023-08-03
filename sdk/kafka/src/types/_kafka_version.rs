@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaVersion {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::KafkaVersionStatus>,
 }
 impl KafkaVersion {

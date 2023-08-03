@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateViewOutput {
     /// <p>A structure that contains the details about the new view.</p>
-    #[doc(hidden)]
     pub view: ::std::option::Option<crate::types::View>,
     _request_id: Option<String>,
 }

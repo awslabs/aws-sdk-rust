@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMembersOutput {
     /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
-    #[doc(hidden)]
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }

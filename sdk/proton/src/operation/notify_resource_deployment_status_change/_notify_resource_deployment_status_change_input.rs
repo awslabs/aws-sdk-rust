@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NotifyResourceDeploymentStatusChangeInput {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of your provisioned resource.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceDeploymentStatus>,
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>The deployment ID for your provisioned resource.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status message for your provisioned resource.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl NotifyResourceDeploymentStatusChangeInput {

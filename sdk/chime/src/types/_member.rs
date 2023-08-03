@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The member ID (user ID or bot ID).</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The member type.</p>
-    #[doc(hidden)]
     pub member_type: ::std::option::Option<crate::types::MemberType>,
     /// <p>The member email address.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The member name.</p>
-    #[doc(hidden)]
     pub full_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl Member {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzedResource {
     /// <p>The ARN of the resource that was analyzed.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource that was analyzed.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The time at which the finding was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the resource was analyzed.</p>
-    #[doc(hidden)]
     pub analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the finding was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
-    #[doc(hidden)]
     pub is_public: ::std::option::Option<bool>,
     /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    #[doc(hidden)]
     pub shared_via: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current status of the finding generated from the analyzed resource.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FindingStatus>,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    #[doc(hidden)]
     pub resource_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>An error message.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
 }
 impl AnalyzedResource {

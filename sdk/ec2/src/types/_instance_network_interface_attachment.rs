@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceNetworkInterfaceAttachment {
     /// <p>The time stamp when the attachment initiated.</p>
-    #[doc(hidden)]
     pub attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the network interface attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The index of the device on the instance for the network interface attachment.</p>
-    #[doc(hidden)]
     pub device_index: ::std::option::Option<i32>,
     /// <p>The attachment state.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>The index of the network card.</p>
-    #[doc(hidden)]
     pub network_card_index: ::std::option::Option<i32>,
 }
 impl InstanceNetworkInterfaceAttachment {

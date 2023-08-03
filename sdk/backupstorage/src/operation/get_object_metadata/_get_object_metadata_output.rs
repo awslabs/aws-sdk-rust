@@ -4,18 +4,14 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetObjectMetadataOutput {
     /// Metadata string.
-    #[doc(hidden)]
     pub metadata_string: ::std::option::Option<::std::string::String>,
     /// Metadata blob.
     pub metadata_blob: ::aws_smithy_http::byte_stream::ByteStream,
     /// The size of MetadataBlob.
-    #[doc(hidden)]
     pub metadata_blob_length: i64,
     /// MetadataBlob checksum.
-    #[doc(hidden)]
     pub metadata_blob_checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm.
-    #[doc(hidden)]
     pub metadata_blob_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
     _request_id: Option<String>,
 }

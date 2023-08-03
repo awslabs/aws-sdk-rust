@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKxEnvironmentOutput {
     /// <p>The name of the kdb environment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the kdb environment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>A unique identifier for the kdb environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the kdb environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier of the environment.</p>
-    #[doc(hidden)]
     pub environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the kdb environment was created in FinSpace.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

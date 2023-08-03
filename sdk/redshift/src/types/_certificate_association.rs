@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateAssociation {
     /// <p>The custom domain name for the certificate association.</p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier for the certificate association.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CertificateAssociation {

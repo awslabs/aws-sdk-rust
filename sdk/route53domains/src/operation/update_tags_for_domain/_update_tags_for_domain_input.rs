@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTagsForDomainInput {
     /// <p>The domain for which you want to add or update tags.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    #[doc(hidden)]
     pub tags_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateTagsForDomainInput {

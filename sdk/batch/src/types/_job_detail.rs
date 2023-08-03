@@ -5,92 +5,64 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDetail {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The job name.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue that the job is associated with.</p>
-    #[doc(hidden)]
     pub job_queue: ::std::option::Option<::std::string::String>,
     /// <p>The current status for the job.</p> <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The share identifier for the job.</p>
-    #[doc(hidden)]
     pub share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
-    #[doc(hidden)]
     pub scheduling_priority: ::std::option::Option<i32>,
     /// <p>A list of job attempts that are associated with this job.</p>
-    #[doc(hidden)]
     pub attempts: ::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>>,
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<i64>,
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
-    #[doc(hidden)]
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<i64>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub stopped_at: ::std::option::Option<i64>,
     /// <p>A list of job IDs that this job depends on.</p>
-    #[doc(hidden)]
     pub depends_on: ::std::option::Option<::std::vec::Vec<crate::types::JobDependency>>,
     /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
-    #[doc(hidden)]
     pub job_definition: ::std::option::Option<::std::string::String>,
     /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object that represents the details for the container that's associated with the job.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::ContainerDetail>,
     /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
-    #[doc(hidden)]
     pub node_details: ::std::option::Option<crate::types::NodeDetails>,
     /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
-    #[doc(hidden)]
     pub node_properties: ::std::option::Option<crate::types::NodeProperties>,
     /// <p>The array properties of the job, if it's an array job.</p>
-    #[doc(hidden)]
     pub array_properties: ::std::option::Option<crate::types::ArrayPropertiesDetail>,
     /// <p>The timeout configuration for the job.</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<crate::types::JobTimeout>,
     /// <p>The tags that are applied to the job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-    #[doc(hidden)]
     pub propagate_tags: ::std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    #[doc(hidden)]
     pub platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
-    #[doc(hidden)]
     pub eks_properties: ::std::option::Option<crate::types::EksPropertiesDetail>,
     /// <p>A list of job attempts that are associated with this job.</p>
-    #[doc(hidden)]
     pub eks_attempts: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>>,
     /// <p>Indicates whether the job is canceled.</p>
-    #[doc(hidden)]
     pub is_cancelled: ::std::option::Option<bool>,
     /// <p>Indicates whether the job is terminated.</p>
-    #[doc(hidden)]
     pub is_terminated: ::std::option::Option<bool>,
 }
 impl JobDetail {

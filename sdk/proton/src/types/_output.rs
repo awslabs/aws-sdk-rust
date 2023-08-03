@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Output {
     /// <p>The output key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The output value.</p>
-    #[doc(hidden)]
     pub value_string: ::std::option::Option<::std::string::String>,
 }
 impl Output {

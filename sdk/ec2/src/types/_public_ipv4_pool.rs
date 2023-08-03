@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicIpv4Pool {
     /// <p>The ID of the address pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the address pool.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The address ranges.</p>
-    #[doc(hidden)]
     pub pool_address_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
     /// <p>The total number of addresses.</p>
-    #[doc(hidden)]
     pub total_address_count: ::std::option::Option<i32>,
     /// <p>The total number of available addresses.</p>
-    #[doc(hidden)]
     pub total_available_address_count: ::std::option::Option<i32>,
     /// <p>The name of the location from which the address pool is advertised. A network border group is a unique set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.</p>
-    #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>Any tags for the address pool.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PublicIpv4Pool {

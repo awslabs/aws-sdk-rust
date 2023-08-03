@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMetricSetsInput {
     /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMetricSetsInput {

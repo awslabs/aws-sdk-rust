@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortProbeAction {
     /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
-    #[doc(hidden)]
     pub blocked: bool,
     /// <p>A list of objects related to port probe details.</p>
-    #[doc(hidden)]
     pub port_probe_details: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
 }
 impl PortProbeAction {

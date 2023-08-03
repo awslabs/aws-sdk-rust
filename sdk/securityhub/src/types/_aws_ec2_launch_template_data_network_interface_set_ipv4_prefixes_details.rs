@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails {
     /// <p> The IPv4 prefix. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
-    #[doc(hidden)]
     pub ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails {

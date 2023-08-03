@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStackResourcesOutput {
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
-    #[doc(hidden)]
     pub stack_resource_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

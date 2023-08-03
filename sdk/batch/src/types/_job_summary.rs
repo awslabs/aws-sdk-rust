@@ -5,42 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The job ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The job name.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <code>SubmitJob</code> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<i64>,
     /// <p>The current status for the job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<i64>,
     /// <p>The Unix timestamp for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub stopped_at: ::std::option::Option<i64>,
     /// <p>An object that represents the details of the container that's associated with the job.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::ContainerSummary>,
     /// <p>The array properties of the job, if it's an array job.</p>
-    #[doc(hidden)]
     pub array_properties: ::std::option::Option<crate::types::ArrayPropertiesSummary>,
     /// <p>The node properties for a single node in a job summary list.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
-    #[doc(hidden)]
     pub node_properties: ::std::option::Option<crate::types::NodePropertiesSummary>,
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    #[doc(hidden)]
     pub job_definition: ::std::option::Option<::std::string::String>,
 }
 impl JobSummary {

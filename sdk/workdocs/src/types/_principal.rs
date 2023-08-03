@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Principal {
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The permission information for the resource.</p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>>,
 }
 impl Principal {

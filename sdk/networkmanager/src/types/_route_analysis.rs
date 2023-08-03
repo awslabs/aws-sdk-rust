@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteAnalysis {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AWS account that created the route analysis.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route analysis.</p>
-    #[doc(hidden)]
     pub route_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the analysis started.</p>
-    #[doc(hidden)]
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the route analysis.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RouteAnalysisStatus>,
     /// <p>The source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::RouteAnalysisEndpointOptions>,
     /// <p>The destination.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::RouteAnalysisEndpointOptions>,
     /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path analysis does not succeed.</p>
-    #[doc(hidden)]
     pub include_return_path: bool,
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
-    #[doc(hidden)]
     pub use_middleboxes: bool,
     /// <p>The forward path.</p>
-    #[doc(hidden)]
     pub forward_path: ::std::option::Option<crate::types::RouteAnalysisPath>,
     /// <p>The return path.</p>
-    #[doc(hidden)]
     pub return_path: ::std::option::Option<crate::types::RouteAnalysisPath>,
 }
 impl RouteAnalysis {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryRuntimeStatistics {
     /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
-    #[doc(hidden)]
     pub timeline: ::std::option::Option<crate::types::QueryRuntimeStatisticsTimeline>,
     /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<crate::types::QueryRuntimeStatisticsRows>,
     /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
-    #[doc(hidden)]
     pub output_stage: ::std::option::Option<crate::types::QueryStage>,
 }
 impl QueryRuntimeStatistics {

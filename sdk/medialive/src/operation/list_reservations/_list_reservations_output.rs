@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReservationsOutput {
     /// Token to retrieve the next page of results
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// List of reservations
-    #[doc(hidden)]
     pub reservations: ::std::option::Option<::std::vec::Vec<crate::types::Reservation>>,
     _request_id: Option<String>,
 }

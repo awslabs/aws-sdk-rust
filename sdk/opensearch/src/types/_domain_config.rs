@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainConfig {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<crate::types::VersionStatus>,
     /// <p>Container for the cluster configuration of a the domain.</p>
-    #[doc(hidden)]
     pub cluster_config: ::std::option::Option<crate::types::ClusterConfigStatus>,
     /// <p>Container for EBS options configured for the domain.</p>
-    #[doc(hidden)]
     pub ebs_options: ::std::option::Option<crate::types::EbsOptionsStatus>,
     /// <p>Specifies the access policies for the domain.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
-    #[doc(hidden)]
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptionsStatus>,
     /// <p>The current VPC options for the domain and the status of any updates to their configuration.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcDerivedInfoStatus>,
     /// <p>Container for Amazon Cognito options for the domain.</p>
-    #[doc(hidden)]
     pub cognito_options: ::std::option::Option<crate::types::CognitoOptionsStatus>,
     /// <p>Key-value pairs to enable encryption at rest.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptionsStatus>,
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>,
     /// <p>Key-value pairs to specify advanced configuration options. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced options</a>.</p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<crate::types::AdvancedOptionsStatus>,
     /// <p>Key-value pairs to configure log publishing.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptionsStatus>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     /// <p>Container for fine-grained access control settings for the domain.</p>
-    #[doc(hidden)]
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
     /// <p>Container for Auto-Tune settings for the domain.</p>
-    #[doc(hidden)]
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
     /// <p>Container for information about the progress of an existing configuration change.</p>
-    #[doc(hidden)]
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     /// <p>Container for off-peak window options for the domain.</p>
-    #[doc(hidden)]
     pub off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptionsStatus>,
     /// <p>Software update options for the domain.</p>
-    #[doc(hidden)]
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
 }
 impl DomainConfig {

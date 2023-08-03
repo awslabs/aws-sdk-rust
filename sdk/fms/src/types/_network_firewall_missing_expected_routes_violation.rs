@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallMissingExpectedRoutesViolation {
     /// <p>The target of the violation.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>The expected routes.</p>
-    #[doc(hidden)]
     pub expected_routes: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>,
     /// <p>Information about the VPC ID.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkFirewallMissingExpectedRoutesViolation {

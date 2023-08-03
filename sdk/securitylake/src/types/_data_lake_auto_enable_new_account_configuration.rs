@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeAutoEnableNewAccountConfiguration {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services sources that are automatically enabled in Security Lake.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceResource>>,
 }
 impl DataLakeAutoEnableNewAccountConfiguration {

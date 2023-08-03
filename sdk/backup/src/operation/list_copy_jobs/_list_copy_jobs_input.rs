@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCopyJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
-    #[doc(hidden)]
     pub by_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns only copy jobs that are in the specified state.</p>
-    #[doc(hidden)]
     pub by_state: ::std::option::Option<crate::types::CopyJobState>,
     /// <p>Returns only copy jobs that were created before the specified date.</p>
-    #[doc(hidden)]
     pub by_created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only copy jobs that were created after the specified date.</p>
-    #[doc(hidden)]
     pub by_created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
@@ -36,22 +30,16 @@ pub struct ListCopyJobsInput {
     /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
     /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub by_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
-    #[doc(hidden)]
     pub by_destination_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
-    #[doc(hidden)]
     pub by_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub by_complete_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
-    #[doc(hidden)]
     pub by_parent_job_id: ::std::option::Option<::std::string::String>,
 }
 impl ListCopyJobsInput {

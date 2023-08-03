@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceMessageContent {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
-    #[doc(hidden)]
     pub call_instructions_message: ::std::option::Option<crate::types::CallInstructionsMessageType>,
     /// An object that defines a message that contains unformatted text.
-    #[doc(hidden)]
     pub plain_text_message: ::std::option::Option<crate::types::PlainTextMessageType>,
     /// An object that defines a message that contains SSML-formatted text.
-    #[doc(hidden)]
     pub ssml_message: ::std::option::Option<crate::types::SsmlMessageType>,
 }
 impl VoiceMessageContent {

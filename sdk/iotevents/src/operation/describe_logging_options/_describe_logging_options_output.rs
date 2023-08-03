@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoggingOptionsOutput {
     /// <p>The current settings of the AWS IoT Events logging options.</p>
-    #[doc(hidden)]
     pub logging_options: ::std::option::Option<crate::types::LoggingOptions>,
     _request_id: Option<String>,
 }

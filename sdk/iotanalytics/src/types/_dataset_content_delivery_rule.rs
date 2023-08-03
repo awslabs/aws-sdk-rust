@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetContentDeliveryRule {
     /// <p>The name of the dataset content delivery rules entry.</p>
-    #[doc(hidden)]
     pub entry_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination to which dataset contents are delivered.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::DatasetContentDeliveryDestination>,
 }
 impl DatasetContentDeliveryRule {

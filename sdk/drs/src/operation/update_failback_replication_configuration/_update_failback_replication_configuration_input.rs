@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFailbackReplicationConfigurationInput {
     /// <p>The ID of the Recovery Instance.</p>
-    #[doc(hidden)]
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Failback Replication Configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
-    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
-    #[doc(hidden)]
     pub use_private_ip: ::std::option::Option<bool>,
 }
 impl UpdateFailbackReplicationConfigurationInput {

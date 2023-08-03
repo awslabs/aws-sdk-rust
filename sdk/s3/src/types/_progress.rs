@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Progress {
     /// <p>The current number of object bytes scanned.</p>
-    #[doc(hidden)]
     pub bytes_scanned: i64,
     /// <p>The current number of uncompressed object bytes processed.</p>
-    #[doc(hidden)]
     pub bytes_processed: i64,
     /// <p>The current number of bytes of records payload data returned.</p>
-    #[doc(hidden)]
     pub bytes_returned: i64,
 }
 impl Progress {

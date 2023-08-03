@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTimeline {
     /// <p>The creation date and time of the instance.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance was ready to perform tasks.</p>
-    #[doc(hidden)]
     pub ready_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the instance was terminated.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InstanceTimeline {

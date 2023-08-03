@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticPolicyDefinitionDetail {
     /// <p>A description of the static policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The content of the static policy written in the Cedar policy language.</p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
 }
 impl StaticPolicyDefinitionDetail {

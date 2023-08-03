@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfiguration {
     /// The IP address where contents of the media stream will be sent.
-    #[doc(hidden)]
     pub destination_ip: ::std::option::Option<::std::string::String>,
     /// The port to use when the content of the media stream is distributed to the output.
-    #[doc(hidden)]
     pub destination_port: ::std::option::Option<i32>,
     /// The VPC interface that is used for the media stream associated with the output.
-    #[doc(hidden)]
     pub interface: ::std::option::Option<crate::types::Interface>,
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
-    #[doc(hidden)]
     pub outbound_ip: ::std::option::Option<::std::string::String>,
 }
 impl DestinationConfiguration {

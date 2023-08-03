@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVpnTunnelReplacementStatusOutput {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer gateway.</p>
-    #[doc(hidden)]
     pub customer_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private gateway.</p>
-    #[doc(hidden)]
     pub vpn_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The external IP address of the VPN tunnel.</p>
-    #[doc(hidden)]
     pub vpn_tunnel_outside_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Get details of pending tunnel endpoint maintenance.</p>
-    #[doc(hidden)]
     pub maintenance_details: ::std::option::Option<crate::types::MaintenanceDetails>,
     _request_id: Option<String>,
 }

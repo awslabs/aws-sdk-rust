@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyMacInput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The data on for which MAC is under verification.</p>
-    #[doc(hidden)]
     pub message_data: ::std::option::Option<::std::string::String>,
     /// <p>The MAC being verified.</p>
-    #[doc(hidden)]
     pub mac: ::std::option::Option<::std::string::String>,
     /// <p>The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub verification_attributes: ::std::option::Option<crate::types::MacAttributes>,
     /// <p>The length of the MAC.</p>
-    #[doc(hidden)]
     pub mac_length: ::std::option::Option<i32>,
 }
 impl VerifyMacInput {

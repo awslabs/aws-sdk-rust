@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchImportFindingsOutput {
     /// <p>The number of findings that failed to import.</p>
-    #[doc(hidden)]
     pub failed_count: i32,
     /// <p>The number of findings that were successfully imported.</p>
-    #[doc(hidden)]
     pub success_count: i32,
     /// <p>The list of findings that failed to import.</p>
-    #[doc(hidden)]
     pub failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::ImportFindingsError>>,
     _request_id: Option<String>,
 }

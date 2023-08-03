@@ -16,10 +16,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Featurization {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    #[doc(hidden)]
     pub featurization_pipeline: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
 }
 impl Featurization {

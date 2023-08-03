@@ -5,68 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The name you configured for your gateway.</p>
-    #[doc(hidden)]
     pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates the time zone configured for the gateway.</p>
-    #[doc(hidden)]
     pub gateway_timezone: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates the operating state of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_state: ::std::option::Option<::std::string::String>,
     /// <p>A <code>NetworkInterface</code> array that contains descriptions of the gateway network interfaces.</p>
-    #[doc(hidden)]
     pub gateway_network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>The type of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_type: ::std::option::Option<::std::string::String>,
     /// <p>The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the gateway is not available for an update this field is not returned in the response.</p>
-    #[doc(hidden)]
     pub next_update_availability_date: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response. This only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
-    #[doc(hidden)]
     pub last_software_update: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
-    #[doc(hidden)]
     pub ec2_instance_region: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.</p>
-    #[doc(hidden)]
     pub vpc_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
-    #[doc(hidden)]
     pub host_environment: ::std::option::Option<crate::types::HostEnvironment>,
     /// <p>The type of endpoint for your gateway.</p>
     /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<::std::string::String>,
     /// <p>Date after which this gateway will not receive software updates for new features.</p>
-    #[doc(hidden)]
     pub software_updates_end_date: ::std::option::Option<::std::string::String>,
     /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
-    #[doc(hidden)]
     pub deprecation_date: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the size of the gateway's metadata cache.</p>
-    #[doc(hidden)]
     pub gateway_capacity: ::std::option::Option<crate::types::GatewayCapacity>,
     /// <p>A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.</p>
-    #[doc(hidden)]
     pub supported_gateway_capacities: ::std::option::Option<::std::vec::Vec<crate::types::GatewayCapacity>>,
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
-    #[doc(hidden)]
     pub host_environment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

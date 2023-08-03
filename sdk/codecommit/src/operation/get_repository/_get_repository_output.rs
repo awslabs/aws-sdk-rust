@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryOutput {
     /// <p>Information about the repository.</p>
-    #[doc(hidden)]
     pub repository_metadata: ::std::option::Option<crate::types::RepositoryMetadata>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails {
     /// <p>The ARN (ends with <code>:*</code>) of the CloudWatch Logs log group to which you want your logs emitted.</p>
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails {

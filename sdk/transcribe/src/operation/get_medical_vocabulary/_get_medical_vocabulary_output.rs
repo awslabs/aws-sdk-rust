@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMedicalVocabularyOutput {
     /// <p>The name of the custom medical vocabulary you requested information about.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
-    #[doc(hidden)]
     pub vocabulary_state: ::std::option::Option<crate::types::VocabularyState>,
     /// <p>The date and time the specified custom medical vocabulary was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom medical vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
-    #[doc(hidden)]
     pub download_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

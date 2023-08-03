@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateShardCountInput {
     /// <p>The name of the stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following: </p>
     /// <ul>
@@ -13,13 +12,10 @@ pub struct UpdateShardCountInput {
     /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
     /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_shard_count: ::std::option::Option<i32>,
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-    #[doc(hidden)]
     pub scaling_type: ::std::option::Option<crate::types::ScalingType>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateShardCountInput {

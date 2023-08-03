@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Model {
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the last data sample taken.</p>
-    #[doc(hidden)]
     pub latest_sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last inference that was made.</p>
-    #[doc(hidden)]
     pub latest_inference: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information required for model metrics.</p>
-    #[doc(hidden)]
     pub model_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>,
 }
 impl Model {

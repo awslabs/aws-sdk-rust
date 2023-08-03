@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePipelineInput {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribePipelineInput {

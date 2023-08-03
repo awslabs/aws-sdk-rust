@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainLogPublishingOptions {
     /// <p>Configures the OpenSearch index logs publishing.</p>
-    #[doc(hidden)]
     pub index_slow_logs: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
     /// <p>Configures the OpenSearch search slow log publishing.</p>
-    #[doc(hidden)]
     pub search_slow_logs: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
     /// <p>The log configuration.</p>
-    #[doc(hidden)]
     pub audit_logs: ::std::option::Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
 }
 impl AwsElasticsearchDomainLogPublishingOptions {

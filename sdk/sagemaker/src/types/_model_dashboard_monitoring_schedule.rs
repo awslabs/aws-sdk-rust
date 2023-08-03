@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardMonitoringSchedule {
     /// <p>The Amazon Resource Name (ARN) of a monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitoring schedule.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
     /// <p>The monitor type of a model monitor.</p>
-    #[doc(hidden)]
     pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
     /// <p>If a monitoring job failed, provides the reason.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that indicates when the monitoring schedule was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the monitoring schedule was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_config: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
     /// <p>The endpoint which is monitored.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
-    #[doc(hidden)]
     pub monitoring_alert_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
     /// <p>Summary of information about the last monitoring job to run.</p>
-    #[doc(hidden)]
     pub last_monitoring_execution_summary: ::std::option::Option<crate::types::MonitoringExecutionSummary>,
 }
 impl ModelDashboardMonitoringSchedule {

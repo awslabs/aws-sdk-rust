@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoConfiguration {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
-    #[doc(hidden)]
     pub avc_profile: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
-    #[doc(hidden)]
     pub avc_level: ::std::option::Option<::std::string::String>,
     /// <p>Codec used for the video encoding.</p>
-    #[doc(hidden)]
     pub codec: ::std::option::Option<::std::string::String>,
     /// <p>Software or hardware used to encode the video.</p>
-    #[doc(hidden)]
     pub encoder: ::std::option::Option<::std::string::String>,
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
-    #[doc(hidden)]
     pub target_bitrate: i64,
     /// <p>The expected ingest framerate. This is configured in the encoder.</p>
-    #[doc(hidden)]
     pub target_framerate: i64,
     /// <p>Video-resolution height in pixels.</p>
-    #[doc(hidden)]
     pub video_height: i64,
     /// <p>Video-resolution width in pixels.</p>
-    #[doc(hidden)]
     pub video_width: i64,
 }
 impl VideoConfiguration {

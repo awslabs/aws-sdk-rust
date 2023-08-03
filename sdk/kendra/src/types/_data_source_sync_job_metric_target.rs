@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceSyncJobMetricTarget {
     /// <p>The ID of the data source that is running the sync job.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the sync job that is running on the data source.</p>
     /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
-    #[doc(hidden)]
     pub data_source_sync_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceSyncJobMetricTarget {

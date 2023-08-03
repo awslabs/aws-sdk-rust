@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSamplingTargetsOutput {
     /// <p>Updated rules that the service should use to sample requests.</p>
-    #[doc(hidden)]
     pub sampling_target_documents: ::std::option::Option<::std::vec::Vec<crate::types::SamplingTargetDocument>>,
     /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
-    #[doc(hidden)]
     pub last_rule_modification: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
-    #[doc(hidden)]
     pub unprocessed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStatistics>>,
     _request_id: Option<String>,
 }

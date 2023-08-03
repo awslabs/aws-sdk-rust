@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHumanTaskUiOutput {
     /// <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
-    #[doc(hidden)]
     pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleAction {
     /// <p>The type of action that creates a rule.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
-    #[doc(hidden)]
     pub task_action: ::std::option::Option<crate::types::TaskActionDefinition>,
     /// <p>Information about the EventBridge action.</p>
-    #[doc(hidden)]
     pub event_bridge_action: ::std::option::Option<crate::types::EventBridgeActionDefinition>,
     /// <p>Information about the contact category action.</p>
-    #[doc(hidden)]
     pub assign_contact_category_action: ::std::option::Option<crate::types::AssignContactCategoryActionDefinition>,
     /// <p>Information about the send notification action.</p>
-    #[doc(hidden)]
     pub send_notification_action: ::std::option::Option<crate::types::SendNotificationActionDefinition>,
 }
 impl RuleAction {

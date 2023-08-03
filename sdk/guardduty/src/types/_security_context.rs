@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityContext {
     /// <p>Whether the container is privileged.</p>
-    #[doc(hidden)]
     pub privileged: bool,
 }
 impl SecurityContext {

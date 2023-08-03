@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyVersionsOutput {
     /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
-    #[doc(hidden)]
     pub traffic_policies: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>,
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub traffic_policy_version_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

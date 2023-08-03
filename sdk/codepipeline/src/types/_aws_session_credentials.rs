@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AwsSessionCredentials {
     /// <p>The access key for the session.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret access key for the session.</p>
-    #[doc(hidden)]
     pub secret_access_key: ::std::option::Option<::std::string::String>,
     /// <p>The token for the session.</p>
-    #[doc(hidden)]
     pub session_token: ::std::option::Option<::std::string::String>,
 }
 impl AwsSessionCredentials {

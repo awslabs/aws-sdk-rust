@@ -4,51 +4,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type.</p>
-    #[doc(hidden)]
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    #[doc(hidden)]
     pub selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of objects that filter the property value history request.</p>
-    #[doc(hidden)]
     pub property_filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     /// <p>The date and time of the earliest property value to return.</p>
     #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the latest property value to return.</p>
     #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-    #[doc(hidden)]
     pub interpolation: ::std::option::Option<crate::types::InterpolationParameters>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The time direction to use in the result order.</p>
-    #[doc(hidden)]
     pub order_by_time: ::std::option::Option<crate::types::OrderByTime>,
     /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The ISO8601 DateTime of the latest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
 }
 impl GetPropertyValueHistoryInput {

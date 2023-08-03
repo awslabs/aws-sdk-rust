@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationConfigurationUpdate {
     /// <p>Describes updates to a SQL-based Kinesis Data Analytics application's configuration.</p>
-    #[doc(hidden)]
     pub sql_application_configuration_update: ::std::option::Option<crate::types::SqlApplicationConfigurationUpdate>,
     /// <p>Describes updates to an application's code configuration.</p>
-    #[doc(hidden)]
     pub application_code_configuration_update: ::std::option::Option<crate::types::ApplicationCodeConfigurationUpdate>,
     /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
-    #[doc(hidden)]
     pub flink_application_configuration_update: ::std::option::Option<crate::types::FlinkApplicationConfigurationUpdate>,
     /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub environment_property_updates: ::std::option::Option<crate::types::EnvironmentPropertyUpdates>,
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub application_snapshot_configuration_update: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate>,
     /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
-    #[doc(hidden)]
     pub vpc_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationUpdate>>,
     /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
-    #[doc(hidden)]
     pub zeppelin_application_configuration_update: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate>,
 }
 impl ApplicationConfigurationUpdate {

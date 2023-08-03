@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationFeedbackOutput {
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
-    #[doc(hidden)]
     pub recommendation_feedback_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationFeedbackSummary>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

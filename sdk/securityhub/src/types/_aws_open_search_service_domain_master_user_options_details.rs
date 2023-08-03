@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainMasterUserOptionsDetails {
     /// <p>The Amazon Resource Name (ARN) for the master user. </p>
-    #[doc(hidden)]
     pub master_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The username for the master user. </p>
-    #[doc(hidden)]
     pub master_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master user. </p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {

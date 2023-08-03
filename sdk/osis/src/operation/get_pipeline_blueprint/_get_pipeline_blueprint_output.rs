@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineBlueprintOutput {
     /// <p>The requested blueprint in YAML format.</p>
-    #[doc(hidden)]
     pub blueprint: ::std::option::Option<crate::types::PipelineBlueprint>,
     _request_id: Option<String>,
 }

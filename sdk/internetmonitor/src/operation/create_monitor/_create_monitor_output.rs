@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMonitorOutput {
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a monitor.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MonitorConfigState>,
     _request_id: Option<String>,
 }

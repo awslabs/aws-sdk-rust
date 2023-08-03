@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    #[doc(hidden)]
     pub import_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

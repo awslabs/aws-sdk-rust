@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNamedShadowsForThingInput {
     /// <p>The name of the thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The token to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The result page size.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListNamedShadowsForThingInput {

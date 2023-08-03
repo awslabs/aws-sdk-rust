@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoipCidr {
     /// <p> An address range in a customer-owned IP address space. </p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the address pool. </p>
-    #[doc(hidden)]
     pub coip_pool_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the local gateway route table. </p>
-    #[doc(hidden)]
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
 }
 impl CoipCidr {

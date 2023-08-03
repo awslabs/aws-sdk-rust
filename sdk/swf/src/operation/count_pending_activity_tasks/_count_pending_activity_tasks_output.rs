@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CountPendingActivityTasksOutput {
     /// <p>The number of tasks in the task list.</p>
-    #[doc(hidden)]
     pub count: i32,
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
-    #[doc(hidden)]
     pub truncated: bool,
     _request_id: Option<String>,
 }

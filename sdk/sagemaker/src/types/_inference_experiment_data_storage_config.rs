@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceExperimentDataStorageConfig {
     /// <p>The Amazon S3 bucket where the inference request and response data is stored. </p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::CaptureContentTypeHeader>,
 }
 impl InferenceExperimentDataStorageConfig {

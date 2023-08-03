@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyDefinitionResponse {
     /// <p>An object that contains information about the data type.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
-    #[doc(hidden)]
     pub is_time_series: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
-    #[doc(hidden)]
     pub is_required_in_entity: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
-    #[doc(hidden)]
     pub is_external_id: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
-    #[doc(hidden)]
     pub is_stored_externally: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
-    #[doc(hidden)]
     pub is_imported: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
-    #[doc(hidden)]
     pub is_final: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
-    #[doc(hidden)]
     pub is_inherited: ::std::option::Option<bool>,
     /// <p>An object that contains the default value.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<crate::types::DataValue>,
     /// <p>A mapping that specifies configuration information about the property.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A friendly name for the property.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl PropertyDefinitionResponse {

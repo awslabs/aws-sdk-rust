@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentClassifierSummary {
     /// <p>The name that you assigned the document classifier.</p>
-    #[doc(hidden)]
     pub document_classifier_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of versions you created.</p>
-    #[doc(hidden)]
     pub number_of_versions: ::std::option::Option<i32>,
     /// <p>The time that the latest document classifier version was submitted for processing.</p>
-    #[doc(hidden)]
     pub latest_version_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version name you assigned to the latest document classifier version.</p>
-    #[doc(hidden)]
     pub latest_version_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the latest document classifier version.</p>
-    #[doc(hidden)]
     pub latest_version_status: ::std::option::Option<crate::types::ModelStatus>,
 }
 impl DocumentClassifierSummary {

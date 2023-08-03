@@ -11,7 +11,6 @@ pub struct RecommendationPreferences {
     /// <li> <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p> </li>
     /// <li> <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
 }
 impl RecommendationPreferences {

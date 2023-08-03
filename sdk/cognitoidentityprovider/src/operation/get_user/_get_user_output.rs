@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUserOutput {
     /// <p>The user name of the user you want to retrieve from the get user request.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    #[doc(hidden)]
     pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    #[doc(hidden)]
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
-    #[doc(hidden)]
     pub preferred_mfa_setting: ::std::option::Option<::std::string::String>,
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    #[doc(hidden)]
     pub user_mfa_setting_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

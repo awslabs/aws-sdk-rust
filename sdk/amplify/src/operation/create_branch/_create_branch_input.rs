@@ -5,59 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The name for the branch. </p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> The description for the branch. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> Describes the current stage for the branch. </p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::Stage>,
     /// <p> The framework for the branch. </p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<::std::string::String>,
     /// <p> Enables notifications for the branch. </p>
-    #[doc(hidden)]
     pub enable_notification: ::std::option::Option<bool>,
     /// <p> Enables auto building for the branch. </p>
-    #[doc(hidden)]
     pub enable_auto_build: ::std::option::Option<bool>,
     /// <p> The environment variables for the branch. </p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    #[doc(hidden)]
     pub basic_auth_credentials: ::std::option::Option<::std::string::String>,
     /// <p> Enables basic authorization for the branch. </p>
-    #[doc(hidden)]
     pub enable_basic_auth: ::std::option::Option<bool>,
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-    #[doc(hidden)]
     pub enable_performance_mode: ::std::option::Option<bool>,
     /// <p> The tag for the branch. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The build specification (build spec) for the branch. </p>
-    #[doc(hidden)]
     pub build_spec: ::std::option::Option<::std::string::String>,
     /// <p> The content Time To Live (TTL) for the website in seconds. </p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<::std::string::String>,
     /// <p> The display name for a branch. This is used as the default domain prefix. </p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p> Enables pull request previews for this branch. </p>
-    #[doc(hidden)]
     pub enable_pull_request_preview: ::std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
-    #[doc(hidden)]
     pub pull_request_environment_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub backend_environment_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateBranchInput {

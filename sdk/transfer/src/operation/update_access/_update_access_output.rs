@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccessOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

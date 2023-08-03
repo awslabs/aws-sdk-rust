@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionFilter {
     /// <p>The name of the dimension to filter on.</p>
-    #[doc(hidden)]
     pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of values for the dimension specified in DimensionName that you want to filter on.</p>
-    #[doc(hidden)]
     pub dimension_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DimensionFilter {

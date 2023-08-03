@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventBusInput {
     /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventBusInput {

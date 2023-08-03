@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
     /// <p>Volume name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-    #[doc(hidden)]
     pub host_path: ::std::option::Option<crate::types::HostPath>,
 }
 impl Volume {

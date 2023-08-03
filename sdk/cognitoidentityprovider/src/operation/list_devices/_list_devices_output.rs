@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesOutput {
     /// <p>The devices returned in the list devices response.</p>
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>,
     /// <p>The pagination token for the list device response.</p>
-    #[doc(hidden)]
     pub pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopRemoteAccessSessionOutput {
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
-    #[doc(hidden)]
     pub remote_access_session: ::std::option::Option<crate::types::RemoteAccessSession>,
     _request_id: Option<String>,
 }

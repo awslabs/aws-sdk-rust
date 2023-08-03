@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGameSessionPlacementOutput {
     /// <p>Object that describes the requested game session placement.</p>
-    #[doc(hidden)]
     pub game_session_placement: ::std::option::Option<crate::types::GameSessionPlacement>,
     _request_id: Option<String>,
 }

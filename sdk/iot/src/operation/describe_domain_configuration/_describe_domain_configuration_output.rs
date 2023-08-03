@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainConfigurationOutput {
     /// <p>The name of the domain configuration.</p>
-    #[doc(hidden)]
     pub domain_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the domain configuration.</p>
-    #[doc(hidden)]
     pub domain_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
-    #[doc(hidden)]
     pub server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>>,
     /// <p>An object that specifies the authorization service for a domain.</p>
-    #[doc(hidden)]
     pub authorizer_config: ::std::option::Option<crate::types::AuthorizerConfig>,
     /// <p>A Boolean value that specifies the current state of the domain configuration.</p>
-    #[doc(hidden)]
     pub domain_configuration_status: ::std::option::Option<crate::types::DomainConfigurationStatus>,
     /// <p>The type of service delivered by the endpoint.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>The type of the domain.</p>
-    #[doc(hidden)]
     pub domain_type: ::std::option::Option<crate::types::DomainType>,
     /// <p>The date and time the domain configuration's status was last changed.</p>
-    #[doc(hidden)]
     pub last_status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that specifies the TLS configuration for a domain.</p>
-    #[doc(hidden)]
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
     _request_id: Option<String>,
 }

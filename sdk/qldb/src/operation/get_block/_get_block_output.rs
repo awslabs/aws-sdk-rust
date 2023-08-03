@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetBlockOutput {
     /// <p>The block data object in Amazon Ion format.</p>
-    #[doc(hidden)]
     pub block: ::std::option::Option<crate::types::ValueHolder>,
     /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
-    #[doc(hidden)]
     pub proof: ::std::option::Option<crate::types::ValueHolder>,
     _request_id: Option<String>,
 }

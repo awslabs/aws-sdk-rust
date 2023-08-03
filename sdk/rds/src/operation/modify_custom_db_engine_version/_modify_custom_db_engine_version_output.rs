@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group family for the database engine.</p>
-    #[doc(hidden)]
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine.</p>
-    #[doc(hidden)]
     pub db_engine_description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine version.</p>
-    #[doc(hidden)]
     pub db_engine_version_description: ::std::option::Option<::std::string::String>,
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
-    #[doc(hidden)]
     pub default_character_set: ::std::option::Option<crate::types::CharacterSet>,
     /// <p>The EC2 image</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::CustomDbEngineVersionAmi>,
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
-    #[doc(hidden)]
     pub db_engine_media_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    #[doc(hidden)]
     pub supported_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    #[doc(hidden)]
     pub supported_nchar_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    #[doc(hidden)]
     pub valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    #[doc(hidden)]
     pub supported_timezones: ::std::option::Option<::std::vec::Vec<crate::types::Timezone>>,
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub supports_log_exports_to_cloudwatch_logs: bool,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
-    #[doc(hidden)]
     pub supports_read_replica: bool,
     /// <p>A list of the supported DB engine modes.</p>
-    #[doc(hidden)]
     pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
@@ -63,50 +47,35 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    #[doc(hidden)]
     pub supported_feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
-    #[doc(hidden)]
     pub supports_parallel_query: bool,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
-    #[doc(hidden)]
     pub supports_global_databases: bool,
     /// <p>The major engine version of the CEV.</p>
-    #[doc(hidden)]
     pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    #[doc(hidden)]
     pub database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    #[doc(hidden)]
     pub database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the custom engine version.</p>
-    #[doc(hidden)]
     pub db_engine_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the DB engine version.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
-    #[doc(hidden)]
     pub supports_babelfish: bool,
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-    #[doc(hidden)]
     pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
-    #[doc(hidden)]
     pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

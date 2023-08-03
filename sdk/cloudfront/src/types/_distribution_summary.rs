@@ -5,68 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is your Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is propagated to all CloudFront edge locations.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the distribution was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<crate::types::Aliases>,
     /// <p>A complex type that contains information about origins for this distribution.</p>
-    #[doc(hidden)]
     pub origins: ::std::option::Option<crate::types::Origins>,
     /// <p>A complex type that contains information about origin groups for this distribution.</p>
-    #[doc(hidden)]
     pub origin_groups: ::std::option::Option<crate::types::OriginGroups>,
     /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
-    #[doc(hidden)]
     pub default_cache_behavior: ::std::option::Option<crate::types::DefaultCacheBehavior>,
     /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
-    #[doc(hidden)]
     pub cache_behaviors: ::std::option::Option<crate::types::CacheBehaviors>,
     /// <p>A complex type that contains zero or more <code>CustomErrorResponses</code> elements.</p>
-    #[doc(hidden)]
     pub custom_error_responses: ::std::option::Option<crate::types::CustomErrorResponses>,
     /// <p>The comment originally specified when this distribution was created.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about price class for this streaming distribution.</p>
-    #[doc(hidden)]
     pub price_class: ::std::option::Option<crate::types::PriceClass>,
     /// <p>Whether the distribution is enabled to accept user requests for content.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.</p>
-    #[doc(hidden)]
     pub viewer_certificate: ::std::option::Option<crate::types::ViewerCertificate>,
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your content.</p>
-    #[doc(hidden)]
     pub restrictions: ::std::option::Option<crate::types::Restrictions>,
     /// <p>The Web ACL Id (if any) associated with the distribution.</p>
-    #[doc(hidden)]
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the maximum HTTP version that you want viewers to use to communicate with CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will automatically use an earlier version.</p>
-    #[doc(hidden)]
     pub http_version: ::std::option::Option<crate::types::HttpVersion>,
     /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.</p>
-    #[doc(hidden)]
     pub is_ipv6_enabled: ::std::option::Option<bool>,
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    #[doc(hidden)]
     pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
     /// <p>Whether the primary distribution has a staging distribution enabled.</p>
-    #[doc(hidden)]
     pub staging: ::std::option::Option<bool>,
 }
 impl DistributionSummary {

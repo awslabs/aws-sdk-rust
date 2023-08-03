@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the application.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ApplicationType>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags on the application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ApplicationSummary {

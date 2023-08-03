@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Content {
     /// <p>The textual data of the content.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>The character set of the content.</p>
-    #[doc(hidden)]
     pub charset: ::std::option::Option<::std::string::String>,
 }
 impl Content {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDatabaseInput {
     /// <p>The name of the Timestream database to be deleted.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDatabaseInput {

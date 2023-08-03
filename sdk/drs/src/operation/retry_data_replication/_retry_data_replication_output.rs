@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetryDataReplicationOutput {
     /// <p>The ID of the Source Server.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Source Server.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the Source Server.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
-    #[doc(hidden)]
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the last recovery launch of this Source Server.</p>
-    #[doc(hidden)]
     pub last_launch_result: ::std::option::Option<crate::types::LastLaunchResult>,
     /// <p>The Data Replication Info of the Source Server.</p>
-    #[doc(hidden)]
     pub data_replication_info: ::std::option::Option<crate::types::DataReplicationInfo>,
     /// <p>The lifecycle information of this Source Server.</p>
-    #[doc(hidden)]
     pub life_cycle: ::std::option::Option<crate::types::LifeCycle>,
     /// <p>The source properties of the Source Server.</p>
-    #[doc(hidden)]
     pub source_properties: ::std::option::Option<crate::types::SourceProperties>,
     /// <p>The staging area of the source server.</p>
-    #[doc(hidden)]
     pub staging_area: ::std::option::Option<crate::types::StagingArea>,
     /// <p>Source cloud properties of the Source Server.</p>
-    #[doc(hidden)]
     pub source_cloud_properties: ::std::option::Option<crate::types::SourceCloudProperties>,
     /// <p>Replication direction of the Source Server.</p>
-    #[doc(hidden)]
     pub replication_direction: ::std::option::Option<crate::types::ReplicationDirection>,
     /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
-    #[doc(hidden)]
     pub reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
-    #[doc(hidden)]
     pub source_network_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

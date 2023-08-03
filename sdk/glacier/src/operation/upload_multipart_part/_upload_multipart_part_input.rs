@@ -5,19 +5,14 @@
 #[derive(::std::fmt::Debug)]
 pub struct UploadMultipartPartInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
-    #[doc(hidden)]
     pub vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The upload ID of the multipart upload.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<::std::string::String>,
     /// <p>The data to upload.</p>
     pub body: ::aws_smithy_http::byte_stream::ByteStream,

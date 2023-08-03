@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThingTypesOutput {
     /// <p>The thing types.</p>
-    #[doc(hidden)]
     pub thing_types: ::std::option::Option<::std::vec::Vec<crate::types::ThingTypeDefinition>>,
     /// <p>The token for the next set of results. Will not be returned if operation has returned all results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesOutput {
     /// <p> A list of application component strategy recommendations. </p>
-    #[doc(hidden)]
     pub application_component_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
     _request_id: Option<String>,
 }

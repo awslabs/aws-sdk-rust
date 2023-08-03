@@ -7,13 +7,10 @@ pub struct DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
     /// <cpuutilization></cpuutilization></code> type.</p>
-    #[doc(hidden)]
     pub instance_health_list: ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>,
     /// <p>The date and time that the health information was retrieved.</p>
-    #[doc(hidden)]
     pub refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Pagination token for the next page of results, if available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

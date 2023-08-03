@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollbackDetails {
     /// <p>The reason for this instance refresh rollback (for example, whether a manual or automatic rollback was initiated).</p>
-    #[doc(hidden)]
     pub rollback_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the rollback began.</p>
-    #[doc(hidden)]
     pub rollback_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the value of <code>PercentageComplete</code> at the time the rollback started.</p>
-    #[doc(hidden)]
     pub percentage_complete_on_rollback: ::std::option::Option<i32>,
     /// <p>Indicates the value of <code>InstancesToUpdate</code> at the time the rollback started.</p>
-    #[doc(hidden)]
     pub instances_to_update_on_rollback: ::std::option::Option<i32>,
     /// <p>Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
-    #[doc(hidden)]
     pub progress_details_on_rollback: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
 }
 impl RollbackDetails {

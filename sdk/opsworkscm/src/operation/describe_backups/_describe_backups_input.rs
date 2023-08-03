@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBackupsInput {
     /// <p>Describes a single backup. </p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns backups for the server with the specified ServerName. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeBackupsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartKeyUsageOutput {
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated for use.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }

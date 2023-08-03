@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePullRequestEventsOutput {
     /// <p>Information about the pull request events.</p>
-    #[doc(hidden)]
     pub pull_request_events: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestEvent>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

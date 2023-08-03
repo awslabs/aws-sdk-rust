@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetOutput {
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>How long, in days, dataset contents are kept for the dataset.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     _request_id: Option<String>,
 }

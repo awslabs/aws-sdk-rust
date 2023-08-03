@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReservedInstancesOutput {
     /// <p>The ID for the modification.</p>
-    #[doc(hidden)]
     pub reserved_instances_modification_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

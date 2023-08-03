@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationRule {
     /// <p>An array of objects representing the destination for a replication rule.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>,
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
-    #[doc(hidden)]
     pub repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
 }
 impl ReplicationRule {

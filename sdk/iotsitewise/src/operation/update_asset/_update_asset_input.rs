@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssetInput {
     /// <p>The ID of the asset to update.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name for the asset.</p>
-    #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A description for the asset.</p>
-    #[doc(hidden)]
     pub asset_description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssetInput {

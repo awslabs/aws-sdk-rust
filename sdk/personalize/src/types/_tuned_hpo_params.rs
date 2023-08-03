@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
-    #[doc(hidden)]
     pub algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TunedHpoParams {

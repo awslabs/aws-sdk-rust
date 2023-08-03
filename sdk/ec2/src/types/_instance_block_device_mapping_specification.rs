@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceBlockDeviceMappingSpecification {
     /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
     /// <p>suppress the specified device included in the block device mapping.</p>
-    #[doc(hidden)]
     pub no_device: ::std::option::Option<::std::string::String>,
     /// <p>The virtual device name.</p>
-    #[doc(hidden)]
     pub virtual_name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBlockDeviceMappingSpecification {

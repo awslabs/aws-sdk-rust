@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The memory maximum in MiB.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl MemoryMiBRequest {

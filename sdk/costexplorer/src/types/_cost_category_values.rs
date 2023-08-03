@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategoryValues {
     /// <p>The unique name of the Cost Category.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The specific value of the Cost Category.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
-    #[doc(hidden)]
     pub match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
 }
 impl CostCategoryValues {

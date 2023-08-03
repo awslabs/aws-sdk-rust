@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the watchlist to be deleted.</p>
-    #[doc(hidden)]
     pub watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWatchlistInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventOutput {
     /// <p>The details of the event.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::Event>,
     _request_id: Option<String>,
 }

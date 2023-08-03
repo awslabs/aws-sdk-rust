@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryInfo {
     /// <p>The unique ID number of this query.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The query string used in this query.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QueryStatus>,
     /// <p>The date and time that this query was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<i64>,
     /// <p>The name of the log group scanned by this query.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl QueryInfo {

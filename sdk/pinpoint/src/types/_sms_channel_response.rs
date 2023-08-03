@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsChannelResponse {
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the SMS channel is enabled for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub has_credential: ::std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the SMS channel is archived.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>The user who last modified the SMS channel.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
-    #[doc(hidden)]
     pub promotional_messages_per_second: ::std::option::Option<i32>,
     /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
-    #[doc(hidden)]
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The registered short code to use when you send messages through the SMS channel.</p>
-    #[doc(hidden)]
     pub short_code: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
-    #[doc(hidden)]
     pub transactional_messages_per_second: ::std::option::Option<i32>,
     /// <p>The current version of the SMS channel.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl SmsChannelResponse {

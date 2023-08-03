@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesOutput {
     /// <p>A list of devices.</p>
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceDescription>>,
     /// <p>The token to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

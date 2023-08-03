@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobStoppingCondition {
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
-    #[doc(hidden)]
     pub max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl JobStoppingCondition {

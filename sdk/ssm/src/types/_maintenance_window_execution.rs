@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindowExecution {
     /// <p>The ID of the maintenance window.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the maintenance window execution.</p>
-    #[doc(hidden)]
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status. Not available for all status values.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The time the execution started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the execution finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MaintenanceWindowExecution {

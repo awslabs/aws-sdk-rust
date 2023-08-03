@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGeoMatchSetsOutput {
     /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>GeoMatchSetSummary</code> objects.</p>
-    #[doc(hidden)]
     pub geo_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetSummary>>,
     _request_id: Option<String>,
 }

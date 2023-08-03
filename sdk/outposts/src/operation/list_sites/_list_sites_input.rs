@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSitesInput {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters the results by country code.</p>
-    #[doc(hidden)]
     pub operating_address_country_code_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by state or region.</p>
-    #[doc(hidden)]
     pub operating_address_state_or_region_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by city.</p>
-    #[doc(hidden)]
     pub operating_address_city_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListSitesInput {

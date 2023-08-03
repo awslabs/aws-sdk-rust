@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceSpecificCredentialsOutput {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
-    #[doc(hidden)]
     pub service_specific_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>>,
     _request_id: Option<String>,
 }

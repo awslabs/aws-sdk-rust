@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAppAuthorizationInput {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    #[doc(hidden)]
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
-    #[doc(hidden)]
     pub app_authorization_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
     /// <p>Specify credentials that match the authorization type of the app authorization to update. For example, if the authorization type of the app authorization is OAuth2 (<code>oauth2</code>), then you should provide only the OAuth2 credentials.</p>
-    #[doc(hidden)]
     pub credential: ::std::option::Option<crate::types::Credential>,
     /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
-    #[doc(hidden)]
     pub tenant: ::std::option::Option<crate::types::Tenant>,
 }
 impl UpdateAppAuthorizationInput {

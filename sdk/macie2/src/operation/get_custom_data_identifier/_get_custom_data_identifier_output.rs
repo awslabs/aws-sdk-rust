@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCustomDataIdentifierOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
-    #[doc(hidden)]
     pub deleted: ::std::option::Option<bool>,
     /// <p>The custom description of the custom data identifier.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the custom data identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
-    #[doc(hidden)]
     pub ignore_words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
-    #[doc(hidden)]
     pub keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
-    #[doc(hidden)]
     pub maximum_match_distance: ::std::option::Option<i32>,
     /// <p>The custom name of the custom data identifier.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
-    #[doc(hidden)]
     pub regex: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    #[doc(hidden)]
     pub severity_levels: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

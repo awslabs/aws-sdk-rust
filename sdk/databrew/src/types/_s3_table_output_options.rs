@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3TableOutputOptions {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can write output from a job.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::S3Location>,
 }
 impl S3TableOutputOptions {

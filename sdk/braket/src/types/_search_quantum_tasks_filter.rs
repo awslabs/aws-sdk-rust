@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksFilter {
     /// <p>The name of the device used for the task.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values to use for the filter.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator to use in the filter.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::SearchQuantumTasksFilterOperator>,
 }
 impl SearchQuantumTasksFilter {

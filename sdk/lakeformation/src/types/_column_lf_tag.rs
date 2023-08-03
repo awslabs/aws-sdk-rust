@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnLfTag {
     /// <p>The name of a column resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The LF-tags attached to a column resource.</p>
-    #[doc(hidden)]
     pub lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
 }
 impl ColumnLfTag {

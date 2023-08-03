@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Page {
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub line_range: ::std::option::Option<crate::types::Range>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub offset_range: ::std::option::Option<crate::types::Range>,
     /// <p>The page number of the page that contains the sensitive data.</p>
-    #[doc(hidden)]
     pub page_number: ::std::option::Option<i64>,
 }
 impl Page {

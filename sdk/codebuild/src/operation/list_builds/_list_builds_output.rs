@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBuildsOutput {
     /// <p>A list of build IDs, with each build ID representing a single build.</p>
-    #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

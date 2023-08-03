@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementResult {
     /// <p>Contains the details of the first fetched page.</p>
-    #[doc(hidden)]
     pub first_page: ::std::option::Option<crate::types::Page>,
     /// <p>Contains server-side performance information for the command.</p>
-    #[doc(hidden)]
     pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    #[doc(hidden)]
     pub consumed_i_os: ::std::option::Option<crate::types::IoUsage>,
 }
 impl ExecuteStatementResult {

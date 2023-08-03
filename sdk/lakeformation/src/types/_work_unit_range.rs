@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkUnitRange {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
-    #[doc(hidden)]
     pub work_unit_id_max: i64,
     /// <p>Defines the minimum work unit ID in the range.</p>
-    #[doc(hidden)]
     pub work_unit_id_min: i64,
     /// <p>A work token used to query the execution service.</p>
-    #[doc(hidden)]
     pub work_unit_token: ::std::option::Option<::std::string::String>,
 }
 impl WorkUnitRange {

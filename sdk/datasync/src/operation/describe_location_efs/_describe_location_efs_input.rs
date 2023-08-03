@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationEfsInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationEfsInput {

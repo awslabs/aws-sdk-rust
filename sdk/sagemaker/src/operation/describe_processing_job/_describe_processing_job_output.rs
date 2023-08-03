@@ -4,67 +4,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProcessingJobOutput {
     /// <p>The inputs for a processing job.</p>
-    #[doc(hidden)]
     pub processing_inputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingInput>>,
     /// <p>Output configuration for the processing job.</p>
-    #[doc(hidden)]
     pub processing_output_config: ::std::option::Option<crate::types::ProcessingOutputConfig>,
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub processing_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    #[doc(hidden)]
     pub processing_resources: ::std::option::Option<crate::types::ProcessingResources>,
     /// <p>The time limit for how long the processing job is allowed to run.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::ProcessingStoppingCondition>,
     /// <p>Configures the processing job to run a specified container image.</p>
-    #[doc(hidden)]
     pub app_specification: ::std::option::Option<crate::types::AppSpecification>,
     /// <p>The environment variables set in the Docker container.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Networking options for a processing job.</p>
-    #[doc(hidden)]
     pub network_config: ::std::option::Option<crate::types::NetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration information used to create an experiment.</p>
-    #[doc(hidden)]
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     /// <p>The Amazon Resource Name (ARN) of the processing job.</p>
-    #[doc(hidden)]
     pub processing_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of a processing job.</p>
-    #[doc(hidden)]
     pub processing_job_status: ::std::option::Option<crate::types::ProcessingJobStatus>,
     /// <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
-    #[doc(hidden)]
     pub exit_message: ::std::option::Option<::std::string::String>,
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the processing job completed.</p>
-    #[doc(hidden)]
     pub processing_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the processing job started.</p>
-    #[doc(hidden)]
     pub processing_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the processing job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the processing job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an AutoML job associated with this processing job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a training job associated with this processing job.</p>
-    #[doc(hidden)]
     pub training_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

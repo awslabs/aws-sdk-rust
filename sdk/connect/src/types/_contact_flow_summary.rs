@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactFlowSummary {
     /// <p>The identifier of the flow.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the flow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of flow.</p>
-    #[doc(hidden)]
     pub contact_flow_type: ::std::option::Option<crate::types::ContactFlowType>,
     /// <p>The type of flow.</p>
-    #[doc(hidden)]
     pub contact_flow_state: ::std::option::Option<crate::types::ContactFlowState>,
 }
 impl ContactFlowSummary {

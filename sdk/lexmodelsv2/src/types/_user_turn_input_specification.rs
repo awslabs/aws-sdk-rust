@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTurnInputSpecification {
     /// <p>The utterance input in the user turn.</p>
-    #[doc(hidden)]
     pub utterance_input: ::std::option::Option<crate::types::UtteranceInputSpecification>,
     /// <p>Request attributes of the user turn.</p>
-    #[doc(hidden)]
     pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains information about the session state in the input.</p>
-    #[doc(hidden)]
     pub session_state: ::std::option::Option<crate::types::InputSessionStateSpecification>,
 }
 impl UserTurnInputSpecification {

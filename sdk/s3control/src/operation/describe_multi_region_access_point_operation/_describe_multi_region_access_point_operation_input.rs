@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMultiRegionAccessPointOperationInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
-    #[doc(hidden)]
     pub request_token_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMultiRegionAccessPointOperationInput {

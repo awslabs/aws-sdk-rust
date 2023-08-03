@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointSummary {
     /// <p>The name of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the endpoint was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the endpoint was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the endpoint.</p>
     /// <ul>
@@ -28,7 +24,6 @@ pub struct EndpointSummary {
     /// <li> <p> <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is the only operation that can be performed on a failed endpoint.</p> </li>
     /// </ul>
     /// <p>To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.</p>
-    #[doc(hidden)]
     pub endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
 }
 impl EndpointSummary {

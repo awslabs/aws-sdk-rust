@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PushSync {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    #[doc(hidden)]
     pub application_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PushSync {

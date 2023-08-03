@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegisterAccountStatusOutput {
     /// <p> The unique ID of the Amazon Web Services account, provided at account creation. </p>
-    #[doc(hidden)]
     pub customer_account_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of registering your account and resources. The status can be one of:</p>
     /// <ul>
@@ -12,19 +11,14 @@ pub struct GetRegisterAccountStatusOutput {
     /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li>
     /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub account_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
-    #[doc(hidden)]
     pub timestream_registration_response: ::std::option::Option<crate::types::TimestreamRegistrationResponse>,
     /// <p> Information about the registered IAM resources or errors, if any. </p>
-    #[doc(hidden)]
     pub iam_registration_response: ::std::option::Option<crate::types::IamRegistrationResponse>,
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

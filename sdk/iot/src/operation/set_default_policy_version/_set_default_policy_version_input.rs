@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetDefaultPolicyVersionInput {
     /// <p>The policy name.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy version ID.</p>
-    #[doc(hidden)]
     pub policy_version_id: ::std::option::Option<::std::string::String>,
 }
 impl SetDefaultPolicyVersionInput {

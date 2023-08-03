@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynatraceConnectorProfileProperties {
     /// <p> The location of the Dynatrace resource. </p>
-    #[doc(hidden)]
     pub instance_url: ::std::option::Option<::std::string::String>,
 }
 impl DynatraceConnectorProfileProperties {

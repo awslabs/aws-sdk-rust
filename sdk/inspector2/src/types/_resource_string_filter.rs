@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceStringFilter {
     /// <p>The filter's comparison.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::ResourceStringComparison>,
     /// <p>The filter's value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceStringFilter {

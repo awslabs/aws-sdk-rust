@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisLabelReferenceOptions {
     /// <p>The field that the axis label is targeted to.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that the axis label is targeted to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl AxisLabelReferenceOptions {

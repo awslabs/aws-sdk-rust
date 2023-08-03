@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCachePolicyOutput {
     /// <p>The cache policy.</p>
-    #[doc(hidden)]
     pub cache_policy: ::std::option::Option<crate::types::CachePolicy>,
     /// <p>The current version of the cache policy.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

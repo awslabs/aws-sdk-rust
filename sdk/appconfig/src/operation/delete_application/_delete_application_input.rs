@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The ID of the application to delete.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationInput {

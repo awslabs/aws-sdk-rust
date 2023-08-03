@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to delete.</p>
-    #[doc(hidden)]
     pub resolver_query_log_config_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResolverQueryLogConfigInput {

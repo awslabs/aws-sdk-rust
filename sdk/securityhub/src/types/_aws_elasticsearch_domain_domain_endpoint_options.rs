@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainDomainEndpointOptions {
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
-    #[doc(hidden)]
     pub enforce_https: bool,
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     /// <p>Valid values:</p>
@@ -13,7 +12,6 @@ pub struct AwsElasticsearchDomainDomainEndpointOptions {
     /// <li> <p> <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p> </li>
     /// <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tls_security_policy: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticsearchDomainDomainEndpointOptions {

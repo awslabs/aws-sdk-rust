@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroupRecommendation {
     /// <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The finding classification of the Auto Scaling group.</p>
     /// <p>Findings for Auto Scaling groups include:</p>
@@ -19,28 +16,20 @@ pub struct AutoScalingGroupRecommendation {
     /// <li> <p> <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when Compute Optimizer determines that the group is correctly provisioned to run your workload based on the chosen instance type. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub finding: ::std::option::Option<crate::types::Finding>,
     /// <p>An array of objects that describe the utilization metrics of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the current configuration of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub current_configuration: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
     /// <p>An array of objects that describe the recommendation options for the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroupRecommendationOption>>,
     /// <p>The timestamp of when the Auto Scaling group recommendation was last generated.</p>
-    #[doc(hidden)]
     pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The risk of the current Auto Scaling group not meeting the performance needs of its workloads. The higher the risk, the more likely the current Auto Scaling group configuration has insufficient capacity and cannot meet workload requirements.</p>
-    #[doc(hidden)]
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p>An object that describes the effective recommendation preferences for the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub effective_recommendation_preferences: ::std::option::Option<crate::types::EffectiveRecommendationPreferences>,
     /// <p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p>
@@ -55,7 +44,6 @@ pub struct AutoScalingGroupRecommendation {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
 }
 impl AutoScalingGroupRecommendation {

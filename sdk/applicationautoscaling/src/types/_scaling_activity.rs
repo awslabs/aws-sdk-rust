@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingActivity {
     /// <p>The unique identifier of the scaling activity.</p>
-    #[doc(hidden)]
     pub activity_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    #[doc(hidden)]
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scaling activity. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -30,7 +28,6 @@ pub struct ScalingActivity {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -56,31 +53,22 @@ pub struct ScalingActivity {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>A simple description of what action the scaling activity intends to accomplish.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A simple description of what caused the scaling activity to happen.</p>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for when the scaling activity began.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the scaling activity.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::ScalingActivityStatusCode>,
     /// <p>A simple message about the current status of the scaling activity.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The details about the scaling activity.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>Machine-readable data that describes the reason for a not scaled activity. Only available when <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> includes not scaled activities.</p>
-    #[doc(hidden)]
     pub not_scaled_reasons: ::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>>,
 }
 impl ScalingActivity {

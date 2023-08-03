@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LambdaFunctionScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about input for an execution history event.</p>
-    #[doc(hidden)]
     pub input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     /// <p>The maximum allowed duration of the Lambda function.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The credentials that Step Functions uses for the task.</p>
-    #[doc(hidden)]
     pub task_credentials: ::std::option::Option<crate::types::TaskCredentials>,
 }
 impl LambdaFunctionScheduledEventDetails {

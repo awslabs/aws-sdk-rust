@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemTemplateFilter {
     /// <p>The name of the system search filter field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SystemTemplateFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SystemTemplateFilter {

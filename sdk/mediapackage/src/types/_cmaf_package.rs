@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CmafPackage {
     /// A Common Media Application Format (CMAF) encryption configuration.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::CmafEncryption>,
     /// A list of HLS manifest configurations
-    #[doc(hidden)]
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
-    #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-    #[doc(hidden)]
     pub segment_prefix: ::std::option::Option<::std::string::String>,
     /// A StreamSelection configuration.
-    #[doc(hidden)]
     pub stream_selection: ::std::option::Option<crate::types::StreamSelection>,
 }
 impl CmafPackage {

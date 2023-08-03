@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveThingFromThingGroupInput {
     /// <p>The group name.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The group ARN.</p>
-    #[doc(hidden)]
     pub thing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing to remove from the group.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the thing to remove from the group.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveThingFromThingGroupInput {

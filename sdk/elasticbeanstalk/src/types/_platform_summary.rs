@@ -5,43 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformSummary {
     /// <p>The ARN of the platform version.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the person who created the platform version.</p>
-    #[doc(hidden)]
     pub platform_owner: ::std::option::Option<::std::string::String>,
     /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
-    #[doc(hidden)]
     pub platform_status: ::std::option::Option<crate::types::PlatformStatus>,
     /// <p>The category of platform version.</p>
-    #[doc(hidden)]
     pub platform_category: ::std::option::Option<::std::string::String>,
     /// <p>The operating system used by the platform version.</p>
-    #[doc(hidden)]
     pub operating_system_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the operating system used by the platform version.</p>
-    #[doc(hidden)]
     pub operating_system_version: ::std::option::Option<::std::string::String>,
     /// <p>The tiers in which the platform version runs.</p>
-    #[doc(hidden)]
     pub supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The additions associated with the platform version.</p>
-    #[doc(hidden)]
     pub supported_addon_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>recommended</code> | empty</p>
     /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
-    #[doc(hidden)]
     pub platform_lifecycle_state: ::std::option::Option<::std::string::String>,
     /// <p>The version string of the platform version.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The platform branch to which the platform version belongs.</p>
-    #[doc(hidden)]
     pub platform_branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-    #[doc(hidden)]
     pub platform_branch_lifecycle_state: ::std::option::Option<::std::string::String>,
 }
 impl PlatformSummary {

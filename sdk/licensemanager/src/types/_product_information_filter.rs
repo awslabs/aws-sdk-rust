@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductInformationFilter {
     /// <p>Filter name.</p>
-    #[doc(hidden)]
     pub product_information_filter_name: ::std::option::Option<::std::string::String>,
     /// <p>Filter value.</p>
-    #[doc(hidden)]
     pub product_information_filter_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Logical operator.</p>
-    #[doc(hidden)]
     pub product_information_filter_comparator: ::std::option::Option<::std::string::String>,
 }
 impl ProductInformationFilter {

@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobDataSource {
     /// <p>The Amazon S3 location of the input data objects.</p>
-    #[doc(hidden)]
     pub s3_data_source: ::std::option::Option<crate::types::LabelingJobS3DataSource>,
     /// <p>An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send Data to a Streaming Labeling Job</a>. </p>
-    #[doc(hidden)]
     pub sns_data_source: ::std::option::Option<crate::types::LabelingJobSnsDataSource>,
 }
 impl LabelingJobDataSource {

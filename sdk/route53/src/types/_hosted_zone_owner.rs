@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostedZoneOwner {
     /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub owning_account: ::std::option::Option<::std::string::String>,
     /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
-    #[doc(hidden)]
     pub owning_service: ::std::option::Option<::std::string::String>,
 }
 impl HostedZoneOwner {

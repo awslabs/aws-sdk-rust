@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// <p>The name of the channel whose information is retrieved.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
-    #[doc(hidden)]
     pub include_statistics: bool,
 }
 impl DescribeChannelInput {

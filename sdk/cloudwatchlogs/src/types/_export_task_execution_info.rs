@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTaskExecutionInfo {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<i64>,
     /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<i64>,
 }
 impl ExportTaskExecutionInfo {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessorOutput {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
-    #[doc(hidden)]
     pub kinesis_data_stream: ::std::option::Option<crate::types::KinesisDataStream>,
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl StreamProcessorOutput {

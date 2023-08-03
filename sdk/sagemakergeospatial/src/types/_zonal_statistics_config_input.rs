@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZonalStatisticsConfigInput {
     /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
-    #[doc(hidden)]
     pub zone_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>List of zonal statistics to compute.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>>,
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
-    #[doc(hidden)]
     pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
@@ -20,7 +17,6 @@ pub struct ZonalStatisticsConfigInput {
     /// <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p> <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code> </p> </li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
-    #[doc(hidden)]
     pub zone_s3_path_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ZonalStatisticsConfigInput {

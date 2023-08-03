@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleDefinition {
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
-    #[doc(hidden)]
     pub match_attributes: ::std::option::Option<crate::types::MatchAttributes>,
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action and you can add custom actions. </p> <note>
     /// <p>Network Firewall only forwards a packet for stateful rule inspection if you specify <code>aws:forward_to_sfe</code> for a rule that the packet matches, or if the packet doesn't match any stateless rule and you specify <code>aws:forward_to_sfe</code> for the <code>StatelessDefaultActions</code> setting for the <code>FirewallPolicy</code>.</p>
@@ -18,7 +17,6 @@ pub struct RuleDefinition {
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>. </p>
     /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>. </p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleDefinition {

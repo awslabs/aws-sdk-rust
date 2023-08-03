@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationRevisionsInput {
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct ListApplicationRevisionsInput {
     /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
     /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ApplicationRevisionSortBy>,
     /// <p> The order in which to sort the list results: </p>
     /// <ul>
@@ -23,14 +21,11 @@ pub struct ListApplicationRevisionsInput {
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
     /// <p> If set to null, all of the user's buckets are searched. </p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
     /// <ul>
@@ -38,10 +33,8 @@ pub struct ListApplicationRevisionsInput {
     /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
     /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub deployed: ::std::option::Option<crate::types::ListStateFilterAction>,
     /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationRevisionsInput {

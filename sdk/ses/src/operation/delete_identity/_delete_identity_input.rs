@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIdentityInput {
     /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIdentityInput {

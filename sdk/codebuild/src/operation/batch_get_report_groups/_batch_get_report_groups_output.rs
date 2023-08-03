@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetReportGroupsOutput {
     /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
-    #[doc(hidden)]
     pub report_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReportGroup>>,
     /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
-    #[doc(hidden)]
     pub report_groups_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

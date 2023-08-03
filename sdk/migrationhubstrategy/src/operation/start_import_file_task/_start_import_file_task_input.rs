@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportFileTaskInput {
     /// <p> A descriptive name for the request. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon S3 key name of the import file. </p>
-    #[doc(hidden)]
     pub s3key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
-    #[doc(hidden)]
     pub data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
-    #[doc(hidden)]
     pub s3bucket_for_report_data: ::std::option::Option<::std::string::String>,
 }
 impl StartImportFileTaskInput {

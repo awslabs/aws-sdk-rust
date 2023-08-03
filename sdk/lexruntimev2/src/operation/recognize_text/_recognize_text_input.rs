@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RecognizeTextInput {
     /// <p>The identifier of the bot that processes the request.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias identifier in use for the bot that processes the request.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale where the session is in use.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user session that is having the conversation.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the dialog between the user and the bot.</p>
-    #[doc(hidden)]
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    #[doc(hidden)]
     pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RecognizeTextInput {

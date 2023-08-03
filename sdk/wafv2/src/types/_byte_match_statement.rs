@@ -17,13 +17,10 @@ pub struct ByteMatchStatement {
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
     /// <p> <b>If you're using the CLI or one of the Amazon Web Services SDKs</b> </p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
-    #[doc(hidden)]
     pub search_string: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The part of the web request that you want WAF to inspect. </p>
-    #[doc(hidden)]
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    #[doc(hidden)]
     pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
     /// <p> <b>CONTAINS</b> </p>
@@ -40,7 +37,6 @@ pub struct ByteMatchStatement {
     /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
     /// <p> <b>ENDS_WITH</b> </p>
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
-    #[doc(hidden)]
     pub positional_constraint: ::std::option::Option<crate::types::PositionalConstraint>,
 }
 impl ByteMatchStatement {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TracingConfig {
     /// <p>The tracing mode.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::TracingMode>,
 }
 impl TracingConfig {

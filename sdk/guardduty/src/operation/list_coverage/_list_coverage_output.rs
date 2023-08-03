@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCoverageOutput {
     /// <p>A list of resources and their attributes providing cluster details.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::CoverageResource>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

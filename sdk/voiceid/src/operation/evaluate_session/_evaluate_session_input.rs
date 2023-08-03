@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    #[doc(hidden)]
     pub session_name_or_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateSessionInput {

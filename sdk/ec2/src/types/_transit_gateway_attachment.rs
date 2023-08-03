@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayAttachment {
     /// <p>The ID of the attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
-    #[doc(hidden)]
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state. Note that the <code>initiating</code> state has been deprecated.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayAttachmentState>,
     /// <p>The association.</p>
-    #[doc(hidden)]
     pub association: ::std::option::Option<crate::types::TransitGatewayAttachmentAssociation>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags for the attachment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGatewayAttachment {

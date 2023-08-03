@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptBootstrapActionConfig {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    #[doc(hidden)]
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScriptBootstrapActionConfig {

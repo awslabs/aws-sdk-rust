@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RadarChartAggregatedFieldWells {
     /// <p>The aggregated field well categories of a radar chart.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl RadarChartAggregatedFieldWells {

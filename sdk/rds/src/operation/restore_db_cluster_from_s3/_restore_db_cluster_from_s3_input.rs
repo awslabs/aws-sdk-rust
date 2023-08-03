@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreDbClusterFromS3Input {
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of days for which automated backups of the restored DB cluster are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -12,13 +11,10 @@ pub struct RestoreDbClusterFromS3Input {
     /// <ul>
     /// <li> <p>Must be a value from 1 to 35</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>A value that indicates that the restored DB cluster should be associated with the specified CharacterSet.</p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The database name for the restored DB cluster.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -28,37 +24,30 @@ pub struct RestoreDbClusterFromS3Input {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is omitted, the default parameter group for the engine version is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with the restored DB cluster.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A DB subnet group to associate with the restored DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this DB cluster.</p>
     /// <p>Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
     /// <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
     /// <p>Default: <code>3306</code> </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The name of the master user for the restored DB cluster.</p>
     /// <p>Constraints:</p>
@@ -67,7 +56,6 @@ pub struct RestoreDbClusterFromS3Input {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
     /// <p>Constraints:</p>
@@ -75,11 +63,9 @@ pub struct RestoreDbClusterFromS3Input {
     /// <li> <p>Must contain from 8 to 41 characters.</p> </li>
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>
     /// <p>Permanent options can't be removed from an option group. An option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -90,47 +76,36 @@ pub struct RestoreDbClusterFromS3Input {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.</p>
     /// <p>Valid values: <code>mysql</code> </p>
-    #[doc(hidden)]
     pub source_engine: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p>
     /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code> </p>
-    #[doc(hidden)]
     pub source_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket that contains the data used to create the Amazon Aurora DB cluster.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for all of the file names that contain the data used to create the Amazon Aurora DB cluster. If you do not specify a <b>SourceS3Prefix</b> value, then the Amazon Aurora DB cluster is created by using all of the files in the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.</p>
-    #[doc(hidden)]
     pub s3_ingestion_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
@@ -140,30 +115,23 @@ pub struct RestoreDbClusterFromS3Input {
     /// <ul>
     /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backtrack_window: ::std::option::Option<i64>,
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p> <b>Aurora MySQL</b> </p>
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation.</p>
     /// <p>For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-    #[doc(hidden)]
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid values:</p>
@@ -173,7 +141,6 @@ pub struct RestoreDbClusterFromS3Input {
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
@@ -181,20 +148,17 @@ pub struct RestoreDbClusterFromS3Input {
     /// <ul>
     /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
     /// <p>Default: <code>aurora</code> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterFromS3Input {

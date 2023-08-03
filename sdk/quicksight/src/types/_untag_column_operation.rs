@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagColumnOperation {
     /// <p>The column that this operation acts on.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The column tags to remove from this column.</p>
-    #[doc(hidden)]
     pub tag_names: ::std::option::Option<::std::vec::Vec<crate::types::ColumnTagName>>,
 }
 impl UntagColumnOperation {

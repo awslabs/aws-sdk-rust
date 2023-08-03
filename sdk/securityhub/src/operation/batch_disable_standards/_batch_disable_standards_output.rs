@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisableStandardsOutput {
     /// <p>The details of the standards subscriptions that were disabled.</p>
-    #[doc(hidden)]
     pub standards_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
     _request_id: Option<String>,
 }

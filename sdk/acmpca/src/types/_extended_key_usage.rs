@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtendedKeyUsage {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
-    #[doc(hidden)]
     pub extended_key_usage_type: ::std::option::Option<crate::types::ExtendedKeyUsageType>,
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
-    #[doc(hidden)]
     pub extended_key_usage_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ExtendedKeyUsage {

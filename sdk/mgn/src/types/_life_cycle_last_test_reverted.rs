@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastTestReverted {
     /// <p>Lifecycle last Test reverted API call date and time.</p>
-    #[doc(hidden)]
     pub api_call_date_time: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastTestReverted {

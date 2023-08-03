@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetItemOutput {
     /// <p>A map of table name to a list of items. Each object in <code>Responses</code> consists of a table name, along with a map of attribute data consisting of the data type and attribute value.</p>
-    #[doc(hidden)]
     pub responses: ::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,
@@ -20,7 +19,6 @@ pub struct BatchGetItemOutput {
     /// <li> <p> <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p> </li>
     /// </ul>
     /// <p>If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code> map.</p>
-    #[doc(hidden)]
     pub unprocessed_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>>,
     /// <p>The read capacity units consumed by the entire <code>BatchGetItem</code> operation.</p>
     /// <p>Each element consists of:</p>
@@ -28,7 +26,6 @@ pub struct BatchGetItemOutput {
     /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
     /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionRequest {
     /// <p>The required properties of the function.</p>
-    #[doc(hidden)]
     pub required_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The scope of the function.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The data connector.</p>
-    #[doc(hidden)]
     pub implemented_by: ::std::option::Option<crate::types::DataConnector>,
 }
 impl FunctionRequest {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploySystemInstanceOutput {
     /// <p>An object that contains summary information about a system instance that was deployed. </p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
-    #[doc(hidden)]
     pub greengrass_deployment_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

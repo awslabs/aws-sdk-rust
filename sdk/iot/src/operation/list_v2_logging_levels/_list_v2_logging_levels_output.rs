@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListV2LoggingLevelsOutput {
     /// <p>The logging configuration for a target.</p>
-    #[doc(hidden)]
     pub log_target_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogTargetConfiguration>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

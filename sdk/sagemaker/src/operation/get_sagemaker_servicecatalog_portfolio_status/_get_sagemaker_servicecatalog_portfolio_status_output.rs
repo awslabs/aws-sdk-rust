@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSagemakerServicecatalogPortfolioStatusOutput {
     /// <p>Whether Service Catalog is enabled or disabled in SageMaker.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SagemakerServicecatalogStatus>,
     _request_id: Option<String>,
 }

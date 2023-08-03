@@ -7,11 +7,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tag {
     /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag <code>Department:Sales</code>, the key is 'Department'.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag <code>Department:Sales</code>, the value is 'Sales'.</p>
     /// <p>Note that you can set the value of a tag to an empty string, but you can't set the value of a tag to null. Omitting the tag value is the same as using an empty string.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {

@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of minutes' worth of events to retrieve.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventsInput {

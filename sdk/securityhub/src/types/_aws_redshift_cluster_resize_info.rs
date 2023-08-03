@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterResizeInfo {
     /// <p>Indicates whether the resize operation can be canceled.</p>
-    #[doc(hidden)]
     pub allow_cancel_resize: bool,
     /// <p>The type of resize operation.</p>
     /// <p>Valid values: <code>ClassicResize</code> </p>
-    #[doc(hidden)]
     pub resize_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterResizeInfo {

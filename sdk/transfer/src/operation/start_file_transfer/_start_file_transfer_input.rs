@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFileTransferInput {
     /// <p>The unique identifier for the connector.</p>
-    #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more source paths for the Transfer Family server. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
-    #[doc(hidden)]
     pub send_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
-    #[doc(hidden)]
     pub retrieve_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
-    #[doc(hidden)]
     pub local_directory_path: ::std::option::Option<::std::string::String>,
     /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
-    #[doc(hidden)]
     pub remote_directory_path: ::std::option::Option<::std::string::String>,
 }
 impl StartFileTransferInput {

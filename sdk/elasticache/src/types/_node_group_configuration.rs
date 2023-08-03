@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeGroupConfiguration {
     /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
-    #[doc(hidden)]
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.</p>
     /// <p>Example: <code>"0-3999"</code> </p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::string::String>,
     /// <p>The number of read replica nodes in this node group (shard).</p>
-    #[doc(hidden)]
     pub replica_count: ::std::option::Option<i32>,
     /// <p>The Availability Zone where the primary node of this node group (shard) is launched.</p>
-    #[doc(hidden)]
     pub primary_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
-    #[doc(hidden)]
     pub replica_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The outpost ARN of the primary node.</p>
-    #[doc(hidden)]
     pub primary_outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The outpost ARN of the node replicas.</p>
-    #[doc(hidden)]
     pub replica_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NodeGroupConfiguration {

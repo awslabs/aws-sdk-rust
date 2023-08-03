@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatastoreInput {
     /// <p>The name of the data store</p>
-    #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
-    #[doc(hidden)]
     pub include_statistics: bool,
 }
 impl DescribeDatastoreInput {

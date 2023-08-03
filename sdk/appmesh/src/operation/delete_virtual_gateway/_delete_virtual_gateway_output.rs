@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVirtualGatewayOutput {
     /// <p>The virtual gateway that was deleted.</p>
-    #[doc(hidden)]
     pub virtual_gateway: ::std::option::Option<crate::types::VirtualGatewayData>,
     _request_id: Option<String>,
 }

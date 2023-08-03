@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListChannelBansOutput {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The information for each requested ban.</p>
-    #[doc(hidden)]
     pub channel_bans: ::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>>,
     _request_id: Option<String>,
 }

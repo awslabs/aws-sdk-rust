@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStageDevicesOutput {
     /// <p>List of summaries of devices allocated to the stage.</p>
-    #[doc(hidden)]
     pub device_deployment_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DeviceDeploymentSummary>>,
     /// <p>The token to use when calling the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayMetadata {
     /// <p>The gateway's EUI value.</p>
-    #[doc(hidden)]
     pub gateway_eui: ::std::option::Option<::std::string::String>,
     /// <p>The SNR value.</p>
-    #[doc(hidden)]
     pub snr: ::std::option::Option<f64>,
     /// <p>The RSSI value.</p>
-    #[doc(hidden)]
     pub rssi: ::std::option::Option<f64>,
 }
 impl LoRaWanGatewayMetadata {

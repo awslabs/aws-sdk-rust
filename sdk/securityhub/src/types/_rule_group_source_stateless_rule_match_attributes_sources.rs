@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesSources {
     /// <p>An IP address or a block of IP addresses.</p>
-    #[doc(hidden)]
     pub address_definition: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesSources {

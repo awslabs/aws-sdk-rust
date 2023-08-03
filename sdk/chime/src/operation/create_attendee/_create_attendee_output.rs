@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAttendeeOutput {
     /// <p>The attendee information, including attendee ID and join token.</p>
-    #[doc(hidden)]
     pub attendee: ::std::option::Option<crate::types::Attendee>,
     _request_id: Option<String>,
 }

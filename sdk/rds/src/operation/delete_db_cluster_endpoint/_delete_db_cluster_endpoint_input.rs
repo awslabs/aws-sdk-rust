@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbClusterEndpointInput {
     /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbClusterEndpointInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableOutput {
     /// <p>Information about the local gateway route table.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table: ::std::option::Option<crate::types::LocalGatewayRouteTable>,
     _request_id: Option<String>,
 }

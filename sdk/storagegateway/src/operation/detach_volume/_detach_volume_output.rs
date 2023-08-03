@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

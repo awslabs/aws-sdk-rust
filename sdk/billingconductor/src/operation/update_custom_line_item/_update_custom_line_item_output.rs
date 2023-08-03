@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateCustomLineItemOutput {
     /// <p> The ARN of the successfully updated custom line item. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the billing group that the custom line item is applied to. </p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the successfully updated custom line item. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the successfully updated custom line item. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-    #[doc(hidden)]
     pub charge_details: ::std::option::Option<crate::types::ListCustomLineItemChargeDetails>,
     /// <p> The most recent time when the custom line item was modified. </p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p> The number of resources that are associated to the custom line item. </p>
-    #[doc(hidden)]
     pub association_size: i64,
     _request_id: Option<String>,
 }

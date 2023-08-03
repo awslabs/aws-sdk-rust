@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsServiceRecommendedOptionProjectedMetric {
     /// <p> The recommended CPU size for the Amazon ECS service. </p>
-    #[doc(hidden)]
     pub recommended_cpu_units: i32,
     /// <p> The recommended memory size for the Amazon ECS service. </p>
-    #[doc(hidden)]
     pub recommended_memory_size: i32,
     /// <p> An array of objects that describe the projected metric. </p>
-    #[doc(hidden)]
     pub projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedMetric>>,
 }
 impl EcsServiceRecommendedOptionProjectedMetric {

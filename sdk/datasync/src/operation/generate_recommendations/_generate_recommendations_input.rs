@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateRecommendationsInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    #[doc(hidden)]
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the universally unique identifiers (UUIDs) of the resources in your storage system that you want recommendations on.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::DiscoveryResourceType>,
 }
 impl GenerateRecommendationsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobRunOutput {
     /// <p>The output contains the application ID on which the job run is cancelled.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The output contains the ID of the cancelled job run.</p>
-    #[doc(hidden)]
     pub job_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

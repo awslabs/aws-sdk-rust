@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopRequestSource {
     /// <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the integration source. The default field settings and JSON parsing rules are different based on the integration source. Valid values:</p>
-    #[doc(hidden)]
     pub aws_managed_human_loop_request_source: ::std::option::Option<crate::types::AwsManagedHumanLoopRequestSource>,
 }
 impl HumanLoopRequestSource {

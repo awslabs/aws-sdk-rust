@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoPreprocessor {
     /// Use these settings to convert the color space or to modify properties such as hue and contrast for this output. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
-    #[doc(hidden)]
     pub color_corrector: ::std::option::Option<crate::types::ColorCorrector>,
     /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
-    #[doc(hidden)]
     pub deinterlacer: ::std::option::Option<crate::types::Deinterlacer>,
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
-    #[doc(hidden)]
     pub dolby_vision: ::std::option::Option<crate::types::DolbyVision>,
     /// Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
-    #[doc(hidden)]
     pub hdr10_plus: ::std::option::Option<crate::types::Hdr10Plus>,
     /// Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
-    #[doc(hidden)]
     pub image_inserter: ::std::option::Option<crate::types::ImageInserter>,
     /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
-    #[doc(hidden)]
     pub noise_reducer: ::std::option::Option<crate::types::NoiseReducer>,
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
-    #[doc(hidden)]
     pub partner_watermarking: ::std::option::Option<crate::types::PartnerWatermarking>,
     /// Settings for burning the output timecode and specified prefix into the output.
-    #[doc(hidden)]
     pub timecode_burnin: ::std::option::Option<crate::types::TimecodeBurnin>,
 }
 impl VideoPreprocessor {

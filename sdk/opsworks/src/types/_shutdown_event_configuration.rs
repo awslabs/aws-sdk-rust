@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShutdownEventConfiguration {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
-    #[doc(hidden)]
     pub execution_timeout: ::std::option::Option<i32>,
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
-    #[doc(hidden)]
     pub delay_until_elb_connections_drained: ::std::option::Option<bool>,
 }
 impl ShutdownEventConfiguration {

@@ -6,25 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateTrustInput {
     /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
-    #[doc(hidden)]
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
-    #[doc(hidden)]
     pub trust_password: ::std::option::Option<::std::string::String>,
     /// <p>The direction of the trust relationship.</p>
-    #[doc(hidden)]
     pub trust_direction: ::std::option::Option<crate::types::TrustDirection>,
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
-    #[doc(hidden)]
     pub trust_type: ::std::option::Option<crate::types::TrustType>,
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    #[doc(hidden)]
     pub conditional_forwarder_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
-    #[doc(hidden)]
     pub selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
 impl CreateTrustInput {

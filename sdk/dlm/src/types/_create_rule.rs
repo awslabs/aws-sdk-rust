@@ -11,20 +11,15 @@
 pub struct CreateRule {
     /// <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
     /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::LocationValues>,
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
-    #[doc(hidden)]
     pub interval: i32,
     /// <p>The interval unit.</p>
-    #[doc(hidden)]
     pub interval_unit: ::std::option::Option<crate::types::IntervalUnitValues>,
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
-    #[doc(hidden)]
     pub times: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    #[doc(hidden)]
     pub cron_expression: ::std::option::Option<::std::string::String>,
 }
 impl CreateRule {

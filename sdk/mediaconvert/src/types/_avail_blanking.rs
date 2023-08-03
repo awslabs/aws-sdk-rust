@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailBlanking {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    #[doc(hidden)]
     pub avail_blanking_image: ::std::option::Option<::std::string::String>,
 }
 impl AvailBlanking {

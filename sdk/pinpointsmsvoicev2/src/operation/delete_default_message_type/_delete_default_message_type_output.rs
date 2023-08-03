@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDefaultMessageTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The current message type for the configuration set.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     _request_id: Option<String>,
 }

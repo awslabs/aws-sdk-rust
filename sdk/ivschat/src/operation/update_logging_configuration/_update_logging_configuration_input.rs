@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be updated.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Logging-configuration name. The value does not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    #[doc(hidden)]
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
 }
 impl UpdateLoggingConfigurationInput {

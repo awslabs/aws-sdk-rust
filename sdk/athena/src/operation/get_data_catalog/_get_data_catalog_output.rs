@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataCatalogOutput {
     /// <p>The data catalog returned.</p>
-    #[doc(hidden)]
     pub data_catalog: ::std::option::Option<crate::types::DataCatalog>,
     _request_id: Option<String>,
 }

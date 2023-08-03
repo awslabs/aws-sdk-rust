@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HomeDirectoryMapEntry {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
-    #[doc(hidden)]
     pub entry: ::std::option::Option<::std::string::String>,
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
 }
 impl HomeDirectoryMapEntry {

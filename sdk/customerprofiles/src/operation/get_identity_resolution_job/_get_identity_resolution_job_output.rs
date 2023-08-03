@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityResolutionJobOutput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Identity Resolution Job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
@@ -19,31 +17,22 @@ pub struct GetIdentityResolutionJobOutput {
     /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
     /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IdentityResolutionJobStatus>,
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the Identity Resolution Job was started or will be started.</p>
-    #[doc(hidden)]
     pub job_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the Identity Resolution Job was completed.</p>
-    #[doc(hidden)]
     pub job_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the Identity Resolution Job was most recently edited.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the Identity Resolution Job will expire.</p>
-    #[doc(hidden)]
     pub job_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
-    #[doc(hidden)]
     pub auto_merging: ::std::option::Option<crate::types::AutoMerging>,
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-    #[doc(hidden)]
     pub exporting_location: ::std::option::Option<crate::types::ExportingLocation>,
     /// <p>Statistics about the Identity Resolution Job.</p>
-    #[doc(hidden)]
     pub job_stats: ::std::option::Option<crate::types::JobStats>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisResultLocation {
     /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl AnalysisResultLocation {

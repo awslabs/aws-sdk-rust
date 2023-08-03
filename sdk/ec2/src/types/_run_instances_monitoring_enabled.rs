@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunInstancesMonitoringEnabled {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl RunInstancesMonitoringEnabled {

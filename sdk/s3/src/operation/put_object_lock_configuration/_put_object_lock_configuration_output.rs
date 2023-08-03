@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutObjectLockConfigurationOutput {
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

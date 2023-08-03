@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRefreshLivePoolProgress {
     /// <p>The percentage of instances in the Auto Scaling group that have been replaced. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p>
-    #[doc(hidden)]
     pub percentage_complete: ::std::option::Option<i32>,
     /// <p>The number of instances remaining to update.</p>
-    #[doc(hidden)]
     pub instances_to_update: ::std::option::Option<i32>,
 }
 impl InstanceRefreshLivePoolProgress {

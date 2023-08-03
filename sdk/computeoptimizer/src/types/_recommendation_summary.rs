@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
-    #[doc(hidden)]
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
     /// <p>The resource type that the recommendation summary applies to.</p>
-    #[doc(hidden)]
     pub recommendation_resource_type: ::std::option::Option<crate::types::RecommendationSourceType>,
     /// <p>The Amazon Web Services account ID of the recommendation summary.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the savings opportunity for a given resource type. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    #[doc(hidden)]
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     /// <p>An object that describes the performance risk ratings for a given resource type.</p>
-    #[doc(hidden)]
     pub current_performance_risk_ratings: ::std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
     /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
-    #[doc(hidden)]
     pub inferred_workload_savings: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadSaving>>,
 }
 impl RecommendationSummary {

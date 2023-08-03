@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMatchingJobOutput {
     /// <p>The ID of the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The time at which the job was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the job has finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::JobMetrics>,
     /// <p>An object containing an error message, if there was an error.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
     _request_id: Option<String>,
 }

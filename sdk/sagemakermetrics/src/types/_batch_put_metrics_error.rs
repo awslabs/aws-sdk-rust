@@ -11,10 +11,8 @@ pub struct BatchPutMetricsError {
     /// <li> <p> <code>VALIDATION_ERROR</code>: The metric data failed validation.</p> </li>
     /// <li> <p> <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::PutMetricsErrorCode>,
     /// <p>An index that corresponds to the metric in the request.</p>
-    #[doc(hidden)]
     pub metric_index: i32,
 }
 impl BatchPutMetricsError {

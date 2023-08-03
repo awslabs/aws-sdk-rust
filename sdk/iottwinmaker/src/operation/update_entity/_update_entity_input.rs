@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entity.</p>
-    #[doc(hidden)]
     pub entity_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the entity.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub component_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
     /// <p>An object that describes the update request for a parent entity.</p>
-    #[doc(hidden)]
     pub parent_entity_update: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
 }
 impl UpdateEntityInput {

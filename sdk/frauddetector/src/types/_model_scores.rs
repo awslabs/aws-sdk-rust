@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelScores {
     /// <p>The model version.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<crate::types::ModelVersion>,
     /// <p>The model's fraud prediction scores.</p>
-    #[doc(hidden)]
     pub scores: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
 }
 impl ModelScores {

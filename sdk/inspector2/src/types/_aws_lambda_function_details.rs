@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionDetails {
     /// <p>The name of the AWS Lambda function.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The runtime environment for the AWS Lambda function.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::Runtime>,
     /// <p>The SHA256 hash of the AWS Lambda function's deployment package.</p>
-    #[doc(hidden)]
     pub code_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The version of the AWS Lambda function.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Lambda function's execution role.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Lambda function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The AWS Lambda function's networking configuration.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::LambdaVpcConfig>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<crate::types::PackageType>,
     /// <p>The instruction set architecture that the AWS Lambda function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    #[doc(hidden)]
     pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AwsLambdaFunctionDetails {

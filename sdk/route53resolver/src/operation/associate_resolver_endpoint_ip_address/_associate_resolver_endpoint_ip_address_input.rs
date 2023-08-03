@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResolverEndpointIpAddressInput {
     /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
-    #[doc(hidden)]
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<crate::types::IpAddressUpdate>,
 }
 impl AssociateResolverEndpointIpAddressInput {

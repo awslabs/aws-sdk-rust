@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlgorithmSpecification {
     /// <p>Configures the paths to the Python scripts used for entry and training.</p>
-    #[doc(hidden)]
     pub script_mode_config: ::std::option::Option<crate::types::ScriptModeConfig>,
     /// <p>The container image used to create an Amazon Braket job.</p>
-    #[doc(hidden)]
     pub container_image: ::std::option::Option<crate::types::ContainerImage>,
 }
 impl AlgorithmSpecification {

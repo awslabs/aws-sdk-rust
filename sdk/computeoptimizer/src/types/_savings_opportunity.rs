@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsOpportunity {
     /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer recommendations for a given resource.</p>
-    #[doc(hidden)]
     pub savings_opportunity_percentage: f64,
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing..</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings: ::std::option::Option<crate::types::EstimatedMonthlySavings>,
 }
 impl SavingsOpportunity {

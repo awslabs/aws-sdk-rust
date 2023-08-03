@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyFilter {
     /// <p>Represents a single property to match with when searching a raster data collection.</p>
-    #[doc(hidden)]
     pub property: ::std::option::Option<crate::types::Property>,
 }
 impl PropertyFilter {

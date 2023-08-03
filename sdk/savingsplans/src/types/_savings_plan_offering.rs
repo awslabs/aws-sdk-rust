@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlanOffering {
     /// <p>The ID of the offering.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The product type.</p>
-    #[doc(hidden)]
     pub product_types: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanProductType>>,
     /// <p>The plan type.</p>
-    #[doc(hidden)]
     pub plan_type: ::std::option::Option<crate::types::SavingsPlanType>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The payment option.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
     /// <p>The duration, in seconds.</p>
-    #[doc(hidden)]
     pub duration_seconds: i64,
     /// <p>The currency.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<crate::types::CurrencyCode>,
     /// <p>The service.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The usage details of the line item in the billing report.</p>
-    #[doc(hidden)]
     pub usage_type: ::std::option::Option<::std::string::String>,
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The properties.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanOfferingProperty>>,
 }
 impl SavingsPlanOffering {

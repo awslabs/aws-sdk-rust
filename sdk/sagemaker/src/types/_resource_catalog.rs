@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceCatalog {
     /// <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
-    #[doc(hidden)]
     pub resource_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the <code>ResourceCatalog</code>. </p>
-    #[doc(hidden)]
     pub resource_catalog_name: ::std::option::Option<::std::string::String>,
     /// <p> A free form description of the <code>ResourceCatalog</code>. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The time the <code>ResourceCatalog</code> was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceCatalog {

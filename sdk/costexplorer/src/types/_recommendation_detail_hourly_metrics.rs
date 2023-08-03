@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationDetailHourlyMetrics {
     /// <p>The period of time that you want the usage and costs for.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_on_demand_cost: ::std::option::Option<::std::string::String>,
     /// <p>The current amount of Savings Plans eligible usage that the Savings Plan covered.</p>
-    #[doc(hidden)]
     pub current_coverage: ::std::option::Option<::std::string::String>,
     /// <p>The estimated coverage amount based on the recommended Savings Plan.</p>
-    #[doc(hidden)]
     pub estimated_coverage: ::std::option::Option<::std::string::String>,
     /// <p>The estimated utilization for the recommended Savings Plan.</p>
-    #[doc(hidden)]
     pub estimated_new_commitment_utilization: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationDetailHourlyMetrics {

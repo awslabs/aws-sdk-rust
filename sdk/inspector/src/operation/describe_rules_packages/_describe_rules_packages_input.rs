@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRulesPackagesInput {
     /// <p>The ARN that specifies the rules package that you want to describe.</p>
-    #[doc(hidden)]
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The locale that you want to translate a rules package description into.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
 }
 impl DescribeRulesPackagesInput {

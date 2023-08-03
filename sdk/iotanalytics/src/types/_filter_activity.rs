@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterActivity {
     /// <p>The name of the filter activity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl FilterActivity {

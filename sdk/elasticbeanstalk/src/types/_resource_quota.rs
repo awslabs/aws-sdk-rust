@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceQuota {
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<i32>,
 }
 impl ResourceQuota {

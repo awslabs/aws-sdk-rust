@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteComponentOutput {
     /// <p>The detailed data of the component being deleted.</p>
-    #[doc(hidden)]
     pub component: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,
 }

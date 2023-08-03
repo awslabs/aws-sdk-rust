@@ -4,29 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDetectorOutput {
     /// <p>The timestamp of when the detector was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The publishing frequency of the finding.</p>
-    #[doc(hidden)]
     pub finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>The GuardDuty service role.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The detector status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetectorStatus>,
     /// <p>The last-updated timestamp for the detector.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::std::string::String>,
     /// <p>Describes which data sources are enabled for the detector.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<crate::types::DataSourceConfigurationsResult>,
     /// <p>The tags of the detector resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the features that have been enabled for the detector.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfigurationResult>>,
     _request_id: Option<String>,
 }

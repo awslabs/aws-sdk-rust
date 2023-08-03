@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryExecution {
     /// <p>The unique identifier for each query execution.</p>
-    #[doc(hidden)]
     pub query_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The SQL query statements which the query execution ran.</p>
-    #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
-    #[doc(hidden)]
     pub statement_type: ::std::option::Option<crate::types::StatementType>,
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
-    #[doc(hidden)]
     pub result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     /// <p>Specifies the query result reuse behavior that was used for the query.</p>
-    #[doc(hidden)]
     pub result_reuse_configuration: ::std::option::Option<crate::types::ResultReuseConfiguration>,
     /// <p>The database in which the query execution occurred.</p>
-    #[doc(hidden)]
     pub query_execution_context: ::std::option::Option<crate::types::QueryExecutionContext>,
     /// <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QueryExecutionStatus>,
     /// <p>Query execution statistics, such as the amount of data scanned, the amount of time that the query took to process, and the type of statement that was run.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::QueryExecutionStatistics>,
     /// <p>The name of the workgroup in which the query ran.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The engine version that executed the query.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur. The list of parameters is not returned in the response.</p>
-    #[doc(hidden)]
     pub execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The kind of query statement that was run.</p>
-    #[doc(hidden)]
     pub substatement_type: ::std::option::Option<::std::string::String>,
 }
 impl QueryExecution {

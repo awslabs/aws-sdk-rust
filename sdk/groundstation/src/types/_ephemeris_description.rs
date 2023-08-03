@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EphemerisDescription {
     /// <p>Source S3 object used for the ephemeris.</p>
-    #[doc(hidden)]
     pub source_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>Supplied ephemeris data.</p>
-    #[doc(hidden)]
     pub ephemeris_data: ::std::option::Option<::std::string::String>,
 }
 impl EphemerisDescription {

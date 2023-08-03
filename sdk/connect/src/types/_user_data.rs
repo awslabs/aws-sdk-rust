@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserData {
     /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user. </p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::UserReference>,
     /// <p>Information about the routing profile that is assigned to the user.</p>
-    #[doc(hidden)]
     pub routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,
     /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
-    #[doc(hidden)]
     pub hierarchy_path: ::std::option::Option<crate::types::HierarchyPathReference>,
     /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgentStatusReference>,
     /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots. </p>
-    #[doc(hidden)]
     pub available_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
     /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent. </p>
-    #[doc(hidden)]
     pub max_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
     /// <p> A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots. </p>
-    #[doc(hidden)]
     pub active_slots_by_channel: ::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>>,
     /// <p>A list of contact reference information.</p>
-    #[doc(hidden)]
     pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::AgentContactReference>>,
     /// <p>The Next status of the agent.</p>
-    #[doc(hidden)]
     pub next_status: ::std::option::Option<::std::string::String>,
 }
 impl UserData {

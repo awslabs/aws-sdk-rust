@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigurationInput {
     /// <p>The name of the domain configuration to be updated.</p>
-    #[doc(hidden)]
     pub domain_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies the authorization service for a domain.</p>
-    #[doc(hidden)]
     pub authorizer_config: ::std::option::Option<crate::types::AuthorizerConfig>,
     /// <p>The status to which the domain configuration should be updated.</p>
-    #[doc(hidden)]
     pub domain_configuration_status: ::std::option::Option<crate::types::DomainConfigurationStatus>,
     /// <p>Removes the authorization configuration from a domain.</p>
-    #[doc(hidden)]
     pub remove_authorizer_config: ::std::option::Option<bool>,
     /// <p>An object that specifies the TLS configuration for a domain.</p>
-    #[doc(hidden)]
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
 }
 impl UpdateDomainConfigurationInput {

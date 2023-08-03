@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CmafPackage {
     /// A CMAF encryption configuration.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::CmafEncryption>,
     /// A list of HLS manifest configurations.
-    #[doc(hidden)]
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
-    #[doc(hidden)]
     pub include_encoder_configuration_in_segments: ::std::option::Option<bool>,
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
-    #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
 }
 impl CmafPackage {

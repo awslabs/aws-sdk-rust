@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppBundleOutput {
     /// <p>Contains information about an app bundle.</p>
-    #[doc(hidden)]
     pub app_bundle: ::std::option::Option<crate::types::AppBundle>,
     _request_id: Option<String>,
 }

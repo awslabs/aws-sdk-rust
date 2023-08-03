@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementStatistics {
     /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub inbox_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub spam_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub missing_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of emails that were authenticated by using Sender Policy Framework (SPF) during the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub spf_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail (DKIM) during the predictive inbox placement test.</p>
-    #[doc(hidden)]
     pub dkim_percentage: ::std::option::Option<f64>,
 }
 impl PlacementStatistics {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessagingSessionEndpoint {
     /// <p>The endpoint to which you establish a websocket connection.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl MessagingSessionEndpoint {

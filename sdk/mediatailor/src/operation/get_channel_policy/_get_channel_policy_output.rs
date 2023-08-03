@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelPolicyOutput {
     /// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

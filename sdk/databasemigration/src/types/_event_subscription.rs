@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The Amazon Web Services customer account associated with the DMS event notification subscription.</p>
-    #[doc(hidden)]
     pub customer_aws_id: ::std::option::Option<::std::string::String>,
     /// <p>The DMS event notification subscription Id.</p>
-    #[doc(hidden)]
     pub cust_subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The topic ARN of the DMS event notification subscription.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the DMS event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
     /// <p>The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The time the DMS event notification subscription was created.</p>
-    #[doc(hidden)]
     pub subscription_creation_time: ::std::option::Option<::std::string::String>,
     /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of source Ids for the event subscription.</p>
-    #[doc(hidden)]
     pub source_ids_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A lists of event categories.</p>
-    #[doc(hidden)]
     pub event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Boolean value that indicates if the event subscription is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl EventSubscription {

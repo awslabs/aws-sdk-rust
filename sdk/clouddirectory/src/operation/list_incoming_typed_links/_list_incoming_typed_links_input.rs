@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIncomingTypedLinksInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Reference that identifies the object whose attributes will be listed.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    #[doc(hidden)]
     pub filter_attribute_ranges: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
-    #[doc(hidden)]
     pub filter_typed_link: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The consistency level to execute the request at.</p>
-    #[doc(hidden)]
     pub consistency_level: ::std::option::Option<crate::types::ConsistencyLevel>,
 }
 impl ListIncomingTypedLinksInput {

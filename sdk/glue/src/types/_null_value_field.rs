@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NullValueField {
     /// <p>The value of the null placeholder.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The datatype of the value.</p>
-    #[doc(hidden)]
     pub datatype: ::std::option::Option<crate::types::Datatype>,
 }
 impl NullValueField {

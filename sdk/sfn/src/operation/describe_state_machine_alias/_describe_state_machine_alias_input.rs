@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStateMachineAliasInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
-    #[doc(hidden)]
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStateMachineAliasInput {

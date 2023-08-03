@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
-    #[doc(hidden)]
     pub success_topic: ::std::option::Option<::std::string::String>,
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
-    #[doc(hidden)]
     pub error_topic: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
-    #[doc(hidden)]
     pub include_inference_response_in: ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
 }
 impl AsyncInferenceNotificationConfig {

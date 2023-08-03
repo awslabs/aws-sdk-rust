@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePartnerStatusInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database whose partner integration status is being updated.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partner whose integration status is being updated.</p>
-    #[doc(hidden)]
     pub partner_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the updated status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PartnerIntegrationStatus>,
     /// <p>The status message provided by the partner.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePartnerStatusInput {

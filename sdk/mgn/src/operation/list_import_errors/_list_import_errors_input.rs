@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportErrorsInput {
     /// <p>List import errors request import id.</p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>List import errors request max results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>List import errors request next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportErrorsInput {

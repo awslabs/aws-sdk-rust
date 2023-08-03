@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDownloadUrlForLayerInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that is associated with the image layer to download.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The digest of the image layer to download.</p>
-    #[doc(hidden)]
     pub layer_digest: ::std::option::Option<::std::string::String>,
 }
 impl GetDownloadUrlForLayerInput {

@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopBottomRankedComputation {
     /// <p>The ID for a computation.</p>
-    #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The category field that is used in a computation.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The value field that is used in a computation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The result size of a top and bottom ranked computation.</p>
-    #[doc(hidden)]
     pub result_size: i32,
     /// <p>The computation type. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p>TOP: A top ranked computation.</p> </li>
     /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TopBottomComputationType>,
 }
 impl TopBottomRankedComputation {

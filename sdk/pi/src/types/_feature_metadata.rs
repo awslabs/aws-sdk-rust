@@ -13,7 +13,6 @@ pub struct FeatureMetadata {
     /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
     /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl FeatureMetadata {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationHealthOutput {
     /// <p>The termination health details.</p>
-    #[doc(hidden)]
     pub termination_health: ::std::option::Option<crate::types::TerminationHealth>,
     _request_id: Option<String>,
 }

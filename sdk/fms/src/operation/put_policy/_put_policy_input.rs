@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPolicyInput {
     /// <p>The details of the Firewall Manager policy to be created.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::Policy>,
     /// <p>The tags to add to the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutPolicyInput {

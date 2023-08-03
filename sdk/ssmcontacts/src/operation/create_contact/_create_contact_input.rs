@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContactInput {
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContactType>,
     /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
-    #[doc(hidden)]
     pub plan: ::std::option::Option<crate::types::Plan>,
     /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateContactInput {

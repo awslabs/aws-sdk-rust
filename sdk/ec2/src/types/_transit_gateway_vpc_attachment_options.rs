@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayVpcAttachmentOptions {
     /// <p>Indicates whether DNS support is enabled.</p>
-    #[doc(hidden)]
     pub dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     /// <p>Indicates whether IPv6 support is disabled.</p>
-    #[doc(hidden)]
     pub ipv6_support: ::std::option::Option<crate::types::Ipv6SupportValue>,
     /// <p>Indicates whether appliance mode support is enabled.</p>
-    #[doc(hidden)]
     pub appliance_mode_support: ::std::option::Option<crate::types::ApplianceModeSupportValue>,
 }
 impl TransitGatewayVpcAttachmentOptions {

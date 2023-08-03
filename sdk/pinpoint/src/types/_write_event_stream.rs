@@ -19,10 +19,8 @@ pub struct WriteEventStream {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
-    #[doc(hidden)]
     pub destination_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl WriteEventStream {

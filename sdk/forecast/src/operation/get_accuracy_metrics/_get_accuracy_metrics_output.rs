@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccuracyMetricsOutput {
     /// <p>An array of results from evaluating the predictor.</p>
-    #[doc(hidden)]
     pub predictor_evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
-    #[doc(hidden)]
     pub is_auto_predictor: ::std::option::Option<bool>,
     /// <note>
     /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges. </p>
     /// </note>
     /// <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>
     /// <p>This parameter is only valid for predictors trained using AutoML.</p>
-    #[doc(hidden)]
     pub auto_ml_override_strategy: ::std::option::Option<crate::types::AutoMlOverrideStrategy>,
     /// <p>The accuracy metric used to optimize the predictor.</p>
-    #[doc(hidden)]
     pub optimization_metric: ::std::option::Option<crate::types::OptimizationMetric>,
     _request_id: Option<String>,
 }

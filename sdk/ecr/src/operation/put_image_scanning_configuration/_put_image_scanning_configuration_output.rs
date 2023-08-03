@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutImageScanningConfigurationOutput {
     /// <p>The registry ID associated with the request.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name associated with the request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The image scanning configuration setting for the repository.</p>
-    #[doc(hidden)]
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     _request_id: Option<String>,
 }

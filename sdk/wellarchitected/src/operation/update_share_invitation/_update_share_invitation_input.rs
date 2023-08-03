@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateShareInvitationInput {
     /// <p>The ID assigned to the share invitation.</p>
-    #[doc(hidden)]
     pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>Share invitation action taken by contributor.</p>
-    #[doc(hidden)]
     pub share_invitation_action: ::std::option::Option<crate::types::ShareInvitationAction>,
 }
 impl UpdateShareInvitationInput {

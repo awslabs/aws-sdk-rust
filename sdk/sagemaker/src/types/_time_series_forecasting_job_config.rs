@@ -14,10 +14,8 @@ pub struct TimeSeriesForecastingJobConfig {
     /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p> <note>
     /// <p>These column keys must not include any column set in <code>TimeSeriesConfig</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub feature_specification_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    #[doc(hidden)]
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, <code>1D</code> indicates every day and <code>15min</code> indicates every 15 minutes. The value of a frequency must not overlap with the next larger frequency. For example, you must use a frequency of <code>1H</code> instead of <code>60min</code>.</p>
@@ -30,19 +28,14 @@ pub struct TimeSeriesForecastingJobConfig {
     /// <li> <p>Month - 1-11</p> </li>
     /// <li> <p>Year - 1</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub forecast_frequency: ::std::option::Option<::std::string::String>,
     /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length. The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the time-steps in the dataset.</p>
-    #[doc(hidden)]
     pub forecast_horizon: ::std::option::Option<i32>,
     /// <p>The quantiles used to train the model for forecasts at a specified quantile. You can specify quantiles from <code>0.01</code> (p1) to <code>0.99</code> (p99), by increments of 0.01 or higher. Up to five forecast quantiles can be specified. When <code>ForecastQuantiles</code> is not provided, the AutoML job uses the quantiles p10, p50, and p90 as default.</p>
-    #[doc(hidden)]
     pub forecast_quantiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The transformations modifying specific attributes of the time-series, such as filling strategies for missing values.</p>
-    #[doc(hidden)]
     pub transformations: ::std::option::Option<crate::types::TimeSeriesTransformations>,
     /// <p>The collection of components that defines the time-series.</p>
-    #[doc(hidden)]
     pub time_series_config: ::std::option::Option<crate::types::TimeSeriesConfig>,
 }
 impl TimeSeriesForecastingJobConfig {

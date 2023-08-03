@@ -4,30 +4,22 @@
 #[derive(::std::fmt::Debug)]
 pub struct NotifyObjectCompleteInput {
     /// Backup job Id for the in-progress backup
-    #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// Upload Id for the in-progress upload
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// Object checksum
-    #[doc(hidden)]
     pub object_checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm
-    #[doc(hidden)]
     pub object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
-    #[doc(hidden)]
     pub metadata_string: ::std::option::Option<::std::string::String>,
     /// Optional metadata associated with an Object. Maximum length is 4MB.
     pub metadata_blob: ::aws_smithy_http::byte_stream::ByteStream,
     /// The size of MetadataBlob.
-    #[doc(hidden)]
     pub metadata_blob_length: i64,
     /// Checksum of MetadataBlob.
-    #[doc(hidden)]
     pub metadata_blob_checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm.
-    #[doc(hidden)]
     pub metadata_blob_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
 }
 impl NotifyObjectCompleteInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationInput {
     /// <p>The Kinesis Analytics application name.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the Kinesis Analytics application.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationInputProcessingConfigurationInput {

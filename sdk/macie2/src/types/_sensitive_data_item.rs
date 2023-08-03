@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitiveDataItem {
     /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::SensitiveDataItemCategory>,
     /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
-    #[doc(hidden)]
     pub detections: ::std::option::Option<::std::vec::Vec<crate::types::DefaultDetection>>,
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i64>,
 }
 impl SensitiveDataItem {

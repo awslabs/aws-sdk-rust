@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GaugeChartFieldWells {
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub target_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl GaugeChartFieldWells {

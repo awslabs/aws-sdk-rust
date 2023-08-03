@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetInput {
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
-    #[doc(hidden)]
     pub rule_set_body: ::std::option::Option<::std::string::String>,
 }
 impl ValidateMatchmakingRuleSetInput {

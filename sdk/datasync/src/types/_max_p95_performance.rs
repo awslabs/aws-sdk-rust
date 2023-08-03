@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaxP95Performance {
     /// <p>Peak IOPS related to read operations.</p>
-    #[doc(hidden)]
     pub iops_read: ::std::option::Option<f64>,
     /// <p>Peak IOPS related to write operations.</p>
-    #[doc(hidden)]
     pub iops_write: ::std::option::Option<f64>,
     /// <p>Peak IOPS unrelated to read and write operations.</p>
-    #[doc(hidden)]
     pub iops_other: ::std::option::Option<f64>,
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
-    #[doc(hidden)]
     pub iops_total: ::std::option::Option<f64>,
     /// <p>Peak throughput related to read operations.</p>
-    #[doc(hidden)]
     pub throughput_read: ::std::option::Option<f64>,
     /// <p>Peak throughput related to write operations.</p>
-    #[doc(hidden)]
     pub throughput_write: ::std::option::Option<f64>,
     /// <p>Peak throughput unrelated to read and write operations.</p>
-    #[doc(hidden)]
     pub throughput_other: ::std::option::Option<f64>,
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
-    #[doc(hidden)]
     pub throughput_total: ::std::option::Option<f64>,
     /// <p>Peak latency for read operations.</p>
-    #[doc(hidden)]
     pub latency_read: ::std::option::Option<f64>,
     /// <p>Peak latency for write operations.</p>
-    #[doc(hidden)]
     pub latency_write: ::std::option::Option<f64>,
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
-    #[doc(hidden)]
     pub latency_other: ::std::option::Option<f64>,
 }
 impl MaxP95Performance {

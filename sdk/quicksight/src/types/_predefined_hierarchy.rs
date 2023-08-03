@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredefinedHierarchy {
     /// <p>The hierarchy ID of the predefined hierarchy.</p>
-    #[doc(hidden)]
     pub hierarchy_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of columns that define the predefined hierarchy.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
     /// <p>The option that determines the drill down filters for the predefined hierarchy.</p>
-    #[doc(hidden)]
     pub drill_down_filters: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
 }
 impl PredefinedHierarchy {

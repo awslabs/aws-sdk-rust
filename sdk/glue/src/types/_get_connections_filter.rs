@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectionsFilter {
     /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
-    #[doc(hidden)]
     pub match_criteria: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
 }
 impl GetConnectionsFilter {

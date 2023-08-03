@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldLinkContentConfiguration {
     /// <p>The custom text content (value, font configuration) for the table link content configuration.</p>
-    #[doc(hidden)]
     pub custom_text_content: ::std::option::Option<crate::types::TableFieldCustomTextContent>,
     /// <p>The custom icon content for the table link content configuration.</p>
-    #[doc(hidden)]
     pub custom_icon_content: ::std::option::Option<crate::types::TableFieldCustomIconContent>,
 }
 impl TableFieldLinkContentConfiguration {

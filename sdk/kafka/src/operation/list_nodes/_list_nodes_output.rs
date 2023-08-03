@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNodesOutput {
     /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List containing a NodeInfo object.</p>
-    #[doc(hidden)]
     pub node_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>>,
     _request_id: Option<String>,
 }

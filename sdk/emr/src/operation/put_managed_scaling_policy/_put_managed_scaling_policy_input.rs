@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutManagedScalingPolicyInput {
     /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the constraints for the managed scaling policy. </p>
-    #[doc(hidden)]
     pub managed_scaling_policy: ::std::option::Option<crate::types::ManagedScalingPolicy>,
 }
 impl PutManagedScalingPolicyInput {

@@ -5,48 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PricingRuleListElement {
     /// <p>The name of a pricing rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) used to uniquely identify a pricing rule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The pricing rule description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The scope of pricing rule that indicates if it is globally applicable, or if it is service-specific.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::PricingRuleScope>,
     /// <p>The type of pricing rule.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PricingRuleType>,
     /// <p>A percentage modifier applied on the public pricing rates.</p>
-    #[doc(hidden)]
     pub modifier_percentage: ::std::option::Option<f64>,
     /// <p>If the <code>Scope</code> attribute is <code>SERVICE</code>, this attribute indicates which service the <code>PricingRule</code> is applicable for.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The pricing plans count that this pricing rule is associated with.</p>
-    #[doc(hidden)]
     pub associated_pricing_plan_count: i64,
     /// <p>The time when the pricing rule was created.</p>
-    #[doc(hidden)]
     pub creation_time: i64,
     /// <p> The most recent time when the pricing rule was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    #[doc(hidden)]
     pub billing_entity: ::std::option::Option<::std::string::String>,
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    #[doc(hidden)]
     pub tiering: ::std::option::Option<crate::types::Tiering>,
     /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
-    #[doc(hidden)]
     pub usage_type: ::std::option::Option<::std::string::String>,
     /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
 }
 impl PricingRuleListElement {

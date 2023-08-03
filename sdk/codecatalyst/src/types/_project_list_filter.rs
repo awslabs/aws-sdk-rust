@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectListFilter {
     /// <p>A key that can be used to sort results.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::FilterKey>,
     /// <p>The values of the key.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator used to compare the fields.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
 impl ProjectListFilter {

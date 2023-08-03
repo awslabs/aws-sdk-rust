@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ScheduledQueryDescription {
     /// <p>Scheduled query ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the scheduled query.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The query to be run.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>Creation time of the scheduled query.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>State of the scheduled query. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
     /// <p>Last time the query was run.</p>
-    #[doc(hidden)]
     pub previous_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The next time the scheduled query is scheduled to run.</p>
-    #[doc(hidden)]
     pub next_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Schedule configuration.</p>
-    #[doc(hidden)]
     pub schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>Notification configuration.</p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     /// <p>Scheduled query target store configuration.</p>
-    #[doc(hidden)]
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     /// <p>IAM role that Timestream uses to run the schedule query.</p>
-    #[doc(hidden)]
     pub scheduled_query_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A customer provided KMS key used to encrypt the scheduled query resource.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Error-reporting configuration for the scheduled query.</p>
-    #[doc(hidden)]
     pub error_report_configuration: ::std::option::Option<crate::types::ErrorReportConfiguration>,
     /// <p>Runtime summary for the last scheduled query run. </p>
-    #[doc(hidden)]
     pub last_run_summary: ::std::option::Option<crate::types::ScheduledQueryRunSummary>,
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    #[doc(hidden)]
     pub recently_failed_runs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
 }
 impl ScheduledQueryDescription {

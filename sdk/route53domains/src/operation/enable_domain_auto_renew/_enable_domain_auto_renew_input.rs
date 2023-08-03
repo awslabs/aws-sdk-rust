@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableDomainAutoRenewInput {
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl EnableDomainAutoRenewInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VoiceProfileSummary {
     /// <p>The ID of the voice profile in a voice profile summary.</p>
-    #[doc(hidden)]
     pub voice_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the voice profile in a voice profile summary.</p>
-    #[doc(hidden)]
     pub voice_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the voice profile domain in a voice profile summary.</p>
-    #[doc(hidden)]
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The time at which a voice profile summary was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a voice profile summary was last updated.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Extends the life of the voice profile. You can use <code>UpdateVoiceProfile</code> to refresh an existing voice profile's voice print and extend the life of the summary.</p>
-    #[doc(hidden)]
     pub expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VoiceProfileSummary {

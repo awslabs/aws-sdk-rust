@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomRoutingAcceleratorsOutput {
     /// <p>The list of custom routing accelerators for a customer account.</p>
-    #[doc(hidden)]
     pub accelerators: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingAccelerator>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchedulesOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The schedules that match the specified criteria.</p>
-    #[doc(hidden)]
     pub schedules: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleSummary>>,
     _request_id: Option<String>,
 }

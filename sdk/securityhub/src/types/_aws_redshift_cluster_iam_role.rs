@@ -6,10 +6,8 @@
 pub struct AwsRedshiftClusterIamRole {
     /// <p>The status of the IAM role's association with the cluster.</p>
     /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
-    #[doc(hidden)]
     pub apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterIamRole {

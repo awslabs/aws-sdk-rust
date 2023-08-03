@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The ARN for the Amazon SNS topic to which notifications should be published.</p>
-    #[doc(hidden)]
     pub notification_topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl NotificationConfiguration {

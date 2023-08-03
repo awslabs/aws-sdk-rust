@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TargetType>,
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.) </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl Target {

@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScalingPlanInput {
     /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
-    #[doc(hidden)]
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    #[doc(hidden)]
     pub application_source: ::std::option::Option<crate::types::ApplicationSource>,
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    #[doc(hidden)]
     pub scaling_instructions: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
 }
 impl CreateScalingPlanInput {

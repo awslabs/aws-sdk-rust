@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterDevicesInput {
     /// <p>The name of the fleet the devices belong to.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique IDs of the devices.</p>
-    #[doc(hidden)]
     pub device_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeregisterDevicesInput {

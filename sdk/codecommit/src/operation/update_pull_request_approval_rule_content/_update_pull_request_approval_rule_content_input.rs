@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalRuleContentInput {
     /// <p>The system-generated ID of the pull request.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the approval rule you want to update.</p>
-    #[doc(hidden)]
     pub approval_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    #[doc(hidden)]
     pub existing_rule_content_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The updated content for the approval rule.</p> <note>
     /// <p>When you update the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
@@ -24,7 +21,6 @@ pub struct UpdatePullRequestApprovalRuleContentInput {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub new_rule_content: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePullRequestApprovalRuleContentInput {

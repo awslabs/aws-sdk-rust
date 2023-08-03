@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRecordInput {
     /// <p>A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.</p>
-    #[doc(hidden)]
     pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.</p>
-    #[doc(hidden)]
     pub expiration_time_response: ::std::option::Option<crate::types::ExpirationTimeResponse>,
 }
 impl BatchGetRecordInput {

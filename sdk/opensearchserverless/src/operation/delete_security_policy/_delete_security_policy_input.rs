@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSecurityPolicyInput {
     /// <p>The type of policy.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     /// <p>The name of the policy to delete.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSecurityPolicyInput {

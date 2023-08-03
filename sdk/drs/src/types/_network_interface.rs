@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The MAC address of the network interface.</p>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>Network interface IPs.</p>
-    #[doc(hidden)]
     pub ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether this is the primary network interface.</p>
-    #[doc(hidden)]
     pub is_primary: ::std::option::Option<bool>,
 }
 impl NetworkInterface {

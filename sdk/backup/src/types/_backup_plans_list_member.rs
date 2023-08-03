@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupPlansListMember {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    #[doc(hidden)]
     pub backup_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a backup plan.</p>
-    #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a resource backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub deletion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of a saved backup plan.</p>
-    #[doc(hidden)]
     pub backup_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The last time a job to back up resources was run with this rule. A date and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
-    #[doc(hidden)]
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
 }
 impl BackupPlansListMember {

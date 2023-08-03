@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceCatalogProvisioningUpdateDetails {
     /// <p>The ID of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    #[doc(hidden)]
     pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
 }
 impl ServiceCatalogProvisioningUpdateDetails {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProvisionedConcurrencyConfigsOutput {
     /// <p>A list of provisioned concurrency configurations.</p>
-    #[doc(hidden)]
     pub provisioned_concurrency_configs: ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedConcurrencyConfigListItem>>,
     /// <p>The pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecencyDimension {
     /// <p>The duration to use when determining whether an endpoint is active or inactive.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<crate::types::Duration>,
     /// <p>The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the specified duration are included in the segment.</p>
-    #[doc(hidden)]
     pub recency_type: ::std::option::Option<crate::types::RecencyType>,
 }
 impl RecencyDimension {

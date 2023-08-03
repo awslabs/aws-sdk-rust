@@ -6,34 +6,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolFunctionPackageInfo {
     /// <p>ID of the function package.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Function package ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Onboarding state of the function package.</p>
-    #[doc(hidden)]
     pub onboarding_state: ::std::option::Option<crate::types::OnboardingState>,
     /// <p>Operational state of the function package.</p>
-    #[doc(hidden)]
     pub operational_state: ::std::option::Option<crate::types::OperationalState>,
     /// <p>Usage state of the function package.</p>
-    #[doc(hidden)]
     pub usage_state: ::std::option::Option<crate::types::UsageState>,
     /// <p>Identifies the function package and the function package descriptor.</p>
-    #[doc(hidden)]
     pub vnfd_id: ::std::option::Option<::std::string::String>,
     /// <p>Provider of the function package and the function package descriptor.</p>
-    #[doc(hidden)]
     pub vnf_provider: ::std::option::Option<::std::string::String>,
     /// <p>The product name for the network function.</p>
-    #[doc(hidden)]
     pub vnf_product_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the version of the function package descriptor.</p>
-    #[doc(hidden)]
     pub vnfd_version: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the function package.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
 }
 impl ListSolFunctionPackageInfo {

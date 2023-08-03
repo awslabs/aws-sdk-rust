@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelLegalHoldInput {
     /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
-    #[doc(hidden)]
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
     /// <p>String describing the reason for removing the legal hold.</p>
-    #[doc(hidden)]
     pub cancel_description: ::std::option::Option<::std::string::String>,
     /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
-    #[doc(hidden)]
     pub retain_record_in_days: ::std::option::Option<i64>,
 }
 impl CancelLegalHoldInput {

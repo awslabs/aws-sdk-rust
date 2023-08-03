@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::GroupFilterOperator>,
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::GroupFilterAttribute>,
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl GroupSearchFilter {

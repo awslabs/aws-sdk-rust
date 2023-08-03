@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceRef {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual service.</p>
-    #[doc(hidden)]
     pub virtual_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    #[doc(hidden)]
     pub mesh_owner: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    #[doc(hidden)]
     pub resource_owner: ::std::option::Option<::std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual service.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VirtualServiceRef {

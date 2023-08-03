@@ -6,113 +6,78 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The engine version of a DB instance.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance class for a DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The license model for a DB instance.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone group for a DB instance.</p>
-    #[doc(hidden)]
     pub availability_zone_group: ::std::option::Option<::std::string::String>,
     /// <p>A list of Availability Zones for a DB instance.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
-    #[doc(hidden)]
     pub multi_az_capable: bool,
     /// <p>Indicates whether a DB instance can have a read replica.</p>
-    #[doc(hidden)]
     pub read_replica_capable: bool,
     /// <p>Indicates whether a DB instance is in a VPC.</p>
-    #[doc(hidden)]
     pub vpc: bool,
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
-    #[doc(hidden)]
     pub supports_storage_encryption: bool,
     /// <p>Indicates the storage type for a DB instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
-    #[doc(hidden)]
     pub supports_iops: bool,
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
-    #[doc(hidden)]
     pub supports_enhanced_monitoring: bool,
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
-    #[doc(hidden)]
     pub supports_iam_database_authentication: bool,
     /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
-    #[doc(hidden)]
     pub supports_performance_insights: bool,
     /// <p>Minimum storage size for a DB instance.</p>
-    #[doc(hidden)]
     pub min_storage_size: ::std::option::Option<i32>,
     /// <p>Maximum storage size for a DB instance.</p>
-    #[doc(hidden)]
     pub max_storage_size: ::std::option::Option<i32>,
     /// <p>Minimum total provisioned IOPS for a DB instance.</p>
-    #[doc(hidden)]
     pub min_iops_per_db_instance: ::std::option::Option<i32>,
     /// <p>Maximum total provisioned IOPS for a DB instance.</p>
-    #[doc(hidden)]
     pub max_iops_per_db_instance: ::std::option::Option<i32>,
     /// <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
-    #[doc(hidden)]
     pub min_iops_per_gib: ::std::option::Option<f64>,
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
-    #[doc(hidden)]
     pub max_iops_per_gib: ::std::option::Option<f64>,
     /// <p>A list of the available processor features for the DB instance class of a DB instance.</p>
-    #[doc(hidden)]
     pub available_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
     /// <p>A list of the supported DB engine modes.</p>
-    #[doc(hidden)]
     pub supported_engine_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
-    #[doc(hidden)]
     pub supports_storage_autoscaling: ::std::option::Option<bool>,
     /// <p>Whether a DB instance supports Kerberos Authentication.</p>
-    #[doc(hidden)]
     pub supports_kerberos_authentication: ::std::option::Option<bool>,
     /// <p>Whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub outpost_capable: bool,
     /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
-    #[doc(hidden)]
     pub supported_activity_stream_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
-    #[doc(hidden)]
     pub supports_global_databases: bool,
     /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub supports_clusters: bool,
     /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
     /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether a DB instance supports storage throughput.</p>
-    #[doc(hidden)]
     pub supports_storage_throughput: bool,
     /// <p>Minimum storage throughput for a DB instance.</p>
-    #[doc(hidden)]
     pub min_storage_throughput_per_db_instance: ::std::option::Option<i32>,
     /// <p>Maximum storage throughput for a DB instance.</p>
-    #[doc(hidden)]
     pub max_storage_throughput_per_db_instance: ::std::option::Option<i32>,
     /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    #[doc(hidden)]
     pub min_storage_throughput_per_iops: ::std::option::Option<f64>,
     /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
-    #[doc(hidden)]
     pub max_storage_throughput_per_iops: ::std::option::Option<f64>,
 }
 impl OrderableDbInstanceOption {

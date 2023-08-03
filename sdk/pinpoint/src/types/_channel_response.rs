@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelResponse {
     /// <p>The unique identifier for the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when the channel was enabled.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the channel is enabled for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub has_credential: ::std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the channel is archived.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>The user who last modified the channel.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when the channel was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the channel.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl ChannelResponse {

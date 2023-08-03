@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPermissionSetsProvisionedToAccountOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Defines the level of access that an AWS account has.</p>
-    #[doc(hidden)]
     pub permission_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

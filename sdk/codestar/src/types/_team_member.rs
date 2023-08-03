@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TeamMember {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
-    #[doc(hidden)]
     pub project_role: ::std::option::Option<::std::string::String>,
     /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
-    #[doc(hidden)]
     pub remote_access_allowed: ::std::option::Option<bool>,
 }
 impl TeamMember {

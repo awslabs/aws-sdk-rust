@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentContactReference {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The channel of the contact.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>How the contact was initiated.</p>
-    #[doc(hidden)]
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
     /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
-    #[doc(hidden)]
     pub agent_contact_state: ::std::option::Option<crate::types::ContactState>,
     /// <p>The epoch timestamp when the contact state started.</p>
-    #[doc(hidden)]
     pub state_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the contact was connected to an agent.</p>
-    #[doc(hidden)]
     pub connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains information about a queue resource for which metrics are returned.</p>
-    #[doc(hidden)]
     pub queue: ::std::option::Option<crate::types::QueueReference>,
 }
 impl AgentContactReference {

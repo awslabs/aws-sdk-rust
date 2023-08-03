@@ -7,15 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfileSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
-    #[doc(hidden)]
     pub or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
-    #[doc(hidden)]
     pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
     /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
 }
 impl RoutingProfileSearchCriteria {

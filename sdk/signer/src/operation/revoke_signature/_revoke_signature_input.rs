@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeSignatureInput {
     /// <p>ID of the signing job to be revoked.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>AWS account ID of the job owner.</p>
-    #[doc(hidden)]
     pub job_owner: ::std::option::Option<::std::string::String>,
     /// <p>The reason for revoking the signing job.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl RevokeSignatureInput {

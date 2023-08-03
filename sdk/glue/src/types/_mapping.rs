@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mapping {
     /// <p>After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.</p>
-    #[doc(hidden)]
     pub to_key: ::std::option::Option<::std::string::String>,
     /// <p>The table or column to be modified.</p>
-    #[doc(hidden)]
     pub from_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of the data to be modified.</p>
-    #[doc(hidden)]
     pub from_type: ::std::option::Option<::std::string::String>,
     /// <p>The data type that the data is to be modified to.</p>
-    #[doc(hidden)]
     pub to_type: ::std::option::Option<::std::string::String>,
     /// <p>If true, then the column is removed.</p>
-    #[doc(hidden)]
     pub dropped: ::std::option::Option<bool>,
     /// <p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p>
     /// <p>For the children part, suppose you have the structure:</p>
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
     /// <p>You can specify a <code>Mapping</code> that looks like:</p>
     /// <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>
-    #[doc(hidden)]
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
 }
 impl Mapping {

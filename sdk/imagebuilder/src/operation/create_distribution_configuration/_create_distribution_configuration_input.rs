@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDistributionConfigurationInput {
     /// <p>The name of the distribution configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the distribution configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The distributions of the distribution configuration.</p>
-    #[doc(hidden)]
     pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
     /// <p>The tags of the distribution configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The idempotency token of the distribution configuration.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDistributionConfigurationInput {

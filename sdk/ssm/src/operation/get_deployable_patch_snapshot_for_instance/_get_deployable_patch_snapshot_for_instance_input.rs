@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeployablePatchSnapshotForInstanceInput {
     /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Defines the basic information about a patch baseline override.</p>
-    #[doc(hidden)]
     pub baseline_override: ::std::option::Option<crate::types::BaselineOverride>,
 }
 impl GetDeployablePatchSnapshotForInstanceInput {

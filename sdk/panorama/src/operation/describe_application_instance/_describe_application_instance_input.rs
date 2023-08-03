@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationInstanceInput {
     /// <p>The application instance's ID.</p>
-    #[doc(hidden)]
     pub application_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeApplicationInstanceInput {

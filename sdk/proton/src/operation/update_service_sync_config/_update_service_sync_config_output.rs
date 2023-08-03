@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncConfigOutput {
     /// <p>The detailed data of the Proton Ops file.</p>
-    #[doc(hidden)]
     pub service_sync_config: ::std::option::Option<crate::types::ServiceSyncConfig>,
     _request_id: Option<String>,
 }

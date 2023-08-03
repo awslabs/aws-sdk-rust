@@ -4,39 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetOutput {
     /// <p>The ID of the asset.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    #[doc(hidden)]
     pub asset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the asset.</p>
-    #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset model that was used to create the asset.</p>
-    #[doc(hidden)]
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of asset properties for the asset.</p>
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetCompositeModels</code> object.</p>
-    #[doc(hidden)]
     pub asset_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>,
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    #[doc(hidden)]
     pub asset_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>,
     /// <p>The composite models for the asset.</p>
-    #[doc(hidden)]
     pub asset_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModel>>,
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub asset_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub asset_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the asset, which contains a state and any error message.</p>
-    #[doc(hidden)]
     pub asset_status: ::std::option::Option<crate::types::AssetStatus>,
     /// <p>A description for the asset.</p>
-    #[doc(hidden)]
     pub asset_description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

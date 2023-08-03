@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveIamPolicyAssignment {
     /// <p>A name for the IAM policy assignment.</p>
-    #[doc(hidden)]
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl ActiveIamPolicyAssignment {

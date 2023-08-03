@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMemberInput {
     /// <p>The unique identifier of the network from which the member is removed.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member to remove.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMemberInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    #[doc(hidden)]
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the control panel.</p>
-    #[doc(hidden)]
     pub control_panel_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateControlPanelInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberIdArnPair {
     /// <p>The ID of the member.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
-    #[doc(hidden)]
     pub member_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemberIdArnPair {

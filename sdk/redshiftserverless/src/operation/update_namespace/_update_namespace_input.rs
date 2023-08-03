@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateNamespaceInput {
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    #[doc(hidden)]
     pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
-    #[doc(hidden)]
     pub admin_username: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with <code>iamRoles</code>.</p>
-    #[doc(hidden)]
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
-    #[doc(hidden)]
     pub iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    #[doc(hidden)]
     pub log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
 }
 impl UpdateNamespaceInput {

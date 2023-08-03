@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataRepositoryAssociationsInput {
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    #[doc(hidden)]
     pub association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of <code>Filter</code> elements.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataRepositoryAssociationsInput {

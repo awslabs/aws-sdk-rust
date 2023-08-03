@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDestinationRequest {
     /// A unique name for the location the RTMP stream is being pushed to.
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
 }
 impl InputDestinationRequest {

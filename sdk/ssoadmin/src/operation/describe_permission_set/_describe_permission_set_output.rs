@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePermissionSetOutput {
     /// <p>Describes the level of access on an AWS account.</p>
-    #[doc(hidden)]
     pub permission_set: ::std::option::Option<crate::types::PermissionSet>,
     _request_id: Option<String>,
 }

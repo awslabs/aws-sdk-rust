@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataLakeOrganizationConfigurationInput {
     /// <p>Turns off automatic enablement of Security Lake for member accounts that are added to an organization.</p>
-    #[doc(hidden)]
     pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
 }
 impl DeleteDataLakeOrganizationConfigurationInput {

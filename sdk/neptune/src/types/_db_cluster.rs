@@ -6,135 +6,92 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbCluster {
     /// <p> <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group: ::std::option::Option<::std::string::String>,
     /// <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current state of this DB cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the progress of the operation as a percentage.</p>
-    #[doc(hidden)]
     pub percent_progress: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the earliest time to which a database can be restored with point-in-time restore.</p>
-    #[doc(hidden)]
     pub earliest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the connection endpoint for the primary instance of the DB cluster.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections across the Read Replicas that are available in a DB cluster. As clients request new connections to the reader endpoint, Neptune distributes the connection requests among the Read Replicas in the DB cluster. This functionality can help balance your read workload across multiple Read Replicas in your DB cluster.</p>
     /// <p>If a failover occurs, and the Read Replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Read Replicas in the cluster, you can then reconnect to the reader endpoint.</p>
-    #[doc(hidden)]
     pub reader_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB cluster has instances in multiple Availability Zones.</p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>Provides the name of the database engine to be used for this DB cluster.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-    #[doc(hidden)]
     pub latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the port that the database engine is listening on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterOptionGroupStatus>>,
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub replication_source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB cluster.</p>
-    #[doc(hidden)]
     pub read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Provides the list of instances that make up the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
     /// <p>Provides a list of VPC security groups that the DB cluster belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB cluster is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.</p>
-    #[doc(hidden)]
     pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon services on your behalf.</p>
-    #[doc(hidden)]
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
-    #[doc(hidden)]
     pub clone_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
-    #[doc(hidden)]
     pub pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
     /// <p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>If set to <code>true</code>, the DB cluster can be cloned across accounts.</p>
-    #[doc(hidden)]
     pub cross_account_clone: ::std::option::Option<bool>,
     /// <p>Time at which the DB cluster will be automatically restarted.</p>
-    #[doc(hidden)]
     pub automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    #[doc(hidden)]
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DbCluster {

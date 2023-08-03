@@ -8,7 +8,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaModifications {
     /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReplicaModificationsStatus>,
 }
 impl ReplicaModifications {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameterRange {
     /// <p>The name of the hyperparameter to search.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum value of the hyperparameter to search.</p>
-    #[doc(hidden)]
     pub min_value: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the hyperparameter to search.</p>
-    #[doc(hidden)]
     pub max_value: ::std::option::Option<::std::string::String>,
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     /// <dl>
@@ -35,7 +32,6 @@ pub struct IntegerParameterRange {
     /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub scaling_type: ::std::option::Option<crate::types::HyperParameterScalingType>,
 }
 impl IntegerParameterRange {

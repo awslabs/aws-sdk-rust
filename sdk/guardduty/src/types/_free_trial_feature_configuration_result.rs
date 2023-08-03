@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialFeatureConfigurationResult {
     /// <p>The name of the feature for which the free trial is configured.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::FreeTrialFeatureResult>,
     /// <p>The number of the remaining free trial days for the feature.</p>
-    #[doc(hidden)]
     pub free_trial_days_remaining: i32,
 }
 impl FreeTrialFeatureConfigurationResult {

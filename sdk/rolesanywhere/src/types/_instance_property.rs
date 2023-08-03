@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceProperty {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    #[doc(hidden)]
     pub seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of instanceProperty objects. </p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether the temporary credential request was successful. </p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<bool>,
 }
 impl InstanceProperty {

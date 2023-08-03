@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDistributionWithStagingConfigOutput {
     /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
-    #[doc(hidden)]
     pub distribution: ::std::option::Option<crate::types::Distribution>,
     /// <p>The current version of the primary distribution (after it's updated).</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

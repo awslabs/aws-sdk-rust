@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportOutput {
     /// <p>The name given to the import job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource to import.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The action to take when there is a merge conflict.</p>
-    #[doc(hidden)]
     pub merge_strategy: ::std::option::Option<crate::types::MergeStrategy>,
     /// <p>The identifier for the specific import job.</p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p>A list of tags added to the imported bot.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A timestamp for the date and time that the import job was requested.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionInput {
     /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The pending maintenance action to apply to this resource.</p>
     /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
-    #[doc(hidden)]
     pub apply_action: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
     /// <p>Valid values:</p>
@@ -18,7 +16,6 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
     /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub opt_in_type: ::std::option::Option<::std::string::String>,
 }
 impl ApplyPendingMaintenanceActionInput {

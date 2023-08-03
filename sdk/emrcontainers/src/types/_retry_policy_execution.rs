@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryPolicyExecution {
     /// <p>The current number of attempts made on the driver of the job.</p>
-    #[doc(hidden)]
     pub current_attempt_count: ::std::option::Option<i32>,
 }
 impl RetryPolicyExecution {

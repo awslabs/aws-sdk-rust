@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedCanary {
     /// <p>The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code> deployment.</p>
-    #[doc(hidden)]
     pub canary_percentage: i32,
     /// <p>The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment.</p>
-    #[doc(hidden)]
     pub canary_interval: i32,
 }
 impl TimeBasedCanary {

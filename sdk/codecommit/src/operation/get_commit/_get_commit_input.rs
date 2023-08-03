@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommitInput {
     /// <p>The name of the repository to which the commit was made.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCommitInput {

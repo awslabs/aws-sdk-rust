@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopAssessmentInput {
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl StopAssessmentInput {

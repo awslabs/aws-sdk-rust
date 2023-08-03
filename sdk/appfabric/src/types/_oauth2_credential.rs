@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Oauth2Credential {
     /// <p>The client ID of the client application.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The client secret of the client application.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
 }
 impl Oauth2Credential {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSuiteDefinitionsOutput {
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    #[doc(hidden)]
     pub suite_definition_information_list: ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
     /// <p>A token used to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

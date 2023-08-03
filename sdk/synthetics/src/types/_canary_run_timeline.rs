@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryRunTimeline {
     /// <p>The start time of the run.</p>
-    #[doc(hidden)]
     pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the run.</p>
-    #[doc(hidden)]
     pub completed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CanaryRunTimeline {

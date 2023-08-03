@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateComplianceCount {
     /// <p>The 12-digit account ID or region based on the GroupByKey value.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of compliant and noncompliant Config rules.</p>
-    #[doc(hidden)]
     pub compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,
 }
 impl AggregateComplianceCount {

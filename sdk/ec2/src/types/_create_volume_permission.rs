@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVolumePermission {
     /// <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::PermissionGroup>,
     /// <p>The ID of the Amazon Web Services account to be added or removed.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateVolumePermission {

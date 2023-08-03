@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TwitterParameters {
     /// <p>Twitter query string.</p>
-    #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of rows to query Twitter.</p>
-    #[doc(hidden)]
     pub max_rows: i32,
 }
 impl TwitterParameters {

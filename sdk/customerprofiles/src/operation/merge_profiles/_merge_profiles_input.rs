@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeProfilesInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the profile to be taken.</p>
-    #[doc(hidden)]
     pub main_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
-    #[doc(hidden)]
     pub profile_ids_to_be_merged: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
-    #[doc(hidden)]
     pub field_source_profile_ids: ::std::option::Option<crate::types::FieldSourceProfileIds>,
 }
 impl MergeProfilesInput {

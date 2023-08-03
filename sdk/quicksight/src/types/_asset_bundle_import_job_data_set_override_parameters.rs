@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSetOverrideParameters {
     /// <p>The ID of the dataset to apply overrides to.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobDataSetOverrideParameters {

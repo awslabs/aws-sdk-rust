@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectPoliciesOutput {
     /// <p>A list of project policies attached to the project.</p>
-    #[doc(hidden)]
     pub project_policies: ::std::option::Option<::std::vec::Vec<crate::types::ProjectPolicy>>,
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

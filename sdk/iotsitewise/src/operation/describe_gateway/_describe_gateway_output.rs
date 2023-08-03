@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayOutput {
     /// <p>The ID of the gateway device.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The gateway's platform.</p>
-    #[doc(hidden)]
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-    #[doc(hidden)]
     pub gateway_capability_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

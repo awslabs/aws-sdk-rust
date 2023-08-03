@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
-    #[doc(hidden)]
     pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains asset property value information.</p>
-    #[doc(hidden)]
     pub asset_property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
 }
 impl BatchGetAssetPropertyValueSuccessEntry {

@@ -10,10 +10,8 @@ pub struct DescribeWorkflowTypeOutput {
     /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>
     /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub type_info: ::std::option::Option<crate::types::WorkflowTypeInfo>,
     /// <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::WorkflowTypeConfiguration>,
     _request_id: Option<String>,
 }

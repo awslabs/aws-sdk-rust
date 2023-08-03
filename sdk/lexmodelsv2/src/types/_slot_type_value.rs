@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeValue {
     /// <p>The value of the slot type entry.</p>
-    #[doc(hidden)]
     pub sample_value: ::std::option::Option<crate::types::SampleValue>,
     /// <p>Additional values related to the slot type entry.</p>
-    #[doc(hidden)]
     pub synonyms: ::std::option::Option<::std::vec::Vec<crate::types::SampleValue>>,
 }
 impl SlotTypeValue {

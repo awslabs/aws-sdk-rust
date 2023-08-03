@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of an attribute to use as a filter.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>The type of search (For example, eq, geq, leq)</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>Value of the filter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Filter {

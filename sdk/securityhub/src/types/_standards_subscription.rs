@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsSubscription {
     /// <p>The ARN of a resource that represents your subscription to a supported standard.</p>
-    #[doc(hidden)]
     pub standards_subscription_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a standard.</p>
-    #[doc(hidden)]
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>A key-value pair of input for the standard.</p>
-    #[doc(hidden)]
     pub standards_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
@@ -22,10 +19,8 @@ pub struct StandardsSubscription {
     /// <li> <p> <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
     /// <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub standards_status: ::std::option::Option<crate::types::StandardsStatus>,
     /// <p>The reason for the current status.</p>
-    #[doc(hidden)]
     pub standards_status_reason: ::std::option::Option<crate::types::StandardsStatusReason>,
 }
 impl StandardsSubscription {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestSetsOutput {
     /// <p>The selected test sets in a list of test sets.</p>
-    #[doc(hidden)]
     pub test_sets: ::std::option::Option<::std::vec::Vec<crate::types::TestSetSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestSets operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestSets operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Input {
     /// The Unique ARN of the input (generated, immutable).
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
-    #[doc(hidden)]
     pub attached_channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of the destinations of the input (PUSH-type).
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestination>>,
     /// The generated ID of the input (unique for user account, immutable).
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
-    #[doc(hidden)]
     pub input_class: ::std::option::Option<crate::types::InputClass>,
     /// Settings for the input devices.
-    #[doc(hidden)]
     pub input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
     /// A list of IDs for all Inputs which are partners of this one.
-    #[doc(hidden)]
     pub input_partner_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
-    #[doc(hidden)]
     pub input_source_type: ::std::option::Option<crate::types::InputSourceType>,
     /// A list of MediaConnect Flows for this input.
-    #[doc(hidden)]
     pub media_connect_flows: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlow>>,
     /// The user-assigned name (This is a mutable value).
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// A list of IDs for all the Input Security Groups attached to the input.
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of the sources of the input (PULL-type).
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
     /// Placeholder documentation for InputState
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InputState>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// The different types of inputs that AWS Elemental MediaLive supports.
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InputType>,
 }
 impl Input {

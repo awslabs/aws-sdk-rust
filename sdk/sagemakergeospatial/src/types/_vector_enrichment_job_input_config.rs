@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VectorEnrichmentJobInputConfig {
     /// <p>The input structure that defines the data source file type.</p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<crate::types::VectorEnrichmentJobDocumentType>,
     /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
-    #[doc(hidden)]
     pub data_source_config: ::std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput>,
 }
 impl VectorEnrichmentJobInputConfig {

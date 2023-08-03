@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The short format name of the response plan. Can't include spaces.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The long format of the response plan name. This field can contain spaces.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Details used to create an incident when using this response plan.</p>
-    #[doc(hidden)]
     pub incident_template: ::std::option::Option<crate::types::IncidentTemplate>,
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
-    #[doc(hidden)]
     pub chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
-    #[doc(hidden)]
     pub engagements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>A list of tags that you are adding to the response plan.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about third-party services integrated into the response plan.</p>
-    #[doc(hidden)]
     pub integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
 }
 impl CreateResponsePlanInput {

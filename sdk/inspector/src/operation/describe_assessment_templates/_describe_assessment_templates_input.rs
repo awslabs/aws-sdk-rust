@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTemplatesInput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAssessmentTemplatesInput {

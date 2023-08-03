@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateConfigurationItemsFromApplicationInput {
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
-    #[doc(hidden)]
     pub application_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    #[doc(hidden)]
     pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateConfigurationItemsFromApplicationInput {

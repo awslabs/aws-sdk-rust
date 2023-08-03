@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseInputDefinition {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
-    #[doc(hidden)]
     pub glue_connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The table within the target database.</p>
-    #[doc(hidden)]
     pub database_table_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-    #[doc(hidden)]
     pub temp_directory: ::std::option::Option<crate::types::S3Location>,
     /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseInputDefinition {

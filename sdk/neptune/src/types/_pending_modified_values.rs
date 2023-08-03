@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingModifiedValues {
     /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the pending port for the DB instance.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies the pending number of days for which automated backups are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>Indicates the database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the identifier of the CA certificate for the DB instance.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new DB subnet group for the DB instance.</p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    #[doc(hidden)]
     pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
 }
 impl PendingModifiedValues {

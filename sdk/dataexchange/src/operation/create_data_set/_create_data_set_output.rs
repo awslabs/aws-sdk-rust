@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSetOutput {
     /// <p>The ARN for the data set.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of asset that is added to a data set.</p>
-    #[doc(hidden)]
     pub asset_type: ::std::option::Option<crate::types::AssetType>,
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description for the data set.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the data set.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data set.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<crate::types::Origin>,
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-    #[doc(hidden)]
     pub origin_details: ::std::option::Option<crate::types::OriginDetails>,
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the data set.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

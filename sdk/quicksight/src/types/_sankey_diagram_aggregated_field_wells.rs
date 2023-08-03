@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SankeyDiagramAggregatedFieldWells {
     /// <p>The source field wells of a sankey diagram.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The destination field wells of a sankey diagram.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The weight field wells of a sankey diagram.</p>
-    #[doc(hidden)]
     pub weight: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl SankeyDiagramAggregatedFieldWells {

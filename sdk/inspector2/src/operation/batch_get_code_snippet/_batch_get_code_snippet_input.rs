@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCodeSnippetInput {
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    #[doc(hidden)]
     pub finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetCodeSnippetInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryInput {
     /// <p>The SQL code of your query.</p>
-    #[doc(hidden)]
     pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
-    #[doc(hidden)]
     pub delivery_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p> The alias that identifies a query template. </p>
-    #[doc(hidden)]
     pub query_alias: ::std::option::Option<::std::string::String>,
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    #[doc(hidden)]
     pub query_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartQueryInput {

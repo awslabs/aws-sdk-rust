@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateDelegationByAssessmentInput {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
-    #[doc(hidden)]
     pub create_delegation_requests: ::std::option::Option<::std::vec::Vec<crate::types::CreateDelegationRequest>>,
     /// <p> The identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateDelegationByAssessmentInput {

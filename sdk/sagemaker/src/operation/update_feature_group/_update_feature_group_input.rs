@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFeatureGroupInput {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
-    #[doc(hidden)]
     pub feature_additions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     /// <p>Updates the feature group online store configuration.</p>
-    #[doc(hidden)]
     pub online_store_config: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>,
 }
 impl UpdateFeatureGroupInput {

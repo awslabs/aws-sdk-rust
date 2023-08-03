@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BadRequestDetail {
     /// <p>Contains the list of errors in the request.</p>
-    #[doc(hidden)]
     pub code_errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
 }
 impl BadRequestDetail {

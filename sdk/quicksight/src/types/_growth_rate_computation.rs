@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrowthRateComputation {
     /// <p>The ID for a computation.</p>
-    #[doc(hidden)]
     pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The value field that is used in a computation.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The period size setup of a growth rate computation.</p>
-    #[doc(hidden)]
     pub period_size: i32,
 }
 impl GrowthRateComputation {

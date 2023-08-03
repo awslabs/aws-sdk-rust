@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMembersInput {
     /// <p>The identifier of the collaboration in which the members are listed.</p>
-    #[doc(hidden)]
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the results that is returned per call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListMembersInput {

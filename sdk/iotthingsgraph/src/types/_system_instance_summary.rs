@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemInstanceSummary {
     /// <p>The ID of the system instance.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the system instance.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the system instance.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SystemInstanceDeploymentStatus>,
     /// <p>The target of the system instance.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::DeploymentTarget>,
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    #[doc(hidden)]
     pub greengrass_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the system instance was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date and time when the system instance was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    #[doc(hidden)]
     pub greengrass_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
-    #[doc(hidden)]
     pub greengrass_group_version_id: ::std::option::Option<::std::string::String>,
 }
 impl SystemInstanceSummary {

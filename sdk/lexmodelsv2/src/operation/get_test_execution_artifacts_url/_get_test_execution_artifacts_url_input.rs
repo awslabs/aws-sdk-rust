@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTestExecutionArtifactsUrlInput {
     /// <p>The unique identifier of the completed test execution.</p>
-    #[doc(hidden)]
     pub test_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTestExecutionArtifactsUrlInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHsmClientCertificateInput {
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
-    #[doc(hidden)]
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHsmClientCertificateInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
-    #[doc(hidden)]
     pub usage_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
-    #[doc(hidden)]
     pub key_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateUsagePlanKeyInput {

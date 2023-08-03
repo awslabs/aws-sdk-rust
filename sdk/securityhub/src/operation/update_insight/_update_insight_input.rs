@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInsightInput {
     /// <p>The ARN of the insight that you want to update.</p>
-    #[doc(hidden)]
     pub insight_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name for the insight.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated filters that define this insight.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-    #[doc(hidden)]
     pub group_by_attribute: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInsightInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessLogSettings {
     /// <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
 }
 impl AccessLogSettings {

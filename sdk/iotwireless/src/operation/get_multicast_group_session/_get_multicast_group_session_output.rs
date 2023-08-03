@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMulticastGroupSessionOutput {
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
     _request_id: Option<String>,
 }

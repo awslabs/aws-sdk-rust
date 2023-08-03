@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateSigninDelegateGroupsWithAccountInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The sign-in delegate groups.</p>
-    #[doc(hidden)]
     pub signin_delegate_groups: ::std::option::Option<::std::vec::Vec<crate::types::SigninDelegateGroup>>,
 }
 impl AssociateSigninDelegateGroupsWithAccountInput {

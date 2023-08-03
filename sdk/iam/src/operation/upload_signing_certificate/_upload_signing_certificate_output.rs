@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadSigningCertificateOutput {
     /// <p>Information about the certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<crate::types::SigningCertificate>,
     _request_id: Option<String>,
 }

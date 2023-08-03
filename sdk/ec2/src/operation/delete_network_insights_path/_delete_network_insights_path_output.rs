@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkInsightsPathOutput {
     /// <p>The ID of the path.</p>
-    #[doc(hidden)]
     pub network_insights_path_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sample {
     /// <p>The number of rows in the sample.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SampleType>,
 }
 impl Sample {

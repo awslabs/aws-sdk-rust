@@ -13,13 +13,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttendeeCapabilities {
     /// <p>The audio capability assigned to an attendee.</p>
-    #[doc(hidden)]
     pub audio: ::std::option::Option<crate::types::MediaCapabilities>,
     /// <p>The video capability assigned to an attendee.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::MediaCapabilities>,
     /// <p>The content capability assigned to an attendee.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::MediaCapabilities>,
 }
 impl AttendeeCapabilities {

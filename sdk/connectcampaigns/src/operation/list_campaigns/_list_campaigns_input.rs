@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCampaignsInput {
     /// The maximum number of results to return per page.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// The token for the next set of results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Filter model by type
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::CampaignFilters>,
 }
 impl ListCampaignsInput {

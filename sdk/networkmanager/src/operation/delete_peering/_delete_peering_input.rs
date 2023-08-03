@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePeeringInput {
     /// <p>The ID of the peering connection to delete.</p>
-    #[doc(hidden)]
     pub peering_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePeeringInput {

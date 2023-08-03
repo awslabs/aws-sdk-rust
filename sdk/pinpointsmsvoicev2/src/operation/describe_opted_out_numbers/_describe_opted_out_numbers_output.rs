@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersOutput {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    #[doc(hidden)]
     pub opt_out_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the OptOutList.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-    #[doc(hidden)]
     pub opted_out_numbers: ::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

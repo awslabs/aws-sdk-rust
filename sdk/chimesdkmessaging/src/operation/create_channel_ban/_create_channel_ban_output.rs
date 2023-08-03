@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelBanOutput {
     /// <p>The ARN of the response to the ban request.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::Identity>,
     _request_id: Option<String>,
 }

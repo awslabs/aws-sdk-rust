@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollbackStackInput {
     /// <p>The name that's associated with the stack.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl RollbackStackInput {

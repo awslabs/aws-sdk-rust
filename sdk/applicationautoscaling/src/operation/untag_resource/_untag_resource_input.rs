@@ -6,10 +6,8 @@ pub struct UntagResourceInput {
     /// <p>Identifies the Application Auto Scaling scalable target from which to remove tags.</p>
     /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code> </p>
     /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {

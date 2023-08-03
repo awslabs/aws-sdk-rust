@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioChannelTaggingSettings {
     /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
-    #[doc(hidden)]
     pub channel_tag: ::std::option::Option<crate::types::AudioChannelTag>,
 }
 impl AudioChannelTaggingSettings {

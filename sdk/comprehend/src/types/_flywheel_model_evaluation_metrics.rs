@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlywheelModelEvaluationMetrics {
     /// <p>The average F1 score from the evaluation metrics.</p>
-    #[doc(hidden)]
     pub average_f1_score: ::std::option::Option<f64>,
     /// <p>Average precision metric for the model.</p>
-    #[doc(hidden)]
     pub average_precision: ::std::option::Option<f64>,
     /// <p>Average recall metric for the model.</p>
-    #[doc(hidden)]
     pub average_recall: ::std::option::Option<f64>,
     /// <p>Average accuracy metric for the model.</p>
-    #[doc(hidden)]
     pub average_accuracy: ::std::option::Option<f64>,
 }
 impl FlywheelModelEvaluationMetrics {

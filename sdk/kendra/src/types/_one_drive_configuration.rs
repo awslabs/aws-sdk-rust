@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OneDriveConfiguration {
     /// <p>The Azure Active Directory domain of the organization. </p>
-    #[doc(hidden)]
     pub tenant_domain: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to OneDrive. The user name should be the application ID for the OneDrive application, and the password is the application key for the OneDrive application.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of user accounts whose documents should be indexed.</p>
-    #[doc(hidden)]
     pub one_drive_users: ::std::option::Option<crate::types::OneDriveUsers>,
     /// <p>A list of regular expression patterns to include certain documents in your OneDrive. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the file name.</p>
-    #[doc(hidden)]
     pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain documents in your OneDrive. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the file name.</p>
-    #[doc(hidden)]
     pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map OneDrive data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to OneDrive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The OneDrive data source field names must exist in your OneDrive custom metadata.</p>
-    #[doc(hidden)]
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p> <code>TRUE</code> to disable local groups information.</p>
-    #[doc(hidden)]
     pub disable_local_groups: bool,
 }
 impl OneDriveConfiguration {

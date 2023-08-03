@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DelegationSet {
     /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    #[doc(hidden)]
     pub name_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DelegationSet {

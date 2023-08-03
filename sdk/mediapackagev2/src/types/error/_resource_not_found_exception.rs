@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The specified resource type wasn't found.</p>
-    #[doc(hidden)]
     pub resource_type_not_found: ::std::option::Option<crate::types::ResourceTypeNotFound>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

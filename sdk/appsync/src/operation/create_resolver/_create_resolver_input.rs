@@ -4,49 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResolverInput {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>Type</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the field to attach the resolver to.</p>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data source for which the resolver is being created.</p>
-    #[doc(hidden)]
     pub data_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The mapping template to use for requests.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    #[doc(hidden)]
     pub request_mapping_template: ::std::option::Option<::std::string::String>,
     /// <p>The mapping template to use for responses from the data source.</p>
-    #[doc(hidden)]
     pub response_mapping_template: ::std::option::Option<::std::string::String>,
     /// <p>The resolver type.</p>
     /// <ul>
     /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
     /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kind: ::std::option::Option<crate::types::ResolverKind>,
     /// <p>The <code>PipelineConfig</code>.</p>
-    #[doc(hidden)]
     pub pipeline_config: ::std::option::Option<crate::types::PipelineConfig>,
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    #[doc(hidden)]
     pub sync_config: ::std::option::Option<crate::types::SyncConfig>,
     /// <p>The caching configuration for the resolver.</p>
-    #[doc(hidden)]
     pub caching_config: ::std::option::Option<crate::types::CachingConfig>,
     /// <p>The maximum batching size for a resolver.</p>
-    #[doc(hidden)]
     pub max_batch_size: ::std::option::Option<i32>,
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::AppSyncRuntime>,
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl CreateResolverInput {

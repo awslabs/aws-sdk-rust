@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    #[doc(hidden)]
     pub network_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetNetworkInput {

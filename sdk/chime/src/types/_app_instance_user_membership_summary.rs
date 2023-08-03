@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
     /// <p>The time at which a message was last read.</p>
-    #[doc(hidden)]
     pub read_marker_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppInstanceUserMembershipSummary {

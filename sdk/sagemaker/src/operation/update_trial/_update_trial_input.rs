@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrialInput {
     /// <p>The name of the trial to update.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateTrialInput {

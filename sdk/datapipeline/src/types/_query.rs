@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Query {
     /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
-    #[doc(hidden)]
     pub selectors: ::std::option::Option<::std::vec::Vec<crate::types::Selector>>,
 }
 impl Query {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMessageMoveTaskOutput {
     /// <p>An identifier associated with a message movement task. You can use this identifier to cancel a specified message movement task using the <code>CancelMessageMoveTask</code> action.</p>
-    #[doc(hidden)]
     pub task_handle: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanInterface {
     /// <p>The unique name of the interface.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the communication protocol for the interface.</p>
-    #[doc(hidden)]
     pub protocol_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the communication protocol for the interface.</p>
-    #[doc(hidden)]
     pub protocol_version: ::std::option::Option<::std::string::String>,
 }
 impl CanInterface {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGlobalClusterInput {
     /// <p>The cluster identifier of the new global cluster.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.</p>
-    #[doc(hidden)]
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this cluster.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The engine version of the global cluster.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The storage encryption setting for the new global cluster. </p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
 }
 impl CreateGlobalClusterInput {

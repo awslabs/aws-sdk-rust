@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildBotLocaleOutput {
     /// <p>The identifier of the specified bot.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that was built. This is only the draft version of the bot.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The language and locale specified of where the bot can be used.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot's build status. When the status is <code>ReadyExpressTesting</code> you can test the bot using the utterances defined for the intents and slot types. When the status is <code>Built</code>, the bot is ready for use and can be tested using any utterance.</p>
-    #[doc(hidden)]
     pub bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
-    #[doc(hidden)]
     pub last_build_submitted_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

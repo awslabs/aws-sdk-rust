@@ -7,15 +7,12 @@ pub struct EmailConfiguration {
     /// <p>The email address that sends emails.</p> <important>
     /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the email address that sends emails in Amazon SES</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>Contains the subject and message of an email.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::EmailContent>,
     /// <p>Contains the information of one or more recipients who receive the emails.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
     /// </important>
-    #[doc(hidden)]
     pub recipients: ::std::option::Option<crate::types::EmailRecipients>,
 }
 impl EmailConfiguration {

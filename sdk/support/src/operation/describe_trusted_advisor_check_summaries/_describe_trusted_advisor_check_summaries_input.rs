@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    #[doc(hidden)]
     pub check_ids: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {

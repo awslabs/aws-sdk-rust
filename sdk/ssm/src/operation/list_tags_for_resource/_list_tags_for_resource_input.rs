@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>Returns a list of tags for a specific resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     /// <p>The resource ID for which you want to see a list of tags.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

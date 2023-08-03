@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserInput {
     /// <p>The ID of an existing collection to which the new UserID needs to be created.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>ID for the UserID to be created. This ID needs to be unique within the collection.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Idempotent token used to identify the request to <code>CreateUser</code>. If you use the same token with multiple <code>CreateUser</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInput {

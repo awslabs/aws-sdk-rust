@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RollingDateConfiguration {
     /// <p>The data set that is used in the rolling date configuration.</p>
-    #[doc(hidden)]
     pub data_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The expression of the rolling date configuration.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
 }
 impl RollingDateConfiguration {

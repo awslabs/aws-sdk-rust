@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopRunOutput {
     /// <p>The run that was stopped.</p>
-    #[doc(hidden)]
     pub run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,
 }

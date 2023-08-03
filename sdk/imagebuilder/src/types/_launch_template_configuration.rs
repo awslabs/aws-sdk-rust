@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateConfiguration {
     /// <p>Identifies the Amazon EC2 launch template to use.</p>
-    #[doc(hidden)]
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID that this configuration applies to.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
-    #[doc(hidden)]
     pub set_default_version: bool,
 }
 impl LaunchTemplateConfiguration {

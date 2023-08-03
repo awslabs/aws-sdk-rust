@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostedZoneOutput {
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
-    #[doc(hidden)]
     pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    #[doc(hidden)]
     pub vp_cs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
     _request_id: Option<String>,
 }

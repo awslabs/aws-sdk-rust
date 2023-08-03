@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQualificationTypeOutput {
     /// <p> The returned Qualification Type</p>
-    #[doc(hidden)]
     pub qualification_type: ::std::option::Option<crate::types::QualificationType>,
     _request_id: Option<String>,
 }

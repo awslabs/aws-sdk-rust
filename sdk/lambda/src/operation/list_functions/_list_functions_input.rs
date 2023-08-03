@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFunctionsInput {
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
-    #[doc(hidden)]
     pub master_region: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
-    #[doc(hidden)]
     pub function_version: ::std::option::Option<crate::types::FunctionVersion>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListFunctionsInput {

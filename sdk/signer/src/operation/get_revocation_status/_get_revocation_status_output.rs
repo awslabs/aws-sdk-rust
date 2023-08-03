@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRevocationStatusOutput {
     /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
-    #[doc(hidden)]
     pub revoked_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

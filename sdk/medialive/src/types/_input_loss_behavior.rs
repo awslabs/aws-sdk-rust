@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputLossBehavior {
     /// Documentation update needed
-    #[doc(hidden)]
     pub black_frame_msec: ::std::option::Option<i32>,
     /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
-    #[doc(hidden)]
     pub input_loss_image_color: ::std::option::Option<::std::string::String>,
     /// When input loss image type is "slate" these fields specify the parameters for accessing the slate.
-    #[doc(hidden)]
     pub input_loss_image_slate: ::std::option::Option<crate::types::InputLocation>,
     /// Indicates whether to substitute a solid color or a slate into the output after input loss exceeds blackFrameMsec.
-    #[doc(hidden)]
     pub input_loss_image_type: ::std::option::Option<crate::types::InputLossImageType>,
     /// Documentation update needed
-    #[doc(hidden)]
     pub repeat_frame_msec: ::std::option::Option<i32>,
 }
 impl InputLossBehavior {

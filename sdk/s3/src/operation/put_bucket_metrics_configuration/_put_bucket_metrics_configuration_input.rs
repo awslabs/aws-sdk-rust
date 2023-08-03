@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutBucketMetricsConfigurationInput {
     /// <p>The name of the bucket for which the metrics configuration is set.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the metrics configuration.</p>
-    #[doc(hidden)]
     pub metrics_configuration: ::std::option::Option<crate::types::MetricsConfiguration>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl PutBucketMetricsConfigurationInput {

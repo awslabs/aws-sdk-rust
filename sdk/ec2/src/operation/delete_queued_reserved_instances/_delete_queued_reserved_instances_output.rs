@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteQueuedReservedInstancesOutput {
     /// <p>Information about the queued purchases that were successfully deleted.</p>
-    #[doc(hidden)]
     pub successful_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulQueuedPurchaseDeletion>>,
     /// <p>Information about the queued purchases that could not be deleted.</p>
-    #[doc(hidden)]
     pub failed_queued_purchase_deletions: ::std::option::Option<::std::vec::Vec<crate::types::FailedQueuedPurchaseDeletion>>,
     _request_id: Option<String>,
 }

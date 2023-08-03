@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerDatasetParameter {
     /// <p>An identifier for the integer parameter created in the dataset.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the integer parameter that is created in the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    #[doc(hidden)]
     pub value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
     /// <p>A list of default values for a given integer parameter. This structure only accepts static values.</p>
-    #[doc(hidden)]
     pub default_values: ::std::option::Option<crate::types::IntegerDatasetParameterDefaultValues>,
 }
 impl IntegerDatasetParameter {

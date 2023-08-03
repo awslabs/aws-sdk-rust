@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplatePrivateDnsNameOptionsRequest {
     /// <p>The type of hostname for Amazon EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 native subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    #[doc(hidden)]
     pub hostname_type: ::std::option::Option<crate::types::HostnameType>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_a_record: ::std::option::Option<bool>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    #[doc(hidden)]
     pub enable_resource_name_dns_aaaa_record: ::std::option::Option<bool>,
 }
 impl LaunchTemplatePrivateDnsNameOptionsRequest {

@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiConditionalSplitActivity {
     /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
-    #[doc(hidden)]
     pub branches: ::std::option::Option<::std::vec::Vec<crate::types::MultiConditionalBranch>>,
     /// <p>The unique identifier for the activity to perform for participants who don't meet any of the conditions specified for other paths in the activity.</p>
-    #[doc(hidden)]
     pub default_activity: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time to wait or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
-    #[doc(hidden)]
     pub evaluation_wait_time: ::std::option::Option<crate::types::WaitTime>,
 }
 impl MultiConditionalSplitActivity {

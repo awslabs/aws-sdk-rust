@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Site {
     /// <p>The ID of the site.</p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the site.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the site.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The site tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
-    #[doc(hidden)]
     pub site_arn: ::std::option::Option<::std::string::String>,
     /// <p> Notes about a site. </p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p> The ISO-3166 two-letter country code where the hardware is installed and powered on. </p>
-    #[doc(hidden)]
     pub operating_address_country_code: ::std::option::Option<::std::string::String>,
     /// <p> State or region where the hardware is installed and powered on. </p>
-    #[doc(hidden)]
     pub operating_address_state_or_region: ::std::option::Option<::std::string::String>,
     /// <p> City where the hardware is installed and powered on. </p>
-    #[doc(hidden)]
     pub operating_address_city: ::std::option::Option<::std::string::String>,
     /// <p> Information about the physical and logistical details for a rack at the site. </p>
-    #[doc(hidden)]
     pub rack_physical_properties: ::std::option::Option<crate::types::RackPhysicalProperties>,
 }
 impl Site {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContinuousBackupsInput {
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContinuousBackupsInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataModel {
     /// <p>Source column to be mapped to time.</p>
-    #[doc(hidden)]
     pub time_column: ::std::option::Option<::std::string::String>,
     /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
-    #[doc(hidden)]
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
     /// <p>Source to target mappings for dimensions.</p>
-    #[doc(hidden)]
     pub dimension_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
     /// <p>Source to target mappings for multi-measure records.</p>
-    #[doc(hidden)]
     pub multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
     /// <p>Source to target mappings for measures.</p>
-    #[doc(hidden)]
     pub mixed_measure_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
     /// <p></p>
-    #[doc(hidden)]
     pub measure_name_column: ::std::option::Option<::std::string::String>,
 }
 impl DataModel {

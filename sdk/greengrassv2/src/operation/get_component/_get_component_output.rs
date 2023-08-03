@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentOutput {
     /// <p>The format of the recipe.</p>
-    #[doc(hidden)]
     pub recipe_output_format: ::std::option::Option<crate::types::RecipeOutputFormat>,
     /// <p>The recipe of the component version.</p>
-    #[doc(hidden)]
     pub recipe: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StillWaitingResponseSpecification {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    #[doc(hidden)]
     pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
-    #[doc(hidden)]
     pub frequency_in_seconds: ::std::option::Option<i32>,
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
-    #[doc(hidden)]
     pub allow_interrupt: ::std::option::Option<bool>,
 }
 impl StillWaitingResponseSpecification {

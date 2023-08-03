@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceRouteTableAssociationOutput {
     /// <p>The ID of the new association.</p>
-    #[doc(hidden)]
     pub new_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association.</p>
-    #[doc(hidden)]
     pub association_state: ::std::option::Option<crate::types::RouteTableAssociationState>,
     _request_id: Option<String>,
 }

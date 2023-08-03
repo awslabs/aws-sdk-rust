@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewDeviceMetadataType {
     /// <p>The device key.</p>
-    #[doc(hidden)]
     pub device_key: ::std::option::Option<::std::string::String>,
     /// <p>The device group key.</p>
-    #[doc(hidden)]
     pub device_group_key: ::std::option::Option<::std::string::String>,
 }
 impl NewDeviceMetadataType {

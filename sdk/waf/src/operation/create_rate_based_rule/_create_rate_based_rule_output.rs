@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRateBasedRuleOutput {
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::RateBasedRule>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

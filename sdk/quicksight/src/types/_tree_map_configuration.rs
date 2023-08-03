@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreeMapConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::TreeMapFieldWells>,
     /// <p>The sort configuration of a tree map.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::TreeMapSortConfiguration>,
     /// <p>The label options (label text, label visibility) of the groups that are displayed in a tree map.</p>
-    #[doc(hidden)]
     pub group_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label options (label text, label visibility) of the sizes that are displayed in a tree map.</p>
-    #[doc(hidden)]
     pub size_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label options (label text, label visibility) for the colors displayed in a tree map.</p>
-    #[doc(hidden)]
     pub color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The color options (gradient color, point of divergence) of a tree map.</p>
-    #[doc(hidden)]
     pub color_scale: ::std::option::Option<crate::types::ColorScale>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The options that determine if visual data labels are displayed.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip display setup of the visual.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
 }
 impl TreeMapConfiguration {

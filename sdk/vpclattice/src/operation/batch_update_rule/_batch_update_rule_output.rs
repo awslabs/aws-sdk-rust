@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateRuleOutput {
     /// <p>The rules that were successfully updated.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateSuccess>>,
     /// <p>The rules that the operation couldn't update.</p>
-    #[doc(hidden)]
     pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdateFailure>>,
     _request_id: Option<String>,
 }

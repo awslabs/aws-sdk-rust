@@ -9,22 +9,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateDomainValidationOption {
     /// <p>A fully qualified domain name (FQDN) in the certificate.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
-    #[doc(hidden)]
     pub resource_record: ::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord>,
     /// <p>The domain name that Certificate Manager uses to send domain validation emails.</p>
-    #[doc(hidden)]
     pub validation_domain: ::std::option::Option<::std::string::String>,
     /// <p>A list of email addresses that Certificate Manager uses to send domain validation emails.</p>
-    #[doc(hidden)]
     pub validation_emails: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The method used to validate the domain name.</p>
-    #[doc(hidden)]
     pub validation_method: ::std::option::Option<::std::string::String>,
     /// <p>The validation status of the domain name.</p>
-    #[doc(hidden)]
     pub validation_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateDomainValidationOption {

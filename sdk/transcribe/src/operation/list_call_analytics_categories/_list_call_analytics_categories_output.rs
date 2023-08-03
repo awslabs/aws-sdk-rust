@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCallAnalyticsCategoriesOutput {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::CategoryProperties>>,
     _request_id: Option<String>,
 }

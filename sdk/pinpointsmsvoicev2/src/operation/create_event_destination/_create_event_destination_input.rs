@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventDestinationInput {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that identifies the event destination.</p>
-    #[doc(hidden)]
     pub event_destination_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    #[doc(hidden)]
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
-    #[doc(hidden)]
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventDestinationInput {

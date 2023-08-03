@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanThreatName {
     /// <p>The name of the identified threat.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Severity of threat identified as part of the malware scan.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>Total number of files infected with given threat.</p>
-    #[doc(hidden)]
     pub item_count: i32,
     /// <p>List of infected files in EBS volume with details.</p>
-    #[doc(hidden)]
     pub file_paths: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilePath>>,
 }
 impl ScanThreatName {

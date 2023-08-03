@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateInstanceInAutoScalingGroupInput {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub should_decrement_desired_capacity: ::std::option::Option<bool>,
 }
 impl TerminateInstanceInAutoScalingGroupInput {

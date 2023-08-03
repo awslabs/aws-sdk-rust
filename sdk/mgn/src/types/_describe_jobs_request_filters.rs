@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobsRequestFilters {
     /// <p>Request to describe Job log filters by job ID.</p>
-    #[doc(hidden)]
     pub job_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to describe Job log filters by date.</p>
-    #[doc(hidden)]
     pub from_date: ::std::option::Option<::std::string::String>,
     /// <p>Request to describe job log items by last date.</p>
-    #[doc(hidden)]
     pub to_date: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobsRequestFilters {

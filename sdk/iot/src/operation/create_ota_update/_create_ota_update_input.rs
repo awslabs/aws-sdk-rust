@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOtaUpdateInput {
     /// <p>The ID of the OTA update to be created.</p>
-    #[doc(hidden)]
     pub ota_update_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the OTA update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The devices targeted to receive OTA updates.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
-    #[doc(hidden)]
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
     /// <p>Configuration for the rollout of OTA updates.</p>
-    #[doc(hidden)]
     pub aws_job_executions_rollout_config: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
     /// <p>Configuration information for pre-signed URLs.</p>
-    #[doc(hidden)]
     pub aws_job_presigned_url_config: ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
-    #[doc(hidden)]
     pub aws_job_abort_config: ::std::option::Option<crate::types::AwsJobAbortConfig>,
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    #[doc(hidden)]
     pub aws_job_timeout_config: ::std::option::Option<crate::types::AwsJobTimeoutConfig>,
     /// <p>The files to be streamed by the OTA update.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>,
     /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
-    #[doc(hidden)]
     pub additional_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Metadata which can be used to manage updates.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOtaUpdateInput {

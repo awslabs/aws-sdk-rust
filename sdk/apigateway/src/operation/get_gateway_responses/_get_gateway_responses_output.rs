@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGatewayResponsesOutput {
     /// <p>Returns the entire collection, because of no pagination support.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>>,
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

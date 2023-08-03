@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevisionInfo {
     /// <p>Information about the location and type of an application revision.</p>
-    #[doc(hidden)]
     pub revision_location: ::std::option::Option<crate::types::RevisionLocation>,
     /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
-    #[doc(hidden)]
     pub generic_revision_info: ::std::option::Option<crate::types::GenericRevisionInfo>,
 }
 impl RevisionInfo {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpersonationMatchedRule {
     /// <p>The ID of the rule that matched the input</p>
-    #[doc(hidden)]
     pub impersonation_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule that matched the input.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl ImpersonationMatchedRule {

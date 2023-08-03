@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStacksInput {
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
-    #[doc(hidden)]
     pub stack_status_filter: ::std::option::Option<::std::vec::Vec<crate::types::StackStatus>>,
 }
 impl ListStacksInput {

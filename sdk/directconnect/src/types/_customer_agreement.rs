@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerAgreement {
     /// <p>The name of the agreement.</p>
-    #[doc(hidden)]
     pub agreement_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code> </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl CustomerAgreement {

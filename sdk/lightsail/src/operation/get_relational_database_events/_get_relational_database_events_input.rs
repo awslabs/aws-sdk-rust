@@ -4,16 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseEventsInput {
     /// <p>The name of the database from which to get events.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>
     /// <p>Default: <code>60</code> </p>
     /// <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
-    #[doc(hidden)]
     pub duration_in_minutes: ::std::option::Option<i32>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetRelationalDatabaseEventsInput {

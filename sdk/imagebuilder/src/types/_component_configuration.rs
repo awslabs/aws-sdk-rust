@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    #[doc(hidden)]
     pub component_arn: ::std::option::Option<::std::string::String>,
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>>,
 }
 impl ComponentConfiguration {

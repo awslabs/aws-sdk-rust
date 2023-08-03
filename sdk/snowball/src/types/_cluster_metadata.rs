@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional description of the cluster.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>The type of Snowcone device to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    #[doc(hidden)]
     pub snowball_type: ::std::option::Option<crate::types::SnowballType>,
     /// <p>The creation date for this cluster.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<crate::types::JobResource>,
     /// <p>The automatically generated ID for a specific address.</p>
-    #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
@@ -43,19 +33,14 @@ pub struct ClusterMetadata {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    #[doc(hidden)]
     pub forwarding_address_id: ::std::option::Option<::std::string::String>,
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    #[doc(hidden)]
     pub on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
 }
 impl ClusterMetadata {

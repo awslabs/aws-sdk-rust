@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentOutput {
     /// <p>The name of the FinSpace environment.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
 }

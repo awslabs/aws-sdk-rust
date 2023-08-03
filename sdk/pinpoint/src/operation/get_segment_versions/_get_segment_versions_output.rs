@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSegmentVersionsOutput {
     /// <p>Provides information about all the segments that are associated with an application.</p>
-    #[doc(hidden)]
     pub segments_response: ::std::option::Option<crate::types::SegmentsResponse>,
     _request_id: Option<String>,
 }

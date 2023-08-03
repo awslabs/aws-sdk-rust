@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryDeletionSummaryItem {
     /// <p>The inventory type version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>A count of the number of deleted items.</p>
-    #[doc(hidden)]
     pub count: i32,
     /// <p>The remaining number of items to delete.</p>
-    #[doc(hidden)]
     pub remaining_count: i32,
 }
 impl InventoryDeletionSummaryItem {

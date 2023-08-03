@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EgressAccessLogs {
     /// Customize the log group name.
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl EgressAccessLogs {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplatesOutput {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
-    #[doc(hidden)]
     pub templates_response: ::std::option::Option<crate::types::TemplatesResponse>,
     _request_id: Option<String>,
 }

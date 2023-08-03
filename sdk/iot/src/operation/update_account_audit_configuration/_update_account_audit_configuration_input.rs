@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountAuditConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the targets to which audit notifications are sent.</p>
-    #[doc(hidden)]
     pub audit_notification_target_configurations:
         ::std::option::Option<::std::collections::HashMap<crate::types::AuditNotificationType, crate::types::AuditNotificationTarget>>,
     /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
     /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
     /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
     /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
-    #[doc(hidden)]
     pub audit_check_configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>>,
 }
 impl UpdateAccountAuditConfigurationInput {

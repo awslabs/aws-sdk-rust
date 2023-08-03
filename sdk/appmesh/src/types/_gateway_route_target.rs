@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
-    #[doc(hidden)]
     pub virtual_service: ::std::option::Option<crate::types::GatewayRouteVirtualService>,
     /// <p>The port number of the gateway route target.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl GatewayRouteTarget {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePortfolioShareStatusInput {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-    #[doc(hidden)]
     pub portfolio_share_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribePortfolioShareStatusInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyWorkspaceAccessPropertiesInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The device types and operating systems to enable or disable for access.</p>
-    #[doc(hidden)]
     pub workspace_access_properties: ::std::option::Option<crate::types::WorkspaceAccessProperties>,
 }
 impl ModifyWorkspaceAccessPropertiesInput {

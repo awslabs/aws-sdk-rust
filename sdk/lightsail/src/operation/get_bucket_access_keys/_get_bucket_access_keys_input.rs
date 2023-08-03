@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketAccessKeysInput {
     /// <p>The name of the bucket for which to return access keys.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl GetBucketAccessKeysInput {

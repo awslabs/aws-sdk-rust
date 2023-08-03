@@ -5,77 +5,53 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Service {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster. However, you can have similarly named services in multiple clusters within a Region or across multiple Regions.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
-    #[doc(hidden)]
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
-    #[doc(hidden)]
     pub service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     /// <p>The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
-    #[doc(hidden)]
     pub desired_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
-    #[doc(hidden)]
     pub running_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
-    #[doc(hidden)]
     pub pending_count: i32,
     /// <p>The launch type the service is using. When using the DescribeServices API, this field is omitted if the service was created using a capacity provider strategy.</p>
-    #[doc(hidden)]
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
-    #[doc(hidden)]
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The platform version to run your service on. A platform version is only specified for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
-    #[doc(hidden)]
     pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
-    #[doc(hidden)]
     pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
-    #[doc(hidden)]
     pub task_sets: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
     /// <p>The current state of deployments for the service.</p>
-    #[doc(hidden)]
     pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     /// <p>The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event stream for your service. A maximum of 100 of the latest events are displayed.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEvent>>,
     /// <p>The Unix timestamp for the time when the service was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The placement constraints for the tasks in the service.</p>
-    #[doc(hidden)]
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     /// <p>The placement strategy that determines how tasks for the service are placed.</p>
-    #[doc(hidden)]
     pub placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
-    #[doc(hidden)]
     pub health_check_grace_period_seconds: ::std::option::Option<i32>,
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
@@ -85,10 +61,8 @@ pub struct Service {
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scheduling_strategy: ::std::option::Option<crate::types::SchedulingStrategy>,
     /// <p>The deployment controller type the service is using. </p>
-    #[doc(hidden)]
     pub deployment_controller: ::std::option::Option<crate::types::DeploymentController>,
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -101,19 +75,14 @@ pub struct Service {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The principal that created the service.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_ecs_managed_tags: bool,
     /// <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
-    #[doc(hidden)]
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the execute command functionality is turned on for all containers in tasks as part of the service.</p>
-    #[doc(hidden)]
     pub enable_execute_command: bool,
 }
 impl Service {

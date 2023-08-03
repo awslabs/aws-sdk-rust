@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Termination {
     /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
-    #[doc(hidden)]
     pub cps_limit: ::std::option::Option<i32>,
     /// <p>The default caller ID phone number.</p>
-    #[doc(hidden)]
     pub default_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    #[doc(hidden)]
     pub calling_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
-    #[doc(hidden)]
     pub cidr_allowed_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When termination settings are disabled, outbound calls can not be made.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
 }
 impl Termination {

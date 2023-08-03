@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverRuleAssociation {
     /// <p>The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a> request.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.</p>
-    #[doc(hidden)]
     pub resolver_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of an association between a Resolver rule and a VPC.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC that you associated the Resolver rule with.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A code that specifies the current status of the association between a Resolver rule and a VPC.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResolverRuleAssociationStatus>,
     /// <p>A detailed description of the status of the association between a Resolver rule and a VPC.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ResolverRuleAssociation {

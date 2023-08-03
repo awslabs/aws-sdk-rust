@@ -9,7 +9,6 @@ pub struct PutAccountSuppressionAttributesInput {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl PutAccountSuppressionAttributesInput {

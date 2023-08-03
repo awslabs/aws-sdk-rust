@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Latency {
     /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub p999: ::std::option::Option<f64>,
     /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub p99: ::std::option::Option<f64>,
     /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub p95: ::std::option::Option<f64>,
     /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub p90: ::std::option::Option<f64>,
     /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub p85: ::std::option::Option<f64>,
     /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub p75: ::std::option::Option<f64>,
     /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub p50: ::std::option::Option<f64>,
     /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
-    #[doc(hidden)]
     pub p10: ::std::option::Option<f64>,
 }
 impl Latency {

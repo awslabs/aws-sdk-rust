@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTemplateAliasOutput {
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>An ID for the template associated with the deletion.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the template alias.</p>
-    #[doc(hidden)]
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

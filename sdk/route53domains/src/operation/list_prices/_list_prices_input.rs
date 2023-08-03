@@ -5,15 +5,12 @@
 pub struct ListPricesInput {
     /// <p>The TLD for which you want to receive the pricing information. For example. <code>.net</code>.</p>
     /// <p>If a <code>Tld</code> value is not provided, a list of prices for all TLDs supported by Route&nbsp;53 is returned.</p>
-    #[doc(hidden)]
     pub tld: ::std::option::Option<::std::string::String>,
     /// <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Number of <code>Prices</code> to be returned.</p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>MaxItems</code>.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListPricesInput {

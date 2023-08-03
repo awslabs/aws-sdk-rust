@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
 }
 impl TestConnectionInput {

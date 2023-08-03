@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMonitorInput {
     /// <p>The name of the monitor. </p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. Don't reuse the same client token for other API requests.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for a monitor. You can add a maximum of 50 tags in Internet Monitor.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    #[doc(hidden)]
     pub max_city_networks_to_monitor: i32,
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
-    #[doc(hidden)]
     pub traffic_percentage_to_monitor: i32,
     /// <p>Defines the health event threshold percentages, for performance score and availability score. Internet Monitor creates a health event when there's an internet issue that affects your application end users where a health score percentage is at or below a set threshold. If you don't set a health event threshold, the default calue is 95%.</p>
-    #[doc(hidden)]
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
 }
 impl CreateMonitorInput {

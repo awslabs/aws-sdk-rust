@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageValidationSpecification {
     /// <p>The IAM roles to be used for the validation of the model package.</p>
-    #[doc(hidden)]
     pub validation_role: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies a batch transform job that SageMaker runs to validate your model package.</p>
-    #[doc(hidden)]
     pub validation_profiles: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageValidationProfile>>,
 }
 impl ModelPackageValidationSpecification {

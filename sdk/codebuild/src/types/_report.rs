@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Report {
     /// <p> The ARN of the report run. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the report that was run.</p>
     /// <dl>
@@ -22,37 +21,26 @@ pub struct Report {
     /// <p>A test report.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ReportType>,
     /// <p> The name of the report that was run. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the report group associated with this report. </p>
-    #[doc(hidden)]
     pub report_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the build run that generated this report. </p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of this report. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReportStatusType>,
     /// <p> The date and time this report run occurred. </p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An expired report is not available to view in CodeBuild. </p>
-    #[doc(hidden)]
     pub expired: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Information about where the raw data used to generate this report was exported. </p>
-    #[doc(hidden)]
     pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     /// <p> A boolean that specifies if this report run is truncated. The list of test cases is truncated after the maximum number of test cases is reached. </p>
-    #[doc(hidden)]
     pub truncated: ::std::option::Option<bool>,
     /// <p> A <code>TestReportSummary</code> object that contains information about this test report. </p>
-    #[doc(hidden)]
     pub test_summary: ::std::option::Option<crate::types::TestReportSummary>,
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
-    #[doc(hidden)]
     pub code_coverage_summary: ::std::option::Option<crate::types::CodeCoverageReportSummary>,
 }
 impl Report {

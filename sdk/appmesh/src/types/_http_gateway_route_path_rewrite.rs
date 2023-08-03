@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
-    #[doc(hidden)]
     pub exact: ::std::option::Option<::std::string::String>,
 }
 impl HttpGatewayRoutePathRewrite {

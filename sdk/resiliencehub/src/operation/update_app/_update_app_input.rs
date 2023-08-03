@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAppInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional description for an app.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
-    #[doc(hidden)]
     pub clear_resiliency_policy_arn: ::std::option::Option<bool>,
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    #[doc(hidden)]
     pub assessment_schedule: ::std::option::Option<crate::types::AppAssessmentScheduleType>,
 }
 impl UpdateAppInput {

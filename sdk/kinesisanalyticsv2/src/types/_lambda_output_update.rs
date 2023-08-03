@@ -7,7 +7,6 @@ pub struct LambdaOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
-    #[doc(hidden)]
     pub resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl LambdaOutputUpdate {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput {
     /// <p>Information about the association.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_virtual_interface_group_association:
         ::std::option::Option<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
     _request_id: Option<String>,

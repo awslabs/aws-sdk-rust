@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationConfig {
     /// <p>The name of the Amazon S3 bucket to use as the destination for an export job.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix for an export job.</p>
-    #[doc(hidden)]
     pub key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3DestinationConfig {

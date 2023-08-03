@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeSignal {
     /// <p>The camera node's name, from the application manifest.</p>
-    #[doc(hidden)]
     pub node_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The signal value.</p>
-    #[doc(hidden)]
     pub signal: ::std::option::Option<crate::types::NodeSignalValue>,
 }
 impl NodeSignal {

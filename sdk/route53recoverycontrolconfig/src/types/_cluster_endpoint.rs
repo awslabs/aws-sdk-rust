@@ -6,10 +6,8 @@
 pub struct ClusterEndpoint {
     /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p>
     /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl ClusterEndpoint {

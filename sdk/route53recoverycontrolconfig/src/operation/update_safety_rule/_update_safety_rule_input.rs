@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSafetyRuleInput {
     /// <p>The assertion rule to update.</p>
-    #[doc(hidden)]
     pub assertion_rule_update: ::std::option::Option<crate::types::AssertionRuleUpdate>,
     /// <p>The gating rule to update.</p>
-    #[doc(hidden)]
     pub gating_rule_update: ::std::option::Option<crate::types::GatingRuleUpdate>,
 }
 impl UpdateSafetyRuleInput {

@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>Optional: The version of the stream that you want to delete. </p>
     /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStreamInput {

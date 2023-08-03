@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateValidity {
     /// <p>The certificate is not valid before this date.</p>
-    #[doc(hidden)]
     pub not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The certificate is not valid after this date.</p>
-    #[doc(hidden)]
     pub not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CertificateValidity {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLaunchProfileInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLaunchProfileInput {

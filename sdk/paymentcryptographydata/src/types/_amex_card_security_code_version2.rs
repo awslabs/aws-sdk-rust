@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmexCardSecurityCodeVersion2 {
     /// <p>The expiry date of a payment card.</p>
-    #[doc(hidden)]
     pub card_expiry_date: ::std::option::Option<::std::string::String>,
     /// <p>The service code of the AMEX payment card. This is different from the Card Security Code (CSC).</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
 }
 impl AmexCardSecurityCodeVersion2 {

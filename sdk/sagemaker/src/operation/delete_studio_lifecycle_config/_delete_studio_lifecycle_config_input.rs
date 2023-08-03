@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
-    #[doc(hidden)]
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStudioLifecycleConfigInput {

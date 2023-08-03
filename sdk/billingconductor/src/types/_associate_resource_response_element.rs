@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResourceResponseElement {
     /// <p>The resource ARN that was associated to the custom line item.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An <code>AssociateResourceError</code> that will populate if the resource association fails.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::AssociateResourceError>,
 }
 impl AssociateResourceResponseElement {

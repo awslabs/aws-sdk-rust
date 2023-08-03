@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerLaunchConfiguration {
     /// <p>The ID of the server with which the launch configuration is associated.</p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::Server>,
     /// <p>The logical ID of the server in the CloudFormation template.</p>
-    #[doc(hidden)]
     pub logical_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC into which the server should be launched.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet the server should be launched into.</p>
-    #[doc(hidden)]
     pub subnet: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group that applies to the launched server.</p>
-    #[doc(hidden)]
     pub security_group: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
-    #[doc(hidden)]
     pub ec2_key_name: ::std::option::Option<::std::string::String>,
     /// <p>Location of the user-data script to be executed when launching the server.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<crate::types::UserData>,
     /// <p>The instance type to use when launching the server.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
-    #[doc(hidden)]
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>The name of the IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>Location of an Amazon S3 object.</p>
-    #[doc(hidden)]
     pub configure_script: ::std::option::Option<crate::types::S3Location>,
     /// <p>The type of configuration script.</p>
-    #[doc(hidden)]
     pub configure_script_type: ::std::option::Option<crate::types::ScriptType>,
 }
 impl ServerLaunchConfiguration {

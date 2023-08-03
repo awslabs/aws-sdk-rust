@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImageScanFindingsOutput {
     /// <p>The registry ID associated with the request.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name associated with the request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<crate::types::ImageIdentifier>,
     /// <p>The current state of the scan.</p>
-    #[doc(hidden)]
     pub image_scan_status: ::std::option::Option<crate::types::ImageScanStatus>,
     /// <p>The information contained in the image scan findings.</p>
-    #[doc(hidden)]
     pub image_scan_findings: ::std::option::Option<crate::types::ImageScanFindings>,
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageScanFindings</code> request. When the results of a <code>DescribeImageScanFindings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

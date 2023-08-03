@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidateProjectCacheInput {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
 }
 impl InvalidateProjectCacheInput {

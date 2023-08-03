@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisionedProductPlanOutput {
     /// <p>The name of the plan.</p>
-    #[doc(hidden)]
     pub plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The plan identifier.</p>
-    #[doc(hidden)]
     pub plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub provision_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
-    #[doc(hidden)]
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

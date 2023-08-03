@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationOutput {
     /// <p>The identifier of the application.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of top-level resources that were registered as part of this application.</p>
-    #[doc(hidden)]
     pub associated_resource_count: i32,
     /// <p>Key-value pairs associated with the application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
-    #[doc(hidden)]
     pub integrations: ::std::option::Option<crate::types::Integrations>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveContainerSettings {
     /// M2ts Settings
-    #[doc(hidden)]
     pub m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
     /// Raw Settings
-    #[doc(hidden)]
     pub raw_settings: ::std::option::Option<crate::types::RawSettings>,
 }
 impl ArchiveContainerSettings {

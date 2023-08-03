@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyTemplateInput {
     /// <p>Specifies the ID of the policy store that contains the policy template that you want information about.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy template that you want information about.</p>
-    #[doc(hidden)]
     pub policy_template_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPolicyTemplateInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsStepFunctionStateMachineLoggingConfigurationDetails {
     /// <p> An array of objects that describes where your execution history events will be logged. </p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>,
     /// <p> Determines whether execution data is included in your log. When set to false, data is excluded. </p>
-    #[doc(hidden)]
     pub include_execution_data: bool,
     /// <p> Defines which category of execution history events are logged. </p>
-    #[doc(hidden)]
     pub level: ::std::option::Option<::std::string::String>,
 }
 impl AwsStepFunctionStateMachineLoggingConfigurationDetails {

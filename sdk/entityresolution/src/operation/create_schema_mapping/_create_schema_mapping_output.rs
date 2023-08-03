@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSchemaMappingOutput {
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the schema.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    #[doc(hidden)]
     pub mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
     _request_id: Option<String>,
 }

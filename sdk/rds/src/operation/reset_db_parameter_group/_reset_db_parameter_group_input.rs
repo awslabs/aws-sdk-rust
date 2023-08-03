@@ -9,10 +9,8 @@ pub struct ResetDbParameterGroupInput {
     /// <ul>
     /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.</p>
-    #[doc(hidden)]
     pub reset_all_parameters: bool,
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p> <b>MySQL</b> </p>
@@ -23,7 +21,6 @@ pub struct ResetDbParameterGroupInput {
     /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
     /// <p> <b>Oracle</b> </p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ResetDbParameterGroupInput {

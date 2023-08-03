@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachPrincipalPolicyInput {
     /// <p>The policy name.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
 }
 impl AttachPrincipalPolicyInput {

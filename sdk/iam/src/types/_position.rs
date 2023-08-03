@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Position {
     /// <p>The line containing the specified position in the document.</p>
-    #[doc(hidden)]
     pub line: i32,
     /// <p>The column in the line containing the specified position in the document.</p>
-    #[doc(hidden)]
     pub column: i32,
 }
 impl Position {

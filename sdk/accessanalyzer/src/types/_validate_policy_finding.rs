@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidatePolicyFinding {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    #[doc(hidden)]
     pub finding_details: ::std::option::Option<::std::string::String>,
     /// <p>The impact of the finding.</p>
     /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
     /// <p>Errors report when a part of the policy is not functional.</p>
     /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
-    #[doc(hidden)]
     pub finding_type: ::std::option::Option<crate::types::ValidatePolicyFindingType>,
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
-    #[doc(hidden)]
     pub issue_code: ::std::option::Option<::std::string::String>,
     /// <p>A link to additional documentation about the type of finding.</p>
-    #[doc(hidden)]
     pub learn_more_link: ::std::option::Option<::std::string::String>,
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    #[doc(hidden)]
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::Location>>,
 }
 impl ValidatePolicyFinding {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBulkDeploymentStatusInput {
     /// The ID of the bulk deployment.
-    #[doc(hidden)]
     pub bulk_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBulkDeploymentStatusInput {

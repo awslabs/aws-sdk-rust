@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetOutput {
     /// <p>Information about the fleet.</p>
-    #[doc(hidden)]
     pub fleet: ::std::option::Option<crate::types::Fleet>,
     _request_id: Option<String>,
 }

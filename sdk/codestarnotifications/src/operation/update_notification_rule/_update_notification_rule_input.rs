@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateNotificationRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the notification rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NotificationRuleStatus>,
     /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    #[doc(hidden)]
     pub event_type_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-    #[doc(hidden)]
     pub detail_type: ::std::option::Option<crate::types::DetailType>,
 }
 impl UpdateNotificationRuleInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowExecutionRecordsOutput {
     /// <p> Returns a list of all instances when this flow was run. </p>
-    #[doc(hidden)]
     pub flow_executions: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionRecord>>,
     /// <p> The pagination token for the next page of data. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

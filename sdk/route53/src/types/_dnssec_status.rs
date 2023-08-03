@@ -38,10 +38,8 @@ pub struct DnssecStatus {
     /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub serve_signature: ::std::option::Option<::std::string::String>,
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl DnssecStatus {

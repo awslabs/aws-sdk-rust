@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpAuthorization {
     /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
-    #[doc(hidden)]
     pub sigv4: ::std::option::Option<crate::types::SigV4Authorization>,
 }
 impl HttpAuthorization {

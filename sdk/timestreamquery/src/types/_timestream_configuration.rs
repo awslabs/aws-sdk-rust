@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamConfiguration {
     /// <p>Name of Timestream database to which the query result will be written.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of Timestream table that the query result will be written to. The table should be within the same database that is provided in Timestream configuration.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Column from query result that should be used as the time column in destination table. Column type for this should be TIMESTAMP.</p>
-    #[doc(hidden)]
     pub time_column: ::std::option::Option<::std::string::String>,
     /// <p> This is to allow mapping column(s) from the query result to the dimension in the destination table. </p>
-    #[doc(hidden)]
     pub dimension_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
     /// <p>Multi-measure mappings.</p>
-    #[doc(hidden)]
     pub multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
     /// <p>Specifies how to map measures to multi-measure records.</p>
-    #[doc(hidden)]
     pub mixed_measure_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MixedMeasureMapping>>,
     /// <p>Name of the measure column.</p>
-    #[doc(hidden)]
     pub measure_name_column: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamConfiguration {

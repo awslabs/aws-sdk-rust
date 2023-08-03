@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserAuthConfigInfo {
     /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database user to which the proxy connects.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication that the proxy uses for connections from the proxy to the underlying database.</p>
-    #[doc(hidden)]
     pub auth_scheme: ::std::option::Option<crate::types::AuthScheme>,
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL Server.</p>
-    #[doc(hidden)]
     pub iam_auth: ::std::option::Option<crate::types::IamAuthMode>,
     /// <p>The type of authentication the proxy uses for connections from clients.</p>
-    #[doc(hidden)]
     pub client_password_auth_type: ::std::option::Option<crate::types::ClientPasswordAuthType>,
 }
 impl UserAuthConfigInfo {

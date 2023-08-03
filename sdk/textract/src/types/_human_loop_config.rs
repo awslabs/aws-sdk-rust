@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopConfig {
     /// <p>The name of the human workflow used for this image. This should be kept unique within a region.</p>
-    #[doc(hidden)]
     pub human_loop_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    #[doc(hidden)]
     pub flow_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>Sets attributes of the input data.</p>
-    #[doc(hidden)]
     pub data_attributes: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
 }
 impl HumanLoopConfig {

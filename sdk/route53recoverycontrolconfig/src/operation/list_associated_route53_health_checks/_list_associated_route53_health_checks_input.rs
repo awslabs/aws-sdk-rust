@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociatedRoute53HealthChecksInput {
     /// <p>The number of objects that you want to return with this call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    #[doc(hidden)]
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListAssociatedRoute53HealthChecksInput {

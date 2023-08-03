@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImageScanOutput {
     /// <p>The registry ID associated with the request.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name associated with the request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<crate::types::ImageIdentifier>,
     /// <p>The current state of the scan.</p>
-    #[doc(hidden)]
     pub image_scan_status: ::std::option::Option<crate::types::ImageScanStatus>,
     _request_id: Option<String>,
 }

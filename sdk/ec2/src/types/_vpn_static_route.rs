@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpnStaticRoute {
     /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how the routes were provided.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::VpnStaticRouteSource>,
     /// <p>The current state of the static route.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VpnState>,
 }
 impl VpnStaticRoute {

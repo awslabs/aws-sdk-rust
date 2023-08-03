@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCodeSigningConfigOutput {
     /// <p>The code signing configuration</p>
-    #[doc(hidden)]
     pub code_signing_config: ::std::option::Option<crate::types::CodeSigningConfig>,
     _request_id: Option<String>,
 }

@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuota {
     /// <p>The service identifier.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The service name.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
-    #[doc(hidden)]
     pub quota_arn: ::std::option::Option<::std::string::String>,
     /// <p>The quota identifier.</p>
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The quota name.</p>
-    #[doc(hidden)]
     pub quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The quota value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
     /// <p>The unit of measurement.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the quota value can be increased.</p>
-    #[doc(hidden)]
     pub adjustable: bool,
     /// <p>Indicates whether the quota is global.</p>
-    #[doc(hidden)]
     pub global_quota: bool,
     /// <p>Information about the measurement.</p>
-    #[doc(hidden)]
     pub usage_metric: ::std::option::Option<crate::types::MetricInfo>,
     /// <p>The period of time.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::QuotaPeriod>,
     /// <p>The error code and error reason.</p>
-    #[doc(hidden)]
     pub error_reason: ::std::option::Option<crate::types::ErrorReason>,
 }
 impl ServiceQuota {

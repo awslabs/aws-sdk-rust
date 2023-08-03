@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaSettingsUpdate {
     /// <p>The Region of the replica to be added.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub replica_provisioned_read_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
-    #[doc(hidden)]
     pub replica_provisioned_read_capacity_auto_scaling_settings_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
-    #[doc(hidden)]
     pub replica_global_secondary_index_settings_update:
         ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate>>,
     /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
-    #[doc(hidden)]
     pub replica_table_class: ::std::option::Option<crate::types::TableClass>,
 }
 impl ReplicaSettingsUpdate {

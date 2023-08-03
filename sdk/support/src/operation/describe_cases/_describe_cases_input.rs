@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCasesInput {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
-    #[doc(hidden)]
     pub case_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
-    #[doc(hidden)]
     pub display_id: ::std::option::Option<::std::string::String>,
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    #[doc(hidden)]
     pub after_time: ::std::option::Option<::std::string::String>,
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    #[doc(hidden)]
     pub before_time: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
-    #[doc(hidden)]
     pub include_resolved_cases: ::std::option::Option<bool>,
     /// <p>A resumption point for pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return before paginating.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
-    #[doc(hidden)]
     pub include_communications: ::std::option::Option<bool>,
 }
 impl DescribeCasesInput {

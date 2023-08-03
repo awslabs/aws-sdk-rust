@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FixedResponseActionConfig {
     /// <p>The message.</p>
-    #[doc(hidden)]
     pub message_body: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>The content type.</p>
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl FixedResponseActionConfig {

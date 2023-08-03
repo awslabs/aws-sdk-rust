@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    #[doc(hidden)]
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
 }
 impl CreateEdgeDeploymentStageInput {

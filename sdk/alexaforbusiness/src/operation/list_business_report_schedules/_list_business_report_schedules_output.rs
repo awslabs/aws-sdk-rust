@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBusinessReportSchedulesOutput {
     /// <p>The schedule of the reports.</p>
-    #[doc(hidden)]
     pub business_report_schedules: ::std::option::Option<::std::vec::Vec<crate::types::BusinessReportSchedule>>,
     /// <p>The token used to list the remaining schedules from the previous API call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

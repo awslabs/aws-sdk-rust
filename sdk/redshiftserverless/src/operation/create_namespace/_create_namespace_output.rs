@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNamespaceOutput {
     /// <p>The created namespace object.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<crate::types::Namespace>,
     _request_id: Option<String>,
 }

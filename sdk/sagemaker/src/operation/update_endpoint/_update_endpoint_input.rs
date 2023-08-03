@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEndpointInput {
     /// <p>The name of the endpoint whose configuration you want to update.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new endpoint configuration.</p>
-    #[doc(hidden)]
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub retain_all_variant_properties: ::std::option::Option<bool>,
     /// <p>When you are updating endpoint resources with <code>RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no variant properties are overridden. </p>
-    #[doc(hidden)]
     pub exclude_retained_variant_properties: ::std::option::Option<::std::vec::Vec<crate::types::VariantProperty>>,
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
-    #[doc(hidden)]
     pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     /// <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
-    #[doc(hidden)]
     pub retain_deployment_config: ::std::option::Option<bool>,
 }
 impl UpdateEndpointInput {

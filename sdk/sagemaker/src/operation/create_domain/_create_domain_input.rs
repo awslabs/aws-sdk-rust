@@ -4,47 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p>A name for the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The mode of authentication that members use to access the domain.</p>
-    #[doc(hidden)]
     pub auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
     /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
-    #[doc(hidden)]
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
     /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    #[doc(hidden)]
     pub home_efs_file_system_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
-    #[doc(hidden)]
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     /// <p>A collection of <code>Domain</code> settings.</p>
-    #[doc(hidden)]
     pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     /// <p>The default settings used to create a space.</p>
-    #[doc(hidden)]
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
 }
 impl CreateDomainInput {

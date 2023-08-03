@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingAction {
     /// <p>The type of action that occurred for the affected resource. This value is typically AWS_API_CALL, which indicates that an entity invoked an API operation for the resource.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::FindingActionType>,
     /// <p>The invocation details of the API operation that an entity invoked for the affected resource, if the value for the actionType property is AWS_API_CALL.</p>
-    #[doc(hidden)]
     pub api_call_details: ::std::option::Option<crate::types::ApiCallDetails>,
 }
 impl FindingAction {

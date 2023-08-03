@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceProfileOutput {
     /// <p>The Amazon Resource Name of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the device profile.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the device profile.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDeviceProfile>,
     /// <p>Information about the Sidewalk parameters in the device profile.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkGetDeviceProfile>,
     _request_id: Option<String>,
 }

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RasterDataCollectionMetadata {
     /// <p>The name of the raster data collection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of raster data collection.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataCollectionType>,
     /// <p>A description of the raster data collection.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The description URL of the raster data collection.</p>
-    #[doc(hidden)]
     pub description_page_url: ::std::option::Option<::std::string::String>,
     /// <p>The list of filters supported by the raster data collection.</p>
-    #[doc(hidden)]
     pub supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Each tag consists of a key and a value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RasterDataCollectionMetadata {

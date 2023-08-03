@@ -15,7 +15,6 @@ pub struct ConfirmPublicVirtualInterfaceOutput {
     /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub virtual_interface_state: ::std::option::Option<crate::types::VirtualInterfaceState>,
     _request_id: Option<String>,
 }

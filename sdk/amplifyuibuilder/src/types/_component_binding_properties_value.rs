@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentBindingPropertiesValue {
     /// <p>The property type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties to customize with data at runtime.</p>
-    #[doc(hidden)]
     pub binding_properties: ::std::option::Option<crate::types::ComponentBindingPropertiesValueProperties>,
     /// <p>The default value of the property.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl ComponentBindingPropertiesValue {

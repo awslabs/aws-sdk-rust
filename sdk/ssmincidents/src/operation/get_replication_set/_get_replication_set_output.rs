@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReplicationSetOutput {
     /// <p>Details of the replication set.</p>
-    #[doc(hidden)]
     pub replication_set: ::std::option::Option<crate::types::ReplicationSet>,
     _request_id: Option<String>,
 }

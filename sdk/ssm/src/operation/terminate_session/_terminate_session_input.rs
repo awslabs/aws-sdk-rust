@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateSessionInput {
     /// <p>The ID of the session to terminate.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl TerminateSessionInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateContentInput {
     /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
-    #[doc(hidden)]
     pub new_rule_content: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    #[doc(hidden)]
     pub existing_rule_content_sha256: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApprovalRuleTemplateContentInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting being transcribed.</p>
-    #[doc(hidden)]
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    #[doc(hidden)]
     pub transcription_configuration: ::std::option::Option<crate::types::TranscriptionConfiguration>,
 }
 impl StartMeetingTranscriptionInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportJobSummary {
     /// <p>A string that represents the import job ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains details about the resource destination the import job is going to target.</p>
-    #[doc(hidden)]
     pub import_destination: ::std::option::Option<crate::types::ImportDestination>,
     /// <p>The status of the import job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The date and time when the import job was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current number of records processed.</p>
-    #[doc(hidden)]
     pub processed_records_count: ::std::option::Option<i32>,
     /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
-    #[doc(hidden)]
     pub failed_records_count: ::std::option::Option<i32>,
 }
 impl ImportJobSummary {

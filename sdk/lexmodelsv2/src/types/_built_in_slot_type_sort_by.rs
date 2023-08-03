@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuiltInSlotTypeSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>,
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl BuiltInSlotTypeSortBy {

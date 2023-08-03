@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceDetailInput {
     /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
-    #[doc(hidden)]
     pub member_account: ::std::option::Option<::std::string::String>,
 }
 impl GetComplianceDetailInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceUpdate {
     /// <p>The name of the cluster to which the service update applies</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the service update is initially available</p>
-    #[doc(hidden)]
     pub release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides details of the service update</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
     /// <p>Reflects the nature of the service update</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ServiceUpdateType>,
     /// <p>A list of nodes updated by the service update</p>
-    #[doc(hidden)]
     pub nodes_updated: ::std::option::Option<::std::string::String>,
     /// <p>The date at which the service update will be automatically applied</p>
-    #[doc(hidden)]
     pub auto_update_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ServiceUpdate {

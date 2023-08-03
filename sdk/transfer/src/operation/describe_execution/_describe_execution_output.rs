@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExecutionOutput {
     /// <p>A unique identifier for the workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The structure that contains the details of the workflow' execution.</p>
-    #[doc(hidden)]
     pub execution: ::std::option::Option<crate::types::DescribedExecution>,
     _request_id: Option<String>,
 }

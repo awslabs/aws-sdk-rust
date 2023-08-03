@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerHealthCheck {
     /// <p>The number of consecutive health check successes required before the instance is moved to the Healthy state.</p>
-    #[doc(hidden)]
     pub healthy_threshold: i32,
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    #[doc(hidden)]
     pub interval: i32,
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
     /// <p>For the HTTP and HTTPS protocols, the target also specifies the ping path.</p>
@@ -20,13 +18,10 @@ pub struct AwsElbLoadBalancerHealthCheck {
     /// <protocol></protocol></i>:<i>
     /// <port></port></i>/<i>
     /// <path to ping></path></i> </code>.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
-    #[doc(hidden)]
     pub timeout: i32,
     /// <p>The number of consecutive health check failures that must occur before the instance is moved to the Unhealthy state.</p>
-    #[doc(hidden)]
     pub unhealthy_threshold: i32,
 }
 impl AwsElbLoadBalancerHealthCheck {

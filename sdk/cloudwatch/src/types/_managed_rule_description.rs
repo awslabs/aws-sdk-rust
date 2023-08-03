@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedRuleDescription {
     /// <p> The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>. </p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p> If a managed rule is enabled, this is the ARN for the related Amazon Web Services resource. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> Describes the state of a managed rule. If present, it contains information about the Contributor Insights rule that contains information about the related Amazon Web Services resource. </p>
-    #[doc(hidden)]
     pub rule_state: ::std::option::Option<crate::types::ManagedRuleState>,
 }
 impl ManagedRuleDescription {

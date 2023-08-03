@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SelectObjectContentInput {
     /// <p>The S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The object key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub sse_customer_key: ::std::option::Option<::std::string::String>,
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>The expression that is used to query the object.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The type of the provided expression (for example, SQL).</p>
-    #[doc(hidden)]
     pub expression_type: ::std::option::Option<crate::types::ExpressionType>,
     /// <p>Specifies if periodic request progress information should be enabled.</p>
-    #[doc(hidden)]
     pub request_progress: ::std::option::Option<crate::types::RequestProgress>,
     /// <p>Describes the format of the data in the object that is being queried.</p>
-    #[doc(hidden)]
     pub input_serialization: ::std::option::Option<crate::types::InputSerialization>,
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
-    #[doc(hidden)]
     pub output_serialization: ::std::option::Option<crate::types::OutputSerialization>,
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
     /// <p> <code>ScanRange</code>may be used in the following ways:</p>
@@ -59,10 +49,8 @@ pub struct SelectObjectContentInput {
     /// </end>
     /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scan_range: ::std::option::Option<crate::types::ScanRange>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl SelectObjectContentInput {

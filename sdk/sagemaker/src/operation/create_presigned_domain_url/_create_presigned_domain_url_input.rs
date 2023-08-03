@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePresignedDomainUrlInput {
     /// <p>The domain ID.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the UserProfile to sign-in as.</p>
-    #[doc(hidden)]
     pub user_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-    #[doc(hidden)]
     pub session_expiration_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
-    #[doc(hidden)]
     pub expires_in_seconds: ::std::option::Option<i32>,
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
 }
 impl CreatePresignedDomainUrlInput {

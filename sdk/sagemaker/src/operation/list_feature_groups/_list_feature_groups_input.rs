@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFeatureGroupsInput {
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
-    #[doc(hidden)]
     pub feature_group_status_equals: ::std::option::Option<crate::types::FeatureGroupStatus>,
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    #[doc(hidden)]
     pub offline_store_status_equals: ::std::option::Option<crate::types::OfflineStoreStatusValue>,
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The order in which feature groups are listed.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::FeatureGroupSortOrder>,
     /// <p>The value on which the feature group list is sorted.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::FeatureGroupSortBy>,
     /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListFeatureGroupsInput {

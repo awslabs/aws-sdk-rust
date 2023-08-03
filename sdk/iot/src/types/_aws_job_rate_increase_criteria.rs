@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsJobRateIncreaseCriteria {
     /// <p>When this number of things have been notified, it will initiate an increase in the rollout rate.</p>
-    #[doc(hidden)]
     pub number_of_notified_things: ::std::option::Option<i32>,
     /// <p>When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.</p>
-    #[doc(hidden)]
     pub number_of_succeeded_things: ::std::option::Option<i32>,
 }
 impl AwsJobRateIncreaseCriteria {

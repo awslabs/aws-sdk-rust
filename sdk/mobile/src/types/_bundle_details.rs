@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BundleDetails {
     /// <p> Unique bundle identifier. </p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p> Title of the download bundle. </p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p> Version of the download bundle. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p> Description of the download bundle. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> Icon for the download bundle. </p>
-    #[doc(hidden)]
     pub icon_url: ::std::option::Option<::std::string::String>,
     /// <p> Developer desktop or mobile app or website platforms. </p>
-    #[doc(hidden)]
     pub available_platforms: ::std::option::Option<::std::vec::Vec<crate::types::Platform>>,
 }
 impl BundleDetails {

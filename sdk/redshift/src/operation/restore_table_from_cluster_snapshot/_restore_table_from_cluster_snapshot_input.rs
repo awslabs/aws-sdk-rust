@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreTableFromClusterSnapshotInput {
     /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
-    #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source database that contains the table to restore from.</p>
-    #[doc(hidden)]
     pub source_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
-    #[doc(hidden)]
     pub source_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source table to restore from.</p>
-    #[doc(hidden)]
     pub source_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to restore the table to.</p>
-    #[doc(hidden)]
     pub target_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema to restore the table to.</p>
-    #[doc(hidden)]
     pub target_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table to create as a result of the current request.</p>
-    #[doc(hidden)]
     pub new_table_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
-    #[doc(hidden)]
     pub enable_case_sensitive_identifier: ::std::option::Option<bool>,
 }
 impl RestoreTableFromClusterSnapshotInput {

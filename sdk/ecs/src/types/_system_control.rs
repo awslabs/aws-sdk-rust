@@ -10,10 +10,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemControl {
     /// <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The value for the namespaced kernel parameter that's specified in <code>namespace</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl SystemControl {

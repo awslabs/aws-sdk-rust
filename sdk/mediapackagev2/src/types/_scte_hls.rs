@@ -9,7 +9,6 @@ pub struct ScteHls {
     /// <ul>
     /// <li> <p>DATERANGE - Insert EXT-X-DATERANGE tags to signal ad and program transition events in TS and CMAF manifests. If you use DATERANGE, you must set a programDateTimeIntervalSeconds value of 1 or higher. To learn more about DATERANGE, see <a href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35 Ad Marker EXT-X-DATERANGE</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ad_marker_hls: ::std::option::Option<crate::types::AdMarkerHls>,
 }
 impl ScteHls {

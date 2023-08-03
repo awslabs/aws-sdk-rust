@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignStateBatchOutput {
     /// List of successful response of campaign state
-    #[doc(hidden)]
     pub successful_requests: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
     /// List of failed requests of campaign state
-    #[doc(hidden)]
     pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
     _request_id: Option<String>,
 }

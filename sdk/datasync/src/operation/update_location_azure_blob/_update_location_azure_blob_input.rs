@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLocationAzureBlobInput {
     /// <p>Specifies the ARN of the Azure Blob Storage transfer location that you're updating.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies path segments if you want to limit your transfer to a virtual directory in your container (for example, <code>/my/images</code>).</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
-    #[doc(hidden)]
     pub sas_configuration: ::std::option::Option<crate::types::AzureBlobSasConfiguration>,
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
-    #[doc(hidden)]
     pub blob_type: ::std::option::Option<crate::types::AzureBlobType>,
     /// <p>Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
-    #[doc(hidden)]
     pub access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateLocationAzureBlobInput {

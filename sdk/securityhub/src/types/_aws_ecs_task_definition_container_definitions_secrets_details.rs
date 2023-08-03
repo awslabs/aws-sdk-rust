@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
     /// <p>The name of the secret.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The secret to expose to the container. The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
-    #[doc(hidden)]
     pub value_from: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {

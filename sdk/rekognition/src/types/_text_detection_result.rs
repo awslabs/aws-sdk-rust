@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextDetectionResult {
     /// <p>The time, in milliseconds from the start of the video, that the text was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the text first appears.</p>
-    #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Details about text detected in a video.</p>
-    #[doc(hidden)]
     pub text_detection: ::std::option::Option<crate::types::TextDetection>,
 }
 impl TextDetectionResult {

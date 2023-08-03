@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePlatformVersionInput {
     /// <p>The ARN of the platform version.</p>
-    #[doc(hidden)]
     pub platform_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribePlatformVersionInput {

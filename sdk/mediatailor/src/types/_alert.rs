@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alert {
     /// <p>The code for the alert. For example, <code>NOT_PROCESSED</code>.</p>
-    #[doc(hidden)]
     pub alert_code: ::std::option::Option<::std::string::String>,
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
-    #[doc(hidden)]
     pub alert_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the alert was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
-    #[doc(hidden)]
     pub related_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The category that MediaTailor assigns to the alert.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::AlertCategory>,
 }
 impl Alert {

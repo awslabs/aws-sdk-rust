@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSigningJobInput {
     /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>The name of the signing profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the signing profile owner.</p>
-    #[doc(hidden)]
     pub profile_owner: ::std::option::Option<::std::string::String>,
 }
 impl StartSigningJobInput {

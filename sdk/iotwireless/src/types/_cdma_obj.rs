@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdmaObj {
     /// <p>CDMA system ID (SID).</p>
-    #[doc(hidden)]
     pub system_id: ::std::option::Option<i32>,
     /// <p>CDMA network ID (NID).</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<i32>,
     /// <p>CDMA base station ID (BSID).</p>
-    #[doc(hidden)]
     pub base_station_id: ::std::option::Option<i32>,
     /// <p>CDMA registration zone (RZ).</p>
-    #[doc(hidden)]
     pub registration_zone: ::std::option::Option<i32>,
     /// <p>CDMA local identification (local ID) parameters.</p>
-    #[doc(hidden)]
     pub cdma_local_id: ::std::option::Option<crate::types::CdmaLocalId>,
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
-    #[doc(hidden)]
     pub pilot_power: ::std::option::Option<i32>,
     /// <p>CDMA base station latitude in degrees.</p>
-    #[doc(hidden)]
     pub base_lat: ::std::option::Option<f32>,
     /// <p>CDMA base station longitude in degrees.</p>
-    #[doc(hidden)]
     pub base_lng: ::std::option::Option<f32>,
     /// <p>CDMA network measurement reports.</p>
-    #[doc(hidden)]
     pub cdma_nmr: ::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>>,
 }
 impl CdmaObj {

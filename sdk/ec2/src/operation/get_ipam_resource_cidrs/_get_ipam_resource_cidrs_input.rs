@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpamResourceCidrsInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return in the request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scope that the resource is in.</p>
-    #[doc(hidden)]
     pub ipam_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IPAM pool that the resource is in.</p>
-    #[doc(hidden)]
     pub ipam_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::IpamResourceType>,
     /// <p>The resource tag.</p>
-    #[doc(hidden)]
     pub resource_tag: ::std::option::Option<crate::types::RequestIpamResourceTag>,
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
-    #[doc(hidden)]
     pub resource_owner: ::std::option::Option<::std::string::String>,
 }
 impl GetIpamResourceCidrsInput {

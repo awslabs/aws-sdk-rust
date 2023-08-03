@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceNetworkData {
     /// <p>Source Network ID.</p>
-    #[doc(hidden)]
     pub source_network_id: ::std::option::Option<::std::string::String>,
     /// <p>VPC ID protected by the Source Network.</p>
-    #[doc(hidden)]
     pub source_vpc: ::std::option::Option<::std::string::String>,
     /// <p>ID of the recovered VPC following Source Network recovery.</p>
-    #[doc(hidden)]
     pub target_vpc: ::std::option::Option<::std::string::String>,
     /// <p>CloudFormation stack name that was deployed for recovering the Source Network.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
 impl SourceNetworkData {

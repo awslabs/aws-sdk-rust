@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTask {
     /// <p>Import task id.</p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>Import task s3 bucket source.</p>
-    #[doc(hidden)]
     pub s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
     /// <p>Import task creation datetime.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Import task end datetime.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Import task status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p>Import task progress percentage.</p>
-    #[doc(hidden)]
     pub progress_percentage: ::std::option::Option<f32>,
     /// <p>Import task summary.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::ImportTaskSummary>,
 }
 impl ImportTask {

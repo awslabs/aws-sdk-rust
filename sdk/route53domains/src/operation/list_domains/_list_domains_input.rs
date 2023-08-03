@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
-    #[doc(hidden)]
     pub filter_conditions: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
-    #[doc(hidden)]
     pub sort_condition: ::std::option::Option<crate::types::SortCondition>,
     /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListDomainsInput {

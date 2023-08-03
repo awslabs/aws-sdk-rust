@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceFileUploadUrlInput {
     /// <p>The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl GetEvidenceFileUploadUrlInput {

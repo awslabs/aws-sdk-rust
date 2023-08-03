@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportFailureListItem {
     /// <p> The location of the failure in the S3 bucket. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p> The status of the import. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ImportFailureStatus>,
     /// <p> The type of import error. </p>
-    #[doc(hidden)]
     pub error_type: ::std::option::Option<::std::string::String>,
     /// <p> Provides the reason the import failed. </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p> When the import was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportFailureListItem {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSessionSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
-    #[doc(hidden)]
     pub has_error_event: bool,
 }
 impl StreamSessionSummary {

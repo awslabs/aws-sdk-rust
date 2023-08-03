@@ -6,52 +6,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Component {
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the component.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the component was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the component was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the component was last attempted.</p>
-    #[doc(hidden)]
     pub last_deployment_attempted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the component was last deployed successfully.</p>
-    #[doc(hidden)]
     pub last_deployment_succeeded_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The component deployment status.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The message associated with the component deployment status.</p>
-    #[doc(hidden)]
     pub deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
-    #[doc(hidden)]
     pub service_spec: ::std::option::Option<::std::string::String>,
     /// <p>The last token the client requested.</p>
-    #[doc(hidden)]
     pub last_client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last attempted deployment of this component.</p>
-    #[doc(hidden)]
     pub last_attempted_deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last successful deployment of this component.</p>
-    #[doc(hidden)]
     pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl Component {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Group {
     /// <p> The key of the specific import group. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::GroupName>,
     /// <p> The value of the specific import group. </p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Group {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HierarchyGroup {
     /// <p>The identifier of the hierarchy group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the hierarchy group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the level in the hierarchy group.</p>
-    #[doc(hidden)]
     pub level_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the levels in the hierarchy group.</p>
-    #[doc(hidden)]
     pub hierarchy_path: ::std::option::Option<crate::types::HierarchyPath>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl HierarchyGroup {

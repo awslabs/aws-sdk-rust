@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationEventDetails {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Summary information about an Health event.</p>
     /// <p>Health events can be public or account-specific:</p>
@@ -14,13 +13,10 @@ pub struct OrganizationEventDetails {
     /// <li> <p> <i>Account-specific</i> events are specific to either your Amazon Web Services account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, Health provides information about the event and the affected resources in the account.</p> </li>
     /// </ul>
     /// <p>You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::Event>,
     /// <p>The detailed description of the event. Included in the information returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
-    #[doc(hidden)]
     pub event_description: ::std::option::Option<crate::types::EventDescription>,
     /// <p>Additional metadata about the event.</p>
-    #[doc(hidden)]
     pub event_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OrganizationEventDetails {

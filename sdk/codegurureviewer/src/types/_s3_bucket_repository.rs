@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketRepository {
     /// <p>The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object keys for a source code .zip file and for a build artifacts .zip file.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::S3RepositoryDetails>,
 }
 impl S3BucketRepository {

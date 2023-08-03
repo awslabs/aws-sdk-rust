@@ -5,13 +5,10 @@
 pub struct DescribeInstanceAttributeInput {
     /// <p>The instance attribute.</p>
     /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInstanceAttributeInput {

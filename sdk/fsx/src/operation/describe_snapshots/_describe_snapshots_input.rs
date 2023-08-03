@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInput {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-    #[doc(hidden)]
     pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSnapshotsInput {

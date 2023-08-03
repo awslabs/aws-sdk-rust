@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeBranchesByFastForwardOutput {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The tree ID of the merge in the destination or target branch.</p>
-    #[doc(hidden)]
     pub tree_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

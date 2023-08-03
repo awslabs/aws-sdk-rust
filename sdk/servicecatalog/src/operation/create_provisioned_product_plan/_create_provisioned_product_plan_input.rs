@@ -8,38 +8,27 @@ pub struct CreateProvisionedProductPlanInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The name of the plan.</p>
-    #[doc(hidden)]
     pub plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The plan type.</p>
-    #[doc(hidden)]
     pub plan_type: ::std::option::Option<crate::types::ProvisionedProductPlanType>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    #[doc(hidden)]
     pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
-    #[doc(hidden)]
     pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    #[doc(hidden)]
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    #[doc(hidden)]
     pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProvisionedProductPlanInput {

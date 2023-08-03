@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultButtonConfiguration {
     /// <p>The background color of the button.</p>
-    #[doc(hidden)]
     pub background_color: ::std::option::Option<::std::string::String>,
     /// <p>The border radius of the button.</p>
-    #[doc(hidden)]
     pub border_radius: ::std::option::Option<i32>,
     /// <p>Action triggered by the button.</p>
-    #[doc(hidden)]
     pub button_action: ::std::option::Option<crate::types::ButtonAction>,
     /// <p>Button destination.</p>
-    #[doc(hidden)]
     pub link: ::std::option::Option<::std::string::String>,
     /// <p>Button text.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The text color of the button.</p>
-    #[doc(hidden)]
     pub text_color: ::std::option::Option<::std::string::String>,
 }
 impl DefaultButtonConfiguration {

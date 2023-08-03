@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputWhitelistRuleCidr {
     /// The IPv4 CIDR to whitelist.
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl InputWhitelistRuleCidr {

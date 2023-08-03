@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SipRuleTargetApplication {
     /// <p>The ID of a rule's target SIP media application.</p>
-    #[doc(hidden)]
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The priority setting of a rule's target SIP media application.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The AWS Region of a rule's target SIP media application.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
 impl SipRuleTargetApplication {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldCustomIconContent {
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
-    #[doc(hidden)]
     pub icon: ::std::option::Option<crate::types::TableFieldIconSetType>,
 }
 impl TableFieldCustomIconContent {

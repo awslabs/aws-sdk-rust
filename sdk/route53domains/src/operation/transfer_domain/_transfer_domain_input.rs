@@ -12,33 +12,24 @@ pub struct TransferDomainInput {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub idn_lang_code: ::std::option::Option<::std::string::String>,
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
     /// <p>Default: 1</p>
-    #[doc(hidden)]
     pub duration_in_years: ::std::option::Option<i32>,
     /// <p>Contains details for the host and glue IP addresses.</p>
-    #[doc(hidden)]
     pub nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
-    #[doc(hidden)]
     pub auth_code: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
-    #[doc(hidden)]
     pub auto_renew: ::std::option::Option<bool>,
     /// <p>Provides detailed contact information.</p>
-    #[doc(hidden)]
     pub admin_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
-    #[doc(hidden)]
     pub registrant_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
-    #[doc(hidden)]
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
     /// owner.".
@@ -46,19 +37,16 @@ pub struct TransferDomainInput {
     /// <p>While some domains may allow different privacy settings per contact, we recommend specifying the same privacy setting for all contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub privacy_protect_admin_contact: ::std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub privacy_protect_registrant_contact: ::std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub privacy_protect_tech_contact: ::std::option::Option<bool>,
 }
 impl TransferDomainInput {

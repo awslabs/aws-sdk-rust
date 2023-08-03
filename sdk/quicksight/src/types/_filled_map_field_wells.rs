@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapFieldWells {
     /// <p>The aggregated field well of the filled map.</p>
-    #[doc(hidden)]
     pub filled_map_aggregated_field_wells: ::std::option::Option<crate::types::FilledMapAggregatedFieldWells>,
 }
 impl FilledMapFieldWells {

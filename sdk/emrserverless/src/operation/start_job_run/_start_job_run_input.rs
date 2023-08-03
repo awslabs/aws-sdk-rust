@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartJobRunInput {
     /// <p>The ID of the application on which to run the job.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The execution role ARN for the job run.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The job driver for the job run.</p>
-    #[doc(hidden)]
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The configuration overrides for the job run.</p>
-    #[doc(hidden)]
     pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     /// <p>The tags assigned to the job run.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
-    #[doc(hidden)]
     pub execution_timeout_minutes: ::std::option::Option<i64>,
     /// <p>The optional job run name. This doesn't have to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl StartJobRunInput {

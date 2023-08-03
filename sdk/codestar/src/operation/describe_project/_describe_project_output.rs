@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeProjectOutput {
     /// <p>The display name for the project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project, if any.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the project was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
-    #[doc(hidden)]
     pub project_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The project creation or deletion status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProjectStatus>,
     _request_id: Option<String>,
 }

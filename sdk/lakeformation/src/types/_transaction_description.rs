@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactionDescription {
     /// <p>The ID of the transaction.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
-    #[doc(hidden)]
     pub transaction_status: ::std::option::Option<crate::types::TransactionStatus>,
     /// <p>The time when the transaction started.</p>
-    #[doc(hidden)]
     pub transaction_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
-    #[doc(hidden)]
     pub transaction_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TransactionDescription {

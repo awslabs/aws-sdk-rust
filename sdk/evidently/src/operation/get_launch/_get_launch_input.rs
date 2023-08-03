@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLaunchInput {
     /// <p>The name or ARN of the project that contains the launch.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch that you want to see the details of.</p>
-    #[doc(hidden)]
     pub launch: ::std::option::Option<::std::string::String>,
 }
 impl GetLaunchInput {

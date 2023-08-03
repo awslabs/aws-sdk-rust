@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubnetCidrReservationInput {
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 or IPV6 CIDR range to reserve.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The type of reservation.</p>
     /// <p>The following are valid values:</p>
@@ -15,16 +13,12 @@ pub struct CreateSubnetCidrReservationInput {
     /// <li> <p> <code>prefix</code>: The Amazon EC2 Prefix Delegation feature assigns the IP addresses to network interfaces that are associated with an instance. For information about Prefix Delegation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation.html">Prefix Delegation for Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
     /// <li> <p> <code>explicit</code>: You manually assign the IP addresses to resources that reside in your subnet. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub reservation_type: ::std::option::Option<crate::types::SubnetCidrReservationType>,
     /// <p>The description to assign to the subnet CIDR reservation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to assign to the subnet CIDR reservation.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateSubnetCidrReservationInput {

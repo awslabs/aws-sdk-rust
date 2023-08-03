@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsupportedTimestamps {
     /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
-    #[doc(hidden)]
     pub total_number_of_unsupported_timestamps: ::std::option::Option<i32>,
 }
 impl UnsupportedTimestamps {

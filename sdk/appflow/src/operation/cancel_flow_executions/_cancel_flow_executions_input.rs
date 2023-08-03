@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelFlowExecutionsInput {
     /// <p>The name of a flow with active runs that you want to cancel.</p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
     /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
-    #[doc(hidden)]
     pub execution_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CancelFlowExecutionsInput {

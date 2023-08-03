@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Engagement {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    #[doc(hidden)]
     pub engagement_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user that started the engagement.</p>
-    #[doc(hidden)]
     pub sender: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the incident that's engaging the contact.</p>
-    #[doc(hidden)]
     pub incident_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the engagement began.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the engagement ended.</p>
-    #[doc(hidden)]
     pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Engagement {

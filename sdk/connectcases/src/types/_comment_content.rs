@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommentContent {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::CommentBodyTextType>,
 }
 impl CommentContent {

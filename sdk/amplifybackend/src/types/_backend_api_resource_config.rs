@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendApiResourceConfig {
     /// <p>Additional authentication methods used to interact with your data models.</p>
-    #[doc(hidden)]
     pub additional_auth_types: ::std::option::Option<::std::vec::Vec<crate::types::BackendApiAuthType>>,
     /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub api_name: ::std::option::Option<::std::string::String>,
     /// <p>The conflict resolution strategy for your data stored in the data models.</p>
-    #[doc(hidden)]
     pub conflict_resolution: ::std::option::Option<crate::types::BackendApiConflictResolution>,
     /// <p>The default authentication type for interacting with the configured data models in your Amplify project.</p>
-    #[doc(hidden)]
     pub default_auth_type: ::std::option::Option<crate::types::BackendApiAuthType>,
     /// <p>The service used to provision and interact with the data model.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The definition of the data model in the annotated transform of the GraphQL schema.</p>
-    #[doc(hidden)]
     pub transform_schema: ::std::option::Option<::std::string::String>,
 }
 impl BackendApiResourceConfig {

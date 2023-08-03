@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkRoutesInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_identifier: ::std::option::Option<crate::types::RouteTableIdentifier>,
     /// <p>An exact CIDR block.</p>
-    #[doc(hidden)]
     pub exact_cidr_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
-    #[doc(hidden)]
     pub longest_prefix_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
-    #[doc(hidden)]
     pub subnet_of_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
-    #[doc(hidden)]
     pub supernet_of_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the prefix lists.</p>
-    #[doc(hidden)]
     pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The route states.</p>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::RouteState>>,
     /// <p>The route types.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<crate::types::RouteType>>,
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    #[doc(hidden)]
     pub destination_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl GetNetworkRoutesInput {

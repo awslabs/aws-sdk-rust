@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmModelVersionSummary {
     /// <p>The name of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    #[doc(hidden)]
     pub alarm_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
@@ -29,10 +23,8 @@ pub struct AlarmModelVersionSummary {
     /// <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>
     /// <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AlarmModelVersionStatus>,
     /// <p> Contains information about the status of the alarm model version. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl AlarmModelVersionSummary {

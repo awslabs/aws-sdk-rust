@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceItem {
     /// <p>The compliance type. For example, Association (for a State Manager association), Patch, or Custom:<code>string</code> are all valid compliance types.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the resource. For a managed node, this is the node ID.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the compliance item. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article; for example: KB4010320.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A title for the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::ComplianceSeverity>,
     /// <p>A summary for the compliance item. The summary includes an execution ID, the execution type (for example, command), and the execution time.</p>
-    #[doc(hidden)]
     pub execution_summary: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceItem {

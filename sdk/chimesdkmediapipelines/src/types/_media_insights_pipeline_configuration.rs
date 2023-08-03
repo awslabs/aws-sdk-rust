@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaInsightsPipelineConfiguration {
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the configuration.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub resource_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Lists the rules that trigger a real-time alert.</p>
-    #[doc(hidden)]
     pub real_time_alert_configuration: ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
     /// <p>The elements in the configuration.</p>
-    #[doc(hidden)]
     pub elements: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
     /// <p>The ID of the configuration.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the configuration was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the configuration was last updated.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MediaInsightsPipelineConfiguration {

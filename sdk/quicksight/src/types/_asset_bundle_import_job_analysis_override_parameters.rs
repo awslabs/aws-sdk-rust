@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobAnalysisOverrideParameters {
     /// <p>The ID of the analysis that you ant to apply overrides to.</p>
-    #[doc(hidden)]
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the analysis.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobAnalysisOverrideParameters {

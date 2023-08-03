@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbClusterInput {
     /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>
     /// <p>Default: 1</p>
@@ -12,16 +11,12 @@ pub struct CreateDbClusterInput {
     /// <ul>
     /// <li> <p>Must be a value from 1 to 35</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -31,43 +26,33 @@ pub struct CreateDbClusterInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p> The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this DB cluster.</p>
     /// <p>Valid Values: <code>neptune</code> </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine to use for the new DB cluster.</p>
     /// <p>Example: <code>1.0.2.1</code> </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the instances in the DB cluster accept connections.</p>
     /// <p> Default: <code>8182</code> </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
@@ -78,23 +63,18 @@ pub struct CreateDbClusterInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.</p>
-    #[doc(hidden)]
     pub replication_source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the new DB cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specifies whether the DB cluster is encrypted.</p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon KMS key identifier for an encrypted DB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -105,27 +85,20 @@ pub struct CreateDbClusterInput {
     /// </ul>
     /// <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
     /// <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is not currently supported.</p>
-    #[doc(hidden)]
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>
     /// <p>Default: <code>false</code>.</p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    #[doc(hidden)]
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInput {

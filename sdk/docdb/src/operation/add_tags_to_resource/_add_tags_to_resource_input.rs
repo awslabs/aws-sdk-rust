@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsToResourceInput {
     /// <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsToResourceInput {

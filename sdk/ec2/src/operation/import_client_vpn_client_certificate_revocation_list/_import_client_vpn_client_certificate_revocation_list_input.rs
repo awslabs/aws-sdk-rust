@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportClientVpnClientCertificateRevocationListInput {
     /// <p>The ID of the Client VPN endpoint to which the client certificate revocation list applies.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The client certificate revocation list file. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a Client Certificate Revocation List</a> in the <i>Client VPN Administrator Guide</i>.</p>
-    #[doc(hidden)]
     pub certificate_revocation_list: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ImportClientVpnClientCertificateRevocationListInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePartitionIndexInput {
     /// <p>The catalog ID where the table resides.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of a table in which you want to create a partition index.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
-    #[doc(hidden)]
     pub partition_index: ::std::option::Option<crate::types::PartitionIndex>,
 }
 impl CreatePartitionIndexInput {

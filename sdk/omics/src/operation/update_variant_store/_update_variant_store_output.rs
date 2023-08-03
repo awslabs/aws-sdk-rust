@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVariantStoreOutput {
     /// <p>The store's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The store's genome reference.</p>
-    #[doc(hidden)]
     pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>The store's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StoreStatus>,
     /// <p>The store's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The store's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>When the store was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the store was updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

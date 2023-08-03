@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StoreImageTaskResult {
     /// <p>The ID of the AMI that is being stored.</p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The time the task started.</p>
-    #[doc(hidden)]
     pub task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stored AMI object in the bucket.</p>
-    #[doc(hidden)]
     pub s3object_key: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the task as a percentage.</p>
-    #[doc(hidden)]
     pub progress_percentage: ::std::option::Option<i32>,
     /// <p>The state of the store task (<code>InProgress</code>, <code>Completed</code>, or <code>Failed</code>).</p>
-    #[doc(hidden)]
     pub store_task_state: ::std::option::Option<::std::string::String>,
     /// <p>If the tasks fails, the reason for the failure is returned. If the task succeeds, <code>null</code> is returned.</p>
-    #[doc(hidden)]
     pub store_task_failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl StoreImageTaskResult {

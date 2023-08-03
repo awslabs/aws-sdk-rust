@@ -5,101 +5,70 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The unique identifier for the cluster.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status details about the cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClusterStatus>,
     /// <p>Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
-    #[doc(hidden)]
     pub ec2_instance_attributes: ::std::option::Option<crate::types::Ec2InstanceAttributes>,
     /// <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
-    #[doc(hidden)]
     pub instance_collection_type: ::std::option::Option<crate::types::InstanceCollectionType>,
     /// <p>The path to the Amazon S3 location where logs for this cluster are stored.</p>
-    #[doc(hidden)]
     pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p> The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
-    #[doc(hidden)]
     pub log_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The AMI version requested for this cluster.</p>
-    #[doc(hidden)]
     pub requested_ami_version: ::std::option::Option<::std::string::String>,
     /// <p>The AMI version running on this cluster.</p>
-    #[doc(hidden)]
     pub running_ami_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the cluster should terminate after completing all steps.</p>
-    #[doc(hidden)]
     pub auto_terminate: bool,
     /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
-    #[doc(hidden)]
     pub termination_protected: bool,
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
-    #[doc(hidden)]
     pub visible_to_all_users: bool,
     /// <p>The applications installed on this cluster.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     /// <p>A list of tags associated with a cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
-    #[doc(hidden)]
     pub normalized_instance_hours: ::std::option::Option<i32>,
     /// <p>The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public subnet, this is the public DNS name.</p>
-    #[doc(hidden)]
     pub master_public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR cluster.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The name of the security configuration applied to the cluster.</p>
-    #[doc(hidden)]
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>
-    #[doc(hidden)]
     pub auto_scaling_role: ::std::option::Option<::std::string::String>,
     /// <p>The way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
-    #[doc(hidden)]
     pub scale_down_behavior: ::std::option::Option<crate::types::ScaleDownBehavior>,
     /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
-    #[doc(hidden)]
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
-    #[doc(hidden)]
     pub ebs_root_volume_size: ::std::option::Option<i32>,
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI package repositories apply when an instance boots using the AMI.</p>
-    #[doc(hidden)]
     pub repo_upgrade_on_boot: ::std::option::Option<crate::types::RepoUpgradeOnBoot>,
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    #[doc(hidden)]
     pub kerberos_attributes: ::std::option::Option<crate::types::KerberosAttributes>,
     /// <p>The Amazon Resource Name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of steps that can be executed concurrently.</p>
-    #[doc(hidden)]
     pub step_concurrency_level: ::std::option::Option<i32>,
     /// <p>Placement group configured for an Amazon EMR cluster.</p>
-    #[doc(hidden)]
     pub placement_groups: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>,
     /// <p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>
-    #[doc(hidden)]
     pub os_release_label: ::std::option::Option<::std::string::String>,
 }
 impl Cluster {

@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDetectorVersionStatusInput {
     /// <p>The detector ID. </p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version ID. </p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The new status.</p>
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetectorVersionStatus>,
 }
 impl UpdateDetectorVersionStatusInput {

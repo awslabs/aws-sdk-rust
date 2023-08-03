@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordBatchResponseEntry {
     /// <p>The ID of the record.</p>
-    #[doc(hidden)]
     pub record_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code for an individual record result.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message for an individual record result.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl PutRecordBatchResponseEntry {

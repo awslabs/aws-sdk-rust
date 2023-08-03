@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutSkillAuthorizationInput {
     /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
-    #[doc(hidden)]
     pub authorization_result: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unique identifier of a skill.</p>
-    #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
     /// <p>The room that the skill is authorized for.</p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutSkillAuthorizationInput {

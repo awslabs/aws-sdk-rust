@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Configuration {
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
-    #[doc(hidden)]
     pub lex: ::std::option::Option<crate::types::LexConfiguration>,
 }
 impl Configuration {

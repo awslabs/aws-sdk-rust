@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteHasOutOfScopeEndpointViolation {
     /// <p>The ID of the subnet associated with the route that violates the policy scope.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the route that violates the policy scope.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of routes that violate the route table.</p>
-    #[doc(hidden)]
     pub violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>The subnet's Availability Zone.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet's Availability Zone.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The route table associated with the current firewall subnet.</p>
-    #[doc(hidden)]
     pub current_firewall_subnet_route_table: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the firewall subnet.</p>
-    #[doc(hidden)]
     pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of firewall subnet routes.</p>
-    #[doc(hidden)]
     pub firewall_subnet_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>The ID of the Internet Gateway.</p>
-    #[doc(hidden)]
     pub internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The current route table associated with the Internet Gateway.</p>
-    #[doc(hidden)]
     pub current_internet_gateway_route_table: ::std::option::Option<::std::string::String>,
     /// <p>The routes in the route table associated with the Internet Gateway.</p>
-    #[doc(hidden)]
     pub internet_gateway_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
 }
 impl RouteHasOutOfScopeEndpointViolation {

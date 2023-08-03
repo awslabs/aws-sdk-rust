@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
-    #[doc(hidden)]
     pub artifact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ArtifactSource>,
 }
 impl DeleteArtifactInput {

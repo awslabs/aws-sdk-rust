@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleNamesByTargetInput {
     /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
-    #[doc(hidden)]
     pub event_bus_name: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListRuleNamesByTargetInput {

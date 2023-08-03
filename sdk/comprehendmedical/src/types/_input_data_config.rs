@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The path to the input data files in the S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl InputDataConfig {

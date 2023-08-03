@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureLogsForChannelOutput {
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The types of logs collected.</p>
-    #[doc(hidden)]
     pub log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
     _request_id: Option<String>,
 }

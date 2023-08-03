@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteQueryDefinitionOutput {
     /// <p>A value of TRUE indicates that the operation succeeded. FALSE indicates that the operation failed.</p>
-    #[doc(hidden)]
     pub success: bool,
     _request_id: Option<String>,
 }

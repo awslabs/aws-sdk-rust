@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentTemplateFilter {
     /// <p>Include <code>templateName</code> to filter search for a template name.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentTemplateFilter {

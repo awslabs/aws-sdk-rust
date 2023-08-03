@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyQualifierInfo {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
-    #[doc(hidden)]
     pub policy_qualifier_id: ::std::option::Option<crate::types::PolicyQualifierId>,
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
-    #[doc(hidden)]
     pub qualifier: ::std::option::Option<crate::types::Qualifier>,
 }
 impl PolicyQualifierInfo {

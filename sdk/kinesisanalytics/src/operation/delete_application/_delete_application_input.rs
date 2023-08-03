@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
-    #[doc(hidden)]
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationInput {

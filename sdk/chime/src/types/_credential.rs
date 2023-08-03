@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Credential {
     /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
 }
 impl Credential {

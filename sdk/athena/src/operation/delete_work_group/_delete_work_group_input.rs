@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkGroupInput {
     /// <p>The unique name of the workgroup to delete.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
-    #[doc(hidden)]
     pub recursive_delete_option: ::std::option::Option<bool>,
 }
 impl DeleteWorkGroupInput {

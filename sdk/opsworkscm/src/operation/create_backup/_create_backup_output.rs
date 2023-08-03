@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackupOutput {
     /// <p>Backup created by request.</p>
-    #[doc(hidden)]
     pub backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,
 }

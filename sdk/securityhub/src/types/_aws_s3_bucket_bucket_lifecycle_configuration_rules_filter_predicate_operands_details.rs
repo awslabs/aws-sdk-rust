@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
     /// <p>Prefix text for matching objects.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A tag that is assigned to matching objects.</p>
-    #[doc(hidden)]
     pub tag: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails>,
     /// <p>The type of filter value. Valid values are <code>LifecyclePrefixPredicate</code> or <code>LifecycleTagPredicate</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {

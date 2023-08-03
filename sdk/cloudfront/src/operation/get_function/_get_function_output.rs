@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetFunctionOutput {
     /// <p>The function code of a CloudFront function.</p>
-    #[doc(hidden)]
     pub function_code: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The content type (media type) of the response.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

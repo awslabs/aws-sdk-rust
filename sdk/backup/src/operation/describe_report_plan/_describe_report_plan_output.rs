@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReportPlanOutput {
     /// <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
-    #[doc(hidden)]
     pub report_plan: ::std::option::Option<crate::types::ReportPlan>,
     _request_id: Option<String>,
 }

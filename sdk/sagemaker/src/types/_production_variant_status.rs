@@ -12,13 +12,10 @@ pub struct ProductionVariantStatus {
     /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
     /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VariantStatus>,
     /// <p>A message that describes the status of the production variant.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the current status change.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProductionVariantStatus {

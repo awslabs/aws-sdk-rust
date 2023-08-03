@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutHypervisorPropertyMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    #[doc(hidden)]
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    #[doc(hidden)]
     pub vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutHypervisorPropertyMappingsInput {

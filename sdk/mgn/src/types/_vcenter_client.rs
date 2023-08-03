@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VcenterClient {
     /// <p>ID of vCenter client.</p>
-    #[doc(hidden)]
     pub vcenter_client_id: ::std::option::Option<::std::string::String>,
     /// <p>Arn of vCenter client.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Hostname of vCenter client .</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>Vcenter UUID of vCenter client.</p>
-    #[doc(hidden)]
     pub vcenter_uuid: ::std::option::Option<::std::string::String>,
     /// <p>Datacenter name of vCenter client.</p>
-    #[doc(hidden)]
     pub datacenter_name: ::std::option::Option<::std::string::String>,
     /// <p>Last seen time of vCenter client.</p>
-    #[doc(hidden)]
     pub last_seen_datetime: ::std::option::Option<::std::string::String>,
     /// <p>Tags for Source Server of vCenter client.</p>
-    #[doc(hidden)]
     pub source_server_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Tags for vCenter client.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl VcenterClient {

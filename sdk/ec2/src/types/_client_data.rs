@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientData {
     /// <p>A user-defined comment about the disk upload.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The time that the disk upload ends.</p>
-    #[doc(hidden)]
     pub upload_end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size of the uploaded disk image, in GiB.</p>
-    #[doc(hidden)]
     pub upload_size: ::std::option::Option<f64>,
     /// <p>The time that the disk upload starts.</p>
-    #[doc(hidden)]
     pub upload_start: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClientData {

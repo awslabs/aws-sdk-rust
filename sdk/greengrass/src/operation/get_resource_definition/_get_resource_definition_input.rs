@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceDefinitionInput {
     /// The ID of the resource definition.
-    #[doc(hidden)]
     pub resource_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceDefinitionInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePrincipalMappingOutput {
     /// <p>Shows the identifier of the index to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the identifier of the group to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct DescribePrincipalMappingOutput {
     /// <li> <p>Ordering ID—the latest action that should process and apply after other actions.</p> </li>
     /// <li> <p>Failure reason—the reason an action could not be processed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub group_ordering_id_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
     _request_id: Option<String>,
 }

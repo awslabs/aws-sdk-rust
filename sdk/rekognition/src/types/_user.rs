@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct User {
     /// <p> A provided ID for the User. Unique within the collection.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
-    #[doc(hidden)]
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
 }
 impl User {

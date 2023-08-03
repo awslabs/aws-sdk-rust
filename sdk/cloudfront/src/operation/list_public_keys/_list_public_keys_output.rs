@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPublicKeysOutput {
     /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
-    #[doc(hidden)]
     pub public_key_list: ::std::option::Option<crate::types::PublicKeyList>,
     _request_id: Option<String>,
 }

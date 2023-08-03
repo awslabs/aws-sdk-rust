@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
-    #[doc(hidden)]
     pub dkim_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>>,
     _request_id: Option<String>,
 }

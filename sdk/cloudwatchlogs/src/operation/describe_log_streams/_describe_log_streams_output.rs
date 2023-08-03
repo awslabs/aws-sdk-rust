@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLogStreamsOutput {
     /// <p>The log streams.</p>
-    #[doc(hidden)]
     pub log_streams: ::std::option::Option<::std::vec::Vec<crate::types::LogStream>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

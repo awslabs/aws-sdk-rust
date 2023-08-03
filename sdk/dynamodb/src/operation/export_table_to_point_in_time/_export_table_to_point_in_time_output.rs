@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTableToPointInTimeOutput {
     /// <p>Contains a description of the table export.</p>
-    #[doc(hidden)]
     pub export_description: ::std::option::Option<crate::types::ExportDescription>,
     _request_id: Option<String>,
 }

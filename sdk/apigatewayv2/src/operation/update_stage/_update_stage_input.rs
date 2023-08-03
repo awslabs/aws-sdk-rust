@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStageInput {
     /// <p>Settings for logging access in this stage.</p>
-    #[doc(hidden)]
     pub access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-    #[doc(hidden)]
     pub auto_deploy: ::std::option::Option<bool>,
     /// <p>The identifier of a client certificate for a Stage.</p>
-    #[doc(hidden)]
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The default route settings for the stage.</p>
-    #[doc(hidden)]
     pub default_route_settings: ::std::option::Option<crate::types::RouteSettings>,
     /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The description for the API stage.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Route settings for the stage.</p>
-    #[doc(hidden)]
     pub route_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>,
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    #[doc(hidden)]
     pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateStageInput {

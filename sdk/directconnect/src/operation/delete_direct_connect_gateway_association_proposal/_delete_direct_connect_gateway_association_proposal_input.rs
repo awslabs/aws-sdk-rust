@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the proposal.</p>
-    #[doc(hidden)]
     pub proposal_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDirectConnectGatewayAssociationProposalInput {

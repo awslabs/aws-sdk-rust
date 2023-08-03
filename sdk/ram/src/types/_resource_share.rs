@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
-    #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource share.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
-    #[doc(hidden)]
     pub owning_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
     /// <ul>
     /// <li> <p> <code>True</code> – the resource share can be shared with any Amazon Web Services account.</p> </li>
     /// <li> <p> <code>False</code> – the resource share can be shared with only accounts in the same organization as the account that owns the resource share.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub allow_external_principals: ::std::option::Option<bool>,
     /// <p>The current status of the resource share.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceShareStatus>,
     /// <p>A message about the status of the resource share.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The date and time when the resource share was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the resource share was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
@@ -41,7 +32,6 @@ pub struct ResourceShare {
     /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
     /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub feature_set: ::std::option::Option<crate::types::ResourceShareFeatureSet>,
 }
 impl ResourceShare {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ContactDetail {
     /// <p>First name of contact.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>Last name of contact.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
     /// <ul>
@@ -16,42 +14,30 @@ pub struct ContactDetail {
     /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
     /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub contact_type: ::std::option::Option<crate::types::ContactType>,
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
-    #[doc(hidden)]
     pub organization_name: ::std::option::Option<::std::string::String>,
     /// <p>First line of the contact's address.</p>
-    #[doc(hidden)]
     pub address_line1: ::std::option::Option<::std::string::String>,
     /// <p>Second line of contact's address, if any.</p>
-    #[doc(hidden)]
     pub address_line2: ::std::option::Option<::std::string::String>,
     /// <p>The city of the contact's address.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The state or province of the contact's city.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>Code for the country of the contact's address.</p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<crate::types::CountryCode>,
     /// <p>The zip or postal code of the contact's address.</p>
-    #[doc(hidden)]
     pub zip_code: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the contact.</p>
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>Email address of the contact.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>Fax number of the contact.</p>
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
-    #[doc(hidden)]
     pub fax: ::std::option::Option<::std::string::String>,
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    #[doc(hidden)]
     pub extra_params: ::std::option::Option<::std::vec::Vec<crate::types::ExtraParam>>,
 }
 impl ContactDetail {

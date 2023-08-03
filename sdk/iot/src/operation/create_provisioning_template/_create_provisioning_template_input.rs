@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisioningTemplateInput {
     /// <p>The name of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The JSON formatted contents of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>True to enable the provisioning template, otherwise false.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    #[doc(hidden)]
     pub provisioning_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    #[doc(hidden)]
     pub pre_provisioning_hook: ::std::option::Option<crate::types::ProvisioningHook>,
     /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TemplateType>,
 }
 impl CreateProvisioningTemplateInput {

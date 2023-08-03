@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableLdapsInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LdapsType>,
 }
 impl DisableLdapsInput {

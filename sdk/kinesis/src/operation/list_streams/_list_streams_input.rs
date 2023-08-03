@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamsInput {
     /// <p>The maximum number of streams to list. The default value is 100. If you specify a value greater than 100, at most 100 results are returned.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The name of the stream to start the list with.</p>
-    #[doc(hidden)]
     pub exclusive_start_stream_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListStreamsInput {

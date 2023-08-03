@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Outposts.</p>
-    #[doc(hidden)]
     pub outposts_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC CIDR committed by this endpoint.</p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The status of the endpoint.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EndpointStatus>,
     /// <p>The time the endpoint was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The network interface of the endpoint.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>The ID of the VPC used for the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet used for the endpoint.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group used for the endpoint.</p>
-    #[doc(hidden)]
     pub security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of connectivity used to access the Amazon S3 on Outposts endpoint.</p>
-    #[doc(hidden)]
     pub access_type: ::std::option::Option<crate::types::EndpointAccessType>,
     /// <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
-    #[doc(hidden)]
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The failure reason, if any, for a create or delete endpoint operation.</p>
-    #[doc(hidden)]
     pub failed_reason: ::std::option::Option<crate::types::FailedReason>,
 }
 impl Endpoint {

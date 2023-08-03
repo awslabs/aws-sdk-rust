@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreFromSnapshotInput {
     /// <p>The name of the namespace to restore the snapshot to.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup used to restore the snapshot.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.</p>
     /// <p>The format of the ARN is arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
-    #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the snapshot.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromSnapshotInput {

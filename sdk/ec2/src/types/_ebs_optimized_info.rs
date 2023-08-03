@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsOptimizedInfo {
     /// <p>The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
-    #[doc(hidden)]
     pub baseline_bandwidth_in_mbps: ::std::option::Option<i32>,
     /// <p>The baseline throughput performance for an EBS-optimized instance type, in MB/s.</p>
-    #[doc(hidden)]
     pub baseline_throughput_in_m_bps: ::std::option::Option<f64>,
     /// <p>The baseline input/output storage operations per seconds for an EBS-optimized instance type.</p>
-    #[doc(hidden)]
     pub baseline_iops: ::std::option::Option<i32>,
     /// <p>The maximum bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
-    #[doc(hidden)]
     pub maximum_bandwidth_in_mbps: ::std::option::Option<i32>,
     /// <p>The maximum throughput performance for an EBS-optimized instance type, in MB/s.</p>
-    #[doc(hidden)]
     pub maximum_throughput_in_m_bps: ::std::option::Option<f64>,
     /// <p>The maximum input/output storage operations per second for an EBS-optimized instance type.</p>
-    #[doc(hidden)]
     pub maximum_iops: ::std::option::Option<i32>,
 }
 impl EbsOptimizedInfo {

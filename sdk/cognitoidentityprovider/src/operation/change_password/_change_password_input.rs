@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChangePasswordInput {
     /// <p>The old password.</p>
-    #[doc(hidden)]
     pub previous_password: ::std::option::Option<::std::string::String>,
     /// <p>The new password.</p>
-    #[doc(hidden)]
     pub proposed_password: ::std::option::Option<::std::string::String>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl ChangePasswordInput {

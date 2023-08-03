@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GitHubDocumentCrawlProperties {
     /// <p> <code>TRUE</code> to index all files with a repository.</p>
-    #[doc(hidden)]
     pub crawl_repository_documents: bool,
     /// <p> <code>TRUE</code> to index all issues within a repository.</p>
-    #[doc(hidden)]
     pub crawl_issue: bool,
     /// <p> <code>TRUE</code> to index all comments on issues.</p>
-    #[doc(hidden)]
     pub crawl_issue_comment: bool,
     /// <p> <code>TRUE</code> to include all comment attachments for issues.</p>
-    #[doc(hidden)]
     pub crawl_issue_comment_attachment: bool,
     /// <p> <code>TRUE</code> to index all pull requests within a repository.</p>
-    #[doc(hidden)]
     pub crawl_pull_request: bool,
     /// <p> <code>TRUE</code> to index all comments on pull requests.</p>
-    #[doc(hidden)]
     pub crawl_pull_request_comment: bool,
     /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
-    #[doc(hidden)]
     pub crawl_pull_request_comment_attachment: bool,
 }
 impl GitHubDocumentCrawlProperties {

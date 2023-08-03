@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveRegionInput {
     /// <p>The identifier of the directory for which you want to remove Region replication.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveRegionInput {

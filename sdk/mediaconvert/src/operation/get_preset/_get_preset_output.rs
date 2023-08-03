@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPresetOutput {
     /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
-    #[doc(hidden)]
     pub preset: ::std::option::Option<crate::types::Preset>,
     _request_id: Option<String>,
 }

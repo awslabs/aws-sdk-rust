@@ -6,13 +6,10 @@ pub struct GetSystemTemplateRevisionsInput {
     /// <p>The ID of the system template.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetSystemTemplateRevisionsInput {

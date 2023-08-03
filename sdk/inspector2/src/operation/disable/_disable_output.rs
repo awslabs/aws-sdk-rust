@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableOutput {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
-    #[doc(hidden)]
     pub failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,
     _request_id: Option<String>,
 }

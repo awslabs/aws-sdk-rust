@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionOAuthRequestParameters {
     /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
-    #[doc(hidden)]
     pub client_parameters: ::std::option::Option<crate::types::CreateConnectionOAuthClientRequestParameters>,
     /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
-    #[doc(hidden)]
     pub authorization_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The method to use for the authorization request.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<crate::types::ConnectionOAuthHttpMethod>,
     /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
-    #[doc(hidden)]
     pub o_auth_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
 impl CreateConnectionOAuthRequestParameters {

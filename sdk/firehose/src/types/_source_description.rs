@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceDescription {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
-    #[doc(hidden)]
     pub kinesis_stream_source_description: ::std::option::Option<crate::types::KinesisStreamSourceDescription>,
 }
 impl SourceDescription {

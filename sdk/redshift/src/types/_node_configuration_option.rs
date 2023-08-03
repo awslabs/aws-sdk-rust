@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeConfigurationOption {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes.</p>
-    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The estimated disk utilizaton percentage.</p>
-    #[doc(hidden)]
     pub estimated_disk_utilization_percent: ::std::option::Option<f64>,
     /// <p>The category of the node configuration recommendation.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::Mode>,
 }
 impl NodeConfigurationOption {

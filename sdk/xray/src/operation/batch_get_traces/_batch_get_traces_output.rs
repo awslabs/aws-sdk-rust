@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetTracesOutput {
     /// <p>Full traces for the specified requests.</p>
-    #[doc(hidden)]
     pub traces: ::std::option::Option<::std::vec::Vec<crate::types::Trace>>,
     /// <p>Trace IDs of requests that haven't been processed.</p>
-    #[doc(hidden)]
     pub unprocessed_trace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

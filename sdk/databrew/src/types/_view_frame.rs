@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewFrame {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
-    #[doc(hidden)]
     pub start_column_index: ::std::option::Option<i32>,
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
-    #[doc(hidden)]
     pub column_range: ::std::option::Option<i32>,
     /// <p>A list of columns to hide in the view frame.</p>
-    #[doc(hidden)]
     pub hidden_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The starting index for the range of rows to return in the view frame.</p>
-    #[doc(hidden)]
     pub start_row_index: ::std::option::Option<i32>,
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
-    #[doc(hidden)]
     pub row_range: ::std::option::Option<i32>,
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
-    #[doc(hidden)]
     pub analytics: ::std::option::Option<crate::types::AnalyticsMode>,
 }
 impl ViewFrame {

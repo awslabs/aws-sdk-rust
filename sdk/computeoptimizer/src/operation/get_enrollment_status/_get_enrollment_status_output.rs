@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnrollmentStatusOutput {
     /// <p>The enrollment status of the account.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The reason for the enrollment status of the account.</p>
     /// <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Confirms the enrollment status of member accounts of the organization, if the account is a management account of an organization.</p>
-    #[doc(hidden)]
     pub member_accounts_enrolled: bool,
     /// <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
-    #[doc(hidden)]
     pub number_of_member_accounts_opted_in: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

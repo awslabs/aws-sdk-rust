@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SankeyDiagramChartConfiguration {
     /// <p>The field well configuration of a sankey diagram.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::SankeyDiagramFieldWells>,
     /// <p>The sort configuration of a sankey diagram.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::SankeyDiagramSortConfiguration>,
     /// <p>The data label configuration of a sankey diagram.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
 }
 impl SankeyDiagramChartConfiguration {

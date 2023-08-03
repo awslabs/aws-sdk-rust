@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGeneratedCodeJobOutput {
     /// <p>Details about the generated code job.</p>
-    #[doc(hidden)]
     pub generated_code_job: ::std::option::Option<crate::types::GeneratedCodeJobDetails>,
     _request_id: Option<String>,
 }

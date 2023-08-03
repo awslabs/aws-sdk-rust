@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteClusterInput {

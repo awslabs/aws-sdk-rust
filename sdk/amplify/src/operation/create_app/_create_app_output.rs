@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
-    #[doc(hidden)]
     pub app: ::std::option::Option<crate::types::App>,
     _request_id: Option<String>,
 }

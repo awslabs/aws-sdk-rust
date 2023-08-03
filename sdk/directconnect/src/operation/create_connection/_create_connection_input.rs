@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionInput {
     /// <p>The location of the connection.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The bandwidth of the connection.</p>
-    #[doc(hidden)]
     pub bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the LAG.</p>
-    #[doc(hidden)]
     pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the lag.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the requested connection.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
-    #[doc(hidden)]
     pub request_mac_sec: ::std::option::Option<bool>,
 }
 impl CreateConnectionInput {

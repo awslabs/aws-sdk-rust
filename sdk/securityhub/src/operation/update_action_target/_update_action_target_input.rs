@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateActionTargetInput {
     /// <p>The ARN of the custom action target to update.</p>
-    #[doc(hidden)]
     pub action_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the custom action target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description for the custom action target.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateActionTargetInput {

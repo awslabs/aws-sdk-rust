@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportVolumeOutput {
     /// <p>Information about the conversion task.</p>
-    #[doc(hidden)]
     pub conversion_task: ::std::option::Option<crate::types::ConversionTask>,
     _request_id: Option<String>,
 }

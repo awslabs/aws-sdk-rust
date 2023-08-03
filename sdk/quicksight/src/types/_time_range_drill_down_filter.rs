@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeRangeDrillDownFilter {
     /// <p>The column that the filter is applied to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The minimum value for the filter value range.</p>
-    #[doc(hidden)]
     pub range_minimum: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum value for the filter value range.</p>
-    #[doc(hidden)]
     pub range_maximum: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
 }
 impl TimeRangeDrillDownFilter {

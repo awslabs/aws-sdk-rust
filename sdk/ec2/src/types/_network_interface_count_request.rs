@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfaceCountRequest {
     /// <p>The minimum number of network interfaces. To specify no minimum limit, omit this parameter.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum number of network interfaces. To specify no maximum limit, omit this parameter.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl NetworkInterfaceCountRequest {

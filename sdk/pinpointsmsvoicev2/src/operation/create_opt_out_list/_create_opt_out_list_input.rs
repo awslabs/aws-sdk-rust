@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOptOutListInput {
     /// <p>The name of the new OptOutList.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateOptOutListInput {

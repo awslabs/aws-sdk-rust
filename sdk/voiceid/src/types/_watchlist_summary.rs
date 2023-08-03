@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WatchlistSummary {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the watchlist.</p>
-    #[doc(hidden)]
     pub watchlist_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the watchlist.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the watchlist.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the specified watchlist is the default watchlist of a domain.</p>
-    #[doc(hidden)]
     pub default_watchlist: bool,
     /// <p>The timestamp of when the watchlist was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the watchlist was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl WatchlistSummary {

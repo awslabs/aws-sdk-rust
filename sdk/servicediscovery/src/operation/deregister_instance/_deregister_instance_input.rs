@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterInstanceInput {
     /// <p>The ID of the service that the instance is associated with.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for <code>Id</code> in the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterInstanceInput {

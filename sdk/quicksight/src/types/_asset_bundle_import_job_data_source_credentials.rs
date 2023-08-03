@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssetBundleImportJobDataSourceCredentials {
     /// <p>A username and password credential pair to be used to create the imported data source. Keep this field blank if you are using a Secrets Manager secret to provide credentials.</p>
-    #[doc(hidden)]
     pub credential_pair: ::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentialPair>,
     /// <p>The ARN of the Secrets Manager secret that's used to create the imported data source. Keep this field blank, unless you are using a secret in place of a credential pair.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobDataSourceCredentials {

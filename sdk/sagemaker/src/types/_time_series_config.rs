@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesConfig {
     /// <p>The name of the column representing the target variable that you want to predict for each item in your dataset. The data type of the target variable must be numerical.</p>
-    #[doc(hidden)]
     pub target_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>
-    #[doc(hidden)]
     pub timestamp_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column that represents the set of item identifiers for which you want to predict the target value.</p>
-    #[doc(hidden)]
     pub item_identifier_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of columns names that can be grouped with the item identifier column to create a composite key for which a target value is predicted.</p>
-    #[doc(hidden)]
     pub grouping_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TimeSeriesConfig {

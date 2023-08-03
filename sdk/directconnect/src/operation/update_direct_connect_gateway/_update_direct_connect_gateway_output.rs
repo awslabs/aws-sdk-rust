@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayOutput {
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway: ::std::option::Option<crate::types::DirectConnectGateway>,
     _request_id: Option<String>,
 }

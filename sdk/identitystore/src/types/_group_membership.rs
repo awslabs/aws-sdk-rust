@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
-    #[doc(hidden)]
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-    #[doc(hidden)]
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a group in the identity store.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<crate::types::MemberId>,
 }
 impl GroupMembership {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectDominantLanguageInput {
     /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl DetectDominantLanguageInput {

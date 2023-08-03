@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStageOutput {
     /// <p>The identifier of the Deployment that the stage points to.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a client certificate for an API stage.</p>
-    #[doc(hidden)]
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The stage's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
-    #[doc(hidden)]
     pub cache_cluster_enabled: bool,
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
-    #[doc(hidden)]
     pub cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
-    #[doc(hidden)]
     pub cache_cluster_status: ::std::option::Option<crate::types::CacheClusterStatus>,
     /// <p>A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. </p>
-    #[doc(hidden)]
     pub method_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodSetting>>,
     /// <p>A map that defines the stage variables for a Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the associated API documentation.</p>
-    #[doc(hidden)]
     pub documentation_version: ::std::option::Option<::std::string::String>,
     /// <p>Settings for logging access in this stage.</p>
-    #[doc(hidden)]
     pub access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     /// <p>Settings for the canary deployment in this stage.</p>
-    #[doc(hidden)]
     pub canary_settings: ::std::option::Option<crate::types::CanarySettings>,
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
-    #[doc(hidden)]
     pub tracing_enabled: bool,
     /// <p>The ARN of the WebAcl associated with the Stage.</p>
-    #[doc(hidden)]
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp when the stage was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the stage last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

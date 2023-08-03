@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceProfileDetectionsInput {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    #[doc(hidden)]
     pub suppress_data_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>>,
 }
 impl UpdateResourceProfileDetectionsInput {

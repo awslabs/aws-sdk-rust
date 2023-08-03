@@ -5,7 +5,6 @@
 pub struct DeleteDbClusterSnapshotOutput {
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot: ::std::option::Option<crate::types::DbClusterSnapshot>,
     _request_id: Option<String>,
 }

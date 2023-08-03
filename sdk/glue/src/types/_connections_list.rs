@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionsList {
     /// <p>A list of connections used by the job.</p>
-    #[doc(hidden)]
     pub connections: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectionsList {

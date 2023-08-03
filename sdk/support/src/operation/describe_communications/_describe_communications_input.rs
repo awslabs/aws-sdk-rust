@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCommunicationsInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    #[doc(hidden)]
     pub before_time: ::std::option::Option<::std::string::String>,
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    #[doc(hidden)]
     pub after_time: ::std::option::Option<::std::string::String>,
     /// <p>A resumption point for pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return before paginating.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeCommunicationsInput {

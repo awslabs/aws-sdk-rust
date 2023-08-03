@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableFieldOption {
     /// <p>The field ID of the pivot table field.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom label of the pivot table field.</p>
-    #[doc(hidden)]
     pub custom_label: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of the pivot table field.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl PivotTableFieldOption {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVpceConfigurationOutput {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
-    #[doc(hidden)]
     pub vpce_configuration: ::std::option::Option<crate::types::VpceConfiguration>,
     _request_id: Option<String>,
 }

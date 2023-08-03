@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operation {
     /// <p>The ID of the operation that you want to get information about.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the operation that's associated with the specified ID.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The status of the operation. Values include the following:</p>
     /// <dl>
@@ -37,10 +35,8 @@ pub struct Operation {
     /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
@@ -52,13 +48,10 @@ pub struct Operation {
     /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
     /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the target entity that's associated with the operation:</p>
     /// <dl>
@@ -81,7 +74,6 @@ pub struct Operation {
     /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::collections::HashMap<crate::types::OperationTargetType, ::std::string::String>>,
 }
 impl Operation {

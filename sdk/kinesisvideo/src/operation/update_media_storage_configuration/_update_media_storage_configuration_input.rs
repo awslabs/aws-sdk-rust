@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMediaStorageConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    #[doc(hidden)]
     pub media_storage_configuration: ::std::option::Option<crate::types::MediaStorageConfiguration>,
 }
 impl UpdateMediaStorageConfigurationInput {

@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbProxyTarget {
     /// <p>The Amazon Resource Name (ARN) for the RDS DB instance or Aurora DB cluster.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The writer endpoint for the RDS DB instance or Aurora DB cluster.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the target represents an RDS DB instance.</p>
-    #[doc(hidden)]
     pub tracked_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier representing the target. It can be the instance identifier for an RDS DB instance, or the cluster identifier for an Aurora DB cluster.</p>
-    #[doc(hidden)]
     pub rds_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The port that the RDS Proxy uses to connect to the target RDS DB instance or Aurora DB cluster.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>Specifies the kind of database, such as an RDS DB instance or an Aurora DB cluster, that the target represents.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TargetType>,
     /// <p>A value that indicates whether the target of the proxy can be used for read/write or read-only operations.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::TargetRole>,
     /// <p>Information about the connection health of the RDS Proxy target.</p>
-    #[doc(hidden)]
     pub target_health: ::std::option::Option<crate::types::TargetHealth>,
 }
 impl DbProxyTarget {

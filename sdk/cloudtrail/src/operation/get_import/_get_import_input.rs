@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImportInput {
     /// <p> The ID for the import. </p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
 }
 impl GetImportInput {

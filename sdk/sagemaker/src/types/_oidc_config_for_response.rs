@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OidcConfigForResponse {
     /// <p>The OIDC IdP client ID used to configure your private workforce.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC IdP issuer used to configure your private workforce.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC IdP authorization endpoint used to configure your private workforce.</p>
-    #[doc(hidden)]
     pub authorization_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC IdP token endpoint used to configure your private workforce.</p>
-    #[doc(hidden)]
     pub token_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC IdP user information endpoint used to configure your private workforce.</p>
-    #[doc(hidden)]
     pub user_info_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC IdP logout endpoint used to configure your private workforce.</p>
-    #[doc(hidden)]
     pub logout_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC IdP JSON Web Key Set (Jwks) URI used to configure your private workforce.</p>
-    #[doc(hidden)]
     pub jwks_uri: ::std::option::Option<::std::string::String>,
 }
 impl OidcConfigForResponse {

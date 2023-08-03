@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReferencesInput {
     /// <p>The references' reference store ID.</p>
-    #[doc(hidden)]
     pub reference_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of references to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter to apply to the list.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ReferenceFilter>,
 }
 impl ListReferencesInput {

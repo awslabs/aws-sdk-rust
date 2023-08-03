@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataViewInput {
     /// <p>The unique identifier for the Dataview.</p>
-    #[doc(hidden)]
     pub data_view_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataViewInput {

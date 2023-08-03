@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>Describes application updates.</p>
-    #[doc(hidden)]
     pub application_update: ::std::option::Option<crate::types::ApplicationUpdate>,
 }
 impl UpdateApplicationInput {

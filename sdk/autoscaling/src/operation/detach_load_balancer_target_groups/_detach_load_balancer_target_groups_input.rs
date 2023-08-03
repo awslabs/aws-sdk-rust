@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    #[doc(hidden)]
     pub target_group_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetachLoadBalancerTargetGroupsInput {

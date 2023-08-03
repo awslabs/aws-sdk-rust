@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTargetGroupInput {
     /// <p>The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of target group.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TargetGroupType>,
     /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<crate::types::TargetGroupConfig>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the target group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTargetGroupInput {

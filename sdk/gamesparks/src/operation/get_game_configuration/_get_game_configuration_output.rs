@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGameConfigurationOutput {
     /// <p>Details about the game configuration.</p>
-    #[doc(hidden)]
     pub game_configuration: ::std::option::Option<crate::types::GameConfigurationDetails>,
     _request_id: Option<String>,
 }

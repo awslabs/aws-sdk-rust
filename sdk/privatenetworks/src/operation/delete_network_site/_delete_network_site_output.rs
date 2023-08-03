@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkSiteOutput {
     /// <p>Information about the network site.</p>
-    #[doc(hidden)]
     pub network_site: ::std::option::Option<crate::types::NetworkSite>,
     _request_id: Option<String>,
 }

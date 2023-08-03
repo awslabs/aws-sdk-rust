@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditFindingsOutput {
     /// <p>The findings (results) of the audit.</p>
-    #[doc(hidden)]
     pub findings: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -9,10 +9,8 @@ pub struct Compliance {
     /// <p>A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any of these resources do not comply.</p>
     /// <p>Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the Amazon Web Services resource or Config rule.</p>
     /// <p>For the <code>Compliance</code> data type, Config supports only <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code> values. Config does not support the <code>NOT_APPLICABLE</code> value for the <code>Compliance</code> data type.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>The number of Amazon Web Services resources or Config rules that cause a result of <code>NON_COMPLIANT</code>, up to a maximum number.</p>
-    #[doc(hidden)]
     pub compliance_contributor_count: ::std::option::Option<crate::types::ComplianceContributorCount>,
 }
 impl Compliance {

@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrialComponentsInput {
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
-    #[doc(hidden)]
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
-    #[doc(hidden)]
     pub trial_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only components created after the specified time.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only components created before the specified time.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortTrialComponentsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The maximum number of components to return in the response. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTrialComponentsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateVehicleOutput {
     /// <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
-    #[doc(hidden)]
     pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleResponseItem>>,
     /// <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleError>>,
     _request_id: Option<String>,
 }

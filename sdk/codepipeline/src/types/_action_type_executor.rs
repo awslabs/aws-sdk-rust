@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeExecutor {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ExecutorConfiguration>,
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ExecutorType>,
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer account that are needed to successfully run an action.</p>
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
-    #[doc(hidden)]
     pub policy_statements_template: ::std::option::Option<::std::string::String>,
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
-    #[doc(hidden)]
     pub job_timeout: ::std::option::Option<i32>,
 }
 impl ActionTypeExecutor {

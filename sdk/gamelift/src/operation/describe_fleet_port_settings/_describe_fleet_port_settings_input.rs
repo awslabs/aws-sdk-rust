@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetPortSettingsInput {
     /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFleetPortSettingsInput {

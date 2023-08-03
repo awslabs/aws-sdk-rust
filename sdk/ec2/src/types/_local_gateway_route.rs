@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalGatewayRoute {
     /// <p>The CIDR block used for destination matches.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual interface group.</p>
-    #[doc(hidden)]
     pub local_gateway_virtual_interface_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The route type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LocalGatewayRouteType>,
     /// <p>The state of the route.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::LocalGatewayRouteState>,
     /// <p>The ID of the local gateway route table.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the local gateway route.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer-owned address pool.</p>
-    #[doc(hidden)]
     pub coip_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the prefix list. </p>
-    #[doc(hidden)]
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl LocalGatewayRoute {

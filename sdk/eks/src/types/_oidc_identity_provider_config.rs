@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OidcIdentityProviderConfig {
     /// <p>The name of the configuration.</p>
-    #[doc(hidden)]
     pub identity_provider_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the configuration.</p>
-    #[doc(hidden)]
     pub identity_provider_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The cluster that the configuration is associated to.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying tokens.</p>
-    #[doc(hidden)]
     pub issuer_url: ::std::option::Option<::std::string::String>,
     /// <p>This is also known as <i>audience</i>. The ID of the client application that makes authentication requests to the OIDC identity provider.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON Web token (JWT) claim that is used as the username.</p>
-    #[doc(hidden)]
     pub username_claim: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. The prefix can't contain <code>system:</code> </p>
-    #[doc(hidden)]
     pub username_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The JSON web token (JWT) claim that the provider uses to return your groups.</p>
-    #[doc(hidden)]
     pub groups_claim: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix can't contain <code>system:</code> </p>
-    #[doc(hidden)]
     pub groups_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value.</p>
-    #[doc(hidden)]
     pub required_claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the OIDC identity provider.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ConfigStatus>,
 }
 impl OidcIdentityProviderConfig {

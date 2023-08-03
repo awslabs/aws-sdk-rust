@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Icd10CmTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::Icd10CmTraitName>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as a trait.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl Icd10CmTrait {

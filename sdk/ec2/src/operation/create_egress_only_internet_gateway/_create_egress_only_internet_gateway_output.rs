@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEgressOnlyInternetGatewayOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the egress-only internet gateway.</p>
-    #[doc(hidden)]
     pub egress_only_internet_gateway: ::std::option::Option<crate::types::EgressOnlyInternetGateway>,
     _request_id: Option<String>,
 }

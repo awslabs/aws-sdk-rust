@@ -100,13 +100,10 @@ pub struct Rule {
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::DeviceAttribute>,
     /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::RuleOperator>,
     /// <p>The rule's value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Rule {

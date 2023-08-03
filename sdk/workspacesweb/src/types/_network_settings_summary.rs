@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkSettingsSummary {
     /// <p>The ARN of the network settings.</p>
-    #[doc(hidden)]
     pub network_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the network settings.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkSettingsSummary {

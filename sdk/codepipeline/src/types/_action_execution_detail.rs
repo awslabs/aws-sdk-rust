@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionExecutionDetail {
     /// <p>The pipeline execution ID for the action execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The action execution ID.</p>
-    #[doc(hidden)]
     pub action_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the pipeline where the action was run.</p>
-    #[doc(hidden)]
     pub pipeline_version: ::std::option::Option<i32>,
     /// <p>The name of the stage that contains the action.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the action execution.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last update time of the action execution.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActionExecutionStatus>,
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::ActionExecutionInput>,
     /// <p>Output details for the action execution, such as the action execution result.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::ActionExecutionOutput>,
 }
 impl ActionExecutionDetail {

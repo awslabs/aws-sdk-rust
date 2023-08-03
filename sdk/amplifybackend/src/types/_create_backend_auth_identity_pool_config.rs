@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthIdentityPoolConfig {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
-    #[doc(hidden)]
     pub identity_pool_name: ::std::option::Option<::std::string::String>,
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
-    #[doc(hidden)]
     pub unauthenticated_login: ::std::option::Option<bool>,
 }
 impl CreateBackendAuthIdentityPoolConfig {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReferenceInput {
     /// <p>The reference's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The reference's store ID.</p>
-    #[doc(hidden)]
     pub reference_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The range to retrieve.</p>
-    #[doc(hidden)]
     pub range: ::std::option::Option<::std::string::String>,
     /// <p>The part number to retrieve.</p>
-    #[doc(hidden)]
     pub part_number: ::std::option::Option<i32>,
     /// <p>The file to retrieve.</p>
-    #[doc(hidden)]
     pub file: ::std::option::Option<crate::types::ReferenceFile>,
 }
 impl GetReferenceInput {

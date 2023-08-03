@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsInput {
     /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of runtime environments to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The names of the runtime environments. Must be unique within the account.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The engine type for the runtime environment.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
 }
 impl ListEnvironmentsInput {

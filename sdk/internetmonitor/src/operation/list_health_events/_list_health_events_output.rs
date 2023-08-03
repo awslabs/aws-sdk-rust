@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHealthEventsOutput {
     /// <p>A list of health events.</p>
-    #[doc(hidden)]
     pub health_events: ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

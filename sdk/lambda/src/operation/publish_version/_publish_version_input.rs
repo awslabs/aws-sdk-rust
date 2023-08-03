@@ -11,16 +11,12 @@ pub struct PublishVersionInput {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <code>UpdateFunctionCode</code>.</p>
-    #[doc(hidden)]
     pub code_sha256: ::std::option::Option<::std::string::String>,
     /// <p>A description for the version to override the description in the function configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PublishVersionInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateCertificateInput {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateCertificateInput {

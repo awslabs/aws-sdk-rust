@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatastoreInput {
     /// <p>The name of the data store to be updated.</p>
-    #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
-    #[doc(hidden)]
     pub datastore_storage: ::std::option::Option<crate::types::DatastoreStorage>,
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
-    #[doc(hidden)]
     pub file_format_configuration: ::std::option::Option<crate::types::FileFormatConfiguration>,
 }
 impl UpdateDatastoreInput {

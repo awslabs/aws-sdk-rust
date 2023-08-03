@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowMetrics {
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub records_processed: i64,
     /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub steps_completed: i64,
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    #[doc(hidden)]
     pub total_steps: i64,
 }
 impl AppflowIntegrationWorkflowMetrics {

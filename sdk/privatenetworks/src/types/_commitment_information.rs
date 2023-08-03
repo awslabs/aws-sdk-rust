@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitmentInformation {
     /// <p>The duration and renewal status of the commitment period for the radio unit.</p>
-    #[doc(hidden)]
     pub commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
     /// <p>The date and time that the commitment period started.</p>
-    #[doc(hidden)]
     pub start_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the commitment period ends. If you do not cancel or renew the commitment before the expiration date, you will be billed at the 60-day-commitment rate.</p>
-    #[doc(hidden)]
     pub expires_on: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CommitmentInformation {

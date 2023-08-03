@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageConfigResponse {
     /// <p>Configuration values that override the container image Dockerfile.</p>
-    #[doc(hidden)]
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
     /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ImageConfigError>,
 }
 impl ImageConfigResponse {

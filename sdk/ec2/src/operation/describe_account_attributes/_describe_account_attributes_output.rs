@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>Information about the account attributes.</p>
-    #[doc(hidden)]
     pub account_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>,
     _request_id: Option<String>,
 }

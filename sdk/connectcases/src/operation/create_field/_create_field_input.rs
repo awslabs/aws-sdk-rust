@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the data type, some system constraints, and default display of the field.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FieldType>,
     /// <p>The description of the field.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl CreateFieldInput {

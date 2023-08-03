@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobsInput {
     /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>The parameter by which to sort the results.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListInferenceRecommendationsJobsSortBy>,
     /// <p>The sort order for the results.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of recommendations, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of recommendations to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter that returns only jobs that were created for this model.</p>
-    #[doc(hidden)]
     pub model_name_equals: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only jobs that were created for this versioned model package.</p>
-    #[doc(hidden)]
     pub model_package_version_arn_equals: ::std::option::Option<::std::string::String>,
 }
 impl ListInferenceRecommendationsJobsInput {

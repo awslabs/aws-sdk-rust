@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAwsLogSourceInput {
     /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
 }
 impl CreateAwsLogSourceInput {

@@ -11,16 +11,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NonTalkTimeFilter {
     /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<i64>,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
-    #[doc(hidden)]
     pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
-    #[doc(hidden)]
     pub relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
     /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
-    #[doc(hidden)]
     pub negate: ::std::option::Option<bool>,
 }
 impl NonTalkTimeFilter {

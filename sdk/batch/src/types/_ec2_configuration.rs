@@ -55,15 +55,12 @@ pub struct Ec2Configuration {
     /// </dl>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub image_type: ::std::option::Option<::std::string::String>,
     /// <p>The AMI ID used for instances launched in the compute environment that match the image type. This setting overrides the <code>imageId</code> set in the <code>computeResource</code> object.</p> <note>
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub image_id_override: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes version for the compute environment. If you don't specify a value, the latest version that Batch supports is used.</p>
-    #[doc(hidden)]
     pub image_kubernetes_version: ::std::option::Option<::std::string::String>,
 }
 impl Ec2Configuration {

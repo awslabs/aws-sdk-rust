@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsOutput {
     /// <p>Information about the environments that are returned.</p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<::std::vec::Vec<crate::types::Environment>>,
     _request_id: Option<String>,
 }

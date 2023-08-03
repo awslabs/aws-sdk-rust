@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacePermissionsInput {
     /// <p>The network interface permission IDs.</p>
-    #[doc(hidden)]
     pub network_interface_permission_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more filters.</p>
     /// <ul>
@@ -15,13 +14,10 @@ pub struct DescribeNetworkInterfacePermissionsInput {
     /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li>
     /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. If this parameter is not specified, up to 50 results are returned by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeNetworkInterfacePermissionsInput {

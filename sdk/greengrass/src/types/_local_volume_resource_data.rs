@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalVolumeResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
-    #[doc(hidden)]
     pub destination_path: ::std::option::Option<::std::string::String>,
     /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
-    #[doc(hidden)]
     pub group_owner_setting: ::std::option::Option<crate::types::GroupOwnerSetting>,
     /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
-    #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
 }
 impl LocalVolumeResourceData {

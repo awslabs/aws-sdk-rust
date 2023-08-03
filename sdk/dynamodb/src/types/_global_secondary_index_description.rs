@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalSecondaryIndexDescription {
     /// <p>The name of the global secondary index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:</p>
     /// <ul>
@@ -15,10 +14,8 @@ pub struct GlobalSecondaryIndexDescription {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
-    #[doc(hidden)]
     pub projection: ::std::option::Option<crate::types::Projection>,
     /// <p>The current state of the global secondary index:</p>
     /// <ul>
@@ -27,26 +24,20 @@ pub struct GlobalSecondaryIndexDescription {
     /// <li> <p> <code>DELETING</code> - The index is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The index is ready for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub index_status: ::std::option::Option<crate::types::IndexStatus>,
     /// <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is the process of reading items from the table and determining whether they can be added to the index. (Not all items will qualify: For example, a partition key cannot have any duplicate values.) If an item can be added to the index, DynamoDB will do so. After all items have been processed, the backfilling operation is complete and <code>Backfilling</code> is false.</p>
     /// <p>You can delete an index that is being created during the <code>Backfilling</code> phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is true. You can't delete the index that is being created when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is false. </p> <note>
     /// <p>For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does not appear in the <code>DescribeTable</code> output.</p>
     /// </note>
-    #[doc(hidden)]
     pub backfilling: ::std::option::Option<bool>,
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughputDescription>,
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[doc(hidden)]
     pub index_size_bytes: ::std::option::Option<i64>,
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    #[doc(hidden)]
     pub item_count: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
-    #[doc(hidden)]
     pub index_arn: ::std::option::Option<::std::string::String>,
 }
 impl GlobalSecondaryIndexDescription {

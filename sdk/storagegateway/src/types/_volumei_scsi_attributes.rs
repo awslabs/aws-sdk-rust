@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeiScsiAttributes {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The network interface identifier.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The port used to communicate with iSCSI targets.</p>
-    #[doc(hidden)]
     pub network_interface_port: i32,
     /// <p>The logical disk number.</p>
-    #[doc(hidden)]
     pub lun_number: ::std::option::Option<i32>,
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
-    #[doc(hidden)]
     pub chap_enabled: bool,
 }
 impl VolumeiScsiAttributes {

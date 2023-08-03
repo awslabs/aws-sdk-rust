@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<::std::string::String>,
     /// <p>The value for the HTTP response header.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
-    #[doc(hidden)]
     pub r#override: ::std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyCustomHeader {

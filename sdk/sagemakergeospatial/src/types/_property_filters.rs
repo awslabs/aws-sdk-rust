@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyFilters {
     /// <p>A list of Property Filters.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     /// <p>The Logical Operator used to combine the Property Filters.</p>
-    #[doc(hidden)]
     pub logical_operator: ::std::option::Option<crate::types::LogicalOperator>,
 }
 impl PropertyFilters {

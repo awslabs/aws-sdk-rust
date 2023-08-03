@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsInput {
     /// <p>The Elasticsearch domains for which you want information.</p>
-    #[doc(hidden)]
     pub domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeElasticsearchDomainsInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricLevelImpact {
     /// <p>The name of the measure.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of anomalous metrics for the measure.</p>
-    #[doc(hidden)]
     pub num_time_series: i32,
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
-    #[doc(hidden)]
     pub contribution_matrix: ::std::option::Option<crate::types::ContributionMatrix>,
 }
 impl MetricLevelImpact {

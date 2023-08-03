@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct R53ResourceRecord {
     /// <p>The DNS target domain name.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Route 53 Resource Record Set ID.</p>
-    #[doc(hidden)]
     pub record_set_id: ::std::option::Option<::std::string::String>,
 }
 impl R53ResourceRecord {

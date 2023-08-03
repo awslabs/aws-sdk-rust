@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
 }
 impl DeleteConfigInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProjectInput {

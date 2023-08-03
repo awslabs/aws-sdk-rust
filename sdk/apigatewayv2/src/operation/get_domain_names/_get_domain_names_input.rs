@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainNamesInput {
     /// <p>The maximum number of elements to be returned for this resource.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<::std::string::String>,
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainNamesInput {

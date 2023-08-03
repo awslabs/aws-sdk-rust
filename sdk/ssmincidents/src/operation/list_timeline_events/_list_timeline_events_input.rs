@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTimelineEventsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    #[doc(hidden)]
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
@@ -17,19 +16,14 @@ pub struct ListTimelineEventsInput {
     /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Sort timeline events by the specified key value pair.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::TimelineEventSort>,
     /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The maximum number of results per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTimelineEventsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstallToRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
-    #[doc(hidden)]
     pub remote_access_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the app about which you are requesting information.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
 }
 impl InstallToRemoteAccessSessionInput {

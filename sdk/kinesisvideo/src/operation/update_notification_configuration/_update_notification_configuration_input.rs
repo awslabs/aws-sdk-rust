@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNotificationConfigurationInput {
     /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
 impl UpdateNotificationConfigurationInput {

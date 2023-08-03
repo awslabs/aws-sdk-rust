@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Type {
     /// <p>The type name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type definition.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TypeDefinitionFormat>,
 }
 impl Type {

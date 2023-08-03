@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MfaOptionType {
     /// <p>The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery medium value.</p>
-    #[doc(hidden)]
     pub delivery_medium: ::std::option::Option<crate::types::DeliveryMediumType>,
     /// <p>The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl MfaOptionType {

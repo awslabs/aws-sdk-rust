@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountSettingDefaultOutput {
     /// <p>The current setting for a resource.</p>
-    #[doc(hidden)]
     pub setting: ::std::option::Option<crate::types::Setting>,
     _request_id: Option<String>,
 }

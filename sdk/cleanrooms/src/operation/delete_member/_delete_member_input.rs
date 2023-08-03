@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMemberInput {
     /// <p>The unique identifier for the associated collaboration.</p>
-    #[doc(hidden)]
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the member to remove.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMemberInput {

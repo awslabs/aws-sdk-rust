@@ -9,7 +9,6 @@ pub struct DescribeImagesInput {
     /// <li> <p>If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs shared with your account are returned. In addition, AMIs that are shared with the organization or OU of which you are member are also returned. </p> </li>
     /// <li> <p>If you specify <code>all</code>, all public AMIs are returned.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub executable_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
@@ -52,29 +51,22 @@ pub struct DescribeImagesInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The image IDs.</p>
     /// <p>Default: Describes all images available to you.</p>
-    #[doc(hidden)]
     pub image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    #[doc(hidden)]
     pub owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to include deprecated AMIs.</p>
     /// <p>Default: No deprecated AMIs are included in the response.</p> <note>
     /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub include_deprecated: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeImagesInput {

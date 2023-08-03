@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDirectoryInput {
     /// <p>The identifier of the directory to delete.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDirectoryInput {

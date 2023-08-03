@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TuningJobStepMetaData {
     /// <p>The Amazon Resource Name (ARN) of the tuning job that was run by this step execution.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl TuningJobStepMetaData {

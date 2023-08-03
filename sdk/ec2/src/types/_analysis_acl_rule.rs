@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisAclRule {
     /// <p>The IPv4 address range, in CIDR notation.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule is an outbound rule.</p>
-    #[doc(hidden)]
     pub egress: ::std::option::Option<bool>,
     /// <p>The range of ports.</p>
-    #[doc(hidden)]
     pub port_range: ::std::option::Option<crate::types::PortRange>,
     /// <p>The protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to allow or deny traffic that matches the rule.</p>
-    #[doc(hidden)]
     pub rule_action: ::std::option::Option<::std::string::String>,
     /// <p>The rule number.</p>
-    #[doc(hidden)]
     pub rule_number: ::std::option::Option<i32>,
 }
 impl AnalysisAclRule {

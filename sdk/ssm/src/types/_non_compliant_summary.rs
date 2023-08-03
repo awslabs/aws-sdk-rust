@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NonCompliantSummary {
     /// <p>The total number of compliance items that aren't compliant.</p>
-    #[doc(hidden)]
     pub non_compliant_count: i32,
     /// <p>A summary of the non-compliance severity by compliance type</p>
-    #[doc(hidden)]
     pub severity_summary: ::std::option::Option<crate::types::SeveritySummary>,
 }
 impl NonCompliantSummary {

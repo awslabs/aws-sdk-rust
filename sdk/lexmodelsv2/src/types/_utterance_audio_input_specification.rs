@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceAudioInputSpecification {
     /// <p>Amazon S3 file pointing to the audio.</p>
-    #[doc(hidden)]
     pub audio_file_s3_location: ::std::option::Option<::std::string::String>,
 }
 impl UtteranceAudioInputSpecification {

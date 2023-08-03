@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceCatalogsOutput {
     /// <p> A list of the requested <code>ResourceCatalog</code>s. </p>
-    #[doc(hidden)]
     pub resource_catalogs: ::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>>,
     /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

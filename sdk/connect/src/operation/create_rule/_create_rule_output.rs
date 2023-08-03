@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the rule.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

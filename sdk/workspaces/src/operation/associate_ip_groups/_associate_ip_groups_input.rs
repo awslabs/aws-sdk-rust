@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateIpGroupsInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of one or more IP access control groups.</p>
-    #[doc(hidden)]
     pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociateIpGroupsInput {

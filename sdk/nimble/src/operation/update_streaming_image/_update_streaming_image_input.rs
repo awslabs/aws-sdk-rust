@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateStreamingImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name for the streaming image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The streaming image ID.</p>
-    #[doc(hidden)]
     pub streaming_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStreamingImageInput {

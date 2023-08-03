@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInfo {
     /// <p>The network performance.</p>
-    #[doc(hidden)]
     pub network_performance: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of network interfaces for the instance type.</p>
-    #[doc(hidden)]
     pub maximum_network_interfaces: ::std::option::Option<i32>,
     /// <p>The maximum number of physical network cards that can be allocated to the instance.</p>
-    #[doc(hidden)]
     pub maximum_network_cards: ::std::option::Option<i32>,
     /// <p>The index of the default network card, starting at 0.</p>
-    #[doc(hidden)]
     pub default_network_card_index: ::std::option::Option<i32>,
     /// <p>Describes the network cards for the instance type.</p>
-    #[doc(hidden)]
     pub network_cards: ::std::option::Option<::std::vec::Vec<crate::types::NetworkCardInfo>>,
     /// <p>The maximum number of IPv4 addresses per network interface.</p>
-    #[doc(hidden)]
     pub ipv4_addresses_per_interface: ::std::option::Option<i32>,
     /// <p>The maximum number of IPv6 addresses per network interface.</p>
-    #[doc(hidden)]
     pub ipv6_addresses_per_interface: ::std::option::Option<i32>,
     /// <p>Indicates whether IPv6 is supported.</p>
-    #[doc(hidden)]
     pub ipv6_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether Elastic Network Adapter (ENA) is supported.</p>
-    #[doc(hidden)]
     pub ena_support: ::std::option::Option<crate::types::EnaSupport>,
     /// <p>Indicates whether Elastic Fabric Adapter (EFA) is supported.</p>
-    #[doc(hidden)]
     pub efa_supported: ::std::option::Option<bool>,
     /// <p>Describes the Elastic Fabric Adapters for the instance type.</p>
-    #[doc(hidden)]
     pub efa_info: ::std::option::Option<crate::types::EfaInfo>,
     /// <p>Indicates whether the instance type automatically encrypts in-transit traffic between instances.</p>
-    #[doc(hidden)]
     pub encryption_in_transit_supported: ::std::option::Option<bool>,
     /// <p>Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network traffic between EC2 instances.</p>
-    #[doc(hidden)]
     pub ena_srd_supported: ::std::option::Option<bool>,
 }
 impl NetworkInfo {

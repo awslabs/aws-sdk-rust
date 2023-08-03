@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedProductConfig {
     /// <p>The name of the product configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of user-supplied arguments.</p>
-    #[doc(hidden)]
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SupportedProductConfig {

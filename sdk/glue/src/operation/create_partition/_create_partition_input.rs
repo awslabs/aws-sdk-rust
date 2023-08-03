@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePartitionInput {
     /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metadata table in which the partition is to be created.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
-    #[doc(hidden)]
     pub partition_input: ::std::option::Option<crate::types::PartitionInput>,
 }
 impl CreatePartitionInput {

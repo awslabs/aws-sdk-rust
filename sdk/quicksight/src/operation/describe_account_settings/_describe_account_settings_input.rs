@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAccountSettingsInput {

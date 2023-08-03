@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamingSessionStreamInput {
     /// <p>The streaming session ID.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The streaming session stream ID.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID. </p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStreamingSessionStreamInput {

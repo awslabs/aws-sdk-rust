@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoomSkillParameterInput {
     /// <p>The ARN of the room from which to get the room skill parameter details. </p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
-    #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
     /// <p>The room skill parameter key for which to get details. Required.</p>
-    #[doc(hidden)]
     pub parameter_key: ::std::option::Option<::std::string::String>,
 }
 impl GetRoomSkillParameterInput {

@@ -13,10 +13,8 @@ pub struct NameServersUpdateState {
     /// <li> <p> <code>FAILED</code> - The name server record update failed.</p> </li>
     /// <li> <p> <code>STARTED</code> - The automatic name server record update started.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::NameServersUpdateStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl NameServersUpdateState {

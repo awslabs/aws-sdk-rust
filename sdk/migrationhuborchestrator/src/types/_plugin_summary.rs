@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PluginSummary {
     /// <p>The ID of the plugin.</p>
-    #[doc(hidden)]
     pub plugin_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the host.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The status of the plugin.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PluginHealth>,
     /// <p>The IP address at which the plugin is located.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The version of the plugin.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the plugin was registered.</p>
-    #[doc(hidden)]
     pub registered_time: ::std::option::Option<::std::string::String>,
 }
 impl PluginSummary {

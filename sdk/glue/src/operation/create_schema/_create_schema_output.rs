@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSchemaOutput {
     /// <p>The name of the registry.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the registry.</p>
-    #[doc(hidden)]
     pub registry_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the schema if specified when created.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::DataFormat>,
     /// <p>The schema compatibility mode.</p>
-    #[doc(hidden)]
     pub compatibility: ::std::option::Option<crate::types::Compatibility>,
     /// <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
-    #[doc(hidden)]
     pub schema_checkpoint: i64,
     /// <p>The latest version of the schema associated with the returned schema definition.</p>
-    #[doc(hidden)]
     pub latest_schema_version: i64,
     /// <p>The next version of the schema associated with the returned schema definition.</p>
-    #[doc(hidden)]
     pub next_schema_version: i64,
     /// <p>The status of the schema. </p>
-    #[doc(hidden)]
     pub schema_status: ::std::option::Option<crate::types::SchemaStatus>,
     /// <p>The tags for the schema.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unique identifier of the first schema version.</p>
-    #[doc(hidden)]
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the first schema version created.</p>
-    #[doc(hidden)]
     pub schema_version_status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     _request_id: Option<String>,
 }

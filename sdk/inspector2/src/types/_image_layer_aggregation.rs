@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageLayerAggregation {
     /// <p>The repository associated with the container image hosting the layers.</p>
-    #[doc(hidden)]
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The ID of the container image layer.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The hashes associated with the layers.</p>
-    #[doc(hidden)]
     pub layer_hashes: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The order to sort results by.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ImageLayerSortBy>,
 }
 impl ImageLayerAggregation {

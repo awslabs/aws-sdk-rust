@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopVectorEnrichmentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl StopVectorEnrichmentJobInput {

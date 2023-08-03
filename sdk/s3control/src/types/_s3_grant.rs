@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Grant {
     /// <p></p>
-    #[doc(hidden)]
     pub grantee: ::std::option::Option<crate::types::S3Grantee>,
     /// <p></p>
-    #[doc(hidden)]
     pub permission: ::std::option::Option<crate::types::S3Permission>,
 }
 impl S3Grant {

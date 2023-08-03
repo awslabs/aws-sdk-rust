@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPointForObjectLambdaOutput {
     /// <p>The name of the Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
-    #[doc(hidden)]
     pub public_access_block_configuration: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified Object Lambda Access Point was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The alias of the Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<crate::types::ObjectLambdaAccessPointAlias>,
     _request_id: Option<String>,
 }

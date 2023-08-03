@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplatesOutput {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the template.</p>
-    #[doc(hidden)]
     pub template_summary: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
     _request_id: Option<String>,
 }

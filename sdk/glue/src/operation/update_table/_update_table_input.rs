@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableInput {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
-    #[doc(hidden)]
     pub table_input: ::std::option::Option<crate::types::TableInput>,
     /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
-    #[doc(hidden)]
     pub skip_archive: ::std::option::Option<bool>,
     /// <p>The transaction ID at which to update the table contents. </p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The version ID at which to update the table contents. </p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateTableInput {

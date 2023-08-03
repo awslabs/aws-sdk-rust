@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteContactInput {
     /// <p>The Amazon Resource Name (ARN) of the contact that you're deleting.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContactInput {

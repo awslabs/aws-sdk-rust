@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefineIndexFieldOutput {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
-    #[doc(hidden)]
     pub index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
 }

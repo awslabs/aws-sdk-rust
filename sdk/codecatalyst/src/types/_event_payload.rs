@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventPayload {
     /// <p>The type of content in the event payload.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The data included in the event payload.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
 }
 impl EventPayload {

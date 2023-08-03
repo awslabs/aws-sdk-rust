@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentSummary {
     /// <p>The unique identifier of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the runtime environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
-    #[doc(hidden)]
     pub application_version: ::std::option::Option<i32>,
     /// <p>The current status of the deployment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeploymentLifecycle>,
     /// <p>The timestamp when the deployment was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason for the reported status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentSummary {

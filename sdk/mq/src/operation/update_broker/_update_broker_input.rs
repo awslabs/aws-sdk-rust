@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    #[doc(hidden)]
     pub authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of information about the configuration.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ConfigurationId>,
     /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    #[doc(hidden)]
     pub host_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    #[doc(hidden)]
     pub ldap_server_metadata: ::std::option::Option<crate::types::LdapServerMetadataInput>,
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-    #[doc(hidden)]
     pub logs: ::std::option::Option<crate::types::Logs>,
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    #[doc(hidden)]
     pub maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
-    #[doc(hidden)]
     pub data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
 }
 impl UpdateBrokerInput {

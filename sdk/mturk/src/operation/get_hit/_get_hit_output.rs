@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHitOutput {
     /// <p> Contains the requested HIT data.</p>
-    #[doc(hidden)]
     pub hit: ::std::option::Option<crate::types::Hit>,
     _request_id: Option<String>,
 }

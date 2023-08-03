@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldSummary {
     /// <p>The unique identifier of a field.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    #[doc(hidden)]
     pub field_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of a field.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FieldType>,
     /// <p>The namespace of a field.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<crate::types::FieldNamespace>,
 }
 impl FieldSummary {

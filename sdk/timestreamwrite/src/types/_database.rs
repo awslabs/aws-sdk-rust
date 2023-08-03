@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Database {
     /// <p>The Amazon Resource Name that uniquely identifies this database.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The total number of tables found within a Timestream database. </p>
-    #[doc(hidden)]
     pub table_count: i64,
     /// <p>The identifier of the KMS key used to encrypt the data stored in the database.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the database was created, calculated from the Unix epoch time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The last time that this database was updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Database {

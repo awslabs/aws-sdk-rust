@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartDefaultSeriesSettings {
     /// <p>The axis to which you are binding all line series to.</p>
-    #[doc(hidden)]
     pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
     /// <p>Line styles options for all line series in the visual.</p>
-    #[doc(hidden)]
     pub line_style_settings: ::std::option::Option<crate::types::LineChartLineStyleSettings>,
     /// <p>Marker styles options for all line series in the visual.</p>
-    #[doc(hidden)]
     pub marker_style_settings: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,
 }
 impl LineChartDefaultSeriesSettings {

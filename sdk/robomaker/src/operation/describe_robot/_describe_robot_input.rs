@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
-    #[doc(hidden)]
     pub robot: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRobotInput {

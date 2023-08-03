@@ -14,25 +14,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    #[doc(hidden)]
     pub log_destination_configs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The parts of the request that you want to keep out of the logs.</p>
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting. </p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
-    #[doc(hidden)]
     pub managed_by_firewall_manager: bool,
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
-    #[doc(hidden)]
     pub logging_filter: ::std::option::Option<crate::types::LoggingFilter>,
 }
 impl LoggingConfiguration {

@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsEventSubscriptionDetails {
     /// <p>The identifier of the account that is associated with the event notification subscription.</p>
-    #[doc(hidden)]
     pub cust_subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the event notification subscription.</p>
-    #[doc(hidden)]
     pub customer_aws_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the event notification subscription is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The list of event categories for the event notification subscription.</p>
-    #[doc(hidden)]
     pub event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the event notification subscription.</p>
-    #[doc(hidden)]
     pub event_subscription_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the SNS topic to post the event notifications to.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of source identifiers for the event notification subscription.</p>
-    #[doc(hidden)]
     pub source_ids_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The source type for the event notification subscription.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the event notification subscription.</p>
     /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code> </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The datetime when the event notification subscription was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub subscription_creation_time: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsEventSubscriptionDetails {

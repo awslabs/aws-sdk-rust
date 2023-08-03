@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventDataStoreInput {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
-    #[doc(hidden)]
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The event data store name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    #[doc(hidden)]
     pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
-    #[doc(hidden)]
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
-    #[doc(hidden)]
     pub organization_enabled: ::std::option::Option<bool>,
     /// <p>The retention period, in days.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<i32>,
     /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
-    #[doc(hidden)]
     pub termination_protection_enabled: ::std::option::Option<bool>,
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
@@ -35,7 +28,6 @@ pub struct UpdateEventDataStoreInput {
     /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEventDataStoreInput {

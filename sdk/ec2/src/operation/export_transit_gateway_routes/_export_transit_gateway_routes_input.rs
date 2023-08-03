@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTransitGatewayRoutesInput {
     /// <p>The ID of the route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
@@ -18,13 +17,10 @@ pub struct ExportTransitGatewayRoutesInput {
     /// <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p> </li>
     /// <li> <p> <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The name of the S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ExportTransitGatewayRoutesInput {

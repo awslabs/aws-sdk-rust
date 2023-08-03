@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMarkerEntry {
     /// <p>The account that created the delete marker.&gt;</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The object key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Version ID of an object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
-    #[doc(hidden)]
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeleteMarkerEntry {

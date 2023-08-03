@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deleted configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
-    #[doc(hidden)]
     pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     /// <p>The default message type of the configuration set that was deleted.</p>
-    #[doc(hidden)]
     pub default_message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
-    #[doc(hidden)]
     pub default_sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

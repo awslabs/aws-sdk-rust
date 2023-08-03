@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRequirementsWithMetadataRequest {
     /// <p>The architecture type.</p>
-    #[doc(hidden)]
     pub architecture_types: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
     /// <p>The virtualization type.</p>
-    #[doc(hidden)]
     pub virtualization_types: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
-    #[doc(hidden)]
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
 }
 impl InstanceRequirementsWithMetadataRequest {

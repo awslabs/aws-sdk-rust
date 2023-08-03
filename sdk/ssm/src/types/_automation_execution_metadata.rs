@@ -5,97 +5,67 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationExecutionMetadata {
     /// <p>The execution ID.</p>
-    #[doc(hidden)]
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Automation runbook used during execution.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The document version used during the execution.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The status of the execution.</p>
-    #[doc(hidden)]
     pub automation_execution_status: ::std::option::Option<crate::types::AutomationExecutionStatus>,
     /// <p>The time the execution started.</p>
-    #[doc(hidden)]
     pub execution_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the execution finished. This isn't populated if the execution is still in progress.</p>
-    #[doc(hidden)]
     pub execution_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The IAM role ARN of the user who ran the automation.</p>
-    #[doc(hidden)]
     pub executed_by: ::std::option::Option<::std::string::String>,
     /// <p>An S3 bucket where execution information is stored.</p>
-    #[doc(hidden)]
     pub log_file: ::std::option::Option<::std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The Automation execution mode.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ExecutionMode>,
     /// <p>The execution ID of the parent automation.</p>
-    #[doc(hidden)]
     pub parent_automation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step that is currently running.</p>
-    #[doc(hidden)]
     pub current_step_name: ::std::option::Option<::std::string::String>,
     /// <p>The action of the step that is currently running.</p>
-    #[doc(hidden)]
     pub current_action: ::std::option::Option<::std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
-    #[doc(hidden)]
     pub target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The targets defined by the user when starting the automation.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
-    #[doc(hidden)]
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>A list of targets that resolved during the execution.</p>
-    #[doc(hidden)]
     pub resolved_targets: ::std::option::Option<crate::types::ResolvedTargets>,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when starting the automation.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The <code>MaxErrors</code> value specified by the user when starting the automation.</p>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>Use this filter with <code>DescribeAutomationExecutions</code>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
-    #[doc(hidden)]
     pub automation_type: ::std::option::Option<crate::types::AutomationType>,
     /// <p>The details for the CloudWatch alarm applied to your automation.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
-    #[doc(hidden)]
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
-    #[doc(hidden)]
     pub automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
-    #[doc(hidden)]
     pub scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the Automation runbooks that are run during a runbook workflow in Change Manager.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    #[doc(hidden)]
     pub runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
     /// <p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a State Manager association used in the Automation operation.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Change Manager change request.</p>
-    #[doc(hidden)]
     pub change_request_name: ::std::option::Option<::std::string::String>,
 }
 impl AutomationExecutionMetadata {

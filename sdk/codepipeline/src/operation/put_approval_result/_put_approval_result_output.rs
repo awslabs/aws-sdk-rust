@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-    #[doc(hidden)]
     pub approved_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

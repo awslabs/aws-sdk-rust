@@ -6,10 +6,8 @@
 pub struct EventCategoryGroup {
     /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p> A list of event categories from a source type that you've chosen.</p>
-    #[doc(hidden)]
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EventCategoryGroup {

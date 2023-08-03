@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeConfiguration {
     /// <p>A unique name for the S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The full S3 path (excluding bucket) to the .zip file. This file contains the code that is loaded onto the cluster when it's started.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>The version of an S3 object.</p>
-    #[doc(hidden)]
     pub s3_object_version: ::std::option::Option<::std::string::String>,
 }
 impl CodeConfiguration {

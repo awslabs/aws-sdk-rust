@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetErrorDetails {
     /// <p>The ID of the asset.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::AssetErrorCode>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl AssetErrorDetails {

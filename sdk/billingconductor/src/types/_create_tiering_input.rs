@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTieringInput {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
-    #[doc(hidden)]
     pub free_tier: ::std::option::Option<crate::types::CreateFreeTierConfig>,
 }
 impl CreateTieringInput {

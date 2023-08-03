@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFaceSearchOutput {
     /// <p>The identifier for the search job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceSearch</code>. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

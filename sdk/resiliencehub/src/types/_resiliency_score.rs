@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResiliencyScore {
     /// <p>The outage score for a valid key.</p>
-    #[doc(hidden)]
     pub score: f64,
     /// <p>The disruption score for a valid key.</p>
-    #[doc(hidden)]
     pub disruption_score: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>,
 }
 impl ResiliencyScore {

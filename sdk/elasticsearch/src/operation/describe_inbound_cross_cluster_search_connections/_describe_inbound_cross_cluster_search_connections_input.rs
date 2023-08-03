@@ -13,13 +13,10 @@ pub struct DescribeInboundCrossClusterSearchConnectionsInput {
     /// <li>destination-domain-info.domain-name</li>
     /// </ul>
     /// <p></p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInboundCrossClusterSearchConnectionsInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectoryConnectSettingsDescription {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user name of the service account in your self-managed directory.</p>
-    #[doc(hidden)]
     pub customer_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The security group identifier for the AD Connector directory.</p>
-    #[doc(hidden)]
     pub security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Availability Zones that the directory is in.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP addresses of the AD Connector servers.</p>
-    #[doc(hidden)]
     pub connect_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DirectoryConnectSettingsDescription {

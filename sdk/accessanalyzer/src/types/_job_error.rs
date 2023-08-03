@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobError {
     /// <p>The job error code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::JobErrorCode>,
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl JobError {

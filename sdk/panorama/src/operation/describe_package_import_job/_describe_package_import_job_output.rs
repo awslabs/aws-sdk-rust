@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageImportJobOutput {
     /// <p>The job's ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The job's client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The job's type.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::PackageImportJobType>,
     /// <p>The job's input config.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::PackageImportJobInputConfig>,
     /// <p>The job's output config.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::PackageImportJobOutputConfig>,
     /// <p>The job's output.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<crate::types::PackageImportJobOutput>,
     /// <p>When the job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the job was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageImportJobStatus>,
     /// <p>The job's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The job's tags.</p>
-    #[doc(hidden)]
     pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
     _request_id: Option<String>,
 }

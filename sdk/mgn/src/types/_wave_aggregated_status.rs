@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaveAggregatedStatus {
     /// <p>Wave aggregated status last update dateTime.</p>
-    #[doc(hidden)]
     pub last_update_date_time: ::std::option::Option<::std::string::String>,
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
-    #[doc(hidden)]
     pub replication_started_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Wave aggregated status health status.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::WaveHealthStatus>,
     /// <p>Wave aggregated status progress status.</p>
-    #[doc(hidden)]
     pub progress_status: ::std::option::Option<crate::types::WaveProgressStatus>,
     /// <p>Wave aggregated status total applications amount.</p>
-    #[doc(hidden)]
     pub total_applications: i64,
 }
 impl WaveAggregatedStatus {

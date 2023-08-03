@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstanceConnectEndpointOutput {
     /// <p>Information about the EC2 Instance Connect Endpoint.</p>
-    #[doc(hidden)]
     pub instance_connect_endpoint: ::std::option::Option<crate::types::Ec2InstanceConnectEndpoint>,
     /// <p>Unique, case-sensitive idempotency token provided by the client in the the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

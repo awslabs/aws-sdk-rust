@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaCapturePipelineSummary {
     /// <p>The ID of the media pipeline in the summary.</p>
-    #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the media pipeline in the summary.</p>
-    #[doc(hidden)]
     pub media_pipeline_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaCapturePipelineSummary {

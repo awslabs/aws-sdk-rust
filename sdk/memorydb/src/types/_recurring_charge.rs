@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecurringCharge {
     /// <p>The amount of the recurring charge to run this reserved node.</p>
-    #[doc(hidden)]
     pub recurring_charge_amount: f64,
     /// <p>The frequency of the recurring price charged to run this reserved node.</p>
-    #[doc(hidden)]
     pub recurring_charge_frequency: ::std::option::Option<::std::string::String>,
 }
 impl RecurringCharge {

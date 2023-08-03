@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The resource-based policy.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The name of the registry.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The revision ID of the policy.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {

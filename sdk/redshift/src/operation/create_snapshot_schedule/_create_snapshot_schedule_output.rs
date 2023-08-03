@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotScheduleOutput {
     /// <p>A list of ScheduleDefinitions.</p>
-    #[doc(hidden)]
     pub schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique identifier for the schedule.</p>
-    #[doc(hidden)]
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description of the schedule.</p>
-    #[doc(hidden)]
     pub schedule_description: ::std::option::Option<::std::string::String>,
     /// <p>An optional set of tags describing the schedule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p></p>
-    #[doc(hidden)]
     pub next_invocations: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>The number of clusters associated with the schedule.</p>
-    #[doc(hidden)]
     pub associated_cluster_count: ::std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-    #[doc(hidden)]
     pub associated_clusters: ::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
     _request_id: Option<String>,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityConfigSummary {
     /// <p>The unique identifier of the security configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of security configuration.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SecurityConfigType>,
     /// <p>The version of the security configuration.</p>
-    #[doc(hidden)]
     pub config_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the security configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Epoch time when the security configuration was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<i64>,
     /// <p>The timestamp of when the configuration was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<i64>,
 }
 impl SecurityConfigSummary {

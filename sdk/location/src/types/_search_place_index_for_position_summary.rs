@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionSummary {
     /// <p>The position specified in the request.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code> </p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
@@ -18,10 +16,8 @@ pub struct SearchPlaceIndexForPositionSummary {
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
 }
 impl SearchPlaceIndexForPositionSummary {

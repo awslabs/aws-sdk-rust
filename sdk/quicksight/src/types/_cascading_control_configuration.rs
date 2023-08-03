@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CascadingControlConfiguration {
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    #[doc(hidden)]
     pub source_controls: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
 }
 impl CascadingControlConfiguration {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsInspectionConfigurationResponse {
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    #[doc(hidden)]
     pub tls_inspection_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
-    #[doc(hidden)]
     pub tls_inspection_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the TLS inspection configuration. This ID is returned in the responses to create and list commands. You provide it to operations such as update and delete.</p>
-    #[doc(hidden)]
     pub tls_inspection_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the current status of a <code>TLSInspectionConfiguration</code>. You can retrieve this for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code> and providing the TLS inspection configuration name and ARN.</p>
-    #[doc(hidden)]
     pub tls_inspection_configuration_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>A description of the TLS inspection configuration. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The last time that the TLS inspection configuration was changed.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of firewall policies that use this TLS inspection configuration.</p>
-    #[doc(hidden)]
     pub number_of_associations: ::std::option::Option<i32>,
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>A list of the certificates associated with the TLS inspection configuration.</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::TlsCertificateData>>,
 }
 impl TlsInspectionConfigurationResponse {

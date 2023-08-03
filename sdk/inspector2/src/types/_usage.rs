@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Usage {
     /// <p>The type scan.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UsageType>,
     /// <p>The total of usage.</p>
-    #[doc(hidden)]
     pub total: f64,
     /// <p>The estimated monthly cost of Amazon Inspector.</p>
-    #[doc(hidden)]
     pub estimated_monthly_cost: f64,
     /// <p>The currency type used when calculating usage data.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<crate::types::Currency>,
 }
 impl Usage {

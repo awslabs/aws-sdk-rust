@@ -3,10 +3,8 @@
 #[non_exhaustive]
 pub struct WriteGetObjectResponseInput {
     /// <p>Route prefix to the HTTP URL generated.</p>
-    #[doc(hidden)]
     pub request_route: ::std::option::Option<::std::string::String>,
     /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
-    #[doc(hidden)]
     pub request_token: ::std::option::Option<::std::string::String>,
     /// <p>The object data.</p>
     pub body: ::aws_smithy_http::byte_stream::ByteStream,
@@ -27,125 +25,88 @@ pub struct WriteGetObjectResponseInput {
     /// <li> <p> <code>500 - Internal Server Error</code> </p> </li>
     /// <li> <p> <code>503 - Service Unavailable</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<i32>,
     /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>Contains a generic description of the error condition. Returned in the <message>
     /// tag of the error XML response for a corresponding
     /// <code>GetObject</code> call. Cannot be used with a successful
     /// <code>StatusCode</code> header or when the transformed object is provided in body.
     /// </message></p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that a range of bytes was specified.</p>
-    #[doc(hidden)]
     pub accept_ranges: ::std::option::Option<::std::string::String>,
     /// <p>Specifies caching behavior along the request/reply chain.</p>
-    #[doc(hidden)]
     pub cache_control: ::std::option::Option<::std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
-    #[doc(hidden)]
     pub content_disposition: ::std::option::Option<::std::string::String>,
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
-    #[doc(hidden)]
     pub content_encoding: ::std::option::Option<::std::string::String>,
     /// <p>The language the content is in.</p>
-    #[doc(hidden)]
     pub content_language: ::std::option::Option<::std::string::String>,
     /// <p>The size of the content body in bytes.</p>
-    #[doc(hidden)]
     pub content_length: ::std::option::Option<i64>,
     /// <p>The portion of the object returned in the response.</p>
-    #[doc(hidden)]
     pub content_range: ::std::option::Option<::std::string::String>,
     /// <p>A standard MIME type describing the format of the object data.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
     /// <p></p>
-    #[doc(hidden)]
     pub checksum_crc32: ::std::option::Option<::std::string::String>,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    #[doc(hidden)]
     pub checksum_crc32_c: ::std::option::Option<::std::string::String>,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    #[doc(hidden)]
     pub checksum_sha1: ::std::option::Option<::std::string::String>,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
-    #[doc(hidden)]
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
-    #[doc(hidden)]
     pub delete_marker: ::std::option::Option<bool>,
     /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    #[doc(hidden)]
     pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide the object expiration information. The value of the <code>rule-id</code> is URL-encoded. </p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
-    #[doc(hidden)]
     pub missing_meta: ::std::option::Option<i32>,
     /// <p>A map of metadata to store with the object in S3.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
-    #[doc(hidden)]
     pub object_lock_mode: ::std::option::Option<crate::types::ObjectLockMode>,
     /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
-    #[doc(hidden)]
     pub object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     /// <p>The date and time when Object Lock is configured to expire.</p>
-    #[doc(hidden)]
     pub object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The count of parts this object has.</p>
-    #[doc(hidden)]
     pub parts_count: ::std::option::Option<i32>,
     /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
-    #[doc(hidden)]
     pub replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
-    #[doc(hidden)]
     pub restore: ::std::option::Option<::std::string::String>,
     /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
-    #[doc(hidden)]
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
-    #[doc(hidden)]
     pub sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
-    #[doc(hidden)]
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
-    #[doc(hidden)]
     pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>The number of tags, if any, on the object.</p>
-    #[doc(hidden)]
     pub tag_count: ::std::option::Option<i32>,
     /// <p>An ID used to reference a specific version of the object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
-    #[doc(hidden)]
     pub bucket_key_enabled: ::std::option::Option<bool>,
 }
 impl WriteGetObjectResponseInput {

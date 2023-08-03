@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateS3DataAccessFromS3BucketResponseDetails {
     /// <p>Details about the asset source from an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub asset_source: ::std::option::Option<crate::types::S3DataAccessAssetSourceEntry>,
     /// <p>The unique identifier for this data set.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateS3DataAccessFromS3BucketResponseDetails {

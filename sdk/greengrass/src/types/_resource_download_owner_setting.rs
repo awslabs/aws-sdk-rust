@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDownloadOwnerSetting {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
-    #[doc(hidden)]
     pub group_owner: ::std::option::Option<::std::string::String>,
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
-    #[doc(hidden)]
     pub group_permission: ::std::option::Option<crate::types::Permission>,
 }
 impl ResourceDownloadOwnerSetting {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuthenticationProfilesOutput {
     /// <p>The list of authentication profiles.</p>
-    #[doc(hidden)]
     pub authentication_profiles: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>>,
     _request_id: Option<String>,
 }

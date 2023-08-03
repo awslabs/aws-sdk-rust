@@ -6,22 +6,16 @@
 pub struct EventDestinationDefinition {
     /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>An array that specifies which events Amazon Pinpoint should send to the destinations in this <code>EventDestinationDefinition</code>.</p>
-    #[doc(hidden)]
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-    #[doc(hidden)]
     pub cloud_watch_destination: ::std::option::Option<crate::types::CloudWatchDestination>,
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
-    #[doc(hidden)]
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
     /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
-    #[doc(hidden)]
     pub pinpoint_destination: ::std::option::Option<crate::types::PinpointDestination>,
 }
 impl EventDestinationDefinition {

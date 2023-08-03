@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Environment {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
 }
 impl Environment {

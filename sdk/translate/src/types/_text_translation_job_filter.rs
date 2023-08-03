@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextTranslationJobFilter {
     /// <p>Filters the list of jobs by name.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of jobs based by job status.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    #[doc(hidden)]
     pub submitted_before_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
-    #[doc(hidden)]
     pub submitted_after_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TextTranslationJobFilter {

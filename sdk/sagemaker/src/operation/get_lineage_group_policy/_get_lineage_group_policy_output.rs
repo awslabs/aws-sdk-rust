@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLineageGroupPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    #[doc(hidden)]
     pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy that gives access to the lineage group in another account.</p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

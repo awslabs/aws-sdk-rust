@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoDatabaseMigrationPreference {
     /// <p> The target database engine for database migration preference that you specify. </p>
-    #[doc(hidden)]
     pub target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::TargetDatabaseEngine>>,
 }
 impl NoDatabaseMigrationPreference {

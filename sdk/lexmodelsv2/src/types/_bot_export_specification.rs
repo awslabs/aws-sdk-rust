@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotExportSpecification {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
 }
 impl BotExportSpecification {

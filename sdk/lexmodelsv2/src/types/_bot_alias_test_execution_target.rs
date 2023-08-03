@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotAliasTestExecutionTarget {
     /// <p>The bot Id of the bot alias used in the test set execution.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot alias Id of the bot alias used in the test set execution.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale Id of the bot alias used in the test set execution.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
 }
 impl BotAliasTestExecutionTarget {

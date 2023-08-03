@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p> Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p> Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket). </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> AWS resource name which uniquely identifies the resource in AWS systems. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> Identifies which feature in AWS Mobile Hub is associated with this AWS resource. </p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<::std::string::String>,
     /// <p> Key-value attribute pairs. </p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Resource {

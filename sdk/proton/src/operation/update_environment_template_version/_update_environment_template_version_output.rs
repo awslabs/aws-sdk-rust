@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentTemplateVersionOutput {
     /// <p>The environment template version detail data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub environment_template_version: ::std::option::Option<crate::types::EnvironmentTemplateVersion>,
     _request_id: Option<String>,
 }

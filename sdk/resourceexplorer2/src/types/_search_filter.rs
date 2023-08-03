@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchFilter {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-    #[doc(hidden)]
     pub filter_string: ::std::option::Option<::std::string::String>,
 }
 impl SearchFilter {

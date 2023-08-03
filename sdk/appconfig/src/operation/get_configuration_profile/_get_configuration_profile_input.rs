@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationProfileInput {
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the configuration profile that you want to get.</p>
-    #[doc(hidden)]
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetConfigurationProfileInput {

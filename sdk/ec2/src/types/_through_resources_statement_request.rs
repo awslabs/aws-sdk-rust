@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThroughResourcesStatementRequest {
     /// <p>The resource statement.</p>
-    #[doc(hidden)]
     pub resource_statement: ::std::option::Option<crate::types::ResourceStatementRequest>,
 }
 impl ThroughResourcesStatementRequest {

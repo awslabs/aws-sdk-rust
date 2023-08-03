@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateParam {
     /// <p>The keys associated with an update request.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UpdateParamType>,
     /// <p>The value of the keys submitted as part of an update request.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateParam {

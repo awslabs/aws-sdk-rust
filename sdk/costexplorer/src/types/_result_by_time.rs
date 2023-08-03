@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultByTime {
     /// <p>The time period that the result covers.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The total amount of cost or usage accrued during the time period.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricValue>>,
     /// <p>The groups that this time period includes.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     /// <p>Determines whether the result is estimated.</p>
-    #[doc(hidden)]
     pub estimated: bool,
 }
 impl ResultByTime {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfTagPolicyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
 impl LfTagPolicyResource {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CpuOptions {
     /// <p>The number of CPU cores for the instance.</p>
-    #[doc(hidden)]
     pub core_count: ::std::option::Option<i32>,
     /// <p>The number of threads per CPU core.</p>
-    #[doc(hidden)]
     pub threads_per_core: ::std::option::Option<i32>,
     /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
-    #[doc(hidden)]
     pub amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
 impl CpuOptions {

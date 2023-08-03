@@ -11,7 +11,6 @@ pub struct DescribeDatasetImportJobOutput {
     /// <li> <p>ACTIVE</p> </li>
     /// <li> <p>CREATE FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dataset_import_job: ::std::option::Option<crate::types::DatasetImportJob>,
     _request_id: Option<String>,
 }

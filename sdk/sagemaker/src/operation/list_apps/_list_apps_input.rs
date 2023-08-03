@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppsInput {
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of items to return in the response. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The sort order for the results. The default is Ascending.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::AppSortKey>,
     /// <p>A parameter to search for the domain ID.</p>
-    #[doc(hidden)]
     pub domain_id_equals: ::std::option::Option<::std::string::String>,
     /// <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be set.</p>
-    #[doc(hidden)]
     pub user_profile_name_equals: ::std::option::Option<::std::string::String>,
     /// <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.</p>
-    #[doc(hidden)]
     pub space_name_equals: ::std::option::Option<::std::string::String>,
 }
 impl ListAppsInput {

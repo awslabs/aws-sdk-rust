@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStagePlanNode {
     /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the operation this query stage plan node is performing.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
-    #[doc(hidden)]
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::QueryStagePlanNode>>,
     /// <p>Source plan node IDs.</p>
-    #[doc(hidden)]
     pub remote_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryStagePlanNode {

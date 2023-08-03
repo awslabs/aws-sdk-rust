@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayTaskOutput {
     /// <p>The ID of the wireless gateway.</p>
-    #[doc(hidden)]
     pub wireless_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the WirelessGatewayTask.</p>
-    #[doc(hidden)]
     pub wireless_gateway_task_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the task was created.</p>
-    #[doc(hidden)]
     pub task_created_at: ::std::option::Option<::std::string::String>,
     /// <p>The status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WirelessGatewayTaskStatus>,
     _request_id: Option<String>,
 }

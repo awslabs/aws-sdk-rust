@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTransitGatewayRouteTableAnnouncementsOutput {
     /// <p>Describes the transit gateway route table announcement.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_announcements: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

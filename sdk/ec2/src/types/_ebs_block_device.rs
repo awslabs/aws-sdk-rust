@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsBlockDevice {
     /// <p>Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
@@ -16,10 +15,8 @@ pub struct EbsBlockDevice {
     /// </ul>
     /// <p>For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
     /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
@@ -29,23 +26,18 @@ pub struct EbsBlockDevice {
     /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
     /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume supports.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is encrypted.</p>
     /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     /// <p>This parameter is valid only for <code>gp3</code> volumes.</p>
     /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<i32>,
     /// <p>The ARN of the Outpost on which the snapshot is stored.</p>
     /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html"> CreateImage</a>.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>In no case can you remove encryption from an encrypted volume.</p>
@@ -58,7 +50,6 @@ pub struct EbsBlockDevice {
     /// <li> <p>If you are creating a block device mapping from an <b>existing unencrypted volume</b>, you can include this parameter, but you must specify <code>false</code>. If you specify <code>true</code>, the request will fail. In this case, we recommend that you omit the parameter.</p> </li>
     /// <li> <p>If you are creating a block device mapping from an <b>existing encrypted volume</b>, you can include this parameter, and specify either <code>true</code> or <code>false</code>. However, if you specify <code>false</code>, the parameter is ignored and the block device mapping is always encrypted. In this case, we recommend that you omit the parameter.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
 }
 impl EbsBlockDevice {

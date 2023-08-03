@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationNfsOutput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the source NFS location that was described.</p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    #[doc(hidden)]
     pub on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
     /// <p>The mount options that DataSync uses to mount your NFS share.</p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
     /// <p>The time that the NFS location was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

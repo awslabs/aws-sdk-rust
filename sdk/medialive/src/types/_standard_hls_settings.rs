@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardHlsSettings {
     /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
-    #[doc(hidden)]
     pub audio_rendition_sets: ::std::option::Option<::std::string::String>,
     /// Settings information for the .m3u8 container
-    #[doc(hidden)]
     pub m3u8_settings: ::std::option::Option<crate::types::M3u8Settings>,
 }
 impl StandardHlsSettings {

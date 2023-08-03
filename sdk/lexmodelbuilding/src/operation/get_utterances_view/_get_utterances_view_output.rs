@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUtterancesViewOutput {
     /// <p>The name of the bot for which utterance information was returned.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    #[doc(hidden)]
     pub utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>>,
     _request_id: Option<String>,
 }

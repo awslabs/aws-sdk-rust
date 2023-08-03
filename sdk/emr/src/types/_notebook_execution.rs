@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotebookExecution {
     /// <p>The unique identifier of a notebook execution.</p>
-    #[doc(hidden)]
     pub notebook_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.</p>
-    #[doc(hidden)]
     pub editor_id: ::std::option::Option<::std::string::String>,
     /// <p>The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the notebook execution.</p>
-    #[doc(hidden)]
     pub execution_engine: ::std::option::Option<crate::types::ExecutionEngineConfig>,
     /// <p>A name for the notebook execution.</p>
-    #[doc(hidden)]
     pub notebook_execution_name: ::std::option::Option<::std::string::String>,
     /// <p>Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.</p>
-    #[doc(hidden)]
     pub notebook_params: ::std::option::Option<::std::string::String>,
     /// <p>The status of the notebook execution.</p>
     /// <ul>
@@ -32,40 +27,28 @@ pub struct NotebookExecution {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NotebookExecutionStatus>,
     /// <p>The timestamp when notebook execution started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when notebook execution ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
-    #[doc(hidden)]
     pub output_notebook_uri: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the latest status change of the notebook execution.</p>
-    #[doc(hidden)]
     pub last_state_change_reason: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    #[doc(hidden)]
     pub notebook_instance_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
-    #[doc(hidden)]
     pub notebook_s3_location: ::std::option::Option<crate::types::NotebookS3LocationForOutput>,
     /// <p>The Amazon S3 location for the notebook execution output.</p>
-    #[doc(hidden)]
     pub output_notebook_s3_location: ::std::option::Option<crate::types::OutputNotebookS3LocationForOutput>,
     /// <p>The output format for the notebook execution.</p>
-    #[doc(hidden)]
     pub output_notebook_format: ::std::option::Option<crate::types::OutputNotebookFormat>,
     /// <p>The environment variables associated with the notebook execution.</p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl NotebookExecution {

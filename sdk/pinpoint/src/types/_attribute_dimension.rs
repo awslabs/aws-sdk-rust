@@ -15,10 +15,8 @@ pub struct AttributeDimension {
     /// <li>BETWEEN - endpoints with attributes read as ISO_INSTANT datetimes between the values are included in the segment.</li>
     /// <p></p>
     /// </ul>
-    #[doc(hidden)]
     pub attribute_type: ::std::option::Option<crate::types::AttributeType>,
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttributeDimension {

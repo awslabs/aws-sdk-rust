@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemEvent {
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::EventType>,
     /// <p>Contains the configuration information of alarm state changes.</p>
-    #[doc(hidden)]
     pub state_change_configuration: ::std::option::Option<crate::types::StateChangeConfiguration>,
 }
 impl SystemEvent {

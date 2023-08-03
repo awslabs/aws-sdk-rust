@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutCapacityAssignmentConfigurationInput {
     /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
-    #[doc(hidden)]
     pub capacity_reservation_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of assignments for the capacity assignment configuration.</p>
-    #[doc(hidden)]
     pub capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
 }
 impl PutCapacityAssignmentConfigurationInput {

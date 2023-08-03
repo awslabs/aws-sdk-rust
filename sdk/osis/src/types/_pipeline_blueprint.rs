@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineBlueprint {
     /// <p>The name of the blueprint.</p>
-    #[doc(hidden)]
     pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>The YAML configuration of the blueprint.</p>
-    #[doc(hidden)]
     pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBlueprint {

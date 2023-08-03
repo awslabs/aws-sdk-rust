@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameServerInstance {
     /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A generated unique identifier for the game server group that includes the game server instance. </p>
-    #[doc(hidden)]
     pub game_server_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the game server instance</p>
-    #[doc(hidden)]
     pub instance_status: ::std::option::Option<crate::types::GameServerInstanceStatus>,
 }
 impl GameServerInstance {

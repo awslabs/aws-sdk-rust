@@ -4,35 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
-    #[doc(hidden)]
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined alias for a Dev Environment.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
-    #[doc(hidden)]
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    #[doc(hidden)]
     pub inactivity_timeout_minutes: i32,
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    #[doc(hidden)]
     pub persistent_storage: ::std::option::Option<crate::types::PersistentStorageConfiguration>,
 }
 impl CreateDevEnvironmentInput {

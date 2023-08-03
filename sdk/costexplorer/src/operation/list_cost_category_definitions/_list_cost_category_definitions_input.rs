@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsInput {
     /// <p>The date when the Cost Category was effective. </p>
-    #[doc(hidden)]
     pub effective_on: ::std::option::Option<::std::string::String>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of entries a paginated response contains. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListCostCategoryDefinitionsInput {

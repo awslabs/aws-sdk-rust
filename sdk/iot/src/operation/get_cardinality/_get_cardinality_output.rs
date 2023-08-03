@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCardinalityOutput {
     /// <p>The approximate count of unique values that match the query.</p>
-    #[doc(hidden)]
     pub cardinality: i32,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventTrackerOutput {
     /// <p>The ARN of the event tracker.</p>
-    #[doc(hidden)]
     pub event_tracker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-    #[doc(hidden)]
     pub tracking_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

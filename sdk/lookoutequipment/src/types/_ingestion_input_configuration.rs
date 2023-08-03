@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestionInputConfiguration {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion. </p>
-    #[doc(hidden)]
     pub s3_input_configuration: ::std::option::Option<crate::types::IngestionS3InputConfiguration>,
 }
 impl IngestionInputConfiguration {

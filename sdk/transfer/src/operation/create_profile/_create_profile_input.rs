@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileInput {
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
-    #[doc(hidden)]
     pub as2_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines the type of profile to create:</p>
     /// <ul>
     /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
     /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub profile_type: ::std::option::Option<crate::types::ProfileType>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    #[doc(hidden)]
     pub certificate_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProfileInput {

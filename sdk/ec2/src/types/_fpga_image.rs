@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FpgaImage {
     /// <p>The FPGA image identifier (AFI ID).</p>
-    #[doc(hidden)]
     pub fpga_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The global FPGA image identifier (AGFI ID).</p>
-    #[doc(hidden)]
     pub fpga_image_global_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AFI.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the AFI.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Amazon Web Services Shell that was used to create the bitstream.</p>
-    #[doc(hidden)]
     pub shell_version: ::std::option::Option<::std::string::String>,
     /// <p>Information about the PCI bus.</p>
-    #[doc(hidden)]
     pub pci_id: ::std::option::Option<crate::types::PciId>,
     /// <p>Information about the state of the AFI.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::FpgaImageState>,
     /// <p>The date and time the AFI was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent update to the AFI.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Amazon Web Services account that owns the AFI.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the AFI owner. Possible values include <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>.</p>
-    #[doc(hidden)]
     pub owner_alias: ::std::option::Option<::std::string::String>,
     /// <p>The product codes for the AFI.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>Any tags assigned to the AFI.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether the AFI is public.</p>
-    #[doc(hidden)]
     pub public: ::std::option::Option<bool>,
     /// <p>Indicates whether data retention support is enabled for the AFI.</p>
-    #[doc(hidden)]
     pub data_retention_support: ::std::option::Option<bool>,
     /// <p>The instance types supported by the AFI.</p>
-    #[doc(hidden)]
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FpgaImage {

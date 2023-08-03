@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingModifiedValues {
     /// <p>The pending or in-progress change of the admin user password for the cluster.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change of the cluster's node type.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change of the number of nodes in the cluster.</p>
-    #[doc(hidden)]
     pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>The pending or in-progress change of the cluster type.</p>
-    #[doc(hidden)]
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change of the service version.</p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change of the automated snapshot retention period.</p>
-    #[doc(hidden)]
     pub automated_snapshot_retention_period: ::std::option::Option<i32>,
     /// <p>The pending or in-progress change of the new identifier for the cluster.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change of the ability to connect to the cluster from the public network.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
-    #[doc(hidden)]
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>The name of the maintenance track that the cluster will change to during the next maintenance window.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The encryption type for a cluster. Possible values are: KMS and None. </p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValues {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageImportJobOutputConfig {
     /// <p>The package version's output configuration.</p>
-    #[doc(hidden)]
     pub package_version_output_config: ::std::option::Option<crate::types::PackageVersionOutputConfig>,
 }
 impl PackageImportJobOutputConfig {

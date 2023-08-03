@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetPublicKeyCertificateOutput {
     /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
-    #[doc(hidden)]
     pub key_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
-    #[doc(hidden)]
     pub key_certificate_chain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

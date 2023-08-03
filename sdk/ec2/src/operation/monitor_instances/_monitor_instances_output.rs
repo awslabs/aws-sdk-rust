@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitorInstancesOutput {
     /// <p>The monitoring information.</p>
-    #[doc(hidden)]
     pub instance_monitorings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>>,
     _request_id: Option<String>,
 }

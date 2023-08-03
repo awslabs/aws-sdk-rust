@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeSummary {
     /// <p>The unique identifier assigned to the slot type.</p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the slot type.</p>
-    #[doc(hidden)]
     pub slot_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the slot type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If the slot type is derived from a built-on slot type, the name of the parent slot type.</p>
-    #[doc(hidden)]
     pub parent_slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the type of the slot type.</p>
     /// <ul>
@@ -25,7 +20,6 @@ pub struct SlotTypeSummary {
     /// <li> <p> <code>Extended</code> - A slot type created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html"> <code>AMAZON.AlphaNumeric</code> </a>.</p> </li>
     /// <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a custom grammar slot type</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub slot_type_category: ::std::option::Option<crate::types::SlotTypeCategory>,
 }
 impl SlotTypeSummary {

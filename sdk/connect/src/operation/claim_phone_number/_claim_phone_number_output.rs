@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimPhoneNumberOutput {
     /// <p>A unique identifier for the phone number.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    #[doc(hidden)]
     pub phone_number_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

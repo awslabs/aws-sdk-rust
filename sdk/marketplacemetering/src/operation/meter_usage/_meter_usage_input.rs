@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    #[doc(hidden)]
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
-    #[doc(hidden)]
     pub usage_dimension: ::std::option::Option<::std::string::String>,
     /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
-    #[doc(hidden)]
     pub usage_quantity: ::std::option::Option<i32>,
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
-    #[doc(hidden)]
     pub usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
 }
 impl MeterUsageInput {

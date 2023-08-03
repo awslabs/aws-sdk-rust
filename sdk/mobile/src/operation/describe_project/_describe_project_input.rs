@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p> Unique project identifier. </p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
-    #[doc(hidden)]
     pub sync_from_resources: bool,
 }
 impl DescribeProjectInput {

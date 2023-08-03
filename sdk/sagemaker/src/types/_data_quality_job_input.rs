@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityJobInput {
     /// <p>Input object for the endpoint</p>
-    #[doc(hidden)]
     pub endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     /// <p>Input object for the batch transform job.</p>
-    #[doc(hidden)]
     pub batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
 }
 impl DataQualityJobInput {

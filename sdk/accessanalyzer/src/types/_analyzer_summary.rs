@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzerSummary {
     /// <p>The ARN of the analyzer.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the analyzer.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>A timestamp for the time at which the analyzer was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The resource that was most recently analyzed by the analyzer.</p>
-    #[doc(hidden)]
     pub last_resource_analyzed: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the most recently analyzed resource was analyzed.</p>
-    #[doc(hidden)]
     pub last_resource_analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags added to the analyzer.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AnalyzerStatus>,
     /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<crate::types::StatusReason>,
 }
 impl AnalyzerSummary {

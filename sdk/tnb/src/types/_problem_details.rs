@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProblemDetails {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable title of the problem type.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
 }
 impl ProblemDetails {

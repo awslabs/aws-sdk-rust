@@ -6,14 +6,11 @@
 pub struct OracleSettings {
     /// <p>Set this attribute to set up table-level supplemental logging for the Oracle database. This attribute enables PRIMARY KEY supplemental logging on all tables selected for a migration task.</p>
     /// <p>If you use this option, you still need to enable database-level supplemental logging.</p>
-    #[doc(hidden)]
     pub add_supplemental_logging: ::std::option::Option<bool>,
     /// <p>Specifies the ID of the destination for the archived redo logs. This value should be the same as a number in the dest_id column of the v$archived_log view. If you work with an additional redo log destination, use the <code>AdditionalArchivedLogDestId</code> option to specify the additional destination ID. Doing this improves performance by ensuring that the correct logs are accessed from the outset.</p>
-    #[doc(hidden)]
     pub archived_log_dest_id: ::std::option::Option<i32>,
     /// <p>Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup. This attribute is useful in the case of a switchover. In this case, DMS needs to know which destination to get archive redo logs from to read changes. This need arises because the previous primary instance is now a standby instance after switchover.</p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless necessary. For additional information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
-    #[doc(hidden)]
     pub additional_archived_log_dest_id: ::std::option::Option<i32>,
     /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a primary-to-single setup or a primary-to-multiple-standby setup. </p>
     /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a source. In this case, DMS needs information about what destination to get archive redo logs from to read changes. DMS needs this because after the switchover the previous primary is a standby instance. For example, in a primary-to-single standby setup you might apply the following settings. </p>
@@ -21,137 +18,97 @@ pub struct OracleSettings {
     /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
     /// <p> <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> </p>
     /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the database, never use <code>RESETLOGS</code> unless it's necessary. For more information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
-    #[doc(hidden)]
     pub extra_archived_log_dest_ids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>Set this attribute to <code>true</code> to enable replication of Oracle tables containing columns that are nested tables or defined types.</p>
-    #[doc(hidden)]
     pub allow_select_nested_tables: ::std::option::Option<bool>,
     /// <p>Set this attribute to change the number of threads that DMS configures to perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 2 (the default) and 8 (the maximum). Use this attribute together with the <code>readAheadBlocks</code> attribute.</p>
-    #[doc(hidden)]
     pub parallel_asm_read_threads: ::std::option::Option<i32>,
     /// <p>Set this attribute to change the number of read-ahead blocks that DMS configures to perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM). You can specify an integer value between 1000 (the default) and 200,000 (the maximum).</p>
-    #[doc(hidden)]
     pub read_ahead_blocks: ::std::option::Option<i32>,
     /// <p>Set this attribute to <code>false</code> in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This tells the DMS instance to not access redo logs through any specified path prefix replacement using direct file access.</p>
-    #[doc(hidden)]
     pub access_alternate_directly: ::std::option::Option<bool>,
     /// <p>Set this attribute to <code>true</code> in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This tells the DMS instance to use any specified prefix replacement to access all online redo logs.</p>
-    #[doc(hidden)]
     pub use_alternate_folder_for_online: ::std::option::Option<bool>,
     /// <p>Set this string attribute to the required value in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This value specifies the default Oracle root used to access the redo logs.</p>
-    #[doc(hidden)]
     pub oracle_path_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Set this string attribute to the required value in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This value specifies the path prefix used to replace the default Oracle root to access the redo logs.</p>
-    #[doc(hidden)]
     pub use_path_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Set this attribute to true in order to use the Binary Reader to capture change data for an Amazon RDS for Oracle as the source. This setting tells DMS instance to replace the default Oracle root with the specified <code>usePathPrefix</code> setting to access the redo logs.</p>
-    #[doc(hidden)]
     pub replace_path_prefix: ::std::option::Option<bool>,
     /// <p>Set this attribute to enable homogenous tablespace replication and create existing tables or indexes under the same tablespace on the target.</p>
-    #[doc(hidden)]
     pub enable_homogenous_tablespace: ::std::option::Option<bool>,
     /// <p>When set to <code>true</code>, this attribute helps to increase the commit rate on the Oracle target database by writing directly to tables and not writing a trail to database logs.</p>
-    #[doc(hidden)]
     pub direct_path_no_log: ::std::option::Option<bool>,
     /// <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
-    #[doc(hidden)]
     pub archived_logs_only: ::std::option::Option<bool>,
     /// <p>For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password. You can set this value from the <code> <i>asm_user_password</i> </code> value. You set this value as part of the comma-separated value that you set to the <code>Password</code> request parameter when you create the endpoint to access transaction logs using Binary Reader. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
-    #[doc(hidden)]
     pub asm_password: ::std::option::Option<::std::string::String>,
     /// <p>For an Oracle source endpoint, your ASM server address. You can set this value from the <code>asm_server</code> value. You set <code>asm_server</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
-    #[doc(hidden)]
     pub asm_server: ::std::option::Option<::std::string::String>,
     /// <p>For an Oracle source endpoint, your ASM user name. You can set this value from the <code>asm_user</code> value. You set <code>asm_user</code> as part of the extra connection attribute string to access an Oracle server with Binary Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source database</a>.</p>
-    #[doc(hidden)]
     pub asm_user: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the length of a character column is in bytes or in characters. To indicate that the character column length is in characters, set this attribute to <code>CHAR</code>. Otherwise, the character column length is in bytes.</p>
     /// <p>Example: <code>charLengthSemantics=CHAR;</code> </p>
-    #[doc(hidden)]
     pub char_length_semantics: ::std::option::Option<crate::types::CharLengthSemantics>,
     /// <p>Database name for the endpoint.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel load feature. Note that the target table cannot have any constraints or indexes.</p>
-    #[doc(hidden)]
     pub direct_path_parallel_load: ::std::option::Option<bool>,
     /// <p>When set to <code>true</code>, this attribute causes a task to fail if the actual size of an LOB column is greater than the specified <code>LobMaxSize</code>.</p>
     /// <p>If a task is set to limited LOB mode and this option is set to <code>true</code>, the task fails instead of truncating the LOB data.</p>
-    #[doc(hidden)]
     pub fail_tasks_on_lob_truncation: ::std::option::Option<bool>,
     /// <p>Specifies the number scale. You can select a scale up to 38, or you can select FLOAT. By default, the NUMBER data type is converted to precision 38, scale 10.</p>
     /// <p>Example: <code>numberDataTypeScale=12</code> </p>
-    #[doc(hidden)]
     pub number_datatype_scale: ::std::option::Option<i32>,
     /// <p>Endpoint connection password.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint TCP port.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>When set to <code>true</code>, this attribute supports tablespace replication.</p>
-    #[doc(hidden)]
     pub read_table_space_name: ::std::option::Option<bool>,
     /// <p>Specifies the number of seconds that the system waits before resending a query.</p>
     /// <p>Example: <code>retryInterval=6;</code> </p>
-    #[doc(hidden)]
     pub retry_interval: ::std::option::Option<i32>,
     /// <p>For an Oracle source endpoint, the transparent data encryption (TDE) password required by AWM DMS to access Oracle redo logs encrypted by TDE using Binary Reader. It is also the <code> <i>TDE_Password</i> </code> part of the comma-separated value you set to the <code>Password</code> request parameter when you create the endpoint. The <code>SecurityDbEncryptian</code> setting is related to this <code>SecurityDbEncryptionName</code> setting. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"> Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User Guide</i>. </p>
-    #[doc(hidden)]
     pub security_db_encryption: ::std::option::Option<::std::string::String>,
     /// <p>For an Oracle source endpoint, the name of a key used for the transparent data encryption (TDE) of the columns and tablespaces in an Oracle source database that is encrypted using TDE. The key value is the value of the <code>SecurityDbEncryption</code> setting. For more information on setting the key name value of <code>SecurityDbEncryptionName</code>, see the information and example for setting the <code>securityDbEncryptionName</code> extra connection attribute in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"> Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database Migration Service User Guide</i>.</p>
-    #[doc(hidden)]
     pub security_db_encryption_name: ::std::option::Option<::std::string::String>,
     /// <p>Fully qualified domain name of the endpoint.</p>
     /// <p>For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own custom function that mimics the operation of <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
-    #[doc(hidden)]
     pub spatial_data_option_to_geo_json_function_name: ::std::option::Option<::std::string::String>,
     /// <p>Use this attribute to specify a time in minutes for the delay in standby sync. If the source is an Oracle Active Data Guard standby database, use this attribute to specify the time lag between primary and standby databases.</p>
     /// <p>In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby instance as a source for replicating ongoing changes. Doing this eliminates the need to connect to an active database that might be in production.</p>
-    #[doc(hidden)]
     pub standby_delay_time: ::std::option::Option<i32>,
     /// <p>Endpoint connection user name.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader with Amazon RDS for Oracle as the source, you set additional attributes. For more information about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
-    #[doc(hidden)]
     pub use_b_file: ::std::option::Option<bool>,
     /// <p>Set this attribute to Y to have DMS use a direct path full load. Specify this value to use the direct path protocol in the Oracle Call Interface (OCI). By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
-    #[doc(hidden)]
     pub use_direct_path_full_load: ::std::option::Option<bool>,
     /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the default). Set this attribute to N if you want to access the redo logs as a binary file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.</p>
-    #[doc(hidden)]
     pub use_logminer_reader: ::std::option::Option<bool>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Oracle endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection details.</p>
-    #[doc(hidden)]
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub secrets_manager_oracle_asm_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the Oracle endpoint.</p>
-    #[doc(hidden)]
     pub secrets_manager_oracle_asm_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub trim_space_in_char: ::std::option::Option<bool>,
     /// <p>When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.</p>
-    #[doc(hidden)]
     pub convert_timestamp_with_zone_to_utc: ::std::option::Option<bool>,
     /// <p>The timeframe in minutes to check for open transactions for a CDC-only task.</p>
     /// <p>You can specify an integer value between 0 (the default) and 240 (the maximum). </p> <note>
     /// <p>This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub open_transaction_window: ::std::option::Option<i32>,
 }
 impl OracleSettings {

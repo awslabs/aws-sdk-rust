@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListChannelsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
-    #[doc(hidden)]
     pub privacy: ::std::option::Option<crate::types::ChannelPrivacy>,
     /// <p>The maximum number of channels that you want to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
 impl ListChannelsInput {

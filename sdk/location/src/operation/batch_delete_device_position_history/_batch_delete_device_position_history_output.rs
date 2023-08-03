@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryOutput {
     /// <p>Contains error details for each device history that failed to delete.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpsertRowsResult {
     /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
-    #[doc(hidden)]
     pub row_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The result of the upsert action. </p>
-    #[doc(hidden)]
     pub upsert_action: ::std::option::Option<crate::types::UpsertAction>,
 }
 impl UpsertRowsResult {

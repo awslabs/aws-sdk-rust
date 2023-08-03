@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseAddressInput {
     /// <p>The allocation ID. This parameter is required.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>Deprecated.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     /// <p>If you provide an incorrect network border group, you receive an <code>InvalidAddress.NotFound</code> error.</p>
     /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you receive an <code>InvalidParameterCombination</code> error.</p>
-    #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ReleaseAddressInput {

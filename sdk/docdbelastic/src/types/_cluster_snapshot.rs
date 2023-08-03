@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSnapshot {
     /// <p>A list of the IDs of subnets associated with the DB cluster snapshot.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub snapshot_creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub cluster_creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>A list of the IDs of the VPC security groups associated with the cluster snapshot.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    #[doc(hidden)]
     pub admin_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSnapshot {

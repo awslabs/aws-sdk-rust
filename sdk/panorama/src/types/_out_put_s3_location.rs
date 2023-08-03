@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutPutS3Location {
     /// <p>The object's bucket.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object's key.</p>
-    #[doc(hidden)]
     pub object_key: ::std::option::Option<::std::string::String>,
 }
 impl OutPutS3Location {

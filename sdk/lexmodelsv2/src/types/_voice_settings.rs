@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
-    #[doc(hidden)]
     pub voice_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
     /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<crate::types::VoiceEngine>,
 }
 impl VoiceSettings {

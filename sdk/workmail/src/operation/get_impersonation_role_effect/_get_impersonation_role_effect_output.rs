@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImpersonationRoleEffectOutput {
     /// <p>The impersonation role type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
     /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::AccessEffect>,
     /// <p>A list of the rules that match the input and produce the configured effect.</p>
-    #[doc(hidden)]
     pub matched_rules: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationMatchedRule>>,
     _request_id: Option<String>,
 }

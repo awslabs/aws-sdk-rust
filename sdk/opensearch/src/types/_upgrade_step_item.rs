@@ -10,7 +10,6 @@ pub struct UpgradeStepItem {
     /// <li> <p>Snapshot</p> </li>
     /// <li> <p>Upgrade</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     /// <p> The current status of the upgrade. The status can take one of the following values: </p>
     /// <ul>
@@ -19,13 +18,10 @@ pub struct UpgradeStepItem {
     /// <li> <p>Succeeded with Issues</p> </li>
     /// <li> <p>Failed</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub upgrade_step_status: ::std::option::Option<crate::types::UpgradeStatus>,
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
-    #[doc(hidden)]
     pub issues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The floating point value representing the progress percentage of a particular step.</p>
-    #[doc(hidden)]
     pub progress_percent: ::std::option::Option<f64>,
 }
 impl UpgradeStepItem {

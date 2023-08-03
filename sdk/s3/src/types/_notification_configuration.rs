@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
-    #[doc(hidden)]
     pub topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
-    #[doc(hidden)]
     pub queue_configurations: ::std::option::Option<::std::vec::Vec<crate::types::QueueConfiguration>>,
     /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
-    #[doc(hidden)]
     pub lambda_function_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionConfiguration>>,
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
-    #[doc(hidden)]
     pub event_bridge_configuration: ::std::option::Option<crate::types::EventBridgeConfiguration>,
 }
 impl NotificationConfiguration {

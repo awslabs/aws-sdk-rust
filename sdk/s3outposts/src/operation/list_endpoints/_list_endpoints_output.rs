@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEndpointsOutput {
     /// <p>The list of endpoints associated with the specified Outpost.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

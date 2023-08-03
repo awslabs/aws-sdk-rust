@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassificationTypeUpdate {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
-    #[doc(hidden)]
     pub one_time: ::std::option::Option<crate::types::S3OneTimeClassificationType>,
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic. </p>
-    #[doc(hidden)]
     pub continuous: ::std::option::Option<crate::types::S3ContinuousClassificationType>,
 }
 impl ClassificationTypeUpdate {

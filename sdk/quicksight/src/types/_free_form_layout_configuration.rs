@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormLayoutConfiguration {
     /// <p>The elements that are included in a free-form layout.</p>
-    #[doc(hidden)]
     pub elements: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
     /// <p>Configuration options for the canvas of a free-form layout.</p>
-    #[doc(hidden)]
     pub canvas_size_options: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
 }
 impl FreeFormLayoutConfiguration {

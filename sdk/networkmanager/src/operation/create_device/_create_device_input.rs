@@ -4,38 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateDeviceInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
-    #[doc(hidden)]
     pub aws_location: ::std::option::Option<crate::types::AwsLocation>,
     /// <p>A description of the device.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the device.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The vendor of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    #[doc(hidden)]
     pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The model of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The location of the device.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>The ID of the site.</p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDeviceInput {

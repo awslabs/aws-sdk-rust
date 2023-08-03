@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCertificateOutput {
     /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

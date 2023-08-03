@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignVersionsOutput {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
-    #[doc(hidden)]
     pub campaigns_response: ::std::option::Option<crate::types::CampaignsResponse>,
     _request_id: Option<String>,
 }

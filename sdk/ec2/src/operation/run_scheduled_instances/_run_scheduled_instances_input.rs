@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RunScheduledInstancesInput {
     /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The number of instances.</p>
     /// <p>Default: 1</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
-    #[doc(hidden)]
     pub launch_specification: ::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification>,
     /// <p>The Scheduled Instance ID.</p>
-    #[doc(hidden)]
     pub scheduled_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl RunScheduledInstancesInput {

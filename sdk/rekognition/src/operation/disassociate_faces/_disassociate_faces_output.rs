@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFacesOutput {
     /// <p>An array of DissociatedFace objects containing FaceIds that are successfully disassociated with the UserID is returned. Returned if the DisassociatedFaces action is successful.</p>
-    #[doc(hidden)]
     pub disassociated_faces: ::std::option::Option<::std::vec::Vec<crate::types::DisassociatedFace>>,
     /// <p>An array of UnsuccessfulDisassociation objects containing FaceIds that are not successfully associated, along with the reasons for the failure to associate. Returned if the DisassociateFaces action is successful.</p>
-    #[doc(hidden)]
     pub unsuccessful_face_disassociations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDisassociation>>,
     /// <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
-    #[doc(hidden)]
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
     _request_id: Option<String>,
 }

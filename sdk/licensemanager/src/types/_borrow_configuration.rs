@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BorrowConfiguration {
     /// <p>Indicates whether early check-ins are allowed.</p>
-    #[doc(hidden)]
     pub allow_early_check_in: ::std::option::Option<bool>,
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
-    #[doc(hidden)]
     pub max_time_to_live_in_minutes: ::std::option::Option<i32>,
 }
 impl BorrowConfiguration {

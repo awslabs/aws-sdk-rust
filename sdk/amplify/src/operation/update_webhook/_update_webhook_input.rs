@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWebhookInput {
     /// <p> The unique ID for a webhook. </p>
-    #[doc(hidden)]
     pub webhook_id: ::std::option::Option<::std::string::String>,
     /// <p> The name for a branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> The description for a webhook. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWebhookInput {

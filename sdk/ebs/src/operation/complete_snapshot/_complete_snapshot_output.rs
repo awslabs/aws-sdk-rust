@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteSnapshotOutput {
     /// <p>The status of the snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }

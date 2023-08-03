@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCapacityReservationFleetInput {
     /// <p>The ID of the Capacity Reservation Fleet to modify.</p>
-    #[doc(hidden)]
     pub capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
-    #[doc(hidden)]
     pub total_target_capacity: ::std::option::Option<i32>,
     /// <p>The date and time at which the Capacity Reservation Fleet expires. When the Capacity Reservation Fleet expires, its state changes to <code>expired</code> and all of the Capacity Reservations in the Fleet expire.</p>
     /// <p>The Capacity Reservation Fleet expires within an hour after the specified time. For example, if you specify <code>5/31/2019</code>, <code>13:30:55</code>, the Capacity Reservation Fleet is guaranteed to expire between <code>13:30:55</code> and <code>14:30:55</code> on <code>5/31/2019</code>.</p>
     /// <p>You can't specify <b>EndDate</b> and <b> RemoveEndDate</b> in the same request.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether to remove the end date from the Capacity Reservation Fleet. If you remove the end date, the Capacity Reservation Fleet does not expire and it remains active until you explicitly cancel it using the <b>CancelCapacityReservationFleet</b> action.</p>
     /// <p>You can't specify <b>RemoveEndDate</b> and <b> EndDate</b> in the same request.</p>
-    #[doc(hidden)]
     pub remove_end_date: ::std::option::Option<bool>,
 }
 impl ModifyCapacityReservationFleetInput {

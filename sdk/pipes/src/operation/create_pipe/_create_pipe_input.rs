@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePipeInput {
     /// <p>The name of the pipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the pipe.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state the pipe should be in.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::RequestedPipeState>,
     /// <p>The ARN of the source resource.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The parameters required to set up a source for your pipe.</p>
-    #[doc(hidden)]
     pub source_parameters: ::std::option::Option<crate::types::PipeSourceParameters>,
     /// <p>The ARN of the enrichment resource.</p>
-    #[doc(hidden)]
     pub enrichment: ::std::option::Option<::std::string::String>,
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    #[doc(hidden)]
     pub enrichment_parameters: ::std::option::Option<crate::types::PipeEnrichmentParameters>,
     /// <p>The ARN of the target resource.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The parameters required to set up a target for your pipe.</p>
-    #[doc(hidden)]
     pub target_parameters: ::std::option::Option<crate::types::PipeTargetParameters>,
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePipeInput {

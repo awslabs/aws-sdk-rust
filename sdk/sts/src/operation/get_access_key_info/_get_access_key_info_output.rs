@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessKeyInfoOutput {
     /// <p>The number used to identify the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

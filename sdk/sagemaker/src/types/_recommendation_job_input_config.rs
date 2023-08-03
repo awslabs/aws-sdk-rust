@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
-    #[doc(hidden)]
     pub model_package_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
-    #[doc(hidden)]
     pub job_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>Specifies the traffic pattern of the job.</p>
-    #[doc(hidden)]
     pub traffic_pattern: ::std::option::Option<crate::types::TrafficPattern>,
     /// <p>Defines the resource limit of the job.</p>
-    #[doc(hidden)]
     pub resource_limit: ::std::option::Option<crate::types::RecommendationJobResourceLimit>,
     /// <p>Specifies the endpoint configuration to use for a job.</p>
-    #[doc(hidden)]
     pub endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EndpointInputConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
     /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
@@ -47,19 +42,14 @@ pub struct RecommendationJobInputConfig {
     /// </region></code> </p> </li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
-    #[doc(hidden)]
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies mandatory fields for running an Inference Recommender job. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package.</p>
-    #[doc(hidden)]
     pub container_config: ::std::option::Option<crate::types::RecommendationJobContainerConfig>,
     /// <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EndpointInfo>>,
     /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::RecommendationJobVpcConfig>,
     /// <p>The name of the created model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationJobInputConfig {

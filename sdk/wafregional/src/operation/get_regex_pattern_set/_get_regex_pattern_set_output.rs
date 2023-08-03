@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegexPatternSetOutput {
     /// <p>Information about the <code>RegexPatternSet</code> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
-    #[doc(hidden)]
     pub regex_pattern_set: ::std::option::Option<crate::types::RegexPatternSet>,
     _request_id: Option<String>,
 }

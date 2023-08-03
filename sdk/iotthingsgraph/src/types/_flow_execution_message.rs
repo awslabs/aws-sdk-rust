@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowExecutionMessage {
     /// <p>The unique identifier of the message.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of flow event .</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::FlowExecutionEventType>,
     /// <p>The date and time when the message was last updated.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A string containing information about the flow event.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::std::string::String>,
 }
 impl FlowExecutionMessage {

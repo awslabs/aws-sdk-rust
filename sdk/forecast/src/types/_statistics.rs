@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statistics {
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
-    #[doc(hidden)]
     pub count_distinct: ::std::option::Option<i32>,
     /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
-    #[doc(hidden)]
     pub count_null: ::std::option::Option<i32>,
     /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
-    #[doc(hidden)]
     pub count_nan: ::std::option::Option<i32>,
     /// <p>For a numeric field, the minimum value in the field.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<::std::string::String>,
     /// <p>For a numeric field, the maximum value in the field.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<::std::string::String>,
     /// <p>For a numeric field, the average value in the field.</p>
-    #[doc(hidden)]
     pub avg: ::std::option::Option<f64>,
     /// <p>For a numeric field, the standard deviation.</p>
-    #[doc(hidden)]
     pub stddev: ::std::option::Option<f64>,
     /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
-    #[doc(hidden)]
     pub count_long: ::std::option::Option<i64>,
     /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
-    #[doc(hidden)]
     pub count_distinct_long: ::std::option::Option<i64>,
     /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
-    #[doc(hidden)]
     pub count_null_long: ::std::option::Option<i64>,
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
-    #[doc(hidden)]
     pub count_nan_long: ::std::option::Option<i64>,
 }
 impl Statistics {

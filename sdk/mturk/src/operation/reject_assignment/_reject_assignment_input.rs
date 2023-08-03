@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectAssignmentInput {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
-    #[doc(hidden)]
     pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    #[doc(hidden)]
     pub requester_feedback: ::std::option::Option<::std::string::String>,
 }
 impl RejectAssignmentInput {

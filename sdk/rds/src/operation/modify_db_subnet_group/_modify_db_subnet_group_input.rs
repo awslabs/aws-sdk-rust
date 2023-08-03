@@ -7,13 +7,10 @@ pub struct ModifyDbSubnetGroupInput {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the DB subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 subnet IDs for the DB subnet group.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifyDbSubnetGroupInput {

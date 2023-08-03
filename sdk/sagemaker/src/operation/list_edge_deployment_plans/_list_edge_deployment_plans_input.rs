@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEdgeDeploymentPlansInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to select (50 by default).</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Selects edge deployment plans created after this time.</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Selects edge deployment plans created before this time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Selects edge deployment plans that were last updated after this time.</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Selects edge deployment plans with names containing this name.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
-    #[doc(hidden)]
     pub device_fleet_name_contains: ::std::option::Option<::std::string::String>,
     /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListEdgeDeploymentPlansSortBy>,
     /// <p>The direction of the sorting (ascending or descending).</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListEdgeDeploymentPlansInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportSummary {
     /// <p> The Amazon Resource Number (ARN) corresponding to the import request. </p>
-    #[doc(hidden)]
     pub import_arn: ::std::option::Option<::std::string::String>,
     /// <p> The status of the import operation. </p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p> The Amazon Resource Number (ARN) of the table being imported into. </p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p> The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester). </p>
-    #[doc(hidden)]
     pub s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
     /// <p> The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task. </p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-    #[doc(hidden)]
     pub input_format: ::std::option::Option<crate::types::InputFormat>,
     /// <p> The time at which this import task began. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?) </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportSummary {

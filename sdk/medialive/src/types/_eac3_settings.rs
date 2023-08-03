@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Eac3Settings {
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    #[doc(hidden)]
     pub attenuation_control: ::std::option::Option<crate::types::Eac3AttenuationControl>,
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<f64>,
     /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
-    #[doc(hidden)]
     pub bitstream_mode: ::std::option::Option<crate::types::Eac3BitstreamMode>,
     /// Dolby Digital Plus coding mode. Determines number of channels.
-    #[doc(hidden)]
     pub coding_mode: ::std::option::Option<crate::types::Eac3CodingMode>,
     /// When set to enabled, activates a DC highpass filter for all input channels.
-    #[doc(hidden)]
     pub dc_filter: ::std::option::Option<crate::types::Eac3DcFilter>,
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
-    #[doc(hidden)]
     pub dialnorm: ::std::option::Option<i32>,
     /// Sets the Dolby dynamic range compression profile.
-    #[doc(hidden)]
     pub drc_line: ::std::option::Option<crate::types::Eac3DrcLine>,
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
-    #[doc(hidden)]
     pub drc_rf: ::std::option::Option<crate::types::Eac3DrcRf>,
     /// When encoding 3/2 audio, setting to lfe enables the LFE channel
-    #[doc(hidden)]
     pub lfe_control: ::std::option::Option<crate::types::Eac3LfeControl>,
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.
-    #[doc(hidden)]
     pub lfe_filter: ::std::option::Option<crate::types::Eac3LfeFilter>,
     /// Left only/Right only center mix level. Only used for 3/2 coding mode.
-    #[doc(hidden)]
     pub lo_ro_center_mix_level: ::std::option::Option<f64>,
     /// Left only/Right only surround mix level. Only used for 3/2 coding mode.
-    #[doc(hidden)]
     pub lo_ro_surround_mix_level: ::std::option::Option<f64>,
     /// Left total/Right total center mix level. Only used for 3/2 coding mode.
-    #[doc(hidden)]
     pub lt_rt_center_mix_level: ::std::option::Option<f64>,
     /// Left total/Right total surround mix level. Only used for 3/2 coding mode.
-    #[doc(hidden)]
     pub lt_rt_surround_mix_level: ::std::option::Option<f64>,
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    #[doc(hidden)]
     pub metadata_control: ::std::option::Option<crate::types::Eac3MetadataControl>,
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    #[doc(hidden)]
     pub passthrough_control: ::std::option::Option<crate::types::Eac3PassthroughControl>,
     /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
-    #[doc(hidden)]
     pub phase_control: ::std::option::Option<crate::types::Eac3PhaseControl>,
     /// Stereo downmix preference. Only used for 3/2 coding mode.
-    #[doc(hidden)]
     pub stereo_downmix: ::std::option::Option<crate::types::Eac3StereoDownmix>,
     /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
-    #[doc(hidden)]
     pub surround_ex_mode: ::std::option::Option<crate::types::Eac3SurroundExMode>,
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
-    #[doc(hidden)]
     pub surround_mode: ::std::option::Option<crate::types::Eac3SurroundMode>,
 }
 impl Eac3Settings {

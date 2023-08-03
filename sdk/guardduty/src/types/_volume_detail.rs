@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeDetail {
     /// <p>EBS volume Arn information.</p>
-    #[doc(hidden)]
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The EBS volume type.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>The device name for the EBS volume.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume size in GB.</p>
-    #[doc(hidden)]
     pub volume_size_in_gb: i32,
     /// <p>EBS volume encryption type.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>Snapshot Arn of the EBS volume.</p>
-    #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>KMS key Arn used to encrypt the EBS volume.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl VolumeDetail {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReplayOutput {
     /// <p>The ARN of the replay.</p>
-    #[doc(hidden)]
     pub replay_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the replay.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReplayState>,
     /// <p>The reason that the replay is in the state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the replay started.</p>
-    #[doc(hidden)]
     pub replay_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

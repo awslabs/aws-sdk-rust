@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLedgerInput {
     /// <p>The name of the ledger.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     /// <p>Use one of the following options to specify this parameter:</p>
@@ -26,7 +24,6 @@ pub struct UpdateLedgerInput {
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLedgerInput {

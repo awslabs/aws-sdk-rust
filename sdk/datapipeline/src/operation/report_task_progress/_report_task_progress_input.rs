@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportTaskProgressInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
 }
 impl ReportTaskProgressInput {

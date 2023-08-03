@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
-    #[doc(hidden)]
     pub image_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteImageRecipeInput {

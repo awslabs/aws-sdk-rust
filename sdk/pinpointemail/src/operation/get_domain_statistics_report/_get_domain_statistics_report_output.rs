@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-    #[doc(hidden)]
     pub overall_volume: ::std::option::Option<crate::types::OverallVolume>,
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    #[doc(hidden)]
     pub daily_volumes: ::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>>,
     _request_id: Option<String>,
 }

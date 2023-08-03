@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachFromIndex {
     /// <p>A reference to the index object.</p>
-    #[doc(hidden)]
     pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>A reference to the object being detached from the index.</p>
-    #[doc(hidden)]
     pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchDetachFromIndex {

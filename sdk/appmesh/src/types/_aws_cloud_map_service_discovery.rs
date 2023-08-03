@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudMapServiceDiscovery {
     /// <p>The name of the Cloud Map namespace to use.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Cloud Map service to use.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>>,
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-    #[doc(hidden)]
     pub ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl AwsCloudMapServiceDiscovery {

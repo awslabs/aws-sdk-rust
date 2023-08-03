@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionInput {
     /// <p>The ID of the session. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The origin of the request. </p>
-    #[doc(hidden)]
     pub request_origin: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionInput {

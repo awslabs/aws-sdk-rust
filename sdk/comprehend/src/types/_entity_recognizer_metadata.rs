@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EntityRecognizerMetadata {
     /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
-    #[doc(hidden)]
     pub number_of_trained_documents: ::std::option::Option<i32>,
     /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
-    #[doc(hidden)]
     pub number_of_test_documents: ::std::option::Option<i32>,
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
-    #[doc(hidden)]
     pub evaluation_metrics: ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
     /// <p>Entity types from the metadata of an entity recognizer.</p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>>,
 }
 impl EntityRecognizerMetadata {

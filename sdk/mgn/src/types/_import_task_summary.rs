@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTaskSummary {
     /// <p>Import task summary waves.</p>
-    #[doc(hidden)]
     pub waves: ::std::option::Option<crate::types::ImportTaskSummaryWaves>,
     /// <p>Import task summary applications.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<crate::types::ImportTaskSummaryApplications>,
     /// <p>Import task summary servers.</p>
-    #[doc(hidden)]
     pub servers: ::std::option::Option<crate::types::ImportTaskSummaryServers>,
 }
 impl ImportTaskSummary {

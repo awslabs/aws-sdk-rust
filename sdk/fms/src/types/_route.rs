@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Route {
     /// <p>The type of destination for the route.</p>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<crate::types::DestinationType>,
     /// <p>The type of target for the route.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::TargetType>,
     /// <p>The destination of the route.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The route's target.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
 }
 impl Route {

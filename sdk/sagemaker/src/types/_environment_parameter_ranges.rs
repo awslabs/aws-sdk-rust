@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentParameterRanges {
     /// <p>Specified a list of parameters for each category.</p>
-    #[doc(hidden)]
     pub categorical_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameter>>,
 }
 impl EnvironmentParameterRanges {

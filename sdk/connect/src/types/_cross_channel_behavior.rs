@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossChannelBehavior {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
-    #[doc(hidden)]
     pub behavior_type: ::std::option::Option<crate::types::BehaviorType>,
 }
 impl CrossChannelBehavior {

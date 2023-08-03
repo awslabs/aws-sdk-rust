@@ -13,15 +13,12 @@ pub struct EbsUtilizationMetric {
     /// <li> <p> <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
     /// <li> <p> <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified period of time.</p> <p>Unit: Bytes</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::EbsMetricName>,
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The value of the utilization metric.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl EbsUtilizationMetric {

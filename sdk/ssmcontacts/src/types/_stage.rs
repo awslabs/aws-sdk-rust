@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stage {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
-    #[doc(hidden)]
     pub duration_in_minutes: ::std::option::Option<i32>,
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl Stage {

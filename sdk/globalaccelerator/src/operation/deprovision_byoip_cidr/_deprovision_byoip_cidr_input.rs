@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeprovisionByoipCidrInput {
     /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl DeprovisionByoipCidrInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InterpolationParameters {
     /// <p>The interpolation type.</p>
-    #[doc(hidden)]
     pub interpolation_type: ::std::option::Option<crate::types::InterpolationType>,
     /// <p>The interpolation time interval in seconds.</p>
-    #[doc(hidden)]
     pub interval_in_seconds: ::std::option::Option<i64>,
 }
 impl InterpolationParameters {

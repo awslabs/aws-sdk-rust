@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPhoneNumberOrderInput {
     /// <p>The ID for the phone number order.</p>
-    #[doc(hidden)]
     pub phone_number_order_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPhoneNumberOrderInput {

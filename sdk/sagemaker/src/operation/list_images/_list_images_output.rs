@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImagesOutput {
     /// <p>A list of images and their properties.</p>
-    #[doc(hidden)]
     pub images: ::std::option::Option<::std::vec::Vec<crate::types::Image>>,
     /// <p>A token for getting the next set of images, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverRuleConfig {
     /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
-    #[doc(hidden)]
     pub target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
-    #[doc(hidden)]
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ResolverRuleConfig {

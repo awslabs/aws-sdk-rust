@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGatewayInput {
     /// <p>A unique, friendly name for the gateway.</p>
-    #[doc(hidden)]
     pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
-    #[doc(hidden)]
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGatewayInput {

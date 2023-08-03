@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUploadUrlInput {
     /// <p>The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this <code>scanName</code> when you call <code>CreateScan</code> on the code resource you upload to this URL.</p>
-    #[doc(hidden)]
     pub scan_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateUploadUrlInput {

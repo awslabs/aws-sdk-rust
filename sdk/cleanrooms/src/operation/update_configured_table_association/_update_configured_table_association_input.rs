@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableAssociationInput {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    #[doc(hidden)]
     pub configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    #[doc(hidden)]
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the configured table association.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConfiguredTableAssociationInput {

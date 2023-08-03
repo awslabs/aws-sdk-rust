@@ -5,25 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionRecipeSource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
-    #[doc(hidden)]
     pub lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
     /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
-    #[doc(hidden)]
     pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The platforms that the component version supports.</p>
-    #[doc(hidden)]
     pub component_platforms: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>,
     /// <p>The component versions on which this Lambda function component depends.</p>
-    #[doc(hidden)]
     pub component_dependencies:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDependencyRequirement>>,
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
-    #[doc(hidden)]
     pub component_lambda_parameters: ::std::option::Option<crate::types::LambdaExecutionParameters>,
 }
 impl LambdaFunctionRecipeSource {

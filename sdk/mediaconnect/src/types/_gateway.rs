@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Gateway {
     /// The range of IP addresses that contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    #[doc(hidden)]
     pub egress_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The Amazon Resource Name (ARN) of the gateway.
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub gateway_messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
     /// The current status of the gateway.
-    #[doc(hidden)]
     pub gateway_state: ::std::option::Option<crate::types::GatewayState>,
     /// The name of the gateway. This name can not be modified after the gateway is created.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The list of networks in the gateway.
-    #[doc(hidden)]
     pub networks: ::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>>,
 }
 impl Gateway {

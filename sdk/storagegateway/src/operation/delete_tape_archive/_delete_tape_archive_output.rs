@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
-    #[doc(hidden)]
     pub tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

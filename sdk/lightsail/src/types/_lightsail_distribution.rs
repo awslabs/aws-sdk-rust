@@ -5,69 +5,49 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LightsailDistribution {
     /// <p>The name of the distribution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail distribution. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that describes the location of the distribution, such as the Amazon Web Services Region and Availability Zone.</p> <note>
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>Distribution</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The alternate domain names of the distribution.</p>
-    #[doc(hidden)]
     pub alternative_domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the distribution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the distribution is enabled.</p>
-    #[doc(hidden)]
     pub is_enabled: ::std::option::Option<bool>,
     /// <p>The domain name of the distribution.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the bundle currently applied to the distribution.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SSL/TLS certificate attached to the distribution, if any.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the origin resource of the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<crate::types::Origin>,
     /// <p>The public DNS of the origin.</p>
-    #[doc(hidden)]
     pub origin_public_dns: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the default cache behavior of the distribution.</p>
-    #[doc(hidden)]
     pub default_cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
     /// <p>An object that describes the cache behavior settings of the distribution.</p>
-    #[doc(hidden)]
     pub cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
     /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
-    #[doc(hidden)]
     pub cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
     /// <p>Indicates whether the bundle that is currently applied to your distribution, specified using the <code>distributionName</code> parameter, can be changed to another bundle.</p>
     /// <p>Use the <code>UpdateDistributionBundle</code> action to change your distribution's bundle.</p>
-    #[doc(hidden)]
     pub able_to_update_bundle: ::std::option::Option<bool>,
     /// <p>The IP address type of the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LightsailDistribution {

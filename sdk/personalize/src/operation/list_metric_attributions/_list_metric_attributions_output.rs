@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMetricAttributionsOutput {
     /// <p>The list of metric attributions.</p>
-    #[doc(hidden)]
     pub metric_attributions: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttributionSummary>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

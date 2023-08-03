@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchOutput {
     /// <p>The status information returned for the search request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SearchStatus>,
     /// <p>The documents that match the search criteria.</p>
-    #[doc(hidden)]
     pub hits: ::std::option::Option<crate::types::Hits>,
     /// <p>The requested facet information.</p>
-    #[doc(hidden)]
     pub facets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::BucketInfo>>,
     /// <p>The requested field statistics information.</p>
-    #[doc(hidden)]
     pub stats: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldStats>>,
     _request_id: Option<String>,
 }

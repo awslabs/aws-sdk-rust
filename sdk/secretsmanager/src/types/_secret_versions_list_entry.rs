@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecretVersionsListEntry {
     /// <p>The unique version identifier of this version of the secret.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of staging labels that are currently associated with this version of the secret.</p>
-    #[doc(hidden)]
     pub version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date that this version of the secret was last accessed. Note that the resolution of this field is at the date level and does not include the time.</p>
-    #[doc(hidden)]
     pub last_accessed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time this version of the secret was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The KMS keys used to encrypt the secret version.</p>
-    #[doc(hidden)]
     pub kms_key_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SecretVersionsListEntry {

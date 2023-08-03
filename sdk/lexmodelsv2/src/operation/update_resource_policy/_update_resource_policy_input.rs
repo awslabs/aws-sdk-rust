@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
     /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    #[doc(hidden)]
     pub expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResourcePolicyInput {

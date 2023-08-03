@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsOutput {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
-    #[doc(hidden)]
     pub cost_category_references: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

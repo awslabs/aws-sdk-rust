@@ -6,7 +6,6 @@ pub struct DeletePullRequestApprovalRuleOutput {
     /// <p>The ID of the deleted approval rule. </p> <note>
     /// <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>
     /// </note>
-    #[doc(hidden)]
     pub approval_rule_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

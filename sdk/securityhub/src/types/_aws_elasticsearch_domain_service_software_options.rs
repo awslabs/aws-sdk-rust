@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
-    #[doc(hidden)]
     pub automated_update_date: ::std::option::Option<::std::string::String>,
     /// <p>Whether a request to update the domain can be canceled.</p>
-    #[doc(hidden)]
     pub cancellable: bool,
     /// <p>The version of the service software that is currently installed on the domain.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed description of the service software status.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The most recent version of the service software.</p>
-    #[doc(hidden)]
     pub new_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether a service software update is available for the domain.</p>
-    #[doc(hidden)]
     pub update_available: bool,
     /// <p>The status of the service software update. Valid values are as follows:</p>
     /// <ul>
@@ -30,7 +24,6 @@ pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
     /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub update_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticsearchDomainServiceSoftwareOptions {

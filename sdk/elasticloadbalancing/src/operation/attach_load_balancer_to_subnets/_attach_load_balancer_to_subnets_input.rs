@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerToSubnetsInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttachLoadBalancerToSubnetsInput {

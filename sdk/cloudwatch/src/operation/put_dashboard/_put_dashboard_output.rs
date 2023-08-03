@@ -6,7 +6,6 @@ pub struct PutDashboardOutput {
     /// <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>
     /// <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>
     /// <p>If this result includes error messages, the input was not valid and the operation failed.</p>
-    #[doc(hidden)]
     pub dashboard_validation_messages: ::std::option::Option<::std::vec::Vec<crate::types::DashboardValidationMessage>>,
     _request_id: Option<String>,
 }

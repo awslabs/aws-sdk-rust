@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSigningPlatformsOutput {
     /// <p>A list of all platforms that match the request parameters.</p>
-    #[doc(hidden)]
     pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>>,
     /// <p>Value for specifying the next set of paginated results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

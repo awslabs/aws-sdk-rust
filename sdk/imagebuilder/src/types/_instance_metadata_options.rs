@@ -10,10 +10,8 @@ pub struct InstanceMetadataOptions {
     /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
-    #[doc(hidden)]
     pub http_tokens: ::std::option::Option<::std::string::String>,
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
-    #[doc(hidden)]
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
 }
 impl InstanceMetadataOptions {

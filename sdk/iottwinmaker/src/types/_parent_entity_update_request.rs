@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParentEntityUpdateRequest {
     /// <p>The type of the update.</p>
-    #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::ParentEntityUpdateType>,
     /// <p>The ID of the parent entity.</p>
-    #[doc(hidden)]
     pub parent_entity_id: ::std::option::Option<::std::string::String>,
 }
 impl ParentEntityUpdateRequest {

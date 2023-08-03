@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendationMetadata {
     /// <p>The unique identifier for the recommendation set.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that shows when the recommendations were generated.</p>
-    #[doc(hidden)]
     pub generation_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
-    #[doc(hidden)]
     pub additional_metadata: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansPurchaseRecommendationMetadata {

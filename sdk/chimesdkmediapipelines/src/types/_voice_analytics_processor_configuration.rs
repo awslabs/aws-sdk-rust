@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceAnalyticsProcessorConfiguration {
     /// <p>The status of the speaker search task.</p>
-    #[doc(hidden)]
     pub speaker_search_status: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
     /// <p>The status of the voice tone analysis task.</p>
-    #[doc(hidden)]
     pub voice_tone_analysis_status: ::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus>,
 }
 impl VoiceAnalyticsProcessorConfiguration {

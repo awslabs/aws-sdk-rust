@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLayoutOutput {
     /// <p>The unique identifier of the layout.</p>
-    #[doc(hidden)]
     pub layout_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
-    #[doc(hidden)]
     pub layout_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the layout. It must be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::LayoutContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }

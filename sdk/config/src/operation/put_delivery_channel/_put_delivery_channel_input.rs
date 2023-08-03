@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDeliveryChannelInput {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub delivery_channel: ::std::option::Option<crate::types::DeliveryChannel>,
 }
 impl PutDeliveryChannelInput {

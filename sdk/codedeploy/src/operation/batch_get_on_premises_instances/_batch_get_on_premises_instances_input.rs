@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesInput {
     /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
-    #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetOnPremisesInstancesInput {

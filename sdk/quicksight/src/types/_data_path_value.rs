@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataPathValue {
     /// <p>The field ID of the field that needs to be sorted.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual value of the field that needs to be sorted.</p>
-    #[doc(hidden)]
     pub field_value: ::std::option::Option<::std::string::String>,
 }
 impl DataPathValue {

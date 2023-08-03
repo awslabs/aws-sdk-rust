@@ -4,32 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePositionHistoryInput {
     /// <p>The tracker resource receiving the request for the device position history.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The device whose position history you want to retrieve.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
     /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub start_time_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
     /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub end_time_exclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional limit for the number of device positions returned in a single call.</p>
     /// <p>Default value: <code>100</code> </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetDevicePositionHistoryInput {

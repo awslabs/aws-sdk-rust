@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReEncryptOutput {
     /// <p>The reencrypted data. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    #[doc(hidden)]
     pub ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Unique identifier of the KMS key used to originally encrypt the data.</p>
-    #[doc(hidden)]
     pub source_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
-    #[doc(hidden)]
     pub source_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
-    #[doc(hidden)]
     pub destination_encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithmSpec>,
     _request_id: Option<String>,
 }

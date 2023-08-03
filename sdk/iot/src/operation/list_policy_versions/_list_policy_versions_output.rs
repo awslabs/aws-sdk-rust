@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPolicyVersionsOutput {
     /// <p>The policy versions.</p>
-    #[doc(hidden)]
     pub policy_versions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
     _request_id: Option<String>,
 }

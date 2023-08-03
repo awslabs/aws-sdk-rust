@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutStorageLensConfigurationTaggingInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
-    #[doc(hidden)]
     pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the requester.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
     /// <p>You can set up to a maximum of 50 tags.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
 }
 impl PutStorageLensConfigurationTaggingInput {

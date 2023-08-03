@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClientVpnRouteInput {
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the target subnet used by the route.</p>
-    #[doc(hidden)]
     pub target_vpc_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteClientVpnRouteInput {

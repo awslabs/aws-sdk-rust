@@ -12,34 +12,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub db_cluster_endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-    #[doc(hidden)]
     pub db_cluster_endpoint_resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The DNS address of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<::std::string::String>,
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    #[doc(hidden)]
     pub custom_endpoint_type: ::std::option::Option<::std::string::String>,
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    #[doc(hidden)]
     pub static_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    #[doc(hidden)]
     pub excluded_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-    #[doc(hidden)]
     pub db_cluster_endpoint_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

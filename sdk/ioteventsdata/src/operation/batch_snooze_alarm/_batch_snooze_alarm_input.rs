@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchSnoozeAlarmInput {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
     pub snooze_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
 }
 impl BatchSnoozeAlarmInput {

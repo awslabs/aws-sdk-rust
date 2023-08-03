@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionError {
     /// <p>The values that define the partition.</p>
-    #[doc(hidden)]
     pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The details about the partition error.</p>
-    #[doc(hidden)]
     pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl PartitionError {

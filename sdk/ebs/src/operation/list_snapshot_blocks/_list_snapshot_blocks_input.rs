@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSnapshotBlocksInput {
     /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to request the next page of results.</p>
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of blocks to be returned by the request.</p>
     /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
     /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
-    #[doc(hidden)]
     pub starting_block_index: ::std::option::Option<i32>,
 }
 impl ListSnapshotBlocksInput {

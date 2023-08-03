@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAcceleratorOutput {
     /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
-    #[doc(hidden)]
     pub accelerator: ::std::option::Option<crate::types::Accelerator>,
     _request_id: Option<String>,
 }

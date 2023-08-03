@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApiKeyInput {
     /// <p>The identifier of the ApiKey resource to be updated.</p>
-    #[doc(hidden)]
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    #[doc(hidden)]
     pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateApiKeyInput {

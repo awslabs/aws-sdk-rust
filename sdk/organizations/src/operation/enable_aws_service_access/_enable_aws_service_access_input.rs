@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableAwsServiceAccessInput {
     /// <p>The service principal name of the Amazon Web Services service for which you want to enable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    #[doc(hidden)]
     pub service_principal: ::std::option::Option<::std::string::String>,
 }
 impl EnableAwsServiceAccessInput {

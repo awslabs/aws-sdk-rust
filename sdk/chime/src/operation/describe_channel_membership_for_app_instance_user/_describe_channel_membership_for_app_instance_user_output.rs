@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelMembershipForAppInstanceUserOutput {
     /// <p>The channel to which a user belongs.</p>
-    #[doc(hidden)]
     pub channel_membership: ::std::option::Option<crate::types::ChannelMembershipForAppInstanceUserSummary>,
     _request_id: Option<String>,
 }

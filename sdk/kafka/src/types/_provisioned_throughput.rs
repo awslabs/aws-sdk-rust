@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedThroughput {
     /// <p>Provisioned throughput is enabled or not.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
-    #[doc(hidden)]
     pub volume_throughput: ::std::option::Option<i32>,
 }
 impl ProvisionedThroughput {

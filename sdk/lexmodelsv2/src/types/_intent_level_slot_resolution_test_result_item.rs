@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentLevelSlotResolutionTestResultItem {
     /// <p>The name of the intent that was recognized.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
-    #[doc(hidden)]
     pub multi_turn_conversation: bool,
     /// <p>The results for the slot resolution in the test execution result.</p>
-    #[doc(hidden)]
     pub slot_resolution_results: ::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>>,
 }
 impl IntentLevelSlotResolutionTestResultItem {

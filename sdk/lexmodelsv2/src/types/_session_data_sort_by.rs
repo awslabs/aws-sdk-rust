@@ -10,10 +10,8 @@ pub struct SessionDataSortBy {
     /// <li> <p> <code>numberOfTurns</code> – The number of turns that the session took.</p> </li>
     /// <li> <p> <code>conversationDurationSeconds</code> – The duration of the conversation in seconds.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsSessionSortByName>,
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
 impl SessionDataSortBy {

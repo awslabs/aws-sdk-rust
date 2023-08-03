@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnaSrdSpecification {
     /// <p>Indicates whether ENA Express is enabled for the network interface.</p>
-    #[doc(hidden)]
     pub ena_srd_enabled: ::std::option::Option<bool>,
     /// <p>Configures ENA Express for UDP network traffic.</p>
-    #[doc(hidden)]
     pub ena_srd_udp_specification: ::std::option::Option<crate::types::EnaSrdUdpSpecification>,
 }
 impl EnaSrdSpecification {

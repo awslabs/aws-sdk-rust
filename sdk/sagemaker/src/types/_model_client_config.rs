@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelClientConfig {
     /// <p>The timeout value in seconds for an invocation request. The default value is 600.</p>
-    #[doc(hidden)]
     pub invocations_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The maximum number of retries when invocation requests are failing. The default value is 3.</p>
-    #[doc(hidden)]
     pub invocations_max_retries: ::std::option::Option<i32>,
 }
 impl ModelClientConfig {

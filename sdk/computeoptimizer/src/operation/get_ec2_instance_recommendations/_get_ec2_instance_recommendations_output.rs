@@ -5,14 +5,11 @@
 pub struct GetEc2InstanceRecommendationsOutput {
     /// <p>The token to use to advance to the next page of instance recommendations.</p>
     /// <p>This value is null when there are no more pages of instance recommendations to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe instance recommendations.</p>
-    #[doc(hidden)]
     pub instance_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an instance of an unsupported instance family.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }

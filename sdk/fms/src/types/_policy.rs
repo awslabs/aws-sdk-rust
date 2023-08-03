@@ -5,37 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Policy {
     /// <p>The ID of the Firewall Manager policy.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Firewall Manager policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>
-    #[doc(hidden)]
     pub policy_update_token: ::std::option::Option<::std::string::String>,
     /// <p>Details about the security service that is being used to protect the resources.</p>
-    #[doc(hidden)]
     pub security_service_policy_data: ::std::option::Option<crate::types::SecurityServicePolicyData>,
     /// <p>The type of resource protected by or in scope of the policy. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
     /// <p>For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is <code>AWS::EC2::VPC</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a single resource type, use <code>ResourceType</code>.</p>
-    #[doc(hidden)]
     pub resource_type_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of <code>ResourceTag</code> objects.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     /// <p>If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with the specified tags are in scope of the policy.</p>
-    #[doc(hidden)]
     pub exclude_resource_tags: bool,
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
-    #[doc(hidden)]
     pub remediation_enabled: bool,
     /// <p>Indicates whether Firewall Manager should automatically remove protections from resources that leave the policy scope and clean up resources that Firewall Manager is managing for accounts when those accounts leave policy scope. For example, Firewall Manager will disassociate a Firewall Manager managed web ACL from a protected customer resource when the customer resource leaves policy scope. </p>
     /// <p>By default, Firewall Manager doesn't remove protections or delete Firewall Manager managed resources. </p>
     /// <p>This option is not available for Shield Advanced or WAF Classic policies.</p>
-    #[doc(hidden)]
     pub delete_unused_fm_managed_resources: bool,
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
@@ -45,7 +35,6 @@ pub struct Policy {
     /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub include_map:
         ::std::option::Option<::std::collections::HashMap<crate::types::CustomerPolicyScopeIdType, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
@@ -56,21 +45,17 @@ pub struct Policy {
     /// <li> <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// <li> <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub exclude_map:
         ::std::option::Option<::std::collections::HashMap<crate::types::CustomerPolicyScopeIdType, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The unique identifiers of the resource sets used by the policy.</p>
-    #[doc(hidden)]
     pub resource_set_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The definition of the Network Firewall firewall policy.</p>
-    #[doc(hidden)]
     pub policy_description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> - The administrator can manage and delete the policy.</p> </li>
     /// <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub policy_status: ::std::option::Option<crate::types::CustomerPolicyStatus>,
 }
 impl Policy {

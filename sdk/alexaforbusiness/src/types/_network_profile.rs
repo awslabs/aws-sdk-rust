@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NetworkProfile {
     /// <p>The ARN of the network profile associated with a device.</p>
-    #[doc(hidden)]
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network profile associated with a device.</p>
-    #[doc(hidden)]
     pub network_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about a device's network profile.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The SSID of the Wi-Fi network.</p>
-    #[doc(hidden)]
     pub ssid: ::std::option::Option<::std::string::String>,
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-    #[doc(hidden)]
     pub security_type: ::std::option::Option<crate::types::NetworkSecurityType>,
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
-    #[doc(hidden)]
     pub eap_method: ::std::option::Option<crate::types::NetworkEapMethod>,
     /// <p>The current password of the Wi-Fi network.</p>
-    #[doc(hidden)]
     pub current_password: ::std::option::Option<::std::string::String>,
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-    #[doc(hidden)]
     pub next_password: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-    #[doc(hidden)]
     pub trust_anchors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NetworkProfile {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSettingsResource {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    #[doc(hidden)]
     pub campaign_hook: ::std::option::Option<crate::types::CampaignHook>,
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The default sending limits for campaigns in the application.</p>
-    #[doc(hidden)]
     pub limits: ::std::option::Option<crate::types::CampaignLimits>,
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
@@ -23,7 +19,6 @@ pub struct ApplicationSettingsResource {
     /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    #[doc(hidden)]
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
 }
 impl ApplicationSettingsResource {

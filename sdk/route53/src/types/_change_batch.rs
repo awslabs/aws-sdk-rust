@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeBatch {
     /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>Information about the changes to make to the record sets.</p>
-    #[doc(hidden)]
     pub changes: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
 }
 impl ChangeBatch {

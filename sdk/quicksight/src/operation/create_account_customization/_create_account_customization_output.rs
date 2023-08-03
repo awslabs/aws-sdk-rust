@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) for the customization that you created for this Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace associated with the customization you're creating. </p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. </p>
-    #[doc(hidden)]
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

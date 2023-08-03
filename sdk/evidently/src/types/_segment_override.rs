@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentOverride {
     /// <p>The ARN of the segment to use.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
-    #[doc(hidden)]
     pub evaluation_order: ::std::option::Option<i64>,
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    #[doc(hidden)]
     pub weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl SegmentOverride {

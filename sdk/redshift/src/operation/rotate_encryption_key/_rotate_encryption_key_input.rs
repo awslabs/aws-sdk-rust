@@ -6,7 +6,6 @@
 pub struct RotateEncryptionKeyInput {
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RotateEncryptionKeyInput {

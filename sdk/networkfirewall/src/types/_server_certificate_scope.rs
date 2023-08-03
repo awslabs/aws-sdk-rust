@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerCertificateScope {
     /// <p>The source IP addresses and address ranges to decrypt for inspection, in CIDR notation. If not specified, this matches with any source address.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     /// <p>The destination IP addresses and address ranges to decrypt for inspection, in CIDR notation. If not specified, this matches with any destination address.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     /// <p>The source ports to decrypt for inspection, in Transmission Control Protocol (TCP) format. If not specified, this matches with any source port.</p>
     /// <p>You can specify individual ports, for example <code>1994</code>, and you can specify port ranges, such as <code>1990:1994</code>.</p>
-    #[doc(hidden)]
     pub source_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The destination ports to decrypt for inspection, in Transmission Control Protocol (TCP) format. If not specified, this matches with any destination port.</p>
     /// <p>You can specify individual ports, for example <code>1994</code>, and you can specify port ranges, such as <code>1990:1994</code>.</p>
-    #[doc(hidden)]
     pub destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The protocols to decrypt for inspection, specified using each protocol's assigned internet protocol number (IANA). Network Firewall currently supports only TCP.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl ServerCertificateScope {

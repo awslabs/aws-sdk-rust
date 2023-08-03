@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaConflictHandlerConfig {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
-    #[doc(hidden)]
     pub lambda_conflict_handler_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaConflictHandlerConfig {

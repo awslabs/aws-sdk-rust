@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActiveViolationsInput {
     /// <p>The name of the thing whose active violations are listed.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p> The criteria for a behavior. </p>
-    #[doc(hidden)]
     pub behavior_criteria_type: ::std::option::Option<crate::types::BehaviorCriteriaType>,
     /// <p> A list of all suppressed alerts. </p>
-    #[doc(hidden)]
     pub list_suppressed_alerts: ::std::option::Option<bool>,
     /// <p>The verification state of the violation (detect alarm).</p>
-    #[doc(hidden)]
     pub verification_state: ::std::option::Option<crate::types::VerificationState>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListActiveViolationsInput {

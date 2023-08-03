@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureSummary {
     /// <p>The ARN of the feature.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the project that contains the feature.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the feature.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The date and time that the feature is created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the feature was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    #[doc(hidden)]
     pub evaluation_strategy: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
     /// <p>An array of structures that define</p>
-    #[doc(hidden)]
     pub evaluation_rules: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>,
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
-    #[doc(hidden)]
     pub default_variation: ::std::option::Option<::std::string::String>,
     /// <p>The list of tag keys and values associated with this feature.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FeatureSummary {

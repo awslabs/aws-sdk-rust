@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OfferingStatus {
     /// <p>The type specified for the offering status.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OfferingTransactionType>,
     /// <p>Represents the metadata of an offering status.</p>
-    #[doc(hidden)]
     pub offering: ::std::option::Option<crate::types::Offering>,
     /// <p>The number of available devices in the offering.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The date on which the offering is effective.</p>
-    #[doc(hidden)]
     pub effective_on: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OfferingStatus {

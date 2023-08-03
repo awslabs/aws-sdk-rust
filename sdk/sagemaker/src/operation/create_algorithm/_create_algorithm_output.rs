@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAlgorithmOutput {
     /// <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

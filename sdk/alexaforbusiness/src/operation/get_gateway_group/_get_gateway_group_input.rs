@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGatewayGroupInput {
     /// <p>The ARN of the gateway group to get.</p>
-    #[doc(hidden)]
     pub gateway_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetGatewayGroupInput {

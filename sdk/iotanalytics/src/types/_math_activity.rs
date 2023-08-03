@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MathActivity {
     /// <p>The name of the math activity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute that contains the result of the math operation.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
-    #[doc(hidden)]
     pub math: ::std::option::Option<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl MathActivity {

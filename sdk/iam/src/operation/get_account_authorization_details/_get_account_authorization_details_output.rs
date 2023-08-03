@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountAuthorizationDetailsOutput {
     /// <p>A list containing information about IAM users.</p>
-    #[doc(hidden)]
     pub user_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::UserDetail>>,
     /// <p>A list containing information about IAM groups.</p>
-    #[doc(hidden)]
     pub group_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::GroupDetail>>,
     /// <p>A list containing information about IAM roles.</p>
-    #[doc(hidden)]
     pub role_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleDetail>>,
     /// <p>A list containing information about managed policies.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::ManagedPolicyDetail>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

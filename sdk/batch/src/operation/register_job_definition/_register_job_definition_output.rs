@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterJobDefinitionOutput {
     /// <p>The name of the job definition.</p>
-    #[doc(hidden)]
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    #[doc(hidden)]
     pub job_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the job definition.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

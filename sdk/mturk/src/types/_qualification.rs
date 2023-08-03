@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Qualification {
     /// <p> The ID of the Qualification type for the Qualification.</p>
-    #[doc(hidden)]
     pub qualification_type_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Worker who possesses the Qualification. </p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p> The date and time the Qualification was granted to the Worker. If the Worker's Qualification was revoked, and then re-granted based on a new Qualification request, GrantTime is the date and time of the last call to the AcceptQualificationRequest operation.</p>
-    #[doc(hidden)]
     pub grant_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The value (score) of the Qualification, if the Qualification has an integer value.</p>
-    #[doc(hidden)]
     pub integer_value: ::std::option::Option<i32>,
     /// <p>The Locale data structure represents a geographical region or location.</p>
-    #[doc(hidden)]
     pub locale_value: ::std::option::Option<crate::types::Locale>,
     /// <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QualificationStatus>,
 }
 impl Qualification {

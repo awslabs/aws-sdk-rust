@@ -15,11 +15,9 @@ pub struct ListUniqueProblemsOutput {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub unique_problems:
         ::std::option::Option<::std::collections::HashMap<crate::types::ExecutionResult, ::std::vec::Vec<crate::types::UniqueProblem>>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

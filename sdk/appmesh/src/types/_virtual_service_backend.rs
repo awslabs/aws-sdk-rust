@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceBackend {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
-    #[doc(hidden)]
     pub virtual_service_name: ::std::option::Option<::std::string::String>,
     /// <p>A reference to an object that represents the client policy for a backend.</p>
-    #[doc(hidden)]
     pub client_policy: ::std::option::Option<crate::types::ClientPolicy>,
 }
 impl VirtualServiceBackend {

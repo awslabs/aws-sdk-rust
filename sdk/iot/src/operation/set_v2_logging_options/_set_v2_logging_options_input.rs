@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetV2LoggingOptionsInput {
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The default logging level.</p>
-    #[doc(hidden)]
     pub default_log_level: ::std::option::Option<crate::types::LogLevel>,
     /// <p>If true all logs are disabled. The default is false.</p>
-    #[doc(hidden)]
     pub disable_all_logs: ::std::option::Option<bool>,
 }
 impl SetV2LoggingOptionsInput {

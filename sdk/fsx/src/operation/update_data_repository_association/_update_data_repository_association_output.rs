@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataRepositoryAssociationOutput {
     /// <p>The response object returned after the data repository association is updated.</p>
-    #[doc(hidden)]
     pub association: ::std::option::Option<crate::types::DataRepositoryAssociation>,
     _request_id: Option<String>,
 }

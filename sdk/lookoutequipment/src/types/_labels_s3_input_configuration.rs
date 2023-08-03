@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelsS3InputConfiguration {
     /// <p>The name of the S3 bucket holding the label data. </p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p> The prefix for the S3 bucket used for the label data. </p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl LabelsS3InputConfiguration {

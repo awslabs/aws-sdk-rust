@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchFailedResultModel {
     /// ARN of the resource
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// Error code for the failed operation
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// ID of the resource
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Error message for the failed operation
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl BatchFailedResultModel {

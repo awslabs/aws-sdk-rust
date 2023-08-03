@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactInformationOutput {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub contact_information: ::std::option::Option<crate::types::ContactInformation>,
     _request_id: Option<String>,
 }

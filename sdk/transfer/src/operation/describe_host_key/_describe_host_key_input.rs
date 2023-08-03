@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHostKeyInput {
     /// <p>The identifier of the server that contains the host key that you want described.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the host key that you want described.</p>
-    #[doc(hidden)]
     pub host_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHostKeyInput {

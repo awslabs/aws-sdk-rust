@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyUserInput {
     /// <p>The ID of the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Access permissions string used for this user.</p>
-    #[doc(hidden)]
     pub access_string: ::std::option::Option<::std::string::String>,
     /// <p>Adds additional user permissions to the access string.</p>
-    #[doc(hidden)]
     pub append_access_string: ::std::option::Option<::std::string::String>,
     /// <p>The passwords belonging to the user. You are allowed up to two.</p>
-    #[doc(hidden)]
     pub passwords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates no password is required for the user.</p>
-    #[doc(hidden)]
     pub no_password_required: ::std::option::Option<bool>,
     /// <p>Specifies how to authenticate the user.</p>
-    #[doc(hidden)]
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
 }
 impl ModifyUserInput {

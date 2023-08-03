@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystem {
     /// <p>The Amazon Web Services account that created the file system. If the file system was created by a user in IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The system-generated, unique 17-digit ID of the file system.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>, <code>WINDOWS</code>, <code>ONTAP</code>, or <code>OPENZFS</code>.</p>
-    #[doc(hidden)]
     pub file_system_type: ::std::option::Option<crate::types::FileSystemType>,
     /// <p>The lifecycle status of the file system. The following are the possible values and what they mean:</p>
     /// <ul>
@@ -26,30 +22,22 @@ pub struct FileSystem {
     /// <li> <p> <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only) The file system is currently unavailable due to a change in your Active Directory configuration.</p> </li>
     /// <li> <p> <code>UPDATING</code> - The file system is undergoing a customer-initiated update.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::FileSystemLifecycle>,
     /// <p>A structure providing details of any failures that occurred.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::FileSystemFailureDetails>,
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage. </p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>The ID of the primary virtual private cloud (VPC) for the file system.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the IDs of the subnets that the file system is accessible from. For the Amazon FSx Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
     /// <p>For FSx for Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the file system's endpoint. For <code>MULTI_AZ_1</code> Windows and ONTAP file systems, the file system endpoint is available in the <code>PreferredSubnetID</code>.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the elastic network interfaces from which a specific file system is accessible. The elastic network interface is automatically created in the same virtual private cloud (VPC) that the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p>
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network interface ID. For an Amazon FSx for Lustre file system, you can have more than one.</p>
-    #[doc(hidden)]
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Domain Name System (DNS) name for the file system.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt Amazon FSx file system data. Used as follows with Amazon FSx file system types:</p>
     /// <ul>
@@ -58,31 +46,22 @@ pub struct FileSystem {
     /// <li> <p>Amazon FSx for OpenZFS</p> </li>
     /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the file system resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration for this Amazon FSx for Windows File Server file system.</p>
-    #[doc(hidden)]
     pub windows_configuration: ::std::option::Option<crate::types::WindowsFileSystemConfiguration>,
     /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
-    #[doc(hidden)]
     pub lustre_configuration: ::std::option::Option<crate::types::LustreFileSystemConfiguration>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system that you have initiated using the <code>UpdateFileSystem</code> operation.</p>
-    #[doc(hidden)]
     pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
     /// <p>The configuration for this Amazon FSx for NetApp ONTAP file system.</p>
-    #[doc(hidden)]
     pub ontap_configuration: ::std::option::Option<crate::types::OntapFileSystemConfiguration>,
     /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
-    #[doc(hidden)]
     pub file_system_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for this Amazon FSx for OpenZFS file system.</p>
-    #[doc(hidden)]
     pub open_zfs_configuration: ::std::option::Option<crate::types::OpenZfsFileSystemConfiguration>,
 }
 impl FileSystem {

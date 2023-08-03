@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Assignment {
     /// <p> A unique identifier for the assignment.</p>
-    #[doc(hidden)]
     pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Worker who accepted the HIT.</p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the HIT.</p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the assignment.</p>
-    #[doc(hidden)]
     pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
     /// <p> If results have been submitted, AutoApprovalTime is the date and time the results of the assignment results are considered Approved automatically if they have not already been explicitly approved or rejected by the Requester. This value is derived from the auto-approval delay specified by the Requester in the HIT. This value is omitted from the assignment if the Worker has not yet submitted results.</p>
-    #[doc(hidden)]
     pub auto_approval_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date and time the Worker accepted the assignment.</p>
-    #[doc(hidden)]
     pub accept_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results, SubmitTime is the date and time the assignment was submitted. This value is omitted from the assignment if the Worker has not yet submitted results.</p>
-    #[doc(hidden)]
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results and the Requester has approved the results, ApprovalTime is the date and time the Requester approved the results. This value is omitted from the assignment if the Requester has not yet approved the results.</p>
-    #[doc(hidden)]
     pub approval_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> If the Worker has submitted results and the Requester has rejected the results, RejectionTime is the date and time the Requester rejected the results.</p>
-    #[doc(hidden)]
     pub rejection_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date and time of the deadline for the assignment. This value is derived from the deadline specification for the HIT and the date and time the Worker accepted the HIT.</p>
-    #[doc(hidden)]
     pub deadline: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The Worker's answers submitted for the HIT contained in a QuestionFormAnswers document, if the Worker provides an answer. If the Worker does not provide any answers, Answer may contain a QuestionFormAnswers document, or Answer may be empty.</p>
-    #[doc(hidden)]
     pub answer: ::std::option::Option<::std::string::String>,
     /// <p> The feedback string included with the call to the ApproveAssignment operation or the RejectAssignment operation, if the Requester approved or rejected the assignment and specified feedback.</p>
-    #[doc(hidden)]
     pub requester_feedback: ::std::option::Option<::std::string::String>,
 }
 impl Assignment {

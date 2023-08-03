@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPageResolutionsInput {
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the contact engaged for the incident.</p>
-    #[doc(hidden)]
     pub page_id: ::std::option::Option<::std::string::String>,
 }
 impl ListPageResolutionsInput {

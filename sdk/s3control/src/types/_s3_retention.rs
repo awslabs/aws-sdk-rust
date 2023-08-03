@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Retention {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-    #[doc(hidden)]
     pub retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::S3ObjectLockRetentionMode>,
 }
 impl S3Retention {

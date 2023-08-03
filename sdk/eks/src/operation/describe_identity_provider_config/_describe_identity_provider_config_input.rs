@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfigInput {
     /// <p>The cluster name that the identity provider configuration is associated to.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>An object representing an identity provider configuration.</p>
-    #[doc(hidden)]
     pub identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfig>,
 }
 impl DescribeIdentityProviderConfigInput {

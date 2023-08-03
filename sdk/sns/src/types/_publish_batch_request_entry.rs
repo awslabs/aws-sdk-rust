@@ -8,13 +8,10 @@ pub struct PublishBatchRequestEntry {
     /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
     /// </note>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The body of the message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The subject of the batch message.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
     /// <ul>
@@ -22,10 +19,8 @@ pub struct PublishBatchRequestEntry {
     /// <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http). </p>
-    #[doc(hidden)]
     pub message_structure: ::std::option::Option<::std::string::String>,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
-    #[doc(hidden)]
     pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
@@ -46,7 +41,6 @@ pub struct PublishBatchRequestEntry {
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
     /// <p> <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
-    #[doc(hidden)]
     pub message_deduplication_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
@@ -55,7 +49,6 @@ pub struct PublishBatchRequestEntry {
     /// <p> <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <important>
     /// <p> <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
     /// </important>
-    #[doc(hidden)]
     pub message_group_id: ::std::option::Option<::std::string::String>,
 }
 impl PublishBatchRequestEntry {

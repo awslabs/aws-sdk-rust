@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnrollmentConfig {
     /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
-    #[doc(hidden)]
     pub existing_enrollment_action: ::std::option::Option<crate::types::ExistingEnrollmentAction>,
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
-    #[doc(hidden)]
     pub fraud_detection_config: ::std::option::Option<crate::types::EnrollmentJobFraudDetectionConfig>,
 }
 impl EnrollmentConfig {

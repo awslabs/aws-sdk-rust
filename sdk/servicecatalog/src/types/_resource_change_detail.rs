@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceChangeDetail {
     /// <p>Information about the resource attribute to be modified.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::ResourceTargetDefinition>,
     /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
-    #[doc(hidden)]
     pub evaluation: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>The ID of the entity that caused the change.</p>
-    #[doc(hidden)]
     pub causing_entity: ::std::option::Option<::std::string::String>,
 }
 impl ResourceChangeDetail {

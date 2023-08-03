@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SkipWaitTimeForInstanceTerminationInput {
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl SkipWaitTimeForInstanceTerminationInput {

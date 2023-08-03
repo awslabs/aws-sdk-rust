@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
-    #[doc(hidden)]
     pub statements: ::std::option::Option<::std::vec::Vec<crate::types::BatchStatementRequest>>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -12,7 +11,6 @@ pub struct BatchExecuteStatementInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
 }
 impl BatchExecuteStatementInput {

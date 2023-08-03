@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCertificateInput {
     /// <p>The identifier of the certificate object that you are updating.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    #[doc(hidden)]
     pub active_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    #[doc(hidden)]
     pub inactive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A short description to help identify the certificate.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCertificateInput {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeForecastOutput {
     /// <p>The forecast ARN as specified in the request.</p>
-    #[doc(hidden)]
     pub forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the forecast.</p>
-    #[doc(hidden)]
     pub forecast_name: ::std::option::Option<::std::string::String>,
     /// <p>The quantiles at which probabilistic forecasts were generated.</p>
-    #[doc(hidden)]
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the predictor used to generate the forecast.</p>
-    #[doc(hidden)]
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dataset group that provided the data used to train the predictor.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The estimated time remaining in minutes for the forecast job to complete.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
@@ -30,13 +24,10 @@ pub struct DescribeForecastOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the forecast creation task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -46,10 +37,8 @@ pub struct DescribeForecastOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time series to include in the forecast.</p>
-    #[doc(hidden)]
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
     _request_id: Option<String>,
 }

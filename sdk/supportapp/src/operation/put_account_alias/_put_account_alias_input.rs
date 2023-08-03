@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountAliasInput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_alias: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountAliasInput {

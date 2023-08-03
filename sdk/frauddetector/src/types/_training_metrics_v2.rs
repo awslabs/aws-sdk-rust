@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingMetricsV2 {
     /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
-    #[doc(hidden)]
     pub ofi: ::std::option::Option<crate::types::OfiTrainingMetricsValue>,
     /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
-    #[doc(hidden)]
     pub tfi: ::std::option::Option<crate::types::TfiTrainingMetricsValue>,
     /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
-    #[doc(hidden)]
     pub ati: ::std::option::Option<crate::types::AtiTrainingMetricsValue>,
 }
 impl TrainingMetricsV2 {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClassifierInput {
     /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
-    #[doc(hidden)]
     pub grok_classifier: ::std::option::Option<crate::types::CreateGrokClassifierRequest>,
     /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
-    #[doc(hidden)]
     pub xml_classifier: ::std::option::Option<crate::types::CreateXmlClassifierRequest>,
     /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
-    #[doc(hidden)]
     pub json_classifier: ::std::option::Option<crate::types::CreateJsonClassifierRequest>,
     /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
-    #[doc(hidden)]
     pub csv_classifier: ::std::option::Option<crate::types::CreateCsvClassifierRequest>,
 }
 impl CreateClassifierInput {

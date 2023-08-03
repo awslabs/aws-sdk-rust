@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Preset {
     /// <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the preset.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the preset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the preset.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<::std::string::String>,
     /// <p>A section of the response body that provides information about the audio preset values.</p>
-    #[doc(hidden)]
     pub audio: ::std::option::Option<crate::types::AudioParameters>,
     /// <p>A section of the response body that provides information about the video preset values.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::VideoParameters>,
     /// <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
-    #[doc(hidden)]
     pub thumbnails: ::std::option::Option<crate::types::Thumbnails>,
     /// <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl Preset {

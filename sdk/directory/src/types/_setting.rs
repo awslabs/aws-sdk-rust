@@ -6,10 +6,8 @@
 pub struct Setting {
     /// <p>The name of the directory setting. For example:</p>
     /// <p> <code>TLS_1_0</code> </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Setting {

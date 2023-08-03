@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAppInstanceBotInput {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The request metadata. Limited to a 1KB string in UTF-8.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::Configuration>,
 }
 impl CreateAppInstanceBotInput {

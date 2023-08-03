@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreCoreNetworkPolicyVersionOutput {
     /// <p>Describes the restored core network policy.</p>
-    #[doc(hidden)]
     pub core_network_policy: ::std::option::Option<crate::types::CoreNetworkPolicy>,
     _request_id: Option<String>,
 }

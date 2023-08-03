@@ -5,61 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceGroup {
     /// <p>The identifier of the instance group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the instance group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The marketplace to provision instances for this group. Valid values are ON_DEMAND or SPOT.</p>
-    #[doc(hidden)]
     pub market: ::std::option::Option<crate::types::MarketType>,
     /// <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
-    #[doc(hidden)]
     pub instance_group_type: ::std::option::Option<crate::types::InstanceGroupType>,
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    #[doc(hidden)]
     pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The target number of instances for the instance group.</p>
-    #[doc(hidden)]
     pub requested_instance_count: ::std::option::Option<i32>,
     /// <p>The number of instances currently running in this instance group.</p>
-    #[doc(hidden)]
     pub running_instance_count: ::std::option::Option<i32>,
     /// <p>The current status of the instance group.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceGroupStatus>,
     /// <note>
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The version number of the requested configuration specification for this instance group.</p>
-    #[doc(hidden)]
     pub configurations_version: i64,
     /// <p>A list of configurations that were successfully applied for an instance group last time.</p>
-    #[doc(hidden)]
     pub last_successfully_applied_configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The version number of a configuration specification that was successfully applied for an instance group last time. </p>
-    #[doc(hidden)]
     pub last_successfully_applied_configurations_version: i64,
     /// <p>The EBS block devices that are mapped to this instance group.</p>
-    #[doc(hidden)]
     pub ebs_block_devices: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDevice>>,
     /// <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>Policy for customizing shrink operations.</p>
-    #[doc(hidden)]
     pub shrink_policy: ::std::option::Option<crate::types::ShrinkPolicy>,
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
-    #[doc(hidden)]
     pub auto_scaling_policy: ::std::option::Option<crate::types::AutoScalingPolicyDescription>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    #[doc(hidden)]
     pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroup {

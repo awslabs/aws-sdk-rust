@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerNodeDetails {
     /// <p>The information of the trigger represented by the trigger node.</p>
-    #[doc(hidden)]
     pub trigger: ::std::option::Option<crate::types::Trigger>,
 }
 impl TriggerNodeDetails {

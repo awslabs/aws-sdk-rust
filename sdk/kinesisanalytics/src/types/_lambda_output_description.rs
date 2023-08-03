@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaOutputDescription {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaOutputDescription {

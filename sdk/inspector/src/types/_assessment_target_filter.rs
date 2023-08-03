@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTargetFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
-    #[doc(hidden)]
     pub assessment_target_name_pattern: ::std::option::Option<::std::string::String>,
 }
 impl AssessmentTargetFilter {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentsOutput {
     /// <p>The list of application components.</p>
-    #[doc(hidden)]
     pub application_component_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponent>>,
     /// <p>The token to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

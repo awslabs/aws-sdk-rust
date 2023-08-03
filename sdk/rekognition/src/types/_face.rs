@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Face {
     /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
-    #[doc(hidden)]
     pub face_id: ::std::option::Option<::std::string::String>,
     /// <p>Bounding box of the face.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier that you assign to all the faces in the input image.</p>
-    #[doc(hidden)]
     pub external_image_id: ::std::option::Option<::std::string::String>,
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
-    #[doc(hidden)]
     pub index_faces_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier assigned to the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl Face {

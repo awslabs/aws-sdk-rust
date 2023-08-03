@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEcsServiceRecommendationProjectedMetricsOutput {
     /// <p> An array of objects that describes the projected metrics. </p>
-    #[doc(hidden)]
     pub recommended_option_projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendedOptionProjectedMetric>>,
     _request_id: Option<String>,
 }

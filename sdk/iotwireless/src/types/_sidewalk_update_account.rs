@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SidewalkUpdateAccount {
     /// <p>The new Sidewalk application server private key.</p>
-    #[doc(hidden)]
     pub app_server_private_key: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkUpdateAccount {

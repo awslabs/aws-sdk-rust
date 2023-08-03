@@ -8,10 +8,8 @@ pub struct RelationalDatabaseDataSourceConfig {
     /// <ul>
     /// <li> <p> <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational Database Service (Amazon RDS) HTTP endpoint.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub relational_database_source_type: ::std::option::Option<crate::types::RelationalDatabaseSourceType>,
     /// <p>Amazon RDS HTTP endpoint settings.</p>
-    #[doc(hidden)]
     pub rds_http_endpoint_config: ::std::option::Option<crate::types::RdsHttpEndpointConfig>,
 }
 impl RelationalDatabaseDataSourceConfig {

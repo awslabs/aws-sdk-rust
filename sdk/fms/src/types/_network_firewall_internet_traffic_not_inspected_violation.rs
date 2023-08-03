@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallInternetTrafficNotInspectedViolation {
     /// <p>The subnet ID.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnet Availability Zone.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Information about the route table ID.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The route or routes that are in violation.</p>
-    #[doc(hidden)]
     pub violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>Information about whether the route table is used in another Availability Zone.</p>
-    #[doc(hidden)]
     pub is_route_table_used_in_different_az: bool,
     /// <p>Information about the subnet route table for the current firewall.</p>
-    #[doc(hidden)]
     pub current_firewall_subnet_route_table: ::std::option::Option<::std::string::String>,
     /// <p>The expected endpoint for the current firewall.</p>
-    #[doc(hidden)]
     pub expected_firewall_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The firewall subnet ID.</p>
-    #[doc(hidden)]
     pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The firewall subnet routes that are expected.</p>
-    #[doc(hidden)]
     pub expected_firewall_subnet_routes: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>,
     /// <p>The actual firewall subnet routes.</p>
-    #[doc(hidden)]
     pub actual_firewall_subnet_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>The internet gateway ID.</p>
-    #[doc(hidden)]
     pub internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The current route table for the internet gateway.</p>
-    #[doc(hidden)]
     pub current_internet_gateway_route_table: ::std::option::Option<::std::string::String>,
     /// <p>The internet gateway routes that are expected.</p>
-    #[doc(hidden)]
     pub expected_internet_gateway_routes: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedRoute>>,
     /// <p>The actual internet gateway routes.</p>
-    #[doc(hidden)]
     pub actual_internet_gateway_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>Information about the VPC ID.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkFirewallInternetTrafficNotInspectedViolation {

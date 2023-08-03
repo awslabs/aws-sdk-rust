@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserStorage {
     /// <p>The size of the user volume.</p>
-    #[doc(hidden)]
     pub capacity: ::std::option::Option<::std::string::String>,
 }
 impl UserStorage {

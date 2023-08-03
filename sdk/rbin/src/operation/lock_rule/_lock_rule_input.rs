@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LockRuleInput {
     /// <p>The unique ID of the retention rule.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Information about the retention rule lock configuration.</p>
-    #[doc(hidden)]
     pub lock_configuration: ::std::option::Option<crate::types::LockConfiguration>,
 }
 impl LockRuleInput {

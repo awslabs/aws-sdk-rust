@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePortalOutput {
     /// <p>The ARN of the web portal.</p>
-    #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
-    #[doc(hidden)]
     pub portal_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

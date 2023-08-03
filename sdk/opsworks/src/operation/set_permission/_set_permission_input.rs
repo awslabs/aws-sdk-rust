@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetPermissionInput {
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-    #[doc(hidden)]
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user is allowed to use SSH to communicate with the instance.</p>
-    #[doc(hidden)]
     pub allow_ssh: ::std::option::Option<bool>,
     /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
-    #[doc(hidden)]
     pub allow_sudo: ::std::option::Option<bool>,
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
@@ -24,7 +20,6 @@ pub struct SetPermissionInput {
     /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-    #[doc(hidden)]
     pub level: ::std::option::Option<::std::string::String>,
 }
 impl SetPermissionInput {

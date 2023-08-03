@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SessionKeyVisa {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    #[doc(hidden)]
     pub primary_account_number: ::std::option::Option<::std::string::String>,
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    #[doc(hidden)]
     pub pan_sequence_number: ::std::option::Option<::std::string::String>,
 }
 impl SessionKeyVisa {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicaAction {
     /// <p>The Region of the replica to be removed.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicaAction {

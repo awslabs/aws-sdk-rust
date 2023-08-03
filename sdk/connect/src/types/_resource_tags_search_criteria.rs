@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTagsSearchCriteria {
     /// <p>The search criteria to be used to return tags.</p>
-    #[doc(hidden)]
     pub tag_search_condition: ::std::option::Option<crate::types::TagSearchCondition>,
 }
 impl ResourceTagsSearchCriteria {

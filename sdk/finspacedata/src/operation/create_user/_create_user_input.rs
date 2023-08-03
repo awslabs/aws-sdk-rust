@@ -4,33 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The option to indicate the type of user. Use one of the following options to specify this parameter:</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UserType>,
     /// <p>The first name of the user that you want to register.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the user that you want to register.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub api_access: ::std::option::Option<crate::types::ApiAccess>,
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
-    #[doc(hidden)]
     pub api_access_principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVaultLockOutput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::std::string::String>,
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

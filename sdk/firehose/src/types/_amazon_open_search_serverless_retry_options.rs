@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchServerlessRetryOptions {
     /// <p>After an initial failure to deliver to the Serverless offering for Amazon OpenSearch Service, the total amount of time during which Kinesis Data Firehose retries delivery (including the first attempt). After this time has elapsed, the failed documents are written to Amazon S3. Default value is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
 impl AmazonOpenSearchServerlessRetryOptions {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFindingsInput {
     /// <p>A collection of attributes that specify which findings you want to update.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     /// <p>The updated note for the finding.</p>
-    #[doc(hidden)]
     pub note: ::std::option::Option<crate::types::NoteUpdate>,
     /// <p>The updated record state for the finding.</p>
-    #[doc(hidden)]
     pub record_state: ::std::option::Option<crate::types::RecordState>,
 }
 impl UpdateFindingsInput {

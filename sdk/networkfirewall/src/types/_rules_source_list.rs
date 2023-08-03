@@ -11,13 +11,10 @@ pub struct RulesSourceList {
     /// <li> <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p> </li>
     /// <li> <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
-    #[doc(hidden)]
     pub target_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetType>>,
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
-    #[doc(hidden)]
     pub generated_rules_type: ::std::option::Option<crate::types::GeneratedRulesType>,
 }
 impl RulesSourceList {

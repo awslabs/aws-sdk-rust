@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceAggregation {
     /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
-    #[doc(hidden)]
     pub amis: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
-    #[doc(hidden)]
     pub operating_systems: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The Amazon EC2 instance tags to aggregate findings for.</p>
-    #[doc(hidden)]
     pub instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p>The order to sort results by.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::Ec2InstanceSortBy>,
 }
 impl Ec2InstanceAggregation {

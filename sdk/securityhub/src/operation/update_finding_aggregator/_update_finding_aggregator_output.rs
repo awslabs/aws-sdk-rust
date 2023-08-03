@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFindingAggregatorOutput {
     /// <p>The ARN of the finding aggregator.</p>
-    #[doc(hidden)]
     pub finding_aggregator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The aggregation Region.</p>
-    #[doc(hidden)]
     pub finding_aggregation_region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
-    #[doc(hidden)]
     pub region_linking_mode: ::std::option::Option<::std::string::String>,
     /// <p>The list of excluded Regions or included Regions.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

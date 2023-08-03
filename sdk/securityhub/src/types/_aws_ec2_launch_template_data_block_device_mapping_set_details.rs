@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
     /// <p> The device name. </p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p> Parameters used to automatically set up Amazon EBS volumes when the instance is launched. </p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>,
     /// <p> Omits the device from the block device mapping when an empty string is specified. </p>
-    #[doc(hidden)]
     pub no_device: ::std::option::Option<::std::string::String>,
     /// <p> The virtual device name (ephemeralN). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. </p>
-    #[doc(hidden)]
     pub virtual_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {

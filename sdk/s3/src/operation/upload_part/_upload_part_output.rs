@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UploadPartOutput {
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
-    #[doc(hidden)]
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>Entity tag for the uploaded object.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_crc32: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_crc32_c: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_sha1: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
-    #[doc(hidden)]
     pub sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
-    #[doc(hidden)]
     pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>If present, specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key was used for the object.</p>
-    #[doc(hidden)]
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
-    #[doc(hidden)]
     pub bucket_key_enabled: bool,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

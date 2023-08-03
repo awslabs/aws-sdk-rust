@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-    #[doc(hidden)]
     pub identity_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
-    #[doc(hidden)]
     pub session_policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateStudioSessionMappingInput {

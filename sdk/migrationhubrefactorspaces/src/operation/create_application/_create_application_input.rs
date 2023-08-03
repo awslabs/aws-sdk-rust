@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name to use for the application. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the environment.</p>
-    #[doc(hidden)]
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC).</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
-    #[doc(hidden)]
     pub proxy_type: ::std::option::Option<crate::types::ProxyType>,
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
-    #[doc(hidden)]
     pub api_gateway_proxy: ::std::option::Option<crate::types::ApiGatewayProxyInput>,
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInput {

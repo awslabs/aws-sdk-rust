@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberCapabilities {
     /// <p>Allows or denies inbound calling for the specified phone number.</p>
-    #[doc(hidden)]
     pub inbound_call: ::std::option::Option<bool>,
     /// <p>Allows or denies outbound calling for the specified phone number.</p>
-    #[doc(hidden)]
     pub outbound_call: ::std::option::Option<bool>,
     /// <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
-    #[doc(hidden)]
     pub inbound_sms: ::std::option::Option<bool>,
     /// <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
-    #[doc(hidden)]
     pub outbound_sms: ::std::option::Option<bool>,
     /// <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
-    #[doc(hidden)]
     pub inbound_mms: ::std::option::Option<bool>,
     /// <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
-    #[doc(hidden)]
     pub outbound_mms: ::std::option::Option<bool>,
 }
 impl PhoneNumberCapabilities {

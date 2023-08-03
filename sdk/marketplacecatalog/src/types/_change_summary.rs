@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSummary {
     /// <p>The type of the change.</p>
-    #[doc(hidden)]
     pub change_type: ::std::option::Option<::std::string::String>,
     /// <p>The entity to be changed.</p>
-    #[doc(hidden)]
     pub entity: ::std::option::Option<crate::types::Entity>,
     /// <p>This object contains details specific to the change type of the requested change.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
-    #[doc(hidden)]
     pub error_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// <p>Optional name for the change.</p>
-    #[doc(hidden)]
     pub change_name: ::std::option::Option<::std::string::String>,
 }
 impl ChangeSummary {

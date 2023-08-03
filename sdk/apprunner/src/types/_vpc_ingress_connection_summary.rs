@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcIngressConnectionSummary {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
-    #[doc(hidden)]
     pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
 }
 impl VpcIngressConnectionSummary {

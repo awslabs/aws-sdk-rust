@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutActionRevisionOutput {
     /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
-    #[doc(hidden)]
     pub new_revision: bool,
     /// <p>The ID of the current workflow state of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

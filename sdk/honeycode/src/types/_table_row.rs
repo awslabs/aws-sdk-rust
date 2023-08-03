@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableRow {
     /// <p>The id of the row in the table.</p>
-    #[doc(hidden)]
     pub row_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
 }
 impl TableRow {

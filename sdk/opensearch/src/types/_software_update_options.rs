@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SoftwareUpdateOptions {
     /// <p>Whether automatic service software updates are enabled for the domain.</p>
-    #[doc(hidden)]
     pub auto_software_update_enabled: ::std::option::Option<bool>,
 }
 impl SoftwareUpdateOptions {

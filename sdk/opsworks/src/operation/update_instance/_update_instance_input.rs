@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInstanceInput {
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance's layer IDs.</p>
-    #[doc(hidden)]
     pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
-    #[doc(hidden)]
     pub auto_scaling_type: ::std::option::Option<crate::types::AutoScalingType>,
     /// <p>The instance host name.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
     /// <ul>
@@ -30,24 +25,18 @@ pub struct UpdateInstanceInput {
     /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
-    #[doc(hidden)]
     pub os: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance's Amazon EC2 key name.</p>
-    #[doc(hidden)]
     pub ssh_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
-    #[doc(hidden)]
     pub install_updates_on_boot: ::std::option::Option<bool>,
     /// <p>This property cannot be updated.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -56,7 +45,6 @@ pub struct UpdateInstanceInput {
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInstanceInput {

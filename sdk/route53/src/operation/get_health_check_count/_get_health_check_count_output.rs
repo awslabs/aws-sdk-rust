@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub health_check_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

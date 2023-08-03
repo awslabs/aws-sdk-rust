@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPoolOriginationIdentitiesOutput {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique PoolId of the pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
-    #[doc(hidden)]
     pub origination_identities: ::std::option::Option<::std::vec::Vec<crate::types::OriginationIdentityMetadata>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

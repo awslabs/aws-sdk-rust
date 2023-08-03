@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTarget {
     /// <p>The resource type of the target.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl ActionTarget {

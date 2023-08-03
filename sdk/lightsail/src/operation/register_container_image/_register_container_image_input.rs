@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterContainerImageInput {
     /// <p>The name of the container service for which to register a container image.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The label for the container image when it's registered to the container service.</p>
     /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
@@ -18,10 +17,8 @@ pub struct RegisterContainerImageInput {
     /// </ul>
     /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
     /// <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The digest of the container image to be registered.</p>
-    #[doc(hidden)]
     pub digest: ::std::option::Option<::std::string::String>,
 }
 impl RegisterContainerImageInput {

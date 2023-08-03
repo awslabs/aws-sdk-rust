@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDefinition {
     /// <p>The name of the job definition.</p>
-    #[doc(hidden)]
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the job definition.</p>
-    #[doc(hidden)]
     pub job_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the job definition.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<i32>,
     /// <p>The status of the job definition.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
-    #[doc(hidden)]
     pub scheduling_priority: ::std::option::Option<i32>,
     /// <p>Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition. For more information about specifying parameters, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job definition parameters</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The retry strategy to use for failed jobs that are submitted with this job definition.</p>
-    #[doc(hidden)]
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
-    #[doc(hidden)]
     pub container_properties: ::std::option::Option<crate::types::ContainerProperties>,
     /// <p>The timeout time for jobs that are submitted with this job definition. After the amount of time you specify passes, Batch terminates your jobs if they aren't finished.</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<crate::types::JobTimeout>,
     /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
-    #[doc(hidden)]
     pub node_properties: ::std::option::Option<crate::types::NodeProperties>,
     /// <p>The tags that are applied to the job definition.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-    #[doc(hidden)]
     pub propagate_tags: ::std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
-    #[doc(hidden)]
     pub platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
-    #[doc(hidden)]
     pub eks_properties: ::std::option::Option<crate::types::EksProperties>,
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
-    #[doc(hidden)]
     pub container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
 }
 impl JobDefinition {

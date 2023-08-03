@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketMetricsConfigurationOutput {
     /// <p>Specifies the metrics configuration.</p>
-    #[doc(hidden)]
     pub metrics_configuration: ::std::option::Option<crate::types::MetricsConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PointOfInterest {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
-    #[doc(hidden)]
     pub begin_offset_millis: i32,
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
-    #[doc(hidden)]
     pub end_offset_millis: i32,
 }
 impl PointOfInterest {

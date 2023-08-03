@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metric {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
-    #[doc(hidden)]
     pub frame_name: ::std::option::Option<::std::string::String>,
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MetricType>,
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
-    #[doc(hidden)]
     pub thread_states: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Metric {

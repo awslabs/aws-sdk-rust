@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePartitionIndexInput {
     /// <p>The catalog ID where the table resides.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partition index to be deleted.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl DeletePartitionIndexInput {

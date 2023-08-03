@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategoryReference {
     /// <p>The unique identifier for your Cost Category. </p>
-    #[doc(hidden)]
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Cost Category's effective start date.</p>
-    #[doc(hidden)]
     pub effective_start: ::std::option::Option<::std::string::String>,
     /// <p>The Cost Category's effective end date.</p>
-    #[doc(hidden)]
     pub effective_end: ::std::option::Option<::std::string::String>,
     /// <p>The number of rules that are associated with a specific Cost Category. </p>
-    #[doc(hidden)]
     pub number_of_rules: i32,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-    #[doc(hidden)]
     pub processing_status: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
     /// <p>A list of unique cost category values in a specific cost category. </p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The default value for the cost category.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl CostCategoryReference {

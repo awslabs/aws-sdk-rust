@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DelegatedAdministrator {
     /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the delegated administrator's account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the delegated administrator's account in the organization.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AccountStatus>,
     /// <p>The method by which the delegated administrator's account joined the organization.</p>
-    #[doc(hidden)]
     pub joined_method: ::std::option::Option<crate::types::AccountJoinedMethod>,
     /// <p>The date when the delegated administrator's account became a part of the organization.</p>
-    #[doc(hidden)]
     pub joined_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the account was made a delegated administrator.</p>
-    #[doc(hidden)]
     pub delegation_enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DelegatedAdministrator {

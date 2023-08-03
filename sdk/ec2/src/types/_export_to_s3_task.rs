@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportToS3Task {
     /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
-    #[doc(hidden)]
     pub container_format: ::std::option::Option<crate::types::ContainerFormat>,
     /// <p>The format for the exported image.</p>
-    #[doc(hidden)]
     pub disk_image_format: ::std::option::Option<crate::types::DiskImageFormat>,
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The encryption key for your S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl ExportToS3Task {

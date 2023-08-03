@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashManifest {
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-    #[doc(hidden)]
     pub manifest_layout: ::std::option::Option<crate::types::ManifestLayout>,
     /// An optional string to include in the name of the manifest.
-    #[doc(hidden)]
     pub manifest_name: ::std::option::Option<::std::string::String>,
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
-    #[doc(hidden)]
     pub min_buffer_time_seconds: ::std::option::Option<i32>,
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
-    #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::Profile>,
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
-    #[doc(hidden)]
     pub scte_markers_source: ::std::option::Option<crate::types::ScteMarkersSource>,
     /// A StreamSelection configuration.
-    #[doc(hidden)]
     pub stream_selection: ::std::option::Option<crate::types::StreamSelection>,
 }
 impl DashManifest {

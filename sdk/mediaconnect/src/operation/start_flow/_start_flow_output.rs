@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartFlowOutput {
     /// The ARN of the flow that you started.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The status of the flow when the StartFlow process begins.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }

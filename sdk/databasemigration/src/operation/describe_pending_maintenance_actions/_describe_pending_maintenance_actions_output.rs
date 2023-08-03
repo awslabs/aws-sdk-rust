@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>The pending maintenance action.</p>
-    #[doc(hidden)]
     pub pending_maintenance_actions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePendingMaintenanceActions>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

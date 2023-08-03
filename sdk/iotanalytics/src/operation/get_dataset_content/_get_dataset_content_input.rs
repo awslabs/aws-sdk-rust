@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDatasetContentInput {
     /// <p>The name of the dataset whose contents are retrieved.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDatasetContentInput {

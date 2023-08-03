@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl InputDataConfig {

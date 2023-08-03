@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedInstanceType {
     /// <p>The <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 instance type</a>, for example <code>m5.xlarge</code>, of the <code>SupportedInstanceType</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory that is available to Amazon EMR from the <code>SupportedInstanceType</code>. The kernel and hypervisor software consume some memory, so this value might be lower than the overall memory for the instance type.</p>
-    #[doc(hidden)]
     pub memory_gb: f32,
     /// <p> <code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
-    #[doc(hidden)]
     pub storage_gb: ::std::option::Option<i32>,
     /// <p>The number of vCPUs available for the <code>SupportedInstanceType</code>.</p>
-    #[doc(hidden)]
     pub vcpu: ::std::option::Option<i32>,
     /// <p>Indicates whether the <code>SupportedInstanceType</code> only supports 64-bit architecture.</p>
-    #[doc(hidden)]
     pub is64_bits_only: bool,
     /// <p>The Amazon EC2 family and generation for the <code>SupportedInstanceType</code>.</p>
-    #[doc(hidden)]
     pub instance_family_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the <code>SupportedInstanceType</code> supports Amazon EBS optimization.</p>
-    #[doc(hidden)]
     pub ebs_optimized_available: bool,
     /// <p>Indicates whether the <code>SupportedInstanceType</code> uses Amazon EBS optimization by default.</p>
-    #[doc(hidden)]
     pub ebs_optimized_by_default: bool,
     /// <p>Number of disks for the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
-    #[doc(hidden)]
     pub number_of_disks: ::std::option::Option<i32>,
     /// <p>Indicates whether the <code>SupportedInstanceType</code> only supports Amazon EBS.</p>
-    #[doc(hidden)]
     pub ebs_storage_only: bool,
     /// <p>The CPU architecture, for example <code>X86_64</code> or <code>AARCH64</code>.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::string::String>,
 }
 impl SupportedInstanceType {

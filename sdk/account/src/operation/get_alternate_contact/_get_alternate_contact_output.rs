@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAlternateContactOutput {
     /// <p>A structure that contains the details for the specified alternate contact.</p>
-    #[doc(hidden)]
     pub alternate_contact: ::std::option::Option<crate::types::AlternateContact>,
     _request_id: Option<String>,
 }

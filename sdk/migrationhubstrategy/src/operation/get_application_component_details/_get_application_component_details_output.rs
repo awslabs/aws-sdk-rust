@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationComponentDetailsOutput {
     /// <p> Detailed information about an application component. </p>
-    #[doc(hidden)]
     pub application_component_detail: ::std::option::Option<crate::types::ApplicationComponentDetail>,
     /// <p> The associated application group as defined in AWS Application Discovery Service. </p>
-    #[doc(hidden)]
     pub associated_applications: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
     /// <p> Set to true if the application component belongs to more than one application group. </p>
-    #[doc(hidden)]
     pub more_application_resource: ::std::option::Option<bool>,
     /// <p> A list of the IDs of the servers on which the application component is running. </p>
-    #[doc(hidden)]
     pub associated_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

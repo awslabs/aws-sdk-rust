@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StrategySummary {
     /// <p> The name of recommended strategy. </p>
-    #[doc(hidden)]
     pub strategy: ::std::option::Option<crate::types::Strategy>,
     /// <p> The count of recommendations per strategy. </p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl StrategySummary {

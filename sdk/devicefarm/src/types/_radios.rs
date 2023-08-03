@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Radios {
     /// <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
-    #[doc(hidden)]
     pub wifi: ::std::option::Option<bool>,
     /// <p>True if Bluetooth is enabled at the beginning of the test. Otherwise, false.</p>
-    #[doc(hidden)]
     pub bluetooth: ::std::option::Option<bool>,
     /// <p>True if NFC is enabled at the beginning of the test. Otherwise, false.</p>
-    #[doc(hidden)]
     pub nfc: ::std::option::Option<bool>,
     /// <p>True if GPS is enabled at the beginning of the test. Otherwise, false.</p>
-    #[doc(hidden)]
     pub gps: ::std::option::Option<bool>,
 }
 impl Radios {

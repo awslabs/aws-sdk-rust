@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAction {
     /// <p>The ID of the replication group</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the cache cluster</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The date the update is first available</p>
-    #[doc(hidden)]
     pub service_update_release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The severity of the service update</p>
-    #[doc(hidden)]
     pub service_update_severity: ::std::option::Option<crate::types::ServiceUpdateSeverity>,
     /// <p>The status of the service update</p>
-    #[doc(hidden)]
     pub service_update_status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
     /// <p>The recommended date to apply the service update to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    #[doc(hidden)]
     pub service_update_recommended_apply_by_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Reflects the nature of the service update </p>
-    #[doc(hidden)]
     pub service_update_type: ::std::option::Option<crate::types::ServiceUpdateType>,
     /// <p>The date that the service update is available to a replication group</p>
-    #[doc(hidden)]
     pub update_action_available_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the update action</p>
-    #[doc(hidden)]
     pub update_action_status: ::std::option::Option<crate::types::UpdateActionStatus>,
     /// <p>The progress of the service update on the replication group</p>
-    #[doc(hidden)]
     pub nodes_updated: ::std::option::Option<::std::string::String>,
     /// <p>The date when the UpdateActionStatus was last modified</p>
-    #[doc(hidden)]
     pub update_action_status_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If yes, all nodes in the replication group have been updated by the recommended apply-by date. If no, at least one node in the replication group have not been updated by the recommended apply-by date. If N/A, the replication group was created after the recommended apply-by date.</p>
-    #[doc(hidden)]
     pub sla_met: ::std::option::Option<crate::types::SlaMet>,
     /// <p>The status of the service update on the node group</p>
-    #[doc(hidden)]
     pub node_group_update_status: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupUpdateStatus>>,
     /// <p>The status of the service update on the cache node</p>
-    #[doc(hidden)]
     pub cache_node_update_status: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeUpdateStatus>>,
     /// <p>The estimated length of time for the update to complete</p>
-    #[doc(hidden)]
     pub estimated_update_time: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAction {

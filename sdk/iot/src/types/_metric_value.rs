@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricValue {
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i64>,
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
-    #[doc(hidden)]
     pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
-    #[doc(hidden)]
     pub ports: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p> The numeral value of a metric. </p>
-    #[doc(hidden)]
     pub number: ::std::option::Option<f64>,
     /// <p> The numeral values of a metric. </p>
-    #[doc(hidden)]
     pub numbers: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p> The string values of a metric. </p>
-    #[doc(hidden)]
     pub strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricValue {

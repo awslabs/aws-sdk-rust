@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResumeCampaignInput {
     /// Identifier representing a Campaign
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl ResumeCampaignInput {

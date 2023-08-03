@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCustomDataIdentifiersOutput {
     /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
-    #[doc(hidden)]
     pub custom_data_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCustomDataIdentifierSummary>>,
     /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
-    #[doc(hidden)]
     pub not_found_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

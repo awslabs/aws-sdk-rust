@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAggregatedAssociationOverview {
     /// <p>Detailed status information about the aggregated associations.</p>
-    #[doc(hidden)]
     pub detailed_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of associations for the managed node(s).</p>
-    #[doc(hidden)]
     pub instance_association_status_aggregated_count: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl InstanceAggregatedAssociationOverview {

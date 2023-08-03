@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DownloadDbLogFilePortionOutput {
     /// <p>Entries from the specified log file.</p>
-    #[doc(hidden)]
     pub log_file_data: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
-    #[doc(hidden)]
     pub additional_data_pending: bool,
     _request_id: Option<String>,
 }

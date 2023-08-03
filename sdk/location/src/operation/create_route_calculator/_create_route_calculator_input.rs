@@ -10,7 +10,6 @@ pub struct CreateRouteCalculatorInput {
     /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub calculator_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data provider of traffic and road network data.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
@@ -22,14 +21,11 @@ pub struct CreateRouteCalculatorInput {
     /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    #[doc(hidden)]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>The optional description for the route calculator resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
@@ -45,7 +41,6 @@ pub struct CreateRouteCalculatorInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRouteCalculatorInput {

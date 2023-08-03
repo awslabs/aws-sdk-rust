@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteInput {
     /// <p>The name of the route to update.</p>
-    #[doc(hidden)]
     pub route_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service mesh that the route resides in.</p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual router that the route is associated with.</p>
-    #[doc(hidden)]
     pub virtual_router_name: ::std::option::Option<::std::string::String>,
     /// <p>The new route specification to apply. This overwrites the existing data.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::RouteSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    #[doc(hidden)]
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRouteInput {

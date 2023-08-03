@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceInput {
     /// <p>Next token of device description.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet the devices belong to.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeviceInput {

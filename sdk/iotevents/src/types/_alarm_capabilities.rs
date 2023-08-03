@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmCapabilities {
     /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
-    #[doc(hidden)]
     pub initialization_configuration: ::std::option::Option<crate::types::InitializationConfiguration>,
     /// <p>Specifies whether to get notified for alarm state changes.</p>
-    #[doc(hidden)]
     pub acknowledge_flow: ::std::option::Option<crate::types::AcknowledgeFlow>,
 }
 impl AlarmCapabilities {

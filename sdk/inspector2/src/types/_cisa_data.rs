@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CisaData {
     /// <p>The date and time CISA added this vulnerability to their catalogue.</p>
-    #[doc(hidden)]
     pub date_added: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time CISA expects a fix to have been provided vulnerability.</p>
-    #[doc(hidden)]
     pub date_due: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The remediation action recommended by CISA for this vulnerability.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
 }
 impl CisaData {

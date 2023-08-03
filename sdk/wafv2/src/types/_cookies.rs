@@ -9,10 +9,8 @@ pub struct Cookies {
     /// <p>The filter to use to identify the subset of cookies to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code> </p>
-    #[doc(hidden)]
     pub match_pattern: ::std::option::Option<crate::types::CookieMatchPattern>,
     /// <p>The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
-    #[doc(hidden)]
     pub match_scope: ::std::option::Option<crate::types::MapMatchScope>,
     /// <p>What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. </p>
     /// <p>The options for oversize handling are the following:</p>
@@ -21,7 +19,6 @@ pub struct Cookies {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
 impl Cookies {

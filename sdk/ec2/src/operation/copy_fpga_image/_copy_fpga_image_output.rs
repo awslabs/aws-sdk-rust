@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyFpgaImageOutput {
     /// <p>The ID of the new AFI.</p>
-    #[doc(hidden)]
     pub fpga_image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

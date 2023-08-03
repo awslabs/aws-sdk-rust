@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
-    #[doc(hidden)]
     pub duration_in_minutes: ::std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl InstantBooking {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorDebugOption {
     /// <p>The name of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
-    #[doc(hidden)]
     pub key_value: ::std::option::Option<::std::string::String>,
 }
 impl DetectorDebugOption {

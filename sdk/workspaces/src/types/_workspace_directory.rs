@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceDirectory {
     /// <p>The directory identifier.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory alias.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The name of the directory.</p>
-    #[doc(hidden)]
     pub directory_name: ::std::option::Option<::std::string::String>,
     /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
-    #[doc(hidden)]
     pub registration_code: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the subnets used with the directory.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP addresses of the DNS servers for the directory.</p>
-    #[doc(hidden)]
     pub dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user name for the service account.</p>
-    #[doc(hidden)]
     pub customer_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
-    #[doc(hidden)]
     pub iam_role_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory type.</p>
-    #[doc(hidden)]
     pub directory_type: ::std::option::Option<crate::types::WorkspaceDirectoryType>,
     /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
-    #[doc(hidden)]
     pub workspace_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkspaceDirectoryState>,
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
-    #[doc(hidden)]
     pub workspace_creation_properties: ::std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
-    #[doc(hidden)]
     pub ip_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
-    #[doc(hidden)]
     pub workspace_access_properties: ::std::option::Option<crate::types::WorkspaceAccessProperties>,
     /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
-    #[doc(hidden)]
     pub selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
-    #[doc(hidden)]
     pub saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
-    #[doc(hidden)]
     pub certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
 }
 impl WorkspaceDirectory {

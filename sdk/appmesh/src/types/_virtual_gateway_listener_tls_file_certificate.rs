@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGatewayListenerTlsFileCertificate {

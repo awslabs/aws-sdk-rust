@@ -7,10 +7,8 @@ pub struct EgressConfiguration {
     /// <p>The type of egress configuration.</p>
     /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
     /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
-    #[doc(hidden)]
     pub egress_type: ::std::option::Option<crate::types::EgressType>,
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
-    #[doc(hidden)]
     pub vpc_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl EgressConfiguration {

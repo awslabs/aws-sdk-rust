@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy you want to delete.</p>
-    #[doc(hidden)]
     pub deployment_strategy_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeploymentStrategyInput {

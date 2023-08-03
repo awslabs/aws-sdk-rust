@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceError {
     /// <p>The error ID.</p>
-    #[doc(hidden)]
     pub service_error_id: ::std::option::Option<::std::string::String>,
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The error type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>A message that describes the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the error occurred.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
 }
 impl ServiceError {

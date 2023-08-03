@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SvmEndpoints {
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
-    #[doc(hidden)]
     pub iscsi: ::std::option::Option<crate::types::SvmEndpoint>,
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
-    #[doc(hidden)]
     pub management: ::std::option::Option<crate::types::SvmEndpoint>,
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
-    #[doc(hidden)]
     pub nfs: ::std::option::Option<crate::types::SvmEndpoint>,
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
-    #[doc(hidden)]
     pub smb: ::std::option::Option<crate::types::SvmEndpoint>,
 }
 impl SvmEndpoints {

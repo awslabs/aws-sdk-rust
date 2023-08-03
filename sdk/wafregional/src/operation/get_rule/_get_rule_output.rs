@@ -8,7 +8,6 @@ pub struct GetRuleOutput {
     /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
     /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,
 }

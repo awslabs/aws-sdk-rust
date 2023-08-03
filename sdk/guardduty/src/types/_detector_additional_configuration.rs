@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorAdditionalConfiguration {
     /// <p>Name of the additional configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::FeatureAdditionalConfiguration>,
     /// <p>Status of the additional configuration.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl DetectorAdditionalConfiguration {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfiguredTable {
     /// <p>The unique ID for the configured table.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the configured table.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A name for the configured table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the configured table.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Glue table that this configured table represents.</p>
-    #[doc(hidden)]
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The time the configured table was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the configured table was last updated</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
-    #[doc(hidden)]
     pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
-    #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
     /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
-    #[doc(hidden)]
     pub allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConfiguredTable {

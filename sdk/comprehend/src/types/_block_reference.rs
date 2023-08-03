@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockReference {
     /// <p>Unique identifier for the block.</p>
-    #[doc(hidden)]
     pub block_id: ::std::option::Option<::std::string::String>,
     /// <p>Offset of the start of the block within its parent block.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>Offset of the end of the block within its parent block.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p>List of child blocks within this block.</p>
-    #[doc(hidden)]
     pub child_blocks: ::std::option::Option<::std::vec::Vec<crate::types::ChildBlock>>,
 }
 impl BlockReference {

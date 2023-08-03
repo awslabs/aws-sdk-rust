@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PullRequestMergedStateChangedEventMetadata {
     /// <p>The name of the repository where the pull request was created.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch that the pull request is merged into.</p>
-    #[doc(hidden)]
     pub destination_reference: ::std::option::Option<::std::string::String>,
     /// <p>Information about the merge state change event.</p>
-    #[doc(hidden)]
     pub merge_metadata: ::std::option::Option<crate::types::MergeMetadata>,
 }
 impl PullRequestMergedStateChangedEventMetadata {

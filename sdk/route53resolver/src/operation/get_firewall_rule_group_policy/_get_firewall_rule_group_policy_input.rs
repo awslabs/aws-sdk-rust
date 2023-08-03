@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetFirewallRuleGroupPolicyInput {

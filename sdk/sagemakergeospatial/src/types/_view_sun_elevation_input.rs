@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewSunElevationInput {
     /// <p>The lower bound to view the sun elevation.</p>
-    #[doc(hidden)]
     pub lower_bound: ::std::option::Option<f32>,
     /// <p>The upper bound to view the sun elevation.</p>
-    #[doc(hidden)]
     pub upper_bound: ::std::option::Option<f32>,
 }
 impl ViewSunElevationInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppflowIntegration {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
-    #[doc(hidden)]
     pub flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    #[doc(hidden)]
     pub batches: ::std::option::Option<::std::vec::Vec<crate::types::Batch>>,
 }
 impl AppflowIntegration {

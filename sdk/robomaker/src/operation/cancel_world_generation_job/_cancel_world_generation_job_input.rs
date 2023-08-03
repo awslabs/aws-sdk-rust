@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<::std::string::String>,
 }
 impl CancelWorldGenerationJobInput {

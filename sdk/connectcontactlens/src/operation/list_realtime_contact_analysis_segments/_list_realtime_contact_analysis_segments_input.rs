@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximimum number of results to return per page.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRealtimeContactAnalysisSegmentsInput {

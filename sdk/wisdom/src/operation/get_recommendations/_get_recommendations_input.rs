@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationsInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    #[doc(hidden)]
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
-    #[doc(hidden)]
     pub wait_time_seconds: i32,
 }
 impl GetRecommendationsInput {

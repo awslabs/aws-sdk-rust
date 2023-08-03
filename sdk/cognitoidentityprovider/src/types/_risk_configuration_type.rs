@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RiskConfigurationType {
     /// <p>The user pool ID.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The compromised credentials risk configuration object, including the <code>EventFilter</code> and the <code>EventAction</code>.</p>
-    #[doc(hidden)]
     pub compromised_credentials_risk_configuration: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
     /// <p>The account takeover risk configuration object, including the <code>NotifyConfiguration</code> object and <code>Actions</code> to take if there is an account takeover.</p>
-    #[doc(hidden)]
     pub account_takeover_risk_configuration: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
     /// <p>The configuration to override the risk decision.</p>
-    #[doc(hidden)]
     pub risk_exception_configuration: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
     /// <p>The last modified date.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RiskConfigurationType {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
-    #[doc(hidden)]
     pub junction_path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the security style for the volume. If a volume's security style is not specified, it is automatically set to the root volume's security style. The security style determines the type of permissions that FSx for ONTAP uses to control data access. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one of the following values:</p>
     /// <ul>
@@ -13,16 +12,12 @@ pub struct CreateOntapVolumeConfiguration {
     /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
     /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub security_style: ::std::option::Option<crate::types::SecurityStyle>,
     /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
-    #[doc(hidden)]
     pub size_in_megabytes: ::std::option::Option<i32>,
     /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or set to false to disable them. This parameter is required.</p>
-    #[doc(hidden)]
     pub storage_efficiency_enabled: ::std::option::Option<bool>,
     /// <p>Specifies the ONTAP SVM in which to create the volume.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
     /// <p>Valid tiering policies are the following:</p>
@@ -38,7 +33,6 @@ pub struct CreateOntapVolumeConfiguration {
     /// <ul>
     /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tiering_policy: ::std::option::Option<crate::types::TieringPolicy>,
     /// <p>Specifies the type of volume you are creating. Valid values are the following:</p>
     /// <ul>
@@ -46,7 +40,6 @@ pub struct CreateOntapVolumeConfiguration {
     /// <li> <p> <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only and can be used as the destination of a NetApp SnapMirror relationship.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    #[doc(hidden)]
     pub ontap_volume_type: ::std::option::Option<crate::types::InputOntapVolumeType>,
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
@@ -56,13 +49,10 @@ pub struct CreateOntapVolumeConfiguration {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    #[doc(hidden)]
     pub snapshot_policy: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
-    #[doc(hidden)]
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
-    #[doc(hidden)]
     pub snaplock_configuration: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
 }
 impl CreateOntapVolumeConfiguration {

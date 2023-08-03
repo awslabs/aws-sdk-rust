@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
-    #[doc(hidden)]
     pub backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
     _request_id: Option<String>,
 }

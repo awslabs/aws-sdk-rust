@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The facet value being counted.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The number of hits that contain the facet value in the specified facet field.</p>
-    #[doc(hidden)]
     pub count: i64,
 }
 impl Bucket {

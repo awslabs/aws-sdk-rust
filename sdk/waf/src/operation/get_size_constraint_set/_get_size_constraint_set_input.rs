@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    #[doc(hidden)]
     pub size_constraint_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSizeConstraintSetInput {

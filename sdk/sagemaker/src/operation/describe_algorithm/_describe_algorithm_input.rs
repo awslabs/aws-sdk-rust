@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlgorithmInput {
     /// <p>The name of the algorithm to describe.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAlgorithmInput {

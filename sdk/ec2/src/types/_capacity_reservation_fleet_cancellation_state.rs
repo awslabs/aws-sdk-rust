@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservationFleetCancellationState {
     /// <p>The current state of the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub current_fleet_state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     /// <p>The previous state of the Capacity Reservation Fleet.</p>
-    #[doc(hidden)]
     pub previous_fleet_state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     /// <p>The ID of the Capacity Reservation Fleet that was successfully cancelled.</p>
-    #[doc(hidden)]
     pub capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationFleetCancellationState {

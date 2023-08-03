@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to update.</p>
-    #[doc(hidden)]
     pub resolver_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The new settings for the Resolver rule.</p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<crate::types::ResolverRuleConfig>,
 }
 impl UpdateResolverRuleInput {

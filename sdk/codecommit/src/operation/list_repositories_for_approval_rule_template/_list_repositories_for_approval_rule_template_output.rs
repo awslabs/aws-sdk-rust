@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRepositoriesForApprovalRuleTemplateOutput {
     /// <p>A list of repository names that are associated with the specified approval rule template.</p>
-    #[doc(hidden)]
     pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

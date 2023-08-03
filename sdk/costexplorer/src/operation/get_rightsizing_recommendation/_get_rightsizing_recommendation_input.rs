@@ -40,19 +40,14 @@ pub struct GetRightsizingRecommendationInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,
     /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The number of recommendations that you want returned in a single response object.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetRightsizingRecommendationInput {

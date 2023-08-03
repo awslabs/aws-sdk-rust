@@ -5,10 +5,8 @@
 pub struct GetParameterInput {
     /// <p>The name of the parameter you want to query.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
-    #[doc(hidden)]
     pub with_decryption: ::std::option::Option<bool>,
 }
 impl GetParameterInput {

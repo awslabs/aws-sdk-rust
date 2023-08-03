@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReadSetInput {
     /// <p>The read set's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The read set's sequence store ID.</p>
-    #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The file to retrieve.</p>
-    #[doc(hidden)]
     pub file: ::std::option::Option<crate::types::ReadSetFile>,
     /// <p>The part number to retrieve.</p>
-    #[doc(hidden)]
     pub part_number: ::std::option::Option<i32>,
 }
 impl GetReadSetInput {

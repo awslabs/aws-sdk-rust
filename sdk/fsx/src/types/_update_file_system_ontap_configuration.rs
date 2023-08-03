@@ -5,31 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
-    #[doc(hidden)]
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
-    #[doc(hidden)]
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>Update the password for the <code>fsxadmin</code> user by entering a new password. You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API to manage your file system resources. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing resources using NetApp Applicaton</a>.</p>
-    #[doc(hidden)]
     pub fsx_admin_password: ::std::option::Option<::std::string::String>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD storage capacity and IOPS</a>.</p>
-    #[doc(hidden)]
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
-    #[doc(hidden)]
     pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
-    #[doc(hidden)]
     pub add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
-    #[doc(hidden)]
     pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFileSystemOntapConfiguration {

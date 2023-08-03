@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceResourceCost {
     /// <p>The type of the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CostEstimationServiceResourceState>,
     /// <p>The number of active resources analyzed for this service to create a monthly cost estimate.</p>
-    #[doc(hidden)]
     pub count: i32,
     /// <p>The price per hour to analyze the resources in the service. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
-    #[doc(hidden)]
     pub unit_cost: f64,
     /// <p>The total estimated monthly cost to analyze the active resources for this resource.</p>
-    #[doc(hidden)]
     pub cost: f64,
 }
 impl ServiceResourceCost {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceEvaluationSummaryInput {
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
-    #[doc(hidden)]
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl GetResourceEvaluationSummaryInput {

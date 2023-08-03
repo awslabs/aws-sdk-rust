@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetImportJobInput {
     /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
-    #[doc(hidden)]
     pub dataset_import_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
@@ -19,21 +16,17 @@ pub struct CreateDatasetImportJobInput {
     /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
     /// </ul>
     /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
-    #[doc(hidden)]
     pub timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
     /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
-    #[doc(hidden)]
     pub time_zone: ::std::option::Option<::std::string::String>,
     /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
-    #[doc(hidden)]
     pub use_geolocation_for_time_zone: bool,
     /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
     /// <ul>
     /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
     /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub geolocation_format: ::std::option::Option<::std::string::String>,
     /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -46,13 +39,10 @@ pub struct CreateDatasetImportJobInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An <code>INCREMENTAL</code> import appends the imported data to the existing data.</p>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::ImportMode>,
 }
 impl CreateDatasetImportJobInput {

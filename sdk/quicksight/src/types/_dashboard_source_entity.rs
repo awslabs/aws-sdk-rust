@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardSourceEntity {
     /// <p>Source template.</p>
-    #[doc(hidden)]
     pub source_template: ::std::option::Option<crate::types::DashboardSourceTemplate>,
 }
 impl DashboardSourceEntity {

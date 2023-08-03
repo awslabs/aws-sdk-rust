@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cell {
     /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
-    #[doc(hidden)]
     pub cell_reference: ::std::option::Option<::std::string::String>,
     /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<i64>,
     /// <p>The name of the column that contains the sensitive data, if available.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The row number of the row that contains the sensitive data.</p>
-    #[doc(hidden)]
     pub row: ::std::option::Option<i64>,
 }
 impl Cell {

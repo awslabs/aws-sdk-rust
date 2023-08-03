@@ -8,38 +8,29 @@ pub struct FleetLaunchTemplateOverridesRequest {
     /// <p> <code>mac1.metal</code> is not supported as a launch template override.</p> <note>
     /// <p>If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price. </p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    #[doc(hidden)]
     pub max_price: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type <code>instant</code> can have only one subnet ID.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which to launch the instances.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The number of units provided by the specified instance type.</p>
-    #[doc(hidden)]
     pub weighted_capacity: ::std::option::Option<f64>,
     /// <p>The priority for the launch template override. The highest priority is launched first.</p>
     /// <p>If the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand capacity.</p>
     /// <p>If the Spot <code>AllocationStrategy</code> is set to <code>capacity-optimized-prioritized</code>, EC2 Fleet uses priority on a best-effort basis to determine which launch template override to use in fulfilling Spot capacity, but optimizes for capacity first.</p>
     /// <p>Valid values are whole numbers starting at <code>0</code>. The lower the number, the higher the priority. If no number is set, the launch template override has the lowest priority. You can set the same priority for different launch template overrides.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<f64>,
     /// <p>The location where the instance launched, if applicable.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::Placement>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     /// <p>The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl FleetLaunchTemplateOverridesRequest {

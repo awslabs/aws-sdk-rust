@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldSortOptions {
     /// <p>The sort configuration for a field in a field well.</p>
-    #[doc(hidden)]
     pub field_sort: ::std::option::Option<crate::types::FieldSort>,
     /// <p>The sort configuration for a column that is not used in a field well.</p>
-    #[doc(hidden)]
     pub column_sort: ::std::option::Option<crate::types::ColumnSort>,
 }
 impl FieldSortOptions {

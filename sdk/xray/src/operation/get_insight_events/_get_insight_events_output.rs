@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightEventsOutput {
     /// <p>A detailed description of the event. This includes the time of the event, client and root cause impact statistics, and the top anomalous service at the time of the event.</p>
-    #[doc(hidden)]
     pub insight_events: ::std::option::Option<::std::vec::Vec<crate::types::InsightEvent>>,
     /// <p>Use this token to retrieve the next page of insight events.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

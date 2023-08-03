@@ -10,7 +10,6 @@ pub struct PromoteReadReplicaDbClusterInput {
     /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-replica1</code> </p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl PromoteReadReplicaDbClusterInput {

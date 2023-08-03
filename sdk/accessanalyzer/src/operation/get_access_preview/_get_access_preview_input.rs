@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPreviewInput {
     /// <p>The unique ID for the access preview.</p>
-    #[doc(hidden)]
     pub access_preview_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
-    #[doc(hidden)]
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessPreviewInput {

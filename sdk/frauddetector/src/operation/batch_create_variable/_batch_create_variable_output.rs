@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateVariableOutput {
     /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateVariableError>>,
     _request_id: Option<String>,
 }

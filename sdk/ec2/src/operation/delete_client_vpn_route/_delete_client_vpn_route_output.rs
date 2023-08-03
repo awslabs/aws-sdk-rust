@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClientVpnRouteOutput {
     /// <p>The current state of the route.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
     _request_id: Option<String>,
 }

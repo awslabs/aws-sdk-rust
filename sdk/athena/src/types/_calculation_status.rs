@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculationStatus {
     /// <p>The date and time the calculation was submitted for processing.</p>
-    #[doc(hidden)]
     pub submission_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the calculation completed processing.</p>
-    #[doc(hidden)]
     pub completion_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the calculation execution. A description of each state follows.</p>
     /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
@@ -19,10 +17,8 @@ pub struct CalculationStatus {
     /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
     /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
     /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CalculationExecutionState>,
     /// <p>The reason for the calculation state change (for example, the calculation was canceled because the session was terminated).</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<::std::string::String>,
 }
 impl CalculationStatus {

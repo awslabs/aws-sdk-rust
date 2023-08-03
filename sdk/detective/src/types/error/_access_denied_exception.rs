@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The SDK default error code associated with the access denied exception.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The SDK default explanation of why access was denied.</p>
-    #[doc(hidden)]
     pub error_code_reason: ::std::option::Option<::std::string::String>,
     /// <p>The error code associated with the access denied exception.</p>
-    #[doc(hidden)]
     pub sub_error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p> An explanation of why access was denied.</p>
-    #[doc(hidden)]
     pub sub_error_code_reason: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

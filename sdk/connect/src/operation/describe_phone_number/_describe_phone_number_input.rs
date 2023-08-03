@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePhoneNumberInput {
     /// <p>A unique identifier for the phone number.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePhoneNumberInput {

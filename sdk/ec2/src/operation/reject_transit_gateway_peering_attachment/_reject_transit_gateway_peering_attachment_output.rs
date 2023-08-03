@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectTransitGatewayPeeringAttachmentOutput {
     /// <p>The transit gateway peering attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_peering_attachment: ::std::option::Option<crate::types::TransitGatewayPeeringAttachment>,
     _request_id: Option<String>,
 }

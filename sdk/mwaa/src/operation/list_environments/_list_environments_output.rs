@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutput {
     /// <p>Returns a list of Amazon MWAA environments.</p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Retrieves the next page of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

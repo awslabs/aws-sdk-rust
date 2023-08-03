@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkStartImportInfo {
     /// <p>The CSV file contained in an S3 bucket that's used for adding devices to an import task.</p>
-    #[doc(hidden)]
     pub device_creation_file: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkStartImportInfo {

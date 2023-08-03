@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContainerOutput {
     /// <p>The name of the queried container.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::Container>,
     _request_id: Option<String>,
 }

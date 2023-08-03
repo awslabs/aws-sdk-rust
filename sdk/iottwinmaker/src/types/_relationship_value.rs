@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationshipValue {
     /// <p>The ID of the target entity associated with this relationship value.</p>
-    #[doc(hidden)]
     pub target_entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target component associated with the relationship value.</p>
-    #[doc(hidden)]
     pub target_component_name: ::std::option::Option<::std::string::String>,
 }
 impl RelationshipValue {

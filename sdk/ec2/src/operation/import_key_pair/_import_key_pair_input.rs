@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportKeyPairInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A unique name for the key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
-    #[doc(hidden)]
     pub public_key_material: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The tags to apply to the imported key pair.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl ImportKeyPairInput {

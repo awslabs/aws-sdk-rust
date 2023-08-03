@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeNameAndValue {
     /// <p>The attribute name of the typed link.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the typed link.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl AttributeNameAndValue {

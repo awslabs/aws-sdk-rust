@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInputSecurityGroupOutput {
     /// Unique ARN of Input Security Group
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The Id of the Input Security Group
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The list of inputs currently using this Input Security Group.
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The current state of the Input Security Group.
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InputSecurityGroupState>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Whitelist rules and their sync status
-    #[doc(hidden)]
     pub whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>>,
     _request_id: Option<String>,
 }

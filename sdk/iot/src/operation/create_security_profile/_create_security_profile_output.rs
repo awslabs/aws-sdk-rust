@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSecurityProfileOutput {
     /// <p>The name you gave to the security profile.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the security profile.</p>
-    #[doc(hidden)]
     pub security_profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssetBundleImportJobDataSourceCredentialPair {
     /// <p>The username for the data source connection.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the data source connection.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobDataSourceCredentialPair {

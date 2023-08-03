@@ -9,15 +9,12 @@ pub struct DocumentAttributeCondition {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    #[doc(hidden)]
     pub condition_document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::ConditionOperator>,
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
-    #[doc(hidden)]
     pub condition_on_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
 impl DocumentAttributeCondition {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetUtilizationOutput {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    #[doc(hidden)]
     pub fleet_utilization: ::std::option::Option<::std::vec::Vec<crate::types::FleetUtilization>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

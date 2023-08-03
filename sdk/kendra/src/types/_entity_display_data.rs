@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EntityDisplayData {
     /// <p>The name of the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user.</p>
-    #[doc(hidden)]
     pub identified_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The first name of the user.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the user.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
 }
 impl EntityDisplayData {

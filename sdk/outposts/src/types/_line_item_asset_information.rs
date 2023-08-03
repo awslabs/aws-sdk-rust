@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p> The MAC addresses of the asset. </p>
-    #[doc(hidden)]
     pub mac_address_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LineItemAssetInformation {

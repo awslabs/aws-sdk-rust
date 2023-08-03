@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubscriberInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The notification that you want to create a subscriber for.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The subscriber that you want to associate with a budget notification.</p>
-    #[doc(hidden)]
     pub subscriber: ::std::option::Option<crate::types::Subscriber>,
 }
 impl CreateSubscriberInput {

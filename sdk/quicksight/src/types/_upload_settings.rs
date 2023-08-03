@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadSettings {
     /// <p>File format.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::FileFormat>,
     /// <p>A row number to start reading data from.</p>
-    #[doc(hidden)]
     pub start_from_row: ::std::option::Option<i32>,
     /// <p>Whether the file has a header row, or the files each have a header row.</p>
-    #[doc(hidden)]
     pub contains_header: ::std::option::Option<bool>,
     /// <p>Text qualifier.</p>
-    #[doc(hidden)]
     pub text_qualifier: ::std::option::Option<crate::types::TextQualifier>,
     /// <p>The delimiter between values in the file.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
 }
 impl UploadSettings {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListVectorEnrichmentJobsInput {
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<::std::string::String>,
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The parameter by which to sort the results.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<::std::string::String>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListVectorEnrichmentJobsInput {

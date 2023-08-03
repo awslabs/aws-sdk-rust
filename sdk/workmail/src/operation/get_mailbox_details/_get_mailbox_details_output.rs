@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMailboxDetailsOutput {
     /// <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
-    #[doc(hidden)]
     pub mailbox_quota: ::std::option::Option<i32>,
     /// <p>The current mailbox size, in MB, for the specified user.</p>
-    #[doc(hidden)]
     pub mailbox_size: f64,
     _request_id: Option<String>,
 }

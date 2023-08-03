@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSessionOutput {
     /// <p>The name of the bot associated with the session data.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias in use for the bot associated with the session data.</p>
-    #[doc(hidden)]
     pub bot_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client application user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

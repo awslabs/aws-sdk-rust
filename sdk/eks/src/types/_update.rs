@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Update {
     /// <p>A UUID that is used to track the update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the update.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UpdateStatus>,
     /// <p>The type of the update.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UpdateType>,
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    #[doc(hidden)]
     pub params: ::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>>,
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
 }
 impl Update {

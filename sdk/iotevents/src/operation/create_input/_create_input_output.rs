@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInputOutput {
     /// <p>Information about the configuration of the input.</p>
-    #[doc(hidden)]
     pub input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
     _request_id: Option<String>,
 }

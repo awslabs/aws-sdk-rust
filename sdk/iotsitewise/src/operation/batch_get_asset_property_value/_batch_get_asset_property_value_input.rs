@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueInput {
     /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetAssetPropertyValueInput {

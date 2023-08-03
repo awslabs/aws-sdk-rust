@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceCount {
     /// <p>Number of compliant conformance packs.</p>
-    #[doc(hidden)]
     pub compliant_conformance_pack_count: i32,
     /// <p>Number of noncompliant conformance packs.</p>
-    #[doc(hidden)]
     pub non_compliant_conformance_pack_count: i32,
 }
 impl AggregateConformancePackComplianceCount {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceOutput {
     /// <p>An array of key-value pairs containing information about the specified instance.</p>
-    #[doc(hidden)]
     pub instance: ::std::option::Option<crate::types::Instance>,
     _request_id: Option<String>,
 }

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringJobDefinition {
     /// <p>Baseline configuration used to validate that the data conforms to the specified constraints and statistics</p>
-    #[doc(hidden)]
     pub baseline_config: ::std::option::Option<crate::types::MonitoringBaselineConfig>,
     /// <p>The array of inputs for the monitoring job. Currently we support monitoring an Amazon SageMaker Endpoint.</p>
-    #[doc(hidden)]
     pub monitoring_inputs: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringInput>>,
     /// <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).</p>
-    #[doc(hidden)]
     pub monitoring_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a monitoring job. In distributed processing, you specify more than one instance.</p>
-    #[doc(hidden)]
     pub monitoring_resources: ::std::option::Option<crate::types::MonitoringResources>,
     /// <p>Configures the monitoring job to run a specified Docker container image.</p>
-    #[doc(hidden)]
     pub monitoring_app_specification: ::std::option::Option<crate::types::MonitoringAppSpecification>,
     /// <p>Specifies a time limit for how long the monitoring job is allowed to run.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
     /// <p>Sets the environment variables in the Docker container.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies networking options for an monitoring job.</p>
-    #[doc(hidden)]
     pub network_config: ::std::option::Option<crate::types::NetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MonitoringJobDefinition {

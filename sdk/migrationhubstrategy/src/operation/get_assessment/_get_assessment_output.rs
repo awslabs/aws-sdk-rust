@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentOutput {
     /// <p> The ID for the specific assessment task. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> Detailed information about the assessment. </p>
-    #[doc(hidden)]
     pub data_collection_details: ::std::option::Option<crate::types::DataCollectionDetails>,
     /// <p>List of criteria for assessment.</p>
-    #[doc(hidden)]
     pub assessment_targets: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentTarget>>,
     _request_id: Option<String>,
 }

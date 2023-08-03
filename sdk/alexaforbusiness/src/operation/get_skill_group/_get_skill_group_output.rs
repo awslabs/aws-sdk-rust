@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSkillGroupOutput {
     /// <p>The details of the skill group requested. Required.</p>
-    #[doc(hidden)]
     pub skill_group: ::std::option::Option<crate::types::SkillGroup>,
     _request_id: Option<String>,
 }

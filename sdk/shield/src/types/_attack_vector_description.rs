@@ -25,7 +25,6 @@ pub struct AttackVectorDescription {
     /// <li> <p>UDS_REFLECTION</p> </li>
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub vector_type: ::std::option::Option<::std::string::String>,
 }
 impl AttackVectorDescription {

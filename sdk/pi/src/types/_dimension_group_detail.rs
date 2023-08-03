@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionGroupDetail {
     /// <p>The name of the dimension group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions within a dimension group.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>,
 }
 impl DimensionGroupDetail {

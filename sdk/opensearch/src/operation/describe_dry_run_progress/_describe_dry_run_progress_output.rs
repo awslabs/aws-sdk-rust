@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDryRunProgressOutput {
     /// <p>The current status of the dry run, including any validation errors.</p>
-    #[doc(hidden)]
     pub dry_run_progress_status: ::std::option::Option<crate::types::DryRunProgressStatus>,
     /// <p>Details about the changes you're planning to make on the domain.</p>
-    #[doc(hidden)]
     pub dry_run_config: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>The results of the dry run. </p>
-    #[doc(hidden)]
     pub dry_run_results: ::std::option::Option<crate::types::DryRunResults>,
     _request_id: Option<String>,
 }

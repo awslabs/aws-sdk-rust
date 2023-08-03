@@ -6,35 +6,27 @@
 pub struct JobInput {
     /// <p> The name of the file to transcode. Elsewhere in the body of the JSON block is the the ID of the pipeline to use for processing the job. The <code>InputBucket</code> object in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the file from. </p>
     /// <p>If the file name includes a prefix, such as <code>cooking/lasagna.mpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The frame rate of the input file. If you want Elastic Transcoder to automatically detect the frame rate of the input file, specify <code>auto</code>. If you want to specify the frame rate for the input file, enter one of the following values: </p>
     /// <p> <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the frame rate.</p>
-    #[doc(hidden)]
     pub frame_rate: ::std::option::Option<::std::string::String>,
     /// <p>This value must be <code>auto</code>, which causes Elastic Transcoder to automatically detect the resolution of the input file.</p>
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<::std::string::String>,
     /// <p> The aspect ratio of the input file. If you want Elastic Transcoder to automatically detect the aspect ratio of the input file, specify <code>auto</code>. If you want to specify the aspect ratio for the output file, enter one of the following values: </p>
     /// <p> <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p> If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the aspect ratio. </p>
-    #[doc(hidden)]
     pub aspect_ratio: ::std::option::Option<::std::string::String>,
     /// <p>Whether the input file is interlaced. If you want Elastic Transcoder to automatically detect whether the input file is interlaced, specify <code>auto</code>. If you want to specify whether the input file is interlaced, enter one of the following values:</p>
     /// <p> <code>true</code>, <code>false</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of interlacing.</p>
-    #[doc(hidden)]
     pub interlaced: ::std::option::Option<::std::string::String>,
     /// <p>The container type for the input file. If you want Elastic Transcoder to automatically detect the container type of the input file, specify <code>auto</code>. If you want to specify the container type for the input file, enter one of the following values: </p>
     /// <p> <code>3gp</code>, <code>aac</code>, <code>asf</code>, <code>avi</code>, <code>divx</code>, <code>flv</code>, <code>m4a</code>, <code>mkv</code>, <code>mov</code>, <code>mp3</code>, <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>, <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>, <code>vob</code>, <code>wav</code>, <code>webm</code> </p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// <p>Settings for clipping an input. Each input can have different clip settings.</p>
-    #[doc(hidden)]
     pub time_span: ::std::option::Option<crate::types::TimeSpan>,
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
@@ -46,10 +38,8 @@ pub struct JobInput {
     /// <p>To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null <code>CaptionSources</code> array.</p>
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
-    #[doc(hidden)]
     pub input_captions: ::std::option::Option<crate::types::InputCaptions>,
     /// <p>The detected properties of the input file.</p>
-    #[doc(hidden)]
     pub detected_properties: ::std::option::Option<crate::types::DetectedProperties>,
 }
 impl JobInput {

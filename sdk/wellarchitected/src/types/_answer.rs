@@ -5,53 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Answer {
     /// <p>The ID of the question.</p>
-    #[doc(hidden)]
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the question.</p>
-    #[doc(hidden)]
     pub question_title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the question.</p>
-    #[doc(hidden)]
     pub question_description: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    #[doc(hidden)]
     pub improvement_plan_url: ::std::option::Option<::std::string::String>,
     /// <p>The helpful resource URL.</p>
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-    #[doc(hidden)]
     pub helpful_resource_url: ::std::option::Option<::std::string::String>,
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
-    #[doc(hidden)]
     pub helpful_resource_display_text: ::std::option::Option<::std::string::String>,
     /// <p>List of choices available for a question.</p>
-    #[doc(hidden)]
     pub choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    #[doc(hidden)]
     pub selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of selected choices to a question in your workload.</p>
-    #[doc(hidden)]
     pub choice_answers: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    #[doc(hidden)]
     pub is_applicable: bool,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    #[doc(hidden)]
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The notes associated with the workload.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the question is not applicable to your workload.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::AnswerReason>,
 }
 impl Answer {

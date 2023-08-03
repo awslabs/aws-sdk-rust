@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDistributionInput {
     /// <p>The distribution's configuration information.</p>
-    #[doc(hidden)]
     pub distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
 }
 impl CreateDistributionInput {

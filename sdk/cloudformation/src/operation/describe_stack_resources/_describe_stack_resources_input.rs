@@ -11,17 +11,14 @@ pub struct DescribeStackResourcesInput {
     /// </ul>
     /// <p>Default: There is no default value.</p>
     /// <p>Required: Conditional. If you don't specify <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
     /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack the instance belongs to and what other resources are part of the stack.</p>
     /// <p>Required: Conditional. If you don't specify <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
     /// <p>Default: There is no default value.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStackResourcesInput {

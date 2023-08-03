@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeRepository {
     /// <p>The URL of the Git repository.</p>
-    #[doc(hidden)]
     pub repository_url: ::std::option::Option<::std::string::String>,
 }
 impl CodeRepository {

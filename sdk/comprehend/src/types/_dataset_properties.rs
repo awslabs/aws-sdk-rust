@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetProperties {
     /// <p>The ARN of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The dataset type (training data or test data).</p>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<crate::types::DatasetType>,
     /// <p>The S3 URI where the dataset is stored.</p>
-    #[doc(hidden)]
     pub dataset_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Description of the dataset.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The dataset status. While the system creates the dataset, the status is <code>CREATING</code>. When the dataset is ready to use, the status changes to <code>COMPLETED</code>. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p>A description of the status of the dataset.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents in the dataset.</p>
-    #[doc(hidden)]
     pub number_of_documents: ::std::option::Option<i64>,
     /// <p>Creation time of the dataset.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time when the data from the dataset becomes available in the data lake.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasetProperties {

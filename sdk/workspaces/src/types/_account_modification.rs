@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountModification {
     /// <p>The state of the modification to the configuration of BYOL.</p>
-    #[doc(hidden)]
     pub modification_state: ::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
-    #[doc(hidden)]
     pub dedicated_tenancy_support: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
-    #[doc(hidden)]
     pub dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl AccountModification {

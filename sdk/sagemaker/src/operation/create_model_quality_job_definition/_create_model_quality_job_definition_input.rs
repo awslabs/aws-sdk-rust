@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelQualityJobDefinitionInput {
     /// <p>The name of the monitoring job definition.</p>
-    #[doc(hidden)]
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the constraints and baselines for the monitoring job.</p>
-    #[doc(hidden)]
     pub model_quality_baseline_config: ::std::option::Option<crate::types::ModelQualityBaselineConfig>,
     /// <p>The container that runs the monitoring job.</p>
-    #[doc(hidden)]
     pub model_quality_app_specification: ::std::option::Option<crate::types::ModelQualityAppSpecification>,
     /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
-    #[doc(hidden)]
     pub model_quality_job_input: ::std::option::Option<crate::types::ModelQualityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
-    #[doc(hidden)]
     pub model_quality_job_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    #[doc(hidden)]
     pub job_resources: ::std::option::Option<crate::types::MonitoringResources>,
     /// <p>Specifies the network configuration for the monitoring job.</p>
-    #[doc(hidden)]
     pub network_config: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelQualityJobDefinitionInput {

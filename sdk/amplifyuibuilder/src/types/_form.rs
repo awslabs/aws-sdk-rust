@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Form {
     /// <p>The unique ID of the Amplify app associated with the form.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the form.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the form.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The operation to perform on the specified form.</p>
-    #[doc(hidden)]
     pub form_action_type: ::std::option::Option<crate::types::FormActionType>,
     /// <p>Stores the configuration for the form's style.</p>
-    #[doc(hidden)]
     pub style: ::std::option::Option<crate::types::FormStyle>,
     /// <p>The type of data source to use to create the form.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::FormDataTypeConfig>,
     /// <p>Stores the information about the form's fields.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>>,
     /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
-    #[doc(hidden)]
     pub sectional_elements: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>>,
     /// <p>The schema version of the form when it was imported.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>One or more key-value pairs to use when tagging the form.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Stores the call to action configuration for the form.</p>
-    #[doc(hidden)]
     pub cta: ::std::option::Option<crate::types::FormCta>,
     /// <p>Specifies an icon or decoration to display on the form.</p>
-    #[doc(hidden)]
     pub label_decorator: ::std::option::Option<crate::types::LabelDecorator>,
 }
 impl Form {

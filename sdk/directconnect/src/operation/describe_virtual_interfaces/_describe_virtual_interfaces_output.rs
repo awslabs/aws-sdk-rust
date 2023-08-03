@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
-    #[doc(hidden)]
     pub virtual_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VirtualInterface>>,
     _request_id: Option<String>,
 }

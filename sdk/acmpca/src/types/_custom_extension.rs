@@ -8,15 +8,12 @@
 pub struct CustomExtension {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
-    #[doc(hidden)]
     pub critical: ::std::option::Option<bool>,
 }
 impl CustomExtension {

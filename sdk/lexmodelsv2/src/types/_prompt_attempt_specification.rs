@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PromptAttemptSpecification {
     /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
-    #[doc(hidden)]
     pub allow_interrupt: ::std::option::Option<bool>,
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
-    #[doc(hidden)]
     pub allowed_input_types: ::std::option::Option<crate::types::AllowedInputTypes>,
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    #[doc(hidden)]
     pub audio_and_dtmf_input_specification: ::std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
     /// <p>Specifies the settings on text input.</p>
-    #[doc(hidden)]
     pub text_input_specification: ::std::option::Option<crate::types::TextInputSpecification>,
 }
 impl PromptAttemptSpecification {

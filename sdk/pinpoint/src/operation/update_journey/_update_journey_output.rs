@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJourneyOutput {
     /// <p>Provides information about the status, configuration, and other settings for a journey.</p>
-    #[doc(hidden)]
     pub journey_response: ::std::option::Option<crate::types::JourneyResponse>,
     _request_id: Option<String>,
 }

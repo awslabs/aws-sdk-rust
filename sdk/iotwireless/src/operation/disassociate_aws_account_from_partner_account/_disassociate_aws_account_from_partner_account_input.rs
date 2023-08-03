@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateAwsAccountFromPartnerAccountInput {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
-    #[doc(hidden)]
     pub partner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The partner type.</p>
-    #[doc(hidden)]
     pub partner_type: ::std::option::Option<crate::types::PartnerType>,
 }
 impl DisassociateAwsAccountFromPartnerAccountInput {

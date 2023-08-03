@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionMetadata {
     /// <p>The resource tags on an AWS Lambda function.</p>
-    #[doc(hidden)]
     pub function_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
-    #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a function.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>An AWS Lambda function's runtime.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::Runtime>,
 }
 impl LambdaFunctionMetadata {

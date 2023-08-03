@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>Details for the export revision to Amazon S3 action.</p>
-    #[doc(hidden)]
     pub export_revision_to_s3: ::std::option::Option<crate::types::AutoExportRevisionToS3RequestDetails>,
 }
 impl Action {

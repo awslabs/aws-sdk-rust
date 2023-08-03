@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInput {

@@ -4,52 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub elasticsearch_version: ::std::option::Option<::std::string::String>,
     /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
-    #[doc(hidden)]
     pub elasticsearch_cluster_config: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
     /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
-    #[doc(hidden)]
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p> IAM access policy as a JSON-formatted string.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
-    #[doc(hidden)]
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
     /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
-    #[doc(hidden)]
     pub cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p>Specifies the Encryption At Rest Options.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Specifies advanced security options.</p>
-    #[doc(hidden)]
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     /// <p>Specifies Auto-Tune options.</p>
-    #[doc(hidden)]
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsInput>,
     /// <p>A list of <code>Tag</code> added during domain creation.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateElasticsearchDomainInput {

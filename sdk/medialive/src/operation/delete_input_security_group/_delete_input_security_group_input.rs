@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
-    #[doc(hidden)]
     pub input_security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInputSecurityGroupInput {

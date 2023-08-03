@@ -7,13 +7,11 @@ pub struct GetEffectiveRecommendationPreferencesOutput {
     /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
     /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    #[doc(hidden)]
     pub enhanced_infrastructure_metrics: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
     /// <p>The provider of the external metrics recommendation preference. Considers all applicable preferences that you might have set at the account and organization level.</p>
     /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
     /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetEC2InstanceRecommendations</code> actions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    #[doc(hidden)]
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
     _request_id: Option<String>,
 }

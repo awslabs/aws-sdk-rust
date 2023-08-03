@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    #[doc(hidden)]
     pub recovery_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the recovery group.</p>
-    #[doc(hidden)]
     pub recovery_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

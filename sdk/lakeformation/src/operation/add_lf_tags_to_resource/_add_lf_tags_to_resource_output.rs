@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddLfTagsToResourceOutput {
     /// <p>A list of failures to tag the resource.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::LfTagError>>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRefreshScheduleInput {
     /// <p>The ID of the dataset.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The refresh schedule.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::RefreshSchedule>,
 }
 impl UpdateRefreshScheduleInput {

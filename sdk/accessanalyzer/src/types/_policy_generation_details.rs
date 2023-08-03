@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
 }
 impl PolicyGenerationDetails {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAsProvisionedProductOutput {
     /// <p>Information about a request operation.</p>
-    #[doc(hidden)]
     pub record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
 }

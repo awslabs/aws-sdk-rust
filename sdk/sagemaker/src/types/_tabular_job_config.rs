@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TabularJobConfig {
     /// <p>The configuration information of how model candidates are generated.</p>
-    #[doc(hidden)]
     pub candidate_generation_config: ::std::option::Option<crate::types::CandidateGenerationConfig>,
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    #[doc(hidden)]
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     /// <p>A URL to the Amazon S3 data source containing selected features from the input data source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
     /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
@@ -20,28 +18,22 @@ pub struct TabularJobConfig {
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
     /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
-    #[doc(hidden)]
     pub feature_specification_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
     /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
     /// <p>The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best hyperparameters according to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::AutoMlMode>,
     /// <p>Generates possible candidates without training the models. A model candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
-    #[doc(hidden)]
     pub generate_candidate_definitions_only: bool,
     /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p> <note>
     /// <p>You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a> metric, or none at all.</p>
     /// </note>
-    #[doc(hidden)]
     pub problem_type: ::std::option::Option<crate::types::ProblemType>,
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
-    #[doc(hidden)]
     pub target_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    #[doc(hidden)]
     pub sample_weight_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl TabularJobConfig {

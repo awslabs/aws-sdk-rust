@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStopJobRunSuccessfulSubmission {
     /// <p>The name of the job definition used in the job run that was stopped.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-    #[doc(hidden)]
     pub job_run_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchStopJobRunSuccessfulSubmission {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartContentModerationOutput {
     /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

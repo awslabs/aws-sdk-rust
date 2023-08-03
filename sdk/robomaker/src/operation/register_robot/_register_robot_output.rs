@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterRobotOutput {
     /// <p>The Amazon Resource Name (ARN) of the fleet that the robot will join.</p>
-    #[doc(hidden)]
     pub fleet: ::std::option::Option<::std::string::String>,
     /// <p>Information about the robot registration.</p>
-    #[doc(hidden)]
     pub robot: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

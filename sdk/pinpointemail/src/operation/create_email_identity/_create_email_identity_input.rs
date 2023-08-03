@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEmailIdentityInput {
     /// <p>The email address or domain that you want to verify.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateEmailIdentityInput {

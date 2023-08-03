@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesDetails {
     /// <p>Information about a Docker volume.</p>
-    #[doc(hidden)]
     pub docker_volume_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails>,
     /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
-    #[doc(hidden)]
     pub efs_volume_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails>,
     /// <p>Information about a bind mount host volume.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails>,
     /// <p>The name of the data volume.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesDetails {

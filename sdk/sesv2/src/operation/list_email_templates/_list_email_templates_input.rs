@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEmailTemplatesInput {
     /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate the position in the list of email templates.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListEmailTemplatesInput {

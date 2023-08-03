@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrlsOutput {
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
-    #[doc(hidden)]
     pub https: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

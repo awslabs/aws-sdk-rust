@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobOutput {
     /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The job description provided when initiating the job.</p>
-    #[doc(hidden)]
     pub job_description: ::std::option::Option<::std::string::String>,
     /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ActionCode>,
     /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
-    #[doc(hidden)]
     pub archive_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
-    #[doc(hidden)]
     pub vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
-    #[doc(hidden)]
     pub completed: bool,
     /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::StatusCode>,
     /// <p>A friendly message that describes the job status.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
-    #[doc(hidden)]
     pub archive_size_in_bytes: ::std::option::Option<i64>,
     /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
-    #[doc(hidden)]
     pub inventory_size_in_bytes: ::std::option::Option<i64>,
     /// <p>An Amazon SNS topic that receives notification.</p>
-    #[doc(hidden)]
     pub sns_topic: ::std::option::Option<::std::string::String>,
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
-    #[doc(hidden)]
     pub completion_date: ::std::option::Option<::std::string::String>,
     /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
     /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
@@ -57,28 +44,20 @@ pub struct DescribeJobOutput {
     /// <li> <p>Inventory jobs</p> </li>
     /// <li> <p>Select jobs</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sha256_tree_hash: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
-    #[doc(hidden)]
     pub archive_sha256_tree_hash: ::std::option::Option<::std::string::String>,
     /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
-    #[doc(hidden)]
     pub retrieval_byte_range: ::std::option::Option<::std::string::String>,
     /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<::std::string::String>,
     /// <p>Parameters used for range inventory retrieval.</p>
-    #[doc(hidden)]
     pub inventory_retrieval_parameters: ::std::option::Option<crate::types::InventoryRetrievalJobDescription>,
     /// <p>Contains the job output location.</p>
-    #[doc(hidden)]
     pub job_output_path: ::std::option::Option<::std::string::String>,
     /// <p>Contains the parameters used for a select.</p>
-    #[doc(hidden)]
     pub select_parameters: ::std::option::Option<crate::types::SelectParameters>,
     /// <p>Contains the location where the data from the select job is stored.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
     _request_id: Option<String>,
 }

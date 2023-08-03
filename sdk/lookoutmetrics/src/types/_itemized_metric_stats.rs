@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemizedMetricStats {
     /// <p>The name of the measure.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of times that the measure appears.</p>
-    #[doc(hidden)]
     pub occurrence_count: i32,
 }
 impl ItemizedMetricStats {

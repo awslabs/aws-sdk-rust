@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchedulesOutput {
     /// <p>A list of schedules that are defined.</p>
-    #[doc(hidden)]
     pub schedules: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

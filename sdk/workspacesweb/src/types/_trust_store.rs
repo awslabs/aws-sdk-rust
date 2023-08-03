@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustStore {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    #[doc(hidden)]
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the trust store.</p>
-    #[doc(hidden)]
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
 }
 impl TrustStore {

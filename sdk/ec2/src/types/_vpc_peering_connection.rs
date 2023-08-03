@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcPeeringConnection {
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    #[doc(hidden)]
     pub accepter_vpc_info: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>,
     /// <p>The time that an unaccepted VPC peering connection will expire.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the requester VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
-    #[doc(hidden)]
     pub requester_vpc_info: ::std::option::Option<crate::types::VpcPeeringConnectionVpcInfo>,
     /// <p>The status of the VPC peering connection.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VpcPeeringConnectionStateReason>,
     /// <p>Any tags assigned to the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC peering connection.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcPeeringConnection {

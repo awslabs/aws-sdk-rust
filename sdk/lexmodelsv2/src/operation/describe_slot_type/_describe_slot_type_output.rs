@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSlotTypeOutput {
     /// <p>The unique identifier for the slot type.</p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The name specified for the slot type.</p>
-    #[doc(hidden)]
     pub slot_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The description specified for the slot type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
-    #[doc(hidden)]
     pub slot_type_values: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>>,
     /// <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
-    #[doc(hidden)]
     pub value_selection_setting: ::std::option::Option<crate::types::SlotValueSelectionSetting>,
     /// <p>The built in slot type used as a parent to this slot type.</p>
-    #[doc(hidden)]
     pub parent_slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot associated with the slot type.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the slot type.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The language and locale specified for the slot type.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the slot type was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    #[doc(hidden)]
     pub external_source_setting: ::std::option::Option<crate::types::ExternalSourceSetting>,
     /// <p>Specifications for a composite slot type.</p>
-    #[doc(hidden)]
     pub composite_slot_type_setting: ::std::option::Option<crate::types::CompositeSlotTypeSetting>,
     _request_id: Option<String>,
 }

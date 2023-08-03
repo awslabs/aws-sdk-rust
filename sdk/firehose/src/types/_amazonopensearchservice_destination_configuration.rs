@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon OpenSearch Service Configuration API and for indexing documents.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming the role specified in RoleARN. </p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN field. </p>
-    #[doc(hidden)]
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The ElasticsearAmazon OpenSearch Service index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run time. </p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to facilitate the expiration of old data.</p>
-    #[doc(hidden)]
     pub index_rotation_period: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
     /// <p>The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are used. </p>
-    #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The default value is 300 (5 minutes). </p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>,
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix. </p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode>,
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     /// <p>Describes a data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl AmazonopensearchserviceDestinationConfiguration {

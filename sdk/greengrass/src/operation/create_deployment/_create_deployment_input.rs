@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the deployment if you wish to redeploy a previous deployment.
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     /// The ID of the Greengrass group.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// The ID of the group version to be deployed.
-    #[doc(hidden)]
     pub group_version_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateDeploymentInput {

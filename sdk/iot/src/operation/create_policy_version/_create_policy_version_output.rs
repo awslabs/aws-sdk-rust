@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePolicyVersionOutput {
     /// <p>The policy ARN.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The policy version ID.</p>
-    #[doc(hidden)]
     pub policy_version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the policy version is the default.</p>
-    #[doc(hidden)]
     pub is_default_version: bool,
     _request_id: Option<String>,
 }

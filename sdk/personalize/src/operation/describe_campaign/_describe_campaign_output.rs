@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCampaignOutput {
     /// <p>The properties of the campaign.</p>
-    #[doc(hidden)]
     pub campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,
 }

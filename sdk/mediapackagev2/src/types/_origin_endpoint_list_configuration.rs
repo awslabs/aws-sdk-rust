@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginEndpointListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    #[doc(hidden)]
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
-    #[doc(hidden)]
     pub origin_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
-    #[doc(hidden)]
     pub container_type: ::std::option::Option<crate::types::ContainerType>,
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the origin endpoint was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the origin endpoint was modified.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    #[doc(hidden)]
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
-    #[doc(hidden)]
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListLowLatencyHlsManifestConfiguration>>,
 }
 impl OriginEndpointListConfiguration {

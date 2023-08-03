@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionContext {
     /// <p>The date and time when the credentials were issued, and whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<crate::types::SessionContextAttributes>,
     /// <p>The source and type of credentials that were issued to the entity.</p>
-    #[doc(hidden)]
     pub session_issuer: ::std::option::Option<crate::types::SessionIssuer>,
 }
 impl SessionContext {

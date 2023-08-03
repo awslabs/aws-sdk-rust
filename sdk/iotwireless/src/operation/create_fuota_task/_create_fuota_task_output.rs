@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFuotaTaskOutput {
     /// <p>The arn of a FUOTA task.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a FUOTA task.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

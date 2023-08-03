@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestedEventStatistics {
     /// <p>The number of stored events.</p>
-    #[doc(hidden)]
     pub number_of_events: ::std::option::Option<i64>,
     /// <p>The total size of the stored events.</p>
-    #[doc(hidden)]
     pub event_data_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The oldest stored event.</p>
-    #[doc(hidden)]
     pub least_recent_event: ::std::option::Option<::std::string::String>,
     /// <p>The newest stored event.</p>
-    #[doc(hidden)]
     pub most_recent_event: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the stored event was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
 }
 impl IngestedEventStatistics {

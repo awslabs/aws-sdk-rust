@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique identifier for the journey that the metric applies to.</p>
-    #[doc(hidden)]
     pub journey_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub kpi_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
-    #[doc(hidden)]
     pub kpi_result: ::std::option::Option<crate::types::BaseKpiResult>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Journey Engagement Metrics resource because the resource returns all results in a single page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JourneyDateRangeKpiResponse {

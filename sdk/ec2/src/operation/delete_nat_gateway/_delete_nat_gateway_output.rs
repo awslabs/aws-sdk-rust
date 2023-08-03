@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNatGatewayOutput {
     /// <p>The ID of the NAT gateway.</p>
-    #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

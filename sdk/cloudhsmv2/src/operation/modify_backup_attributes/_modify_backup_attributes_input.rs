@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyBackupAttributesInput {
     /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
-    #[doc(hidden)]
     pub never_expires: ::std::option::Option<bool>,
 }
 impl ModifyBackupAttributesInput {

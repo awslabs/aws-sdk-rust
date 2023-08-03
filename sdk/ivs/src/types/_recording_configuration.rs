@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordingConfiguration {
     /// <p>Recording-configuration ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
-    #[doc(hidden)]
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RecordingConfigurationState>,
     /// <p>Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
-    #[doc(hidden)]
     pub thumbnail_configuration: ::std::option::Option<crate::types::ThumbnailConfiguration>,
     /// <p>If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.</p>
-    #[doc(hidden)]
     pub recording_reconnect_window_seconds: i32,
     /// <p>Object that describes which renditions should be recorded for a stream.</p>
-    #[doc(hidden)]
     pub rendition_configuration: ::std::option::Option<crate::types::RenditionConfiguration>,
 }
 impl RecordingConfiguration {

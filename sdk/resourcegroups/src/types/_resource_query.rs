@@ -14,7 +14,6 @@ pub struct ResourceQuery {
     /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> Specifies that you want the group to contain the members of an CloudFormation stack. The <code>Query</code> contains a <code>StackIdentifier</code> element with an ARN for a CloudFormation stack.</p> </li>
     /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> Specifies that you want the group to include resource that have tags that match the query. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::QueryType>,
     /// <p>The query that defines a group or a search. The contents depends on the value of the <code>Type</code> element.</p>
     /// <ul>
@@ -34,7 +33,6 @@ pub struct ResourceQuery {
     /// </ul> <p>Example: <code>"TagFilters": [ { "Key": "Stage", "Values": [ "Gamma", "Beta" ] }</code> </p> </li>
     /// <li> <p> <code>StackIdentifier</code> – applicable only if <code>Type</code> = <code>CLOUDFORMATION_STACK_1_0</code>. The value of this parameter is the Amazon Resource Name (ARN) of the CloudFormation stack whose resources you want included in the group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
 }
 impl ResourceQuery {

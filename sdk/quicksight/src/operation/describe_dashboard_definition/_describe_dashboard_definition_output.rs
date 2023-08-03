@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDashboardDefinitionOutput {
     /// <p>The ID of the dashboard described.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>Errors associated with this dashboard version.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::DashboardError>>,
     /// <p>The display name of the dashboard.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Status associated with the dashboard version.</p>
     /// <ul>
@@ -22,20 +19,15 @@ pub struct DescribeDashboardDefinitionOutput {
     /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
     /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The ARN of the theme of the dashboard.</p>
-    #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>The definition of a dashboard.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DashboardVersionDefinition>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Options for publishing the dashboard:</p>
     /// <ul>
@@ -43,7 +35,6 @@ pub struct DescribeDashboardDefinitionOutput {
     /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
     /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dashboard_publish_options: ::std::option::Option<crate::types::DashboardPublishOptions>,
     _request_id: Option<String>,
 }

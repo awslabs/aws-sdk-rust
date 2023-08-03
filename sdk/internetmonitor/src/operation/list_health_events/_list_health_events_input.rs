@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHealthEventsInput {
     /// <p>The name of the monitor.</p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when a health event started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of health event objects that you want to return with this call. </p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The status of a health event.</p>
-    #[doc(hidden)]
     pub event_status: ::std::option::Option<crate::types::HealthEventStatus>,
 }
 impl ListHealthEventsInput {

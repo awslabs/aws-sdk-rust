@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicyError {
     /// <p>The error code associated with a core network policy error.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with a core network policy error code.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The JSON path where the error was discovered in the policy document.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl CoreNetworkPolicyError {

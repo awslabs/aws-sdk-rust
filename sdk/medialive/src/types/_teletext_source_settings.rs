@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TeletextSourceSettings {
     /// Optionally defines a region where TTML style captions will be displayed
-    #[doc(hidden)]
     pub output_rectangle: ::std::option::Option<crate::types::CaptionRectangle>,
     /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
-    #[doc(hidden)]
     pub page_number: ::std::option::Option<::std::string::String>,
 }
 impl TeletextSourceSettings {

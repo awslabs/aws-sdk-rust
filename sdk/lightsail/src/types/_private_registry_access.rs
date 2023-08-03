@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateRegistryAccess {
     /// <p>An object that describes the activation status of the role that you can use to grant a Lightsail container service access to Amazon ECR private repositories. If the role is activated, the Amazon Resource Name (ARN) of the role is also listed.</p>
-    #[doc(hidden)]
     pub ecr_image_puller_role: ::std::option::Option<crate::types::ContainerServiceEcrImagePullerRole>,
 }
 impl PrivateRegistryAccess {

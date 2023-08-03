@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisLoadBalancerTarget {
     /// <p>The IP address.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Information about the instance.</p>
-    #[doc(hidden)]
     pub instance: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The port on which the target is listening.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl AnalysisLoadBalancerTarget {

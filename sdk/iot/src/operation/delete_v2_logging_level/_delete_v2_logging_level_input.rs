@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteV2LoggingLevelInput {
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::LogTargetType>,
     /// <p>The name of the resource for which you are configuring logging.</p>
-    #[doc(hidden)]
     pub target_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteV2LoggingLevelInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartJobInput {
     /// <p> The unique ID for an Amplify app. </p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The branch name for the job. </p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p> A descriptive reason for starting this job. </p>
-    #[doc(hidden)]
     pub job_reason: ::std::option::Option<::std::string::String>,
     /// <p> The commit ID from a third-party repository provider for the job. </p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p> The commit message from a third-party repository provider for the job. </p>
-    #[doc(hidden)]
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p> The commit date and time for the job. </p>
-    #[doc(hidden)]
     pub commit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StartJobInput {

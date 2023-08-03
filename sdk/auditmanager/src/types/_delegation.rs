@@ -5,41 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delegation {
     /// <p> The unique identifier for the delegation. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the assessment that's associated with the delegation. </p>
-    #[doc(hidden)]
     pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the assessment that's associated with the delegation. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the delegation. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DelegationStatus>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The type of customer persona. </p> <note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub role_type: ::std::option::Option<crate::types::RoleType>,
     /// <p> Specifies when the delegation was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies when the delegation was last updated. </p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The identifier for the control set that's associated with the delegation. </p>
-    #[doc(hidden)]
     pub control_set_id: ::std::option::Option<::std::string::String>,
     /// <p> The comment that's related to the delegation. </p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p> The user or role that created the delegation. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl Delegation {

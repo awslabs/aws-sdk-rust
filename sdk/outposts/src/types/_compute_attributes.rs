@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeAttributes {
     /// <p> The host ID of the Dedicated Host on the asset. </p>
-    #[doc(hidden)]
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The state.</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct ComputeAttributes {
     /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
     /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ComputeAssetState>,
 }
 impl ComputeAttributes {

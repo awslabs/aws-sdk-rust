@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerGroup {
     /// <p>The ID of a server group.</p>
-    #[doc(hidden)]
     pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a server group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The servers that belong to a server group.</p>
-    #[doc(hidden)]
     pub server_list: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
 }
 impl ServerGroup {

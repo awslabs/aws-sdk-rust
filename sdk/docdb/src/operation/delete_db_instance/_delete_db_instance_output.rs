@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceOutput {
     /// <p>Detailed information about an instance. </p>
-    #[doc(hidden)]
     pub db_instance: ::std::option::Option<crate::types::DbInstance>,
     _request_id: Option<String>,
 }

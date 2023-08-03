@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLoadBalancerAttributesInput {

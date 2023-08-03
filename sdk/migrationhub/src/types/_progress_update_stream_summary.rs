@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProgressUpdateStreamSummary {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    #[doc(hidden)]
     pub progress_update_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl ProgressUpdateStreamSummary {

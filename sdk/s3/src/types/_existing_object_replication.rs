@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExistingObjectReplication {
     /// <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExistingObjectReplicationStatus>,
 }
 impl ExistingObjectReplication {

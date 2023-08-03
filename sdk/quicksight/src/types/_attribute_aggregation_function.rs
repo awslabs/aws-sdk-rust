@@ -8,10 +8,8 @@ pub struct AttributeAggregationFunction {
     /// <ul>
     /// <li> <p> <code>UNIQUE_VALUE</code>: Returns the unique value for a field, aggregated by the dimension fields.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub simple_attribute_aggregation: ::std::option::Option<crate::types::SimpleAttributeAggregationFunction>,
     /// <p>Used by the <code>UNIQUE_VALUE</code> aggregation function. If there are multiple values for the field used by the aggregation, the value for this property will be returned instead. Defaults to '*'.</p>
-    #[doc(hidden)]
     pub value_for_multiple_values: ::std::option::Option<::std::string::String>,
 }
 impl AttributeAggregationFunction {

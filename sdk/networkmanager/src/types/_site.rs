@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Site {
     /// <p>The ID of the site.</p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
-    #[doc(hidden)]
     pub site_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the site.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The location of the site.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>The date and time that the site was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the site.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SiteState>,
     /// <p>The tags for the site.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Site {

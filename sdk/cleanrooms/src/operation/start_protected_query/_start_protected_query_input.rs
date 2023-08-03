@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartProtectedQueryInput {
     /// <p>The type of the protected query to be started.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ProtectedQueryType>,
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    #[doc(hidden)]
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The protected SQL query parameters.</p>
-    #[doc(hidden)]
     pub sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     /// <p>The details needed to write the query results.</p>
-    #[doc(hidden)]
     pub result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
 }
 impl StartProtectedQueryInput {

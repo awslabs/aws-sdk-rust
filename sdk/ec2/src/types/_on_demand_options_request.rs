@@ -8,27 +8,21 @@ pub struct OnDemandOptionsRequest {
     /// <p> <code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
     /// <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
     /// <p>Default: <code>lowest-price</code> </p>
-    #[doc(hidden)]
     pub allocation_strategy: ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    #[doc(hidden)]
     pub capacity_reservation_options: ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    #[doc(hidden)]
     pub single_instance_type: ::std::option::Option<bool>,
     /// <p>Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    #[doc(hidden)]
     pub single_availability_zone: ::std::option::Option<bool>,
     /// <p>The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
-    #[doc(hidden)]
     pub min_target_capacity: ::std::option::Option<i32>,
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
-    #[doc(hidden)]
     pub max_total_price: ::std::option::Option<::std::string::String>,
 }
 impl OnDemandOptionsRequest {

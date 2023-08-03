@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the volume.</p>
     /// <ul>
@@ -20,34 +18,24 @@ pub struct Volume {
     /// <li> <p> <code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p> </li>
     /// <li> <p> <code>PENDING</code> - Amazon FSx hasn't started creating the volume.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,
     /// <p>The name of the volume.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of an Amazon FSx for NetApp ONTAP volume.</p>
-    #[doc(hidden)]
     pub ontap_configuration: ::std::option::Option<crate::types::OntapVolumeConfiguration>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The system-generated, unique ID of the volume.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the volume.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The reason why the volume lifecycle status changed.</p>
-    #[doc(hidden)]
     pub lifecycle_transition_reason: ::std::option::Option<crate::types::LifecycleTransitionReason>,
     /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
-    #[doc(hidden)]
     pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
     /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
-    #[doc(hidden)]
     pub open_zfs_configuration: ::std::option::Option<crate::types::OpenZfsVolumeConfiguration>,
 }
 impl Volume {

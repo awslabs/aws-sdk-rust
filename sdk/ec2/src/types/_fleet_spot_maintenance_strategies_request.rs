@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetSpotMaintenanceStrategiesRequest {
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
-    #[doc(hidden)]
     pub capacity_rebalance: ::std::option::Option<crate::types::FleetSpotCapacityRebalanceRequest>,
 }
 impl FleetSpotMaintenanceStrategiesRequest {

@@ -7,10 +7,8 @@
 pub struct S3EncryptionConfig {
     /// <p> The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used. </p>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code> for <code>EncryptionMode</code> </p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3EncryptionConfig {

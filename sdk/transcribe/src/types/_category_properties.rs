@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryProperties {
     /// <p>The name of the Call Analytics category. Category names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub category_name: ::std::option::Option<::std::string::String>,
     /// <p>The rules used to define a Call Analytics category. Each category can have between 1 and 20 rules.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>The date and time the specified Call Analytics category was created.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the specified Call Analytics category was last updated.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-05T12:45:32.691000-07:00</code> represents 12:45 PM UTC-7 on May 5, 2022.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming transcriptions.</p>
-    #[doc(hidden)]
     pub input_type: ::std::option::Option<crate::types::InputType>,
 }
 impl CategoryProperties {

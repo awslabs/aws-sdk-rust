@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePresignedNotebookUrlOutput {
     /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
-    #[doc(hidden)]
     pub notebook_url: ::std::option::Option<::std::string::String>,
     /// <p>The authentication token for the notebook.</p>
-    #[doc(hidden)]
     pub auth_token: ::std::option::Option<::std::string::String>,
     /// <p>The UTC epoch time when the authentication token expires.</p>
-    #[doc(hidden)]
     pub auth_token_expiration_time: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

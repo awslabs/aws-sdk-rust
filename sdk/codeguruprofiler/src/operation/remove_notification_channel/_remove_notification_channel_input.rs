@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveNotificationChannelInput {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveNotificationChannelInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution for which the cancellation was requested.</p>
-    #[doc(hidden)]
     pub external_workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub external_initiated_event_id: i64,
     /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
-    #[doc(hidden)]
     pub cause: ::std::option::Option<crate::types::WorkflowExecutionCancelRequestedCause>,
 }
 impl WorkflowExecutionCancelRequestedEventAttributes {

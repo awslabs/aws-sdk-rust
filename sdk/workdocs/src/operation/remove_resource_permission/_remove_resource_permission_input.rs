@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RemoveResourcePermissionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The principal ID of the resource.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The principal type of the resource.</p>
-    #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
 impl RemoveResourcePermissionInput {

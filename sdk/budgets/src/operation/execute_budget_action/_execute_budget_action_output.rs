@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of execution. </p>
-    #[doc(hidden)]
     pub execution_type: ::std::option::Option<crate::types::ExecutionType>,
     _request_id: Option<String>,
 }

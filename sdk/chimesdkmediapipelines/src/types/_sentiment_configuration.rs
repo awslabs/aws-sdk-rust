@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentConfiguration {
     /// <p>The name of the rule in the sentiment configuration.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
-    #[doc(hidden)]
     pub sentiment_type: ::std::option::Option<crate::types::SentimentType>,
     /// <p>Specifies the analysis interval.</p>
-    #[doc(hidden)]
     pub time_period: i32,
 }
 impl SentimentConfiguration {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRemediationExceptionsOutput {
     /// <p>Returns a list of remediation exception objects.</p>
-    #[doc(hidden)]
     pub remediation_exceptions: ::std::option::Option<::std::vec::Vec<crate::types::RemediationException>>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

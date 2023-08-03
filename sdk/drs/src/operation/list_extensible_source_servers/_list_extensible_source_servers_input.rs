@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExtensibleSourceServersInput {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-    #[doc(hidden)]
     pub staging_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of extensible source servers to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token of the next extensible source server to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListExtensibleSourceServersInput {

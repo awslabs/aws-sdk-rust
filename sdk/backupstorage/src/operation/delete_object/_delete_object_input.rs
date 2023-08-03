@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// Backup job Id for the in-progress backup.
-    #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
     /// The name of the Object.
-    #[doc(hidden)]
     pub object_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteObjectInput {

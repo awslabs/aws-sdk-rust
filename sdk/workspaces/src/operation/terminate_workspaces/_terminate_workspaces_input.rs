@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateWorkspacesInput {
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    #[doc(hidden)]
     pub terminate_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
 }
 impl TerminateWorkspacesInput {

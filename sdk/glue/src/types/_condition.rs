@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>A logical operator.</p>
-    #[doc(hidden)]
     pub logical_operator: ::std::option::Option<crate::types::LogicalOperator>,
     /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::JobRunState>,
     /// <p>The name of the crawler to which this condition applies.</p>
-    #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the crawler to which this condition applies.</p>
-    #[doc(hidden)]
     pub crawl_state: ::std::option::Option<crate::types::CrawlState>,
 }
 impl Condition {

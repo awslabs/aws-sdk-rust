@@ -6,43 +6,33 @@
 pub struct VpnConnectionOptionsSpecification {
     /// <p>Indicate whether to enable acceleration for the VPN connection.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub enable_acceleration: ::std::option::Option<bool>,
     /// <p>Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device that does not support BGP, you must specify <code>true</code>. Use <code>CreateVpnConnectionRoute</code> to create a static route.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub static_routes_only: ::std::option::Option<bool>,
     /// <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
     /// <p>Default: <code>ipv4</code> </p>
-    #[doc(hidden)]
     pub tunnel_inside_ip_version: ::std::option::Option<crate::types::TunnelInsideIpVersion>,
     /// <p>The tunnel options for the VPN connection.</p>
-    #[doc(hidden)]
     pub tunnel_options: ::std::option::Option<::std::vec::Vec<crate::types::VpnTunnelOptionsSpecification>>,
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    #[doc(hidden)]
     pub local_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    #[doc(hidden)]
     pub remote_ipv4_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    #[doc(hidden)]
     pub local_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    #[doc(hidden)]
     pub remote_ipv6_network_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The type of IPv4 address assigned to the outside interface of the customer gateway device.</p>
     /// <p>Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> </p>
     /// <p>Default: <code>PublicIpv4</code> </p>
-    #[doc(hidden)]
     pub outside_ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>The transit gateway attachment ID to use for the VPN tunnel.</p>
     /// <p>Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
-    #[doc(hidden)]
     pub transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
 }
 impl VpnConnectionOptionsSpecification {

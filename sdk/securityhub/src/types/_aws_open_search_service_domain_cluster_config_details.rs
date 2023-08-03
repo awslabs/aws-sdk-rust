@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainClusterConfigDetails {
     /// <p>The number of data nodes to use in the OpenSearch domain.</p>
-    #[doc(hidden)]
     pub instance_count: i32,
     /// <p>Whether UltraWarm is enabled.</p>
-    #[doc(hidden)]
     pub warm_enabled: bool,
     /// <p>The number of UltraWarm instances.</p>
-    #[doc(hidden)]
     pub warm_count: i32,
     /// <p>Whether to use a dedicated master node for the OpenSearch domain. A dedicated master node performs cluster management tasks, but does not hold data or respond to data upload requests.</p>
-    #[doc(hidden)]
     pub dedicated_master_enabled: bool,
     /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub zone_awareness_config: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails>,
     /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
-    #[doc(hidden)]
     pub dedicated_master_count: i32,
     /// <p>The instance type for your data nodes.</p>
     /// <p>For a list of valid values, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The type of UltraWarm instance.</p>
-    #[doc(hidden)]
     pub warm_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable zone awareness for the OpenSearch domain. When zone awareness is enabled, OpenSearch Service allocates the cluster's nodes and replica index shards across Availability Zones (AZs) in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
-    #[doc(hidden)]
     pub zone_awareness_enabled: bool,
     /// <p>The hardware configuration of the computer that hosts the dedicated master node.</p>
     /// <p>If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>. </p>
-    #[doc(hidden)]
     pub dedicated_master_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainClusterConfigDetails {

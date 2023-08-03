@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCsvHeaderInput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCsvHeaderInput {

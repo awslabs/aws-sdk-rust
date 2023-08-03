@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ID of the user.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The login name of the user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The given name of the user.</p>
-    #[doc(hidden)]
     pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>The surname of the user.</p>
-    #[doc(hidden)]
     pub surname: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the root folder.</p>
-    #[doc(hidden)]
     pub root_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the recycle bin folder.</p>
-    #[doc(hidden)]
     pub recycle_bin_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the user.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UserStatusType>,
     /// <p>The type of user.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UserType>,
     /// <p>The time when the user was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the user was modified.</p>
-    #[doc(hidden)]
     pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time zone ID of the user.</p>
-    #[doc(hidden)]
     pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the user.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::LocaleType>,
     /// <p>The storage for the user.</p>
-    #[doc(hidden)]
     pub storage: ::std::option::Option<crate::types::UserStorageMetadata>,
 }
 impl User {

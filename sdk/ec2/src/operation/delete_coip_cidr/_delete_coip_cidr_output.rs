@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCoipCidrOutput {
     /// <p> Information about a range of customer-owned IP addresses. </p>
-    #[doc(hidden)]
     pub coip_cidr: ::std::option::Option<crate::types::CoipCidr>,
     _request_id: Option<String>,
 }

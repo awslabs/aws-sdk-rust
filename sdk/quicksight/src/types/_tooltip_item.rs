@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TooltipItem {
     /// <p>The tooltip item for the fields.</p>
-    #[doc(hidden)]
     pub field_tooltip_item: ::std::option::Option<crate::types::FieldTooltipItem>,
     /// <p>The tooltip item for the columns that are not part of a field well.</p>
-    #[doc(hidden)]
     pub column_tooltip_item: ::std::option::Option<crate::types::ColumnTooltipItem>,
 }
 impl TooltipItem {

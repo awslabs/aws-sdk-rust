@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnarchiveFindingsInput {
     /// <p>The ID of the detector associated with the findings to unarchive.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the findings to unarchive.</p>
-    #[doc(hidden)]
     pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnarchiveFindingsInput {

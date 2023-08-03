@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogStreamsInput {
     /// <p>The name of your database for which to get log streams.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRelationalDatabaseLogStreamsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BootstrapActionDetail {
     /// <p>A description of the bootstrap action.</p>
-    #[doc(hidden)]
     pub bootstrap_action_config: ::std::option::Option<crate::types::BootstrapActionConfig>,
 }
 impl BootstrapActionDetail {

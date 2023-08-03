@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source configuration to apply to the App Runner service.</p>
     /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
-    #[doc(hidden)]
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
-    #[doc(hidden)]
     pub instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
-    #[doc(hidden)]
     pub health_check_configuration: ::std::option::Option<crate::types::HealthCheckConfiguration>,
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The observability configuration of your service.</p>
-    #[doc(hidden)]
     pub observability_configuration: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
 }
 impl UpdateServiceInput {

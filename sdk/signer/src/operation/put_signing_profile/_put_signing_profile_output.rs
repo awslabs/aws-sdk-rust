@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSigningProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the signing profile being created.</p>
-    #[doc(hidden)]
     pub profile_version: ::std::option::Option<::std::string::String>,
     /// <p>The signing profile ARN, including the profile version.</p>
-    #[doc(hidden)]
     pub profile_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

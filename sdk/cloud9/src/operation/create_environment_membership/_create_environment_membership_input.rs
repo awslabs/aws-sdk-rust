@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentMembershipInput {
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<crate::types::MemberPermissions>,
 }
 impl CreateEnvironmentMembershipInput {

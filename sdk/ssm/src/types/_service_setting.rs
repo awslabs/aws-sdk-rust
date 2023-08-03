@@ -7,19 +7,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSetting {
     /// <p>The ID of the service setting.</p>
-    #[doc(hidden)]
     pub setting_id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the service setting.</p>
-    #[doc(hidden)]
     pub setting_value: ::std::option::Option<::std::string::String>,
     /// <p>The last time the service setting was modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
-    #[doc(hidden)]
     pub last_modified_user: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the service setting.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
@@ -27,7 +22,6 @@ pub struct ServiceSetting {
     /// <li> <p>Customized: The current setting use a custom value specified by the customer.</p> </li>
     /// <li> <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl ServiceSetting {

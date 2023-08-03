@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationNfsOutput {
     /// <p>The ARN of the transfer location that you created for your NFS file server.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

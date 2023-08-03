@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

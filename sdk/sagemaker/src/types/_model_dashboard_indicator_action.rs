@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardIndicatorAction {
     /// <p>Indicates whether the alert action is turned on.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl ModelDashboardIndicatorAction {

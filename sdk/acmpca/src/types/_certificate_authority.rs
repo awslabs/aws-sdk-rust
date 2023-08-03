@@ -5,52 +5,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateAuthority {
     /// <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the certificate authority.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>Date and time at which your private CA was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date and time at which your private CA was last updated.</p>
-    #[doc(hidden)]
     pub last_state_change_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Type of your private CA.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CertificateAuthorityType>,
     /// <p>Serial number of your private CA.</p>
-    #[doc(hidden)]
     pub serial: ::std::option::Option<::std::string::String>,
     /// <p>Status of your private CA.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateAuthorityStatus>,
     /// <p>Date and time before which your private CA certificate is not valid.</p>
-    #[doc(hidden)]
     pub not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date and time after which your private CA certificate is not valid.</p>
-    #[doc(hidden)]
     pub not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Reason the request to create your private CA failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<crate::types::FailureReason>,
     /// <p>Your private CA configuration.</p>
-    #[doc(hidden)]
     pub certificate_authority_configuration: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
     /// <p>Information about the Online Certificate Status Protocol (OCSP) configuration or certificate revocation list (CRL) created and maintained by your private CA. </p>
-    #[doc(hidden)]
     pub revocation_configuration: ::std::option::Option<crate::types::RevocationConfiguration>,
     /// <p>The period during which a deleted CA can be restored. For more information, see the <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a> action. </p>
-    #[doc(hidden)]
     pub restorable_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Defines a cryptographic key management compliance standard used for handling CA keys. </p>
     /// <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>
     /// <p>Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an <code>InvalidArgsException</code> with the message "A certificate authority cannot be created in this region with the specified security standard."</p>
-    #[doc(hidden)]
     pub key_storage_security_standard: ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
     /// <p>Specifies whether the CA issues general-purpose certificates that typically require a revocation mechanism, or short-lived certificates that may optionally omit revocation because they expire quickly. Short-lived certificate validity is limited to seven days.</p>
     /// <p>The default value is GENERAL_PURPOSE.</p>
-    #[doc(hidden)]
     pub usage_mode: ::std::option::Option<crate::types::CertificateAuthorityUsageMode>,
 }
 impl CertificateAuthority {

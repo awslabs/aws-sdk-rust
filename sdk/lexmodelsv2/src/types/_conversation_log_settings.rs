@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLogSettings {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-    #[doc(hidden)]
     pub text_log_settings: ::std::option::Option<::std::vec::Vec<crate::types::TextLogSetting>>,
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-    #[doc(hidden)]
     pub audio_log_settings: ::std::option::Option<::std::vec::Vec<crate::types::AudioLogSetting>>,
 }
 impl ConversationLogSettings {

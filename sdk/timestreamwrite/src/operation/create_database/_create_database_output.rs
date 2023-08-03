@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatabaseOutput {
     /// <p>The newly created Timestream database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::Database>,
     _request_id: Option<String>,
 }

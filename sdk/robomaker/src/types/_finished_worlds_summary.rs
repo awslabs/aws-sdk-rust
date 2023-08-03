@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FinishedWorldsSummary {
     /// <p>The total number of finished worlds.</p>
-    #[doc(hidden)]
     pub finished_count: i32,
     /// <p>A list of worlds that succeeded.</p>
-    #[doc(hidden)]
     pub succeeded_worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about worlds that failed.</p>
-    #[doc(hidden)]
     pub failure_summary: ::std::option::Option<crate::types::FailureSummary>,
 }
 impl FinishedWorldsSummary {

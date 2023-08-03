@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInsightInput {
     /// <p>The ARN of the insight to delete.</p>
-    #[doc(hidden)]
     pub insight_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInsightInput {

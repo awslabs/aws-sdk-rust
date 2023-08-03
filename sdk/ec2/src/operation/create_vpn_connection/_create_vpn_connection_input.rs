@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpnConnectionInput {
     /// <p>The ID of the customer gateway.</p>
-    #[doc(hidden)]
     pub customer_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of VPN connection (<code>ipsec.1</code>).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</p>
-    #[doc(hidden)]
     pub vpn_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The options for the VPN connection.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::VpnConnectionOptionsSpecification>,
     /// <p>The tags to apply to the VPN connection.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpnConnectionInput {

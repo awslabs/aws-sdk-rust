@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCoreNetworkOutput {
     /// <p>Details about a core network.</p>
-    #[doc(hidden)]
     pub core_network: ::std::option::Option<crate::types::CoreNetwork>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionInput {
     /// The ID of the workspace in which to delete the alert manager definition.
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlertManagerDefinitionInput {

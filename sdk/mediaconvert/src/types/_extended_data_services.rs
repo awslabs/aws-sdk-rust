@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtendedDataServices {
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    #[doc(hidden)]
     pub copy_protection_action: ::std::option::Option<crate::types::CopyProtectionAction>,
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    #[doc(hidden)]
     pub vchip_action: ::std::option::Option<crate::types::VchipAction>,
 }
 impl ExtendedDataServices {

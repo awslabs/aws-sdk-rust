@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_attributes_result: ::std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
     _request_id: Option<String>,
 }

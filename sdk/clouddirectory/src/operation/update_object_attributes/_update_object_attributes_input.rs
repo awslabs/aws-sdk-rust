@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateObjectAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reference that identifies the object.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The attributes update structure.</p>
-    #[doc(hidden)]
     pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
 }
 impl UpdateObjectAttributesInput {

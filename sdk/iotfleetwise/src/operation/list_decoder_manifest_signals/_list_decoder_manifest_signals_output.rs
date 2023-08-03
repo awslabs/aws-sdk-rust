@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDecoderManifestSignalsOutput {
     /// <p> Information about a list of signals to decode. </p>
-    #[doc(hidden)]
     pub signal_decoders: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackTestConfiguration {
     /// <p>Run a backtest instead of monitoring new data.</p>
-    #[doc(hidden)]
     pub run_back_test_mode: ::std::option::Option<bool>,
 }
 impl BackTestConfiguration {

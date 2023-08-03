@@ -4,29 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourcePolicyStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the statement. The ID is the same as the <code>Sid</code> IAM property. The statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM JSON policy elements: Sid</a>. </p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the statement allows or denies access to the resource.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::Effect>,
     /// <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web Services JSON policy elements: Principal</a>.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
     /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    #[doc(hidden)]
     pub expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateResourcePolicyStatementInput {

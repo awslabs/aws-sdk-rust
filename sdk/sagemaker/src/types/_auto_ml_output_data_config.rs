@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlOutputDataConfig {
     /// <p>The Key Management Service (KMS) encryption key ID.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlOutputDataConfig {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclDetails {
     /// <p> The name of the web ACL. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether this web ACL is managed by Firewall Manager. </p>
-    #[doc(hidden)]
     pub managedby_firewall_manager: bool,
     /// <p> A unique identifier for the web ACL. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The web ACL capacity units (WCUs) currently being used by this web ACL. </p>
-    #[doc(hidden)]
     pub capacity: i64,
     /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
-    #[doc(hidden)]
     pub captcha_config: ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigDetails>,
     /// <p> The action to perform if none of the Rules contained in the web ACL match. </p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<crate::types::AwsWafv2WebAclActionDetails>,
     /// <p> A description of the web ACL that helps with identification. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2RulesDetails>>,
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    #[doc(hidden)]
     pub visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
 impl AwsWafv2WebAclDetails {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelfManageResources {
     /// <p> Self-managed resources target destination. </p>
-    #[doc(hidden)]
     pub target_destination: ::std::option::Option<::std::vec::Vec<crate::types::SelfManageTargetDestination>>,
 }
 impl SelfManageResources {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
-    #[doc(hidden)]
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
 }
 impl TrainingData {

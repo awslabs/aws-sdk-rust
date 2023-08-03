@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
-    #[doc(hidden)]
     pub cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
     /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCachePolicyInput {

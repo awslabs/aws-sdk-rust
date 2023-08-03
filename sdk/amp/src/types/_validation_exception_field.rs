@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// The field name.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Message describing why the field failed validation.
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ValidationExceptionField {

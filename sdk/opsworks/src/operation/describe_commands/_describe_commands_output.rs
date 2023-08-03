@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCommandsOutput {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    #[doc(hidden)]
     pub commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     _request_id: Option<String>,
 }

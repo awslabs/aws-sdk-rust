@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedS3Resource {
     /// <p>(Discontinued) The failed S3 resources.</p>
-    #[doc(hidden)]
     pub failed_item: ::std::option::Option<crate::types::S3Resource>,
     /// <p>(Discontinued) The status code of a failed item.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>(Discontinued) The error message of a failed item.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedS3Resource {

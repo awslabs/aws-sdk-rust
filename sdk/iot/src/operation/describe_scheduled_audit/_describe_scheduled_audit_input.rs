@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledAuditInput {
     /// <p>The name of the scheduled audit whose information you want to get.</p>
-    #[doc(hidden)]
     pub scheduled_audit_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScheduledAuditInput {

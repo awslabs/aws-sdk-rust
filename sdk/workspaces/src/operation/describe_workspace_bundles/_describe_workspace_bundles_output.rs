@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceBundlesOutput {
     /// <p>Information about the bundles.</p>
-    #[doc(hidden)]
     pub bundles: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceBundle>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PickupDetails {
     /// <p>The name of the person picking up the device.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the person picking up the device.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the person picking up the device.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The number on the credential identifying the person picking up the device.</p>
-    #[doc(hidden)]
     pub identification_number: ::std::option::Option<::std::string::String>,
     /// <p>Expiration date of the credential identifying the person picking up the device.</p>
-    #[doc(hidden)]
     pub identification_expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Organization that issued the credential identifying the person picking up the device.</p>
-    #[doc(hidden)]
     pub identification_issuing_org: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for a device that will be picked up.</p>
-    #[doc(hidden)]
     pub device_pickup_id: ::std::option::Option<::std::string::String>,
 }
 impl PickupDetails {

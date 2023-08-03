@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlacementInput {
     /// <p>The name of the placement to be created.</p>
-    #[doc(hidden)]
     pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in which to create the placement.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlacementInput {

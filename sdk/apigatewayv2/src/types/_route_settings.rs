@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteSettings {
     /// <p>Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
-    #[doc(hidden)]
     pub data_trace_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether detailed metrics are enabled.</p>
-    #[doc(hidden)]
     pub detailed_metrics_enabled: ::std::option::Option<bool>,
     /// <p>Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
-    #[doc(hidden)]
     pub logging_level: ::std::option::Option<crate::types::LoggingLevel>,
     /// <p>Specifies the throttling burst limit.</p>
-    #[doc(hidden)]
     pub throttling_burst_limit: ::std::option::Option<i32>,
     /// <p>Specifies the throttling rate limit.</p>
-    #[doc(hidden)]
     pub throttling_rate_limit: ::std::option::Option<f64>,
 }
 impl RouteSettings {

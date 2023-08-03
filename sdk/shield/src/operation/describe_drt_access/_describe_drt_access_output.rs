@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDrtAccessOutput {
     /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    #[doc(hidden)]
     pub log_bucket_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

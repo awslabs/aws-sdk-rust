@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantDetailsToAdd {
     /// <p>The role of the participant being added.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>The display name of the participant.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantDetailsToAdd {

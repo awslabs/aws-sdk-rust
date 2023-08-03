@@ -4,35 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePortalInput {
     /// <p>The ID of the portal to update.</p>
-    #[doc(hidden)]
     pub portal_id: ::std::option::Option<::std::string::String>,
     /// <p>A new friendly name for the portal.</p>
-    #[doc(hidden)]
     pub portal_name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the portal.</p>
-    #[doc(hidden)]
     pub portal_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    #[doc(hidden)]
     pub portal_contact_email: ::std::option::Option<::std::string::String>,
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
     /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
     /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub portal_logo_image: ::std::option::Option<crate::types::Image>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The email address that sends alarm notifications.</p>
-    #[doc(hidden)]
     pub notification_sender_email: ::std::option::Option<::std::string::String>,
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
-    #[doc(hidden)]
     pub alarms: ::std::option::Option<crate::types::Alarms>,
 }
 impl UpdatePortalInput {

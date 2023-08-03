@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskDefinitionPlacementConstraint {
     /// <p>The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid candidates.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TaskDefinitionPlacementConstraintType>,
     /// <p>A cluster query language expression to apply to the constraint. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
 }
 impl TaskDefinitionPlacementConstraint {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableCellStyle {
     /// <p>The visibility of the table cells.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The font configuration of the table cells.</p>
-    #[doc(hidden)]
     pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The text wrap (none, wrap) for the table cells.</p>
-    #[doc(hidden)]
     pub text_wrap: ::std::option::Option<crate::types::TextWrap>,
     /// <p>The horizontal text alignment (left, center, right, auto) for the table cells.</p>
-    #[doc(hidden)]
     pub horizontal_text_alignment: ::std::option::Option<crate::types::HorizontalTextAlignment>,
     /// <p>The vertical text alignment (top, middle, bottom) for the table cells.</p>
-    #[doc(hidden)]
     pub vertical_text_alignment: ::std::option::Option<crate::types::VerticalTextAlignment>,
     /// <p>The background color for the table cells.</p>
-    #[doc(hidden)]
     pub background_color: ::std::option::Option<::std::string::String>,
     /// <p>The height color for the table cells.</p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
     /// <p>The borders for the table cells.</p>
-    #[doc(hidden)]
     pub border: ::std::option::Option<crate::types::GlobalTableBorderOptions>,
 }
 impl TableCellStyle {

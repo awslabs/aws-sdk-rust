@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableCellConditionalFormatting {
     /// <p>The field ID of the cell for conditional formatting.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The text format of the cell for conditional formatting.</p>
-    #[doc(hidden)]
     pub text_format: ::std::option::Option<crate::types::TextConditionalFormat>,
     /// <p>The scope of the cell for conditional formatting.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::PivotTableConditionalFormattingScope>,
     /// <p>A list of cell scopes for conditional formatting.</p>
-    #[doc(hidden)]
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>,
 }
 impl PivotTableCellConditionalFormatting {

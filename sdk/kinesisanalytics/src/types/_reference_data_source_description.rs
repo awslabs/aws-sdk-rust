@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceDataSourceDescription {
     /// <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
-    #[doc(hidden)]
     pub s3_reference_data_source_description: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
-    #[doc(hidden)]
     pub reference_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
 impl ReferenceDataSourceDescription {

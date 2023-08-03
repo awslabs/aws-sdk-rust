@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogGroupLogDestination {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the log stream name within the log group that you specified </p>
-    #[doc(hidden)]
     pub log_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogGroupLogDestination {

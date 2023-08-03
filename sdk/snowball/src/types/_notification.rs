@@ -7,16 +7,12 @@
 pub struct Notification {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    #[doc(hidden)]
     pub job_states_to_notify: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
     /// <p>Any change in job state will trigger a notification for this job.</p>
-    #[doc(hidden)]
     pub notify_all: bool,
     /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
-    #[doc(hidden)]
     pub device_pickup_sns_topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl Notification {

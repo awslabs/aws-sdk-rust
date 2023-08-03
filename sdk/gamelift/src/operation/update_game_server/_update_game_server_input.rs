@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A custom string that uniquely identifies the game server to update.</p>
-    #[doc(hidden)]
     pub game_server_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
-    #[doc(hidden)]
     pub game_server_data: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
-    #[doc(hidden)]
     pub utilization_status: ::std::option::Option<crate::types::GameServerUtilizationStatus>,
     /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::GameServerHealthCheck>,
 }
 impl UpdateGameServerInput {

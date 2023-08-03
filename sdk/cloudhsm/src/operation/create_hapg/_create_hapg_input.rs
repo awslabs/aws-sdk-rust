@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHapgInput {
     /// <p>The label of the new high-availability partition group.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
 }
 impl CreateHapgInput {

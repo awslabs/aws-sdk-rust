@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotebookExecutionSummary {
     /// <p>The unique identifier of the notebook execution.</p>
-    #[doc(hidden)]
     pub notebook_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the editor associated with the notebook execution.</p>
-    #[doc(hidden)]
     pub editor_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the notebook execution.</p>
-    #[doc(hidden)]
     pub notebook_execution_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the notebook execution.</p>
     /// <ul>
@@ -26,19 +23,14 @@ pub struct NotebookExecutionSummary {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NotebookExecutionStatus>,
     /// <p>The timestamp when notebook execution started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when notebook execution started.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
-    #[doc(hidden)]
     pub notebook_s3_location: ::std::option::Option<crate::types::NotebookS3LocationForOutput>,
     /// <p>The unique ID of the execution engine for the notebook execution.</p>
-    #[doc(hidden)]
     pub execution_engine_id: ::std::option::Option<::std::string::String>,
 }
 impl NotebookExecutionSummary {

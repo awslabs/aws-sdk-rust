@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThousandSeparatorOptions {
     /// <p>Determines the thousands separator symbol.</p>
-    #[doc(hidden)]
     pub symbol: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     /// <p>Determines the visibility of the thousands separator.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl ThousandSeparatorOptions {

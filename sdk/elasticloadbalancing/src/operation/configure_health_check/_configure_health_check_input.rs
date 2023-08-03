@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureHealthCheckInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration information.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
 }
 impl ConfigureHealthCheckInput {

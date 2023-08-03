@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DkimSigningAttributes {
     /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a domain.</p>
-    #[doc(hidden)]
     pub domain_signing_selector: ::std::option::Option<::std::string::String>,
     /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
     /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using base64 encoding.</p>
-    #[doc(hidden)]
     pub domain_signing_private_key: ::std::option::Option<::std::string::String>,
     /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
-    #[doc(hidden)]
     pub next_signing_key_length: ::std::option::Option<crate::types::DkimSigningKeyLength>,
 }
 impl DkimSigningAttributes {

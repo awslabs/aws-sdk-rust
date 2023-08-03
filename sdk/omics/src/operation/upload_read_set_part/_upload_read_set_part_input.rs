@@ -4,16 +4,12 @@
 #[derive(::std::fmt::Debug)]
 pub struct UploadReadSetPartInput {
     /// <p> The Sequence Store ID used for the multipart upload. </p>
-    #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID for the initiated multipart upload. </p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p> The source file for an upload part. </p>
-    #[doc(hidden)]
     pub part_source: ::std::option::Option<crate::types::ReadSetPartSource>,
     /// <p> The number of the part being uploaded. </p>
-    #[doc(hidden)]
     pub part_number: ::std::option::Option<i32>,
     /// <p> The read set data to upload for a part. </p>
     pub payload: ::aws_smithy_http::byte_stream::ByteStream,

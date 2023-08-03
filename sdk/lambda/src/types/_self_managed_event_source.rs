@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelfManagedEventSource {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
-    #[doc(hidden)]
     pub endpoints: ::std::option::Option<::std::collections::HashMap<crate::types::EndPointType, ::std::vec::Vec<::std::string::String>>>,
 }
 impl SelfManagedEventSource {

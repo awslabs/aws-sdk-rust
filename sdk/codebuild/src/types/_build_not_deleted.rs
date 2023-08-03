@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildNotDeleted {
     /// <p>The ID of the build that could not be successfully deleted.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the build that could not be successfully deleted.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<::std::string::String>,
 }
 impl BuildNotDeleted {

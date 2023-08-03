@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportHypervisorConfigurationInput {
     /// <p>The name of the hypervisor.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The username for the hypervisor.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the hypervisor.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The Key Management Service for the hypervisor.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the hypervisor configuration to import.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportHypervisorConfigurationInput {

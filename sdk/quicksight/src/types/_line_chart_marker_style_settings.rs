@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartMarkerStyleSettings {
     /// <p>Configuration option that determines whether to show the markers in the series.</p>
-    #[doc(hidden)]
     pub marker_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Shape option for markers in the series.</p>
     /// <ul>
@@ -15,13 +14,10 @@ pub struct LineChartMarkerStyleSettings {
     /// <li> <p> <code>DIAMOND</code>: Show marker as a diamond.</p> </li>
     /// <li> <p> <code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub marker_shape: ::std::option::Option<crate::types::LineChartMarkerShape>,
     /// <p>Size of marker in the series.</p>
-    #[doc(hidden)]
     pub marker_size: ::std::option::Option<::std::string::String>,
     /// <p>Color of marker in the series.</p>
-    #[doc(hidden)]
     pub marker_color: ::std::option::Option<::std::string::String>,
 }
 impl LineChartMarkerStyleSettings {

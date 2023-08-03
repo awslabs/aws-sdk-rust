@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -21,10 +20,8 @@ pub struct UpdateProjectVisibilityInput {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub project_visibility: ::std::option::Option<crate::types::ProjectVisibilityType>,
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
-    #[doc(hidden)]
     pub resource_access_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectVisibilityInput {

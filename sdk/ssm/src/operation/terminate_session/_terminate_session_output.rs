@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateSessionOutput {
     /// <p>The ID of the session that has been terminated.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

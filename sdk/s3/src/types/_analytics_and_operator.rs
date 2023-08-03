@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsAndOperator {
     /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have to be included in the metrics results.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags to use when evaluating an AND predicate.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AnalyticsAndOperator {

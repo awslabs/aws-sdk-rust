@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetDeploymentsInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// If true, performs a best-effort only core reset.
-    #[doc(hidden)]
     pub force: ::std::option::Option<bool>,
     /// The ID of the Greengrass group.
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl ResetDeploymentsInput {

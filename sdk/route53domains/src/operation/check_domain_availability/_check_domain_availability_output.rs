@@ -64,7 +64,6 @@ pub struct CheckDomainAvailabilityOutput {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub availability: ::std::option::Option<crate::types::DomainAvailability>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChannelMessageInput {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the message being deleted.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChannelMessageInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedHost {
     /// <p>The name of the host.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon EC2 instance.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the operating system.</p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedHost {

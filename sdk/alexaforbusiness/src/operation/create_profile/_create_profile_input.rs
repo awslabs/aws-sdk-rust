@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileInput {
     /// <p>The name of a room profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The time zone used by a room profile.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The valid address for the room.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The distance unit to be used by devices in the profile.</p>
-    #[doc(hidden)]
     pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
     /// <p>The temperature unit to be used by devices in the profile.</p>
-    #[doc(hidden)]
     pub temperature_unit: ::std::option::Option<crate::types::TemperatureUnit>,
     /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
-    #[doc(hidden)]
     pub wake_word: ::std::option::Option<crate::types::WakeWord>,
     /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Whether room profile setup is enabled.</p>
-    #[doc(hidden)]
     pub setup_mode_disabled: ::std::option::Option<bool>,
     /// <p>The maximum volume limit for a room profile.</p>
-    #[doc(hidden)]
     pub max_volume_limit: ::std::option::Option<i32>,
     /// <p>Whether PSTN calling is enabled.</p>
-    #[doc(hidden)]
     pub pstn_enabled: ::std::option::Option<bool>,
     /// <p>Whether data retention of the profile is enabled.</p>
-    #[doc(hidden)]
     pub data_retention_opt_in: ::std::option::Option<bool>,
     /// <p>The meeting room settings of a room profile.</p>
-    #[doc(hidden)]
     pub meeting_room_configuration: ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
     /// <p>The tags for the profile.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProfileInput {

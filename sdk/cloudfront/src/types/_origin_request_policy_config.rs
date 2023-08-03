@@ -12,19 +12,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginRequestPolicyConfig {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A unique name to identify the origin request policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
-    #[doc(hidden)]
     pub headers_config: ::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig>,
     /// <p>The cookies from viewer requests to include in origin requests.</p>
-    #[doc(hidden)]
     pub cookies_config: ::std::option::Option<crate::types::OriginRequestPolicyCookiesConfig>,
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
-    #[doc(hidden)]
     pub query_strings_config: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringsConfig>,
 }
 impl OriginRequestPolicyConfig {

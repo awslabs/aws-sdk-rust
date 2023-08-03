@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl S3DestinationConfiguration {

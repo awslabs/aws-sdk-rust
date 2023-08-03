@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteReadSetOutput {
     /// <p>Errors returned by individual delete operations.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetBatchError>>,
     _request_id: Option<String>,
 }

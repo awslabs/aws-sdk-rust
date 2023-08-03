@@ -8,10 +8,8 @@ pub struct GetSchemaByDefinitionInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>The definition of the schema for which schema details are required.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<::std::string::String>,
 }
 impl GetSchemaByDefinitionInput {

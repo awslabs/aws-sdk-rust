@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampColumn {
     /// <p>The name of the timestamp column.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the timestamp column.</p>
-    #[doc(hidden)]
     pub column_format: ::std::option::Option<::std::string::String>,
 }
 impl TimestampColumn {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLifecyclePolicyInput {

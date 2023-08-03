@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentResult {
     /// <p>The name and unique ID of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the bucket error code.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<::std::string::String>,
     /// <p>Returns the detailed error message.</p>
-    #[doc(hidden)]
     pub deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the deployment was started on the agent.</p>
-    #[doc(hidden)]
     pub deployment_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
-    #[doc(hidden)]
     pub deployment_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns a list of models deployed on the agent.</p>
-    #[doc(hidden)]
     pub deployment_models: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentModel>>,
 }
 impl DeploymentResult {

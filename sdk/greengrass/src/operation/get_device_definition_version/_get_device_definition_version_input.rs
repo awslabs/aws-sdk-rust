@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceDefinitionVersionInput {
     /// The ID of the device definition.
-    #[doc(hidden)]
     pub device_definition_id: ::std::option::Option<::std::string::String>,
     /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    #[doc(hidden)]
     pub device_definition_version_id: ::std::option::Option<::std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceDefinitionVersionInput {

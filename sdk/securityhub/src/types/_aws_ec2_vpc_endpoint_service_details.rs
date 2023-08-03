@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpcEndpointServiceDetails {
     /// <p>Whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
-    #[doc(hidden)]
     pub acceptance_required: bool,
     /// <p>The Availability Zones where the service is available.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The DNS names for the service.</p>
-    #[doc(hidden)]
     pub base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether the service manages its VPC endpoints.</p>
-    #[doc(hidden)]
     pub manages_vpc_endpoints: bool,
     /// <p>The ARNs of the Gateway Load Balancers for the service.</p>
-    #[doc(hidden)]
     pub gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARNs of the Network Load Balancers for the service.</p>
-    #[doc(hidden)]
     pub network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The private DNS name for the service.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the service. Valid values are as follows:</p>
     /// <ul>
@@ -39,10 +30,8 @@ pub struct AwsEc2VpcEndpointServiceDetails {
     /// <li> <p> <code>Failed</code> </p> </li>
     /// <li> <p> <code>Pending</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub service_state: ::std::option::Option<::std::string::String>,
     /// <p>The types for the service.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails>>,
 }
 impl AwsEc2VpcEndpointServiceDetails {

@@ -14,7 +14,6 @@ pub struct AutoMlCandidateGenerationConfig {
     /// <p>If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>, <code>col2</code>,..) should be a subset of the column names in the input data. </p>
     /// <p>If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided, then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>. </p>
     /// <p>The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1", "col2", ...]</code> are case sensitive and should be a list of strings containing unique values that are a subset of the column names in the input data. The list of columns provided must not include the target column.</p>
-    #[doc(hidden)]
     pub feature_specification_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Stores the configuration information for the selection of algorithms used to train the model candidates.</p>
     /// <p>The list of available algorithms to choose from depends on the training mode set in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html"> <code>AutoMLJobConfig.Mode</code> </a>.</p>
@@ -25,7 +24,6 @@ pub struct AutoMlCandidateGenerationConfig {
     /// </ul>
     /// <p>For the list of all algorithms per training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html"> AutoMLAlgorithmConfig</a>.</p>
     /// <p>For more information on each algorithm, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm support</a> section in Autopilot developer guide.</p>
-    #[doc(hidden)]
     pub algorithms_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithmConfig>>,
 }
 impl AutoMlCandidateGenerationConfig {

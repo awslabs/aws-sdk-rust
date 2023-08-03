@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentAlarms {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    #[doc(hidden)]
     pub alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
-    #[doc(hidden)]
     pub enable: bool,
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
-    #[doc(hidden)]
     pub rollback: bool,
 }
 impl DeploymentAlarms {

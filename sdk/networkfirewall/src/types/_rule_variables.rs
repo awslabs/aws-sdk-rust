@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleVariables {
     /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
-    #[doc(hidden)]
     pub ip_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>,
     /// <p>A list of port ranges. </p>
-    #[doc(hidden)]
     pub port_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortSet>>,
 }
 impl RuleVariables {

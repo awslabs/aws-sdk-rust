@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGameSessionInput {
     /// <p>A unique identifier for the game session to update. </p>
-    #[doc(hidden)]
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-    #[doc(hidden)]
     pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    #[doc(hidden)]
     pub player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
     /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
     /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
 }
 impl UpdateGameSessionInput {

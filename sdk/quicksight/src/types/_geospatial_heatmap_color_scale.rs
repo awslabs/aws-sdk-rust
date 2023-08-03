@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialHeatmapColorScale {
     /// <p>The list of colors to be used in heatmap point style.</p>
-    #[doc(hidden)]
     pub colors: ::std::option::Option<::std::vec::Vec<crate::types::GeospatialHeatmapDataColor>>,
 }
 impl GeospatialHeatmapColorScale {

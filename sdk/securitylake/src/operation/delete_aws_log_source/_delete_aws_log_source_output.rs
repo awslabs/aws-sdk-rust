@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceOutput {
     /// <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

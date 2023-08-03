@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The source of the event. For example, if the event occurred at the node level, the source would be the node ID.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID, etc.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>A user-defined message associated with the event.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the event occurred.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Event {

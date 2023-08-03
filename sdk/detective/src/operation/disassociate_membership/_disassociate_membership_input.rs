@@ -5,7 +5,6 @@
 pub struct DisassociateMembershipInput {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
     /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateMembershipInput {

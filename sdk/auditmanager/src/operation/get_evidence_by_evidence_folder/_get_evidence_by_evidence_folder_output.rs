@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEvidenceByEvidenceFolderOutput {
     /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
-    #[doc(hidden)]
     pub evidence: ::std::option::Option<::std::vec::Vec<crate::types::Evidence>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

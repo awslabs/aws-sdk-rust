@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatePersistenceConfigurations {
     /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl StatePersistenceConfigurations {

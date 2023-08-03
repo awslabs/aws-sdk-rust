@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobLogItemsInput {
     /// <p>Request to describe Job log job ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Request to describe Job log item maximum results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Request to describe Job log next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Request to describe Job log Account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobLogItemsInput {

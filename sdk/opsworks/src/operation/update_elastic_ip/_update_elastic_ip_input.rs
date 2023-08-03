@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateElasticIpInput {
     /// <p>The IP address for which you want to update the name.</p>
-    #[doc(hidden)]
     pub elastic_ip: ::std::option::Option<::std::string::String>,
     /// <p>The new name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateElasticIpInput {

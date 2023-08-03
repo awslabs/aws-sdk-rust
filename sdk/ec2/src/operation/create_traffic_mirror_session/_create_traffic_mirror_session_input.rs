@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrafficMirrorSessionInput {
     /// <p>The ID of the source network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Traffic Mirror target.</p>
-    #[doc(hidden)]
     pub traffic_mirror_target_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target.</p>
     /// <p>If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number of bytes in each packet to mirror.</p>
-    #[doc(hidden)]
     pub packet_length: ::std::option::Option<i32>,
     /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
     /// <p>Valid values are 1-32766.</p>
-    #[doc(hidden)]
     pub session_number: ::std::option::Option<i32>,
     /// <p>The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, see <a href="https://tools.ietf.org/html/rfc7348">RFC 7348</a>. If you do not specify a <code>VirtualNetworkId</code>, an account-wide unique id is chosen at random.</p>
-    #[doc(hidden)]
     pub virtual_network_id: ::std::option::Option<i32>,
     /// <p>The description of the Traffic Mirror session.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to a Traffic Mirror session.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTrafficMirrorSessionInput {

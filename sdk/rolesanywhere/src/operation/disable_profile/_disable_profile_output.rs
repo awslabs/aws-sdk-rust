@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableProfileOutput {
     /// <p>The state of the profile after a read or write operation.</p>
-    #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::ProfileDetail>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateResourcePolicyOutput {
     /// <p>True if your policy passes validation, otherwise false.</p>
-    #[doc(hidden)]
     pub policy_validation_passed: bool,
     /// <p>Validation errors if your policy didn't pass validation.</p>
-    #[doc(hidden)]
     pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>>,
     _request_id: Option<String>,
 }

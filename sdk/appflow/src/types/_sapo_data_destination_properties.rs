@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataDestinationProperties {
     /// <p>The object path specified in the SAPOData flow destination.</p>
-    #[doc(hidden)]
     pub object_path: ::std::option::Option<::std::string::String>,
     /// <p>Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data.</p>
     /// <p>For example, this setting would determine where to write the response from a destination connector upon a successful insert operation.</p>
-    #[doc(hidden)]
     pub success_response_handling_config: ::std::option::Option<crate::types::SuccessResponseHandlingConfig>,
     /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
-    #[doc(hidden)]
     pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    #[doc(hidden)]
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
     /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
-    #[doc(hidden)]
     pub write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
 }
 impl SapoDataDestinationProperties {

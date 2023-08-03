@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateOrganizationsAccessReportOutput {
     /// <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

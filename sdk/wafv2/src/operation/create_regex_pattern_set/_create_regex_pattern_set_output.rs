@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRegexPatternSetOutput {
     /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::RegexPatternSetSummary>,
     _request_id: Option<String>,
 }

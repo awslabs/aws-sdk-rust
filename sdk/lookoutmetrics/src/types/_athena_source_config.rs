@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AthenaSourceConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The database's name.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The database's data catalog.</p>
-    #[doc(hidden)]
     pub data_catalog: ::std::option::Option<::std::string::String>,
     /// <p>The database's table name.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The database's work group name.</p>
-    #[doc(hidden)]
     pub work_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The database's results path.</p>
-    #[doc(hidden)]
     pub s3_results_path: ::std::option::Option<::std::string::String>,
     /// <p>Settings for backtest mode.</p>
-    #[doc(hidden)]
     pub back_test_configuration: ::std::option::Option<crate::types::BackTestConfiguration>,
 }
 impl AthenaSourceConfig {

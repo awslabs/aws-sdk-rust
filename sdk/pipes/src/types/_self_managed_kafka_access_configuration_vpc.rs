@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelfManagedKafkaAccessConfigurationVpc {
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    #[doc(hidden)]
     pub security_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SelfManagedKafkaAccessConfigurationVpc {

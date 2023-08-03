@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcAssociationAuthorizationsOutput {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
-    #[doc(hidden)]
     pub vp_cs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BridgeOutput {
     /// The output of the bridge. A flow output is delivered to the AWS cloud.
-    #[doc(hidden)]
     pub flow_output: ::std::option::Option<crate::types::BridgeFlowOutput>,
     /// The output of the bridge. A network output is delivered to your premises.
-    #[doc(hidden)]
     pub network_output: ::std::option::Option<crate::types::BridgeNetworkOutput>,
 }
 impl BridgeOutput {

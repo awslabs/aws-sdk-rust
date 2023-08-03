@@ -10,13 +10,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainConfigurationSummary {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
-    #[doc(hidden)]
     pub domain_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the domain configuration.</p>
-    #[doc(hidden)]
     pub domain_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of service delivered by the endpoint.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
 }
 impl DomainConfigurationSummary {

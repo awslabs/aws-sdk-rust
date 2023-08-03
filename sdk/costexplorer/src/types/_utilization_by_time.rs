@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtilizationByTime {
     /// <p>The period of time that this utilization was used for.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The groups that this utilization result uses.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
     /// <p>The total number of reservation hours that were used.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::ReservationAggregates>,
 }
 impl UtilizationByTime {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TsvOptions {
     /// <p>The file's read options.</p>
-    #[doc(hidden)]
     pub read_options: ::std::option::Option<crate::types::ReadOptions>,
 }
 impl TsvOptions {

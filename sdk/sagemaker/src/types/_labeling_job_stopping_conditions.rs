@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobStoppingConditions {
     /// <p>The maximum number of objects that can be labeled by human workers.</p>
-    #[doc(hidden)]
     pub max_human_labeled_object_count: ::std::option::Option<i32>,
     /// <p>The maximum number of input data objects that should be labeled.</p>
-    #[doc(hidden)]
     pub max_percentage_of_input_dataset_labeled: ::std::option::Option<i32>,
 }
 impl LabelingJobStoppingConditions {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportAssetsToS3ResponseDetails {
     /// <p>The destination in Amazon S3 where the asset is exported.</p>
-    #[doc(hidden)]
     pub asset_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AssetDestinationEntry>>,
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Encryption configuration of the export job.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>The unique identifier for the revision associated with this export response.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ExportAssetsToS3ResponseDetails {

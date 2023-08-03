@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityFilter {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    #[doc(hidden)]
     pub event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    #[doc(hidden)]
     pub entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IDs for affected entities.</p>
-    #[doc(hidden)]
     pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the most recent dates and times that the entity was updated.</p>
-    #[doc(hidden)]
     pub last_updated_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
     /// <p>A map of entity tags attached to the affected entity.</p> <note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
-    #[doc(hidden)]
     pub status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>>,
 }
 impl EntityFilter {

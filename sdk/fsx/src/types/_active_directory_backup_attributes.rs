@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveDirectoryBackupAttributes {
     /// <p>The fully qualified domain name of the self-managed Active Directory directory.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Managed Microsoft Active Directory instance to which the file system is joined.</p>
-    #[doc(hidden)]
     pub active_directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ActiveDirectoryBackupAttributes {

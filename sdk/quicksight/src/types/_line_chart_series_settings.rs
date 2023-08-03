@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartSeriesSettings {
     /// <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
-    #[doc(hidden)]
     pub line_style_settings: ::std::option::Option<crate::types::LineChartLineStyleSettings>,
     /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
-    #[doc(hidden)]
     pub marker_style_settings: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,
 }
 impl LineChartSeriesSettings {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTemplate {
     /// <p>The ARN of the assessment template.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assessment template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-    #[doc(hidden)]
     pub assessment_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
-    #[doc(hidden)]
     pub duration_in_seconds: i32,
     /// <p>The rules packages that are specified for this assessment template.</p>
-    #[doc(hidden)]
     pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    #[doc(hidden)]
     pub user_attributes_for_findings: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
-    #[doc(hidden)]
     pub last_assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
-    #[doc(hidden)]
     pub assessment_run_count: ::std::option::Option<i32>,
     /// <p>The time at which the assessment template is created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssessmentTemplate {

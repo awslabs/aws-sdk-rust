@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveProfilePermissionInput {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the cross-account permissions statement.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveProfilePermissionInput {

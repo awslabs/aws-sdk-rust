@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParentBotNetwork {
     /// <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the network of bots.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
 }
 impl ParentBotNetwork {

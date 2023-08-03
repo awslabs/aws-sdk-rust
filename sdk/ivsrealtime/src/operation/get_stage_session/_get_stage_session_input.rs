@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStageSessionInput {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
-    #[doc(hidden)]
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of a session within the stage.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStageSessionInput {

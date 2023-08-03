@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInfo {
     /// <p>The start time.</p>
-    #[doc(hidden)]
     pub added_to_cluster_time: ::std::option::Option<::std::string::String>,
     /// <p>The broker node info.</p>
-    #[doc(hidden)]
     pub broker_node_info: ::std::option::Option<crate::types::BrokerNodeInfo>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the node.</p>
-    #[doc(hidden)]
     pub node_arn: ::std::option::Option<::std::string::String>,
     /// <p>The node type.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<crate::types::NodeType>,
     /// <p>The ZookeeperNodeInfo.</p>
-    #[doc(hidden)]
     pub zookeeper_node_info: ::std::option::Option<crate::types::ZookeeperNodeInfo>,
 }
 impl NodeInfo {

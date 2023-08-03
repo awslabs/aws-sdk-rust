@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-    #[doc(hidden)]
     pub requests: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>>,
 }
 impl BatchEvaluateFeatureInput {

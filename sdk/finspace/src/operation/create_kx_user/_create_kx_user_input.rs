@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKxUserInput {
     /// <p>A unique identifier for the kdb environment where you want to create a user.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role ARN that will be associated with the user.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to label the user. You can add up to 50 tags to a user.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxUserInput {

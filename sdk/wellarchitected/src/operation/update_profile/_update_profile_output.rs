@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfileOutput {
     /// <p>The profile.</p>
-    #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::Profile>,
     _request_id: Option<String>,
 }

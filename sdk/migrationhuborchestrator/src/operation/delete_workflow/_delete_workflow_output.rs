@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the migration workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
     _request_id: Option<String>,
 }

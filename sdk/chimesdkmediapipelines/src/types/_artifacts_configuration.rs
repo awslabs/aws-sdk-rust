@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactsConfiguration {
     /// <p>The configuration for the audio artifacts.</p>
-    #[doc(hidden)]
     pub audio: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
     /// <p>The configuration for the video artifacts.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::VideoArtifactsConfiguration>,
     /// <p>The configuration for the content artifacts.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::ContentArtifactsConfiguration>,
     /// <p>Enables video compositing.</p>
-    #[doc(hidden)]
     pub composited_video: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
 }
 impl ArtifactsConfiguration {

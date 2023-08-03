@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationAttributesOutput {
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p> Location-specific information on the requested fleet's remote locations.</p>
-    #[doc(hidden)]
     pub location_attributes: ::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,80 +5,55 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobMetadata {
     /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the jobs.</p>
-    #[doc(hidden)]
     pub job_state: ::std::option::Option<crate::types::JobState>,
     /// <p>The type of job.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>The type of device used with this job.</p>
-    #[doc(hidden)]
     pub snowball_type: ::std::option::Option<crate::types::SnowballType>,
     /// <p>The creation date for this job.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<crate::types::JobResource>,
     /// <p>The description of the job, provided at job creation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in KMS.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
-    #[doc(hidden)]
     pub address_id: ::std::option::Option<::std::string::String>,
     /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
-    #[doc(hidden)]
     pub shipping_details: ::std::option::Option<crate::types::ShippingDetails>,
     /// <p>The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    #[doc(hidden)]
     pub snowball_capacity_preference: ::std::option::Option<crate::types::SnowballCapacity>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p>
-    #[doc(hidden)]
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>A value that defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
-    #[doc(hidden)]
     pub data_transfer_progress: ::std::option::Option<crate::types::DataTransfer>,
     /// <p>Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snow device for your job part is being delivered to you.</p>
-    #[doc(hidden)]
     pub job_log_info: ::std::option::Option<crate::types::JobLogs>,
     /// <p>The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    #[doc(hidden)]
     pub forwarding_address_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata associated with the tax documents required in your Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
     /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
-    #[doc(hidden)]
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfiguration>,
     /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-    #[doc(hidden)]
     pub remote_management: ::std::option::Option<crate::types::RemoteManagement>,
     /// <p>The ID of the long-term pricing type for the device.</p>
-    #[doc(hidden)]
     pub long_term_pricing_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    #[doc(hidden)]
     pub on_device_service_configuration: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
     /// <p>The highest impact level of data that will be stored or processed on the device, provided at job creation.</p>
-    #[doc(hidden)]
     pub impact_level: ::std::option::Option<crate::types::ImpactLevel>,
     /// <p>Information identifying the person picking up the device.</p>
-    #[doc(hidden)]
     pub pickup_details: ::std::option::Option<crate::types::PickupDetails>,
     /// <p>Unique ID associated with a device.</p>
-    #[doc(hidden)]
     pub snowball_id: ::std::option::Option<::std::string::String>,
 }
 impl JobMetadata {

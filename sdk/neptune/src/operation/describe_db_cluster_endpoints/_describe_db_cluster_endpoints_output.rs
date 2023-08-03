@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClusterEndpointsOutput {
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    #[doc(hidden)]
     pub db_cluster_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterEndpoint>>,
     _request_id: Option<String>,
 }

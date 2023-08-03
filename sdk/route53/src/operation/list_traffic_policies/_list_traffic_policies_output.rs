@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrafficPoliciesOutput {
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub traffic_policy_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicySummary>>,
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
-    #[doc(hidden)]
     pub traffic_policy_id_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced the current response.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

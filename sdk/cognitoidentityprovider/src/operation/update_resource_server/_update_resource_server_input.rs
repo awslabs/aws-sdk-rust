@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceServerInput {
     /// <p>The user pool ID for the user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the resource server.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource server.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The scope values to be set for the resource server.</p>
-    #[doc(hidden)]
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
 }
 impl UpdateResourceServerInput {

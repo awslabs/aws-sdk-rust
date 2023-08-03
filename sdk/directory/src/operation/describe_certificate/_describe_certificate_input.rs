@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCertificateInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCertificateInput {

@@ -4,33 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceInput {
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
-    #[doc(hidden)]
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     /// <p>The runtime configuration of instances (scaling units) of your service.</p>
-    #[doc(hidden)]
     pub instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
-    #[doc(hidden)]
     pub health_check_configuration: ::std::option::Option<crate::types::HealthCheckConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
-    #[doc(hidden)]
     pub auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The observability configuration of your service.</p>
-    #[doc(hidden)]
     pub observability_configuration: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
 }
 impl CreateServiceInput {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedCertificate {
     /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    #[doc(hidden)]
     pub usage: ::std::option::Option<crate::types::CertificateUsageType>,
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CertificateStatusType>,
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    #[doc(hidden)]
     pub active_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    #[doc(hidden)]
     pub inactive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CertificateType>,
     /// <p>The name or short description that's used to identify the certificate.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ListedCertificate {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategoryOutput {
     /// <p>Provides you with the properties of your new category, including its associated rules.</p>
-    #[doc(hidden)]
     pub category_properties: ::std::option::Option<crate::types::CategoryProperties>,
     _request_id: Option<String>,
 }

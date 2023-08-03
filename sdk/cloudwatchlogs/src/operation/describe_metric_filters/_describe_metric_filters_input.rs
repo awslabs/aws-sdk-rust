@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMetricFiltersInput {
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
-    #[doc(hidden)]
     pub filter_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
-    #[doc(hidden)]
     pub metric_namespace: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMetricFiltersInput {

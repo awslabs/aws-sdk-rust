@@ -9,26 +9,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncSourceWithState {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either <code>AwsOrganizations</code> (if an organization is present in Organizations) or <code>singleAccountMultiRegions</code>.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
-    #[doc(hidden)]
     pub aws_organizations_source: ::std::option::Option<crate::types::ResourceDataSyncAwsOrganizationsSource>,
     /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
-    #[doc(hidden)]
     pub source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those Regions come online.</p>
-    #[doc(hidden)]
     pub include_future_regions: bool,
     /// <p>The data type name for including resource data sync state. There are four sync states:</p>
     /// <p> <code>OrganizationNotExists</code>: Your organization doesn't exist.</p>
     /// <p> <code>NoPermissions</code>: The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.</p>
     /// <p> <code>InvalidOrganizationalUnit</code>: You specified or selected an invalid unit in the resource data sync configuration.</p>
     /// <p> <code>TrustedAccessDisabled</code>: You disabled Systems Manager access in the organization in Organizations.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_all_ops_data_sources: bool,
 }
 impl ResourceDataSyncSourceWithState {

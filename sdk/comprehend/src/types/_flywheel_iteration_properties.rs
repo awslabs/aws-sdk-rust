@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlywheelIterationProperties {
     /// <p></p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub flywheel_iteration_id: ::std::option::Option<::std::string::String>,
     /// <p>The creation start time of the flywheel iteration.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The completion time of this flywheel iteration.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the flywheel iteration.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FlywheelIterationStatus>,
     /// <p>A description of the status of the flywheel iteration.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the evaluated model associated with this flywheel iteration.</p>
-    #[doc(hidden)]
     pub evaluated_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The evaluation metrics associated with the evaluated model.</p>
-    #[doc(hidden)]
     pub evaluated_model_metrics: ::std::option::Option<crate::types::FlywheelModelEvaluationMetrics>,
     /// <p>The ARN of the trained model associated with this flywheel iteration.</p>
-    #[doc(hidden)]
     pub trained_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metrics associated with the trained model.</p>
-    #[doc(hidden)]
     pub trained_model_metrics: ::std::option::Option<crate::types::FlywheelModelEvaluationMetrics>,
     /// <p></p>
-    #[doc(hidden)]
     pub evaluation_manifest_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl FlywheelIterationProperties {

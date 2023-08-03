@@ -4,24 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppBlockBuilderInput {
     /// <p>The unique name for the app block builder.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the app block builder.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the app block builder.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
@@ -31,21 +26,16 @@ pub struct CreateAppBlockBuilderInput {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration for the app block builder.</p>
     /// <p>App block builders require that you specify at least two subnets in different availability zones.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Enables or disables default internet access for the app block builder.</p>
-    #[doc(hidden)]
     pub enable_default_internet_access: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    #[doc(hidden)]
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
 }
 impl CreateAppBlockBuilderInput {

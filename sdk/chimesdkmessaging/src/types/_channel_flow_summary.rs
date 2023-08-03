@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelFlowSummary {
     /// <p>The ARN of the channel flow.</p>
-    #[doc(hidden)]
     pub channel_flow_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel flow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the processor Lambda functions.</p>
-    #[doc(hidden)]
     pub processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
 }
 impl ChannelFlowSummary {

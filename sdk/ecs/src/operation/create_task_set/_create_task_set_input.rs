@@ -4,29 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The task definition for the tasks in the task set to use.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the network configuration for a task set.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-    #[doc(hidden)]
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    #[doc(hidden)]
     pub service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    #[doc(hidden)]
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The capacity provider strategy to use for the task set.</p>
     /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
@@ -34,16 +26,12 @@ pub struct CreateTaskSetInput {
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    #[doc(hidden)]
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
-    #[doc(hidden)]
     pub scale: ::std::option::Option<crate::types::Scale>,
     /// <p>The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -56,7 +44,6 @@ pub struct CreateTaskSetInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTaskSetInput {

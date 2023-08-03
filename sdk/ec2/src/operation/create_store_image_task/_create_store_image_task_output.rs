@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStoreImageTaskOutput {
     /// <p>The name of the stored AMI object in the S3 bucket.</p>
-    #[doc(hidden)]
     pub object_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

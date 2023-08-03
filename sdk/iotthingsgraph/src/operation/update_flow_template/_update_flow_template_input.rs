@@ -6,14 +6,11 @@ pub struct UpdateFlowTemplateInput {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The version of the user's namespace.</p>
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
-    #[doc(hidden)]
     pub compatible_namespace_version: ::std::option::Option<i64>,
 }
 impl UpdateFlowTemplateInput {

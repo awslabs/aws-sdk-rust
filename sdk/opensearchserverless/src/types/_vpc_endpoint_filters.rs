@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpointFilters {
     /// <p>The current status of the endpoint.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
 impl VpcEndpointFilters {

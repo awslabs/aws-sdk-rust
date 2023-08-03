@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClustersOutput {
     /// <p>A list of Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub clusters: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInList>>,
     /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
     /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

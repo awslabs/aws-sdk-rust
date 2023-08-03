@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateUserStackOutput {
     /// <p>The list of UserStackAssociationError objects.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::UserStackAssociationError>>,
     _request_id: Option<String>,
 }

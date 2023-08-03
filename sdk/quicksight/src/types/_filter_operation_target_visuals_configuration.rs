@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterOperationTargetVisualsConfiguration {
     /// <p>The configuration of the same-sheet target visuals that you want to be filtered.</p>
-    #[doc(hidden)]
     pub same_sheet_target_visual_configuration: ::std::option::Option<crate::types::SameSheetTargetVisualConfiguration>,
 }
 impl FilterOperationTargetVisualsConfiguration {

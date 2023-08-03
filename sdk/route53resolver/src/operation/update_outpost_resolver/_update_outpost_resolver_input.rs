@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOutpostResolverInput {
     /// <p>A unique string that identifies Resolver on an Outpost.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Resolver on the Outpost.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p> Amazon EC2 instance type. </p>
-    #[doc(hidden)]
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOutpostResolverInput {

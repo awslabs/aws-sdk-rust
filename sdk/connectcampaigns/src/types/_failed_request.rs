@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Identifier representing a Dial request
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// A predefined code indicating the error that caused the failure.
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::FailureCode>,
 }
 impl FailedRequest {

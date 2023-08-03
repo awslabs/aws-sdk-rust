@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileFormatConfiguration {
     /// <p>Contains the configuration information of the JSON format.</p>
-    #[doc(hidden)]
     pub json_configuration: ::std::option::Option<crate::types::JsonConfiguration>,
     /// <p>Contains the configuration information of the Parquet format.</p>
-    #[doc(hidden)]
     pub parquet_configuration: ::std::option::Option<crate::types::ParquetConfiguration>,
 }
 impl FileFormatConfiguration {

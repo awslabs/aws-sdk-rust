@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SalesforceConnectorProfileCredentials {
     /// <p> The credentials used to access protected Salesforce resources. </p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p> The credentials used to acquire new access tokens. </p>
-    #[doc(hidden)]
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    #[doc(hidden)]
     pub o_auth_request: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
     /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
-    #[doc(hidden)]
     pub client_credentials_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p>
     /// <p>You can specify one of the following values:</p>
@@ -38,10 +34,8 @@ pub struct SalesforceConnectorProfileCredentials {
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
     /// <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your Salesforce records.</p>
-    #[doc(hidden)]
     pub jwt_token: ::std::option::Option<::std::string::String>,
 }
 impl SalesforceConnectorProfileCredentials {

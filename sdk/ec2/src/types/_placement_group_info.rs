@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementGroupInfo {
     /// <p>The supported placement group types.</p>
-    #[doc(hidden)]
     pub supported_strategies: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupStrategy>>,
 }
 impl PlacementGroupInfo {

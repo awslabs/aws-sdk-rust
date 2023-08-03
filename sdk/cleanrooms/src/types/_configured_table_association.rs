@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfiguredTableAssociation {
     /// <p>The unique ARN for the configured table association.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the configured table association.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the configured table that the association refers to.</p>
-    #[doc(hidden)]
     pub configured_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the configured table that the association refers to.</p>
-    #[doc(hidden)]
     pub configured_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the membership this configured table association belongs to.</p>
-    #[doc(hidden)]
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the membership this configured table association belongs to.</p>
-    #[doc(hidden)]
     pub membership_arn: ::std::option::Option<::std::string::String>,
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configured table association, in lowercase. The table is identified by this name when running protected queries against the underlying data.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the configured table association.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time the configured table association was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the configured table association was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfiguredTableAssociation {

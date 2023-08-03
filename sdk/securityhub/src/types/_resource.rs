@@ -6,28 +6,20 @@
 pub struct Resource {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
     /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The canonical identifier for the given resource type.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
-    #[doc(hidden)]
     pub partition: ::std::option::Option<crate::types::Partition>,
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
-    #[doc(hidden)]
     pub resource_role: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains information about sensitive data that was detected on the resource.</p>
-    #[doc(hidden)]
     pub data_classification: ::std::option::Option<crate::types::DataClassificationDetails>,
     /// <p>Additional details about the resource related to a finding.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::ResourceDetails>,
 }
 impl Resource {

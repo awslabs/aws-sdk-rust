@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMlModelOutput {
     /// <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the training <code>DataSource</code>.</p>
-    #[doc(hidden)]
     pub training_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    #[doc(hidden)]
     pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
@@ -30,13 +24,10 @@ pub struct GetMlModelOutput {
     /// <li> <p> <code>COMPLETED</code> - The request completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    #[doc(hidden)]
     pub size_in_bytes: ::std::option::Option<i64>,
     /// <p>The current endpoint of the <code>MLModel</code> </p>
-    #[doc(hidden)]
     pub endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -47,10 +38,8 @@ pub struct GetMlModelOutput {
     /// <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>
     /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    #[doc(hidden)]
     pub input_data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
     /// <ul>
@@ -58,37 +47,27 @@ pub struct GetMlModelOutput {
     /// <li> <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p> </li>
     /// <li> <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ml_model_type: ::std::option::Option<crate::types::MlModelType>,
     /// <p>The scoring threshold is used in binary classification <code>MLModel</code> models. It marks the boundary between a positive prediction and a negative prediction.</p>
     /// <p>Output values greater than or equal to the threshold receive a positive result from the MLModel, such as <code>true</code>. Output values less than the threshold receive a negative response from the MLModel, such as <code>false</code>.</p>
-    #[doc(hidden)]
     pub score_threshold: ::std::option::Option<f32>,
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-    #[doc(hidden)]
     pub score_threshold_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
-    #[doc(hidden)]
     pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
-    #[doc(hidden)]
     pub compute_time: ::std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    #[doc(hidden)]
     pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
     /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
-    #[doc(hidden)]
     pub recipe: ::std::option::Option<::std::string::String>,
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
     /// <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

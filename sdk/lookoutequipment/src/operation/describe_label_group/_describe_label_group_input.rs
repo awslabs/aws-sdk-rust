@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelGroupInput {
     /// <p> Returns the name of the label group. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLabelGroupInput {

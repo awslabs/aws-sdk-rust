@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RadarChartConfiguration {
     /// <p>The field well configuration of a <code>RadarChartVisual</code>.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::RadarChartFieldWells>,
     /// <p>The sort configuration of a <code>RadarChartVisual</code>.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::RadarChartSortConfiguration>,
     /// <p>The shape of the radar chart.</p>
-    #[doc(hidden)]
     pub shape: ::std::option::Option<crate::types::RadarChartShape>,
     /// <p>The base sreies settings of a radar chart.</p>
-    #[doc(hidden)]
     pub base_series_settings: ::std::option::Option<crate::types::RadarChartSeriesSettings>,
     /// <p>The start angle of a radar chart's axis.</p>
-    #[doc(hidden)]
     pub start_angle: ::std::option::Option<f64>,
     /// <p>The palette (chart color) display setup of the visual.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
     /// <p>Determines the visibility of the colors of alternatign bands in a radar chart.</p>
-    #[doc(hidden)]
     pub alternate_band_colors_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The color of the even-numbered alternate bands of a radar chart.</p>
-    #[doc(hidden)]
     pub alternate_band_even_color: ::std::option::Option<::std::string::String>,
     /// <p>The color of the odd-numbered alternate bands of a radar chart.</p>
-    #[doc(hidden)]
     pub alternate_band_odd_color: ::std::option::Option<::std::string::String>,
     /// <p>The category axis of a radar chart.</p>
-    #[doc(hidden)]
     pub category_axis: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The category label options of a radar chart.</p>
-    #[doc(hidden)]
     pub category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The color axis of a radar chart.</p>
-    #[doc(hidden)]
     pub color_axis: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The color label options of a radar chart.</p>
-    #[doc(hidden)]
     pub color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The axis behavior options of a radar chart.</p>
-    #[doc(hidden)]
     pub axes_range_scale: ::std::option::Option<crate::types::RadarChartAxesRangeScale>,
 }
 impl RadarChartConfiguration {

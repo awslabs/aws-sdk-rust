@@ -6,11 +6,9 @@
 pub struct TerminateEnvironmentInput {
     /// <p>The ID of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
@@ -20,10 +18,8 @@ pub struct TerminateEnvironmentInput {
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> </p>
     /// <p> Default: <code>true</code> </p>
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub terminate_resources: ::std::option::Option<bool>,
     /// <p>Terminates the target environment even if another environment in the same group is dependent on it.</p>
-    #[doc(hidden)]
     pub force_terminate: ::std::option::Option<bool>,
 }
 impl TerminateEnvironmentInput {

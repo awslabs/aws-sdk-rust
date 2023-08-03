@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMetricFiltersOutput {
     /// <p>The metric filters.</p>
-    #[doc(hidden)]
     pub metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilter>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

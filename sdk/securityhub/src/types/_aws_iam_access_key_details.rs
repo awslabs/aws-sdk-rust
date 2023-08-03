@@ -7,32 +7,23 @@ pub struct AwsIamAccessKeyDetails {
     /// <p>The user associated with the IAM access key related to a finding.</p>
     /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the IAM access key related to a finding.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AwsIamAccessKeyStatus>,
     /// <p>Indicates when the IAM access key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the principal associated with an access key.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of principal associated with an access key.</p>
-    #[doc(hidden)]
     pub principal_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the principal.</p>
-    #[doc(hidden)]
     pub principal_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the account for the key.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the access key.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the session that the key was used for.</p>
-    #[doc(hidden)]
     pub session_context: ::std::option::Option<crate::types::AwsIamAccessKeySessionContext>,
 }
 impl AwsIamAccessKeyDetails {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbSecurityGroupDetails {
     /// <p>The ARN for the DB security group.</p>
-    #[doc(hidden)]
     pub db_security_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the description of the DB security group.</p>
-    #[doc(hidden)]
     pub db_security_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the DB security group.</p>
-    #[doc(hidden)]
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of EC2 security groups.</p>
-    #[doc(hidden)]
     pub ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup>>,
     /// <p>Contains a list of IP ranges.</p>
-    #[doc(hidden)]
     pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSecurityGroupIpRange>>,
     /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides VPC ID associated with the DB security group. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSecurityGroupDetails {

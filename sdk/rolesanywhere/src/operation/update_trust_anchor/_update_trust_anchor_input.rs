@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    #[doc(hidden)]
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trust anchor.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
 }
 impl UpdateTrustAnchorInput {

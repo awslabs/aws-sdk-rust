@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessRulesAndCustomActions {
     /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
-    #[doc(hidden)]
     pub stateless_rules: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>>,
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
-    #[doc(hidden)]
     pub custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
 }
 impl StatelessRulesAndCustomActions {

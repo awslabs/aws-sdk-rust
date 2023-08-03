@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComponentOutput {
     /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
-    #[doc(hidden)]
     pub application_component: ::std::option::Option<crate::types::ApplicationComponent>,
     /// <p>The list of resource ARNs that belong to the component.</p>
-    #[doc(hidden)]
     pub resource_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

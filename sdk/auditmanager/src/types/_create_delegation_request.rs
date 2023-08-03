@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDelegationRequest {
     /// <p> A comment that's related to the delegation request. </p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the control set. </p>
-    #[doc(hidden)]
     pub control_set_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The type of customer persona. </p> <note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub role_type: ::std::option::Option<crate::types::RoleType>,
 }
 impl CreateDelegationRequest {

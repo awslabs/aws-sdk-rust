@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourcesOutput {
     /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
-    #[doc(hidden)]
     pub failed_resources_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailureInfo>>,
     _request_id: Option<String>,
 }

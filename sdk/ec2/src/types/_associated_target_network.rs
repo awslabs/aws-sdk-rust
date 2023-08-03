@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedTargetNetwork {
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The target network type.</p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<crate::types::AssociatedNetworkType>,
 }
 impl AssociatedTargetNetwork {

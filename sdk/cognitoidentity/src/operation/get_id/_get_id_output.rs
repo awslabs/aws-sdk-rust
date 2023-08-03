@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

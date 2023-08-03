@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    #[doc(hidden)]
     pub percentage_value: ::std::option::Option<f64>,
 }
 impl UpdateCustomLineItemPercentageChargeDetails {

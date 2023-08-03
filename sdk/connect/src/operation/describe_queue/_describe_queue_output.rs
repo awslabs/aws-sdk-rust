@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeQueueOutput {
     /// <p>The name of the queue.</p>
-    #[doc(hidden)]
     pub queue: ::std::option::Option<crate::types::Queue>,
     _request_id: Option<String>,
 }

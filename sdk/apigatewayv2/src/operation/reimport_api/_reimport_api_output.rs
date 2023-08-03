@@ -4,52 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReimportApiOutput {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
-    #[doc(hidden)]
     pub api_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
-    #[doc(hidden)]
     pub api_gateway_managed: ::std::option::Option<bool>,
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    #[doc(hidden)]
     pub api_key_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub cors_configuration: ::std::option::Option<crate::types::Cors>,
     /// <p>The timestamp when the API was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the API.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
-    #[doc(hidden)]
     pub disable_schema_validation: ::std::option::Option<bool>,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-    #[doc(hidden)]
     pub disable_execute_api_endpoint: ::std::option::Option<bool>,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub import_info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the API.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API protocol.</p>
-    #[doc(hidden)]
     pub protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    #[doc(hidden)]
     pub route_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>A collection of tags associated with the API.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A version identifier for the API.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

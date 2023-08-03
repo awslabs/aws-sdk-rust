@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReadSetUploadPartsOutput {
     /// <p> Next token returned in the response of a previous ListReadSetUploadParts call. Used to get the next page of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> An array of upload parts. </p>
-    #[doc(hidden)]
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::ReadSetUploadPartListItem>>,
     _request_id: Option<String>,
 }

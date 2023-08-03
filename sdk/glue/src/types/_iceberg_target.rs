@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IcebergTarget {
     /// <p>One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.</p>
-    #[doc(hidden)]
     pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the connection to use to connect to the Iceberg target.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    #[doc(hidden)]
     pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
-    #[doc(hidden)]
     pub maximum_traversal_depth: ::std::option::Option<i32>,
 }
 impl IcebergTarget {

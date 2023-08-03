@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PositionConfigurationItem {
     /// <p>Resource identifier for the position configuration.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Resource type of the resource for the position configuration.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
     /// <p>The details of the positioning solver object used to compute the location.</p>
-    #[doc(hidden)]
     pub solvers: ::std::option::Option<crate::types::PositionSolverDetails>,
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl PositionConfigurationItem {

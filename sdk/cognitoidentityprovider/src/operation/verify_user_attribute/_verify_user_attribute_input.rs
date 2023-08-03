@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VerifyUserAttributeInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The attribute name in the request to verify user attributes.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The verification code in the request to verify user attributes.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl VerifyUserAttributeInput {

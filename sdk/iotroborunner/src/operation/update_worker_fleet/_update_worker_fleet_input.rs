@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerFleetInput {
     /// Full ARN of the worker fleet.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    #[doc(hidden)]
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkerFleetInput {

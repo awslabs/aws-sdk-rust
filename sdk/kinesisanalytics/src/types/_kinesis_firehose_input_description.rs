@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseInputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseInputDescription {

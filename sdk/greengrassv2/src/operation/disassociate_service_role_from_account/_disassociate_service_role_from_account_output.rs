@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateServiceRoleFromAccountOutput {
     /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub disassociated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

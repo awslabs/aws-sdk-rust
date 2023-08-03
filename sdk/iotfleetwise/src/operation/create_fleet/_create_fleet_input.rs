@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetInput {
     /// <p> The unique ID of the fleet to create. </p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the fleet to create. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    #[doc(hidden)]
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the fleet.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFleetInput {

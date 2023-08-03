@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContinuousDeploymentPolicyConfigOutput {
     /// <p>Contains the configuration for a continuous deployment policy.</p>
-    #[doc(hidden)]
     pub continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
     /// <p>The version identifier for the current version of the continuous deployment policy.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

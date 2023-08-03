@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileFormatDescriptor {
     /// <p>Contains information about how a source CSV data file should be analyzed.</p>
-    #[doc(hidden)]
     pub csv_format_descriptor: ::std::option::Option<crate::types::CsvFormatDescriptor>,
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
-    #[doc(hidden)]
     pub json_format_descriptor: ::std::option::Option<crate::types::JsonFormatDescriptor>,
 }
 impl FileFormatDescriptor {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteParallelDataOutput {
     /// <p>The name of the parallel data resource that is being deleted.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parallel data deletion.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ParallelDataStatus>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstanceInput {
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the instance's layer IDs.</p>
-    #[doc(hidden)]
     pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
-    #[doc(hidden)]
     pub auto_scaling_type: ::std::option::Option<crate::types::AutoScalingType>,
     /// <p>The instance host name.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The instance's operating system, which must be set to one of the following.</p>
     /// <ul>
@@ -29,41 +24,30 @@ pub struct CreateInstanceInput {
     /// </ul>
     /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
     /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
-    #[doc(hidden)]
     pub os: ::std::option::Option<::std::string::String>,
     /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance's Amazon EC2 key-pair name.</p>
-    #[doc(hidden)]
     pub ssh_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
-    #[doc(hidden)]
     pub virtualization_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    #[doc(hidden)]
     pub root_device_type: ::std::option::Option<crate::types::RootDeviceType>,
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
     /// </note>
-    #[doc(hidden)]
     pub install_updates_on_boot: ::std::option::Option<bool>,
     /// <p>Whether to create an Amazon EBS-optimized instance.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
     /// <ul>
@@ -71,10 +55,8 @@ pub struct CreateInstanceInput {
     /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
-    #[doc(hidden)]
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<::std::string::String>,
 }
 impl CreateInstanceInput {

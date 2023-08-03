@@ -7,41 +7,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceFleet {
     /// <p>The unique identifier of the instance fleet.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name for the instance fleet.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the instance fleet. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceFleetStatus>,
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, or TASK. </p>
-    #[doc(hidden)]
     pub instance_fleet_type: ::std::option::Option<crate::types::InstanceFleetType>,
     /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedOnDemandCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
     /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_on_demand_capacity: ::std::option::Option<i32>,
     /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units. You can use <code>InstanceFleet$ProvisionedSpotCapacity</code> to determine the Spot capacity units that have been provisioned for the instance fleet.</p> <note>
     /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_spot_capacity: ::std::option::Option<i32>,
     /// <p>The number of On-Demand units that have been provisioned for the instance fleet to fulfill <code>TargetOnDemandCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetOnDemandCapacity</code>.</p>
-    #[doc(hidden)]
     pub provisioned_on_demand_capacity: ::std::option::Option<i32>,
     /// <p>The number of Spot units that have been provisioned for this instance fleet to fulfill <code>TargetSpotCapacity</code>. This provisioned capacity might be less than or greater than <code>TargetSpotCapacity</code>.</p>
-    #[doc(hidden)]
     pub provisioned_spot_capacity: ::std::option::Option<i32>,
     /// <p>An array of specifications for the instance types that comprise an instance fleet.</p>
-    #[doc(hidden)]
     pub instance_type_specifications: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeSpecification>>,
     /// <p>Describes the launch specification for an instance fleet. </p>
-    #[doc(hidden)]
     pub launch_specifications: ::std::option::Option<crate::types::InstanceFleetProvisioningSpecifications>,
     /// <p>The resize specification for the instance fleet.</p>
-    #[doc(hidden)]
     pub resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
 impl InstanceFleet {

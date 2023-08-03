@@ -5,55 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task that was described.</p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>The name of the task that was described.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
-    #[doc(hidden)]
     pub current_task_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
-    #[doc(hidden)]
     pub source_location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
-    #[doc(hidden)]
     pub destination_location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>
     /// <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    #[doc(hidden)]
     pub source_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    #[doc(hidden)]
     pub destination_network_interface_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>
     /// <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::Options>,
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::TaskSchedule>,
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
-    #[doc(hidden)]
     pub error_detail: ::std::option::Option<::std::string::String>,
     /// <p>The time that the task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     _request_id: Option<String>,
 }

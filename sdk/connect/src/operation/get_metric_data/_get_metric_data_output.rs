@@ -5,11 +5,9 @@
 pub struct GetMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the historical metrics.</p>
     /// <p>If no grouping is specified, a summary of metric data is returned.</p>
-    #[doc(hidden)]
     pub metric_results: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricResult>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsOutput {
     /// <p>An array of objects, one for each finding that matches the criteria specified in the request.</p>
-    #[doc(hidden)]
     pub findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
     _request_id: Option<String>,
 }

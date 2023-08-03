@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicDetails {
     /// <p>The name of the topic.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the topic.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The data sets that the topic is associated with.</p>
-    #[doc(hidden)]
     pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
 }
 impl TopicDetails {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmConfiguration {
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
-    #[doc(hidden)]
     pub ignore_poll_alarm_failure: bool,
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    #[doc(hidden)]
     pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
 }
 impl AlarmConfiguration {

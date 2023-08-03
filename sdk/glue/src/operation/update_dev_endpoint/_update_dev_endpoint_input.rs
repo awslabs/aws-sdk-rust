@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDevEndpointInput {
     /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::std::string::String>,
     /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
-    #[doc(hidden)]
     pub add_public_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub delete_public_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub custom_libraries: ::std::option::Option<crate::types::DevEndpointCustomLibraries>,
     /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
-    #[doc(hidden)]
     pub update_etl_libraries: ::std::option::Option<bool>,
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    #[doc(hidden)]
     pub delete_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
@@ -30,7 +23,6 @@ pub struct UpdateDevEndpointInput {
     /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    #[doc(hidden)]
     pub add_arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateDevEndpointInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfiguredTableAnalysisRule {
     /// <p>The unique ID for the configured table.</p>
-    #[doc(hidden)]
     pub configured_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the configured table.</p>
-    #[doc(hidden)]
     pub configured_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy that controls SQL query rules.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
     /// <p>The time the configured table analysis rule was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the configured table analysis rule was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfiguredTableAnalysisRule {

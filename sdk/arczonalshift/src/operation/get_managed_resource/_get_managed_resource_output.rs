@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetManagedResourceOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
-    #[doc(hidden)]
     pub applied_weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
     /// <p>The zonal shifts that are currently active for a resource. </p>
-    #[doc(hidden)]
     pub zonal_shifts: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportSnapshotOutput {
     /// <p>A description of the import snapshot task.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the import snapshot task.</p>
-    #[doc(hidden)]
     pub import_task_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the import snapshot task.</p>
-    #[doc(hidden)]
     pub snapshot_task_detail: ::std::option::Option<crate::types::SnapshotTaskDetail>,
     /// <p>Any tags assigned to the import snapshot task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

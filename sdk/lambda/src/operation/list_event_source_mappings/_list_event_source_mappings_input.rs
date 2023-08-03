@@ -12,7 +12,6 @@ pub struct ListEventSourceMappingsInput {
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -23,13 +22,10 @@ pub struct ListEventSourceMappingsInput {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token returned by a previous call.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListEventSourceMappingsInput {

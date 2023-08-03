@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the workspace.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that you can use to manage the workspace</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkspaceInput {

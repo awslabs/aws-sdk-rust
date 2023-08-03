@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UseCase {
     /// <p>The identifier for the use case.</p>
-    #[doc(hidden)]
     pub use_case_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the use case.</p>
-    #[doc(hidden)]
     pub use_case_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
-    #[doc(hidden)]
     pub use_case_type: ::std::option::Option<crate::types::UseCaseType>,
 }
 impl UseCase {

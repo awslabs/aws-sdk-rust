@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Limits {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub maximum_replication_count: i32,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub maximum_partition_count: i32,
 }
 impl Limits {

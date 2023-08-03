@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPointForObjectLambdaInput {
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
 }
 impl CreateAccessPointForObjectLambdaInput {

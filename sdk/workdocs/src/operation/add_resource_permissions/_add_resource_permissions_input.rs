@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AddResourcePermissionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The users, groups, or organization being granted permission.</p>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>,
     /// <p>The notification options.</p>
-    #[doc(hidden)]
     pub notification_options: ::std::option::Option<crate::types::NotificationOptions>,
 }
 impl AddResourcePermissionsInput {

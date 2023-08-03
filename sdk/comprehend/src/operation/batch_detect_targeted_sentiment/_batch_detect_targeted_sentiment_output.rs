@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchDetectTargetedSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    #[doc(hidden)]
     pub result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectTargetedSentimentItemResult>>,
     /// <p>List of errors that the operation can return.</p>
-    #[doc(hidden)]
     pub error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,
     _request_id: Option<String>,
 }

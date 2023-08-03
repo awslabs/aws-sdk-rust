@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesOutput {
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
-    #[doc(hidden)]
     pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

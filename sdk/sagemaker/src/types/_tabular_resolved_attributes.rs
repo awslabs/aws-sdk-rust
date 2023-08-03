@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TabularResolvedAttributes {
     /// <p>The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary Classification, Multiclass Classification, Regression). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p>
-    #[doc(hidden)]
     pub problem_type: ::std::option::Option<crate::types::ProblemType>,
 }
 impl TabularResolvedAttributes {

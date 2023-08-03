@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterParameterStatus {
     /// <p>The name of the parameter.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
     /// <p>The following are possible statuses and descriptions.</p>
@@ -18,10 +17,8 @@ pub struct ClusterParameterStatus {
     /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
     /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    #[doc(hidden)]
     pub parameter_apply_error_description: ::std::option::Option<::std::string::String>,
 }
 impl ClusterParameterStatus {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingField {
     /// <p>The type of the lending document.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The results extracted for a lending document.</p>
-    #[doc(hidden)]
     pub key_detection: ::std::option::Option<crate::types::LendingDetection>,
     /// <p>An array of LendingDetection objects.</p>
-    #[doc(hidden)]
     pub value_detections: ::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>>,
 }
 impl LendingField {

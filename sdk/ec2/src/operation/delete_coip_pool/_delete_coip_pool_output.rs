@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCoipPoolOutput {
     /// <p>Information about the CoIP address pool.</p>
-    #[doc(hidden)]
     pub coip_pool: ::std::option::Option<crate::types::CoipPool>,
     _request_id: Option<String>,
 }

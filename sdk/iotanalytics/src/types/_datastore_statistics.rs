@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreStatistics {
     /// <p>The estimated size of the data store.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<crate::types::EstimatedResourceSize>,
 }
 impl DatastoreStatistics {

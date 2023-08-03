@@ -7,19 +7,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentJobInput {
     /// <p>The requested deployment configuration.</p>
-    #[doc(hidden)]
     pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
-    #[doc(hidden)]
     pub fleet: ::std::option::Option<::std::string::String>,
     /// <p>The deployment application configuration.</p>
-    #[doc(hidden)]
     pub deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDeploymentJobInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomDomainAssociationsOutput {
     /// <p>The marker for the custom domain association.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The associations for the custom domain.</p>
-    #[doc(hidden)]
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
     _request_id: Option<String>,
 }

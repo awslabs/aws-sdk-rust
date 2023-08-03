@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingInfo {
     /// <p>The name of an S3 bucket where execution logs are stored.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The S3 bucket subfolder. </p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
-    #[doc(hidden)]
     pub s3_region: ::std::option::Option<::std::string::String>,
 }
 impl LoggingInfo {

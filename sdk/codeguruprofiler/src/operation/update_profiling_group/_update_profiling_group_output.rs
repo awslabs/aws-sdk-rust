@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfilingGroupOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
-    #[doc(hidden)]
     pub profiling_group: ::std::option::Option<crate::types::ProfilingGroupDescription>,
     _request_id: Option<String>,
 }

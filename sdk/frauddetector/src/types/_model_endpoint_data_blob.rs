@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelEndpointDataBlob {
     /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
-    #[doc(hidden)]
     pub byte_buffer: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl ModelEndpointDataBlob {

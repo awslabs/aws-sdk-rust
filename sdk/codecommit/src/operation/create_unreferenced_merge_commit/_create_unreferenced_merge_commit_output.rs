@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUnreferencedMergeCommitOutput {
     /// <p>The full commit ID of the commit that contains your merge results.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
-    #[doc(hidden)]
     pub tree_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

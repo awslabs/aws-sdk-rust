@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
-    #[doc(hidden)]
     pub export_job_properties: ::std::option::Option<crate::types::ExportJobProperties>,
     _request_id: Option<String>,
 }

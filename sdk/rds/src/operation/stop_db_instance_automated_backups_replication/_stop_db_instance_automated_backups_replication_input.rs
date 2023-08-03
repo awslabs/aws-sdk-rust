@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDbInstanceAutomatedBackupsReplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-    #[doc(hidden)]
     pub source_db_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopDbInstanceAutomatedBackupsReplicationInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyOtpMessageOutput {
     /// <p>Verify OTP Message Response.</p>
-    #[doc(hidden)]
     pub verification_response: ::std::option::Option<crate::types::VerificationResponse>,
     _request_id: Option<String>,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The type of encryption that will be used on the output associated with this entitlement. Allowable encryption types: static-key, speke.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::UpdateEncryption>,
     /// The ARN of the entitlement that you want to update.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    #[doc(hidden)]
     pub entitlement_status: ::std::option::Option<crate::types::EntitlementStatus>,
     /// The flow that is associated with the entitlement that you want to update.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    #[doc(hidden)]
     pub subscribers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFlowEntitlementInput {

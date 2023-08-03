@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
-    #[doc(hidden)]
     pub geofence_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
@@ -18,17 +16,13 @@ pub struct ListGeofenceResponseEntry {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    #[doc(hidden)]
     pub geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListGeofenceResponseEntry {

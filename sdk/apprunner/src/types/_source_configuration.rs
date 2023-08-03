@@ -6,18 +6,14 @@
 pub struct SourceConfiguration {
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
-    #[doc(hidden)]
     pub code_repository: ::std::option::Option<crate::types::CodeRepository>,
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
-    #[doc(hidden)]
     pub image_repository: ::std::option::Option<crate::types::ImageRepository>,
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
     /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
-    #[doc(hidden)]
     pub auto_deployments_enabled: ::std::option::Option<bool>,
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
-    #[doc(hidden)]
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl SourceConfiguration {

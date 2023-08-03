@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotTierStatus {
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume from which the snapshot was created.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the snapshot.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SnapshotState>,
     /// <p>The ID of the Amazon Web Services account that owns the snapshot.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags that are assigned to the snapshot.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
-    #[doc(hidden)]
     pub storage_tier: ::std::option::Option<crate::types::StorageTier>,
     /// <p>The date and time when the last archive or restore process was started.</p>
-    #[doc(hidden)]
     pub last_tiering_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The progress of the last archive or restore process, as a percentage.</p>
-    #[doc(hidden)]
     pub last_tiering_progress: ::std::option::Option<i32>,
     /// <p>The status of the last archive or restore process.</p>
-    #[doc(hidden)]
     pub last_tiering_operation_status: ::std::option::Option<crate::types::TieringOperationStatus>,
     /// <p>A message describing the status of the last archive or restore process.</p>
-    #[doc(hidden)]
     pub last_tiering_operation_status_detail: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the last archive process was completed.</p>
-    #[doc(hidden)]
     pub archival_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
-    #[doc(hidden)]
     pub restore_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotTierStatus {

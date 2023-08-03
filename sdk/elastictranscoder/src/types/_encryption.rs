@@ -20,18 +20,14 @@ pub struct Encryption {
     /// </ul> <important>
     /// <p>For the AES modes, your private encryption keys and your unencrypted data are never stored by AWS; therefore, it is important that you safely manage your encryption keys. If you lose them, you won't be able to unencrypt your data.</p>
     /// </important>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<::std::string::String>,
     /// <p>The data encryption key that you want Elastic Transcoder to use to encrypt your output file, or that was used to encrypt your input file. The key must be base64-encoded and it must be one of the following bit lengths before being base64-encoded:</p>
     /// <p> <code>128</code>, <code>192</code>, or <code>256</code>. </p>
     /// <p>The key must also be encrypted by using the Amazon Key Management Service.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The MD5 digest of the key that you used to encrypt your input file, or that you want Elastic Transcoder to use to encrypt your output file. Elastic Transcoder uses the key digest as a checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
-    #[doc(hidden)]
     pub key_md5: ::std::option::Option<::std::string::String>,
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you used to encrypt your input files or that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
-    #[doc(hidden)]
     pub initialization_vector: ::std::option::Option<::std::string::String>,
 }
 impl Encryption {

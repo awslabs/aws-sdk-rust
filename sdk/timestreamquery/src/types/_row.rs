@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Row {
     /// <p>List of data points in a single row of the result set.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
 }
 impl Row {

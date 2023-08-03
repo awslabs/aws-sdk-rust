@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDirectorySetupInput {
     /// <p> The identifier of the directory on which you want to perform the update. </p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of update that needs to be performed on the directory. For example, OS. </p>
-    #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::UpdateType>,
     /// <p> The settings for the OS update that needs to be performed on the directory. </p>
-    #[doc(hidden)]
     pub os_update_settings: ::std::option::Option<crate::types::OsUpdateSettings>,
     /// <p> The boolean that specifies if a snapshot for the directory needs to be taken before updating the directory. </p>
-    #[doc(hidden)]
     pub create_snapshot_before_update: ::std::option::Option<bool>,
 }
 impl UpdateDirectorySetupInput {

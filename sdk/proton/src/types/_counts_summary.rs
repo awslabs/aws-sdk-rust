@@ -6,25 +6,18 @@
 pub struct CountsSummary {
     /// <p>The total number of components in the Amazon Web Services account.</p>
     /// <p>The semantics of the <code>components</code> field are different from the semantics of results for other infrastructure-provisioning resources. That's because at this time components don't have associated templates, therefore they don't have the concept of staleness. The <code>components</code> object will only contain <code>total</code> and <code>failed</code> members.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<crate::types::ResourceCountsSummary>,
     /// <p>The staleness counts for Proton environments in the Amazon Web Services account. The <code>environments</code> object will only contain <code>total</code> members.</p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<crate::types::ResourceCountsSummary>,
     /// <p>The total number of environment templates in the Amazon Web Services account. The <code>environmentTemplates</code> object will only contain <code>total</code> members.</p>
-    #[doc(hidden)]
     pub environment_templates: ::std::option::Option<crate::types::ResourceCountsSummary>,
     /// <p>The staleness counts for Proton service instances in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub service_instances: ::std::option::Option<crate::types::ResourceCountsSummary>,
     /// <p>The staleness counts for Proton services in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<crate::types::ResourceCountsSummary>,
     /// <p>The total number of service templates in the Amazon Web Services account. The <code>serviceTemplates</code> object will only contain <code>total</code> members.</p>
-    #[doc(hidden)]
     pub service_templates: ::std::option::Option<crate::types::ResourceCountsSummary>,
     /// <p>The staleness counts for Proton pipelines in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub pipelines: ::std::option::Option<crate::types::ResourceCountsSummary>,
 }
 impl CountsSummary {

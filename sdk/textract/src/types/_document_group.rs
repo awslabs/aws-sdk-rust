@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentGroup {
     /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains information about the pages of a document, defined by logical boundary.</p>
-    #[doc(hidden)]
     pub split_documents: ::std::option::Option<::std::vec::Vec<crate::types::SplitDocument>>,
     /// <p>A list of the detected signatures found in a document group.</p>
-    #[doc(hidden)]
     pub detected_signatures: ::std::option::Option<::std::vec::Vec<crate::types::DetectedSignature>>,
     /// <p>A list of any expected signatures not found in a document group.</p>
-    #[doc(hidden)]
     pub undetected_signatures: ::std::option::Option<::std::vec::Vec<crate::types::UndetectedSignature>>,
 }
 impl DocumentGroup {

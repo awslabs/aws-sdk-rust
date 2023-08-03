@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsKmsKeyDetails {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the KMS key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub creation_date: f64,
     /// <p>The globally unique identifier for the KMS key.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
-    #[doc(hidden)]
     pub key_manager: ::std::option::Option<::std::string::String>,
     /// <p>The state of the KMS key. Valid values are as follows:</p>
     /// <ul>
@@ -25,19 +21,15 @@ pub struct AwsKmsKeyDetails {
     /// <li> <p> <code>PendingImport</code> </p> </li>
     /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_state: ::std::option::Option<::std::string::String>,
     /// <p>The source of the KMS key material.</p>
     /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
     /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management infrastructure or the KMS key lacks key material.</p>
     /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<::std::string::String>,
     /// <p>A description of the KMS key.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the key has key rotation enabled.</p>
-    #[doc(hidden)]
     pub key_rotation_status: bool,
 }
 impl AwsKmsKeyDetails {

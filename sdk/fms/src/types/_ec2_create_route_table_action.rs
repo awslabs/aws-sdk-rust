@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2CreateRouteTableAction {
     /// <p>A description of the CreateRouteTable action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the ID of a VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2CreateRouteTableAction {

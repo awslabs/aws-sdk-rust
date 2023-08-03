@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColorsConfiguration {
     /// <p>A list of up to 50 custom colors.</p>
-    #[doc(hidden)]
     pub custom_colors: ::std::option::Option<::std::vec::Vec<crate::types::CustomColor>>,
 }
 impl ColorsConfiguration {

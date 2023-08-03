@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
-    #[doc(hidden)]
     pub initiator_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChapCredentialsInput {

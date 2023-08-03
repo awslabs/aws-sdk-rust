@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevicePoolCompatibilityResult {
     /// <p>The device (phone or tablet) to return information about.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<crate::types::Device>,
     /// <p>Whether the result was compatible with the device pool.</p>
-    #[doc(hidden)]
     pub compatible: ::std::option::Option<bool>,
     /// <p>Information about the compatibility.</p>
-    #[doc(hidden)]
     pub incompatibility_messages: ::std::option::Option<::std::vec::Vec<crate::types::IncompatibilityMessage>>,
 }
 impl DevicePoolCompatibilityResult {

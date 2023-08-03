@@ -5,46 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon ES domain. The IAM role must have permissions for&nbsp;<code>DescribeDomain</code>, <code>DescribeDomains</code>, and <code>DescribeDomainConfig</code>&nbsp;after assuming the role specified in <b>RoleARN</b>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     /// <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Specify either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field.</p>
-    #[doc(hidden)]
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run time.</p>
     /// <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. The default value is&nbsp;<code>OneDay</code>.</p>
-    #[doc(hidden)]
     pub index_rotation_period: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
     /// <p>The buffering options. If no value is specified, the default values for <code>ElasticsearchBufferingHints</code> are used.</p>
-    #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::ElasticsearchRetryOptions>,
     /// <p>Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
     /// <p>You can't change this backup mode after you create the delivery stream. </p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::ElasticsearchS3BackupMode>,
     /// <p>The configuration for the backup Amazon S3 location.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     /// <p>The data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl ElasticsearchDestinationConfiguration {

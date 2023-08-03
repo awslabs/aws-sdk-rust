@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroupOutput {
     /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
-    #[doc(hidden)]
     pub firewall_rule_group_association: ::std::option::Option<crate::types::FirewallRuleGroupAssociation>,
     _request_id: Option<String>,
 }

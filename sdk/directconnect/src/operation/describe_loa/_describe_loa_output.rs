@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoaOutput {
     /// <p>The binary contents of the LOA-CFA document.</p>
-    #[doc(hidden)]
     pub loa_content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-    #[doc(hidden)]
     pub loa_content_type: ::std::option::Option<crate::types::LoaContentType>,
     _request_id: Option<String>,
 }

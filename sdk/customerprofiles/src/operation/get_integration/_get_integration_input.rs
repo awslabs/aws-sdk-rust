@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntegrationInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
 }
 impl GetIntegrationInput {

@@ -6,56 +6,39 @@
 pub struct ImportImageTask {
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>A description of the import task.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the image is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The target hypervisor for the import task.</p>
     /// <p>Valid values: <code>xen</code> </p>
-    #[doc(hidden)]
     pub hypervisor: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) of the imported virtual machine.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the import image task.</p>
-    #[doc(hidden)]
     pub import_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the KMS key that was used to create the encrypted image.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The license type of the virtual machine.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<::std::string::String>,
     /// <p>The description string for the import image task.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of progress of the import image task.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>Information about the snapshots.</p>
-    #[doc(hidden)]
     pub snapshot_details: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>>,
     /// <p>A brief status for the import image task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive status message for the import image task.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the import image task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
-    #[doc(hidden)]
     pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>>,
     /// <p>The usage operation value.</p>
-    #[doc(hidden)]
     pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>The boot mode of the virtual machine.</p>
-    #[doc(hidden)]
     pub boot_mode: ::std::option::Option<crate::types::BootModeValues>,
 }
 impl ImportImageTask {

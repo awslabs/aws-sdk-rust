@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPolicyDetail {
     /// <p>The type of access policy.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the policy.</p>
-    #[doc(hidden)]
     pub policy_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy document without any whitespaces.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The date the policy was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<i64>,
     /// <p>The timestamp of when the policy was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<i64>,
 }
 impl AccessPolicyDetail {

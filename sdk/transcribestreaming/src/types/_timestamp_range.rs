@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampRange {
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the category match.</p>
-    #[doc(hidden)]
     pub begin_offset_millis: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the category match.</p>
-    #[doc(hidden)]
     pub end_offset_millis: ::std::option::Option<i64>,
 }
 impl TimestampRange {

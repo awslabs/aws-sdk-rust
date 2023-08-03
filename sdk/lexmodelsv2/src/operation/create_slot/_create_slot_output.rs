@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSlotOutput {
     /// <p>The unique identifier associated with the slot. Use this to identify the slot when you update or delete it.</p>
-    #[doc(hidden)]
     pub slot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name specified for the slot.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>The description associated with the slot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the slot type associated with this slot.</p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The value elicitation settings specified for the slot.</p>
-    #[doc(hidden)]
     pub value_elicitation_setting: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
     /// <p>Indicates whether the slot is configured to obfuscate values in Amazon CloudWatch logs.</p>
-    #[doc(hidden)]
     pub obfuscation_setting: ::std::option::Option<crate::types::ObfuscationSetting>,
     /// <p>The unique identifier of the bot associated with the slot.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the slot.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The language and local specified for the slot.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the intent associated with the slot.</p>
-    #[doc(hidden)]
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the date and time that the slot was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the slot returns multiple values in one response.</p>
-    #[doc(hidden)]
     pub multiple_values_setting: ::std::option::Option<crate::types::MultipleValuesSetting>,
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    #[doc(hidden)]
     pub sub_slot_setting: ::std::option::Option<crate::types::SubSlotSetting>,
     _request_id: Option<String>,
 }

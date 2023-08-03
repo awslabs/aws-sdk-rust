@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemOutput {
     /// <p>The ARN of the on-premises storage system that the discovery job looked at.</p>
-    #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>The server name and network port required to connect with your on-premises storage system's management interface.</p>
-    #[doc(hidden)]
     pub server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
     /// <p>The type of on-premises storage system.</p> <note>
     /// <p>DataSync Discovery currently only supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later. </p>
     /// </note>
-    #[doc(hidden)]
     pub system_type: ::std::option::Option<crate::types::DiscoverySystemType>,
     /// <p>The ARN of the DataSync agent that connects to and reads from your on-premises storage system.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name that you gave your on-premises storage system when adding it to DataSync Discovery.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the connectivity error that the DataSync agent is encountering with your on-premises storage system.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether your DataSync agent can connect to your on-premises storage system.</p>
-    #[doc(hidden)]
     pub connectivity_status: ::std::option::Option<crate::types::StorageSystemConnectivityStatus>,
     /// <p>The ARN of the Amazon CloudWatch log group that's used to monitor and log discovery job events.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when you added the on-premises storage system to DataSync Discovery.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the secret that stores your on-premises storage system's credentials. DataSync Discovery stores these credentials in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-configure-storage.html#discovery-add-storage">Secrets Manager</a>.</p>
-    #[doc(hidden)]
     pub secrets_manager_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

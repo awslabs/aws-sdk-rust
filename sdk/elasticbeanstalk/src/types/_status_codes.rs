@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusCodes {
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
-    #[doc(hidden)]
     pub status2xx: ::std::option::Option<i32>,
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
-    #[doc(hidden)]
     pub status3xx: ::std::option::Option<i32>,
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
-    #[doc(hidden)]
     pub status4xx: ::std::option::Option<i32>,
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
-    #[doc(hidden)]
     pub status5xx: ::std::option::Option<i32>,
 }
 impl StatusCodes {

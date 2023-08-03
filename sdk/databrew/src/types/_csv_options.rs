@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvOptions {
     /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
-    #[doc(hidden)]
     pub header_row: ::std::option::Option<bool>,
 }
 impl CsvOptions {

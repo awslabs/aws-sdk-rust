@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateScramSecretInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of AWS Secrets Manager secret ARNs.</p>
-    #[doc(hidden)]
     pub secret_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDisassociateScramSecretInput {

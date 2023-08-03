@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKxDatabasesOutput {
     /// <p>A list of databases in the kdb environment.</p>
-    #[doc(hidden)]
     pub kx_databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>>,
     /// <p>A token that indicates where a results page should begin.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

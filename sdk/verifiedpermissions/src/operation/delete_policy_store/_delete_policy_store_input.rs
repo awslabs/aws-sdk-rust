@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePolicyStoreInput {
     /// <p>Specifies the ID of the policy store that you want to delete.</p>
-    #[doc(hidden)]
     pub policy_store_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePolicyStoreInput {

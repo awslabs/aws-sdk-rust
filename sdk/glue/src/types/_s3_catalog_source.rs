@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3CatalogSource {
     /// <p>The name of the data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The database to read from.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The database table to read from.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
-    #[doc(hidden)]
     pub partition_predicate: ::std::option::Option<::std::string::String>,
     /// <p>Specifies additional connection options.</p>
-    #[doc(hidden)]
     pub additional_options: ::std::option::Option<crate::types::S3SourceAdditionalOptions>,
 }
 impl S3CatalogSource {

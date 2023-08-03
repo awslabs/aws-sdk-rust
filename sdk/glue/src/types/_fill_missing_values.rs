@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FillMissingValues {
     /// <p>The name of the transform node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A JSON path to a variable in the data structure for the dataset that is imputed.</p>
-    #[doc(hidden)]
     pub imputed_path: ::std::option::Option<::std::string::String>,
     /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
-    #[doc(hidden)]
     pub filled_path: ::std::option::Option<::std::string::String>,
 }
 impl FillMissingValues {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCaseInput {
     /// <p>A unique identifier of the case.</p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of unique field identifiers. </p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCaseInput {

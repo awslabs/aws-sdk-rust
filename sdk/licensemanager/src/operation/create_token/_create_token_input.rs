@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTokenInput {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-    #[doc(hidden)]
     pub role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
-    #[doc(hidden)]
     pub expiration_in_days: ::std::option::Option<i32>,
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    #[doc(hidden)]
     pub token_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Idempotency token, valid for 10 minutes.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTokenInput {

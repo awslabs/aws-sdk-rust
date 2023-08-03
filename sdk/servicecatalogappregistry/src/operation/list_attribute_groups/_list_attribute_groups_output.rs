@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAttributeGroupsOutput {
     /// <p>This list of attribute groups.</p>
-    #[doc(hidden)]
     pub attribute_groups: ::std::option::Option<::std::vec::Vec<crate::types::AttributeGroupSummary>>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateSourceNetworkInput {
     /// <p>Which VPC ID to protect.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Account containing the VPC to protect.</p>
-    #[doc(hidden)]
     pub origin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Region containing the VPC to protect.</p>
-    #[doc(hidden)]
     pub origin_region: ::std::option::Option<::std::string::String>,
     /// <p>A set of tags to be associated with the Source Network resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSourceNetworkInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectorProfileInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
-    #[doc(hidden)]
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
-    #[doc(hidden)]
     pub force_delete: ::std::option::Option<bool>,
 }
 impl DeleteConnectorProfileInput {

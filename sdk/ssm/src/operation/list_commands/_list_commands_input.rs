@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCommandsInput {
     /// <p>(Optional) If provided, lists only the specified command.</p>
-    #[doc(hidden)]
     pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
     /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::CommandFilter>>,
 }
 impl ListCommandsInput {

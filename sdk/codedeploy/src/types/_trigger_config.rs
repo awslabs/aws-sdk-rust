@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerConfig {
     /// <p>The name of the notification trigger.</p>
-    #[doc(hidden)]
     pub trigger_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.</p>
-    #[doc(hidden)]
     pub trigger_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event type or types for which notifications are triggered.</p>
-    #[doc(hidden)]
     pub trigger_events: ::std::option::Option<::std::vec::Vec<crate::types::TriggerEventType>>,
 }
 impl TriggerConfig {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateImagePermissionsInput {
     /// <p>The name of the private image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
-    #[doc(hidden)]
     pub shared_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The permissions for the image.</p>
-    #[doc(hidden)]
     pub image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
 }
 impl UpdateImagePermissionsInput {

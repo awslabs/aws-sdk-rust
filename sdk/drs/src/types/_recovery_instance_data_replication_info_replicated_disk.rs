@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInfoReplicatedDisk {
     /// <p>The name of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The total amount of data to be replicated in bytes.</p>
-    #[doc(hidden)]
     pub total_storage_bytes: i64,
     /// <p>The amount of data replicated so far in bytes.</p>
-    #[doc(hidden)]
     pub replicated_storage_bytes: i64,
     /// <p>The amount of data to be rescanned in bytes.</p>
-    #[doc(hidden)]
     pub rescanned_storage_bytes: i64,
     /// <p>The size of the replication backlog in bytes.</p>
-    #[doc(hidden)]
     pub backlogged_storage_bytes: i64,
 }
 impl RecoveryInstanceDataReplicationInfoReplicatedDisk {

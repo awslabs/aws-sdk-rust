@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    #[doc(hidden)]
     pub regex_pattern_set_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetUpdate>>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRegexPatternSetInput {

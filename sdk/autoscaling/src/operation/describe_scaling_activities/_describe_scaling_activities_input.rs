@@ -5,19 +5,14 @@
 pub struct DescribeScalingActivitiesInput {
     /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
-    #[doc(hidden)]
     pub activity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
-    #[doc(hidden)]
     pub include_deleted_groups: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScalingActivitiesInput {

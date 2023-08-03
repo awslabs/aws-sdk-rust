@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogOddsMetric {
     /// <p>The name of the variable.</p>
-    #[doc(hidden)]
     pub variable_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of variable.</p>
-    #[doc(hidden)]
     pub variable_type: ::std::option::Option<::std::string::String>,
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
-    #[doc(hidden)]
     pub variable_importance: ::std::option::Option<f32>,
 }
 impl LogOddsMetric {

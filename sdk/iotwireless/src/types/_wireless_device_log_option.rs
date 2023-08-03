@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessDeviceLogOption {
     /// <p>The wireless device type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
     /// <p>The list of wireless device event log options.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>,
 }
 impl WirelessDeviceLogOption {

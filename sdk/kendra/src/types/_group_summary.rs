@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupSummary {
     /// <p>The identifier of the group you want group summary information on.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
-    #[doc(hidden)]
     pub ordering_id: ::std::option::Option<i64>,
 }
 impl GroupSummary {

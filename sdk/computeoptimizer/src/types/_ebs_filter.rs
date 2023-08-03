@@ -10,11 +10,9 @@ pub struct EbsFilter {
     /// <p>You can filter your Amazon EBS volume recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon EBS volume recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon EBS volume recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon EBS volume recommendations. Use this filter to find all of your Amazon EBS volume recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon EBS volume recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::EbsFilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EbsFilter {

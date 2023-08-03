@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedactChannelMessageInput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the message being redacted.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the SubChannel in the request.</p>
-    #[doc(hidden)]
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl RedactChannelMessageInput {

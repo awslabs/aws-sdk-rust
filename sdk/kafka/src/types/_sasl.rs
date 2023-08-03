@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sasl {
     /// <p>Details for SASL/SCRAM client authentication.</p>
-    #[doc(hidden)]
     pub scram: ::std::option::Option<crate::types::Scram>,
     /// <p>Indicates whether IAM access control is enabled.</p>
-    #[doc(hidden)]
     pub iam: ::std::option::Option<crate::types::Iam>,
 }
 impl Sasl {

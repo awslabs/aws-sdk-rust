@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestMetricFilterOutput {
     /// <p>The matched events.</p>
-    #[doc(hidden)]
     pub matches: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterMatchRecord>>,
     _request_id: Option<String>,
 }

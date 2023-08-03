@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionBasedLayoutPaperCanvasSizeOptions {
     /// <p>The paper size that is used to define canvas dimensions.</p>
-    #[doc(hidden)]
     pub paper_size: ::std::option::Option<crate::types::PaperSize>,
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p>PORTRAIT</p> </li>
     /// <li> <p>LANDSCAPE</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub paper_orientation: ::std::option::Option<crate::types::PaperOrientation>,
     /// <p>Defines the spacing between the canvas content and the top, bottom, left, and right edges.</p>
-    #[doc(hidden)]
     pub paper_margin: ::std::option::Option<crate::types::Spacing>,
 }
 impl SectionBasedLayoutPaperCanvasSizeOptions {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSolutionInput {
     /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-    #[doc(hidden)]
     pub solution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSolutionInput {

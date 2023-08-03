@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerCertificateSummary {
     /// <p>The ARN of the server certificate.</p>
-    #[doc(hidden)]
     pub server_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the server certificate.</p>
-    #[doc(hidden)]
     pub server_certificate_status: ::std::option::Option<crate::types::ServerCertificateStatus>,
     /// <p>Details that explain the status of the server certificate.</p>
-    #[doc(hidden)]
     pub server_certificate_status_detail: ::std::option::Option<::std::string::String>,
 }
 impl ServerCertificateSummary {

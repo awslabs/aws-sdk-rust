@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRevocationStatusInput {
     /// <p>The timestamp of the signature that validates the profile or job.</p>
-    #[doc(hidden)]
     pub signature_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of a signing platform. </p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of a signing profile.</p>
-    #[doc(hidden)]
     pub profile_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a signing job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    #[doc(hidden)]
     pub certificate_hashes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetRevocationStatusInput {

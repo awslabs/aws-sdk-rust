@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWebLoginTokenOutput {
     /// <p>An Airflow web server login token.</p>
-    #[doc(hidden)]
     pub web_token: ::std::option::Option<::std::string::String>,
     /// <p>The Airflow web server hostname for the environment.</p>
-    #[doc(hidden)]
     pub web_server_hostname: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

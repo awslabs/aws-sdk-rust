@@ -5,7 +5,6 @@
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

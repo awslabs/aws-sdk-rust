@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaterfallChartAggregatedFieldWells {
     /// <p>The category field wells of a waterfall visual.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field wells of a waterfall visual.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The breakdown field wells of a waterfall visual.</p>
-    #[doc(hidden)]
     pub breakdowns: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl WaterfallChartAggregatedFieldWells {

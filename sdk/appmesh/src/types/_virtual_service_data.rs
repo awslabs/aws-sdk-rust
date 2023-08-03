@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceData {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
-    #[doc(hidden)]
     pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual service.</p>
-    #[doc(hidden)]
     pub virtual_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The specifications of the virtual service.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<crate::types::VirtualServiceSpec>,
     /// <p>An object that represents metadata for a resource.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The current status of the virtual service.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VirtualServiceStatus>,
 }
 impl VirtualServiceData {

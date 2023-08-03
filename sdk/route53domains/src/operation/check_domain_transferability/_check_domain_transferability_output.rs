@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckDomainTransferabilityOutput {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
-    #[doc(hidden)]
     pub transferability: ::std::option::Option<crate::types::DomainTransferability>,
     _request_id: Option<String>,
 }

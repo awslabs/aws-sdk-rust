@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. </p>
-    #[doc(hidden)]
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {

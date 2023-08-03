@@ -11,7 +11,6 @@ pub struct SseDescription {
     /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
     /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SseStatus>,
 }
 impl SseDescription {

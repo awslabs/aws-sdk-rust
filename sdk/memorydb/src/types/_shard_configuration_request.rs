@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShardConfigurationRequest {
     /// <p>The number of shards in the cluster</p>
-    #[doc(hidden)]
     pub shard_count: i32,
 }
 impl ShardConfigurationRequest {

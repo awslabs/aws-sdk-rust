@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserOutput {
     /// <p>The identifier for the described user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the user.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The email of the user.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the user.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EntityState>,
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
-    #[doc(hidden)]
     pub user_role: ::std::option::Option<crate::types::UserRole>,
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
-    #[doc(hidden)]
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
-    #[doc(hidden)]
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

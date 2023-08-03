@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchScheduleActionCreateResult {
     /// List of actions that have been created in the schedule.
-    #[doc(hidden)]
     pub schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionCreateResult {

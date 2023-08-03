@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelMessage {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a message.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The message content.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The message metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The message type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMessageType>,
     /// <p>The time at which the message was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a message was edited.</p>
-    #[doc(hidden)]
     pub last_edited_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a message was updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
-    #[doc(hidden)]
     pub sender: ::std::option::Option<crate::types::Identity>,
     /// <p>Hides the content of a message.</p>
-    #[doc(hidden)]
     pub redacted: bool,
     /// <p>The persistence setting for a channel message.</p>
-    #[doc(hidden)]
     pub persistence: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
 }
 impl ChannelMessage {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistoryInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::TimePeriod>,
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> A generic string.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBudgetPerformanceHistoryInput {

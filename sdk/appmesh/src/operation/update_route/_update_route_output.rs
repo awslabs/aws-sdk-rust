@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteOutput {
     /// <p>A full description of the route that was updated.</p>
-    #[doc(hidden)]
     pub route: ::std::option::Option<crate::types::RouteData>,
     _request_id: Option<String>,
 }

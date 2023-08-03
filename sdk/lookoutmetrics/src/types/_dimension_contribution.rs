@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionContribution {
     /// <p>The name of the dimension.</p>
-    #[doc(hidden)]
     pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of dimension values that contributed to the anomaly.</p>
-    #[doc(hidden)]
     pub dimension_value_contribution_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValueContribution>>,
 }
 impl DimensionContribution {

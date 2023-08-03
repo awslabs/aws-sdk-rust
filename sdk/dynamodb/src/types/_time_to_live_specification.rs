@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeToLiveSpecification {
     /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The name of the TTL attribute used to store the expiration time for items in the table.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl TimeToLiveSpecification {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowStepsOutput {
     /// <p>Unique identifier for the workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>List containing workflow step details.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepItem>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
-    #[doc(hidden)]
     pub sse_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>KMS key ID to use for the default encryption.</p>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketServerSideEncryptionByDefault {

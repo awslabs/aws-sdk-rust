@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointSettingsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    #[doc(hidden)]
     pub endpoint_settings: ::std::option::Option<::std::vec::Vec<crate::types::EndpointSetting>>,
     _request_id: Option<String>,
 }

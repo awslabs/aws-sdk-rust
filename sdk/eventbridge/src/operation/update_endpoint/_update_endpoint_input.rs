@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEndpointInput {
     /// <p>The name of the endpoint you want to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the endpoint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configure the routing policy, including the health check and secondary Region.</p>
-    #[doc(hidden)]
     pub routing_config: ::std::option::Option<crate::types::RoutingConfig>,
     /// <p>Whether event replication was enabled or disabled by this request.</p>
-    #[doc(hidden)]
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     /// <p>Define event buses used for replication.</p>
-    #[doc(hidden)]
     pub event_buses: ::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>>,
     /// <p>The ARN of the role used by event replication for this request.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEndpointInput {

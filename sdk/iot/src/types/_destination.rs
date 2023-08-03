@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>Describes the location in S3 of the updated firmware.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl Destination {

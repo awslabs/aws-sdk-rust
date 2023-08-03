@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Minimum object size to which the rule applies.</p>
-    #[doc(hidden)]
     pub object_size_greater_than: i64,
     /// <p>Maximum object size to which the rule applies.</p>
-    #[doc(hidden)]
     pub object_size_less_than: i64,
 }
 impl LifecycleRuleAndOperator {

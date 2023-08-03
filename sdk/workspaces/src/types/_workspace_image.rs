@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceImage {
     /// <p>The identifier of the image.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the image.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that the image is running. </p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The status of the image.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkspaceImageState>,
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
-    #[doc(hidden)]
     pub required_tenancy: ::std::option::Option<crate::types::WorkspaceImageRequiredTenancy>,
     /// <p>The error code that is returned for the image.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned for the image.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account that the image has been shared with sees the original creation date of the image.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The updates (if any) that are available for the specified image.</p>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<crate::types::UpdateResult>,
 }
 impl WorkspaceImage {

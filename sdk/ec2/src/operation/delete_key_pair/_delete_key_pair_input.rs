@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyPairInput {
     /// <p>The name of the key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the key pair.</p>
-    #[doc(hidden)]
     pub key_pair_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteKeyPairInput {

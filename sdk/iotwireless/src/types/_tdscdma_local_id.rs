@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TdscdmaLocalId {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
-    #[doc(hidden)]
     pub uarfcn: ::std::option::Option<i32>,
     /// <p>Cell parameters for TD-SCDMA.</p>
-    #[doc(hidden)]
     pub cell_params: ::std::option::Option<i32>,
 }
 impl TdscdmaLocalId {

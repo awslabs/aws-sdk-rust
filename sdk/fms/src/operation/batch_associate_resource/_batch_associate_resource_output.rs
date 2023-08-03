@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateResourceOutput {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    #[doc(hidden)]
     pub resource_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The resources that failed to associate to the resource set.</p>
-    #[doc(hidden)]
     pub failed_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedItem>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool.</p>
-    #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDedicatedIpPoolInput {

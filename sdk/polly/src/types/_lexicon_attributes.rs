@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexiconAttributes {
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
-    #[doc(hidden)]
     pub alphabet: ::std::option::Option<::std::string::String>,
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Date lexicon was last modified (a timestamp value).</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
-    #[doc(hidden)]
     pub lexicon_arn: ::std::option::Option<::std::string::String>,
     /// <p>Number of lexemes in the lexicon.</p>
-    #[doc(hidden)]
     pub lexemes_count: i32,
     /// <p>Total size of the lexicon, in characters.</p>
-    #[doc(hidden)]
     pub size: i32,
 }
 impl LexiconAttributes {

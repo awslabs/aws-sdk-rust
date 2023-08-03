@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3KeyFilter {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
-    #[doc(hidden)]
     pub filter_rules: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
 }
 impl S3KeyFilter {

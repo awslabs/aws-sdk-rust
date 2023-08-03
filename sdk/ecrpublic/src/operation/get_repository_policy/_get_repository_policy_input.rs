@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryPolicyInput {
     /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository with the policy to retrieve.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRepositoryPolicyInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataIntegrationInput {
     /// <p>A unique identifier for the DataIntegration.</p>
-    #[doc(hidden)]
     pub data_integration_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDataIntegrationInput {

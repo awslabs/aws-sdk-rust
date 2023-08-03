@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetSuccessItem {
     /// <p>The current state of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub current_fleet_state: ::std::option::Option<crate::types::FleetStateCode>,
     /// <p>The previous state of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub previous_fleet_state: ::std::option::Option<crate::types::FleetStateCode>,
     /// <p>The ID of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetSuccessItem {

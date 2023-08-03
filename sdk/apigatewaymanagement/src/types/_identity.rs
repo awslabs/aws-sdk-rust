@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Identity {
     /// <p>The source IP address of the TCP connection making the request to API Gateway.</p>
-    #[doc(hidden)]
     pub source_ip: ::std::option::Option<::std::string::String>,
     /// <p>The User Agent of the API caller.</p>
-    #[doc(hidden)]
     pub user_agent: ::std::option::Option<::std::string::String>,
 }
 impl Identity {

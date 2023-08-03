@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalInformation {
     /// <p>The name of the signal.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of samples to collect.</p>
-    #[doc(hidden)]
     pub max_sample_count: ::std::option::Option<i64>,
     /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
-    #[doc(hidden)]
     pub minimum_sampling_interval_ms: ::std::option::Option<i64>,
 }
 impl SignalInformation {

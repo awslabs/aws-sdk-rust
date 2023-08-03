@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainDescription {
     /// <p> The name of the domain. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account ID that owns the domain. </p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the domain. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The current status of a domain. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p> A timestamp that represents the date and time the domain was created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The ARN of an Key Management Service (KMS) key associated with a domain. </p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p> The number of repositories in the domain. </p>
-    #[doc(hidden)]
     pub repository_count: i32,
     /// <p> The total size of all assets in the domain. </p>
-    #[doc(hidden)]
     pub asset_size_bytes: i64,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
-    #[doc(hidden)]
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl DomainDescription {

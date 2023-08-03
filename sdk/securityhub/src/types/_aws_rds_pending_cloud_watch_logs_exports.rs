@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsPendingCloudWatchLogsExports {
     /// <p>A list of log types that are being enabled.</p>
-    #[doc(hidden)]
     pub log_types_to_enable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of log types that are being disabled.</p>
-    #[doc(hidden)]
     pub log_types_to_disable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsRdsPendingCloudWatchLogsExports {

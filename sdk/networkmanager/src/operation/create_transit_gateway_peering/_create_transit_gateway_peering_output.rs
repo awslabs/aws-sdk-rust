@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringOutput {
     /// <p>Returns information about the transit gateway peering connection request.</p>
-    #[doc(hidden)]
     pub transit_gateway_peering: ::std::option::Option<crate::types::TransitGatewayPeering>,
     _request_id: Option<String>,
 }

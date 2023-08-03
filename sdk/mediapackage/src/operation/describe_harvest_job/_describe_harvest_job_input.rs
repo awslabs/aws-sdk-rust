@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHarvestJobInput {
     /// The ID of the HarvestJob.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHarvestJobInput {

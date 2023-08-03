@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegistryScanningConfigurationOutput {
     /// <p>The ID of the registry.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The scanning configuration for the registry.</p>
-    #[doc(hidden)]
     pub scanning_configuration: ::std::option::Option<crate::types::RegistryScanningConfiguration>,
     _request_id: Option<String>,
 }

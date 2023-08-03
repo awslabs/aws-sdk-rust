@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectedSheetsFilterScopeConfiguration {
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
-    #[doc(hidden)]
     pub sheet_visual_scoping_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
 }
 impl SelectedSheetsFilterScopeConfiguration {

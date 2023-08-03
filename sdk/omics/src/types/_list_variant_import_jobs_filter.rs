@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVariantImportJobsFilter {
     /// <p>A status to filter on.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A store name to filter on.</p>
-    #[doc(hidden)]
     pub store_name: ::std::option::Option<::std::string::String>,
 }
 impl ListVariantImportJobsFilter {

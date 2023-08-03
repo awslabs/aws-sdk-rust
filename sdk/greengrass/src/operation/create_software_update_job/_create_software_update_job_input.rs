@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSoftwareUpdateJobInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
-    #[doc(hidden)]
     pub s3_url_signer_role: ::std::option::Option<::std::string::String>,
     /// The piece of software on the Greengrass core that will be updated.
-    #[doc(hidden)]
     pub software_to_update: ::std::option::Option<crate::types::SoftwareToUpdate>,
     /// The minimum level of log statements that should be logged by the OTA Agent during an update.
-    #[doc(hidden)]
     pub update_agent_log_level: ::std::option::Option<crate::types::UpdateAgentLogLevel>,
     /// The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
-    #[doc(hidden)]
     pub update_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The architecture of the cores which are the targets of an update.
-    #[doc(hidden)]
     pub update_targets_architecture: ::std::option::Option<crate::types::UpdateTargetsArchitecture>,
     /// The operating system of the cores which are the targets of an update.
-    #[doc(hidden)]
     pub update_targets_operating_system: ::std::option::Option<crate::types::UpdateTargetsOperatingSystem>,
 }
 impl CreateSoftwareUpdateJobInput {

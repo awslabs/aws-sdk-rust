@@ -12,14 +12,11 @@ pub struct Captions {
     /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub merge_policy: ::std::option::Option<::std::string::String>,
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
-    #[doc(hidden)]
     pub caption_formats: ::std::option::Option<::std::vec::Vec<crate::types::CaptionFormat>>,
 }
 impl Captions {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsEntityItem {
     /// <p>The time the OpsData was captured.</p>
-    #[doc(hidden)]
     pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>The details of an OpsData summary.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
 }
 impl OpsEntityItem {

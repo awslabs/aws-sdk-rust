@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConformancePackInput {
     /// <p>Name of the conformance pack you want to delete.</p>
-    #[doc(hidden)]
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConformancePackInput {

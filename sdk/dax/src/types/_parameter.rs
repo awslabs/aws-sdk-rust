@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameter {
     /// <p>The name of the parameter.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the parameter can be applied to any nodes, or only nodes of a particular type.</p>
-    #[doc(hidden)]
     pub parameter_type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>The value for the parameter.</p>
-    #[doc(hidden)]
     pub parameter_value: ::std::option::Option<::std::string::String>,
     /// <p>A list of node types, and specific parameter values for each node.</p>
-    #[doc(hidden)]
     pub node_type_specific_values: ::std::option::Option<::std::vec::Vec<crate::types::NodeTypeSpecificValue>>,
     /// <p>A description of the parameter</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the parameter. For example, <code>integer</code>:</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>A range of values within which the parameter can be set.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Whether the customer is allowed to modify the parameter.</p>
-    #[doc(hidden)]
     pub is_modifiable: ::std::option::Option<crate::types::IsModifiable>,
     /// <p>The conditions under which changes to this parameter can be applied. For example, <code>requires-reboot</code> indicates that a new value for this parameter will only take effect if a node is rebooted.</p>
-    #[doc(hidden)]
     pub change_type: ::std::option::Option<crate::types::ChangeType>,
 }
 impl Parameter {

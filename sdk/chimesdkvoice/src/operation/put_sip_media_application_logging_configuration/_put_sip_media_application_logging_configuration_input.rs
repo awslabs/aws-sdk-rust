@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSipMediaApplicationLoggingConfigurationInput {
     /// <p>The SIP media application ID.</p>
-    #[doc(hidden)]
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration for the specified SIP media application.</p>
-    #[doc(hidden)]
     pub sip_media_application_logging_configuration: ::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration>,
 }
 impl PutSipMediaApplicationLoggingConfigurationInput {

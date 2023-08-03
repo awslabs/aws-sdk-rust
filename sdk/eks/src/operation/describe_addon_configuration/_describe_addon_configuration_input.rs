@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAddonConfigurationInput {
     /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
-    #[doc(hidden)]
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
-    #[doc(hidden)]
     pub addon_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAddonConfigurationInput {

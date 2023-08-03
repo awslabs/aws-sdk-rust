@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollingUpdatePolicy {
     /// <p>Batch size for each rolling step to provision capacity and turn on traffic on the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value must be between 5% to 50% of the variant's total instance count.</p>
-    #[doc(hidden)]
     pub maximum_batch_size: ::std::option::Option<crate::types::CapacitySize>,
     /// <p>The length of the baking period, during which SageMaker monitors alarms for each batch on the new fleet.</p>
-    #[doc(hidden)]
     pub wait_interval_in_seconds: ::std::option::Option<i32>,
     /// <p>The time limit for the total deployment. Exceeding this limit causes a timeout.</p>
-    #[doc(hidden)]
     pub maximum_execution_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>Batch size for rollback to the old endpoint fleet. Each rolling step to provision capacity and turn on traffic on the old endpoint fleet, and terminate capacity on the new endpoint fleet. If this field is absent, the default value will be set to 100% of total capacity which means to bring up the whole capacity of the old fleet at once during rollback.</p>
-    #[doc(hidden)]
     pub rollback_maximum_batch_size: ::std::option::Option<crate::types::CapacitySize>,
 }
 impl RollingUpdatePolicy {

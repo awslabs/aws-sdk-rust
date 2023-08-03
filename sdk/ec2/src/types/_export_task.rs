@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTask {
     /// <p>A description of the resource being exported.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the export task.</p>
-    #[doc(hidden)]
     pub export_task_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the export task.</p>
-    #[doc(hidden)]
     pub export_to_s3_task: ::std::option::Option<crate::types::ExportToS3Task>,
     /// <p>Information about the instance to export.</p>
-    #[doc(hidden)]
     pub instance_export_details: ::std::option::Option<crate::types::InstanceExportDetails>,
     /// <p>The state of the export task.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ExportTaskState>,
     /// <p>The status message related to the export task.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the export task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ExportTask {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Counters {
     /// <p>The total number of entities.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<i32>,
     /// <p>The number of passed entities.</p>
-    #[doc(hidden)]
     pub passed: ::std::option::Option<i32>,
     /// <p>The number of failed entities.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<i32>,
     /// <p>The number of warned entities.</p>
-    #[doc(hidden)]
     pub warned: ::std::option::Option<i32>,
     /// <p>The number of errored entities.</p>
-    #[doc(hidden)]
     pub errored: ::std::option::Option<i32>,
     /// <p>The number of stopped entities.</p>
-    #[doc(hidden)]
     pub stopped: ::std::option::Option<i32>,
     /// <p>The number of skipped entities.</p>
-    #[doc(hidden)]
     pub skipped: ::std::option::Option<i32>,
 }
 impl Counters {

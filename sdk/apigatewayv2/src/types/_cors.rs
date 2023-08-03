@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cors {
     /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub allow_credentials: ::std::option::Option<bool>,
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub allow_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub allow_methods: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub allow_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
-    #[doc(hidden)]
     pub max_age: ::std::option::Option<i32>,
 }
 impl Cors {

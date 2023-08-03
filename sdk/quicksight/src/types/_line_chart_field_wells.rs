@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartFieldWells {
     /// <p>The field well configuration of a line chart.</p>
-    #[doc(hidden)]
     pub line_chart_aggregated_field_wells: ::std::option::Option<crate::types::LineChartAggregatedFieldWells>,
 }
 impl LineChartFieldWells {

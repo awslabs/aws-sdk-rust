@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStackInstanceResourceDriftsInput {
     /// <p>The name or unique ID of the stack set that you want to list drifted resources for.</p>
-    #[doc(hidden)]
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The resource drift status of the stack instance. </p>
     /// <ul>
@@ -19,16 +16,12 @@ pub struct ListStackInstanceResourceDriftsInput {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stack_instance_resource_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
-    #[doc(hidden)]
     pub stack_instance_account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Region where you want to list resource drifts.</p>
-    #[doc(hidden)]
     pub stack_instance_region: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the drift operation.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -36,7 +29,6 @@ pub struct ListStackInstanceResourceDriftsInput {
     /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
     /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub call_as: ::std::option::Option<crate::types::CallAs>,
 }
 impl ListStackInstanceResourceDriftsInput {

@@ -9,7 +9,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlInjectionMatchTuple {
     /// <p>Specifies where in a web request to look for snippets of malicious SQL code.</p>
-    #[doc(hidden)]
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
     /// <p>You can only specify a single type of TextTransformation.</p>
@@ -49,7 +48,6 @@ pub struct SqlInjectionMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    #[doc(hidden)]
     pub text_transformation: ::std::option::Option<crate::types::TextTransformation>,
 }
 impl SqlInjectionMatchTuple {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIpamScopesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The scopes you want information on.</p>
-    #[doc(hidden)]
     pub ipam_scopes: ::std::option::Option<::std::vec::Vec<crate::types::IpamScope>>,
     _request_id: Option<String>,
 }

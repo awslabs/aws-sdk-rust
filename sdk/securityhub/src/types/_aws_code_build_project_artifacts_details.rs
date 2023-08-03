@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectArtifactsDetails {
     /// <p>An identifier for the artifact definition.</p>
-    #[doc(hidden)]
     pub artifact_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to disable encryption on the artifact. Only valid when <code>Type</code> is <code>S3</code>.</p>
-    #[doc(hidden)]
     pub encryption_disabled: bool,
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The name of the S3 bucket where the artifact is located.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>Only used when Type is S3. The name of the artifact. Used with <code>NamepaceType</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The value to use for the namespace. Used with <code>Name</code> and <code>Path</code> to determine the pattern for storing the artifact.</p>
-    #[doc(hidden)]
     pub namespace_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether the name specified in the buildspec file overrides the artifact name.</p>
-    #[doc(hidden)]
     pub override_artifact_name: bool,
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The type of output artifact to create.</p>
-    #[doc(hidden)]
     pub packaging: ::std::option::Option<::std::string::String>,
     /// <p>Only used when <code>Type</code> is <code>S3</code>. The path to the artifact. Used with <code>Name</code> and <code>NamespaceType</code> to determine the pattern for storing the artifact.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The type of build artifact.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectArtifactsDetails {

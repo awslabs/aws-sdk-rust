@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomVocabularyItem {
     /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
-    #[doc(hidden)]
     pub item_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
-    #[doc(hidden)]
     pub phrase: ::std::option::Option<::std::string::String>,
     /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
-    #[doc(hidden)]
     pub weight: ::std::option::Option<i32>,
     /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
-    #[doc(hidden)]
     pub display_as: ::std::option::Option<::std::string::String>,
 }
 impl CustomVocabularyItem {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplatesOutput {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
-    #[doc(hidden)]
     pub templates_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TemplateMetadata>>,
     /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

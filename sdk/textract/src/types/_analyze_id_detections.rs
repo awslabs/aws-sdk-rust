@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzeIdDetections {
     /// <p>Text of either the normalized field or value associated with it.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
-    #[doc(hidden)]
     pub normalized_value: ::std::option::Option<crate::types::NormalizedValue>,
     /// <p>The confidence score of the detected text.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl AnalyzeIdDetections {

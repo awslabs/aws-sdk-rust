@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidLayerPartException {
     /// <p>The Amazon Web Services account ID that's associated with the layer part.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The upload ID that's associated with the layer part.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The position of the last byte of the layer part.</p>
-    #[doc(hidden)]
     pub last_valid_byte_received: ::std::option::Option<i64>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

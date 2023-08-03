@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
-    #[doc(hidden)]
     pub notebook_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNotebookExecutionInput {

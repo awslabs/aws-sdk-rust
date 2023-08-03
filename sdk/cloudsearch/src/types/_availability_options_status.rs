@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityOptionsStatus {
     /// <p>The availability options configured for the domain.</p>
-    #[doc(hidden)]
     pub options: bool,
     /// <p>The status of domain configuration option.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AvailabilityOptionsStatus {

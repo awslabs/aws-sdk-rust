@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchPrincipalType {
     /// <p>UserIds or GroupIds.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Role of a User or Group.</p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalRoleType>>,
 }
 impl SearchPrincipalType {

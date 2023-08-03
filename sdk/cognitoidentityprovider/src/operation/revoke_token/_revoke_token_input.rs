@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RevokeTokenInput {
     /// <p>The refresh token that you want to revoke.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The client ID for the token that you want to revoke.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
 }
 impl RevokeTokenInput {

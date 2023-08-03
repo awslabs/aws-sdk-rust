@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkflowInput {
     /// <p>A textual description for the workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
@@ -18,15 +17,12 @@ pub struct CreateWorkflowInput {
     /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
     /// <p> For file location, you specify either the Amazon S3 bucket and key, or the Amazon EFS file system ID and path. </p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
     /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
-    #[doc(hidden)]
     pub on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWorkflowInput {

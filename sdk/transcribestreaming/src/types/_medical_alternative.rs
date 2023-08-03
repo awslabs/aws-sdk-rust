@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalAlternative {
     /// <p>Contains transcribed text.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<::std::string::String>,
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::MedicalItem>>,
     /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::MedicalEntity>>,
 }
 impl MedicalAlternative {

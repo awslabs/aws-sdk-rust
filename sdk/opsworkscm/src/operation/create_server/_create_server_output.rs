@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServerOutput {
     /// <p>The server that is created by the request. </p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SdkConfigurationProperty {
     /// <p>The name of a an SdkType configuration property.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of an SdkType configuration property.</p>
-    #[doc(hidden)]
     pub friendly_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of an SdkType configuration property.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
-    #[doc(hidden)]
     pub required: bool,
     /// <p>The default value of an SdkType configuration property.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl SdkConfigurationProperty {

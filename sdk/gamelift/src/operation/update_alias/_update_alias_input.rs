@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAliasInput {
     /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
-    #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of the alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
-    #[doc(hidden)]
     pub routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
 }
 impl UpdateAliasInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddIpRoutesInput {
     /// <p>Identifier (ID) of the directory to which to add the address block.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.</p>
-    #[doc(hidden)]
     pub ip_routes: ::std::option::Option<::std::vec::Vec<crate::types::IpRoute>>,
     /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for <i>directory ID</i> directory controllers." Following are the new rules: </p>
     /// <p>Inbound:</p>
@@ -36,7 +34,6 @@ pub struct AddIpRoutesInput {
     /// <li> <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li>
     /// </ul>
     /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
-    #[doc(hidden)]
     pub update_security_group_for_directory_controllers: ::std::option::Option<bool>,
 }
 impl AddIpRoutesInput {

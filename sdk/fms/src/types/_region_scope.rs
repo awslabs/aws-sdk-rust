@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionScope {
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
-    #[doc(hidden)]
     pub all_regions_enabled: bool,
 }
 impl RegionScope {

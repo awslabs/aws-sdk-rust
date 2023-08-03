@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancellationReason {
     /// <p>Item in the request which caused the transaction to get cancelled.</p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>Status code for the result of the cancelled transaction.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>Cancellation reason message description.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl CancellationReason {

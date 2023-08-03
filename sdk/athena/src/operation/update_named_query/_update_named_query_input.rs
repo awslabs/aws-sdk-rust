@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNamedQueryInput {
     /// <p>The unique identifier (UUID) of the query.</p>
-    #[doc(hidden)]
     pub named_query_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the query.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The query description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the query with all query statements.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNamedQueryInput {

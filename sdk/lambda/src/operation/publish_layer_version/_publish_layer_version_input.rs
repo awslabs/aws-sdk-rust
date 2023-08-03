@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    #[doc(hidden)]
     pub layer_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The function layer archive.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::LayerVersionContentInput>,
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    #[doc(hidden)]
     pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
     /// <p>The layer's software license. It can be any of the following:</p>
     /// <ul>
@@ -22,10 +18,8 @@ pub struct PublishLayerVersionInput {
     /// <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>
     /// <li> <p>The full text of the license.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub license_info: ::std::option::Option<::std::string::String>,
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    #[doc(hidden)]
     pub compatible_architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
 }
 impl PublishLayerVersionInput {

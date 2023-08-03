@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesResponseEntry {
     /// <p>A policy ID.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
-    #[doc(hidden)]
     pub policy_hash: ::std::option::Option<::std::string::String>,
     /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl GetResourcePoliciesResponseEntry {

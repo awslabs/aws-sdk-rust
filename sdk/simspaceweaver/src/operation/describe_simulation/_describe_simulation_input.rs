@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSimulationInput {
     /// <p>The name of the simulation.</p>
-    #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSimulationInput {

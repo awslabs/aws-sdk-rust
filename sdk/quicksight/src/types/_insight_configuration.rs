@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightConfiguration {
     /// <p>The computations configurations of the insight visual</p>
-    #[doc(hidden)]
     pub computations: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
     /// <p>The custom narrative of the insight visual.</p>
-    #[doc(hidden)]
     pub custom_narrative: ::std::option::Option<crate::types::CustomNarrativeOptions>,
 }
 impl InsightConfiguration {

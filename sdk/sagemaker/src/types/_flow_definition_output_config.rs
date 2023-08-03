@@ -6,10 +6,8 @@
 pub struct FlowDefinitionOutputConfig {
     /// <p>The Amazon S3 path where the object containing human output will be made available.</p>
     /// <p>To learn more about the format of Amazon A2I output data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.</p>
-    #[doc(hidden)]
     pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Key Management Service (KMS) key ID for server-side encryption.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl FlowDefinitionOutputConfig {

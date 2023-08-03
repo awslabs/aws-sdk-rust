@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadOnlyFieldInfo {
     /// <p>Identifier of the read-only field.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
 impl ReadOnlyFieldInfo {

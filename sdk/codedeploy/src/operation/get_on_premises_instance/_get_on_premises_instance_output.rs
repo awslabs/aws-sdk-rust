@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOnPremisesInstanceOutput {
     /// <p> Information about the on-premises instance. </p>
-    #[doc(hidden)]
     pub instance_info: ::std::option::Option<crate::types::InstanceInfo>,
     _request_id: Option<String>,
 }

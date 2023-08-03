@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-    #[doc(hidden)]
     pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     /// Search window time to look for dash-7 packets
-    #[doc(hidden)]
     pub recovery_window: ::std::option::Option<i32>,
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-    #[doc(hidden)]
     pub source_priority: ::std::option::Option<crate::types::SourcePriority>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::State>,
 }
 impl FailoverConfig {

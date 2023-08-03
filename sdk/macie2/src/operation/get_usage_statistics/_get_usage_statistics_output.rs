@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsageStatisticsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-    #[doc(hidden)]
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
     _request_id: Option<String>,
 }

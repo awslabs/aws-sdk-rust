@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ClassifyDocumentInput {
     /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
     /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
     /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
     /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
-    #[doc(hidden)]
     pub bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    #[doc(hidden)]
     pub document_reader_config: ::std::option::Option<crate::types::DocumentReaderConfig>,
 }
 impl ClassifyDocumentInput {

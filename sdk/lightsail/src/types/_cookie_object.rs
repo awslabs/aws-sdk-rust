@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CookieObject {
     /// <p>Specifies which cookies to forward to the distribution's origin for a cache behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the cookies specified in the <code>cookiesAllowList</code> parameter.</p>
-    #[doc(hidden)]
     pub option: ::std::option::Option<crate::types::ForwardValues>,
     /// <p>The specific cookies to forward to your distribution's origin.</p>
-    #[doc(hidden)]
     pub cookies_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CookieObject {

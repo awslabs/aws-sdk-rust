@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetPrincipalTagAttributeMapOutput {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The provider name you want to use for attribute mappings.</p>
-    #[doc(hidden)]
     pub identity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>You can use this operation to select default (username and clientID) attribute mappings.</p>
-    #[doc(hidden)]
     pub use_defaults: ::std::option::Option<bool>,
     /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
-    #[doc(hidden)]
     pub principal_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFrameworksOutput {
     /// <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
-    #[doc(hidden)]
     pub frameworks: ::std::option::Option<::std::vec::Vec<crate::types::Framework>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

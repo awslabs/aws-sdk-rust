@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReactionValueFormats {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
-    #[doc(hidden)]
     pub emoji: ::std::option::Option<::std::string::String>,
     /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
-    #[doc(hidden)]
     pub short_code: ::std::option::Option<::std::string::String>,
     /// <p>The Unicode codepoint for the reaction.</p>
-    #[doc(hidden)]
     pub unicode: ::std::option::Option<::std::string::String>,
 }
 impl ReactionValueFormats {

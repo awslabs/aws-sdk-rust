@@ -4,33 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConformancePackInput {
     /// <p>The unique name of the conformance pack you want to deploy.</p>
-    #[doc(hidden)]
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack. </p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
-    #[doc(hidden)]
     pub template_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
     /// <p>You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action (<code>AWS::Config::RemediationConfiguration</code>).</p>
     /// </note>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub delivery_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
-    #[doc(hidden)]
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    #[doc(hidden)]
     pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     /// <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
-    #[doc(hidden)]
     pub template_ssm_document_details: ::std::option::Option<crate::types::TemplateSsmDocumentDetails>,
 }
 impl PutConformancePackInput {

@@ -7,13 +7,10 @@ pub struct CreateObservabilityConfigurationInput {
     /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
     /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
     /// </note>
-    #[doc(hidden)]
     pub observability_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
-    #[doc(hidden)]
     pub trace_configuration: ::std::option::Option<crate::types::TraceConfiguration>,
     /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateObservabilityConfigurationInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateResolverQueryLogConfigOutput {
     /// <p>A complex type that contains settings for the association that you deleted between an Amazon VPC and a query logging configuration.</p>
-    #[doc(hidden)]
     pub resolver_query_log_config_association: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
     _request_id: Option<String>,
 }

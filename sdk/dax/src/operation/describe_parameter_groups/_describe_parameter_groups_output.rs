@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameter groups. Each element in the array represents one parameter group.</p>
-    #[doc(hidden)]
     pub parameter_groups: ::std::option::Option<::std::vec::Vec<crate::types::ParameterGroup>>,
     _request_id: Option<String>,
 }

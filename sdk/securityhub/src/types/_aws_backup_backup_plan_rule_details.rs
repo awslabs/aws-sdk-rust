@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsBackupBackupPlanRuleDetails {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens. </p>
-    #[doc(hidden)]
     pub target_backup_vault: ::std::option::Option<::std::string::String>,
     /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. </p>
-    #[doc(hidden)]
     pub start_window_minutes: i64,
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters. </p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of resources. </p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether Backup creates continuous backups capable of point-in-time restore (PITR). </p>
-    #[doc(hidden)]
     pub enable_continuous_backup: bool,
     /// <p>A value in minutes after a backup job is successfully started before it must be completed, or it is canceled by Backup. </p>
-    #[doc(hidden)]
     pub completion_window_minutes: i64,
     /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
-    #[doc(hidden)]
     pub copy_actions: ::std::option::Option<::std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>>,
     /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails>,
 }
 impl AwsBackupBackupPlanRuleDetails {

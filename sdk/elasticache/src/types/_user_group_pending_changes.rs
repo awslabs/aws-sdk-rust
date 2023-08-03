@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserGroupPendingChanges {
     /// <p>The list of user IDs to remove.</p>
-    #[doc(hidden)]
     pub user_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of user IDs to add.</p>
-    #[doc(hidden)]
     pub user_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UserGroupPendingChanges {

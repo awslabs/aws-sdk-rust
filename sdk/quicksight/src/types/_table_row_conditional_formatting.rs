@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableRowConditionalFormatting {
     /// <p>The conditional formatting color (solid, gradient) of the background for a table row.</p>
-    #[doc(hidden)]
     pub background_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     /// <p>The conditional formatting color (solid, gradient) of the text for a table row.</p>
-    #[doc(hidden)]
     pub text_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
 }
 impl TableRowConditionalFormatting {

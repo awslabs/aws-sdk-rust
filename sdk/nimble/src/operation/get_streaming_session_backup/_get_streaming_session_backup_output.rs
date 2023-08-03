@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamingSessionBackupOutput {
     /// <p>Information about the streaming session backup.</p>
-    #[doc(hidden)]
     pub streaming_session_backup: ::std::option::Option<crate::types::StreamingSessionBackup>,
     _request_id: Option<String>,
 }

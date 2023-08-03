@@ -16,34 +16,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeFilter {
     /// <p>Performs a logical <code>AND</code> operation on all supplied filters.</p>
-    #[doc(hidden)]
     pub and_all_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
     /// <p>Performs a logical <code>OR</code> operation on all supplied filters.</p>
-    #[doc(hidden)]
     pub or_all_filters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeFilter>>,
     /// <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
-    #[doc(hidden)]
     pub not_filter: ::std::option::Option<::std::boxed::Box<crate::types::AttributeFilter>>,
     /// <p>Performs an equals operation on two document attributes or metadata fields.</p>
-    #[doc(hidden)]
     pub equals_to: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>Returns true when a document contains all of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
-    #[doc(hidden)]
     pub contains_all: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>Returns true when a document contains any of the specified document attributes or metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.</p>
-    #[doc(hidden)]
     pub contains_any: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    #[doc(hidden)]
     pub greater_than: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    #[doc(hidden)]
     pub greater_than_or_equals: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    #[doc(hidden)]
     pub less_than: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
-    #[doc(hidden)]
     pub less_than_or_equals: ::std::option::Option<crate::types::DocumentAttribute>,
 }
 impl AttributeFilter {

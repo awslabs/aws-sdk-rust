@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainNodesStatus {
     /// <p>The ID of the node.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<crate::types::NodeType>,
     /// <p>The Availability Zone of the node.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The instance type information of the node.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     /// <p>Indicates if the node is active or in standby.</p>
-    #[doc(hidden)]
     pub node_status: ::std::option::Option<crate::types::NodeStatus>,
     /// <p>Indicates if the node has EBS or instance storage. </p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes. </p>
-    #[doc(hidden)]
     pub storage_volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The storage size of the node, in GiB.</p>
-    #[doc(hidden)]
     pub storage_size: ::std::option::Option<::std::string::String>,
 }
 impl DomainNodesStatus {

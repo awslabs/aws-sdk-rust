@@ -4,30 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIndexOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the index in this Region. For information about the aggregator index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::IndexType>,
     /// <p>The current state of the index in this Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IndexState>,
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    #[doc(hidden)]
     pub replicating_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
-    #[doc(hidden)]
     pub replicating_to: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time when the index was originally created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the index was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

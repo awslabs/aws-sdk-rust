@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionConfig {
     /// <p>A comment to describe the function.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<crate::types::FunctionRuntime>,
 }
 impl FunctionConfig {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The S3 bucket of the S3 object.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key of the S3 object.</p>
     /// <p>This is required when used for the following:</p>
@@ -16,7 +15,6 @@ pub struct S3Location {
     /// <li> <p>SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li>
     /// <li> <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an existing application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new application package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {

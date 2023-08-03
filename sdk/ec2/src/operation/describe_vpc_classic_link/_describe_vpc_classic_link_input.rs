@@ -15,13 +15,10 @@ pub struct DescribeVpcClassicLinkInput {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The VPCs for which you want to describe the ClassicLink status.</p>
-    #[doc(hidden)]
     pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeVpcClassicLinkInput {

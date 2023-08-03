@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceCount {
     /// <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The number of resources.</p>
-    #[doc(hidden)]
     pub count: i64,
 }
 impl ResourceCount {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributeDataset {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DistributeDataset {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyPackageVersionsOutput {
     /// <p> A list of the package versions that were successfully copied to your repository. </p>
-    #[doc(hidden)]
     pub successful_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SuccessfulPackageVersionInfo>>,
     /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct CopyPackageVersionsOutput {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub failed_versions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>>,
     _request_id: Option<String>,
 }

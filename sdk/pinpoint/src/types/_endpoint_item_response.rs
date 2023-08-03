@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointItemResponse {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<i32>,
 }
 impl EndpointItemResponse {

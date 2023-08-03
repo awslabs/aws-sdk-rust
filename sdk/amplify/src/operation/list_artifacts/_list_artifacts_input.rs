@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArtifactsInput {
     /// <p> The unique ID for an Amplify app. </p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of a branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID for a job. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListArtifactsInput {

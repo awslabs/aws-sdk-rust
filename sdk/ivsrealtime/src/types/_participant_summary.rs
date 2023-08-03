@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantSummary {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
-    #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information</i>.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the participant is connected to or disconnected from the stage.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ParticipantState>,
     /// <p>ISO 8601 timestamp (returned as a string) when the participant first joined the stage session.</p>
-    #[doc(hidden)]
     pub first_join_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether the participant ever published to the stage session.</p>
-    #[doc(hidden)]
     pub published: bool,
 }
 impl ParticipantSummary {

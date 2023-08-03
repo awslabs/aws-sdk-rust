@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldUrlConfiguration {
     /// <p>The link configuration of a table field URL.</p>
-    #[doc(hidden)]
     pub link_configuration: ::std::option::Option<crate::types::TableFieldLinkConfiguration>,
     /// <p>The image configuration of a table field URL.</p>
-    #[doc(hidden)]
     pub image_configuration: ::std::option::Option<crate::types::TableFieldImageConfiguration>,
 }
 impl TableFieldUrlConfiguration {

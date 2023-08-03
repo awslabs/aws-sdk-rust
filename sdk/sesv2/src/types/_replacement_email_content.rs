@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplacementEmailContent {
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
-    #[doc(hidden)]
     pub replacement_template: ::std::option::Option<crate::types::ReplacementTemplate>,
 }
 impl ReplacementEmailContent {

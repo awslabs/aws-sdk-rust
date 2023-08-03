@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
-    #[doc(hidden)]
     pub moderator: ::std::option::Option<crate::types::Identity>,
 }
 impl ChannelModeratorSummary {

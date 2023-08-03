@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointDetail {
     /// <p>The unique identifier of the endpoint.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status in the endpoint creation process.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
 impl CreateVpcEndpointDetail {

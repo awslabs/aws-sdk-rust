@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesInput {
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::SearchVulnerabilitiesFilterCriteria>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchVulnerabilitiesInput {

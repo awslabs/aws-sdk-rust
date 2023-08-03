@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlueprintRun {
     /// <p>The name of the blueprint.</p>
-    #[doc(hidden)]
     pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>The run ID for this blueprint run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
-    #[doc(hidden)]
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the blueprint run. Possible values are:</p>
     /// <ul>
@@ -20,25 +17,18 @@ pub struct BlueprintRun {
     /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
     /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::BlueprintRunState>,
     /// <p>The date and time that the blueprint run started.</p>
-    #[doc(hidden)]
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the blueprint run completed.</p>
-    #[doc(hidden)]
     pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates any errors that are seen while running the blueprint.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
-    #[doc(hidden)]
     pub rollback_error_message: ::std::option::Option<::std::string::String>,
     /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl BlueprintRun {

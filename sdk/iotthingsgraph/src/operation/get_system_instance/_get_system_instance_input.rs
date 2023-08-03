@@ -6,7 +6,6 @@ pub struct GetSystemInstanceInput {
     /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetSystemInstanceInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotFleetRequestConfig {
     /// <p>The progress of the Spot Fleet request. If there is an error, the status is <code>error</code>. After all requests are placed, the status is <code>pending_fulfillment</code>. If the size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code> while Spot Instances are terminating.</p>
-    #[doc(hidden)]
     pub activity_status: ::std::option::Option<crate::types::ActivityStatus>,
     /// <p>The creation date and time of the request.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub spot_fleet_request_config: ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
     /// <p>The ID of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub spot_fleet_request_state: ::std::option::Option<crate::types::BatchState>,
     /// <p>The tags for a Spot Fleet resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl SpotFleetRequestConfig {

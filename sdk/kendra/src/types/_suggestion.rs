@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Suggestion {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::SuggestionValue>,
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
-    #[doc(hidden)]
     pub source_documents: ::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>>,
 }
 impl Suggestion {

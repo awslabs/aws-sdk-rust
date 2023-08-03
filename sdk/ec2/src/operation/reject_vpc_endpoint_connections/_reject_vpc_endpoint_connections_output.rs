@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectVpcEndpointConnectionsOutput {
     /// <p>Information about the endpoints that were not rejected, if applicable.</p>
-    #[doc(hidden)]
     pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
 }

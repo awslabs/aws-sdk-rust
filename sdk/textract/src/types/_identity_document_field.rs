@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityDocumentField {
     /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AnalyzeIdDetections>,
     /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
-    #[doc(hidden)]
     pub value_detection: ::std::option::Option<crate::types::AnalyzeIdDetections>,
 }
 impl IdentityDocumentField {

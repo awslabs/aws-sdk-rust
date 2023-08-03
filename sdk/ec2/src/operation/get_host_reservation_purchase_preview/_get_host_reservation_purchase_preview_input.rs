@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostReservationPurchasePreviewInput {
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-    #[doc(hidden)]
     pub host_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The offering ID of the reservation.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHostReservationPurchasePreviewInput {

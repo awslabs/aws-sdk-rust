@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrganizationPortfolioAccessOutput {
     /// <p>Displays information about the organization nodes.</p>
-    #[doc(hidden)]
     pub organization_nodes: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationNode>>,
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

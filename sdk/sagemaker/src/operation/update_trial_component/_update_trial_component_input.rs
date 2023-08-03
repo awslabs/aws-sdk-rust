@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrialComponentInput {
     /// <p>The name of the component to update.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The new status of the component.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TrialComponentStatus>,
     /// <p>When the component started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the component ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>>,
     /// <p>The hyperparameters to remove from the component.</p>
-    #[doc(hidden)]
     pub parameters_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
-    #[doc(hidden)]
     pub input_artifacts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     /// <p>The input artifacts to remove from the component.</p>
-    #[doc(hidden)]
     pub input_artifacts_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
-    #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     /// <p>The output artifacts to remove from the component.</p>
-    #[doc(hidden)]
     pub output_artifacts_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateTrialComponentInput {

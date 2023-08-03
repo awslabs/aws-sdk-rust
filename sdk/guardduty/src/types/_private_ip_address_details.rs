@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateIpAddressDetails {
     /// <p>The private DNS name of the EC2 instance.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address of the EC2 instance.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl PrivateIpAddressDetails {

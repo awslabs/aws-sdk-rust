@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBatchInferenceJobOutput {
     /// <p>Information on the specified batch inference job.</p>
-    #[doc(hidden)]
     pub batch_inference_job: ::std::option::Option<crate::types::BatchInferenceJob>,
     _request_id: Option<String>,
 }

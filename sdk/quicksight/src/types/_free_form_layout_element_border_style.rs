@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormLayoutElementBorderStyle {
     /// <p>The border visibility of a free-form layout element.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The border color of a free-form layout element.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutElementBorderStyle {

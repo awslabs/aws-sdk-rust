@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportServerEngineAttributeInput {
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
-    #[doc(hidden)]
     pub export_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the server from which you are exporting the attribute.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct ExportServerEngineAttributeInput {
     /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
     /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub input_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl ExportServerEngineAttributeInput {

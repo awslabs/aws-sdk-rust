@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceServerInput {
     /// <p>The user pool ID for the user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name for the resource server.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
-    #[doc(hidden)]
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
 }
 impl CreateResourceServerInput {

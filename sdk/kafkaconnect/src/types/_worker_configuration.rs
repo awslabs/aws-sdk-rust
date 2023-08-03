@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerConfiguration {
     /// <p>The revision of the worker configuration.</p>
-    #[doc(hidden)]
     pub revision: i64,
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    #[doc(hidden)]
     pub worker_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkerConfiguration {

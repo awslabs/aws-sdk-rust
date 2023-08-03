@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateParallelDataOutput {
     /// <p>The custom name that you assigned to the parallel data resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ParallelDataStatus>,
     _request_id: Option<String>,
 }

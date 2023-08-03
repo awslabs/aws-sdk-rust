@@ -7,7 +7,6 @@ pub struct BlockchainInstant {
     /// <p>The container of the <code>Timestamp</code> of the blockchain instant.</p> <note>
     /// <p>This <code>timestamp</code> will only be recorded up to the second.</p>
     /// </note>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BlockchainInstant {

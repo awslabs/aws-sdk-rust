@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSummaryConfig {
     /// <p>If set to <code>True</code>, any unrecognized resource types generate warnings and not an error. Any unrecognized resource types are returned in the <code>Warnings</code> output parameter.</p>
-    #[doc(hidden)]
     pub treat_unrecognized_resource_types_as_warnings: ::std::option::Option<bool>,
 }
 impl TemplateSummaryConfig {

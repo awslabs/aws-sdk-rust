@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Output {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     /// A description of the output.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// The address where you want to send the output.
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
-    #[doc(hidden)]
     pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
-    #[doc(hidden)]
     pub listener_address: ::std::option::Option<::std::string::String>,
     /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
-    #[doc(hidden)]
     pub media_live_input_arn: ::std::option::Option<::std::string::String>,
     /// The configuration for each media stream that is associated with the output.
-    #[doc(hidden)]
     pub media_stream_output_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfiguration>>,
     /// The name of the output. This value must be unique within the current flow.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The ARN of the output.
-    #[doc(hidden)]
     pub output_arn: ::std::option::Option<::std::string::String>,
     /// The port to use when content is distributed to this output.
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// Attributes related to the transport stream that are used in the output.
-    #[doc(hidden)]
     pub transport: ::std::option::Option<crate::types::Transport>,
     /// The name of the VPC interface attachment to use for this output.
-    #[doc(hidden)]
     pub vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
     /// The ARN of the bridge that added this output.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The bridge output ports currently in use.
-    #[doc(hidden)]
     pub bridge_ports: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl Output {

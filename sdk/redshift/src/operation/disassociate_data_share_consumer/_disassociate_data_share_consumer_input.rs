@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
-    #[doc(hidden)]
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
-    #[doc(hidden)]
     pub disassociate_entire_account: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
-    #[doc(hidden)]
     pub consumer_arn: ::std::option::Option<::std::string::String>,
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub consumer_region: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateDataShareConsumerInput {

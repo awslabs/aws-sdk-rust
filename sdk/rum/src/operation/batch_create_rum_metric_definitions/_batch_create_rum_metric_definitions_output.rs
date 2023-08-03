@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateRumMetricDefinitionsError>>,
     /// <p>An array of structures that define the extended metrics.</p>
-    #[doc(hidden)]
     pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>>,
     _request_id: Option<String>,
 }

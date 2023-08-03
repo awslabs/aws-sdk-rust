@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMediaLiveConnectorPipelineInput {
     /// <p>The media live connector pipeline's data sources.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
     /// <p>The media live connector pipeline's data sinks.</p>
-    #[doc(hidden)]
     pub sinks: ::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
     /// <p>The token assigned to the client making the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the media live connector pipeline.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaLiveConnectorPipelineInput {

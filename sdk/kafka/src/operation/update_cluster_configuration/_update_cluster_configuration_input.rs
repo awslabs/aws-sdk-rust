@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClusterConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    #[doc(hidden)]
     pub configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
     /// <p>The version of the cluster that needs to be updated.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterConfigurationInput {

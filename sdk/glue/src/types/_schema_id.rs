@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaId {
     /// <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema registry that contains the schema.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
 }
 impl SchemaId {

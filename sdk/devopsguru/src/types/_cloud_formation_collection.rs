@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFormationCollection {
     /// <p> An array of CloudFormation stack names. </p>
-    #[doc(hidden)]
     pub stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudFormationCollection {

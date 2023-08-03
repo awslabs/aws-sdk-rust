@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationSubnetGroup {
     /// <p>The identifier of the replication instance subnet group.</p>
-    #[doc(hidden)]
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A description for the replication subnet group.</p>
-    #[doc(hidden)]
     pub replication_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the subnet group.</p>
-    #[doc(hidden)]
     pub subnet_group_status: ::std::option::Option<::std::string::String>,
     /// <p>The subnets that are in the subnet group.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    #[doc(hidden)]
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReplicationSubnetGroup {

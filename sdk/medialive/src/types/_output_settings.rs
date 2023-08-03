@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputSettings {
     /// Archive Output Settings
-    #[doc(hidden)]
     pub archive_output_settings: ::std::option::Option<crate::types::ArchiveOutputSettings>,
     /// Frame Capture Output Settings
-    #[doc(hidden)]
     pub frame_capture_output_settings: ::std::option::Option<crate::types::FrameCaptureOutputSettings>,
     /// Hls Output Settings
-    #[doc(hidden)]
     pub hls_output_settings: ::std::option::Option<crate::types::HlsOutputSettings>,
     /// Media Package Output Settings
-    #[doc(hidden)]
     pub media_package_output_settings: ::std::option::Option<crate::types::MediaPackageOutputSettings>,
     /// Ms Smooth Output Settings
-    #[doc(hidden)]
     pub ms_smooth_output_settings: ::std::option::Option<crate::types::MsSmoothOutputSettings>,
     /// Multiplex Output Settings
-    #[doc(hidden)]
     pub multiplex_output_settings: ::std::option::Option<crate::types::MultiplexOutputSettings>,
     /// Rtmp Output Settings
-    #[doc(hidden)]
     pub rtmp_output_settings: ::std::option::Option<crate::types::RtmpOutputSettings>,
     /// Udp Output Settings
-    #[doc(hidden)]
     pub udp_output_settings: ::std::option::Option<crate::types::UdpOutputSettings>,
 }
 impl OutputSettings {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyntaxToken {
     /// <p>A unique identifier for a token.</p>
-    #[doc(hidden)]
     pub token_id: ::std::option::Option<i32>,
     /// <p>The word that was recognized in the source text.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The zero-based offset from the beginning of the source text to the first character in the word.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based offset from the beginning of the source text to the last character in the word.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    #[doc(hidden)]
     pub part_of_speech: ::std::option::Option<crate::types::PartOfSpeechTag>,
 }
 impl SyntaxToken {

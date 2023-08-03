@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCurrentMetricDataInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct GetCurrentMetricDataInput {
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request. </p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::Filters>,
     /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. </p>
     /// <ul>
@@ -22,7 +20,6 @@ pub struct GetCurrentMetricDataInput {
     /// <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
     /// <li> <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub groupings: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
     /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     /// <dl>
@@ -122,21 +119,17 @@ pub struct GetCurrentMetricDataInput {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub current_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetric>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
     /// <li> <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>,
 }
 impl GetCurrentMetricDataInput {

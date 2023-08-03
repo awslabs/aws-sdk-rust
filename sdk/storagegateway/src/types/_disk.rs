@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Disk {
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
-    #[doc(hidden)]
     pub disk_id: ::std::option::Option<::std::string::String>,
     /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
-    #[doc(hidden)]
     pub disk_path: ::std::option::Option<::std::string::String>,
     /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
-    #[doc(hidden)]
     pub disk_node: ::std::option::Option<::std::string::String>,
     /// <p>A value that represents the status of a local disk.</p>
-    #[doc(hidden)]
     pub disk_status: ::std::option::Option<::std::string::String>,
     /// <p>The local disk size in bytes.</p>
-    #[doc(hidden)]
     pub disk_size_in_bytes: i64,
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-    #[doc(hidden)]
     pub disk_allocation_type: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
-    #[doc(hidden)]
     pub disk_allocation_resource: ::std::option::Option<::std::string::String>,
     /// <p>A list of values that represents attributes of a local disk.</p>
-    #[doc(hidden)]
     pub disk_attribute_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Disk {

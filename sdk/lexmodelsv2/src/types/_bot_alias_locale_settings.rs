@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotAliasLocaleSettings {
     /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies the Lambda function that should be used in the locale.</p>
-    #[doc(hidden)]
     pub code_hook_specification: ::std::option::Option<crate::types::CodeHookSpecification>,
 }
 impl BotAliasLocaleSettings {

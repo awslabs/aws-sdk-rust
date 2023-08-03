@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInAppTemplateOutput {
     /// <p>In-App Template Response.</p>
-    #[doc(hidden)]
     pub in_app_template_response: ::std::option::Option<crate::types::InAppTemplateResponse>,
     _request_id: Option<String>,
 }

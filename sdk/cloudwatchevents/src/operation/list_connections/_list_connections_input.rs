@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectionsInput {
     /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
-    #[doc(hidden)]
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connection.</p>
-    #[doc(hidden)]
     pub connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of connections to return.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl ListConnectionsInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationUtilizationGroup {
     /// <p>The key for a specific reservation attribute.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of a specific reservation attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The attributes for this group of reservations.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>How much you used this group of reservations.</p>
-    #[doc(hidden)]
     pub utilization: ::std::option::Option<crate::types::ReservationAggregates>,
 }
 impl ReservationUtilizationGroup {

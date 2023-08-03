@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMediaInsightsPipelineInput {
     /// <p>The ARN of the pipeline's configuration.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The runtime configuration for the Kinesis video stream source of the media insights pipeline.</p>
-    #[doc(hidden)]
     pub kinesis_video_stream_source_runtime_configuration: ::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration>,
     /// <p>The runtime metadata for the media insights pipeline. Consists of a key-value map of strings.</p>
-    #[doc(hidden)]
     pub media_insights_runtime_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
-    #[doc(hidden)]
     pub kinesis_video_stream_recording_source_runtime_configuration:
         ::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>,
     /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
-    #[doc(hidden)]
     pub s3_recording_sink_runtime_configuration: ::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration>,
     /// <p>The tags assigned to the media insights pipeline.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The unique identifier for the media insights pipeline request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateMediaInsightsPipelineInput {

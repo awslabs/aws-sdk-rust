@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanFuotaTask {
     /// <p>Supported RfRegions</p>
-    #[doc(hidden)]
     pub rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
 }
 impl LoRaWanFuotaTask {

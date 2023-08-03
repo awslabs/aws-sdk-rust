@@ -13,10 +13,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisteredDomainDelegationInfo {
     /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
-    #[doc(hidden)]
     pub name_servers_update_state: ::std::option::Option<crate::types::NameServersUpdateState>,
     /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
-    #[doc(hidden)]
     pub r53_hosted_zone_deletion_state: ::std::option::Option<crate::types::R53HostedZoneDeletionState>,
 }
 impl RegisteredDomainDelegationInfo {

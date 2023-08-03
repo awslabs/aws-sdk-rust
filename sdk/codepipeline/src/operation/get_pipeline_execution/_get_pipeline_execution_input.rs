@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineExecutionInput {
     /// <p>The name of the pipeline about which you want to get execution details.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
-    #[doc(hidden)]
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPipelineExecutionInput {

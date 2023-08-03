@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectModerationLabelsOutput {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
-    #[doc(hidden)]
     pub moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>,
     /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
-    #[doc(hidden)]
     pub moderation_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    #[doc(hidden)]
     pub human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     _request_id: Option<String>,
 }

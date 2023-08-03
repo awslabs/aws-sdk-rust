@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobForDevicesInput {
     /// <p>ID of target device.</p>
-    #[doc(hidden)]
     pub device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Configuration settings for a software update job.</p>
-    #[doc(hidden)]
     pub device_job_config: ::std::option::Option<crate::types::DeviceJobConfig>,
     /// <p>The type of job to run.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::JobType>,
 }
 impl CreateJobForDevicesInput {

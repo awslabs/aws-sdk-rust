@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesOutput {
     /// <p>A token that indicates the location of the next service in the array of services, after the current requested list of services.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of services with summaries of detail data.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>>,
     _request_id: Option<String>,
 }

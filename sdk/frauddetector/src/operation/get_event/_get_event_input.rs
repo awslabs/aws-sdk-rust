@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventInput {
     /// <p>The ID of the event to retrieve.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type of the event to retrieve.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
 }
 impl GetEventInput {

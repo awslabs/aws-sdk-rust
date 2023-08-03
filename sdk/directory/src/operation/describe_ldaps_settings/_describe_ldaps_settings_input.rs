@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLdapsSettingsInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::LdapsType>,
     /// <p>The type of next token used for pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of items that should be displayed on one page.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeLdapsSettingsInput {

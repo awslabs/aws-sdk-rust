@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessorSettingsForUpdate {
     /// <p> The label detection settings you want to use for your stream processor. </p>
-    #[doc(hidden)]
     pub connected_home_for_update: ::std::option::Option<crate::types::ConnectedHomeSettingsForUpdate>,
 }
 impl StreamProcessorSettingsForUpdate {

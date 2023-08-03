@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketConfiguration {
     /// <p>The name of an existing Amazon S3 bucket where the generated snapshot artifacts are sent.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the Amazon S3 bucket that the generated snapshots are stored in.</p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The region that the Amazon S3 bucket is located in. The bucket must be located in the same region that the <code>StartDashboardSnapshotJob</code> API call is made.</p>
-    #[doc(hidden)]
     pub bucket_region: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketConfiguration {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyVersion {
     /// <p>The policy version ID.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the policy version is the default.</p>
-    #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The date and time the policy was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PolicyVersion {

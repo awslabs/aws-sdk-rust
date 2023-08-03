@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPreviewFinding {
     /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
-    #[doc(hidden)]
     pub existing_finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The existing status of the finding, provided only for existing findings.</p>
-    #[doc(hidden)]
     pub existing_finding_status: ::std::option::Option<crate::types::FindingStatus>,
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
-    #[doc(hidden)]
     pub is_public: ::std::option::Option<bool>,
     /// <p>The type of the resource that can be accessed in the finding.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The time at which the access preview finding was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
@@ -41,19 +31,14 @@ pub struct AccessPreviewFinding {
     /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-    #[doc(hidden)]
     pub change_type: ::std::option::Option<crate::types::FindingChangeType>,
     /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FindingStatus>,
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    #[doc(hidden)]
     pub resource_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>An error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>,
 }
 impl AccessPreviewFinding {

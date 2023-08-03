@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryStatus {
     /// <p>The current state of the canary.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CanaryState>,
     /// <p>If the canary has insufficient permissions to run, this field provides more details.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>If the canary cannot run or has failed, this field displays the reason.</p>
-    #[doc(hidden)]
     pub state_reason_code: ::std::option::Option<crate::types::CanaryStateReasonCode>,
 }
 impl CanaryStatus {

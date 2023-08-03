@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
     /// <p>Returns a list of summary details for all the applications in a runtime environment.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
     /// <p>A pagination token that's returned when the response doesn't contain all applications.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

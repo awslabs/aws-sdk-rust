@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAttachmentInput {
     /// <p>A unique identifier for the attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
-    #[doc(hidden)]
     pub connection_token: ::std::option::Option<::std::string::String>,
 }
 impl GetAttachmentInput {

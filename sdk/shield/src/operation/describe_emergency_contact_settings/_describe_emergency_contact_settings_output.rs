@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEmergencyContactSettingsOutput {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
-    #[doc(hidden)]
     pub emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
     _request_id: Option<String>,
 }

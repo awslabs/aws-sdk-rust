@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseEvent {
     /// <p>The database that the database event relates to.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the database event was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message of the database event.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The category that the database event belongs to.</p>
-    #[doc(hidden)]
     pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RelationalDatabaseEvent {

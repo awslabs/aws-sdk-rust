@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSegmentReferencesInput {
     /// <p>The ARN of the segment that you want to view information for.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SegmentReferenceResourceType>,
 }
 impl ListSegmentReferencesInput {

@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceOutput {
     /// <p>The current state of the device.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeviceStatus>,
     /// <p>The model of the device.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The manufacturer of the device.</p>
-    #[doc(hidden)]
     pub manufacturer: ::std::option::Option<::std::string::String>,
     /// <p>The operating system of the device.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<::std::string::String>,
     /// <p>The operating system version of the device.</p>
-    #[doc(hidden)]
     pub operating_system_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system patch level of the device.</p>
-    #[doc(hidden)]
     pub patch_level: ::std::option::Option<::std::string::String>,
     /// <p>The date that the device first signed in to Amazon WorkLink.</p>
-    #[doc(hidden)]
     pub first_accessed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the device last accessed Amazon WorkLink.</p>
-    #[doc(hidden)]
     pub last_accessed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user name associated with the device.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

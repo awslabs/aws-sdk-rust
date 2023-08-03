@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration. The minimum possible value is 1 and the maximum is 100.</p>
-    #[doc(hidden)]
     pub desired_capacity: ::std::option::Option<i32>,
 }
 impl HighAvailabilityConfig {

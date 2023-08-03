@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ProgressEvent {
     /// <p>The name of the resource type used in the operation.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The primary identifier for the resource.</p> <note>
     /// <p>In some cases, the resource identifier may be available before the resource operation has reached a status of <code>SUCCESS</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique token representing this resource operation request.</p>
     /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation request.</p>
-    #[doc(hidden)]
     pub request_token: ::std::option::Option<::std::string::String>,
     /// <p>The resource operation type.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::Operation>,
     /// <p>The current status of the resource operation request.</p>
     /// <ul>
@@ -28,23 +24,17 @@ pub struct ProgressEvent {
     /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub operation_status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>When the resource operation request was initiated.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A JSON string containing the resource model, consisting of each resource property and its current value.</p>
-    #[doc(hidden)]
     pub resource_model: ::std::option::Option<::std::string::String>,
     /// <p>Any message explaining the current status.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>For requests with a status of <code>FAILED</code>, the associated error code.</p>
     /// <p>For error code definitions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-test-contract-errors.html">Handler error codes</a> in the <i>CloudFormation Command Line Interface User Guide for Extension Development</i>.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::HandlerErrorCode>,
     /// <p>When to next request the status of this resource operation request.</p>
-    #[doc(hidden)]
     pub retry_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProgressEvent {

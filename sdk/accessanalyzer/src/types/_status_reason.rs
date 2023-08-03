@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ReasonCode>,
 }
 impl StatusReason {

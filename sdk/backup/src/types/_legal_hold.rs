@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LegalHold {
     /// <p>This is the title of a legal hold.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LegalHoldStatus>,
     /// <p>This is the description of a legal hold.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>ID of specific legal hold on one or more recovery points.</p>
-    #[doc(hidden)]
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
     /// <p>This is an Amazon Resource Number (ARN) that uniquely identifies the legal hold; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    #[doc(hidden)]
     pub legal_hold_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is the time in number format when legal hold was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is the time in number format when legal hold was cancelled.</p>
-    #[doc(hidden)]
     pub cancellation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LegalHold {

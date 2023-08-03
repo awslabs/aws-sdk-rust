@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetAdvisorCollectorOutput {
     /// <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
-    #[doc(hidden)]
     pub collector_referenced_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub collector_name: ::std::option::Option<::std::string::String>,
     /// <p>A summary description of the Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES Configuration API and for indexing documents. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon ES domain. The IAM role must have permissions for&nbsp;<code>DescribeDomain</code>, <code>DescribeDomains</code>, and <code>DescribeDomainConfig</code>&nbsp;after assuming the IAM role specified in <code>RoleARN</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     /// <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Specify either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field.</p>
-    #[doc(hidden)]
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error during runtime.</p>
     /// <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new index name, provide an empty string for <code>TypeName</code>. </p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the Amazon ES Destination</a>. Default value is&nbsp;<code>OneDay</code>.</p>
-    #[doc(hidden)]
     pub index_rotation_period: ::std::option::Option<crate::types::ElasticsearchIndexRotationPeriod>,
     /// <p>The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values are used. </p>
-    #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::ElasticsearchBufferingHints>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5 minutes).</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::ElasticsearchRetryOptions>,
     /// <p>The Amazon S3 destination.</p>
-    #[doc(hidden)]
     pub s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>The data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
 impl ElasticsearchDestinationUpdate {

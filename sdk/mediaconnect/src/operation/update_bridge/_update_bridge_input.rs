@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeInput {
     /// The Amazon Resource Number (ARN) of the bridge that you want to update.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub egress_gateway_bridge: ::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub ingress_gateway_bridge: ::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest>,
     /// The settings for source failover.
-    #[doc(hidden)]
     pub source_failover_config: ::std::option::Option<crate::types::UpdateFailoverConfig>,
 }
 impl UpdateBridgeInput {

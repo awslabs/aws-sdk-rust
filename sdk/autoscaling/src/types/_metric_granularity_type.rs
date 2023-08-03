@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricGranularityType {
     /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
-    #[doc(hidden)]
     pub granularity: ::std::option::Option<::std::string::String>,
 }
 impl MetricGranularityType {

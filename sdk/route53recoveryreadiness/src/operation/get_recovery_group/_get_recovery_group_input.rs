@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecoveryGroupInput {
     /// <p>The name of a recovery group.</p>
-    #[doc(hidden)]
     pub recovery_group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetRecoveryGroupInput {

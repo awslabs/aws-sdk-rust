@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbProxyEndpointInput {
     /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
-    #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB proxy endpoint to create.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
-    #[doc(hidden)]
     pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
-    #[doc(hidden)]
     pub target_role: ::std::option::Option<crate::types::DbProxyEndpointTargetRole>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbProxyEndpointInput {

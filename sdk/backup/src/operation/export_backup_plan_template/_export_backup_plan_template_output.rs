@@ -6,7 +6,6 @@ pub struct ExportBackupPlanTemplateOutput {
     /// <p>The body of a backup plan template in JSON format.</p> <note>
     /// <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>
     /// </note>
-    #[doc(hidden)]
     pub backup_plan_template_json: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

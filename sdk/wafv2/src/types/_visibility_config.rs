@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisibilityConfig {
     /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
-    #[doc(hidden)]
     pub sampled_requests_enabled: bool,
     /// <p>Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies the default action to web requests that pass the inspection of all rules in the web ACL without being either allowed or blocked. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL default action</a> in the <i>WAF Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub cloud_watch_metrics_enabled: bool,
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl VisibilityConfig {

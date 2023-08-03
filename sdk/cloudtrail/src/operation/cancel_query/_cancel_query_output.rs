@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQueryOutput {
     /// <p>The ID of the canceled query.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
-    #[doc(hidden)]
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
     _request_id: Option<String>,
 }

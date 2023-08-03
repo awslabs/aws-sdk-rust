@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceAttributes {
     /// <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".</p>
-    #[doc(hidden)]
     pub ec2_key_name: ::std::option::Option<::std::string::String>,
     /// <p>Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
-    #[doc(hidden)]
     pub ec2_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more Amazon EC2 subnets in which to launch Amazon EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses the Amazon EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this value is not specified, and the account and Region support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    #[doc(hidden)]
     pub requested_ec2_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Availability Zone in which the cluster will run. </p>
-    #[doc(hidden)]
     pub ec2_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.</p>
-    #[doc(hidden)]
     pub requested_ec2_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IAM role that was specified when the cluster was launched. The Amazon EC2 instances of the cluster assume this role.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the master node.</p>
-    #[doc(hidden)]
     pub emr_managed_master_security_group: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>
-    #[doc(hidden)]
     pub emr_managed_slave_security_group: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
-    #[doc(hidden)]
     pub service_access_security_group: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
-    #[doc(hidden)]
     pub additional_master_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
-    #[doc(hidden)]
     pub additional_slave_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Ec2InstanceAttributes {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResultQualifier {
     /// <p>The name of the Config rule that was used in the evaluation.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    #[doc(hidden)]
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
 impl EvaluationResultQualifier {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIceServerConfigInput {
     /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::Service>,
     /// <p>An optional user ID to be associated with the credentials.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl GetIceServerConfigInput {

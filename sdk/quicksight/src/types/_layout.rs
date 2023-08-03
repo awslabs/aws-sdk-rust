@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Layout {
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
 }
 impl Layout {

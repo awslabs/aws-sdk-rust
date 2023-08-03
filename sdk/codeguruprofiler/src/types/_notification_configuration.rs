@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
 }
 impl NotificationConfiguration {

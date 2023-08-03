@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricPolicy {
     /// <p>A setting to enable or disable metrics at the container level.</p>
-    #[doc(hidden)]
     pub container_level_metrics: ::std::option::Option<crate::types::ContainerLevelMetrics>,
     /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
-    #[doc(hidden)]
     pub metric_policy_rules: ::std::option::Option<::std::vec::Vec<crate::types::MetricPolicyRule>>,
 }
 impl MetricPolicy {

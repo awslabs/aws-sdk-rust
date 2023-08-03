@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableReachabilityAnalyzerOrganizationSharingOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
-    #[doc(hidden)]
     pub return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

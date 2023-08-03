@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalNumber {
     /// <p>The unscaled numeric value.</p>
-    #[doc(hidden)]
     pub unscaled_value: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
-    #[doc(hidden)]
     pub scale: i32,
 }
 impl DecimalNumber {

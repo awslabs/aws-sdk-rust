@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupsConfig {
     /// <p>One or more target groups.</p>
-    #[doc(hidden)]
     pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
 }
 impl TargetGroupsConfig {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorTypesOutput {
     /// <p> The available accelerator types. </p>
-    #[doc(hidden)]
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
     _request_id: Option<String>,
 }

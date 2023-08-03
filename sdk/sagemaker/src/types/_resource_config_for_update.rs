@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceConfigForUpdate {
     /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
-    #[doc(hidden)]
     pub keep_alive_period_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceConfigForUpdate {

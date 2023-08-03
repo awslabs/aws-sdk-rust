@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateResourcePolicyInput {
     /// <p>This field is reserved for internal use.</p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl ValidateResourcePolicyInput {

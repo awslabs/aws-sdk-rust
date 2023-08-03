@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceConfiguration {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
-    #[doc(hidden)]
     pub server_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -16,30 +15,22 @@ pub struct SalesforceConfiguration {
     /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
-    #[doc(hidden)]
     pub standard_object_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>>,
     /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
-    #[doc(hidden)]
     pub knowledge_article_configuration: ::std::option::Option<crate::types::SalesforceKnowledgeArticleConfiguration>,
     /// <p>Configuration information for Salesforce chatter feeds.</p>
-    #[doc(hidden)]
     pub chatter_feed_configuration: ::std::option::Option<crate::types::SalesforceChatterFeedConfiguration>,
     /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
-    #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
-    #[doc(hidden)]
     pub standard_object_attachment_configuration: ::std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
     /// <p>A list of regular expression patterns to include certain documents in your Salesforce. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
-    #[doc(hidden)]
     pub include_attachment_file_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain documents in your Salesforce. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
-    #[doc(hidden)]
     pub exclude_attachment_file_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SalesforceConfiguration {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualClustersInput {
     /// <p>The container provider ID of the virtual cluster.</p>
-    #[doc(hidden)]
     pub container_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
-    #[doc(hidden)]
     pub container_provider_type: ::std::option::Option<crate::types::ContainerProviderType>,
     /// <p>The date and time after which the virtual clusters are created.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time before which the virtual clusters are created.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The states of the requested virtual clusters.</p>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::VirtualClusterState>>,
     /// <p>The maximum number of virtual clusters that can be listed.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of virtual clusters to return. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListVirtualClustersInput {

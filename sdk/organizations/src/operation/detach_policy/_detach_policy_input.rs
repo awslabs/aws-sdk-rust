@@ -5,7 +5,6 @@
 pub struct DetachPolicyInput {
     /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
@@ -14,7 +13,6 @@ pub struct DetachPolicyInput {
     /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
 }
 impl DetachPolicyInput {

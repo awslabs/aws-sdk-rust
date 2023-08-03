@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleResult {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    #[doc(hidden)]
     pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleResult {

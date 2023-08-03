@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrConfiguration {
     /// <p>The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don’t provide this information, Image Builder creates a repository in your account named <code>image-builder-image-scanning-repository</code> for vulnerability scans of your output container images.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
-    #[doc(hidden)]
     pub container_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EcrConfiguration {

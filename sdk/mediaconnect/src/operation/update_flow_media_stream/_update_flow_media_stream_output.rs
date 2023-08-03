@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowMediaStreamOutput {
     /// The ARN of the flow that is associated with the media stream that you updated.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The media stream that you updated.
-    #[doc(hidden)]
     pub media_stream: ::std::option::Option<crate::types::MediaStream>,
     _request_id: Option<String>,
 }

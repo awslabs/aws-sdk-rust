@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionStartedEventAttributes {
     /// <p>The input provided to the workflow execution.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration of decision tasks for this workflow type.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    #[doc(hidden)]
     pub task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -22,31 +19,22 @@ pub struct WorkflowExecutionStartedEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>The name of the task list for scheduling the decision tasks for this workflow execution.</p>
-    #[doc(hidden)]
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p>The priority of the decision tasks in the workflow execution.</p>
-    #[doc(hidden)]
     pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>The workflow type of this execution.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The list of tags associated with this workflow execution. An execution can have up to 5 tags.</p>
-    #[doc(hidden)]
     pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If this workflow execution was started due to a <code>ContinueAsNewWorkflowExecution</code> decision, then it contains the <code>runId</code> of the previous workflow execution that was closed and continued as this execution.</p>
-    #[doc(hidden)]
     pub continued_execution_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The source workflow execution that started this workflow execution. The member isn't set if the workflow execution was not started by a workflow.</p>
-    #[doc(hidden)]
     pub parent_workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this workflow execution. The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub parent_initiated_event_id: i64,
     /// <p>The IAM role attached to the workflow execution.</p>
-    #[doc(hidden)]
     pub lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionStartedEventAttributes {

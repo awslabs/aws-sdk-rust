@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSeverityLevelsOutput {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
-    #[doc(hidden)]
     pub severity_levels: ::std::option::Option<::std::vec::Vec<crate::types::SeverityLevel>>,
     _request_id: Option<String>,
 }

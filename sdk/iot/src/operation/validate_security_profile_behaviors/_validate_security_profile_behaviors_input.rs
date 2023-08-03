@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSecurityProfileBehaviorsInput {
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    #[doc(hidden)]
     pub behaviors: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
 }
 impl ValidateSecurityProfileBehaviorsInput {

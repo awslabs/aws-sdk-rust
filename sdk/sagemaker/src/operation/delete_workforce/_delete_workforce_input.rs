@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkforceInput {
     /// <p>The name of the workforce.</p>
-    #[doc(hidden)]
     pub workforce_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorkforceInput {

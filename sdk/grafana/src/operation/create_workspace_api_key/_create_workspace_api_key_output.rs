@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWorkspaceApiKeyOutput {
     /// <p>The name of the key that was created.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workspace that the key is valid for.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

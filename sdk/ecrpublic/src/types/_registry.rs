@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Registry {
     /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
-    #[doc(hidden)]
     pub registry_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
-    #[doc(hidden)]
     pub registry_uri: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
-    #[doc(hidden)]
     pub verified: ::std::option::Option<bool>,
     /// <p>An array of objects that represents the aliases for a public registry.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>>,
 }
 impl Registry {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerlessSasl {
     /// <p>Indicates whether IAM access control is enabled.</p>
-    #[doc(hidden)]
     pub iam: ::std::option::Option<crate::types::Iam>,
 }
 impl ServerlessSasl {

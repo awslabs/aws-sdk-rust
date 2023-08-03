@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Outposts bucket. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
 }
 impl LifecycleConfiguration {

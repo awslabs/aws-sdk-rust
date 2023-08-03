@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignOutboundCallConfigInput {
     /// Identifier representing a Campaign
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The identifier of the contact flow for the outbound call.
-    #[doc(hidden)]
     pub connect_contact_flow_id: ::std::option::Option<::std::string::String>,
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-    #[doc(hidden)]
     pub connect_source_phone_number: ::std::option::Option<::std::string::String>,
     /// Answering Machine Detection config
-    #[doc(hidden)]
     pub answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
 }
 impl UpdateCampaignOutboundCallConfigInput {

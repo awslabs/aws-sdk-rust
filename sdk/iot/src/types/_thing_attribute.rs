@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingAttribute {
     /// <p>The name of the thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing type, if the thing has been associated with a type.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing ARN.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of thing attributes which are name-value pairs.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the thing record in the registry.</p>
-    #[doc(hidden)]
     pub version: i64,
 }
 impl ThingAttribute {

@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbEngineVersion {
     /// <p>The name of the database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group family for the database engine.</p>
-    #[doc(hidden)]
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine.</p>
-    #[doc(hidden)]
     pub db_engine_description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine version.</p>
-    #[doc(hidden)]
     pub db_engine_version_description: ::std::option::Option<::std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub default_character_set: ::std::option::Option<crate::types::CharacterSet>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub supported_character_sets: ::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    #[doc(hidden)]
     pub valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    #[doc(hidden)]
     pub supported_timezones: ::std::option::Option<::std::vec::Vec<crate::types::Timezone>>,
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub supports_log_exports_to_cloudwatch_logs: bool,
     /// <p>Indicates whether the database engine version supports read replicas.</p>
-    #[doc(hidden)]
     pub supports_read_replica: bool,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
-    #[doc(hidden)]
     pub supports_global_databases: bool,
 }
 impl DbEngineVersion {

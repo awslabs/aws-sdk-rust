@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAwsOrganizationsAccessStatusOutput {
     /// <p>The status of the portfolio share feature.</p>
-    #[doc(hidden)]
     pub access_status: ::std::option::Option<crate::types::AccessStatus>,
     _request_id: Option<String>,
 }

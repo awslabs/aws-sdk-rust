@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRotationShiftsInput {
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
-    #[doc(hidden)]
     pub rotation_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time for the beginning of the time range to list shifts for.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time for the end of the time range to list shifts for.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListRotationShiftsInput {

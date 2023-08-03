@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRescoreExecutionPlansOutput {
     /// <p>An array of summary information for one or more rescore execution plans.</p>
-    #[doc(hidden)]
     pub summary_items: ::std::option::Option<::std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

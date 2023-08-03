@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualReferenceOutput {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
-    #[doc(hidden)]
     pub base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
-    #[doc(hidden)]
     pub base_canary_run_id: ::std::option::Option<::std::string::String>,
 }
 impl VisualReferenceOutput {

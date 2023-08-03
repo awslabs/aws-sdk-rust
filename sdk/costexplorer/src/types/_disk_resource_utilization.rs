@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
-    #[doc(hidden)]
     pub disk_read_ops_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of write operations per second. </p>
-    #[doc(hidden)]
     pub disk_write_ops_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The maximum read throughput operations per second. </p>
-    #[doc(hidden)]
     pub disk_read_bytes_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The maximum write throughput operations per second. </p>
-    #[doc(hidden)]
     pub disk_write_bytes_per_second: ::std::option::Option<::std::string::String>,
 }
 impl DiskResourceUtilization {

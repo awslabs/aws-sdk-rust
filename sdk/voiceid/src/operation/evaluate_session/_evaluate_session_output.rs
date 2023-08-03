@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateSessionOutput {
     /// <p>The identifier of the domain that contains the session.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The service-generated identifier of the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The client-provided name of the session.</p>
-    #[doc(hidden)]
     pub session_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, after Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
-    #[doc(hidden)]
     pub streaming_status: ::std::option::Option<crate::types::StreamingStatus>,
     /// <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
-    #[doc(hidden)]
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResult>,
     /// <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
-    #[doc(hidden)]
     pub fraud_detection_result: ::std::option::Option<crate::types::FraudDetectionResult>,
     _request_id: Option<String>,
 }

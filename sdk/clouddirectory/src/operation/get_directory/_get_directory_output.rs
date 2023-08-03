@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDirectoryOutput {
     /// <p>Metadata about the directory.</p>
-    #[doc(hidden)]
     pub directory: ::std::option::Option<crate::types::Directory>,
     _request_id: Option<String>,
 }

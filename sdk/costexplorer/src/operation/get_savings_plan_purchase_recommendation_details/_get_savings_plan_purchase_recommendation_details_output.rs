@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlanPurchaseRecommendationDetailsOutput {
     /// <p>The ID that is associated with the Savings Plan recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_detail_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_detail_data: ::std::option::Option<crate::types::RecommendationDetailData>,
     _request_id: Option<String>,
 }

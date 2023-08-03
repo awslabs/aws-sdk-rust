@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKxChangesetInput {
     /// <p>A unique identifier for the kdb environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the kdb database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
-    #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetKxChangesetInput {

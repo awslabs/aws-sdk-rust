@@ -5,29 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    #[doc(hidden)]
     pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset import job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset import job.</p>
     /// <p>A dataset import job can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::ImportMode>,
 }
 impl DatasetImportJobSummary {

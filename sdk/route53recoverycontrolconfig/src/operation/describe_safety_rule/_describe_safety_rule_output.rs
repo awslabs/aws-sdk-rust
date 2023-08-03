@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSafetyRuleOutput {
     /// <p>The assertion rule in the response.</p>
-    #[doc(hidden)]
     pub assertion_rule: ::std::option::Option<crate::types::AssertionRule>,
     /// <p>The gating rule in the response.</p>
-    #[doc(hidden)]
     pub gating_rule: ::std::option::Option<crate::types::GatingRule>,
     _request_id: Option<String>,
 }

@@ -10,46 +10,32 @@ pub struct AwsSsmComplianceSummary {
     /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>CRITICAL</code>.</p>
-    #[doc(hidden)]
     pub compliant_critical_count: i32,
     /// <p>For the patches that are compliant, the number that have a severity of <code>HIGH</code>.</p>
-    #[doc(hidden)]
     pub compliant_high_count: i32,
     /// <p>For the patches that are compliant, the number that have a severity of <code>MEDIUM</code>.</p>
-    #[doc(hidden)]
     pub compliant_medium_count: i32,
     /// <p>The type of execution that was used determine compliance.</p>
-    #[doc(hidden)]
     pub execution_type: ::std::option::Option<::std::string::String>,
     /// <p>For the patch items that are noncompliant, the number of items that have a severity of <code>CRITICAL</code>.</p>
-    #[doc(hidden)]
     pub non_compliant_critical_count: i32,
     /// <p>For the patches that are compliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
-    #[doc(hidden)]
     pub compliant_informational_count: i32,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
-    #[doc(hidden)]
     pub non_compliant_informational_count: i32,
     /// <p>For the patches that are compliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    #[doc(hidden)]
     pub compliant_unspecified_count: i32,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>LOW</code>.</p>
-    #[doc(hidden)]
     pub non_compliant_low_count: i32,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>HIGH</code>.</p>
-    #[doc(hidden)]
     pub non_compliant_high_count: i32,
     /// <p>For the patches that are compliant, the number that have a severity of <code>LOW</code>.</p>
-    #[doc(hidden)]
     pub compliant_low_count: i32,
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
-    #[doc(hidden)]
     pub patch_baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
     /// <ul>
@@ -60,16 +46,12 @@ pub struct AwsSsmComplianceSummary {
     /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub overall_severity: ::std::option::Option<::std::string::String>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
-    #[doc(hidden)]
     pub non_compliant_medium_count: i32,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    #[doc(hidden)]
     pub non_compliant_unspecified_count: i32,
     /// <p>The identifier of the patch group for which compliance was determined. A patch group uses tags to group EC2 instances that should have the same patch compliance.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
 }
 impl AwsSsmComplianceSummary {

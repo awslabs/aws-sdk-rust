@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeatMapConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::HeatMapFieldWells>,
     /// <p>The sort configuration of a heat map.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::HeatMapSortConfiguration>,
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
-    #[doc(hidden)]
     pub row_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label options of the column that is displayed in a heat map.</p>
-    #[doc(hidden)]
     pub column_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
-    #[doc(hidden)]
     pub color_scale: ::std::option::Option<crate::types::ColorScale>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The options that determine if visual data labels are displayed.</p>
-    #[doc(hidden)]
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip display setup of the visual.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
 }
 impl HeatMapConfiguration {

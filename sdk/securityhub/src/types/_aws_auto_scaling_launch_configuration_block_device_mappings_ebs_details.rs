@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     /// <p>Whether to delete the volume when the instance is terminated.</p>
-    #[doc(hidden)]
     pub delete_on_termination: bool,
     /// <p>Whether to encrypt the volume.</p>
-    #[doc(hidden)]
     pub encrypted: bool,
     /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume.</p>
     /// <p>Only supported for <code>gp3</code> or <code>io1</code> volumes. Required for <code>io1</code> volumes. Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.</p>
-    #[doc(hidden)]
     pub iops: i32,
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
@@ -26,7 +22,6 @@ pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     /// <li> <p>standard: 1-1,024</p> </li>
     /// </ul>
     /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
-    #[doc(hidden)]
     pub volume_size: i32,
     /// <p>The volume type. Valid values are as follows:</p>
     /// <ul>
@@ -37,7 +32,6 @@ pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     /// <li> <p> <code>st1</code> </p> </li>
     /// <li> <p> <code>standard</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {

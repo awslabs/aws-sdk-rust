@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationOptions {
     /// <p>A map of the column id to the import properties for each column.</p>
-    #[doc(hidden)]
     pub column_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SourceDataColumnProperties>>,
 }
 impl DestinationOptions {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableAssociationOutput {
     /// <p>The entire updated configured table association.</p>
-    #[doc(hidden)]
     pub configured_table_association: ::std::option::Option<crate::types::ConfiguredTableAssociation>,
     _request_id: Option<String>,
 }

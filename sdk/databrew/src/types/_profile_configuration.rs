@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfileConfiguration {
     /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations. </p>
-    #[doc(hidden)]
     pub dataset_statistics_configuration: ::std::option::Option<crate::types::StatisticsConfiguration>,
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns. </p>
-    #[doc(hidden)]
     pub profile_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>,
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations. </p>
-    #[doc(hidden)]
     pub column_statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsConfiguration>>,
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
-    #[doc(hidden)]
     pub entity_detector_configuration: ::std::option::Option<crate::types::EntityDetectorConfiguration>,
 }
 impl ProfileConfiguration {

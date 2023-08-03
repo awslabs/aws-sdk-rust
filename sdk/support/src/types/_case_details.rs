@@ -27,13 +27,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaseDetails {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID displayed for the case in the Amazon Web Services Support Center. This is a numeric string.</p>
-    #[doc(hidden)]
     pub display_id: ::std::option::Option<::std::string::String>,
     /// <p>The subject line for the case in the Amazon Web Services Support Center.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The status of the case.</p>
     /// <p>Valid values:</p>
@@ -45,31 +42,22 @@ pub struct CaseDetails {
     /// <li> <p> <code>unassigned</code> </p> </li>
     /// <li> <p> <code>work-in-progress</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The code for the Amazon Web Services service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The category of problem for the support case.</p>
-    #[doc(hidden)]
     pub category_code: ::std::option::Option<::std::string::String>,
     /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
-    #[doc(hidden)]
     pub severity_code: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the account that submitted the case.</p>
-    #[doc(hidden)]
     pub submitted_by: ::std::option::Option<::std::string::String>,
     /// <p>The time that the case was created in the Amazon Web Services Support Center.</p>
-    #[doc(hidden)]
     pub time_created: ::std::option::Option<::std::string::String>,
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
-    #[doc(hidden)]
     pub recent_communications: ::std::option::Option<crate::types::RecentCaseCommunications>,
     /// <p>The email addresses that receive copies of communication about the case.</p>
-    #[doc(hidden)]
     pub cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
 }
 impl CaseDetails {

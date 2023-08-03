@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAmazonMqBrokerUsersDetails {
     /// <p> The type of change pending for the broker user. </p>
-    #[doc(hidden)]
     pub pending_change: ::std::option::Option<::std::string::String>,
     /// <p> The username of the broker user. </p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl AwsAmazonMqBrokerUsersDetails {

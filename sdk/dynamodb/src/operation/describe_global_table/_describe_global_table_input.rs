@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGlobalTableInput {
     /// <p>The name of the global table.</p>
-    #[doc(hidden)]
     pub global_table_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGlobalTableInput {

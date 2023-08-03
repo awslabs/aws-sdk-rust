@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKxEnvironmentsOutput {
     /// <p>A list of environments in an account.</p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<::std::vec::Vec<crate::types::KxEnvironment>>,
     /// <p>A token that indicates where a results page should begin.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

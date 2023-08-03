@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersOutput {
     /// <p>List of phone numbers, in E.164 format.</p>
-    #[doc(hidden)]
     pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token used to retrieve the next page of search results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

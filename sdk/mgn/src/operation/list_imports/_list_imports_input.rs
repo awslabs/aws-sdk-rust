@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p>List imports request filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListImportsRequestFilters>,
     /// <p>List imports request max results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>List imports request next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportsInput {

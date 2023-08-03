@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceConnectorSettings {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
-    #[doc(hidden)]
     pub cdr_bucket: ::std::option::Option<::std::string::String>,
 }
 impl VoiceConnectorSettings {

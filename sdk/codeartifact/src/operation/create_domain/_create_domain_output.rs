@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainOutput {
     /// <p> Contains information about the created domain after processing the request. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainDescription>,
     _request_id: Option<String>,
 }

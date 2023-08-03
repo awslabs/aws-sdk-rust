@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypeOfferingsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The location type.</p>
-    #[doc(hidden)]
     pub location_type: ::std::option::Option<crate::types::LocationType>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
     /// <li> <p> <code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p> </li>
     /// <li> <p> <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInstanceTypeOfferingsInput {

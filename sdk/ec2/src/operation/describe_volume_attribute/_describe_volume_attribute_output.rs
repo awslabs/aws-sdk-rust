@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVolumeAttributeOutput {
     /// <p>The state of <code>autoEnableIO</code> attribute.</p>
-    #[doc(hidden)]
     pub auto_enable_io: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>A list of product codes.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>The ID of the volume.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrafficMirrorFilterRuleOutput {
     /// <p>The ID of the deleted Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_rule_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

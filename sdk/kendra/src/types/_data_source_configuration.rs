@@ -5,60 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3DataSourceConfiguration>,
     /// <p>Provides the configuration information to connect to Microsoft SharePoint as your data source.</p>
-    #[doc(hidden)]
     pub share_point_configuration: ::std::option::Option<crate::types::SharePointConfiguration>,
     /// <p>Provides the configuration information to connect to a database as your data source.</p>
-    #[doc(hidden)]
     pub database_configuration: ::std::option::Option<crate::types::DatabaseConfiguration>,
     /// <p>Provides the configuration information to connect to Salesforce as your data source.</p>
-    #[doc(hidden)]
     pub salesforce_configuration: ::std::option::Option<crate::types::SalesforceConfiguration>,
     /// <p>Provides the configuration information to connect to Microsoft OneDrive as your data source.</p>
-    #[doc(hidden)]
     pub one_drive_configuration: ::std::option::Option<crate::types::OneDriveConfiguration>,
     /// <p>Provides the configuration information to connect to ServiceNow as your data source.</p>
-    #[doc(hidden)]
     pub service_now_configuration: ::std::option::Option<crate::types::ServiceNowConfiguration>,
     /// <p>Provides the configuration information to connect to Confluence as your data source.</p>
-    #[doc(hidden)]
     pub confluence_configuration: ::std::option::Option<crate::types::ConfluenceConfiguration>,
     /// <p>Provides the configuration information to connect to Google Drive as your data source.</p>
-    #[doc(hidden)]
     pub google_drive_configuration: ::std::option::Option<crate::types::GoogleDriveConfiguration>,
     /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
-    #[doc(hidden)]
     pub web_crawler_configuration: ::std::option::Option<crate::types::WebCrawlerConfiguration>,
     /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
-    #[doc(hidden)]
     pub work_docs_configuration: ::std::option::Option<crate::types::WorkDocsConfiguration>,
     /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
-    #[doc(hidden)]
     pub fsx_configuration: ::std::option::Option<crate::types::FsxConfiguration>,
     /// <p>Provides the configuration information to connect to Slack as your data source.</p>
-    #[doc(hidden)]
     pub slack_configuration: ::std::option::Option<crate::types::SlackConfiguration>,
     /// <p>Provides the configuration information to connect to Box as your data source.</p>
-    #[doc(hidden)]
     pub box_configuration: ::std::option::Option<crate::types::BoxConfiguration>,
     /// <p>Provides the configuration information to connect to Quip as your data source.</p>
-    #[doc(hidden)]
     pub quip_configuration: ::std::option::Option<crate::types::QuipConfiguration>,
     /// <p>Provides the configuration information to connect to Jira as your data source.</p>
-    #[doc(hidden)]
     pub jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
     /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
-    #[doc(hidden)]
     pub git_hub_configuration: ::std::option::Option<crate::types::GitHubConfiguration>,
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
     /// <p>Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a> API.</p>
     #[deprecated(note = "Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
-    #[doc(hidden)]
     pub alfresco_configuration: ::std::option::Option<crate::types::AlfrescoConfiguration>,
     /// <p>Provides a template for the configuration information to connect to your data source.</p>
-    #[doc(hidden)]
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
 }
 impl DataSourceConfiguration {

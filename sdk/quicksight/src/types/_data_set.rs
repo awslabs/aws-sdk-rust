@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSet {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dataset.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time that this dataset was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this dataset was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
-    #[doc(hidden)]
     pub physical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>>,
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
-    #[doc(hidden)]
     pub logical_table_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>>,
     /// <p>The list of columns after all transforms. These columns are available in templates, analyses, and dashboards.</p>
-    #[doc(hidden)]
     pub output_columns: ::std::option::Option<::std::vec::Vec<crate::types::OutputColumn>>,
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
     /// <p>The amount of SPICE capacity used by this dataset. This is 0 if the dataset isn't imported into SPICE.</p>
-    #[doc(hidden)]
     pub consumed_spice_capacity_in_bytes: i64,
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    #[doc(hidden)]
     pub column_groups: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>,
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
-    #[doc(hidden)]
     pub field_folders: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>>,
     /// <p>The row-level security configuration for the dataset.</p>
-    #[doc(hidden)]
     pub row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     /// <p>The element you can use to define tags for row-level security.</p>
-    #[doc(hidden)]
     pub row_level_permission_tag_configuration: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    #[doc(hidden)]
     pub column_level_permission_rules: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
-    #[doc(hidden)]
     pub data_set_usage_configuration: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     /// <p>The parameters that are declared in a dataset.</p>
-    #[doc(hidden)]
     pub dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
 }
 impl DataSet {

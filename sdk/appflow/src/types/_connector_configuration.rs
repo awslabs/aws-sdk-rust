@@ -5,82 +5,56 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorConfiguration {
     /// <p> Specifies whether the connector can be used as a source. </p>
-    #[doc(hidden)]
     pub can_use_as_source: bool,
     /// <p> Specifies whether the connector can be used as a destination. </p>
-    #[doc(hidden)]
     pub can_use_as_destination: bool,
     /// <p> Lists the connectors that are available for use as destinations. </p>
-    #[doc(hidden)]
     pub supported_destination_connectors: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorType>>,
     /// <p> Specifies the supported flow frequency for that connector. </p>
-    #[doc(hidden)]
     pub supported_scheduling_frequencies: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleFrequencyType>>,
     /// <p> Specifies if PrivateLink is enabled for that connector. </p>
-    #[doc(hidden)]
     pub is_private_link_enabled: bool,
     /// <p> Specifies if a PrivateLink endpoint URL is required. </p>
-    #[doc(hidden)]
     pub is_private_link_endpoint_url_required: bool,
     /// <p> Specifies the supported trigger types for the flow. </p>
-    #[doc(hidden)]
     pub supported_trigger_types: ::std::option::Option<::std::vec::Vec<crate::types::TriggerType>>,
     /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
-    #[doc(hidden)]
     pub connector_metadata: ::std::option::Option<crate::types::ConnectorMetadata>,
     /// <p>The connector type.</p>
-    #[doc(hidden)]
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>The label used for registering the connector.</p>
-    #[doc(hidden)]
     pub connector_label: ::std::option::Option<::std::string::String>,
     /// <p>A description about the connector.</p>
-    #[doc(hidden)]
     pub connector_description: ::std::option::Option<::std::string::String>,
     /// <p>The owner who developed the connector.</p>
-    #[doc(hidden)]
     pub connector_owner: ::std::option::Option<::std::string::String>,
     /// <p>The connector name.</p>
-    #[doc(hidden)]
     pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The connector version.</p>
-    #[doc(hidden)]
     pub connector_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the registered connector.</p>
-    #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The connection modes that the connector supports.</p>
-    #[doc(hidden)]
     pub connector_modes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The authentication config required for the connector.</p>
-    #[doc(hidden)]
     pub authentication_config: ::std::option::Option<crate::types::AuthenticationConfig>,
     /// <p>The required connector runtime settings.</p>
-    #[doc(hidden)]
     pub connector_runtime_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorRuntimeSetting>>,
     /// <p>A list of API versions that are supported by the connector.</p>
-    #[doc(hidden)]
     pub supported_api_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of operators supported by the connector.</p>
-    #[doc(hidden)]
     pub supported_operators: ::std::option::Option<::std::vec::Vec<crate::types::Operators>>,
     /// <p>A list of write operations supported by the connector.</p>
-    #[doc(hidden)]
     pub supported_write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
     /// <p>The provisioning type used to register the connector.</p>
-    #[doc(hidden)]
     pub connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
     /// <p>The configuration required for registering the connector.</p>
-    #[doc(hidden)]
     pub connector_provisioning_config: ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
     /// <p>Logo URL of the connector.</p>
-    #[doc(hidden)]
     pub logo_url: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the connector was registered.</p>
-    #[doc(hidden)]
     pub registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about who registered the connector.</p>
-    #[doc(hidden)]
     pub registered_by: ::std::option::Option<::std::string::String>,
     /// <p>The data transfer types that the connector supports.</p>
     /// <dl>
@@ -97,10 +71,8 @@ pub struct ConnectorConfiguration {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub supported_data_transfer_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedDataTransferType>>,
     /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
-    #[doc(hidden)]
     pub supported_data_transfer_apis: ::std::option::Option<::std::vec::Vec<crate::types::DataTransferApi>>,
 }
 impl ConnectorConfiguration {

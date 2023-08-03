@@ -11,10 +11,8 @@
 pub struct Document {
     /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. </p>
-    #[doc(hidden)]
     pub bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5 MB.</p>
-    #[doc(hidden)]
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl Document {

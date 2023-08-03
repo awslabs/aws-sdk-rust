@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThingTypeInput {
     /// <p>The name of the thing type.</p>
-    #[doc(hidden)]
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
-    #[doc(hidden)]
     pub thing_type_properties: ::std::option::Option<crate::types::ThingTypeProperties>,
     /// <p>Metadata which can be used to manage the thing type.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateThingTypeInput {

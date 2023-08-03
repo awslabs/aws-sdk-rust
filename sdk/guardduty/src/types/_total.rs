@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Total {
     /// <p>The total usage.</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<::std::string::String>,
     /// <p>The currency unit that the amount is given in.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl Total {

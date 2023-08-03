@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAutomationRulesOutput {
     /// <p> A list of rule details for the provided rule ARNs. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>,
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why. </p>
-    #[doc(hidden)]
     pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }

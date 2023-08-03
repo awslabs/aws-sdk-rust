@@ -6,7 +6,6 @@
 pub struct TemplateConfiguration {
     /// <p>The template schema used for the data source, where templates schemas are supported.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl TemplateConfiguration {

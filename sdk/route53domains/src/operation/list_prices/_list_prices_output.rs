@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricesOutput {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
-    #[doc(hidden)]
     pub prices: ::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>>,
     /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
-    #[doc(hidden)]
     pub next_page_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

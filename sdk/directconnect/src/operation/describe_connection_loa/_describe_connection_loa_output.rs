@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectionLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
-    #[doc(hidden)]
     pub loa: ::std::option::Option<crate::types::Loa>,
     _request_id: Option<String>,
 }

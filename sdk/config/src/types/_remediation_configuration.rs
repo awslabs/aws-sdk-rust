@@ -5,44 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationConfiguration {
     /// <p>The name of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::RemediationTargetType>,
     /// <p>Target ID is the name of the SSM document.</p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>Version of the target. For example, version of the SSM document.</p> <note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_version: ::std::option::Option<::std::string::String>,
     /// <p>An object of the RemediationParameterValue.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RemediationParameterValue>>,
     /// <p>The type of a resource. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The remediation is triggered automatically.</p>
-    #[doc(hidden)]
     pub automatic: bool,
     /// <p>An ExecutionControls object.</p>
-    #[doc(hidden)]
     pub execution_controls: ::std::option::Option<crate::types::ExecutionControls>,
     /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
-    #[doc(hidden)]
     pub maximum_automatic_attempts: ::std::option::Option<i32>,
     /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
     /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
-    #[doc(hidden)]
     pub retry_attempt_seconds: ::std::option::Option<i64>,
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
-    #[doc(hidden)]
     pub created_by_service: ::std::option::Option<::std::string::String>,
 }
 impl RemediationConfiguration {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupSummary {
     /// <p>Name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the table.</p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN associated with the table.</p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN associated with the backup.</p>
-    #[doc(hidden)]
     pub backup_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the specified backup.</p>
-    #[doc(hidden)]
     pub backup_name: ::std::option::Option<::std::string::String>,
     /// <p>Time at which the backup was created.</p>
-    #[doc(hidden)]
     pub backup_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
-    #[doc(hidden)]
     pub backup_expiry_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
-    #[doc(hidden)]
     pub backup_status: ::std::option::Option<crate::types::BackupStatus>,
     /// <p>BackupType:</p>
     /// <ul>
@@ -34,10 +26,8 @@ pub struct BackupSummary {
     /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
     /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_type: ::std::option::Option<crate::types::BackupType>,
     /// <p>Size of the backup in bytes.</p>
-    #[doc(hidden)]
     pub backup_size_bytes: ::std::option::Option<i64>,
 }
 impl BackupSummary {

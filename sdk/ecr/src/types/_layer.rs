@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Layer {
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    #[doc(hidden)]
     pub layer_digest: ::std::option::Option<::std::string::String>,
     /// <p>The availability status of the image layer.</p>
-    #[doc(hidden)]
     pub layer_availability: ::std::option::Option<crate::types::LayerAvailability>,
     /// <p>The size, in bytes, of the image layer.</p>
-    #[doc(hidden)]
     pub layer_size: ::std::option::Option<i64>,
     /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
-    #[doc(hidden)]
     pub media_type: ::std::option::Option<::std::string::String>,
 }
 impl Layer {

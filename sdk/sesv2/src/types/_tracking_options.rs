@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingOptions {
     /// <p>The domain to use for tracking open and click events.</p>
-    #[doc(hidden)]
     pub custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
 impl TrackingOptions {

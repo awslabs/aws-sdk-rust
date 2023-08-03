@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbProxyEndpointOutput {
     /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation. The DB proxy endpoint that you create might provide capabilities such as read/write or read-only operations, or using a different VPC than the proxy's default VPC.</p>
-    #[doc(hidden)]
     pub db_proxy_endpoint: ::std::option::Option<crate::types::DbProxyEndpoint>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Source {
     /// <p>The type of the trust anchor. </p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::TrustAnchorType>,
     /// <p>The data field of the trust anchor depending on its type. </p>
-    #[doc(hidden)]
     pub source_data: ::std::option::Option<crate::types::SourceData>,
 }
 impl Source {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Difference {
     /// <p>Information about a <code>beforeBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
-    #[doc(hidden)]
     pub before_blob: ::std::option::Option<crate::types::BlobMetadata>,
     /// <p>Information about an <code>afterBlob</code> data type object, including the ID, the file mode permission code, and the path.</p>
-    #[doc(hidden)]
     pub after_blob: ::std::option::Option<crate::types::BlobMetadata>,
     /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
-    #[doc(hidden)]
     pub change_type: ::std::option::Option<crate::types::ChangeTypeEnum>,
 }
 impl Difference {

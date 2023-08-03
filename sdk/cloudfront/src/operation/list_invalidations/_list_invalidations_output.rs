@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInvalidationsOutput {
     /// <p>Information about invalidation batches.</p>
-    #[doc(hidden)]
     pub invalidation_list: ::std::option::Option<crate::types::InvalidationList>,
     _request_id: Option<String>,
 }

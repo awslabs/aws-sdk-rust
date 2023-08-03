@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringScheduleConfig {
     /// <p>Configures the monitoring schedule.</p>
-    #[doc(hidden)]
     pub schedule_config: ::std::option::Option<crate::types::ScheduleConfig>,
     /// <p>Defines the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_job_definition: ::std::option::Option<crate::types::MonitoringJobDefinition>,
     /// <p>The name of the monitoring job definition to schedule.</p>
-    #[doc(hidden)]
     pub monitoring_job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the monitoring job definition to schedule.</p>
-    #[doc(hidden)]
     pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
 }
 impl MonitoringScheduleConfig {

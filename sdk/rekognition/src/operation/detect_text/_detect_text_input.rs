@@ -5,10 +5,8 @@
 pub struct DetectTextInput {
     /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::DetectTextFilters>,
 }
 impl DetectTextInput {

@@ -7,19 +7,14 @@ pub struct LaunchTemplateSpotMarketOptions {
     /// <p>The maximum hourly price you're willing to pay for the Spot Instances. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your Spot Instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    #[doc(hidden)]
     pub max_price: ::std::option::Option<::std::string::String>,
     /// <p>The Spot Instance request type.</p>
-    #[doc(hidden)]
     pub spot_instance_type: ::std::option::Option<crate::types::SpotInstanceType>,
     /// <p>The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
-    #[doc(hidden)]
     pub block_duration_minutes: ::std::option::Option<i32>,
     /// <p>The end date of the request. For a one-time request, the request remains active until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until it is canceled or this date and time is reached.</p>
-    #[doc(hidden)]
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    #[doc(hidden)]
     pub instance_interruption_behavior: ::std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl LaunchTemplateSpotMarketOptions {

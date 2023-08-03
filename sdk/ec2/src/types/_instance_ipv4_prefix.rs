@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceIpv4Prefix {
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
-    #[doc(hidden)]
     pub ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
 impl InstanceIpv4Prefix {

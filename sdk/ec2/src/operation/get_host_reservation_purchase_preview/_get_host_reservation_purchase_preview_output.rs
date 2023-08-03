@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostReservationPurchasePreviewOutput {
     /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
-    #[doc(hidden)]
     pub purchase: ::std::option::Option<::std::vec::Vec<crate::types::Purchase>>,
     /// <p>The potential total hourly price of the reservation per hour.</p>
-    #[doc(hidden)]
     pub total_hourly_price: ::std::option::Option<::std::string::String>,
     /// <p>The potential total upfront price. This is billed immediately.</p>
-    #[doc(hidden)]
     pub total_upfront_price: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

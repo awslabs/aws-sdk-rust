@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportInstanceInput {
     /// <p>A description for the instance being imported.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The disk image.</p>
-    #[doc(hidden)]
     pub disk_images: ::std::option::Option<::std::vec::Vec<crate::types::DiskImage>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The launch specification.</p>
-    #[doc(hidden)]
     pub launch_specification: ::std::option::Option<crate::types::ImportInstanceLaunchSpecification>,
     /// <p>The instance operating system.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
 }
 impl ImportInstanceInput {

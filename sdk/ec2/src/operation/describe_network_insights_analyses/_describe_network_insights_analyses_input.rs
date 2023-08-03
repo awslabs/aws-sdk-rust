@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAnalysesInput {
     /// <p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p>
-    #[doc(hidden)]
     pub network_insights_analysis_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
-    #[doc(hidden)]
     pub network_insights_path_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the network insights analyses started.</p>
-    #[doc(hidden)]
     pub analysis_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the network insights analyses ended.</p>
-    #[doc(hidden)]
     pub analysis_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The filters. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
     /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNetworkInsightsAnalysesInput {

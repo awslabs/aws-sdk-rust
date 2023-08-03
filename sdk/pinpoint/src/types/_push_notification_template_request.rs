@@ -5,36 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PushNotificationTemplateRequest {
     /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    #[doc(hidden)]
     pub adm: ::std::option::Option<crate::types::AndroidPushNotificationTemplate>,
     /// <p>The message template to use for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    #[doc(hidden)]
     pub apns: ::std::option::Option<crate::types::ApnsPushNotificationTemplate>,
     /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    #[doc(hidden)]
     pub baidu: ::std::option::Option<crate::types::AndroidPushNotificationTemplate>,
     /// <p>The default message template to use for push notification channels.</p>
     ///
     /// _Note: This member has been renamed from `default`._
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<crate::types::DefaultPushNotificationTemplate>,
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
-    #[doc(hidden)]
     pub default_substitutions: ::std::option::Option<::std::string::String>,
     /// <p>The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
-    #[doc(hidden)]
     pub gcm: ::std::option::Option<crate::types::AndroidPushNotificationTemplate>,
     /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
-    #[doc(hidden)]
     pub recommender_id: ::std::option::Option<::std::string::String>,
     /// <note>
     /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
     /// </note>
     /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A custom description of the message template.</p>
-    #[doc(hidden)]
     pub template_description: ::std::option::Option<::std::string::String>,
 }
 impl PushNotificationTemplateRequest {

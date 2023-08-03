@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGraphsOutput {
     /// <p>A list of behavior graphs that the account is an administrator account for.</p>
-    #[doc(hidden)]
     pub graph_list: ::std::option::Option<::std::vec::Vec<crate::types::Graph>>,
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

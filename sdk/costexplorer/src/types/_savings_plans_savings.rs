@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansSavings {
     /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings Plans, when compared to the On-Demand equivalent of the same usage.</p>
-    #[doc(hidden)]
     pub net_savings: ::std::option::Option<::std::string::String>,
     /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand rate.</p>
-    #[doc(hidden)]
     pub on_demand_cost_equivalent: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlansSavings {

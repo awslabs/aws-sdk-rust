@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DqResultsPublishingOptions {
     /// <p>The context of the evaluation.</p>
-    #[doc(hidden)]
     pub evaluation_context: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 prefix prepended to the results.</p>
-    #[doc(hidden)]
     pub results_s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Enable metrics for your data quality results.</p>
-    #[doc(hidden)]
     pub cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     /// <p>Enable publishing for your data quality results.</p>
-    #[doc(hidden)]
     pub results_publishing_enabled: ::std::option::Option<bool>,
 }
 impl DqResultsPublishingOptions {

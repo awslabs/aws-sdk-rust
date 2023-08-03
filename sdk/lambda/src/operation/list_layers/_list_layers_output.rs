@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLayersOutput {
     /// <p>A pagination token returned when the response doesn't contain all layers.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of function layers.</p>
-    #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<crate::types::LayersListItem>>,
     _request_id: Option<String>,
 }

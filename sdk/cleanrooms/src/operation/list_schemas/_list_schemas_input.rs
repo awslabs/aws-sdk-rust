@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchemasInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    #[doc(hidden)]
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
-    #[doc(hidden)]
     pub schema_type: ::std::option::Option<crate::types::SchemaType>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the results that is returned per call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSchemasInput {

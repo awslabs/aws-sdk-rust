@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedInputTypes {
     /// <p>Indicates whether audio input is allowed.</p>
-    #[doc(hidden)]
     pub allow_audio_input: ::std::option::Option<bool>,
     /// <p>Indicates whether DTMF input is allowed.</p>
-    #[doc(hidden)]
     pub allow_dtmf_input: ::std::option::Option<bool>,
 }
 impl AllowedInputTypes {

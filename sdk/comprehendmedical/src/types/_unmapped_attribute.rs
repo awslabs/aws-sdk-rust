@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnmappedAttribute {
     /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EntityType>,
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::Attribute>,
 }
 impl UnmappedAttribute {

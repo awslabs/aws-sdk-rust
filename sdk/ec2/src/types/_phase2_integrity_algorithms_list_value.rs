@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Phase2IntegrityAlgorithmsListValue {
     /// <p>The integrity algorithm.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Phase2IntegrityAlgorithmsListValue {

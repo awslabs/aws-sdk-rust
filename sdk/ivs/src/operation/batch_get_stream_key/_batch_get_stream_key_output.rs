@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetStreamKeyOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKey>>,
     /// <p></p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,
     _request_id: Option<String>,
 }

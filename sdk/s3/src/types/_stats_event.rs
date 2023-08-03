@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatsEvent {
     /// <p>The Stats event details.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<crate::types::Stats>,
 }
 impl StatsEvent {

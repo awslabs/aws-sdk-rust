@@ -7,18 +7,14 @@ pub struct WriteApplicationSettingsRequest {
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     /// <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource.</p>
-    #[doc(hidden)]
     pub campaign_hook: ::std::option::Option<crate::types::CampaignHook>,
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
-    #[doc(hidden)]
     pub cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub event_tagging_enabled: ::std::option::Option<bool>,
     /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
-    #[doc(hidden)]
     pub limits: ::std::option::Option<crate::types::CampaignLimits>,
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
@@ -30,7 +26,6 @@ pub struct WriteApplicationSettingsRequest {
     /// <p>To override the default quiet time settings for a specific campaign or journey, use the
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource to define a custom quiet time for the campaign or journey.</p>
-    #[doc(hidden)]
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
 }
 impl WriteApplicationSettingsRequest {

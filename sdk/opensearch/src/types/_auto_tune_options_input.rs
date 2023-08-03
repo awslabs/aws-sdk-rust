@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsInput {
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are deprecated and have been replaced with <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak windows</a>.</p>
-    #[doc(hidden)]
     pub maintenance_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
     /// <p>Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured daily off-peak window.</p>
-    #[doc(hidden)]
     pub use_off_peak_window: ::std::option::Option<bool>,
 }
 impl AutoTuneOptionsInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLogSourcesOutput {
     /// <p>The list of log sources in your organization that send data to the data lake.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSource>>,
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

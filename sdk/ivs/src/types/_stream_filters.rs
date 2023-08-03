@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamFilters {
     /// <p>The stream’s health.</p>
-    #[doc(hidden)]
     pub health: ::std::option::Option<crate::types::StreamHealth>,
 }
 impl StreamFilters {

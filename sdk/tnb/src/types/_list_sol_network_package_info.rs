@@ -6,40 +6,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolNetworkPackageInfo {
     /// <p>ID of the individual network package.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network package ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_onboarding_state: ::std::option::Option<crate::types::NsdOnboardingState>,
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_operational_state: ::std::option::Option<crate::types::NsdOperationalState>,
     /// <p>Usage state of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_usage_state: ::std::option::Option<crate::types::NsdUsageState>,
     /// <p>ID of the network service descriptor on which the network package is based.</p>
-    #[doc(hidden)]
     pub nsd_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the onboarded network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_name: ::std::option::Option<::std::string::String>,
     /// <p>Version of the onboarded network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_version: ::std::option::Option<::std::string::String>,
     /// <p>Designer of the onboarded network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_designer: ::std::option::Option<::std::string::String>,
     /// <p>Identifies a network service descriptor in a version independent manner.</p>
-    #[doc(hidden)]
     pub nsd_invariant_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    #[doc(hidden)]
     pub vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The metadata of the network package.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ListSolNetworkPackageMetadata>,
 }
 impl ListSolNetworkPackageInfo {

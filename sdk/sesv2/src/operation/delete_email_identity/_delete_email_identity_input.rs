@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEmailIdentityInput {
     /// <p>The identity (that is, the email address or domain) to delete.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEmailIdentityInput {

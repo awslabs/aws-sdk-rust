@@ -5,34 +5,25 @@
 pub struct GetSpotPlacementScoresInput {
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    #[doc(hidden)]
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The target capacity.</p>
-    #[doc(hidden)]
     pub target_capacity: ::std::option::Option<i32>,
     /// <p>The unit for the target capacity.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
-    #[doc(hidden)]
     pub target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
     /// <p>Specify <code>true</code> so that the response returns a list of scored Availability Zones. Otherwise, the response returns a list of scored Regions.</p>
     /// <p>A list of scored Availability Zones is useful if you want to launch all of your Spot capacity into a single Availability Zone.</p>
-    #[doc(hidden)]
     pub single_availability_zone: ::std::option::Option<bool>,
     /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
-    #[doc(hidden)]
     pub region_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
-    #[doc(hidden)]
     pub instance_requirements_with_metadata: ::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetSpotPlacementScoresInput {

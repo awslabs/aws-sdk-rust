@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInstanceAccessControlAttributeConfigurationInput {

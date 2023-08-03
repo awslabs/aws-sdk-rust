@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectMetricSetConfigOutput {
     /// <p>The inferred dataset configuration for the datasource.</p>
-    #[doc(hidden)]
     pub detected_metric_set_config: ::std::option::Option<crate::types::DetectedMetricSetConfig>,
     _request_id: Option<String>,
 }

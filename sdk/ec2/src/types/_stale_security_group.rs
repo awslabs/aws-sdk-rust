@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaleSecurityGroup {
     /// <p>The description of the security group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the stale inbound rules in the security group.</p>
-    #[doc(hidden)]
     pub stale_ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::StaleIpPermission>>,
     /// <p>Information about the stale outbound rules in the security group.</p>
-    #[doc(hidden)]
     pub stale_ip_permissions_egress: ::std::option::Option<::std::vec::Vec<crate::types::StaleIpPermission>>,
     /// <p>The ID of the VPC for the security group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl StaleSecurityGroup {

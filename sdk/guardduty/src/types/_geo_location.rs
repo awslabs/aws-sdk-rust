@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoLocation {
     /// <p>The latitude information of the remote IP address.</p>
-    #[doc(hidden)]
     pub lat: f64,
     /// <p>The longitude information of the remote IP address.</p>
-    #[doc(hidden)]
     pub lon: f64,
 }
 impl GeoLocation {

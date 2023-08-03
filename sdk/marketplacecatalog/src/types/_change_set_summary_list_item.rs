@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSetSummaryListItem {
     /// <p>The unique identifier for a change set.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    #[doc(hidden)]
     pub change_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The non-unique name for the change set.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the change set.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangeStatus>,
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-    #[doc(hidden)]
     pub entity_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::FailureCode>,
 }
 impl ChangeSetSummaryListItem {

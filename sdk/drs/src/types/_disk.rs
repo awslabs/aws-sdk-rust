@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Disk {
     /// <p>The disk or device name.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
-    #[doc(hidden)]
     pub bytes: i64,
 }
 impl Disk {

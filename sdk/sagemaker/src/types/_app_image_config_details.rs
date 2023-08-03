@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppImageConfigDetails {
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
-    #[doc(hidden)]
     pub app_image_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    #[doc(hidden)]
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
     /// <p>When the AppImageConfig was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the AppImageConfig was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration for the file system and kernels in the SageMaker image.</p>
-    #[doc(hidden)]
     pub kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
 }
 impl AppImageConfigDetails {

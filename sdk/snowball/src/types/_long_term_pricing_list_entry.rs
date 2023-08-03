@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LongTermPricingListEntry {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    #[doc(hidden)]
     pub long_term_pricing_id: ::std::option::Option<::std::string::String>,
     /// <p>The end date the long-term pricing contract.</p>
-    #[doc(hidden)]
     pub long_term_pricing_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The start date of the long-term pricing contract.</p>
-    #[doc(hidden)]
     pub long_term_pricing_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of long-term pricing that was selected for the device.</p>
-    #[doc(hidden)]
     pub long_term_pricing_type: ::std::option::Option<crate::types::LongTermPricingType>,
     /// <p>The current active jobs on the device the long-term pricing type.</p>
-    #[doc(hidden)]
     pub current_active_job: ::std::option::Option<::std::string::String>,
     /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
-    #[doc(hidden)]
     pub replacement_job: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
-    #[doc(hidden)]
     pub is_long_term_pricing_auto_renew: ::std::option::Option<bool>,
     /// <p>The status of the long-term pricing type.</p>
-    #[doc(hidden)]
     pub long_term_pricing_status: ::std::option::Option<::std::string::String>,
     /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
-    #[doc(hidden)]
     pub snowball_type: ::std::option::Option<crate::types::SnowballType>,
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
-    #[doc(hidden)]
     pub job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LongTermPricingListEntry {

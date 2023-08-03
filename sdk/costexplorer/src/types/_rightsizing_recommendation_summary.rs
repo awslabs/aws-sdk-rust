@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RightsizingRecommendationSummary {
     /// <p>The total number of instance recommendations.</p>
-    #[doc(hidden)]
     pub total_recommendation_count: ::std::option::Option<::std::string::String>,
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
-    #[doc(hidden)]
     pub estimated_total_monthly_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
-    #[doc(hidden)]
     pub savings_currency_code: ::std::option::Option<::std::string::String>,
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
-    #[doc(hidden)]
     pub savings_percentage: ::std::option::Option<::std::string::String>,
 }
 impl RightsizingRecommendationSummary {

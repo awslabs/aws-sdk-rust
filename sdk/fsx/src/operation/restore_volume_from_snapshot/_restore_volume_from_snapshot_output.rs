@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotOutput {
     /// <p>The ID of the volume that you restored.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle state of the volume being restored.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::VolumeLifecycle>,
     /// <p>A list of administrative actions for the file system that are in process or waiting to be processed. Administrative actions describe changes to the Amazon FSx system.</p>
-    #[doc(hidden)]
     pub administrative_actions: ::std::option::Option<::std::vec::Vec<crate::types::AdministrativeAction>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionCommand {
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
-    #[doc(hidden)]
     pub python_version: ::std::option::Option<::std::string::String>,
 }
 impl SessionCommand {

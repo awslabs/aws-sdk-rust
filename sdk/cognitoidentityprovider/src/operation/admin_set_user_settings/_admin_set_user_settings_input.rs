@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminSetUserSettingsInput {
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user whose options you're setting.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    #[doc(hidden)]
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
 }
 impl AdminSetUserSettingsInput {

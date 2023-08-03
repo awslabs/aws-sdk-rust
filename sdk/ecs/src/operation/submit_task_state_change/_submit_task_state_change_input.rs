@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitTaskStateChangeInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The task ID or full ARN of the task in the state change request.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<::std::string::String>,
     /// <p>The status of the state change request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the state change request.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>Any containers that's associated with the state change request.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerStateChange>>,
     /// <p>Any attachments associated with the state change request.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>,
     /// <p>The details for the managed agent that's associated with the task.</p>
-    #[doc(hidden)]
     pub managed_agents: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAgentStateChange>>,
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
-    #[doc(hidden)]
     pub pull_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-    #[doc(hidden)]
     pub pull_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-    #[doc(hidden)]
     pub execution_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SubmitTaskStateChangeInput {

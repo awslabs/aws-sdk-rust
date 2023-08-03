@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileUploaderFieldConfig {
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
-    #[doc(hidden)]
     pub access_level: ::std::option::Option<crate::types::StorageAccessLevel>,
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    #[doc(hidden)]
     pub accepted_file_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
-    #[doc(hidden)]
     pub show_thumbnails: ::std::option::Option<bool>,
     /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
     /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
-    #[doc(hidden)]
     pub is_resumable: ::std::option::Option<bool>,
     /// <p>Specifies the maximum number of files that can be selected to upload. The default value is an unlimited number of files.</p>
-    #[doc(hidden)]
     pub max_file_count: ::std::option::Option<i32>,
     /// <p>The maximum file size in bytes that the file uploader will accept. The default value is an unlimited file size.</p>
-    #[doc(hidden)]
     pub max_size: ::std::option::Option<i32>,
 }
 impl FileUploaderFieldConfig {

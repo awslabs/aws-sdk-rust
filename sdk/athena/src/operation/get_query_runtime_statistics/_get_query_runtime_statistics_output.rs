@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryRuntimeStatisticsOutput {
     /// <p>Runtime statistics about the query execution.</p>
-    #[doc(hidden)]
     pub query_runtime_statistics: ::std::option::Option<crate::types::QueryRuntimeStatistics>,
     _request_id: Option<String>,
 }

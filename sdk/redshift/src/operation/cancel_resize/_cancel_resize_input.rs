@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelResizeInput {
     /// <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CancelResizeInput {

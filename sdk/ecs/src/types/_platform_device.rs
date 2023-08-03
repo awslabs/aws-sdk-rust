@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformDevice {
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PlatformDeviceType>,
 }
 impl PlatformDevice {

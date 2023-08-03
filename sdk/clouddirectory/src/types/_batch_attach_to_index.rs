@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAttachToIndex {
     /// <p>A reference to the index that you are attaching the object to.</p>
-    #[doc(hidden)]
     pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>A reference to the object that you are attaching to the index.</p>
-    #[doc(hidden)]
     pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchAttachToIndex {

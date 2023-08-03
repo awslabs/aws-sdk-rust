@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchemaVersionsOutput {
     /// <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
-    #[doc(hidden)]
     pub schemas: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionListItem>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributionConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the distribution configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the distribution configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the distribution configuration was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the distribution configuration was updated.</p>
-    #[doc(hidden)]
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the distribution configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of Regions where the container image is distributed to.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DistributionConfigurationSummary {

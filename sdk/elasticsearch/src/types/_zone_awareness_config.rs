@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZoneAwarenessConfig {
     /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled</p>
-    #[doc(hidden)]
     pub availability_zone_count: ::std::option::Option<i32>,
 }
 impl ZoneAwarenessConfig {

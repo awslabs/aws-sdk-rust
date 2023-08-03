@@ -9,7 +9,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SizeConstraint {
     /// <p>Specifies where in a web request to look for the size constraint.</p>
-    #[doc(hidden)]
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
     /// <p>You can only specify a single type of TextTransformation.</p>
@@ -50,7 +49,6 @@ pub struct SizeConstraint {
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
-    #[doc(hidden)]
     pub text_transformation: ::std::option::Option<crate::types::TextTransformation>,
     /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p>
@@ -59,12 +57,10 @@ pub struct SizeConstraint {
     /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
     /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
-    #[doc(hidden)]
     pub size: i64,
 }
 impl SizeConstraint {

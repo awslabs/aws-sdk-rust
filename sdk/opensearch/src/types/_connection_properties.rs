@@ -8,10 +8,8 @@ pub struct ConnectionProperties {
     /// <p>The Endpoint attribute cannot be modified. </p>
     /// </important>
     /// <p>The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The connection properties for cross cluster search.</p>
-    #[doc(hidden)]
     pub cross_cluster_search: ::std::option::Option<crate::types::CrossClusterSearchConnectionProperties>,
 }
 impl ConnectionProperties {

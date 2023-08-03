@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConnectorProperties {
     /// <p> Specifies the information that is required for querying Amplitude. </p>
-    #[doc(hidden)]
     pub amplitude: ::std::option::Option<crate::types::AmplitudeSourceProperties>,
     /// <p> Specifies the information that is required for querying Datadog. </p>
-    #[doc(hidden)]
     pub datadog: ::std::option::Option<crate::types::DatadogSourceProperties>,
     /// <p> Specifies the information that is required for querying Dynatrace. </p>
-    #[doc(hidden)]
     pub dynatrace: ::std::option::Option<crate::types::DynatraceSourceProperties>,
     /// <p> Specifies the information that is required for querying Google Analytics. </p>
-    #[doc(hidden)]
     pub google_analytics: ::std::option::Option<crate::types::GoogleAnalyticsSourceProperties>,
     /// <p> Specifies the information that is required for querying Infor Nexus. </p>
-    #[doc(hidden)]
     pub infor_nexus: ::std::option::Option<crate::types::InforNexusSourceProperties>,
     /// <p> Specifies the information that is required for querying Marketo. </p>
-    #[doc(hidden)]
     pub marketo: ::std::option::Option<crate::types::MarketoSourceProperties>,
     /// <p> Specifies the information that is required for querying Amazon S3. </p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3SourceProperties>,
     /// <p> Specifies the information that is required for querying Salesforce. </p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceSourceProperties>,
     /// <p> Specifies the information that is required for querying ServiceNow. </p>
-    #[doc(hidden)]
     pub service_now: ::std::option::Option<crate::types::ServiceNowSourceProperties>,
     /// <p> Specifies the information that is required for querying Singular. </p>
-    #[doc(hidden)]
     pub singular: ::std::option::Option<crate::types::SingularSourceProperties>,
     /// <p> Specifies the information that is required for querying Slack. </p>
-    #[doc(hidden)]
     pub slack: ::std::option::Option<crate::types::SlackSourceProperties>,
     /// <p> Specifies the information that is required for querying Trend Micro. </p>
-    #[doc(hidden)]
     pub trendmicro: ::std::option::Option<crate::types::TrendmicroSourceProperties>,
     /// <p> Specifies the information that is required for querying Veeva. </p>
-    #[doc(hidden)]
     pub veeva: ::std::option::Option<crate::types::VeevaSourceProperties>,
     /// <p> Specifies the information that is required for querying Zendesk. </p>
-    #[doc(hidden)]
     pub zendesk: ::std::option::Option<crate::types::ZendeskSourceProperties>,
     /// <p> The properties that are applied when using SAPOData as a flow source. </p>
-    #[doc(hidden)]
     pub sapo_data: ::std::option::Option<crate::types::SapoDataSourceProperties>,
     /// <p>The properties that are applied when the custom connector is being used as a source.</p>
-    #[doc(hidden)]
     pub custom_connector: ::std::option::Option<crate::types::CustomConnectorSourceProperties>,
     /// <p>Specifies the information that is required for querying Salesforce Pardot.</p>
-    #[doc(hidden)]
     pub pardot: ::std::option::Option<crate::types::PardotSourceProperties>,
 }
 impl SourceConnectorProperties {

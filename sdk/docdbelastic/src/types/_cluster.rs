@@ -5,44 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The URL used to connect to the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    #[doc(hidden)]
     pub admin_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub auth_type: ::std::option::Option<crate::types::Auth>,
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub shard_capacity: ::std::option::Option<i32>,
     /// <p>The number of shards in the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub shard_count: ::std::option::Option<i32>,
     /// <p>A list of EC2 VPC security groups associated with this cluster.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl Cluster {

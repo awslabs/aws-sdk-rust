@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceEventsInput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference events.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of inference events to list. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The name of the inference scheduler for the inference events listed. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
-    #[doc(hidden)]
     pub interval_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given</p>
-    #[doc(hidden)]
     pub interval_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListInferenceEventsInput {

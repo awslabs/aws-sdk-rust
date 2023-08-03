@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationConstraint {
     /// <p>Column in aggregation constraint for which there must be a minimum number of distinct values in an output row for it to be in the query output.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<i32>,
     /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AggregationType>,
 }
 impl AggregationConstraint {

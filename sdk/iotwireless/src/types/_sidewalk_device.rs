@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkDevice {
     /// <p>The Sidewalk Amazon ID.</p>
-    #[doc(hidden)]
     pub amazon_id: ::std::option::Option<::std::string::String>,
     /// <p>The sidewalk device identification.</p>
-    #[doc(hidden)]
     pub sidewalk_id: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk manufacturing series number.</p>
-    #[doc(hidden)]
     pub sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    #[doc(hidden)]
     pub device_certificates: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
     /// <p>The Sidewalk device private keys that will be used for onboarding the device.</p>
-    #[doc(hidden)]
     pub private_keys: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
     /// <p>The ID of the Sidewalk device profile.</p>
-    #[doc(hidden)]
     pub device_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Sidewalk device profile.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk device status, such as provisioned or registered.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
 }
 impl SidewalkDevice {

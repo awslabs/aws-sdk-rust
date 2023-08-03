@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSetsOutput {
     /// <p>The data set objects listed by the request.</p>
-    #[doc(hidden)]
     pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DataSetEntry>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

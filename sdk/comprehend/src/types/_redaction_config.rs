@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedactionConfig {
     /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for your request.</p>
-    #[doc(hidden)]
     pub pii_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntityType>>,
     /// <p>Specifies whether the PII entity is redacted with the mask character or the entity type.</p>
-    #[doc(hidden)]
     pub mask_mode: ::std::option::Option<crate::types::PiiEntitiesDetectionMaskMode>,
     /// <p>A character that replaces each character in the redacted PII entity.</p>
-    #[doc(hidden)]
     pub mask_character: ::std::option::Option<::std::string::String>,
 }
 impl RedactionConfig {

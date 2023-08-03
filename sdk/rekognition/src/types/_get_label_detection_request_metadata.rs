@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLabelDetectionRequestMetadata {
     /// <p>The sorting method chosen for a GetLabelDetection request.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::LabelDetectionSortBy>,
     /// <p>The aggregation method chosen for a GetLabelDetection request.</p>
-    #[doc(hidden)]
     pub aggregate_by: ::std::option::Option<crate::types::LabelDetectionAggregateBy>,
 }
 impl GetLabelDetectionRequestMetadata {

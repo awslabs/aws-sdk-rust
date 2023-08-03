@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfig {
     /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
-    #[doc(hidden)]
     pub enable_answer_machine_detection: bool,
     /// <p>Wait for the answering machine prompt.</p>
-    #[doc(hidden)]
     pub await_answer_machine_prompt: bool,
 }
 impl AnswerMachineDetectionConfig {

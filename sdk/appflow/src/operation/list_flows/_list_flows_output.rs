@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlowsOutput {
     /// <p> The list of flows associated with your account. </p>
-    #[doc(hidden)]
     pub flows: ::std::option::Option<::std::vec::Vec<crate::types::FlowDefinition>>,
     /// <p> The pagination token for next page of data. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

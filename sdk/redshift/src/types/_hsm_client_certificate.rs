@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HsmClientCertificate {
     /// <p>The identifier of the HSM client certificate.</p>
-    #[doc(hidden)]
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
-    #[doc(hidden)]
     pub hsm_client_certificate_public_key: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the HSM client certificate.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl HsmClientCertificate {

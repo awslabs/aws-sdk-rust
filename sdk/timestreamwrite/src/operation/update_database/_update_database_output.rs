@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatabaseOutput {
     /// <p>A top-level container for a table. Databases and tables are the fundamental management concepts in Amazon Timestream. All tables in a database are encrypted with the same KMS key.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<crate::types::Database>,
     _request_id: Option<String>,
 }

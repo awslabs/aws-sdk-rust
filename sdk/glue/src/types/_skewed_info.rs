@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SkewedInfo {
     /// <p>A list of names of columns that contain skewed values.</p>
-    #[doc(hidden)]
     pub skewed_column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of values that appear so frequently as to be considered skewed.</p>
-    #[doc(hidden)]
     pub skewed_column_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A mapping of skewed values to the columns that contain them.</p>
-    #[doc(hidden)]
     pub skewed_column_value_location_maps: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SkewedInfo {

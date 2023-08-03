@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMatchBackfillOutput {
     /// <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
-    #[doc(hidden)]
     pub matchmaking_ticket: ::std::option::Option<crate::types::MatchmakingTicket>,
     _request_id: Option<String>,
 }

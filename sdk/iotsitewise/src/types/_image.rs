@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an image file.</p>
-    #[doc(hidden)]
     pub file: ::std::option::Option<crate::types::ImageFile>,
 }
 impl Image {

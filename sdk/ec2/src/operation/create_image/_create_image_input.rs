@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageInput {
     /// <p>The block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <code>CopyImage</code> action.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>A description for the new image.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the new image.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of the following values:</p>
     /// <ul>
@@ -25,7 +20,6 @@ pub struct CreateImageInput {
     /// <li> <p> <code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and data in memory is written to the volumes before the snapshots are created.</p> </li>
     /// </ul>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub no_reboot: ::std::option::Option<bool>,
     /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
@@ -34,7 +28,6 @@ pub struct CreateImageInput {
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateImageInput {

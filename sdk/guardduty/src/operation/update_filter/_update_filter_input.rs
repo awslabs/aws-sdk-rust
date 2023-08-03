@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFilterInput {
     /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the filter.</p>
-    #[doc(hidden)]
     pub filter_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::FilterAction>,
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
-    #[doc(hidden)]
     pub rank: ::std::option::Option<i32>,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    #[doc(hidden)]
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
 }
 impl UpdateFilterInput {

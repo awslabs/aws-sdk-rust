@@ -6,20 +6,15 @@
 pub struct AwsDynamoDbTableProvisionedThroughput {
     /// <p>Indicates when the provisioned throughput was last decreased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_decrease_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the provisioned throughput was last increased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_increase_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The number of times during the current UTC calendar day that the provisioned throughput was decreased.</p>
-    #[doc(hidden)]
     pub number_of_decreases_today: i32,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    #[doc(hidden)]
     pub read_capacity_units: i32,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    #[doc(hidden)]
     pub write_capacity_units: i32,
 }
 impl AwsDynamoDbTableProvisionedThroughput {

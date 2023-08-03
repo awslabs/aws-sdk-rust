@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQuantumTaskInput {
     /// <p>The client token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device to run the task on.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the device to run the task on.</p>
-    #[doc(hidden)]
     pub device_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The number of shots to use for the task.</p>
-    #[doc(hidden)]
     pub shots: ::std::option::Option<i64>,
     /// <p>The S3 bucket to store task result files in.</p>
-    #[doc(hidden)]
     pub output_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
-    #[doc(hidden)]
     pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The action associated with the task.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>Tags to be added to the quantum task you're creating.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
-    #[doc(hidden)]
     pub job_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateQuantumTaskInput {

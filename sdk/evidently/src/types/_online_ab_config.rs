@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnlineAbConfig {
     /// <p>The name of the variation that is to be the default variation that the other variations are compared to.</p>
-    #[doc(hidden)]
     pub control_treatment_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
-    #[doc(hidden)]
     pub treatment_weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl OnlineAbConfig {

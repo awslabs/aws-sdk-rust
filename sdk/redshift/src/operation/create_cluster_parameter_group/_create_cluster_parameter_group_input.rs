@@ -14,17 +14,13 @@ pub struct CreateClusterParameterGroupInput {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    #[doc(hidden)]
     pub parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameter group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterParameterGroupInput {

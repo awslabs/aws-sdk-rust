@@ -5,92 +5,63 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricAlarm {
     /// <p>The name of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the alarm.</p>
-    #[doc(hidden)]
     pub alarm_description: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    #[doc(hidden)]
     pub alarm_configuration_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
-    #[doc(hidden)]
     pub actions_enabled: ::std::option::Option<bool>,
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state value for the alarm.</p>
-    #[doc(hidden)]
     pub state_value: ::std::option::Option<crate::types::StateValue>,
     /// <p>An explanation for the alarm state, in text format.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>An explanation for the alarm state, in JSON format.</p>
-    #[doc(hidden)]
     pub state_reason_data: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp of the last update to the value of either the <code>StateValue</code> or <code>EvaluationState</code> parameters.</p>
-    #[doc(hidden)]
     pub state_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the metric associated with the alarm, if this is an alarm based on a single metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the metric associated with the alarm.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::Statistic>,
     /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</p>
-    #[doc(hidden)]
     pub extended_statistic: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions for the metric associated with the alarm.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The period, in seconds, over which the statistic is applied.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The unit of the metric associated with the alarm.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::StandardUnit>,
     /// <p>The number of periods over which data is compared to the specified threshold.</p>
-    #[doc(hidden)]
     pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>The number of data points that must be breaching to trigger the alarm.</p>
-    #[doc(hidden)]
     pub datapoints_to_alarm: ::std::option::Option<i32>,
     /// <p>The value to compare with the specified statistic.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<f64>,
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
     /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
-    #[doc(hidden)]
     pub treat_missing_data: ::std::option::Option<::std::string::String>,
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
-    #[doc(hidden)]
     pub evaluate_low_sample_count_percentile: ::std::option::Option<::std::string::String>,
     /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
-    #[doc(hidden)]
     pub threshold_metric_id: ::std::option::Option<::std::string::String>,
     /// <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated based on only partial data. This happens if the query used for the alarm returns more than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create alarms on Metrics Insights queries</a>.</p>
-    #[doc(hidden)]
     pub evaluation_state: ::std::option::Option<crate::types::EvaluationState>,
     /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
-    #[doc(hidden)]
     pub state_transitioned_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MetricAlarm {

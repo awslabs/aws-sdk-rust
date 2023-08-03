@@ -6,7 +6,6 @@ pub struct UploadPartCopyInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
@@ -37,58 +36,40 @@ pub struct UploadPartCopyInput {
     /// </ul>
     /// <p>To copy a specific version of an object, append <code>?versionId=
     /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
-    #[doc(hidden)]
     pub copy_source: ::std::option::Option<::std::string::String>,
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
-    #[doc(hidden)]
     pub copy_source_if_match: ::std::option::Option<::std::string::String>,
     /// <p>Copies the object if it has been modified since the specified time.</p>
-    #[doc(hidden)]
     pub copy_source_if_modified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
-    #[doc(hidden)]
     pub copy_source_if_none_match: ::std::option::Option<::std::string::String>,
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
-    #[doc(hidden)]
     pub copy_source_if_unmodified_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
-    #[doc(hidden)]
     pub copy_source_range: ::std::option::Option<::std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
-    #[doc(hidden)]
     pub part_number: ::std::option::Option<i32>,
     /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
-    #[doc(hidden)]
     pub sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p>
-    #[doc(hidden)]
     pub sse_customer_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    #[doc(hidden)]
     pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
-    #[doc(hidden)]
     pub copy_source_sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
-    #[doc(hidden)]
     pub copy_source_sse_customer_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    #[doc(hidden)]
     pub copy_source_sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub request_payer: ::std::option::Option<crate::types::RequestPayer>,
     /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_source_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl UploadPartCopyInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExecutionsOutput {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
-    #[doc(hidden)]
     pub executions: ::std::option::Option<::std::vec::Vec<crate::types::ListedExecution>>,
     _request_id: Option<String>,
 }

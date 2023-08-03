@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WhatIfRangeScenario {
     /// <p>The start date in the date range that you need the forecast results for.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date in the date range that you need the forecast results for.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The target value that you want to meet for the provided date range.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl WhatIfRangeScenario {

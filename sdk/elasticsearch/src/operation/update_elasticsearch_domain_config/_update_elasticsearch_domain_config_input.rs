@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfigInput {
     /// <p>The name of the Elasticsearch domain that you are updating. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The type and number of instances to instantiate for the domain cluster.</p>
-    #[doc(hidden)]
     pub elasticsearch_cluster_config: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
     /// <p>Specify the type and size of the EBS volume that you want to use. </p>
-    #[doc(hidden)]
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
-    #[doc(hidden)]
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
     /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
-    #[doc(hidden)]
     pub cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Specifies advanced security options.</p>
-    #[doc(hidden)]
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>Specifies the Encryption At Rest Options.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Specifies Auto-Tune options.</p>
-    #[doc(hidden)]
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
     /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl UpdateElasticsearchDomainConfigInput {

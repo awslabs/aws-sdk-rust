@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BulkEmailContent {
     /// <p>The template to use for the bulk email message.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<crate::types::Template>,
 }
 impl BulkEmailContent {

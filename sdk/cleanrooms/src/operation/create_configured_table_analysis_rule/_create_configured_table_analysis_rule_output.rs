@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAnalysisRuleOutput {
     /// <p>The entire created analysis rule.</p>
-    #[doc(hidden)]
     pub analysis_rule: ::std::option::Option<crate::types::ConfiguredTableAnalysisRule>,
     _request_id: Option<String>,
 }

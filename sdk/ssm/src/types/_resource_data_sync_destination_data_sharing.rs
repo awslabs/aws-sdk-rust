@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncDestinationDataSharing {
     /// <p>The sharing data type. Only <code>Organization</code> is supported.</p>
-    #[doc(hidden)]
     pub destination_data_sharing_type: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDataSyncDestinationDataSharing {

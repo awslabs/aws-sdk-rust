@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeLine {
     /// <p>The code line number.</p>
-    #[doc(hidden)]
     pub number: ::std::option::Option<i32>,
     /// <p>The code that contains a vulnerability.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
 }
 impl CodeLine {

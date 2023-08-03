@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
     /// <p>The device name that is exposed to the EC2 instance. For example, <code>/dev/sdh</code> or <code>xvdh</code>.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters that are used to automatically set up Amazon EBS volumes when an instance is launched.</p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails>,
     /// <p>Whether to suppress the device that is included in the block device mapping of the Amazon Machine Image (AMI).</p>
     /// <p>If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.&gt;</p>
-    #[doc(hidden)]
     pub no_device: bool,
     /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
     /// <p>You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
-    #[doc(hidden)]
     pub virtual_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {

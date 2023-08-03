@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomRoutingListenersInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
-    #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListCustomRoutingListenersInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VsamAttributes {
     /// <p>The record format of the data set.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
-    #[doc(hidden)]
     pub encoding: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
-    #[doc(hidden)]
     pub compressed: bool,
     /// <p>The primary key of the data set.</p>
-    #[doc(hidden)]
     pub primary_key: ::std::option::Option<crate::types::PrimaryKey>,
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
-    #[doc(hidden)]
     pub alternate_keys: ::std::option::Option<::std::vec::Vec<crate::types::AlternateKey>>,
 }
 impl VsamAttributes {

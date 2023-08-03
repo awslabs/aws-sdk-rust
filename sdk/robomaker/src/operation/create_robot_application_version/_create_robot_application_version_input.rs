@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationVersionInput {
     /// <p>The application information for the robot application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    #[doc(hidden)]
     pub current_revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    #[doc(hidden)]
     pub s3_etags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
 }
 impl CreateRobotApplicationVersionInput {

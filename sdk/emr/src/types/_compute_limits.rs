@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeLimits {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
-    #[doc(hidden)]
     pub unit_type: ::std::option::Option<crate::types::ComputeLimitsUnitType>,
     /// <p> The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
-    #[doc(hidden)]
     pub minimum_capacity_units: ::std::option::Option<i32>,
     /// <p> The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
-    #[doc(hidden)]
     pub maximum_capacity_units: ::std::option::Option<i32>,
     /// <p> The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
-    #[doc(hidden)]
     pub maximum_on_demand_capacity_units: ::std::option::Option<i32>,
     /// <p> The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
-    #[doc(hidden)]
     pub maximum_core_capacity_units: ::std::option::Option<i32>,
 }
 impl ComputeLimits {

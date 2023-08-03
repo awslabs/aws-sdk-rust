@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    #[doc(hidden)]
     pub failed_service_action_associations: ::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
     _request_id: Option<String>,
 }

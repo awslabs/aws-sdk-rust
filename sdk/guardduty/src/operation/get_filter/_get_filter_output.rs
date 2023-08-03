@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFilterOutput {
     /// <p>The name of the filter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the filter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::FilterAction>,
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
-    #[doc(hidden)]
     pub rank: i32,
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    #[doc(hidden)]
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>The tags of the filter resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

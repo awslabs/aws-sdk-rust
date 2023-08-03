@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableOptions {
     /// <p>The metric placement (row, column) options.</p>
-    #[doc(hidden)]
     pub metric_placement: ::std::option::Option<crate::types::PivotTableMetricPlacement>,
     /// <p>The visibility of the single metric options.</p>
-    #[doc(hidden)]
     pub single_metric_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The visibility of the column names.</p>
-    #[doc(hidden)]
     pub column_names_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Determines the visibility of the pivot table.</p>
-    #[doc(hidden)]
     pub toggle_buttons_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The table cell style of the column header.</p>
-    #[doc(hidden)]
     pub column_header_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The table cell style of the row headers.</p>
-    #[doc(hidden)]
     pub row_header_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The table cell style of cells.</p>
-    #[doc(hidden)]
     pub cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The table cell style of row field names.</p>
-    #[doc(hidden)]
     pub row_field_names_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The row alternate color options (widget status, row alternate colors).</p>
-    #[doc(hidden)]
     pub row_alternate_color_options: ::std::option::Option<crate::types::RowAlternateColorOptions>,
     /// <p>The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is <code>VISIBLE</code>.</p>
-    #[doc(hidden)]
     pub collapsed_row_dimensions_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl PivotTableOptions {

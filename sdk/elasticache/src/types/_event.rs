@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The identifier for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
-    #[doc(hidden)]
     pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the origin of this event - a cluster, a parameter group, a security group, etc.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The text of the event.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the event occurred.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Event {

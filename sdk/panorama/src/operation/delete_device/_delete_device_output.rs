@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeviceOutput {
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

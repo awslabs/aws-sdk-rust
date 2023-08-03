@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePatchGroupsInput {
     /// <p>The maximum number of patch groups to return (per page).</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
@@ -12,10 +11,8 @@ pub struct DescribePatchGroupsInput {
     /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p> </li>
     /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribePatchGroupsInput {

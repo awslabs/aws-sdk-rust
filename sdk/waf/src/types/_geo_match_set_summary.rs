@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchSetSummary {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You can use <code>GeoMatchSetId</code> in a <code>GetGeoMatchSet</code> request to get detailed information about an <code>GeoMatchSet</code>.</p>
-    #[doc(hidden)]
     pub geo_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl GeoMatchSetSummary {

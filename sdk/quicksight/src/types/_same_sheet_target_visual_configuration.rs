@@ -6,14 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SameSheetTargetVisualConfiguration {
     /// <p>A list of the target visual IDs that are located in the same sheet of the analysis.</p>
-    #[doc(hidden)]
     pub target_visuals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub target_visual_options: ::std::option::Option<crate::types::TargetVisualOptions>,
 }
 impl SameSheetTargetVisualConfiguration {

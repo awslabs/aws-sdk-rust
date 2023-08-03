@@ -4,58 +4,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLayerInput {
     /// <p>The layer ID.</p>
-    #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>The layer name, which is used by the console.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
-    #[doc(hidden)]
     pub shortname: ::std::option::Option<::std::string::String>,
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>>,
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    #[doc(hidden)]
     pub custom_instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
-    #[doc(hidden)]
     pub custom_json: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the layer's custom security group IDs.</p>
-    #[doc(hidden)]
     pub custom_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    #[doc(hidden)]
     pub packages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    #[doc(hidden)]
     pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     /// <p>Whether to disable auto healing for the layer.</p>
-    #[doc(hidden)]
     pub enable_auto_healing: ::std::option::Option<bool>,
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    #[doc(hidden)]
     pub auto_assign_elastic_ips: ::std::option::Option<bool>,
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    #[doc(hidden)]
     pub auto_assign_public_ips: ::std::option::Option<bool>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-    #[doc(hidden)]
     pub custom_recipes: ::std::option::Option<crate::types::Recipes>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
-    #[doc(hidden)]
     pub install_updates_on_boot: ::std::option::Option<bool>,
     /// <p>Whether to use Amazon EBS-optimized instances.</p>
-    #[doc(hidden)]
     pub use_ebs_optimized_instances: ::std::option::Option<bool>,
     /// <p></p>
-    #[doc(hidden)]
     pub lifecycle_event_configuration: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
 }
 impl UpdateLayerInput {

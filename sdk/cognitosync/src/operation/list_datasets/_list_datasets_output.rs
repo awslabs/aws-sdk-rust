@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsOutput {
     /// A set of datasets.
-    #[doc(hidden)]
     pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
     /// Number of datasets returned.
-    #[doc(hidden)]
     pub count: i32,
     /// A pagination token for obtaining the next page of results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

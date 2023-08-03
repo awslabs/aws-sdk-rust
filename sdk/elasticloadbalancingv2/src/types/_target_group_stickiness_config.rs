@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupStickinessConfig {
     /// <p>Indicates whether target group stickiness is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
 }
 impl TargetGroupStickinessConfig {

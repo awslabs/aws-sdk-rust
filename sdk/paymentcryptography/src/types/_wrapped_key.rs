@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WrappedKey {
     /// <p>The <code>KeyARN</code> of the wrapped key.</p>
-    #[doc(hidden)]
     pub wrapping_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key block format of a wrapped key.</p>
-    #[doc(hidden)]
     pub wrapped_key_material_format: ::std::option::Option<crate::types::WrappedKeyMaterialFormat>,
     /// <p>Parameter information for generating a wrapped key using TR-31 or TR-34 standard.</p>
-    #[doc(hidden)]
     pub key_material: ::std::option::Option<::std::string::String>,
 }
 impl WrappedKey {

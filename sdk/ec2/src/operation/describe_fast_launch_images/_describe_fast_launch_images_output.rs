@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFastLaunchImagesOutput {
     /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
-    #[doc(hidden)]
     pub fast_launch_images: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

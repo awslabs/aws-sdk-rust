@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
-    #[doc(hidden)]
     pub virtual_interface_test: ::std::option::Option<crate::types::VirtualInterfaceTestHistory>,
     _request_id: Option<String>,
 }

@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyGroup {
     /// <p>The name (friendly name, not ARN) identifying the group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl PolicyGroup {

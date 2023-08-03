@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The ID of the subscription.</p>
-    #[doc(hidden)]
     pub subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the subscription.</p>
-    #[doc(hidden)]
     pub end_point: ::std::option::Option<::std::string::String>,
     /// <p>The protocol of the subscription.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::SubscriptionProtocolType>,
 }
 impl Subscription {

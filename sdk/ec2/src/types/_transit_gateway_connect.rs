@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayConnect {
     /// <p>The ID of the Connect attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment from which the Connect attachment was created.</p>
-    #[doc(hidden)]
     pub transport_transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the attachment.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayAttachmentState>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Connect attachment options.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::TransitGatewayConnectOptions>,
     /// <p>The tags for the attachment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGatewayConnect {

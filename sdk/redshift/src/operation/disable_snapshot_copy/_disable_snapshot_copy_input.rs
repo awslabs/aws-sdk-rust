@@ -6,7 +6,6 @@
 pub struct DisableSnapshotCopyInput {
     /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DisableSnapshotCopyInput {

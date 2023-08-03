@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudComponentStatus {
     /// <p>The state of the component version.</p>
-    #[doc(hidden)]
     pub component_state: ::std::option::Option<crate::types::CloudComponentState>,
     /// <p>A message that communicates details, such as errors, about the status of the component version.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A dictionary of errors that communicate why the component version is in an error state. For example, if IoT Greengrass can't access an artifact for the component version, then <code>errors</code> contains the artifact's URI as a key, and the error message as the value for that key.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
@@ -19,10 +16,8 @@ pub struct CloudComponentStatus {
     /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
     /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    #[doc(hidden)]
     pub vendor_guidance_message: ::std::option::Option<::std::string::String>,
 }
 impl CloudComponentStatus {

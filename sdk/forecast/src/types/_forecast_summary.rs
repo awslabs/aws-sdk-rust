@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastSummary {
     /// <p>The ARN of the forecast.</p>
-    #[doc(hidden)]
     pub forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the forecast.</p>
-    #[doc(hidden)]
     pub forecast_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the predictor used to generate the forecast.</p>
-    #[doc(hidden)]
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the Forecast was created from an AutoPredictor.</p>
-    #[doc(hidden)]
     pub created_using_auto_predictor: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provided the data used to train the predictor.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the forecast. States include:</p>
     /// <ul>
@@ -28,13 +23,10 @@ pub struct ForecastSummary {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the forecast creation task was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -44,7 +36,6 @@ pub struct ForecastSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ForecastSummary {

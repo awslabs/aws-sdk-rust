@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageRecord {
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
-    #[doc(hidden)]
     pub automated_discovery_free_trial_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.</p>
-    #[doc(hidden)]
     pub free_trial_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
-    #[doc(hidden)]
     pub usage: ::std::option::Option<::std::vec::Vec<crate::types::UsageByAccount>>,
 }
 impl UsageRecord {

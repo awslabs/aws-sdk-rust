@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOutpostInstanceTypesInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetOutpostInstanceTypesInput {

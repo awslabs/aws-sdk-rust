@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to permanently delete.</p>
-    #[doc(hidden)]
     pub cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInboundCrossClusterSearchConnectionInput {

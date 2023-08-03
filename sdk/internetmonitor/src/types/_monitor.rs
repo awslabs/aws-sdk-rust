@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Monitor {
     /// <p>The name of the monitor.</p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a monitor.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MonitorConfigState>,
     /// <p>The health of data processing for the monitor.</p>
-    #[doc(hidden)]
     pub processing_status: ::std::option::Option<crate::types::MonitorProcessingStatusCode>,
 }
 impl Monitor {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaDefinition {
     /// <p>List of column definitions.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
     /// <p>List of column names used for primary key.</p>
-    #[doc(hidden)]
     pub primary_key_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SchemaDefinition {

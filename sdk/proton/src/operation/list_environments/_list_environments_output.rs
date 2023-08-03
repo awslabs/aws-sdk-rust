@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutput {
     /// <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment detail data summaries.</p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
     _request_id: Option<String>,
 }

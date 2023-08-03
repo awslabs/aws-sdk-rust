@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterApplicationRevisionInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A comment about the revision.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the application revision to register, including type and location.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<crate::types::RevisionLocation>,
 }
 impl RegisterApplicationRevisionInput {

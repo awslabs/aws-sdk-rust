@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionIndex {
     /// <p>The keys for the partition index.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the partition index.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl PartitionIndex {

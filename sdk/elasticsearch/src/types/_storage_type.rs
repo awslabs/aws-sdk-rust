@@ -10,7 +10,6 @@ pub struct StorageType {
     /// <li>ebs</li> Elastic block storage that would be attached to the given Instance
     /// </ol>
     /// <p></p>
-    #[doc(hidden)]
     pub storage_type_name: ::std::option::Option<::std::string::String>,
     /// <p> SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes </p>
     /// <ol>
@@ -20,10 +19,8 @@ pub struct StorageType {
     /// <li>io1</li>
     /// </ol> Refer <code><code>VolumeType</code></code> for more information regarding above EBS storage options.
     /// <p></p>
-    #[doc(hidden)]
     pub storage_sub_type_name: ::std::option::Option<::std::string::String>,
     /// <p>List of limits that are applicable for given storage type. </p>
-    #[doc(hidden)]
     pub storage_type_limits: ::std::option::Option<::std::vec::Vec<crate::types::StorageTypeLimit>>,
 }
 impl StorageType {

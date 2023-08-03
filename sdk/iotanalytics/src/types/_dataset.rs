@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dataset.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>DatasetAction</code> objects that automatically create the dataset contents.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>>,
     /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically updated.</p>
-    #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
     /// <p>When dataset contents are created they are delivered to destinations specified here.</p>
-    #[doc(hidden)]
     pub content_delivery_rules: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>>,
     /// <p>The status of the dataset.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p>When the dataset was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the dataset was updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    #[doc(hidden)]
     pub versioning_configuration: ::std::option::Option<crate::types::VersioningConfiguration>,
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    #[doc(hidden)]
     pub late_data_rules: ::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>>,
 }
 impl Dataset {

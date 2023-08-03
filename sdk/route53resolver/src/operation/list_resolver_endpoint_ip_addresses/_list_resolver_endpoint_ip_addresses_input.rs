@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResolverEndpointIpAddressesInput {
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-    #[doc(hidden)]
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
     /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListResolverEndpointIpAddressesInput {

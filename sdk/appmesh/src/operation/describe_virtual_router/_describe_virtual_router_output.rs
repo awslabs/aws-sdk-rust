@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVirtualRouterOutput {
     /// <p>The full description of your virtual router.</p>
-    #[doc(hidden)]
     pub virtual_router: ::std::option::Option<crate::types::VirtualRouterData>,
     _request_id: Option<String>,
 }

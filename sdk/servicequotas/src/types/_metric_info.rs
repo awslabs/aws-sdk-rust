@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricInfo {
     /// <p>The namespace of the metric.</p>
-    #[doc(hidden)]
     pub metric_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
-    #[doc(hidden)]
     pub metric_dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
-    #[doc(hidden)]
     pub metric_statistic_recommendation: ::std::option::Option<::std::string::String>,
 }
 impl MetricInfo {

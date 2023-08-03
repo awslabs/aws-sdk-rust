@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectAnomaliesOutput {
     /// <p>The results of the <code>DetectAnomalies</code> operation.</p>
-    #[doc(hidden)]
     pub detect_anomaly_result: ::std::option::Option<crate::types::DetectAnomalyResult>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBucketMetricsConfigurationsOutput {
     /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
-    #[doc(hidden)]
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    #[doc(hidden)]
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of metrics configurations for a bucket.</p>
-    #[doc(hidden)]
     pub metrics_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricsConfiguration>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

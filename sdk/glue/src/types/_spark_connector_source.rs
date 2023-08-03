@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SparkConnectorSource {
     /// <p>The name of the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection that is associated with the connector.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    #[doc(hidden)]
     pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<::std::string::String>,
     /// <p>Additional connection options for the connector.</p>
-    #[doc(hidden)]
     pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies data schema for the custom spark source.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl SparkConnectorSource {

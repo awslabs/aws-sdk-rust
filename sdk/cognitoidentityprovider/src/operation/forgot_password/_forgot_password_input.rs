@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ForgotPasswordInput {
     /// <p>The ID of the client associated with the user pool.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
-    #[doc(hidden)]
     pub secret_hash: ::std::option::Option<::std::string::String>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    #[doc(hidden)]
     pub user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
-    #[doc(hidden)]
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ForgotPassword API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>user migration</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -29,7 +24,6 @@ pub struct ForgotPasswordInput {
     /// <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>
     /// </ul>
     /// </note>
-    #[doc(hidden)]
     pub client_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ForgotPasswordInput {

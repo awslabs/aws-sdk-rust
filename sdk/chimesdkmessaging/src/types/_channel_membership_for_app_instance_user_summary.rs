@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelMembershipForAppInstanceUserSummary {
     /// <p>Returns the channel data for an <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
     /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user_membership_summary: ::std::option::Option<crate::types::AppInstanceUserMembershipSummary>,
 }
 impl ChannelMembershipForAppInstanceUserSummary {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPointDescription {
     /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the access point, assigned by Amazon EFS.</p>
-    #[doc(hidden)]
     pub access_point_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
-    #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EFS file system that the access point applies to.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
-    #[doc(hidden)]
     pub posix_user: ::std::option::Option<crate::types::PosixUser>,
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
-    #[doc(hidden)]
     pub root_directory: ::std::option::Option<crate::types::RootDirectory>,
     /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the lifecycle phase of the access point.</p>
-    #[doc(hidden)]
     pub life_cycle_state: ::std::option::Option<crate::types::LifeCycleState>,
 }
 impl AccessPointDescription {

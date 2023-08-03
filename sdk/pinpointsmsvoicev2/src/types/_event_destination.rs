@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDestination {
     /// <p>The name of the EventDestination.</p>
-    #[doc(hidden)]
     pub event_destination_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to true events will be logged.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>An array of event types that determine which events to log.</p>
-    #[doc(hidden)]
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// <p>An object that contains information about an event destination that sends logging events to Amazon CloudWatch logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that contains information about an event destination that sends logging events to Amazon SNS.</p>
-    #[doc(hidden)]
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
 impl EventDestination {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyType {
     /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::Attribute>,
     /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
-    #[doc(hidden)]
     pub measurement: ::std::option::Option<crate::types::Measurement>,
     /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
-    #[doc(hidden)]
     pub transform: ::std::option::Option<crate::types::Transform>,
     /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::Metric>,
 }
 impl PropertyType {

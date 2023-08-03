@@ -17,21 +17,16 @@ pub struct DescribeKeyPairsInput {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The key pair names.</p>
     /// <p>Default: Describes all of your key pairs.</p>
-    #[doc(hidden)]
     pub key_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the key pairs.</p>
-    #[doc(hidden)]
     pub key_pair_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>If <code>true</code>, the public key material is included in the response.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub include_public_key: ::std::option::Option<bool>,
 }
 impl DescribeKeyPairsInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableMetadataInput {
     /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
-    #[doc(hidden)]
     pub catalog_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database that contains the table metadata to return.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table for which metadata is returned.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl GetTableMetadataInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
-    #[doc(hidden)]
     pub analysis_schemes: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
     _request_id: Option<String>,
 }

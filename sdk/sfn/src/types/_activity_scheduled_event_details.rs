@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActivityScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
-    #[doc(hidden)]
     pub input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     /// <p>The maximum allowed duration of the activity task.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The maximum allowed duration between two heartbeats for the activity task.</p>
-    #[doc(hidden)]
     pub heartbeat_in_seconds: ::std::option::Option<i64>,
 }
 impl ActivityScheduledEventDetails {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActiveDirectoryConfiguration {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
-    #[doc(hidden)]
     pub computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
-    #[doc(hidden)]
     pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
 }
 impl ActiveDirectoryConfiguration {

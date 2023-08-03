@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImageScanInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that contains the images to scan.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<crate::types::ImageIdentifier>,
 }
 impl StartImageScanInput {

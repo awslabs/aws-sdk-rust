@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayInput {
     /// <p>The identifier of the wireless gateway to get.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of identifier used in <code>identifier</code>.</p>
-    #[doc(hidden)]
     pub identifier_type: ::std::option::Option<crate::types::WirelessGatewayIdType>,
 }
 impl GetWirelessGatewayInput {

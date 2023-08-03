@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the configuration recording was initiated.</p>
-    #[doc(hidden)]
     pub configuration_item_capture_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration item status. The valid values are:</p>
     /// <ul>
@@ -23,52 +20,37 @@ pub struct ConfigurationItem {
     /// </ul> <note>
     /// <p>The CIs do not incur any cost.</p>
     /// </note>
-    #[doc(hidden)]
     pub configuration_item_status: ::std::option::Option<crate::types::ConfigurationItemStatus>,
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
-    #[doc(hidden)]
     pub configuration_state_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique MD5 hash that represents the configuration item's state.</p>
     /// <p>You can use MD5 hash to compare the states of two or more configuration items that are associated with the same resource.</p>
-    #[doc(hidden)]
     pub configuration_item_md5_hash: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) associated with the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the resource, if available.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The region where the resource resides.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone associated with the resource.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp when the resource was created.</p>
-    #[doc(hidden)]
     pub resource_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A mapping of key value tags associated with the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of CloudTrail event IDs.</p>
     /// <p>A populated field indicates that the current configuration was initiated by the events recorded in the CloudTrail log. For more information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
     /// <p>An empty field indicates that the current configuration was not initiated by any event. As of Version 1.3, the relatedEvents field is empty. You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
-    #[doc(hidden)]
     pub related_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of related Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
     /// <p>The description of the resource configuration.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the <code>configuration</code> parameter.</p>
-    #[doc(hidden)]
     pub supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ConfigurationItem {

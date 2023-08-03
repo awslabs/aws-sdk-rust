@@ -6,45 +6,33 @@
 pub struct Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub gt: i32,
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub gte: i32,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub lt: i32,
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub lte: i32,
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    #[doc(hidden)]
     pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    #[doc(hidden)]
     pub not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
-    #[doc(hidden)]
     pub greater_than: i64,
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
-    #[doc(hidden)]
     pub greater_than_or_equal: i64,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
-    #[doc(hidden)]
     pub less_than: i64,
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
-    #[doc(hidden)]
     pub less_than_or_equal: i64,
 }
 impl Condition {

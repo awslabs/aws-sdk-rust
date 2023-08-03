@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartDevEnvironmentSessionOutput {
     /// <p>Information about connection details for a Dev Environment.</p>
-    #[doc(hidden)]
     pub access_details: ::std::option::Option<crate::types::DevEnvironmentAccessDetails>,
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

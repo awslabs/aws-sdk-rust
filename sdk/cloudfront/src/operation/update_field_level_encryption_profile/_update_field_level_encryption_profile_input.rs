@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionProfileInput {
     /// <p>Request to update a field-level encryption profile.</p>
-    #[doc(hidden)]
     pub field_level_encryption_profile_config: ::std::option::Option<crate::types::FieldLevelEncryptionProfileConfig>,
     /// <p>The ID of the field-level encryption profile request.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFieldLevelEncryptionProfileInput {

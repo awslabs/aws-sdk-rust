@@ -6,15 +6,12 @@
 pub struct DescribeEngineDefaultParametersInput {
     /// <p>The name of the cache parameter group family.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
-    #[doc(hidden)]
     pub cache_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEngineDefaultParametersInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksVolume {
     /// <p>The name of the volume. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub host_path: ::std::option::Option<crate::types::EksHostPath>,
     /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub empty_dir: ::std::option::Option<crate::types::EksEmptyDir>,
     /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub secret: ::std::option::Option<crate::types::EksSecret>,
 }
 impl EksVolume {

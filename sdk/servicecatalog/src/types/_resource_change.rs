@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceChange {
     /// <p>The change action.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The ID of the resource, as defined in the CloudFormation template.</p>
-    #[doc(hidden)]
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource, if it was already created.</p>
-    #[doc(hidden)]
     pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource is deleted and replaced with a new one.</p>
-    #[doc(hidden)]
     pub replacement: ::std::option::Option<crate::types::Replacement>,
     /// <p>The change scope.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
     /// <p>Information about the resource changes.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>>,
 }
 impl ResourceChange {

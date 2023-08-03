@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobResultOutput {
     /// <p>The Amazon Resource Name (ARN) for the snapshot job. The job ARN is generated when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of a job after it has reached a terminal state. A finished snapshot job will retuen a <code>COMPLETED</code> or <code>FAILED</code> status.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::SnapshotJobStatus>,
     /// <p>The time that a snapshot job was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that a snapshot job status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The result of the snapshot job. Jobs that have successfully completed will return the S3Uri where they are located. Jobs that have failedwill return information on the error that caused the job to fail.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::SnapshotJobResult>,
     /// <p>Displays information for the error that caused a job to fail.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::SnapshotJobErrorInfo>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentState {
     /// <p>The current state of the component.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ComponentStatus>,
     /// <p>Describes how or why the component changed state.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ComponentState {

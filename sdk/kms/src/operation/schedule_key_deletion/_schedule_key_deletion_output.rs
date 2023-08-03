@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time after which KMS deletes the KMS key.</p>
     /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
-    #[doc(hidden)]
     pub deletion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub key_state: ::std::option::Option<crate::types::KeyState>,
     /// <p>The waiting period before the KMS key is deleted. </p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
-    #[doc(hidden)]
     pub pending_window_in_days: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

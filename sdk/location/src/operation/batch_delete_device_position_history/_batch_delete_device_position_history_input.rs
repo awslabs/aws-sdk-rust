@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryInput {
     /// <p>The name of the tracker resource to delete the device position history from.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
     /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteDevicePositionHistoryInput {

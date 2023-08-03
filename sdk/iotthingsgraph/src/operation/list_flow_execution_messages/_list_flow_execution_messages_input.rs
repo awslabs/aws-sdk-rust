@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlowExecutionMessagesInput {
     /// <p>The ID of the flow execution.</p>
-    #[doc(hidden)]
     pub flow_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListFlowExecutionMessagesInput {

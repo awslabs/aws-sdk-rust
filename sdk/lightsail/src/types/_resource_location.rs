@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceLocation {
     /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region name.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<crate::types::RegionName>,
 }
 impl ResourceLocation {

@@ -3,28 +3,22 @@
 #[non_exhaustive]
 pub struct PutSessionOutput {
     /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the current intent.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
     /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code> the default is <code>ORIGINAL_VALUE</code>. </p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::string::String>,
     /// <p>Map of key/value pairs representing session-specific context information.</p>
-    #[doc(hidden)]
     pub session_attributes: ::std::option::Option<::std::string::String>,
     /// <p>The next message that should be presented to the user.</p>
     /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
     #[deprecated(
         note = "The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales."
     )]
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The next message that should be presented to the user.</p>
     /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
-    #[doc(hidden)]
     pub encoded_message: ::std::option::Option<::std::string::String>,
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
@@ -33,7 +27,6 @@ pub struct PutSessionOutput {
     /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
     /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub message_format: ::std::option::Option<crate::types::MessageFormatType>,
     /// <p></p>
     /// <ul>
@@ -44,18 +37,14 @@ pub struct PutSessionOutput {
     /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p> </li>
     /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub dialog_state: ::std::option::Option<crate::types::DialogState>,
     /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
-    #[doc(hidden)]
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>The audio version of the message to convey to the user.</p>
     pub audio_stream: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>A unique identifier for the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of active contexts for the session.</p>
-    #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

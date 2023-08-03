@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InviteUsersInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The user email addresses to which to send the email invitation.</p>
-    #[doc(hidden)]
     pub user_email_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user type.</p>
-    #[doc(hidden)]
     pub user_type: ::std::option::Option<crate::types::UserType>,
 }
 impl InviteUsersInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionAlgorithmOptions {
     /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithm>>,
     /// <p>The default encryption algorithm that is used by a code signing job.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<crate::types::EncryptionAlgorithm>,
 }
 impl EncryptionAlgorithmOptions {

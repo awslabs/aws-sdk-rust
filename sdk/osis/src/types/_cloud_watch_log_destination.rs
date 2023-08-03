@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogDestination {
     /// <p>The name of the CloudWatch Logs group to send pipeline logs to. You can specify an existing log group or create a new one. For example, <code>/aws/OpenSearchService/IngestionService/my-pipeline</code>.</p>
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogDestination {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateConnectionAliasOutput {
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
-    #[doc(hidden)]
     pub connection_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

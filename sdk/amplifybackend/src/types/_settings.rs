@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Settings {
     /// <p>The supported MFA types.</p>
-    #[doc(hidden)]
     pub mfa_types: ::std::option::Option<::std::vec::Vec<crate::types::MfaTypesElement>>,
     /// <p>The body of the SMS message.</p>
-    #[doc(hidden)]
     pub sms_message: ::std::option::Option<::std::string::String>,
 }
 impl Settings {

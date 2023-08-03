@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentSummary {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component.</p>
-    #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the component.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<crate::types::ComponentType>,
     /// <p>The tags of the component.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the component summary.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ComponentSummary {

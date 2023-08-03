@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStartRecommendationsOutput {
     /// <p>A list with error details about the analysis of each source database.</p>
-    #[doc(hidden)]
     pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartRecommendationsErrorEntry>>,
     _request_id: Option<String>,
 }

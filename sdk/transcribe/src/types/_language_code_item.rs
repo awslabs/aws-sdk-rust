@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LanguageCodeItem {
     /// <p>Provides the language code for each language identified in your media.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Provides the total time, in seconds, each identified language is spoken in your media.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<f32>,
 }
 impl LanguageCodeItem {

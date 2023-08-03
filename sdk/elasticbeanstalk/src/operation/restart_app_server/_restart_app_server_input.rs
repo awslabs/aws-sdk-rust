@@ -6,11 +6,9 @@
 pub struct RestartAppServerInput {
     /// <p>The ID of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment to restart the server for.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl RestartAppServerInput {

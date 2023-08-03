@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTapesOutput {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
-    #[doc(hidden)]
     pub tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

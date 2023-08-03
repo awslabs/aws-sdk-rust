@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRouteCalculatorInput {
     /// <p>The name of the route calculator resource.</p>
-    #[doc(hidden)]
     pub calculator_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRouteCalculatorInput {

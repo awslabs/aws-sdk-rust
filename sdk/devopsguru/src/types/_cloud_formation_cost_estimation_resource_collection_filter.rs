@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFormationCostEstimationResourceCollectionFilter {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
-    #[doc(hidden)]
     pub stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudFormationCostEstimationResourceCollectionFilter {

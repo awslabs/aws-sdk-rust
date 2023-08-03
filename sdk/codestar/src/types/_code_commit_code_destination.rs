@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeCommitCodeDestination {
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl CodeCommitCodeDestination {

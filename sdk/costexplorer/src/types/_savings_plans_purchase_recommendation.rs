@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlansPurchaseRecommendation {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-    #[doc(hidden)]
     pub account_scope: ::std::option::Option<crate::types::AccountScope>,
     /// <p>The requested Savings Plans recommendation type.</p>
-    #[doc(hidden)]
     pub savings_plans_type: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
     /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
-    #[doc(hidden)]
     pub term_in_years: ::std::option::Option<crate::types::TermInYears>,
     /// <p>The payment option that's used to generate the recommendation.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The lookback period in days that's used to generate the recommendation.</p>
-    #[doc(hidden)]
     pub lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
     /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
-    #[doc(hidden)]
     pub savings_plans_purchase_recommendation_details: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>>,
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
-    #[doc(hidden)]
     pub savings_plans_purchase_recommendation_summary: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary>,
 }
 impl SavingsPlansPurchaseRecommendation {

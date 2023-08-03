@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>The latitude.</p>
-    #[doc(hidden)]
     pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude.</p>
-    #[doc(hidden)]
     pub longitude: ::std::option::Option<f64>,
 }
 impl Location {

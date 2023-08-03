@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Country {
     /// <p>The country code of the remote IP address.</p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The country name of the remote IP address.</p>
-    #[doc(hidden)]
     pub country_name: ::std::option::Option<::std::string::String>,
 }
 impl Country {

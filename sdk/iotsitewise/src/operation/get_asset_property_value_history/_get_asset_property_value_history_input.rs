@@ -4,36 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssetPropertyValueHistoryInput {
     /// <p>The ID of the asset.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The quality by which to filter asset data.</p>
-    #[doc(hidden)]
     pub qualities: ::std::option::Option<::std::vec::Vec<crate::types::Quality>>,
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
-    #[doc(hidden)]
     pub time_ordering: ::std::option::Option<crate::types::TimeOrdering>,
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
     /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
     /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetAssetPropertyValueHistoryInput {

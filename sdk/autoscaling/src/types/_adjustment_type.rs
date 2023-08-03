@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdjustmentType {
     /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    #[doc(hidden)]
     pub adjustment_type: ::std::option::Option<::std::string::String>,
 }
 impl AdjustmentType {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalReplicationGroupMember {
     /// <p>The replication group id of the Global datastore member.</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon region of the Global datastore member.</p>
-    #[doc(hidden)]
     pub replication_group_region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the role of the replication group, primary or secondary.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether automatic failover is enabled for the replication group.</p>
-    #[doc(hidden)]
     pub automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
     /// <p>The status of the membership of the replication group.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl GlobalReplicationGroupMember {

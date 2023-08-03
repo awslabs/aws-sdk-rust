@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateThirdPartyFirewallOutput {
     /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
-    #[doc(hidden)]
     pub third_party_firewall_status: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     _request_id: Option<String>,
 }

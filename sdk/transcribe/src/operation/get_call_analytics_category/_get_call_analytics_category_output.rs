@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCallAnalyticsCategoryOutput {
     /// <p>Provides you with the properties of the Call Analytics category you specified in your <code>GetCallAnalyticsCategory</code> request.</p>
-    #[doc(hidden)]
     pub category_properties: ::std::option::Option<crate::types::CategoryProperties>,
     _request_id: Option<String>,
 }

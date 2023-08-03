@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UndeploySystemInstanceOutput {
     /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     _request_id: Option<String>,
 }

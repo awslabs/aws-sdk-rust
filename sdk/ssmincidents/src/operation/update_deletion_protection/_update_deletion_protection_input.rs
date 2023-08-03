@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeletionProtectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
-    #[doc(hidden)]
     pub deletion_protected: ::std::option::Option<bool>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDeletionProtectionInput {

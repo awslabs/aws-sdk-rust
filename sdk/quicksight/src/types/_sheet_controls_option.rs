@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetControlsOption {
     /// <p>Visibility state.</p>
-    #[doc(hidden)]
     pub visibility_state: ::std::option::Option<crate::types::DashboardUiState>,
 }
 impl SheetControlsOption {

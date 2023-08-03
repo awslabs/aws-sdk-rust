@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaAnalysisRuleInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    #[doc(hidden)]
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema to retrieve the analysis rule for.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AnalysisRuleType>,
 }
 impl GetSchemaAnalysisRuleInput {

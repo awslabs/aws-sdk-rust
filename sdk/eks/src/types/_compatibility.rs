@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Compatibility {
     /// <p>The supported Kubernetes version of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The supported compute platform.</p>
-    #[doc(hidden)]
     pub platform_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported default version.</p>
-    #[doc(hidden)]
     pub default_version: bool,
 }
 impl Compatibility {

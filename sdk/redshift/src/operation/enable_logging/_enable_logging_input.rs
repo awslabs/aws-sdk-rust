@@ -6,7 +6,6 @@
 pub struct EnableLoggingInput {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
     /// <p>Constraints:</p>
@@ -14,7 +13,6 @@ pub struct EnableLoggingInput {
     /// <li> <p>Must be in the same region as the cluster</p> </li>
     /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix applied to the log file names.</p>
     /// <p>Constraints:</p>
@@ -29,13 +27,10 @@ pub struct EnableLoggingInput {
     /// <li> <p>x7f or larger</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    #[doc(hidden)]
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    #[doc(hidden)]
     pub log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnableLoggingInput {

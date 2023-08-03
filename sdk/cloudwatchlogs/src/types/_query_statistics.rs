@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStatistics {
     /// <p>The number of log events that matched the query string.</p>
-    #[doc(hidden)]
     pub records_matched: f64,
     /// <p>The total number of log events scanned during the query.</p>
-    #[doc(hidden)]
     pub records_scanned: f64,
     /// <p>The total number of bytes in the log events scanned during the query.</p>
-    #[doc(hidden)]
     pub bytes_scanned: f64,
 }
 impl QueryStatistics {

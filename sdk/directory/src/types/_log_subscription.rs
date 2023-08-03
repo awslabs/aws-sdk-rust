@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogSubscription {
     /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the log subscription was created.</p>
-    #[doc(hidden)]
     pub subscription_created_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LogSubscription {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFindingsInput {
     /// <p>The ARN that specifies the finding that you want to describe.</p>
-    #[doc(hidden)]
     pub finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
 }
 impl DescribeFindingsInput {

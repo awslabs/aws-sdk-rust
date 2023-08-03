@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinColumn {
     /// <p>The column to be joined.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>The key of the column to be joined.</p>
-    #[doc(hidden)]
     pub keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl JoinColumn {

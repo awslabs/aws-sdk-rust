@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutQueryDefinitionInput {
     /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
-    #[doc(hidden)]
     pub query_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
     /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
-    #[doc(hidden)]
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
 }
 impl PutQueryDefinitionInput {

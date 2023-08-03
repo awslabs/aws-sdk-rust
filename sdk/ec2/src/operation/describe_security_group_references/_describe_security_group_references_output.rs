@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupReferencesOutput {
     /// <p>Information about the VPCs with the referencing security groups.</p>
-    #[doc(hidden)]
     pub security_group_reference_set: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupReference>>,
     _request_id: Option<String>,
 }

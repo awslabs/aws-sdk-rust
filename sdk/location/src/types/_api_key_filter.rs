@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiKeyFilter {
     /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-    #[doc(hidden)]
     pub key_status: ::std::option::Option<crate::types::Status>,
 }
 impl ApiKeyFilter {

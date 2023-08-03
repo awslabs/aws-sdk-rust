@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictMetadata {
     /// <p>The path of the file that contains conflicts.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
-    #[doc(hidden)]
     pub file_sizes: ::std::option::Option<crate::types::FileSizes>,
     /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
-    #[doc(hidden)]
     pub file_modes: ::std::option::Option<crate::types::FileModes>,
     /// <p>Information about any object type conflicts in a merge operation.</p>
-    #[doc(hidden)]
     pub object_types: ::std::option::Option<crate::types::ObjectTypes>,
     /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
-    #[doc(hidden)]
     pub number_of_conflicts: i32,
     /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
-    #[doc(hidden)]
     pub is_binary_file: ::std::option::Option<crate::types::IsBinaryFile>,
     /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
-    #[doc(hidden)]
     pub content_conflict: bool,
     /// <p>A boolean value indicating whether there are conflicts in the file mode of a file.</p>
-    #[doc(hidden)]
     pub file_mode_conflict: bool,
     /// <p>A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of a file, folder, or submodule.</p>
-    #[doc(hidden)]
     pub object_type_conflict: bool,
     /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
-    #[doc(hidden)]
     pub merge_operations: ::std::option::Option<crate::types::MergeOperations>,
 }
 impl ConflictMetadata {

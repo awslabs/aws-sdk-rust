@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisableAlarmInput {
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    #[doc(hidden)]
     pub disable_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::DisableAlarmActionRequest>>,
 }
 impl BatchDisableAlarmInput {

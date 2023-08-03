@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMailboxExportJobOutput {
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The mailbox export job description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket prefix.</p>
-    #[doc(hidden)]
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
-    #[doc(hidden)]
     pub s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
-    #[doc(hidden)]
     pub estimated_progress: i32,
     /// <p>The state of the mailbox export job.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::MailboxExportJobState>,
     /// <p>Error information for failed mailbox export jobs.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<::std::string::String>,
     /// <p>The mailbox export job start timestamp.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The mailbox export job end timestamp.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

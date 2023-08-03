@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSensitiveDataOccurrencesOutput {
     /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
-    #[doc(hidden)]
     pub sensitive_data_occurrences:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::DetectedDataDetails>>>,
     /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
@@ -16,7 +14,6 @@ pub struct GetSensitiveDataOccurrencesOutput {
     /// <li><p>PROCESSING - Macie is processing the request.</p></li>
     /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RevealRequestStatus>,
     _request_id: Option<String>,
 }

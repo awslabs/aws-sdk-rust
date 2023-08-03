@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMessagingSessionEndpointOutput {
     /// <p>The endpoint returned in the response.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::MessagingSessionEndpoint>,
     _request_id: Option<String>,
 }

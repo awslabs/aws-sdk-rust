@@ -5,47 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetAppOntapsvm {
     /// <p>The universally unique identifier (UUID) of the cluster associated with the SVM.</p>
-    #[doc(hidden)]
     pub cluster_uuid: ::std::option::Option<::std::string::String>,
     /// <p>The UUID of the SVM.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SVM</p>
-    #[doc(hidden)]
     pub svm_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of CIFS shares in the SVM.</p>
-    #[doc(hidden)]
     pub cifs_share_count: ::std::option::Option<i64>,
     /// <p>The data transfer protocols (such as NFS) configured for the SVM.</p>
-    #[doc(hidden)]
     pub enabled_protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The storage space that's being used in the SVM.</p>
-    #[doc(hidden)]
     pub total_capacity_used: ::std::option::Option<i64>,
     /// <p>The total storage space that's available in the SVM.</p>
-    #[doc(hidden)]
     pub total_capacity_provisioned: ::std::option::Option<i64>,
     /// <p>The storage space that's being used in the SVM without accounting for compression or deduplication.</p>
-    #[doc(hidden)]
     pub total_logical_capacity_used: ::std::option::Option<i64>,
     /// <p>The performance data that DataSync Discovery collects about the SVM.</p>
-    #[doc(hidden)]
     pub max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the SVM. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p>The number of NFS volumes in the SVM.</p>
-    #[doc(hidden)]
     pub nfs_exported_volumes: ::std::option::Option<i64>,
     /// <p>Indicates whether DataSync Discovery recommendations for the SVM are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    #[doc(hidden)]
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     /// <p>The amount of storage in the SVM that's being used for snapshots.</p>
-    #[doc(hidden)]
     pub total_snapshot_capacity_used: ::std::option::Option<i64>,
     /// <p>The number of LUNs (logical unit numbers) in the SVM.</p>
-    #[doc(hidden)]
     pub lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapsvm {

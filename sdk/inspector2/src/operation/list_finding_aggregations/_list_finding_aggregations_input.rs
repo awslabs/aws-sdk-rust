@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingAggregationsInput {
     /// <p>The type of the aggregation request.</p>
-    #[doc(hidden)]
     pub aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
-    #[doc(hidden)]
     pub aggregation_request: ::std::option::Option<crate::types::AggregationRequest>,
 }
 impl ListFindingAggregationsInput {

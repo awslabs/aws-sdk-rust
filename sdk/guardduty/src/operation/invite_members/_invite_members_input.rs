@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InviteMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
-    #[doc(hidden)]
     pub disable_email_notification: ::std::option::Option<bool>,
     /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl InviteMembersInput {

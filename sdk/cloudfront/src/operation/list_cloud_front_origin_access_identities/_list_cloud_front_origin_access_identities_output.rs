@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCloudFrontOriginAccessIdentitiesOutput {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-    #[doc(hidden)]
     pub cloud_front_origin_access_identity_list: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>,
     _request_id: Option<String>,
 }

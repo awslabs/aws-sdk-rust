@@ -5,13 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationModel {
     /// <p>The location's name.</p>
-    #[doc(hidden)]
     pub location_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift location resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
 impl LocationModel {

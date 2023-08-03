@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
-    #[doc(hidden)]
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time before which the job runs were submitted.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time after which the job runs were submitted.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the job run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The states of the job run.</p>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
     /// <p>The maximum number of job runs that can be listed.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of job runs to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListJobRunsInput {

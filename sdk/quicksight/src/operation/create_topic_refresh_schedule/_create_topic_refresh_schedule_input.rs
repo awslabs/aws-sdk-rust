@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTopicRefreshScheduleInput {
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The definition of a refresh schedule.</p>
-    #[doc(hidden)]
     pub refresh_schedule: ::std::option::Option<crate::types::TopicRefreshSchedule>,
 }
 impl CreateTopicRefreshScheduleInput {

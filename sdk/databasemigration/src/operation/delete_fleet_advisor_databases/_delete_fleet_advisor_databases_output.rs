@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetAdvisorDatabasesOutput {
     /// <p>The IDs of the databases that the operation deleted.</p>
-    #[doc(hidden)]
     pub database_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

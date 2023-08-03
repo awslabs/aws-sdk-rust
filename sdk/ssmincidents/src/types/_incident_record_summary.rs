@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncidentRecordSummary {
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the incident.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IncidentRecordStatus>,
     /// <p>Defines the impact to customers and applications.</p>
-    #[doc(hidden)]
     pub impact: ::std::option::Option<i32>,
     /// <p>The time the incident was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the incident was resolved.</p>
-    #[doc(hidden)]
     pub resolved_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>What caused Incident Manager to create the incident.</p>
-    #[doc(hidden)]
     pub incident_record_source: ::std::option::Option<crate::types::IncidentRecordSource>,
 }
 impl IncidentRecordSummary {

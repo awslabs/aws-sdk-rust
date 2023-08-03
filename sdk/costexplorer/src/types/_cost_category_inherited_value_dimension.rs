@@ -6,10 +6,8 @@
 pub struct CostCategoryInheritedValueDimension {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-    #[doc(hidden)]
     pub dimension_name: ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>,
     /// <p>The key to extract cost category values.</p>
-    #[doc(hidden)]
     pub dimension_key: ::std::option::Option<::std::string::String>,
 }
 impl CostCategoryInheritedValueDimension {

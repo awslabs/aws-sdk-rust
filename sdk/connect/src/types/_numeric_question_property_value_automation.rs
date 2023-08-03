@@ -11,7 +11,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericQuestionPropertyValueAutomation {
     /// <p>The property label of the automation.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
 }
 impl NumericQuestionPropertyValueAutomation {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterOutput {
     /// <p>The base64-encoded SDP answer content.</p>
-    #[doc(hidden)]
     pub answer: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

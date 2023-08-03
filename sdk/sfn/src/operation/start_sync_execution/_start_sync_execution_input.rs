@@ -4,20 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartSyncExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the execution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
     /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
     /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
-    #[doc(hidden)]
     pub trace_header: ::std::option::Option<::std::string::String>,
 }
 impl StartSyncExecutionInput {

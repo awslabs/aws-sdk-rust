@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Span {
     /// <p>The start position of the span (inclusive).</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<crate::types::Position>,
     /// <p>The end position of the span (exclusive).</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<crate::types::Position>,
 }
 impl Span {

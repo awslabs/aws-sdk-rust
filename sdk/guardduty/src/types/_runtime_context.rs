@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeContext {
     /// <p>Information about the process that modified the current process. This is available for multiple finding types.</p>
-    #[doc(hidden)]
     pub modifying_process: ::std::option::Option<crate::types::ProcessDetails>,
     /// <p>The timestamp at which the process modified the current process. The timestamp is in UTC date string format.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The path to the script that was executed.</p>
-    #[doc(hidden)]
     pub script_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the new library that was loaded.</p>
-    #[doc(hidden)]
     pub library_path: ::std::option::Option<::std::string::String>,
     /// <p>The value of the LD_PRELOAD environment variable.</p>
-    #[doc(hidden)]
     pub ld_preload_value: ::std::option::Option<::std::string::String>,
     /// <p>The path to the docket socket that was accessed.</p>
-    #[doc(hidden)]
     pub socket_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the leveraged <code>runc</code> implementation.</p>
-    #[doc(hidden)]
     pub runc_binary_path: ::std::option::Option<::std::string::String>,
     /// <p>The path in the container that modified the release agent file.</p>
-    #[doc(hidden)]
     pub release_agent_path: ::std::option::Option<::std::string::String>,
     /// <p>The path on the host that is mounted by the container.</p>
-    #[doc(hidden)]
     pub mount_source: ::std::option::Option<::std::string::String>,
     /// <p>The path in the container that is mapped to the host directory.</p>
-    #[doc(hidden)]
     pub mount_target: ::std::option::Option<::std::string::String>,
     /// <p>Represents the type of mounted fileSystem.</p>
-    #[doc(hidden)]
     pub file_system_type: ::std::option::Option<::std::string::String>,
     /// <p>Represents options that control the behavior of a runtime operation or action. For example, a filesystem mount operation may contain a read-only flag.</p>
-    #[doc(hidden)]
     pub flags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the module loaded into the kernel.</p>
-    #[doc(hidden)]
     pub module_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the module loaded into the kernel.</p>
-    #[doc(hidden)]
     pub module_file_path: ::std::option::Option<::std::string::String>,
     /// <p>The <code>SHA256</code> hash of the module.</p>
-    #[doc(hidden)]
     pub module_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The path to the modified shell history file.</p>
-    #[doc(hidden)]
     pub shell_history_file_path: ::std::option::Option<::std::string::String>,
     /// <p>Information about the process that had its memory overwritten by the current process.</p>
-    #[doc(hidden)]
     pub target_process: ::std::option::Option<crate::types::ProcessDetails>,
     /// <p>Represents the communication protocol associated with the address. For example, the address family <code>AF_INET</code> is used for IP version of 4 protocol.</p>
-    #[doc(hidden)]
     pub address_family: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a particular protocol within the address family. Usually there is a single protocol in address families. For example, the address family <code>AF_INET</code> only has the IP protocol.</p>
-    #[doc(hidden)]
     pub iana_protocol_number: i32,
     /// <p>Specifies the Region of a process's address space such as stack and heap.</p>
-    #[doc(hidden)]
     pub memory_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuntimeContext {

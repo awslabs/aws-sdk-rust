@@ -12,7 +12,6 @@ pub struct GetEndpointAttributesOutput {
     /// <p>The device token for the iOS platform is returned in lowercase.</p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

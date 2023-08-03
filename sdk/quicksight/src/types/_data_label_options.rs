@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLabelOptions {
     /// <p>Determines the visibility of the data labels.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Determines the visibility of the category field labels.</p>
-    #[doc(hidden)]
     pub category_label_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Determines the visibility of the measure field labels.</p>
-    #[doc(hidden)]
     pub measure_label_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The option that determines the data label type.</p>
-    #[doc(hidden)]
     pub data_label_types: ::std::option::Option<::std::vec::Vec<crate::types::DataLabelType>>,
     /// <p>Determines the position of the data labels.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::DataLabelPosition>,
     /// <p>Determines the content of the data labels.</p>
-    #[doc(hidden)]
     pub label_content: ::std::option::Option<crate::types::DataLabelContent>,
     /// <p>Determines the font configuration of the data labels.</p>
-    #[doc(hidden)]
     pub label_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>Determines the color of the data labels.</p>
-    #[doc(hidden)]
     pub label_color: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether overlap is enabled or disabled for the data labels.</p>
-    #[doc(hidden)]
     pub overlap: ::std::option::Option<crate::types::DataLabelOverlap>,
     /// <p>Determines the visibility of the total.</p>
-    #[doc(hidden)]
     pub totals_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DataLabelOptions {

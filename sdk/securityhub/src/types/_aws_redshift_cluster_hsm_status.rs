@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterHsmStatus {
     /// <p>The name of the HSM client certificate that the Amazon Redshift cluster uses to retrieve the data encryption keys that are stored in an HSM.</p>
-    #[doc(hidden)]
     pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the HSM configuration that contains the information that the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
-    #[doc(hidden)]
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p>
     /// <p>Type: String</p>
     /// <p>Valid values: <code>active</code> | <code>applying</code> </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterHsmStatus {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultiplexesInput {
     /// The maximum number of items to return.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// The token to retrieve the next page of results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMultiplexesInput {

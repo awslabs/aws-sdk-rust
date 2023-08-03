@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetImportItem {
     /// <p>The data set.</p>
-    #[doc(hidden)]
     pub data_set: ::std::option::Option<crate::types::DataSet>,
     /// <p>The location of the data set.</p>
-    #[doc(hidden)]
     pub external_location: ::std::option::Option<crate::types::ExternalLocation>,
 }
 impl DataSetImportItem {

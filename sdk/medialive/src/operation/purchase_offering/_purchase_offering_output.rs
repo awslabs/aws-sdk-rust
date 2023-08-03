@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseOfferingOutput {
     /// Reserved resources available to use
-    #[doc(hidden)]
     pub reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
 }

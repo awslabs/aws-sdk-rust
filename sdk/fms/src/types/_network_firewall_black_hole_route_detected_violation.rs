@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallBlackHoleRouteDetectedViolation {
     /// <p>The subnet that has an inactive state.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>Information about the route table ID.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC ID.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the route or routes that are in violation.</p>
-    #[doc(hidden)]
     pub violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
 }
 impl NetworkFirewallBlackHoleRouteDetectedViolation {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceOutput {
     /// <p>The full description of the deleted service.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::Service>,
     _request_id: Option<String>,
 }

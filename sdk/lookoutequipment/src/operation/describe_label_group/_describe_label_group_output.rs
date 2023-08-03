@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelGroupOutput {
     /// <p> The name of the label group. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the label group. </p>
-    #[doc(hidden)]
     pub label_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
-    #[doc(hidden)]
     pub fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The time at which the label group was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time at which the label group was updated. </p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

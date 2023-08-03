@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendVoiceMessageOutput {
     /// <p>The unique identifier for the message.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

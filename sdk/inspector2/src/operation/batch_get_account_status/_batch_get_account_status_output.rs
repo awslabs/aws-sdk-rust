@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAccountStatusOutput {
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountState>>,
     /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
-    #[doc(hidden)]
     pub failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,
     _request_id: Option<String>,
 }

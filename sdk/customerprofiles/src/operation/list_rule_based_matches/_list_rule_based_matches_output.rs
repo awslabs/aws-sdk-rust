@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleBasedMatchesOutput {
     /// <p>The list of <code>MatchIds</code> for the given domain.</p>
-    #[doc(hidden)]
     pub match_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token from the previous <code>ListRuleBasedMatches</code> API call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopPipelineExecutionInput {
     /// <p>The name of the pipeline to stop.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
-    #[doc(hidden)]
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
-    #[doc(hidden)]
     pub abandon: ::std::option::Option<bool>,
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl StopPipelineExecutionInput {

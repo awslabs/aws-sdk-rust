@@ -7,41 +7,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppBlock {
     /// <p>The name of the app block.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the app block.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the app block.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the app block.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The source S3 location of the app block.</p>
-    #[doc(hidden)]
     pub source_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The setup script details of the app block.</p>
     /// <p>This only applies to app blocks with PackagingType <code>CUSTOM</code>.</p>
-    #[doc(hidden)]
     pub setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     /// <p>The created time of the app block.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The post setup script details of the app block.</p>
     /// <p>This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.</p>
-    #[doc(hidden)]
     pub post_setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     /// <p>The packaging type of the app block.</p>
-    #[doc(hidden)]
     pub packaging_type: ::std::option::Option<crate::types::PackagingType>,
     /// <p>The state of the app block.</p>
     /// <p>An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block, it becomes <code>ACTIVE</code>. </p>
     /// <p>Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AppBlockState>,
     /// <p>The errors of the app block.</p>
-    #[doc(hidden)]
     pub app_block_errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetails>>,
 }
 impl AppBlock {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSpecification {
     /// Input codec
-    #[doc(hidden)]
     pub codec: ::std::option::Option<crate::types::InputCodec>,
     /// Maximum input bitrate, categorized coarsely
-    #[doc(hidden)]
     pub maximum_bitrate: ::std::option::Option<crate::types::InputMaximumBitrate>,
     /// Input resolution, categorized coarsely
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<crate::types::InputResolution>,
 }
 impl InputSpecification {

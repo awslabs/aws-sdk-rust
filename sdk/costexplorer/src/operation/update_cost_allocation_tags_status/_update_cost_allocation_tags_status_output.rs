@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusOutput {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiCallActionDomainDetails {
     /// <p>The name of the DNS domain that issued the API call.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiCallActionDomainDetails {

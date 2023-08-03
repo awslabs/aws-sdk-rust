@@ -8,11 +8,9 @@
 pub struct ResponseInspectionStatusCode {
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code> </p>
-    #[doc(hidden)]
     pub success_codes: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code> </p>
-    #[doc(hidden)]
     pub failure_codes: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl ResponseInspectionStatusCode {

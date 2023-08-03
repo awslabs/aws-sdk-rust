@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserProfile {
     /// <p>The user's IAM ARN.</p>
-    #[doc(hidden)]
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The user's SSH user name.</p>
-    #[doc(hidden)]
     pub ssh_username: ::std::option::Option<::std::string::String>,
     /// <p>The user's SSH public key.</p>
-    #[doc(hidden)]
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
-    #[doc(hidden)]
     pub allow_self_management: ::std::option::Option<bool>,
 }
 impl UserProfile {

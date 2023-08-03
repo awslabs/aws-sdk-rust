@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateMembersInput {

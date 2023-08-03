@@ -9,13 +9,10 @@ pub struct VdmAttributes {
     /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub vdm_enabled: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_attributes: ::std::option::Option<crate::types::DashboardAttributes>,
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
-    #[doc(hidden)]
     pub guardian_attributes: ::std::option::Option<crate::types::GuardianAttributes>,
 }
 impl VdmAttributes {

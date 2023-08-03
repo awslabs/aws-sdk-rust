@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingSettingsDescription {
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
-    #[doc(hidden)]
     pub minimum_units: ::std::option::Option<i64>,
     /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
-    #[doc(hidden)]
     pub maximum_units: ::std::option::Option<i64>,
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
-    #[doc(hidden)]
     pub auto_scaling_disabled: ::std::option::Option<bool>,
     /// <p>Role ARN used for configuring the auto scaling policy.</p>
-    #[doc(hidden)]
     pub auto_scaling_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the scaling policies.</p>
-    #[doc(hidden)]
     pub scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingPolicyDescription>>,
 }
 impl AutoScalingSettingsDescription {

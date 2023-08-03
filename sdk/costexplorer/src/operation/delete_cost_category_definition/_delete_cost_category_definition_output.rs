@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
-    #[doc(hidden)]
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
-    #[doc(hidden)]
     pub effective_end: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

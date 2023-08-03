@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoCodecSettings {
     /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
-    #[doc(hidden)]
     pub av1_settings: ::std::option::Option<crate::types::Av1Settings>,
     /// Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
-    #[doc(hidden)]
     pub avc_intra_settings: ::std::option::Option<crate::types::AvcIntraSettings>,
     /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
-    #[doc(hidden)]
     pub codec: ::std::option::Option<crate::types::VideoCodec>,
     /// Required when you set Codec to the value FRAME_CAPTURE.
-    #[doc(hidden)]
     pub frame_capture_settings: ::std::option::Option<crate::types::FrameCaptureSettings>,
     /// Required when you set Codec to the value H_264.
-    #[doc(hidden)]
     pub h264_settings: ::std::option::Option<crate::types::H264Settings>,
     /// Settings for H265 codec
-    #[doc(hidden)]
     pub h265_settings: ::std::option::Option<crate::types::H265Settings>,
     /// Required when you set Codec to the value MPEG2.
-    #[doc(hidden)]
     pub mpeg2_settings: ::std::option::Option<crate::types::Mpeg2Settings>,
     /// Required when you set Codec to the value PRORES.
-    #[doc(hidden)]
     pub prores_settings: ::std::option::Option<crate::types::ProresSettings>,
     /// Required when you set Codec to the value VC3
-    #[doc(hidden)]
     pub vc3_settings: ::std::option::Option<crate::types::Vc3Settings>,
     /// Required when you set Codec to the value VP8.
-    #[doc(hidden)]
     pub vp8_settings: ::std::option::Option<crate::types::Vp8Settings>,
     /// Required when you set Codec to the value VP9.
-    #[doc(hidden)]
     pub vp9_settings: ::std::option::Option<crate::types::Vp9Settings>,
     /// Required when you set Codec to the value XAVC.
-    #[doc(hidden)]
     pub xavc_settings: ::std::option::Option<crate::types::XavcSettings>,
 }
 impl VideoCodecSettings {

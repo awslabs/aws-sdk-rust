@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
@@ -21,10 +18,8 @@ pub struct BotLocaleImportSpecification {
     /// <li> <p> <code>IntentB</code> </p> </li>
     /// <li> <p> <code>IntentC</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
-    #[doc(hidden)]
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
 }
 impl BotLocaleImportSpecification {

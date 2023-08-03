@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStageDevicesInput {
     /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of requests to select.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The name of the edge deployment plan.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>Toggle for excluding devices deployed in other stages.</p>
-    #[doc(hidden)]
     pub exclude_devices_deployed_in_other_stage: ::std::option::Option<bool>,
     /// <p>The name of the stage in the deployment.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl ListStageDevicesInput {

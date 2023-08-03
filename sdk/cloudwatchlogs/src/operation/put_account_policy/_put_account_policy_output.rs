@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountPolicyOutput {
     /// <p>The account policy that you created.</p>
-    #[doc(hidden)]
     pub account_policy: ::std::option::Option<crate::types::AccountPolicy>,
     _request_id: Option<String>,
 }

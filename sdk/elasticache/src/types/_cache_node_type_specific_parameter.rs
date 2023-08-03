@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheNodeTypeSpecificParameter {
     /// <p>The name of the parameter.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The source of the parameter value.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The valid data type for the parameter.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>The valid range of values for the parameter.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
-    #[doc(hidden)]
     pub is_modifiable: bool,
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
-    #[doc(hidden)]
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache node types and their corresponding values for this parameter.</p>
-    #[doc(hidden)]
     pub cache_node_type_specific_values: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificValue>>,
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
-    #[doc(hidden)]
     pub change_type: ::std::option::Option<crate::types::ChangeType>,
 }
 impl CacheNodeTypeSpecificParameter {

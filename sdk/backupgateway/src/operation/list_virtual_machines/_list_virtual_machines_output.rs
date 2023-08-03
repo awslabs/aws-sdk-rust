@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualMachinesOutput {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    #[doc(hidden)]
     pub virtual_machines: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMachine>>,
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

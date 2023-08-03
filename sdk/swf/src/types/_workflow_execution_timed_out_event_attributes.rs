@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <p>The type of timeout that caused this event.</p>
-    #[doc(hidden)]
     pub timeout_type: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
@@ -14,7 +13,6 @@ pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
 }
 impl WorkflowExecutionTimedOutEventAttributes {

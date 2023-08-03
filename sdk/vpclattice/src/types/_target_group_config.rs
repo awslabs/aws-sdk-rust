@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupConfig {
     /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The protocol to use for routing traffic to the targets. Default is the protocol of a target group.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::TargetGroupProtocol>,
     /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
-    #[doc(hidden)]
     pub protocol_version: ::std::option::Option<crate::types::TargetGroupProtocolVersion>,
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The health check configuration.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
 impl TargetGroupConfig {

@@ -7,23 +7,17 @@ pub struct RunTaskInput {
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
-    #[doc(hidden)]
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Determines whether to use the execute command functionality for the containers in this task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     /// <p>If <code>true</code>, then the task definition must have a task role, or you must provide one as an override.</p>
-    #[doc(hidden)]
     pub enable_execute_command: ::std::option::Option<bool>,
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.</p> <note>
@@ -33,35 +27,26 @@ pub struct RunTaskInput {
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
-    #[doc(hidden)]
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The network configuration for the task. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p>
     /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<crate::types::TaskOverride>,
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).</p>
-    #[doc(hidden)]
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.</p>
-    #[doc(hidden)]
     pub placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
     /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action.</p> <note>
     /// <p>An error will be received if you specify the <code>SERVICE</code> option when running a task.</p>
     /// </note>
-    #[doc(hidden)]
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>The reference ID to use for the task. The reference ID can have a maximum length of 1024 characters.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
-    #[doc(hidden)]
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -74,7 +59,6 @@ pub struct RunTaskInput {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     /// <p>When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a specific revision.</p>
@@ -82,7 +66,6 @@ pub struct RunTaskInput {
     /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
     /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
 }
 impl RunTaskInput {

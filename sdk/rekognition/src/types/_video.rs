@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Video {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
-    #[doc(hidden)]
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl Video {

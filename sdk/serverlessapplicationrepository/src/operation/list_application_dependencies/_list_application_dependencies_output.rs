@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationDependenciesOutput {
     /// <p>An array of application summaries nested in the application.</p>
-    #[doc(hidden)]
     pub dependencies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDependencySummary>>,
     /// <p>The token to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

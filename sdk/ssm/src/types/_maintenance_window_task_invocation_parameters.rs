@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindowTaskInvocationParameters {
     /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
-    #[doc(hidden)]
     pub run_command: ::std::option::Option<crate::types::MaintenanceWindowRunCommandParameters>,
     /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
-    #[doc(hidden)]
     pub automation: ::std::option::Option<crate::types::MaintenanceWindowAutomationParameters>,
     /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
-    #[doc(hidden)]
     pub step_functions: ::std::option::Option<crate::types::MaintenanceWindowStepFunctionsParameters>,
     /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::MaintenanceWindowLambdaParameters>,
 }
 impl MaintenanceWindowTaskInvocationParameters {

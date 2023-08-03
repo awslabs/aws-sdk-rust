@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachNetworkInterfaceOutput {
     /// <p>The ID of the network interface attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The index of the network card.</p>
-    #[doc(hidden)]
     pub network_card_index: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

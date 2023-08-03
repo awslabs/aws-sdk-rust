@@ -4,14 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    #[doc(hidden)]
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of IAM policy.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
     /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
 }
 impl UpdateServiceNetworkInput {

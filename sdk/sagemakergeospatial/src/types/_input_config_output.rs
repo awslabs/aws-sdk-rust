@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
-    #[doc(hidden)]
     pub previous_earth_observation_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
-    #[doc(hidden)]
     pub raster_data_collection_query: ::std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
 }
 impl InputConfigOutput {

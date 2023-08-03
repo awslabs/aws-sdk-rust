@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailRecipients {
     /// <p>Specifies one or more recipients who receive the email.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
 }
 impl EmailRecipients {

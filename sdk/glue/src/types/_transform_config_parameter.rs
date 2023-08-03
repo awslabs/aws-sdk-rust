@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformConfigParameter {
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ParamType>,
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
-    #[doc(hidden)]
     pub validation_rule: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
-    #[doc(hidden)]
     pub validation_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
-    #[doc(hidden)]
     pub list_type: ::std::option::Option<crate::types::ParamType>,
     /// <p>Specifies whether the parameter is optional or not in the config file of the dynamic transform.</p>
-    #[doc(hidden)]
     pub is_optional: ::std::option::Option<bool>,
 }
 impl TransformConfigParameter {

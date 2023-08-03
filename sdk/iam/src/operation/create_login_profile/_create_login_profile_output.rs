@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoginProfileOutput {
     /// <p>A structure containing the user name and password create date.</p>
-    #[doc(hidden)]
     pub login_profile: ::std::option::Option<crate::types::LoginProfile>,
     _request_id: Option<String>,
 }

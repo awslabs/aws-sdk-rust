@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Source {
     /// <p>The <code>S3Source</code> object.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3Source>,
 }
 impl Source {

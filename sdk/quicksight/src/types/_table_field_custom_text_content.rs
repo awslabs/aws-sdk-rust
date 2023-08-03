@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldCustomTextContent {
     /// <p>The string value of the custom text content for the table URL link content.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The font configuration of the custom text content for the table URL link content.</p>
-    #[doc(hidden)]
     pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
 }
 impl TableFieldCustomTextContent {

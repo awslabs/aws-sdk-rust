@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ARN of the user.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the user in the user pool is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
@@ -23,19 +20,14 @@ pub struct User {
     /// <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li>
     /// <li> <p>UNKNOWN – The user status is not known.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The first name, or given name, of the user.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name, or surname, of the user.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the user was created in the user pool.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The authentication type for the user.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl User {

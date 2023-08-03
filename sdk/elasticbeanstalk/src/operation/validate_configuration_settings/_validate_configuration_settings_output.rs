@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsOutput {
     /// <p> A list of <code>ValidationMessage</code>. </p>
-    #[doc(hidden)]
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdmChannelRequest {
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
-    #[doc(hidden)]
     pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl AdmChannelRequest {

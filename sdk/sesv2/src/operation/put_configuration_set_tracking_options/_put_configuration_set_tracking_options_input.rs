@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain to use to track open and click events.</p>
-    #[doc(hidden)]
     pub custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
 impl PutConfigurationSetTrackingOptionsInput {

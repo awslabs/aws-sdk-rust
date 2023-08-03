@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetUsageConfiguration {
     /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
-    #[doc(hidden)]
     pub disable_use_as_direct_query_source: bool,
     /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
-    #[doc(hidden)]
     pub disable_use_as_imported_source: bool,
 }
 impl DataSetUsageConfiguration {

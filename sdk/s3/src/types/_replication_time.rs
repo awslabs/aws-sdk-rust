@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTime {
     /// <p> Specifies whether the replication time is enabled. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReplicationTimeStatus>,
     /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<crate::types::ReplicationTimeValue>,
 }
 impl ReplicationTime {

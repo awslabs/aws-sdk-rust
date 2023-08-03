@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EncryptionStatus>,
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EncryptionType>,
 }
 impl EncryptionConfig {

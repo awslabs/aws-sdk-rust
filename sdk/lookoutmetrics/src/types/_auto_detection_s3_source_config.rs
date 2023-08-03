@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoDetectionS3SourceConfig {
     /// <p>The config's templated path list.</p>
-    #[doc(hidden)]
     pub templated_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The config's historical data path list.</p>
-    #[doc(hidden)]
     pub historical_data_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AutoDetectionS3SourceConfig {

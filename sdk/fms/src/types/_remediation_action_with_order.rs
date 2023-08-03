@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationActionWithOrder {
     /// <p>Information about an action you can take to remediate a violation.</p>
-    #[doc(hidden)]
     pub remediation_action: ::std::option::Option<crate::types::RemediationAction>,
     /// <p>The order of the remediation actions in the list.</p>
-    #[doc(hidden)]
     pub order: i32,
 }
 impl RemediationActionWithOrder {

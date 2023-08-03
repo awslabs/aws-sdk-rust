@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MfaDevice {
     /// <p>The user with whom the MFA device is associated.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The date when the MFA device was enabled for the user.</p>
-    #[doc(hidden)]
     pub enable_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MfaDevice {

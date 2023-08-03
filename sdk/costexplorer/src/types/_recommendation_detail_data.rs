@@ -5,91 +5,62 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationDetailData {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to PAYER. If the value is LINKED, recommendations are calculated for individual member accounts only.</p>
-    #[doc(hidden)]
     pub account_scope: ::std::option::Option<crate::types::AccountScope>,
     /// <p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-    #[doc(hidden)]
     pub lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
     /// <p>The requested Savings Plan recommendation type.</p>
-    #[doc(hidden)]
     pub savings_plans_type: ::std::option::Option<crate::types::SupportedSavingsPlansType>,
     /// <p>The term of the commitment in years.</p>
-    #[doc(hidden)]
     pub term_in_years: ::std::option::Option<crate::types::TermInYears>,
     /// <p>The payment option for the commitment (for example, All Upfront or No Upfront).</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The AccountID that the recommendation is generated for.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to generate the recommendation and present potential savings.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The instance family of the recommended Savings Plan.</p>
-    #[doc(hidden)]
     pub instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The region the recommendation is generated for.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The period of time that you want the usage and costs for.</p>
-    #[doc(hidden)]
     pub generation_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The period of time that you want the usage and costs for.</p>
-    #[doc(hidden)]
     pub latest_usage_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    #[doc(hidden)]
     pub current_average_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
     /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    #[doc(hidden)]
     pub current_maximum_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
     /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>
-    #[doc(hidden)]
     pub current_minimum_hourly_on_demand_spend: ::std::option::Option<::std::string::String>,
     /// <p>The estimated utilization of the recommended Savings Plan.</p>
-    #[doc(hidden)]
     pub estimated_average_utilization: ::std::option::Option<::std::string::String>,
     /// <p>The estimated monthly savings amount based on the recommended Savings Plan.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_on_demand_cost: ::std::option::Option<::std::string::String>,
     /// <p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>
-    #[doc(hidden)]
     pub estimated_on_demand_cost_with_current_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The estimated return on investment that's based on the recommended Savings Plan that you purchased. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>
-    #[doc(hidden)]
     pub estimated_roi: ::std::option::Option<::std::string::String>,
     /// <p>The cost of the recommended Savings Plan over the length of the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_sp_cost: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings amount that's based on the recommended Savings Plan over the length of the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>
-    #[doc(hidden)]
     pub estimated_savings_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The existing hourly commitment for the Savings Plan type.</p>
-    #[doc(hidden)]
     pub existing_hourly_commitment: ::std::option::Option<::std::string::String>,
     /// <p>The recommended hourly commitment level for the Savings Plan type and the configuration that's based on the usage during the lookback period.</p>
-    #[doc(hidden)]
     pub hourly_commitment_to_purchase: ::std::option::Option<::std::string::String>,
     /// <p>The upfront cost of the recommended Savings Plan, based on the selected payment option.</p>
-    #[doc(hidden)]
     pub upfront_cost: ::std::option::Option<::std::string::String>,
     /// <p>The average value of hourly coverage over the lookback period.</p>
-    #[doc(hidden)]
     pub current_average_coverage: ::std::option::Option<::std::string::String>,
     /// <p>The estimated coverage of the recommended Savings Plan.</p>
-    #[doc(hidden)]
     pub estimated_average_coverage: ::std::option::Option<::std::string::String>,
     /// <p>The related hourly cost, coverage, and utilization metrics over the lookback period.</p>
-    #[doc(hidden)]
     pub metrics_over_lookback_period: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationDetailHourlyMetrics>>,
 }
 impl RecommendationDetailData {

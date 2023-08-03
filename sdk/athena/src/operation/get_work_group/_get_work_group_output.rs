@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkGroupOutput {
     /// <p>Information about the workgroup.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<crate::types::WorkGroup>,
     _request_id: Option<String>,
 }

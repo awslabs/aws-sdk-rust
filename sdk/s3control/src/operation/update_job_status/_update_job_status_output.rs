@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobStatusOutput {
     /// <p>The ID for the job whose status was updated.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status for the specified job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The reason that the specified job's status was updated.</p>
-    #[doc(hidden)]
     pub status_update_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

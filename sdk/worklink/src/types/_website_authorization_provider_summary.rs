@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebsiteAuthorizationProviderSummary {
     /// <p>A unique identifier for the authorization provider.</p>
-    #[doc(hidden)]
     pub authorization_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>The authorization provider type.</p>
-    #[doc(hidden)]
     pub authorization_provider_type: ::std::option::Option<crate::types::AuthorizationProviderType>,
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The time of creation.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl WebsiteAuthorizationProviderSummary {

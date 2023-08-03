@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LicenseInfo {
     /// <p> Name of the license. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The URL for license data. </p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl LicenseInfo {

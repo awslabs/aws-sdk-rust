@@ -6,22 +6,16 @@ pub struct ImportTableInput {
     /// <p>Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
     /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code> exception.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The S3 bucket that provides the source for the import. </p>
-    #[doc(hidden)]
     pub s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
     /// <p> The format of the source data. Valid values for <code>ImportFormat</code> are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>. </p>
-    #[doc(hidden)]
     pub input_format: ::std::option::Option<crate::types::InputFormat>,
     /// <p> Additional properties that specify how the input is formatted, </p>
-    #[doc(hidden)]
     pub input_format_options: ::std::option::Option<crate::types::InputFormatOptions>,
     /// <p> Type of compression to be used on the input coming from the imported table. </p>
-    #[doc(hidden)]
     pub input_compression_type: ::std::option::Option<crate::types::InputCompressionType>,
     /// <p>Parameters for the table to import the data into. </p>
-    #[doc(hidden)]
     pub table_creation_parameters: ::std::option::Option<crate::types::TableCreationParameters>,
 }
 impl ImportTableInput {

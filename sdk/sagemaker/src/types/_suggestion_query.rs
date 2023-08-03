@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestionQuery {
     /// <p>Defines a property name hint. Only property names that begin with the specified hint are included in the response.</p>
-    #[doc(hidden)]
     pub property_name_query: ::std::option::Option<crate::types::PropertyNameQuery>,
 }
 impl SuggestionQuery {

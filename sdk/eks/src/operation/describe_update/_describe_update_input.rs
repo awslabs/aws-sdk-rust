@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUpdateInput {
     /// <p>The name of the Amazon EKS cluster associated with the update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the update to describe.</p>
-    #[doc(hidden)]
     pub update_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EKS node group associated with the update. This parameter is required if the update is a node group update.</p>
-    #[doc(hidden)]
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>. This parameter is required if the update is an add-on update.</p>
-    #[doc(hidden)]
     pub addon_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUpdateInput {

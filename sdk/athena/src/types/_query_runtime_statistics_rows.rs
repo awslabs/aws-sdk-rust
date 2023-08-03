@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryRuntimeStatisticsRows {
     /// <p>The number of rows read to execute the query.</p>
-    #[doc(hidden)]
     pub input_rows: ::std::option::Option<i64>,
     /// <p>The number of bytes read to execute the query.</p>
-    #[doc(hidden)]
     pub input_bytes: ::std::option::Option<i64>,
     /// <p>The number of bytes returned by the query.</p>
-    #[doc(hidden)]
     pub output_bytes: ::std::option::Option<i64>,
     /// <p>The number of rows returned by the query.</p>
-    #[doc(hidden)]
     pub output_rows: ::std::option::Option<i64>,
 }
 impl QueryRuntimeStatisticsRows {

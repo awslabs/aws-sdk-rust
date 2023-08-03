@@ -12,63 +12,47 @@ pub struct CreateReplicationInstanceInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code> </p>
-    #[doc(hidden)]
     pub replication_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right DMS replication instance</a>; and, <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting the best size for a replication instance</a>. </p>
-    #[doc(hidden)]
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A subnet group to associate with the replication instance.</p>
-    #[doc(hidden)]
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The engine version number of the replication instance.</p>
     /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
     /// <p>Default: <code>true</code> </p>
     /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you create a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
     /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you create a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter. </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>One or more tags to be assigned to the replication instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
-    #[doc(hidden)]
     pub dns_name_servers: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateReplicationInstanceInput {

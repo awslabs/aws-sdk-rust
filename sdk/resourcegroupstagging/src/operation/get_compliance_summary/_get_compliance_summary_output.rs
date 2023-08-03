@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryOutput {
     /// <p>A table that shows counts of noncompliant resources.</p>
-    #[doc(hidden)]
     pub summary_list: ::std::option::Option<::std::vec::Vec<crate::types::Summary>>,
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
-    #[doc(hidden)]
     pub pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

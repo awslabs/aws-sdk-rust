@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageVersionInput {
     /// <p>The name of the associated package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target package version.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPackageVersionInput {

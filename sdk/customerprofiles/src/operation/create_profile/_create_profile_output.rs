@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileOutput {
     /// <p>The unique identifier of a customer profile.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

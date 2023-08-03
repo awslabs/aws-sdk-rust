@@ -5,7 +5,6 @@
 pub struct DetectStackSetDriftOutput {
     /// <p>The ID of the drift detection stack set operation.</p>
     /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

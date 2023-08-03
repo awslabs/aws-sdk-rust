@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMonitorInput {
     /// <p>The name of the monitor resource.</p>
-    #[doc(hidden)]
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMonitorInput {

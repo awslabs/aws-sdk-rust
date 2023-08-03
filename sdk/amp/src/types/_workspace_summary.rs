@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceSummary {
     /// Unique string identifying this workspace.
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// Alias of this workspace.
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// The AmazonResourceName of this workspace.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The status of this workspace.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// The time when the workspace was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The tags of this workspace.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkspaceSummary {

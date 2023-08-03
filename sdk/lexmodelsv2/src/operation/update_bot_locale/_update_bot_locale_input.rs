@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The new description of the locale.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
-    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
-    #[doc(hidden)]
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
 }
 impl UpdateBotLocaleInput {

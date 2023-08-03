@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainSummary {
     /// <p> The name of the domain. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the domain. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the status of the domain. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p> A timestamp that contains the date and time the domain was created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The key used to encrypt the domain. </p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
 }
 impl DomainSummary {

@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanDeviceProfile {
     /// <p>The SupportsClassB value.</p>
-    #[doc(hidden)]
     pub supports_class_b: bool,
     /// <p>The ClassBTimeout value.</p>
-    #[doc(hidden)]
     pub class_b_timeout: ::std::option::Option<i32>,
     /// <p>The PingSlotPeriod value.</p>
-    #[doc(hidden)]
     pub ping_slot_period: ::std::option::Option<i32>,
     /// <p>The PingSlotDR value.</p>
-    #[doc(hidden)]
     pub ping_slot_dr: ::std::option::Option<i32>,
     /// <p>The PingSlotFreq value.</p>
-    #[doc(hidden)]
     pub ping_slot_freq: ::std::option::Option<i32>,
     /// <p>The SupportsClassC value.</p>
-    #[doc(hidden)]
     pub supports_class_c: bool,
     /// <p>The ClassCTimeout value.</p>
-    #[doc(hidden)]
     pub class_c_timeout: ::std::option::Option<i32>,
     /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
-    #[doc(hidden)]
     pub mac_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of regional parameters.</p>
-    #[doc(hidden)]
     pub reg_params_revision: ::std::option::Option<::std::string::String>,
     /// <p>The RXDelay1 value.</p>
-    #[doc(hidden)]
     pub rx_delay1: ::std::option::Option<i32>,
     /// <p>The RXDROffset1 value.</p>
-    #[doc(hidden)]
     pub rx_dr_offset1: ::std::option::Option<i32>,
     /// <p>The RXDataRate2 value.</p>
-    #[doc(hidden)]
     pub rx_data_rate2: ::std::option::Option<i32>,
     /// <p>The RXFreq2 value.</p>
-    #[doc(hidden)]
     pub rx_freq2: ::std::option::Option<i32>,
     /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
-    #[doc(hidden)]
     pub factory_preset_freqs_list: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The MaxEIRP value.</p>
-    #[doc(hidden)]
     pub max_eirp: ::std::option::Option<i32>,
     /// <p>The MaxDutyCycle value.</p>
-    #[doc(hidden)]
     pub max_duty_cycle: ::std::option::Option<i32>,
     /// <p>The frequency band (RFRegion) value.</p>
-    #[doc(hidden)]
     pub rf_region: ::std::option::Option<::std::string::String>,
     /// <p>The SupportsJoin value.</p>
-    #[doc(hidden)]
     pub supports_join: ::std::option::Option<bool>,
     /// <p>The Supports32BitFCnt value.</p>
-    #[doc(hidden)]
     pub supports32_bit_f_cnt: bool,
 }
 impl LoRaWanDeviceProfile {

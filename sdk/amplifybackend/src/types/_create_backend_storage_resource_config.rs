@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<crate::types::BackendStoragePermissions>,
     /// <p>The name of the storage service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<crate::types::ServiceName>,
 }
 impl CreateBackendStorageResourceConfig {

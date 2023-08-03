@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SemtechGnssDetail {
     /// <p>The vendor of the solver object.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::PositionSolverProvider>,
     /// <p>The type of positioning solver used.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PositionSolverType>,
     /// <p>The status indicating whether the solver is enabled.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PositionConfigurationStatus>,
     /// <p>Whether forward error correction is enabled.</p>
-    #[doc(hidden)]
     pub fec: ::std::option::Option<crate::types::PositionConfigurationFec>,
 }
 impl SemtechGnssDetail {

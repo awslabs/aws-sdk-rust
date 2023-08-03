@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Container {
     /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A list of URIs for containers created in the context Region.</p>
-    #[doc(hidden)]
     pub image_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Container {

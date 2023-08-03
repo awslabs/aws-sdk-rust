@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeOutput {
     /// <p>The security groups associated with the instance.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>The block device mapping of the instance.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
-    #[doc(hidden)]
     pub disable_api_termination: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
-    #[doc(hidden)]
     pub ena_support: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
-    #[doc(hidden)]
     pub enclave_options: ::std::option::Option<crate::types::EnclaveOptions>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
-    #[doc(hidden)]
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The kernel ID.</p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>A list of product codes.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>The RAM disk ID.</p>
-    #[doc(hidden)]
     pub ramdisk_id: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    #[doc(hidden)]
     pub root_device_name: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
-    #[doc(hidden)]
     pub source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-    #[doc(hidden)]
     pub sriov_net_support: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The user data.</p>
-    #[doc(hidden)]
     pub user_data: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>To enable the instance for Amazon Web Services Stop Protection, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
-    #[doc(hidden)]
     pub disable_api_stop: ::std::option::Option<crate::types::AttributeBooleanValue>,
     _request_id: Option<String>,
 }

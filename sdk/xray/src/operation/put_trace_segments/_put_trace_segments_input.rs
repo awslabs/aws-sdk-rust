@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutTraceSegmentsInput {
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
-    #[doc(hidden)]
     pub trace_segment_documents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutTraceSegmentsInput {

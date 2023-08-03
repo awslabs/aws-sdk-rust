@@ -35,21 +35,16 @@ pub struct HealthCheck {
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<i32>,
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
-    #[doc(hidden)]
     pub retries: ::std::option::Option<i32>,
     /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p> <note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
-    #[doc(hidden)]
     pub start_period: ::std::option::Option<i32>,
 }
 impl HealthCheck {

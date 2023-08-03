@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeedbackInput {
     /// <p> The ID of the insight for which the feedback was provided. </p>
-    #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeedbackInput {

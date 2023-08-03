@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexBot {
     /// <p>The name of the Amazon Lex bot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
-    #[doc(hidden)]
     pub lex_region: ::std::option::Option<::std::string::String>,
 }
 impl LexBot {

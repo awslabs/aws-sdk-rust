@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlRunConfiguration {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
-    #[doc(hidden)]
     pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl SqlRunConfiguration {

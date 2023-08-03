@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServerEngineAttributesOutput {
     /// <p>Contains the response to an <code>UpdateServerEngineAttributes</code> request. </p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
 }

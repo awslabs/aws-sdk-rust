@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReleaseLabelOutput {
     /// <p>The target release label described in the response.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::SimplifiedApplication>>,
     /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
-    #[doc(hidden)]
     pub available_os_releases: ::std::option::Option<::std::vec::Vec<crate::types::OsRelease>>,
     _request_id: Option<String>,
 }

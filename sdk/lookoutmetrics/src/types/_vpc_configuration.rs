@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    #[doc(hidden)]
     pub subnet_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of strings containing the list of security groups.</p>
-    #[doc(hidden)]
     pub security_group_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcConfiguration {

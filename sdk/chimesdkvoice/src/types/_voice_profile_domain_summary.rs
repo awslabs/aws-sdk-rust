@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VoiceProfileDomainSummary {
     /// <p>The ID of the voice profile domain summary.</p>
-    #[doc(hidden)]
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a voice profile in a voice profile domain summary.</p>
-    #[doc(hidden)]
     pub voice_profile_domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the voice profile domain summary.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the voice profile domain summary.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the voice profile domain summary was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the voice profile domain summary was last updated.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VoiceProfileDomainSummary {

@@ -5,34 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportPlan {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    #[doc(hidden)]
     pub report_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    #[doc(hidden)]
     pub report_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
-    #[doc(hidden)]
     pub report_plan_description: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
-    #[doc(hidden)]
     pub report_setting: ::std::option::Option<crate::types::ReportSetting>,
     /// <p>Contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    #[doc(hidden)]
     pub report_delivery_channel: ::std::option::Option<crate::types::ReportDeliveryChannel>,
     /// <p>The deployment status of a report plan. The statuses are:</p>
     /// <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED</code> </p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that a report job associated with this report plan last attempted to run, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub last_attempted_execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that a report job associated with this report plan last successfully ran, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub last_successful_execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportPlan {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCrawlersInput {
     /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
-    #[doc(hidden)]
     pub crawler_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetCrawlersInput {

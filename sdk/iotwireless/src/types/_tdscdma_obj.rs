@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TdscdmaObj {
     /// <p>Mobile Country Code.</p>
-    #[doc(hidden)]
     pub mcc: ::std::option::Option<i32>,
     /// <p>Mobile Network Code.</p>
-    #[doc(hidden)]
     pub mnc: ::std::option::Option<i32>,
     /// <p>Location Area Code.</p>
-    #[doc(hidden)]
     pub lac: ::std::option::Option<i32>,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    #[doc(hidden)]
     pub utran_cid: ::std::option::Option<i32>,
     /// <p>TD-SCDMA local identification (local ID) information.</p>
-    #[doc(hidden)]
     pub tdscdma_local_id: ::std::option::Option<crate::types::TdscdmaLocalId>,
     /// <p>TD-SCDMA Timing advance.</p>
-    #[doc(hidden)]
     pub tdscdma_timing_advance: ::std::option::Option<i32>,
     /// <p>Signal power of the received signal (Received Signal Code Power), measured in decibel-milliwatts (dBm).</p>
-    #[doc(hidden)]
     pub rscp: ::std::option::Option<i32>,
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
-    #[doc(hidden)]
     pub path_loss: ::std::option::Option<i32>,
     /// <p>TD-SCDMA object for network measurement reports.</p>
-    #[doc(hidden)]
     pub tdscdma_nmr: ::std::option::Option<::std::vec::Vec<crate::types::TdscdmaNmrObj>>,
 }
 impl TdscdmaObj {

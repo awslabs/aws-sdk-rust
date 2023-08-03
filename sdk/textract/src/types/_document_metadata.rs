@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentMetadata {
     /// <p>The number of pages that are detected in the document.</p>
-    #[doc(hidden)]
     pub pages: ::std::option::Option<i32>,
 }
 impl DocumentMetadata {

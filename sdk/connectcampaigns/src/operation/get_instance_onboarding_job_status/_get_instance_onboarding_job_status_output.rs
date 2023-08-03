@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceOnboardingJobStatusOutput {
     /// Instance onboarding job status object
-    #[doc(hidden)]
     pub connect_instance_onboarding_job_status: ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
     _request_id: Option<String>,
 }

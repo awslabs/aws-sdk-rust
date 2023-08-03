@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkAclDetails {
     /// <p>Whether this is the default network ACL for the VPC.</p>
-    #[doc(hidden)]
     pub is_default: bool,
     /// <p>The identifier of the network ACL.</p>
-    #[doc(hidden)]
     pub network_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account that owns the network ACL.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC for the network ACL.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Associations between the network ACL and subnets.</p>
-    #[doc(hidden)]
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclAssociation>>,
     /// <p>The set of rules in the network ACL.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkAclEntry>>,
 }
 impl AwsEc2NetworkAclDetails {

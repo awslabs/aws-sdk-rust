@@ -5,7 +5,6 @@
 pub struct GetIntrospectionSchemaOutput {
     /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
     /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

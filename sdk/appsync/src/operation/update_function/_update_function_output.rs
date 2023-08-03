@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFunctionOutput {
     /// <p>The <code>Function</code> object.</p>
-    #[doc(hidden)]
     pub function_configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     _request_id: Option<String>,
 }

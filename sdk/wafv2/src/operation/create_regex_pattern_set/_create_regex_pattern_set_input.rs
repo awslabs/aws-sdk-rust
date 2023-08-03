@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRegexPatternSetInput {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -12,16 +11,12 @@ pub struct CreateRegexPatternSetInput {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>A description of the set that helps with identification. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Array of regular expression strings. </p>
-    #[doc(hidden)]
     pub regular_expression_list: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRegexPatternSetInput {

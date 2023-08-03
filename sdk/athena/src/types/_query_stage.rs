@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStage {
     /// <p>The identifier for a stage.</p>
-    #[doc(hidden)]
     pub stage_id: ::std::option::Option<i64>,
     /// <p>State of the stage after query execution.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes output from the stage after execution.</p>
-    #[doc(hidden)]
     pub output_bytes: ::std::option::Option<i64>,
     /// <p>The number of rows output from the stage after execution.</p>
-    #[doc(hidden)]
     pub output_rows: ::std::option::Option<i64>,
     /// <p>The number of bytes input into the stage for execution.</p>
-    #[doc(hidden)]
     pub input_bytes: ::std::option::Option<i64>,
     /// <p>The number of rows input into the stage for execution.</p>
-    #[doc(hidden)]
     pub input_rows: ::std::option::Option<i64>,
     /// <p>Time taken to execute this stage.</p>
-    #[doc(hidden)]
     pub execution_time: ::std::option::Option<i64>,
     /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
-    #[doc(hidden)]
     pub query_stage_plan: ::std::option::Option<crate::types::QueryStagePlanNode>,
     /// <p>List of sub query stages that form this stage execution plan.</p>
-    #[doc(hidden)]
     pub sub_stages: ::std::option::Option<::std::vec::Vec<crate::types::QueryStage>>,
 }
 impl QueryStage {

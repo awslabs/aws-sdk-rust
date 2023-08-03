@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    #[doc(hidden)]
     pub sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSqlInjectionMatchSetInput {

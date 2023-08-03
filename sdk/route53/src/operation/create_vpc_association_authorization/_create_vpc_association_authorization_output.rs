@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<crate::types::Vpc>,
     _request_id: Option<String>,
 }

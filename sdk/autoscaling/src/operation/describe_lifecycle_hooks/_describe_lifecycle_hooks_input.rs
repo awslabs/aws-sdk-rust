@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLifecycleHooksInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    #[doc(hidden)]
     pub lifecycle_hook_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeLifecycleHooksInput {

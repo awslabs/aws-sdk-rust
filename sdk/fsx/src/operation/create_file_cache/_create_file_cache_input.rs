@@ -5,34 +5,24 @@
 pub struct CreateFileCacheInput {
     /// <p>An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The type of cache that you're creating, which must be <code>LUSTRE</code>.</p>
-    #[doc(hidden)]
     pub file_cache_type: ::std::option::Option<crate::types::FileCacheType>,
     /// <p>Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.</p>
-    #[doc(hidden)]
     pub file_cache_type_version: ::std::option::Option<::std::string::String>,
     /// <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for Amazon File Cache access. This list isn't returned in later requests to describe the cache.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations. This value defaults to false.</p>
-    #[doc(hidden)]
     pub copy_tags_to_data_repository_associations: ::std::option::Option<bool>,
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the Amazon File Cache resource being created.</p>
-    #[doc(hidden)]
     pub lustre_configuration: ::std::option::Option<crate::types::CreateFileCacheLustreConfiguration>,
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
@@ -41,7 +31,6 @@ pub struct CreateFileCacheInput {
     /// <li> <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
-    #[doc(hidden)]
     pub data_repository_associations: ::std::option::Option<::std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>,
 }
 impl CreateFileCacheInput {

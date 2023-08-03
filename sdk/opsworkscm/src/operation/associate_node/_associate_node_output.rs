@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateNodeOutput {
     /// <p>Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code> API call to get the status of the association request. </p>
-    #[doc(hidden)]
     pub node_association_status_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

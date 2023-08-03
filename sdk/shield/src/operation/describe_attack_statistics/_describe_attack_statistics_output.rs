@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAttackStatisticsOutput {
     /// <p>The time range of the attack.</p>
-    #[doc(hidden)]
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>The data that describes the attacks detected during the time period.</p>
-    #[doc(hidden)]
     pub data_items: ::std::option::Option<::std::vec::Vec<crate::types::AttackStatisticsDataItem>>,
     _request_id: Option<String>,
 }

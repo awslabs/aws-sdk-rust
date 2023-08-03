@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListScenesOutput {
     /// <p>A list of objects that contain information about the scenes.</p>
-    #[doc(hidden)]
     pub scene_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SceneSummary>>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMlTransformInput {
     /// <p>The unique identifier of the transform to delete.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMlTransformInput {

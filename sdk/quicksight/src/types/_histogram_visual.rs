@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistogramVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    #[doc(hidden)]
     pub visual_id: ::std::option::Option<::std::string::String>,
     /// <p>The title that is displayed on the visual.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     /// <p>The subtitle that is displayed on the visual.</p>
-    #[doc(hidden)]
     pub subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     /// <p>The configuration for a <code>HistogramVisual</code>.</p>
-    #[doc(hidden)]
     pub chart_configuration: ::std::option::Option<crate::types::HistogramConfiguration>,
     /// <p>The list of custom actions that are configured for a visual.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl HistogramVisual {

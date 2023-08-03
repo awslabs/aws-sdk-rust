@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutTargetsOutput {
     /// <p>The number of failed entries.</p>
-    #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The failed target entries.</p>
-    #[doc(hidden)]
     pub failed_entries: ::std::option::Option<::std::vec::Vec<crate::types::PutTargetsResultEntry>>,
     _request_id: Option<String>,
 }

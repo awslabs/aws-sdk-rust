@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNotebookExecutionOutput {
     /// <p>Properties of the notebook execution.</p>
-    #[doc(hidden)]
     pub notebook_execution: ::std::option::Option<crate::types::NotebookExecution>,
     _request_id: Option<String>,
 }

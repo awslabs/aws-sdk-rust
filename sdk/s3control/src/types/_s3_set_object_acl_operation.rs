@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SetObjectAclOperation {
     /// <p></p>
-    #[doc(hidden)]
     pub access_control_policy: ::std::option::Option<crate::types::S3AccessControlPolicy>,
 }
 impl S3SetObjectAclOperation {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateBlockDeviceMapping {
     /// <p>The device name.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual device name (ephemeralN).</p>
-    #[doc(hidden)]
     pub virtual_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the block device for an EBS volume.</p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>,
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
-    #[doc(hidden)]
     pub no_device: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateBlockDeviceMapping {

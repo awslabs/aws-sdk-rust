@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReservationPurchaseRecommendationOutput {
     /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ReservationPurchaseRecommendationMetadata>,
     /// <p>Recommendations for reservations to purchase.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ReservationPurchaseRecommendation>>,
     /// <p>The pagination token for the next set of retrievable results.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

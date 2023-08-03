@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcesAffected {
     /// <p>The details of the S3 bucket that the finding applies to.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<crate::types::S3Bucket>,
     /// <p>The details of the S3 object that the finding applies to.</p>
-    #[doc(hidden)]
     pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl ResourcesAffected {

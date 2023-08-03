@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OfiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
-    #[doc(hidden)]
     pub metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::OfiMetricDataPoint>>,
     /// <p> The model's overall performance score. </p>
-    #[doc(hidden)]
     pub model_performance: ::std::option::Option<crate::types::OfiModelPerformance>,
 }
 impl OfiTrainingMetricsValue {

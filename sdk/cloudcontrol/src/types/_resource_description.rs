@@ -6,10 +6,8 @@
 pub struct ResourceDescription {
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list of the resource properties and their current values.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDescription {

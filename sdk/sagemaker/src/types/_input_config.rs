@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfig {
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. The data inputs are <code>Framework</code> specific. </p>
     /// <ul>
@@ -111,14 +110,11 @@ pub struct InputConfig {
     /// <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub data_input_config: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the framework in which the model was trained. For example: TENSORFLOW.</p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<crate::types::Framework>,
     /// <p>Specifies the framework version to use. This API field is only supported for the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p>
     /// <p>For information about framework versions supported for cloud targets and edge devices, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud Supported Instance Types and Frameworks</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge Supported Frameworks</a>.</p>
-    #[doc(hidden)]
     pub framework_version: ::std::option::Option<::std::string::String>,
 }
 impl InputConfig {

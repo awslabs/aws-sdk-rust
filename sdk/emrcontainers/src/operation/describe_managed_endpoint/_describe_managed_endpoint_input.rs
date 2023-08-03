@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeManagedEndpointInput {
     /// <p>This output displays ID of the managed endpoint.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the endpoint's virtual cluster.</p>
-    #[doc(hidden)]
     pub virtual_cluster_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeManagedEndpointInput {

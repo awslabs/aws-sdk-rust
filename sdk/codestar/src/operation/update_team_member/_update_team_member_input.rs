@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTeamMemberInput {
     /// <p>The ID of the project.</p>
-    #[doc(hidden)]
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
-    #[doc(hidden)]
     pub project_role: ::std::option::Option<::std::string::String>,
     /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
-    #[doc(hidden)]
     pub remote_access_allowed: ::std::option::Option<bool>,
 }
 impl UpdateTeamMemberInput {

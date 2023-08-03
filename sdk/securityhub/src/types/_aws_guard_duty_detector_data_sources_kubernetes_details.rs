@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsGuardDutyDetectorDataSourcesKubernetesDetails {
     /// <p> Describes whether Kubernetes audit logs are activated as a data source for the detector. </p>
-    #[doc(hidden)]
     pub audit_logs: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails>,
 }
 impl AwsGuardDutyDetectorDataSourcesKubernetesDetails {

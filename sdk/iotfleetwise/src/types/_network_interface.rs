@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NetworkInterfaceType>,
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
-    #[doc(hidden)]
     pub can_interface: ::std::option::Option<crate::types::CanInterface>,
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
-    #[doc(hidden)]
     pub obd_interface: ::std::option::Option<crate::types::ObdInterface>,
 }
 impl NetworkInterface {

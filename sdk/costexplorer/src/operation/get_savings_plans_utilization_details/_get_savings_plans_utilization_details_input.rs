@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:</p>
     /// <ul>
@@ -15,16 +14,12 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li>
     /// </ul>
     /// <p> <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The data type.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -38,7 +33,6 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <li> <p> <code>AmortizedUpfrontCommitment</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortDefinition>,
 }
 impl GetSavingsPlansUtilizationDetailsInput {

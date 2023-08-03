@@ -13,7 +13,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
-    #[doc(hidden)]
     pub timer_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelTimerDecisionAttributes {

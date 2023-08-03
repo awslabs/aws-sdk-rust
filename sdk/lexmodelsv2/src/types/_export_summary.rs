@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the bot or bot locale that was exported.</p>
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     /// <p>The file format used in the export files.</p>
-    #[doc(hidden)]
     pub file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>The date and time that the export was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the export was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExportSummary {

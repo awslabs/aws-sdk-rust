@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceInfo {
     /// <p>The service identifier.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The service name.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl ServiceInfo {

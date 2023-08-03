@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftDestinationProperties {
     /// <p> The object specified in the Amazon Redshift flow destination. </p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Amazon Redshift. </p>
-    #[doc(hidden)]
     pub intermediate_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> The object key for the bucket in which Amazon AppFlow places the destination files. </p>
-    #[doc(hidden)]
     pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Amazon Redshift destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    #[doc(hidden)]
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
 }
 impl RedshiftDestinationProperties {

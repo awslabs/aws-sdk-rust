@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPermissionInput {
     /// <p>The name of the profiling group to grant access to.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    #[doc(hidden)]
     pub action_group: ::std::option::Option<crate::types::ActionGroup>,
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    #[doc(hidden)]
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PutPermissionInput {

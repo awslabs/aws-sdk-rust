@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTableColumnsOutput {
     /// <p> The list of columns in the table. </p>
-    #[doc(hidden)]
     pub table_columns: ::std::option::Option<::std::vec::Vec<crate::types::TableColumn>>,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
-    #[doc(hidden)]
     pub workbook_cursor: i64,
     _request_id: Option<String>,
 }

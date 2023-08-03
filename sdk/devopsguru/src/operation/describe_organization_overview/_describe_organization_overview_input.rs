@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrganizationOverviewInput {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
-    #[doc(hidden)]
     pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used. </p>
-    #[doc(hidden)]
     pub to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
-    #[doc(hidden)]
     pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeOrganizationOverviewInput {

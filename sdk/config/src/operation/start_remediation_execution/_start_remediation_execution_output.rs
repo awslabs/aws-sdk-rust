@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRemediationExecutionOutput {
     /// <p>Returns a failure message. For example, the resource is already compliant.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>For resources that have failed to start execution, the API returns a resource key object.</p>
-    #[doc(hidden)]
     pub failed_items: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
     _request_id: Option<String>,
 }

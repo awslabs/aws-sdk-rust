@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringConfiguration {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
-    #[doc(hidden)]
     pub s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     /// <p>The managed log persistence configuration for a job run.</p>
-    #[doc(hidden)]
     pub managed_persistence_monitoring_configuration: ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
     /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_configuration: ::std::option::Option<crate::types::CloudWatchLoggingConfiguration>,
 }
 impl MonitoringConfiguration {

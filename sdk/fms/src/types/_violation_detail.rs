@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViolationDetail {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
-    #[doc(hidden)]
     pub member_account: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID that the violation details were requested for.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type that the violation details were requested for.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>List of violations for the requested resource.</p>
-    #[doc(hidden)]
     pub resource_violations: ::std::option::Option<::std::vec::Vec<crate::types::ResourceViolation>>,
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Brief description for the requested resource.</p>
-    #[doc(hidden)]
     pub resource_description: ::std::option::Option<::std::string::String>,
 }
 impl ViolationDetail {

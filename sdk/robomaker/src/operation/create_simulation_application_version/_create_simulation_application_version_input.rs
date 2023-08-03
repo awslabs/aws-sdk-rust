@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSimulationApplicationVersionInput {
     /// <p>The application information for the simulation application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    #[doc(hidden)]
     pub current_revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
-    #[doc(hidden)]
     pub s3_etags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
 }
 impl CreateSimulationApplicationVersionInput {

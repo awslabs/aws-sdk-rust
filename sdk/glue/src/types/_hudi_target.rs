@@ -6,16 +6,12 @@
 pub struct HudiTarget {
     /// <p>An array of Amazon S3 location strings for Hudi, each indicating the root folder with which the metadata files for a Hudi table resides. The Hudi folder may be located in a child folder of the root folder.</p>
     /// <p>The crawler will scan all folders underneath a path for a Hudi folder.</p>
-    #[doc(hidden)]
     pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the connection to use to connect to the Hudi target. If your Hudi files are stored in buckets that require VPC authorization, you can set their connection properties here.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    #[doc(hidden)]
     pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
-    #[doc(hidden)]
     pub maximum_traversal_depth: ::std::option::Option<i32>,
 }
 impl HudiTarget {

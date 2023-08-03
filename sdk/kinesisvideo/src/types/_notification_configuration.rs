@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>Indicates if a notification configuration is enabled or disabled.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ConfigurationStatus>,
     /// <p>The destination information required to deliver a notification to a customer.</p>
-    #[doc(hidden)]
     pub destination_config: ::std::option::Option<crate::types::NotificationDestinationConfig>,
 }
 impl NotificationConfiguration {

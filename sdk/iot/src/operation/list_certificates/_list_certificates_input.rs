@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificatesInput {
     /// <p>The result page size.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
-    #[doc(hidden)]
     pub ascending_order: ::std::option::Option<bool>,
 }
 impl ListCertificatesInput {

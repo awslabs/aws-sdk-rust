@@ -10,13 +10,10 @@
 pub struct XssMatchSet {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    #[doc(hidden)]
     pub xss_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-    #[doc(hidden)]
     pub xss_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchTuple>>,
 }
 impl XssMatchSet {

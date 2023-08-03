@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlIdp {
     /// <p>The Metadata of the SAML application in xml format.</p>
-    #[doc(hidden)]
     pub metadata_content: ::std::option::Option<::std::string::String>,
     /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
 }
 impl SamlIdp {

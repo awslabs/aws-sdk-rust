@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNamedQueryInput {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
-    #[doc(hidden)]
     pub named_query_id: ::std::option::Option<::std::string::String>,
 }
 impl GetNamedQueryInput {

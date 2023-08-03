@@ -10,114 +10,78 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::ReplicationEndpointTypeValue>,
     /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
-    #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
-    #[doc(hidden)]
     pub engine_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The user name used to connect to the endpoint.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the server at the endpoint.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The port value used to access the endpoint.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The name of the database at the endpoint.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Additional connection attributes used to connect to the endpoint.</p>
-    #[doc(hidden)]
     pub extra_connection_attributes: ::std::option::Option<::std::string::String>,
     /// <p>The status of the endpoint.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
-    #[doc(hidden)]
     pub ssl_mode: ::std::option::Option<crate::types::DmsSslModeValue>,
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The external table definition.</p>
-    #[doc(hidden)]
     pub external_table_definition: ::std::option::Option<::std::string::String>,
     /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
-    #[doc(hidden)]
     pub dynamo_db_settings: ::std::option::Option<crate::types::DynamoDbSettings>,
     /// <p>The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.</p>
-    #[doc(hidden)]
     pub s3_settings: ::std::option::Option<crate::types::S3Settings>,
     /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
-    #[doc(hidden)]
     pub dms_transfer_settings: ::std::option::Option<crate::types::DmsTransferSettings>,
     /// <p>The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code> structure.</p>
-    #[doc(hidden)]
     pub mongo_db_settings: ::std::option::Option<crate::types::MongoDbSettings>,
     /// <p>The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code> structure.</p>
-    #[doc(hidden)]
     pub kinesis_settings: ::std::option::Option<crate::types::KinesisSettings>,
     /// <p>The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code> structure.</p>
-    #[doc(hidden)]
     pub kafka_settings: ::std::option::Option<crate::types::KafkaSettings>,
     /// <p>The settings for the OpenSearch source endpoint. For more information, see the <code>ElasticsearchSettings</code> structure.</p>
-    #[doc(hidden)]
     pub elasticsearch_settings: ::std::option::Option<crate::types::ElasticsearchSettings>,
     /// <p>The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code> structure.</p>
-    #[doc(hidden)]
     pub neptune_settings: ::std::option::Option<crate::types::NeptuneSettings>,
     /// <p>Settings for the Amazon Redshift endpoint.</p>
-    #[doc(hidden)]
     pub redshift_settings: ::std::option::Option<crate::types::RedshiftSettings>,
     /// <p>The settings for the PostgreSQL source and target endpoint. For more information, see the <code>PostgreSQLSettings</code> structure.</p>
-    #[doc(hidden)]
     pub postgre_sql_settings: ::std::option::Option<crate::types::PostgreSqlSettings>,
     /// <p>The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code> structure.</p>
-    #[doc(hidden)]
     pub my_sql_settings: ::std::option::Option<crate::types::MySqlSettings>,
     /// <p>The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code> structure.</p>
-    #[doc(hidden)]
     pub oracle_settings: ::std::option::Option<crate::types::OracleSettings>,
     /// <p>The settings for the SAP ASE source and target endpoint. For more information, see the <code>SybaseSettings</code> structure.</p>
-    #[doc(hidden)]
     pub sybase_settings: ::std::option::Option<crate::types::SybaseSettings>,
     /// <p>The settings for the Microsoft SQL Server source and target endpoint. For more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
-    #[doc(hidden)]
     pub microsoft_sql_server_settings: ::std::option::Option<crate::types::MicrosoftSqlServerSettings>,
     /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
-    #[doc(hidden)]
     pub ibm_db2_settings: ::std::option::Option<crate::types::IbmDb2Settings>,
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
-    #[doc(hidden)]
     pub doc_db_settings: ::std::option::Option<crate::types::DocDbSettings>,
     /// <p>The settings for the Redis target endpoint. For more information, see the <code>RedisSettings</code> structure.</p>
-    #[doc(hidden)]
     pub redis_settings: ::std::option::Option<crate::types::RedisSettings>,
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-    #[doc(hidden)]
     pub gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
     /// <p>The settings for the Amazon Timestream target endpoint. For more information, see the <code>TimestreamSettings</code> structure.</p>
-    #[doc(hidden)]
     pub timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
 }
 impl Endpoint {

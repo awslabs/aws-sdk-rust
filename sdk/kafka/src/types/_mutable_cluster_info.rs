@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
-    #[doc(hidden)]
     pub broker_ebs_volume_info: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
     /// <p>Information about the changes in the configuration of the brokers.</p>
-    #[doc(hidden)]
     pub configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
-    #[doc(hidden)]
     pub number_of_broker_nodes: ::std::option::Option<i32>,
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-    #[doc(hidden)]
     pub enhanced_monitoring: ::std::option::Option<crate::types::EnhancedMonitoring>,
     /// <p>The settings for open monitoring.</p>
-    #[doc(hidden)]
     pub open_monitoring: ::std::option::Option<crate::types::OpenMonitoring>,
     /// <p>The Apache Kafka version.</p>
-    #[doc(hidden)]
     pub kafka_version: ::std::option::Option<::std::string::String>,
     /// <p>You can configure your MSK cluster to send broker logs to different destination types. This is a container for the configuration details related to broker logs.</p>
-    #[doc(hidden)]
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     /// <p>Information about the Amazon MSK broker type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Includes all client authentication information.</p>
-    #[doc(hidden)]
     pub client_authentication: ::std::option::Option<crate::types::ClientAuthentication>,
     /// <p>Includes all encryption-related information.</p>
-    #[doc(hidden)]
     pub encryption_info: ::std::option::Option<crate::types::EncryptionInfo>,
     /// <p>Information about the broker access configuration.</p>
-    #[doc(hidden)]
     pub connectivity_info: ::std::option::Option<crate::types::ConnectivityInfo>,
     /// <p>This controls storage mode for supported storage tiers.</p>
-    #[doc(hidden)]
     pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
 }
 impl MutableClusterInfo {

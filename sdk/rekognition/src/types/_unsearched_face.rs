@@ -13,10 +13,8 @@ pub struct UnsearchedFace {
     /// <li> <p>GetFaceSearch</p> </li>
     /// </ul>
     /// <p>The Amazon Rekognition Image <code>DetectFaces</code> and <code>IndexFaces</code> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>
-    #[doc(hidden)]
     pub face_details: ::std::option::Option<crate::types::FaceDetail>,
     /// <p> Reasons why a face wasn't used for Search. </p>
-    #[doc(hidden)]
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFaceReason>>,
 }
 impl UnsearchedFace {

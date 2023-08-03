@@ -9,7 +9,6 @@ pub struct DeleteDbSubnetGroupInput {
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInput {

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRobotApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the robot application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the robot application.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the robot application.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    #[doc(hidden)]
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>The revision id of the robot application.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified robot application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The object that contains the Docker image URI used to create the robot application.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

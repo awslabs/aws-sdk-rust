@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedCluster {
     /// <p>The name of the cluster</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The error type associated with the update failure</p>
-    #[doc(hidden)]
     pub error_type: ::std::option::Option<::std::string::String>,
     /// <p>The error message associated with the update failure</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedCluster {

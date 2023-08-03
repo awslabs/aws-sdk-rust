@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubscriberInput {
     /// <p>The AWS identity used to access your data.</p>
-    #[doc(hidden)]
     pub subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     /// <p>The name of your Security Lake subscriber account.</p>
-    #[doc(hidden)]
     pub subscriber_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for your subscriber account in Security Lake.</p>
-    #[doc(hidden)]
     pub subscriber_description: ::std::option::Option<::std::string::String>,
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    #[doc(hidden)]
     pub access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSubscriberInput {

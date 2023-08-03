@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEmailMonitoringConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

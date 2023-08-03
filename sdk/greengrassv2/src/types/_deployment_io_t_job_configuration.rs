@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentIoTJobConfiguration {
     /// <p>The rollout configuration for the job. This configuration defines the rate at which the job rolls out to the fleet of target devices.</p>
-    #[doc(hidden)]
     pub job_executions_rollout_config: ::std::option::Option<crate::types::IoTJobExecutionsRolloutConfig>,
     /// <p>The stop configuration for the job. This configuration defines when and how to stop a job rollout.</p>
-    #[doc(hidden)]
     pub abort_config: ::std::option::Option<crate::types::IoTJobAbortConfig>,
     /// <p>The timeout configuration for the job. This configuration defines the amount of time each device has to complete the job.</p>
-    #[doc(hidden)]
     pub timeout_config: ::std::option::Option<crate::types::IoTJobTimeoutConfig>,
 }
 impl DeploymentIoTJobConfiguration {

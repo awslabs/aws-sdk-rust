@@ -65,15 +65,12 @@ pub struct MetricDefinitionRequest {
     /// <li> <p> <code>HttpErrorCount</code> </p> </li>
     /// <li> <p> <code>SessionCount</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The field within the event object that the metric value is sourced from.</p>
     /// <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to count the number of events that the filter catches. </p>
     /// <p>If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will handle data extraction from the event.</p>
-    #[doc(hidden)]
     pub value_key: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch metric unit to use for this metric. If you omit this field, the metric is recorded with no unit.</p>
-    #[doc(hidden)]
     pub unit_label: ::std::option::Option<::std::string::String>,
     /// <p>Use this field only if you are sending the metric to CloudWatch.</p>
     /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch. For extended metrics, valid values for the entries in this field are the following:</p>
@@ -86,7 +83,6 @@ pub struct MetricDefinitionRequest {
     /// <li> <p> <code>"event_details.fileType": "FileType"</code> </p> </li>
     /// </ul>
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
-    #[doc(hidden)]
     pub dimension_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The pattern that defines the metric, specified as a JSON object. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
     /// <p>When you define extended metrics, the metric definition is not valid if <code>EventPattern</code> is omitted.</p>
@@ -97,11 +93,9 @@ pub struct MetricDefinitionRequest {
     /// <li> <p> <code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code> </p> </li>
     /// </ul>
     /// <p>If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
-    #[doc(hidden)]
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.</p>
     /// <p>You cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl MetricDefinitionRequest {

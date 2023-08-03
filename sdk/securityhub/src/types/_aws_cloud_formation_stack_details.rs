@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFormationStackDetails {
     /// <p>The capabilities allowed in the stack. </p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time at which the stack was created. </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined description associated with the stack. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Boolean to enable or disable rollback on stack creation failures. </p>
-    #[doc(hidden)]
     pub disable_rollback: bool,
     /// <p>Information about whether a stack's actual configuration differs, or has drifted, from its expected configuration, as defined in the stack template and any values specified as template parameters. </p>
-    #[doc(hidden)]
     pub drift_information: ::std::option::Option<crate::types::AwsCloudFormationStackDriftInformationDetails>,
     /// <p>Whether termination protection is enabled for the stack. </p>
-    #[doc(hidden)]
     pub enable_termination_protection: bool,
     /// <p>The time the nested stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the Amazon SNS topic to which stack-related events are published. </p>
-    #[doc(hidden)]
     pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of output structures. </p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFormationStackOutputsDetails>>,
     /// <p>The ARN of an IAM role that's associated with the stack. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier of the stack. </p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The name associated with the stack. </p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the stack. </p>
-    #[doc(hidden)]
     pub stack_status: ::std::option::Option<::std::string::String>,
     /// <p>Success or failure message associated with the stack status. </p>
-    #[doc(hidden)]
     pub stack_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The length of time, in minutes, that CloudFormation waits for the nested stack to reach the <code>CREATE_COMPLETE</code> state. </p>
-    #[doc(hidden)]
     pub timeout_in_minutes: i32,
 }
 impl AwsCloudFormationStackDetails {

@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedItem {
     /// <p>Details about the related item.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<crate::types::ItemIdentifier>,
     /// <p>The title of the related item.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
     /// </important>
-    #[doc(hidden)]
     pub generated_id: ::std::option::Option<::std::string::String>,
 }
 impl RelatedItem {

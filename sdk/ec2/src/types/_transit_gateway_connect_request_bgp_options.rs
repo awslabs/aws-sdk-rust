@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayConnectRequestBgpOptions {
     /// <p>The peer Autonomous System Number (ASN).</p>
-    #[doc(hidden)]
     pub peer_asn: ::std::option::Option<i64>,
 }
 impl TransitGatewayConnectRequestBgpOptions {

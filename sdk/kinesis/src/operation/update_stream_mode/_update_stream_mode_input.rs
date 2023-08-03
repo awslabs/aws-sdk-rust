@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStreamModeInput {
     /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    #[doc(hidden)]
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
 }
 impl UpdateStreamModeInput {

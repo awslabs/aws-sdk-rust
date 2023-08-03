@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ulimit {
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
-    #[doc(hidden)]
     pub hard_limit: ::std::option::Option<i32>,
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
-    #[doc(hidden)]
     pub soft_limit: ::std::option::Option<i32>,
 }
 impl Ulimit {

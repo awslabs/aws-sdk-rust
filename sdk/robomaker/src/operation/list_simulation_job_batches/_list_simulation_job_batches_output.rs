@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSimulationJobBatchesOutput {
     /// <p>A list of simulation job batch summaries.</p>
-    #[doc(hidden)]
     pub simulation_job_batch_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SimulationJobBatchSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

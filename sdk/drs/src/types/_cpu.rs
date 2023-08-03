@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cpu {
     /// <p>The number of CPU cores.</p>
-    #[doc(hidden)]
     pub cores: i64,
     /// <p>The model name of the CPU.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
 }
 impl Cpu {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryWhatIfForecastOutput {
     /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
-    #[doc(hidden)]
     pub forecast: ::std::option::Option<crate::types::Forecast>,
     _request_id: Option<String>,
 }

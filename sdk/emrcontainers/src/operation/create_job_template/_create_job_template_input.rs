@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobTemplateInput {
     /// <p>The specified name of the job template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The client token of the job template.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The job template data which holds values of StartJobRun API request.</p>
-    #[doc(hidden)]
     pub job_template_data: ::std::option::Option<crate::types::JobTemplateData>,
     /// <p>The tags that are associated with the job template.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key ARN used to encrypt the job template.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateJobTemplateInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExplainerConfig {
     /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
-    #[doc(hidden)]
     pub clarify_explainer_config: ::std::option::Option<crate::types::ClarifyExplainerConfig>,
 }
 impl ExplainerConfig {

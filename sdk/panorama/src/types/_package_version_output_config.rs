@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionOutputConfig {
     /// <p>The output's package name.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The output's package version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that the version is recommended for all users.</p>
-    #[doc(hidden)]
     pub mark_latest: bool,
 }
 impl PackageVersionOutputConfig {

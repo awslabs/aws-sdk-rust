@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomMetricsOutput {
     /// <p> The name of the custom metric. </p>
-    #[doc(hidden)]
     pub metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

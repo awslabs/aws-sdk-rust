@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableStorageOptimizerOutput {
     /// <p>A response indicating the success of failure of the operation.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

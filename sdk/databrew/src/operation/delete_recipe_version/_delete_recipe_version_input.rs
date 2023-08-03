@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecipeVersionInput {
     /// <p>The name of the recipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    #[doc(hidden)]
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRecipeVersionInput {

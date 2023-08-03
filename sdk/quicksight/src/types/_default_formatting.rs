@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultFormatting {
     /// <p>The display format. Valid values for this structure are <code>AUTO</code>, <code>PERCENT</code>, <code>CURRENCY</code>, <code>NUMBER</code>, <code>DATE</code>, and <code>STRING</code>.</p>
-    #[doc(hidden)]
     pub display_format: ::std::option::Option<crate::types::DisplayFormat>,
     /// <p>The additional options for display formatting.</p>
-    #[doc(hidden)]
     pub display_format_options: ::std::option::Option<crate::types::DisplayFormatOptions>,
 }
 impl DefaultFormatting {

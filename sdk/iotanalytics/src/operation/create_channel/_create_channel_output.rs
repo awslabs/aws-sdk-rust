@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelOutput {
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>How long, in days, message data is kept for the channel.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     _request_id: Option<String>,
 }

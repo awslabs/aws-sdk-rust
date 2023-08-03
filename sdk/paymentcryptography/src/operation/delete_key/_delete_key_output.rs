@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyOutput {
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }

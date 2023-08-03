@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceConnectionStatus {
     /// <p>The identifier of the WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
-    #[doc(hidden)]
     pub connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The timestamp of the connection status check.</p>
-    #[doc(hidden)]
     pub connection_state_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last known user connection.</p>
-    #[doc(hidden)]
     pub last_known_user_connection_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl WorkspaceConnectionStatus {

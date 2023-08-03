@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentInfo {
     /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-    #[doc(hidden)]
     pub availability_zone_information: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
 }
 impl EnvironmentInfo {

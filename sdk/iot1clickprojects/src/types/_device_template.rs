@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceTemplate {
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
-    #[doc(hidden)]
     pub callback_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DeviceTemplate {

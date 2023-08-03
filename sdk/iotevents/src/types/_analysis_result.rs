@@ -15,7 +15,6 @@ pub struct AnalysisResult {
     /// <li> <p> <code>referenced-resource</code> - Resources that the detector model uses must be available.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The severity level of the analysis result. Based on the severity level, analysis results fall into three general categories:</p>
     /// <ul>
@@ -23,13 +22,10 @@ pub struct AnalysisResult {
     /// <li> <p> <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your detector model. We recommend that you review warnings and take necessary actions before you use your detector model in production environments. Otherwise, the detector model might not work as expected.</p> </li>
     /// <li> <p> <code>ERROR</code> - An error result notifies you about a problem found in your detector model. You must fix all errors before you can publish your detector model.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::AnalysisResultLevel>,
     /// <p>Contains additional information about the analysis result.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
-    #[doc(hidden)]
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>>,
 }
 impl AnalysisResult {

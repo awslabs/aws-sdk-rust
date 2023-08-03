@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentStatusInput {
     /// <p> The unique identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the assessment. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AssessmentStatus>,
 }
 impl UpdateAssessmentStatusInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportResourceSpecification {
     /// <p>Parameters for exporting a bot.</p>
-    #[doc(hidden)]
     pub bot_export_specification: ::std::option::Option<crate::types::BotExportSpecification>,
     /// <p>Parameters for exporting a bot locale.</p>
-    #[doc(hidden)]
     pub bot_locale_export_specification: ::std::option::Option<crate::types::BotLocaleExportSpecification>,
     /// <p>The parameters required to export a custom vocabulary.</p>
-    #[doc(hidden)]
     pub custom_vocabulary_export_specification: ::std::option::Option<crate::types::CustomVocabularyExportSpecification>,
     /// <p>Specifications for the test set that is exported as a resource.</p>
-    #[doc(hidden)]
     pub test_set_export_specification: ::std::option::Option<crate::types::TestSetExportSpecification>,
 }
 impl ExportResourceSpecification {

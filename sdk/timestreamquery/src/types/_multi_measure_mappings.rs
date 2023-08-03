@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiMeasureMappings {
     /// <p>The name of the target multi-measure name in the derived table. This input is required when measureNameColumn is not provided. If MeasureNameColumn is provided, then value from that column will be used as multi-measure name.</p>
-    #[doc(hidden)]
     pub target_multi_measure_name: ::std::option::Option<::std::string::String>,
     /// <p>Required. Attribute mappings to be used for mapping query results to ingest data for multi-measure attributes.</p>
-    #[doc(hidden)]
     pub multi_measure_attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>>,
 }
 impl MultiMeasureMappings {

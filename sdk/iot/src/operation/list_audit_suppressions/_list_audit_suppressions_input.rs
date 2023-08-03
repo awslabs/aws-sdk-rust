@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditSuppressionsInput {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    #[doc(hidden)]
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
-    #[doc(hidden)]
     pub ascending_order: ::std::option::Option<bool>,
     /// <p> The token for the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAuditSuppressionsInput {

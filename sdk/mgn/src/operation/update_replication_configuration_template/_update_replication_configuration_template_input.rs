@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template template ID request.</p>
-    #[doc(hidden)]
     pub replication_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration template ARN request.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration template Staging Area subnet ID request.</p>
-    #[doc(hidden)]
     pub staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
-    #[doc(hidden)]
     pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    #[doc(hidden)]
     pub replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Update replication configuration template Replication Server instance type request.</p>
-    #[doc(hidden)]
     pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration template use dedicated Replication Server request.</p>
-    #[doc(hidden)]
     pub use_dedicated_replication_server: ::std::option::Option<bool>,
     /// <p>Update replication configuration template use default large Staging Disk type request.</p>
-    #[doc(hidden)]
     pub default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Update replication configuration template EBS encryption request.</p>
-    #[doc(hidden)]
     pub ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     /// <p>Update replication configuration template EBS encryption key ARN request.</p>
-    #[doc(hidden)]
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration template bandwidth throttling request.</p>
-    #[doc(hidden)]
     pub bandwidth_throttling: i64,
     /// <p>Update replication configuration template data plane routing request.</p>
-    #[doc(hidden)]
     pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Update replication configuration template create Public IP request.</p>
-    #[doc(hidden)]
     pub create_public_ip: ::std::option::Option<bool>,
     /// <p>Update replication configuration template Staging Area Tags request.</p>
-    #[doc(hidden)]
     pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Update replication configuration template use Fips Endpoint request.</p>
-    #[doc(hidden)]
     pub use_fips_endpoint: ::std::option::Option<bool>,
 }
 impl UpdateReplicationConfigurationTemplateInput {

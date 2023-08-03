@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashEncryption {
     /// Time (in seconds) between each encryption key rotation.
-    #[doc(hidden)]
     pub key_rotation_interval_seconds: ::std::option::Option<i32>,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[doc(hidden)]
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl DashEncryption {

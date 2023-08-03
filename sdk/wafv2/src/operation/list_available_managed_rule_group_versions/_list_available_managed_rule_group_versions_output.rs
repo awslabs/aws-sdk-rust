@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupVersionsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The versions that are currently available for the specified managed rule group. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    #[doc(hidden)]
     pub versions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupVersion>>,
     /// <p>The name of the version that's currently set as the default. </p>
-    #[doc(hidden)]
     pub current_default_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

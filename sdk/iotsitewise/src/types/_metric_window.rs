@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricWindow {
     /// <p>The tumbling time interval window.</p>
-    #[doc(hidden)]
     pub tumbling: ::std::option::Option<crate::types::TumblingWindow>,
 }
 impl MetricWindow {

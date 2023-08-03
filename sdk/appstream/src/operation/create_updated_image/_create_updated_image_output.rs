@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUpdatedImageOutput {
     /// <p>Describes an image.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>Indicates whether a new image can be created.</p>
-    #[doc(hidden)]
     pub can_update_image: bool,
     _request_id: Option<String>,
 }

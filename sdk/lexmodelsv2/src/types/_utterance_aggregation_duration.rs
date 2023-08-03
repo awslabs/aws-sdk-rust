@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceAggregationDuration {
     /// <p>The desired time window for aggregating utterances. </p>
-    #[doc(hidden)]
     pub relative_aggregation_duration: ::std::option::Option<crate::types::RelativeAggregationDuration>,
 }
 impl UtteranceAggregationDuration {

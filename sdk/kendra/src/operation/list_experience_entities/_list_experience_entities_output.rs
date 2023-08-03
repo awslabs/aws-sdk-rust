@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExperienceEntitiesOutput {
     /// <p>An array of summary information for one or more users or groups.</p>
-    #[doc(hidden)]
     pub summary_items: ::std::option::Option<::std::vec::Vec<crate::types::ExperienceEntitiesSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeaturedResultsConflictException {
     /// <p>An explanation for the conflicting queries.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
-    #[doc(hidden)]
     pub conflicting_items: ::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

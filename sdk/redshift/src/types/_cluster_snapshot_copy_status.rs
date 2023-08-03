@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSnapshotCopyStatus {
     /// <p>The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.</p>
-    #[doc(hidden)]
     pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region.</p>
-    #[doc(hidden)]
     pub retention_period: i64,
     /// <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: i32,
     /// <p>The name of the snapshot copy grant.</p>
-    #[doc(hidden)]
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSnapshotCopyStatus {

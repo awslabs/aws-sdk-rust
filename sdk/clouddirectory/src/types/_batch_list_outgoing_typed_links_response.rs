@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListOutgoingTypedLinksResponse {
     /// <p>Returns a typed link specifier as output.</p>
-    #[doc(hidden)]
     pub typed_link_specifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListOutgoingTypedLinksResponse {

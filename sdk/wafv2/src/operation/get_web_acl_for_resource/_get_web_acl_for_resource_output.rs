@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWebAclForResourceOutput {
     /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
-    #[doc(hidden)]
     pub web_acl: ::std::option::Option<crate::types::WebAcl>,
     _request_id: Option<String>,
 }

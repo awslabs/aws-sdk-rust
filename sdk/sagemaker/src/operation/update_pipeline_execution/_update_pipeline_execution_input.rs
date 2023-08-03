@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipelineExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the pipeline execution.</p>
-    #[doc(hidden)]
     pub pipeline_execution_display_name: ::std::option::Option<::std::string::String>,
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
-    #[doc(hidden)]
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
 impl UpdatePipelineExecutionInput {

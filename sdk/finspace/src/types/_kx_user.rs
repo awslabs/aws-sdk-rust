@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxUser {
     /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role ARN that is associated with the user.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the kdb user was created. </p>
-    #[doc(hidden)]
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the kdb user was updated. </p>
-    #[doc(hidden)]
     pub update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KxUser {

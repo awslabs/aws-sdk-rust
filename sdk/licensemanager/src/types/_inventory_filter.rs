@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>Name of the filter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Condition of the filter.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::InventoryFilterCondition>,
     /// <p>Value of the filter.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl InventoryFilter {

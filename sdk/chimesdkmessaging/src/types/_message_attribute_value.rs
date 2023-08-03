@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageAttributeValue {
     /// <p>The strings in a message attribute value.</p>
-    #[doc(hidden)]
     pub string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MessageAttributeValue {

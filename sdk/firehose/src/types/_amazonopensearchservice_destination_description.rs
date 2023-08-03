@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonopensearchserviceDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
-    #[doc(hidden)]
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName. </p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index rotation period</p>
-    #[doc(hidden)]
     pub index_rotation_period: ::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod>,
     /// <p>The buffering options.</p>
-    #[doc(hidden)]
     pub buffering_hints: ::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints>,
     /// <p>The Amazon OpenSearch Service retry options.</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions>,
     /// <p>The Amazon S3 backup mode.</p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode>,
     /// <p>Describes a destination in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>Describes a data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    #[doc(hidden)]
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl AmazonopensearchserviceDestinationDescription {

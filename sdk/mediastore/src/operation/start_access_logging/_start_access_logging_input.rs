@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAccessLoggingInput {
     /// <p>The name of the container that you want to start access logging on.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl StartAccessLoggingInput {

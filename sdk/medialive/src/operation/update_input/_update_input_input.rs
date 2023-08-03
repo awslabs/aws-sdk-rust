@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInputInput {
     /// Destination settings for PUSH type inputs.
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
     /// Settings for the devices.
-    #[doc(hidden)]
     pub input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>>,
     /// Unique ID of the input.
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
     /// A list of security groups referenced by IDs to attach to the input.
-    #[doc(hidden)]
     pub input_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    #[doc(hidden)]
     pub media_connect_flows: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
     /// Name of the input.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
 }
 impl UpdateInputInput {

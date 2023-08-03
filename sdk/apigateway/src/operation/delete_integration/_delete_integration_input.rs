@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a delete integration request's resource identifier.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a delete integration request's HTTP method.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIntegrationInput {

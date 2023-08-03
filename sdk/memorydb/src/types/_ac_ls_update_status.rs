@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcLsUpdateStatus {
     /// <p>A list of ACLs pending to be applied.</p>
-    #[doc(hidden)]
     pub acl_to_apply: ::std::option::Option<::std::string::String>,
 }
 impl AcLsUpdateStatus {

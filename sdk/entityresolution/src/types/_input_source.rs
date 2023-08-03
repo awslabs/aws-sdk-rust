@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSource {
     /// <p>An Glue table ARN for the input source table.</p>
-    #[doc(hidden)]
     pub input_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema to be retrieved.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
-    #[doc(hidden)]
     pub apply_normalization: ::std::option::Option<bool>,
 }
 impl InputSource {

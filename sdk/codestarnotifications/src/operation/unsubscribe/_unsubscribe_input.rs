@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UnsubscribeInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
-    #[doc(hidden)]
     pub target_address: ::std::option::Option<::std::string::String>,
 }
 impl UnsubscribeInput {

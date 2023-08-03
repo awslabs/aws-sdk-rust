@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AuthenticationResult {
     /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
-    #[doc(hidden)]
     pub authentication_result_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of when audio aggregation started for this authentication result.</p>
-    #[doc(hidden)]
     pub audio_aggregation_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of when audio aggregation ended for this authentication result.</p>
-    #[doc(hidden)]
     pub audio_aggregation_ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
-    #[doc(hidden)]
     pub customer_speaker_id: ::std::option::Option<::std::string::String>,
     /// <p>The service-generated identifier for the speaker whose authentication result is produced.</p>
-    #[doc(hidden)]
     pub generated_speaker_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
-    #[doc(hidden)]
     pub decision: ::std::option::Option<crate::types::AuthenticationDecision>,
     /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<i32>,
     /// <p>The <code>AuthenticationConfiguration</code> used to generate this authentication result.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl AuthenticationResult {

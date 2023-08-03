@@ -6,14 +6,11 @@
 pub struct CloudWatchLogOptionsSpecification {
     /// <p>Enable or disable VPN tunnel logging feature. Default value is <code>False</code>.</p>
     /// <p>Valid values: <code>True</code> | <code>False</code> </p>
-    #[doc(hidden)]
     pub log_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log group to send logs to.</p>
-    #[doc(hidden)]
     pub log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set log format. Default format is <code>json</code>.</p>
     /// <p>Valid values: <code>json</code> | <code>text</code> </p>
-    #[doc(hidden)]
     pub log_output_format: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogOptionsSpecification {

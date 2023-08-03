@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnPremisesTagSet {
     /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    #[doc(hidden)]
     pub on_premises_tag_set_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagFilter>>>,
 }
 impl OnPremisesTagSet {

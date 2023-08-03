@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceFailback {
     /// <p>The ID of the failback client that this Recovery Instance is associated with.</p>
-    #[doc(hidden)]
     pub failback_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The Job ID of the last failback log for this Recovery Instance.</p>
-    #[doc(hidden)]
     pub failback_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the failback initiation started.</p>
-    #[doc(hidden)]
     pub failback_initiation_time: ::std::option::Option<::std::string::String>,
     /// <p>The state of the failback process that this Recovery Instance is in.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::FailbackState>,
     /// <p>The date and time the agent on the Recovery Instance was last seen by the service.</p>
-    #[doc(hidden)]
     pub agent_last_seen_by_service_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the failback client was last seen by the service.</p>
-    #[doc(hidden)]
     pub failback_client_last_seen_by_service_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether we are failing back to the original Source Server for this Recovery Instance.</p>
-    #[doc(hidden)]
     pub failback_to_original_server: ::std::option::Option<bool>,
     /// <p>The date and time of the first byte that was replicated from the Recovery Instance.</p>
-    #[doc(hidden)]
     pub first_byte_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time that the Recovery Instance has been replicating for.</p>
-    #[doc(hidden)]
     pub elapsed_replication_duration: ::std::option::Option<::std::string::String>,
     /// <p>The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.</p>
-    #[doc(hidden)]
     pub failback_launch_type: ::std::option::Option<crate::types::FailbackLaunchType>,
 }
 impl RecoveryInstanceFailback {

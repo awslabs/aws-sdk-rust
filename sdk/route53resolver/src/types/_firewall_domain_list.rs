@@ -6,34 +6,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallDomainList {
     /// <p>The ID of the domain list. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain list. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The number of domain names that are specified in the domain list.</p>
-    #[doc(hidden)]
     pub domain_count: ::std::option::Option<i32>,
     /// <p>The status of the domain list. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
-    #[doc(hidden)]
     pub managed_owner_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
-    #[doc(hidden)]
     pub modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallDomainList {

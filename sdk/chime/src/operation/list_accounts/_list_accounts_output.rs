@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountsOutput {
     /// <p>List of Amazon Chime accounts and account details.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCatalogItemInput {
     /// <p>The ID of the catalog item.</p>
-    #[doc(hidden)]
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCatalogItemInput {

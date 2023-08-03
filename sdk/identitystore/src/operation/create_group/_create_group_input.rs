@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    #[doc(hidden)]
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the description of the group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl CreateGroupInput {

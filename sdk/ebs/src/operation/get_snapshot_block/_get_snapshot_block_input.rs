@@ -6,13 +6,10 @@ pub struct GetSnapshotBlockInput {
     /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
-    #[doc(hidden)]
     pub block_index: ::std::option::Option<i32>,
     /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
-    #[doc(hidden)]
     pub block_token: ::std::option::Option<::std::string::String>,
 }
 impl GetSnapshotBlockInput {

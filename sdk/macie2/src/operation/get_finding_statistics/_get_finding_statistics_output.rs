@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingStatisticsOutput {
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
-    #[doc(hidden)]
     pub counts_by_group: ::std::option::Option<::std::vec::Vec<crate::types::GroupCount>>,
     _request_id: Option<String>,
 }

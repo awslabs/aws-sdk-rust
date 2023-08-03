@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRefreshScheduleOutput {
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the refresh schedule.</p>
-    #[doc(hidden)]
     pub schedule_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the refresh schedule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

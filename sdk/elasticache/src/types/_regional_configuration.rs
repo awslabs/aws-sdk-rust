@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionalConfiguration {
     /// <p>The name of the secondary cluster</p>
-    #[doc(hidden)]
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon region where the cluster is stored</p>
-    #[doc(hidden)]
     pub replication_group_region: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
-    #[doc(hidden)]
     pub resharding_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
 }
 impl RegionalConfiguration {

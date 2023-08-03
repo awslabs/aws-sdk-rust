@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTestSetOutput {
     /// <p>The test set Id for the test set response.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The test set name of the test set.</p>
-    #[doc(hidden)]
     pub test_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the test set.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the test set is audio or text data.</p>
-    #[doc(hidden)]
     pub modality: ::std::option::Option<crate::types::TestSetModality>,
     /// <p>The status of the test set.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TestSetStatus>,
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The total number of agent and user turn in the test set.</p>
-    #[doc(hidden)]
     pub num_turns: ::std::option::Option<i32>,
     /// <p>The Amazon S3 storage location for the test set data.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::TestSetStorageLocation>,
     /// <p>The creation date and time for the test set data.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time for the last update of the test set data.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

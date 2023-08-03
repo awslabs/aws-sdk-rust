@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationDetails {
     /// <p>The configuration details of the CloudWatch Logs destination.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_details: ::std::option::Option<crate::types::CloudWatchLogsDestinationDetails>,
     /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_details: ::std::option::Option<crate::types::KinesisFirehoseDestinationDetails>,
 }
 impl DestinationDetails {

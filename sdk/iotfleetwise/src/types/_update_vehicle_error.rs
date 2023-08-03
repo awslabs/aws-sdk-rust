@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The relevant HTTP error code (400+).</p>
-    #[doc(hidden)]
     pub code: i32,
     /// <p>A message associated with the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVehicleError {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetDetails {
     /// <p>The Amazon S3 object that is the asset.</p>
-    #[doc(hidden)]
     pub s3_snapshot_asset: ::std::option::Option<crate::types::S3SnapshotAsset>,
     /// <p>The Amazon Redshift datashare that is the asset.</p>
-    #[doc(hidden)]
     pub redshift_data_share_asset: ::std::option::Option<crate::types::RedshiftDataShareAsset>,
     /// <p>Information about the API Gateway API asset.</p>
-    #[doc(hidden)]
     pub api_gateway_api_asset: ::std::option::Option<crate::types::ApiGatewayApiAsset>,
     /// <p>The Amazon S3 data access that is the asset.</p>
-    #[doc(hidden)]
     pub s3_data_access_asset: ::std::option::Option<crate::types::S3DataAccessAsset>,
     /// <p>The AWS Lake Formation data permission that is the asset.</p>
-    #[doc(hidden)]
     pub lake_formation_data_permission_asset: ::std::option::Option<crate::types::LakeFormationDataPermissionAsset>,
 }
 impl AssetDetails {

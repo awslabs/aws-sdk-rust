@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CandidateAddress {
     /// <p>The street information of the candidate address.</p>
-    #[doc(hidden)]
     pub street_info: ::std::option::Option<::std::string::String>,
     /// <p>The numeric portion of the candidate address.</p>
-    #[doc(hidden)]
     pub street_number: ::std::option::Option<::std::string::String>,
     /// <p>The city of the candidate address.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The state of the candidate address.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The postal code of the candidate address.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The zip + 4 or postal code +4 of the candidate address.</p>
-    #[doc(hidden)]
     pub postal_code_plus4: ::std::option::Option<::std::string::String>,
     /// <p>The country of the candidate address.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
 }
 impl CandidateAddress {

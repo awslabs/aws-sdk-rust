@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
 }
 impl Repository {

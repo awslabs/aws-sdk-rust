@@ -7,43 +7,30 @@ pub struct IndexField {
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-    #[doc(hidden)]
     pub index_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub index_field_type: ::std::option::Option<crate::types::IndexFieldType>,
     /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub int_options: ::std::option::Option<crate::types::IntOptions>,
     /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub double_options: ::std::option::Option<crate::types::DoubleOptions>,
     /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub literal_options: ::std::option::Option<crate::types::LiteralOptions>,
     /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub text_options: ::std::option::Option<crate::types::TextOptions>,
     /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub date_options: ::std::option::Option<crate::types::DateOptions>,
     /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub lat_lon_options: ::std::option::Option<crate::types::LatLonOptions>,
     /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub int_array_options: ::std::option::Option<crate::types::IntArrayOptions>,
     /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub double_array_options: ::std::option::Option<crate::types::DoubleArrayOptions>,
     /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub literal_array_options: ::std::option::Option<crate::types::LiteralArrayOptions>,
     /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub text_array_options: ::std::option::Option<crate::types::TextArrayOptions>,
     /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
-    #[doc(hidden)]
     pub date_array_options: ::std::option::Option<crate::types::DateArrayOptions>,
 }
 impl IndexField {

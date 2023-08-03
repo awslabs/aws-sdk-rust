@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPullRequestsInput {
     /// <p>The name of the repository for which you want to list pull requests.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
-    #[doc(hidden)]
     pub author_arn: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-    #[doc(hidden)]
     pub pull_request_status: ::std::option::Option<crate::types::PullRequestStatusEnum>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListPullRequestsInput {

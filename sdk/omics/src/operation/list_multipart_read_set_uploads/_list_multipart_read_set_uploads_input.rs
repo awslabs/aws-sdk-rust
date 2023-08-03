@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultipartReadSetUploadsInput {
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of multipart uploads returned in a page. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListMultipartReadSetUploadsInput {

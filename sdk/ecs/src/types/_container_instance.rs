@@ -5,54 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerInstance {
     /// <p>The Amazon Resource Name (ARN) of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The capacity provider that's associated with the container instance.</p>
-    #[doc(hidden)]
     pub capacity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The version counter for the container instance. Every time a container instance experiences a change that triggers a CloudWatch event, the version counter is incremented. If you're replicating your Amazon ECS container instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon ECS APIs with the version reported in CloudWatch Events for the container instance (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the container instance.</p>
-    #[doc(hidden)]
     pub version_info: ::std::option::Option<crate::types::VersionInfo>,
     /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and memory that wasn't already allocated to tasks and is therefore available for new tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code> network mode). Any port that's not specified here is available for new tasks.</p>
-    #[doc(hidden)]
     pub remaining_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>For CPU and memory resource types, this parameter describes the amount of each resource that was available on the container instance when the container agent registered it with Amazon ECS. This value represents the total amount of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.</p>
-    #[doc(hidden)]
     pub registered_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>, <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
     /// <p>If your account has opted in to the <code>awsvpcTrunking</code> account setting, then any newly registered container instance will transition to a <code>REGISTERING</code> status while the trunk elastic network interface is provisioned for the instance. If the registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code> status. You can describe the container instance and see the reason for failure in the <code>statusReason</code> parameter. Once the container instance is terminated, the instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic network interface is deprovisioned. The instance then transitions to an <code>INACTIVE</code> status.</p>
     /// <p>The <code>ACTIVE</code> status indicates that the container instance can accept tasks. The <code>DRAINING</code> indicates that new tasks aren't placed on the container instance and any service tasks running on the container instance are removed if possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The reason that the container instance reached its current status.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS. An instance with an agent that may be unhealthy or stopped return <code>false</code>. Only instances connected to an agent can accept task placement requests.</p>
-    #[doc(hidden)]
     pub agent_connected: bool,
     /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code> status.</p>
-    #[doc(hidden)]
     pub running_tasks_count: i32,
     /// <p>The number of tasks on the container instance that are in the <code>PENDING</code> status.</p>
-    #[doc(hidden)]
     pub pending_tasks_count: i32,
     /// <p>The status of the most recent agent update. If an update wasn't ever requested, this value is <code>NULL</code>.</p>
-    #[doc(hidden)]
     pub agent_update_status: ::std::option::Option<crate::types::AgentUpdateStatus>,
     /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at instance registration or manually with the <code>PutAttributes</code> operation.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The Unix timestamp for the time when the container instance was registered.</p>
-    #[doc(hidden)]
     pub registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The resources attached to a container instance, such as an elastic network interface.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -65,10 +49,8 @@ pub struct ContainerInstance {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An object representing the health status of the container instance.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::ContainerInstanceHealthStatus>,
 }
 impl ContainerInstance {

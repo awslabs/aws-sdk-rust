@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePackageInput {
     /// <p>Unique identifier for the package.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<crate::types::PackageType>,
     /// <p>Description of the package.</p>
-    #[doc(hidden)]
     pub package_description: ::std::option::Option<::std::string::String>,
     /// <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
-    #[doc(hidden)]
     pub package_source: ::std::option::Option<crate::types::PackageSource>,
 }
 impl CreatePackageInput {

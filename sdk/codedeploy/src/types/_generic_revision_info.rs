@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenericRevisionInfo {
     /// <p>A comment about the revision.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The deployment groups for which this is the current target revision.</p>
-    #[doc(hidden)]
     pub deployment_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When the revision was first used by CodeDeploy.</p>
-    #[doc(hidden)]
     pub first_used_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the revision was last used by CodeDeploy.</p>
-    #[doc(hidden)]
     pub last_used_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the revision was registered with CodeDeploy.</p>
-    #[doc(hidden)]
     pub register_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GenericRevisionInfo {

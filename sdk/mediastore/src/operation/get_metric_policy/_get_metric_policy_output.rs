@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricPolicyOutput {
     /// <p>The metric policy that is associated with the specific container.</p>
-    #[doc(hidden)]
     pub metric_policy: ::std::option::Option<crate::types::MetricPolicy>,
     _request_id: Option<String>,
 }

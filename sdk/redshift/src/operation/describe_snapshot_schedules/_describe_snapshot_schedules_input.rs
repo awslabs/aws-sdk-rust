@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotSchedulesInput {
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a snapshot schedule.</p>
-    #[doc(hidden)]
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The key value for a snapshot schedule tag.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value corresponding to the key of the snapshot schedule tag.</p>
-    #[doc(hidden)]
     pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeSnapshotSchedulesInput {

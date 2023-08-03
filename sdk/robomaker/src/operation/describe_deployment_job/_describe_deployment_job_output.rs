@@ -7,34 +7,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeploymentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]
     pub fleet: ::std::option::Option<::std::string::String>,
     /// <p>The status of the deployment job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The deployment configuration.</p>
-    #[doc(hidden)]
     pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     /// <p>The deployment application configuration.</p>
-    #[doc(hidden)]
     pub deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     /// <p>A short description of the reason why the deployment job failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The deployment job failure code.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of robot deployment summaries.</p>
-    #[doc(hidden)]
     pub robot_deployment_summary: ::std::option::Option<::std::vec::Vec<crate::types::RobotDeployment>>,
     /// <p>The list of all tags added to the specified deployment job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

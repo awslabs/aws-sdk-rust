@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueTableReference {
     /// <p>The name of the Glue table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database the Glue table belongs to.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
 }
 impl GlueTableReference {

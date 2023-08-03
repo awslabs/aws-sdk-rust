@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Notifications {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
-    #[doc(hidden)]
     pub progressing: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
-    #[doc(hidden)]
     pub completed: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
-    #[doc(hidden)]
     pub warning: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
 }
 impl Notifications {

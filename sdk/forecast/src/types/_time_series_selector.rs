@@ -11,7 +11,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesSelector {
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
-    #[doc(hidden)]
     pub time_series_identifiers: ::std::option::Option<crate::types::TimeSeriesIdentifiers>,
 }
 impl TimeSeriesSelector {

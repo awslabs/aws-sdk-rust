@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeactivateEvaluationFormInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the evaluation form.</p>
-    #[doc(hidden)]
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>A version of the evaluation form. If the version property is not provided, the latest version of the evaluation form is deactivated.</p>
-    #[doc(hidden)]
     pub evaluation_form_version: ::std::option::Option<i32>,
 }
 impl DeactivateEvaluationFormInput {

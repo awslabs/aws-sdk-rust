@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainPermissionsPolicyOutput {
     /// <p> Information about the deleted resource policy after processing the request. </p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceStatusDetail {
     /// <p>The list of available features on the device.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<crate::types::Feature>,
     /// <p>The device status detail code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::DeviceStatusDetailCode>,
 }
 impl DeviceStatusDetail {

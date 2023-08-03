@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActionsOutput {
     /// <p>A list of actions and their properties.</p>
-    #[doc(hidden)]
     pub action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
     /// <p>A token for getting the next set of actions, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

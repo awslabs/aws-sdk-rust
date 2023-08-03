@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceHealthCheckResult {
     /// <p>The type of container instance health status that was verified.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InstanceHealthCheckType>,
     /// <p>The container instance health status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for when the container instance health status last changed.</p>
-    #[doc(hidden)]
     pub last_status_change: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InstanceHealthCheckResult {

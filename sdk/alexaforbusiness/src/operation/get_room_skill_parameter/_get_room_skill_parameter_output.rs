@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoomSkillParameterOutput {
     /// <p>The details of the room skill parameter requested. Required.</p>
-    #[doc(hidden)]
     pub room_skill_parameter: ::std::option::Option<crate::types::RoomSkillParameter>,
     _request_id: Option<String>,
 }

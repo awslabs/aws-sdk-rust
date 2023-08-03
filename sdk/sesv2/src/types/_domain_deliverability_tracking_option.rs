@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainDeliverabilityTrackingOption {
     /// <p>A verified domain that’s associated with your Amazon Web Services account and currently has an active Deliverability dashboard subscription.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The date when you enabled the Deliverability dashboard for the domain.</p>
-    #[doc(hidden)]
     pub subscription_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
-    #[doc(hidden)]
     pub inbox_placement_tracking_option: ::std::option::Option<crate::types::InboxPlacementTrackingOption>,
 }
 impl DomainDeliverabilityTrackingOption {

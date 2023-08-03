@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEvaluationsOutput {
     /// <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

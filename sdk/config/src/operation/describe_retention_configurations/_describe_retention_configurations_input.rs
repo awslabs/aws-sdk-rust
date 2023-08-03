@@ -6,10 +6,8 @@ pub struct DescribeRetentionConfigurationsInput {
     /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    #[doc(hidden)]
     pub retention_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRetentionConfigurationsInput {

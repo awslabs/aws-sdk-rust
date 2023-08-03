@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserStackAssociationError {
     /// <p>Information about the user and associated stack.</p>
-    #[doc(hidden)]
     pub user_stack_association: ::std::option::Option<crate::types::UserStackAssociation>,
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::UserStackAssociationErrorCode>,
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl UserStackAssociationError {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsOutput {
     /// <p>The current state of Auto-Tune on the domain.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AutoTuneState>,
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
-    #[doc(hidden)]
     pub use_off_peak_window: ::std::option::Option<bool>,
 }
 impl AutoTuneOptionsOutput {

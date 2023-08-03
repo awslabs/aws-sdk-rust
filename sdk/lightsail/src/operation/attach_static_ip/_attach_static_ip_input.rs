@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachStaticIpInput {
     /// <p>The name of the static IP.</p>
-    #[doc(hidden)]
     pub static_ip_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance name to which you want to attach the static IP address.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachStaticIpInput {

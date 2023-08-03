@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCostCategoryDefinitionInput {
     /// <p>The unique name of the Cost Category.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    #[doc(hidden)]
     pub effective_start: ::std::option::Option<::std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
-    #[doc(hidden)]
     pub rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     /// <p>The default value for the cost category.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    #[doc(hidden)]
     pub split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -32,7 +26,6 @@ pub struct CreateCostCategoryDefinitionInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateCostCategoryDefinitionInput {

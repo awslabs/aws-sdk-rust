@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    #[doc(hidden)]
     pub ec2: ::std::option::Option<bool>,
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    #[doc(hidden)]
     pub ecr: ::std::option::Option<bool>,
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<bool>,
     /// <p>Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. </p>
-    #[doc(hidden)]
     pub lambda_code: ::std::option::Option<bool>,
 }
 impl AutoEnable {

@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance IDs for the deployment targets.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The layer IDs for the deployment targets.</p>
-    #[doc(hidden)]
     pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<crate::types::DeploymentCommand>,
     /// <p>A user-defined comment.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
-    #[doc(hidden)]
     pub custom_json: ::std::option::Option<::std::string::String>,
 }
 impl CreateDeploymentInput {

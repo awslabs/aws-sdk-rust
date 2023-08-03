@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceChatterFeedConfiguration {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
-    #[doc(hidden)]
     pub document_data_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column in the Salesforce FeedItem table that contains the title of the document. This is typically the <code>Title</code> column.</p>
-    #[doc(hidden)]
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index fields.</p>
-    #[doc(hidden)]
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>Filters the documents in the feed based on status of the user. When you specify <code>ACTIVE_USERS</code> only documents from users who have an active account are indexed. When you specify <code>STANDARD_USER</code> only documents for Salesforce standard users are documented. You can specify both.</p>
-    #[doc(hidden)]
     pub include_filter_types: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceChatterFeedIncludeFilterType>>,
 }
 impl SalesforceChatterFeedConfiguration {

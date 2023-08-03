@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnabledServicePrincipal {
     /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
-    #[doc(hidden)]
     pub service_principal: ::std::option::Option<::std::string::String>,
     /// <p>The date that the service principal was enabled for integration with Organizations.</p>
-    #[doc(hidden)]
     pub date_enabled: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnabledServicePrincipal {

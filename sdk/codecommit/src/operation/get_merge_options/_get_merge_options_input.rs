@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMergeOptionsInput {
     /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub source_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    #[doc(hidden)]
     pub destination_commit_specifier: ::std::option::Option<::std::string::String>,
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    #[doc(hidden)]
     pub conflict_detail_level: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    #[doc(hidden)]
     pub conflict_resolution_strategy: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
 }
 impl GetMergeOptionsInput {

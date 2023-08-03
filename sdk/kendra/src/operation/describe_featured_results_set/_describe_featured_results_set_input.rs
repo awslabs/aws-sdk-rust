@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFeaturedResultsSetInput {
     /// <p>The identifier of the index used for featuring results.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
-    #[doc(hidden)]
     pub featured_results_set_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFeaturedResultsSetInput {

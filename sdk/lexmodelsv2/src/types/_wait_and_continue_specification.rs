@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaitAndContinueSpecification {
     /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-    #[doc(hidden)]
     pub waiting_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-    #[doc(hidden)]
     pub continue_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
-    #[doc(hidden)]
     pub still_waiting_response: ::std::option::Option<crate::types::StillWaitingResponseSpecification>,
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
 }
 impl WaitAndContinueSpecification {

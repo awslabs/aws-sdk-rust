@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
-    #[doc(hidden)]
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetUserSettingsInput {

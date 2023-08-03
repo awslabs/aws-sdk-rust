@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssociationBatchOutput {
     /// <p>Information about the associations that succeeded.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::AssociationDescription>>,
     /// <p>Information about the associations that failed.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedCreateAssociation>>,
     _request_id: Option<String>,
 }

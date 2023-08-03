@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksPodPropertiesOverride {
     /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
     /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodPropertiesOverride {

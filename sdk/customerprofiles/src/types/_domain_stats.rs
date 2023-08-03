@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainStats {
     /// <p>The total number of profiles currently in the domain.</p>
-    #[doc(hidden)]
     pub profile_count: i64,
     /// <p>The number of profiles that you are currently paying for in the domain. If you have more than 100 objects associated with a single profile, that profile counts as two profiles. If you have more than 200 objects, that profile counts as three, and so on.</p>
-    #[doc(hidden)]
     pub metering_profile_count: i64,
     /// <p>The total number of objects in domain.</p>
-    #[doc(hidden)]
     pub object_count: i64,
     /// <p>The total size, in bytes, of all objects in the domain.</p>
-    #[doc(hidden)]
     pub total_size: i64,
 }
 impl DomainStats {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReservedInstancesInput {
     /// <p>The IDs of the Reserved Instances to modify.</p>
-    #[doc(hidden)]
     pub reserved_instances_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings for the Reserved Instances to modify.</p>
-    #[doc(hidden)]
     pub target_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesConfiguration>>,
 }
 impl ModifyReservedInstancesInput {

@@ -5,73 +5,50 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationComponentDetail {
     /// <p> The ID of the application component. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of application component. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The top recommendation set for the application component. </p>
-    #[doc(hidden)]
     pub recommendation_set: ::std::option::Option<crate::types::RecommendationSet>,
     /// <p> The status of analysis, if the application component has source code or an associated database. </p>
-    #[doc(hidden)]
     pub analysis_status: ::std::option::Option<crate::types::SrcCodeOrDbAnalysisStatus>,
     /// <p> A detailed description of the analysis status and any failure message. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p> A list of anti-pattern severity summaries. </p>
-    #[doc(hidden)]
     pub list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
     /// <p> Configuration details for the database associated with the application component. </p>
-    #[doc(hidden)]
     pub database_config_detail: ::std::option::Option<crate::types::DatabaseConfigDetail>,
     /// <p> Details about the source code repository associated with the application component. </p>
-    #[doc(hidden)]
     pub source_code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>>,
     /// <p> The type of application component. </p>
-    #[doc(hidden)]
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p> The application component subtype.</p>
-    #[doc(hidden)]
     pub resource_sub_type: ::std::option::Option<crate::types::ResourceSubType>,
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
-    #[doc(hidden)]
     pub inclusion_status: ::std::option::Option<crate::types::InclusionStatus>,
     /// <p> The S3 bucket name and the Amazon S3 key name for the anti-pattern report. </p>
-    #[doc(hidden)]
     pub antipattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p> The status of the anti-pattern report generation.</p>
-    #[doc(hidden)]
     pub antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
     /// <p> The status message for the anti-pattern. </p>
-    #[doc(hidden)]
     pub antipattern_report_status_message: ::std::option::Option<::std::string::String>,
     /// <p> OS version. </p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<::std::string::String>,
     /// <p> OS driver. </p>
-    #[doc(hidden)]
     pub os_driver: ::std::option::Option<::std::string::String>,
     /// <p> The timestamp of when the application component was assessed. </p>
-    #[doc(hidden)]
     pub last_analyzed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The ID of the server that the application component is running on. </p>
-    #[doc(hidden)]
     pub associated_server_id: ::std::option::Option<::std::string::String>,
     /// <p> Set to true if the application component is running on multiple servers.</p>
-    #[doc(hidden)]
     pub more_server_association_exists: ::std::option::Option<bool>,
     /// <p>The status of the application unit.</p>
-    #[doc(hidden)]
     pub runtime_status: ::std::option::Option<crate::types::RuntimeAnalysisStatus>,
     /// <p>The status message for the application unit.</p>
-    #[doc(hidden)]
     pub runtime_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The error in the analysis of the source code or database.</p>
-    #[doc(hidden)]
     pub app_unit_error: ::std::option::Option<crate::types::AppUnitError>,
     /// <p>A list of the analysis results.</p>
-    #[doc(hidden)]
     pub result_list: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
 }
 impl ApplicationComponentDetail {

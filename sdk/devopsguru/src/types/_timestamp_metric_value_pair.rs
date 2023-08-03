@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampMetricValuePair {
     /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
-    #[doc(hidden)]
     pub metric_value: ::std::option::Option<f64>,
 }
 impl TimestampMetricValuePair {

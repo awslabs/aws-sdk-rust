@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Dev Environment. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DevEnvironmentStatus>,
     _request_id: Option<String>,
 }

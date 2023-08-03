@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterDetails {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code> </a> API operation. </p>
-    #[doc(hidden)]
     pub active_services_count: i32,
     /// <p>The short name of one or more capacity providers to associate with the cluster.</p>
-    #[doc(hidden)]
     pub capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The setting to use to create the cluster. Specifically used to configure whether to enable CloudWatch Container Insights for the cluster.</p>
-    #[doc(hidden)]
     pub cluster_settings: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsClusterClusterSettingsDetails>>,
     /// <p>The run command configuration for the cluster.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::AwsEcsClusterConfigurationDetails>,
     /// <p>The default capacity provider strategy for the cluster. The default capacity provider strategy is used when services or tasks are run without a specified launch type or capacity provider strategy.</p>
-    #[doc(hidden)]
     pub default_capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails>>,
     /// <p>A name that you use to identify your cluster. </p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. </p>
-    #[doc(hidden)]
     pub registered_container_instances_count: i32,
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state. </p>
-    #[doc(hidden)]
     pub running_tasks_count: i32,
     /// <p>The status of the cluster. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterDetails {

@@ -8,19 +8,14 @@ pub struct ListPortfolioAccessInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-    #[doc(hidden)]
     pub organization_parent_id: ::std::option::Option<::std::string::String>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListPortfolioAccessInput {

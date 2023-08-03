@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndpointInput {
     /// <p>The ID of the Outposts. </p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group to use with the endpoint.</p>
-    #[doc(hidden)]
     pub security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
     /// <p> <code>Private</code> is the default access type value.</p>
     /// </note>
-    #[doc(hidden)]
     pub access_type: ::std::option::Option<crate::types::EndpointAccessType>,
     /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
-    #[doc(hidden)]
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
 }
 impl CreateEndpointInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStorageInfo {
     /// <p>The total size of the disks, in GB.</p>
-    #[doc(hidden)]
     pub total_size_in_gb: ::std::option::Option<i64>,
     /// <p>Describes the disks that are available for the instance type.</p>
-    #[doc(hidden)]
     pub disks: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>,
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-    #[doc(hidden)]
     pub nvme_support: ::std::option::Option<crate::types::EphemeralNvmeSupport>,
     /// <p>Indicates whether data is encrypted at rest.</p>
-    #[doc(hidden)]
     pub encryption_support: ::std::option::Option<crate::types::InstanceStorageEncryptionSupport>,
 }
 impl InstanceStorageInfo {

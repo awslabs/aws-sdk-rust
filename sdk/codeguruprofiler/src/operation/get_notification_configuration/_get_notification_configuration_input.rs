@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNotificationConfigurationInput {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetNotificationConfigurationInput {

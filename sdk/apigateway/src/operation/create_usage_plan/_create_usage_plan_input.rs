@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUsagePlanInput {
     /// <p>The name of the usage plan.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the usage plan.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The associated API stages of the usage plan.</p>
-    #[doc(hidden)]
     pub api_stages: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>,
     /// <p>The throttling limits of the usage plan.</p>
-    #[doc(hidden)]
     pub throttle: ::std::option::Option<crate::types::ThrottleSettings>,
     /// <p>The quota of the usage plan.</p>
-    #[doc(hidden)]
     pub quota: ::std::option::Option<crate::types::QuotaSettings>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateUsagePlanInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMediaStorageConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    #[doc(hidden)]
     pub media_storage_configuration: ::std::option::Option<crate::types::MediaStorageConfiguration>,
     _request_id: Option<String>,
 }

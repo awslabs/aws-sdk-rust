@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>Desired value to use with a game server group target-based scaling policy. </p>
-    #[doc(hidden)]
     pub target_value: ::std::option::Option<f64>,
 }
 impl TargetTrackingConfiguration {

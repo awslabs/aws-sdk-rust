@@ -7,19 +7,14 @@
 pub struct EntityInfo {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entity (user or role).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of entity (user or role).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PolicyOwnerEntityType>,
     /// <p>The identifier of the entity (user or role).</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl EntityInfo {

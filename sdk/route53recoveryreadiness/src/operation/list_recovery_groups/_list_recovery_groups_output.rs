@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecoveryGroupsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of recovery groups.</p>
-    #[doc(hidden)]
     pub recovery_groups: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryGroupOutput>>,
     _request_id: Option<String>,
 }

@@ -5,45 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Blueprint {
     /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
-    #[doc(hidden)]
     pub blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BlueprintType>,
     /// <p>The description of the blueprint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the blueprint is active. Inactive blueprints are listed to support customers with existing instances but are not necessarily available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
-    #[doc(hidden)]
     pub is_active: ::std::option::Option<bool>,
     /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes. </p>
-    #[doc(hidden)]
     pub min_power: ::std::option::Option<i32>,
     /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The version code.</p>
-    #[doc(hidden)]
     pub version_code: ::std::option::Option<::std::string::String>,
     /// <p>The product URL to learn more about the image or blueprint.</p>
-    #[doc(hidden)]
     pub product_url: ::std::option::Option<::std::string::String>,
     /// <p>The end-user license agreement URL for the image or blueprint.</p>
-    #[doc(hidden)]
     pub license_url: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::InstancePlatform>,
     /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    #[doc(hidden)]
     pub app_category: ::std::option::Option<crate::types::AppCategory>,
 }
 impl Blueprint {

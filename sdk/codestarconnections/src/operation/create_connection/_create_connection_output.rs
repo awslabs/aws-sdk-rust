@@ -6,10 +6,8 @@ pub struct CreateConnectionOutput {
     /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the tags applied to the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

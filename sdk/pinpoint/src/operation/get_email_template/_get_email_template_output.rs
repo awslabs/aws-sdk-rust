@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEmailTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-    #[doc(hidden)]
     pub email_template_response: ::std::option::Option<crate::types::EmailTemplateResponse>,
     _request_id: Option<String>,
 }

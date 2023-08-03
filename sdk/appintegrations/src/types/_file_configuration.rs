@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileConfiguration {
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
-    #[doc(hidden)]
     pub folders: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Restrictions for what files should be pulled from the source.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl FileConfiguration {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProtocolsListOutput {
     /// <p>Information about the specified Firewall Manager protocols list.</p>
-    #[doc(hidden)]
     pub protocols_list: ::std::option::Option<crate::types::ProtocolsListData>,
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    #[doc(hidden)]
     pub protocols_list_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

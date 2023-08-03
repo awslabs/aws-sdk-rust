@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedPreparedStatementName {
     /// <p>The name of a prepared statement that could not be returned due to an error.</p>
-    #[doc(hidden)]
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The error code returned when the request for the prepared statement failed.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct UnprocessedPreparedStatementName {
     /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
     /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedPreparedStatementName {

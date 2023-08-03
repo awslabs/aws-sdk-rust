@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
 }
 impl DeleteClusterInput {

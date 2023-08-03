@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCompilationJobsInput {
     /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of model compilation jobs to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::CompilationJobStatus>,
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListCompilationJobsSortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListCompilationJobsInput {

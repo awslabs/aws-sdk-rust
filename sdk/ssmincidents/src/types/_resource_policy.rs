@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p>The JSON blob that describes the policy.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource policy.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
-    #[doc(hidden)]
     pub ram_resource_share_region: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicy {

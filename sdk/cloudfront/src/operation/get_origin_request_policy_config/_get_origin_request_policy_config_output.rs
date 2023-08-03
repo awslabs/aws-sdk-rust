@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOriginRequestPolicyConfigOutput {
     /// <p>The origin request policy configuration.</p>
-    #[doc(hidden)]
     pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
     /// <p>The current version of the origin request policy.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

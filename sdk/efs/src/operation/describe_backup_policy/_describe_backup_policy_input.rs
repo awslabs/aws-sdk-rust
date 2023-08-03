@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBackupPolicyInput {
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBackupPolicyInput {

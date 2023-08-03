@@ -15,11 +15,9 @@ pub struct CreateContactMethodInput {
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ContactProtocol>,
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
     /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
-    #[doc(hidden)]
     pub contact_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl CreateContactMethodInput {

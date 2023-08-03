@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableFastSnapshotRestoreErrorItem {
     /// <p>The ID of the snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The errors.</p>
-    #[doc(hidden)]
     pub fast_snapshot_restore_state_errors: ::std::option::Option<::std::vec::Vec<crate::types::EnableFastSnapshotRestoreStateErrorItem>>,
 }
 impl EnableFastSnapshotRestoreErrorItem {

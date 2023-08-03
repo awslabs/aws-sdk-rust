@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedConnector {
     /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the connector.</p>
-    #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl ListedConnector {

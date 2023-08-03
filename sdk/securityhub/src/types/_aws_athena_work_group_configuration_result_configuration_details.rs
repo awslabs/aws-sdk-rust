@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAthenaWorkGroupConfigurationResultConfigurationDetails {
     /// <p> Specifies the method used to encrypt the user’s data stores in the Athena workgroup. </p>
-    #[doc(hidden)]
     pub encryption_configuration:
         ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnabledStandardsOutput {
     /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
-    #[doc(hidden)]
     pub standards_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>>,
     /// <p>The pagination token to use to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

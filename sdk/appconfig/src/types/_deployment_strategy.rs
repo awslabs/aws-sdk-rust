@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentStrategy {
     /// <p>The deployment strategy ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment strategy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the deployment strategy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Total amount of time the deployment lasted.</p>
-    #[doc(hidden)]
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    #[doc(hidden)]
     pub growth_type: ::std::option::Option<crate::types::GrowthType>,
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
-    #[doc(hidden)]
     pub growth_factor: f32,
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
-    #[doc(hidden)]
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    #[doc(hidden)]
     pub replicate_to: ::std::option::Option<crate::types::ReplicateTo>,
 }
 impl DeploymentStrategy {

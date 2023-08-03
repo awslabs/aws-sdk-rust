@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>Maximum number of applications to list.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
-    #[doc(hidden)]
     pub exclusive_start_application_name: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationsInput {

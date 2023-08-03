@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsControl {
     /// <p>The ARN of the security standard control.</p>
-    #[doc(hidden)]
     pub standards_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
-    #[doc(hidden)]
     pub control_status: ::std::option::Option<crate::types::ControlStatus>,
     /// <p>The reason provided for the most recent change in status for the control.</p>
-    #[doc(hidden)]
     pub disabled_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the status of the security standard control was most recently updated.</p>
-    #[doc(hidden)]
     pub control_status_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the security standard control.</p>
-    #[doc(hidden)]
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the security standard control.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The longer description of the security standard control. Provides information about what the control is checking for.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
-    #[doc(hidden)]
     pub remediation_url: ::std::option::Option<::std::string::String>,
     /// <p>The severity of findings generated from this security standard control.</p>
     /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services resources if the issue is detected.</p>
-    #[doc(hidden)]
     pub severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     /// <p>The list of requirements that are related to this control.</p>
-    #[doc(hidden)]
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StandardsControl {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeatOutput {
     /// <p>Indicates whether the calling task runner should terminate.</p>
-    #[doc(hidden)]
     pub terminate: bool,
     _request_id: Option<String>,
 }

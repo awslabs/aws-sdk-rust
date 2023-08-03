@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeneratePinDataOutput {
     /// <p>The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
-    #[doc(hidden)]
     pub generation_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    #[doc(hidden)]
     pub generation_key_check_value: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    #[doc(hidden)]
     pub encryption_key_check_value: ::std::option::Option<::std::string::String>,
     /// <p>The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with ISO 9564 standard.</p>
-    #[doc(hidden)]
     pub encrypted_pin_block: ::std::option::Option<::std::string::String>,
     /// <p>The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.</p>
-    #[doc(hidden)]
     pub pin_data: ::std::option::Option<crate::types::PinData>,
     _request_id: Option<String>,
 }

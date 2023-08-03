@@ -5,45 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ParameterHistory {
     /// <p>The name of the parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter used.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>The ID of the query key used for this parameter.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Date the parameter was last changed or updated.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    #[doc(hidden)]
     pub last_modified_user: ::std::option::Option<::std::string::String>,
     /// <p>Information about the parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameter value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Parameter names can include the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
-    #[doc(hidden)]
     pub allowed_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The parameter version.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>Labels assigned to the parameter version.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The parameter tier.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::ParameterTier>,
     /// <p>Information about the policies assigned to a parameter.</p>
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl ParameterHistory {

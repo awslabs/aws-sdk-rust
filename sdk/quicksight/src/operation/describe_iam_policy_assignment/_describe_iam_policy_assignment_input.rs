@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assignment, also called a rule.</p>
-    #[doc(hidden)]
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace that contains the assignment.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIamPolicyAssignmentInput {

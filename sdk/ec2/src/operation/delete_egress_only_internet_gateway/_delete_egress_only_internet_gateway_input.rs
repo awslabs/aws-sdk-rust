@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEgressOnlyInternetGatewayInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the egress-only internet gateway.</p>
-    #[doc(hidden)]
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEgressOnlyInternetGatewayInput {

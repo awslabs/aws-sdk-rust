@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeHintDetails {
     /// <p>One or more strings that Amazon Lex should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
-    #[doc(hidden)]
     pub runtime_hint_values: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeHintValue>>,
     /// <p>A map of constituent sub slot names inside a composite slot in the intent and the phrases that should be added for each sub slot. Inside each composite slot hints, this structure provides a mechanism to add granular sub slot phrases. Only sub slot hints are supported for composite slots. The intent name, composite slot name and the constituent sub slot names must exist.</p>
-    #[doc(hidden)]
     pub sub_slot_hints: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RuntimeHintDetails>>,
 }
 impl RuntimeHintDetails {

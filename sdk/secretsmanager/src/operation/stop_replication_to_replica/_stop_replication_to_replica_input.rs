@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaInput {
     /// <p>The ARN of the primary secret. </p>
-    #[doc(hidden)]
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationToReplicaInput {

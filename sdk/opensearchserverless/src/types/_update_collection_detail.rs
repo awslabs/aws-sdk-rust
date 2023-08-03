@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the collection.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the collection.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CollectionStatus>,
     /// <p>The collection type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CollectionType>,
     /// <p>The description of the collection.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the collection was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<i64>,
 }
 impl UpdateCollectionDetail {

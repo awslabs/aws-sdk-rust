@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PieChartFieldWells {
     /// <p>The field well configuration of a pie chart.</p>
-    #[doc(hidden)]
     pub pie_chart_aggregated_field_wells: ::std::option::Option<crate::types::PieChartAggregatedFieldWells>,
 }
 impl PieChartFieldWells {

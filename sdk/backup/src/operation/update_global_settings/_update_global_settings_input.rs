@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    #[doc(hidden)]
     pub global_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateGlobalSettingsInput {

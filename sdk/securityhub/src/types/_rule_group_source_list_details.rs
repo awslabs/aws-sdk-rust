@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceListDetails {
     /// <p>Indicates whether to allow or deny access to the domains listed in <code>Targets</code>.</p>
-    #[doc(hidden)]
     pub generated_rules_type: ::std::option::Option<::std::string::String>,
     /// <p>The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify <code>HTTP_HOST</code> for HTTP. You can specify either or both.</p>
-    #[doc(hidden)]
     pub target_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The domains that you want to inspect for in your traffic flows. You can provide full domain names, or use the '.' prefix as a wildcard. For example, <code>.example.com</code> matches all domains that end with <code>example.com</code>.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleGroupSourceListDetails {

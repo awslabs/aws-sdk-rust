@@ -5,22 +5,16 @@
 pub struct CreateOutpostResolverInput {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
     /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route&nbsp;53 console.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Number of Amazon EC2 instances for the Resolver on Outpost. The default and minimal value is 4.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
-    #[doc(hidden)]
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOutpostResolverInput {

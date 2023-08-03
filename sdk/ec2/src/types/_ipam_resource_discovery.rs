@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamResourceDiscovery {
     /// <p>The ID of the owner.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery ID.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery Region.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_region: ::std::option::Option<::std::string::String>,
     /// <p>The resource discovery description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The operating Regions for the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    #[doc(hidden)]
     pub operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::IpamOperatingRegion>>,
     /// <p>Defines if the resource discovery is the default. The default resource discovery is the resource discovery automatically created when you create an IPAM.</p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p>The lifecycle state of the resource discovery.</p>
     /// <ul>
@@ -40,10 +33,8 @@ pub struct IpamResourceDiscovery {
     /// <li> <p> <code>isolate-complete</code> - Resource discovery isolation is complete.</p> </li>
     /// <li> <p> <code>restore-in-progress</code> - Amazon Web Services account that created the resource discovery and was isolated has been restored.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IpamResourceDiscoveryState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IpamResourceDiscovery {

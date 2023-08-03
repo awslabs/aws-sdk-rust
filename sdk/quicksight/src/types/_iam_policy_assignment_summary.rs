@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamPolicyAssignmentSummary {
     /// <p>Assignment name.</p>
-    #[doc(hidden)]
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>Assignment status.</p>
-    #[doc(hidden)]
     pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
 }
 impl IamPolicyAssignmentSummary {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainOutput {
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

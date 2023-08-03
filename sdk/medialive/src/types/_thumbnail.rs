@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Thumbnail {
     /// The binary data for the latest thumbnail.
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// The content type for the latest thumbnail.
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// Thumbnail Type
-    #[doc(hidden)]
     pub thumbnail_type: ::std::option::Option<crate::types::ThumbnailType>,
     /// Time stamp for the latest thumbnail.
-    #[doc(hidden)]
     pub time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Thumbnail {

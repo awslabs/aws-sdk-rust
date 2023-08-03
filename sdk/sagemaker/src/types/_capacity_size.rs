@@ -10,10 +10,8 @@ pub struct CapacitySize {
     /// <li> <p> <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.</p> </li>
     /// <li> <p> <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage of capacity.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::CapacitySizeType>,
     /// <p>Defines the capacity size, either as a number of instances or a capacity percentage.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
 }
 impl CapacitySize {

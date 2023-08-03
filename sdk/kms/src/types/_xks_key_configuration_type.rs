@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct XksKeyConfigurationType {
     /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl XksKeyConfigurationType {

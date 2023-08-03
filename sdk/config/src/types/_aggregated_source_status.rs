@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedSourceStatus {
     /// <p>The source account ID or an organization.</p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The source account or an organization.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::AggregatedSourceType>,
     /// <p>The region authorized to collect aggregated data.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>Filters the last updated status type.</p>
     /// <ul>
@@ -19,16 +16,12 @@ pub struct AggregatedSourceStatus {
     /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
     /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_update_status: ::std::option::Option<crate::types::AggregatedSourceStatusType>,
     /// <p>The time of the last update.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error code that Config returned when the source account aggregation last failed.</p>
-    #[doc(hidden)]
     pub last_error_code: ::std::option::Option<::std::string::String>,
     /// <p>The message indicating that the source account aggregation failed due to an error.</p>
-    #[doc(hidden)]
     pub last_error_message: ::std::option::Option<::std::string::String>,
 }
 impl AggregatedSourceStatus {

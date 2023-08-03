@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsStatusFilter {
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
-    #[doc(hidden)]
     pub ongoing: ::std::option::Option<crate::types::ListInsightsOngoingStatusFilter>,
     /// <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
-    #[doc(hidden)]
     pub closed: ::std::option::Option<crate::types::ListInsightsClosedStatusFilter>,
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
-    #[doc(hidden)]
     pub any: ::std::option::Option<crate::types::ListInsightsAnyStatusFilter>,
 }
 impl ListInsightsStatusFilter {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDistributionWithStagingConfigInput {
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
-    #[doc(hidden)]
     pub staging_distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p> <code>
@@ -15,7 +13,6 @@ pub struct UpdateDistributionWithStagingConfigInput {
     /// ,
     /// <staging etag></staging>
     /// </primary></code> </p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDistributionWithStagingConfigInput {

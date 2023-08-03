@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderConfiguration {
     /// <p>The authorization strategy that you selected when you created the data store.</p>
-    #[doc(hidden)]
     pub authorization_strategy: ::std::option::Option<crate::types::AuthorizationStrategy>,
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
-    #[doc(hidden)]
     pub fine_grained_authorization_enabled: bool,
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
     /// <p> <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
@@ -16,10 +14,8 @@ pub struct IdentityProviderConfiguration {
     /// <p> <code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
     /// <p> <code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
     /// <p> <code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
-    #[doc(hidden)]
     pub idp_lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderConfiguration {

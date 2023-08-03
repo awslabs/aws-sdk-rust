@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWirelessDevicesOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless device.</p>
-    #[doc(hidden)]
     pub wireless_device_list: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceStatistics>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskMap {
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
-    #[doc(hidden)]
     pub original_disk_path: ::std::option::Option<::std::string::String>,
     /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
-    #[doc(hidden)]
     pub new_disk_name: ::std::option::Option<::std::string::String>,
 }
 impl DiskMap {

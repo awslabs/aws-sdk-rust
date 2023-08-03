@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetSourceEntry {
     /// <p>The Amazon S3 bucket that's part of the source of the asset.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name of the object in Amazon S3 for the asset.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl AssetSourceEntry {

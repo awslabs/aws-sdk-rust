@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcPeeringConnectionStateReason {
     /// <p>The status of the VPC peering connection.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::VpcPeeringConnectionStateReasonCode>,
     /// <p>A message that provides more information about the status, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl VpcPeeringConnectionStateReason {

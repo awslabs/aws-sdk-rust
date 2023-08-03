@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAliasesInput {
     /// <p>The name of the image.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the image version.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
     /// <p>The maximum number of aliases to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAliasesInput {

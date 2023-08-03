@@ -6,16 +6,12 @@ pub struct AddThingToBillingGroupInput {
     /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing to be added to the billing group.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the thing to be added to the billing group.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl AddThingToBillingGroupInput {

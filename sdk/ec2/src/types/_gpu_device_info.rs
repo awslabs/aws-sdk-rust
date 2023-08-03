@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpuDeviceInfo {
     /// <p>The name of the GPU accelerator.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The manufacturer of the GPU accelerator.</p>
-    #[doc(hidden)]
     pub manufacturer: ::std::option::Option<::std::string::String>,
     /// <p>The number of GPUs for the instance type.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>Describes the memory available to the GPU accelerator.</p>
-    #[doc(hidden)]
     pub memory_info: ::std::option::Option<crate::types::GpuDeviceMemoryInfo>,
 }
 impl GpuDeviceInfo {

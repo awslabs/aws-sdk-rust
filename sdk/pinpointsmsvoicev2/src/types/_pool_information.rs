@@ -5,38 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PoolInformation {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the pool.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the pool.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PoolStatus>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    #[doc(hidden)]
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
-    #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    #[doc(hidden)]
     pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>When set to false, an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
-    #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the pool.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>Allows you to enable shared routes on your pool.</p>
     /// <p>By default, this is set to <code>False</code>. If you set this value to <code>True</code>, your messages are sent using phone numbers or sender IDs (depending on the country) that are shared with other Amazon Pinpoint users. In some countries, such as the United States, senders aren't allowed to use shared routes and must use a dedicated phone number or short code.</p>
-    #[doc(hidden)]
     pub shared_routes_enabled: bool,
     /// <p>When set to true the pool can't be deleted.</p>
-    #[doc(hidden)]
     pub deletion_protection_enabled: bool,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PoolInformation {

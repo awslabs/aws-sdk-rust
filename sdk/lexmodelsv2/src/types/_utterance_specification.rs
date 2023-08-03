@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceSpecification {
     /// <p>The identifier of the alias of the bot that the utterance was made to.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that the utterance was made to.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the bot that the utterance was made to.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session that the utterance was made in.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The channel that is integrated with the bot that the utterance was made to.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
@@ -26,25 +21,18 @@ pub struct UtteranceSpecification {
     /// <li> <p> <code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency) key presses.</p> </li>
     /// <li> <p> <code>MultiMode</code> – The session consisted of multiple modes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::AnalyticsModality>,
     /// <p>The date and time when the conversation in which the utterance took place began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    #[doc(hidden)]
     pub conversation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the conversation in which the utterance took place ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
-    #[doc(hidden)]
     pub conversation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The text of the utterance.</p>
-    #[doc(hidden)]
     pub utterance: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the utterance took place.</p>
-    #[doc(hidden)]
     pub utterance_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration in milliseconds of the audio associated with the utterance.</p>
-    #[doc(hidden)]
     pub audio_voice_duration_millis: ::std::option::Option<i64>,
     /// <p>Specifies whether the bot understood the utterance or not.</p>
-    #[doc(hidden)]
     pub utterance_understood: bool,
     /// <p>The input type of the utterance. The possible values are as follows:</p>
     /// <ul>
@@ -63,7 +51,6 @@ pub struct UtteranceSpecification {
     /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub input_type: ::std::option::Option<::std::string::String>,
     /// <p>The output type of the utterance. The possible values are as follows:</p>
     /// <ul>
@@ -73,31 +60,22 @@ pub struct UtteranceSpecification {
     /// <li> <p> <code>audio/</code> (defaults to <code>mpeg</code>)</p> </li>
     /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub output_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the intent that the utterance is associated to.</p>
-    #[doc(hidden)]
     pub associated_intent_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the slot that the utterance is associated to.</p>
-    #[doc(hidden)]
     pub associated_slot_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the intent that the utterance is associated to.</p>
-    #[doc(hidden)]
     pub intent_state: ::std::option::Option<crate::types::IntentState>,
     /// <p>The type of dialog action that the utterance is associated to. See the <code>type</code> field in <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_DialogAction.html">DialogAction</a> for more information.</p>
-    #[doc(hidden)]
     pub dialog_action_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the audio of the bot response.</p>
-    #[doc(hidden)]
     pub bot_response_audio_voice_id: ::std::option::Option<::std::string::String>,
     /// <p>The slots that have been filled in the session by the time of the utterance.</p>
-    #[doc(hidden)]
     pub slots_filled_in_session: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the request associated with the utterance.</p>
-    #[doc(hidden)]
     pub utterance_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects containing information about the bot response to the utterance.</p>
-    #[doc(hidden)]
     pub bot_responses: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceBotResponse>>,
 }
 impl UtteranceSpecification {

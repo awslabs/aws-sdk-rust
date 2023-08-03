@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkerFleetsInput {
     /// Site ARN.
-    #[doc(hidden)]
     pub site: ::std::option::Option<::std::string::String>,
     /// Maximum number of results to retrieve in a single ListWorkerFleets call.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkerFleetsInput {

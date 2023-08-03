@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImageScanFindingAggregationsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
     /// <p class="title"> <b>Aggregation types</b> </p>
@@ -15,13 +14,10 @@ pub struct ListImageScanFindingAggregationsOutput {
     /// <li> <p>vulnerabilityId</p> </li>
     /// </ul>
     /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
-    #[doc(hidden)]
     pub aggregation_type: ::std::option::Option<::std::string::String>,
     /// <p>An array of image scan finding aggregations that match the filter criteria.</p>
-    #[doc(hidden)]
     pub responses: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

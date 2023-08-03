@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupTuple {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The weight. The range is 0 to 999.</p>
-    #[doc(hidden)]
     pub weight: ::std::option::Option<i32>,
 }
 impl TargetGroupTuple {

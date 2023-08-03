@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConsoleScreenshotOutput {
     /// <p>The data that comprises the image.</p>
-    #[doc(hidden)]
     pub image_data: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketStatisticsBySensitivity {
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of -1.</p>
-    #[doc(hidden)]
     pub classification_error: ::std::option::Option<crate::types::SensitivityAggregations>,
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 50.</p>
-    #[doc(hidden)]
     pub not_classified: ::std::option::Option<crate::types::SensitivityAggregations>,
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 1-49.</p>
-    #[doc(hidden)]
     pub not_sensitive: ::std::option::Option<crate::types::SensitivityAggregations>,
     /// <p>The aggregated statistical data for all buckets that have a sensitivity score of 51-100.</p>
-    #[doc(hidden)]
     pub sensitive: ::std::option::Option<crate::types::SensitivityAggregations>,
 }
 impl BucketStatisticsBySensitivity {

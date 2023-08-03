@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCertificatesOutput {
     /// <p>An object that describes certificates.</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

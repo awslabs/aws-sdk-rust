@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemResourceMetricsOutput {
     /// <p>The details that your discovery job collected about your storage system resource.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMetrics>>,
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

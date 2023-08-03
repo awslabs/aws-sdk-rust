@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTagsInput {
     /// <p>One or more tags to delete.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the tagged ML object.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
 }
 impl DeleteTagsInput {

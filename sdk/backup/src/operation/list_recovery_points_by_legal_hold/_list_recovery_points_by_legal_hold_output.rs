@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByLegalHoldOutput {
     /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
-    #[doc(hidden)]
     pub recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>>,
     /// <p>This return is the next item following a partial list of returned resources.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

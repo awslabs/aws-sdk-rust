@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationOutput {
     /// <p> Retrieves <code>TagKey</code> configuration from an account. </p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::AppRegistryConfiguration>,
     _request_id: Option<String>,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayPolicyRule {
     /// <p>The source CIDR block for the transit gateway policy rule.</p>
-    #[doc(hidden)]
     pub source_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
-    #[doc(hidden)]
     pub source_port_range: ::std::option::Option<::std::string::String>,
     /// <p>The destination CIDR block for the transit gateway policy rule.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
-    #[doc(hidden)]
     pub destination_port_range: ::std::option::Option<::std::string::String>,
     /// <p>The protocol used by the transit gateway policy rule.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The meta data tags used for the transit gateway policy rule.</p>
-    #[doc(hidden)]
     pub meta_data: ::std::option::Option<crate::types::TransitGatewayPolicyRuleMetaData>,
 }
 impl TransitGatewayPolicyRule {

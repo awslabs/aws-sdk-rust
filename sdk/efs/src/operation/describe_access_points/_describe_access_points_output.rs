@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccessPointsOutput {
     /// <p>An array of access point descriptions.</p>
-    #[doc(hidden)]
     pub access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPointDescription>>,
     /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

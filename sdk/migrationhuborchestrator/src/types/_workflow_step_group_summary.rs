@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowStepGroupSummary {
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the step group.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The status of the step group.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StepGroupStatus>,
     /// <p>The previous step group.</p>
-    #[doc(hidden)]
     pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next step group.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl WorkflowStepGroupSummary {

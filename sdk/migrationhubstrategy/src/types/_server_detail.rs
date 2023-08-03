@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerDetail {
     /// <p> The server ID. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the server. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A set of recommendations. </p>
-    #[doc(hidden)]
     pub recommendation_set: ::std::option::Option<crate::types::RecommendationSet>,
     /// <p> The status of assessment for the server. </p>
-    #[doc(hidden)]
     pub data_collection_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p> A list of anti-pattern severity summaries. </p>
-    #[doc(hidden)]
     pub list_antipattern_severity_summary: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
     /// <p> System information about the server. </p>
-    #[doc(hidden)]
     pub system_info: ::std::option::Option<crate::types::SystemInfo>,
     /// <p> A list of strategy summaries. </p>
-    #[doc(hidden)]
     pub application_component_strategy_summary: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
-    #[doc(hidden)]
     pub antipattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p> The status of the anti-pattern report generation. </p>
-    #[doc(hidden)]
     pub antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
     /// <p> A message about the status of the anti-pattern report generation. </p>
-    #[doc(hidden)]
     pub antipattern_report_status_message: ::std::option::Option<::std::string::String>,
     /// <p> The type of server. </p>
-    #[doc(hidden)]
     pub server_type: ::std::option::Option<::std::string::String>,
     /// <p> The timestamp of when the server was assessed. </p>
-    #[doc(hidden)]
     pub last_analyzed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error in server analysis.</p>
-    #[doc(hidden)]
     pub server_error: ::std::option::Option<crate::types::ServerError>,
 }
 impl ServerDetail {

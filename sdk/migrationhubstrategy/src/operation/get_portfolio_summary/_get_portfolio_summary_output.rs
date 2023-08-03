@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPortfolioSummaryOutput {
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
-    #[doc(hidden)]
     pub assessment_summary: ::std::option::Option<crate::types::AssessmentSummary>,
     _request_id: Option<String>,
 }

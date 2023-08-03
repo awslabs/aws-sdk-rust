@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetParameterOutput {
     /// <p>Information about a parameter.</p>
-    #[doc(hidden)]
     pub parameter: ::std::option::Option<crate::types::Parameter>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SequenceNumberRange {
     /// <p>The first sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
-    #[doc(hidden)]
     pub starting_sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The last sequence number for the stream records contained within a shard. String contains numeric characters only.</p>
-    #[doc(hidden)]
     pub ending_sequence_number: ::std::option::Option<::std::string::String>,
 }
 impl SequenceNumberRange {

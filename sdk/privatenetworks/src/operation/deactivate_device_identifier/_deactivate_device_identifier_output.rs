@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeactivateDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
-    #[doc(hidden)]
     pub device_identifier: ::std::option::Option<crate::types::DeviceIdentifier>,
     _request_id: Option<String>,
 }

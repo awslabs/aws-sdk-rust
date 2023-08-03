@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJourneyExecutionMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
-    #[doc(hidden)]
     pub journey_execution_metrics_response: ::std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
     _request_id: Option<String>,
 }

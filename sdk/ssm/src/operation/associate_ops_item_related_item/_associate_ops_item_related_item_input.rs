@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItemInput {
     /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
-    #[doc(hidden)]
     pub association_type: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
     /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
-    #[doc(hidden)]
     pub resource_uri: ::std::option::Option<::std::string::String>,
 }
 impl AssociateOpsItemRelatedItemInput {

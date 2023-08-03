@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbortEnvironmentUpdateInput {
     /// <p>This specifies the ID of the environment with the in-progress update that you want to cancel.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>This specifies the name of the environment with the in-progress update that you want to cancel.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl AbortEnvironmentUpdateInput {

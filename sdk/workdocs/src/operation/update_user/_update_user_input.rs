@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateUserInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The given name of the user.</p>
-    #[doc(hidden)]
     pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>The surname of the user.</p>
-    #[doc(hidden)]
     pub surname: ::std::option::Option<::std::string::String>,
     /// <p>The type of the user.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UserType>,
     /// <p>The amount of storage for the user.</p>
-    #[doc(hidden)]
     pub storage_rule: ::std::option::Option<crate::types::StorageRuleType>,
     /// <p>The time zone ID of the user.</p>
-    #[doc(hidden)]
     pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the user.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::LocaleType>,
     /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
-    #[doc(hidden)]
     pub grant_poweruser_privileges: ::std::option::Option<crate::types::BooleanEnumType>,
 }
 impl UpdateUserInput {

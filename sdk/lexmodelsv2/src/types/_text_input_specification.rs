@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextInputSpecification {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
-    #[doc(hidden)]
     pub start_timeout_ms: ::std::option::Option<i32>,
 }
 impl TextInputSpecification {

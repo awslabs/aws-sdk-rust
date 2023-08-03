@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaResponse {
     /// <p>The number of lines of code in a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub code_line_count: ::std::option::Option<i64>,
     /// <p>The size level of the code in a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub code_size: ::std::option::Option<i64>,
     /// <p>The complexity level of the code in a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub complexity: ::std::option::Option<::std::string::String>,
     /// <p>The database server for a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub server: ::std::option::Option<crate::types::ServerShortInfoResponse>,
     /// <p>The database for a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub database_instance: ::std::option::Option<crate::types::DatabaseShortInfoResponse>,
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub original_schema: ::std::option::Option<crate::types::SchemaShortInfoResponse>,
     /// <p>The similarity value for a schema in a Fleet Advisor collector inventory. A higher similarity value indicates that a schema is likely to be a duplicate.</p>
-    #[doc(hidden)]
     pub similarity: ::std::option::Option<f64>,
 }
 impl SchemaResponse {

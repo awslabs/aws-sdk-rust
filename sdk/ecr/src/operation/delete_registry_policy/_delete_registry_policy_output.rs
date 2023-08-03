@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRegistryPolicyOutput {
     /// <p>The registry ID associated with the request.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the registry permissions policy that was deleted.</p>
-    #[doc(hidden)]
     pub policy_text: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangesetInput {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Changeset for which to get data.</p>
-    #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetChangesetInput {

@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>Name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Status of the application.</p>
-    #[doc(hidden)]
     pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
 }
 impl ApplicationSummary {

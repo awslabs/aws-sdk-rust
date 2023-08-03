@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicKeySummary {
     /// <p>The identifier of the public key.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A name to help identify the public key.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the public key was uploaded.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The public key.</p>
-    #[doc(hidden)]
     pub encoded_key: ::std::option::Option<::std::string::String>,
     /// <p>A comment to describe the public key. The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl PublicKeySummary {

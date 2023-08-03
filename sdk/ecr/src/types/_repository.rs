@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Repository {
     /// <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
-    #[doc(hidden)]
     pub repository_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>
-    #[doc(hidden)]
     pub repository_uri: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in JavaScript date format, when the repository was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tag mutability setting for the repository.</p>
-    #[doc(hidden)]
     pub image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
     /// <p>The image scanning configuration for a repository.</p>
-    #[doc(hidden)]
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl Repository {

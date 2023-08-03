@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
-    #[doc(hidden)]
     pub workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
     /// Pagination token to use when requesting the next page in this list.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

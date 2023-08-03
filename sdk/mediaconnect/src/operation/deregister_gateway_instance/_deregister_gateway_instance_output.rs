@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterGatewayInstanceOutput {
     /// The Amazon Resource Name (ARN) of the instance.
-    #[doc(hidden)]
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
     /// The status of the instance.
-    #[doc(hidden)]
     pub instance_state: ::std::option::Option<crate::types::InstanceState>,
     _request_id: Option<String>,
 }

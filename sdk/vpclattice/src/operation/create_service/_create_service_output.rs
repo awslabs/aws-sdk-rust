@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceOutput {
     /// <p>The ID of the service.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The custom domain name of the service.</p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status. If the status is <code>CREATE_FAILED</code>, you will have to delete and recreate the service.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ServiceStatus>,
     /// <p>The type of IAM policy.</p>
-    #[doc(hidden)]
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
     /// <p>The public DNS name of the service.</p>
-    #[doc(hidden)]
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     _request_id: Option<String>,
 }

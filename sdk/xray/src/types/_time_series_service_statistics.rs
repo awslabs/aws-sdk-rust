@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesServiceStatistics {
     /// <p>Timestamp of the window for which statistics are aggregated.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Response statistics for an edge.</p>
-    #[doc(hidden)]
     pub edge_summary_statistics: ::std::option::Option<crate::types::EdgeStatistics>,
     /// <p>Response statistics for a service.</p>
-    #[doc(hidden)]
     pub service_summary_statistics: ::std::option::Option<crate::types::ServiceStatistics>,
     /// <p>The forecasted high and low fault count values.</p>
-    #[doc(hidden)]
     pub service_forecast_statistics: ::std::option::Option<crate::types::ForecastStatistics>,
     /// <p>The response time histogram for the selected entities.</p>
-    #[doc(hidden)]
     pub response_time_histogram: ::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>>,
 }
 impl TimeSeriesServiceStatistics {

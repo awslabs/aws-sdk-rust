@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureGroupSummary {
     /// <p>The name of <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
-    #[doc(hidden)]
     pub feature_group_status: ::std::option::Option<crate::types::FeatureGroupStatus>,
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
-    #[doc(hidden)]
     pub offline_store_status: ::std::option::Option<crate::types::OfflineStoreStatus>,
 }
 impl FeatureGroupSummary {

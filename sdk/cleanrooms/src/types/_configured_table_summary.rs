@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfiguredTableSummary {
     /// <p>The unique ID of the configured table.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN of the configured table.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configured table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time the configured table was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the configured table was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The types of analysis rules associated with this configured table.</p>
-    #[doc(hidden)]
     pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
 }
 impl ConfiguredTableSummary {

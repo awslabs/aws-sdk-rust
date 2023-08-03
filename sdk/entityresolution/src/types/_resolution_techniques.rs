@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolutionTechniques {
     /// <p>There are two types of matching, <code>RULE_MATCHING</code> and <code>ML_MATCHING</code> </p>
-    #[doc(hidden)]
     pub resolution_type: ::std::option::Option<crate::types::ResolutionType>,
     /// <p>An object which defines the list of matching rules to run and has a field <code>Rules</code>, which is a list of rule objects.</p>
-    #[doc(hidden)]
     pub rule_based_properties: ::std::option::Option<crate::types::RuleBasedProperties>,
 }
 impl ResolutionTechniques {

@@ -4,35 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to update.</p>
-    #[doc(hidden)]
     pub experiment: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    #[doc(hidden)]
     pub treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    #[doc(hidden)]
     pub metric_goals: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    #[doc(hidden)]
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
-    #[doc(hidden)]
     pub sampling_rate: ::std::option::Option<i64>,
     /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
-    #[doc(hidden)]
     pub remove_segment: bool,
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    #[doc(hidden)]
     pub online_ab_config: ::std::option::Option<crate::types::OnlineAbConfig>,
 }
 impl UpdateExperimentInput {

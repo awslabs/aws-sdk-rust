@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResetUserPasswordInput {
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user whose password will be reset.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The new password that will be reset.</p>
-    #[doc(hidden)]
     pub new_password: ::std::option::Option<::std::string::String>,
 }
 impl ResetUserPasswordInput {

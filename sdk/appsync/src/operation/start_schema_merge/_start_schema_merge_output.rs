@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSchemaMergeOutput {
     /// <p>The state of the source API association.</p>
-    #[doc(hidden)]
     pub source_api_association_status: ::std::option::Option<crate::types::SourceApiAssociationStatus>,
     _request_id: Option<String>,
 }

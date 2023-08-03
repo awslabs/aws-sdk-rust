@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceImageOutput {
     /// <p>The identifier of the new WorkSpace image.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the image.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that the image is running.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     /// <p>The availability status of the image.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::WorkspaceImageState>,
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
-    #[doc(hidden)]
     pub required_tenancy: ::std::option::Option<crate::types::WorkspaceImageRequiredTenancy>,
     /// <p>The date when the image was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -7,28 +7,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alias {
     /// <p>A unique identifier for the alias. Alias IDs are unique within a Region.</p>
-    #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::alias/alias-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift alias ARN, the resource ID matches the alias ID value.</p>
-    #[doc(hidden)]
     pub alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of an alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
-    #[doc(hidden)]
     pub routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that this data object was last modified. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Alias {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCodeRepositoryOutput {
     /// <p>The Amazon Resource Name (ARN) of the new repository.</p>
-    #[doc(hidden)]
     pub code_repository_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

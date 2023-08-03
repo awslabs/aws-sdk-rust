@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRiskConfigurationOutput {
     /// <p>The risk configuration.</p>
-    #[doc(hidden)]
     pub risk_configuration: ::std::option::Option<crate::types::RiskConfigurationType>,
     _request_id: Option<String>,
 }

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreProperties {
     /// <p>The AWS-generated ID number for the data store.</p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name used in the creation of the data store.</p>
-    #[doc(hidden)]
     pub datastore_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user-generated name for the data store.</p>
-    #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the data store.</p>
-    #[doc(hidden)]
     pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
     /// <p>The time that a data store was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The FHIR version. Only R4 version data is supported.</p>
-    #[doc(hidden)]
     pub datastore_type_version: ::std::option::Option<crate::types::FhirVersion>,
     /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
-    #[doc(hidden)]
     pub datastore_endpoint: ::std::option::Option<::std::string::String>,
     /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
-    #[doc(hidden)]
     pub sse_configuration: ::std::option::Option<crate::types::SseConfiguration>,
     /// <p>The preloaded data configuration for the data store. Only data preloaded from Synthea is supported.</p>
-    #[doc(hidden)]
     pub preload_data_config: ::std::option::Option<crate::types::PreloadDataConfig>,
     /// <p>The identity provider that you selected when you created the data store.</p>
-    #[doc(hidden)]
     pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
 }
 impl DatastoreProperties {

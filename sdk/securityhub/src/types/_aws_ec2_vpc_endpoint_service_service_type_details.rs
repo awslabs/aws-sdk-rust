@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpcEndpointServiceServiceTypeDetails {
     /// <p>The type of service.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpcEndpointServiceServiceTypeDetails {

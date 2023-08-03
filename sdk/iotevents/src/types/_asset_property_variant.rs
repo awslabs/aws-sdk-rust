@@ -14,16 +14,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetPropertyVariant {
     /// <p>The asset property value is a string. You must use an expression, and the evaluated result should be a string.</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
-    #[doc(hidden)]
     pub integer_value: ::std::option::Option<::std::string::String>,
     /// <p>The asset property value is a double. You must use an expression, and the evaluated result should be a double.</p>
-    #[doc(hidden)]
     pub double_value: ::std::option::Option<::std::string::String>,
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
-    #[doc(hidden)]
     pub boolean_value: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyVariant {

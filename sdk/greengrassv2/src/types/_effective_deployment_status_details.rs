@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EffectiveDeploymentStatusDetails {
     /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
-    #[doc(hidden)]
     pub error_stack: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
-    #[doc(hidden)]
     pub error_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EffectiveDeploymentStatusDetails {

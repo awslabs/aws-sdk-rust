@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourceInput {
     /// <p>The identifier associated with the organization for which the resource is described.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource to be described.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeResourceInput {

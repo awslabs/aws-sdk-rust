@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The budget that you want to update your budget to.</p>
-    #[doc(hidden)]
     pub new_budget: ::std::option::Option<crate::types::Budget>,
 }
 impl UpdateBudgetInput {

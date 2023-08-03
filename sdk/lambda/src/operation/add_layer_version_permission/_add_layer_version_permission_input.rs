@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddLayerVersionPermissionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    #[doc(hidden)]
     pub layer_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
     /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
-    #[doc(hidden)]
     pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
     /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl AddLayerVersionPermissionInput {

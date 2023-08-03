@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointLoadBalancerOptions {
     /// <p>The IP protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     /// <p>The IP port number.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The ARN of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the subnets.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateVerifiedAccessEndpointLoadBalancerOptions {

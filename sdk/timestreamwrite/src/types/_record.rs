@@ -6,31 +6,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Record {
     /// <p>Contains the list of dimensions for time-series data points.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>Measure represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures. </p>
-    #[doc(hidden)]
     pub measure_name: ::std::option::Option<::std::string::String>,
     /// <p> Contains the measure value for the time-series data point. </p>
-    #[doc(hidden)]
     pub measure_value: ::std::option::Option<::std::string::String>,
     /// <p> Contains the data type of the measure value for the time-series data point. Default type is <code>DOUBLE</code>. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.</p>
-    #[doc(hidden)]
     pub measure_value_type: ::std::option::Option<crate::types::MeasureValueType>,
     /// <p> Contains the time at which the measure value for the data point was collected. The time value plus the unit provides the time elapsed since the epoch. For example, if the time value is <code>12345</code> and the unit is <code>ms</code>, then <code>12345 ms</code> have elapsed since the epoch. </p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::std::string::String>,
     /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
-    #[doc(hidden)]
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
     /// <p>64-bit attribute used for record updates. Write requests for duplicate data with a higher version number will update the existing measure value and version. In cases where the measure value is the same, <code>Version</code> will still be updated. Default value is <code>1</code>.</p> <note>
     /// <p> <code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code> error.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i64>,
     /// <p> Contains the list of MeasureValue for time-series data points. </p>
     /// <p> This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly. </p>
-    #[doc(hidden)]
     pub measure_values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureValue>>,
 }
 impl Record {

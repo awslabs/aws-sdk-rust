@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingDeploymentSummary {
     /// <p>The name of the endpoint configuration used in the deployment. </p>
-    #[doc(hidden)]
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint for the in-progress deployment.</p>
-    #[doc(hidden)]
     pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
     /// <p>The start time of the deployment.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code> for the in-progress deployment.</p>
-    #[doc(hidden)]
     pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
 }
 impl PendingDeploymentSummary {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStaticPolicyDefinition {
     /// <p>Specifies the description to be added to or replaced on the static policy.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Cedar policy language text to be added to or replaced on the static policy.</p> <important>
     /// <p>You can change only the following elements from the original content:</p>
@@ -21,7 +20,6 @@ pub struct UpdateStaticPolicyDefinition {
     /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
     /// </important>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStaticPolicyDefinition {

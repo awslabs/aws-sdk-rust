@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaClusterClientAuthenticationDescription {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::KafkaClusterClientAuthenticationType>,
 }
 impl KafkaClusterClientAuthenticationDescription {

@@ -6,10 +6,8 @@ pub struct CreateAccessPointOutput {
     /// <p>The ARN of the access point.</p> <note>
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
-    #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name or alias of the access point.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

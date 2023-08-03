@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryCriteria {
     /// <p>The type of job execution failures that can initiate a job retry.</p>
-    #[doc(hidden)]
     pub failure_type: ::std::option::Option<crate::types::RetryableFailureType>,
     /// <p>The number of retries allowed for a failure type for the job.</p>
-    #[doc(hidden)]
     pub number_of_retries: ::std::option::Option<i32>,
 }
 impl RetryCriteria {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The metric used for the subscription.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::MetricType>,
     /// <p>The statistic used for the subscription.</p>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::StatisticType>,
     /// <p>The data aggregation time for the subscription.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<crate::types::PeriodType>,
 }
 impl Subscription {

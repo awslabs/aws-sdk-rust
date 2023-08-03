@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStorageVirtualMachineOutput {
     /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
-    #[doc(hidden)]
     pub storage_virtual_machine: ::std::option::Option<crate::types::StorageVirtualMachine>,
     _request_id: Option<String>,
 }

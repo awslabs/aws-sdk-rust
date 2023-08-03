@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterJobDefinitionInput {
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-    #[doc(hidden)]
     pub job_definition: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterJobDefinitionInput {

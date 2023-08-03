@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFragmentsInput {
     /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i64>,
     /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
-    #[doc(hidden)]
     pub fragment_selector: ::std::option::Option<crate::types::FragmentSelector>,
 }
 impl ListFragmentsInput {

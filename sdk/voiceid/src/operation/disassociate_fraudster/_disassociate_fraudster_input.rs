@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DisassociateFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the watchlist that you want to disassociate from the fraudster.</p>
-    #[doc(hidden)]
     pub watchlist_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the fraudster to be disassociated from the watchlist.</p>
-    #[doc(hidden)]
     pub fraudster_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateFraudsterInput {

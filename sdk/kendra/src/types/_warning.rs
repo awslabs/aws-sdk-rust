@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Warning {
     /// <p>The message that explains the problem with the query.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The code used to show the type of warning for the query.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::WarningCode>,
 }
 impl Warning {

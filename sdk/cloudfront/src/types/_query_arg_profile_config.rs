@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryArgProfileConfig {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
-    #[doc(hidden)]
     pub forward_when_query_arg_profile_is_unknown: ::std::option::Option<bool>,
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
-    #[doc(hidden)]
     pub query_arg_profiles: ::std::option::Option<crate::types::QueryArgProfiles>,
 }
 impl QueryArgProfileConfig {

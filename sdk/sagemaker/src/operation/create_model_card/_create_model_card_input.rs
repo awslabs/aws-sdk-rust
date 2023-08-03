@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateModelCardInput {
     /// <p>The unique name of the model card.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
-    #[doc(hidden)]
     pub security_config: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -19,10 +16,8 @@ pub struct CreateModelCardInput {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>Key-value pairs used to manage metadata for model cards.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelCardInput {

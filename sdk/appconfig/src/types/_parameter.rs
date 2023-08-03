@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameter {
     /// <p>Information about the parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A parameter value must be specified in the extension association.</p>
-    #[doc(hidden)]
     pub required: bool,
 }
 impl Parameter {

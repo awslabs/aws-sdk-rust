@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowRunInput {
     /// <p>Name of the workflow being run.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
-    #[doc(hidden)]
     pub include_graph: ::std::option::Option<bool>,
 }
 impl GetWorkflowRunInput {

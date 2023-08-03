@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateProfilesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    #[doc(hidden)]
     pub profile_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateProfilesInput {

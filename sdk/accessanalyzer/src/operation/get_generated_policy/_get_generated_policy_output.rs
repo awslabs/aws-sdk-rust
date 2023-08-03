@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGeneratedPolicyOutput {
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
-    #[doc(hidden)]
     pub job_details: ::std::option::Option<crate::types::JobDetails>,
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
-    #[doc(hidden)]
     pub generated_policy_result: ::std::option::Option<crate::types::GeneratedPolicyResult>,
     _request_id: Option<String>,
 }

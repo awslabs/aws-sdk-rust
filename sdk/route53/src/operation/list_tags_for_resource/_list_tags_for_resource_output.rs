@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
-    #[doc(hidden)]
     pub resource_tag_set: ::std::option::Option<crate::types::ResourceTagSet>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisioningClaimOutput {
     /// <p>The ID of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The provisioning claim certificate.</p>
-    #[doc(hidden)]
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The provisioning claim key pair.</p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<crate::types::KeyPair>,
     /// <p>The provisioning claim expiration time.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

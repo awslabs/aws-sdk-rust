@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordActivityTaskHeartbeatOutput {
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
-    #[doc(hidden)]
     pub cancel_requested: bool,
     _request_id: Option<String>,
 }

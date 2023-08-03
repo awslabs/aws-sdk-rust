@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContextSummary {
     /// <p>The Amazon Resource Name (ARN) of the context.</p>
-    #[doc(hidden)]
     pub context_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the context.</p>
-    #[doc(hidden)]
     pub context_name: ::std::option::Option<::std::string::String>,
     /// <p>The source of the context.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ContextSource>,
     /// <p>The type of the context.</p>
-    #[doc(hidden)]
     pub context_type: ::std::option::Option<::std::string::String>,
     /// <p>When the context was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the context was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContextSummary {

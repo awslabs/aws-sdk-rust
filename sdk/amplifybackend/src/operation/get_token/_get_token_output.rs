@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTokenOutput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The one-time challenge code for authenticating into the Amplify Admin UI.</p>
-    #[doc(hidden)]
     pub challenge_code: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID provided when creating a new challenge token.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The expiry time for the one-time generated token code.</p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

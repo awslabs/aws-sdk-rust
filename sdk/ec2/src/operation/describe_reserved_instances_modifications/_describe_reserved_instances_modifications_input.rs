@@ -19,13 +19,10 @@ pub struct DescribeReservedInstancesModificationsInput {
     /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// <li> <p> <code>update-date</code> - The time when the modification request was last updated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>IDs for the submitted modification request.</p>
-    #[doc(hidden)]
     pub reserved_instances_modification_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedInstancesModificationsInput {

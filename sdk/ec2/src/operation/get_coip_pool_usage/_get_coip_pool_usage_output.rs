@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCoipPoolUsageOutput {
     /// <p>The ID of the customer-owned address pool.</p>
-    #[doc(hidden)]
     pub coip_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the address usage.</p>
-    #[doc(hidden)]
     pub coip_address_usages: ::std::option::Option<::std::vec::Vec<crate::types::CoipAddressUsage>>,
     /// <p>The ID of the local gateway route table.</p>
-    #[doc(hidden)]
     pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

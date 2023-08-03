@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainInfo {
     /// <p>The name of the domain. This name is unique within the account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the domain:</p>
     /// <ul>
     /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
     /// <li> <p> <code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The description of the domain provided through <code>RegisterDomain</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the domain.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DomainInfo {

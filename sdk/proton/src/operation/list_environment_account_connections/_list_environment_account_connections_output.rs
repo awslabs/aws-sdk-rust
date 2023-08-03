@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsOutput {
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
-    #[doc(hidden)]
     pub environment_account_connections: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>>,
     /// <p>A token that indicates the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

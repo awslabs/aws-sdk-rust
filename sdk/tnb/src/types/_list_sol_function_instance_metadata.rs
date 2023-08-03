@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolFunctionInstanceMetadata {
     /// <p>When the network function instance was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the network function instance was last modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListSolFunctionInstanceMetadata {

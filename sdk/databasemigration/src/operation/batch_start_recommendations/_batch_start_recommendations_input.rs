@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStartRecommendationsInput {
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>,
 }
 impl BatchStartRecommendationsInput {

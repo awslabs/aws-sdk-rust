@@ -5,28 +5,20 @@
 pub struct SendCommandInput {
     /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
     /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    #[doc(hidden)]
     pub session_token: ::std::option::Option<::std::string::String>,
     /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
-    #[doc(hidden)]
     pub start_session: ::std::option::Option<crate::types::StartSessionRequest>,
     /// <p>Command to start a new transaction.</p>
-    #[doc(hidden)]
     pub start_transaction: ::std::option::Option<crate::types::StartTransactionRequest>,
     /// <p>Command to end the current session.</p>
-    #[doc(hidden)]
     pub end_session: ::std::option::Option<crate::types::EndSessionRequest>,
     /// <p>Command to commit the specified transaction.</p>
-    #[doc(hidden)]
     pub commit_transaction: ::std::option::Option<crate::types::CommitTransactionRequest>,
     /// <p>Command to abort the current transaction.</p>
-    #[doc(hidden)]
     pub abort_transaction: ::std::option::Option<crate::types::AbortTransactionRequest>,
     /// <p>Command to execute a statement in the specified transaction.</p>
-    #[doc(hidden)]
     pub execute_statement: ::std::option::Option<crate::types::ExecuteStatementRequest>,
     /// <p>Command to fetch a page.</p>
-    #[doc(hidden)]
     pub fetch_page: ::std::option::Option<crate::types::FetchPageRequest>,
 }
 impl SendCommandInput {

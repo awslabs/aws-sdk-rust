@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityRulesetFilterCriteria {
     /// <p>The name of the ruleset filter criteria.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the ruleset filter criteria.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Filter on rulesets created before this date.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter on rulesets created after this date.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter on rulesets last modified before this date.</p>
-    #[doc(hidden)]
     pub last_modified_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter on rulesets last modified after this date.</p>
-    #[doc(hidden)]
     pub last_modified_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name and database name of the target table.</p>
-    #[doc(hidden)]
     pub target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
 }
 impl DataQualityRulesetFilterCriteria {

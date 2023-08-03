@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAggregateDiscoveredResourceCountsOutput {
     /// <p>The total number of resources that are present in an aggregator with the filters that you provide.</p>
-    #[doc(hidden)]
     pub total_discovered_resources: i64,
     /// <p>The key passed into the request object. If <code>GroupByKey</code> is not provided, the result will be empty.</p>
-    #[doc(hidden)]
     pub group_by_key: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of GroupedResourceCount objects.</p>
-    #[doc(hidden)]
     pub grouped_resource_counts: ::std::option::Option<::std::vec::Vec<crate::types::GroupedResourceCount>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

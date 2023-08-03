@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>The name of the Timestream database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The duration for which your time-series data must be stored in the memory store and the magnetic store.</p>
-    #[doc(hidden)]
     pub retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
     /// <p> A list of key-value pairs to label the table. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    #[doc(hidden)]
     pub magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     /// <p> The schema of the table. </p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
 }
 impl CreateTableInput {

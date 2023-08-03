@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableStatisticsOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The table statistics.</p>
-    #[doc(hidden)]
     pub table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThemesOutput {
     /// <p>The list of themes for the Amplify app.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>,
     /// <p>The pagination token that's returned if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

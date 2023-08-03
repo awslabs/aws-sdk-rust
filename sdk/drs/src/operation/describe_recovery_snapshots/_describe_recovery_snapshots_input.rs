@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsInput {
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>,
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::RecoverySnapshotsOrder>,
     /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token of the next Recovery Snapshot to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRecoverySnapshotsInput {

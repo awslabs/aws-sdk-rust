@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Extraction {
     /// <p>Holds the structured data returned by AnalyzeDocument for lending documents.</p>
-    #[doc(hidden)]
     pub lending_document: ::std::option::Option<crate::types::LendingDocument>,
     /// <p>The structure holding all the information returned by AnalyzeExpense</p>
-    #[doc(hidden)]
     pub expense_document: ::std::option::Option<crate::types::ExpenseDocument>,
     /// <p>The structure that lists each document processed in an AnalyzeID operation.</p>
-    #[doc(hidden)]
     pub identity_document: ::std::option::Option<crate::types::IdentityDocument>,
 }
 impl Extraction {

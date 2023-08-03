@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<bool>,
 }
 impl UpdateOrganizationConfigurationInput {

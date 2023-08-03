@@ -4,42 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePatchGroupStateOutput {
     /// <p>The number of managed nodes in the patch group.</p>
-    #[doc(hidden)]
     pub instances: i32,
     /// <p>The number of managed nodes with installed patches.</p>
-    #[doc(hidden)]
     pub instances_with_installed_patches: i32,
     /// <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
-    #[doc(hidden)]
     pub instances_with_installed_other_patches: i32,
     /// <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    #[doc(hidden)]
     pub instances_with_installed_pending_reboot_patches: ::std::option::Option<i32>,
     /// <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>
     /// </note>
-    #[doc(hidden)]
     pub instances_with_installed_rejected_patches: ::std::option::Option<i32>,
     /// <p>The number of managed nodes with missing patches from the patch baseline.</p>
-    #[doc(hidden)]
     pub instances_with_missing_patches: i32,
     /// <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
-    #[doc(hidden)]
     pub instances_with_failed_patches: i32,
     /// <p>The number of managed nodes with patches that aren't applicable.</p>
-    #[doc(hidden)]
     pub instances_with_not_applicable_patches: i32,
     /// <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
-    #[doc(hidden)]
     pub instances_with_unreported_not_applicable_patches: ::std::option::Option<i32>,
     /// <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    #[doc(hidden)]
     pub instances_with_critical_non_compliant_patches: ::std::option::Option<i32>,
     /// <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    #[doc(hidden)]
     pub instances_with_security_non_compliant_patches: ::std::option::Option<i32>,
     /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
-    #[doc(hidden)]
     pub instances_with_other_non_compliant_patches: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVolumePermissionModifications {
     /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-    #[doc(hidden)]
     pub add: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
-    #[doc(hidden)]
     pub remove: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
 }
 impl CreateVolumePermissionModifications {

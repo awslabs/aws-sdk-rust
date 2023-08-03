@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppInstanceAdminSummary {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
-    #[doc(hidden)]
     pub admin: ::std::option::Option<crate::types::Identity>,
 }
 impl AppInstanceAdminSummary {

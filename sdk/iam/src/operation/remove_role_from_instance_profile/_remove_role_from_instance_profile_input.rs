@@ -5,11 +5,9 @@
 pub struct RemoveRoleFromInstanceProfileInput {
     /// <p>The name of the instance profile to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the role to remove.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveRoleFromInstanceProfileInput {

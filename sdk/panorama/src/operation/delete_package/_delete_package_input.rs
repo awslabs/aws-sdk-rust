@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePackageInput {
     /// <p>The package's ID.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
-    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl DeletePackageInput {

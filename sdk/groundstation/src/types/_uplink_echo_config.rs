@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UplinkEchoConfig {
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>ARN of an uplink <code>Config</code>.</p>
-    #[doc(hidden)]
     pub antenna_uplink_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl UplinkEchoConfig {

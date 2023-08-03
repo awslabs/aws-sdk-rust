@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDataError {
     /// <p>The query identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
     /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
     /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::QueryErrorCode>,
     /// <p>The error message associated with the current query error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl MetricDataError {

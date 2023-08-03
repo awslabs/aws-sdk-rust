@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogPublishingOption {
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the log should be published.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl LogPublishingOption {

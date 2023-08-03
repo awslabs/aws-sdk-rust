@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaEndpointInput {

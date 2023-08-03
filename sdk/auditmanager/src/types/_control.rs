@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Control {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the control. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the control is a standard control or a custom control.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ControlType>,
     /// <p> The name of the control. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the control. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
-    #[doc(hidden)]
     pub testing_information: ::std::option::Option<::std::string::String>,
     /// <p> The title of the action plan for remediating the control. </p>
-    #[doc(hidden)]
     pub action_plan_title: ::std::option::Option<::std::string::String>,
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    #[doc(hidden)]
     pub action_plan_instructions: ::std::option::Option<::std::string::String>,
     /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
-    #[doc(hidden)]
     pub control_sources: ::std::option::Option<::std::string::String>,
     /// <p> The data mapping sources for the control. </p>
-    #[doc(hidden)]
     pub control_mapping_sources: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
     /// <p> The time when the control was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time when the control was most recently updated. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The user or role that created the control. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p> The user or role that most recently updated the control. </p>
-    #[doc(hidden)]
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p> The tags associated with the control. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Control {

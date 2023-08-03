@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EgressOnlyInternetGateway {
     /// <p>Information about the attachment of the egress-only internet gateway.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
     /// <p>The ID of the egress-only internet gateway.</p>
-    #[doc(hidden)]
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the egress-only internet gateway.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EgressOnlyInternetGateway {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationResourceLifecycleOutput {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle configuration.</p>
-    #[doc(hidden)]
     pub resource_lifecycle_config: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
     _request_id: Option<String>,
 }

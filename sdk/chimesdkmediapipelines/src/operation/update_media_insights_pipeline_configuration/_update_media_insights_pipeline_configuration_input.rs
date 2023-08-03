@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateMediaInsightsPipelineConfigurationInput {
     /// <p>The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub resource_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings for real-time alerts for the media insights pipeline.</p>
-    #[doc(hidden)]
     pub real_time_alert_configuration: ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream..</p>
-    #[doc(hidden)]
     pub elements: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
 }
 impl UpdateMediaInsightsPipelineConfigurationInput {

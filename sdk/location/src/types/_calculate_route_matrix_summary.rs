@@ -11,16 +11,12 @@ pub struct CalculateRouteMatrixSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
-    #[doc(hidden)]
     pub route_count: ::std::option::Option<i32>,
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
-    #[doc(hidden)]
     pub error_count: ::std::option::Option<i32>,
     /// <p>The unit of measurement for route distances.</p>
-    #[doc(hidden)]
     pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
 }
 impl CalculateRouteMatrixSummary {

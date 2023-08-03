@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisDisplayMinMaxRange {
     /// <p>The minimum setup for an axis display range.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<f64>,
     /// <p>The maximum setup for an axis display range.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<f64>,
 }
 impl AxisDisplayMinMaxRange {

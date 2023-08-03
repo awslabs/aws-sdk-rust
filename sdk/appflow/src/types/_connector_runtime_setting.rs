@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorRuntimeSetting {
     /// <p>Contains value information about the connector runtime setting.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Data type of the connector runtime setting.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this connector runtime setting is required.</p>
-    #[doc(hidden)]
     pub is_required: bool,
     /// <p>A label used for connector runtime setting.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>A description about the connector runtime setting.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the scope of the connector runtime setting.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    #[doc(hidden)]
     pub connector_supplied_value_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectorRuntimeSetting {

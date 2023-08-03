@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Session {
     /// <p>The ID of the execute command session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A URL to the managed agent on the container that the SSM Session Manager client uses to send commands and receive output from the container.</p>
-    #[doc(hidden)]
     pub stream_url: ::std::option::Option<::std::string::String>,
     /// <p>An encrypted token value containing session and caller information. It's used to authenticate the connection to the container.</p>
-    #[doc(hidden)]
     pub token_value: ::std::option::Option<::std::string::String>,
 }
 impl Session {

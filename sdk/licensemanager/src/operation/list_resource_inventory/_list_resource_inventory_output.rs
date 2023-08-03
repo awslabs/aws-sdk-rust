@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceInventoryOutput {
     /// <p>Information about the resources.</p>
-    #[doc(hidden)]
     pub resource_inventory_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInventory>>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

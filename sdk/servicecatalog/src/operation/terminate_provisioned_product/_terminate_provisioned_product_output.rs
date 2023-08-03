@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateProvisionedProductOutput {
     /// <p>Information about the result of this request.</p>
-    #[doc(hidden)]
     pub record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
 }

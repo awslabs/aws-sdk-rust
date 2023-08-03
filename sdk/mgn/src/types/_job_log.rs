@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobLog {
     /// <p>Job log event date and time.</p>
-    #[doc(hidden)]
     pub log_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Job log event.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::JobLogEvent>,
     /// <p>Job event data</p>
-    #[doc(hidden)]
     pub event_data: ::std::option::Option<crate::types::JobLogEventData>,
 }
 impl JobLog {

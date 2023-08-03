@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
     /// <p>The number of seconds after which a Dead Peer Detection (DPD) timeout occurs.</p>
-    #[doc(hidden)]
     pub dpd_timeout_seconds: i32,
     /// <p>The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.</p>
-    #[doc(hidden)]
     pub ike_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The external IP address of the VPN tunnel.</p>
-    #[doc(hidden)]
     pub outside_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase1_dh_group_numbers: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase1_encryption_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase1_integrity_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
-    #[doc(hidden)]
     pub phase1_lifetime_seconds: i32,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase2_encryption_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    #[doc(hidden)]
     pub phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
-    #[doc(hidden)]
     pub phase2_lifetime_seconds: i32,
     /// <p>The preshared key to establish initial authentication between the virtual private gateway and the customer gateway.</p>
-    #[doc(hidden)]
     pub pre_shared_key: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the rekey window, which is determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
-    #[doc(hidden)]
     pub rekey_fuzz_percentage: i32,
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
-    #[doc(hidden)]
     pub rekey_margin_time_seconds: i32,
     /// <p>The number of packets in an IKE replay window.</p>
-    #[doc(hidden)]
     pub replay_window_size: i32,
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
-    #[doc(hidden)]
     pub tunnel_inside_cidr: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {

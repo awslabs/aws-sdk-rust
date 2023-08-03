@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSolFunctionPackageContentInput {
     /// <p>Function package ID.</p>
-    #[doc(hidden)]
     pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
     /// <p>Function package content type.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::PackageContentType>,
     /// <p>Function package file.</p>
-    #[doc(hidden)]
     pub file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl PutSolFunctionPackageContentInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfiguration {
     /// <p>Configurations for S3 bucket notifications.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>>,
 }
 impl AwsS3BucketNotificationConfiguration {

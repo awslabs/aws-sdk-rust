@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyVersionIdentifier {
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the version of the policy associated with the resource.</p>
-    #[doc(hidden)]
     pub policy_version_id: ::std::option::Option<::std::string::String>,
 }
 impl PolicyVersionIdentifier {

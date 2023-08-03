@@ -6,33 +6,25 @@
 pub struct CreateLocationSmbInput {
     /// <p>Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network can also mount this path.</p>
     /// <p>To copy all data in the specified subdirectory, DataSync must be able to mount the SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will mount.</p> <note>
     /// <p>You can't specify an IP version 6 (IPv6) address.</p>
     /// </note>
-    #[doc(hidden)]
     pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Windows domain name that your SMB file server belongs to. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required permissions</a> for SMB locations.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.</p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl CreateLocationSmbInput {

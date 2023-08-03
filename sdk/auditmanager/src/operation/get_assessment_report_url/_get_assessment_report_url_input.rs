@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentReportUrlInput {
     /// <p> The unique identifier for the assessment report. </p>
-    #[doc(hidden)]
     pub assessment_report_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentReportUrlInput {

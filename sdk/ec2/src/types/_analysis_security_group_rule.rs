@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisSecurityGroupRule {
     /// <p>The IPv4 address range, in CIDR notation.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The direction. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>egress</p> </li>
     /// <li> <p>ingress</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<::std::string::String>,
     /// <p>The security group ID.</p>
-    #[doc(hidden)]
     pub security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The port range.</p>
-    #[doc(hidden)]
     pub port_range: ::std::option::Option<crate::types::PortRange>,
     /// <p>The prefix list ID.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The protocol name.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
 }
 impl AnalysisSecurityGroupRule {

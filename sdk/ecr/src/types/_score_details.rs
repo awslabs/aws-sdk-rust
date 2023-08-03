@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
-    #[doc(hidden)]
     pub cvss: ::std::option::Option<crate::types::CvssScoreDetails>,
 }
 impl ScoreDetails {

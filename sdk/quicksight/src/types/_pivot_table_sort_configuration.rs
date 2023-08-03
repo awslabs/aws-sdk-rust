@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableSortConfiguration {
     /// <p>The field sort options for a pivot table sort configuration.</p>
-    #[doc(hidden)]
     pub field_sort_options: ::std::option::Option<::std::vec::Vec<crate::types::PivotFieldSortOptions>>,
 }
 impl PivotTableSortConfiguration {

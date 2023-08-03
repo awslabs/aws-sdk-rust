@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataLakeSettingsOutput {
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
-    #[doc(hidden)]
     pub data_lake_settings: ::std::option::Option<crate::types::DataLakeSettings>,
     _request_id: Option<String>,
 }

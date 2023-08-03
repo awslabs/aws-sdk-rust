@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestInspectionAcfp {
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
-    #[doc(hidden)]
     pub payload_type: ::std::option::Option<crate::types::PayloadType>,
     /// <p>The name of the field in the request payload that contains your customer's username. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -15,7 +14,6 @@ pub struct RequestInspectionAcfp {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>. </p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub username_field: ::std::option::Option<crate::types::UsernameField>,
     /// <p>The name of the field in the request payload that contains your customer's password. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -23,7 +21,6 @@ pub struct RequestInspectionAcfp {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub password_field: ::std::option::Option<crate::types::PasswordField>,
     /// <p>The name of the field in the request payload that contains your customer's email. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -31,7 +28,6 @@ pub struct RequestInspectionAcfp {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "email": "THE_EMAIL" } }</code>, the email field specification is <code>/form/email</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>email1</code>, the email field specification is <code>email1</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub email_field: ::std::option::Option<crate::types::EmailField>,
     /// <p>The names of the fields in the request payload that contain your customer's primary phone number. </p>
     /// <p>Order the phone number fields in the array exactly as they are ordered in the request payload. </p>
@@ -40,7 +36,6 @@ pub struct RequestInspectionAcfp {
     /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryphoneline1": "THE_PHONE1", "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</code>, the phone number field identifiers are <code>/form/primaryphoneline1</code>, <code>/form/primaryphoneline2</code>, and <code>/form/primaryphoneline3</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub phone_number_fields: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberField>>,
     /// <p>The names of the fields in the request payload that contain your customer's primary physical address. </p>
     /// <p>Order the address fields in the array exactly as they are ordered in the request payload. </p>
@@ -49,7 +44,6 @@ pub struct RequestInspectionAcfp {
     /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryaddressline1": "THE_ADDRESS1", "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</code>, the address field idenfiers are <code>/form/primaryaddressline1</code>, <code>/form/primaryaddressline2</code>, and <code>/form/primaryaddressline3</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub address_fields: ::std::option::Option<::std::vec::Vec<crate::types::AddressField>>,
 }
 impl RequestInspectionAcfp {

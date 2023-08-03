@@ -4,27 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableSettingsInput {
     /// <p>The name of the global table</p>
-    #[doc(hidden)]
     pub global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
     /// <ul>
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub global_table_billing_mode: ::std::option::Option<crate::types::BillingMode>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
-    #[doc(hidden)]
     pub global_table_provisioned_write_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
-    #[doc(hidden)]
     pub global_table_provisioned_write_capacity_auto_scaling_settings_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
-    #[doc(hidden)]
     pub global_table_global_secondary_index_settings_update:
         ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>>,
     /// <p>Represents the settings for a global table in a Region that will be modified.</p>
-    #[doc(hidden)]
     pub replica_settings_update: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsUpdate>>,
 }
 impl UpdateGlobalTableSettingsInput {

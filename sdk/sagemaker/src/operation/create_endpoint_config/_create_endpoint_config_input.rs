@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndpointConfigInput {
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request. </p>
-    #[doc(hidden)]
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    #[doc(hidden)]
     pub production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
     /// <p>Configuration to control how SageMaker captures inference data.</p>
-    #[doc(hidden)]
     pub data_capture_config: ::std::option::Option<crate::types::DataCaptureConfig>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
@@ -28,16 +24,12 @@ pub struct CreateEndpointConfigInput {
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
-    #[doc(hidden)]
     pub async_inference_config: ::std::option::Option<crate::types::AsyncInferenceConfig>,
     /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
-    #[doc(hidden)]
     pub explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
-    #[doc(hidden)]
     pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
 }
 impl CreateEndpointConfigInput {

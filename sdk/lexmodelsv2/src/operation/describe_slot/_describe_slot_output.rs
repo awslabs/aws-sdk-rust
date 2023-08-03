@@ -4,47 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSlotOutput {
     /// <p>The unique identifier generated for the slot.</p>
-    #[doc(hidden)]
     pub slot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name specified for the slot.</p>
-    #[doc(hidden)]
     pub slot_name: ::std::option::Option<::std::string::String>,
     /// <p>The description specified for the slot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the slot type that determines the values entered into the slot.</p>
-    #[doc(hidden)]
     pub slot_type_id: ::std::option::Option<::std::string::String>,
     /// <p>Prompts that Amazon Lex uses to elicit a value for the slot.</p>
-    #[doc(hidden)]
     pub value_elicitation_setting: ::std::option::Option<crate::types::SlotValueElicitationSetting>,
     /// <p>Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>, the actual value of the slot is shown in logs.</p>
-    #[doc(hidden)]
     pub obfuscation_setting: ::std::option::Option<crate::types::ObfuscationSetting>,
     /// <p>The identifier of the bot associated with the slot.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the slot.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The language and locale specified for the slot.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the intent associated with the slot.</p>
-    #[doc(hidden)]
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the slot was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the slot was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the slot accepts multiple values in a single utterance.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub multiple_values_setting: ::std::option::Option<crate::types::MultipleValuesSetting>,
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    #[doc(hidden)]
     pub sub_slot_setting: ::std::option::Option<crate::types::SubSlotSetting>,
     _request_id: Option<String>,
 }

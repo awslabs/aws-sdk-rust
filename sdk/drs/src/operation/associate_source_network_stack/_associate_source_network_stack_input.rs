@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociateSourceNetworkStackInput {
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
-    #[doc(hidden)]
     pub source_network_id: ::std::option::Option<::std::string::String>,
     /// <p>CloudFormation template to associate with a Source Network.</p>
-    #[doc(hidden)]
     pub cfn_stack_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSourceNetworkStackInput {

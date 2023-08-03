@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
     /// <p> The maximum number of accelerators. If this parameter isn't specified, there's no maximum limit. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>. </p>
-    #[doc(hidden)]
     pub max: i32,
     /// <p> The minimum number of accelerators. If this parameter isn't specified, there's no minimum limit. </p>
-    #[doc(hidden)]
     pub min: i32,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {

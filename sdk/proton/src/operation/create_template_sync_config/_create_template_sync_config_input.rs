@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTemplateSyncConfigInput {
     /// <p>The name of your registered template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the registered template.</p>
-    #[doc(hidden)]
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The provider type for your repository.</p>
-    #[doc(hidden)]
     pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository branch for your template.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
 }
 impl CreateTemplateSyncConfigInput {

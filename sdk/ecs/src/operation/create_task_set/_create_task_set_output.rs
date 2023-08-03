@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTaskSetOutput {
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
-    #[doc(hidden)]
     pub task_set: ::std::option::Option<crate::types::TaskSet>,
     _request_id: Option<String>,
 }

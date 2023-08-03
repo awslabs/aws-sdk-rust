@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathMatch {
     /// <p>The type of path match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::PathMatchType>,
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
-    #[doc(hidden)]
     pub case_sensitive: ::std::option::Option<bool>,
 }
 impl PathMatch {

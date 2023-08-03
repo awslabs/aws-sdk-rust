@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackendApiModelsOutput {
     /// <p>Stringified JSON of the datastore model.</p>
-    #[doc(hidden)]
     pub models: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
-    #[doc(hidden)]
     pub model_introspection_schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

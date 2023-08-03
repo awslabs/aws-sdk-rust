@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpOwner {
     /// <p>The autonomous system number (ASN) for the autonomous system that included the IP address.</p>
-    #[doc(hidden)]
     pub asn: ::std::option::Option<::std::string::String>,
     /// <p>The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system that included the IP address.</p>
-    #[doc(hidden)]
     pub asn_org: ::std::option::Option<::std::string::String>,
     /// <p>The name of the internet service provider (ISP) that owned the IP address.</p>
-    #[doc(hidden)]
     pub isp: ::std::option::Option<::std::string::String>,
     /// <p>The name of the organization that owned the IP address.</p>
-    #[doc(hidden)]
     pub org: ::std::option::Option<::std::string::String>,
 }
 impl IpOwner {

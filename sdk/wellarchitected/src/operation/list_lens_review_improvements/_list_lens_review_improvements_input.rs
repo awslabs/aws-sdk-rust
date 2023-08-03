@@ -5,30 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLensReviewImprovementsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    #[doc(hidden)]
     pub lens_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    #[doc(hidden)]
     pub milestone_number: ::std::option::Option<i32>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The priority of the question.</p>
-    #[doc(hidden)]
     pub question_priority: ::std::option::Option<crate::types::QuestionPriority>,
 }
 impl ListLensReviewImprovementsInput {

@@ -11,10 +11,8 @@ pub struct BillingModeSummary {
     /// <li> <p> <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     /// <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write capacity mode.</p>
-    #[doc(hidden)]
     pub last_update_to_pay_per_request_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BillingModeSummary {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
-    #[doc(hidden)]
     pub api_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the API key to use for authorization.</p>
-    #[doc(hidden)]
     pub api_key_value: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionApiKeyAuthRequestParameters {

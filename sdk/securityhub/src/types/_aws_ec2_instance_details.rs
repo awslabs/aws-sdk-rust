@@ -5,44 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceDetails {
     /// <p>The instance type of the instance. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Machine Image (AMI) ID of the instance.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 addresses associated with the instance.</p>
-    #[doc(hidden)]
     pub ip_v4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IPv6 addresses associated with the instance.</p>
-    #[doc(hidden)]
     pub ip_v6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The key name associated with the instance.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM profile ARN of the instance.</p>
-    #[doc(hidden)]
     pub iam_instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC that the instance was launched in.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subnet that the instance was launched in.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the instance was launched.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub launched_at: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2InstanceNetworkInterfacesDetails>>,
     /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance. </p>
-    #[doc(hidden)]
     pub virtualization_type: ::std::option::Option<::std::string::String>,
     /// <p>Details about the metadata options for the Amazon EC2 instance. </p>
-    #[doc(hidden)]
     pub metadata_options: ::std::option::Option<crate::types::AwsEc2InstanceMetadataOptions>,
     /// <p> Describes the type of monitoring that’s turned on for an instance. </p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::AwsEc2InstanceMonitoringDetails>,
 }
 impl AwsEc2InstanceDetails {

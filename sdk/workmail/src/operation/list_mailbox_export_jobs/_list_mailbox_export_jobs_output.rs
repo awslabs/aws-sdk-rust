@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMailboxExportJobsOutput {
     /// <p>The mailbox export job details.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::MailboxExportJob>>,
     /// <p>The token to use to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

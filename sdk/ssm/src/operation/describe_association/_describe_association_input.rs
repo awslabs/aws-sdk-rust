@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssociationInput {
     /// <p>The name of the SSM document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The association ID for which you want information.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
-    #[doc(hidden)]
     pub association_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssociationInput {

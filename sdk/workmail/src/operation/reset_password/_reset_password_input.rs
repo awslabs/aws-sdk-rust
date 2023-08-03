@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResetPasswordInput {
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user for whom the password is reset.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The new password for the user.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
 }
 impl ResetPasswordInput {

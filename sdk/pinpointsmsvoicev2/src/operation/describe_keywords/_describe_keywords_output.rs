@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeywordsOutput {
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
-    #[doc(hidden)]
     pub origination_identity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>An array of KeywordInformation objects that contain the results.</p>
-    #[doc(hidden)]
     pub keywords: ::std::option::Option<::std::vec::Vec<crate::types::KeywordInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

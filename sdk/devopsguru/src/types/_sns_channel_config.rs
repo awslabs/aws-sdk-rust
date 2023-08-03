@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsChannelConfig {
     /// <p> The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl SnsChannelConfig {

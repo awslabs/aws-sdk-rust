@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArchiveRulesInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    #[doc(hidden)]
     pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>A token used for pagination of results returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListArchiveRulesInput {

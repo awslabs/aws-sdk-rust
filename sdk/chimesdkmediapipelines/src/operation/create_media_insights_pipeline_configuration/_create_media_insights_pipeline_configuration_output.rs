@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMediaInsightsPipelineConfigurationOutput {
     /// <p>The configuration settings for the media insights pipeline.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration: ::std::option::Option<crate::types::MediaInsightsPipelineConfiguration>,
     _request_id: Option<String>,
 }

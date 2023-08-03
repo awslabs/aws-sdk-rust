@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Csv {
     /// <p>The column names specified in the .csv file.</p>
-    #[doc(hidden)]
     pub column_names: ::std::option::Option<::std::vec::Vec<crate::types::ColumnName>>,
 }
 impl Csv {

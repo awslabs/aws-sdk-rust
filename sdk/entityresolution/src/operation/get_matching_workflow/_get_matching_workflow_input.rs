@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMatchingWorkflowInput {
     /// <p>The name of the workflow.</p>
-    #[doc(hidden)]
     pub workflow_name: ::std::option::Option<::std::string::String>,
 }
 impl GetMatchingWorkflowInput {

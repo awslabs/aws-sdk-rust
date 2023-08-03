@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLaunchConfigurationTemplateInput {
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Launch disposition.</p>
-    #[doc(hidden)]
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
-    #[doc(hidden)]
     pub target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy private IP.</p>
-    #[doc(hidden)]
     pub copy_private_ip: ::std::option::Option<bool>,
     /// <p>Copy tags.</p>
-    #[doc(hidden)]
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>Licensing.</p>
-    #[doc(hidden)]
     pub licensing: ::std::option::Option<crate::types::Licensing>,
     /// <p>S3 bucket ARN to export Source Network templates.</p>
-    #[doc(hidden)]
     pub export_bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateLaunchConfigurationTemplateInput {

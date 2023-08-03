@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightFeedback {
     /// <p> The insight feedback ID. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The feedback provided by the customer. </p>
-    #[doc(hidden)]
     pub feedback: ::std::option::Option<crate::types::InsightFeedbackOption>,
 }
 impl InsightFeedback {

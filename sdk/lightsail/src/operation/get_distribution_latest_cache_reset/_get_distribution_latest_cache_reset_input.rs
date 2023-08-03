@@ -6,7 +6,6 @@ pub struct GetDistributionLatestCacheResetInput {
     /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
-    #[doc(hidden)]
     pub distribution_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDistributionLatestCacheResetInput {

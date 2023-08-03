@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableZonesOutput {
     /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
-    #[doc(hidden)]
     pub az_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

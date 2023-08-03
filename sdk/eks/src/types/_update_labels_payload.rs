@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLabelsPayload {
     /// <p>Kubernetes labels to be added or updated.</p>
-    #[doc(hidden)]
     pub add_or_update_labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Kubernetes labels to be removed.</p>
-    #[doc(hidden)]
     pub remove_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateLabelsPayload {

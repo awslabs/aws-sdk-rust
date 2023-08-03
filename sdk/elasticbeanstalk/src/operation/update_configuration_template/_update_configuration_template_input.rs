@@ -6,21 +6,16 @@
 pub struct UpdateConfigurationTemplateInput {
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration template to update.</p>
     /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
-    #[doc(hidden)]
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     /// <p>A list of configuration options to remove from the configuration set.</p>
     /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
-    #[doc(hidden)]
     pub options_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
 }
 impl UpdateConfigurationTemplateInput {

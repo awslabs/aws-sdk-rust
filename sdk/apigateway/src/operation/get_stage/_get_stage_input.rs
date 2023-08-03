@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStageInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Stage resource to get information about.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl GetStageInput {

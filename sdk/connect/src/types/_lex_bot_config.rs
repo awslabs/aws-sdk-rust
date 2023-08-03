@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexBotConfig {
     /// <p>Configuration information of an Amazon Lex bot.</p>
-    #[doc(hidden)]
     pub lex_bot: ::std::option::Option<crate::types::LexBot>,
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
-    #[doc(hidden)]
     pub lex_v2_bot: ::std::option::Option<crate::types::LexV2Bot>,
 }
 impl LexBotConfig {

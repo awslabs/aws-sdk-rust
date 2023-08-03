@@ -10,10 +10,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FulfillmentActivity {
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FulfillmentActivityType>,
     /// <p> A description of the Lambda function that is run to fulfill the intent. </p>
-    #[doc(hidden)]
     pub code_hook: ::std::option::Option<crate::types::CodeHook>,
 }
 impl FulfillmentActivity {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobScheduleFrequency {
     /// <p>Specifies a daily recurrence pattern for running the job.</p>
-    #[doc(hidden)]
     pub daily_schedule: ::std::option::Option<crate::types::DailySchedule>,
     /// <p>Specifies a monthly recurrence pattern for running the job.</p>
-    #[doc(hidden)]
     pub monthly_schedule: ::std::option::Option<crate::types::MonthlySchedule>,
     /// <p>Specifies a weekly recurrence pattern for running the job.</p>
-    #[doc(hidden)]
     pub weekly_schedule: ::std::option::Option<crate::types::WeeklySchedule>,
 }
 impl JobScheduleFrequency {

@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeTargetParameters {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    #[doc(hidden)]
     pub input_template: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for using a Lambda function as a target.</p>
-    #[doc(hidden)]
     pub lambda_function_parameters: ::std::option::Option<crate::types::PipeTargetLambdaFunctionParameters>,
     /// <p>The parameters for using a Step Functions state machine as a target.</p>
-    #[doc(hidden)]
     pub step_function_state_machine_parameters: ::std::option::Option<crate::types::PipeTargetStateMachineParameters>,
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    #[doc(hidden)]
     pub kinesis_stream_parameters: ::std::option::Option<crate::types::PipeTargetKinesisStreamParameters>,
     /// <p>The parameters for using an Amazon ECS task as a target.</p>
-    #[doc(hidden)]
     pub ecs_task_parameters: ::std::option::Option<crate::types::PipeTargetEcsTaskParameters>,
     /// <p>The parameters for using an Batch job as a target.</p>
-    #[doc(hidden)]
     pub batch_job_parameters: ::std::option::Option<crate::types::PipeTargetBatchJobParameters>,
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    #[doc(hidden)]
     pub sqs_queue_parameters: ::std::option::Option<crate::types::PipeTargetSqsQueueParameters>,
     /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
-    #[doc(hidden)]
     pub http_parameters: ::std::option::Option<crate::types::PipeTargetHttpParameters>,
     /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
-    #[doc(hidden)]
     pub redshift_data_parameters: ::std::option::Option<crate::types::PipeTargetRedshiftDataParameters>,
     /// <p>The parameters for using a SageMaker pipeline as a target.</p>
-    #[doc(hidden)]
     pub sage_maker_pipeline_parameters: ::std::option::Option<crate::types::PipeTargetSageMakerPipelineParameters>,
     /// <p>The parameters for using an EventBridge event bus as a target.</p>
-    #[doc(hidden)]
     pub event_bridge_event_bus_parameters: ::std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>,
     /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_parameters: ::std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>,
 }
 impl PipeTargetParameters {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatabaseInput {
     /// <p> The name of the database. </p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p> The identifier of the new KMS key (<code>KmsKeyId</code>) to be used to encrypt the data stored in the database. If the <code>KmsKeyId</code> currently registered with the database is the same as the <code>KmsKeyId</code> in the request, there will not be any update. </p>
     /// <p>You can specify the <code>KmsKeyId</code> using any of the following:</p>
@@ -14,7 +13,6 @@ pub struct UpdateDatabaseInput {
     /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
     /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-1:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDatabaseInput {

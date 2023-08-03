@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWirelessGatewayFirmwareInformationOutput {
     /// <p>Information about the wireless gateway's firmware.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanGatewayCurrentVersion>,
     _request_id: Option<String>,
 }

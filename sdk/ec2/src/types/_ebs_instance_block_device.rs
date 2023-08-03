@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsInstanceBlockDevice {
     /// <p>The time stamp when the attachment initiated.</p>
-    #[doc(hidden)]
     pub attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The attachment state.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>The ID of the EBS volume.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsInstanceBlockDevice {

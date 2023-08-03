@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OpenTunnelOutput {
     /// <p>A unique alpha-numeric tunnel ID.</p>
-    #[doc(hidden)]
     pub tunnel_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name for the tunnel.</p>
-    #[doc(hidden)]
     pub tunnel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
-    #[doc(hidden)]
     pub source_access_token: ::std::option::Option<::std::string::String>,
     /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
-    #[doc(hidden)]
     pub destination_access_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

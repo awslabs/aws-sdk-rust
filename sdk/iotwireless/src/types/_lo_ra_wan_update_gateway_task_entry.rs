@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanUpdateGatewayTaskEntry {
     /// <p>The version of the gateways that should receive the update.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
     /// <p>The firmware version to update the gateway to.</p>
-    #[doc(hidden)]
     pub update_version: ::std::option::Option<crate::types::LoRaWanGatewayVersion>,
 }
 impl LoRaWanUpdateGatewayTaskEntry {

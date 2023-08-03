@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseIpamPoolAllocationOutput {
     /// <p>Indicates if the release was successful.</p>
-    #[doc(hidden)]
     pub success: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSampleFindingsInput {
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-    #[doc(hidden)]
     pub finding_types: ::std::option::Option<::std::vec::Vec<crate::types::FindingType>>,
 }
 impl CreateSampleFindingsInput {

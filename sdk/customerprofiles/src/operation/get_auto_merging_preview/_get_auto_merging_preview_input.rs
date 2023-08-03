@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutoMergingPreviewInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of matching attributes that represent matching criteria.</p>
-    #[doc(hidden)]
     pub consolidation: ::std::option::Option<crate::types::Consolidation>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    #[doc(hidden)]
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
-    #[doc(hidden)]
     pub min_allowed_confidence_score_for_merging: ::std::option::Option<f64>,
 }
 impl GetAutoMergingPreviewInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionInfo {
     /// <p> The name of a Lambda function. </p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub function_alias: ::std::option::Option<::std::string::String>,
     /// <p> The version of a Lambda function that production traffic points to. </p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
-    #[doc(hidden)]
     pub target_version: ::std::option::Option<::std::string::String>,
     /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
-    #[doc(hidden)]
     pub target_version_weight: f64,
 }
 impl LambdaFunctionInfo {

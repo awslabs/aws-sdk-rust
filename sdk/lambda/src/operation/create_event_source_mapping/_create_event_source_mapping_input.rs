@@ -12,7 +12,6 @@ pub struct CreateEventSourceMappingInput {
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -23,11 +22,9 @@ pub struct CreateEventSourceMappingInput {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
     /// <p>Default: True</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
@@ -39,66 +36,46 @@ pub struct CreateEventSourceMappingInput {
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub batch_size: ::std::option::Option<i32>,
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
     /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
-    #[doc(hidden)]
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
     /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
-    #[doc(hidden)]
     pub parallelization_factor: ::std::option::Option<i32>,
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
-    #[doc(hidden)]
     pub starting_position: ::std::option::Option<crate::types::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
-    #[doc(hidden)]
     pub starting_position_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
-    #[doc(hidden)]
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
-    #[doc(hidden)]
     pub maximum_record_age_in_seconds: ::std::option::Option<i32>,
     /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
-    #[doc(hidden)]
     pub bisect_batch_on_function_error: ::std::option::Option<bool>,
     /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-    #[doc(hidden)]
     pub maximum_retry_attempts: ::std::option::Option<i32>,
     /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
-    #[doc(hidden)]
     pub tumbling_window_in_seconds: ::std::option::Option<i32>,
     /// <p>The name of the Kafka topic.</p>
-    #[doc(hidden)]
     pub topics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
-    #[doc(hidden)]
     pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
-    #[doc(hidden)]
     pub source_access_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
-    #[doc(hidden)]
     pub self_managed_event_source: ::std::option::Option<crate::types::SelfManagedEventSource>,
     /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    #[doc(hidden)]
     pub function_response_types: ::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>>,
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-    #[doc(hidden)]
     pub amazon_managed_kafka_event_source_config: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-    #[doc(hidden)]
     pub self_managed_kafka_event_source_config: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
-    #[doc(hidden)]
     pub scaling_config: ::std::option::Option<crate::types::ScalingConfig>,
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
-    #[doc(hidden)]
     pub document_db_event_source_config: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
 }
 impl CreateEventSourceMappingInput {

@@ -4,19 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartPipelineReprocessingInput {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
     /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
     /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
-    #[doc(hidden)]
     pub channel_messages: ::std::option::Option<crate::types::ChannelMessages>,
 }
 impl StartPipelineReprocessingInput {

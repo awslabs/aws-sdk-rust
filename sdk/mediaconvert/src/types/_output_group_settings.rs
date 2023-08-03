@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputGroupSettings {
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    #[doc(hidden)]
     pub cmaf_group_settings: ::std::option::Option<crate::types::CmafGroupSettings>,
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    #[doc(hidden)]
     pub dash_iso_group_settings: ::std::option::Option<crate::types::DashIsoGroupSettings>,
     /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package.
-    #[doc(hidden)]
     pub file_group_settings: ::std::option::Option<crate::types::FileGroupSettings>,
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    #[doc(hidden)]
     pub hls_group_settings: ::std::option::Option<crate::types::HlsGroupSettings>,
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
-    #[doc(hidden)]
     pub ms_smooth_group_settings: ::std::option::Option<crate::types::MsSmoothGroupSettings>,
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OutputGroupType>,
 }
 impl OutputGroupSettings {

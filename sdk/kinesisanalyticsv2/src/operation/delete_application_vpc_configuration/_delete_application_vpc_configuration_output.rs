@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationVpcConfigurationOutput {
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated version ID of the application.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

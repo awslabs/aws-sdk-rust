@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSummary {
     /// <p>The ARN of the device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the device.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The provider of the device.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the device.</p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<crate::types::DeviceType>,
     /// <p>The status of the device.</p>
-    #[doc(hidden)]
     pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
 }
 impl DeviceSummary {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnomalySubscriptionInput {
     /// <p>The cost anomaly subscription object that you want to create. </p>
-    #[doc(hidden)]
     pub anomaly_subscription: ::std::option::Option<crate::types::AnomalySubscription>,
     /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>. You can use resource tags to control access to your <code>subscription</code> using IAM policies.</p>
     /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
@@ -17,7 +16,6 @@ pub struct CreateAnomalySubscriptionInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl CreateAnomalySubscriptionInput {

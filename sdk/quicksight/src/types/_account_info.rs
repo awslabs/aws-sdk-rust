@@ -12,19 +12,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountInfo {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
-    #[doc(hidden)]
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The edition of your Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::Edition>,
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
-    #[doc(hidden)]
     pub notification_email: ::std::option::Option<::std::string::String>,
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of your account subscription.</p>
-    #[doc(hidden)]
     pub account_subscription_status: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfo {

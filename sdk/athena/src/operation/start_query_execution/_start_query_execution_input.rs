@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The database within which the query executes.</p>
-    #[doc(hidden)]
     pub query_execution_context: ::std::option::Option<crate::types::QueryExecutionContext>,
     /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    #[doc(hidden)]
     pub result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     /// <p>The name of the workgroup in which the query is being started.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    #[doc(hidden)]
     pub execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the query result reuse behavior for the query.</p>
-    #[doc(hidden)]
     pub result_reuse_configuration: ::std::option::Option<crate::types::ResultReuseConfiguration>,
 }
 impl StartQueryExecutionInput {

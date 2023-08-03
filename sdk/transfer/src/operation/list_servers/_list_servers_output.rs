@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServersOutput {
     /// <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of servers that were listed.</p>
-    #[doc(hidden)]
     pub servers: ::std::option::Option<::std::vec::Vec<crate::types::ListedServer>>,
     _request_id: Option<String>,
 }

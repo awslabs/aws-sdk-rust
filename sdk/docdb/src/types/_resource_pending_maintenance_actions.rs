@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePendingMaintenanceActions {
     /// <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance actions.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
-    #[doc(hidden)]
     pub pending_maintenance_action_details: ::std::option::Option<::std::vec::Vec<crate::types::PendingMaintenanceAction>>,
 }
 impl ResourcePendingMaintenanceActions {

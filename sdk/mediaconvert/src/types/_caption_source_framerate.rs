@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionSourceFramerate {
     /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate. Use this setting along with the setting Framerate numerator.
-    #[doc(hidden)]
     pub framerate_denominator: ::std::option::Option<i32>,
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate. Use this setting along with the setting Framerate denominator.
-    #[doc(hidden)]
     pub framerate_numerator: ::std::option::Option<i32>,
 }
 impl CaptionSourceFramerate {

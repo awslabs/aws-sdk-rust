@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsStatus {
     /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AdvancedSecurityOptionsStatus {

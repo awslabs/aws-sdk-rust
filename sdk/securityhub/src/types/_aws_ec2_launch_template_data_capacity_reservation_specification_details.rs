@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
     /// <p> Indicates the instance's Capacity Reservation preferences. If equal to <code>open</code>, the instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). If equal to <code>none</code>, the instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity. </p>
-    #[doc(hidden)]
     pub capacity_reservation_preference: ::std::option::Option<::std::string::String>,
     /// <p> Specifies a target Capacity Reservation. </p>
-    #[doc(hidden)]
     pub capacity_reservation_target:
         ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails>,
 }

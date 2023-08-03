@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,
 }

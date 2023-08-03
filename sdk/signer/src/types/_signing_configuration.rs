@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningConfiguration {
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
-    #[doc(hidden)]
     pub encryption_algorithm_options: ::std::option::Option<crate::types::EncryptionAlgorithmOptions>,
     /// <p>The hash algorithm options that are available for a code signing job.</p>
-    #[doc(hidden)]
     pub hash_algorithm_options: ::std::option::Option<crate::types::HashAlgorithmOptions>,
 }
 impl SigningConfiguration {

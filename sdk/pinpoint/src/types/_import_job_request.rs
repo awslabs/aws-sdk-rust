@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportJobRequest {
     /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
-    #[doc(hidden)]
     pub define_segment: ::std::option::Option<bool>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format. If the Amazon S3 location stores multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>Specifies whether to register the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
-    #[doc(hidden)]
     pub register_endpoints: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the endpoint definitions to import. This location can be a folder or a single file. If the location is a folder, Amazon Pinpoint imports endpoint definitions from the files in this location, including any subfolders that the folder contains.</p>
     /// <p>The URL should be in the following format: s3://<replaceable>
@@ -27,13 +22,10 @@ pub struct ImportJobRequest {
     /// </replaceable>/<replaceable>
     /// file-name
     /// </replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
-    #[doc(hidden)]
     pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the segment to update or add the imported endpoint definitions to, if the import job is meant to update an existing segment.</p>
-    #[doc(hidden)]
     pub segment_id: ::std::option::Option<::std::string::String>,
     /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
-    #[doc(hidden)]
     pub segment_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobRequest {

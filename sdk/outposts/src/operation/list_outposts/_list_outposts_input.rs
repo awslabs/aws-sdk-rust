@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOutpostsInput {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters the results by the lifecycle status.</p>
-    #[doc(hidden)]
     pub life_cycle_status_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by Availability Zone (for example, <code>us-east-1a</code>).</p>
-    #[doc(hidden)]
     pub availability_zone_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by AZ ID (for example, <code>use1-az1</code>).</p>
-    #[doc(hidden)]
     pub availability_zone_id_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListOutpostsInput {

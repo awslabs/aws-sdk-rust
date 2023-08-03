@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectSentimentOutput {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
-    #[doc(hidden)]
     pub sentiment: ::std::option::Option<crate::types::SentimentType>,
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
-    #[doc(hidden)]
     pub sentiment_score: ::std::option::Option<crate::types::SentimentScore>,
     _request_id: Option<String>,
 }

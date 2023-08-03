@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingJob {
     /// <p>The name of the training job.</p>
-    #[doc(hidden)]
     pub training_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    #[doc(hidden)]
     pub training_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub tuning_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
-    #[doc(hidden)]
     pub labeling_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Amazon S3 location that is configured for storing model artifacts.</p>
-    #[doc(hidden)]
     pub model_artifacts: ::std::option::Option<crate::types::ModelArtifacts>,
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
@@ -32,7 +26,6 @@ pub struct TrainingJob {
     /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
-    #[doc(hidden)]
     pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
     /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
     /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
@@ -90,75 +83,52 @@ pub struct TrainingJob {
     /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
     /// <p>If the training job failed, the reason it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Algorithm-specific parameters.</p>
-    #[doc(hidden)]
     pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about the algorithm used for training, and algorithm metadata.</p>
-    #[doc(hidden)]
     pub algorithm_specification: ::std::option::Option<crate::types::AlgorithmSpecification>,
     /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
     /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
-    #[doc(hidden)]
     pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>A timestamp that indicates when the training job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.</p>
-    #[doc(hidden)]
     pub training_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-    #[doc(hidden)]
     pub training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the status of the training job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A history of all of the secondary statuses that the training job has transitioned through.</p>
-    #[doc(hidden)]
     pub secondary_status_transitions: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryStatusTransition>>,
     /// <p>A list of final metric values that are set when the training job completes. Used only if the training job was configured to use metrics.</p>
-    #[doc(hidden)]
     pub final_metric_data_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricData>>,
     /// <p>If the <code>TrainingJob</code> was created with network isolation, the value is set to <code>true</code>. If network isolation is enabled, nodes can't communicate beyond the VPC they run in.</p>
-    #[doc(hidden)]
     pub enable_network_isolation: bool,
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
-    #[doc(hidden)]
     pub enable_inter_container_traffic_encryption: bool,
     /// <p>When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of on-demand instances. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot Training</a>.</p>
-    #[doc(hidden)]
     pub enable_managed_spot_training: bool,
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
-    #[doc(hidden)]
     pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The training time in seconds.</p>
-    #[doc(hidden)]
     pub training_time_in_seconds: ::std::option::Option<i32>,
     /// <p>The billable time in seconds.</p>
-    #[doc(hidden)]
     pub billable_time_in_seconds: ::std::option::Option<i32>,
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-    #[doc(hidden)]
     pub debug_hook_config: ::std::option::Option<crate::types::DebugHookConfig>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -166,25 +136,18 @@ pub struct TrainingJob {
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     /// <p>Information about the debug rule configuration.</p>
-    #[doc(hidden)]
     pub debug_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>>,
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
-    #[doc(hidden)]
     pub tensor_board_output_config: ::std::option::Option<crate::types::TensorBoardOutputConfig>,
     /// <p>Information about the evaluation status of the rules for the training job.</p>
-    #[doc(hidden)]
     pub debug_rule_evaluation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
     /// <p>The environment variables to set in the Docker container.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    #[doc(hidden)]
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TrainingJob {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupConfigurationOutput {
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-    #[doc(hidden)]
     pub group_configuration: ::std::option::Option<crate::types::GroupConfiguration>,
     _request_id: Option<String>,
 }

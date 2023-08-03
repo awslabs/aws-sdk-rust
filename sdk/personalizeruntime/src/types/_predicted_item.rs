@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictedItem {
     /// <p>The recommended item ID.</p>
-    #[doc(hidden)]
     pub item_id: ::std::option::Option<::std::string::String>,
     /// <p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <code>how-scores-work</code>.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f64>,
     /// <p>The name of the promotion that included the predicted item.</p>
-    #[doc(hidden)]
     pub promotion_name: ::std::option::Option<::std::string::String>,
 }
 impl PredictedItem {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachStaticIpInput {
     /// <p>The name of the static IP to detach from the instance.</p>
-    #[doc(hidden)]
     pub static_ip_name: ::std::option::Option<::std::string::String>,
 }
 impl DetachStaticIpInput {

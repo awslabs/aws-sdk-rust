@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncBlocker {
     /// <p>The ID of the sync blocker.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the sync blocker.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BlockerType>,
     /// <p>The status of the sync blocker.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BlockerStatus>,
     /// <p>The reason why the sync blocker was created.</p>
-    #[doc(hidden)]
     pub created_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time when the sync blocker was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contexts for the sync blocker.</p>
-    #[doc(hidden)]
     pub contexts: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlockerContext>>,
     /// <p>The reason the sync blocker was resolved.</p>
-    #[doc(hidden)]
     pub resolved_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time the sync blocker was resolved.</p>
-    #[doc(hidden)]
     pub resolved_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SyncBlocker {

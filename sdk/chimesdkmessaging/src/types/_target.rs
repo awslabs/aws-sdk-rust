@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The ARN of the target channel member.</p>
-    #[doc(hidden)]
     pub member_arn: ::std::option::Option<::std::string::String>,
 }
 impl Target {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResizeInfo {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
-    #[doc(hidden)]
     pub resize_type: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
-    #[doc(hidden)]
     pub allow_cancel_resize: bool,
 }
 impl ResizeInfo {

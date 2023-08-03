@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBatchSegmentJobOutput {
     /// <p>Information on the specified batch segment job.</p>
-    #[doc(hidden)]
     pub batch_segment_job: ::std::option::Option<crate::types::BatchSegmentJob>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionAlias {
     /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
-    #[doc(hidden)]
     pub connection_string: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the connection alias.</p>
-    #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the connection alias.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ConnectionAliasState>,
     /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The association status of the connection alias.</p>
-    #[doc(hidden)]
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>>,
 }
 impl ConnectionAlias {

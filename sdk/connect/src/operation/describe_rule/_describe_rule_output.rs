@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuleOutput {
     /// <p>Information about the rule.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,
 }

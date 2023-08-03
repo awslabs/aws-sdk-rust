@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>The names of the load balancers.</p>
-    #[doc(hidden)]
     pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeTagsInput {

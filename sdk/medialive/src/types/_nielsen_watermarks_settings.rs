@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NielsenWatermarksSettings {
     /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
-    #[doc(hidden)]
     pub nielsen_cbet_settings: ::std::option::Option<crate::types::NielsenCbet>,
     /// Choose the distribution types that you want to assign to the watermarks: - PROGRAM_CONTENT - FINAL_DISTRIBUTOR
-    #[doc(hidden)]
     pub nielsen_distribution_type: ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
-    #[doc(hidden)]
     pub nielsen_naes_ii_nw_settings: ::std::option::Option<crate::types::NielsenNaesIiNw>,
 }
 impl NielsenWatermarksSettings {

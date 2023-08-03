@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSkillGroupInput {
     /// <p>The name for the skill group.</p>
-    #[doc(hidden)]
     pub skill_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the skill group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the skill group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSkillGroupInput {

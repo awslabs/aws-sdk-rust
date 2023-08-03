@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddAttributesActivity {
     /// <p>The name of the addAttributes activity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
     /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl AddAttributesActivity {

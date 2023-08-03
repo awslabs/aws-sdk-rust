@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamodbDataSourceConfig {
     /// <p>The table name.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
-    #[doc(hidden)]
     pub use_caller_credentials: bool,
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
-    #[doc(hidden)]
     pub delta_sync_config: ::std::option::Option<crate::types::DeltaSyncConfig>,
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
-    #[doc(hidden)]
     pub versioned: bool,
 }
 impl DynamodbDataSourceConfig {

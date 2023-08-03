@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrainingJobsOutput {
     /// <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
-    #[doc(hidden)]
     pub training_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrainingJobSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

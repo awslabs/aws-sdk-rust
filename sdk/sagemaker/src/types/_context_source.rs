@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContextSource {
     /// <p>The URI of the source.</p>
-    #[doc(hidden)]
     pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of the source.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the source.</p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
 }
 impl ContextSource {

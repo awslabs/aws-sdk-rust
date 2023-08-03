@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceBlockDeviceMapping {
     /// <p>The device to which these mappings apply.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
     /// <p>Use to manage instance ephemeral devices.</p>
-    #[doc(hidden)]
     pub virtual_name: ::std::option::Option<::std::string::String>,
     /// <p>Use to remove a mapping from the base image.</p>
-    #[doc(hidden)]
     pub no_device: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBlockDeviceMapping {

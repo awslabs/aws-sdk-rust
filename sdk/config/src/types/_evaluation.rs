@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub compliance_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    #[doc(hidden)]
     pub compliance_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that it was evaluated against.</p>
     /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
     /// <p>Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
-    #[doc(hidden)]
     pub annotation: ::std::option::Option<::std::string::String>,
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
-    #[doc(hidden)]
     pub ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Evaluation {

@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningJob {
     /// <p>The ID of the signing job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>Source</code> that contains information about a signing job's code image source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>A <code>SignedObject</code> structure that contains information about a signing job's signed code image.</p>
-    #[doc(hidden)]
     pub signed_object: ::std::option::Option<crate::types::SignedObject>,
     /// <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of the certificate used for the signing job.</p>
-    #[doc(hidden)]
     pub signing_material: ::std::option::Option<crate::types::SigningMaterial>,
     /// <p>The date and time that the signing job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the signing job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SigningStatus>,
     /// <p>Indicates whether the signing job is revoked.</p>
-    #[doc(hidden)]
     pub is_revoked: bool,
     /// <p>The name of the signing profile that created a signing job.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the signing profile that created a signing job.</p>
-    #[doc(hidden)]
     pub profile_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a signing platform.</p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a signing platform.</p>
-    #[doc(hidden)]
     pub platform_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the signature of a signing job expires.</p>
-    #[doc(hidden)]
     pub signature_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS account ID of the job owner.</p>
-    #[doc(hidden)]
     pub job_owner: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the job invoker.</p>
-    #[doc(hidden)]
     pub job_invoker: ::std::option::Option<::std::string::String>,
 }
 impl SigningJob {

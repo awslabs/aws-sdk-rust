@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVirtualServiceOutput {
     /// <p>The virtual service that was deleted.</p>
-    #[doc(hidden)]
     pub virtual_service: ::std::option::Option<crate::types::VirtualServiceData>,
     _request_id: Option<String>,
 }

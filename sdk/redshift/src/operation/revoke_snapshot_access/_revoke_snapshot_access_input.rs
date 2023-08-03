@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeSnapshotAccessInput {
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
-    #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
-    #[doc(hidden)]
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    #[doc(hidden)]
     pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
-    #[doc(hidden)]
     pub account_with_restore_access: ::std::option::Option<::std::string::String>,
 }
 impl RevokeSnapshotAccessInput {

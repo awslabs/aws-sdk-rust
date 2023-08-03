@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingGroupsForThingInput {
     /// <p>The thing whose group memberships will be updated.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The groups to which the thing will be added.</p>
-    #[doc(hidden)]
     pub thing_groups_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The groups from which the thing will be removed.</p>
-    #[doc(hidden)]
     pub thing_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
-    #[doc(hidden)]
     pub override_dynamic_groups: ::std::option::Option<bool>,
 }
 impl UpdateThingGroupsForThingInput {

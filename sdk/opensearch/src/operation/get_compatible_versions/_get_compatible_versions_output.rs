@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCompatibleVersionsOutput {
     /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
-    #[doc(hidden)]
     pub compatible_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>>,
     _request_id: Option<String>,
 }

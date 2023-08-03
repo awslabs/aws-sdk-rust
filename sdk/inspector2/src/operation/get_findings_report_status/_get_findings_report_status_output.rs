@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsReportStatusOutput {
     /// <p>The ID of the report.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the report.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExternalReportStatus>,
     /// <p>The error code of the report.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ReportingErrorCode>,
     /// <p>The error message of the report.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The destination of the report.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>The filter criteria associated with the report.</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     _request_id: Option<String>,
 }

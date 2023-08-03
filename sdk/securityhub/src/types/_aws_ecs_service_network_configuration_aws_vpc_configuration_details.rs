@@ -6,15 +6,12 @@
 pub struct AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
     /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
     /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code> </p>
-    #[doc(hidden)]
     pub assign_public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups associated with the task or service.</p>
     /// <p>You can provide up to five security groups.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the subnets associated with the task or service.</p>
     /// <p>You can provide up to 16 subnets.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {

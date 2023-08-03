@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnStatisticsError {
     /// <p>The <code>ColumnStatistics</code> of the column.</p>
-    #[doc(hidden)]
     pub column_statistics: ::std::option::Option<crate::types::ColumnStatistics>,
     /// <p>An error message with the reason for the failure of an operation.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl ColumnStatisticsError {

@@ -4,34 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBotLocaleOutput {
     /// <p>The specified bot identifier.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The specified bot version.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The specified locale name.</p>
-    #[doc(hidden)]
     pub locale_name: ::std::option::Option<::std::string::String>,
     /// <p>The specified locale identifier.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The specified description of the bot locale.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The specified confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents.</p>
-    #[doc(hidden)]
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
-    #[doc(hidden)]
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     /// <p>The status of the bot.</p>
     /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
     /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
     /// <p>If there was a problem with building the bot, the status is <code>Failed</code>. If the bot was saved but not built, the status is <code>NotBuilt</code>.</p>
-    #[doc(hidden)]
     pub bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     /// <p>A timestamp specifying the date and time that the bot locale was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

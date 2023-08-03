@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelephonyConfig {
     /// <p>Information about traffic distributions.</p>
-    #[doc(hidden)]
     pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
 }
 impl TelephonyConfig {

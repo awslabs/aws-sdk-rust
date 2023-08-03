@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExportOutput {
     /// <p>The name of the bot being exported.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot being exported.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The type of the exported resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The format of the exported data.</p>
-    #[doc(hidden)]
     pub export_type: ::std::option::Option<crate::types::ExportType>,
     /// <p>The status of the export. </p>
     /// <ul>
@@ -21,13 +17,10 @@ pub struct GetExportOutput {
     /// <li> <p> <code>READY</code> - The export is complete.</p> </li>
     /// <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

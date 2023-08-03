@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIngestionOutput {
     /// <p>Contains information about an ingestion.</p>
-    #[doc(hidden)]
     pub ingestion: ::std::option::Option<crate::types::Ingestion>,
     _request_id: Option<String>,
 }

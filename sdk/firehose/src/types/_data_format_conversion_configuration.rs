@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataFormatConversionConfiguration {
     /// <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is required if <code>Enabled</code> is set to true.</p>
-    #[doc(hidden)]
     pub schema_configuration: ::std::option::Option<crate::types::SchemaConfiguration>,
     /// <p>Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if <code>Enabled</code> is set to true.</p>
-    #[doc(hidden)]
     pub input_format_configuration: ::std::option::Option<crate::types::InputFormatConfiguration>,
     /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code> is set to true.</p>
-    #[doc(hidden)]
     pub output_format_configuration: ::std::option::Option<crate::types::OutputFormatConfiguration>,
     /// <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to disable format conversion while preserving the configuration details.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl DataFormatConversionConfiguration {

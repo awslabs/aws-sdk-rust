@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignUpOutput {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
-    #[doc(hidden)]
     pub user_confirmed: bool,
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
-    #[doc(hidden)]
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
-    #[doc(hidden)]
     pub user_sub: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

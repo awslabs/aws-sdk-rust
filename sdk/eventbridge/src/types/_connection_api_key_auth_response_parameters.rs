@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionApiKeyAuthResponseParameters {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
-    #[doc(hidden)]
     pub api_key_name: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionApiKeyAuthResponseParameters {

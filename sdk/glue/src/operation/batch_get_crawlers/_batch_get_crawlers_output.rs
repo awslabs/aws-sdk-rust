@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCrawlersOutput {
     /// <p>A list of crawler definitions.</p>
-    #[doc(hidden)]
     pub crawlers: ::std::option::Option<::std::vec::Vec<crate::types::Crawler>>,
     /// <p>A list of names of crawlers that were not found.</p>
-    #[doc(hidden)]
     pub crawlers_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

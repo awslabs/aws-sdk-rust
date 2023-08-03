@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetCapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type for which the Capacity Reservation reserves capacity.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    #[doc(hidden)]
     pub instance_platform: ::std::option::Option<crate::types::CapacityReservationInstancePlatform>,
     /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The total number of instances for which the Capacity Reservation reserves capacity.</p>
-    #[doc(hidden)]
     pub total_instance_count: ::std::option::Option<i32>,
     /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
-    #[doc(hidden)]
     pub fulfilled_capacity: ::std::option::Option<f64>,
     /// <p>Indicates whether the Capacity Reservation reserves capacity for EBS-optimized instance types.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The date and time at which the Capacity Reservation was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
-    #[doc(hidden)]
     pub weight: ::std::option::Option<f64>,
     /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority"> Instance type priority</a> in the Amazon EC2 User Guide.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
 }
 impl FleetCapacityReservation {

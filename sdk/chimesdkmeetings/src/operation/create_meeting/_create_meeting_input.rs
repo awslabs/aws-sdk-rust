@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The Region in which to create the meeting.</p>
     /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    #[doc(hidden)]
     pub media_region: ::std::option::Option<::std::string::String>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub meeting_host_id: ::std::option::Option<::std::string::String>,
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    #[doc(hidden)]
     pub external_meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    #[doc(hidden)]
     pub notifications_configuration: ::std::option::Option<crate::types::NotificationsConfiguration>,
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    #[doc(hidden)]
     pub meeting_features: ::std::option::Option<crate::types::MeetingFeaturesConfiguration>,
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    #[doc(hidden)]
     pub primary_meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    #[doc(hidden)]
     pub tenant_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
     /// <ul>
@@ -46,7 +38,6 @@ pub struct CreateMeetingInput {
     /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
     /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMeetingInput {

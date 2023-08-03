@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entity {
     /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
-    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
-    #[doc(hidden)]
     pub end_time: f64,
     /// <p>The category of information identified. The only category is <code>PII</code>.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The word or words identified as PII.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score associated with the identified PII entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f64>,
 }
 impl Entity {

@@ -6,19 +6,14 @@
 pub struct ReplicationPendingModifiedValues {
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    #[doc(hidden)]
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The engine version number of the replication instance.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationPendingModifiedValues {

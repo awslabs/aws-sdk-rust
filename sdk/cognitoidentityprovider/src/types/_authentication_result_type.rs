@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AuthenticationResultType {
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The expiration period of the authentication result in seconds.</p>
-    #[doc(hidden)]
     pub expires_in: i32,
     /// <p>The token type.</p>
-    #[doc(hidden)]
     pub token_type: ::std::option::Option<::std::string::String>,
     /// <p>The refresh token.</p>
-    #[doc(hidden)]
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID token.</p>
-    #[doc(hidden)]
     pub id_token: ::std::option::Option<::std::string::String>,
     /// <p>The new device metadata from an authentication result.</p>
-    #[doc(hidden)]
     pub new_device_metadata: ::std::option::Option<crate::types::NewDeviceMetadataType>,
 }
 impl AuthenticationResultType {

@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCatalog {
     /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the data catalog.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataCatalogType>,
     /// <p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
@@ -29,7 +26,6 @@ pub struct DataCatalog {
     /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DataCatalog {

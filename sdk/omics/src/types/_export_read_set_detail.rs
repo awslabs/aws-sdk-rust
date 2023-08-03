@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportReadSetDetail {
     /// <p>The set's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The set's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>,
     /// <p>The set's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ExportReadSetDetail {

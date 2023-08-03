@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesForecastingSettings {
     /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas application.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas application. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
-    #[doc(hidden)]
     pub amazon_forecast_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesForecastingSettings {

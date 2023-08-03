@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGlobalClustersOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub global_clusters: ::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>>,
     _request_id: Option<String>,
 }

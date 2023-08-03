@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommentsForPullRequestInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that contains the pull request.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-    #[doc(hidden)]
     pub before_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
-    #[doc(hidden)]
     pub after_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetCommentsForPullRequestInput {

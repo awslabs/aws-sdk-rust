@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPositionEstimateInput {
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    #[doc(hidden)]
     pub wi_fi_access_points: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
-    #[doc(hidden)]
     pub cell_towers: ::std::option::Option<crate::types::CellTowers>,
     /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<crate::types::Ip>,
     /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
-    #[doc(hidden)]
     pub gnss: ::std::option::Option<crate::types::Gnss>,
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetPositionEstimateInput {

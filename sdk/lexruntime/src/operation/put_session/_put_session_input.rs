@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias in use for the bot that contains the session data.</p>
-    #[doc(hidden)]
     pub bot_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    #[doc(hidden)]
     pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
-    #[doc(hidden)]
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
     /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
@@ -26,7 +21,6 @@ pub struct PutSessionInput {
     /// <li> <p> <code>slotToElict</code> </p> </li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
-    #[doc(hidden)]
     pub recent_intent_summary_view: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>,
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
@@ -42,11 +36,9 @@ pub struct PutSessionInput {
     /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept: ::std::option::Option<::std::string::String>,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
 }
 impl PutSessionInput {

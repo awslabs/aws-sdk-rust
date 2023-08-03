@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventDetailsForOrganizationInput {
     /// <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
-    #[doc(hidden)]
     pub organization_event_detail_filters: ::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>>,
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventDetailsForOrganizationInput {

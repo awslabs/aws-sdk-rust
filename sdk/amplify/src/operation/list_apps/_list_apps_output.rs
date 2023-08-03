@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppsOutput {
     /// <p> A list of Amplify apps. </p>
-    #[doc(hidden)]
     pub apps: ::std::option::Option<::std::vec::Vec<crate::types::App>>,
     /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

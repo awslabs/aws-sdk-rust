@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtocolsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    #[doc(hidden)]
     pub list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specified protocols list.</p>
-    #[doc(hidden)]
     pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified protocols list.</p>
-    #[doc(hidden)]
     pub list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    #[doc(hidden)]
     pub protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProtocolsListDataSummary {

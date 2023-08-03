@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceInsightHealth {
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
-    #[doc(hidden)]
     pub open_proactive_insights: i32,
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
-    #[doc(hidden)]
     pub open_reactive_insights: i32,
 }
 impl ServiceInsightHealth {

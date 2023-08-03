@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Lifecycle {
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
-    #[doc(hidden)]
     pub move_to_cold_storage_after_days: ::std::option::Option<i64>,
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
-    #[doc(hidden)]
     pub delete_after_days: ::std::option::Option<i64>,
 }
 impl Lifecycle {

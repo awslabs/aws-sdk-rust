@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainConfigOutput {
     /// <p>Container for the configuration of the OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub domain_config: ::std::option::Option<crate::types::DomainConfig>,
     _request_id: Option<String>,
 }

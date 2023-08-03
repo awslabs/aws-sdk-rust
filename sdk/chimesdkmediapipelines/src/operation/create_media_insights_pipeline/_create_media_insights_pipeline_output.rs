@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMediaInsightsPipelineOutput {
     /// <p>The media insights pipeline object.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline: ::std::option::Option<crate::types::MediaInsightsPipeline>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExportCertificateOutput {
     /// <p>The base64 PEM-encoded certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

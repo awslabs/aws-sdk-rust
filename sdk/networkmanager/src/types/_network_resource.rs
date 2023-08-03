@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResource {
     /// <p>The ARN of the gateway.</p>
-    #[doc(hidden)]
     pub registered_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -39,25 +35,18 @@ pub struct NetworkResource {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The time that the resource definition was retrieved.</p>
-    #[doc(hidden)]
     pub definition_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The resource metadata.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl NetworkResource {

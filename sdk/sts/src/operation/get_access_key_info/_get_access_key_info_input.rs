@@ -5,7 +5,6 @@
 pub struct GetAccessKeyInfoInput {
     /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or lowercase letter or digit.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessKeyInfoInput {

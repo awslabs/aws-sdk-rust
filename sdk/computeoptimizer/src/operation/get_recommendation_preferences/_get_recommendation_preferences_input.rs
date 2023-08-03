@@ -7,18 +7,14 @@ pub struct GetRecommendationPreferencesInput {
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>An object that describes the scope of the recommendation preference to return.</p>
     /// <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The token to advance to the next page of recommendation preferences.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of recommendation preferences to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetRecommendationPreferencesInput {

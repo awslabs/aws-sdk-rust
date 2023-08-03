@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDashboardForJobRunOutput {
     /// <p>The URL to view job run's dashboard.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

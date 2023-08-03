@@ -5,7 +5,6 @@
 pub struct UpdateLoginProfileInput {
     /// <p>The name of the user whose password you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The new password for the specified IAM user.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
@@ -15,10 +14,8 @@ pub struct UpdateLoginProfileInput {
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
     /// <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
-    #[doc(hidden)]
     pub password_reset_required: ::std::option::Option<bool>,
 }
 impl UpdateLoginProfileInput {

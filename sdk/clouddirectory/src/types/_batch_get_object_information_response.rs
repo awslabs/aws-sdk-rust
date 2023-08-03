@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetObjectInformationResponse {
     /// <p>The facets attached to the specified object.</p>
-    #[doc(hidden)]
     pub schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetObjectInformationResponse {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterSlackWorkspaceForOrganizationOutput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Slack workspace.</p>
-    #[doc(hidden)]
     pub team_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
-    #[doc(hidden)]
     pub account_type: ::std::option::Option<crate::types::AccountType>,
     _request_id: Option<String>,
 }

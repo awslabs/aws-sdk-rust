@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepStatus {
     /// <p>The execution state of the cluster step.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StepState>,
     /// <p>The reason for the step execution status change.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<crate::types::StepStateChangeReason>,
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::FailureDetails>,
     /// <p>The timeline of the cluster step status over time.</p>
-    #[doc(hidden)]
     pub timeline: ::std::option::Option<crate::types::StepTimeline>,
 }
 impl StepStatus {

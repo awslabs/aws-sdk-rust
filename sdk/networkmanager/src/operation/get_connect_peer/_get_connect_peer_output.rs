@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectPeerOutput {
     /// <p>Returns information about a core network Connect peer.</p>
-    #[doc(hidden)]
     pub connect_peer: ::std::option::Option<crate::types::ConnectPeer>,
     _request_id: Option<String>,
 }

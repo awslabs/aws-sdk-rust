@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateComputeEnvironmentOutput {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    #[doc(hidden)]
     pub compute_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    #[doc(hidden)]
     pub compute_environment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

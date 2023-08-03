@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeEndpointAccessInput {
     /// <p>The cluster identifier of the cluster to grant access to.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID to grant access to.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-    #[doc(hidden)]
     pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthorizeEndpointAccessInput {

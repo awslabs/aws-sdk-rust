@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoggerDefinitionInput {
     /// The ID of the logger definition.
-    #[doc(hidden)]
     pub logger_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLoggerDefinitionInput {

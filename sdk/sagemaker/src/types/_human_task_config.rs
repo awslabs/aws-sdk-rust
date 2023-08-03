@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanTaskConfig {
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.</p>
-    #[doc(hidden)]
     pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the user interface that workers use to complete the labeling task.</p>
-    #[doc(hidden)]
     pub ui_config: ::std::option::Option<crate::types::UiConfig>,
     /// <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data object is sent to a human worker. Use this function to provide input to a custom labeling job.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling workflows, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation Lambda</a>. </p>
@@ -346,19 +344,14 @@ pub struct HumanTaskConfig {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub pre_human_task_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
-    #[doc(hidden)]
     pub task_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A title for the task for your human workers.</p>
-    #[doc(hidden)]
     pub task_title: ::std::option::Option<::std::string::String>,
     /// <p>A description of the task for your human workers.</p>
-    #[doc(hidden)]
     pub task_description: ::std::option::Option<::std::string::String>,
     /// <p>The number of human workers that will label an object. </p>
-    #[doc(hidden)]
     pub number_of_human_workers_per_data_object: ::std::option::Option<i32>,
     /// <p>The amount of time that a worker has to complete a task. </p>
     /// <p>If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).</p>
@@ -367,23 +360,18 @@ pub struct HumanTaskConfig {
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the maximum is 8 hours (28,800 seconds).</p> </li>
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub task_time_limit_in_seconds: ::std::option::Option<i32>,
     /// <p>The length of time that a task remains available for labeling by human workers. The default and maximum values for this parameter depend on the type of workforce you use.</p>
     /// <ul>
     /// <li> <p>If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours (21,600 seconds).</p> </li>
     /// <li> <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub task_availability_lifetime_in_seconds: ::std::option::Option<i32>,
     /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
-    #[doc(hidden)]
     pub max_concurrent_task_count: ::std::option::Option<i32>,
     /// <p>Configures how labels are consolidated across human workers.</p>
-    #[doc(hidden)]
     pub annotation_consolidation_config: ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
-    #[doc(hidden)]
     pub public_workforce_task_price: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
 }
 impl HumanTaskConfig {

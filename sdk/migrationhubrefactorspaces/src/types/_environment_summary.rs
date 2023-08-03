@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnvironmentSummary {
     /// <p>The name of the environment. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the environment. </p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The network fabric type of the environment. </p>
-    #[doc(hidden)]
     pub network_fabric_type: ::std::option::Option<crate::types::NetworkFabricType>,
     /// <p>The Amazon Web Services account ID of the environment owner.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Transit Gateway set up by the environment. </p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the environment. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EnvironmentState>,
     /// <p>The tags assigned to the environment. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Any error associated with the environment resource. </p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ErrorResponse>,
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the environment is created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnvironmentSummary {

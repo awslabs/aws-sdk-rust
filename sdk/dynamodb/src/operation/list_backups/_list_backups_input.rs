@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBackupsInput {
     /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of backups to return at once.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
-    #[doc(hidden)]
     pub time_range_lower_bound: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
-    #[doc(hidden)]
     pub time_range_upper_bound: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-    #[doc(hidden)]
     pub exclusive_start_backup_arn: ::std::option::Option<::std::string::String>,
     /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
     /// <p>Where <code>BackupType</code> can be:</p>
@@ -25,7 +20,6 @@ pub struct ListBackupsInput {
     /// <li> <p> <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p> </li>
     /// <li> <p> <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_type: ::std::option::Option<crate::types::BackupTypeFilter>,
 }
 impl ListBackupsInput {

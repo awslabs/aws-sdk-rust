@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeConfiguration {
     /// <p>The Amazon Managed Blockchain instance type for the node.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which the node exists. Required for Ethereum nodes. </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain. </p>
-    #[doc(hidden)]
     pub log_publishing_configuration: ::std::option::Option<crate::types::NodeLogPublishingConfiguration>,
     /// <p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
-    #[doc(hidden)]
     pub state_db: ::std::option::Option<crate::types::StateDbType>,
 }
 impl NodeConfiguration {

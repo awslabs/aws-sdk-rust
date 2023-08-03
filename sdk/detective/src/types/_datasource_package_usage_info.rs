@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasourcePackageUsageInfo {
     /// <p>Total volume of data in bytes per day ingested for a given data source package.</p>
-    #[doc(hidden)]
     pub volume_usage_in_bytes: ::std::option::Option<i64>,
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    #[doc(hidden)]
     pub volume_usage_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasourcePackageUsageInfo {

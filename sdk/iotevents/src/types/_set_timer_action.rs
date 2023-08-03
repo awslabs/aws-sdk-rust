@@ -5,13 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTimerAction {
     /// <p>The name of the timer.</p>
-    #[doc(hidden)]
     pub timer_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
     #[deprecated(
         note = "seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression."
     )]
-    #[doc(hidden)]
     pub seconds: ::std::option::Option<i32>,
     /// <p>The duration of the timer, in seconds. You can use a string expression that includes numbers, variables (<code>$variable.
     /// <variable-name></variable-name></code>), and input values (<code>$input.
@@ -19,7 +17,6 @@ pub struct SetTimerAction {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds. The evaluated result of the duration is rounded down to the nearest whole number. </p>
-    #[doc(hidden)]
     pub duration_expression: ::std::option::Option<::std::string::String>,
 }
 impl SetTimerAction {

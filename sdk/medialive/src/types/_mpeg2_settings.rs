@@ -5,55 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mpeg2Settings {
     /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
-    #[doc(hidden)]
     pub adaptive_quantization: ::std::option::Option<crate::types::Mpeg2AdaptiveQuantization>,
     /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: MediaLive will use the value you specify in fixedAFD.
-    #[doc(hidden)]
     pub afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
     /// Specifies whether to include the color space metadata. The metadata describes the color space that applies to the video (the colorSpace field). We recommend that you insert the metadata.
-    #[doc(hidden)]
     pub color_metadata: ::std::option::Option<crate::types::Mpeg2ColorMetadata>,
     /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide. PASSTHROUGH: Keep the color space of the input content - do not convert it. AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
-    #[doc(hidden)]
     pub color_space: ::std::option::Option<crate::types::Mpeg2ColorSpace>,
     /// Sets the pixel aspect ratio for the encode.
-    #[doc(hidden)]
     pub display_aspect_ratio: ::std::option::Option<crate::types::Mpeg2DisplayRatio>,
     /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied. TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean. When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise. When the content is reasonably clean, the filter tends to decrease the bitrate.
-    #[doc(hidden)]
     pub filter_settings: ::std::option::Option<crate::types::Mpeg2FilterSettings>,
     /// Complete this field only when afdSignaling is set to FIXED. Enter the AFD value (4 bits) to write on all frames of the video encode.
-    #[doc(hidden)]
     pub fixed_afd: ::std::option::Option<crate::types::FixedAfd>,
     /// description": "The framerate denominator. For example, 1001. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
-    #[doc(hidden)]
     pub framerate_denominator: ::std::option::Option<i32>,
     /// The framerate numerator. For example, 24000. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
-    #[doc(hidden)]
     pub framerate_numerator: ::std::option::Option<i32>,
     /// MPEG2: default is open GOP.
-    #[doc(hidden)]
     pub gop_closed_cadence: ::std::option::Option<i32>,
     /// Relates to the GOP structure. The number of B-frames between reference frames. If you do not know what a B-frame is, use the default.
-    #[doc(hidden)]
     pub gop_num_b_frames: ::std::option::Option<i32>,
     /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default. If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
-    #[doc(hidden)]
     pub gop_size: ::std::option::Option<f64>,
     /// Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count.
-    #[doc(hidden)]
     pub gop_size_units: ::std::option::Option<crate::types::Mpeg2GopSizeUnits>,
     /// Set the scan type of the output to PROGRESSIVE or INTERLACED (top field first).
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::Mpeg2ScanType>,
     /// Relates to the GOP structure. If you do not know what GOP is, use the default. FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames. DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
-    #[doc(hidden)]
     pub subgop_length: ::std::option::Option<crate::types::Mpeg2SubGopLength>,
     /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide. DISABLED: do not include timecodes. GOP_TIMECODE: Include timecode metadata in the GOP header.
-    #[doc(hidden)]
     pub timecode_insertion: ::std::option::Option<crate::types::Mpeg2TimecodeInsertionBehavior>,
     /// Timecode burn-in settings
-    #[doc(hidden)]
     pub timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
 }
 impl Mpeg2Settings {

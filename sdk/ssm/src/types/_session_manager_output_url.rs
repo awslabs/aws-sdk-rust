@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionManagerOutputUrl {
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub s3_output_url: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub cloud_watch_output_url: ::std::option::Option<::std::string::String>,
 }
 impl SessionManagerOutputUrl {

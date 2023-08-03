@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThingGroupOutput {
     /// <p>The name of the thing group.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing group ID.</p>
-    #[doc(hidden)]
     pub thing_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing group ARN.</p>
-    #[doc(hidden)]
     pub thing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the thing group.</p>
-    #[doc(hidden)]
     pub version: i64,
     /// <p>The thing group properties.</p>
-    #[doc(hidden)]
     pub thing_group_properties: ::std::option::Option<crate::types::ThingGroupProperties>,
     /// <p>Thing group metadata.</p>
-    #[doc(hidden)]
     pub thing_group_metadata: ::std::option::Option<crate::types::ThingGroupMetadata>,
     /// <p>The dynamic thing group index name.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group search query string.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group query version.</p>
-    #[doc(hidden)]
     pub query_version: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DynamicGroupStatus>,
     _request_id: Option<String>,
 }

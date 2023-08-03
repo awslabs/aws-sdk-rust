@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMyUserProfileInput {
     /// <p>The user's SSH public key.</p>
-    #[doc(hidden)]
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMyUserProfileInput {

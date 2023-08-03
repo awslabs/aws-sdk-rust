@@ -6,13 +6,10 @@
 pub struct ListQueuesInput {
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Pagination token to request the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListQueuesInput {

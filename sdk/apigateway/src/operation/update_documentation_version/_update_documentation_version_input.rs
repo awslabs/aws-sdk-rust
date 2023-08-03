@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi..</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier of the to-be-updated documentation version.</p>
-    #[doc(hidden)]
     pub documentation_version: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    #[doc(hidden)]
     pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateDocumentationVersionInput {

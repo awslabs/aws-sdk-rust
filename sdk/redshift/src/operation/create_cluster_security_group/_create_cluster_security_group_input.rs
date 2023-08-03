@@ -12,13 +12,10 @@ pub struct CreateClusterSecurityGroupInput {
     /// <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>examplesecuritygroup</code> </p>
-    #[doc(hidden)]
     pub cluster_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the security group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterSecurityGroupInput {

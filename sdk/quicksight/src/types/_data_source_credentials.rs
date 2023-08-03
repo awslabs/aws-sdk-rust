@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataSourceCredentials {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
-    #[doc(hidden)]
     pub credential_pair: ::std::option::Option<crate::types::CredentialPair>,
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
-    #[doc(hidden)]
     pub copy_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceCredentials {

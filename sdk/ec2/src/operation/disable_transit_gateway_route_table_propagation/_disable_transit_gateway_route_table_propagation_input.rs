@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableTransitGatewayRouteTablePropagationInput {
     /// <p>The ID of the propagation route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the route table announcement.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_announcement_id: ::std::option::Option<::std::string::String>,
 }
 impl DisableTransitGatewayRouteTablePropagationInput {

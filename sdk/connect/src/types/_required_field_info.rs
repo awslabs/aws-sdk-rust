@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequiredFieldInfo {
     /// <p>The unique identifier for the field.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
 impl RequiredFieldInfo {

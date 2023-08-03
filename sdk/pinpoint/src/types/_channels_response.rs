@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelsResponse {
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChannelResponse>>,
 }
 impl ChannelsResponse {

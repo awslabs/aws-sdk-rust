@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseEndpoint {
     /// <p>Specifies the port that the database is listening on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies the DNS address of the database.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<::std::string::String>,
 }
 impl RelationalDatabaseEndpoint {

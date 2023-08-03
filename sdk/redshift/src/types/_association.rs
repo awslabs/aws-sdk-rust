@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Association {
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>
-    #[doc(hidden)]
     pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The expiration date for the certificate.</p>
-    #[doc(hidden)]
     pub custom_domain_certificate_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of all associated clusters and domain names tied to a specific certificate.</p>
-    #[doc(hidden)]
     pub certificate_associations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateAssociation>>,
 }
 impl Association {

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectVersion {
     /// <p>The entity tag is an MD5 hash of that version of the object.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm that was used to create a checksum of the object.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object.</p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p>The class of storage used to store the object.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::ObjectVersionStorageClass>,
     /// <p>The object key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Version ID of an object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
-    #[doc(hidden)]
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the owner of the object.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub restore_status: ::std::option::Option<crate::types::RestoreStatus>,
 }
 impl ObjectVersion {

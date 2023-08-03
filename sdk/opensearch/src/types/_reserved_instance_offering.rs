@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstanceOffering {
     /// <p>The unique identifier of the Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The OpenSearch instance type offered by the Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     /// <p>The duration, in seconds, for which the offering will reserve the OpenSearch instance.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub fixed_price: ::std::option::Option<f64>,
     /// <p>The hourly rate at which you're charged for the domain using this Reserved Instance.</p>
-    #[doc(hidden)]
     pub usage_price: ::std::option::Option<f64>,
     /// <p>The currency code for the Reserved Instance offering.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>Payment option for the Reserved Instance offering</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::ReservedInstancePaymentOption>,
     /// <p>The recurring charge to your account, regardless of whether you creates any domains using the offering.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedInstanceOffering {

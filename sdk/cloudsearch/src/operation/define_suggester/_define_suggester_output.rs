@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
-    #[doc(hidden)]
     pub suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
 }

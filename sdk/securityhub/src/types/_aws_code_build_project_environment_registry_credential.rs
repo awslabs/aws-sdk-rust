@@ -7,11 +7,9 @@ pub struct AwsCodeBuildProjectEnvironmentRegistryCredential {
     /// <p>The ARN or name of credentials created using Secrets Manager.</p> <note>
     /// <p>The credential can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
     /// </note>
-    #[doc(hidden)]
     pub credential: ::std::option::Option<::std::string::String>,
     /// <p>The service that created the credentials to access a private Docker registry.</p>
     /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
-    #[doc(hidden)]
     pub credential_provider: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectEnvironmentRegistryCredential {

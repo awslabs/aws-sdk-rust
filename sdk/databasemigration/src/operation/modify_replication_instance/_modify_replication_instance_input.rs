@@ -5,38 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    #[doc(hidden)]
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    #[doc(hidden)]
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
-    #[doc(hidden)]
     pub allow_major_version_upgrade: bool,
     /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
     /// <p>An outage does result if these factors apply: </p>
@@ -47,13 +38,10 @@ pub struct ModifyReplicationInstanceInput {
     /// </ul>
     /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
     /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub replication_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyReplicationInstanceInput {

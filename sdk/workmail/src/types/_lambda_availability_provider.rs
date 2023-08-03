@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    #[doc(hidden)]
     pub lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaAvailabilityProvider {

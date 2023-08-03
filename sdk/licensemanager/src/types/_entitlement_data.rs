@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitlementData {
     /// <p>Entitlement data name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Entitlement data value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Entitlement data unit.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::EntitlementDataUnit>,
 }
 impl EntitlementData {

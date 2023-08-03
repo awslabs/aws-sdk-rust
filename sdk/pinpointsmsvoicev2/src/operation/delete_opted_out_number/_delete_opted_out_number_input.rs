@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
-    #[doc(hidden)]
     pub opted_out_number: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptedOutNumberInput {

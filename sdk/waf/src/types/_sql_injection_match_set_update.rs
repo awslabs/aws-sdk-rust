@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlInjectionMatchSetUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.</p>
-    #[doc(hidden)]
     pub sql_injection_match_tuple: ::std::option::Option<crate::types::SqlInjectionMatchTuple>,
 }
 impl SqlInjectionMatchSetUpdate {

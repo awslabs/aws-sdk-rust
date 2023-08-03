@@ -5,10 +5,8 @@
 pub struct ModifyCertificatesInput {
     /// <p>The new default certificate identifier to override the current one with.</p>
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
-    #[doc(hidden)]
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
-    #[doc(hidden)]
     pub remove_customer_override: ::std::option::Option<bool>,
 }
 impl ModifyCertificatesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentConfigurationStatus {
     /// <p>The agent ID.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>
-    #[doc(hidden)]
     pub operation_succeeded: bool,
     /// <p>A description of the operation performed.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl AgentConfigurationStatus {

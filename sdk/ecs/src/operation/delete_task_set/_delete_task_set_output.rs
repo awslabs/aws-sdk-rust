@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTaskSetOutput {
     /// <p>Details about the task set.</p>
-    #[doc(hidden)]
     pub task_set: ::std::option::Option<crate::types::TaskSet>,
     _request_id: Option<String>,
 }

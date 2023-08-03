@@ -5,51 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscriberResource {
     /// <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
-    #[doc(hidden)]
     pub subscriber_id: ::std::option::Option<::std::string::String>,
     /// <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
-    #[doc(hidden)]
     pub subscriber_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS identity used to access your data.</p>
-    #[doc(hidden)]
     pub subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     /// <p>The name of your Amazon Security Lake subscriber account.</p>
-    #[doc(hidden)]
     pub subscriber_name: ::std::option::Option<::std::string::String>,
     /// <p>The subscriber descriptions for a subscriber account. The description for a subscriber includes <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriberId</code>.</p>
-    #[doc(hidden)]
     pub subscriber_description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security Lake User Guide</a>.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
     /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber.</p>
     /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
-    #[doc(hidden)]
     pub access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
     /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
-    #[doc(hidden)]
     pub subscriber_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
-    #[doc(hidden)]
     pub subscriber_status: ::std::option::Option<crate::types::SubscriberStatus>,
     /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
     /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
-    #[doc(hidden)]
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource share.</p>
-    #[doc(hidden)]
     pub resource_share_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the subscriber was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the subscriber was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SubscriberResource {

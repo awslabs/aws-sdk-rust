@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    #[doc(hidden)]
     pub sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
-    #[doc(hidden)]
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
-    #[doc(hidden)]
     pub with_event: ::std::option::Option<bool>,
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-    #[doc(hidden)]
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchExecuteStatementInput {

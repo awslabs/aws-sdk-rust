@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
     /// <p>The options in the network resource definition.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
     /// <p>The count in the network resource definition.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl NetworkResourceDefinition {

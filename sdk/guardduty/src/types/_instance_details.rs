@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceDetails {
     /// <p>The Availability Zone of the EC2 instance.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The profile information of the EC2 instance.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
     /// <p>The image description of the EC2 instance.</p>
-    #[doc(hidden)]
     pub image_description: ::std::option::Option<::std::string::String>,
     /// <p>The image ID of the EC2 instance.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_state: ::std::option::Option<::std::string::String>,
     /// <p>The type of the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The launch time of the EC2 instance.</p>
-    #[doc(hidden)]
     pub launch_time: ::std::option::Option<::std::string::String>,
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>The platform of the EC2 instance.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The product code of the EC2 instance.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>The tags of the EC2 instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceDetails {

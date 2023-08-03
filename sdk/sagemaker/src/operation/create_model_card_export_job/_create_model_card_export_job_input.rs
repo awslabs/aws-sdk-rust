@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelCardExportJobInput {
     /// <p>The name of the model card to export.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.</p>
-    #[doc(hidden)]
     pub model_card_version: ::std::option::Option<i32>,
     /// <p>The name of the model card export job.</p>
-    #[doc(hidden)]
     pub model_card_export_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::ModelCardExportOutputConfig>,
 }
 impl CreateModelCardExportJobInput {

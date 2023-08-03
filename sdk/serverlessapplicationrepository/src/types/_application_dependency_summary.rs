@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationDependencySummary {
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the nested application.</p>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationDependencySummary {

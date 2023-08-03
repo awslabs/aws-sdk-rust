@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationOutput {
     /// The status of the logging configuration.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     _request_id: Option<String>,
 }

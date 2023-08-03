@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendSerialConsoleSshPublicKeyInput {
     /// <p>The ID of the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
     /// <p>Default: 0</p>
-    #[doc(hidden)]
     pub serial_port: i32,
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
 }
 impl SendSerialConsoleSshPublicKeyInput {

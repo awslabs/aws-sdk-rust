@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionSelectorSettings {
     /// Ancillary Source Settings
-    #[doc(hidden)]
     pub ancillary_source_settings: ::std::option::Option<crate::types::AncillarySourceSettings>,
     /// Arib Source Settings
-    #[doc(hidden)]
     pub arib_source_settings: ::std::option::Option<crate::types::AribSourceSettings>,
     /// Dvb Sub Source Settings
-    #[doc(hidden)]
     pub dvb_sub_source_settings: ::std::option::Option<crate::types::DvbSubSourceSettings>,
     /// Embedded Source Settings
-    #[doc(hidden)]
     pub embedded_source_settings: ::std::option::Option<crate::types::EmbeddedSourceSettings>,
     /// Scte20 Source Settings
-    #[doc(hidden)]
     pub scte20_source_settings: ::std::option::Option<crate::types::Scte20SourceSettings>,
     /// Scte27 Source Settings
-    #[doc(hidden)]
     pub scte27_source_settings: ::std::option::Option<crate::types::Scte27SourceSettings>,
     /// Teletext Source Settings
-    #[doc(hidden)]
     pub teletext_source_settings: ::std::option::Option<crate::types::TeletextSourceSettings>,
 }
 impl CaptionSelectorSettings {

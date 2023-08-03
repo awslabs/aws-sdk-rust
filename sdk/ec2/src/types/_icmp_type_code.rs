@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IcmpTypeCode {
     /// <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<i32>,
     /// <p>The ICMP type. A value of -1 means all types.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<i32>,
 }
 impl IcmpTypeCode {

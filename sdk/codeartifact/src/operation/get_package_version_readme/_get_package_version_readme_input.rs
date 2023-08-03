@@ -4,29 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageVersionReadmeInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The repository that contains the package with the requested readme file. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p> A format that specifies the type of the package version with the requested readme file. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package version that contains the requested readme file. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
 }
 impl GetPackageVersionReadmeInput {

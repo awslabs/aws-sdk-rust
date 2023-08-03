@@ -9,10 +9,8 @@ pub struct ListTagsForResourcesInput {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TagResourceType>,
     /// <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
-    #[doc(hidden)]
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListTagsForResourcesInput {

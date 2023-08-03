@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachDiskInput {
     /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
-    #[doc(hidden)]
     pub disk_name: ::std::option::Option<::std::string::String>,
 }
 impl DetachDiskInput {

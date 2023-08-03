@@ -5,38 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbv2LoadBalancerDetails {
     /// <p>The Availability Zones for the load balancer.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
-    #[doc(hidden)]
     pub canonical_hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the load balancer was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The public DNS name of the load balancer.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses.</p>
-    #[doc(hidden)]
     pub scheme: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups for the load balancer.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the load balancer.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::LoadBalancerState>,
     /// <p>The type of load balancer.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC for the load balancer.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Attributes of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AwsElbv2LoadBalancerAttribute>>,
 }
 impl AwsElbv2LoadBalancerDetails {

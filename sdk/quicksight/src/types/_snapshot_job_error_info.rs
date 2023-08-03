@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotJobErrorInfo {
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error type.</p>
-    #[doc(hidden)]
     pub error_type: ::std::option::Option<::std::string::String>,
 }
 impl SnapshotJobErrorInfo {

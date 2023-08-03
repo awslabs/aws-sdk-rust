@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationsOutput {
     /// <p>A key in the response map. The value is an array of data.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroupMembership {
     /// <p>The unique ID for this security group.</p>
-    #[doc(hidden)]
     pub security_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of this security group.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupMembership {

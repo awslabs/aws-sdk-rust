@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceUpdate {
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the service update is initially available</p>
-    #[doc(hidden)]
     pub service_update_release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date after which the service update is no longer available</p>
-    #[doc(hidden)]
     pub service_update_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The severity of the service update</p>
-    #[doc(hidden)]
     pub service_update_severity: ::std::option::Option<crate::types::ServiceUpdateSeverity>,
     /// <p>The recommendend date to apply the service update in order to ensure compliance. For information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service Security Updates for Compliance</a>.</p>
-    #[doc(hidden)]
     pub service_update_recommended_apply_by_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the service update</p>
-    #[doc(hidden)]
     pub service_update_status: ::std::option::Option<crate::types::ServiceUpdateStatus>,
     /// <p>Provides details of the service update</p>
-    #[doc(hidden)]
     pub service_update_description: ::std::option::Option<::std::string::String>,
     /// <p>Reflects the nature of the service update</p>
-    #[doc(hidden)]
     pub service_update_type: ::std::option::Option<crate::types::ServiceUpdateType>,
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticache engine version to which the update applies. Either Redis or Memcached engine version</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the service update will be automatically applied once the recommended apply-by date has expired. </p>
-    #[doc(hidden)]
     pub auto_update_after_recommended_apply_by_date: ::std::option::Option<bool>,
     /// <p>The estimated length of time the service update will take</p>
-    #[doc(hidden)]
     pub estimated_update_time: ::std::option::Option<::std::string::String>,
 }
 impl ServiceUpdate {

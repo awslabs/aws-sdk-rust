@@ -11,7 +11,6 @@ pub struct Media {
     /// <li> <p> <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> </p> </li>
     /// </ul>
     /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p>
-    #[doc(hidden)]
     pub media_file_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of the media file you want to redact. For example:</p>
     /// <ul>
@@ -21,7 +20,6 @@ pub struct Media {
     /// <p>Note that the Amazon S3 bucket that contains your input media must be located in the same Amazon Web Services Region where you're making your transcription request.</p> <important>
     /// <p> <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.</p>
     /// </important>
-    #[doc(hidden)]
     pub redacted_media_file_uri: ::std::option::Option<::std::string::String>,
 }
 impl Media {

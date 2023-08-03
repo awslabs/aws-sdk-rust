@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the assignment.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
@@ -18,13 +15,10 @@ pub struct UpdateIamPolicyAssignmentInput {
     /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
     /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
     /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    #[doc(hidden)]
     pub identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl UpdateIamPolicyAssignmentInput {

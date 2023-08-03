@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectionsOutput {
     /// <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
-    #[doc(hidden)]
     pub connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     /// <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

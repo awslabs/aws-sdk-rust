@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenGenericDataField {
     /// <p>The data type for the generic data field.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::CodegenGenericDataFieldDataType>,
     /// <p>The value of the data type for the generic data field.</p>
-    #[doc(hidden)]
     pub data_type_value: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the generic data field is required.</p>
-    #[doc(hidden)]
     pub required: ::std::option::Option<bool>,
     /// <p>Specifies whether the generic data field is read-only.</p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
     /// <p>Specifies whether the generic data field is an array.</p>
-    #[doc(hidden)]
     pub is_array: ::std::option::Option<bool>,
     /// <p>The relationship of the generic data schema.</p>
-    #[doc(hidden)]
     pub relationship: ::std::option::Option<crate::types::CodegenGenericDataRelationshipType>,
 }
 impl CodegenGenericDataField {

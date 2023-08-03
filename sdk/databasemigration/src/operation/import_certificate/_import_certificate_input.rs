@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    #[doc(hidden)]
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    #[doc(hidden)]
     pub certificate_wallet: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The tags associated with the certificate.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportCertificateInput {

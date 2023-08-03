@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub forgot_password: ::std::option::Option<crate::types::CreateBackendAuthForgotPasswordConfig>,
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub mfa: ::std::option::Option<crate::types::CreateBackendAuthMfaConfig>,
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub o_auth: ::std::option::Option<crate::types::CreateBackendAuthOAuthConfig>,
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub password_policy: ::std::option::Option<crate::types::CreateBackendAuthPasswordPolicyConfig>,
     /// <p>The required attributes to sign up new users in the user pool.</p>
-    #[doc(hidden)]
     pub required_sign_up_attributes: ::std::option::Option<::std::vec::Vec<crate::types::RequiredSignUpAttributesElement>>,
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub sign_in_method: ::std::option::Option<crate::types::SignInMethod>,
     /// <p>The Amazon Cognito user pool name.</p>
-    #[doc(hidden)]
     pub user_pool_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    #[doc(hidden)]
     pub verification_message: ::std::option::Option<crate::types::CreateBackendAuthVerificationMessageConfig>,
 }
 impl CreateBackendAuthUserPoolConfig {

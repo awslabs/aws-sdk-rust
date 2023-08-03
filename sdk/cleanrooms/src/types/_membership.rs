@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Membership {
     /// <p>The unique ID of the membership.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the membership.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the membership's associated collaboration.</p>
-    #[doc(hidden)]
     pub collaboration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the membership's collaboration.</p>
-    #[doc(hidden)]
     pub collaboration_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub collaboration_creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the collaboration creator.</p>
-    #[doc(hidden)]
     pub collaboration_creator_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the membership's collaboration.</p>
-    #[doc(hidden)]
     pub collaboration_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the membership was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the membership metadata was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MembershipStatus>,
     /// <p>The abilities granted to the collaboration member.</p>
-    #[doc(hidden)]
     pub member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    #[doc(hidden)]
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
 }
 impl Membership {

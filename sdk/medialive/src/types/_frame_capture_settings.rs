@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameCaptureSettings {
     /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
-    #[doc(hidden)]
     pub capture_interval: ::std::option::Option<i32>,
     /// Unit for the frame capture interval.
-    #[doc(hidden)]
     pub capture_interval_units: ::std::option::Option<crate::types::FrameCaptureIntervalUnit>,
     /// Timecode burn-in settings
-    #[doc(hidden)]
     pub timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
 }
 impl FrameCaptureSettings {

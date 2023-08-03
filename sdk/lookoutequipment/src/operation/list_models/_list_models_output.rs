@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
-    #[doc(hidden)]
     pub model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>>,
     _request_id: Option<String>,
 }

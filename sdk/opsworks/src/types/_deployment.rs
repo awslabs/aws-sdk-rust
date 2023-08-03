@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deployment {
     /// <p>The deployment ID.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>Date when the deployment was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>Date when the deployment completed.</p>
-    #[doc(hidden)]
     pub completed_at: ::std::option::Option<::std::string::String>,
     /// <p>The deployment duration.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// <p>The user's IAM ARN.</p>
-    #[doc(hidden)]
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined comment.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>Used to specify a stack or deployment command.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<crate::types::DeploymentCommand>,
     /// <p>The deployment status:</p>
     /// <ul>
@@ -37,15 +28,12 @@ pub struct Deployment {
     /// <li> <p>successful</p> </li>
     /// <li> <p>failed</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    #[doc(hidden)]
     pub custom_json: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the target instances.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Deployment {

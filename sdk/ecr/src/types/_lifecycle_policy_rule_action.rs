@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicyRuleAction {
     /// <p>The type of action to be taken.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImageActionType>,
 }
 impl LifecyclePolicyRuleAction {

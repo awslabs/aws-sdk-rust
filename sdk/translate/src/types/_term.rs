@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Term {
     /// <p>The source text of the term being translated by the custom terminology.</p>
-    #[doc(hidden)]
     pub source_text: ::std::option::Option<::std::string::String>,
     /// <p>The target text of the term being translated by the custom terminology.</p>
-    #[doc(hidden)]
     pub target_text: ::std::option::Option<::std::string::String>,
 }
 impl Term {

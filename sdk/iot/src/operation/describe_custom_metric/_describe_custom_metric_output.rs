@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomMetricOutput {
     /// <p> The name of the custom metric. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
-    #[doc(hidden)]
     pub metric_arn: ::std::option::Option<::std::string::String>,
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but while submitting the metrics value in the DeviceMetrics report, it must be passed as an array with a single value.</p>
     /// </important>
-    #[doc(hidden)]
     pub metric_type: ::std::option::Option<crate::types::CustomMetricType>,
     /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

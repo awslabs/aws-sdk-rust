@@ -9,10 +9,8 @@ pub struct ListRecordHistorySearchFilter {
     /// <li> <p> <code>product</code> - Filter results based on the specified product identifier.</p> </li>
     /// <li> <p> <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The filter value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ListRecordHistorySearchFilter {

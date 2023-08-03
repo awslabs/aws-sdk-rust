@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSiteToSiteVpnAttachmentInput {
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifying the VPN attachment.</p>
-    #[doc(hidden)]
     pub vpn_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSiteToSiteVpnAttachmentInput {

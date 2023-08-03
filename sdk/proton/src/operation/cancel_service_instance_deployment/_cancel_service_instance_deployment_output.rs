@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelServiceInstanceDeploymentOutput {
     /// <p>The service instance summary data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub service_instance: ::std::option::Option<crate::types::ServiceInstance>,
     _request_id: Option<String>,
 }

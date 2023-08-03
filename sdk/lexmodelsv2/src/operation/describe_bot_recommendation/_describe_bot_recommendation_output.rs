@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBotRecommendationOutput {
     /// <p>The identifier of the bot associated with the bot recommendation.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the bot recommendation.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale of the bot recommendation to describe.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    #[doc(hidden)]
     pub bot_recommendation_status: ::std::option::Option<crate::types::BotRecommendationStatus>,
     /// <p>The identifier of the bot recommendation being described.</p>
-    #[doc(hidden)]
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>If botRecommendationStatus is Failed, Amazon Lex explains why.</p>
-    #[doc(hidden)]
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time that the bot recommendation was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the bot recommendation was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    #[doc(hidden)]
     pub transcript_source_setting: ::std::option::Option<crate::types::TranscriptSourceSetting>,
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    #[doc(hidden)]
     pub encryption_setting: ::std::option::Option<crate::types::EncryptionSetting>,
     /// <p>The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.</p>
-    #[doc(hidden)]
     pub bot_recommendation_results: ::std::option::Option<crate::types::BotRecommendationResults>,
     _request_id: Option<String>,
 }

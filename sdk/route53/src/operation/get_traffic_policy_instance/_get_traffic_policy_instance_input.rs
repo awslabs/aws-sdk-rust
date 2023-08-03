@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to get information about.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetTrafficPolicyInstanceInput {

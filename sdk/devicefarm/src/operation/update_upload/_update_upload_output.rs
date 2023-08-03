@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUploadOutput {
     /// <p>A test spec uploaded to Device Farm.</p>
-    #[doc(hidden)]
     pub upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }

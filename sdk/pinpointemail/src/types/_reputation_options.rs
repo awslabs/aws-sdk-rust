@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReputationOptions {
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
-    #[doc(hidden)]
     pub reputation_metrics_enabled: bool,
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
-    #[doc(hidden)]
     pub last_fresh_start: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReputationOptions {

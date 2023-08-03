@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsImageProperties {
     /// <p>Information about the quality of the image foreground as defined by brightness, sharpness, and contrast. The higher the value the greater the brightness, sharpness, and contrast respectively.</p>
-    #[doc(hidden)]
     pub quality: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
     /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    #[doc(hidden)]
     pub dominant_colors: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
     /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-    #[doc(hidden)]
     pub foreground: ::std::option::Option<crate::types::DetectLabelsImageForeground>,
     /// <p>Information about the properties of an image’s background, including the background’s quality and dominant colors, including the quality and dominant colors of the image.</p>
-    #[doc(hidden)]
     pub background: ::std::option::Option<crate::types::DetectLabelsImageBackground>,
 }
 impl DetectLabelsImageProperties {

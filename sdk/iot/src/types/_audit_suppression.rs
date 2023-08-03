@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditSuppression {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    #[doc(hidden)]
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
-    #[doc(hidden)]
     pub suppress_indefinitely: ::std::option::Option<bool>,
     /// <p> The description of the audit suppression. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl AuditSuppression {

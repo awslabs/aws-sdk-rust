@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAggregateDiscoveredResourcesInput {
     /// <p>The name of the configuration aggregator. </p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resources that you want Config to list in the response.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ResourceFilters>,
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAggregateDiscoveredResourcesInput {

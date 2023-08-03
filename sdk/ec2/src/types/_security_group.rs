@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroup {
     /// <p>A description of the security group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The inbound rules associated with the security group.</p>
-    #[doc(hidden)]
     pub ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The outbound rules associated with the security group.</p>
-    #[doc(hidden)]
     pub ip_permissions_egress: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>Any tags assigned to the security group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC for the security group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroup {

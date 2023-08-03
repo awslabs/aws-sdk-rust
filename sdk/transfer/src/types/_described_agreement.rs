@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedAgreement {
     /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    #[doc(hidden)]
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or short description that's used to identify the agreement.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the agreement, either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgreementStatusType>,
     /// <p>A system-assigned unique identifier for a server instance. This identifier indicates the specific server that the agreement uses.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the AS2 local profile.</p>
-    #[doc(hidden)]
     pub local_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    #[doc(hidden)]
     pub partner_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
-    #[doc(hidden)]
     pub base_directory: ::std::option::Option<::std::string::String>,
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
-    #[doc(hidden)]
     pub access_role: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DescribedAgreement {

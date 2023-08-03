@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopPiiEntitiesDetectionJobInput {
     /// <p>The identifier of the PII entities detection job to stop.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl StopPiiEntitiesDetectionJobInput {

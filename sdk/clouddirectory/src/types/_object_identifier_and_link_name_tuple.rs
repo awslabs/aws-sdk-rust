@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectIdentifierAndLinkNameTuple {
     /// <p>The ID that is associated with the object.</p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the link between the parent and the child object.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl ObjectIdentifierAndLinkNameTuple {

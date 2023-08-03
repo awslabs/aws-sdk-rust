@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VulnerablePackage {
     /// <p>The architecture of the vulnerable package.</p>
-    #[doc(hidden)]
     pub arch: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of the vulnerable package.</p>
-    #[doc(hidden)]
     pub epoch: ::std::option::Option<i32>,
     /// <p>The file path of the vulnerable package.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vulnerable package.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The package manager of the vulnerable package.</p>
-    #[doc(hidden)]
     pub package_manager: ::std::option::Option<::std::string::String>,
     /// <p>The release of the vulnerable package.</p>
-    #[doc(hidden)]
     pub release: ::std::option::Option<::std::string::String>,
     /// <p>The source layer hash of the vulnerable package.</p>
-    #[doc(hidden)]
     pub source_layer_hash: ::std::option::Option<::std::string::String>,
     /// <p>The version of the vulnerable package.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackage {

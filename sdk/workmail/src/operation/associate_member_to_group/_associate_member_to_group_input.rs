@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateMemberToGroupInput {
     /// <p>The organization under which the group exists.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The group to which the member (user or group) is associated.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The member (user or group) to associate to the group.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateMemberToGroupInput {

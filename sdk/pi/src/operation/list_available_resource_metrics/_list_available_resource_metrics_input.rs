@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
     /// <ul>
@@ -16,13 +14,10 @@ pub struct ListAvailableResourceMetricsInput {
     /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return. If the <code>MaxRecords</code> value is less than the number of existing items, the response includes a pagination token. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAvailableResourceMetricsInput {

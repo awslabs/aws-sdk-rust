@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayoutSections {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
-    #[doc(hidden)]
     pub sections: ::std::option::Option<::std::vec::Vec<crate::types::Section>>,
 }
 impl LayoutSections {

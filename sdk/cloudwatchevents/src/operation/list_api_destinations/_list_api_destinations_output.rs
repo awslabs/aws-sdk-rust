@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApiDestinationsOutput {
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
-    #[doc(hidden)]
     pub api_destinations: ::std::option::Option<::std::vec::Vec<crate::types::ApiDestination>>,
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

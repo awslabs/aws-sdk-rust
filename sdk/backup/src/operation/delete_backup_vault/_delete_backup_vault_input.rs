@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBackupVaultInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBackupVaultInput {

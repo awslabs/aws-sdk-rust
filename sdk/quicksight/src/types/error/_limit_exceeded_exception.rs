@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Limit exceeded.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ExceptionResourceType>,
     /// <p>The Amazon Web Services request ID for this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

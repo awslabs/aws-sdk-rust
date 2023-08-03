@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
     /// <p>Enables fine-grained access control. </p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Enables the internal user database. </p>
-    #[doc(hidden)]
     pub internal_user_database_enabled: bool,
     /// <p>Specifies information about the master user of the domain. </p>
-    #[doc(hidden)]
     pub master_user_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails>,
 }
 impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {

@@ -4,58 +4,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntentOutput {
     /// <p>The name of the intent.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the intent.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of intent slots configured for the intent.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
     /// <p>An array of sample utterances configured for the intent.</p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
-    #[doc(hidden)]
     pub confirmation_prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-    #[doc(hidden)]
     pub rejection_statement: ::std::option::Option<crate::types::Statement>,
     /// <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
-    #[doc(hidden)]
     pub follow_up_prompt: ::std::option::Option<crate::types::FollowUpPrompt>,
     /// <p>After the Lambda function specified in the <code>fulfillmentActivity</code> element fulfills the intent, Amazon Lex conveys this statement to the user.</p>
-    #[doc(hidden)]
     pub conclusion_statement: ::std::option::Option<crate::types::Statement>,
     /// <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
-    #[doc(hidden)]
     pub dialog_code_hook: ::std::option::Option<crate::types::CodeHook>,
     /// <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
-    #[doc(hidden)]
     pub fulfillment_activity: ::std::option::Option<crate::types::FulfillmentActivity>,
     /// <p>A unique identifier for a built-in intent.</p>
-    #[doc(hidden)]
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
     /// <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the intent was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of the intent.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Checksum of the intent.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    #[doc(hidden)]
     pub kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    #[doc(hidden)]
     pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    #[doc(hidden)]
     pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     _request_id: Option<String>,
 }

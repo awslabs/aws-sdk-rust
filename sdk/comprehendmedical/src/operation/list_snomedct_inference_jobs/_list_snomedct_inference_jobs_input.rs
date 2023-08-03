@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSnomedctInferenceJobsInput {
     /// <p>Provides information for filtering a list of detection jobs.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     /// <p> Identifies the next page of InferSNOMEDCT results to return. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of results to return in each page. The default is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSnomedctInferenceJobsInput {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditFindingsInput {
     /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>A filter to limit results to the findings for the specified audit check.</p>
-    #[doc(hidden)]
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>Information identifying the noncompliant resource.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
-    #[doc(hidden)]
     pub list_suppressed_findings: ::std::option::Option<bool>,
 }
 impl ListAuditFindingsInput {

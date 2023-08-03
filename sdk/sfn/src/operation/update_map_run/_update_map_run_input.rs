@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMapRunInput {
     /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
-    #[doc(hidden)]
     pub map_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<i32>,
     /// <p>The maximum percentage of failed items before the Map Run fails.</p>
-    #[doc(hidden)]
     pub tolerated_failure_percentage: ::std::option::Option<f32>,
     /// <p>The maximum number of failed items before the Map Run fails.</p>
-    #[doc(hidden)]
     pub tolerated_failure_count: ::std::option::Option<i64>,
 }
 impl UpdateMapRunInput {

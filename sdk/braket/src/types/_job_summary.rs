@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The status of the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobPrimaryStatus>,
     /// <p>The ARN of the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the Amazon Braket job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Braket job was started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Braket job ended.</p>
-    #[doc(hidden)]
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobSummary {

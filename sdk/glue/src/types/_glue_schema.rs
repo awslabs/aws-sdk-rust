@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueSchema {
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
 }
 impl GlueSchema {

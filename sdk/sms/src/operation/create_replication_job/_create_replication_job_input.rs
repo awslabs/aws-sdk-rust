@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReplicationJobInput {
     /// <p>The ID of the server.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The seed replication time.</p>
-    #[doc(hidden)]
     pub seed_replication_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time between consecutive replication runs, in hours.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
-    #[doc(hidden)]
     pub run_once: ::std::option::Option<bool>,
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<crate::types::LicenseType>,
     /// <p>The name of the IAM role to be used by the Server Migration Service.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the replication job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
-    #[doc(hidden)]
     pub number_of_recent_amis_to_keep: ::std::option::Option<i32>,
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -38,7 +29,6 @@ pub struct CreateReplicationJobInput {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateReplicationJobInput {

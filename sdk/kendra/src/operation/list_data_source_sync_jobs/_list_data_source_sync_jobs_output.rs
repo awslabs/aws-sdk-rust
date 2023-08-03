@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSourceSyncJobsOutput {
     /// <p>A history of synchronization jobs for the data source connector.</p>
-    #[doc(hidden)]
     pub history: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSyncJob>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

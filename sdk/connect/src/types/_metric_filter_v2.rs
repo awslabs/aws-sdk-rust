@@ -6,12 +6,10 @@
 pub struct MetricFilterV2 {
     /// <p>The key to use for filtering data. </p>
     /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
-    #[doc(hidden)]
     pub metric_filter_key: ::std::option::Option<::std::string::String>,
     /// <p>The values to use for filtering data. </p>
     /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> </p>
     /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code> </p>
-    #[doc(hidden)]
     pub metric_filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricFilterV2 {

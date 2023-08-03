@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiConfiguration {
     /// <p>The field well configuration of a KPI visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::KpiFieldWells>,
     /// <p>The sort configuration of a KPI visual.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::KpiSortConfiguration>,
     /// <p>The options that determine the presentation of a KPI visual.</p>
-    #[doc(hidden)]
     pub kpi_options: ::std::option::Option<crate::types::KpiOptions>,
 }
 impl KpiConfiguration {

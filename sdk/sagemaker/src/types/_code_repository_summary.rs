@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeRepositorySummary {
     /// <p>The name of the Git repository.</p>
-    #[doc(hidden)]
     pub code_repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
-    #[doc(hidden)]
     pub code_repository_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the Git repository was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Git repository was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration details for the Git repository, including the URL where it is located and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p>
-    #[doc(hidden)]
     pub git_config: ::std::option::Option<crate::types::GitConfig>,
 }
 impl CodeRepositorySummary {

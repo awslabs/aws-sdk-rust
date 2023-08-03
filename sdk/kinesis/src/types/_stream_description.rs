@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamDescription {
     /// <p>The name of the stream being described.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
     /// <ul>
@@ -17,32 +15,24 @@ pub struct StreamDescription {
     /// <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stream_status: ::std::option::Option<crate::types::StreamStatus>,
     /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-    #[doc(hidden)]
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     /// <p>The shards that comprise the stream.</p>
-    #[doc(hidden)]
     pub shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     /// <p>If set to <code>true</code>, more shards in the stream are available to describe.</p>
-    #[doc(hidden)]
     pub has_more_shards: ::std::option::Option<bool>,
     /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of 168.</p>
-    #[doc(hidden)]
     pub retention_period_hours: ::std::option::Option<i32>,
     /// <p>The approximate time that the stream was created.</p>
-    #[doc(hidden)]
     pub stream_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    #[doc(hidden)]
     pub enhanced_monitoring: ::std::option::Option<::std::vec::Vec<crate::types::EnhancedMetrics>>,
     /// <p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
@@ -52,7 +42,6 @@ pub struct StreamDescription {
     /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
     /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl StreamDescription {

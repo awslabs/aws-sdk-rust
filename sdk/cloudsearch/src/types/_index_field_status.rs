@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexFieldStatus {
     /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::IndexField>,
     /// <p>The status of domain configuration option.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl IndexFieldStatus {

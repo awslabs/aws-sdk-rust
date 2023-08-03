@@ -10,52 +10,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Studio {
     /// <p>The IAM role that studio admins assume when logging in to the Nimble Studio portal.</p>
-    #[doc(hidden)]
     pub admin_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A friendly name for the studio.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the studio resource is located.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM Identity Center users to log in to Nimble Studio portal.</p>
-    #[doc(hidden)]
     pub sso_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the studio resource.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StudioState>,
     /// <p>Status codes that provide additional detail on the studio state.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::StudioStatusCode>,
     /// <p>Additional detail on the studio state.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of the encryption method that is used for the studio.</p>
-    #[doc(hidden)]
     pub studio_encryption_configuration: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
     /// <p>The unique identifier for a studio resource. In Nimble Studio, all other resources are contained in a studio resource.</p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the studio, as included in the URL when accessing it in the Nimble Studio portal.</p>
-    #[doc(hidden)]
     pub studio_name: ::std::option::Option<::std::string::String>,
     /// <p>The address of the web page for the studio.</p>
-    #[doc(hidden)]
     pub studio_url: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The IAM role that studio users assume when logging in to the Nimble Studio portal.</p>
-    #[doc(hidden)]
     pub user_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Studio {

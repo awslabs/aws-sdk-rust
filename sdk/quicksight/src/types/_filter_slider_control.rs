@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterSliderControl {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
-    #[doc(hidden)]
     pub filter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
-    #[doc(hidden)]
     pub source_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
-    #[doc(hidden)]
     pub display_options: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p> </li>
     /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SheetControlSliderType>,
     /// <p>The smaller value that is displayed at the left of the slider.</p>
-    #[doc(hidden)]
     pub maximum_value: f64,
     /// <p>The larger value that is displayed at the right of the slider.</p>
-    #[doc(hidden)]
     pub minimum_value: f64,
     /// <p>The number of increments that the slider bar is divided into.</p>
-    #[doc(hidden)]
     pub step_size: f64,
 }
 impl FilterSliderControl {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan to stop.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage to stop.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl StopEdgeDeploymentStageInput {

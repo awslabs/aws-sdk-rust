@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OidcMemberDefinition {
     /// <p>A list of comma seperated strings that identifies user groups in your OIDC IdP. Each user group is made up of a group of private workers.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OidcMemberDefinition {

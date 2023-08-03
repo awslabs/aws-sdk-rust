@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SdkType {
     /// <p>The identifier of an SdkType instance.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of an SdkType instance.</p>
-    #[doc(hidden)]
     pub friendly_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of an SdkType.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of configuration properties of an SdkType.</p>
-    #[doc(hidden)]
     pub configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
 }
 impl SdkType {

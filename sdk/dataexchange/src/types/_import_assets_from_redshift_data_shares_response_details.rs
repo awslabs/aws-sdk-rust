@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// <p>A list of Amazon Redshift datashare asset sources.</p>
-    #[doc(hidden)]
     pub asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetsFromRedshiftDataSharesResponseDetails {

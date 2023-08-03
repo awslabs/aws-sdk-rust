@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCrawlerScheduleInput {
     /// <p>Name of the crawler to schedule.</p>
-    #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
 }
 impl StartCrawlerScheduleInput {

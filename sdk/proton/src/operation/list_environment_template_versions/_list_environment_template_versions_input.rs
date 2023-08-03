@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplateVersionsInput {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of major or minor versions of an environment template to list.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The name of the environment template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
 }
 impl ListEnvironmentTemplateVersionsInput {

@@ -5,82 +5,56 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the cluster</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the cluster. For example, Available, Updating, Creating.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A group of settings that are currently being applied.</p>
-    #[doc(hidden)]
     pub pending_updates: ::std::option::Option<crate::types::ClusterPendingUpdates>,
     /// <p>The number of shards in the cluster</p>
-    #[doc(hidden)]
     pub number_of_shards: ::std::option::Option<i32>,
     /// <p>A list of shards that are members of the cluster.</p>
-    #[doc(hidden)]
     pub shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
-    #[doc(hidden)]
     pub availability_mode: ::std::option::Option<crate::types::AzStatus>,
     /// <p>The cluster's configuration endpoint</p>
-    #[doc(hidden)]
     pub cluster_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The cluster's node type</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The Redis engine version used by the cluster</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The Redis engine patch version used by the cluster</p>
-    #[doc(hidden)]
     pub engine_patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group used by the cluster</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter group used by the cluster, for example 'active' or 'applying'.</p>
-    #[doc(hidden)]
     pub parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups used by the cluster</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
     /// <p>The name of the subnet group used by the cluster</p>
-    #[doc(hidden)]
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A flag to indicate if In-transit encryption is enabled</p>
-    #[doc(hidden)]
     pub tls_enabled: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key used to encrypt the cluster</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SNS topic must be in Active status to receive notifications</p>
-    #[doc(hidden)]
     pub sns_topic_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
-    #[doc(hidden)]
     pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Access Control List associated with this cluster.</p>
-    #[doc(hidden)]
     pub acl_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
-    #[doc(hidden)]
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
 }
 impl Cluster {

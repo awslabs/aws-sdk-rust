@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingAggregator {
     /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
-    #[doc(hidden)]
     pub finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }
 impl FindingAggregator {

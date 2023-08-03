@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorModelConfiguration {
     /// <p>The name of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_version: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the detector model was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the detector model was last updated.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the detector model.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetectorModelVersionStatus>,
     /// <p>The value used to identify a detector instance. When a device or system sends input, a new detector instance with a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance based on this identifying information. </p>
     /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used for identification. To route the message to the correct detector instance, the device must send a message payload that contains the same attribute-value.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    #[doc(hidden)]
     pub evaluation_method: ::std::option::Option<crate::types::EvaluationMethod>,
 }
 impl DetectorModelConfiguration {

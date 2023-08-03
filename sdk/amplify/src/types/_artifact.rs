@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Artifact {
     /// <p> The file name for the artifact. </p>
-    #[doc(hidden)]
     pub artifact_file_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID for the artifact. </p>
-    #[doc(hidden)]
     pub artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl Artifact {

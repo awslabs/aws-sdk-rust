@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecretsManagerAccessTokenConfiguration {
     /// <p>The name of the HTTP header used to supply the access token in requests to the source location.</p>
-    #[doc(hidden)]
     pub header_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
-    #[doc(hidden)]
     pub secret_string_key: ::std::option::Option<::std::string::String>,
 }
 impl SecretsManagerAccessTokenConfiguration {

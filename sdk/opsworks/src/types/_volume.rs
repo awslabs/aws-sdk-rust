@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
     /// <p>The volume ID.</p>
-    #[doc(hidden)]
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 volume ID.</p>
-    #[doc(hidden)]
     pub ec2_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The RAID array ID.</p>
-    #[doc(hidden)]
     pub raid_array_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The volume size.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The device name.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<::std::string::String>,
     /// <p>The volume mount point. For example, "/mnt/disk1".</p>
-    #[doc(hidden)]
     pub mount_point: ::std::option::Option<::std::string::String>,
     /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
@@ -45,13 +34,10 @@ pub struct Volume {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
 }
 impl Volume {

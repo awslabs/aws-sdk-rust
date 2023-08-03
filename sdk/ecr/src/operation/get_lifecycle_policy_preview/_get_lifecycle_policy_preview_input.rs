@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyPreviewInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of imageIDs to be included.</p>
-    #[doc(hidden)]
     pub image_ids: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::LifecyclePolicyPreviewFilter>,
 }
 impl GetLifecyclePolicyPreviewInput {

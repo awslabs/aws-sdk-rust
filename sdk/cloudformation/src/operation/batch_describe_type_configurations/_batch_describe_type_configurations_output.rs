@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsOutput {
     /// <p>A list of information concerning any errors generated during the setting of the specified configurations.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDescribeTypeConfigurationsError>>,
     /// <p>A list of any of the specified extension configurations that CloudFormation could not process for any reason.</p>
-    #[doc(hidden)]
     pub unprocessed_type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>>,
     /// <p>A list of any of the specified extension configurations from the CloudFormation registry.</p>
-    #[doc(hidden)]
     pub type_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationDetails>>,
     _request_id: Option<String>,
 }

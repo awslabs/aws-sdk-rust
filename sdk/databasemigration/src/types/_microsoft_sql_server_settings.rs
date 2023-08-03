@@ -5,59 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MicrosoftSqlServerSettings {
     /// <p>Endpoint TCP port.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The maximum size of the packets (in bytes) used to transfer data using BCP.</p>
-    #[doc(hidden)]
     pub bcp_packet_size: ::std::option::Option<i32>,
     /// <p>Database name for the endpoint.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file group.</p>
-    #[doc(hidden)]
     pub control_tables_file_group: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint connection password.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is a situation where running an alter DDL statement on a table might result in different information about the table cached in the replication instance.</p>
-    #[doc(hidden)]
     pub query_single_always_on_node: ::std::option::Option<bool>,
     /// <p>When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code> enables you to control active transaction log file growth during full load and ongoing replication tasks. However, it can add some source latency to ongoing replication.</p>
-    #[doc(hidden)]
     pub read_backup_only: ::std::option::Option<bool>,
     /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p>
     /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p>
     /// <p> <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS tasks against the same database, use the default method.</p>
-    #[doc(hidden)]
     pub safeguard_policy: ::std::option::Option<crate::types::SafeguardPolicy>,
     /// <p>Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint connection user name.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>Use this to attribute to transfer data for full-load operations using BCP. When the target table contains an identity column that does not exist in the source table, you must disable the use BCP for loading table option.</p>
-    #[doc(hidden)]
     pub use_bcp_full_load: ::std::option::Option<bool>,
     /// <p>When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are created in native format.</p>
-    #[doc(hidden)]
     pub use_third_party_backup_device: ::std::option::Option<bool>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SQL Server endpoint connection details.</p>
-    #[doc(hidden)]
     pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub trim_space_in_char: ::std::option::Option<bool>,
     /// <p>Indicates the mode used to fetch CDC data.</p>
-    #[doc(hidden)]
     pub tlog_access_mode: ::std::option::Option<crate::types::TlogAccessMode>,
     /// <p>Forces LOB lookup on inline LOB.</p>
-    #[doc(hidden)]
     pub force_lob_lookup: ::std::option::Option<bool>,
 }
 impl MicrosoftSqlServerSettings {

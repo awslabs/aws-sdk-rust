@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationAccessControl {
     /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-    #[doc(hidden)]
     pub canned_acl: ::std::option::Option<crate::types::S3ObjectCannedAcl>,
 }
 impl S3DestinationAccessControl {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityConfigurationsOutput {
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    #[doc(hidden)]
     pub security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>,
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

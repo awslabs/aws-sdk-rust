@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CognitoMemberDefinition {
     /// <p>An identifier for a user pool. The user pool must be in the same region as the service that you are calling.</p>
-    #[doc(hidden)]
     pub user_pool: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for a user group.</p>
-    #[doc(hidden)]
     pub user_group: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for an application client. You must create the app client ID using Amazon Cognito.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl CognitoMemberDefinition {

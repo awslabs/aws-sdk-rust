@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFileSystemsOutput {
     /// <p>An array of file system descriptions.</p>
-    #[doc(hidden)]
     pub file_systems: ::std::option::Option<::std::vec::Vec<crate::types::FileSystem>>,
     /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

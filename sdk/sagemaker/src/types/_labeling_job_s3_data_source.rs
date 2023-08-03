@@ -11,7 +11,6 @@ pub struct LabelingJobS3DataSource {
     /// <li> <p> <code>source</code>: The source of the object is the value. Use this value when the object is a text value.</p> </li>
     /// </ul>
     /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
-    #[doc(hidden)]
     pub manifest_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl LabelingJobS3DataSource {

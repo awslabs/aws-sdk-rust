@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityAllocation {
     /// <p>The usage type. <code>used</code> indicates that the instance capacity is in use by instances that are running in the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub allocation_type: ::std::option::Option<crate::types::AllocationType>,
     /// <p>The amount of instance capacity associated with the usage. For example a value of <code>4</code> indicates that instance capacity for 4 instances is currently in use.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
 }
 impl CapacityAllocation {

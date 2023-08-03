@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateVersion {
     /// <p>The time that this template version was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Errors associated with this template version.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::TemplateError>>,
     /// <p>The version number of the template version.</p>
-    #[doc(hidden)]
     pub version_number: ::std::option::Option<i64>,
     /// <p>The status that is associated with the template.</p>
     /// <ul>
@@ -23,22 +20,16 @@ pub struct TemplateVersion {
     /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
     /// <li> <p> <code>DELETED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
-    #[doc(hidden)]
     pub data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
     /// <p>The description of the template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
-    #[doc(hidden)]
     pub source_entity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the theme associated with this version of the template.</p>
-    #[doc(hidden)]
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    #[doc(hidden)]
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
 }
 impl TemplateVersion {

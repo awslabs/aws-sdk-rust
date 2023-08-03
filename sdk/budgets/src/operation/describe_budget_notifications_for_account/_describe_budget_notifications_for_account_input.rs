@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> A generic string.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBudgetNotificationsForAccountInput {

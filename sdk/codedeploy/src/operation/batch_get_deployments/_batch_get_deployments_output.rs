@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentsOutput {
     /// <p> Information about the deployments. </p>
-    #[doc(hidden)]
     pub deployments_info: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentInfo>>,
     _request_id: Option<String>,
 }

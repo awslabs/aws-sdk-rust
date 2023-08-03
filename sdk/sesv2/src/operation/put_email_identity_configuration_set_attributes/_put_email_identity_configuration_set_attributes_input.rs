@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEmailIdentityConfigurationSetAttributesInput {
     /// <p>The email address or domain to associate with a configuration set.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>The configuration set to associate with an email identity.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl PutEmailIdentityConfigurationSetAttributesInput {

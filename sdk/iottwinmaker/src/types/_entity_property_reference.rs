@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityPropertyReference {
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
-    #[doc(hidden)]
     pub external_id_property: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the entity.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the property.</p>
-    #[doc(hidden)]
     pub property_name: ::std::option::Option<::std::string::String>,
 }
 impl EntityPropertyReference {

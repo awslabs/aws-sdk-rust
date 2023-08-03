@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetModelTemplateOutput {
     /// <p>The template value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

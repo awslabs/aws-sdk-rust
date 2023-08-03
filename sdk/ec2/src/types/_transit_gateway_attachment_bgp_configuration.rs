@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayAttachmentBgpConfiguration {
     /// <p>The transit gateway Autonomous System Number (ASN).</p>
-    #[doc(hidden)]
     pub transit_gateway_asn: ::std::option::Option<i64>,
     /// <p>The peer Autonomous System Number (ASN).</p>
-    #[doc(hidden)]
     pub peer_asn: ::std::option::Option<i64>,
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_address: ::std::option::Option<::std::string::String>,
     /// <p>The interior BGP peer IP address for the appliance.</p>
-    #[doc(hidden)]
     pub peer_address: ::std::option::Option<::std::string::String>,
     /// <p>The BGP status.</p>
-    #[doc(hidden)]
     pub bgp_status: ::std::option::Option<crate::types::BgpStatus>,
 }
 impl TransitGatewayAttachmentBgpConfiguration {

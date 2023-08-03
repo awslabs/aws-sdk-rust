@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrialComponentOutput {
     /// <p>The name of the trial component.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    #[doc(hidden)]
     pub trial_component_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the job type.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::TrialComponentSource>,
     /// <p>The status of the component. States include:</p>
     /// <ul>
@@ -21,46 +17,32 @@ pub struct DescribeTrialComponentOutput {
     /// <li> <p>Completed</p> </li>
     /// <li> <p>Failed</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TrialComponentStatus>,
     /// <p>When the component started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the component ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the component was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who created the trial component.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the component was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who last modified the component.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The hyperparameters of the component.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentParameterValue>>,
     /// <p>The input artifacts of the component.</p>
-    #[doc(hidden)]
     pub input_artifacts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     /// <p>The output artifacts of the component.</p>
-    #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>The metrics for the component.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    #[doc(hidden)]
     pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of ARNs and, if applicable, job types for multiple sources of an experiment run.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSource>>,
     _request_id: Option<String>,
 }

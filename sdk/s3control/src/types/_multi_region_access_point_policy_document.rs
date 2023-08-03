@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointPolicyDocument {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub established: ::std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>,
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub proposed: ::std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>,
 }
 impl MultiRegionAccessPointPolicyDocument {

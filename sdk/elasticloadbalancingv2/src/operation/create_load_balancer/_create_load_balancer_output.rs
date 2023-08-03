@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerOutput {
     /// <p>Information about the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     _request_id: Option<String>,
 }

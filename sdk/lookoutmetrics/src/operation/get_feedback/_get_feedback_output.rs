@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFeedbackOutput {
     /// <p>Feedback for an anomalous metric.</p>
-    #[doc(hidden)]
     pub anomaly_group_time_series_feedback: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>>,
     /// <p>The pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

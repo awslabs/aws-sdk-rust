@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageState {
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about the run of a stage.</p>
-    #[doc(hidden)]
     pub inbound_execution: ::std::option::Option<crate::types::StageExecution>,
     /// <p>The state of the inbound transition, which is either enabled or disabled.</p>
-    #[doc(hidden)]
     pub inbound_transition_state: ::std::option::Option<crate::types::TransitionState>,
     /// <p>The state of the stage.</p>
-    #[doc(hidden)]
     pub action_states: ::std::option::Option<::std::vec::Vec<crate::types::ActionState>>,
     /// <p>Information about the latest execution in the stage, including its ID and status.</p>
-    #[doc(hidden)]
     pub latest_execution: ::std::option::Option<crate::types::StageExecution>,
 }
 impl StageState {

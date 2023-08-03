@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessesOutput {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    #[doc(hidden)]
     pub accesses: ::std::option::Option<::std::vec::Vec<crate::types::ListedAccess>>,
     _request_id: Option<String>,
 }

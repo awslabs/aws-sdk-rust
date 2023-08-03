@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoveryServerConfiguration {
     /// <p>The domain name or IP address of your storage system's management interface.</p>
-    #[doc(hidden)]
     pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The network port for accessing the storage system's management interface.</p>
-    #[doc(hidden)]
     pub server_port: ::std::option::Option<i32>,
 }
 impl DiscoveryServerConfiguration {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsGuardDutyDetectorDetails {
     /// <p> Describes which data sources are activated for the detector. </p>
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails>,
     /// <p> Describes which features are activated for the detector. </p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>>,
     /// <p> The publishing frequency of the finding. </p>
-    #[doc(hidden)]
     pub finding_publishing_frequency: ::std::option::Option<::std::string::String>,
     /// <p> The GuardDuty service role. </p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p> The activation status of the detector. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsGuardDutyDetectorDetails {

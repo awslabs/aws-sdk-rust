@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Body {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<crate::types::Content>,
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
-    #[doc(hidden)]
     pub html: ::std::option::Option<crate::types::Content>,
 }
 impl Body {

@@ -8,16 +8,12 @@ pub struct DisassociatePrincipalFromPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters. </p>
-    #[doc(hidden)]
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
 impl DisassociatePrincipalFromPortfolioInput {

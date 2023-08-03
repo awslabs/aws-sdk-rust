@@ -10,7 +10,6 @@ pub struct FileCacheDataRepositoryAssociation {
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
-    #[doc(hidden)]
     pub file_cache_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the S3 or NFS data repository that links to the cache. You must provide one of the following paths:</p>
     /// <ul>
@@ -21,13 +20,10 @@ pub struct FileCacheDataRepositoryAssociation {
     /// </ul> </li>
     /// <li> <p>The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub data_repository_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of NFS Exports that will be linked with this data repository association. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    #[doc(hidden)]
     pub data_repository_subdirectories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
-    #[doc(hidden)]
     pub nfs: ::std::option::Option<crate::types::FileCacheNfsConfiguration>,
 }
 impl FileCacheDataRepositoryAssociation {

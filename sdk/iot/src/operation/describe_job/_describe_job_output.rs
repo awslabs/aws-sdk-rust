@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobOutput {
     /// <p>An S3 link to the job document.</p>
-    #[doc(hidden)]
     pub document_source: ::std::option::Option<::std::string::String>,
     /// <p>Information about the job.</p>
-    #[doc(hidden)]
     pub job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
 }

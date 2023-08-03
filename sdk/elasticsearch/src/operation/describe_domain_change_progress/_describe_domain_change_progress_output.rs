@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressOutput {
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
-    #[doc(hidden)]
     pub change_progress_status: ::std::option::Option<crate::types::ChangeProgressStatusDetails>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConfiguration {
     /// <p>The selected video streams to capture for a specified media capture pipeline. The number of video streams can't exceed 25.</p>
-    #[doc(hidden)]
     pub selected_video_streams: ::std::option::Option<crate::types::SelectedVideoStreams>,
 }
 impl SourceConfiguration {

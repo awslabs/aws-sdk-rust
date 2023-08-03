@@ -7,7 +7,6 @@ pub struct PutAccountSendingAttributesInput {
     /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
-    #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl PutAccountSendingAttributesInput {

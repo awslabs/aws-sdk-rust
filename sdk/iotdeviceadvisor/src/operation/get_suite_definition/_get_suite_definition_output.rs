@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuiteDefinitionOutput {
     /// <p>Suite definition ID of the suite definition.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the suite definition.</p>
-    #[doc(hidden)]
     pub suite_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>Suite definition version of the suite definition.</p>
-    #[doc(hidden)]
     pub suite_definition_version: ::std::option::Option<::std::string::String>,
     /// <p>Latest suite definition version of the suite definition.</p>
-    #[doc(hidden)]
     pub latest_version: ::std::option::Option<::std::string::String>,
     /// <p>Suite configuration of the suite definition.</p>
-    #[doc(hidden)]
     pub suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
     /// <p>Date (in Unix epoch time) when the suite definition was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tags attached to the suite definition.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

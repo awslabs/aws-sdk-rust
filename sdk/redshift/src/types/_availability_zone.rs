@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the availability zone.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    #[doc(hidden)]
     pub supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
 }
 impl AvailabilityZone {

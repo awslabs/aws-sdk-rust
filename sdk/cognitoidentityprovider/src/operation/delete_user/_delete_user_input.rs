@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteUserInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserInput {

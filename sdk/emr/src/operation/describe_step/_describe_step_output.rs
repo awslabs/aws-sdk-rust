@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStepOutput {
     /// <p>The step details for the requested step identifier.</p>
-    #[doc(hidden)]
     pub step: ::std::option::Option<crate::types::Step>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Task {
     /// <p>The operation to be performed on the provided source fields.</p>
-    #[doc(hidden)]
     pub connector_operator: ::std::option::Option<crate::types::ConnectorOperator>,
     /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.</p>
-    #[doc(hidden)]
     pub destination_field: ::std::option::Option<::std::string::String>,
     /// <p>The source fields to which a particular task is applied.</p>
-    #[doc(hidden)]
     pub source_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map used to store task-related information. The service looks for particular information based on the TaskType.</p>
-    #[doc(hidden)]
     pub task_properties: ::std::option::Option<::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>>,
     /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
-    #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::TaskType>,
 }
 impl Task {

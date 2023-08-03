@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Room name. The value does not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
-    #[doc(hidden)]
     pub maximum_message_rate_per_second: i32,
     /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
-    #[doc(hidden)]
     pub maximum_message_length: i32,
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    #[doc(hidden)]
     pub message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    #[doc(hidden)]
     pub logging_configuration_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateRoomInput {

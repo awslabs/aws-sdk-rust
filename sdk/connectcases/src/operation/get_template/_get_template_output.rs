@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateOutput {
     /// <p>A unique identifier of a template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    #[doc(hidden)]
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of layouts associated to the template.</p>
-    #[doc(hidden)]
     pub layout_configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    #[doc(hidden)]
     pub required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The status of the template.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateStatus>,
     _request_id: Option<String>,
 }

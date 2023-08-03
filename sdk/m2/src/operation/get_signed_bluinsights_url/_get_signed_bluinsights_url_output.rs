@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSignedBluinsightsUrlOutput {
     /// <p>Single sign-on AWS Blu Insights URL.</p>
-    #[doc(hidden)]
     pub signed_bi_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

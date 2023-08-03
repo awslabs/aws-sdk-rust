@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3CsvSource {
     /// <p>The name of the data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    #[doc(hidden)]
     pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    #[doc(hidden)]
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
-    #[doc(hidden)]
     pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
-    #[doc(hidden)]
     pub group_size: ::std::option::Option<::std::string::String>,
     /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
-    #[doc(hidden)]
     pub group_files: ::std::option::Option<::std::string::String>,
     /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
-    #[doc(hidden)]
     pub recurse: ::std::option::Option<bool>,
     /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
-    #[doc(hidden)]
     pub max_band: ::std::option::Option<i32>,
     /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
-    #[doc(hidden)]
     pub max_files_in_band: ::std::option::Option<i32>,
     /// <p>Specifies additional connection options.</p>
-    #[doc(hidden)]
     pub additional_options: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
-    #[doc(hidden)]
     pub separator: ::std::option::Option<crate::types::Separator>,
     /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
-    #[doc(hidden)]
     pub escaper: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
-    #[doc(hidden)]
     pub quote_char: ::std::option::Option<crate::types::QuoteChar>,
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
-    #[doc(hidden)]
     pub multiline: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
-    #[doc(hidden)]
     pub with_header: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
-    #[doc(hidden)]
     pub write_header: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
-    #[doc(hidden)]
     pub skip_first: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
-    #[doc(hidden)]
     pub optimize_performance: bool,
     /// <p>Specifies the data schema for the S3 CSV source.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3CsvSource {

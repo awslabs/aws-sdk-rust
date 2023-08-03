@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTestGridProjectOutput {
     /// <p>ARN of the Selenium testing project that was created.</p>
-    #[doc(hidden)]
     pub test_grid_project: ::std::option::Option<crate::types::TestGridProject>,
     _request_id: Option<String>,
 }

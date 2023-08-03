@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamDestination {
     /// <p>Timestream database name. </p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Timestream table name. </p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamDestination {

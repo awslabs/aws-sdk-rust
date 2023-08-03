@@ -13,7 +13,6 @@ pub struct StackSetDriftDetectionDetails {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.</p> </li>
     /// <li> <p> <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack match from the expected template and parameter configuration.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub drift_status: ::std::option::Option<crate::types::StackSetDriftStatus>,
     /// <p>The status of the stack set drift detection operation.</p>
     /// <ul>
@@ -23,10 +22,8 @@ pub struct StackSetDriftDetectionDetails {
     /// <li> <p> <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.</p> </li>
     /// <li> <p> <code>STOPPED</code>: The user has canceled the drift detection operation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub drift_detection_status: ::std::option::Option<crate::types::StackSetDriftDetectionStatus>,
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack set. This value will be <code>NULL</code> for any stack set on which drift detection hasn't yet been performed.</p>
-    #[doc(hidden)]
     pub last_drift_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total number of stack instances belonging to this stack set.</p>
     /// <p>The total number of stack instances is equal to the total of:</p>
@@ -36,19 +33,14 @@ pub struct StackSetDriftDetectionDetails {
     /// <li> <p>Stack instances where the drift detection operation has failed.</p> </li>
     /// <li> <p>Stack instances currently being checked for drift.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub total_stack_instances_count: i32,
     /// <p>The number of stack instances that have drifted from the expected template and parameter configuration of the stack set. A stack instance is considered to have drifted if one or more of the resources in the associated stack don't match their expected configuration.</p>
-    #[doc(hidden)]
     pub drifted_stack_instances_count: i32,
     /// <p>The number of stack instances which match the expected template and parameter configuration of the stack set.</p>
-    #[doc(hidden)]
     pub in_sync_stack_instances_count: i32,
     /// <p>The number of stack instances that are currently being checked for drift.</p>
-    #[doc(hidden)]
     pub in_progress_stack_instances_count: i32,
     /// <p>The number of stack instances for which the drift detection operation failed.</p>
-    #[doc(hidden)]
     pub failed_stack_instances_count: i32,
 }
 impl StackSetDriftDetectionDetails {

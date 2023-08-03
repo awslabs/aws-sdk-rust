@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBranchInput {
     /// <p>The name of the repository that contains the branch to be deleted.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch to delete.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBranchInput {

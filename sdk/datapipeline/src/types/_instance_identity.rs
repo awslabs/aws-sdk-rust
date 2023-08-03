@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
 }
 impl InstanceIdentity {

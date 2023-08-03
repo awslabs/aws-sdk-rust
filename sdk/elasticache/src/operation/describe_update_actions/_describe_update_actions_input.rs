@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUpdateActionsInput {
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The replication group IDs</p>
-    #[doc(hidden)]
     pub replication_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The cache cluster IDs</p>
-    #[doc(hidden)]
     pub cache_cluster_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update</p>
-    #[doc(hidden)]
     pub service_update_status: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
     /// <p>The range of time specified to search for service updates that are in available status</p>
-    #[doc(hidden)]
     pub service_update_time_range: ::std::option::Option<crate::types::TimeRangeFilter>,
     /// <p>The status of the update action.</p>
-    #[doc(hidden)]
     pub update_action_status: ::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>>,
     /// <p>Dictates whether to include node level update status in the response </p>
-    #[doc(hidden)]
     pub show_node_level_update_status: ::std::option::Option<bool>,
     /// <p>The maximum number of records to include in the response</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUpdateActionsInput {

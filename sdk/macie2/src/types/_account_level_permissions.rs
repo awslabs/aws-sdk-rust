@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLevelPermissions {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
-    #[doc(hidden)]
     pub block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
 }
 impl AccountLevelPermissions {

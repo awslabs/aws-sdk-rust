@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDistributionConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
-    #[doc(hidden)]
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetDistributionConfigurationInput {

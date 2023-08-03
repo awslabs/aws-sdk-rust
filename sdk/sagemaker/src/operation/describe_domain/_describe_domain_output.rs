@@ -4,72 +4,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainOutput {
     /// <p>The domain's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain ID.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
-    #[doc(hidden)]
     pub home_efs_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center managed application instance ID.</p>
-    #[doc(hidden)]
     pub single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified time.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure reason.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The domain's authentication mode.</p>
-    #[doc(hidden)]
     pub auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile. </p>
-    #[doc(hidden)]
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
     /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    #[doc(hidden)]
     pub home_efs_file_system_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The domain's URL.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS customer managed key used to encrypt the EFS volume attached to the domain.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of <code>Domain</code> settings.</p>
-    #[doc(hidden)]
     pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    #[doc(hidden)]
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    #[doc(hidden)]
     pub security_group_id_for_domain_boundary: ::std::option::Option<::std::string::String>,
     /// <p>The default settings used to create a space.</p>
-    #[doc(hidden)]
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     _request_id: Option<String>,
 }

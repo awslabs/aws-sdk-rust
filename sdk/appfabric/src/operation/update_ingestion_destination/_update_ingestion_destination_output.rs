@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIngestionDestinationOutput {
     /// <p>Contains information about an ingestion destination.</p>
-    #[doc(hidden)]
     pub ingestion_destination: ::std::option::Option<crate::types::IngestionDestination>,
     _request_id: Option<String>,
 }

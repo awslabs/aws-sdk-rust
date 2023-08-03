@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEdgeAgentConfigurationsOutput {
     /// <p>A description of a single stream's edge configuration.</p>
-    #[doc(hidden)]
     pub edge_configs: ::std::option::Option<::std::vec::Vec<crate::types::ListEdgeAgentConfigurationsEdgeConfig>>,
     /// <p>If the response is truncated, the call returns this element with a given token. To get the next batch of edge configurations, use this token in your next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

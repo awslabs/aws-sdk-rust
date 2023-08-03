@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleGroupAssociationInput {
     /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
-    #[doc(hidden)]
     pub firewall_rule_group_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The setting that determines the processing order of the rule group among the rule groups that you associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority setting. </p>
     /// <p>You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change the priority setting for a rule group association after you create it.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
-    #[doc(hidden)]
     pub mutation_protection: ::std::option::Option<crate::types::MutationProtectionStatus>,
     /// <p>The name of the rule group association.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFirewallRuleGroupAssociationInput {

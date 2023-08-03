@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceCatalogProvisionedProductDetails {
     /// <p>The ID of the provisioned product.</p>
-    #[doc(hidden)]
     pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the product.</p>
     /// <ul>
@@ -15,7 +14,6 @@ pub struct ServiceCatalogProvisionedProductDetails {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an AVAILABLE status before performing operations.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub provisioned_product_status_message: ::std::option::Option<::std::string::String>,
 }
 impl ServiceCatalogProvisionedProductDetails {

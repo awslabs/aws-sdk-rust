@@ -21,13 +21,10 @@ pub struct InstancePatchStateFilter {
     /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of comparison that should be performed for the value.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InstancePatchStateOperatorType>,
 }
 impl InstancePatchStateFilter {

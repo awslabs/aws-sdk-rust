@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyWorkspaceCreationPropertiesInput {
     /// <p>The identifier of the directory.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The default properties for creating WorkSpaces.</p>
-    #[doc(hidden)]
     pub workspace_creation_properties: ::std::option::Option<crate::types::WorkspaceCreationProperties>,
 }
 impl ModifyWorkspaceCreationPropertiesInput {

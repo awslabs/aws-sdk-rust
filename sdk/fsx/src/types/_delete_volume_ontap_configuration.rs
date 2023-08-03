@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVolumeOntapConfiguration {
     /// <p>Set to true if you want to skip taking a final backup of the volume you are deleting.</p>
-    #[doc(hidden)]
     pub skip_final_backup: ::std::option::Option<bool>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume"> Deleting a SnapLock volume </a>. </p>
-    #[doc(hidden)]
     pub bypass_snaplock_enterprise_retention: ::std::option::Option<bool>,
 }
 impl DeleteVolumeOntapConfiguration {

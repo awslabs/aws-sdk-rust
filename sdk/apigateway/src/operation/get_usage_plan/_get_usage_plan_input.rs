@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsagePlanInput {
     /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
-    #[doc(hidden)]
     pub usage_plan_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUsagePlanInput {

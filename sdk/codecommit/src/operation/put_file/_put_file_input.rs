@@ -4,34 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFileInput {
     /// <p>The name of the repository where you want to add or update the file.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the file, in binary object format. </p>
-    #[doc(hidden)]
     pub file_content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
     /// </note>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
-    #[doc(hidden)]
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
     /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
-    #[doc(hidden)]
     pub parent_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
-    #[doc(hidden)]
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An email address for the person adding or updating the file.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
 }
 impl PutFileInput {

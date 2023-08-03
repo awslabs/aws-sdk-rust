@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAttachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
-    #[doc(hidden)]
     pub attached_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchAttachObjectResponse {

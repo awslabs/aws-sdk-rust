@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsOutput {
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
-    #[doc(hidden)]
     pub custom_line_items: ::std::option::Option<::std::vec::Vec<crate::types::CustomLineItemListElement>>,
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

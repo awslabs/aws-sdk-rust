@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    #[doc(hidden)]
     pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     _request_id: Option<String>,
 }

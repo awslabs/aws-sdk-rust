@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryWithFindingNum {
     /// <p>The name of the finding category. A finding category is determined by the detector that detected the finding.</p>
-    #[doc(hidden)]
     pub category_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of open findings in the category.</p>
-    #[doc(hidden)]
     pub finding_number: ::std::option::Option<i32>,
 }
 impl CategoryWithFindingNum {

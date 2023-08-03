@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Taint {
     /// <p>The key of the taint.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the taint.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The effect of the taint.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::TaintEffect>,
 }
 impl Taint {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentInput {
     /// <p> The unique identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the assessment to be updated. </p>
-    #[doc(hidden)]
     pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the assessment. </p>
-    #[doc(hidden)]
     pub assessment_description: ::std::option::Option<::std::string::String>,
     /// <p> The scope of the assessment. </p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p> The assessment report storage destination for the assessment that's being updated. </p>
-    #[doc(hidden)]
     pub assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> The list of roles for the assessment. </p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
 }
 impl UpdateAssessmentInput {

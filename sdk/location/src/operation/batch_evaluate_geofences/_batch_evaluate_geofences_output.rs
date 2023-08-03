@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesOutput {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>,
     _request_id: Option<String>,
 }

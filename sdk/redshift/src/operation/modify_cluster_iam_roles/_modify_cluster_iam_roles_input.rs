@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterIamRolesInput {
     /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
-    #[doc(hidden)]
     pub add_iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
-    #[doc(hidden)]
     pub remove_iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
-    #[doc(hidden)]
     pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ModifyClusterIamRolesInput {

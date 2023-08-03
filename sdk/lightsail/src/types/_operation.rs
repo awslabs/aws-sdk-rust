@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operation {
     /// <p>The ID of the operation.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The resource name.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
-    #[doc(hidden)]
     pub is_terminal: ::std::option::Option<bool>,
     /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
-    #[doc(hidden)]
     pub operation_details: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation. </p>
-    #[doc(hidden)]
     pub operation_type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The status of the operation. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-    #[doc(hidden)]
     pub status_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error details.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<::std::string::String>,
 }
 impl Operation {

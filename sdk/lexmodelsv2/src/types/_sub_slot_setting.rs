@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubSlotSetting {
     /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Specifications for the constituent sub slots of a composite slot.</p>
-    #[doc(hidden)]
     pub slot_specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Specifications>>,
 }
 impl SubSlotSetting {

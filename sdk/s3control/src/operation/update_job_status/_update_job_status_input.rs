@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobStatusInput {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job whose status you want to update.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status that you want to move the specified job to.</p>
-    #[doc(hidden)]
     pub requested_job_status: ::std::option::Option<crate::types::RequestedJobStatus>,
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
-    #[doc(hidden)]
     pub status_update_reason: ::std::option::Option<::std::string::String>,
 }
 impl UpdateJobStatusInput {

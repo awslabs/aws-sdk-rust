@@ -6,10 +6,8 @@
 pub struct CustomHttpHeader {
     /// <p>The name of the custom header. </p>
     /// <p>For custom request header insertion, when WAF inserts the header into the request, it prefixes this name <code>x-amzn-waf-</code>, to avoid confusion with the headers that are already in the request. For example, for the header name <code>sample</code>, WAF inserts the header <code>x-amzn-waf-sample</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the custom header.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl CustomHttpHeader {

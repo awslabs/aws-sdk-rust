@@ -8,21 +8,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedRuleGroupStatement {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    #[doc(hidden)]
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
-    #[doc(hidden)]
     pub scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     /// <p>Additional information that's used by a managed rule group. Many managed rule groups don't require this.</p>
     /// <p>The rule groups used for intelligent threat mitigation require additional configuration: </p>
@@ -31,11 +26,9 @@ pub struct ManagedRuleGroupStatement {
     /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
     /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub managed_rule_group_configs: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    #[doc(hidden)]
     pub rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
 impl ManagedRuleGroupStatement {

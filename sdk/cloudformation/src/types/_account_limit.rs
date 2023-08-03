@@ -13,10 +13,8 @@
 pub struct AccountLimit {
     /// <p>The name of the account limit.</p>
     /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code> </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value that's associated with the account limit name.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<i32>,
 }
 impl AccountLimit {

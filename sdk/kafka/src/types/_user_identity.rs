@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserIdentity {
     /// <p>The identity type of the requester that calls the API operation.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UserIdentityType>,
     /// <p>A unique identifier for the requester that calls the API operation.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentity {

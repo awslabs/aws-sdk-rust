@@ -7,25 +7,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>The identifier of the source database for which Fleet Advisor provided this recommendation.</p>
-    #[doc(hidden)]
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target engine. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
-    #[doc(hidden)]
     pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when Fleet Advisor created the target engine recommendation.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The status of the target engine recommendation. Valid values include <code>"alternate"</code>, <code>"in-progress"</code>, <code>"not-viable"</code>, and <code>"recommended"</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that this target is the rightsized migration destination.</p>
-    #[doc(hidden)]
     pub preferred: ::std::option::Option<bool>,
     /// <p>The settings in JSON format for the preferred target engine parameters. These parameters include capacity, resource utilization, and the usage type (production, development, or testing).</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::RecommendationSettings>,
     /// <p>The recommendation of a target engine for the specified source database.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::RecommendationData>,
 }
 impl Recommendation {

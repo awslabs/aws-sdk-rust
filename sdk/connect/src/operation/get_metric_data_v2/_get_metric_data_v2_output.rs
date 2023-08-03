@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricDataV2Output {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
-    #[doc(hidden)]
     pub metric_results: ::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>>,
     _request_id: Option<String>,
 }

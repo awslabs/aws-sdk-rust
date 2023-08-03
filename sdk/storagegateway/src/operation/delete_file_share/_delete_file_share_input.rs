@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
-    #[doc(hidden)]
     pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub force_delete: bool,
 }
 impl DeleteFileShareInput {

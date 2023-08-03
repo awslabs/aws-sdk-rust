@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastUpdate {
     /// <p>The status of the last update on the environment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UpdateStatus>,
     /// <p>The day and time of the last update on the environment.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error that was encountered during the last update of the environment.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::UpdateError>,
     /// <p>The source of the last update to the environment. Includes internal processes by Amazon MWAA, such as an environment maintenance update.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
 }
 impl LastUpdate {

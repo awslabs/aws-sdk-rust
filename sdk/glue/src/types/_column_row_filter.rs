@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnRowFilter {
     /// <p>A string containing the name of the column.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the row-level filter expression.</p>
-    #[doc(hidden)]
     pub row_filter_expression: ::std::option::Option<::std::string::String>,
 }
 impl ColumnRowFilter {

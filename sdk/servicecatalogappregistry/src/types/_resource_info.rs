@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceInfo {
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> Provides information about the Service Catalog App Registry resource type. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p> The details related to the resource. </p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
 }
 impl ResourceInfo {

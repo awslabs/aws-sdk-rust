@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesError {
     /// <p>The name of the repository where the association was not made.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {

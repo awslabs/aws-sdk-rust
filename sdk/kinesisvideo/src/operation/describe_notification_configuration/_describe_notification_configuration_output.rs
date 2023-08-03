@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationOutput {
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    #[doc(hidden)]
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResourceError {
     /// <p>The reason why the resource association failed.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>A static error code that's used to classify the type of failure.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::AssociateResourceErrorReason>,
 }
 impl AssociateResourceError {

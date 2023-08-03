@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableFastLaunchInput {
     /// <p>The ID of the image for which you’re enabling faster launching.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include: <code>snapshot</code>, which is the default value.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.</p>
-    #[doc(hidden)]
     pub snapshot_configuration: ::std::option::Option<crate::types::FastLaunchSnapshotConfigurationRequest>,
     /// <p>The launch template to use when launching Windows instances from pre-provisioned snapshots. Launch template parameters can include either the name or ID of the launch template, but not both.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest>,
     /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching. Value must be <code>6</code> or greater.</p>
-    #[doc(hidden)]
     pub max_parallel_launches: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl EnableFastLaunchInput {

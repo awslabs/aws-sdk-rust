@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceLogLevelOutput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
     _request_id: Option<String>,
 }

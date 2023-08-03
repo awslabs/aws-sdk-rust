@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnabledProductsForImportOutput {
     /// <p>The list of ARNs for the resources that represent your subscriptions to products. </p>
-    #[doc(hidden)]
     pub product_subscriptions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token to use to request the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

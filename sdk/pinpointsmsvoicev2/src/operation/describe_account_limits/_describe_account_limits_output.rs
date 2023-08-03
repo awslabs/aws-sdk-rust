@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountLimitsOutput {
     /// <p>An array of AccountLimit objects that show the current spend limits.</p>
-    #[doc(hidden)]
     pub account_limits: ::std::option::Option<::std::vec::Vec<crate::types::AccountLimit>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

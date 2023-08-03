@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastSession>,
 }
 impl StartMulticastGroupSessionInput {

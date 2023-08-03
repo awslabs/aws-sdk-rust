@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetConfiguration {
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
-    #[doc(hidden)]
     pub timestream_configuration: ::std::option::Option<crate::types::TimestreamConfiguration>,
 }
 impl TargetConfiguration {

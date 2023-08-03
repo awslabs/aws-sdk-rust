@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddNotificationChannelInput {
     /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
-    #[doc(hidden)]
     pub config: ::std::option::Option<crate::types::NotificationChannelConfig>,
 }
 impl AddNotificationChannelInput {

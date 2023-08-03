@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MotionGraphicsConfiguration {
     /// Motion Graphics Insertion
-    #[doc(hidden)]
     pub motion_graphics_insertion: ::std::option::Option<crate::types::MotionGraphicsInsertion>,
     /// Motion Graphics Settings
-    #[doc(hidden)]
     pub motion_graphics_settings: ::std::option::Option<crate::types::MotionGraphicsSettings>,
 }
 impl MotionGraphicsConfiguration {

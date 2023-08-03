@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanStatus {
     /// <p>The status code of the scan.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::ScanStatusCode>,
     /// <p>The reason for the scan.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ScanStatusReason>,
 }
 impl ScanStatus {

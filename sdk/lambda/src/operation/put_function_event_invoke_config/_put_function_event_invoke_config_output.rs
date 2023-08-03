@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of times to retry when the function returns an error.</p>
-    #[doc(hidden)]
     pub maximum_retry_attempts: ::std::option::Option<i32>,
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-    #[doc(hidden)]
     pub maximum_event_age_in_seconds: ::std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"> <b>Destinations</b> </p>
@@ -23,7 +19,6 @@ pub struct PutFunctionEventInvokeConfigOutput {
     /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     _request_id: Option<String>,
 }

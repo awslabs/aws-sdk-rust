@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
-    #[doc(hidden)]
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

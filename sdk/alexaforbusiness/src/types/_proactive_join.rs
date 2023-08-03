@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProactiveJoin {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub enabled_by_motion: ::std::option::Option<bool>,
 }
 impl ProactiveJoin {

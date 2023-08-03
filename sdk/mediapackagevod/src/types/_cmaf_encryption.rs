@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CmafEncryption {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
-    #[doc(hidden)]
     pub constant_initialization_vector: ::std::option::Option<::std::string::String>,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[doc(hidden)]
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl CmafEncryption {

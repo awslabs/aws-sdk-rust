@@ -10,16 +10,12 @@ pub struct TrafficRoutingConfig {
     /// <li> <p> <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic. </p> </li>
     /// <li> <p> <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TrafficRoutingConfigType>,
     /// <p>The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.</p>
-    #[doc(hidden)]
     pub wait_interval_in_seconds: ::std::option::Option<i32>,
     /// <p>Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code> must be less than or equal to 50% of the variant's total instance count.</p>
-    #[doc(hidden)]
     pub canary_size: ::std::option::Option<crate::types::CapacitySize>,
     /// <p>Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code> must be 10-50% of the variant's total instance count.</p>
-    #[doc(hidden)]
     pub linear_step_size: ::std::option::Option<crate::types::CapacitySize>,
 }
 impl TrafficRoutingConfig {

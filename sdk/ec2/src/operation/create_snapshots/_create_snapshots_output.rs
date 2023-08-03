@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotsOutput {
     /// <p>List of snapshots.</p>
-    #[doc(hidden)]
     pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>>,
     _request_id: Option<String>,
 }

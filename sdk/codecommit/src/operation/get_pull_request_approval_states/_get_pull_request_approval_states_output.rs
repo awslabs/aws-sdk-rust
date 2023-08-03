@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPullRequestApprovalStatesOutput {
     /// <p>Information about users who have approved the pull request.</p>
-    #[doc(hidden)]
     pub approvals: ::std::option::Option<::std::vec::Vec<crate::types::Approval>>,
     _request_id: Option<String>,
 }

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAutomationRulesRequestItem {
     /// <p> The Amazon Resource Name (ARN) for the rule. </p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html"> <code>BatchUpdateAutomationRules</code> </a>. </p>
-    #[doc(hidden)]
     pub rule_status: ::std::option::Option<crate::types::RuleStatus>,
     /// <p> An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first. </p>
-    #[doc(hidden)]
     pub rule_order: i32,
     /// <p> A description of the rule. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The name of the rule. </p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal. </p>
-    #[doc(hidden)]
     pub is_terminal: bool,
     /// <p> A set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    #[doc(hidden)]
     pub criteria: ::std::option::Option<crate::types::AutomationRulesFindingFilters>,
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>,
 }
 impl UpdateAutomationRulesRequestItem {

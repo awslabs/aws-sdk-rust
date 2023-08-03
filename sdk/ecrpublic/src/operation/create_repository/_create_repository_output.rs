@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRepositoryOutput {
     /// <p>The repository that was created.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<crate::types::Repository>,
     /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
-    #[doc(hidden)]
     pub catalog_data: ::std::option::Option<crate::types::RepositoryCatalogData>,
     _request_id: Option<String>,
 }

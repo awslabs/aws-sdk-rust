@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

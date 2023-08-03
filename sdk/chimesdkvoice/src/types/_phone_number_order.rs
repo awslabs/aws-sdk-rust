@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberOrder {
     /// <p>The ID of the phone order.</p>
-    #[doc(hidden)]
     pub phone_number_order_id: ::std::option::Option<::std::string::String>,
     /// <p>The phone number order product type.</p>
-    #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>The status of the phone number order.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PhoneNumberOrderStatus>,
     /// <p>The type of phone number being ordered, local or toll-free.</p>
-    #[doc(hidden)]
     pub order_type: ::std::option::Option<crate::types::PhoneNumberOrderType>,
     /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
-    #[doc(hidden)]
     pub ordered_phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>>,
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PhoneNumberOrder {

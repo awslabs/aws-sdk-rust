@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormStyle {
     /// <p>The spacing for the horizontal gap.</p>
-    #[doc(hidden)]
     pub horizontal_gap: ::std::option::Option<crate::types::FormStyleConfig>,
     /// <p>The spacing for the vertical gap.</p>
-    #[doc(hidden)]
     pub vertical_gap: ::std::option::Option<crate::types::FormStyleConfig>,
     /// <p>The size of the outer padding for the form.</p>
-    #[doc(hidden)]
     pub outer_padding: ::std::option::Option<crate::types::FormStyleConfig>,
 }
 impl FormStyle {

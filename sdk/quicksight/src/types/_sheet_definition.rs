@@ -5,44 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetDefinition {
     /// <p>The unique identifier of a sheet.</p>
-    #[doc(hidden)]
     pub sheet_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the sheet.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A description of the sheet.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub parameter_controls: ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>,
     /// <p>The list of filter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub filter_controls: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>,
     /// <p>A list of the visuals that are on a sheet. Visual placement is determined by the layout of the sheet.</p>
-    #[doc(hidden)]
     pub visuals: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
     /// <p>The text boxes that are on a sheet.</p>
-    #[doc(hidden)]
     pub text_boxes: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>,
     /// <p>Layouts define how the components of a sheet are arranged.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
     /// <p>The control layouts of the sheet.</p>
-    #[doc(hidden)]
     pub sheet_control_layouts: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
     /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::SheetContentType>,
 }
 impl SheetDefinition {

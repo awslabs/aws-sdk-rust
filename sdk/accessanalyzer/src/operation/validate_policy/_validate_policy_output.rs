@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidatePolicyOutput {
     /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
-    #[doc(hidden)]
     pub findings: ::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>>,
     /// <p>A token used for pagination of results returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

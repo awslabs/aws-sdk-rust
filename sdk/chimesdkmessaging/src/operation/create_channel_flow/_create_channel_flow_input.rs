@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateChannelFlowInput {
     /// <p>The ARN of the channel flow request.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the processor Lambda functions.</p>
-    #[doc(hidden)]
     pub processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
     /// <p>The name of the channel flow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the creation request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token for the request. An Idempotency token.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateChannelFlowInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForStreamInput {
     /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stream that you want to list tags for.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForStreamInput {

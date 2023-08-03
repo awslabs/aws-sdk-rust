@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestCaseRun {
     /// <p>Provides the test case run ID.</p>
-    #[doc(hidden)]
     pub test_case_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the test case run definition ID.</p>
-    #[doc(hidden)]
     pub test_case_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the test case run definition name.</p>
-    #[doc(hidden)]
     pub test_case_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the test case run status. Status is one of the following:</p>
     /// <ul>
@@ -24,25 +21,18 @@ pub struct TestCaseRun {
     /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Provides test case run start time.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides test case run end time.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides test case run log URL.</p>
-    #[doc(hidden)]
     pub log_url: ::std::option::Option<::std::string::String>,
     /// <p>Provides test case run warnings.</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::string::String>,
     /// <p>Provides test case run failure result.</p>
-    #[doc(hidden)]
     pub failure: ::std::option::Option<::std::string::String>,
     /// <p> Provides the test scenarios for the test case run. </p>
-    #[doc(hidden)]
     pub test_scenarios: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>>,
 }
 impl TestCaseRun {

@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateModelCardInput {
     /// <p>The name of the model card to update.</p>
-    #[doc(hidden)]
     pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated model card content. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
     /// <p>When updating model card content, be sure to include the full content and not just updated content.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct UpdateModelCardInput {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
 }
 impl UpdateModelCardInput {

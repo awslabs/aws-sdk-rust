@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationExceptionResourceKey {
     /// <p>The type of a resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl RemediationExceptionResourceKey {

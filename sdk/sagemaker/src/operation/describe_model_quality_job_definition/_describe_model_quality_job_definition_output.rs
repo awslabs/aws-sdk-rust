@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelQualityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model quality job.</p>
-    #[doc(hidden)]
     pub job_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the model quality job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The baseline configuration for a model quality job.</p>
-    #[doc(hidden)]
     pub model_quality_baseline_config: ::std::option::Option<crate::types::ModelQualityBaselineConfig>,
     /// <p>Configures the model quality job to run a specified Docker container image.</p>
-    #[doc(hidden)]
     pub model_quality_app_specification: ::std::option::Option<crate::types::ModelQualityAppSpecification>,
     /// <p>Inputs for the model quality job.</p>
-    #[doc(hidden)]
     pub model_quality_job_input: ::std::option::Option<crate::types::ModelQualityJobInput>,
     /// <p>The output configuration for monitoring jobs.</p>
-    #[doc(hidden)]
     pub model_quality_job_output_config: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    #[doc(hidden)]
     pub job_resources: ::std::option::Option<crate::types::MonitoringResources>,
     /// <p>Networking options for a model quality job.</p>
-    #[doc(hidden)]
     pub network_config: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
     _request_id: Option<String>,
 }

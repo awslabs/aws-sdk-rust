@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePullRequestTitleInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePullRequestTitleInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobExecutionInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing on which the job execution is running.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
-    #[doc(hidden)]
     pub execution_number: ::std::option::Option<i64>,
 }
 impl DescribeJobExecutionInput {

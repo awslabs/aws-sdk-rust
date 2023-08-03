@@ -4,61 +4,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutIntentOutput {
     /// <p>The name of the intent.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the intent.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of intent slots that are configured for the intent.</p>
-    #[doc(hidden)]
     pub slots: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
     /// <p> An array of sample utterances that are configured for the intent. </p>
-    #[doc(hidden)]
     pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
-    #[doc(hidden)]
     pub confirmation_prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
-    #[doc(hidden)]
     pub rejection_statement: ::std::option::Option<crate::types::Statement>,
     /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
-    #[doc(hidden)]
     pub follow_up_prompt: ::std::option::Option<crate::types::FollowUpPrompt>,
     /// <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
-    #[doc(hidden)]
     pub conclusion_statement: ::std::option::Option<crate::types::Statement>,
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
-    #[doc(hidden)]
     pub dialog_code_hook: ::std::option::Option<crate::types::CodeHook>,
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
-    #[doc(hidden)]
     pub fulfillment_activity: ::std::option::Option<crate::types::FulfillmentActivity>,
     /// <p>A unique identifier for the built-in intent that this intent is based on.</p>
-    #[doc(hidden)]
     pub parent_intent_signature: ::std::option::Option<::std::string::String>,
     /// <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
-    #[doc(hidden)]
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the intent was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
-    #[doc(hidden)]
     pub create_version: ::std::option::Option<bool>,
     /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    #[doc(hidden)]
     pub kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    #[doc(hidden)]
     pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    #[doc(hidden)]
     pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     _request_id: Option<String>,
 }

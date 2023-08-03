@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileBatchJobDefinition {
     /// <p>The name of the file containing the batch job definition.</p>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the file containing the batch job definition.</p>
-    #[doc(hidden)]
     pub folder_path: ::std::option::Option<::std::string::String>,
 }
 impl FileBatchJobDefinition {

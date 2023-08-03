@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExportsOutput {
     /// <p>The output for the <code>ListExports</code> action.</p>
-    #[doc(hidden)]
     pub exports: ::std::option::Option<::std::vec::Vec<crate::types::Export>>,
     /// <p>If the output exceeds 100 exported output values, a string that identifies the next page of exports. If there is no additional page, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

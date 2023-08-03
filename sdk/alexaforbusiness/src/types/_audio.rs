@@ -13,10 +13,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl Audio {

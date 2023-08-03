@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExcludePeriodConfiguration {
     /// <p>The amount or number of the exclude period.</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<i32>,
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
-    #[doc(hidden)]
     pub granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> </p> </li>
     /// <li> <p> <code>DISABLED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
 }
 impl ExcludePeriodConfiguration {

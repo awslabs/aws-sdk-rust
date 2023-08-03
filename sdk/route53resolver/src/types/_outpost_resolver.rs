@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutpostResolver {
     /// <p>The ARN (Amazon Resource Name) for the Resolver on an Outpost.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the Outpost Resolver was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the Outpost Resolver was modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub modification_time: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Resolver on Outpost.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon EC2 instance count for the Resolver on the Outpost.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p> The Amazon EC2 instance type. </p>
-    #[doc(hidden)]
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Resolver.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Status of the Resolver.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OutpostResolverStatus>,
     /// <p>A detailed description of the Resolver.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl OutpostResolver {

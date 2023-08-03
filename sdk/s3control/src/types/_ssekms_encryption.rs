@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsekmsEncryption {
     /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key to use for encrypting generated manifest objects.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl SsekmsEncryption {

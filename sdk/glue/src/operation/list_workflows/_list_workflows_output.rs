@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutput {
     /// <p>List of names of workflows in the account.</p>
-    #[doc(hidden)]
     pub workflows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A continuation token, if not all workflow names have been returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

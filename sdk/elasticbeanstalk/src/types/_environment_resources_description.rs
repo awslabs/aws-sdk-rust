@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentResourcesDescription {
     /// <p>Describes the LoadBalancer.</p>
-    #[doc(hidden)]
     pub load_balancer: ::std::option::Option<crate::types::LoadBalancerDescription>,
 }
 impl EnvironmentResourcesDescription {

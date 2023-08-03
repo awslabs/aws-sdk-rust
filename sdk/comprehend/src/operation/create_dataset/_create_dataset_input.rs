@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel of the flywheel to receive the data.</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The dataset type. You can specify that the data in a dataset is for training the model or for testing the model.</p>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<crate::types::DatasetType>,
     /// <p>Description of the dataset.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the input data configuration. The type of input data varies based on the format of the input and whether the data is for a classifier model or an entity recognition model.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::DatasetInputDataConfig>,
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the dataset.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDatasetInput {

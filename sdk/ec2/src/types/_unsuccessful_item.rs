@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsuccessfulItem {
     /// <p>Information about the error.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::UnsuccessfulItemError>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl UnsuccessfulItem {

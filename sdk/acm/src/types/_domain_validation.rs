@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainValidation {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    #[doc(hidden)]
     pub validation_emails: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The domain name that ACM used to send domain validation emails.</p>
-    #[doc(hidden)]
     pub validation_domain: ::std::option::Option<::std::string::String>,
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
@@ -19,14 +16,11 @@ pub struct DomainValidation {
     /// <li> <p> <code></code>SUCCESS</p> </li>
     /// <li> <p> <code></code>FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub validation_status: ::std::option::Option<crate::types::DomainStatus>,
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
-    #[doc(hidden)]
     pub resource_record: ::std::option::Option<crate::types::ResourceRecord>,
     /// <p>Specifies the domain validation method.</p>
-    #[doc(hidden)]
     pub validation_method: ::std::option::Option<crate::types::ValidationMethod>,
 }
 impl DomainValidation {

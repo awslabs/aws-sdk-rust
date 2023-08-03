@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoleDescriptionInput {
     /// <p>The name of the role that you want to modify.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description that you want to apply to the specified role.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRoleDescriptionInput {

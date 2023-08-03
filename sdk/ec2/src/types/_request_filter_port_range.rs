@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestFilterPortRange {
     /// <p>The first port in the range.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>The last port in the range.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
 }
 impl RequestFilterPortRange {

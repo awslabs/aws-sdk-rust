@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointDetails {
     /// <p>The ID of the Amazon EFS access point. </p>
-    #[doc(hidden)]
     pub access_point_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The opaque string specified in the request to ensure idempotent creation. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon EFS file system that the access point applies to. </p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point, that is used for all file operations by NFS clients using the access point. </p>
-    #[doc(hidden)]
     pub posix_user: ::std::option::Option<crate::types::AwsEfsAccessPointPosixUserDetails>,
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point. </p>
-    #[doc(hidden)]
     pub root_directory: ::std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryDetails>,
 }
 impl AwsEfsAccessPointDetails {

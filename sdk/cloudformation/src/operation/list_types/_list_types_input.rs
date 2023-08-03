@@ -14,7 +14,6 @@ pub struct ListTypesInput {
     /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
     /// </ul>
     /// <p>The default is <code>PRIVATE</code>.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
@@ -24,7 +23,6 @@ pub struct ListTypesInput {
     /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li>
     /// </ul>
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
-    #[doc(hidden)]
     pub provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
     /// <p>The deprecation status of the extension that you want to get summary information about.</p>
     /// <p>Valid values include:</p>
@@ -32,20 +30,15 @@ pub struct ListTypesInput {
     /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li>
     /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub deprecated_status: ::std::option::Option<crate::types::DeprecatedStatus>,
     /// <p>The type of extension.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>Filter criteria to use in determining which extensions to return.</p>
     /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::TypeFilters>,
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTypesInput {

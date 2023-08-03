@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamingDistributionsInput {
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
-    #[doc(hidden)]
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListStreamingDistributionsInput {

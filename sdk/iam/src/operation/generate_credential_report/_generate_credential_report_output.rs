@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateCredentialReportOutput {
     /// <p>Information about the state of the credential report.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReportStateType>,
     /// <p>Information about the credential report.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

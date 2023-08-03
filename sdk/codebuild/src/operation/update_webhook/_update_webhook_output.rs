@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWebhookOutput {
     /// <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
-    #[doc(hidden)]
     pub webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,
 }

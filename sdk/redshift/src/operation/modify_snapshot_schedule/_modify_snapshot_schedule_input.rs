@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySnapshotScheduleInput {
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
-    #[doc(hidden)]
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    #[doc(hidden)]
     pub schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ModifySnapshotScheduleInput {

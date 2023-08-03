@@ -5,11 +5,9 @@
 pub struct CreateGroupInput {
     /// <p>The name for the group. It can include any Unicode characters.</p>
     /// <p>The names for all groups in your account, across all Regions, must be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to associate with the group. You can associate as many as 50 tags with a group.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGroupInput {

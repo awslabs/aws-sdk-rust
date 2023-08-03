@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLaunchProfileInitializationOutput {
     /// <p>The launch profile initialization.</p>
-    #[doc(hidden)]
     pub launch_profile_initialization: ::std::option::Option<crate::types::LaunchProfileInitialization>,
     _request_id: Option<String>,
 }

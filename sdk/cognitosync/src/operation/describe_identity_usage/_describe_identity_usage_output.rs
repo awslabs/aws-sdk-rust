@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityUsageOutput {
     /// Usage information for the identity.
-    #[doc(hidden)]
     pub identity_usage: ::std::option::Option<crate::types::IdentityUsage>,
     _request_id: Option<String>,
 }

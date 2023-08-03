@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordInput {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
-    #[doc(hidden)]
     pub record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    #[doc(hidden)]
     pub feature_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>GetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>GetRecord</code> will return null.</p>
-    #[doc(hidden)]
     pub expiration_time_response: ::std::option::Option<crate::types::ExpirationTimeResponse>,
 }
 impl GetRecordInput {

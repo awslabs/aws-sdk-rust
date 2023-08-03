@@ -15,10 +15,8 @@ pub struct Relationship {
     /// <li> <p> <i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table. </p> </li>
     /// <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RelationshipType>,
     /// <p>An array of IDs for related blocks. You can get the type of the relationship from the <code>Type</code> element.</p>
-    #[doc(hidden)]
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Relationship {

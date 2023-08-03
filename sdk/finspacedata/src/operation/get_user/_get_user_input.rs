@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserInput {
     /// <p>The unique identifier of the user to get data for.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUserInput {

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateServiceInput {
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the service.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment in which the service is created.</p>
-    #[doc(hidden)]
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application which the service is created.</p>
-    #[doc(hidden)]
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::ServiceEndpointType>,
     /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
-    #[doc(hidden)]
     pub url_endpoint: ::std::option::Option<crate::types::UrlEndpointInput>,
     /// <p>The configuration for the Lambda endpoint type.</p>
-    #[doc(hidden)]
     pub lambda_endpoint: ::std::option::Option<crate::types::LambdaEndpointInput>,
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateServiceInput {

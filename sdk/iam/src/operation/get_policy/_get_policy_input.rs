@@ -5,7 +5,6 @@
 pub struct GetPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetPolicyInput {

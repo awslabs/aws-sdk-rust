@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>A list of projects in your AWS account.</p>
-    #[doc(hidden)]
     pub projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMetadata>>,
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

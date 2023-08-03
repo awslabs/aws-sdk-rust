@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePageOutput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    #[doc(hidden)]
     pub page_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
-    #[doc(hidden)]
     pub engagement_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the contact that was engaged.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user that started the engagement.</p>
-    #[doc(hidden)]
     pub sender: ::std::option::Option<::std::string::String>,
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    #[doc(hidden)]
     pub public_subject: ::std::option::Option<::std::string::String>,
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    #[doc(hidden)]
     pub public_content: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the incident that engaged the contact channel.</p>
-    #[doc(hidden)]
     pub incident_id: ::std::option::Option<::std::string::String>,
     /// <p>The time the engagement was sent to the contact channel.</p>
-    #[doc(hidden)]
     pub sent_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the contact channel acknowledged the engagement.</p>
-    #[doc(hidden)]
     pub read_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the contact channel received the engagement.</p>
-    #[doc(hidden)]
     pub delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

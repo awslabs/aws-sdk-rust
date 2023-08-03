@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeResourceRecordSetsInput {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
-    #[doc(hidden)]
     pub change_batch: ::std::option::Option<crate::types::ChangeBatch>,
 }
 impl ChangeResourceRecordSetsInput {

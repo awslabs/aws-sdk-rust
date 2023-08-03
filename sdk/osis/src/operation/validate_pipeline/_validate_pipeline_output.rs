@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidatePipelineOutput {
     /// <p>A boolean indicating whether or not the pipeline configuration is valid.</p>
-    #[doc(hidden)]
     pub is_valid: ::std::option::Option<bool>,
     /// <p>A list of errors if the configuration is invalid.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
     _request_id: Option<String>,
 }

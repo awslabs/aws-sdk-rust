@@ -5,45 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the workload.</p>
-    #[doc(hidden)]
     pub workload_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    #[doc(hidden)]
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the workload.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The environment for the workload.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::WorkloadEnvironment>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    #[doc(hidden)]
     pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    #[doc(hidden)]
     pub non_aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
-    #[doc(hidden)]
     pub architectural_design: ::std::option::Option<::std::string::String>,
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
-    #[doc(hidden)]
     pub review_owner: ::std::option::Option<::std::string::String>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub review_restriction_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
-    #[doc(hidden)]
     pub is_review_owner_update_acknowledged: bool,
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
@@ -76,46 +63,32 @@ pub struct Workload {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub industry_type: ::std::option::Option<::std::string::String>,
     /// <p>The industry for the workload.</p>
-    #[doc(hidden)]
     pub industry: ::std::option::Option<::std::string::String>,
     /// <p>The notes associated with the workload.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p>The improvement status for a workload.</p>
-    #[doc(hidden)]
     pub improvement_status: ::std::option::Option<crate::types::WorkloadImprovementStatus>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    #[doc(hidden)]
     pub pillar_priorities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    #[doc(hidden)]
     pub lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the share invitation.</p>
-    #[doc(hidden)]
     pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the workload.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Discovery configuration associated to the workload.</p>
-    #[doc(hidden)]
     pub discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Profile associated with a workload.</p>
-    #[doc(hidden)]
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl Workload {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EffectivePolicy {
     /// <p>The text content of the policy.</p>
-    #[doc(hidden)]
     pub policy_content: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last update to this policy.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The account ID of the policy target. </p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>The policy type.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::EffectivePolicyType>,
 }
 impl EffectivePolicy {

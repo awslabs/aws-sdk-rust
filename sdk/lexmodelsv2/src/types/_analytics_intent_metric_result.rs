@@ -12,7 +12,6 @@ pub struct AnalyticsIntentMetricResult {
     /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
     /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsIntentMetricName>,
     /// <p>The statistic that you requested to calculate.</p>
     /// <ul>
@@ -20,10 +19,8 @@ pub struct AnalyticsIntentMetricResult {
     /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
     /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::AnalyticsMetricStatistic>,
     /// <p>The value of the summary statistic for the metric that you requested.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl AnalyticsIntentMetricResult {

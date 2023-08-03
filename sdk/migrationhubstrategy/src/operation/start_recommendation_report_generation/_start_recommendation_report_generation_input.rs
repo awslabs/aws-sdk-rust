@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRecommendationReportGenerationInput {
     /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p> Groups the resources in the recommendation report with a unique name. </p>
-    #[doc(hidden)]
     pub group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
 }
 impl StartRecommendationReportGenerationInput {

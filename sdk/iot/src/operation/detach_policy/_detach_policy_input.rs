@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachPolicyInput {
     /// <p>The policy to detach.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The target from which the policy will be detached.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
 }
 impl DetachPolicyInput {

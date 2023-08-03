@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImageScanFindingAggregationsInput {
     /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImageScanFindingAggregationsInput {

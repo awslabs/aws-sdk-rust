@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateMemberOutput {
     /// <p>The Amazon Web Services account ID of the successfully associated member account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

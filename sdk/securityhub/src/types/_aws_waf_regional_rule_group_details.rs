@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRegionalRuleGroupDetails {
     /// <p>A name for the metrics for this rule group. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the rule group. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the rule group. </p>
-    #[doc(hidden)]
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>,
 }
 impl AwsWafRegionalRuleGroupDetails {

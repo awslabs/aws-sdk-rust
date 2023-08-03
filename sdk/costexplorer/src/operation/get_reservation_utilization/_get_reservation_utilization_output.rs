@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReservationUtilizationOutput {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    #[doc(hidden)]
     pub utilizations_by_time: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>,
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::ReservationAggregates>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateStepGroupSummary {
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The previous step group.</p>
-    #[doc(hidden)]
     pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next step group.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TemplateStepGroupSummary {

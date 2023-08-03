@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserSearchSummary {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The directory identifier of the user.</p>
-    #[doc(hidden)]
     pub directory_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user's hierarchy group.</p>
-    #[doc(hidden)]
     pub hierarchy_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user's summary.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The user's first name and last name.</p>
-    #[doc(hidden)]
     pub identity_info: ::std::option::Option<crate::types::UserIdentityInfoLite>,
     /// <p>Contains information about the phone configuration settings for a user.</p>
-    #[doc(hidden)]
     pub phone_config: ::std::option::Option<crate::types::UserPhoneConfig>,
     /// <p>The identifier of the user's routing profile.</p>
-    #[doc(hidden)]
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the user's security profiles.</p>
-    #[doc(hidden)]
     pub security_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl UserSearchSummary {

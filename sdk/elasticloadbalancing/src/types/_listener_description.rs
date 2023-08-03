@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListenerDescription {
     /// <p>The listener.</p>
-    #[doc(hidden)]
     pub listener: ::std::option::Option<crate::types::Listener>,
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
-    #[doc(hidden)]
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListenerDescription {

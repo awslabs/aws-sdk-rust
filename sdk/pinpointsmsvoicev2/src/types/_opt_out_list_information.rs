@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptOutListInformation {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    #[doc(hidden)]
     pub opt_out_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the OptOutList.</p>
-    #[doc(hidden)]
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OptOutListInformation {

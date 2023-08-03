@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCachePolicyInput {
     /// <p>A cache policy configuration.</p>
-    #[doc(hidden)]
     pub cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
 }
 impl CreateCachePolicyInput {

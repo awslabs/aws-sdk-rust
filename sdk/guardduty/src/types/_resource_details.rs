@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>InstanceArn that was scanned in the scan entry.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDetails {

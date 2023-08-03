@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutAlternateContactInput {
     /// <p>Specifies a name for the alternate contact.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a title for the alternate contact.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an email address for the alternate contact. </p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a phone number for the alternate contact.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which alternate contact you want to create or update.</p>
-    #[doc(hidden)]
     pub alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
     /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
@@ -24,7 +19,6 @@ pub struct PutAlternateContactInput {
     /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
     /// </note>
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl PutAlternateContactInput {

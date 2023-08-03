@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMinuteUsageOutput {
     /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
-    #[doc(hidden)]
     pub is_reserved_minutes_customer: ::std::option::Option<bool>,
     /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
-    #[doc(hidden)]
     pub total_reserved_minute_allocation: ::std::option::Option<i32>,
     /// <p>Upcoming minutes scheduled for an account, specific to the month being requested.</p>
-    #[doc(hidden)]
     pub upcoming_minutes_scheduled: ::std::option::Option<i32>,
     /// <p>Total scheduled minutes for an account, specific to the month being requested.</p>
-    #[doc(hidden)]
     pub total_scheduled_minutes: ::std::option::Option<i32>,
     /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
-    #[doc(hidden)]
     pub estimated_minutes_remaining: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

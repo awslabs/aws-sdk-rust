@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesOfListenerInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The external port of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_port: i32,
     /// <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
-    #[doc(hidden)]
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SetLoadBalancerPoliciesOfListenerInput {

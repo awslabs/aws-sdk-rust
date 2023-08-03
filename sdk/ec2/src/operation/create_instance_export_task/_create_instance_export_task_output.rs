@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstanceExportTaskOutput {
     /// <p>Information about the export instance task.</p>
-    #[doc(hidden)]
     pub export_task: ::std::option::Option<crate::types::ExportTask>,
     _request_id: Option<String>,
 }

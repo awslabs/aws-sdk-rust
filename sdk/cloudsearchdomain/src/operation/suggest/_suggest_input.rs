@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestInput {
     /// <p>Specifies the string for which you want to get suggestions.</p>
-    #[doc(hidden)]
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
-    #[doc(hidden)]
     pub suggester: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of suggestions to return. </p>
-    #[doc(hidden)]
     pub size: i64,
 }
 impl SuggestInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRemainingFreeTrialDaysOutput {
     /// <p>The member accounts which were included in a request and were processed successfully.</p>
-    #[doc(hidden)]
     pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialInfo>>,
     /// <p>The member account that was included in a request but for which the request could not be processed.</p>
-    #[doc(hidden)]
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }

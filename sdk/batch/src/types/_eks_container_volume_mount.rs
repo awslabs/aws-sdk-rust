@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksContainerVolumeMount {
     /// <p>The name the volume mount. This must match the name of one of the volumes in the pod.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path on the container where the volume is mounted.</p>
-    #[doc(hidden)]
     pub mount_path: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
 }
 impl EksContainerVolumeMount {

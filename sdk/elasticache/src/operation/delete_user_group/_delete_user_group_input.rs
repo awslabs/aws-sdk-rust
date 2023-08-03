@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUserGroupInput {
     /// <p>The ID of the user group.</p>
-    #[doc(hidden)]
     pub user_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserGroupInput {

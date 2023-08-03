@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdInput {
     /// <p>A standard AWS account ID (9+ digits).</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
@@ -23,7 +21,6 @@ pub struct GetIdInput {
     /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
     /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetIdInput {

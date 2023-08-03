@@ -11,13 +11,10 @@
 pub struct ByteMatchSet {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    #[doc(hidden)]
     pub byte_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
-    #[doc(hidden)]
     pub byte_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchTuple>>,
 }
 impl ByteMatchSet {

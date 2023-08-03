@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallPolicyOutput {
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete. </p>
-    #[doc(hidden)]
     pub firewall_policy_response: ::std::option::Option<crate::types::FirewallPolicyResponse>,
     _request_id: Option<String>,
 }

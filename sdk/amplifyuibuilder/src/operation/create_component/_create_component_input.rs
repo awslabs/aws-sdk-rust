@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateComponentInput {
     /// <p>The unique ID of the Amplify app to associate with the component.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Represents the configuration of the component to create.</p>
-    #[doc(hidden)]
     pub component_to_create: ::std::option::Option<crate::types::CreateComponentData>,
 }
 impl CreateComponentInput {

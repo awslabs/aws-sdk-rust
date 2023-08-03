@@ -5,13 +5,10 @@
 pub struct UpdateSmsTemplateInput {
     /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-    #[doc(hidden)]
     pub create_new_version: ::std::option::Option<bool>,
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    #[doc(hidden)]
     pub sms_template_request: ::std::option::Option<crate::types::SmsTemplateRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -22,7 +19,6 @@ pub struct UpdateSmsTemplateInput {
     /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
     /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSmsTemplateInput {

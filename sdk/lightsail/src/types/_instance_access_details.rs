@@ -5,37 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAccessDetails {
     /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
-    #[doc(hidden)]
     pub cert_key: ::std::option::Option<::std::string::String>,
     /// <p>For SSH access, the date on which the temporary keys expire.</p>
-    #[doc(hidden)]
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The public IP address of the Amazon Lightsail instance.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p> <note>
     /// <p>If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will always be an empty string.</p>
     /// <p>If you change the Administrator password on the instance, Lightsail will continue to return the original password value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
     /// </note>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.</p>
-    #[doc(hidden)]
     pub password_data: ::std::option::Option<crate::types::PasswordData>,
     /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey</code>).</p>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>The protocol for these Amazon Lightsail instance access details.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::InstanceAccessProtocol>,
     /// <p>The name of this Amazon Lightsail instance.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>Describes the public SSH host keys or the RDP certificate.</p>
-    #[doc(hidden)]
     pub host_keys: ::std::option::Option<::std::vec::Vec<crate::types::HostKeyAttributes>>,
 }
 impl InstanceAccessDetails {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketCountBySharedAccessType {
     /// <p>The total number of buckets that are shared with one or more of the following or any combination of the following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in the same Amazon Macie organization.</p>
-    #[doc(hidden)]
     pub external: ::std::option::Option<i64>,
     /// <p>The total number of buckets that are shared with one or more Amazon Web Services accounts in the same Amazon Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.</p>
-    #[doc(hidden)]
     pub internal: ::std::option::Option<i64>,
     /// <p>The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
-    #[doc(hidden)]
     pub not_shared: ::std::option::Option<i64>,
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
-    #[doc(hidden)]
     pub unknown: ::std::option::Option<i64>,
 }
 impl BucketCountBySharedAccessType {

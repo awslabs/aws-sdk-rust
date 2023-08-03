@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBlueprintInput {
     /// <p>The name of the blueprint.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the blueprint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-    #[doc(hidden)]
     pub blueprint_location: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBlueprintInput {

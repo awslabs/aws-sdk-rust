@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRecommenderConfigurationOutput {
     /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
-    #[doc(hidden)]
     pub recommender_configuration_response: ::std::option::Option<crate::types::RecommenderConfigurationResponse>,
     _request_id: Option<String>,
 }

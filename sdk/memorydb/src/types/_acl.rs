@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Acl {
     /// <p>The name of the Access Control List</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The list of user names that belong to the ACL.</p>
-    #[doc(hidden)]
     pub user_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The minimum engine version supported for the ACL</p>
-    #[doc(hidden)]
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of updates being applied to the ACL.</p>
-    #[doc(hidden)]
     pub pending_changes: ::std::option::Option<crate::types::AclPendingChanges>,
     /// <p>A list of clusters associated with the ACL.</p>
-    #[doc(hidden)]
     pub clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Acl {

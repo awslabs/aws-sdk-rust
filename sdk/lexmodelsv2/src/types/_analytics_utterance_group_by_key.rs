@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceGroupByKey {
     /// <p>The category by which the utterance analytics were grouped.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsUtteranceField>,
     /// <p>A member of the category by which the utterance analytics were grouped.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AnalyticsUtteranceGroupByKey {

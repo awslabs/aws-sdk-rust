@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionAliasPermission {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
-    #[doc(hidden)]
     pub shared_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
-    #[doc(hidden)]
     pub allow_association: ::std::option::Option<bool>,
 }
 impl ConnectionAliasPermission {

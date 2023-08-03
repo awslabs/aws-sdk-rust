@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceUserSummary {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of an <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
 }
 impl AppInstanceUserSummary {

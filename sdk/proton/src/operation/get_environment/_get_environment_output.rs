@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentOutput {
     /// <p>The detailed data of the requested environment.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
     _request_id: Option<String>,
 }

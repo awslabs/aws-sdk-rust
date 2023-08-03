@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResolverOutput {
     /// <p>The <code>Resolver</code> object.</p>
-    #[doc(hidden)]
     pub resolver: ::std::option::Option<crate::types::Resolver>,
     _request_id: Option<String>,
 }

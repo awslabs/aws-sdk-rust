@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateRecommendationDetail {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
 }
 impl TerminateRecommendationDetail {

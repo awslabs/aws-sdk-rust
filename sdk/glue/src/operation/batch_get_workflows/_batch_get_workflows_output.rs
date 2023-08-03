@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetWorkflowsOutput {
     /// <p>A list of workflow resource metadata.</p>
-    #[doc(hidden)]
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::Workflow>>,
     /// <p>A list of names of workflows not found.</p>
-    #[doc(hidden)]
     pub missing_workflows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

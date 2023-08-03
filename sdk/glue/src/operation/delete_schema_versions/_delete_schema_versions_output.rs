@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSchemaVersionsOutput {
     /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
-    #[doc(hidden)]
     pub schema_version_errors: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionErrorItem>>,
     _request_id: Option<String>,
 }

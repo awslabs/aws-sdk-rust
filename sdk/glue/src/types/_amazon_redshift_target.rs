@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonRedshiftTarget {
     /// <p>The name of the Amazon Redshift target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data of the Amazon Redshift target node.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,
     /// <p>The nodes that are inputs to the data target.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AmazonRedshiftTarget {

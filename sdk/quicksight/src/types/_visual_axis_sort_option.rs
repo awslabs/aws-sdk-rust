@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualAxisSortOption {
     /// <p>The availaiblity status of a visual's axis sort options.</p>
-    #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl VisualAxisSortOption {

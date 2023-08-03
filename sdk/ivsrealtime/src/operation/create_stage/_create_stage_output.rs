@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStageOutput {
     /// <p>The stage that was created.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::Stage>,
     /// <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
-    #[doc(hidden)]
     pub participant_tokens: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantToken>>,
     _request_id: Option<String>,
 }

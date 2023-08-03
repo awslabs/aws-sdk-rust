@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowOutput {
     /// <p>The resource metadata for the workflow.</p>
-    #[doc(hidden)]
     pub workflow: ::std::option::Option<crate::types::Workflow>,
     _request_id: Option<String>,
 }

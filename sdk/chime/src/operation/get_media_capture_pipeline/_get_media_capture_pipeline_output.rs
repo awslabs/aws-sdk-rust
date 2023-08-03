@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMediaCapturePipelineOutput {
     /// <p>The media capture pipeline object.</p>
-    #[doc(hidden)]
     pub media_capture_pipeline: ::std::option::Option<crate::types::MediaCapturePipeline>,
     _request_id: Option<String>,
 }

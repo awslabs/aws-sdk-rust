@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEdgePackagingJobInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDetectorErrorEntry {
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>A message that describes the error.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpdateDetectorErrorEntry {

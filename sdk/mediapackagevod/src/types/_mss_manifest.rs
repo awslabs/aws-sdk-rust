@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MssManifest {
     /// An optional string to include in the name of the manifest.
-    #[doc(hidden)]
     pub manifest_name: ::std::option::Option<::std::string::String>,
     /// A StreamSelection configuration.
-    #[doc(hidden)]
     pub stream_selection: ::std::option::Option<crate::types::StreamSelection>,
 }
 impl MssManifest {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFeaturedResultsSetsOutput {
     /// <p>An array of summary information for one or more featured results sets.</p>
-    #[doc(hidden)]
     pub featured_results_set_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsSetSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns a pagination token in the response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeneratedPolicyProperties {
     /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
-    #[doc(hidden)]
     pub is_complete: ::std::option::Option<bool>,
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-    #[doc(hidden)]
     pub cloud_trail_properties: ::std::option::Option<crate::types::CloudTrailProperties>,
 }
 impl GeneratedPolicyProperties {

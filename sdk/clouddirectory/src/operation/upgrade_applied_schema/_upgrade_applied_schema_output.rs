@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeAppliedSchemaOutput {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-    #[doc(hidden)]
     pub upgraded_schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the directory that is returned as part of the response.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

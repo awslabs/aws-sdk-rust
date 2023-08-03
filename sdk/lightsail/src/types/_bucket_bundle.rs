@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketBundle {
     /// <p>The ID of the bundle.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bundle.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The monthly price of the bundle, in US dollars.</p>
-    #[doc(hidden)]
     pub price: ::std::option::Option<f32>,
     /// <p>The storage size of the bundle, in GB.</p>
-    #[doc(hidden)]
     pub storage_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>The monthly network transfer quota of the bundle.</p>
-    #[doc(hidden)]
     pub transfer_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
-    #[doc(hidden)]
     pub is_active: ::std::option::Option<bool>,
 }
 impl BucketBundle {

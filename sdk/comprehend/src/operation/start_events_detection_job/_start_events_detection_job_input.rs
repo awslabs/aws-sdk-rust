@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartEventsDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the events detection job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the input documents.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The types of events to detect in the input documents.</p>
-    #[doc(hidden)]
     pub target_event_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartEventsDetectionJobInput {

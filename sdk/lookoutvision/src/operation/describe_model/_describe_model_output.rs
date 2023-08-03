@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelOutput {
     /// <p>Contains the description of the model.</p>
-    #[doc(hidden)]
     pub model_description: ::std::option::Option<crate::types::ModelDescription>,
     _request_id: Option<String>,
 }

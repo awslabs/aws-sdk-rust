@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCollectionOutput {
     /// <p>HTTP status code that indicates the result of the operation.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

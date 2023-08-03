@@ -5,36 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayRestApiDetails {
     /// <p>The identifier of the REST API.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the REST API.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the REST API.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier for the REST API.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The list of binary media types supported by the REST API.</p>
-    #[doc(hidden)]
     pub binary_media_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
     /// <p>If <code>null</code>, then compression is disabled.</p>
     /// <p>If 0, then all payloads are compressed.</p>
-    #[doc(hidden)]
     pub minimum_compression_size: i32,
     /// <p>The source of the API key for metering requests according to a usage plan.</p>
     /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
     /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    #[doc(hidden)]
     pub api_key_source: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint configuration of the REST API.</p>
-    #[doc(hidden)]
     pub endpoint_configuration: ::std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
 }
 impl AwsApiGatewayRestApiDetails {

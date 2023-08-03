@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entity {
     /// <p>The type of entity.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the entity.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl Entity {

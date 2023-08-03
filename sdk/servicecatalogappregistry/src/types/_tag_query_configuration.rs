@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagQueryConfiguration {
     /// <p> Condition in the IAM policy that associates resources to an application. </p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
 }
 impl TagQueryConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
-    #[doc(hidden)]
     pub ocsp_url: ::std::option::Option<::std::string::String>,
 }
 impl ClientCertAuthSettings {

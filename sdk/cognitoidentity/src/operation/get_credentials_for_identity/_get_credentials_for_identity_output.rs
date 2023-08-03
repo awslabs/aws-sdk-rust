@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCredentialsForIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    #[doc(hidden)]
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>Credentials for the provided identity ID.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     _request_id: Option<String>,
 }

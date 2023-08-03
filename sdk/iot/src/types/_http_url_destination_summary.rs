@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpUrlDestinationSummary {
     /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
-    #[doc(hidden)]
     pub confirmation_url: ::std::option::Option<::std::string::String>,
 }
 impl HttpUrlDestinationSummary {

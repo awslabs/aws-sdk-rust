@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageConfiguration {
     /// <p>The image URI.</p>
-    #[doc(hidden)]
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
-    #[doc(hidden)]
     pub resolved_image_digest: ::std::option::Option<::std::string::String>,
 }
 impl ImageConfiguration {

@@ -4,54 +4,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateMaintenanceWindowTaskOutput {
     /// <p>The ID of the maintenance window that was updated.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The task ID of the maintenance window that was updated.</p>
-    #[doc(hidden)]
     pub window_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated target values.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The updated task ARN value.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated parameter values.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub task_parameters:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     /// <p>The updated parameter values.</p>
-    #[doc(hidden)]
     pub task_invocation_parameters: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The updated priority value.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The updated <code>MaxConcurrency</code> value.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The updated <code>MaxErrors</code> value.</p>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The updated logging information in Amazon S3.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
     /// <p>The updated task name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated task description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
-    #[doc(hidden)]
     pub cutoff_behavior: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     _request_id: Option<String>,
 }

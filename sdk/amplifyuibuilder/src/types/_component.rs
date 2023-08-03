@@ -5,58 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Component {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the component.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
-    #[doc(hidden)]
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
-    #[doc(hidden)]
     pub variants: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
     /// <p></p>
-    #[doc(hidden)]
     pub binding_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>>,
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
-    #[doc(hidden)]
     pub collection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>>,
     /// <p>The time that the component was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the component was modified.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>One or more key-value pairs to use when tagging the component.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     /// <p>The schema version of the component when it was imported.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
 }
 impl Component {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnomedctTrait {
     /// <p> The name or contextual description of a detected trait. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SnomedctTraitName>,
     /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of a detected trait. </p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl SnomedctTrait {

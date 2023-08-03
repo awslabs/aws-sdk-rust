@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLongTermPricingInput {
     /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
-    #[doc(hidden)]
     pub long_term_pricing_type: ::std::option::Option<crate::types::LongTermPricingType>,
     /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
-    #[doc(hidden)]
     pub is_long_term_pricing_auto_renew: ::std::option::Option<bool>,
     /// <p>The type of Snow Family devices to use for the long-term pricing job.</p>
-    #[doc(hidden)]
     pub snowball_type: ::std::option::Option<crate::types::SnowballType>,
 }
 impl CreateLongTermPricingInput {

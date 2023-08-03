@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRegionAction {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRegionAction {

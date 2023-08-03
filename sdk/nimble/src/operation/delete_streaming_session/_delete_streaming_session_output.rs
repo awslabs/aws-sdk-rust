@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStreamingSessionOutput {
     /// <p>The session.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<crate::types::StreamingSession>,
     _request_id: Option<String>,
 }

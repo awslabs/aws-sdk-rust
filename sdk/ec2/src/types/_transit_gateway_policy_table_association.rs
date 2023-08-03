@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayPolicyTableAssociation {
     /// <p>The ID of the transit gateway policy table.</p>
-    #[doc(hidden)]
     pub transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the transit gateway attachment.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type for the transit gateway policy table association.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     /// <p>The state of the transit gateway policy table association.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayAssociationState>,
 }
 impl TransitGatewayPolicyTableAssociation {

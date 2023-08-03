@@ -11,34 +11,24 @@ pub struct UpdateFunctionCodeInput {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
-    #[doc(hidden)]
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    #[doc(hidden)]
     pub s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
-    #[doc(hidden)]
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
-    #[doc(hidden)]
     pub publish: ::std::option::Option<bool>,
     /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    #[doc(hidden)]
     pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
 }
 impl UpdateFunctionCodeInput {

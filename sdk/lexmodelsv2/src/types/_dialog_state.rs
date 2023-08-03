@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogState {
     /// <p>Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
-    #[doc(hidden)]
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>Override settings to configure the intent state.</p>
-    #[doc(hidden)]
     pub intent: ::std::option::Option<crate::types::IntentOverride>,
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    #[doc(hidden)]
     pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DialogState {

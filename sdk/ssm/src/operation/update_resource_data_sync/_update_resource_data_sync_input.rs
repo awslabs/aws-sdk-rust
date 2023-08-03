@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceDataSyncInput {
     /// <p>The name of the resource data sync you want to update.</p>
-    #[doc(hidden)]
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
-    #[doc(hidden)]
     pub sync_type: ::std::option::Option<::std::string::String>,
     /// <p>Specify information about the data sources to synchronize.</p>
-    #[doc(hidden)]
     pub sync_source: ::std::option::Option<crate::types::ResourceDataSyncSource>,
 }
 impl UpdateResourceDataSyncInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachObject {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
-    #[doc(hidden)]
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of the link.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    #[doc(hidden)]
     pub batch_reference_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchDetachObject {

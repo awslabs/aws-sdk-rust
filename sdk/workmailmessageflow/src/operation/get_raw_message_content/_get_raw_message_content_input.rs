@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRawMessageContentInput {
     /// <p>The identifier of the email message to retrieve.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRawMessageContentInput {

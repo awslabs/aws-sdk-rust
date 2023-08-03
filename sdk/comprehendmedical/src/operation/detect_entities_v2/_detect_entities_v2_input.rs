@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectEntitiesV2Input {
     /// <p>A UTF-8 string containing the clinical content being examined for entities.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
 }
 impl DetectEntitiesV2Input {

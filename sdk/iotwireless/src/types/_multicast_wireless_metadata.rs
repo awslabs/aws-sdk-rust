@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MulticastWirelessMetadata {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastMetadata>,
 }
 impl MulticastWirelessMetadata {

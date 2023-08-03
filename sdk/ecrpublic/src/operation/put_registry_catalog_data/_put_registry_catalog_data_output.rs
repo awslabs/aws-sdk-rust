@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRegistryCatalogDataOutput {
     /// <p>The catalog data for the public registry.</p>
-    #[doc(hidden)]
     pub registry_catalog_data: ::std::option::Option<crate::types::RegistryCatalogData>,
     _request_id: Option<String>,
 }

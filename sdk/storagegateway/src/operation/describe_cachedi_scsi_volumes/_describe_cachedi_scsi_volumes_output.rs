@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCachediScsiVolumesOutput {
     /// <p>An array of objects where each object contains metadata about one cached volume.</p>
-    #[doc(hidden)]
     pub cachedi_scsi_volumes: ::std::option::Option<::std::vec::Vec<crate::types::CachediScsiVolume>>,
     _request_id: Option<String>,
 }

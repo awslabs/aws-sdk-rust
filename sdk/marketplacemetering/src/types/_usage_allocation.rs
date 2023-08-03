@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageAllocation {
     /// <p>The total quantity allocated to this bucket of usage.</p>
-    #[doc(hidden)]
     pub allocated_usage_quantity: ::std::option::Option<i32>,
     /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UsageAllocation {

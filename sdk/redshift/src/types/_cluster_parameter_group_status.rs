@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterParameterGroupStatus {
     /// <p>The name of the cluster parameter group.</p>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of parameter updates.</p>
-    #[doc(hidden)]
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter statuses.</p>
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    #[doc(hidden)]
     pub cluster_parameter_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterStatus>>,
 }
 impl ClusterParameterGroupStatus {

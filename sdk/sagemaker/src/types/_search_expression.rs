@@ -12,16 +12,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchExpression {
     /// <p>A list of filter objects.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>A list of nested filter objects.</p>
-    #[doc(hidden)]
     pub nested_filters: ::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>>,
     /// <p>A list of search expression objects.</p>
-    #[doc(hidden)]
     pub sub_expressions: ::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>>,
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::BooleanOperator>,
 }
 impl SearchExpression {

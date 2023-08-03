@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubscriptionFiltersInput {
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
-    #[doc(hidden)]
     pub filter_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeSubscriptionFiltersInput {

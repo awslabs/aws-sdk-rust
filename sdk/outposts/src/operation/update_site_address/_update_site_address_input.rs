@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSiteAddressInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of the address. </p>
-    #[doc(hidden)]
     pub address_type: ::std::option::Option<crate::types::AddressType>,
     /// <p> The address for the site. </p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::Address>,
 }
 impl UpdateSiteAddressInput {

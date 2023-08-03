@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDetectorInput {
     /// <p>The unique ID of the detector to update.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the detector is enabled or not enabled.</p>
-    #[doc(hidden)]
     pub enable: ::std::option::Option<bool>,
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
-    #[doc(hidden)]
     pub finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>Describes which data sources will be updated.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<crate::types::DataSourceConfigurations>,
     /// <p>Provides the features that will be updated for the detector.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
 }
 impl UpdateDetectorInput {

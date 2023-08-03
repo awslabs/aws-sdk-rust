@@ -7,22 +7,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncDeploymentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]
     pub fleet: ::std::option::Option<::std::string::String>,
     /// <p>The status of the synchronization job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>Information about the deployment configuration.</p>
-    #[doc(hidden)]
     pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     /// <p>Information about the deployment application configurations.</p>
-    #[doc(hidden)]
     pub deployment_application_configs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     /// <p>The failure reason if the job fails.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The failure code if the job fails:</p>
     /// <dl>
@@ -111,10 +105,8 @@ pub struct SyncDeploymentJobOutput {
     /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

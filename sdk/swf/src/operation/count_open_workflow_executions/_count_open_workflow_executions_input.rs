@@ -4,25 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CountOpenWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-    #[doc(hidden)]
     pub start_time_filter: ::std::option::Option<crate::types::ExecutionTimeFilter>,
     /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    #[doc(hidden)]
     pub type_filter: ::std::option::Option<crate::types::WorkflowTypeFilter>,
     /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    #[doc(hidden)]
     pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    #[doc(hidden)]
     pub execution_filter: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
 }
 impl CountOpenWorkflowExecutionsInput {

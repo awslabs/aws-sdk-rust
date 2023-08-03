@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileLocation {
     /// <p>The stream that contains the OTA update.</p>
-    #[doc(hidden)]
     pub stream: ::std::option::Option<crate::types::Stream>,
     /// <p>The location of the updated firmware in S3.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl FileLocation {

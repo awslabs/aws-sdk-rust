@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>Details on SNS configuration. </p>
-    #[doc(hidden)]
     pub sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
 }
 impl NotificationConfiguration {

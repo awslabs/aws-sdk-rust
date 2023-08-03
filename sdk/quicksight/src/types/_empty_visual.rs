@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmptyVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    #[doc(hidden)]
     pub visual_id: ::std::option::Option<::std::string::String>,
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    #[doc(hidden)]
     pub data_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of custom actions that are configured for a visual.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl EmptyVisual {

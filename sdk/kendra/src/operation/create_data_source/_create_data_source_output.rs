@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSourceOutput {
     /// <p>The identifier of the data source connector.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

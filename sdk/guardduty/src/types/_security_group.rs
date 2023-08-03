@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroup {
     /// <p>The security group ID of the EC2 instance.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The security group name of the EC2 instance.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroup {

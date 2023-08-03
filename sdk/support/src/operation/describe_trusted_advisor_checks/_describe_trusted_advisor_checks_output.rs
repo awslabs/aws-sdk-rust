@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
-    #[doc(hidden)]
     pub checks: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>,
     _request_id: Option<String>,
 }

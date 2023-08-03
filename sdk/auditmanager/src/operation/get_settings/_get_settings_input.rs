@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSettingsInput {
     /// <p> The list of setting attribute enum values. </p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::SettingAttribute>,
 }
 impl GetSettingsInput {

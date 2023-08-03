@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetStyle {
     /// <p>The display options for tiles.</p>
-    #[doc(hidden)]
     pub tile: ::std::option::Option<crate::types::TileStyle>,
     /// <p>The layout options for tiles.</p>
-    #[doc(hidden)]
     pub tile_layout: ::std::option::Option<crate::types::TileLayoutStyle>,
 }
 impl SheetStyle {

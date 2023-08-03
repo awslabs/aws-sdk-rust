@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessageButton {
     /// <p>Default button content.</p>
-    #[doc(hidden)]
     pub android: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     /// <p>Default button content.</p>
-    #[doc(hidden)]
     pub default_config: ::std::option::Option<crate::types::DefaultButtonConfiguration>,
     /// <p>Default button content.</p>
-    #[doc(hidden)]
     pub ios: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     /// <p>Default button content.</p>
-    #[doc(hidden)]
     pub web: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
 }
 impl InAppMessageButton {

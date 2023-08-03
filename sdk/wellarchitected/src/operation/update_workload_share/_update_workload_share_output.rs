@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>A workload share return object.</p>
-    #[doc(hidden)]
     pub workload_share: ::std::option::Option<crate::types::WorkloadShare>,
     _request_id: Option<String>,
 }

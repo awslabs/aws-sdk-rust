@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateModelInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The content-type for the model, for example, "application/json".</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the model.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The model ID.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::string::String>,
 }
 impl UpdateModelInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyMapping {
     /// <p>The name of the transform node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
-    #[doc(hidden)]
     pub mapping: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
 }
 impl ApplyMapping {

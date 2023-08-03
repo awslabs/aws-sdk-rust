@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SftpConnectorConfig {
     /// <p>The identifiers for the secrets (in Amazon Web Services Secrets Manager) that contain the SFTP user's private keys or passwords.</p>
-    #[doc(hidden)]
     pub user_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The public portion of the host key, or keys, that are used to authenticate the user to the external server to which you are connecting. You can use the <code>ssh-keyscan</code> command against the SFTP server to retrieve the necessary key.</p>
     /// <p>The three standard SSH public key format elements are <code>
@@ -16,7 +15,6 @@ pub struct SftpConnectorConfig {
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
     /// <li> <p>For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SftpConnectorConfig {

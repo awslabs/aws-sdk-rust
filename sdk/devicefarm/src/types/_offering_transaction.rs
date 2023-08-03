@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OfferingTransaction {
     /// <p>The status of an offering transaction.</p>
-    #[doc(hidden)]
     pub offering_status: ::std::option::Option<crate::types::OfferingStatus>,
     /// <p>The transaction ID of the offering transaction.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID that corresponds to a device offering promotion.</p>
-    #[doc(hidden)]
     pub offering_promotion_id: ::std::option::Option<::std::string::String>,
     /// <p>The date on which an offering transaction was created.</p>
-    #[doc(hidden)]
     pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The cost of an offering transaction.</p>
-    #[doc(hidden)]
     pub cost: ::std::option::Option<crate::types::MonetaryAmount>,
 }
 impl OfferingTransaction {

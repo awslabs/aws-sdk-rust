@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableRestoreStatus {
     /// <p>The ID of the RestoreTableFromSnapshot request.</p>
-    #[doc(hidden)]
     pub table_restore_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
-    #[doc(hidden)]
     pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The namespace of the table being restored from.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup being restored from.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the snapshot being restored from.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
-    #[doc(hidden)]
     pub progress_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
-    #[doc(hidden)]
     pub total_data_in_mega_bytes: ::std::option::Option<i64>,
     /// <p>The name of the source database being restored from.</p>
-    #[doc(hidden)]
     pub source_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source schema being restored from.</p>
-    #[doc(hidden)]
     pub source_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source table being restored from.</p>
-    #[doc(hidden)]
     pub source_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to restore to.</p>
-    #[doc(hidden)]
     pub target_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema to restore to.</p>
-    #[doc(hidden)]
     pub target_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table to create from the restore operation.</p>
-    #[doc(hidden)]
     pub new_table_name: ::std::option::Option<::std::string::String>,
 }
 impl TableRestoreStatus {

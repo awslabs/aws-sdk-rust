@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbInstanceInput {
     /// <p>Not supported.</p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -14,49 +13,38 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid Values: <code>neptune</code> </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
-    #[doc(hidden)]
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The EC2 Availability Zone that the DB instance is created in</p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>
     /// <p> Example: <code>us-east-1d</code> </p>
     /// <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>
     /// <p>Constraints:</p>
@@ -65,7 +53,6 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automated backups are retained.</p>
     /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
@@ -75,115 +62,85 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Must be a value from 0 to 35</p> </li>
     /// <li> <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p> The daily time range during which automated backups are created.</p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the database accepts connections.</p>
     /// <p>Not applicable. The port is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p> Default: <code>8182</code> </p>
     /// <p>Type: Integer</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.</p>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>License model information for this DB instance.</p>
     /// <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The tags to assign to the new instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The identifier of the DB cluster that the instance will belong to.</p>
     /// <p>For information on creating a DB cluster, see <code>CreateDBCluster</code>.</p>
     /// <p>Type: String</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>Not applicable. Storage is managed by the DB Cluster.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-    #[doc(hidden)]
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
-    #[doc(hidden)]
     pub tde_credential_password: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB instance is encrypted.</p>
     /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p>Default: false</p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon KMS key identifier for an encrypted DB instance.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.</p>
     /// <p>Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     /// <p>If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the Active Directory Domain to create the instance in.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
-    #[doc(hidden)]
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-    #[doc(hidden)]
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-    #[doc(hidden)]
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
-    #[doc(hidden)]
     pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The time zone of the DB instance.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune (ignored).</p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub enable_performance_insights: ::std::option::Option<bool>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     /// <p>DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
 }
 impl CreateDbInstanceInput {

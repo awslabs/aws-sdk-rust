@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
-    #[doc(hidden)]
     pub record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
 }
 impl DestinationSchema {

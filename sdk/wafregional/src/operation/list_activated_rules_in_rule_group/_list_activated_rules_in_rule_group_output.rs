@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActivatedRulesInRuleGroupOutput {
     /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ActivatedRules</code> objects.</p>
-    #[doc(hidden)]
     pub activated_rules: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>,
     _request_id: Option<String>,
 }

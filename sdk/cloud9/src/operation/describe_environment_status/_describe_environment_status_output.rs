@@ -13,10 +13,8 @@ pub struct DescribeEnvironmentStatusOutput {
     /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
     /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
     /// <p>Any informational message about the status of the environment.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

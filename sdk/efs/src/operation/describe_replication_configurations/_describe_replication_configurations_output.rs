@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationsOutput {
     /// <p>The collection of replication configurations that is returned.</p>
-    #[doc(hidden)]
     pub replications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationDescription>>,
     /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

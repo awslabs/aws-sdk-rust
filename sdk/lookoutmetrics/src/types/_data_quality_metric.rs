@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityMetric {
     /// <p>The name of the data quality metric.</p>
-    #[doc(hidden)]
     pub metric_type: ::std::option::Option<crate::types::DataQualityMetricType>,
     /// <p>A description of the data quality metric.</p>
-    #[doc(hidden)]
     pub metric_description: ::std::option::Option<::std::string::String>,
     /// <p>The column that is being monitored.</p>
-    #[doc(hidden)]
     pub related_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the data quality metric.</p>
-    #[doc(hidden)]
     pub metric_value: ::std::option::Option<f64>,
 }
 impl DataQualityMetric {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRuleList {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
-    #[doc(hidden)]
     pub join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    #[doc(hidden)]
     pub allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
     /// <p>Columns that can be listed in the output.</p>
-    #[doc(hidden)]
     pub list_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnalysisRuleList {

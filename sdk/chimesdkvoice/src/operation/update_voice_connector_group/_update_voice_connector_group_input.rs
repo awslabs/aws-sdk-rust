@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupInput {
     /// <p>The Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Voice Connector group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.</p>
-    #[doc(hidden)]
     pub voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
 }
 impl UpdateVoiceConnectorGroupInput {

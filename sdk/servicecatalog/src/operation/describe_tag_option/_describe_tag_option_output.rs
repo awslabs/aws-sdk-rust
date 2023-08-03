@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTagOptionOutput {
     /// <p>Information about the TagOption.</p>
-    #[doc(hidden)]
     pub tag_option_detail: ::std::option::Option<crate::types::TagOptionDetail>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceDefinitionInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// Information about the initial version of the resource definition.
-    #[doc(hidden)]
     pub initial_version: ::std::option::Option<crate::types::ResourceDefinitionVersion>,
     /// The name of the resource definition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Tag(s) to add to the new resource.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateResourceDefinitionInput {

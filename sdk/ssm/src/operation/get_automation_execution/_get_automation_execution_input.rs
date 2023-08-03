@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutomationExecutionInput {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
-    #[doc(hidden)]
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAutomationExecutionInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInputSecurityGroupInput {
     /// The id of the Input Security Group to describe
-    #[doc(hidden)]
     pub input_security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInputSecurityGroupInput {

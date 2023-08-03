@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationDescription {
     /// <p>The ID of the destination.</p>
-    #[doc(hidden)]
     pub destination_id: ::std::option::Option<::std::string::String>,
     /// <p>[Deprecated] The destination in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The destination in Amazon S3.</p>
-    #[doc(hidden)]
     pub extended_s3_destination_description: ::std::option::Option<crate::types::ExtendedS3DestinationDescription>,
     /// <p>The destination in Amazon Redshift.</p>
-    #[doc(hidden)]
     pub redshift_destination_description: ::std::option::Option<crate::types::RedshiftDestinationDescription>,
     /// <p>The destination in Amazon ES.</p>
-    #[doc(hidden)]
     pub elasticsearch_destination_description: ::std::option::Option<crate::types::ElasticsearchDestinationDescription>,
     /// <p>The destination in Amazon OpenSearch Service.</p>
-    #[doc(hidden)]
     pub amazonopensearchservice_destination_description: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationDescription>,
     /// <p>The destination in Splunk.</p>
-    #[doc(hidden)]
     pub splunk_destination_description: ::std::option::Option<crate::types::SplunkDestinationDescription>,
     /// <p>Describes the specified HTTP endpoint destination.</p>
-    #[doc(hidden)]
     pub http_endpoint_destination_description: ::std::option::Option<crate::types::HttpEndpointDestinationDescription>,
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
-    #[doc(hidden)]
     pub amazon_open_search_serverless_destination_description: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
 }
 impl DestinationDescription {

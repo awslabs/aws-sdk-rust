@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates automatically after you submit the request.</p>
-    #[doc(hidden)]
     pub sensitivity_score_override: ::std::option::Option<i32>,
 }
 impl UpdateResourceProfileInput {

@@ -9,12 +9,10 @@ pub struct CreateApiKeyInput {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The client application domains that you want to use this API key for. </p>
     /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    #[doc(hidden)]
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateApiKeyInput {

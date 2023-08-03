@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
 }
 impl MultipleOperatingModes {

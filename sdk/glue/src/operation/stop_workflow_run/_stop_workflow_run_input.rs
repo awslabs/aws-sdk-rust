@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopWorkflowRunInput {
     /// <p>The name of the workflow to stop.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run to stop.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl StopWorkflowRunInput {

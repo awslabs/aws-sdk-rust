@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRepositoriesOutput {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
-    #[doc(hidden)]
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    #[doc(hidden)]
     pub repositories_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNfsFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
-    #[doc(hidden)]
     pub nfs_file_share_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NfsFileShareInfo>>,
     _request_id: Option<String>,
 }

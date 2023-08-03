@@ -5,65 +5,45 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionDetails {
     /// <p>An <code>AwsLambdaFunctionCode</code> object.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::AwsLambdaFunctionCode>,
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    #[doc(hidden)]
     pub code_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The function's dead letter queue.</p>
-    #[doc(hidden)]
     pub dead_letter_config: ::std::option::Option<crate::types::AwsLambdaFunctionDeadLetterConfig>,
     /// <p>The function's environment variables.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironment>,
     /// <p>The name of the function.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The function that Lambda calls to begin executing your function.</p>
-    #[doc(hidden)]
     pub handler: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed customer managed key.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the function was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The function's layers.</p>
-    #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<crate::types::AwsLambdaFunctionLayer>>,
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
-    #[doc(hidden)]
     pub master_arn: ::std::option::Option<::std::string::String>,
     /// <p>The memory that is allocated to the function.</p>
-    #[doc(hidden)]
     pub memory_size: i32,
     /// <p>The latest updated revision of the function or alias.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The function's execution role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The runtime environment for the Lambda function.</p>
-    #[doc(hidden)]
     pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time that Lambda allows a function to run before stopping it.</p>
-    #[doc(hidden)]
     pub timeout: i32,
     /// <p>The function's X-Ray tracing configuration.</p>
-    #[doc(hidden)]
     pub tracing_config: ::std::option::Option<crate::types::AwsLambdaFunctionTracingConfig>,
     /// <p>The function's networking configuration.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::AwsLambdaFunctionVpcConfig>,
     /// <p>The version of the Lambda function.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or <code>arm64</code>.</p>
-    #[doc(hidden)]
     pub architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
-    #[doc(hidden)]
     pub package_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaFunctionDetails {

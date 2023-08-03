@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycle {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCreateStandbyWorkspacesRequest {
     /// <p>Information about the standby WorkSpace that could not be created.</p>
-    #[doc(hidden)]
     pub standby_workspace_request: ::std::option::Option<crate::types::StandbyWorkspace>,
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedCreateStandbyWorkspacesRequest {

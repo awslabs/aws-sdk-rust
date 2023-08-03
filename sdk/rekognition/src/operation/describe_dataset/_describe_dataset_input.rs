@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetInput {

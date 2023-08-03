@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerraformSource {
     /// <p> The URL of the Terraform s3 state file you need to import. </p>
-    #[doc(hidden)]
     pub s3_state_file_url: ::std::option::Option<::std::string::String>,
 }
 impl TerraformSource {

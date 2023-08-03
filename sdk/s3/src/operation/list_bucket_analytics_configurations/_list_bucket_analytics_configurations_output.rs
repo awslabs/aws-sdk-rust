@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBucketAnalyticsConfigurationsOutput {
     /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
-    #[doc(hidden)]
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
-    #[doc(hidden)]
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of analytics configurations for a bucket.</p>
-    #[doc(hidden)]
     pub analytics_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsConfiguration>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

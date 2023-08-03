@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Segment {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
-    #[doc(hidden)]
     pub segment_number: i32,
     /// <p>The total number of segments.</p>
-    #[doc(hidden)]
     pub total_segments: i32,
 }
 impl Segment {

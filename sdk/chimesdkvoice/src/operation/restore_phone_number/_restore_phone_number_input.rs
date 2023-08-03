@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RestorePhoneNumberInput {
     /// <p>The ID of the phone number being restored.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl RestorePhoneNumberInput {

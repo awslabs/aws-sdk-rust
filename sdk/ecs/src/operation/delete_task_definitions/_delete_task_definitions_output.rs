@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTaskDefinitionsOutput {
     /// <p>The list of deleted task definitions.</p>
-    #[doc(hidden)]
     pub task_definitions: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinition>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }

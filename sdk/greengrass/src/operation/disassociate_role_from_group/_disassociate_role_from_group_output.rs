@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateRoleFromGroupOutput {
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
-    #[doc(hidden)]
     pub disassociated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

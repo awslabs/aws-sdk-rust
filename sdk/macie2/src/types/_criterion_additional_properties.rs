@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CriterionAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
-    #[doc(hidden)]
     pub eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value for the property exclusively matches (equals an exact match for) all the specified values. If you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
     /// <p>You can use this operator with the following properties: customDataIdentifiers.detections.arn, customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.</p>
-    #[doc(hidden)]
     pub eq_exact_match: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value for the property is greater than the specified value.</p>
-    #[doc(hidden)]
     pub gt: ::std::option::Option<i64>,
     /// <p>The value for the property is greater than or equal to the specified value.</p>
-    #[doc(hidden)]
     pub gte: ::std::option::Option<i64>,
     /// <p>The value for the property is less than the specified value.</p>
-    #[doc(hidden)]
     pub lt: ::std::option::Option<i64>,
     /// <p>The value for the property is less than or equal to the specified value.</p>
-    #[doc(hidden)]
     pub lte: ::std::option::Option<i64>,
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
-    #[doc(hidden)]
     pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CriterionAdditionalProperties {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Fragment {
     /// <p>The unique identifier of the fragment. This value monotonically increases based on the ingestion order.</p>
-    #[doc(hidden)]
     pub fragment_number: ::std::option::Option<::std::string::String>,
     /// <p>The total fragment size, including information about the fragment and contained media data.</p>
-    #[doc(hidden)]
     pub fragment_size_in_bytes: i64,
     /// <p>The timestamp from the producer corresponding to the fragment.</p>
-    #[doc(hidden)]
     pub producer_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp from the AWS server corresponding to the fragment.</p>
-    #[doc(hidden)]
     pub server_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The playback duration or other time value associated with the fragment.</p>
-    #[doc(hidden)]
     pub fragment_length_in_milliseconds: i64,
 }
 impl Fragment {

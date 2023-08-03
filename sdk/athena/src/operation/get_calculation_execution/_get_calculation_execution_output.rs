@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalculationExecutionOutput {
     /// <p>The calculation execution UUID.</p>
-    #[doc(hidden)]
     pub calculation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The session ID that the calculation ran in.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the calculation execution.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location in which calculation results are stored.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the status of the calculation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CalculationStatus>,
     /// <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::CalculationStatistics>,
     /// <p>Contains result information. This field is populated only if the calculation is completed.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::CalculationResult>,
     _request_id: Option<String>,
 }

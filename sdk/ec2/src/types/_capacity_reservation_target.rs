@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservationTarget {
     /// <p>The ID of the Capacity Reservation in which to run the instance.</p>
-    #[doc(hidden)]
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
-    #[doc(hidden)]
     pub capacity_reservation_resource_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationTarget {

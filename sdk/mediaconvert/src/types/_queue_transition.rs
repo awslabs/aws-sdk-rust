@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueueTransition {
     /// The queue that the job was on after the transition.
-    #[doc(hidden)]
     pub destination_queue: ::std::option::Option<::std::string::String>,
     /// The queue that the job was on before the transition.
-    #[doc(hidden)]
     pub source_queue: ::std::option::Option<::std::string::String>,
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QueueTransition {

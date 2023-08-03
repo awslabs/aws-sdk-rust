@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeKeyAndValue {
     /// <p>The key of the attribute.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::AttributeKey>,
     /// <p>The value of the attribute.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl AttributeKeyAndValue {

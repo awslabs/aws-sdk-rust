@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingAggregatorInput {
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    #[doc(hidden)]
     pub finding_aggregator_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetFindingAggregatorInput {

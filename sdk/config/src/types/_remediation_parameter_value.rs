@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationParameterValue {
     /// <p>The value is dynamic and changes at run-time.</p>
-    #[doc(hidden)]
     pub resource_value: ::std::option::Option<crate::types::ResourceValue>,
     /// <p>The value is static and does not change at run-time.</p>
-    #[doc(hidden)]
     pub static_value: ::std::option::Option<crate::types::StaticValue>,
 }
 impl RemediationParameterValue {

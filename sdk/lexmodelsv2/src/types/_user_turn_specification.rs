@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTurnSpecification {
     /// <p>Contains information about the user messages in the turn in the input.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<crate::types::UserTurnInputSpecification>,
     /// <p>Contains results about the expected output for the user turn.</p>
-    #[doc(hidden)]
     pub expected: ::std::option::Option<crate::types::UserTurnOutputSpecification>,
 }
 impl UserTurnSpecification {

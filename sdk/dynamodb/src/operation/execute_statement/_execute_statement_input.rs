@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementInput {
     /// <p>The PartiQL statement representing the operation to run.</p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the PartiQL statement, if any.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
-    #[doc(hidden)]
     pub consistent_read: ::std::option::Option<bool>,
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -21,14 +17,11 @@ pub struct ExecuteStatementInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
     /// <p>The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the limit while processing the results, it stops the operation and returns the matching values up to that point, along with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. </p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed a condition check.</p>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
-    #[doc(hidden)]
     pub return_values_on_condition_check_failure: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl ExecuteStatementInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkSummary {
     /// <p>The ID of a core network.</p>
-    #[doc(hidden)]
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>a core network ARN.</p>
-    #[doc(hidden)]
     pub core_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The global network ID.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the account owner.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of a core network.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CoreNetworkState>,
     /// <p>The description of a core network.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key-value tags associated with a core network summary.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CoreNetworkSummary {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Slack channel that you configure for the Amazon Web Services Support App.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
-    #[doc(hidden)]
     pub notify_on_create_or_reopen_case: ::std::option::Option<bool>,
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-    #[doc(hidden)]
     pub notify_on_add_correspondence_to_case: ::std::option::Option<bool>,
     /// <p>Whether you want to get notified when a support case is resolved.</p>
-    #[doc(hidden)]
     pub notify_on_resolve_case: ::std::option::Option<bool>,
     /// <p>The case severity for a support case that you want to receive notifications.</p>
     /// <p>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the following parameters:</p>
@@ -36,10 +30,8 @@ pub struct CreateSlackChannelConfigurationInput {
     /// </ul> <note>
     /// <p>If you don't specify these parameters in your request, they default to <code>false</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub notify_on_case_severity: ::std::option::Option<crate::types::NotificationSeverityLevel>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    #[doc(hidden)]
     pub channel_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateSlackChannelConfigurationInput {

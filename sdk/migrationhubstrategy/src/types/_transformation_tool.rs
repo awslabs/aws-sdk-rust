@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformationTool {
     /// <p> Name of the tool. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::TransformationToolName>,
     /// <p> Description of the tool. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> URL for installing the tool. </p>
-    #[doc(hidden)]
     pub tranformation_tool_installation_link: ::std::option::Option<::std::string::String>,
 }
 impl TransformationTool {

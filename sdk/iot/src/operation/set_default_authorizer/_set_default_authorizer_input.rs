@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetDefaultAuthorizerInput {
     /// <p>The authorizer name.</p>
-    #[doc(hidden)]
     pub authorizer_name: ::std::option::Option<::std::string::String>,
 }
 impl SetDefaultAuthorizerInput {

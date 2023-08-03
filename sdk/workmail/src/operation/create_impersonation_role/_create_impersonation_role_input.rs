@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImpersonationRoleInput {
     /// <p>The idempotency token for the client request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail organization to create the new impersonation role within.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new impersonation role.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
     /// <p>The description of the new impersonation role.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of rules for the impersonation role.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>>,
 }
 impl CreateImpersonationRoleInput {

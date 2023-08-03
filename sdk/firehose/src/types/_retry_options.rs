@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryOptions {
     /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
 impl RetryOptions {

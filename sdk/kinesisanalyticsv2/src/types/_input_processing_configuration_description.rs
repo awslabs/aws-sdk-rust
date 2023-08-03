@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputProcessingConfigurationDescription {
     /// <p>Provides configuration information about the associated <code>InputLambdaProcessorDescription</code> </p>
-    #[doc(hidden)]
     pub input_lambda_processor_description: ::std::option::Option<crate::types::InputLambdaProcessorDescription>,
 }
 impl InputProcessingConfigurationDescription {

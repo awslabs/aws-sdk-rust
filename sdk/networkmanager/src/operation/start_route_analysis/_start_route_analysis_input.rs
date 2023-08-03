@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The source from which traffic originates.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
     /// <p>The destination.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_return_path: ::std::option::Option<bool>,
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub use_middleboxes: ::std::option::Option<bool>,
 }
 impl StartRouteAnalysisInput {

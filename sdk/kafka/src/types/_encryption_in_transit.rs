@@ -9,11 +9,9 @@ pub struct EncryptionInTransit {
     /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
     /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
-    #[doc(hidden)]
     pub client_broker: ::std::option::Option<crate::types::ClientBroker>,
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
-    #[doc(hidden)]
     pub in_cluster: ::std::option::Option<bool>,
 }
 impl EncryptionInTransit {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationsOutput {
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
-    #[doc(hidden)]
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
     _request_id: Option<String>,
 }

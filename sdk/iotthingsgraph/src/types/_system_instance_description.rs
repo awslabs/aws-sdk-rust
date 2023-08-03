@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemInstanceDescription {
     /// <p>An object that contains summary information about a system instance.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     /// <p>A document that defines an entity. </p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-    #[doc(hidden)]
     pub metrics_configuration: ::std::option::Option<crate::types::MetricsConfiguration>,
     /// <p>The version of the user's namespace against which the system instance was validated.</p>
-    #[doc(hidden)]
     pub validated_namespace_version: ::std::option::Option<i64>,
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
-    #[doc(hidden)]
     pub validated_dependency_revisions: ::std::option::Option<::std::vec::Vec<crate::types::DependencyRevision>>,
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
-    #[doc(hidden)]
     pub flow_actions_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl SystemInstanceDescription {

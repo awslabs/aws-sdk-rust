@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceRevision {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
-    #[doc(hidden)]
     pub revision_summary: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit repositories, the commit ID is linked to a commit details page.</p>
-    #[doc(hidden)]
     pub revision_url: ::std::option::Option<::std::string::String>,
 }
 impl SourceRevision {

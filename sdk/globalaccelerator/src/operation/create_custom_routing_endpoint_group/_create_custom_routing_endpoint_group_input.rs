@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
-    #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
-    #[doc(hidden)]
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
-    #[doc(hidden)]
     pub destination_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCustomRoutingEndpointGroupInput {

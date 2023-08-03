@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Warning {
     /// <p>The error code for the warning.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>A list of the pages that the warning applies to.</p>
-    #[doc(hidden)]
     pub pages: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl Warning {

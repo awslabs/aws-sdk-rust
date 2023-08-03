@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Asset {
     /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
-    #[doc(hidden)]
     pub ground_truth_manifest: ::std::option::Option<crate::types::GroundTruthManifest>,
 }
 impl Asset {

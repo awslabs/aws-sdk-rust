@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableVoiceConnectorRegionsOutput {
     /// <p>The list of AWS Regions.</p>
-    #[doc(hidden)]
     pub voice_connector_regions: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorAwsRegion>>,
     _request_id: Option<String>,
 }

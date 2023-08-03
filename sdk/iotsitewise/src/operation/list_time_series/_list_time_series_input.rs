@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTimeSeriesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The ID of the asset in which the asset property was created.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias prefix of the time series.</p>
-    #[doc(hidden)]
     pub alias_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The type of the time series. The time series type can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
     /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub time_series_type: ::std::option::Option<crate::types::ListTimeSeriesType>,
 }
 impl ListTimeSeriesInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReceiptFilterInput {
     /// <p>The name of the IP address filter to delete.</p>
-    #[doc(hidden)]
     pub filter_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReceiptFilterInput {

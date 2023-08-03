@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCellInput {
     /// <p>The name of the cell to create.</p>
-    #[doc(hidden)]
     pub cell_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A collection of tags associated with a resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCellInput {

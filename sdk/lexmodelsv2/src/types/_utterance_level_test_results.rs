@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceLevelTestResults {
     /// <p>Contains information about an utterance in the results of the test set execution.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceLevelTestResultItem>>,
 }
 impl UtteranceLevelTestResults {

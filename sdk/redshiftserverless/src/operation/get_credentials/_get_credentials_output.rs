@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetCredentialsOutput {
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified <code>DbUser</code> exists in the database, the new user name has the same database privileges as the the user named in <code>DbUser</code>. By default, the user is added to PUBLIC.</p>
-    #[doc(hidden)]
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>.</p>
-    #[doc(hidden)]
     pub db_password: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
-    #[doc(hidden)]
     pub next_refresh_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

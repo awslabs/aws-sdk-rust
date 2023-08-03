@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetInput {
     /// The ID of an MediaPackage VOD Asset resource.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssetInput {

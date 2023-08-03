@@ -6,16 +6,12 @@
 pub struct ModifyOptionGroupInput {
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    #[doc(hidden)]
     pub options_to_include: ::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>>,
     /// <p>Options in this list are removed from the option group.</p>
-    #[doc(hidden)]
     pub options_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
 }
 impl ModifyOptionGroupInput {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Link {
     /// <p>The ID of the link.</p>
-    #[doc(hidden)]
     pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the link.</p>
-    #[doc(hidden)]
     pub link_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the site.</p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the link.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the link.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The bandwidth for the link.</p>
-    #[doc(hidden)]
     pub bandwidth: ::std::option::Option<crate::types::Bandwidth>,
     /// <p>The provider of the link.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the link was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the link.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::LinkState>,
     /// <p>The tags for the link.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Link {

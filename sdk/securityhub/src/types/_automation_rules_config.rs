@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationRulesConfig {
     /// <p> The Amazon Resource Name (ARN) of a rule. </p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p> Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>, Security Hub starts applying the rule to findings and finding updates after the rule is created. </p>
-    #[doc(hidden)]
     pub rule_status: ::std::option::Option<crate::types::RuleStatus>,
     /// <p> An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first. </p>
-    #[doc(hidden)]
     pub rule_order: i32,
     /// <p> The name of the rule. </p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p> A description of the rule. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal. </p>
-    #[doc(hidden)]
     pub is_terminal: bool,
     /// <p> A set of <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
-    #[doc(hidden)]
     pub criteria: ::std::option::Option<crate::types::AutomationRulesFindingFilters>,
     /// <p> One or more actions to update finding fields if a finding matches the defined criteria of the rule. </p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesAction>>,
     /// <p> A timestamp that indicates when the rule was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> A timestamp that indicates when the rule was most recently updated. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The principal that created a rule. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl AutomationRulesConfig {

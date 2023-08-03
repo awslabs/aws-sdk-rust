@@ -4,18 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestIdentityProviderOutput {
     /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
-    #[doc(hidden)]
     pub response: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
-    #[doc(hidden)]
     pub status_code: i32,
     /// <p>A message that indicates whether the test was successful or not.</p> <note>
     /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
     /// </note>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the service used to authenticate a user.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

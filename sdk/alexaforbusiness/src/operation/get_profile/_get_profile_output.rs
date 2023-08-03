@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProfileOutput {
     /// <p>The details of the room profile requested. Required.</p>
-    #[doc(hidden)]
     pub profile: ::std::option::Option<crate::types::Profile>,
     _request_id: Option<String>,
 }

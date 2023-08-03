@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThemeError {
     /// <p>The type of error.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThemeErrorType>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ThemeError {

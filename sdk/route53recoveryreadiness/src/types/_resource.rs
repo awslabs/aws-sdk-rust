@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
-    #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS target resource.</p>
-    #[doc(hidden)]
     pub dns_target_resource: ::std::option::Option<crate::types::DnsTargetResource>,
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    #[doc(hidden)]
     pub readiness_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl Resource {

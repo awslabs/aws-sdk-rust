@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverrideButtonConfiguration {
     /// <p>Action triggered by the button.</p>
-    #[doc(hidden)]
     pub button_action: ::std::option::Option<crate::types::ButtonAction>,
     /// <p>Button destination.</p>
-    #[doc(hidden)]
     pub link: ::std::option::Option<::std::string::String>,
 }
 impl OverrideButtonConfiguration {

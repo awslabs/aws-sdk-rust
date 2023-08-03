@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentStyle {
     /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
-    #[doc(hidden)]
     pub deployment_option: ::std::option::Option<crate::types::DeploymentOption>,
 }
 impl DeploymentStyle {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterPendingModifiedValues {
     /// <p>The pending or in-progress change to the automated snapshot retention period.</p>
-    #[doc(hidden)]
     pub automated_snapshot_retention_period: i32,
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the cluster type.</p>
-    #[doc(hidden)]
     pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the service version.</p>
-    #[doc(hidden)]
     pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The encryption type for a cluster.</p>
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
-    #[doc(hidden)]
     pub enhanced_vpc_routing: bool,
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the cluster's node type.</p>
-    #[doc(hidden)]
     pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
-    #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The pending or in-progress change to whether the cluster can be connected to from the public network.</p>
-    #[doc(hidden)]
     pub publicly_accessible: bool,
 }
 impl AwsRedshiftClusterPendingModifiedValues {

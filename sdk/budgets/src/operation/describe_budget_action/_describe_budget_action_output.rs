@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p> A budget action resource. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::Action>,
     _request_id: Option<String>,
 }

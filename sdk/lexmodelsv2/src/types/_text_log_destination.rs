@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextLogDestination {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
-    #[doc(hidden)]
     pub cloud_watch: ::std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
 }
 impl TextLogDestination {

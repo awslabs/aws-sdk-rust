@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartModelPackagingJobOutput {
     /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCategorySpecificSummary {
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
-    #[doc(hidden)]
     pub cost_optimizing: ::std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>,
 }
 impl TrustedAdvisorCategorySpecificSummary {

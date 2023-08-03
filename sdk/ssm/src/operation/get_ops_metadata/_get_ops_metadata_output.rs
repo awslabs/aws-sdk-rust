@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOpsMetadataOutput {
     /// <p>The resource ID of the Application Manager application.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>OpsMetadata for an Application Manager application.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

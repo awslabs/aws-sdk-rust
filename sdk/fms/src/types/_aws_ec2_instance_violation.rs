@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceViolation {
     /// <p>The resource ID of the EC2 instance.</p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
-    #[doc(hidden)]
     pub aws_ec2_network_interface_violations: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2NetworkInterfaceViolation>>,
 }
 impl AwsEc2InstanceViolation {

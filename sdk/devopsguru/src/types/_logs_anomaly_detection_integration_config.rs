@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogsAnomalyDetectionIntegrationConfig {
     /// <p>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch log groups.</p>
-    #[doc(hidden)]
     pub opt_in_status: ::std::option::Option<crate::types::OptInStatus>,
 }
 impl LogsAnomalyDetectionIntegrationConfig {

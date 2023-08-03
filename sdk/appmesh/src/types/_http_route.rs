@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::HttpRouteMatch>,
     /// <p>An object that represents the action to take if a match is determined.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::HttpRouteAction>,
     /// <p>An object that represents a retry policy.</p>
-    #[doc(hidden)]
     pub retry_policy: ::std::option::Option<crate::types::HttpRetryPolicy>,
     /// <p>An object that represents types of timeouts. </p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<crate::types::HttpTimeout>,
 }
 impl HttpRoute {

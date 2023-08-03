@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTemplateSyncConfigInput {
     /// <p>The synced template name.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The synced template type.</p>
-    #[doc(hidden)]
     pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The repository provider.</p>
-    #[doc(hidden)]
     pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository branch for your template.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
 }
 impl UpdateTemplateSyncConfigInput {

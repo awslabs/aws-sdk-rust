@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC. </p>
-    #[doc(hidden)]
     pub firewall_config: ::std::option::Option<crate::types::FirewallConfig>,
     _request_id: Option<String>,
 }

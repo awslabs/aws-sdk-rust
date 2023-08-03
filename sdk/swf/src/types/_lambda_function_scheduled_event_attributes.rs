@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionScheduledEventAttributes {
     /// <p>The unique ID of the Lambda task.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<::std::string::String>,
     /// <p>The input provided to the Lambda task.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
-    #[doc(hidden)]
     pub start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl LambdaFunctionScheduledEventAttributes {

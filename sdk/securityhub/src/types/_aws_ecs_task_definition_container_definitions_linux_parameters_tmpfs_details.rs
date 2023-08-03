@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
     /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
-    #[doc(hidden)]
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>The list of tmpfs volume mount options.</p>
     /// <p>Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code> | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code> | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code> | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code> | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code> | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> | <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code> | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code> | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code> | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code> | <code>"mpol"</code> </p>
-    #[doc(hidden)]
     pub mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
-    #[doc(hidden)]
     pub size: i32,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {

@@ -5,7 +5,6 @@
 pub struct AuthorizeDbSecurityGroupIngressOutput {
     /// <p>Contains the details for an Amazon RDS DB security group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-    #[doc(hidden)]
     pub db_security_group: ::std::option::Option<crate::types::DbSecurityGroup>,
     _request_id: Option<String>,
 }

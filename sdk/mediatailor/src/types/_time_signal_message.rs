@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSignalMessage {
     /// <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code> message(s) sent with the <code>time_signal</code> message.</p>
-    #[doc(hidden)]
     pub segmentation_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::SegmentationDescriptor>>,
 }
 impl TimeSignalMessage {

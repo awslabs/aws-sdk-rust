@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateHostedConnectionInput {
     /// <p>The ID of the hosted connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the interconnect or the LAG.</p>
-    #[doc(hidden)]
     pub parent_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateHostedConnectionInput {

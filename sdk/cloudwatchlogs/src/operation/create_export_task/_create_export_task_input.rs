@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExportTaskInput {
     /// <p>The name of the export task.</p>
-    #[doc(hidden)]
     pub task_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log group.</p>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
-    #[doc(hidden)]
     pub log_stream_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than this time are not exported.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<i64>,
     /// <p>The end time of the range for the request, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
     /// <p>You must specify a time that is not earlier than when this log group was created.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<i64>,
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
-    #[doc(hidden)]
     pub destination_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CreateExportTaskInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotsInput {
     /// <p> A description propagated to every snapshot specified by the instance.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The instance to specify which volumes should be included in the snapshots.</p>
-    #[doc(hidden)]
     pub instance_specification: ::std::option::Option<crate::types::InstanceSpecification>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
     /// <ul>
@@ -16,16 +14,12 @@ pub struct CreateSnapshotsInput {
     /// <li> <p>To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the destination Outpost. The snapshots must be created on the same Outpost as the instance.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot"> Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Tags to apply to every snapshot specified by the instance.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Copies the tags from the specified volume to corresponding snapshot.</p>
-    #[doc(hidden)]
     pub copy_tags_from_source: ::std::option::Option<crate::types::CopyTagsFromSource>,
 }
 impl CreateSnapshotsInput {

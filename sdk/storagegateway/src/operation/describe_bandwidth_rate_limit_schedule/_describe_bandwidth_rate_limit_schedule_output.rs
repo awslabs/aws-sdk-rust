@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
-    #[doc(hidden)]
     pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
     _request_id: Option<String>,
 }

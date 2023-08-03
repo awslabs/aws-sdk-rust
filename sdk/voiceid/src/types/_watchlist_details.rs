@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WatchlistDetails {
     /// <p>The identifier of the default watchlist.</p>
-    #[doc(hidden)]
     pub default_watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl WatchlistDetails {

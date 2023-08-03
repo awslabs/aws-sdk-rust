@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatementTimeoutException {
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The database connection ID that executed the SQL statement.</p>
-    #[doc(hidden)]
     pub db_connection_id: i64,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

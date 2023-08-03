@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientPropertiesResult {
     /// <p>The resource identifier, in the form of a directory ID.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Amazon WorkSpaces client.</p>
-    #[doc(hidden)]
     pub client_properties: ::std::option::Option<crate::types::ClientProperties>,
 }
 impl ClientPropertiesResult {

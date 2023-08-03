@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct XssMatchSetUpdate {
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
-    #[doc(hidden)]
     pub xss_match_tuple: ::std::option::Option<crate::types::XssMatchTuple>,
 }
 impl XssMatchSetUpdate {

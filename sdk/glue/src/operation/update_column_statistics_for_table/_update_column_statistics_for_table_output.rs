@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatisticsErrors.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsError>>,
     _request_id: Option<String>,
 }

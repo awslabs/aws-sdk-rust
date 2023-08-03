@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInsightOutput {
     /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
-    #[doc(hidden)]
     pub proactive_insight: ::std::option::Option<crate::types::ProactiveInsight>,
     /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
-    #[doc(hidden)]
     pub reactive_insight: ::std::option::Option<crate::types::ReactiveInsight>,
     _request_id: Option<String>,
 }

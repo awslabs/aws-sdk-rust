@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetLocation {
     /// <p> The position of an asset in a rack measured in rack units. </p>
-    #[doc(hidden)]
     pub rack_elevation: ::std::option::Option<f32>,
 }
 impl AssetLocation {

@@ -34,10 +34,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceAttribute {
     /// <p>Type of resource.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ResourceAttributeType>,
     /// <p>Value of the resource type.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceAttribute {

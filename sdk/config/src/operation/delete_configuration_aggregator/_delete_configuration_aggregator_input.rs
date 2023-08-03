@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationAggregatorInput {

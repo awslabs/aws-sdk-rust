@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProductsInput {
     /// <p>The code for the service whose products you want to retrieve. </p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
-    #[doc(hidden)]
     pub format_version: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetProductsInput {

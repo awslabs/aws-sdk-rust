@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClustersInput {
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The creation date and time end value filter for listing clusters.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    #[doc(hidden)]
     pub cluster_states: ::std::option::Option<::std::vec::Vec<crate::types::ClusterState>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl ListClustersInput {

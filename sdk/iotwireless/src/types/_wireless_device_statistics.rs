@@ -5,39 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessDeviceStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless device reporting the data.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The wireless device type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the destination to which the device is assigned.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>Theis value is only valid for 3 months.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
     /// <p>LoRaWAN device info.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanListDevice>,
     /// <p>The Sidewalk account credentials.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkListDevice>,
     /// <p>The status of a wireless device in a FUOTA task.</p>
-    #[doc(hidden)]
     pub fuota_device_status: ::std::option::Option<crate::types::FuotaDeviceStatus>,
     /// <p>The status of the wireless device in the multicast group.</p>
-    #[doc(hidden)]
     pub multicast_device_status: ::std::option::Option<::std::string::String>,
     /// <p>Id of the multicast group.</p>
-    #[doc(hidden)]
     pub mc_group_id: ::std::option::Option<i32>,
 }
 impl WirelessDeviceStatistics {

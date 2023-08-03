@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsClosedStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InsightType>,
     /// <p> A time range used to specify when the behavior of the filtered insights ended. </p>
-    #[doc(hidden)]
     pub end_time_range: ::std::option::Option<crate::types::EndTimeRange>,
 }
 impl ListInsightsClosedStatusFilter {

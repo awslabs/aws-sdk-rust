@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
@@ -15,10 +14,8 @@ pub struct GetSessionEmbedUrlInput {
     /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
     /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub entry_point: ::std::option::Option<::std::string::String>,
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
-    #[doc(hidden)]
     pub session_lifetime_in_minutes: ::std::option::Option<i64>,
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
@@ -27,7 +24,6 @@ pub struct GetSessionEmbedUrlInput {
     /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
     /// </ol>
     /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionEmbedUrlInput {

@@ -6,17 +6,14 @@
 pub struct S3StorageConfig {
     /// <p>The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.</p>
     /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
     /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The S3 path where offline records are written.</p>
-    #[doc(hidden)]
     pub resolved_output_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl S3StorageConfig {

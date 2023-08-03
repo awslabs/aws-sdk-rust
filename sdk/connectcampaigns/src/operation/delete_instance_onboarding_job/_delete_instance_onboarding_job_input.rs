@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
-    #[doc(hidden)]
     pub connect_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInstanceOnboardingJobInput {

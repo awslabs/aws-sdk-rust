@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deployment {
     /// <p>Specifies whether a deployment was automatically released.</p>
-    #[doc(hidden)]
     pub auto_deployed: ::std::option::Option<bool>,
     /// <p>The date and time when the Deployment resource was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier for the deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>May contain additional feedback on the status of an API deployment.</p>
-    #[doc(hidden)]
     pub deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The description for the deployment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl Deployment {

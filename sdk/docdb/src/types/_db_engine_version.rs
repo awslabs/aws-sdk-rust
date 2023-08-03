@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbEngineVersion {
     /// <p>The name of the database engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group family for the database engine.</p>
-    #[doc(hidden)]
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine.</p>
-    #[doc(hidden)]
     pub db_engine_description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the database engine version.</p>
-    #[doc(hidden)]
     pub db_engine_version_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    #[doc(hidden)]
     pub valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub supports_log_exports_to_cloudwatch_logs: bool,
 }
 impl DbEngineVersion {

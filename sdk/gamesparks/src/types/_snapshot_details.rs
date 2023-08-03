@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotDetails {
     /// <p>The identifier of the snapshot.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the snapshot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The sections in the snapshot.</p>
-    #[doc(hidden)]
     pub sections: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Section>>,
     /// <p>The timestamp of when the snapshot was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the snapshot was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotDetails {

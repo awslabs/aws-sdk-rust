@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListScansOutput {
     /// <p>A list of <code>ScanSummary</code> objects with information about all scans in an account.</p>
-    #[doc(hidden)]
     pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::ScanSummary>>,
     /// <p>A pagination token. You can use this in future calls to <code>ListScans</code> to continue listing results after the current page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

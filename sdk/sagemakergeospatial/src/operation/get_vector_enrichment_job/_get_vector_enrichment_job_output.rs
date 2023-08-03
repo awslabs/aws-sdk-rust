@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the Vector Enrichment job being initiated.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::VectorEnrichmentJobType>,
     /// <p>The name of the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The status of the initiated Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VectorEnrichmentJobStatus>,
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Input configuration information for the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::VectorEnrichmentJobInputConfig>,
     /// <p>An object containing information about the job configuration.</p>
-    #[doc(hidden)]
     pub job_config: ::std::option::Option<crate::types::VectorEnrichmentJobConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Details about the errors generated during the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::VectorEnrichmentJobErrorDetails>,
     /// <p>The export status of the Vector Enrichment job being initiated.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::VectorEnrichmentJobExportStatus>,
     /// <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>
-    #[doc(hidden)]
     pub export_error_details: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorDetails>,
     /// <p>Each tag consists of a key and a value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

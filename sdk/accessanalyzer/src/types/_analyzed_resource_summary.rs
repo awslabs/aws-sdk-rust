@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzedResourceSummary {
     /// <p>The ARN of the analyzed resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    #[doc(hidden)]
     pub resource_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource that was analyzed.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl AnalyzedResourceSummary {

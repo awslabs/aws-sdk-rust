@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnSort {
     /// <p>A column of a data set.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The sort direction.</p>
-    #[doc(hidden)]
     pub direction: ::std::option::Option<crate::types::SortDirection>,
     /// <p>The aggregation function that is defined in the column sort.</p>
-    #[doc(hidden)]
     pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
 }
 impl ColumnSort {

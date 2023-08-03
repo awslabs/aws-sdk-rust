@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceDocument {
     /// <p>The identifier of the document used for a query suggestion.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The document fields/attributes used for a query suggestion.</p>
-    #[doc(hidden)]
     pub suggestion_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The additional fields/attributes to include in the response. You can use additional fields to provide extra information in the response. Additional fields are not used to based suggestions on.</p>
-    #[doc(hidden)]
     pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl SourceDocument {

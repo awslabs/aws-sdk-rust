@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecordsOutput {
     /// A list of all records.
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     /// A pagination token for obtaining the next page of results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Total number of records.
-    #[doc(hidden)]
     pub count: i32,
     /// Server sync count for this dataset.
-    #[doc(hidden)]
     pub dataset_sync_count: ::std::option::Option<i64>,
     /// The user/device that made the last change to this record.
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// Names of merged datasets.
-    #[doc(hidden)]
     pub merged_dataset_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Indicates whether the dataset exists.
-    #[doc(hidden)]
     pub dataset_exists: bool,
     /// A boolean value specifying whether to delete the dataset locally.
-    #[doc(hidden)]
     pub dataset_deleted_after_requested_sync_count: bool,
     /// A token containing a session ID, identity ID, and expiration.
-    #[doc(hidden)]
     pub sync_session_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -17,10 +17,8 @@ pub struct InferredWorkloadSaving {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
-    #[doc(hidden)]
     pub estimated_monthly_savings: ::std::option::Option<crate::types::EstimatedMonthlySavings>,
 }
 impl InferredWorkloadSaving {

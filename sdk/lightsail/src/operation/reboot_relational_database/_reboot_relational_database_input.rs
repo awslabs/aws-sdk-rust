@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootRelationalDatabaseInput {
     /// <p>The name of your database to reboot.</p>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
 }
 impl RebootRelationalDatabaseInput {

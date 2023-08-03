@@ -15,10 +15,8 @@ pub struct CalculateRouteOutput {
     /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
     /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub legs: ::std::option::Option<::std::vec::Vec<crate::types::Leg>>,
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::CalculateRouteSummary>,
     _request_id: Option<String>,
 }

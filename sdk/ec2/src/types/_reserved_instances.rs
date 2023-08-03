@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstances {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the Reserved Instance, in seconds.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i64>,
     /// <p>The time when the Reserved Instance expires.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The purchase price of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub fixed_price: ::std::option::Option<f32>,
     /// <p>The number of reservations purchased.</p>
-    #[doc(hidden)]
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The instance type on which the Reserved Instance can be used.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The Reserved Instance product platform description.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>The ID of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the Reserved Instance started.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the Reserved Instance purchase.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReservedInstanceState>,
     /// <p>The usage price of the Reserved Instance, per hour.</p>
-    #[doc(hidden)]
     pub usage_price: ::std::option::Option<f32>,
     /// <p>The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the only supported currency is <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>The tenancy of the instance.</p>
-    #[doc(hidden)]
     pub instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>The offering class of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     /// <p>The Reserved Instance offering type.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<crate::types::OfferingTypeValues>,
     /// <p>The recurring charge tag assigned to the resource.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
     /// <p>The scope of the Reserved Instance.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>Any tags assigned to the resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ReservedInstances {

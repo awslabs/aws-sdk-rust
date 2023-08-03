@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCopyJobOutput {
     /// <p>Uniquely identifies a copy job.</p>
-    #[doc(hidden)]
     pub copy_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
-    #[doc(hidden)]
     pub is_parent: bool,
     _request_id: Option<String>,
 }

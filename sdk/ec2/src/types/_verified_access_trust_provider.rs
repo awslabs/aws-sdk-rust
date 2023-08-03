@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessTrustProvider {
     /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
-    #[doc(hidden)]
     pub verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the Amazon Web Services Verified Access trust provider.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of Verified Access trust provider.</p>
-    #[doc(hidden)]
     pub trust_provider_type: ::std::option::Option<crate::types::TrustProviderType>,
     /// <p>The type of user-based trust provider.</p>
-    #[doc(hidden)]
     pub user_trust_provider_type: ::std::option::Option<crate::types::UserTrustProviderType>,
     /// <p>The type of device-based trust provider.</p>
-    #[doc(hidden)]
     pub device_trust_provider_type: ::std::option::Option<crate::types::DeviceTrustProviderType>,
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
-    #[doc(hidden)]
     pub oidc_options: ::std::option::Option<crate::types::OidcOptions>,
     /// <p>The options for device-identity trust provider.</p>
-    #[doc(hidden)]
     pub device_options: ::std::option::Option<crate::types::DeviceOptions>,
     /// <p>The identifier to be used when working with policy rules.</p>
-    #[doc(hidden)]
     pub policy_reference_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The last updated time.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessTrustProvider {

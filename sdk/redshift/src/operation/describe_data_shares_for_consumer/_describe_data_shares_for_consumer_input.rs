@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataSharesForConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
-    #[doc(hidden)]
     pub consumer_arn: ::std::option::Option<::std::string::String>,
     /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataShareStatusForConsumer>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataSharesForConsumerInput {

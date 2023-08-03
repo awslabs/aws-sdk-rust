@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepExecutionStatusDetail {
     /// <p>The state of the step.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StepExecutionState>,
     /// <p>The creation date and time of the step.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The start date and time of the step.</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The completion date and time of the step.</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description of the step's current state.</p>
-    #[doc(hidden)]
     pub last_state_change_reason: ::std::option::Option<::std::string::String>,
 }
 impl StepExecutionStatusDetail {

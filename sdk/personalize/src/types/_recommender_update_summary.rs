@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommenderUpdateSummary {
     /// <p>The configuration details of the recommender update.</p>
-    #[doc(hidden)]
     pub recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     /// <p>The date and time (in Unix format) that the recommender update was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the recommender update.</p>
     /// <p>A recommender can be in one of the following states:</p>
@@ -20,10 +17,8 @@ pub struct RecommenderUpdateSummary {
     /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If a recommender update fails, the reason behind the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl RecommenderUpdateSummary {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConditionalForwardersInput {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
-    #[doc(hidden)]
     pub remote_domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeConditionalForwardersInput {

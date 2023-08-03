@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationInstanceDependenciesInput {
     /// <p>The application instance's ID.</p>
-    #[doc(hidden)]
     pub application_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListApplicationInstanceDependenciesInput {

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeSecurityGroupEgressInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
-    #[doc(hidden)]
     pub ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The IDs of the security group rules.</p>
-    #[doc(hidden)]
     pub security_group_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
-    #[doc(hidden)]
     pub cidr_ip: ::std::option::Option<::std::string::String>,
     /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>Not supported. Use a set of IP permissions to specify the protocol name or number.</p>
-    #[doc(hidden)]
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    #[doc(hidden)]
     pub source_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
-    #[doc(hidden)]
     pub source_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl RevokeSecurityGroupEgressInput {

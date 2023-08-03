@@ -5,77 +5,55 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stack {
     /// <p>Unique identifier of the stack.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The name associated with the stack.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the change set.</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined description associated with the stack.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Parameter</code> structures.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>The time at which the stack was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the stack was deleted.</p>
-    #[doc(hidden)]
     pub deletion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the stack was last updated. This field will only be returned if the stack has been updated at least once.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    #[doc(hidden)]
     pub rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     /// <p>Current status of the stack.</p>
-    #[doc(hidden)]
     pub stack_status: ::std::option::Option<crate::types::StackStatus>,
     /// <p>Success/failure message associated with the stack status.</p>
-    #[doc(hidden)]
     pub stack_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Boolean to enable or disable rollback on stack creation failures:</p>
     /// <ul>
     /// <li> <p> <code>true</code>: disable rollback.</p> </li>
     /// <li> <p> <code>false</code>: enable rollback.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub disable_rollback: ::std::option::Option<bool>,
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    #[doc(hidden)]
     pub notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The amount of time within which stack creation should complete.</p>
-    #[doc(hidden)]
     pub timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The capabilities allowed in the stack.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>A list of output structures.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's associated with the stack. During a stack operation, CloudFormation uses this role's credentials to make calls on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code>s that specify information about the stack.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Whether termination protection is enabled for the stack.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub enable_termination_protection: ::std::option::Option<bool>,
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>For nested stacks--stacks created as resources for another stack--the stack ID of the top-level stack to which the nested stack ultimately belongs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub root_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
-    #[doc(hidden)]
     pub drift_information: ::std::option::Option<crate::types::StackDriftInformation>,
 }
 impl Stack {

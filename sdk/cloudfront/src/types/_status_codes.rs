@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusCodes {
     /// <p>The number of status codes.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>The items (status codes) for an origin group.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl StatusCodes {

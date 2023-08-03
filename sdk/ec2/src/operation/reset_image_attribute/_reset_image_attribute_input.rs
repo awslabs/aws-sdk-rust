@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetImageAttributeInput {
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::ResetImageAttributeName>,
     /// <p>The ID of the AMI.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ResetImageAttributeInput {

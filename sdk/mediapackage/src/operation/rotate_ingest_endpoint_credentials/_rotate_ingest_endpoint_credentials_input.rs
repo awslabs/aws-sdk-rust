@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotateIngestEndpointCredentialsInput {
     /// The ID of the channel the IngestEndpoint is on.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The id of the IngestEndpoint whose credentials should be rotated
-    #[doc(hidden)]
     pub ingest_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl RotateIngestEndpointCredentialsInput {

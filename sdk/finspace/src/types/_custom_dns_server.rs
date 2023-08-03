@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDnsServer {
     /// <p>The name of the DNS server.</p>
-    #[doc(hidden)]
     pub custom_dns_server_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the DNS server.</p>
-    #[doc(hidden)]
     pub custom_dns_server_ip: ::std::option::Option<::std::string::String>,
 }
 impl CustomDnsServer {

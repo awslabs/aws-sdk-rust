@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceCountLimits {
     /// <p>The maximum allowed number of instances.</p>
-    #[doc(hidden)]
     pub minimum_instance_count: i32,
     /// <p>The minimum allowed number of instances.</p>
-    #[doc(hidden)]
     pub maximum_instance_count: i32,
 }
 impl InstanceCountLimits {

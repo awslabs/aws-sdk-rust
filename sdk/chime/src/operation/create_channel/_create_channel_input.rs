@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateChannelInput {
     /// <p>The ARN of the channel request.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ChannelMode>,
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub privacy: ::std::option::Option<crate::types::ChannelPrivacy>,
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the creation request.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
 impl CreateChannelInput {

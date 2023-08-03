@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMatchmakingConfigurationInput {
     /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMatchmakingConfigurationInput {

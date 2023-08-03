@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateSummary {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the certificate.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes a certificate in detail.</p>
-    #[doc(hidden)]
     pub certificate_detail: ::std::option::Option<crate::types::Certificate>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CertificateSummary {

@@ -7,7 +7,6 @@ pub struct DeleteCacheParameterGroupInput {
     /// <p>The name of the cache parameter group to delete.</p> <note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCacheParameterGroupInput {

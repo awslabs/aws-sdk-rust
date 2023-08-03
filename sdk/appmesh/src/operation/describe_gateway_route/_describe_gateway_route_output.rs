@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayRouteOutput {
     /// <p>The full description of your gateway route.</p>
-    #[doc(hidden)]
     pub gateway_route: ::std::option::Option<crate::types::GatewayRouteData>,
     _request_id: Option<String>,
 }

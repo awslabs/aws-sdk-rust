@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignPayloadOutput {
     /// <p>Unique identifier of the signing job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID of the job owner.</p>
-    #[doc(hidden)]
     pub job_owner: ::std::option::Option<::std::string::String>,
     /// <p>Information including the signing profile ARN and the signing job ID. Clients use metadata to signature records, for example, as annotations added to the signature manifest inside an OCI registry.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A cryptographic signature.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

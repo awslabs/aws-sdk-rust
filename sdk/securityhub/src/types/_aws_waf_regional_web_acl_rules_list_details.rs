@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRegionalWebAclRulesListDetails {
     /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListActionDetails>,
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    #[doc(hidden)]
     pub override_action: ::std::option::Option<crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails>,
     /// <p>The order in which WAF evaluates the rules in a web ACL. </p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The ID of an WAF Regional rule to associate with a web ACL. </p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalWebAclRulesListDetails {

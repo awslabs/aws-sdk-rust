@@ -14,7 +14,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegexMatchTuple {
     /// <p>Specifies where in a web request to look for the <code>RegexPatternSet</code>.</p>
-    #[doc(hidden)]
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p>
     /// <p>You can only specify a single type of TextTransformation.</p>
@@ -54,11 +53,9 @@ pub struct RegexMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    #[doc(hidden)]
     pub text_transformation: ::std::option::Option<crate::types::TextTransformation>,
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    #[doc(hidden)]
     pub regex_pattern_set_id: ::std::option::Option<::std::string::String>,
 }
 impl RegexMatchTuple {

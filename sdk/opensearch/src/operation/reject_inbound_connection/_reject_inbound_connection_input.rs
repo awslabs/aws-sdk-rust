@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectInboundConnectionInput {
     /// <p>The unique identifier of the inbound connection to reject.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
 impl RejectInboundConnectionInput {

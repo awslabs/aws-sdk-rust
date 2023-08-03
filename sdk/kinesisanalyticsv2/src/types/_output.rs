@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Output {
     /// <p>The name of the in-application stream.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies a Kinesis data stream as the destination.</p>
-    #[doc(hidden)]
     pub kinesis_streams_output: ::std::option::Option<crate::types::KinesisStreamsOutput>,
     /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_output: ::std::option::Option<crate::types::KinesisFirehoseOutput>,
     /// <p>Identifies an Amazon Lambda function as the destination.</p>
-    #[doc(hidden)]
     pub lambda_output: ::std::option::Option<crate::types::LambdaOutput>,
     /// <p>Describes the data format when records are written to the destination. </p>
-    #[doc(hidden)]
     pub destination_schema: ::std::option::Option<crate::types::DestinationSchema>,
 }
 impl Output {

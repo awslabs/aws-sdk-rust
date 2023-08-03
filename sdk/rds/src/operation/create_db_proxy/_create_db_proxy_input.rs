@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbProxyInput {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    #[doc(hidden)]
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
-    #[doc(hidden)]
     pub engine_family: ::std::option::Option<crate::types::EngineFamily>,
     /// <p>The authorization mechanism that the proxy uses.</p>
-    #[doc(hidden)]
     pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
-    #[doc(hidden)]
     pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
-    #[doc(hidden)]
     pub require_tls: ::std::option::Option<bool>,
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
-    #[doc(hidden)]
     pub idle_client_timeout: ::std::option::Option<i32>,
     /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
-    #[doc(hidden)]
     pub debug_logging: ::std::option::Option<bool>,
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbProxyInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingGroupDocument {
     /// <p>The thing group name.</p>
-    #[doc(hidden)]
     pub thing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing group ID.</p>
-    #[doc(hidden)]
     pub thing_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The thing group description.</p>
-    #[doc(hidden)]
     pub thing_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The thing group attributes.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Parent group names.</p>
-    #[doc(hidden)]
     pub parent_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ThingGroupDocument {

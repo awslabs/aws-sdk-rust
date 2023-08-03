@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
-    #[doc(hidden)]
     pub s3_data_source: ::std::option::Option<crate::types::S3DataConfig>,
 }
 impl BatchInferenceJobInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVehiclesOutput {
     /// <p> A list of vehicles and information about them. </p>
-    #[doc(hidden)]
     pub vehicle_summaries: ::std::option::Option<::std::vec::Vec<crate::types::VehicleSummary>>,
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

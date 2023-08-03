@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemStatus {
     /// <p>CPU utilization metrics for the instance.</p>
-    #[doc(hidden)]
     pub cpu_utilization: ::std::option::Option<crate::types::CpuUtilization>,
     /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
-    #[doc(hidden)]
     pub load_average: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl SystemStatus {

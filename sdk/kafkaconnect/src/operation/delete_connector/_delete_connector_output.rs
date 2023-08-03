@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
-    #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connector that you requested to delete.</p>
-    #[doc(hidden)]
     pub connector_state: ::std::option::Option<crate::types::ConnectorState>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventStream {
     /// <p>The unique identifier for the application to publish event data for.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream to publish event data to.</p>
     /// <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>
@@ -22,19 +21,14 @@ pub struct EventStream {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
-    #[doc(hidden)]
     pub destination_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The IAM user who last modified the event stream.</p>
-    #[doc(hidden)]
     pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventStream {

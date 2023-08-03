@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCertificateAuthorityAuditReportOutput {
     /// <p>An alphanumeric string that contains a report identifier.</p>
-    #[doc(hidden)]
     pub audit_report_id: ::std::option::Option<::std::string::String>,
     /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

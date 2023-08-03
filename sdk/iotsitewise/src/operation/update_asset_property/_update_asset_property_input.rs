@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssetPropertyInput {
     /// <p>The ID of the asset to be updated.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property to be updated.</p>
-    #[doc(hidden)]
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
-    #[doc(hidden)]
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
-    #[doc(hidden)]
     pub property_notification_state: ::std::option::Option<crate::types::PropertyNotificationState>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.</p>
-    #[doc(hidden)]
     pub property_unit: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssetPropertyInput {

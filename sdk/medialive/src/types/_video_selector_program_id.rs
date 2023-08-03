@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoSelectorProgramId {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
-    #[doc(hidden)]
     pub program_id: ::std::option::Option<i32>,
 }
 impl VideoSelectorProgramId {

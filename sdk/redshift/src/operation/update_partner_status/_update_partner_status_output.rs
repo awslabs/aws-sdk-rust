@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePartnerStatusOutput {
     /// <p>The name of the database that receives data from the partner.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partner that is authorized to send data.</p>
-    #[doc(hidden)]
     pub partner_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpstreamRepositoryInfo {
     /// <p> The name of an upstream repository. </p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl UpstreamRepositoryInfo {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Application {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the application.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ApplicationType>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
-    #[doc(hidden)]
     pub app_registry_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>The latest discovery result for the application.</p>
-    #[doc(hidden)]
     pub discovery_status: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>,
     /// <p>The components of the application.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time at which the application was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl Application {

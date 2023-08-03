@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketReplicationOutput {
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and you can add up to 100 rules. The maximum size of a replication configuration is 128 KB.</p>
-    #[doc(hidden)]
     pub replication_configuration: ::std::option::Option<crate::types::ReplicationConfiguration>,
     _request_id: Option<String>,
 }

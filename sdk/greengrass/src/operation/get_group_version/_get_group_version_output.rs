@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupVersionOutput {
     /// The ARN of the group version.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the group version was created.
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::std::string::String>,
     /// Information about the group version definition.
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::GroupVersion>,
     /// The ID of the group that the version is associated with.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The ID of the group version.
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

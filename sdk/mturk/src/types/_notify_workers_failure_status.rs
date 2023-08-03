@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyWorkersFailureStatus {
     /// <p> Encoded value for the failure type. </p>
-    #[doc(hidden)]
     pub notify_workers_failure_code: ::std::option::Option<crate::types::NotifyWorkersFailureCode>,
     /// <p> A message detailing the reason the Worker could not be notified. </p>
-    #[doc(hidden)]
     pub notify_workers_failure_message: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Worker.</p>
-    #[doc(hidden)]
     pub worker_id: ::std::option::Option<::std::string::String>,
 }
 impl NotifyWorkersFailureStatus {

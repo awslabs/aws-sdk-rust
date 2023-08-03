@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportLabelsTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
-    #[doc(hidden)]
     pub input_s3_path: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
-    #[doc(hidden)]
     pub replace_all_labels: ::std::option::Option<bool>,
 }
 impl StartImportLabelsTaskRunInput {

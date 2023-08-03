@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictorMonitorEvaluation {
     /// <p>The Amazon Resource Name (ARN) of the resource to monitor.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
-    #[doc(hidden)]
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that indicates when the monitor evaluation was started. </p>
-    #[doc(hidden)]
     pub evaluation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.</p>
-    #[doc(hidden)]
     pub evaluation_state: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that indicates the start of the window that is used for monitor evaluation.</p>
-    #[doc(hidden)]
     pub window_start_datetime: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that indicates the end of the window that is used for monitor evaluation.</p>
-    #[doc(hidden)]
     pub window_end_datetime: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides details about a predictor event, such as a retraining.</p>
-    #[doc(hidden)]
     pub predictor_event: ::std::option::Option<crate::types::PredictorEvent>,
     /// <p>The source of the data the monitor resource used during the evaluation.</p>
-    #[doc(hidden)]
     pub monitor_data_source: ::std::option::Option<crate::types::MonitorDataSource>,
     /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
-    #[doc(hidden)]
     pub metric_results: ::std::option::Option<::std::vec::Vec<crate::types::MetricResult>>,
     /// <p>The number of items considered during the evaluation.</p>
-    #[doc(hidden)]
     pub num_items_evaluated: ::std::option::Option<i64>,
     /// <p>Information about any errors that may have occurred during the monitor evaluation.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl PredictorMonitorEvaluation {

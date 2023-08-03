@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Relationship {
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<::std::string::String>,
 }
 impl Relationship {

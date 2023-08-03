@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeySigningKey {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
     /// <p>You must configure the customer managed key as follows:</p>
@@ -45,37 +44,26 @@ pub struct KeySigningKey {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with the customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    #[doc(hidden)]
     pub kms_arn: ::std::option::Option<::std::string::String>,
     /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
-    #[doc(hidden)]
     pub flag: i32,
     /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
-    #[doc(hidden)]
     pub signing_algorithm_mnemonic: ::std::option::Option<::std::string::String>,
     /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
-    #[doc(hidden)]
     pub signing_algorithm_type: i32,
     /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
-    #[doc(hidden)]
     pub digest_algorithm_mnemonic: ::std::option::Option<::std::string::String>,
     /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
-    #[doc(hidden)]
     pub digest_algorithm_type: i32,
     /// <p>An integer used to identify the DNSSEC record for the domain name. The process used to calculate the value is described in <a href="https://tools.ietf.org/rfc/rfc4034.txt">RFC-4034 Appendix B</a>.</p>
-    #[doc(hidden)]
     pub key_tag: i32,
     /// <p>A cryptographic digest of a DNSKEY resource record (RR). DNSKEY records are used to publish the public key that resolvers can use to verify DNSSEC signatures that are used to secure certain kinds of information provided by the DNS system.</p>
-    #[doc(hidden)]
     pub digest_value: ::std::option::Option<::std::string::String>,
     /// <p>The public key, represented as a Base64 encoding, as required by <a href="https://tools.ietf.org/rfc/rfc4034.txt"> RFC-4034 Page 5</a>.</p>
-    #[doc(hidden)]
     pub public_key: ::std::option::Option<::std::string::String>,
     /// <p>A string that represents a delegation signer (DS) record.</p>
-    #[doc(hidden)]
     pub ds_record: ::std::option::Option<::std::string::String>,
     /// <p>A string that represents a DNSKEY record.</p>
-    #[doc(hidden)]
     pub dnskey_record: ::std::option::Option<::std::string::String>,
     /// <p>A string that represents the current key-signing key (KSK) status.</p>
     /// <p>Status can have one of the following values:</p>
@@ -111,16 +99,12 @@ pub struct KeySigningKey {
     /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date when the key-signing key (KSK) was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl KeySigningKey {

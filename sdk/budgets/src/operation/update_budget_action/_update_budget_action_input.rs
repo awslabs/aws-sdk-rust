@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    #[doc(hidden)]
     pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    #[doc(hidden)]
     pub notification_type: ::std::option::Option<crate::types::NotificationType>,
     /// <p>The trigger threshold of the action. </p>
-    #[doc(hidden)]
     pub action_threshold: ::std::option::Option<crate::types::ActionThreshold>,
     /// <p>Specifies all of the type-specific parameters. </p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::Definition>,
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> This specifies if the action needs manual or automatic approval. </p>
-    #[doc(hidden)]
     pub approval_model: ::std::option::Option<crate::types::ApprovalModel>,
     /// <p> A list of subscribers.</p>
-    #[doc(hidden)]
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
 }
 impl UpdateBudgetActionInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkPayload {
     /// <p>Settings for Ethernet port 0.</p>
-    #[doc(hidden)]
     pub ethernet0: ::std::option::Option<crate::types::EthernetPayload>,
     /// <p>Settings for Ethernet port 1.</p>
-    #[doc(hidden)]
     pub ethernet1: ::std::option::Option<crate::types::EthernetPayload>,
     /// <p>Network time protocol (NTP) server settings.</p>
-    #[doc(hidden)]
     pub ntp: ::std::option::Option<crate::types::NtpPayload>,
 }
 impl NetworkPayload {

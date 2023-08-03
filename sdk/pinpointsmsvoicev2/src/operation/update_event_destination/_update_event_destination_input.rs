@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventDestinationInput {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name to use for the event destination.</p>
-    #[doc(hidden)]
     pub event_destination_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to true logging is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>An array of event types that determine which events to log.</p>
-    #[doc(hidden)]
     pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     /// <p>An object that contains information about an event destination that sends data to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Kinesis Data Firehose.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that contains information about an event destination that sends data to Amazon SNS.</p>
-    #[doc(hidden)]
     pub sns_destination: ::std::option::Option<crate::types::SnsDestination>,
 }
 impl UpdateEventDestinationInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The time when the snapshot was created.</p>
-    #[doc(hidden)]
     pub snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Snapshot {

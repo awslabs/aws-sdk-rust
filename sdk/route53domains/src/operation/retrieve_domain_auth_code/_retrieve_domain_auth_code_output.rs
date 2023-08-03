@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrieveDomainAuthCodeOutput {
     /// <p>The authorization code for the domain.</p>
-    #[doc(hidden)]
     pub auth_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

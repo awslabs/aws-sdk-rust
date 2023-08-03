@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBackupPlanOutput {
     /// <p>Uniquely identifies a backup plan.</p>
-    #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    #[doc(hidden)]
     pub backup_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub deletion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

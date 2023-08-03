@@ -6,19 +6,14 @@
 pub struct PartitionInput {
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The last time at which the partition was accessed.</p>
-    #[doc(hidden)]
     pub last_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides information about the physical location where the partition is stored.</p>
-    #[doc(hidden)]
     pub storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
     /// <p>These key-value pairs define partition parameters.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The last time at which column statistics were computed for this partition.</p>
-    #[doc(hidden)]
     pub last_analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PartitionInput {

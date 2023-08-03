@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignSummary {
     /// <p>The Amazon Resource Name (ARN) of a campaign.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a campaign.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the campaign.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the signal catalog associated with the campaign.</p>
-    #[doc(hidden)]
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a vehicle or fleet to which the campaign is deployed.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of a campaign. The status can be one of the following:</p>
     /// <ul>
@@ -27,13 +22,10 @@ pub struct CampaignSummary {
     /// <li> <p> <code>RUNNING</code> - The campaign is active. </p> </li>
     /// <li> <p> <code>SUSPENDED</code> - The campaign is suspended. To resume the campaign, use the API operation. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CampaignStatus>,
     /// <p>The time the campaign was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the campaign was modified.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CampaignSummary {

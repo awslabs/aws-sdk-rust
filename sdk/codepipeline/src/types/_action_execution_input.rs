@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionExecutionInput {
     /// <p>Represents information about an action type.</p>
-    #[doc(hidden)]
     pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>Configuration data for an action execution.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configuration data for an action execution with all variable references replaced with their real values for the execution.</p>
-    #[doc(hidden)]
     pub resolved_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>Details of input artifacts of the action that correspond to the action execution.</p>
-    #[doc(hidden)]
     pub input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>>,
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl ActionExecutionInput {

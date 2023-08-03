@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResolverEndpointOutput {
     /// <p>Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.</p>
-    #[doc(hidden)]
     pub resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,
 }

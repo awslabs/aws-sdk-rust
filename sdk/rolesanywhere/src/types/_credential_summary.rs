@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CredentialSummary {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    #[doc(hidden)]
     pub seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The serial number of the certificate.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the credential is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The PEM-encoded data of the certificate.</p>
-    #[doc(hidden)]
     pub x509_certificate_data: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the temporary credential request was successful. </p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<bool>,
 }
 impl CredentialSummary {

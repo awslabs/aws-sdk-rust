@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the private virtual interface.</p>
-    #[doc(hidden)]
     pub new_private_virtual_interface: ::std::option::Option<crate::types::NewPrivateVirtualInterface>,
 }
 impl CreatePrivateVirtualInterfaceInput {

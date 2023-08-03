@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistrationConfig {
     /// <p>The template body.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationConfig {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotMember {
     /// <p>The unique ID of a bot that is a member of this network of bots.</p>
-    #[doc(hidden)]
     pub bot_member_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of a bot that is a member of this network of bots.</p>
-    #[doc(hidden)]
     pub bot_member_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias ID of a bot that is a member of this network of bots.</p>
-    #[doc(hidden)]
     pub bot_member_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias name of a bot that is a member of this network of bots.</p>
-    #[doc(hidden)]
     pub bot_member_alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of a bot that is a member of this network of bots.</p>
-    #[doc(hidden)]
     pub bot_member_version: ::std::option::Option<::std::string::String>,
 }
 impl BotMember {

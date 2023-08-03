@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInputInput {
     /// <p>The name you want to give to the input.</p>
-    #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the input.</p>
-    #[doc(hidden)]
     pub input_description: ::std::option::Option<::std::string::String>,
     /// <p>The definition of the input.</p>
-    #[doc(hidden)]
     pub input_definition: ::std::option::Option<crate::types::InputDefinition>,
     /// <p>Metadata that can be used to manage the input.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateInputInput {

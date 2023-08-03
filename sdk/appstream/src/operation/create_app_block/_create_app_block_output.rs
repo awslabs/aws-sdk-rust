@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppBlockOutput {
     /// <p>The app block.</p>
-    #[doc(hidden)]
     pub app_block: ::std::option::Option<crate::types::AppBlock>,
     _request_id: Option<String>,
 }

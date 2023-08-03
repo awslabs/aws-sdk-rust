@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociatedStacksOutput {
     /// <p>The name of the stack.</p>
-    #[doc(hidden)]
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

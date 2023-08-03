@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
-    #[doc(hidden)]
     pub transition: ::std::option::Option<crate::types::Transition>,
     /// <p>Program clip range configuration.</p>
-    #[doc(hidden)]
     pub clip_range: ::std::option::Option<crate::types::ClipRange>,
 }
 impl ScheduleConfiguration {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGlobalTableSettingsOutput {
     /// <p>The name of the global table.</p>
-    #[doc(hidden)]
     pub global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Region-specific settings for the global table.</p>
-    #[doc(hidden)]
     pub replica_settings: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsDescription>>,
     _request_id: Option<String>,
 }

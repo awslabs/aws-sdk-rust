@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::Options>,
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::TaskSchedule>,
     /// <p>The name of the task to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
 }
 impl UpdateTaskInput {

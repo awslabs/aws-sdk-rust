@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessDetails {
     /// <p>The name of the process.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the process executable.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The process ID.</p>
-    #[doc(hidden)]
     pub pid: i32,
     /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
-    #[doc(hidden)]
     pub parent_pid: i32,
     /// <p>Indicates when the process was launched.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub launched_at: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the process was terminated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub terminated_at: ::std::option::Option<::std::string::String>,
 }
 impl ProcessDetails {

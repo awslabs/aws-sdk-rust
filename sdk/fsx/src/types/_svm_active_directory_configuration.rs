@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
-    #[doc(hidden)]
     pub net_bios_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    #[doc(hidden)]
     pub self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
 }
 impl SvmActiveDirectoryConfiguration {

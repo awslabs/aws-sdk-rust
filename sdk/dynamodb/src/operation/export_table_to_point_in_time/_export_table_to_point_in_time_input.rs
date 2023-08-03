@@ -4,37 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTableToPointInTimeInput {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
-    #[doc(hidden)]
     pub table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table export will be a snapshot of the table's state at this point in time.</p>
-    #[doc(hidden)]
     pub export_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
     /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>ImportConflictException</code>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
-    #[doc(hidden)]
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
-    #[doc(hidden)]
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
     /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
     /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub s3_sse_algorithm: ::std::option::Option<crate::types::S3SseAlgorithm>,
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
-    #[doc(hidden)]
     pub s3_sse_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-    #[doc(hidden)]
     pub export_format: ::std::option::Option<crate::types::ExportFormat>,
 }
 impl ExportTableToPointInTimeInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
-    #[doc(hidden)]
     pub data_share_arn: ::std::option::Option<::std::string::String>,
 }
 impl RejectDataShareInput {

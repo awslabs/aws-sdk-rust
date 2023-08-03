@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VendorProperties {
     /// The worker ID defined by the vendor FMS.
-    #[doc(hidden)]
     pub vendor_worker_id: ::std::option::Option<::std::string::String>,
     /// The worker IP address defined by the vendor FMS.
-    #[doc(hidden)]
     pub vendor_worker_ip_address: ::std::option::Option<::std::string::String>,
     /// JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-    #[doc(hidden)]
     pub vendor_additional_transient_properties: ::std::option::Option<::std::string::String>,
     /// JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-    #[doc(hidden)]
     pub vendor_additional_fixed_properties: ::std::option::Option<::std::string::String>,
 }
 impl VendorProperties {

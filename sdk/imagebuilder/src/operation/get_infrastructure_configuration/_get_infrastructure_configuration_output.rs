@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure configuration object.</p>
-    #[doc(hidden)]
     pub infrastructure_configuration: ::std::option::Option<crate::types::InfrastructureConfiguration>,
     _request_id: Option<String>,
 }

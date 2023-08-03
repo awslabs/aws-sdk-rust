@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEmailIdentityPolicyInput {
     /// <p>The email identity.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEmailIdentityPolicyInput {

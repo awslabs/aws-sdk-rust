@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHomeRegionOutput {
     /// <p>The name of the home region of the calling account.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

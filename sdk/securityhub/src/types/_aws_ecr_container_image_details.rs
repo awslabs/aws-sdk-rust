@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrContainerImageDetails {
     /// <p>The Amazon Web Services account identifier that is associated with the registry that the image belongs to.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that the image belongs to.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the image. Valid values are as follows:</p>
     /// <ul>
@@ -16,17 +14,13 @@ pub struct AwsEcrContainerImageDetails {
     /// <li> <p> <code>i386</code> </p> </li>
     /// <li> <p> <code>x86_64</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The sha256 digest of the image manifest.</p>
-    #[doc(hidden)]
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that are associated with the image.</p>
-    #[doc(hidden)]
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub image_published_at: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrContainerImageDetails {

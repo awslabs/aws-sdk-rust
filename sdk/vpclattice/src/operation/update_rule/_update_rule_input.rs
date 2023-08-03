@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    #[doc(hidden)]
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub rule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The rule match.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>Information about the action for the specified listener rule.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl UpdateRuleInput {

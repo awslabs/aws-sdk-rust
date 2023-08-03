@@ -7,28 +7,22 @@ pub struct HealthCheckConfiguration {
     /// <p>The IP protocol that App Runner uses to perform health checks for your service.</p>
     /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
     /// <p>Default: <code>TCP</code> </p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::HealthCheckProtocol>,
     /// <p>The URL that health check requests are sent to.</p>
     /// <p> <code>Path</code> is only applicable when you set <code>Protocol</code> to <code>HTTP</code>.</p>
     /// <p>Default: <code>"/"</code> </p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The time interval, in seconds, between health checks.</p>
     /// <p>Default: <code>5</code> </p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<i32>,
     /// <p>The time, in seconds, to wait for a health check response before deciding it failed.</p>
     /// <p>Default: <code>2</code> </p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p>The number of consecutive checks that must succeed before App Runner decides that the service is healthy.</p>
     /// <p>Default: <code>1</code> </p>
-    #[doc(hidden)]
     pub healthy_threshold: ::std::option::Option<i32>,
     /// <p>The number of consecutive checks that must fail before App Runner decides that the service is unhealthy.</p>
     /// <p>Default: <code>5</code> </p>
-    #[doc(hidden)]
     pub unhealthy_threshold: ::std::option::Option<i32>,
 }
 impl HealthCheckConfiguration {

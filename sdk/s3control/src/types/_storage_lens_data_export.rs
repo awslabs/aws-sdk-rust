@@ -7,10 +7,8 @@ pub struct StorageLensDataExport {
     /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p> <note>
     /// <p>This bucket must be located in the same Region as the storage lens configuration. </p>
     /// </note>
-    #[doc(hidden)]
     pub s3_bucket_destination: ::std::option::Option<crate::types::S3BucketDestination>,
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
-    #[doc(hidden)]
     pub cloud_watch_metrics: ::std::option::Option<crate::types::CloudWatchMetrics>,
 }
 impl StorageLensDataExport {

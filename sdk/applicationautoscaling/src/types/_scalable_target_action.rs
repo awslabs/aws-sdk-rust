@@ -6,11 +6,9 @@
 pub struct ScalableTargetAction {
     /// <p>The minimum capacity.</p>
     /// <p>When the scheduled action runs, the resource will have at least this much capacity, but it might have more depending on other settings, such as the target utilization level of a target tracking scaling policy.</p>
-    #[doc(hidden)]
     pub min_capacity: ::std::option::Option<i32>,
     /// <p>The maximum capacity.</p>
     /// <p>Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you can request an increase. For more information, consult the documentation for that service. For information about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<i32>,
 }
 impl ScalableTargetAction {

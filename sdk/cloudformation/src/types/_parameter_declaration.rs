@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterDeclaration {
     /// <p>The name that's associated with the parameter.</p>
-    #[doc(hidden)]
     pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The default value of the parameter.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter.</p>
-    #[doc(hidden)]
     pub parameter_type: ::std::option::Option<::std::string::String>,
     /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
-    #[doc(hidden)]
     pub no_echo: ::std::option::Option<bool>,
     /// <p>The description that's associate with the parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
-    #[doc(hidden)]
     pub parameter_constraints: ::std::option::Option<crate::types::ParameterConstraints>,
 }
 impl ParameterDeclaration {

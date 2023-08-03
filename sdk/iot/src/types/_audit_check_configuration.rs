@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditCheckConfiguration {
     /// <p>True if this audit check is enabled for this account.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AuditCheckConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportKeyOutput {
     /// <p>The key material under export as a TR-34 or TR-31 wrapped key block.</p>
-    #[doc(hidden)]
     pub wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
     _request_id: Option<String>,
 }

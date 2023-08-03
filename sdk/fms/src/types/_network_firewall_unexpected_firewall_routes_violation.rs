@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// <p>The subnet ID for the firewall.</p>
-    #[doc(hidden)]
     pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The routes that are in violation.</p>
-    #[doc(hidden)]
     pub violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>The ID of the route table.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the firewall.</p>
-    #[doc(hidden)]
     pub firewall_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC ID.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkFirewallUnexpectedFirewallRoutesViolation {

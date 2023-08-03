@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRegistration {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the transit gateway registration.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayRegistrationStateReason>,
 }
 impl TransitGatewayRegistration {

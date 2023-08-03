@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverQueryLogConfigAssociation {
     /// <p>The ID of the query logging association.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the query logging configuration that a VPC is associated with.</p>
-    #[doc(hidden)]
     pub resolver_query_log_config_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon VPC that is associated with the query logging configuration.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the specified query logging association. Valid values include the following:</p>
     /// <ul>
@@ -20,7 +17,6 @@ pub struct ResolverQueryLogConfigAssociation {
     /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li>
     /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociationStatus>,
     /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
     /// <ul>
@@ -28,13 +24,10 @@ pub struct ResolverQueryLogConfigAssociation {
     /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li>
     /// </ul>
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null. </p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociationError>,
     /// <p>Contains additional information about the error. If the value or <code>Error</code> is null, the value of <code>ErrorMessage</code> also is null.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the VPC was associated with the query logging configuration, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
 }
 impl ResolverQueryLogConfigAssociation {

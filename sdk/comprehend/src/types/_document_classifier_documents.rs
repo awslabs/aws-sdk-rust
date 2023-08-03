@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentClassifierDocuments {
     /// <p>The S3 URI location of the training documents specified in the S3Uri CSV file.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The S3 URI location of the test documents included in the TestS3Uri CSV file. This field is not required if you do not specify a test CSV file.</p>
-    #[doc(hidden)]
     pub test_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl DocumentClassifierDocuments {

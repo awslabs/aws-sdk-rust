@@ -6,7 +6,6 @@
 pub struct EntityTypesListItem {
     /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
     /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl EntityTypesListItem {

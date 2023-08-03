@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>What occurs to start the revision publish action.</p>
-    #[doc(hidden)]
     pub revision_published: ::std::option::Option<crate::types::RevisionPublished>,
 }
 impl Event {

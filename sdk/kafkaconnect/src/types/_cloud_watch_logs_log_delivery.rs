@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogsLogDelivery {
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogsLogDelivery {

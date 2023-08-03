@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnassignPrivateIpAddressesInput {
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The secondary private IP addresses to unassign from the network interface. You can specify this option multiple times to unassign more than one IP address.</p>
-    #[doc(hidden)]
     pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IPv4 prefixes to unassign from the network interface.</p>
-    #[doc(hidden)]
     pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnassignPrivateIpAddressesInput {

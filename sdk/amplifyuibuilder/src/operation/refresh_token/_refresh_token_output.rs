@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RefreshTokenOutput {
     /// <p>The access token.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the new access token expires.</p>
-    #[doc(hidden)]
     pub expires_in: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

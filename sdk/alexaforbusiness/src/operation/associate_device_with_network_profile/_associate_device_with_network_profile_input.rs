@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateDeviceWithNetworkProfileInput {
     /// <p>The device ARN.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the network profile to associate with a device.</p>
-    #[doc(hidden)]
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateDeviceWithNetworkProfileInput {

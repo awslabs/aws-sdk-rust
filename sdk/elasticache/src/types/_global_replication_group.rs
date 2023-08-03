@@ -8,47 +8,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalReplicationGroup {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional description of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Global datastore</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The cache node type of the Global datastore</p>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticache engine. For Redis only.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The Elasticache Redis engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The replication groups that comprise the Global datastore.</p>
-    #[doc(hidden)]
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalReplicationGroupMember>>,
     /// <p>A flag that indicates whether the Global datastore is cluster enabled.</p>
-    #[doc(hidden)]
     pub cluster_enabled: ::std::option::Option<bool>,
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    #[doc(hidden)]
     pub global_node_groups: ::std::option::Option<::std::vec::Vec<crate::types::GlobalNodeGroup>>,
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub auth_token_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    #[doc(hidden)]
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>
     /// <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    #[doc(hidden)]
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The ARN (Amazon Resource Name) of the global replication group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GlobalReplicationGroup {

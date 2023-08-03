@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerServiceMetricDataOutput {
     /// <p>The name of the metric returned. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::ContainerServiceMetricName>,
     /// <p>An array of objects that describe the metric data returned.</p>
-    #[doc(hidden)]
     pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>>,
     _request_id: Option<String>,
 }

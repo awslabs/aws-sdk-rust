@@ -13,24 +13,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFileSystemLustreConfiguration {
     /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
-    #[doc(hidden)]
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix) that you're using as the data repository for your Amazon FSx for Lustre file system. The root of your FSx for Lustre file system will be mapped to the root of the Amazon S3 bucket you select. An example is <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
     /// </note>
-    #[doc(hidden)]
     pub import_path: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx file system is exported. The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which new and changed data is to be exported from your Amazon FSx for Lustre file system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p>
     /// <p>The Amazon S3 export bucket must be the same as the import bucket specified by <code>ImportPath</code>. If you specify only a bucket name, such as <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to S3 bucket objects. This mapping means that the input data in S3 is overwritten on export. If you provide a custom prefix in the export path, such as <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the contents of your file system to that export prefix in the Amazon S3 bucket.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
     /// </note>
-    #[doc(hidden)]
     pub export_path: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
     /// </note>
-    #[doc(hidden)]
     pub imported_file_chunk_size: ::std::option::Option<i32>,
     /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
     /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
@@ -39,7 +35,6 @@ pub struct CreateFileSystemLustreConfiguration {
     /// </note>
     /// <p>Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>, <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support automatic encryption in the Amazon Web Services Regions where they are available. For more information about encryption in transit for FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>. </p>
     /// <p>(Default = <code>SCRATCH_1</code>)</p>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::LustreDeploymentType>,
     /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
     /// <ul>
@@ -51,7 +46,6 @@ pub struct CreateFileSystemLustreConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3"> Automatically import updates from your S3 bucket</a>.</p> <note>
     /// <p>This parameter is not supported for file systems with a data repository association.</p>
     /// </note>
-    #[doc(hidden)]
     pub auto_import_policy: ::std::option::Option<crate::types::AutoImportPolicyType>,
     /// <p>Required with <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types, provisions the amount of read and write throughput for each 1 tebibyte (TiB) of file system storage capacity, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the <code>PerUnitStorageThroughput</code> (MB/s/TiB). For a 2.4-TiB ﬁle system, provisioning 50 MB/s/TiB of <code>PerUnitStorageThroughput</code> yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision. </p>
     /// <p>Valid values:</p>
@@ -60,22 +54,17 @@ pub struct CreateFileSystemLustreConfiguration {
     /// <li> <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40 MB/s/TiB.</p> </li>
     /// <li> <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000 MB/s/TiB.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
-    #[doc(hidden)]
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
-    #[doc(hidden)]
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>(Optional) Not available for use with file systems that are linked to a data repository. A boolean flag indicating whether tags for the file system should be copied to backups. The default value is false. If <code>CopyTagsToBackups</code> is set to true, all file system tags are copied to all automatic and user-initiated backups when the user doesn't specify any backup-specific tags. If <code>CopyTagsToBackups</code> is set to true and you specify one or more backup tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
     /// <p>(Default = <code>false</code>)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html"> Working with backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
-    #[doc(hidden)]
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>The type of drive cache used by <code>PERSISTENT_1</code> file systems that are provisioned with HDD storage devices. This parameter is required when storage type is HDD. Set this property to <code>READ</code> to improve the performance for frequently accessed files by caching up to 20% of the total storage capacity of the file system.</p>
     /// <p>This parameter is required when <code>StorageType</code> is set to <code>HDD</code>.</p>
-    #[doc(hidden)]
     pub drive_cache_type: ::std::option::Option<crate::types::DriveCacheType>,
     /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
@@ -83,13 +72,10 @@ pub struct CreateFileSystemLustreConfiguration {
     /// <li> <p> <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
-    #[doc(hidden)]
     pub data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
     /// <p>The Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::LustreLogCreateConfiguration>,
     /// <p>The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user.</p>
-    #[doc(hidden)]
     pub root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
 }
 impl CreateFileSystemLustreConfiguration {

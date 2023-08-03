@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>A message in plain text format.</p>
-    #[doc(hidden)]
     pub plain_text_message: ::std::option::Option<crate::types::PlainTextMessage>,
     /// <p>A message in a custom format defined by the client application.</p>
-    #[doc(hidden)]
     pub custom_payload: ::std::option::Option<crate::types::CustomPayload>,
     /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
-    #[doc(hidden)]
     pub ssml_message: ::std::option::Option<crate::types::SsmlMessage>,
     /// <p>A message that defines a response card that the client application can show to the user.</p>
-    #[doc(hidden)]
     pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
 impl Message {

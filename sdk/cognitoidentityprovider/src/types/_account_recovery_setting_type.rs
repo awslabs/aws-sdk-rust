@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountRecoverySettingType {
     /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
-    #[doc(hidden)]
     pub recovery_mechanisms: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryOptionType>>,
 }
 impl AccountRecoverySettingType {

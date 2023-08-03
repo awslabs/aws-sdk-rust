@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FontSize {
     /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
-    #[doc(hidden)]
     pub relative: ::std::option::Option<crate::types::RelativeFontSize>,
 }
 impl FontSize {

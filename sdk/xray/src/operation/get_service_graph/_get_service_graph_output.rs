@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceGraphOutput {
     /// <p>The start of the time frame for which the graph was generated.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which the graph was generated.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The services that have processed a traced request during the specified time frame.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
-    #[doc(hidden)]
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

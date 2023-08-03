@@ -6,10 +6,8 @@
 pub struct DescribeEventCategoriesInput {
     /// <p> The type of DMS resource that generates events. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>Filters applied to the event categories.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeEventCategoriesInput {

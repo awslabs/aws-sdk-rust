@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSecurityProfileInput {
     /// <p>The name of the security profile whose information you want to get.</p>
-    #[doc(hidden)]
     pub security_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSecurityProfileInput {

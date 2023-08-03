@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyGroupTimeSeries {
     /// <p>The ID of the anomaly group.</p>
-    #[doc(hidden)]
     pub anomaly_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the metric.</p>
-    #[doc(hidden)]
     pub time_series_id: ::std::option::Option<::std::string::String>,
 }
 impl AnomalyGroupTimeSeries {

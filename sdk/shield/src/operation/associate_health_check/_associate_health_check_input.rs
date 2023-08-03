@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateHealthCheckInput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
-    #[doc(hidden)]
     pub protection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
-    #[doc(hidden)]
     pub health_check_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateHealthCheckInput {

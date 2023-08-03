@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalFormattingCustomIconOptions {
     /// <p>Determines the type of icon.</p>
-    #[doc(hidden)]
     pub icon: ::std::option::Option<crate::types::Icon>,
     /// <p>Determines the Unicode icon type.</p>
-    #[doc(hidden)]
     pub unicode_icon: ::std::option::Option<::std::string::String>,
 }
 impl ConditionalFormattingCustomIconOptions {

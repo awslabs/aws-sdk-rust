@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationSettingKey {
     /// <p>The notification setting event to reset.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::NotificationEvent>,
     /// <p>The specified channel of notification.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::NotificationChannel>,
 }
 impl NotificationSettingKey {

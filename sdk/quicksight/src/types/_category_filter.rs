@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    #[doc(hidden)]
     pub filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that the filter is applied to.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::CategoryFilterConfiguration>,
 }
 impl CategoryFilter {

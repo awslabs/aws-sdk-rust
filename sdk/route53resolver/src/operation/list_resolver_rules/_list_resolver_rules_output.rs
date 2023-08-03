@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResolverRulesOutput {
     /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
-    #[doc(hidden)]
     pub resolver_rules: ::std::option::Option<::std::vec::Vec<crate::types::ResolverRule>>,
     _request_id: Option<String>,
 }

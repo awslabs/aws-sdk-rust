@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRegistrationStateReason {
     /// <p>The code for the state reason.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::TransitGatewayRegistrationState>,
     /// <p>The message for the state reason.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayRegistrationStateReason {

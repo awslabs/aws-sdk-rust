@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactOutput {
     /// <p>The details of the requested contact.</p>
-    #[doc(hidden)]
     pub contact: ::std::option::Option<crate::types::Contact>,
     _request_id: Option<String>,
 }

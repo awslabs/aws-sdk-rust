@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComprehendMedicalAsyncJobProperties {
     /// <p>The identifier assigned to the detection job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you assigned to the detection job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the detection job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A description of the status of a job.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time that the detection job was submitted for processing.</p>
-    #[doc(hidden)]
     pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the detection job completed.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that job metadata is deleted from the server. Output files in your S3 bucket will not be deleted. After the metadata is deleted, the job will no longer appear in the results of the <code>ListEntitiesDetectionV2Job</code> or the <code>ListPHIDetectionJobs</code> operation.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The input data configuration that you supplied when you created the detection job.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The output data configuration that you supplied when you created the detection job.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The language code of the input documents.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The path to the file that describes the results of a batch job.</p>
-    #[doc(hidden)]
     pub manifest_file_path: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Key Management Service key, if any, used to encrypt the output files. </p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
 }
 impl ComprehendMedicalAsyncJobProperties {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlPartialFailureReason {
     /// <p>The message containing the reason for a partial failure of an AutoML job.</p>
-    #[doc(hidden)]
     pub partial_failure_message: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlPartialFailureReason {

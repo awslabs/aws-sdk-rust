@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedProductAttribute {
     /// <p>The user-friendly name of the provisioned product.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the provisioned product.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
@@ -24,19 +20,14 @@ pub struct ProvisionedProductAttribute {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ProvisionedProductStatus>,
     /// <p>The current status message of the provisioned product.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
-    #[doc(hidden)]
     pub last_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -45,7 +36,6 @@ pub struct ProvisionedProductAttribute {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_provisioning_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -54,31 +44,22 @@ pub struct ProvisionedProductAttribute {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_successful_provisioning_record_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
-    #[doc(hidden)]
     pub physical_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product.</p>
-    #[doc(hidden)]
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
-    #[doc(hidden)]
     pub user_arn_session: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedProductAttribute {

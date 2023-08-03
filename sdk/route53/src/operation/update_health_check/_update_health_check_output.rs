@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHealthCheckOutput {
     /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     _request_id: Option<String>,
 }

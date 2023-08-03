@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
-    #[doc(hidden)]
     pub object_attribute_key: ::std::option::Option<crate::types::AttributeKey>,
     /// <p>The action to perform as part of the attribute update.</p>
-    #[doc(hidden)]
     pub object_attribute_action: ::std::option::Option<crate::types::ObjectAttributeAction>,
 }
 impl ObjectAttributeUpdate {

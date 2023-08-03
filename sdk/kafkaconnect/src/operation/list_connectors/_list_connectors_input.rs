@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectorsInput {
     /// <p>The name prefix that you want to use to search for and list connectors.</p>
-    #[doc(hidden)]
     pub connector_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of connectors to list in one response.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListConnectorsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodePropertyOverride {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
-    #[doc(hidden)]
     pub target_nodes: ::std::option::Option<::std::string::String>,
     /// <p>The overrides that are sent to a node range.</p>
-    #[doc(hidden)]
     pub container_overrides: ::std::option::Option<crate::types::ContainerOverrides>,
 }
 impl NodePropertyOverride {

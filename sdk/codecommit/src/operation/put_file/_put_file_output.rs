@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFileOutput {
     /// <p>The full SHA ID of the commit that contains this file change.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
-    #[doc(hidden)]
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
-    #[doc(hidden)]
     pub tree_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValueMapping {
     /// <p>The value to display for the complex object.</p>
-    #[doc(hidden)]
     pub display_value: ::std::option::Option<crate::types::FormInputValueProperty>,
     /// <p>The complex object.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::FormInputValueProperty>,
 }
 impl ValueMapping {

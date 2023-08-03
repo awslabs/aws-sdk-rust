@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHostedZoneOutput {
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
-    #[doc(hidden)]
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }

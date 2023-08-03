@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSchemaCreationOutput {
     /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SchemaStatus>,
     _request_id: Option<String>,
 }

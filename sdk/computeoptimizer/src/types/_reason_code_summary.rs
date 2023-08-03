@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReasonCodeSummary {
     /// <p>The name of the finding reason code.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::FindingReasonCode>,
     /// <p>The value of the finding reason code summary.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl ReasonCodeSummary {

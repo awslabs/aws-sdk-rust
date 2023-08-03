@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExportInput {
     /// <p>The unique identifier of the export to describe.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeExportInput {

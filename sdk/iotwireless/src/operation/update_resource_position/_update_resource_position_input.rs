@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourcePositionInput {
     /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    #[doc(hidden)]
     pub geo_json_payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl UpdateResourcePositionInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTablesOutput {
     /// <p>A list of the requested <code>Table</code> objects.</p>
-    #[doc(hidden)]
     pub table_list: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
     /// <p>A continuation token, present if the current list segment is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

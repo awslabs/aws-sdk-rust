@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionResults {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStepResult>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    #[doc(hidden)]
     pub on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStepResult>>,
 }
 impl ExecutionResults {

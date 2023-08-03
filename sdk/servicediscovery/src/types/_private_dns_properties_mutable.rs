@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateDnsPropertiesMutable {
     /// <p>Fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
-    #[doc(hidden)]
     pub soa: ::std::option::Option<crate::types::Soa>,
 }
 impl PrivateDnsPropertiesMutable {

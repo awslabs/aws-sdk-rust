@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePullRequestEventsInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The pull request event type about which you want to return information.</p>
-    #[doc(hidden)]
     pub pull_request_event_type: ::std::option::Option<crate::types::PullRequestEventType>,
     /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
-    #[doc(hidden)]
     pub actor_arn: ::std::option::Option<::std::string::String>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribePullRequestEventsInput {

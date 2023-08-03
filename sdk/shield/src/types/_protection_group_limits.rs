@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectionGroupLimits {
     /// <p>The maximum number of protection groups that you can have at one time. </p>
-    #[doc(hidden)]
     pub max_protection_groups: i64,
     /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
-    #[doc(hidden)]
     pub pattern_type_limits: ::std::option::Option<crate::types::ProtectionGroupPatternTypeLimits>,
 }
 impl ProtectionGroupLimits {

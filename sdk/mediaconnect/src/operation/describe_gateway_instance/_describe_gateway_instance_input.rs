@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayInstanceInput {
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
-    #[doc(hidden)]
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayInstanceInput {

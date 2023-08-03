@@ -6,34 +6,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleRule {
     /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<crate::types::LifecycleExpiration>,
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     #[deprecated]
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not contain a <code>Prefix</code> element.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::LifecycleRuleFilter>,
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExpirationStatus>,
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
-    #[doc(hidden)]
     pub transitions: ::std::option::Option<::std::vec::Vec<crate::types::Transition>>,
     /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
-    #[doc(hidden)]
     pub noncurrent_version_transitions: ::std::option::Option<::std::vec::Vec<crate::types::NoncurrentVersionTransition>>,
     /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
-    #[doc(hidden)]
     pub noncurrent_version_expiration: ::std::option::Option<crate::types::NoncurrentVersionExpiration>,
     /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub abort_incomplete_multipart_upload: ::std::option::Option<crate::types::AbortIncompleteMultipartUpload>,
 }
 impl LifecycleRule {

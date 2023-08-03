@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeaturedResultsItem {
     /// <p>The identifier of the featured result.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of document within the featured result response. For example, a response could include a question-answer type that's relevant to the query.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::QueryResultType>,
     /// <p>One or more additional attributes associated with the featured result.</p>
-    #[doc(hidden)]
     pub additional_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>>,
     /// <p>The identifier of the featured document.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides text and information about where to highlight the text.</p>
-    #[doc(hidden)]
     pub document_title: ::std::option::Option<crate::types::TextWithHighlights>,
     /// <p>Provides text and information about where to highlight the text.</p>
-    #[doc(hidden)]
     pub document_excerpt: ::std::option::Option<crate::types::TextWithHighlights>,
     /// <p>The source URI location of the featured document.</p>
-    #[doc(hidden)]
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document attributes assigned to a featured document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    #[doc(hidden)]
     pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
     /// <p>A token that identifies a particular featured result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
-    #[doc(hidden)]
     pub feedback_token: ::std::option::Option<::std::string::String>,
 }
 impl FeaturedResultsItem {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDedicatedIpsInput {
     /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-    #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl GetDedicatedIpsInput {

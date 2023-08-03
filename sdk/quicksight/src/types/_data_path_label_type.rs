@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataPathLabelType {
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual value of the field that is labeled.</p>
-    #[doc(hidden)]
     pub field_value: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of the data label.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DataPathLabelType {

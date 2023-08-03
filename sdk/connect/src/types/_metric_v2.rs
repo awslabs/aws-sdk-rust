@@ -7,13 +7,10 @@ pub struct MetricV2 {
     /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the threshold for service level metrics.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>,
     /// <p>Contains the filters to be used when returning data.</p>
-    #[doc(hidden)]
     pub metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>,
 }
 impl MetricV2 {

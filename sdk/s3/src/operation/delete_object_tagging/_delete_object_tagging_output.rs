@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectTaggingOutput {
     /// <p>The versionId of the object the tag-set was removed from.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

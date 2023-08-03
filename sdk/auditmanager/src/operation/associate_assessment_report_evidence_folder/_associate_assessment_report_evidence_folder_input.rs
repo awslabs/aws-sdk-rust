@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAssessmentReportEvidenceFolderInput {
     /// <p> The identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    #[doc(hidden)]
     pub evidence_folder_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAssessmentReportEvidenceFolderInput {

@@ -5,107 +5,73 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the associated launch configuration.</p>
-    #[doc(hidden)]
     pub launch_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The launch template for the group.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>The mixed instances policy for the group.</p>
-    #[doc(hidden)]
     pub mixed_instances_policy: ::std::option::Option<crate::types::MixedInstancesPolicy>,
     /// <p>The minimum size of the group.</p>
-    #[doc(hidden)]
     pub min_size: ::std::option::Option<i32>,
     /// <p>The maximum size of the group.</p>
-    #[doc(hidden)]
     pub max_size: ::std::option::Option<i32>,
     /// <p>The desired size of the group.</p>
-    #[doc(hidden)]
     pub desired_capacity: ::std::option::Option<i32>,
     /// <p>The predicted capacity of the group when it has a predictive scaling policy.</p>
-    #[doc(hidden)]
     pub predicted_capacity: ::std::option::Option<i32>,
     /// <p>The duration of the default cooldown period, in seconds.</p>
-    #[doc(hidden)]
     pub default_cooldown: ::std::option::Option<i32>,
     /// <p>One or more Availability Zones for the group.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more load balancers associated with the group.</p>
-    #[doc(hidden)]
     pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
-    #[doc(hidden)]
     pub target_group_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A comma-separated value string of one or more health check types.</p>
-    #[doc(hidden)]
     pub health_check_type: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the health check grace period, in seconds.</p>
-    #[doc(hidden)]
     pub health_check_grace_period: ::std::option::Option<i32>,
     /// <p>The EC2 instances associated with the group.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     /// <p>The date and time the group was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The suspended processes associated with the group.</p>
-    #[doc(hidden)]
     pub suspended_processes: ::std::option::Option<::std::vec::Vec<crate::types::SuspendedProcess>>,
     /// <p>The name of the placement group into which to launch your instances, if any.</p>
-    #[doc(hidden)]
     pub placement_group: ::std::option::Option<::std::string::String>,
     /// <p>One or more subnet IDs, if applicable, separated by commas.</p>
-    #[doc(hidden)]
     pub vpc_zone_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The metrics enabled for the group.</p>
-    #[doc(hidden)]
     pub enabled_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EnabledMetric>>,
     /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
     /// <p>The termination policies for the group.</p>
-    #[doc(hidden)]
     pub termination_policies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
-    #[doc(hidden)]
     pub new_instances_protected_from_scale_in: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf.</p>
-    #[doc(hidden)]
     pub service_linked_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p>
     /// <p>Valid Range: Minimum value of 0.</p>
-    #[doc(hidden)]
     pub max_instance_lifetime: ::std::option::Option<i32>,
     /// <p>Indicates whether Capacity Rebalancing is enabled.</p>
-    #[doc(hidden)]
     pub capacity_rebalance: ::std::option::Option<bool>,
     /// <p>The warm pool for the group.</p>
-    #[doc(hidden)]
     pub warm_pool_configuration: ::std::option::Option<crate::types::WarmPoolConfiguration>,
     /// <p>The current size of the warm pool.</p>
-    #[doc(hidden)]
     pub warm_pool_size: ::std::option::Option<i32>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only.</p>
-    #[doc(hidden)]
     pub desired_capacity_type: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the default instance warmup, in seconds.</p>
-    #[doc(hidden)]
     pub default_instance_warmup: ::std::option::Option<i32>,
     /// <p>The traffic sources associated with this Auto Scaling group.</p>
-    #[doc(hidden)]
     pub traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
 impl AutoScalingGroup {

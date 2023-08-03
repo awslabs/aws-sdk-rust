@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Aggregates {
     /// <p>The average (mean) value of the time series over a time interval window.</p>
-    #[doc(hidden)]
     pub average: ::std::option::Option<f64>,
     /// <p>The count of data points in the time series over a time interval window.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<f64>,
     /// <p>The maximum value of the time series over a time interval window.</p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<f64>,
     /// <p>The minimum value of the time series over a time interval window.</p>
-    #[doc(hidden)]
     pub minimum: ::std::option::Option<f64>,
     /// <p>The sum of the time series over a time interval window.</p>
-    #[doc(hidden)]
     pub sum: ::std::option::Option<f64>,
     /// <p>The standard deviation of the time series over a time interval window.</p>
-    #[doc(hidden)]
     pub standard_deviation: ::std::option::Option<f64>,
 }
 impl Aggregates {

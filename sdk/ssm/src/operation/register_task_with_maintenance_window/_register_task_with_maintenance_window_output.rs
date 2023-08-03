@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTaskWithMaintenanceWindowOutput {
     /// <p>The ID of the task in the maintenance window.</p>
-    #[doc(hidden)]
     pub window_task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

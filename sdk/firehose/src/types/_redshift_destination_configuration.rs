@@ -5,38 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RedshiftDestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The database connection string.</p>
-    #[doc(hidden)]
     pub cluster_jdbcurl: ::std::option::Option<::std::string::String>,
     /// <p>The <code>COPY</code> command.</p>
-    #[doc(hidden)]
     pub copy_command: ::std::option::Option<crate::types::CopyCommand>,
     /// <p>The name of the user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The user password.</p>
-    #[doc(hidden)]
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
-    #[doc(hidden)]
     pub retry_options: ::std::option::Option<crate::types::RedshiftRetryOptions>,
     /// <p>The configuration for the intermediate Amazon S3 location from which Amazon Redshift obtains data. Restrictions are described in the topic for <code>CreateDeliveryStream</code>.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
-    #[doc(hidden)]
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     /// <p>The data processing configuration.</p>
-    #[doc(hidden)]
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
-    #[doc(hidden)]
     pub s3_backup_mode: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
     /// <p>The configuration for backup in Amazon S3.</p>
-    #[doc(hidden)]
     pub s3_backup_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     /// <p>The CloudWatch logging options for your delivery stream.</p>
-    #[doc(hidden)]
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
 impl RedshiftDestinationConfiguration {

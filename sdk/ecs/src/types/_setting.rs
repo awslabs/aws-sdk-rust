@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Setting {
     /// <p>The Amazon ECS resource name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::SettingName>,
     /// <p>Determines whether the account setting is on or off for the specified resource.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
 }
 impl Setting {

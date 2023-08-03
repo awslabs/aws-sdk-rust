@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupNameAndArn {
     /// <p>The group name.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The group ARN.</p>
-    #[doc(hidden)]
     pub group_arn: ::std::option::Option<::std::string::String>,
 }
 impl GroupNameAndArn {

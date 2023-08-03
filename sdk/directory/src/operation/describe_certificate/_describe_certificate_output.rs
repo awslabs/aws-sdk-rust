@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCertificateOutput {
     /// <p>Information about the certificate, including registered date time, certificate state, the reason for the state, expiration date time, and certificate common name.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupMembershipOutput {
     /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
-    #[doc(hidden)]
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the identity store.</p>
-    #[doc(hidden)]
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

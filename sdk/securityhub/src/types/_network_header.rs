@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkHeader {
     /// <p>The protocol used for the component.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Information about the destination of the component.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::NetworkPathComponentDetails>,
     /// <p>Information about the origin of the component.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::NetworkPathComponentDetails>,
 }
 impl NetworkHeader {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolNetworkOperationsInfo {
     /// <p>ID of this network operation.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network operation ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the network operation.</p>
-    #[doc(hidden)]
     pub operation_state: ::std::option::Option<crate::types::NsLcmOperationState>,
     /// <p>ID of the network instance related to this operation.</p>
-    #[doc(hidden)]
     pub ns_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of lifecycle management network operation.</p>
-    #[doc(hidden)]
     pub lcm_operation_type: ::std::option::Option<crate::types::LcmOperationType>,
     /// <p>Error related to this specific network operation.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ProblemDetails>,
     /// <p>Metadata related to this network operation.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ListSolNetworkOperationsMetadata>,
 }
 impl ListSolNetworkOperationsInfo {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetManagedEndpointSessionCredentialsInput {
     /// <p>The ARN of the managed endpoint for which the request is submitted. </p>
-    #[doc(hidden)]
     pub endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
-    #[doc(hidden)]
     pub virtual_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Execution Role ARN that will be used by the job run. </p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Type of the token requested. Currently supported and default value of this field is “TOKEN.”</p>
-    #[doc(hidden)]
     pub credential_type: ::std::option::Option<::std::string::String>,
     /// <p>Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.</p>
-    #[doc(hidden)]
     pub duration_in_seconds: ::std::option::Option<i32>,
     /// <p>String identifier used to separate sections of the execution logs uploaded to S3.</p>
-    #[doc(hidden)]
     pub log_context: ::std::option::Option<::std::string::String>,
     /// <p>The client idempotency token of the job run request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl GetManagedEndpointSessionCredentialsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFirewallConfigInput {
     /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFirewallConfigInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayerFailure {
     /// <p>The layer digest that's associated with the failure.</p>
-    #[doc(hidden)]
     pub layer_digest: ::std::option::Option<::std::string::String>,
     /// <p>The failure code that's associated with the failure.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::LayerFailureCode>,
     /// <p>The reason for the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl LayerFailure {

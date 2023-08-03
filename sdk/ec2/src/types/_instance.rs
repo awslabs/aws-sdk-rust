@@ -5,180 +5,123 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
-    #[doc(hidden)]
     pub ami_launch_index: ::std::option::Option<i32>,
     /// <p>The ID of the AMI used to launch the instance.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The kernel associated with this instance, if applicable.</p>
-    #[doc(hidden)]
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the instance was launched.</p>
-    #[doc(hidden)]
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The monitoring for the instance.</p>
-    #[doc(hidden)]
     pub monitoring: ::std::option::Option<crate::types::Monitoring>,
     /// <p>The location where the instance launched, if applicable.</p>
-    #[doc(hidden)]
     pub placement: ::std::option::Option<crate::types::Placement>,
     /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
     /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address assigned to the instance.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The product codes attached to this instance, if applicable.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    #[doc(hidden)]
     pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
     /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
-    #[doc(hidden)]
     pub public_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The RAM disk associated with this instance, if applicable.</p>
-    #[doc(hidden)]
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>The reason for the most recent state transition. This might be an empty string.</p>
-    #[doc(hidden)]
     pub state_transition_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in which the instance is running.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC in which the instance is running.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the image.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     /// <p>Any block device mapping entries for the instance.</p>
-    #[doc(hidden)]
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The idempotency token you provided when you launched the instance, if applicable.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    #[doc(hidden)]
     pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
-    #[doc(hidden)]
     pub ena_support: ::std::option::Option<bool>,
     /// <p>The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p>
-    #[doc(hidden)]
     pub hypervisor: ::std::option::Option<crate::types::HypervisorType>,
     /// <p>The IAM instance profile associated with the instance, if applicable.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
     /// <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
-    #[doc(hidden)]
     pub instance_lifecycle: ::std::option::Option<crate::types::InstanceLifecycleType>,
     /// <p>The Elastic GPU associated with the instance.</p>
-    #[doc(hidden)]
     pub elastic_gpu_associations: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>>,
     /// <p>The elastic inference accelerator associated with the instance.</p>
-    #[doc(hidden)]
     pub elastic_inference_accelerator_associations: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>>,
     /// <p>The network interfaces for the instance.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterface>>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    #[doc(hidden)]
     pub root_device_name: ::std::option::Option<::std::string::String>,
     /// <p>The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.</p>
-    #[doc(hidden)]
     pub root_device_type: ::std::option::Option<crate::types::DeviceType>,
     /// <p>The security groups for the instance.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    #[doc(hidden)]
     pub source_dest_check: ::std::option::Option<bool>,
     /// <p>If the request is a Spot Instance request, the ID of the request.</p>
-    #[doc(hidden)]
     pub spot_instance_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-    #[doc(hidden)]
     pub sriov_net_support: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the most recent state transition.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<crate::types::StateReason>,
     /// <p>Any tags assigned to the instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The virtualization type of the instance.</p>
-    #[doc(hidden)]
     pub virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
     /// <p>The CPU options for the instance.</p>
-    #[doc(hidden)]
     pub cpu_options: ::std::option::Option<crate::types::CpuOptions>,
     /// <p>The ID of the Capacity Reservation.</p>
-    #[doc(hidden)]
     pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Capacity Reservation targeting option.</p>
-    #[doc(hidden)]
     pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecificationResponse>,
     /// <p>Indicates whether the instance is enabled for hibernation.</p>
-    #[doc(hidden)]
     pub hibernation_options: ::std::option::Option<crate::types::HibernationOptions>,
     /// <p>The license configurations for the instance.</p>
-    #[doc(hidden)]
     pub licenses: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
     /// <p>The metadata options for the instance.</p>
-    #[doc(hidden)]
     pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
-    #[doc(hidden)]
     pub enclave_options: ::std::option::Option<crate::types::EnclaveOptions>,
     /// <p>The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code> parameter is the boot mode that is used to boot the instance at launch or start.</p> <note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub boot_mode: ::std::option::Option<crate::types::BootModeValues>,
     /// <p>The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub platform_details: ::std::option::Option<::std::string::String>,
     /// <p>The usage operation value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>The time that the usage operation was last updated.</p>
-    #[doc(hidden)]
     pub usage_operation_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The options for the instance hostname.</p>
-    #[doc(hidden)]
     pub private_dns_name_options: ::std::option::Option<crate::types::PrivateDnsNameOptionsResponse>,
     /// <p>The IPv6 address assigned to the instance.</p>
-    #[doc(hidden)]
     pub ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub tpm_support: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on the recovery and maintenance options of your instance.</p>
-    #[doc(hidden)]
     pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    #[doc(hidden)]
     pub current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
 }
 impl Instance {

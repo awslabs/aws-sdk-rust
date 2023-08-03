@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSignalingChannelsOutput {
     /// <p>An array of <code>ChannelInfo</code> objects.</p>
-    #[doc(hidden)]
     pub channel_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ChannelInfo>>,
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

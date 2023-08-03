@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormNumericQuestionOption {
     /// <p>The minimum answer value of the range option.</p>
-    #[doc(hidden)]
     pub min_value: i32,
     /// <p>The maximum answer value of the range option.</p>
-    #[doc(hidden)]
     pub max_value: i32,
     /// <p>The score assigned to answer values within the range option.</p>
-    #[doc(hidden)]
     pub score: i32,
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
-    #[doc(hidden)]
     pub automatic_fail: bool,
 }
 impl EvaluationFormNumericQuestionOption {

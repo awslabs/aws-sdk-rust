@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VariableImpactExplanation {
     /// <p> The event variable name. </p>
-    #[doc(hidden)]
     pub event_variable_name: ::std::option::Option<::std::string::String>,
     /// <p> The event variable's relative impact in terms of magnitude on the prediction scores. The relative impact values consist of a numerical rating (0-5, 5 being the highest) and direction (increased/decreased) impact of the fraud risk. </p>
-    #[doc(hidden)]
     pub relative_impact: ::std::option::Option<::std::string::String>,
     /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from - infinity to + infinity.</p>
     /// <ul>
     /// <li> <p>A positive value indicates that the variable drove the risk score up.</p> </li>
     /// <li> <p>A negative value indicates that the variable drove the risk score down.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub log_odds_impact: ::std::option::Option<f32>,
 }
 impl VariableImpactExplanation {

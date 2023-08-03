@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateClientDeviceWithCoreDeviceOutput {
     /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
-    #[doc(hidden)]
     pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry>>,
     _request_id: Option<String>,
 }

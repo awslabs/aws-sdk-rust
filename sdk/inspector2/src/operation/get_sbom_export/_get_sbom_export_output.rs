@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSbomExportOutput {
     /// <p>The report ID of the software bill of materials (SBOM) report.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>The format of the software bill of materials (SBOM) report.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::SbomReportFormat>,
     /// <p>The status of the software bill of materials (SBOM) report.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExternalReportStatus>,
     /// <p>An error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ReportingErrorCode>,
     /// <p>An error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::Destination>,
     /// <p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>
-    #[doc(hidden)]
     pub filter_criteria: ::std::option::Option<crate::types::ResourceFilterCriteria>,
     _request_id: Option<String>,
 }

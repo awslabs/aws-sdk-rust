@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLaunchOutput {
     /// <p>A structure that contains the configuration of the launch that was created.</p>
-    #[doc(hidden)]
     pub launch: ::std::option::Option<crate::types::Launch>,
     _request_id: Option<String>,
 }

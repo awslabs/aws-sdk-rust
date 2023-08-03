@@ -10,10 +10,8 @@ pub struct PutEncryptionConfigInput {
     /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
     /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EncryptionType>,
 }
 impl PutEncryptionConfigInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegexMatchStatement {
     /// <p>The string representing the regular expression.</p>
-    #[doc(hidden)]
     pub regex_string: ::std::option::Option<::std::string::String>,
     /// <p>The part of the web request that you want WAF to inspect. </p>
-    #[doc(hidden)]
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    #[doc(hidden)]
     pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl RegexMatchStatement {

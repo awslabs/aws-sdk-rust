@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetLabelStats {
     /// <p> The total number of images that use the label. </p>
-    #[doc(hidden)]
     pub entry_count: ::std::option::Option<i32>,
     /// <p> The total number of images that have the label assigned to a bounding box. </p>
-    #[doc(hidden)]
     pub bounding_box_count: ::std::option::Option<i32>,
 }
 impl DatasetLabelStats {

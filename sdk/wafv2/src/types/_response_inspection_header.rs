@@ -8,15 +8,12 @@
 pub struct ResponseInspectionHeader {
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code> </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code> </p>
-    #[doc(hidden)]
     pub success_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code> </p>
-    #[doc(hidden)]
     pub failure_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResponseInspectionHeader {

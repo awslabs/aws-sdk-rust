@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeActivationsFilter {
     /// <p>The name of the filter.</p>
-    #[doc(hidden)]
     pub filter_key: ::std::option::Option<crate::types::DescribeActivationsFilterKeys>,
     /// <p>The filter values.</p>
-    #[doc(hidden)]
     pub filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeActivationsFilter {

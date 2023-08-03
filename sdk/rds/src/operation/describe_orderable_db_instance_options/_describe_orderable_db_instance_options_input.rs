@@ -22,37 +22,28 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
     /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    #[doc(hidden)]
     pub availability_zone_group: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
-    #[doc(hidden)]
     pub vpc: ::std::option::Option<bool>,
     /// <p>This parameter isn't currently supported.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 10000.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsInput {

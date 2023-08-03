@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlMetadata {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the control. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the control. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
-    #[doc(hidden)]
     pub control_sources: ::std::option::Option<::std::string::String>,
     /// <p> The time when the control was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time when the control was most recently updated. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlMetadata {

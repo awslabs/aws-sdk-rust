@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectionGroupArbitraryPatternLimits {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
-    #[doc(hidden)]
     pub max_members: i64,
 }
 impl ProtectionGroupArbitraryPatternLimits {

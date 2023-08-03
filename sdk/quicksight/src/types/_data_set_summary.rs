@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dataset.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time that this dataset was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this dataset was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::DataSetImportMode>,
     /// <p>The row-level security configuration for the dataset.</p>
-    #[doc(hidden)]
     pub row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     /// <p>Whether or not the row level permission tags are applied.</p>
-    #[doc(hidden)]
     pub row_level_permission_tag_configuration_applied: bool,
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
-    #[doc(hidden)]
     pub column_level_permission_rules_applied: bool,
 }
 impl DataSetSummary {

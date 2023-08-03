@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GaugeChartConditionalFormatting {
     /// <p>Conditional formatting options of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::GaugeChartConditionalFormattingOption>>,
 }
 impl GaugeChartConditionalFormatting {

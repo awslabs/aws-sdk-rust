@@ -5,71 +5,49 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The region name and Availability Zone where the instance is located.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The type of resource (usually <code>Instance</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
-    #[doc(hidden)]
     pub blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
-    #[doc(hidden)]
     pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
-    #[doc(hidden)]
     pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>,
     /// <p>A Boolean value indicating whether this instance has a static IP assigned to it.</p>
-    #[doc(hidden)]
     pub is_static_ip: ::std::option::Option<bool>,
     /// <p>The private IP address of the instance.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The public IP address of the instance.</p>
-    #[doc(hidden)]
     pub public_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 addresses of the instance.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type of the instance.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The size of the vCPU and the amount of RAM for the instance.</p>
-    #[doc(hidden)]
     pub hardware: ::std::option::Option<crate::types::InstanceHardware>,
     /// <p>Information about the public ports and monthly data transfer rates for the instance.</p>
-    #[doc(hidden)]
     pub networking: ::std::option::Option<crate::types::InstanceNetworking>,
     /// <p>The status code and the state (e.g., <code>running</code>) for the instance.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>The user name for connecting to the instance (e.g., <code>ec2-user</code>).</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SSH key being used to connect to the instance (e.g., <code>LightsailDefaultKeyPair</code>).</p>
-    #[doc(hidden)]
     pub ssh_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
-    #[doc(hidden)]
     pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
 impl Instance {

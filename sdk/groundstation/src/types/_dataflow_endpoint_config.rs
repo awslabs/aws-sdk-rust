@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataflowEndpointConfig {
     /// <p>Name of a dataflow endpoint.</p>
-    #[doc(hidden)]
     pub dataflow_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>Region of a dataflow endpoint.</p>
-    #[doc(hidden)]
     pub dataflow_endpoint_region: ::std::option::Option<::std::string::String>,
 }
 impl DataflowEndpointConfig {

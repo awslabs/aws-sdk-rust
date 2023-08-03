@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetShardIteratorInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
-    #[doc(hidden)]
     pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
     /// <ul>
@@ -17,10 +15,8 @@ pub struct GetShardIteratorInput {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
     /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub shard_iterator_type: ::std::option::Option<crate::types::ShardIteratorType>,
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-    #[doc(hidden)]
     pub sequence_number: ::std::option::Option<::std::string::String>,
 }
 impl GetShardIteratorInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableIdentifier {
     /// <p>The ID of the Data Catalog in which the table resides.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database that contains the target table.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target table.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Region of the target table.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl TableIdentifier {

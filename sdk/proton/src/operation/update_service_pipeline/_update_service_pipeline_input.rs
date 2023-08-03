@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateServicePipelineInput {
     /// <p>The name of the service to that the pipeline is associated with.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The spec for the service pipeline to update.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The deployment type.</p>
     /// <p>There are four modes for updating a service pipeline. The <code>deploymentType</code> field defines the mode.</p>
@@ -33,13 +31,10 @@ pub struct UpdateServicePipelineInput {
     /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::DeploymentUpdateType>,
     /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
-    #[doc(hidden)]
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
-    #[doc(hidden)]
     pub template_minor_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateServicePipelineInput {

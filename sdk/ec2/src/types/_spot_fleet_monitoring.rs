@@ -6,7 +6,6 @@
 pub struct SpotFleetMonitoring {
     /// <p>Enables monitoring for the instance.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl SpotFleetMonitoring {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key of the replica that should be used for KMS encryption. To specify a key, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should only provide this parameter if the key is different from the default DynamoDB KMS key <code>alias/aws/dynamodb</code>.</p>
-    #[doc(hidden)]
     pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not specified, uses the source table's provisioned throughput settings.</p>
-    #[doc(hidden)]
     pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
     /// <p>Replica-specific global secondary index settings.</p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndex>>,
     /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
-    #[doc(hidden)]
     pub table_class_override: ::std::option::Option<crate::types::TableClass>,
 }
 impl UpdateReplicationGroupMemberAction {

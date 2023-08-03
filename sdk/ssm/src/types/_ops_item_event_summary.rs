@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemEventSummary {
     /// <p>The ID of the OpsItem.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the OpsItem event.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The source of the OpsItem event.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The type of information provided as a detail.</p>
-    #[doc(hidden)]
     pub detail_type: ::std::option::Option<::std::string::String>,
     /// <p>Specific information about the OpsItem event.</p>
-    #[doc(hidden)]
     pub detail: ::std::option::Option<::std::string::String>,
     /// <p>Information about the user or resource that created the OpsItem event.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::OpsItemIdentity>,
     /// <p>The date and time the OpsItem event was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OpsItemEventSummary {

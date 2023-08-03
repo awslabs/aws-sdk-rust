@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Status {
     /// <p>The identifier of the document.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of a document.</p>
     /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
-    #[doc(hidden)]
     pub document_status: ::std::option::Option<crate::types::DocumentStatus>,
     /// <p>Indicates the source of the error.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl Status {

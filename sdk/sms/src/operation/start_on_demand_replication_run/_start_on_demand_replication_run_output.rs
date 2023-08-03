@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartOnDemandReplicationRunOutput {
     /// <p>The ID of the replication run.</p>
-    #[doc(hidden)]
     pub replication_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegrationConfig {
     /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
-    #[doc(hidden)]
     pub appflow_integration: ::std::option::Option<crate::types::AppflowIntegration>,
 }
 impl IntegrationConfig {

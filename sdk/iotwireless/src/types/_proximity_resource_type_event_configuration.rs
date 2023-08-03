@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProximityResourceTypeEventConfiguration {
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless device topic.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }
 impl ProximityResourceTypeEventConfiguration {

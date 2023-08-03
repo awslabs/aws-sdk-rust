@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCatalogImportStatusOutput {
     /// <p>The status of the specified catalog migration.</p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::CatalogImportStatus>,
     _request_id: Option<String>,
 }

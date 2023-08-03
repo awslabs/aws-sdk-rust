@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateEvaluationResult {
     /// <p>Uniquely identifies the evaluation result.</p>
-    #[doc(hidden)]
     pub evaluation_result_identifier: ::std::option::Option<crate::types::EvaluationResultIdentifier>,
     /// <p>The resource compliance status.</p>
     /// <p>For the <code>AggregationEvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>The time when Config recorded the aggregate evaluation result.</p>
-    #[doc(hidden)]
     pub result_recorded_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
-    #[doc(hidden)]
     pub config_rule_invoked_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Supplementary information about how the agrregate evaluation determined the compliance.</p>
-    #[doc(hidden)]
     pub annotation: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account ID of the source account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source region from where the data is aggregated.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
 impl AggregateEvaluationResult {

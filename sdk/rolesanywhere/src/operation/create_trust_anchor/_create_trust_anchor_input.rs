@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrustAnchorInput {
     /// <p>The name of the trust anchor.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>Specifies whether the trust anchor is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The tags to attach to the trust anchor.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    #[doc(hidden)]
     pub notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
 }
 impl CreateTrustAnchorInput {

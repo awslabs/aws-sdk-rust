@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsTimedMetadataScheduleActionSettings {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
-    #[doc(hidden)]
     pub id3: ::std::option::Option<::std::string::String>,
 }
 impl HlsTimedMetadataScheduleActionSettings {

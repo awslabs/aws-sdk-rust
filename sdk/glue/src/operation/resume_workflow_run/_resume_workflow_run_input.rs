@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResumeWorkflowRunInput {
     /// <p>The name of the workflow to resume.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run to resume.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-    #[doc(hidden)]
     pub node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResumeWorkflowRunInput {

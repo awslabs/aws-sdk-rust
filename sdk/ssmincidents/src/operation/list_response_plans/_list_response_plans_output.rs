@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResponsePlansOutput {
     /// <p>Details of each response plan.</p>
-    #[doc(hidden)]
     pub response_plan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>,
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

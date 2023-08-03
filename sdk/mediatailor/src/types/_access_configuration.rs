@@ -10,10 +10,8 @@ pub struct AccessConfiguration {
     /// <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p>
     /// <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p>
     /// <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
-    #[doc(hidden)]
     pub access_type: ::std::option::Option<crate::types::AccessType>,
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
-    #[doc(hidden)]
     pub secrets_manager_access_token_configuration: ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
 }
 impl AccessConfiguration {

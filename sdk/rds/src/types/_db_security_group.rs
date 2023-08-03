@@ -6,25 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbSecurityGroup {
     /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the DB security group.</p>
-    #[doc(hidden)]
     pub db_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the description of the DB security group.</p>
-    #[doc(hidden)]
     pub db_security_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Provides the VpcId of the DB security group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of <code>EC2SecurityGroup</code> elements.</p>
-    #[doc(hidden)]
     pub ec2_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::Ec2SecurityGroup>>,
     /// <p>Contains a list of <code>IPRange</code> elements.</p>
-    #[doc(hidden)]
     pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::IpRange>>,
     /// <p>The Amazon Resource Name (ARN) for the DB security group.</p>
-    #[doc(hidden)]
     pub db_security_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbSecurityGroup {

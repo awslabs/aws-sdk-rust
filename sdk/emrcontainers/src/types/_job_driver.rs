@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDriver {
     /// <p>The job driver parameters specified for spark submit.</p>
-    #[doc(hidden)]
     pub spark_submit_job_driver: ::std::option::Option<crate::types::SparkSubmitJobDriver>,
     /// <p>The job driver for job type.</p>
-    #[doc(hidden)]
     pub spark_sql_job_driver: ::std::option::Option<crate::types::SparkSqlJobDriver>,
 }
 impl JobDriver {

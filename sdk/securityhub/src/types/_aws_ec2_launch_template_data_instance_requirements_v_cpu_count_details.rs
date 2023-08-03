@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
     /// <p> The maximum number of vCPUs. </p>
-    #[doc(hidden)]
     pub max: i32,
     /// <p> The minimum number of vCPUs. </p>
-    #[doc(hidden)]
     pub min: i32,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {

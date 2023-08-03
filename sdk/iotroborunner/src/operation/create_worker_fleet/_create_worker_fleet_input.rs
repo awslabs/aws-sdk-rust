@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkerFleetInput {
     /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Site ARN.
-    #[doc(hidden)]
     pub site: ::std::option::Option<::std::string::String>,
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    #[doc(hidden)]
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkerFleetInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunStateChange {
     /// <p>The last time the assessment run state changed.</p>
-    #[doc(hidden)]
     pub state_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The assessment run state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AssessmentRunState>,
 }
 impl AssessmentRunStateChange {

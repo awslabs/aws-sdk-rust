@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Administrator {
     /// <p>The ID of the account used as the administrator account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The value that is used to validate the administrator account to the member account.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the relationship between the administrator and member accounts.</p>
-    #[doc(hidden)]
     pub relationship_status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
-    #[doc(hidden)]
     pub invited_at: ::std::option::Option<::std::string::String>,
 }
 impl Administrator {

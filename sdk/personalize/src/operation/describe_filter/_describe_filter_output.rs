@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFilterOutput {
     /// <p>The filter's details.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Filter>,
     _request_id: Option<String>,
 }

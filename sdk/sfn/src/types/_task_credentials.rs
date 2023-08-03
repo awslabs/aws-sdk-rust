@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskCredentials {
     /// <p>The ARN of an IAM role that Step Functions assumes for the task. The role can allow cross-account access to resources.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl TaskCredentials {

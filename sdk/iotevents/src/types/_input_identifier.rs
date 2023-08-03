@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputIdentifier {
     /// <p> The identifier of the input routed to AWS IoT Events. </p>
-    #[doc(hidden)]
     pub iot_events_input_identifier: ::std::option::Option<crate::types::IotEventsInputIdentifier>,
     /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
-    #[doc(hidden)]
     pub iot_site_wise_input_identifier: ::std::option::Option<crate::types::IotSiteWiseInputIdentifier>,
 }
 impl InputIdentifier {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchRasterDataCollectionOutput {
     /// <p>Approximate number of results in the response.</p>
-    #[doc(hidden)]
     pub approximate_result_count: ::std::option::Option<i32>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ItemSource>>,
     _request_id: Option<String>,
 }

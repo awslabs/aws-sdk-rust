@@ -9,13 +9,10 @@ pub struct AccountAttribute {
     /// <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
     /// <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The maximum allowed value. </p>
-    #[doc(hidden)]
     pub maximum: ::std::option::Option<i32>,
     /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
-    #[doc(hidden)]
     pub used: ::std::option::Option<i32>,
 }
 impl AccountAttribute {

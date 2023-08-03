@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortCriteria {
     /// <p>Represents the finding attribute, such as <code>accountId</code>, that sorts the findings.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The order by which the sorted findings are to be displayed.</p>
-    #[doc(hidden)]
     pub order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl SortCriteria {

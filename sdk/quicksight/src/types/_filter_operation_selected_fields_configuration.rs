@@ -6,17 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterOperationSelectedFieldsConfiguration {
     /// <p>Chooses the fields that are filtered in <code>CustomActionFilterOperation</code>.</p>
-    #[doc(hidden)]
     pub selected_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
     /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub selected_field_options: ::std::option::Option<crate::types::SelectedFieldOptions>,
     /// <p>The selected columns of a dataset.</p>
-    #[doc(hidden)]
     pub selected_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
 }
 impl FilterOperationSelectedFieldsConfiguration {

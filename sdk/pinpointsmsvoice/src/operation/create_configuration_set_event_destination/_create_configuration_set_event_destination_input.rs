@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// An object that defines a single event destination.
-    #[doc(hidden)]
     pub event_destination: ::std::option::Option<crate::types::EventDestinationDefinition>,
     /// A name that identifies the event destination.
-    #[doc(hidden)]
     pub event_destination_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateConfigurationSetEventDestinationInput {

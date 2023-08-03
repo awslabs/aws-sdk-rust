@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessGatewayStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless gateway reporting the data.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>LoRaWAN gateway info.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanGateway>,
     /// <p>The date and time when the most recent uplink was received.</p> <note>
     /// <p>This value is only valid for 3 months.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
 }
 impl WirelessGatewayStatistics {

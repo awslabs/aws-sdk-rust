@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectInvitationInput {
     /// <p>The unique identifier of the invitation to reject.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
 }
 impl RejectInvitationInput {

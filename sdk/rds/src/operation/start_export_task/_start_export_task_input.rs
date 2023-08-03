@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExportTaskInput {
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
-    #[doc(hidden)]
     pub export_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster to export to Amazon S3.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket to export the snapshot or cluster data to.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p>
     /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p>
@@ -26,7 +23,6 @@ pub struct StartExportTaskInput {
     /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li>
     /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
@@ -40,10 +36,8 @@ pub struct StartExportTaskInput {
     /// <li> <p>kms:DescribeKey</p> </li>
     /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported data.</p>
-    #[doc(hidden)]
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is exported. Valid values are the following:</p>
     /// <ul>
@@ -52,7 +46,6 @@ pub struct StartExportTaskInput {
     /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub export_only: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartExportTaskInput {

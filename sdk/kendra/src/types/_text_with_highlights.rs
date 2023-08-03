@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextWithHighlights {
     /// <p>The text to display to the user.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The beginning and end of the text that should be highlighted.</p>
-    #[doc(hidden)]
     pub highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
 }
 impl TextWithHighlights {

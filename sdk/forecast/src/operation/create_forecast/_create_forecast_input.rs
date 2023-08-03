@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateForecastInput {
     /// <p>A name for the forecast.</p>
-    #[doc(hidden)]
     pub forecast_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-    #[doc(hidden)]
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
-    #[doc(hidden)]
     pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -24,7 +21,6 @@ pub struct CreateForecastInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -33,7 +29,6 @@ pub struct CreateForecastInput {
     /// <li> <p> <code>Format</code> </p> </li>
     /// <li> <p> <code>Schema</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
 }
 impl CreateForecastInput {

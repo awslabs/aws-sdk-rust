@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutboundCallerConfig {
     /// <p>The caller ID name.</p>
-    #[doc(hidden)]
     pub outbound_caller_id_name: ::std::option::Option<::std::string::String>,
     /// <p>The caller ID number.</p>
-    #[doc(hidden)]
     pub outbound_caller_id_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The outbound whisper flow to be used during an outbound call.</p>
-    #[doc(hidden)]
     pub outbound_flow_id: ::std::option::Option<::std::string::String>,
 }
 impl OutboundCallerConfig {

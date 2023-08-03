@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRevisionInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the configuration.</p>
-    #[doc(hidden)]
     pub configuration_revision: ::std::option::Option<::std::string::String>,
 }
 impl DescribeConfigurationRevisionInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoleAliasDescription {
     /// <p>The role alias.</p>
-    #[doc(hidden)]
     pub role_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role alias.</p>
-    #[doc(hidden)]
     pub role_alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role alias owner.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds for which the credential is valid.</p>
-    #[doc(hidden)]
     pub credential_duration_seconds: ::std::option::Option<i32>,
     /// <p>The UNIX timestamp of when the role alias was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RoleAliasDescription {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorTotalMemoryMiB {
     /// <p>The minimum amount of accelerator memory, in MiB. If this parameter is not specified, there is no minimum limit.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum amount of accelerator memory, in MiB. If this parameter is not specified, there is no maximum limit.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl AcceleratorTotalMemoryMiB {

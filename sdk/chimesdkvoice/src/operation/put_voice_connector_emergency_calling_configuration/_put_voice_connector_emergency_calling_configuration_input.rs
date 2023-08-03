@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration being updated.</p>
-    #[doc(hidden)]
     pub emergency_calling_configuration: ::std::option::Option<crate::types::EmergencyCallingConfiguration>,
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationInput {

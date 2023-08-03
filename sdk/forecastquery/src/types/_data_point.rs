@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPoint {
     /// <p>The timestamp of the specific forecast.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The forecast value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl DataPoint {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComputeOutput {
     /// <p>A list of compute resources registered to the fleet you specified.</p>
-    #[doc(hidden)]
     pub compute_list: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>,
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

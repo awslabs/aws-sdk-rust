@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Aliases {
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Aliases {

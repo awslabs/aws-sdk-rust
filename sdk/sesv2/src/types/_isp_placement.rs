@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
-    #[doc(hidden)]
     pub isp_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
-    #[doc(hidden)]
     pub placement_statistics: ::std::option::Option<crate::types::PlacementStatistics>,
 }
 impl IspPlacement {

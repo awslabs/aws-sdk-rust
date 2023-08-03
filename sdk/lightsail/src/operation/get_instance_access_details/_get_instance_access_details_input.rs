@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceAccessDetailsInput {
     /// <p>The name of the instance to access.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::InstanceAccessProtocol>,
 }
 impl GetInstanceAccessDetailsInput {

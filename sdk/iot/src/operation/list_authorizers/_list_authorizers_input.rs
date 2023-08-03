@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuthorizersInput {
     /// <p>The maximum number of results to return at one time.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>A marker used to get the next set of results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Return the list of authorizers in ascending alphabetical order.</p>
-    #[doc(hidden)]
     pub ascending_order: ::std::option::Option<bool>,
     /// <p>The status of the list authorizers request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AuthorizerStatus>,
 }
 impl ListAuthorizersInput {

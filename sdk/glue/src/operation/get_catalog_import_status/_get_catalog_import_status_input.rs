@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCatalogImportStatusInput {
     /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCatalogImportStatusInput {

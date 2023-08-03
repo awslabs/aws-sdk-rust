@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsInput {
     /// <p>The name of the configuration set that contains the event destination.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl GetConfigurationSetEventDestinationsInput {

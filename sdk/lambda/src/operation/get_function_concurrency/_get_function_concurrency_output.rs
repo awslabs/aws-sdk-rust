@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFunctionConcurrencyOutput {
     /// <p>The number of simultaneous executions that are reserved for the function.</p>
-    #[doc(hidden)]
     pub reserved_concurrent_executions: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

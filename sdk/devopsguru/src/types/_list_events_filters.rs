@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventsFilters {
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
-    #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p> A time range during which you want the filtered events to have occurred. </p>
-    #[doc(hidden)]
     pub event_time_range: ::std::option::Option<crate::types::EventTimeRange>,
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
-    #[doc(hidden)]
     pub event_class: ::std::option::Option<crate::types::EventClass>,
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
-    #[doc(hidden)]
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::EventDataSource>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
 }
 impl ListEventsFilters {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetUiCustomizationInput {
     /// <p>The user pool ID for the user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The client ID for the client app.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The CSS values in the UI customization.</p>
-    #[doc(hidden)]
     pub css: ::std::option::Option<::std::string::String>,
     /// <p>The uploaded logo image for the UI customization.</p>
-    #[doc(hidden)]
     pub image_file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl SetUiCustomizationInput {

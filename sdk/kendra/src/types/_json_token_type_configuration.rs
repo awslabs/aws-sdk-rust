@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonTokenTypeConfiguration {
     /// <p>The user name attribute field.</p>
-    #[doc(hidden)]
     pub user_name_attribute_field: ::std::option::Option<::std::string::String>,
     /// <p>The group attribute field.</p>
-    #[doc(hidden)]
     pub group_attribute_field: ::std::option::Option<::std::string::String>,
 }
 impl JsonTokenTypeConfiguration {

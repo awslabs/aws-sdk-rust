@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveThingFromBillingGroupInput {
     /// <p>The name of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the billing group.</p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing to be removed from the billing group.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the thing to be removed from the billing group.</p>
-    #[doc(hidden)]
     pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl RemoveThingFromBillingGroupInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HashKeyRange {
     /// <p>The starting hash key of the hash key range.</p>
-    #[doc(hidden)]
     pub starting_hash_key: ::std::option::Option<::std::string::String>,
     /// <p>The ending hash key of the hash key range.</p>
-    #[doc(hidden)]
     pub ending_hash_key: ::std::option::Option<::std::string::String>,
 }
 impl HashKeyRange {

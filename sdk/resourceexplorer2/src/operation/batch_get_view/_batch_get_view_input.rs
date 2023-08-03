@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetViewInput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
-    #[doc(hidden)]
     pub view_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetViewInput {

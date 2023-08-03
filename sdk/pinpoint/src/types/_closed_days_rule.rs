@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClosedDaysRule {
     /// <p>The name of the closed day rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Start DateTime ISO 8601 format</p>
-    #[doc(hidden)]
     pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>End DateTime ISO 8601 format</p>
-    #[doc(hidden)]
     pub end_date_time: ::std::option::Option<::std::string::String>,
 }
 impl ClosedDaysRule {

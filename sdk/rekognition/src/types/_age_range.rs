@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgeRange {
     /// <p>The lowest estimated age.</p>
-    #[doc(hidden)]
     pub low: ::std::option::Option<i32>,
     /// <p>The highest estimated age.</p>
-    #[doc(hidden)]
     pub high: ::std::option::Option<i32>,
 }
 impl AgeRange {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSystemTemplateOutput {
     /// <p>An object that contains summary data about the system.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<crate::types::SystemTemplateDescription>,
     _request_id: Option<String>,
 }

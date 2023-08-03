@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRuleDestinationConfiguration {
     /// <p>Configuration of the HTTP URL.</p>
-    #[doc(hidden)]
     pub http_url_configuration: ::std::option::Option<crate::types::HttpUrlDestinationConfiguration>,
     /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcDestinationConfiguration>,
 }
 impl TopicRuleDestinationConfiguration {

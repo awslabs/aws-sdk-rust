@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedJobTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
-    #[doc(hidden)]
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique Name for a managed template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for a managed template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of environments that are supported with the managed job template.</p>
-    #[doc(hidden)]
     pub environments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version for a managed template.</p>
-    #[doc(hidden)]
     pub template_version: ::std::option::Option<::std::string::String>,
 }
 impl ManagedJobTemplateSummary {

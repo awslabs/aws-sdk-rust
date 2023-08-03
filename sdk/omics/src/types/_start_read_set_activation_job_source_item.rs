@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReadSetActivationJobSourceItem {
     /// <p>The source's read set ID.</p>
-    #[doc(hidden)]
     pub read_set_id: ::std::option::Option<::std::string::String>,
 }
 impl StartReadSetActivationJobSourceItem {

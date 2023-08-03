@@ -5,42 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateComponentData {
     /// <p>The unique ID of the component to update.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the component's properties.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
     /// <p>The components that are instances of the main component.</p>
-    #[doc(hidden)]
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     /// <p>A list of the unique variants of the main component being updated.</p>
-    #[doc(hidden)]
     pub variants: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
     /// <p>Describes the properties that can be overriden to customize the component.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>The data binding information for the component's properties.</p>
-    #[doc(hidden)]
     pub binding_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>>,
     /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
-    #[doc(hidden)]
     pub collection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>>,
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>>,
     /// <p>The schema version of the component when it was imported.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateComponentData {

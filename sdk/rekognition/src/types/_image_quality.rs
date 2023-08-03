@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageQuality {
     /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
-    #[doc(hidden)]
     pub brightness: ::std::option::Option<f32>,
     /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
-    #[doc(hidden)]
     pub sharpness: ::std::option::Option<f32>,
 }
 impl ImageQuality {

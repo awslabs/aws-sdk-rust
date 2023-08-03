@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMatchingJobInput {
     /// <p>The name of the matching job to be retrieved.</p>
-    #[doc(hidden)]
     pub workflow_name: ::std::option::Option<::std::string::String>,
 }
 impl StartMatchingJobInput {

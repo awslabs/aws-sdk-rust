@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteClusterSnapshotsOutput {
     /// <p>A list of the snapshot identifiers that were deleted. </p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of any errors returned.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotErrorMessage>>,
     _request_id: Option<String>,
 }

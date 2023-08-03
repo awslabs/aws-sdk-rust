@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaPlacement {
     /// <p>The audio host URL.</p>
-    #[doc(hidden)]
     pub audio_host_url: ::std::option::Option<::std::string::String>,
     /// <p>The audio fallback URL.</p>
-    #[doc(hidden)]
     pub audio_fallback_url: ::std::option::Option<::std::string::String>,
     /// <p>The signaling URL.</p>
-    #[doc(hidden)]
     pub signaling_url: ::std::option::Option<::std::string::String>,
     /// <p>The turn control URL.</p>
-    #[doc(hidden)]
     pub turn_control_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen data URL.</p>
-    #[doc(hidden)]
     pub screen_data_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen viewing URL.</p>
-    #[doc(hidden)]
     pub screen_viewing_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen sharing URL.</p>
-    #[doc(hidden)]
     pub screen_sharing_url: ::std::option::Option<::std::string::String>,
     /// <p>The event ingestion URL.</p>
-    #[doc(hidden)]
     pub event_ingestion_url: ::std::option::Option<::std::string::String>,
 }
 impl MediaPlacement {

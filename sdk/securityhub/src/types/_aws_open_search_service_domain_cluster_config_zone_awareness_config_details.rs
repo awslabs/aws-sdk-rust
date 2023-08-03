@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
     /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
-    #[doc(hidden)]
     pub availability_zone_count: i32,
 }
 impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {

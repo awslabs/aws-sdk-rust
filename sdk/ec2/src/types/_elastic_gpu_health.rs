@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticGpuHealth {
     /// <p>The health status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ElasticGpuStatus>,
 }
 impl ElasticGpuHealth {

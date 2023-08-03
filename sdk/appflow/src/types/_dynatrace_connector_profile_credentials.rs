@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-    #[doc(hidden)]
     pub api_token: ::std::option::Option<::std::string::String>,
 }
 impl DynatraceConnectorProfileCredentials {

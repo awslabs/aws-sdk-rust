@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStatementOutput {
     /// <p>Returns the statement.</p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<crate::types::Statement>,
     _request_id: Option<String>,
 }

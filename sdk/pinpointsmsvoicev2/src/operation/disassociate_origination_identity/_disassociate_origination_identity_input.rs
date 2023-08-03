@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateOriginationIdentityInput {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateOriginationIdentityInput {

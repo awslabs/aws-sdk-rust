@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceMetadataServiceConfiguration {
     /// <p>Indicates the minimum IMDS version that the notebook instance supports. When passed as part of <code>CreateNotebookInstance</code>, if no value is selected, then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no default.</p>
-    #[doc(hidden)]
     pub minimum_instance_metadata_service_version: ::std::option::Option<::std::string::String>,
 }
 impl InstanceMetadataServiceConfiguration {

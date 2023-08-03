@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEvaluationOutput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
-    #[doc(hidden)]
     pub evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

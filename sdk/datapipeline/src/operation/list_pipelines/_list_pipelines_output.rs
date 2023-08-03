@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
-    #[doc(hidden)]
     pub pipeline_id_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
-    #[doc(hidden)]
     pub has_more_results: bool,
     _request_id: Option<String>,
 }

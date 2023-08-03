@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutMetadataInput {
     /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
 }
 impl PutMetadataInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryRecord {
     /// <p>Information about the event.</p>
-    #[doc(hidden)]
     pub event_information: ::std::option::Option<crate::types::EventInformation>,
     /// <p>The event type.</p>
     /// <ul>
@@ -14,10 +13,8 @@ pub struct HistoryRecord {
     /// <li> <p> <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
     /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::EventType>,
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HistoryRecord {

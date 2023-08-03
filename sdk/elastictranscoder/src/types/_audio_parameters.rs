@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioParameters {
     /// <p>The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.</p>
-    #[doc(hidden)]
     pub codec: ::std::option::Option<::std::string::String>,
     /// <p>The sample rate of the audio stream in the output file, in Hertz. Valid values include:</p>
     /// <p> <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>, <code>96000</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.</p>
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<::std::string::String>,
     /// <p>The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320, inclusive.</p>
-    #[doc(hidden)]
     pub bit_rate: ::std::option::Option<::std::string::String>,
     /// <p>The number of audio channels in the output file. The following values are valid:</p>
     /// <p> <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code> </p>
@@ -26,7 +23,6 @@ pub struct AudioParameters {
     /// <li> <p> <code>2</code> <b> channels specified, with any input:</b> Two identical mono channels or stereo. For more information about tracks, see <code>Audio:AudioPackingMode.</code> </p> </li>
     /// </ul>
     /// <p> For more information about how Elastic Transcoder organizes channels and tracks, see <code>Audio:AudioPackingMode</code>.</p>
-    #[doc(hidden)]
     pub channels: ::std::option::Option<::std::string::String>,
     /// <p>The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number of channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and their relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses <code>SingleTrack</code>.</p>
     /// <p>The following values are valid:</p>
@@ -70,12 +66,10 @@ pub struct AudioParameters {
     /// <li> <p> <code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven MOS tracks</p> </li>
     /// <li> <p> <code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub audio_packing_mode: ::std::option::Option<::std::string::String>,
     /// <p>If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile to use. Valid values include:</p>
     /// <p> <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.</p>
-    #[doc(hidden)]
     pub codec_options: ::std::option::Option<crate::types::AudioCodecOptions>,
 }
 impl AudioParameters {

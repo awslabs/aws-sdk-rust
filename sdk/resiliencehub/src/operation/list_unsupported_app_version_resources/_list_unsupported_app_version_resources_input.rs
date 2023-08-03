@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUnsupportedAppVersionResourcesInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
-    #[doc(hidden)]
     pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a specific resolution.</p>
-    #[doc(hidden)]
     pub resolution_id: ::std::option::Option<::std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListUnsupportedAppVersionResourcesInput {

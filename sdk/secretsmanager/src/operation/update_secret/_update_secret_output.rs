@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecretOutput {
     /// <p>The ARN of the secret that was updated.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret that was updated.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The resource's universal resource indicator (URI).</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl Resource {

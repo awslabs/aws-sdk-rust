@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisAction {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Kinesis stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The partition key.</p>
-    #[doc(hidden)]
     pub partition_key: ::std::option::Option<::std::string::String>,
 }
 impl KinesisAction {

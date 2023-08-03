@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirDatastoresOutput {
     /// <p>All properties associated with the listed data stores.</p>
-    #[doc(hidden)]
     pub datastore_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedPrefixList {
     /// <p>The ID of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address version.</p>
-    #[doc(hidden)]
     pub address_family: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the prefix list.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::PrefixListState>,
     /// <p>The state message.</p>
-    #[doc(hidden)]
     pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of entries for the prefix list.</p>
-    #[doc(hidden)]
     pub max_entries: ::std::option::Option<i32>,
     /// <p>The version of the prefix list.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i64>,
     /// <p>The tags for the prefix list.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the owner of the prefix list.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl ManagedPrefixList {

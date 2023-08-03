@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The default outbound queue for the routing profile.</p>
-    #[doc(hidden)]
     pub default_outbound_queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
     /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
-    #[doc(hidden)]
     pub queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    #[doc(hidden)]
     pub media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRoutingProfileInput {

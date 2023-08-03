@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopGameSessionPlacementOutput {
     /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
-    #[doc(hidden)]
     pub game_session_placement: ::std::option::Option<crate::types::GameSessionPlacement>,
     _request_id: Option<String>,
 }

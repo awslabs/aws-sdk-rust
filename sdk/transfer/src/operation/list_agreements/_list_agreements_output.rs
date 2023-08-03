@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAgreementsOutput {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    #[doc(hidden)]
     pub agreements: ::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListAppInstanceUserEndpointsOutput {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

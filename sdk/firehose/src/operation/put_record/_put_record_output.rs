@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordOutput {
     /// <p>The ID of the record.</p>
-    #[doc(hidden)]
     pub record_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTune {
     /// <p>Specifies Auto-Tune type. Valid value is SCHEDULED_ACTION. </p>
-    #[doc(hidden)]
     pub auto_tune_type: ::std::option::Option<crate::types::AutoTuneType>,
     /// <p>Specifies details of the Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. </p>
-    #[doc(hidden)]
     pub auto_tune_details: ::std::option::Option<crate::types::AutoTuneDetails>,
 }
 impl AutoTune {

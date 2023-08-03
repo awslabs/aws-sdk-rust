@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserAccessLoggingSettingsOutput {
     /// <p>The ARN of the user access logging settings.</p>
-    #[doc(hidden)]
     pub user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

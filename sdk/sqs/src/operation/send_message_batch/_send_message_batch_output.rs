@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendMessageBatchOutput {
     /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchResultEntry>>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
-    #[doc(hidden)]
     pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     _request_id: Option<String>,
 }

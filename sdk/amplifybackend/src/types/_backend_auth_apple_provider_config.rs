@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendAuthAppleProviderConfig {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the key_id that comes from Apple.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the private_key that comes from Apple.</p>
-    #[doc(hidden)]
     pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>Describes the team_id that comes from Apple.</p>
-    #[doc(hidden)]
     pub team_id: ::std::option::Option<::std::string::String>,
 }
 impl BackendAuthAppleProviderConfig {

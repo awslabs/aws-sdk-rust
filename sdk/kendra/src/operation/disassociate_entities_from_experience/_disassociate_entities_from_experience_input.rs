@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateEntitiesFromExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    #[doc(hidden)]
     pub entity_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>,
 }
 impl DisassociateEntitiesFromExperienceInput {

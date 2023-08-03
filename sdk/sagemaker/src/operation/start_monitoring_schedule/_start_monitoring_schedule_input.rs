@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMonitoringScheduleInput {
     /// <p>The name of the schedule to start.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
 }
 impl StartMonitoringScheduleInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsImageQuality {
     /// <p>The brightness of an image provided for label detection.</p>
-    #[doc(hidden)]
     pub brightness: ::std::option::Option<f32>,
     /// <p>The sharpness of an image provided for label detection.</p>
-    #[doc(hidden)]
     pub sharpness: ::std::option::Option<f32>,
     /// <p>The contrast of an image provided for label detection.</p>
-    #[doc(hidden)]
     pub contrast: ::std::option::Option<f32>,
 }
 impl DetectLabelsImageQuality {

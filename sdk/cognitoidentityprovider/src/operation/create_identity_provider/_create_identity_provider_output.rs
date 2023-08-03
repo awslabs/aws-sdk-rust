@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIdentityProviderOutput {
     /// <p>The newly created IdP object.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProviderType>,
     _request_id: Option<String>,
 }

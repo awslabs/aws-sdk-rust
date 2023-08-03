@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDryRunProgressInput {
     /// <p>The name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the dry run.</p>
-    #[doc(hidden)]
     pub dry_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
-    #[doc(hidden)]
     pub load_dry_run_config: ::std::option::Option<bool>,
 }
 impl DescribeDryRunProgressInput {

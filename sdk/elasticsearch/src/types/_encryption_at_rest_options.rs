@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionAtRestOptions {
     /// <p>Specifies the option to enable Encryption At Rest.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p> Specifies the KMS Key ID for Encryption At Rest options.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionAtRestOptions {

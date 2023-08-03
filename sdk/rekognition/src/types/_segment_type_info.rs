@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentTypeInfo {
     /// <p>The type of a segment (technical cue or shot detection).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SegmentType>,
     /// <p>The version of the model used to detect segments.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
 }
 impl SegmentTypeInfo {

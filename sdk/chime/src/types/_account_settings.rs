@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
-    #[doc(hidden)]
     pub disable_remote_control: ::std::option::Option<bool>,
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
-    #[doc(hidden)]
     pub enable_dial_out: ::std::option::Option<bool>,
 }
 impl AccountSettings {

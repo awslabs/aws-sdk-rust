@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyOutput {
     /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
-    #[doc(hidden)]
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of the current policy version.</p>
-    #[doc(hidden)]
     pub policy_hash: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

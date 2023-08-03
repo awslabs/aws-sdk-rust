@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpnRoute {
     /// <p>The ID of the Client VPN endpoint with which the route is associated.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address range, in CIDR notation, of the route destination.</p>
-    #[doc(hidden)]
     pub destination_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet through which traffic is routed.</p>
-    #[doc(hidden)]
     pub target_subnet: ::std::option::Option<::std::string::String>,
     /// <p>The route type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how the route was associated with the Client VPN endpoint. <code>associate</code> indicates that the route was automatically added when the target network was associated with the Client VPN endpoint. <code>add-route</code> indicates that the route was manually added using the <b>CreateClientVpnRoute</b> action.</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the route.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnRouteStatus>,
     /// <p>A brief description of the route.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnRoute {

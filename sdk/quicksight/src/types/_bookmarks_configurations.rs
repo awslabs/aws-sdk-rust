@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BookmarksConfigurations {
     /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl BookmarksConfigurations {

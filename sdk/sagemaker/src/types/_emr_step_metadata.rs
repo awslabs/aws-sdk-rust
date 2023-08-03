@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmrStepMetadata {
     /// <p>The identifier of the EMR cluster.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the EMR cluster step.</p>
-    #[doc(hidden)]
     pub step_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the EMR cluster step.</p>
-    #[doc(hidden)]
     pub step_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
-    #[doc(hidden)]
     pub log_file_path: ::std::option::Option<::std::string::String>,
 }
 impl EmrStepMetadata {

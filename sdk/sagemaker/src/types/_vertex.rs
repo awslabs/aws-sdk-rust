@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Vertex {
     /// <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, etc...</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource of the lineage entity.</p>
-    #[doc(hidden)]
     pub lineage_type: ::std::option::Option<crate::types::LineageType>,
 }
 impl Vertex {

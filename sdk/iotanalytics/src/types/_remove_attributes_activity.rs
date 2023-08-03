@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAttributesActivity {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of 1-50 attributes to remove from the message.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next activity in the pipeline.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAttributesActivity {

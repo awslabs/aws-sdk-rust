@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteJobTemplateInput {
     /// <p>The unique identifier of the job template to delete.</p>
-    #[doc(hidden)]
     pub job_template_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteJobTemplateInput {

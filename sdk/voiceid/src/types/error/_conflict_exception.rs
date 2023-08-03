@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
     /// <ul>
@@ -16,7 +15,6 @@ pub struct ConflictException {
     /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
     /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub conflict_type: ::std::option::Option<crate::types::ConflictType>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

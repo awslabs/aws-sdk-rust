@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpoint {
     /// <p>The unique identifier of the endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for your VPC. Amazon Web Services PrivateLink generates this value when you create a VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC, including associated subnets and security groups.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
 }
 impl VpcEndpoint {

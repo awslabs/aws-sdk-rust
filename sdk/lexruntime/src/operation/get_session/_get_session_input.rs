@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias in use for the bot that contains the session data.</p>
-    #[doc(hidden)]
     pub bot_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
     /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
-    #[doc(hidden)]
     pub checkpoint_label_filter: ::std::option::Option<::std::string::String>,
 }
 impl GetSessionInput {

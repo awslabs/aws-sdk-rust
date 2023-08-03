@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMailboxPermissionsInput {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
-    #[doc(hidden)]
     pub grantee_id: ::std::option::Option<::std::string::String>,
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    #[doc(hidden)]
     pub permission_values: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl PutMailboxPermissionsInput {

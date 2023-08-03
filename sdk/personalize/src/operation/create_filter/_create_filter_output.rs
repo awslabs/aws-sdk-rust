@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFilterOutput {
     /// <p>The ARN of the new filter.</p>
-    #[doc(hidden)]
     pub filter_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

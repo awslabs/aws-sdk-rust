@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingS3Output {
     /// <p>A URI that identifies the Amazon S3 bucket where you want Amazon SageMaker to save the results of a processing job.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be created by the platform and exist when your container's entrypoint is invoked.</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether to upload the results of the processing job continuously or after the job completes.</p>
-    #[doc(hidden)]
     pub s3_upload_mode: ::std::option::Option<crate::types::ProcessingS3UploadMode>,
 }
 impl ProcessingS3Output {

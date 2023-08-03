@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetMetricDataQuery {
     /// <p>The query identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<crate::types::MetricNamespace>,
     /// <p>The queried metric. This can be one of the following:</p>
     /// <ul>
@@ -23,16 +21,12 @@ pub struct BatchGetMetricDataQuery {
     /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
     /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<crate::types::Metric>,
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::collections::HashMap<crate::types::MetricDimensionName, ::std::string::String>>,
     /// <p>Represents the start date for the query interval.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Represents the end date for the query interval.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BatchGetMetricDataQuery {

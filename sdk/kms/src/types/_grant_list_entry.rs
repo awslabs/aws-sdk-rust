@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrantListEntry {
     /// <p>The unique identifier for the KMS key to which the grant applies.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the grant.</p>
-    #[doc(hidden)]
     pub grant_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the grant was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identity that gets the permissions in the grant.</p>
     /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
-    #[doc(hidden)]
     pub grantee_principal: ::std::option::Option<::std::string::String>,
     /// <p>The principal that can retire the grant.</p>
-    #[doc(hidden)]
     pub retiring_principal: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account under which the grant was issued.</p>
-    #[doc(hidden)]
     pub issuing_account: ::std::option::Option<::std::string::String>,
     /// <p>The list of operations permitted by the grant.</p>
-    #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::GrantOperation>>,
     /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
-    #[doc(hidden)]
     pub constraints: ::std::option::Option<crate::types::GrantConstraints>,
 }
 impl GrantListEntry {

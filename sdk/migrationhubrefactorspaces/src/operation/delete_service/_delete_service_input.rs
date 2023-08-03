@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The ID of the environment that the service is in.</p>
-    #[doc(hidden)]
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
-    #[doc(hidden)]
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service to delete.</p>
-    #[doc(hidden)]
     pub service_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceInput {

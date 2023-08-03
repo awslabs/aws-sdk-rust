@@ -6,7 +6,6 @@
 pub struct DocumentClassifierOutputDataConfig {
     /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in the same Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of this output file.</p>
     /// <p>When the custom classifier job is finished, the service creates the output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the confusion matrix.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
     /// <ul>
@@ -15,10 +14,8 @@ pub struct DocumentClassifierOutputDataConfig {
     /// <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
     /// <li> <p>ARN of a KMS Key Alias: <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    #[doc(hidden)]
     pub flywheel_stats_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DocumentClassifierOutputDataConfig {

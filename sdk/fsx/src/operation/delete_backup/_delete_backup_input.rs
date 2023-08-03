@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBackupInput {
     /// <p>The ID of the backup that you want to delete.</p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBackupInput {

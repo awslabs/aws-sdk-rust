@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserDefinedFunctionOutput {
     /// <p>The requested function definition.</p>
-    #[doc(hidden)]
     pub user_defined_function: ::std::option::Option<crate::types::UserDefinedFunction>,
     _request_id: Option<String>,
 }

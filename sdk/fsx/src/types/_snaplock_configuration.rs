@@ -6,28 +6,22 @@
 pub struct SnaplockConfiguration {
     /// <p>Enables or disables the audit log volume for an FSx for ONTAP SnapLock volume. The default value is <code>false</code>. If you set <code>AuditLogVolume</code> to <code>true</code>, the SnapLock volume is created as an audit log volume. The minimum retention period for an audit log volume is six months. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-audit-log-volume"> SnapLock audit log volumes</a>. </p>
-    #[doc(hidden)]
     pub audit_log_volume: ::std::option::Option<bool>,
     /// <p>The configuration object for setting the autocommit period of files in an FSx for ONTAP SnapLock volume. </p>
-    #[doc(hidden)]
     pub autocommit_period: ::std::option::Option<crate::types::AutocommitPeriod>,
     /// <p>Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete write once, read many (WORM) files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is permanently disabled on a SnapLock volume, you can't re-enable it. The default value is <code>DISABLED</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged delete</a>. </p>
-    #[doc(hidden)]
     pub privileged_delete: ::std::option::Option<crate::types::PrivilegedDelete>,
     /// <p>Specifies the retention period of an FSx for ONTAP SnapLock volume. </p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::SnaplockRetentionPeriod>,
     /// <p>Specifies the retention mode of an FSx for ONTAP SnapLock volume. After it is set, it can't be changed. You can choose one of the following retention modes: </p>
     /// <ul>
     /// <li> <p> <code>COMPLIANCE</code>: Files transitioned to write once, read many (WORM) on a Compliance volume can't be deleted until their retention periods expire. This retention mode is used to address government or industry-specific mandates or to protect against ransomware attacks. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-compliance.html">SnapLock Compliance</a>. </p> </li>
     /// <li> <p> <code>ENTERPRISE</code>: Files transitioned to WORM on an Enterprise volume can be deleted by authorized users before their retention periods expire using privileged delete. This retention mode is used to advance an organization's data integrity and internal compliance or to test retention settings before using SnapLock Compliance. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock Enterprise</a>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub snaplock_type: ::std::option::Option<crate::types::SnaplockType>,
     /// <p>Enables or disables volume-append mode on an FSx for ONTAP SnapLock volume. Volume-append mode allows you to create WORM-appendable files and write data to them incrementally. The default value is <code>false</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/worm-state.html#worm-state-append">Volume-append mode</a>. </p>
-    #[doc(hidden)]
     pub volume_append_mode_enabled: ::std::option::Option<bool>,
 }
 impl SnaplockConfiguration {

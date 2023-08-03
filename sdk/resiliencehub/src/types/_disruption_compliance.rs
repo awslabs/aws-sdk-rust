@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisruptionCompliance {
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
-    #[doc(hidden)]
     pub achievable_rto_in_secs: i32,
     /// <p>The current RTO, in seconds.</p>
-    #[doc(hidden)]
     pub current_rto_in_secs: i32,
     /// <p>The RTO reference identifier.</p>
-    #[doc(hidden)]
     pub rto_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The RTO description.</p>
-    #[doc(hidden)]
     pub rto_description: ::std::option::Option<::std::string::String>,
     /// <p>The current RPO, in seconds.</p>
-    #[doc(hidden)]
     pub current_rpo_in_secs: i32,
     /// <p>The RPO reference identifier.</p>
-    #[doc(hidden)]
     pub rpo_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The RPO description.</p>
-    #[doc(hidden)]
     pub rpo_description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of compliance for the resiliency policy.</p>
-    #[doc(hidden)]
     pub compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
-    #[doc(hidden)]
     pub achievable_rpo_in_secs: i32,
     /// <p>The disruption compliance message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl DisruptionCompliance {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenameColumnOperation {
     /// <p>The name of the column to be renamed.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the column.</p>
-    #[doc(hidden)]
     pub new_column_name: ::std::option::Option<::std::string::String>,
 }
 impl RenameColumnOperation {

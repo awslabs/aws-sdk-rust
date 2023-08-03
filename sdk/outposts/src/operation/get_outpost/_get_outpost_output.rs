@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOutpostOutput {
     /// <p>Information about an Outpost.</p>
-    #[doc(hidden)]
     pub outpost: ::std::option::Option<crate::types::Outpost>,
     _request_id: Option<String>,
 }

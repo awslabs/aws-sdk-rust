@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAuditSuppressionInput {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    #[doc(hidden)]
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
-    #[doc(hidden)]
     pub suppress_indefinitely: ::std::option::Option<bool>,
     /// <p> The description of the audit suppression. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAuditSuppressionInput {

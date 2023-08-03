@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
-    #[doc(hidden)]
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl GetClientCertificateInput {

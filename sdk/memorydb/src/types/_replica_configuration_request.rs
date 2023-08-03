@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaConfigurationRequest {
     /// <p>The number of replicas to scale up or down to</p>
-    #[doc(hidden)]
     pub replica_count: i32,
 }
 impl ReplicaConfigurationRequest {

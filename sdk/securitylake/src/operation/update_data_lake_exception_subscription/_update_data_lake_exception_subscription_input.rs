@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataLakeExceptionSubscriptionInput {
     /// <p>The subscription protocol to which exception messages are posted.</p>
-    #[doc(hidden)]
     pub subscription_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The account that is subscribed to receive exception notifications.</p>
-    #[doc(hidden)]
     pub notification_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
-    #[doc(hidden)]
     pub exception_time_to_live: ::std::option::Option<i64>,
 }
 impl UpdateDataLakeExceptionSubscriptionInput {

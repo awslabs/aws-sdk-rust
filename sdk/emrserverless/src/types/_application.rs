@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Application {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EMR release associated with the application.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The type of application, such as Spark or Hive.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The state of the application.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ApplicationState>,
     /// <p>The state details of the application.</p>
-    #[doc(hidden)]
     pub state_details: ::std::option::Option<::std::string::String>,
     /// <p>The initial capacity of the application.</p>
-    #[doc(hidden)]
     pub initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
-    #[doc(hidden)]
     pub maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
     /// <p>The date and time when the application run was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the application run was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    #[doc(hidden)]
     pub auto_start_configuration: ::std::option::Option<crate::types::AutoStartConfig>,
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    #[doc(hidden)]
     pub auto_stop_configuration: ::std::option::Option<crate::types::AutoStopConfig>,
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The CPU architecture of an application.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>The image configuration applied to all worker types.</p>
-    #[doc(hidden)]
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     /// <p>The specification applied to each worker type.</p>
-    #[doc(hidden)]
     pub worker_type_specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
 }
 impl Application {

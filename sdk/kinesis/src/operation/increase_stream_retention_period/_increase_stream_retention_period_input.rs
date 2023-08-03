@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncreaseStreamRetentionPeriodInput {
     /// <p>The name of the stream to modify.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
-    #[doc(hidden)]
     pub retention_period_hours: ::std::option::Option<i32>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl IncreaseStreamRetentionPeriodInput {

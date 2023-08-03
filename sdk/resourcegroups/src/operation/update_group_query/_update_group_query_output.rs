@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGroupQueryOutput {
     /// <p>The updated resource query associated with the resource group after the update.</p>
-    #[doc(hidden)]
     pub group_query: ::std::option::Option<crate::types::GroupQuery>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistrationConfig {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    #[doc(hidden)]
     pub duplicate_registration_action: ::std::option::Option<crate::types::DuplicateRegistrationAction>,
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
-    #[doc(hidden)]
     pub fraudster_similarity_threshold: ::std::option::Option<i32>,
     /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
-    #[doc(hidden)]
     pub watchlist_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegistrationConfig {

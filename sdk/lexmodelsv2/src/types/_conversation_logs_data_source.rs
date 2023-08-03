@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLogsDataSource {
     /// <p>The bot Id from the conversation logs.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot alias Id from the conversation logs.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale Id of the conversation log.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the data source of the conversation log.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy>,
 }
 impl ConversationLogsDataSource {

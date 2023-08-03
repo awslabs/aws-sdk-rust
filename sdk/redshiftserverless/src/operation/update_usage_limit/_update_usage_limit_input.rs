@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUsageLimitInput {
     /// <p>The identifier of the usage limit to update.</p>
-    #[doc(hidden)]
     pub usage_limit_id: ::std::option::Option<::std::string::String>,
     /// <p>The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<i64>,
     /// <p>The new action that Amazon Redshift Serverless takes when the limit is reached.</p>
-    #[doc(hidden)]
     pub breach_action: ::std::option::Option<crate::types::UsageLimitBreachAction>,
 }
 impl UpdateUsageLimitInput {

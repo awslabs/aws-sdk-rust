@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTableStorageOptimizersInput {
     /// <p>The Catalog ID of the table.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the database where the table is present.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
-    #[doc(hidden)]
     pub storage_optimizer_type: ::std::option::Option<crate::types::OptimizerType>,
     /// <p>The number of storage optimizers to return on each call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTableStorageOptimizersInput {

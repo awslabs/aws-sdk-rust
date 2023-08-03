@@ -5,19 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypeSummary {
     /// <p>The kind of extension.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and Region, CloudFormation considers that alias as the type name.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
-    #[doc(hidden)]
     pub default_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    #[doc(hidden)]
     pub type_arn: ::std::option::Option<::std::string::String>,
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
@@ -25,36 +21,27 @@ pub struct TypeSummary {
     /// <li> <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p> </li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the extension.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the extension publisher, if the extension is published by a third party. Extensions published by Amazon don't return a publisher ID.</p>
-    #[doc(hidden)]
     pub publisher_id: ::std::option::Option<::std::string::String>,
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub original_type_name: ::std::option::Option<::std::string::String>,
     /// <p>For public extensions that have been activated for this account and Region, the version of the public extension to be used for CloudFormation operations in this account and Region.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub public_version_number: ::std::option::Option<::std::string::String>,
     /// <p>For public extensions that have been activated for this account and Region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
     /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extension in this account and Region when a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    #[doc(hidden)]
     pub latest_public_version: ::std::option::Option<::std::string::String>,
     /// <p>The service used to verify the publisher identity.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
-    #[doc(hidden)]
     pub publisher_identity: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The publisher name, as defined in the public profile for that publisher in the service used to verify the publisher identity.</p>
-    #[doc(hidden)]
     pub publisher_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the extension is activated for this account and Region.</p>
     /// <p>This applies only to third-party public extensions. Extensions published by Amazon are activated by default.</p>
-    #[doc(hidden)]
     pub is_activated: ::std::option::Option<bool>,
 }
 impl TypeSummary {

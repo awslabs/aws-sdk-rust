@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestionSummary {
     /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub app: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application tenant.</p>
-    #[doc(hidden)]
     pub tenant_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the ingestion.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IngestionState>,
 }
 impl IngestionSummary {

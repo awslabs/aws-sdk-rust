@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentTemplateStopCondition {
     /// <p>The source for the stop condition.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentTemplateStopCondition {

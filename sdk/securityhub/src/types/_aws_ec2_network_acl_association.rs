@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkAclAssociation {
     /// <p>The identifier of the association between the network ACL and the subnet.</p>
-    #[doc(hidden)]
     pub network_acl_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the network ACL.</p>
-    #[doc(hidden)]
     pub network_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subnet that is associated with the network ACL.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkAclAssociation {

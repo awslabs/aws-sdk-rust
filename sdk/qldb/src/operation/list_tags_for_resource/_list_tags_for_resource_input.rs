@@ -5,7 +5,6 @@
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsForResourceInput {

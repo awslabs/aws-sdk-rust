@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetDefinition {
     /// <p>Configuration for Athena Dataset Definition input.</p>
-    #[doc(hidden)]
     pub athena_dataset_definition: ::std::option::Option<crate::types::AthenaDatasetDefinition>,
     /// <p>Configuration for Redshift Dataset Definition input.</p>
-    #[doc(hidden)]
     pub redshift_dataset_definition: ::std::option::Option<crate::types::RedshiftDatasetDefinition>,
     /// <p>The local path where you want Amazon SageMaker to download the Dataset Definition inputs to run a processing job. <code>LocalPath</code> is an absolute path to the input data. This is a required parameter when <code>AppManaged</code> is <code>False</code> (default).</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether the generated dataset is <code>FullyReplicated</code> or <code>ShardedByS3Key</code> (default).</p>
-    #[doc(hidden)]
     pub data_distribution_type: ::std::option::Option<crate::types::DataDistributionType>,
     /// <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> (default) mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
-    #[doc(hidden)]
     pub input_mode: ::std::option::Option<crate::types::InputMode>,
 }
 impl DatasetDefinition {

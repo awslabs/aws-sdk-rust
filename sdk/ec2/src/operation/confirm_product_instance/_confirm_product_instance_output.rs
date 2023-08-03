@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmProductInstanceOutput {
     /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
-    #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

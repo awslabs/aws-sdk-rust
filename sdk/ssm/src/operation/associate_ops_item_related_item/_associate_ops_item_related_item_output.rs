@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItemOutput {
     /// <p>The association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

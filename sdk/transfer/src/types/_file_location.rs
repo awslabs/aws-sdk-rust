@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileLocation {
     /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
-    #[doc(hidden)]
     pub s3_file_location: ::std::option::Option<crate::types::S3FileLocation>,
     /// <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
-    #[doc(hidden)]
     pub efs_file_location: ::std::option::Option<crate::types::EfsFileLocation>,
 }
 impl FileLocation {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureMetadata {
     /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
-    #[doc(hidden)]
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature group containing the feature.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of feature.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the feature.</p>
-    #[doc(hidden)]
     pub feature_type: ::std::option::Option<crate::types::FeatureType>,
     /// <p>A timestamp indicating when the feature was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when the feature was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional description that you specify to better describe the feature.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
 }
 impl FeatureMetadata {

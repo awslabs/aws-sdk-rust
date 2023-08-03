@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetSortBy {
     /// <p>Specifies whether to sort the test sets by name or by the time they were last updated.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::TestSetSortAttribute>,
     /// <p>Specifies whether to sort in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl TestSetSortBy {

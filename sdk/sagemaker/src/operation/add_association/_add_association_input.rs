@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddAssociationInput {
     /// <p>The ARN of the source.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
     /// <ul>
@@ -16,7 +14,6 @@ pub struct AddAssociationInput {
     /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
     /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub association_type: ::std::option::Option<crate::types::AssociationEdgeType>,
 }
 impl AddAssociationInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmAction {
     /// <p>Information required to publish the Amazon SNS message.</p>
-    #[doc(hidden)]
     pub sns: ::std::option::Option<crate::types::SnsTopicPublishAction>,
     /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
-    #[doc(hidden)]
     pub iot_topic_publish: ::std::option::Option<crate::types::IotTopicPublishAction>,
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaAction>,
     /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
-    #[doc(hidden)]
     pub iot_events: ::std::option::Option<crate::types::IotEventsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
-    #[doc(hidden)]
     pub sqs: ::std::option::Option<crate::types::SqsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub firehose: ::std::option::Option<crate::types::FirehoseAction>,
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
     /// <p>You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
@@ -36,7 +30,6 @@ pub struct AlarmAction {
     /// <payload-field>
     /// _raw
     /// </payload-field></code>.</p>
-    #[doc(hidden)]
     pub dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
     /// <p>You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
@@ -49,7 +42,6 @@ pub struct AlarmAction {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
-    #[doc(hidden)]
     pub dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p>
     /// <p>You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates.</p>
@@ -61,7 +53,6 @@ pub struct AlarmAction {
     /// </ul>
     /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub iot_site_wise: ::std::option::Option<crate::types::IotSiteWiseAction>,
 }
 impl AlarmAction {

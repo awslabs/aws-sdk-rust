@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupOutput {
     /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<crate::types::Group>,
     _request_id: Option<String>,
 }

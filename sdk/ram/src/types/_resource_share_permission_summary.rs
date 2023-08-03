@@ -5,38 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSharePermissionSummary {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission you want information about.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the permission associated with this resource share.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the version of the managed permission used by this resource share is the default version for this managed permission.</p>
-    #[doc(hidden)]
     pub default_version: ::std::option::Option<bool>,
     /// <p>The name of this managed permission.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource to which this permission applies. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the permission.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the permission was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the permission was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the managed permission associated with this resource share is the default managed permission for all resources of this resource type.</p>
-    #[doc(hidden)]
     pub is_resource_type_default: ::std::option::Option<bool>,
     /// <p>The type of managed permission. This can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li>
     /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
@@ -44,10 +34,8 @@ pub struct ResourceSharePermissionSummary {
     /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
     /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
     /// <p>A list of the tag key value pairs currently attached to the permission.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ResourceSharePermissionSummary {

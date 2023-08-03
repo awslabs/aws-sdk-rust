@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerFilter {
     /// <p>The status of an entity recognizer.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ModelStatus>,
     /// <p>The name that you assigned the entity recognizer.</p>
-    #[doc(hidden)]
     pub recognizer_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted before the specified time. Jobs are returned in descending order, newest to oldest.</p>
-    #[doc(hidden)]
     pub submit_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filters the list of entities based on the time that the list was submitted for processing. Returns only jobs submitted after the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    #[doc(hidden)]
     pub submit_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EntityRecognizerFilter {

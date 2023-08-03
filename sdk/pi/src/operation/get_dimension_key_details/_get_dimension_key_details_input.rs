@@ -4,31 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
     /// <ul>
     /// <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li>
     /// <li> <p> <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group ID values are valid:</p>
     /// <ul>
     /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
     /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
     /// <ul>
     /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
     /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub requested_dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetDimensionKeyDetailsInput {

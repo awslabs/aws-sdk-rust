@@ -8,7 +8,6 @@ pub struct SwitchoverReadReplicaInput {
     /// <ul>
     /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl SwitchoverReadReplicaInput {

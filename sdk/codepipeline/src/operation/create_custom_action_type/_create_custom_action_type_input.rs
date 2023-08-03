@@ -5,30 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomActionTypeInput {
     /// <p>The category of the custom action, such as a build action or a test action.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::ActionCategory>,
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier of the custom action.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>URLs that provide users information about this custom action.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::ActionTypeSettings>,
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub configuration_properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionConfigurationProperty>>,
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    #[doc(hidden)]
     pub input_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    #[doc(hidden)]
     pub output_artifact_details: ::std::option::Option<crate::types::ArtifactDetails>,
     /// <p>The tags for the custom action.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCustomActionTypeInput {

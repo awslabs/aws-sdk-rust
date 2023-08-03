@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClusterCredentialsWithIamInput {
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
     /// <p>The custom domain name for the IAM message cluster credentials.</p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterCredentialsWithIamInput {

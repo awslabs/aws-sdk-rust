@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotFieldWells {
     /// <p>The aggregated field wells of a box plot.</p>
-    #[doc(hidden)]
     pub box_plot_aggregated_field_wells: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
 }
 impl BoxPlotFieldWells {

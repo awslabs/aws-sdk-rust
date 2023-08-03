@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePricingRuleInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFileSystemAssociationsInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file system association to be described.</p>
-    #[doc(hidden)]
     pub file_system_association_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeFileSystemAssociationsInput {

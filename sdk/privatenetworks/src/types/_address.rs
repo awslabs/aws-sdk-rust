@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The city for this address.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The company name for this address.</p>
-    #[doc(hidden)]
     pub company: ::std::option::Option<::std::string::String>,
     /// <p>The country for this address.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The recipient's name for this address.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The recipient's phone number.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The postal code for this address.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The state or province for this address.</p>
-    #[doc(hidden)]
     pub state_or_province: ::std::option::Option<::std::string::String>,
     /// <p>The first line of the street address.</p>
-    #[doc(hidden)]
     pub street1: ::std::option::Option<::std::string::String>,
     /// <p>The second line of the street address.</p>
-    #[doc(hidden)]
     pub street2: ::std::option::Option<::std::string::String>,
     /// <p>The third line of the street address.</p>
-    #[doc(hidden)]
     pub street3: ::std::option::Option<::std::string::String>,
     /// <p>The recipient's email address.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl Address {

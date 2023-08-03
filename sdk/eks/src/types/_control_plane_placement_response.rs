@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlPlanePlacementResponse {
     /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl ControlPlanePlacementResponse {

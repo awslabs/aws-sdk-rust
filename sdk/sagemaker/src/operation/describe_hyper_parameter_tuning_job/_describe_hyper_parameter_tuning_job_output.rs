@@ -4,58 +4,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHyperParameterTuningJobOutput {
     /// <p>The name of the hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_config: ::std::option::Option<crate::types::HyperParameterTuningJobConfig>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that this tuning job launches.</p>
-    #[doc(hidden)]
     pub training_job_definition: ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>,
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
-    #[doc(hidden)]
     pub training_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
     /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_status: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
     /// <p>The date and time that the tuning job started.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the tuning job ended.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the status of the tuning job was modified. </p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
-    #[doc(hidden)]
     pub training_job_status_counters: ::std::option::Option<crate::types::TrainingJobStatusCounters>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.</p>
-    #[doc(hidden)]
     pub objective_status_counters: ::std::option::Option<crate::types::ObjectiveStatusCounters>,
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> object that describes the training job that completed with the best current <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
-    #[doc(hidden)]
     pub best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     /// <p>If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> for the training job with the best objective metric value of all training jobs launched by this tuning job and all parent jobs specified for the warm start tuning job.</p>
-    #[doc(hidden)]
     pub overall_best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     /// <p>The configuration for starting the hyperparameter parameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
-    #[doc(hidden)]
     pub warm_start_config: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
     /// <p>If the tuning job failed, the reason it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
-    #[doc(hidden)]
     pub tuning_job_completion_details: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
     /// <p>The total resources consumed by your hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub consumed_resources: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
     /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub autotune: ::std::option::Option<crate::types::Autotune>,
     _request_id: Option<String>,
 }

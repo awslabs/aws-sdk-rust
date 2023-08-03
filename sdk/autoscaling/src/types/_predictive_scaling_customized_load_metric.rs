@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedLoadMetric {
     /// <p>One or more metric data queries to provide the data points for a load metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
-    #[doc(hidden)]
     pub metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedLoadMetric {

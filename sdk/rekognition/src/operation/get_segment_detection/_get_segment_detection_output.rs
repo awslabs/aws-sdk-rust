@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSegmentDetectionOutput {
     /// <p>Current status of the segment detection job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
-    #[doc(hidden)]
     pub video_metadata: ::std::option::Option<::std::vec::Vec<crate::types::VideoMetadata>>,
     /// <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
-    #[doc(hidden)]
     pub audio_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AudioMetadata>>,
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
-    #[doc(hidden)]
     pub segments: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDetection>>,
     /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
-    #[doc(hidden)]
     pub selected_segment_types: ::std::option::Option<::std::vec::Vec<crate::types::SegmentTypeInfo>>,
     /// <p>Job identifier for the segment detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartSegmentDetection.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::Video>,
     /// <p>A job identifier specified in the call to StartSegmentDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    #[doc(hidden)]
     pub job_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

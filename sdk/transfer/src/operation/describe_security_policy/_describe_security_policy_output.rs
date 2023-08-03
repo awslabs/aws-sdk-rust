@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSecurityPolicyOutput {
     /// <p>An array containing the properties of the security policy.</p>
-    #[doc(hidden)]
     pub security_policy: ::std::option::Option<crate::types::DescribedSecurityPolicy>,
     _request_id: Option<String>,
 }

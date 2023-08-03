@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCrossAccountAuthorizationOutput {
     /// <p>The cross-account authorization.</p>
-    #[doc(hidden)]
     pub cross_account_authorization: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

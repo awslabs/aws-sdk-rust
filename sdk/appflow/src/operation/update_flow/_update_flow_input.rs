@@ -4,30 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowInput {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p> A description of the flow. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    #[doc(hidden)]
     pub trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
-    #[doc(hidden)]
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    #[doc(hidden)]
     pub destination_flow_config_list: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    #[doc(hidden)]
     pub metadata_catalog_config: ::std::option::Option<crate::types::MetadataCatalogConfig>,
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFlowInput {

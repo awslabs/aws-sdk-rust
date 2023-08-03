@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContentModerationOutput {
     /// <p>The current status of the content moderation analysis job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
-    #[doc(hidden)]
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
-    #[doc(hidden)]
     pub moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ContentModerationDetection>>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
-    #[doc(hidden)]
     pub moderation_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Job identifier for the content moderation operation for which you want to obtain results. The job identifer is returned by an initial call to StartContentModeration.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::Video>,
     /// <p>A job identifier specified in the call to StartContentModeration and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    #[doc(hidden)]
     pub job_tag: ::std::option::Option<::std::string::String>,
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    #[doc(hidden)]
     pub get_request_metadata: ::std::option::Option<crate::types::GetContentModerationRequestMetadata>,
     _request_id: Option<String>,
 }

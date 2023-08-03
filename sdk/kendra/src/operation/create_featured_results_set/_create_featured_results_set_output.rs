@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFeaturedResultsSetOutput {
     /// <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was created, and more.</p>
-    #[doc(hidden)]
     pub featured_results_set: ::std::option::Option<crate::types::FeaturedResultsSet>,
     _request_id: Option<String>,
 }

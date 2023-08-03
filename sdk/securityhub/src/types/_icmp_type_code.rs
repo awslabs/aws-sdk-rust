@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IcmpTypeCode {
     /// <p>The ICMP code for which to deny or allow access. To deny or allow all codes, use the value <code>-1</code>.</p>
-    #[doc(hidden)]
     pub code: i32,
     /// <p>The ICMP type for which to deny or allow access. To deny or allow all types, use the value <code>-1</code>.</p>
-    #[doc(hidden)]
     pub r#type: i32,
 }
 impl IcmpTypeCode {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetDistributionCacheOutput {
     /// <p>The status of the reset cache request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::Operation>,
     _request_id: Option<String>,
 }

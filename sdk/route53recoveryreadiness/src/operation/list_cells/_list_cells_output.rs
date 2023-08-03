@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCellsOutput {
     /// <p>A list of cells.</p>
-    #[doc(hidden)]
     pub cells: ::std::option::Option<::std::vec::Vec<crate::types::CellOutput>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

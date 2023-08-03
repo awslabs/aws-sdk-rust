@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
-    #[doc(hidden)]
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of the recommended reservation.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
-    #[doc(hidden)]
     pub tenancy: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
-    #[doc(hidden)]
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
-    #[doc(hidden)]
     pub size_flex_eligible: bool,
 }
 impl Ec2InstanceDetails {

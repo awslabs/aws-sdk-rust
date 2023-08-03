@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataContainer {
     /// Attributes that define the local device resource.
-    #[doc(hidden)]
     pub local_device_resource_data: ::std::option::Option<crate::types::LocalDeviceResourceData>,
     /// Attributes that define the local volume resource.
-    #[doc(hidden)]
     pub local_volume_resource_data: ::std::option::Option<crate::types::LocalVolumeResourceData>,
     /// Attributes that define an Amazon S3 machine learning resource.
-    #[doc(hidden)]
     pub s3_machine_learning_model_resource_data: ::std::option::Option<crate::types::S3MachineLearningModelResourceData>,
     /// Attributes that define an Amazon SageMaker machine learning resource.
-    #[doc(hidden)]
     pub sage_maker_machine_learning_model_resource_data: ::std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>,
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
-    #[doc(hidden)]
     pub secrets_manager_secret_resource_data: ::std::option::Option<crate::types::SecretsManagerSecretResourceData>,
 }
 impl ResourceDataContainer {

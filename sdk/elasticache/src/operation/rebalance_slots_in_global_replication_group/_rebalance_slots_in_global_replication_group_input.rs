@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebalanceSlotsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    #[doc(hidden)]
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
 }
 impl RebalanceSlotsInGlobalReplicationGroupInput {

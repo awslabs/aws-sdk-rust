@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionResult {
     /// <p> Provides any error message information related to the flow run. </p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p> The total number of bytes processed by the flow run. </p>
-    #[doc(hidden)]
     pub bytes_processed: ::std::option::Option<i64>,
     /// <p> The total number of bytes written as a result of the flow run. </p>
-    #[doc(hidden)]
     pub bytes_written: ::std::option::Option<i64>,
     /// <p> The number of records processed in the flow run. </p>
-    #[doc(hidden)]
     pub records_processed: ::std::option::Option<i64>,
 }
 impl ExecutionResult {

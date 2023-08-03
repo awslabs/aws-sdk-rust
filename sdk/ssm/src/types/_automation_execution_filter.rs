@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationExecutionFilter {
     /// <p>One or more keys to limit the results.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::AutomationExecutionFilterKey>,
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AutomationExecutionFilter {

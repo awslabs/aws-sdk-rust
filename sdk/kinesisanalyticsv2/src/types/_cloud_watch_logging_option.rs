@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOption {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
-    #[doc(hidden)]
     pub log_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOption {

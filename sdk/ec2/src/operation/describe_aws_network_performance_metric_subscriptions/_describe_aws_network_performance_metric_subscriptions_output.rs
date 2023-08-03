@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAwsNetworkPerformanceMetricSubscriptionsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Describes the current Infrastructure Performance subscriptions.</p>
-    #[doc(hidden)]
     pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     _request_id: Option<String>,
 }

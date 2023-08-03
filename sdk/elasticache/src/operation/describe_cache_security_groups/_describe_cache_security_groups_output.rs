@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCacheSecurityGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
-    #[doc(hidden)]
     pub cache_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSecurityGroup>>,
     _request_id: Option<String>,
 }

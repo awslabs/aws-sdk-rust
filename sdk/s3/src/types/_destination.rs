@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<::std::string::String>,
     /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
-    #[doc(hidden)]
     pub access_control_translation: ::std::option::Option<crate::types::AccessControlTranslation>,
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
-    #[doc(hidden)]
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
-    #[doc(hidden)]
     pub replication_time: ::std::option::Option<crate::types::ReplicationTime>,
     /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::Metrics>,
 }
 impl Destination {

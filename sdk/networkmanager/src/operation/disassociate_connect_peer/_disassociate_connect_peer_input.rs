@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateConnectPeerInput {
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
-    #[doc(hidden)]
     pub connect_peer_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateConnectPeerInput {

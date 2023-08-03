@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3OnDeviceServiceConfiguration {
     /// <p>If the specified storage limit value matches storage limit of one of the defined configurations, that configuration will be used. If the specified storage limit value does not match any defined configuration, the request will fail. If more than one configuration has the same storage limit as specified, the other input need to be provided.</p>
-    #[doc(hidden)]
     pub storage_limit: ::std::option::Option<f64>,
     /// <p>Storage unit. Currently the only supported unit is TB.</p>
-    #[doc(hidden)]
     pub storage_unit: ::std::option::Option<crate::types::StorageUnit>,
     /// <p>Applicable when creating a cluster. Specifies how many nodes are needed for Amazon S3 compatible storage on Snow family devices. If specified, the other input can be omitted.</p>
-    #[doc(hidden)]
     pub service_size: ::std::option::Option<i32>,
     /// <p>&gt;Fault tolerance level of the cluster. This indicates the number of nodes that can go down without degrading the performance of the cluster. This additional input helps when the specified <code>StorageLimit</code> matches more than one Amazon S3 compatible storage on Snow family devices service configuration.</p>
-    #[doc(hidden)]
     pub fault_tolerance: ::std::option::Option<i32>,
 }
 impl S3OnDeviceServiceConfiguration {

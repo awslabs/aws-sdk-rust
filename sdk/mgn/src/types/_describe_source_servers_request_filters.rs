@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
-    #[doc(hidden)]
     pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to filter Source Servers list by archived.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Request to filter Source Servers list by replication type.</p>
-    #[doc(hidden)]
     pub replication_types: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationType>>,
     /// <p>Request to filter Source Servers list by life cycle states.</p>
-    #[doc(hidden)]
     pub life_cycle_states: ::std::option::Option<::std::vec::Vec<crate::types::LifeCycleState>>,
     /// <p>Request to filter Source Servers list by application IDs.</p>
-    #[doc(hidden)]
     pub application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSourceServersRequestFilters {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteParametersOutput {
     /// <p>The names of the deleted parameters.</p>
-    #[doc(hidden)]
     pub deleted_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
-    #[doc(hidden)]
     pub invalid_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

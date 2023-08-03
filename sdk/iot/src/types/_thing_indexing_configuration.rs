@@ -10,14 +10,12 @@ pub struct ThingIndexingConfiguration {
     /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
     /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub thing_indexing_mode: ::std::option::Option<crate::types::ThingIndexingMode>,
     /// <p>Thing connectivity indexing mode. Valid values are: </p>
     /// <ul>
     /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
     /// <li> <p>OFF - Thing connectivity status indexing is disabled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub thing_connectivity_indexing_mode: ::std::option::Option<crate::types::ThingConnectivityIndexingMode>,
     /// <p>Device Defender indexing mode. Valid values are:</p>
     /// <ul>
@@ -25,7 +23,6 @@ pub struct ThingIndexingConfiguration {
     /// <li> <p>OFF - Device Defender indexing is disabled.</p> </li>
     /// </ul>
     /// <p>For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device Defender Detect.</a> </p>
-    #[doc(hidden)]
     pub device_defender_indexing_mode: ::std::option::Option<crate::types::DeviceDefenderIndexingMode>,
     /// <p>Named shadow indexing mode. Valid values are:</p>
     /// <ul>
@@ -33,16 +30,12 @@ pub struct ThingIndexingConfiguration {
     /// <li> <p>OFF - Named shadow indexing is disabled.</p> </li>
     /// </ul>
     /// <p>For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
-    #[doc(hidden)]
     pub named_shadow_indexing_mode: ::std::option::Option<crate::types::NamedShadowIndexingMode>,
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
-    #[doc(hidden)]
     pub managed_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     /// <p>Contains custom field names and their data type.</p>
-    #[doc(hidden)]
     pub custom_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::IndexingFilter>,
 }
 impl ThingIndexingConfiguration {

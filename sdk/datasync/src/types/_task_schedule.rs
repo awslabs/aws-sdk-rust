@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskSchedule {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
 }
 impl TaskSchedule {

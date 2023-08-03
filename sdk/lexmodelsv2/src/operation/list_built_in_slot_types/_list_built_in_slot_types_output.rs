@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBuiltInSlotTypesOutput {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    #[doc(hidden)]
     pub built_in_slot_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The language and locale of the slot types in the list.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

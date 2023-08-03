@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrainingJobsForHyperParameterTuningJobInput {
     /// <p>The name of the tuning job whose training jobs you want to list.</p>
-    #[doc(hidden)]
     pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
     /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of training jobs to return. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter that returns only training jobs with the specified status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::TrainingJobStatus>,
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
     /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::TrainingJobSortByOptions>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListTrainingJobsForHyperParameterTuningJobInput {

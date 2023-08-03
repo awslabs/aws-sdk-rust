@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MasterUserSecret {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    #[doc(hidden)]
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the secret.</p>
     /// <p>The possible status values include the following:</p>
@@ -16,10 +15,8 @@ pub struct MasterUserSecret {
     /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
     /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub secret_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl MasterUserSecret {

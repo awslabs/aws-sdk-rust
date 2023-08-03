@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AwsCredentials {
     /// <p> The unique identifier for the security credentials.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p> The secret access key that can be used to sign requests.</p>
-    #[doc(hidden)]
     pub secret_access_key: ::std::option::Option<::std::string::String>,
     /// <p> The token that users must pass to use the credentials.</p>
-    #[doc(hidden)]
     pub session_token: ::std::option::Option<::std::string::String>,
     /// <p> The Epoch time when the current credentials expire.</p>
-    #[doc(hidden)]
     pub expiration: i64,
 }
 impl AwsCredentials {

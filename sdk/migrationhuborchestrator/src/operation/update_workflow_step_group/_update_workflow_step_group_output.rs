@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkflowStepGroupOutput {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the step group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    #[doc(hidden)]
     pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
     /// <p>The next step group.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The previous step group.</p>
-    #[doc(hidden)]
     pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time at which the step group was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

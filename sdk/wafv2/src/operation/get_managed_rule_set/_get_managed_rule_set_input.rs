@@ -5,7 +5,6 @@
 pub struct GetManagedRuleSetInput {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -13,10 +12,8 @@ pub struct GetManagedRuleSetInput {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetManagedRuleSetInput {

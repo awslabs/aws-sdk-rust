@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSigningPlatformOutput {
     /// <p>The ID of the target signing platform.</p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the target signing platform.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of partner entities that use the target signing platform.</p>
-    #[doc(hidden)]
     pub partner: ::std::option::Option<::std::string::String>,
     /// <p>The validation template that is used by the target signing platform.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The category type of the target signing platform.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::Category>,
     /// <p>A list of configurations applied to the target platform at signing.</p>
-    #[doc(hidden)]
     pub signing_configuration: ::std::option::Option<crate::types::SigningConfiguration>,
     /// <p>The format of the target platform's signing image.</p>
-    #[doc(hidden)]
     pub signing_image_format: ::std::option::Option<crate::types::SigningImageFormat>,
     /// <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
-    #[doc(hidden)]
     pub max_size_in_mb: i32,
     /// <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
-    #[doc(hidden)]
     pub revocation_supported: bool,
     _request_id: Option<String>,
 }

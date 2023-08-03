@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TeletextDestinationSettings {
     /// Set pageNumber to the Teletext page number for the destination captions for this output. This value must be a three-digit hexadecimal string; strings ending in -FF are invalid. If you are passing through the entire set of Teletext data, do not use this field.
-    #[doc(hidden)]
     pub page_number: ::std::option::Option<::std::string::String>,
     /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
-    #[doc(hidden)]
     pub page_types: ::std::option::Option<::std::vec::Vec<crate::types::TeletextPageType>>,
 }
 impl TeletextDestinationSettings {

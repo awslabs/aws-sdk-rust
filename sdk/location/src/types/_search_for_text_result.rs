@@ -5,21 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchForTextResult {
     /// <p>Details about the search result, such as its address and position.</p>
-    #[doc(hidden)]
     pub place: ::std::option::Option<crate::types::Place>,
     /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
-    #[doc(hidden)]
     pub distance: ::std::option::Option<f64>,
     /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
     /// <p>Returned only when the partner selected is Esri or Grab.</p>
-    #[doc(hidden)]
     pub relevance: ::std::option::Option<f64>,
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
     /// </note>
-    #[doc(hidden)]
     pub place_id: ::std::option::Option<::std::string::String>,
 }
 impl SearchForTextResult {

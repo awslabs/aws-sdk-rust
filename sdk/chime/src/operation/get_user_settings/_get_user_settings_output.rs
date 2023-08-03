@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserSettingsOutput {
     /// <p>The user settings.</p>
-    #[doc(hidden)]
     pub user_settings: ::std::option::Option<crate::types::UserSettings>,
     _request_id: Option<String>,
 }

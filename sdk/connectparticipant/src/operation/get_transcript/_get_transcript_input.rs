@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTranscriptInput {
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
-    #[doc(hidden)]
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the page. Default: 10. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
-    #[doc(hidden)]
     pub scan_direction: ::std::option::Option<crate::types::ScanDirection>,
     /// <p>The sort order for the records. Default: DESCENDING.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortKey>,
     /// <p>A filtering option for where to start.</p>
-    #[doc(hidden)]
     pub start_position: ::std::option::Option<crate::types::StartPosition>,
     /// <p>The authentication token associated with the participant's connection.</p>
-    #[doc(hidden)]
     pub connection_token: ::std::option::Option<::std::string::String>,
 }
 impl GetTranscriptInput {

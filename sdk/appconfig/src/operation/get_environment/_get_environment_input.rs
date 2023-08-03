@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentInput {
     /// <p>The ID of the application that includes the environment you want to get.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment that you want to get.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEnvironmentInput {

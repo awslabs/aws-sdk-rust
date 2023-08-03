@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditTaskMetadata {
     /// <p>The ID of this audit.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    #[doc(hidden)]
     pub task_status: ::std::option::Option<crate::types::AuditTaskStatus>,
     /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
-    #[doc(hidden)]
     pub task_type: ::std::option::Option<crate::types::AuditTaskType>,
 }
 impl AuditTaskMetadata {

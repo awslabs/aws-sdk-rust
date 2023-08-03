@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpellCorrectedQuery {
     /// <p>The query with the suggested spell corrections.</p>
-    #[doc(hidden)]
     pub suggested_query_text: ::std::option::Option<::std::string::String>,
     /// <p>The corrected misspelled word or words in a query.</p>
-    #[doc(hidden)]
     pub corrections: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,
 }
 impl SpellCorrectedQuery {

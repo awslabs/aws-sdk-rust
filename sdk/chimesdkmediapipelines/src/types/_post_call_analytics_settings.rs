@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostCallAnalyticsSettings {
     /// <p>The URL of the Amazon S3 bucket that contains the post-call data.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role used by Amazon Web Services Transcribe to upload your post call analysis. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The content redaction output settings for a post-call analysis task.</p>
-    #[doc(hidden)]
     pub content_redaction_output: ::std::option::Option<crate::types::ContentRedactionOutput>,
     /// <p>The ID of the KMS (Key Management Service) key used to encrypt the output.</p>
-    #[doc(hidden)]
     pub output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl PostCallAnalyticsSettings {

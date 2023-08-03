@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2CustomResponseDetails {
     /// <p> References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. </p>
-    #[doc(hidden)]
     pub custom_response_body_key: ::std::option::Option<::std::string::String>,
     /// <p> The HTTP status code to return to the client. For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide.</i> </p>
-    #[doc(hidden)]
     pub response_code: i32,
     /// <p> The HTTP headers to use in the response. </p>
-    #[doc(hidden)]
     pub response_headers: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
 }
 impl AwsWafv2CustomResponseDetails {

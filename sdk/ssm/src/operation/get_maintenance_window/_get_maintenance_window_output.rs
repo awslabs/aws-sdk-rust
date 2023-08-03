@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the maintenance window.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the maintenance window.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    #[doc(hidden)]
     pub schedule_timezone: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
-    #[doc(hidden)]
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    #[doc(hidden)]
     pub next_execution_time: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the maintenance window in hours.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
-    #[doc(hidden)]
     pub cutoff: i32,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
-    #[doc(hidden)]
     pub allow_unassociated_targets: bool,
     /// <p>Indicates whether the maintenance window is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The date the maintenance window was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the maintenance window was last modified.</p>
-    #[doc(hidden)]
     pub modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

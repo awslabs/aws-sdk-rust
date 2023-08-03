@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the billing group. The names must be unique to each billing group. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> A description of the billing group. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    #[doc(hidden)]
     pub primary_account_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
-    #[doc(hidden)]
     pub pricing_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p> The number of accounts in the particular billing group. </p>
-    #[doc(hidden)]
     pub size: i64,
     /// <p> The most recent time when the billing group was modified. </p>
-    #[doc(hidden)]
     pub last_modified_time: i64,
     /// <p> The status of the billing group. Only one of the valid values can be used. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::BillingGroupStatus>,
     /// <p> The reason why the billing group is in its current status. </p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
-    #[doc(hidden)]
     pub account_grouping: ::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AlternateContact {
     /// <p>The name associated with this alternate contact.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The title associated with this alternate contact.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The email address associated with this alternate contact.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The phone number associated with this alternate contact.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The type of alternate contact.</p>
-    #[doc(hidden)]
     pub alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
 }
 impl AlternateContact {

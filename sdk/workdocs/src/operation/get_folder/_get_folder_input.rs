@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetFolderInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
-    #[doc(hidden)]
     pub folder_id: ::std::option::Option<::std::string::String>,
     /// <p>Set to TRUE to include custom metadata in the response.</p>
-    #[doc(hidden)]
     pub include_custom_metadata: ::std::option::Option<bool>,
 }
 impl GetFolderInput {

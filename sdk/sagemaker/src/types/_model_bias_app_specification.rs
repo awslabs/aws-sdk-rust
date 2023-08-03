@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelBiasAppSpecification {
     /// <p>The container image to be run by the model bias job.</p>
-    #[doc(hidden)]
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure bias parameters</a>.</p>
-    #[doc(hidden)]
     pub config_uri: ::std::option::Option<::std::string::String>,
     /// <p>Sets the environment variables in the Docker container.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ModelBiasAppSpecification {

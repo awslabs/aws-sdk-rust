@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PhoneNumber {
     /// <p>The phone number's ID.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The phone number, in E.164 format.</p>
-    #[doc(hidden)]
     pub e164_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The phone number's country. Format: ISO 3166-1 alpha-2.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The phone number's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PhoneNumberType>,
     /// <p>The phone number's product type.</p>
-    #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>The phone number's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PhoneNumberStatus>,
     /// <p>The phone number's capabilities.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<crate::types::PhoneNumberCapabilities>,
     /// <p>The phone number's associations.</p>
-    #[doc(hidden)]
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberAssociation>>,
     /// <p>The outbound calling name associated with the phone number.</p>
-    #[doc(hidden)]
     pub calling_name: ::std::option::Option<::std::string::String>,
     /// <p>The outbound calling name status.</p>
-    #[doc(hidden)]
     pub calling_name_status: ::std::option::Option<crate::types::CallingNameStatus>,
     /// <p>The phone number creation timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The updated phone number timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The deleted phone number timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub deletion_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The phone number's order ID.</p>
-    #[doc(hidden)]
     pub order_id: ::std::option::Option<::std::string::String>,
 }
 impl PhoneNumber {

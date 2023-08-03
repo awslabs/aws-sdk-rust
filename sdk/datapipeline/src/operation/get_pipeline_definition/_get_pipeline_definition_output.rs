@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineDefinitionOutput {
     /// <p>The objects defined in the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     /// <p>The parameter objects used in the pipeline definition.</p>
-    #[doc(hidden)]
     pub parameter_objects: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
     /// <p>The parameter values used in the pipeline definition.</p>
-    #[doc(hidden)]
     pub parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
     _request_id: Option<String>,
 }

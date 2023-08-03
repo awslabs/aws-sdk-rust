@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>The message associated with the exception.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The payload associated with the exception.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

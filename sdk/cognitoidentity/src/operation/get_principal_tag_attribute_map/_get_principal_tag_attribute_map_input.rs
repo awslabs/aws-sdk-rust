@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPrincipalTagAttributeMapInput {
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>You can use this operation to get the provider name.</p>
-    #[doc(hidden)]
     pub identity_provider_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPrincipalTagAttributeMapInput {

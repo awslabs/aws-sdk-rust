@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricOutput {
     /// <p>The information for each alarm with the specified metric.</p>
-    #[doc(hidden)]
     pub metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
     _request_id: Option<String>,
 }

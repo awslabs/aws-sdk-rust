@@ -11,35 +11,26 @@ pub struct SynthesizeSpeechInput {
     /// <p>Required: Yes</p>
     /// <p> <b>Standard voices</b> </p>
     /// <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<crate::types::Engine>,
     /// <p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
-    #[doc(hidden)]
     pub lexicon_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
-    #[doc(hidden)]
     pub sample_rate: ::std::option::Option<::std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
-    #[doc(hidden)]
     pub speech_mark_types: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
     /// <p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
-    #[doc(hidden)]
     pub text_type: ::std::option::Option<crate::types::TextType>,
     /// <p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
-    #[doc(hidden)]
     pub voice_id: ::std::option::Option<crate::types::VoiceId>,
 }
 impl SynthesizeSpeechInput {

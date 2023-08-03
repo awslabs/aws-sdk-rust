@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateError {
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<i32>,
     /// <p>The message for this error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which permission update caused the error.</p>
-    #[doc(hidden)]
     pub caused_by: ::std::option::Option<crate::types::UpdateInstruction>,
 }
 impl UpdateError {

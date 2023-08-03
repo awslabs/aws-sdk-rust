@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetUserAccessTasksInput {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    #[doc(hidden)]
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tasks IDs to use for the request.</p>
-    #[doc(hidden)]
     pub task_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetUserAccessTasksInput {

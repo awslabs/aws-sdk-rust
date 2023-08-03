@@ -5,10 +5,8 @@
 pub struct GetLambdaFunctionRecommendationsOutput {
     /// <p>The token to use to advance to the next page of function recommendations.</p>
     /// <p>This value is null when there are no more pages of function recommendations to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe function recommendations.</p>
-    #[doc(hidden)]
     pub lambda_function_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendation>>,
     _request_id: Option<String>,
 }

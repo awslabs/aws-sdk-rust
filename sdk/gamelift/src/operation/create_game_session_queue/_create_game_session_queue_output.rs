@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGameSessionQueueOutput {
     /// <p>An object that describes the newly created game session queue.</p>
-    #[doc(hidden)]
     pub game_session_queue: ::std::option::Option<crate::types::GameSessionQueue>,
     _request_id: Option<String>,
 }

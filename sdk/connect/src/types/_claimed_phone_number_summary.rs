@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimedPhoneNumberSummary {
     /// <p>A unique identifier for the phone number.</p>
-    #[doc(hidden)]
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    #[doc(hidden)]
     pub phone_number_arn: ::std::option::Option<::std::string::String>,
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The ISO country code.</p>
-    #[doc(hidden)]
     pub phone_number_country_code: ::std::option::Option<crate::types::PhoneNumberCountryCode>,
     /// <p>The type of phone number.</p>
-    #[doc(hidden)]
     pub phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
     /// <p>The description of the phone number.</p>
-    #[doc(hidden)]
     pub phone_number_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the phone number.</p>
     /// <ul>
@@ -36,7 +28,6 @@ pub struct ClaimedPhoneNumberSummary {
     /// </ul> <note>
     /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
     /// </note>
-    #[doc(hidden)]
     pub phone_number_status: ::std::option::Option<crate::types::PhoneNumberStatus>,
 }
 impl ClaimedPhoneNumberSummary {

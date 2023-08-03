@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomMetricOutput {
     /// <p> The name of the custom metric to be used in the metric report. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
-    #[doc(hidden)]
     pub metric_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

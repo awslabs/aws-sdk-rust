@@ -10,7 +10,6 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
@@ -18,14 +17,12 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-    #[doc(hidden)]
     pub restore_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The date and time to restore the DB cluster to.</p>
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
@@ -37,31 +34,24 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
-    #[doc(hidden)]
     pub restore_to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>
     /// <p>Default: <code>false</code> </p>
     /// <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.</p>
-    #[doc(hidden)]
     pub use_latest_restorable_time: bool,
     /// <p>The port number on which the new DB cluster accepts connections.</p>
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The DB subnet group name to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC security groups that the new DB cluster belongs to.</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to be applied to the restored DB cluster.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
@@ -72,28 +62,22 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is rejected.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    #[doc(hidden)]
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
 }
 impl RestoreDbClusterToPointInTimeInput {

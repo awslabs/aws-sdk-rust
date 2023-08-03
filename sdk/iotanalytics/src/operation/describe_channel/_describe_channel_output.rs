@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelOutput {
     /// <p>An object that contains information about the channel.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::ChannelStatistics>,
     _request_id: Option<String>,
 }

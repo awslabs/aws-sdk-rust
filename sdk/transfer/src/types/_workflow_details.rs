@@ -7,11 +7,9 @@ pub struct WorkflowDetails {
     /// <p>A trigger that starts a workflow: the workflow begins to execute after a file is uploaded.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
-    #[doc(hidden)]
     pub on_upload: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowDetail>>,
     /// <p>A trigger that starts a workflow if a file is only partially uploaded. You can attach a workflow to a server that executes whenever there is a partial upload.</p>
     /// <p>A <i>partial upload</i> occurs when a file is open when the session disconnects.</p>
-    #[doc(hidden)]
     pub on_partial_upload: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowDetail>>,
 }
 impl WorkflowDetails {

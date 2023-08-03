@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSigningProfileOutput {
     /// <p>The name of the target signing profile.</p>
-    #[doc(hidden)]
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the signing profile.</p>
-    #[doc(hidden)]
     pub profile_version: ::std::option::Option<::std::string::String>,
     /// <p>The signing profile ARN, including the profile version.</p>
-    #[doc(hidden)]
     pub profile_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Revocation information for a signing profile.</p>
-    #[doc(hidden)]
     pub revocation_record: ::std::option::Option<crate::types::SigningProfileRevocationRecord>,
     /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
-    #[doc(hidden)]
     pub signing_material: ::std::option::Option<crate::types::SigningMaterial>,
     /// <p>The ID of the platform that is used by the target signing profile.</p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
-    #[doc(hidden)]
     pub platform_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The validity period for a signing job.</p>
-    #[doc(hidden)]
     pub signature_validity_period: ::std::option::Option<crate::types::SignatureValidityPeriod>,
     /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<crate::types::SigningPlatformOverrides>,
     /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
-    #[doc(hidden)]
     pub signing_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the target signing profile.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SigningProfileStatus>,
     /// <p>Reason for the status of the target signing profile.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the signing profile.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

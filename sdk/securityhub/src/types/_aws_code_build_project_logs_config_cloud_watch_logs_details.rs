@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
     /// <p>The group name of the logs in CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {

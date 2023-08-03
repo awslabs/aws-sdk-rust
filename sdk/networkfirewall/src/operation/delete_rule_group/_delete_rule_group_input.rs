@@ -5,16 +5,13 @@
 pub struct DeleteRuleGroupInput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub rule_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
 }
 impl DeleteRuleGroupInput {

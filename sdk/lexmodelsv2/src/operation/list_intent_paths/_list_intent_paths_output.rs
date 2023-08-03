@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIntentPathsOutput {
     /// <p>A list of objects, each of which contains information about a node in the intent path for which you requested metrics.</p>
-    #[doc(hidden)]
     pub node_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentNodeSummary>>,
     _request_id: Option<String>,
 }

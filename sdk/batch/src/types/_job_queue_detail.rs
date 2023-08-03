@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobQueueDetail {
     /// <p>The job queue name.</p>
-    #[doc(hidden)]
     pub job_queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
-    #[doc(hidden)]
     pub job_queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::JqState>,
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    #[doc(hidden)]
     pub scheduling_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job queue (for example, <code>CREATING</code> or <code>VALID</code>).</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JqStatus>,
     /// <p>A short, human-readable string to provide additional details for the current status of the job queue.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
-    #[doc(hidden)]
     pub compute_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
     /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl JobQueueDetail {

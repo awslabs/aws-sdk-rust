@@ -6,7 +6,6 @@
 pub struct DescribeAttachmentOutput {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
 }

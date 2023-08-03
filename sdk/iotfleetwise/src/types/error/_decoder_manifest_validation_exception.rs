@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecoderManifestValidationException {
     /// <p>The request couldn't be completed because of invalid signals in the request.</p>
-    #[doc(hidden)]
     pub invalid_signals: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignalDecoder>>,
     /// <p>The request couldn't be completed because of invalid network interfaces in the request.</p>
-    #[doc(hidden)]
     pub invalid_network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InvalidNetworkInterface>>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

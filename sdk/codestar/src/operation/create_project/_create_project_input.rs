@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateProjectInput {
     /// <p>The display name for the project to be created in AWS CodeStar.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project to be created in AWS CodeStar.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project, if any.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
-    #[doc(hidden)]
     pub source_code: ::std::option::Option<::std::vec::Vec<crate::types::Code>>,
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
-    #[doc(hidden)]
     pub toolchain: ::std::option::Option<crate::types::Toolchain>,
     /// <p>The tags created for the project.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProjectInput {

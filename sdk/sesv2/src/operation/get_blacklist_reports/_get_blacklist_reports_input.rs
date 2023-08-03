@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlacklistReportsInput {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
-    #[doc(hidden)]
     pub blacklist_item_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetBlacklistReportsInput {

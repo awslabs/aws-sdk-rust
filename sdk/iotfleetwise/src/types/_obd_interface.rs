@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObdInterface {
     /// <p>The name of the interface.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the message requesting vehicle data.</p>
-    #[doc(hidden)]
     pub request_message_id: i32,
     /// <p>The standard OBD II PID.</p>
-    #[doc(hidden)]
     pub obd_standard: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number message requests per second.</p>
-    #[doc(hidden)]
     pub pid_request_interval_seconds: i32,
     /// <p>The maximum number message requests per diagnostic trouble code per second.</p>
-    #[doc(hidden)]
     pub dtc_request_interval_seconds: i32,
     /// <p>Whether to use extended IDs in the message.</p>
-    #[doc(hidden)]
     pub use_extended_ids: bool,
     /// <p>Whether the vehicle has a transmission control module (TCM).</p>
-    #[doc(hidden)]
     pub has_transmission_ecu: bool,
 }
 impl ObdInterface {

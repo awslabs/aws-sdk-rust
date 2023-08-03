@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetAdvisorCollectorInput {
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
-    #[doc(hidden)]
     pub collector_name: ::std::option::Option<::std::string::String>,
     /// <p>A summary description of your Fleet Advisor collector.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateFleetAdvisorCollectorInput {

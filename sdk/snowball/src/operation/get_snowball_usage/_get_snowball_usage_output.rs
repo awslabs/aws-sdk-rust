@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSnowballUsageOutput {
     /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
-    #[doc(hidden)]
     pub snowball_limit: ::std::option::Option<i32>,
     /// <p>The number of Snow devices that this account is currently using.</p>
-    #[doc(hidden)]
     pub snowballs_in_use: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

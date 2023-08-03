@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrganizationsOutput {
     /// <p>The overview of owned organizations presented as a list of organization summaries.</p>
-    #[doc(hidden)]
     pub organization_summaries: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationSummary>>,
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

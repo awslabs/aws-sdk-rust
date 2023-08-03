@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLayersOutput {
     /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    #[doc(hidden)]
     pub layers: ::std::option::Option<::std::vec::Vec<crate::types::Layer>>,
     _request_id: Option<String>,
 }

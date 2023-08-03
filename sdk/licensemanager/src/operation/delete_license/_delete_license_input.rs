@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>Current version of the license.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLicenseInput {

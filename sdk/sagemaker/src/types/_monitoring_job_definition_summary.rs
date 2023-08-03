@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringJobDefinitionSummary {
     /// <p>The name of the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_job_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the monitoring job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the endpoint that the job monitors.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl MonitoringJobDefinitionSummary {

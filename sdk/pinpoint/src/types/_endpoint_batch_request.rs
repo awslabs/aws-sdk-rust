@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointBatchRequest {
     /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::vec::Vec<crate::types::EndpointBatchItem>>,
 }
 impl EndpointBatchRequest {

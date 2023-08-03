@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectKafkaSource {
     /// <p>The name of the data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the streaming options.</p>
-    #[doc(hidden)]
     pub streaming_options: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
     /// <p>The amount of time to spend processing each micro batch.</p>
-    #[doc(hidden)]
     pub window_size: ::std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
-    #[doc(hidden)]
     pub detect_schema: ::std::option::Option<bool>,
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
-    #[doc(hidden)]
     pub data_preview_options: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
 }
 impl DirectKafkaSource {

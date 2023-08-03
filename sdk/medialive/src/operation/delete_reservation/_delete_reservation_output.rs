@@ -5,61 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReservationOutput {
     /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// Number of reserved resources
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// Lease duration, e.g. '12'
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// Units for duration, e.g. 'MONTHS'
-    #[doc(hidden)]
     pub duration_units: ::std::option::Option<crate::types::OfferingDurationUnits>,
     /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
-    #[doc(hidden)]
     pub end: ::std::option::Option<::std::string::String>,
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
-    #[doc(hidden)]
     pub fixed_price: ::std::option::Option<f64>,
     /// User specified reservation name
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    #[doc(hidden)]
     pub offering_description: ::std::option::Option<::std::string::String>,
     /// Unique offering ID, e.g. '87654321'
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// Offering type, e.g. 'NO_UPFRONT'
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<crate::types::OfferingType>,
     /// AWS region, e.g. 'us-west-2'
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// Renewal settings for the reservation
-    #[doc(hidden)]
     pub renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,
     /// Unique reservation ID, e.g. '1234567'
-    #[doc(hidden)]
     pub reservation_id: ::std::option::Option<::std::string::String>,
     /// Resource configuration details
-    #[doc(hidden)]
     pub resource_specification: ::std::option::Option<crate::types::ReservationResourceSpecification>,
     /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
-    #[doc(hidden)]
     pub start: ::std::option::Option<::std::string::String>,
     /// Current state of reservation, e.g. 'ACTIVE'
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ReservationState>,
     /// A collection of key-value pairs
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
-    #[doc(hidden)]
     pub usage_price: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }

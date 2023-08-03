@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordInput {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
@@ -12,13 +11,10 @@ pub struct PutRecordInput {
     /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
     /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
     /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub target_stores: ::std::option::Option<::std::vec::Vec<crate::types::TargetStore>>,
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
-    #[doc(hidden)]
     pub ttl_duration: ::std::option::Option<crate::types::TtlDuration>,
 }
 impl PutRecordInput {

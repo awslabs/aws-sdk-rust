@@ -6,28 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolNetworkInstanceInfo {
     /// <p>ID of the network instance.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network instance ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Human-readable name of the network instance.</p>
-    #[doc(hidden)]
     pub ns_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>Human-readable description of the network instance.</p>
-    #[doc(hidden)]
     pub ns_instance_description: ::std::option::Option<::std::string::String>,
     /// <p>ID of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the network instance.</p>
-    #[doc(hidden)]
     pub ns_state: ::std::option::Option<crate::types::NsState>,
     /// <p>The metadata of the network instance.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::ListSolNetworkInstanceMetadata>,
 }
 impl ListSolNetworkInstanceInfo {

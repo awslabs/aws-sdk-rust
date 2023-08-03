@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamKeyOutput {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub stream_key: ::std::option::Option<crate::types::StreamKey>,
     _request_id: Option<String>,
 }

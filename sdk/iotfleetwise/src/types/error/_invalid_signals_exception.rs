@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidSignalsException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The signals which caused the exception.</p>
-    #[doc(hidden)]
     pub invalid_signals: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

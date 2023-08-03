@@ -5,7 +5,6 @@
 pub struct DescribeVpcConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
     /// <p>The ARN must be a full VPC connector ARN.</p>
-    #[doc(hidden)]
     pub vpc_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVpcConnectorInput {

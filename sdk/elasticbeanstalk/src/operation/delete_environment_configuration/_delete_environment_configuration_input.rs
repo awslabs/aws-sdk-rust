@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentConfigurationInput {
     /// <p>The name of the application the environment is associated with.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment to delete the draft configuration from.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentConfigurationInput {

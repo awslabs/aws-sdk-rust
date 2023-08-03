@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutIntegrationInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The name of the profile object type.</p>
-    #[doc(hidden)]
     pub object_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
-    #[doc(hidden)]
     pub flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
     /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    #[doc(hidden)]
     pub object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutIntegrationInput {

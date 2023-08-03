@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringCsvDatasetFormat {
     /// <p>Indicates if the CSV data has a header.</p>
-    #[doc(hidden)]
     pub header: bool,
 }
 impl MonitoringCsvDatasetFormat {

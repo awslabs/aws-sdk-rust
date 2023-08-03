@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingHistoryUpdateSource {
     /// <p> Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> (by an integrated Amazon Web Service or third party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> (by a Security Hub customer). </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FindingHistoryUpdateSourceType>,
     /// <p> The identity of the source that initiated the finding change event. For example, the Amazon Resource Name (ARN) of a partner that calls BatchImportFindings or of a customer that calls BatchUpdateFindings. </p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
 }
 impl FindingHistoryUpdateSource {

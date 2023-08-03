@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanDeviceMetadata {
     /// <p>The DevEUI value.</p>
-    #[doc(hidden)]
     pub dev_eui: ::std::option::Option<::std::string::String>,
     /// <p>The FPort value.</p>
-    #[doc(hidden)]
     pub f_port: ::std::option::Option<i32>,
     /// <p>The DataRate value.</p>
-    #[doc(hidden)]
     pub data_rate: ::std::option::Option<i32>,
     /// <p>The device's channel frequency in Hz.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<i32>,
     /// <p>The date and time of the metadata.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>Information about the gateways accessed by the device.</p>
-    #[doc(hidden)]
     pub gateways: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
 }
 impl LoRaWanDeviceMetadata {

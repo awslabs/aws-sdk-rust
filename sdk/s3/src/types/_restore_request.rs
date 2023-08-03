@@ -6,25 +6,18 @@
 pub struct RestoreRequest {
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
     /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
-    #[doc(hidden)]
     pub days: i32,
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
-    #[doc(hidden)]
     pub glacier_job_parameters: ::std::option::Option<crate::types::GlacierJobParameters>,
     /// <p>Type of restore request.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RestoreRequestType>,
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>The optional description for the job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Describes the parameters for Select job types.</p>
-    #[doc(hidden)]
     pub select_parameters: ::std::option::Option<crate::types::SelectParameters>,
     /// <p>Describes the location where the restore job's output is stored.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
 }
 impl RestoreRequest {

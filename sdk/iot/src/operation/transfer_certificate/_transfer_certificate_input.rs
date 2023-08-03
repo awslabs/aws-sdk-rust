@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransferCertificateInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub target_aws_account: ::std::option::Option<::std::string::String>,
     /// <p>The transfer message.</p>
-    #[doc(hidden)]
     pub transfer_message: ::std::option::Option<::std::string::String>,
 }
 impl TransferCertificateInput {

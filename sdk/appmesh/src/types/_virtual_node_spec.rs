@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeSpec {
     /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
-    #[doc(hidden)]
     pub service_discovery: ::std::option::Option<crate::types::ServiceDiscovery>,
     /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
-    #[doc(hidden)]
     pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
-    #[doc(hidden)]
     pub backends: ::std::option::Option<::std::vec::Vec<crate::types::Backend>>,
     /// <p>A reference to an object that represents the defaults for backends.</p>
-    #[doc(hidden)]
     pub backend_defaults: ::std::option::Option<crate::types::BackendDefaults>,
     /// <p>The inbound and outbound access logging information for the virtual node.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::Logging>,
 }
 impl VirtualNodeSpec {

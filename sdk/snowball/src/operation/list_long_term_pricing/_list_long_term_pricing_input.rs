@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLongTermPricingInput {
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLongTermPricingInput {

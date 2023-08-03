@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecommendationFeedbackOutput {
     /// <p>The recommendation feedback given by the user.</p>
-    #[doc(hidden)]
     pub recommendation_feedback: ::std::option::Option<crate::types::RecommendationFeedback>,
     _request_id: Option<String>,
 }

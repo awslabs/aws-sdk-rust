@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksAttemptDetail {
     /// <p>The details for the final status of the containers for this job attempt.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     /// <p>The name of the pod for this job attempt.</p>
-    #[doc(hidden)]
     pub pod_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the node for this job attempt.</p>
-    #[doc(hidden)]
     pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<i64>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped. This happens when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub stopped_at: ::std::option::Option<i64>,
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl EksAttemptDetail {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExchangeCodeForTokenRequestBody {
     /// <p>The access code to send in the request.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The location of the application that will receive the access code.</p>
-    #[doc(hidden)]
     pub redirect_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client to request the token from.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl ExchangeCodeForTokenRequestBody {

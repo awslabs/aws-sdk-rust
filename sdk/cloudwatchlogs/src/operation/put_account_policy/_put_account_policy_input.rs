@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountPolicyInput {
     /// <p>A name for the policy. This must be unique within the account.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the data protection policy, in JSON.</p>
     /// <p>This policy must include two JSON blocks:</p>
@@ -17,13 +16,10 @@ pub struct PutAccountPolicyInput {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
 }
 impl PutAccountPolicyInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSnapshotLimitsInput {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSnapshotLimitsInput {

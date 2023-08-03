@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddCustomAttributesInput {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    #[doc(hidden)]
     pub custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>,
 }
 impl AddCustomAttributesInput {

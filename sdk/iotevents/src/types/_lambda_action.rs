@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaAction {
     /// <p>The ARN of the Lambda function that is executed.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl LambdaAction {

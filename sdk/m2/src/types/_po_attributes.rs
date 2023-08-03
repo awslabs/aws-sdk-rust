@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PoAttributes {
     /// <p>The format of the data set records.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The character set encoding of the data set.</p>
-    #[doc(hidden)]
     pub encoding: ::std::option::Option<::std::string::String>,
     /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
-    #[doc(hidden)]
     pub member_file_extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PoAttributes {

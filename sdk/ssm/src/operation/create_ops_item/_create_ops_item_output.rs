@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub ops_item_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

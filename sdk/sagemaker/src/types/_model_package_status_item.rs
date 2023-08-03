@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageStatusItem {
     /// <p>The name of the model package for which the overall status is being reported.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetailedModelPackageStatus>,
     /// <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl ModelPackageStatusItem {

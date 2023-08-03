@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentDataConfiguration {
     /// <p>The name of the data model to use to bind data to a component.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>Describes how to sort the component's properties.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<::std::vec::Vec<crate::types::SortProperty>>,
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
-    #[doc(hidden)]
     pub predicate: ::std::option::Option<crate::types::Predicate>,
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    #[doc(hidden)]
     pub identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ComponentDataConfiguration {

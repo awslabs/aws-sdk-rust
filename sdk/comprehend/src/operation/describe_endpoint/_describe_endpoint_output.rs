@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointOutput {
     /// <p>Describes information associated with the specific endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_properties: ::std::option::Option<crate::types::EndpointProperties>,
     _request_id: Option<String>,
 }

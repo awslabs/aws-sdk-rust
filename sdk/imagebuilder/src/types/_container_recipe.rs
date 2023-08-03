@@ -18,22 +18,16 @@ pub struct ContainerRecipe {
     /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
     /// </ol>
     /// </note>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of container, such as Docker.</p>
-    #[doc(hidden)]
     pub container_type: ::std::option::Option<crate::types::ContainerType>,
     /// <p>The name of the container recipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the container recipe.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The system platform for the container, such as Windows or Linux.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The owner of the container recipe.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the container recipe.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -52,37 +46,26 @@ pub struct ContainerRecipe {
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    #[doc(hidden)]
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    #[doc(hidden)]
     pub instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
     /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
-    #[doc(hidden)]
     pub dockerfile_template_data: ::std::option::Option<::std::string::String>,
     /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A flag that indicates if the target container is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The base image for the container recipe.</p>
-    #[doc(hidden)]
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>The date when this container recipe was created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The destination repository for the container image.</p>
-    #[doc(hidden)]
     pub target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
 }
 impl ContainerRecipe {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateResolverQueryLogConfigInput {
     /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
-    #[doc(hidden)]
     pub resolver_query_log_config_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateResolverQueryLogConfigInput {

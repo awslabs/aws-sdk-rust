@@ -13,17 +13,13 @@ pub struct LoadBalancer {
     /// <p>For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two target groups for the load balancer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/green deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <important>
     /// <p>If your service's task definition uses the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the target type, not <code>instance</code>. Do this when creating your target groups because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance. This network mode is required for the Fargate launch type.</p>
     /// </important>
-    #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
-    #[doc(hidden)]
     pub container_port: ::std::option::Option<i32>,
 }
 impl LoadBalancer {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationApplicationSummary {
     /// <p>The name of the simulation application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the simulation application.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    #[doc(hidden)]
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>Information about a simulation software suite.</p>
-    #[doc(hidden)]
     pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
 }
 impl SimulationApplicationSummary {

@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationAssociationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of information to be ingested.</p>
-    #[doc(hidden)]
     pub integration_type: ::std::option::Option<crate::types::IntegrationType>,
     /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
-    #[doc(hidden)]
     pub integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
-    #[doc(hidden)]
     pub source_application_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
-    #[doc(hidden)]
     pub source_application_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIntegrationAssociationInput {

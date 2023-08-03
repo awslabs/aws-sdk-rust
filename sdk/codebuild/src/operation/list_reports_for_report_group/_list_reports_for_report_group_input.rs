@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReportsForReportGroupInput {
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
-    #[doc(hidden)]
     pub report_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ReportFilter>,
 }
 impl ListReportsForReportGroupInput {

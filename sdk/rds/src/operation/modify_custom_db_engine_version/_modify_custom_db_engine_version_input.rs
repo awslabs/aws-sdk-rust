@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCustomDbEngineVersionInput {
     /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of your CEV.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
     /// <dl>
@@ -28,7 +25,6 @@ pub struct ModifyCustomDbEngineVersionInput {
     /// </dd>
     /// </dl>
     /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CustomEngineVersionStatus>,
 }
 impl ModifyCustomDbEngineVersionInput {

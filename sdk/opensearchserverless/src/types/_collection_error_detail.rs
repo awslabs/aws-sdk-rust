@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectionErrorDetail {
     /// <p>If the request contains collection IDs, the response includes the IDs provided in the request.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
 }
 impl CollectionErrorDetail {

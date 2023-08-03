@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomalyGroupInput {
     /// <p>The ID of the anomaly group.</p>
-    #[doc(hidden)]
     pub anomaly_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAnomalyGroupInput {

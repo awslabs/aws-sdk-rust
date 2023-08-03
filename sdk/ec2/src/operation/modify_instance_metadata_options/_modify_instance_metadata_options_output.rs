@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceMetadataOptionsOutput {
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata options for the instance.</p>
-    #[doc(hidden)]
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
     _request_id: Option<String>,
 }

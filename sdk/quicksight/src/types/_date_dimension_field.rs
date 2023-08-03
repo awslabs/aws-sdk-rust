@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateDimensionField {
     /// <p>The custom field ID.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that is used in the <code>DateDimensionField</code>.</p>
-    #[doc(hidden)]
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
     /// <ul>
@@ -22,13 +20,10 @@ pub struct DateDimensionField {
     /// <li> <p> <code>SECOND</code> </p> </li>
     /// <li> <p> <code>MILLISECOND</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub date_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The custom hierarchy ID.</p>
-    #[doc(hidden)]
     pub hierarchy_id: ::std::option::Option<::std::string::String>,
     /// <p>The format configuration of the field.</p>
-    #[doc(hidden)]
     pub format_configuration: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
 impl DateDimensionField {

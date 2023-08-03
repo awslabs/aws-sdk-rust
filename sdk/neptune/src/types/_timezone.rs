@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Timezone {
     /// <p>The name of the time zone.</p>
-    #[doc(hidden)]
     pub timezone_name: ::std::option::Option<::std::string::String>,
 }
 impl Timezone {

@@ -6,14 +6,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameters {
     /// <p> <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
-    #[doc(hidden)]
     pub exclude_boot_volume: ::std::option::Option<bool>,
     /// <p> <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
-    #[doc(hidden)]
     pub no_reboot: ::std::option::Option<bool>,
     /// <p> <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to exclude from multi-volume snapshot sets.</p>
     /// <p>If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then data volumes with the specified tags that are attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
-    #[doc(hidden)]
     pub exclude_data_volume_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Parameters {

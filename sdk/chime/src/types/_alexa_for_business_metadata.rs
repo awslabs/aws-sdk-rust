@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AlexaForBusinessMetadata {
     /// <p>Starts or stops Alexa for Business.</p>
-    #[doc(hidden)]
     pub is_alexa_for_business_enabled: ::std::option::Option<bool>,
     /// <p>The ARN of the room resource.</p>
-    #[doc(hidden)]
     pub alexa_for_business_room_arn: ::std::option::Option<::std::string::String>,
 }
 impl AlexaForBusinessMetadata {

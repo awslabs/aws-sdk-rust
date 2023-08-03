@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamAddressHistoryRecord {
     /// <p>The ID of the resource owner.</p>
-    #[doc(hidden)]
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the resource.</p>
-    #[doc(hidden)]
     pub resource_region: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::IpamAddressHistoryResourceType>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR of the resource.</p>
-    #[doc(hidden)]
     pub resource_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The compliance status of a resource. For more information on compliance statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub resource_compliance_status: ::std::option::Option<crate::types::IpamComplianceStatus>,
     /// <p>The overlap status of an IPAM resource. The overlap status tells you if the CIDR for a resource overlaps with another CIDR in the scope. For more information on overlap statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub resource_overlap_status: ::std::option::Option<crate::types::IpamOverlapStatus>,
     /// <p>The VPC ID of the resource.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Sampled start time of the resource-to-CIDR association within the IPAM scope. Changes are picked up in periodic snapshots, so the start time may have occurred before this specific time.</p>
-    #[doc(hidden)]
     pub sampled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Sampled end time of the resource-to-CIDR association within the IPAM scope. Changes are picked up in periodic snapshots, so the end time may have occurred before this specific time.</p>
-    #[doc(hidden)]
     pub sampled_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IpamAddressHistoryRecord {

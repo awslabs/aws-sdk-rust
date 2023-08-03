@@ -8,16 +8,12 @@ pub struct ScanProvisionedProductsInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    #[doc(hidden)]
     pub access_level_filter: ::std::option::Option<crate::types::AccessLevelFilter>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
 }
 impl ScanProvisionedProductsInput {

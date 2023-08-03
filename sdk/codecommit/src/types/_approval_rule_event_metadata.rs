@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApprovalRuleEventMetadata {
     /// <p>The name of the approval rule.</p>
-    #[doc(hidden)]
     pub approval_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID of the approval rule.</p>
-    #[doc(hidden)]
     pub approval_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The content of the approval rule.</p>
-    #[doc(hidden)]
     pub approval_rule_content: ::std::option::Option<::std::string::String>,
 }
 impl ApprovalRuleEventMetadata {

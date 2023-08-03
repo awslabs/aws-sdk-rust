@@ -5,76 +5,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsServiceDetails {
     /// <p>The capacity provider strategy that the service uses.</p>
-    #[doc(hidden)]
     pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsServiceCapacityProviderStrategyDetails>>,
     /// <p>The ARN of the cluster that hosts the service.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>Deployment parameters for the service. Includes the number of tasks that run and the order in which to start and stop tasks.</p>
-    #[doc(hidden)]
     pub deployment_configuration: ::std::option::Option<crate::types::AwsEcsServiceDeploymentConfigurationDetails>,
     /// <p>Contains the deployment controller type that the service uses.</p>
-    #[doc(hidden)]
     pub deployment_controller: ::std::option::Option<crate::types::AwsEcsServiceDeploymentControllerDetails>,
     /// <p>The number of instantiations of the task definition to run on the service.</p>
-    #[doc(hidden)]
     pub desired_count: i32,
     /// <p>Whether to enable Amazon ECS managed tags for the tasks in the service.</p>
-    #[doc(hidden)]
     pub enable_ecs_managed_tags: bool,
     /// <p>Whether the execute command functionality is enabled for the service.</p>
-    #[doc(hidden)]
     pub enable_execute_command: bool,
     /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
-    #[doc(hidden)]
     pub health_check_grace_period_seconds: i32,
     /// <p>The launch type that the service uses.</p>
     /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> </p>
-    #[doc(hidden)]
     pub launch_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the load balancers that the service uses.</p>
-    #[doc(hidden)]
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsServiceLoadBalancersDetails>>,
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::AwsEcsServiceNetworkConfigurationDetails>,
     /// <p>The placement constraints for the tasks in the service.</p>
-    #[doc(hidden)]
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsServicePlacementConstraintsDetails>>,
     /// <p>Information about how tasks for the service are placed.</p>
-    #[doc(hidden)]
     pub placement_strategies: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsServicePlacementStrategiesDetails>>,
     /// <p>The platform version on which to run the service. Only specified for tasks that are hosted on Fargate. If a platform version is not specified, the <code>LATEST</code> platform version is used by default.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
     /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> </p>
-    #[doc(hidden)]
     pub propagate_tags: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
     /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
     /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code> </p>
-    #[doc(hidden)]
     pub scheduling_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the service.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
     /// <p>The name can contain up to 255 characters. It can use letters, numbers, underscores, and hyphens.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the service discovery registries to assign to the service.</p>
-    #[doc(hidden)]
     pub service_registries: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsServiceServiceRegistriesDetails>>,
     /// <p>The task definition to use for tasks in the service.</p>
-    #[doc(hidden)]
     pub task_definition: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsServiceDetails {

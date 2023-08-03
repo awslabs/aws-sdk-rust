@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeStateInput {
     /// The ARN of the bridge that you want to update.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::DesiredState>,
 }
 impl UpdateBridgeStateInput {

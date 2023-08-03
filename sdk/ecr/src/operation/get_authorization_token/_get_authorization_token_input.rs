@@ -7,7 +7,6 @@ pub struct GetAuthorizationTokenInput {
     #[deprecated(
         note = "This field is deprecated. The returned authorization token can be used to access any Amazon ECR registry that the IAM principal has access to, specifying a registry ID doesn't change the permissions scope of the authorization token."
     )]
-    #[doc(hidden)]
     pub registry_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetAuthorizationTokenInput {

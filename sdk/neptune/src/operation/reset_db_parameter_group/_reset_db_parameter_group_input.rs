@@ -8,15 +8,12 @@ pub struct ResetDbParameterGroupInput {
     /// <ul>
     /// <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>
     /// <p>Default: <code>true</code> </p>
-    #[doc(hidden)]
     pub reset_all_parameters: bool,
     /// <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ResetDbParameterGroupInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLogsRequest {
     /// <p>The settings for your conversation logs. You can log the conversation text, conversation audio, or both.</p>
-    #[doc(hidden)]
     pub log_settings: ::std::option::Option<::std::vec::Vec<crate::types::LogSettingsRequest>>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the AWS KMS key used for encrypting audio logs. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and Policy for Conversation Logs</a>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ConversationLogsRequest {

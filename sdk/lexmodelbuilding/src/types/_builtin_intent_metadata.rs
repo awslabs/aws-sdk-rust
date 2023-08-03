@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuiltinIntentMetadata {
     /// <p>A unique identifier for the built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers for the locales that the intent supports.</p>
-    #[doc(hidden)]
     pub supported_locales: ::std::option::Option<::std::vec::Vec<crate::types::Locale>>,
 }
 impl BuiltinIntentMetadata {

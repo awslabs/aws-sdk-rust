@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Epss {
     /// <p>The Exploit Prediction Scoring System (EPSS) score.</p>
-    #[doc(hidden)]
     pub score: f64,
 }
 impl Epss {

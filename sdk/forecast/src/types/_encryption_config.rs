@@ -6,10 +6,8 @@
 pub struct EncryptionConfig {
     /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfig {

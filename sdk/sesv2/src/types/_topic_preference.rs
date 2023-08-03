@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicPreference {
     /// <p>The name of the topic.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
     /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-    #[doc(hidden)]
     pub subscription_status: ::std::option::Option<crate::types::SubscriptionStatus>,
 }
 impl TopicPreference {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectionsInput {
     /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    #[doc(hidden)]
     pub provider_type_filter: ::std::option::Option<crate::types::ProviderType>,
     /// <p>Filters the list of connections to those associated with a specified host.</p>
-    #[doc(hidden)]
     pub host_arn_filter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListConnectionsInput {

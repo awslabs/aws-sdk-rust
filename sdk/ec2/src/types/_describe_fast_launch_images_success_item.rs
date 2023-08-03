@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFastLaunchImagesSuccessItem {
     /// <p>The image ID that identifies the fast-launch enabled Windows image.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type that is used for pre-provisioning the Windows AMI. Supported values include: <code>snapshot</code>.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::FastLaunchResourceType>,
     /// <p>A group of parameters that are used for pre-provisioning the associated Windows AMI using snapshots.</p>
-    #[doc(hidden)]
     pub snapshot_configuration: ::std::option::Option<crate::types::FastLaunchSnapshotConfigurationResponse>,
     /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from pre-provisioned snapshots.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationResponse>,
     /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
-    #[doc(hidden)]
     pub max_parallel_launches: ::std::option::Option<i32>,
     /// <p>The owner ID for the fast-launch enabled Windows AMI.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of faster launching for the specified Windows AMI.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::FastLaunchStateCode>,
     /// <p>The reason that faster launching for the Windows AMI changed to the current state.</p>
-    #[doc(hidden)]
     pub state_transition_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time that faster launching for the Windows AMI changed to the current state.</p>
-    #[doc(hidden)]
     pub state_transition_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DescribeFastLaunchImagesSuccessItem {

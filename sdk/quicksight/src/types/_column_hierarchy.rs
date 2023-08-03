@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnHierarchy {
     /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
-    #[doc(hidden)]
     pub explicit_hierarchy: ::std::option::Option<crate::types::ExplicitHierarchy>,
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
-    #[doc(hidden)]
     pub date_time_hierarchy: ::std::option::Option<crate::types::DateTimeHierarchy>,
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
-    #[doc(hidden)]
     pub predefined_hierarchy: ::std::option::Option<crate::types::PredefinedHierarchy>,
 }
 impl ColumnHierarchy {

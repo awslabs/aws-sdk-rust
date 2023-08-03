@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Text {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
     /// <p>The value of the text message.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Text {

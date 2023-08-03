@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncInferenceClientConfig {
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
-    #[doc(hidden)]
     pub max_concurrent_invocations_per_instance: ::std::option::Option<i32>,
 }
 impl AsyncInferenceClientConfig {

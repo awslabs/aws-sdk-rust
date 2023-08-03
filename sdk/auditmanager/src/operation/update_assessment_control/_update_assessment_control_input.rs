@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssessmentControlInput {
     /// <p> The unique identifier for the assessment. </p>
-    #[doc(hidden)]
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the control set. </p>
-    #[doc(hidden)]
     pub control_set_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the control. </p>
-    #[doc(hidden)]
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the control. </p>
-    #[doc(hidden)]
     pub control_status: ::std::option::Option<crate::types::ControlStatus>,
     /// <p> The comment body text for the control. </p>
-    #[doc(hidden)]
     pub comment_body: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssessmentControlInput {

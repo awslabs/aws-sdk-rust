@@ -5,11 +5,9 @@
 pub struct DescribeLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub firewall_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub firewall_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLoggingConfigurationInput {

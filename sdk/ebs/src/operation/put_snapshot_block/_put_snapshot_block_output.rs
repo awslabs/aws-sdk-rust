@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSnapshotBlockOutput {
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     _request_id: Option<String>,
 }

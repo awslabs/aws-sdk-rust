@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRule {
     /// <p>The unique ID for the associated collaboration.</p>
-    #[doc(hidden)]
     pub collaboration_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AnalysisRuleType>,
     /// <p>The name for the analysis rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time the analysis rule was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the analysis rule was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A policy that describes the associated data usage limitations.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::AnalysisRulePolicy>,
 }
 impl AnalysisRule {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLambdaConfiguration {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub supporting_access_point: ::std::option::Option<::std::string::String>,
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
-    #[doc(hidden)]
     pub cloud_watch_metrics_enabled: bool,
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
-    #[doc(hidden)]
     pub allowed_features: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>>,
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-    #[doc(hidden)]
     pub transformation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>>,
 }
 impl ObjectLambdaConfiguration {

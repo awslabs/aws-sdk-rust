@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePermissionInput {
     /// <p>Delete or restore the permissions on the target database.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::PermissionActionType>,
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
-    #[doc(hidden)]
     pub source_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePermissionInput {

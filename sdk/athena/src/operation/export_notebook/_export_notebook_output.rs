@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportNotebookOutput {
     /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
-    #[doc(hidden)]
     pub notebook_metadata: ::std::option::Option<crate::types::NotebookMetadata>,
     /// <p>The content of the exported notebook.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

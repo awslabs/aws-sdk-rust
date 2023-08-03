@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDecoderManifestInput {
     /// <p> The name of the decoder manifest to import. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The file to load into an Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub network_file_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
 }
 impl ImportDecoderManifestInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFormationHealth {
     /// <p> The name of the CloudFormation stack. </p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
-    #[doc(hidden)]
     pub insight: ::std::option::Option<crate::types::InsightHealth>,
     /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
-    #[doc(hidden)]
     pub analyzed_resource_count: ::std::option::Option<i64>,
 }
 impl CloudFormationHealth {

@@ -5,32 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    #[doc(hidden)]
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The state of the rule.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RuleState>,
     /// <p>The description of the rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating an Amazon EventBridge rule that runs on a schedule</a>.</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
     /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the rule.</p>
-    #[doc(hidden)]
     pub managed_by: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    #[doc(hidden)]
     pub event_bus_name: ::std::option::Option<::std::string::String>,
 }
 impl Rule {

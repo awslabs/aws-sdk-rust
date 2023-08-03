@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
-    #[doc(hidden)]
     pub custom_authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>A map that holds custom authentication credentials.</p>
-    #[doc(hidden)]
     pub credentials_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CustomAuthCredentials {

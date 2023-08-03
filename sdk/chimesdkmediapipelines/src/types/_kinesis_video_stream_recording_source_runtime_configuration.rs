@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamRecordingSourceRuntimeConfiguration {
     /// <p>The stream or streams to be recorded.</p>
-    #[doc(hidden)]
     pub streams: ::std::option::Option<::std::vec::Vec<crate::types::RecordingStreamConfiguration>>,
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
-    #[doc(hidden)]
     pub fragment_selector: ::std::option::Option<crate::types::FragmentSelector>,
 }
 impl KinesisVideoStreamRecordingSourceRuntimeConfiguration {

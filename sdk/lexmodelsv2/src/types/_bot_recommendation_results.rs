@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotRecommendationResults {
     /// <p>The presigned URL link of the recommended bot definition.</p>
-    #[doc(hidden)]
     pub bot_locale_export_url: ::std::option::Option<::std::string::String>,
     /// <p>The presigned url link of the associated transcript.</p>
-    #[doc(hidden)]
     pub associated_transcripts_url: ::std::option::Option<::std::string::String>,
     /// <p>The statistical summary of the bot recommendation results.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::BotRecommendationResultStatistics>,
 }
 impl BotRecommendationResults {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RangedSocketAddress {
     /// <p>IPv4 socket address.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Port range of a socket address.</p>
-    #[doc(hidden)]
     pub port_range: ::std::option::Option<crate::types::IntegerRange>,
 }
 impl RangedSocketAddress {

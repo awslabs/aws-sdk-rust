@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserPoolMfaConfigOutput {
     /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
-    #[doc(hidden)]
     pub sms_mfa_configuration: ::std::option::Option<crate::types::SmsMfaConfigType>,
     /// <p>The software token multi-factor authentication (MFA) configuration.</p>
-    #[doc(hidden)]
     pub software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
@@ -15,7 +13,6 @@ pub struct GetUserPoolMfaConfigOutput {
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
     /// <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsVolumeDetails {
     /// <p>List of EBS volumes that were scanned.</p>
-    #[doc(hidden)]
     pub scanned_volume_details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
     /// <p>List of EBS volumes that were skipped from the malware scan.</p>
-    #[doc(hidden)]
     pub skipped_volume_details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
 }
 impl EbsVolumeDetails {

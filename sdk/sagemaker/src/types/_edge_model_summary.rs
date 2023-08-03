@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeModelSummary {
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version model.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
 }
 impl EdgeModelSummary {

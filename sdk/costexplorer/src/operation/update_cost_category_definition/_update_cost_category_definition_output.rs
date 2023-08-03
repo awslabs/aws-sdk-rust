@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
-    #[doc(hidden)]
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
-    #[doc(hidden)]
     pub effective_start: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

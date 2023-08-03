@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetImportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    #[doc(hidden)]
     pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

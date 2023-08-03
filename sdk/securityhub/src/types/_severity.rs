@@ -8,7 +8,6 @@
 pub struct Severity {
     /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
-    #[doc(hidden)]
     pub product: f64,
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
@@ -26,7 +25,6 @@ pub struct Severity {
     /// <li> <p>70–89 - <code>HIGH</code> </p> </li>
     /// <li> <p>90–100 - <code>CRITICAL</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub label: ::std::option::Option<crate::types::SeverityLabel>,
     /// <p>Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
@@ -37,10 +35,8 @@ pub struct Severity {
     /// <li> <p> <code>HIGH</code> - 70</p> </li>
     /// <li> <p> <code>CRITICAL</code> - 90</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub normalized: i32,
     /// <p>The native severity from the finding product that generated the finding.</p>
-    #[doc(hidden)]
     pub original: ::std::option::Option<::std::string::String>,
 }
 impl Severity {

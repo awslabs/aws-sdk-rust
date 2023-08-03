@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirDatastoresInput {
     /// <p>Lists all filters associated with a FHIR data store request.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::DatastoreFilter>,
     /// <p>Fetches the next page of data stores when results are paginated.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListFhirDatastoresInput {

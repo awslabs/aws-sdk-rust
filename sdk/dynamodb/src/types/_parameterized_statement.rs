@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterizedStatement {
     /// <p> A PartiQL statment that uses parameters. </p>
-    #[doc(hidden)]
     pub statement: ::std::option::Option<::std::string::String>,
     /// <p> The parameter values. </p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     /// <p>An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code> operation that failed a condition check.</p>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
-    #[doc(hidden)]
     pub return_values_on_condition_check_failure: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl ParameterizedStatement {

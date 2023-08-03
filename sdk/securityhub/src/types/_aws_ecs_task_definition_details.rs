@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionDetails {
     /// <p>The container definitions that describe the containers that make up the task.</p>
-    #[doc(hidden)]
     pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
@@ -15,16 +14,12 @@ pub struct AwsEcsTaskDefinitionDetails {
     /// <li> <p> <code>2048 (2 vCPU)</code> </p> </li>
     /// <li> <p> <code>4096 (4 vCPU)</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a family that this task definition is registered to.</p>
-    #[doc(hidden)]
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    #[doc(hidden)]
     pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
@@ -32,11 +27,9 @@ pub struct AwsEcsTaskDefinitionDetails {
     /// <li> <p> <code>none</code> </p> </li>
     /// <li> <p> <code>task</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub ipc_mode: ::std::option::Option<::std::string::String>,
     /// <p>The amount (in MiB) of memory used by the task. </p>
     /// <p>For tasks that are hosted on Amazon EC2, you can provide a task-level memory value or a container-level memory value. For tasks that are hosted on Fargate, you must use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>, which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code> parameters.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
@@ -45,25 +38,18 @@ pub struct AwsEcsTaskDefinitionDetails {
     /// <li> <p> <code>host</code> </p> </li>
     /// <li> <p> <code>none</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub network_mode: ::std::option::Option<::std::string::String>,
     /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
-    #[doc(hidden)]
     pub pid_mode: ::std::option::Option<::std::string::String>,
     /// <p>The placement constraint objects to use for tasks.</p>
-    #[doc(hidden)]
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails>>,
     /// <p>The configuration details for the App Mesh proxy.</p>
-    #[doc(hidden)]
     pub proxy_configuration: ::std::option::Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>,
     /// <p>The task launch types that the task definition was validated against.</p>
-    #[doc(hidden)]
     pub requires_compatibilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
-    #[doc(hidden)]
     pub task_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data volume definitions for the task.</p>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionVolumesDetails>>,
 }
 impl AwsEcsTaskDefinitionDetails {

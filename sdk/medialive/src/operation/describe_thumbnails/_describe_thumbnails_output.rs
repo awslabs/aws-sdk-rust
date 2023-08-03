@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThumbnailsOutput {
     /// Placeholder documentation for __listOfThumbnailDetail
-    #[doc(hidden)]
     pub thumbnail_details: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailDetail>>,
     _request_id: Option<String>,
 }

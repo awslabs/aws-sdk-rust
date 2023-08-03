@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the access rules of the bucket.</p>
-    #[doc(hidden)]
     pub access_rules: ::std::option::Option<crate::types::AccessRules>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the bundle currently applied to the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The URL of the bucket.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The name of the bucket.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The support code for a bucket. Include this code in your email to support when you have questions about a Lightsail bucket. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
     /// <p>The following options can be configured:</p>
@@ -43,25 +33,19 @@ pub struct Bucket {
     /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
     /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub object_versioning: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
     /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
-    #[doc(hidden)]
     pub able_to_update_bundle: ::std::option::Option<bool>,
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
-    #[doc(hidden)]
     pub readonly_access_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
-    #[doc(hidden)]
     pub resources_receiving_access: ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
     /// <p>An object that describes the state of the bucket.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::BucketState>,
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    #[doc(hidden)]
     pub access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
 }
 impl Bucket {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the new dataset group.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain for the new Domain dataset group.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::Domain>,
     _request_id: Option<String>,
 }

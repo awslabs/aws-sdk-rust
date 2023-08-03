@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Gender {
     /// <p>The predicted gender of the face.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::GenderType>,
     /// <p>Level of confidence in the prediction.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
 }
 impl Gender {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtherName {
     /// <p>Specifies an OID. </p>
-    #[doc(hidden)]
     pub type_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an OID value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl OtherName {

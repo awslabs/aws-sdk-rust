@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentInput {
     /// <p> The name of the assessment to be created. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The optional description of the assessment to be created. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
-    #[doc(hidden)]
     pub assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p> The list of roles for the assessment. </p>
-    #[doc(hidden)]
     pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p> The identifier for the framework that the assessment will be created from. </p>
-    #[doc(hidden)]
     pub framework_id: ::std::option::Option<::std::string::String>,
     /// <p> The tags that are associated with the assessment. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAssessmentInput {

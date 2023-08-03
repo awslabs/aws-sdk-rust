@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain specified in the request.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
     _request_id: Option<String>,
 }

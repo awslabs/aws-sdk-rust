@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRemoteAccessSessionsOutput {
     /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
-    #[doc(hidden)]
     pub remote_access_sessions: ::std::option::Option<::std::vec::Vec<crate::types::RemoteAccessSession>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

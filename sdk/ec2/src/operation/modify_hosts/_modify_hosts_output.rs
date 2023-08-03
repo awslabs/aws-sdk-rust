@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
-    #[doc(hidden)]
     pub successful: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
-    #[doc(hidden)]
     pub unsuccessful: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>>,
     _request_id: Option<String>,
 }

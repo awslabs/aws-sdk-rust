@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessorParameter {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<crate::types::ProcessorParameterName>,
     /// <p>The parameter value.</p>
-    #[doc(hidden)]
     pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ProcessorParameter {

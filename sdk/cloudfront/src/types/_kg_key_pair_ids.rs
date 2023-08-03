@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KgKeyPairIds {
     /// <p>The identifier of the key group that contains the public keys.</p>
-    #[doc(hidden)]
     pub key_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of CloudFront key pair identifiers.</p>
-    #[doc(hidden)]
     pub key_pair_ids: ::std::option::Option<crate::types::KeyPairIds>,
 }
 impl KgKeyPairIds {

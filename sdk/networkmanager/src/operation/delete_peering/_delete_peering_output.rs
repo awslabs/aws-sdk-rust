@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePeeringOutput {
     /// <p>Information about a deleted peering connection.</p>
-    #[doc(hidden)]
     pub peering: ::std::option::Option<crate::types::Peering>,
     _request_id: Option<String>,
 }

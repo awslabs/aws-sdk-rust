@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartVectorEnrichmentJobInput {
     /// <p>The name of the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Input configuration information for the Vector Enrichment job.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::VectorEnrichmentJobInputConfig>,
     /// <p>An object containing information about the job configuration.</p>
-    #[doc(hidden)]
     pub job_config: ::std::option::Option<crate::types::VectorEnrichmentJobConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartVectorEnrichmentJobInput {

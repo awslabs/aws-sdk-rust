@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksPropertiesDetail {
     /// <p>The properties for the Kubernetes pod resources of a job.</p>
-    #[doc(hidden)]
     pub pod_properties: ::std::option::Option<crate::types::EksPodPropertiesDetail>,
 }
 impl EksPropertiesDetail {

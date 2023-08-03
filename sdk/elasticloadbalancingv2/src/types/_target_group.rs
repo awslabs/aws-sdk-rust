@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroup {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target group.</p>
-    #[doc(hidden)]
     pub target_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use for routing traffic to the targets.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The ID of the VPC for the targets.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    #[doc(hidden)]
     pub health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>The port to use to connect with the target.</p>
-    #[doc(hidden)]
     pub health_check_port: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
-    #[doc(hidden)]
     pub health_check_enabled: ::std::option::Option<bool>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
-    #[doc(hidden)]
     pub health_check_interval_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
-    #[doc(hidden)]
     pub health_check_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
-    #[doc(hidden)]
     pub healthy_threshold_count: ::std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
-    #[doc(hidden)]
     pub unhealthy_threshold_count: ::std::option::Option<i32>,
     /// <p>The destination for health checks on the targets.</p>
-    #[doc(hidden)]
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-    #[doc(hidden)]
     pub matcher: ::std::option::Option<crate::types::Matcher>,
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
-    #[doc(hidden)]
     pub load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
-    #[doc(hidden)]
     pub protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
 }
 impl TargetGroup {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexVideoSettings {
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
-    #[doc(hidden)]
     pub constant_bitrate: ::std::option::Option<i32>,
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
-    #[doc(hidden)]
     pub statmux_settings: ::std::option::Option<crate::types::MultiplexStatmuxVideoSettings>,
 }
 impl MultiplexVideoSettings {

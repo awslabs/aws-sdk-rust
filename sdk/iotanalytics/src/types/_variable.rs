@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Variable {
     /// <p>The name of the variable.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the variable as a string.</p>
-    #[doc(hidden)]
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>The value of the variable as a double (numeric).</p>
-    #[doc(hidden)]
     pub double_value: ::std::option::Option<f64>,
     /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
-    #[doc(hidden)]
     pub dataset_content_version_value: ::std::option::Option<crate::types::DatasetContentVersionValue>,
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
-    #[doc(hidden)]
     pub output_file_uri_value: ::std::option::Option<crate::types::OutputFileUriValue>,
 }
 impl Variable {

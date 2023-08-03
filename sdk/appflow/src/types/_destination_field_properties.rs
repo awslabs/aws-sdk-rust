@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationFieldProperties {
     /// <p> Specifies if the destination field can be created by the current user. </p>
-    #[doc(hidden)]
     pub is_creatable: bool,
     /// <p> Specifies if the destination field can have a null value. </p>
-    #[doc(hidden)]
     pub is_nullable: bool,
     /// <p> Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do. </p>
-    #[doc(hidden)]
     pub is_upsertable: bool,
     /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation. </p>
-    #[doc(hidden)]
     pub is_updatable: bool,
     /// <p>Specifies whether the field can use the default value during a Create operation.</p>
-    #[doc(hidden)]
     pub is_defaulted_on_create: bool,
     /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
-    #[doc(hidden)]
     pub supported_write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
 }
 impl DestinationFieldProperties {

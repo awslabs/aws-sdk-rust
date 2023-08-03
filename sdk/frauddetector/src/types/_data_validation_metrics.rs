@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataValidationMetrics {
     /// <p>The file-specific model training data validation messages.</p>
-    #[doc(hidden)]
     pub file_level_messages: ::std::option::Option<::std::vec::Vec<crate::types::FileValidationMessage>>,
     /// <p>The field-specific model training validation messages.</p>
-    #[doc(hidden)]
     pub field_level_messages: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationMessage>>,
 }
 impl DataValidationMetrics {

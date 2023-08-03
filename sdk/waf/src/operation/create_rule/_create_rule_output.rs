@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRuleOutput {
     /// <p>The <code>Rule</code> returned in the <code>CreateRule</code> response.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::Rule>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataIngestionJobSummary {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset used for the data ingestion job. </p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
-    #[doc(hidden)]
     pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p>Indicates the status of the data ingestion job. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IngestionJobStatus>,
 }
 impl DataIngestionJobSummary {

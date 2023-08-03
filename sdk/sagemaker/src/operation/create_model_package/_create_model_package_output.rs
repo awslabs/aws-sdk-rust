@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelPackageOutput {
     /// <p>The Amazon Resource Name (ARN) of the new model package.</p>
-    #[doc(hidden)]
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCodeCoveragesOutput {
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
-    #[doc(hidden)]
     pub code_coverages: ::std::option::Option<::std::vec::Vec<crate::types::CodeCoverage>>,
     _request_id: Option<String>,
 }

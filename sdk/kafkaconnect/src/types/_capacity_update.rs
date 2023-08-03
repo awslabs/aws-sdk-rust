@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityUpdate {
     /// <p>The target auto scaling setting.</p>
-    #[doc(hidden)]
     pub auto_scaling: ::std::option::Option<crate::types::AutoScalingUpdate>,
     /// <p>The target settings for provisioned capacity.</p>
-    #[doc(hidden)]
     pub provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacityUpdate>,
 }
 impl CapacityUpdate {

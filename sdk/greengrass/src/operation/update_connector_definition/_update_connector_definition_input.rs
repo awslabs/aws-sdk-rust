@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectorDefinitionInput {
     /// The ID of the connector definition.
-    #[doc(hidden)]
     pub connector_definition_id: ::std::option::Option<::std::string::String>,
     /// The name of the definition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectorDefinitionInput {

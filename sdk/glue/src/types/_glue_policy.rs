@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GluePolicy {
     /// <p>Contains the requested policy document, in JSON format.</p>
-    #[doc(hidden)]
     pub policy_in_json: ::std::option::Option<::std::string::String>,
     /// <p>Contains the hash value associated with this policy.</p>
-    #[doc(hidden)]
     pub policy_hash: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the policy was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the policy was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GluePolicy {

@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSpecification {
     /// <p>The instance to specify which volumes should be snapshotted.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Excludes the root volume from being snapshotted.</p>
-    #[doc(hidden)]
     pub exclude_boot_volume: ::std::option::Option<bool>,
     /// <p>The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the ID of the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.</p>
     /// <p>You can specify up to 40 volume IDs per request.</p>
-    #[doc(hidden)]
     pub exclude_data_volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceSpecification {

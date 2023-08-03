@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryImageScanningConfigurationDetails {
     /// <p>Whether to scan images after they are pushed to a repository.</p>
-    #[doc(hidden)]
     pub scan_on_push: bool,
 }
 impl AwsEcrRepositoryImageScanningConfigurationDetails {

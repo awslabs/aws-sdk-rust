@@ -5,59 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Experiment {
     /// <p>The ARN of the experiment.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the project that contains this experiment.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the experiment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExperimentStatus>,
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>A description of the experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the experiment is first created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the experiment was most recently updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::ExperimentSchedule>,
     /// <p>A structure that contains the date and time that the experiment started and ended.</p>
-    #[doc(hidden)]
     pub execution: ::std::option::Option<crate::types::ExperimentExecution>,
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    #[doc(hidden)]
     pub treatments: ::std::option::Option<::std::vec::Vec<crate::types::Treatment>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    #[doc(hidden)]
     pub metric_goals: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoal>>,
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    #[doc(hidden)]
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
-    #[doc(hidden)]
     pub sampling_rate: i64,
     /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ExperimentType>,
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    #[doc(hidden)]
     pub online_ab_definition: ::std::option::Option<crate::types::OnlineAbDefinition>,
     /// <p>The list of tag keys and values associated with this experiment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Experiment {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterAgentInput {
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
-    #[doc(hidden)]
     pub discovery_data: ::std::option::Option<crate::types::DiscoveryData>,
     /// <p>Detailed information about the agent being registered.</p>
-    #[doc(hidden)]
     pub agent_details: ::std::option::Option<crate::types::AgentDetails>,
 }
 impl RegisterAgentInput {

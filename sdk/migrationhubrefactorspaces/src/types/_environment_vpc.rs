@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentVpc {
     /// <p>The unique identifier of the environment. </p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC. </p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the virtual private cloud (VPC) owner. </p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon Virtual Private Cloud (Amazon VPC) CIDR blocks. </p>
-    #[doc(hidden)]
     pub cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the VPC at the time it is added to the environment. </p>
-    #[doc(hidden)]
     pub vpc_name: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that indicates when the VPC was last updated by the environment. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnvironmentVpc {

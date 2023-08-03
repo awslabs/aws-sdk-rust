@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsDetectionJobOutput {
     /// <p>An object that contains the properties associated with an event detection job.</p>
-    #[doc(hidden)]
     pub events_detection_job_properties: ::std::option::Option<crate::types::EventsDetectionJobProperties>,
     _request_id: Option<String>,
 }

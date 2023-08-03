@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVpnConnectionInput {
     /// <p>The ID of the VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
-    #[doc(hidden)]
     pub customer_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
-    #[doc(hidden)]
     pub vpn_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifyVpnConnectionInput {

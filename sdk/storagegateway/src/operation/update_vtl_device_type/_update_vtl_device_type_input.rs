@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVtlDeviceTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
-    #[doc(hidden)]
     pub vtl_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of medium changer you want to select.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
-    #[doc(hidden)]
     pub device_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVtlDeviceTypeInput {

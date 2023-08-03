@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeFrom {
     /// <p>The name of another container within the same task definition to mount volumes from.</p>
-    #[doc(hidden)]
     pub source_container: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
 }
 impl VolumeFrom {

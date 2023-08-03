@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPersonalizedRankingOutput {
     /// <p>A list of items in order of most likely interest to the user. The maximum is 500.</p>
-    #[doc(hidden)]
     pub personalized_ranking: ::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>>,
     /// <p>The ID of the recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

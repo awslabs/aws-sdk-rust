@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConditionalForwarderInput {
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
-    #[doc(hidden)]
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConditionalForwarderInput {

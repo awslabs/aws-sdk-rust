@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2TagSet {
     /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    #[doc(hidden)]
     pub ec2_tag_set_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Ec2TagFilter>>>,
 }
 impl Ec2TagSet {

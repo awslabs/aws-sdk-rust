@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateDataQualityMultiFrame {
     /// <p>The name of the data quality evaluation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The inputs of your data quality evaluation. The first input in this list is the primary data source.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The aliases of all data sources except primary.</p>
-    #[doc(hidden)]
     pub additional_data_sources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ruleset for your data quality evaluation.</p>
-    #[doc(hidden)]
     pub ruleset: ::std::option::Option<::std::string::String>,
     /// <p>Options to configure how your results are published.</p>
-    #[doc(hidden)]
     pub publishing_options: ::std::option::Option<crate::types::DqResultsPublishingOptions>,
     /// <p>Options to configure runtime behavior of the transform.</p>
-    #[doc(hidden)]
     pub additional_options: ::std::option::Option<::std::collections::HashMap<crate::types::AdditionalOptionKeys, ::std::string::String>>,
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
-    #[doc(hidden)]
     pub stop_job_on_failure_options: ::std::option::Option<crate::types::DqStopJobOnFailureOptions>,
 }
 impl EvaluateDataQualityMultiFrame {

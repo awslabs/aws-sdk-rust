@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryCodeOutput {
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
-    #[doc(hidden)]
     pub source_location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The entry point to use for the source code when running the canary.</p>
-    #[doc(hidden)]
     pub handler: ::std::option::Option<::std::string::String>,
 }
 impl CanaryCodeOutput {

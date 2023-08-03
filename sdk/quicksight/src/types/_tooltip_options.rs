@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TooltipOptions {
     /// <p>Determines whether or not the tooltip is visible.</p>
-    #[doc(hidden)]
     pub tooltip_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The selected type for the tooltip. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>BASIC</code>: A basic tooltip.</p> </li>
     /// <li> <p> <code>DETAILED</code>: A detailed tooltip.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub selected_tooltip_type: ::std::option::Option<crate::types::SelectedTooltipType>,
     /// <p>The setup for the detailed tooltip. The tooltip setup is always saved. The display type is decided based on the tooltip type.</p>
-    #[doc(hidden)]
     pub field_based_tooltip: ::std::option::Option<crate::types::FieldBasedTooltip>,
 }
 impl TooltipOptions {

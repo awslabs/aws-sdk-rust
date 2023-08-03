@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComboChartConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::ComboChartFieldWells>,
     /// <p>The sort configuration of a <code>ComboChartVisual</code>.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::ComboChartSortConfiguration>,
     /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
     /// <ul>
@@ -16,48 +14,34 @@ pub struct ComboChartConfiguration {
     /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
     /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub bars_arrangement: ::std::option::Option<crate::types::BarsArrangement>,
     /// <p>The category axis of a combo chart.</p>
-    #[doc(hidden)]
     pub category_axis: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart category (group/color) field well.</p>
-    #[doc(hidden)]
     pub category_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label display options (grid line, range, scale, and axis step) of a combo chart's primary y-axis (bar) field well.</p>
-    #[doc(hidden)]
     pub primary_y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's primary y-axis (bar) field well.</p>
-    #[doc(hidden)]
     pub primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label display options (grid line, range, scale, axis step) of a combo chart's secondary y-axis (line) field well.</p>
-    #[doc(hidden)]
     pub secondary_y_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's secondary y-axis(line) field well.</p>
-    #[doc(hidden)]
     pub secondary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>
-    #[doc(hidden)]
     pub color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a bar in a combo chart.</p>
-    #[doc(hidden)]
     pub bar_data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a line in a combo chart.</p>
-    #[doc(hidden)]
     pub line_data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The legend display setup of the visual.</p>
-    #[doc(hidden)]
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The reference line setup of the visual.</p>
-    #[doc(hidden)]
     pub reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     /// <p>The palette (chart color) display setup of the visual.</p>
-    #[doc(hidden)]
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl ComboChartConfiguration {

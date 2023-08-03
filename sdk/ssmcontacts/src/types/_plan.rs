@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
-    #[doc(hidden)]
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     /// <p>The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan. </p>
-    #[doc(hidden)]
     pub rotation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Plan {

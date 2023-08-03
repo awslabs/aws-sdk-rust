@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorResourceDetail {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which the identified resource is located.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the identified resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Amazon Web Services resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
-    #[doc(hidden)]
     pub is_suppressed: bool,
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl TrustedAdvisorResourceDetail {

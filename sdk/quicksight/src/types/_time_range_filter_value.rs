@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeRangeFilterValue {
     /// <p>The static input value.</p>
-    #[doc(hidden)]
     pub static_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The rolling date input value.</p>
-    #[doc(hidden)]
     pub rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
     /// <p>The parameter type input value.</p>
-    #[doc(hidden)]
     pub parameter: ::std::option::Option<::std::string::String>,
 }
 impl TimeRangeFilterValue {

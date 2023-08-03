@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationsInput {
     /// <p>One or more configuration IDs.</p>
-    #[doc(hidden)]
     pub configuration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeConfigurationsInput {

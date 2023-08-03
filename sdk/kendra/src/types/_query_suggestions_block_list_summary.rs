@@ -7,22 +7,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuerySuggestionsBlockListSummary {
     /// <p>The identifier of a block list.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the block list.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the block list.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QuerySuggestionsBlockListStatus>,
     /// <p>The Unix timestamp when the block list was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when the block list was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of items in the block list file.</p>
-    #[doc(hidden)]
     pub item_count: ::std::option::Option<i32>,
 }
 impl QuerySuggestionsBlockListSummary {

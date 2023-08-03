@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceItemEntry {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::ComplianceSeverity>,
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceItemEntry {

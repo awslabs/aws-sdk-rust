@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubscriptionAttributesInput {
     /// <p>The ARN of the subscription whose properties you want to get.</p>
-    #[doc(hidden)]
     pub subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetSubscriptionAttributesInput {

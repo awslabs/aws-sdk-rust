@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricStreamEntry {
     /// <p>The ARN of the metric stream.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date that the metric stream was originally created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-    #[doc(hidden)]
     pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the metric stream.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
-    #[doc(hidden)]
     pub firehose_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
 }
 impl MetricStreamEntry {

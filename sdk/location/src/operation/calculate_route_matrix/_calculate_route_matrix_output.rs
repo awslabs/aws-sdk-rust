@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculateRouteMatrixOutput {
     /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
-    #[doc(hidden)]
     pub route_matrix: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>>,
     /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
-    #[doc(hidden)]
     pub snapped_departure_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
     /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
-    #[doc(hidden)]
     pub snapped_destination_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
     /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::CalculateRouteMatrixSummary>,
     _request_id: Option<String>,
 }

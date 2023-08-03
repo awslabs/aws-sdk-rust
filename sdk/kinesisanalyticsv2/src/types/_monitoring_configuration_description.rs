@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringConfigurationDescription {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application.</p>
-    #[doc(hidden)]
     pub configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     /// <p>Describes the granularity of the CloudWatch Logs for an application.</p>
-    #[doc(hidden)]
     pub metrics_level: ::std::option::Option<crate::types::MetricsLevel>,
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl MonitoringConfigurationDescription {

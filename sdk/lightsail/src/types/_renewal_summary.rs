@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewalSummary {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    #[doc(hidden)]
     pub domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>,
     /// <p>The renewal status of the certificate.</p>
     /// <p>The following renewal status are possible:</p>
@@ -15,13 +14,10 @@ pub struct RenewalSummary {
     /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
     /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub renewal_status: ::std::option::Option<crate::types::RenewalStatus>,
     /// <p>The reason for the renewal status of the certificate.</p>
-    #[doc(hidden)]
     pub renewal_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the certificate was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RenewalSummary {

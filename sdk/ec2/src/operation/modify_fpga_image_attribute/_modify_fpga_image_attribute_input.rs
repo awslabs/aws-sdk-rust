@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyFpgaImageAttributeInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the AFI.</p>
-    #[doc(hidden)]
     pub fpga_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::FpgaImageAttributeName>,
     /// <p>The operation type.</p>
-    #[doc(hidden)]
     pub operation_type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The Amazon Web Services account IDs. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    #[doc(hidden)]
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user groups. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    #[doc(hidden)]
     pub user_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The product codes. After you add a product code to an AFI, it can't be removed. This parameter is valid only when modifying the <code>productCodes</code> attribute.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The load permission for the AFI.</p>
-    #[doc(hidden)]
     pub load_permission: ::std::option::Option<crate::types::LoadPermissionModifications>,
     /// <p>A description for the AFI.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A name for the AFI.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl ModifyFpgaImageAttributeInput {

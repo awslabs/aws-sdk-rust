@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingSessionBackup {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ISO timestamp in for when the resource was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the launch profile which allowed the backups for the streaming session.</p>
-    #[doc(hidden)]
     pub launch_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the user that owns the streaming session.</p>
-    #[doc(hidden)]
     pub owned_by: ::std::option::Option<::std::string::String>,
     /// <p>The streaming session ID for the <code>StreamingSessionBackup</code>.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The streaming session state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StreamingSessionState>,
     /// <p>The status code.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<crate::types::StreamingSessionStatusCode>,
     /// <p>The status message for the streaming session backup.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the backup.</p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StreamingSessionBackup {

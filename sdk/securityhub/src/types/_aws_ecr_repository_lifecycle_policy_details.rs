@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryLifecyclePolicyDetails {
     /// <p>The text of the lifecycle policy.</p>
-    #[doc(hidden)]
     pub lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrRepositoryLifecyclePolicyDetails {

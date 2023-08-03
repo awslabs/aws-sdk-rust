@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeArchiveOutput {
     /// <p>The ARN of the archive.</p>
-    #[doc(hidden)]
     pub archive_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the archive.</p>
-    #[doc(hidden)]
     pub archive_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event source associated with the archive.</p>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the archive.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The event pattern used to filter events sent to the archive.</p>
-    #[doc(hidden)]
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The state of the archive.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArchiveState>,
     /// <p>The reason that the archive is in the state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain events for in the archive.</p>
-    #[doc(hidden)]
     pub retention_days: ::std::option::Option<i32>,
     /// <p>The size of the archive in bytes.</p>
-    #[doc(hidden)]
     pub size_bytes: i64,
     /// <p>The number of events in the archive.</p>
-    #[doc(hidden)]
     pub event_count: i64,
     /// <p>The time at which the archive was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

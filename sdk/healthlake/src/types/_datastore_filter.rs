@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreFilter {
     /// <p>Allows the user to filter data store results by name.</p>
-    #[doc(hidden)]
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>Allows the user to filter data store results by status.</p>
-    #[doc(hidden)]
     pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created before the specified date will be included in the results. </p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created after the specified date will be included in the results.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatastoreFilter {

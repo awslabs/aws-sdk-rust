@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelMessageStatusOutput {
     /// <p>The message status and details.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChannelMessageStatusStructure>,
     _request_id: Option<String>,
 }

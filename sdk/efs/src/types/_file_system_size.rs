@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemSize {
     /// <p>The latest known metered size (in bytes) of data stored in the file system.</p>
-    #[doc(hidden)]
     pub value: i64,
     /// <p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.</p>
-    #[doc(hidden)]
     pub value_in_ia: ::std::option::Option<i64>,
     /// <p>The latest known metered size (in bytes) of data stored in the Standard storage class.</p>
-    #[doc(hidden)]
     pub value_in_standard: ::std::option::Option<i64>,
 }
 impl FileSystemSize {

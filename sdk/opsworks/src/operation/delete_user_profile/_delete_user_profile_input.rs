@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUserProfileInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-    #[doc(hidden)]
     pub iam_user_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserProfileInput {

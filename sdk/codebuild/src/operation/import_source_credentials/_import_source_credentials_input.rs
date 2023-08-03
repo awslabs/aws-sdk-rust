@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportSourceCredentialsInput {
     /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p> The source provider used for this project. </p>
-    #[doc(hidden)]
     pub server_type: ::std::option::Option<crate::types::ServerType>,
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
-    #[doc(hidden)]
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
-    #[doc(hidden)]
     pub should_overwrite: ::std::option::Option<bool>,
 }
 impl ImportSourceCredentialsInput {

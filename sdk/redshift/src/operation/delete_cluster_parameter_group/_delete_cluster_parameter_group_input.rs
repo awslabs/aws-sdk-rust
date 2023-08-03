@@ -10,7 +10,6 @@ pub struct DeleteClusterParameterGroupInput {
     /// <li> <p>Must be the name of an existing cluster parameter group.</p> </li>
     /// <li> <p>Cannot delete a default cluster parameter group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteClusterParameterGroupInput {

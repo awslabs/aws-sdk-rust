@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreatmentConfig {
     /// <p>A name for this treatment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for this treatment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The feature that this experiment is testing.</p>
-    #[doc(hidden)]
     pub feature: ::std::option::Option<::std::string::String>,
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
-    #[doc(hidden)]
     pub variation: ::std::option::Option<::std::string::String>,
 }
 impl TreatmentConfig {

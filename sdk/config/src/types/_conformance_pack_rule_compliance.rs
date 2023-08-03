@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackRuleCompliance {
     /// <p>Name of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Compliance of the Config rule.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives. A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
-    #[doc(hidden)]
     pub controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConformancePackRuleCompliance {

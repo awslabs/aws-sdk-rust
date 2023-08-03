@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
 }
 impl UpdateDomainEndpointOptionsInput {

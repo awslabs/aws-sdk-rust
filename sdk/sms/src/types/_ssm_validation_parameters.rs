@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmValidationParameters {
     /// <p>The location of the validation script.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of validation script.</p>
-    #[doc(hidden)]
     pub script_type: ::std::option::Option<crate::types::ScriptType>,
     /// <p>The command to run the validation script.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::string::String>,
     /// <p>The timeout interval, in seconds.</p>
-    #[doc(hidden)]
     pub execution_timeout_seconds: i32,
     /// <p>The name of the S3 bucket for output.</p>
-    #[doc(hidden)]
     pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl SsmValidationParameters {

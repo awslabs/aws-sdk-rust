@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationOutput {
     /// <p>The unique Id of the web application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the web application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the web application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the web application.</p>
-    #[doc(hidden)]
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the web application.</p>
-    #[doc(hidden)]
     pub application_url: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the web application.</p>
-    #[doc(hidden)]
     pub application_state: ::std::option::Option<crate::types::ApplicationState>,
     /// <p>The date (in Unix epoch time) when the application was created.</p>
-    #[doc(hidden)]
     pub application_creation_date: i64,
     /// <p>The date (in Unix epoch time) when the application was last updated.</p>
-    #[doc(hidden)]
     pub application_last_update_date: i64,
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
-    #[doc(hidden)]
     pub sso_client_id: ::std::option::Option<::std::string::String>,
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

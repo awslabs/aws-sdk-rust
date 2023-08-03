@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteContinuousDeploymentPolicyInput {
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl DeleteContinuousDeploymentPolicyInput {

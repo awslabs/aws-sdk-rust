@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentInfo {
     /// <p>The agent or collector ID.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the host where the agent or collector resides. The host can be a server or virtual machine.</p>
-    #[doc(hidden)]
     pub host_name: ::std::option::Option<::std::string::String>,
     /// <p>Network details about the host where the agent or collector resides.</p>
-    #[doc(hidden)]
     pub agent_network_info_list: ::std::option::Option<::std::vec::Vec<crate::types::AgentNetworkInfo>>,
     /// <p>The ID of the connector.</p>
-    #[doc(hidden)]
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The agent or collector version.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The health of the agent.</p>
-    #[doc(hidden)]
     pub health: ::std::option::Option<crate::types::AgentStatus>,
     /// <p>Time since agent health was reported.</p>
-    #[doc(hidden)]
     pub last_health_ping_time: ::std::option::Option<::std::string::String>,
     /// <p>Status of the collection process for an agent.</p>
-    #[doc(hidden)]
     pub collection_status: ::std::option::Option<::std::string::String>,
     /// <p>Type of agent.</p>
-    #[doc(hidden)]
     pub agent_type: ::std::option::Option<::std::string::String>,
     /// <p>Agent's first registration timestamp in UTC.</p>
-    #[doc(hidden)]
     pub registered_time: ::std::option::Option<::std::string::String>,
 }
 impl AgentInfo {

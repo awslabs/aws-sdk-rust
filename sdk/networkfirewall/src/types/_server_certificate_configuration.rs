@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerCertificateConfiguration {
     /// <p>The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.</p>
-    #[doc(hidden)]
     pub server_certificates: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
     /// <p>A list of a server certificate configuration's scopes.</p>
-    #[doc(hidden)]
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
 }
 impl ServerCertificateConfiguration {

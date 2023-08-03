@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedLogOddsMetric {
     /// <p> The names of all the variables. </p>
-    #[doc(hidden)]
     pub variable_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The relative importance of the variables in the list to the other event variable. </p>
-    #[doc(hidden)]
     pub aggregated_variables_importance: ::std::option::Option<f32>,
 }
 impl AggregatedLogOddsMetric {

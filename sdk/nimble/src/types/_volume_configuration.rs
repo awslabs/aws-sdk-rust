@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeConfiguration {
     /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i32>,
     /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<i32>,
     /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
 }
 impl VolumeConfiguration {

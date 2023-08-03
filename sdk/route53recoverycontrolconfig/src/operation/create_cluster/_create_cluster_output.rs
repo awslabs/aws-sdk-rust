@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterOutput {
     /// <p>The cluster that was created.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }

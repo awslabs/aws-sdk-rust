@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteTransactionInput {
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
-    #[doc(hidden)]
     pub transact_statements: ::std::option::Option<::std::vec::Vec<crate::types::ParameterizedStatement>>,
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
-    #[doc(hidden)]
     pub return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
 }
 impl ExecuteTransactionInput {

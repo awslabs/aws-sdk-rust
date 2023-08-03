@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRepositoryTriggersInput {
     /// <p>The name of the repository where you want to create or update the trigger.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON block of configuration information for each trigger.</p>
-    #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,
 }
 impl PutRepositoryTriggersInput {

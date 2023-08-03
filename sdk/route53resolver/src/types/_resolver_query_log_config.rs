@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverQueryLogConfig {
     /// <p>The ID for the query logging configuration.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
     /// <ul>
@@ -21,28 +19,20 @@ pub struct ResolverQueryLogConfig {
     /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
     /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-    #[doc(hidden)]
     pub share_status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
-    #[doc(hidden)]
     pub association_count: i32,
     /// <p>The ARN for the query logging configuration.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the query logging configuration. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request that created the query logging configuration. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
 }
 impl ResolverQueryLogConfig {

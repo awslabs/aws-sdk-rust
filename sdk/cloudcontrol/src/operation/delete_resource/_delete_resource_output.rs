@@ -5,7 +5,6 @@
 pub struct DeleteResourceOutput {
     /// <p>Represents the current status of the resource deletion request.</p>
     /// <p>After you have initiated a resource deletion request, you can monitor the progress of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by <code>DeleteResource</code>.</p>
-    #[doc(hidden)]
     pub progress_event: ::std::option::Option<crate::types::ProgressEvent>,
     _request_id: Option<String>,
 }

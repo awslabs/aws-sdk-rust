@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDocumentInput {
     /// <p>The name of the SSM document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDocumentInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailOutput {
     /// <p>The domain name for which you requested a confirmation email.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
-    #[doc(hidden)]
     pub is_already_verified: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

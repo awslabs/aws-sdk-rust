@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddJobFlowStepsInput {
     /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
-    #[doc(hidden)]
     pub job_flow_id: ::std::option::Option<::std::string::String>,
     /// <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>,
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AddJobFlowStepsInput {

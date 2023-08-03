@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionRequired {
     /// <p>The code you can use to find instructions on the action required to resolve your broker issue.</p>
-    #[doc(hidden)]
     pub action_required_code: ::std::option::Option<::std::string::String>,
     /// <p>Information about the action required to resolve your broker issue.</p>
-    #[doc(hidden)]
     pub action_required_info: ::std::option::Option<::std::string::String>,
 }
 impl ActionRequired {

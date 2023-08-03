@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Project {
     /// <p>The name of the build project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the build project.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A description that makes the build project easy to identify.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the build input source code for this build project.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ProjectSource>,
     /// <p>An array of <code>ProjectSource</code> objects. </p>
-    #[doc(hidden)]
     pub secondary_sources: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
@@ -28,70 +23,50 @@ pub struct Project {
     /// </ul>
     /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
-    #[doc(hidden)]
     pub secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     /// <p>Information about the build output artifacts for the build project.</p>
-    #[doc(hidden)]
     pub artifacts: ::std::option::Option<crate::types::ProjectArtifacts>,
     /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
-    #[doc(hidden)]
     pub secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>,
     /// <p>Information about the cache for the build project.</p>
-    #[doc(hidden)]
     pub cache: ::std::option::Option<crate::types::ProjectCache>,
     /// <p>Information about the build environment for this build project.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::ProjectEnvironment>,
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed. The default is 60 minutes.</p>
-    #[doc(hidden)]
     pub timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
-    #[doc(hidden)]
     pub queued_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). If you don't specify a value, CodeBuild uses the managed CMK for Amazon Simple Storage Service (Amazon S3). </p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>When the build project was created, expressed in Unix time format.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the build project's settings were last modified, expressed in Unix time format.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
-    #[doc(hidden)]
     pub webhook: ::std::option::Option<crate::types::Webhook>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Information about the build badge for the build project.</p>
-    #[doc(hidden)]
     pub badge: ::std::option::Option<crate::types::ProjectBadge>,
     /// <p>Information about logs for the build project. A project can create logs in CloudWatch Logs, an S3 bucket, or both. </p>
-    #[doc(hidden)]
     pub logs_config: ::std::option::Option<crate::types::LogsConfig>,
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    #[doc(hidden)]
     pub file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
-    #[doc(hidden)]
     pub build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
-    #[doc(hidden)]
     pub concurrent_build_limit: ::std::option::Option<i32>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -108,13 +83,10 @@ pub struct Project {
     /// <p>The project builds are not visible to the public.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub project_visibility: ::std::option::Option<crate::types::ProjectVisibilityType>,
     /// <p>Contains the project identifier used with the public build APIs. </p>
-    #[doc(hidden)]
     pub public_project_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
-    #[doc(hidden)]
     pub resource_access_role: ::std::option::Option<::std::string::String>,
 }
 impl Project {

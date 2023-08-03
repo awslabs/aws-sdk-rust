@@ -46,7 +46,6 @@ pub struct DomainTransferability {
     /// <p>Premium domain transfer is not supported.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub transferable: ::std::option::Option<crate::types::Transferable>,
 }
 impl DomainTransferability {

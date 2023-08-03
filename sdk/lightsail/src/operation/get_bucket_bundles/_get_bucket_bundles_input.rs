@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketBundlesInput {
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
-    #[doc(hidden)]
     pub include_inactive: ::std::option::Option<bool>,
 }
 impl GetBucketBundlesInput {

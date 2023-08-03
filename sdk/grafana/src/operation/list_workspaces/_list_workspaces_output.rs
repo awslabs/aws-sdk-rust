@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkspacesOutput {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    #[doc(hidden)]
     pub workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
     /// <p>The token to use when requesting the next set of workspaces.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

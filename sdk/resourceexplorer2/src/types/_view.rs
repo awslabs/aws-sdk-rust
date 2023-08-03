@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct View {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view.</p>
-    #[doc(hidden)]
     pub view_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns this view.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when this view was last modified.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of an Amazon Web Services account, an organization, or an organizational unit (OU) that specifies whether this view includes resources from only the specified Amazon Web Services account, all accounts in the specified organization, or all accounts in the specified OU.</p>
     /// <p>If not specified, the value defaults to the Amazon Web Services account used to call this operation.</p>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains additional information about the view.</p>
-    #[doc(hidden)]
     pub included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
     /// <p>An array of <code>SearchFilter</code> objects that specify which resources can be included in the results of queries made using this view.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::SearchFilter>,
 }
 impl View {

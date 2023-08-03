@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemRelatedItemsFilter {
     /// <p>The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>, or <code>AssociationId</code>.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterKey>,
     /// <p>The values for the filter.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator used by the filter call. The only supported operator is <code>EQUAL</code>.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::OpsItemRelatedItemsFilterOperator>,
 }
 impl OpsItemRelatedItemsFilter {

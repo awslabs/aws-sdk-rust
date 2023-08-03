@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartChangeRequestExecutionOutput {
     /// <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
-    #[doc(hidden)]
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

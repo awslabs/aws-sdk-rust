@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recipes {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-    #[doc(hidden)]
     pub setup: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-    #[doc(hidden)]
     pub configure: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-    #[doc(hidden)]
     pub deploy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-    #[doc(hidden)]
     pub undeploy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-    #[doc(hidden)]
     pub shutdown: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Recipes {

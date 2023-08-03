@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSizeConstraintSetInput {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    #[doc(hidden)]
     pub size_constraint_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -15,7 +13,6 @@ pub struct UpdateSizeConstraintSetInput {
     /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraintSetUpdate>>,
 }
 impl UpdateSizeConstraintSetInput {

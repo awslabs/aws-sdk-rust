@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecipesOutput {
     /// <p>The list of available recipes.</p>
-    #[doc(hidden)]
     pub recipes: ::std::option::Option<::std::vec::Vec<crate::types::RecipeSummary>>,
     /// <p>A token for getting the next set of recipes.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

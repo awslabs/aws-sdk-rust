@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputS3Object {
     /// <p>The Amazon S3 bucket that contains the manifest.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name and location of the manifest file withiin the bucket.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the bucket.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl InputS3Object {

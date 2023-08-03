@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoExportRevisionToS3RequestDetails {
     /// <p>Encryption configuration for the auto export job.</p>
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
-    #[doc(hidden)]
     pub revision_destination: ::std::option::Option<crate::types::AutoExportRevisionDestinationEntry>,
 }
 impl AutoExportRevisionToS3RequestDetails {

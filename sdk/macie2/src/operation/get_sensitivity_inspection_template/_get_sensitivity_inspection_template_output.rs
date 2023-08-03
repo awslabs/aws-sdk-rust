@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSensitivityInspectionTemplateOutput {
     /// <p>The custom description of the template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The managed data identifiers that are explicitly excluded (not used) when analyzing data.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>,
     /// <p>The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing data.</p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>,
     /// <p>The name of the template: automated-sensitive-data-discovery.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the template.</p>
-    #[doc(hidden)]
     pub sensitivity_inspection_template_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

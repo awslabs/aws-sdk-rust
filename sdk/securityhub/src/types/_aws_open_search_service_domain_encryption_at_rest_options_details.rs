@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
     /// <p>Whether encryption at rest is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The KMS key ID.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {

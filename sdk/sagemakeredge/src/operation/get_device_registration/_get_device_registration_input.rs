@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceRegistrationInput {
     /// <p>The unique name of the device you want to get the registration status from.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet that the device belongs to.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceRegistrationInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetsInput {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    #[doc(hidden)]
     pub outpost_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    #[doc(hidden)]
     pub host_id_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum page size.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by state.</p>
-    #[doc(hidden)]
     pub status_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>,
 }
 impl ListAssetsInput {

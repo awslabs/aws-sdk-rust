@@ -10,7 +10,6 @@ pub struct PointInTimeRecovery {
     /// <li> <p> <code>status=ENABLED</code> </p> </li>
     /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
 }
 impl PointInTimeRecovery {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BundleInformation {
     /// <p>The bundle names.</p>
-    #[doc(hidden)]
     pub bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pricing tier.</p>
-    #[doc(hidden)]
     pub pricing_tier: ::std::option::Option<crate::types::PricingTier>,
 }
 impl BundleInformation {

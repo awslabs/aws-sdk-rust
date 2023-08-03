@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLensReviewsOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    #[doc(hidden)]
     pub lens_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,15 +5,12 @@
 pub struct GetAlarmsInput {
     /// <p>The name of the alarm.</p>
     /// <p>Specify an alarm name to return information about a specific alarm.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lightsail resource being monitored by the alarm.</p>
     /// <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
-    #[doc(hidden)]
     pub monitored_resource_name: ::std::option::Option<::std::string::String>,
 }
 impl GetAlarmsInput {

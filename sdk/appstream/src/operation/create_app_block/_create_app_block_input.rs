@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppBlockInput {
     /// <p>The name of the app block.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the app block.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the app block. This is not displayed to the user.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The source S3 location of the app block.</p>
-    #[doc(hidden)]
     pub source_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.</p>
-    #[doc(hidden)]
     pub setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     /// <p>The tags assigned to the app block.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code> PackagingType.</p>
-    #[doc(hidden)]
     pub post_setup_script_details: ::std::option::Option<crate::types::ScriptDetails>,
     /// <p>The packaging type of the app block.</p>
-    #[doc(hidden)]
     pub packaging_type: ::std::option::Option<crate::types::PackagingType>,
 }
 impl CreateAppBlockInput {

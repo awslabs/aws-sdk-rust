@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to get.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite definition version of the test suite to get.</p>
-    #[doc(hidden)]
     pub suite_definition_version: ::std::option::Option<::std::string::String>,
 }
 impl GetSuiteDefinitionInput {

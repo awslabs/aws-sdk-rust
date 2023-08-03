@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFileSystemAssociationsOutput {
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
-    #[doc(hidden)]
     pub file_system_association_info_list: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>>,
     _request_id: Option<String>,
 }

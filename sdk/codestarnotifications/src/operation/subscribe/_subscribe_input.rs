@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscribeInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::Target>,
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl SubscribeInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryByConfigRuleOutput {
     /// <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
-    #[doc(hidden)]
     pub compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FairsharePolicy {
     /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
-    #[doc(hidden)]
     pub share_decay_seconds: ::std::option::Option<i32>,
     /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
     /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
     /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves 50% of the maximum available vCPU if there's only one fair share identifier. It reserves 25% if there are two fair share identifiers. It reserves 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there's only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
     /// <p>The minimum value is 0 and the maximum value is 99.</p>
-    #[doc(hidden)]
     pub compute_reservation: ::std::option::Option<i32>,
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-    #[doc(hidden)]
     pub share_distribution: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>,
 }
 impl FairsharePolicy {

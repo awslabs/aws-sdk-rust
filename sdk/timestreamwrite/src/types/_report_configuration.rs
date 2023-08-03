@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportConfiguration {
     /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
-    #[doc(hidden)]
     pub report_s3_configuration: ::std::option::Option<crate::types::ReportS3Configuration>,
 }
 impl ReportConfiguration {

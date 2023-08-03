@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectionProperties {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
-    #[doc(hidden)]
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl VpcConnectionProperties {

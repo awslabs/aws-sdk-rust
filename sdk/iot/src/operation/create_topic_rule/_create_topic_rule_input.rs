@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTopicRuleInput {
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The rule payload.</p>
-    #[doc(hidden)]
     pub topic_rule_payload: ::std::option::Option<crate::types::TopicRulePayload>,
     /// <p>Metadata which can be used to manage the topic rule.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::string::String>,
 }
 impl CreateTopicRuleInput {

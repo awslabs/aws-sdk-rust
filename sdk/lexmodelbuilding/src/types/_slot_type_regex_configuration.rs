@@ -19,7 +19,6 @@ pub struct SlotTypeRegexConfiguration {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<::std::string::String>,
 }
 impl SlotTypeRegexConfiguration {

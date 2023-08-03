@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHealthCheckOutput {
     /// <p>A complex type that contains identifying information about the health check.</p>
-    #[doc(hidden)]
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     /// <p>The unique URL representing the new health check.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

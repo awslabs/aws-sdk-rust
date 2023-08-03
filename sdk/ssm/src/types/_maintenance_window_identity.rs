@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowIdentity {
     /// <p>The ID of the maintenance window.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the maintenance window.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the maintenance window.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the maintenance window is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The duration of the maintenance window in hours.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
-    #[doc(hidden)]
     pub cutoff: i32,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.</p>
-    #[doc(hidden)]
     pub schedule_timezone: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
-    #[doc(hidden)]
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    #[doc(hidden)]
     pub next_execution_time: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceWindowIdentity {

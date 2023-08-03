@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesInput {
     /// <p>The name of the domain you want to describe.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The analysis schemes you want to describe.</p>
-    #[doc(hidden)]
     pub analysis_scheme_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-    #[doc(hidden)]
     pub deployed: ::std::option::Option<bool>,
 }
 impl DescribeAnalysisSchemesInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
-    #[doc(hidden)]
     pub time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
     /// <ul>
@@ -14,10 +13,8 @@ pub struct Image {
     /// <ul>
     /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ImageError>,
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
-    #[doc(hidden)]
     pub image_content: ::std::option::Option<::std::string::String>,
 }
 impl Image {

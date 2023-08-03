@@ -6,11 +6,9 @@
 pub struct ResponseAction {
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
-    #[doc(hidden)]
     pub block: ::std::option::Option<crate::types::BlockAction>,
     /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
     /// <p>You must specify exactly one action, either <code>Block</code> or <code>Count</code>.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<crate::types::CountAction>,
 }
 impl ResponseAction {

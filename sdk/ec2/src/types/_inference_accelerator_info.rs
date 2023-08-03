@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceAcceleratorInfo {
     /// <p>Describes the Inference accelerators for the instance type.</p>
-    #[doc(hidden)]
     pub accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
     /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
-    #[doc(hidden)]
     pub total_inference_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl InferenceAcceleratorInfo {

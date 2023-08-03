@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstancesModificationResult {
     /// <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    #[doc(hidden)]
     pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     /// <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
-    #[doc(hidden)]
     pub target_configuration: ::std::option::Option<crate::types::ReservedInstancesConfiguration>,
 }
 impl ReservedInstancesModificationResult {

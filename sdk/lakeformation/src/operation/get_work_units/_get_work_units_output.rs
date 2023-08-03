@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkUnitsOutput {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the plan query operation.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    #[doc(hidden)]
     pub work_unit_ranges: ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>,
     _request_id: Option<String>,
 }

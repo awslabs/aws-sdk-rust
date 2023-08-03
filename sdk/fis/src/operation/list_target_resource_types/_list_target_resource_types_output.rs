@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTargetResourceTypesOutput {
     /// <p>The target resource types.</p>
-    #[doc(hidden)]
     pub target_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceTypeSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
-    #[doc(hidden)]
     pub progress_percentage: f64,
 }
 impl SlotMigration {

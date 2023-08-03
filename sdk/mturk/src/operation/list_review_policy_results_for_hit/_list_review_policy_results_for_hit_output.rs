@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReviewPolicyResultsForHitOutput {
     /// <p>The HITId of the HIT for which results have been returned.</p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
-    #[doc(hidden)]
     pub assignment_review_policy: ::std::option::Option<crate::types::ReviewPolicy>,
     /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
-    #[doc(hidden)]
     pub hit_review_policy: ::std::option::Option<crate::types::ReviewPolicy>,
     /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
-    #[doc(hidden)]
     pub assignment_review_report: ::std::option::Option<crate::types::ReviewReport>,
     /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
-    #[doc(hidden)]
     pub hit_review_report: ::std::option::Option<crate::types::ReviewReport>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsCaptionLanguageMapping {
     /// Caption channel.
-    #[doc(hidden)]
     pub caption_channel: ::std::option::Option<i32>,
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
-    #[doc(hidden)]
     pub custom_language_code: ::std::option::Option<::std::string::String>,
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// Caption language description.
-    #[doc(hidden)]
     pub language_description: ::std::option::Option<::std::string::String>,
 }
 impl HlsCaptionLanguageMapping {

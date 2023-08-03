@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpDialIn {
     /// <p>The IP address.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
-    #[doc(hidden)]
     pub comms_protocol: ::std::option::Option<crate::types::CommsProtocol>,
 }
 impl IpDialIn {

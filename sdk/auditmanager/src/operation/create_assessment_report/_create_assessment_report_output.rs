@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentReportOutput {
     /// <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
-    #[doc(hidden)]
     pub assessment_report: ::std::option::Option<crate::types::AssessmentReport>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestedFix {
     /// <p>A description of the suggested code fix and why it is being suggested. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The suggested code to add to your file. </p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl SuggestedFix {

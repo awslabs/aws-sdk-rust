@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportFilter {
     /// <p> The status used to filter reports. You can filter using one status only. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReportStatusType>,
 }
 impl ReportFilter {

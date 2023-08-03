@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefixList {
     /// <p>The IP address range of the Amazon Web Service.</p>
-    #[doc(hidden)]
     pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the prefix.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the prefix.</p>
-    #[doc(hidden)]
     pub prefix_list_name: ::std::option::Option<::std::string::String>,
 }
 impl PrefixList {

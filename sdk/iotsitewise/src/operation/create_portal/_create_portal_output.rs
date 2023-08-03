@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePortalOutput {
     /// <p>The ID of the created portal.</p>
-    #[doc(hidden)]
     pub portal_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
-    #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    #[doc(hidden)]
     pub portal_start_url: ::std::option::Option<::std::string::String>,
     /// <p>The status of the portal, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    #[doc(hidden)]
     pub portal_status: ::std::option::Option<crate::types::PortalStatus>,
     /// <p>The associated IAM Identity Center application ID, if the portal uses IAM Identity Center.</p>
-    #[doc(hidden)]
     pub sso_application_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

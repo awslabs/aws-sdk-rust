@@ -4,16 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrackerOutput {
     /// <p>The name of the updated tracker resource.</p>
-    #[doc(hidden)]
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tracker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

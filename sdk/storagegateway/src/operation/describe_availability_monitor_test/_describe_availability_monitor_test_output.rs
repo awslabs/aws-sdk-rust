@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityMonitorTestOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AvailabilityMonitorTestStatus>,
     /// <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

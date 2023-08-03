@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsInput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filters the datasets to be returned in the response.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::DatasetFilter>,
     /// <p>Identifies the next page of results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return in a response. The default is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListDatasetsInput {

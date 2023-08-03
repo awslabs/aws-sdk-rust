@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationInput {
     /// <p>The number of requested data processing units.</p>
-    #[doc(hidden)]
     pub target_dpus: ::std::option::Option<i32>,
     /// <p>The name of the capacity reservation to create.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the capacity reservation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCapacityReservationInput {

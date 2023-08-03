@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThresholdV2 {
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<::std::string::String>,
     /// <p>The threshold value to compare.</p>
-    #[doc(hidden)]
     pub threshold_value: ::std::option::Option<f64>,
 }
 impl ThresholdV2 {

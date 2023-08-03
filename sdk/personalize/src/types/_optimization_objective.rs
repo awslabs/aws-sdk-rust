@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptimizationObjective {
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
-    #[doc(hidden)]
     pub item_attribute: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
-    #[doc(hidden)]
     pub objective_sensitivity: ::std::option::Option<crate::types::ObjectiveSensitivity>,
 }
 impl OptimizationObjective {

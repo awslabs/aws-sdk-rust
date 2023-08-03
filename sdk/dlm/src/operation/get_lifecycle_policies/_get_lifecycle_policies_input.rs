@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePoliciesInput {
     /// <p>The identifiers of the data lifecycle policies.</p>
-    #[doc(hidden)]
     pub policy_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The activation state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::GettablePolicyStateValues>,
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    #[doc(hidden)]
     pub target_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    #[doc(hidden)]
     pub tags_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetLifecyclePoliciesInput {

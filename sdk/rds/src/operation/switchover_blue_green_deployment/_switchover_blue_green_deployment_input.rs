@@ -8,12 +8,10 @@ pub struct SwitchoverBlueGreenDeploymentInput {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub blue_green_deployment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, for the switchover to complete.</p>
     /// <p>Default: 300</p>
     /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
-    #[doc(hidden)]
     pub switchover_timeout: ::std::option::Option<i32>,
 }
 impl SwitchoverBlueGreenDeploymentInput {

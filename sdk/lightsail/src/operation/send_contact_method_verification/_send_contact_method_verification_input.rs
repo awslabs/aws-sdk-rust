@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendContactMethodVerificationInput {
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ContactMethodVerificationProtocol>,
 }
 impl SendContactMethodVerificationInput {

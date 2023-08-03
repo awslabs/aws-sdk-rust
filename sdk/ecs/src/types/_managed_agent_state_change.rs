@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedAgentStateChange {
     /// <p>The name of the container that's associated with the managed agent.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed agent.</p>
-    #[doc(hidden)]
     pub managed_agent_name: ::std::option::Option<crate::types::ManagedAgentName>,
     /// <p>The status of the managed agent.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the status of the managed agent.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ManagedAgentStateChange {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageDescriptorInput {
     /// <p>ID of the function package.</p>
-    #[doc(hidden)]
     pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
-    #[doc(hidden)]
     pub accept: ::std::option::Option<crate::types::DescriptorContentType>,
 }
 impl GetSolFunctionPackageDescriptorInput {

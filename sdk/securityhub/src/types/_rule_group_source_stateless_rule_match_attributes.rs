@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributes {
     /// <p>A list of port ranges to specify the destination ports to inspect for.</p>
-    #[doc(hidden)]
     pub destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>>,
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation.</p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations>>,
     /// <p>The protocols to inspect for.</p>
-    #[doc(hidden)]
     pub protocols: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>A list of port ranges to specify the source ports to inspect for.</p>
-    #[doc(hidden)]
     pub source_ports: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>>,
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources>>,
     /// <p>The TCP flags and masks to inspect for.</p>
-    #[doc(hidden)]
     pub tcp_flags: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributes {

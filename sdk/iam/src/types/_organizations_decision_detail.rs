@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationsDecisionDetail {
     /// <p>Specifies whether the simulated operation is allowed by the Organizations service control policies that impact the simulated user's account.</p>
-    #[doc(hidden)]
     pub allowed_by_organizations: bool,
 }
 impl OrganizationsDecisionDetail {

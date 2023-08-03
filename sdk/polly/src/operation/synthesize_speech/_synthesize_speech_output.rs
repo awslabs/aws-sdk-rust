@@ -13,10 +13,8 @@ pub struct SynthesizeSpeechOutput {
     /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is application/x-json-stream.</p> </li>
     /// </ul>
     /// <p> </p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>Number of characters synthesized.</p>
-    #[doc(hidden)]
     pub request_characters: i32,
     _request_id: Option<String>,
 }

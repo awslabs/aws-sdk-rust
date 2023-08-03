@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectMetricSetConfigInput {
     /// <p>An anomaly detector ARN.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>A data source.</p>
-    #[doc(hidden)]
     pub auto_detection_metric_source: ::std::option::Option<crate::types::AutoDetectionMetricSource>,
 }
 impl DetectMetricSetConfigInput {

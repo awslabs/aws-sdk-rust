@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedTranscript {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
-    #[doc(hidden)]
     pub transcript: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedTranscript {

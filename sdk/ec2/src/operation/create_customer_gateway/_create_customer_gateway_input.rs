@@ -6,29 +6,21 @@
 pub struct CreateCustomerGatewayInput {
     /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
     /// <p>Default: 65000</p>
-    #[doc(hidden)]
     pub bgp_asn: ::std::option::Option<i32>,
     /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>The tags to apply to the customer gateway.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateCustomerGatewayInput {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSetTurnRecord {
     /// <p>The record number associated with the turn.</p>
-    #[doc(hidden)]
     pub record_number: ::std::option::Option<i64>,
     /// <p>The unique identifier for the conversation associated with the turn.</p>
-    #[doc(hidden)]
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of turns that has elapsed up to that turn.</p>
-    #[doc(hidden)]
     pub turn_number: ::std::option::Option<i32>,
     /// <p>Contains information about the agent or user turn depending upon type of turn.</p>
-    #[doc(hidden)]
     pub turn_specification: ::std::option::Option<crate::types::TurnSpecification>,
 }
 impl TestSetTurnRecord {

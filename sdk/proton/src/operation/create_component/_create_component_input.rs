@@ -4,37 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateComponentInput {
     /// <p>The customer-provided name of the component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional customer-provided description of the component.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that you want to attach this component to. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Proton environment that you want to associate this component with. You must specify this when you don't specify <code>serviceInstanceName</code> and <code>serviceName</code>.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    #[doc(hidden)]
     pub template_file: ::std::option::Option<::std::string::String>,
     /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
-    #[doc(hidden)]
     pub manifest: ::std::option::Option<::std::string::String>,
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
-    #[doc(hidden)]
     pub service_spec: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token for the created component.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateComponentInput {

@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity that you want to change the DKIM settings for.</p>
-    #[doc(hidden)]
     pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
-    #[doc(hidden)]
     pub signing_enabled: bool,
 }
 impl PutEmailIdentityDkimAttributesInput {

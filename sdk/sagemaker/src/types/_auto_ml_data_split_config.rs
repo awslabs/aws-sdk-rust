@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlDataSplitConfig {
     /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
-    #[doc(hidden)]
     pub validation_fraction: ::std::option::Option<f32>,
 }
 impl AutoMlDataSplitConfig {

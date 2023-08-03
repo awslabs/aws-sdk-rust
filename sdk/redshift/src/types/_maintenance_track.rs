@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceTrack {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
-    #[doc(hidden)]
     pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number for the cluster release.</p>
-    #[doc(hidden)]
     pub database_version: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
-    #[doc(hidden)]
     pub update_targets: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTarget>>,
 }
 impl MaintenanceTrack {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccountSubscriptionInput {
     /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccountSubscriptionInput {

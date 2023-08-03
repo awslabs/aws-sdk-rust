@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
-    #[doc(hidden)]
     pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
-    #[doc(hidden)]
     pub test_windows: ::std::option::Option<::std::vec::Vec<crate::types::WindowSummary>>,
 }
 impl EvaluationResult {

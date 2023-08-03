@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Circle {
     /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
-    #[doc(hidden)]
     pub center: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
-    #[doc(hidden)]
     pub radius: ::std::option::Option<f64>,
 }
 impl Circle {

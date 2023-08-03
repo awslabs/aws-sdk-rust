@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePiiEntitiesDetectionJobOutput {
     /// <p>Provides information about a PII entities detection job.</p>
-    #[doc(hidden)]
     pub pii_entities_detection_job_properties: ::std::option::Option<crate::types::PiiEntitiesDetectionJobProperties>,
     _request_id: Option<String>,
 }

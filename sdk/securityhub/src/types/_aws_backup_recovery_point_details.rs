@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsBackupRecoveryPointDetails {
     /// <p>The size, in bytes, of a backup. </p>
-    #[doc(hidden)]
     pub backup_size_in_bytes: i64,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
-    #[doc(hidden)]
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps. </p>
-    #[doc(hidden)]
     pub calculated_lifecycle: ::std::option::Option<crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails>,
     /// <p>The date and time that a job to create a recovery point is completed, in Unix format and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
-    #[doc(hidden)]
     pub completion_date: ::std::option::Option<::std::string::String>,
     /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it. </p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::AwsBackupRecoveryPointCreatedByDetails>,
     /// <p>The date and time a recovery point is created, in Unix format and UTC. The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the server-side encryption key that is used to protect your backups. </p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point </p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted. </p>
-    #[doc(hidden)]
     pub is_encrypted: bool,
     /// <p>The date and time that a recovery point was last restored, in Unix format and UTC. The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. </p>
-    #[doc(hidden)]
     pub last_restore_time: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define </p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::AwsBackupRecoveryPointLifecycleDetails>,
     /// <p>An ARN that uniquely identifies a recovery point. </p>
-    #[doc(hidden)]
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services resource saved as a recovery point, such as an Amazon EBS volume or an Amazon RDS database. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account, this value will be null. </p>
-    #[doc(hidden)]
     pub source_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>A status code specifying the state of the recovery point. Valid values are as follows:</p>
     /// <ul>
@@ -59,10 +43,8 @@ pub struct AwsBackupRecoveryPointDetails {
     /// <li> <p> <code>EXPIRED</code> </p> </li>
     /// <li> <p> <code>PARTIAL</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A message explaining the reason of the recovery point deletion failure. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage class of the recovery point. Valid values are as follows:</p>
     /// <ul>
@@ -70,7 +52,6 @@ pub struct AwsBackupRecoveryPointDetails {
     /// <li> <p> <code>DELETED</code> </p> </li>
     /// <li> <p> <code>WARM</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<::std::string::String>,
 }
 impl AwsBackupRecoveryPointDetails {

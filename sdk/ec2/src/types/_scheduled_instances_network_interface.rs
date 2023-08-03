@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesNetworkInterface {
     /// <p>Indicates whether to assign a public IPv4 address to instances launched in a VPC. The public IPv4 address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
-    #[doc(hidden)]
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>Indicates whether to delete the interface when the instance is terminated.</p>
-    #[doc(hidden)]
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The index of the device for the network interface attachment.</p>
-    #[doc(hidden)]
     pub device_index: ::std::option::Option<i32>,
     /// <p>The IDs of the security groups.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of IPv6 addresses to assign to the network interface. The IPv6 addresses are automatically selected from the subnet range.</p>
-    #[doc(hidden)]
     pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p>The specific IPv6 addresses from the subnet range.</p>
-    #[doc(hidden)]
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses.</p>
-    #[doc(hidden)]
     pub private_ip_address_configs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>>,
     /// <p>The number of secondary private IPv4 addresses.</p>
-    #[doc(hidden)]
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesNetworkInterface {

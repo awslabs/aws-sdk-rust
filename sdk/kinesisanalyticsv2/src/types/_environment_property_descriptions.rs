@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentPropertyDescriptions {
     /// <p>Describes the execution property groups.</p>
-    #[doc(hidden)]
     pub property_group_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
 }
 impl EnvironmentPropertyDescriptions {

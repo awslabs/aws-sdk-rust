@@ -16,16 +16,12 @@ pub struct CapacitySpecificationSummary {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
-    #[doc(hidden)]
     pub read_capacity_units: ::std::option::Option<i64>,
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
-    #[doc(hidden)]
     pub write_capacity_units: ::std::option::Option<i64>,
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
-    #[doc(hidden)]
     pub last_update_to_pay_per_request_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CapacitySpecificationSummary {

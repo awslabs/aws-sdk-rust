@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesInput {
     /// <p>The ID of the managed device.</p>
-    #[doc(hidden)]
     pub managed_device_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of instance IDs associated with the managed device.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeviceEc2InstancesInput {

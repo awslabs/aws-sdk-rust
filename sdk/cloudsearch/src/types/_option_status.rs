@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp for when this option was last updated.</p>
-    #[doc(hidden)]
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique integer that indicates when this option was last updated.</p>
-    #[doc(hidden)]
     pub update_version: i32,
     /// <p>The state of processing a change to an option. Possible values:</p>
     /// <ul>
@@ -20,10 +17,8 @@ pub struct OptionStatus {
     /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
     /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::OptionState>,
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
-    #[doc(hidden)]
     pub pending_deletion: ::std::option::Option<bool>,
 }
 impl OptionStatus {

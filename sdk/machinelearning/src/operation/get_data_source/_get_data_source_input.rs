@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataSourceInput {
     /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
     /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
     /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
-    #[doc(hidden)]
     pub verbose: bool,
 }
 impl GetDataSourceInput {

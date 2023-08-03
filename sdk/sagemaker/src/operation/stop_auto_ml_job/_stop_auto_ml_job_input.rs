@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopAutoMlJobInput {
     /// <p>The name of the object you are requesting.</p>
-    #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
 }
 impl StopAutoMlJobInput {

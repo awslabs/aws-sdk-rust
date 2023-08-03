@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserSettings {
     /// <p>The telephony settings associated with the user.</p>
-    #[doc(hidden)]
     pub telephony: ::std::option::Option<crate::types::TelephonySettings>,
 }
 impl UserSettings {

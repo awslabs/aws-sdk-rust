@@ -6,22 +6,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlDomainInsights {
     /// <p>The name of the control domain. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the control domain. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The number of controls in the control domain that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
-    #[doc(hidden)]
     pub controls_count_by_noncompliant_evidence: ::std::option::Option<i32>,
     /// <p>The total number of controls in the control domain. </p>
-    #[doc(hidden)]
     pub total_controls_count: ::std::option::Option<i32>,
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control domain. </p>
-    #[doc(hidden)]
     pub evidence_insights: ::std::option::Option<crate::types::EvidenceInsights>,
     /// <p>The time when the control domain insights were last updated. </p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlDomainInsights {

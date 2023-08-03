@@ -5,7 +5,6 @@
 pub struct RemoveAccountFromOrganizationInput {
     /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAccountFromOrganizationInput {

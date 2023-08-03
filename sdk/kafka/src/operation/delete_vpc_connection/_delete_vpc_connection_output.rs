@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcConnectionOutput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
-    #[doc(hidden)]
     pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the VPC connection.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VpcConnectionState>,
     _request_id: Option<String>,
 }

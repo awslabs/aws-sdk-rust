@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Activity {
     /// <p>The activity type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ActivityType>,
     /// <p>The timestamp when the action was performed.</p>
-    #[doc(hidden)]
     pub time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
-    #[doc(hidden)]
     pub is_indirect_activity: bool,
     /// <p>The ID of the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The user who performed the action.</p>
-    #[doc(hidden)]
     pub initiator: ::std::option::Option<crate::types::UserMetadata>,
     /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
-    #[doc(hidden)]
     pub participants: ::std::option::Option<crate::types::Participants>,
     /// <p>The metadata of the resource involved in the user action.</p>
-    #[doc(hidden)]
     pub resource_metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
-    #[doc(hidden)]
     pub original_parent: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
-    #[doc(hidden)]
     pub comment_metadata: ::std::option::Option<crate::types::CommentMetadata>,
 }
 impl Activity {

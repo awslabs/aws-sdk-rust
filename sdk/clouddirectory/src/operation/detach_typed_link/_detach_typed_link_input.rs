@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachTypedLinkInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Used to accept a typed link specifier as input.</p>
-    #[doc(hidden)]
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
 }
 impl DetachTypedLinkInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserAccessLoggingSettings {
     /// <p>The ARN of the user access logging settings.</p>
-    #[doc(hidden)]
     pub user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of web portal ARNs that this user access logging settings is associated with.</p>
-    #[doc(hidden)]
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the Kinesis stream.</p>
-    #[doc(hidden)]
     pub kinesis_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl UserAccessLoggingSettings {

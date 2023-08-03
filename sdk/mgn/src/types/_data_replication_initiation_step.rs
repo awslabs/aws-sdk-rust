@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataReplicationInitiationStep {
     /// <p>Request to query data initiation step name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::DataReplicationInitiationStepName>,
     /// <p>Request to query data initiation status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DataReplicationInitiationStepStatus>,
 }
 impl DataReplicationInitiationStep {

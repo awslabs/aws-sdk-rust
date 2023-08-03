@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJournalS3ExportInput {

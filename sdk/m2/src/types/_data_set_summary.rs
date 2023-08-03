@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetSummary {
     /// <p>The name of the data set.</p>
-    #[doc(hidden)]
     pub data_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data set. The only supported value is VSAM.</p>
-    #[doc(hidden)]
     pub data_set_org: ::std::option::Option<::std::string::String>,
     /// <p>The format of the data set. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the data set was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data set was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data set was referenced.</p>
-    #[doc(hidden)]
     pub last_referenced_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataSetSummary {

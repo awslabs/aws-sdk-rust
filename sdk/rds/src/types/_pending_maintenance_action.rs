@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource. Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>, and <code>ca-certificate-rotation</code>.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date.</p>
-    #[doc(hidden)]
     pub auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the maintenance action is automatically applied.</p>
     /// <p>On this date, the maintenance action is applied to the resource as soon as possible, regardless of the maintenance window for the resource. There might be a delay of one or more days from this date before the maintenance action is applied.</p>
-    #[doc(hidden)]
     pub forced_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    #[doc(hidden)]
     pub opt_in_status: ::std::option::Option<::std::string::String>,
     /// <p>The effective date when the pending maintenance action is applied to the resource. This date takes into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-    #[doc(hidden)]
     pub current_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description providing more detail about the maintenance action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenanceAction {

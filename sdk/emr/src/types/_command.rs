@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Command {
     /// <p>The name of the command.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of the command script.</p>
-    #[doc(hidden)]
     pub script_path: ::std::option::Option<::std::string::String>,
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    #[doc(hidden)]
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Command {

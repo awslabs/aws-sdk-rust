@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChunksOutput {
     /// List of chunks
-    #[doc(hidden)]
     pub chunk_list: ::std::option::Option<::std::vec::Vec<crate::types::Chunk>>,
     /// Pagination token
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

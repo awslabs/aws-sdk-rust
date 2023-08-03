@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopTrainingEntityRecognizerInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
-    #[doc(hidden)]
     pub entity_recognizer_arn: ::std::option::Option<::std::string::String>,
 }
 impl StopTrainingEntityRecognizerInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorFilterNetworkServicesInput {
     /// <p>The ID of the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The network service, for example Amazon DNS, that you want to mirror.</p>
-    #[doc(hidden)]
     pub add_network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     /// <p>The network service, for example Amazon DNS, that you no longer want to mirror.</p>
-    #[doc(hidden)]
     pub remove_network_services: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorNetworkService>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifyTrafficMirrorFilterNetworkServicesInput {

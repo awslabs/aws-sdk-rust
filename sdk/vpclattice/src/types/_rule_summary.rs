@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleSummary {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the rule.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this is the default rule. Listener rules are created when you create a listener. Each listener has a default rule for checking connection requests. </p>
-    #[doc(hidden)]
     pub is_default: ::std::option::Option<bool>,
     /// <p> The priority of the rule. </p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RuleSummary {

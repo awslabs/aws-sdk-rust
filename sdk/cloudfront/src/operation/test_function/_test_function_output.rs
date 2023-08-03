@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestFunctionOutput {
     /// <p>An object that represents the result of running the function with the provided event object.</p>
-    #[doc(hidden)]
     pub test_result: ::std::option::Option<crate::types::TestResult>,
     _request_id: Option<String>,
 }

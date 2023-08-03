@@ -8,7 +8,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationData {
     /// <p>The assets that comprise the validation data. </p>
-    #[doc(hidden)]
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
 }
 impl ValidationData {

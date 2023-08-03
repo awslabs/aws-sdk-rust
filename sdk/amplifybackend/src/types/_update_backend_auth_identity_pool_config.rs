@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
-    #[doc(hidden)]
     pub unauthenticated_login: ::std::option::Option<bool>,
 }
 impl UpdateBackendAuthIdentityPoolConfig {

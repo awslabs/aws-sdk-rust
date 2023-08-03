@@ -13,7 +13,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelWorkflowExecutionDecisionAttributes {
     /// <p> Details of the cancellation.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
 }
 impl CancelWorkflowExecutionDecisionAttributes {

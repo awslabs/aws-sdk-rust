@@ -6,25 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterControl {
     /// <p>A control from a date filter that is used to specify date and time.</p>
-    #[doc(hidden)]
     pub date_time_picker: ::std::option::Option<crate::types::FilterDateTimePickerControl>,
     /// <p>A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.</p>
-    #[doc(hidden)]
     pub list: ::std::option::Option<crate::types::FilterListControl>,
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
-    #[doc(hidden)]
     pub dropdown: ::std::option::Option<crate::types::FilterDropDownControl>,
     /// <p>A control to display a text box that is used to enter a single entry.</p>
-    #[doc(hidden)]
     pub text_field: ::std::option::Option<crate::types::FilterTextFieldControl>,
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
-    #[doc(hidden)]
     pub text_area: ::std::option::Option<crate::types::FilterTextAreaControl>,
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
-    #[doc(hidden)]
     pub slider: ::std::option::Option<crate::types::FilterSliderControl>,
     /// <p>A control from a date filter that is used to specify the relative date.</p>
-    #[doc(hidden)]
     pub relative_date_time: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
 }
 impl FilterControl {

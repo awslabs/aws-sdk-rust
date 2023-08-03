@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct User {
     /// <p>The identifier of the user.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The email of the user.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the user.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EntityState>,
     /// <p>The role of the user.</p>
-    #[doc(hidden)]
     pub user_role: ::std::option::Option<crate::types::UserRole>,
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
-    #[doc(hidden)]
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
-    #[doc(hidden)]
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl User {

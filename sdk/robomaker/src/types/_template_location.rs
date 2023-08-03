@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateLocation {
     /// <p>The Amazon S3 bucket name.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The list of S3 keys identifying the data source files.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl TemplateLocation {

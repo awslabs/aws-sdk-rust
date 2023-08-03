@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingTrigger {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-    #[doc(hidden)]
     pub cloud_watch_alarm_definition: ::std::option::Option<crate::types::CloudWatchAlarmDefinition>,
 }
 impl ScalingTrigger {

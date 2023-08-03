@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChangeSetHooksOutput {
     /// <p>The change set identifier (stack ID).</p>
-    #[doc(hidden)]
     pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The change set name.</p>
-    #[doc(hidden)]
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>List of hook objects.</p>
-    #[doc(hidden)]
     pub hooks: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>>,
     /// <p>Provides the status of the change set hook.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ChangeSetHooksStatus>,
     /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The stack identifier (stack ID).</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The stack name.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

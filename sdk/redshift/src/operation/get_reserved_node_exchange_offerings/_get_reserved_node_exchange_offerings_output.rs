@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReservedNodeExchangeOfferingsOutput {
     /// <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
-    #[doc(hidden)]
     pub reserved_node_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>,
     _request_id: Option<String>,
 }

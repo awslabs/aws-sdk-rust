@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRightsizingRecommendationOutput {
     /// <p>Information regarding this specific recommendation set.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::RightsizingRecommendationMetadata>,
     /// <p>Summary of this recommendation set.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<crate::types::RightsizingRecommendationSummary>,
     /// <p>Recommendations to rightsize resources.</p>
-    #[doc(hidden)]
     pub rightsizing_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RightsizingRecommendation>>,
     /// <p>The token to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::RightsizingRecommendationConfiguration>,
     _request_id: Option<String>,
 }

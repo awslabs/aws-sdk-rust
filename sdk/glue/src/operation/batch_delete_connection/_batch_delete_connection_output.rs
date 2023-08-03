@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteConnectionOutput {
     /// <p>A list of names of the connection definitions that were successfully deleted.</p>
-    #[doc(hidden)]
     pub succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>>,
     _request_id: Option<String>,
 }

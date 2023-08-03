@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Search {
     /// <p>Indicates that the field can be used to create search facets, a count of results for each value in the field. The default is <code>false</code> .</p>
-    #[doc(hidden)]
     pub facetable: bool,
     /// <p>Determines whether the field is used in the search. If the <code>Searchable</code> field is <code>true</code>, you can use relevance tuning to manually tune how Amazon Kendra weights the field in the search. The default is <code>true</code> for string fields and <code>false</code> for number and date fields.</p>
-    #[doc(hidden)]
     pub searchable: bool,
     /// <p>Determines whether the field is returned in the query response. The default is <code>true</code>.</p>
-    #[doc(hidden)]
     pub displayable: bool,
     /// <p>Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub sortable: bool,
 }
 impl Search {

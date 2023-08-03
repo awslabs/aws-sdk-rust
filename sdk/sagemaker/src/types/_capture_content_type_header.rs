@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptureContentTypeHeader {
     /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
-    #[doc(hidden)]
     pub csv_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
-    #[doc(hidden)]
     pub json_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CaptureContentTypeHeader {

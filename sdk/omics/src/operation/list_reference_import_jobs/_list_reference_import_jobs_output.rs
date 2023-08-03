@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReferenceImportJobsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A lis of jobs.</p>
-    #[doc(hidden)]
     pub import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ImportReferenceJobItem>>,
     _request_id: Option<String>,
 }

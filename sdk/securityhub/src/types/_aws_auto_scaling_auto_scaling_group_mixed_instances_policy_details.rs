@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
     /// <p>The instances distribution. The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacity.</p>
-    #[doc(hidden)]
     pub instances_distribution: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails>,
     /// <p>The launch template to use and the instance types (overrides) to use to provision EC2 instances to fulfill On-Demand and Spot capacities.</p>
-    #[doc(hidden)]
     pub launch_template: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails>,
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ipv6CidrBlockAssociation {
     /// <p>The association ID for the IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR block.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
     /// <ul>
@@ -19,7 +17,6 @@ pub struct Ipv6CidrBlockAssociation {
     /// <li> <p> <code>failed</code> </p> </li>
     /// <li> <p> <code>failing</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cidr_block_state: ::std::option::Option<::std::string::String>,
 }
 impl Ipv6CidrBlockAssociation {

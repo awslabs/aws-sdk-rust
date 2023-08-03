@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerShortInfoResponse {
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
 }
 impl ServerShortInfoResponse {

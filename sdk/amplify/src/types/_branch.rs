@@ -5,86 +5,59 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Branch {
     /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub branch_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name for the branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> The description for the branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The tag for the branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The current stage for the branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::Stage>,
     /// <p> The display name for the branch. This is used as the default domain prefix. </p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p> Enables notifications for a branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub enable_notification: ::std::option::Option<bool>,
     /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The environment variables specific to a branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Enables auto-building on push for a branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub enable_auto_build: ::std::option::Option<bool>,
     /// <p> The custom domains for a branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub custom_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The framework for a branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub framework: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the active job for a branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub active_job_id: ::std::option::Option<::std::string::String>,
     /// <p> The total number of jobs that are part of an Amplify app. </p>
-    #[doc(hidden)]
     pub total_number_of_jobs: ::std::option::Option<::std::string::String>,
     /// <p> Enables basic authorization for a branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub enable_basic_auth: ::std::option::Option<bool>,
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-    #[doc(hidden)]
     pub enable_performance_mode: ::std::option::Option<bool>,
     /// <p> The thumbnail URL for the branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub thumbnail_url: ::std::option::Option<::std::string::String>,
     /// <p> The basic authorization credentials for a branch of an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    #[doc(hidden)]
     pub basic_auth_credentials: ::std::option::Option<::std::string::String>,
     /// <p> The build specification (build spec) content for the branch of an Amplify app. </p>
-    #[doc(hidden)]
     pub build_spec: ::std::option::Option<::std::string::String>,
     /// <p> The content Time to Live (TTL) for the website in seconds. </p>
-    #[doc(hidden)]
     pub ttl: ::std::option::Option<::std::string::String>,
     /// <p> A list of custom resources that are linked to this branch. </p>
-    #[doc(hidden)]
     pub associated_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Enables pull request previews for the branch. </p>
-    #[doc(hidden)]
     pub enable_pull_request_preview: ::std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
-    #[doc(hidden)]
     pub pull_request_environment_name: ::std::option::Option<::std::string::String>,
     /// <p> The destination branch if the branch is a pull request branch. </p>
-    #[doc(hidden)]
     pub destination_branch: ::std::option::Option<::std::string::String>,
     /// <p> The source branch if the branch is a pull request branch. </p>
-    #[doc(hidden)]
     pub source_branch: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub backend_environment_arn: ::std::option::Option<::std::string::String>,
 }
 impl Branch {

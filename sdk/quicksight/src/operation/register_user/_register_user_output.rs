@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterUserOutput {
     /// <p>The user's user name.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<crate::types::User>,
     /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
-    #[doc(hidden)]
     pub user_invitation_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

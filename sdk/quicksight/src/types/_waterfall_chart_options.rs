@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaterfallChartOptions {
     /// <p>This option determines the total bar label of a waterfall visual.</p>
-    #[doc(hidden)]
     pub total_bar_label: ::std::option::Option<::std::string::String>,
 }
 impl WaterfallChartOptions {

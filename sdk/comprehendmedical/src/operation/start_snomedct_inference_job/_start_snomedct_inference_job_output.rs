@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSnomedctInferenceJobOutput {
     /// <p> The identifier generated for the job. To get the status of a job, use this identifier with the StartSNOMEDCTInferenceJob operation. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

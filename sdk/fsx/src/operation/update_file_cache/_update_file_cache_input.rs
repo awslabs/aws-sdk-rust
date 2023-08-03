@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFileCacheInput {
     /// <p>The ID of the cache that you are updating.</p>
-    #[doc(hidden)]
     pub file_cache_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration updates for an Amazon File Cache resource.</p>
-    #[doc(hidden)]
     pub lustre_configuration: ::std::option::Option<crate::types::UpdateFileCacheLustreConfiguration>,
 }
 impl UpdateFileCacheInput {

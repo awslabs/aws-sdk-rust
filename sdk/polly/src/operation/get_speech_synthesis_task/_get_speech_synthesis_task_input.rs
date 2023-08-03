@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSpeechSynthesisTaskInput {
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSpeechSynthesisTaskInput {

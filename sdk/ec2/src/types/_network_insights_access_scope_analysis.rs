@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInsightsAccessScopeAnalysis {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope analysis.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_analysis_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Network Access Scope.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AnalysisStatus>,
     /// <p>The status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The warning message.</p>
-    #[doc(hidden)]
     pub warning_message: ::std::option::Option<::std::string::String>,
     /// <p>The analysis start date.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The analysis end date.</p>
-    #[doc(hidden)]
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether there are findings.</p>
-    #[doc(hidden)]
     pub findings_found: ::std::option::Option<crate::types::FindingsFound>,
     /// <p>The number of network interfaces analyzed.</p>
-    #[doc(hidden)]
     pub analyzed_eni_count: ::std::option::Option<i32>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl NetworkInsightsAccessScopeAnalysis {

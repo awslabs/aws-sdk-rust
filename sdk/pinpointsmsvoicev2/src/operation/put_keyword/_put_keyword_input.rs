@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The new keyword to add.</p>
-    #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with the keyword.</p>
     /// <ul>
@@ -15,10 +13,8 @@ pub struct PutKeywordInput {
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub keyword_message: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform for the new keyword when it is received.</p>
-    #[doc(hidden)]
     pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
 }
 impl PutKeywordInput {

@@ -5,16 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchivalSummary {
     /// <p>The date and time when table archival was initiated by DynamoDB, in UNIX epoch time format.</p>
-    #[doc(hidden)]
     pub archival_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     /// <ul>
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub archival_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when applicable in the archival reason. If you wish to restore this backup to the same table name, you will need to delete the original table.</p>
-    #[doc(hidden)]
     pub archival_backup_arn: ::std::option::Option<::std::string::String>,
 }
 impl ArchivalSummary {

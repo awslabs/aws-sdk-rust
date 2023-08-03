@@ -8,20 +8,16 @@ pub struct ListSharedProjectsInput {
     /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
     /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SharedResourceSortByType>,
     /// <p>The order in which to list shared build projects. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
     /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSharedProjectsInput {

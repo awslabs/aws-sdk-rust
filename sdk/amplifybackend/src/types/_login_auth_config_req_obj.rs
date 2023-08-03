@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoginAuthConfigReqObj {
     /// <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login authorization.</p>
-    #[doc(hidden)]
     pub aws_cognito_identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region for the Amplify Admin UI login.</p>
-    #[doc(hidden)]
     pub aws_cognito_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.</p>
-    #[doc(hidden)]
     pub aws_user_pools_id: ::std::option::Option<::std::string::String>,
     /// <p>The web client ID for the Amazon Cognito user pools.</p>
-    #[doc(hidden)]
     pub aws_user_pools_web_client_id: ::std::option::Option<::std::string::String>,
 }
 impl LoginAuthConfigReqObj {

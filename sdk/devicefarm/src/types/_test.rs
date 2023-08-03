@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Test {
     /// <p>The test's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The test's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -34,10 +32,8 @@ pub struct Test {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TestType>,
     /// <p>When the test was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test's status.</p>
     /// <p>Allowed values include:</p>
@@ -52,7 +48,6 @@ pub struct Test {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The test's result.</p>
     /// <p>Allowed values include:</p>
@@ -65,22 +60,16 @@ pub struct Test {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>The test's start time.</p>
-    #[doc(hidden)]
     pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test's stop time.</p>
-    #[doc(hidden)]
     pub stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test's result counters.</p>
-    #[doc(hidden)]
     pub counters: ::std::option::Option<crate::types::Counters>,
     /// <p>A message about the test's result.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Represents the total (metered or unmetered) minutes used by the test.</p>
-    #[doc(hidden)]
     pub device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
 }
 impl Test {

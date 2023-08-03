@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Logging {
     /// <p>The Amazon S3 logging configuration.</p>
-    #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::S3Logs>,
 }
 impl Logging {

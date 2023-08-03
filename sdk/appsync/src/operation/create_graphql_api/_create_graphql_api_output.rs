@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGraphqlApiOutput {
     /// <p>The <code>GraphqlApi</code>.</p>
-    #[doc(hidden)]
     pub graphql_api: ::std::option::Option<crate::types::GraphqlApi>,
     _request_id: Option<String>,
 }

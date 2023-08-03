@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSpaceOutput {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the space exists.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the space displayed to users.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the space.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

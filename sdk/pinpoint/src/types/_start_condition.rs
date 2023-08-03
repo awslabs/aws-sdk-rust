@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCondition {
     /// <p>The custom description of the condition.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
-    #[doc(hidden)]
     pub event_start_condition: ::std::option::Option<crate::types::EventStartCondition>,
     /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
-    #[doc(hidden)]
     pub segment_start_condition: ::std::option::Option<crate::types::SegmentCondition>,
 }
 impl StartCondition {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
-    #[doc(hidden)]
     pub access_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
-    #[doc(hidden)]
     pub access_policy_identity: ::std::option::Option<crate::types::Identity>,
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-    #[doc(hidden)]
     pub access_policy_resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-    #[doc(hidden)]
     pub access_policy_permission: ::std::option::Option<crate::types::Permission>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAccessPolicyInput {

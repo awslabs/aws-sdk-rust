@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBucketInventoryConfigurationsOutput {
     /// <p>If sent in the request, the marker that is used as a starting point for this inventory configuration list response.</p>
-    #[doc(hidden)]
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of inventory configurations for a bucket.</p>
-    #[doc(hidden)]
     pub inventory_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::InventoryConfiguration>>,
     /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
-    #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
-    #[doc(hidden)]
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

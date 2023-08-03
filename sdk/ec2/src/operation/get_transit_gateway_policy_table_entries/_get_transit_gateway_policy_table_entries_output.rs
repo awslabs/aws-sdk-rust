@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPolicyTableEntriesOutput {
     /// <p>The entries for the transit gateway policy table.</p>
-    #[doc(hidden)]
     pub transit_gateway_policy_table_entries: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>>,
     _request_id: Option<String>,
 }

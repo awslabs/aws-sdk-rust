@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyPhrase {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p>The text of a key noun phrase.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The zero-based offset from the beginning of the source text to the first character in the key phrase.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based offset from the beginning of the source text to the last character in the key phrase.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
 }
 impl KeyPhrase {

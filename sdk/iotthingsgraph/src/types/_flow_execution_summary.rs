@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowExecutionSummary {
     /// <p>The ID of the flow execution.</p>
-    #[doc(hidden)]
     pub flow_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the flow execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FlowExecutionStatus>,
     /// <p>The ID of the system instance that contains the flow.</p>
-    #[doc(hidden)]
     pub system_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the flow.</p>
-    #[doc(hidden)]
     pub flow_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the flow execution summary was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the flow execution summary was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FlowExecutionSummary {

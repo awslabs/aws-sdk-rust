@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonthlySetting {
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
-    #[doc(hidden)]
     pub day_of_month: ::std::option::Option<i32>,
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-    #[doc(hidden)]
     pub hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
 }
 impl MonthlySetting {

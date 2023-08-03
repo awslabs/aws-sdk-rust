@@ -5,59 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureGroup {
     /// <p>The Amazon Resource Name (ARN) of a <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureGroup</code> <code>FeatureDefinitions</code>.</p>
-    #[doc(hidden)]
     pub record_identifier_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.</p>
     /// <p>A <code>EventTime</code> is point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>
-    #[doc(hidden)]
     pub event_time_feature_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Feature</code>s. Each <code>Feature</code> must include a <code>FeatureName</code> and a <code>FeatureType</code>. </p>
     /// <p>Valid <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>. </p>
     /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     /// <p>The time a <code>FeatureGroup</code> was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating the last time you updated the feature group.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly.</p>
     /// <p>The default value is <code>False</code>.</p>
-    #[doc(hidden)]
     pub online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
     /// <p>The configuration of an <code>OfflineStore</code>.</p>
     /// <p>Provide an <code>OfflineStoreConfig</code> in a request to <code>CreateFeatureGroup</code> to create an <code>OfflineStore</code>.</p>
     /// <p>To encrypt an <code>OfflineStore</code> using at rest data encryption, specify Amazon Web Services Key Management Service (KMS) key ID, or <code>KMSKeyId</code>, in <code>S3StorageConfig</code>.</p>
-    #[doc(hidden)]
     pub offline_store_config: ::std::option::Option<crate::types::OfflineStoreConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to create the feature group.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A <code>FeatureGroup</code> status.</p>
-    #[doc(hidden)]
     pub feature_group_status: ::std::option::Option<crate::types::FeatureGroupStatus>,
     /// <p>The status of <code>OfflineStore</code>.</p>
-    #[doc(hidden)]
     pub offline_store_status: ::std::option::Option<crate::types::OfflineStoreStatus>,
     /// <p>A value that indicates whether the feature group was updated successfully.</p>
-    #[doc(hidden)]
     pub last_update_status: ::std::option::Option<crate::types::LastUpdateStatus>,
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure may be due to a failure to create a <code>FeatureGroup</code> in or delete a <code>FeatureGroup</code> from the <code>OfflineStore</code>.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A free form description of a <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags used to define a <code>FeatureGroup</code>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl FeatureGroup {

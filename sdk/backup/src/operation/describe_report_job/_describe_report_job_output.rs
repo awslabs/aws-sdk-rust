@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReportJobOutput {
     /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
-    #[doc(hidden)]
     pub report_job: ::std::option::Option<crate::types::ReportJob>,
     _request_id: Option<String>,
 }

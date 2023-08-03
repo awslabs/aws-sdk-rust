@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSuiteDefinitionInput {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
-    #[doc(hidden)]
     pub suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
     /// <p>The tags to be attached to the suite definition.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSuiteDefinitionInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputSettings {
     /// Settings for HLS output groups
-    #[doc(hidden)]
     pub hls_settings: ::std::option::Option<crate::types::HlsSettings>,
 }
 impl OutputSettings {

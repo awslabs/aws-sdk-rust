@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCelebrityInfoOutput {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    #[doc(hidden)]
     pub urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the celebrity.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves the known gender for the celebrity.</p>
-    #[doc(hidden)]
     pub known_gender: ::std::option::Option<crate::types::KnownGender>,
     _request_id: Option<String>,
 }

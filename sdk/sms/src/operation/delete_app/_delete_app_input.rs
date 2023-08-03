@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppInput {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
-    #[doc(hidden)]
     pub force_stop_app_replication: ::std::option::Option<bool>,
     /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
-    #[doc(hidden)]
     pub force_terminate_app: ::std::option::Option<bool>,
 }
 impl DeleteAppInput {

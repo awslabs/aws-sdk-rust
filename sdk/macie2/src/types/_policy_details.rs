@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyDetails {
     /// <p>The action that produced the finding.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::FindingAction>,
     /// <p>The entity that performed the action that produced the finding.</p>
-    #[doc(hidden)]
     pub actor: ::std::option::Option<crate::types::FindingActor>,
 }
 impl PolicyDetails {

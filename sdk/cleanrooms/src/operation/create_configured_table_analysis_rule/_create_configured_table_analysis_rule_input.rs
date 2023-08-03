@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAnalysisRuleInput {
     /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
-    #[doc(hidden)]
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
-    #[doc(hidden)]
     pub analysis_rule_type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
     /// <p>The entire created configured table analysis rule object.</p>
-    #[doc(hidden)]
     pub analysis_rule_policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
 }
 impl CreateConfiguredTableAnalysisRuleInput {

@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateServiceInstanceInput {
     /// <p>The name of the service instance to create.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service the service instance is added to.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The spec for the service instance you want to create.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    #[doc(hidden)]
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    #[doc(hidden)]
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token of the service instance to create.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateServiceInstanceInput {

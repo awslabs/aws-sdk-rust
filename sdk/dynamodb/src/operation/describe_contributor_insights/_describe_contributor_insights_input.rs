@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContributorInsightsInput {
     /// <p>The name of the table to describe.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the global secondary index to describe, if applicable.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContributorInsightsInput {

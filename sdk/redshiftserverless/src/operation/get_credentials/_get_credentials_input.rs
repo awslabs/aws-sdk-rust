@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCredentialsInput {
     /// <p>The name of the workgroup associated with the database.</p>
-    #[doc(hidden)]
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
@@ -15,10 +14,8 @@ pub struct GetCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
 }
 impl GetCredentialsInput {

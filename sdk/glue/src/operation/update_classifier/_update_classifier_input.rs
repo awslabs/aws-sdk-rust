@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClassifierInput {
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
-    #[doc(hidden)]
     pub grok_classifier: ::std::option::Option<crate::types::UpdateGrokClassifierRequest>,
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
-    #[doc(hidden)]
     pub xml_classifier: ::std::option::Option<crate::types::UpdateXmlClassifierRequest>,
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
-    #[doc(hidden)]
     pub json_classifier: ::std::option::Option<crate::types::UpdateJsonClassifierRequest>,
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
-    #[doc(hidden)]
     pub csv_classifier: ::std::option::Option<crate::types::UpdateCsvClassifierRequest>,
 }
 impl UpdateClassifierInput {

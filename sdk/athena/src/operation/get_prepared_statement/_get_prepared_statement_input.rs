@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPreparedStatementInput {
     /// <p>The name of the prepared statement to retrieve.</p>
-    #[doc(hidden)]
     pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl GetPreparedStatementInput {

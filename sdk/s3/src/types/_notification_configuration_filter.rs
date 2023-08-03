@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfigurationFilter {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::S3KeyFilter>,
 }
 impl NotificationConfigurationFilter {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncOrganizationalUnit {
     /// <p>The Organizations unit ID data source for the sync.</p>
-    #[doc(hidden)]
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDataSyncOrganizationalUnit {

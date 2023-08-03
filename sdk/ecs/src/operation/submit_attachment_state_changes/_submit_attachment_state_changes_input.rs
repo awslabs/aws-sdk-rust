@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitAttachmentStateChangesInput {
     /// <p>The short name or full ARN of the cluster that hosts the container instance the attachment belongs to.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>Any attachments associated with the state change request.</p>
-    #[doc(hidden)]
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentStateChange>>,
 }
 impl SubmitAttachmentStateChangesInput {

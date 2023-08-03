@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConversionTasksOutput {
     /// <p>Information about the conversion tasks.</p>
-    #[doc(hidden)]
     pub conversion_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ConversionTask>>,
     _request_id: Option<String>,
 }

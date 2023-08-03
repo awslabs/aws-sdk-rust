@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsAggregator {
     /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.</p>
-    #[doc(hidden)]
     pub aggregator_type: ::std::option::Option<::std::string::String>,
     /// <p>The data type name to use for viewing counts of OpsData.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The aggregator value.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The aggregator filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,
     /// <p>A nested aggregator for viewing counts of OpsData.</p>
-    #[doc(hidden)]
     pub aggregators: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>,
 }
 impl OpsAggregator {

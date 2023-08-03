@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitivityInspectionTemplatesEntry {
     /// <p>The unique identifier for the sensitivity inspection template.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the sensitivity inspection template: automated-sensitive-data-discovery.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl SensitivityInspectionTemplatesEntry {

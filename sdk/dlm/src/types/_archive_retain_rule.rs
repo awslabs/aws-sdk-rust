@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveRetainRule {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
-    #[doc(hidden)]
     pub retention_archive_tier: ::std::option::Option<crate::types::RetentionArchiveTier>,
 }
 impl ArchiveRetainRule {

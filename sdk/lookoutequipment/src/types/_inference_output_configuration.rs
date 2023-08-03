@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceOutputConfiguration {
     /// <p> Specifies configuration information for the output results from for the inference, output S3 location. </p>
-    #[doc(hidden)]
     pub s3_output_configuration: ::std::option::Option<crate::types::InferenceS3OutputConfiguration>,
     /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl InferenceOutputConfiguration {

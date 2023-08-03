@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchMetricsDetail {
     /// <p> The name of the CloudWatch metric. </p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p> The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics. </p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> An array of CloudWatch dimensions associated with </p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
-    #[doc(hidden)]
     pub stat: ::std::option::Option<crate::types::CloudWatchMetricsStat>,
     /// <p> The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>, <code>Count</code>, and <code>Percent</code>. </p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p> The length of time associated with the CloudWatch metric in number of seconds. </p>
-    #[doc(hidden)]
     pub period: i32,
     /// <p>This object returns anomaly metric data.</p>
-    #[doc(hidden)]
     pub metric_data_summary: ::std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
 }
 impl CloudWatchMetricsDetail {

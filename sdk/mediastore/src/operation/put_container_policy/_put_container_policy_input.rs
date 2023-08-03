@@ -4,14 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutContainerPolicyInput {
     /// <p>The name of the container.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
     /// <li> <p>One <code>Version</code> tag</p> </li>
     /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutContainerPolicyInput {

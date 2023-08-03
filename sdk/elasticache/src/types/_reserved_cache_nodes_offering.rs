@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedCacheNodesOffering {
     /// <p>A unique identifier for the reserved cache node offering.</p>
-    #[doc(hidden)]
     pub reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The cache node type for the reserved cache node.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -36,25 +35,18 @@ pub struct ReservedCacheNodesOffering {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the offering. in seconds.</p>
-    #[doc(hidden)]
     pub duration: i32,
     /// <p>The fixed price charged for this offering.</p>
-    #[doc(hidden)]
     pub fixed_price: f64,
     /// <p>The hourly price charged for this offering.</p>
-    #[doc(hidden)]
     pub usage_price: f64,
     /// <p>The cache engine used by the offering.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type.</p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>The recurring price charged to run this reserved cache node.</p>
-    #[doc(hidden)]
     pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedCacheNodesOffering {

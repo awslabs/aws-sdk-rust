@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub target_group_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetTargetGroupInput {

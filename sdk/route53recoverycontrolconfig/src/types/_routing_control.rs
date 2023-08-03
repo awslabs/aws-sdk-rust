@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingControl {
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-    #[doc(hidden)]
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing control.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    #[doc(hidden)]
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
 }
 impl RoutingControl {

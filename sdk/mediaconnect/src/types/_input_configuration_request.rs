@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfigurationRequest {
     /// The port that you want the flow to listen on for an incoming media stream.
-    #[doc(hidden)]
     pub input_port: ::std::option::Option<i32>,
     /// The VPC interface that you want to use for the incoming media stream.
-    #[doc(hidden)]
     pub interface: ::std::option::Option<crate::types::InterfaceRequest>,
 }
 impl InputConfigurationRequest {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
-    #[doc(hidden)]
     pub dev_eui: ::std::option::Option<::std::string::String>,
 }
 impl LoRaWanListDevice {

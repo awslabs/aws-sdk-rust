@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUploadStatusInput {
     /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUploadStatusInput {

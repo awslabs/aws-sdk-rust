@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSimilarProfilesOutput {
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
-    #[doc(hidden)]
     pub profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
-    #[doc(hidden)]
     pub match_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the type of matching to get similar profiles for.</p>
-    #[doc(hidden)]
     pub match_type: ::std::option::Option<crate::types::MatchType>,
     /// <p>The integer rule level that the profiles matched on.</p>
-    #[doc(hidden)]
     pub rule_level: ::std::option::Option<i32>,
     /// <p>It only has value when the <code>MatchType</code> is <code>ML_BASED_MATCHING</code>.A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used as an absolute measure of matching quality.</p>
-    #[doc(hidden)]
     pub confidence_score: ::std::option::Option<f64>,
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

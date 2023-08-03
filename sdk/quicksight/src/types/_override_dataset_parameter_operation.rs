@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverrideDatasetParameterOperation {
     /// <p>The name of the parameter to be overridden with different values.</p>
-    #[doc(hidden)]
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the parameter.</p>
-    #[doc(hidden)]
     pub new_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The new default values for the parameter.</p>
-    #[doc(hidden)]
     pub new_default_values: ::std::option::Option<crate::types::NewDefaultValues>,
 }
 impl OverrideDatasetParameterOperation {

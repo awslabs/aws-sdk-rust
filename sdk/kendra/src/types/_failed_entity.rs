@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedEntity {
     /// <p>The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason the user or group in your IAM Identity Center identity source failed to properly configure with your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedEntity {

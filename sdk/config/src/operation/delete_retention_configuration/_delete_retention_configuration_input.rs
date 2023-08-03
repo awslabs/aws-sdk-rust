@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRetentionConfigurationInput {
     /// <p>The name of the retention configuration to delete.</p>
-    #[doc(hidden)]
     pub retention_configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRetentionConfigurationInput {

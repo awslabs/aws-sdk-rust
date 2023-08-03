@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogConfigurations {
     /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloudwatch: ::std::option::Option<crate::types::LogConfiguration>,
 }
 impl LogConfigurations {

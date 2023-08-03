@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProposalInput {
     /// <p>The unique identifier of the network for which the proposal is made.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the proposal.</p>
-    #[doc(hidden)]
     pub proposal_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProposalInput {

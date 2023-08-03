@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupReferencesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the security groups in your account.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSecurityGroupReferencesInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricWidgetImageOutput {
     /// <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
-    #[doc(hidden)]
     pub metric_widget_image: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }

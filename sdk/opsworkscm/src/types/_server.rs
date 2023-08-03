@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Server {
     /// <p>Associate a public IP address with a server that you are launching. </p>
-    #[doc(hidden)]
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>The number of automated backups to keep. </p>
-    #[doc(hidden)]
     pub backup_retention_count: ::std::option::Option<i32>,
     /// <p>The name of the server. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code> </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the CloudFormation stack that was used to create the server. </p>
-    #[doc(hidden)]
     pub cloud_formation_stack_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
-    #[doc(hidden)]
     pub custom_domain: ::std::option::Option<::std::string::String>,
     /// <p>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount. </p>
-    #[doc(hidden)]
     pub disable_automated_backup: ::std::option::Option<bool>,
     /// <p> A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified. </p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The engine type of the server. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
-    #[doc(hidden)]
     pub engine_model: ::std::option::Option<::std::string::String>,
     /// <p>The response of a createServer() request returns the master credential to access the server in EngineAttributes. These credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer(). </p>
     /// <p class="title"> <b>Attributes returned in a createServer response for Chef</b> </p>
@@ -45,46 +35,32 @@ pub struct Server {
     /// <li> <p> <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including a README and a required private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents.</p> </li>
     /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
     /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>. </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The instance profile ARN of the server. </p>
-    #[doc(hidden)]
     pub instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p> The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console. </p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The key pair associated with the server. </p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<::std::string::String>,
     /// <p>The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>. </p>
-    #[doc(hidden)]
     pub maintenance_status: ::std::option::Option<crate::types::MaintenanceStatus>,
     /// <p>The preferred maintenance period specified for the server. </p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The preferred backup period specified for the server. </p>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p> The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console. </p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The service role ARN used to create the server. </p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server, as well as the server's health state. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ServerStatus>,
     /// <p> Depending on the server status, this field has either a human-readable message (such as a create or backup error), or an escaped block of JSON (used for health check results). </p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p> The subnet IDs specified in a CreateServer request. </p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the server. </p>
-    #[doc(hidden)]
     pub server_arn: ::std::option::Option<::std::string::String>,
 }
 impl Server {

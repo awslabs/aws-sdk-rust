@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveSourceServerActionInput {
     /// <p>Source server ID of the post migration custom action to remove.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action ID to remove.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveSourceServerActionInput {

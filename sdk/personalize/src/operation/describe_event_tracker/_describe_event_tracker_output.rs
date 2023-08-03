@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventTrackerOutput {
     /// <p>An object that describes the event tracker.</p>
-    #[doc(hidden)]
     pub event_tracker: ::std::option::Option<crate::types::EventTracker>,
     _request_id: Option<String>,
 }

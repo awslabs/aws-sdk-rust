@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectivityInfoInput {
     /// A list of connectivity info.
-    #[doc(hidden)]
     pub connectivity_info: ::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>>,
     /// The thing name.
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectivityInfoInput {

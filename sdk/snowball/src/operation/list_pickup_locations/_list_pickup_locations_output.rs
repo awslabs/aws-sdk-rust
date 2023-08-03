@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPickupLocationsOutput {
     /// <p>Information about the address of pickup locations.</p>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsResult</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

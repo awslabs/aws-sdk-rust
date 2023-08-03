@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUploadsInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of upload.</p>
     /// <p>Must be one of the following values:</p>
@@ -43,10 +42,8 @@ pub struct ListUploadsInput {
     /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UploadType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUploadsInput {

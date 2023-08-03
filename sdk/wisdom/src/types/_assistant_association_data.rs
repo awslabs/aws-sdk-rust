@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssistantAssociationData {
     /// <p>The identifier of the assistant association.</p>
-    #[doc(hidden)]
     pub assistant_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-    #[doc(hidden)]
     pub assistant_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
-    #[doc(hidden)]
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    #[doc(hidden)]
     pub assistant_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of association.</p>
-    #[doc(hidden)]
     pub association_type: ::std::option::Option<crate::types::AssociationType>,
     /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
-    #[doc(hidden)]
     pub association_data: ::std::option::Option<crate::types::AssistantAssociationOutputData>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AssistantAssociationData {

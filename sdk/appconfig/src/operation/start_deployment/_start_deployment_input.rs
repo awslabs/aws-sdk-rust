@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDeploymentInput {
     /// <p>The application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment strategy ID.</p>
-    #[doc(hidden)]
     pub deployment_strategy_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile ID.</p>
-    #[doc(hidden)]
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label.</p>
-    #[doc(hidden)]
     pub configuration_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of the deployment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key. </p>
-    #[doc(hidden)]
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartDeploymentInput {

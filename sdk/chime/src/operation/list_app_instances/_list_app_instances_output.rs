@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListAppInstancesOutput {
     /// <p>The information for each <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instances: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>,
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

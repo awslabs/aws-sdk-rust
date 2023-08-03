@@ -5,16 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomFilterListConfiguration {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    #[doc(hidden)]
     pub match_operator: ::std::option::Option<crate::types::CategoryFilterMatchOperator>,
     /// <p>The list of category values for the filter.</p>
-    #[doc(hidden)]
     pub category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
     /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub select_all_options: ::std::option::Option<crate::types::CategoryFilterSelectAllOptions>,
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -22,7 +19,6 @@ pub struct CustomFilterListConfiguration {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
 }
 impl CustomFilterListConfiguration {

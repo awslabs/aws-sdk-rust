@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl DataPoint {

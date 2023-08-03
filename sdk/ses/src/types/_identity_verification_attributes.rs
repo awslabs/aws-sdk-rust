@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityVerificationAttributes {
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    #[doc(hidden)]
     pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
     /// <p>The verification token for a domain identity. Null for email address identities.</p>
-    #[doc(hidden)]
     pub verification_token: ::std::option::Option<::std::string::String>,
 }
 impl IdentityVerificationAttributes {

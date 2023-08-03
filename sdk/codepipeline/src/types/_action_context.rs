@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionContext {
     /// <p>The name of the action in the context of a job.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
-    #[doc(hidden)]
     pub action_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionContext {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PositionConfigurationStatus>,
     /// <p>Whether forward error correction is enabled.</p>
-    #[doc(hidden)]
     pub fec: ::std::option::Option<crate::types::PositionConfigurationFec>,
 }
 impl SemtechGnssConfiguration {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveRoleFromDbClusterInput {
     /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveRoleFromDbClusterInput {

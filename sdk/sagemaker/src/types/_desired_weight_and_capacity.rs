@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DesiredWeightAndCapacity {
     /// <p>The name of the variant to update.</p>
-    #[doc(hidden)]
     pub variant_name: ::std::option::Option<::std::string::String>,
     /// <p>The variant's weight.</p>
-    #[doc(hidden)]
     pub desired_weight: ::std::option::Option<f32>,
     /// <p>The variant's capacity.</p>
-    #[doc(hidden)]
     pub desired_instance_count: ::std::option::Option<i32>,
     /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
-    #[doc(hidden)]
     pub serverless_update_config: ::std::option::Option<crate::types::ProductionVariantServerlessUpdateConfig>,
 }
 impl DesiredWeightAndCapacity {

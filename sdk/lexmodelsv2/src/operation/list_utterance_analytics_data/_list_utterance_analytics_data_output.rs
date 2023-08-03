@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUtteranceAnalyticsDataOutput {
     /// <p>The unique identifier of the bot that the utterances belong to.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
-    #[doc(hidden)]
     pub utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>>,
     _request_id: Option<String>,
 }

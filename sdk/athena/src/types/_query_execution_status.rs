@@ -7,19 +7,14 @@ pub struct QueryExecutionStatus {
     /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.</p> <note>
     /// <p>Athena automatically retries your queries in cases of certain transient errors. As a result, you may see the query state transition from <code>RUNNING</code> or <code>FAILED</code> to <code>QUEUED</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::QueryExecutionState>,
     /// <p>Further detail about the status of the query.</p>
-    #[doc(hidden)]
     pub state_change_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the query was submitted.</p>
-    #[doc(hidden)]
     pub submission_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the query completed.</p>
-    #[doc(hidden)]
     pub completion_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides information about an Athena query error.</p>
-    #[doc(hidden)]
     pub athena_error: ::std::option::Option<crate::types::AthenaError>,
 }
 impl QueryExecutionStatus {

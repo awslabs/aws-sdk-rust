@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceProfileOutput {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently recalculated sensitive data discovery statistics and details for the bucket. If the bucket's sensitivity score is calculated automatically, this includes the score.</p>
-    #[doc(hidden)]
     pub profile_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
-    #[doc(hidden)]
     pub sensitivity_score: ::std::option::Option<i32>,
     /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
-    #[doc(hidden)]
     pub sensitivity_score_overridden: ::std::option::Option<bool>,
     /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::ResourceStatistics>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomPluginInput {
     /// <p>Returns information about a custom plugin.</p>
-    #[doc(hidden)]
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCustomPluginInput {

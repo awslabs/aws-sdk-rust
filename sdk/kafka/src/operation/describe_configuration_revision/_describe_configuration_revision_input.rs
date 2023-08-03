@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRevisionInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<i64>,
 }
 impl DescribeConfigurationRevisionInput {

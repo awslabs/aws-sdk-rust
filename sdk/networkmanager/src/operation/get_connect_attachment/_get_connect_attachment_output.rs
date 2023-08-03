@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectAttachmentOutput {
     /// <p>Details about the Connect attachment.</p>
-    #[doc(hidden)]
     pub connect_attachment: ::std::option::Option<crate::types::ConnectAttachment>,
     _request_id: Option<String>,
 }

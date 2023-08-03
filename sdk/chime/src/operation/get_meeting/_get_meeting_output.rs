@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMeetingOutput {
     /// <p>The Amazon Chime SDK meeting information.</p>
-    #[doc(hidden)]
     pub meeting: ::std::option::Option<crate::types::Meeting>,
     _request_id: Option<String>,
 }

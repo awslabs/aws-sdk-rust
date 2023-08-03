@@ -6,40 +6,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of the alarm.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the alarm was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that lists information about the location of the alarm.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail alarm. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>An object that lists information about the resource monitored by the alarm.</p>
-    #[doc(hidden)]
     pub monitored_resource_info: ::std::option::Option<crate::types::MonitoredResourceInfo>,
     /// <p>The arithmetic operation used when comparing the specified statistic and threshold.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The number of periods over which data is compared to the specified threshold.</p>
-    #[doc(hidden)]
     pub evaluation_periods: ::std::option::Option<i32>,
     /// <p>The period, in seconds, over which the statistic is applied.</p>
-    #[doc(hidden)]
     pub period: i32,
     /// <p>The value against which the specified statistic is compared.</p>
-    #[doc(hidden)]
     pub threshold: ::std::option::Option<f64>,
     /// <p>The number of data points that must not within the specified threshold to trigger the alarm.</p>
-    #[doc(hidden)]
     pub datapoints_to_alarm: ::std::option::Option<i32>,
     /// <p>Specifies how the alarm handles missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
@@ -49,7 +37,6 @@ pub struct Alarm {
     /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
     /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub treat_missing_data: ::std::option::Option<crate::types::TreatMissingData>,
     /// <p>The statistic for the metric associated with the alarm.</p>
     /// <p>The following statistics are available:</p>
@@ -60,10 +47,8 @@ pub struct Alarm {
     /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The name of the metric associated with the alarm.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::MetricName>,
     /// <p>The current state of the alarm.</p>
     /// <p>An alarm has the following possible states:</p>
@@ -72,19 +57,14 @@ pub struct Alarm {
     /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
     /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::AlarmState>,
     /// <p>The unit of the metric associated with the alarm.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::MetricUnit>,
     /// <p>The contact protocols for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
-    #[doc(hidden)]
     pub contact_protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
     /// <p>The alarm states that trigger a notification.</p>
-    #[doc(hidden)]
     pub notification_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
     /// <p>Indicates whether the alarm is enabled.</p>
-    #[doc(hidden)]
     pub notification_enabled: ::std::option::Option<bool>,
 }
 impl Alarm {

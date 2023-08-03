@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormLayoutScreenCanvasSizeOptions {
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    #[doc(hidden)]
     pub optimized_view_port_width: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutScreenCanvasSizeOptions {

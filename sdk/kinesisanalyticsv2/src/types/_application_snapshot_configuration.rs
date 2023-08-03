@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
-    #[doc(hidden)]
     pub snapshots_enabled: ::std::option::Option<bool>,
 }
 impl ApplicationSnapshotConfiguration {

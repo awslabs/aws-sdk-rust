@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectOutput {
     /// <p>The date and time that the project was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who created the project.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The dataset associated with the project.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the project was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier (user name) of the user who last modified the project.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The recipe associated with this job.</p>
-    #[doc(hidden)]
     pub recipe_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
-    #[doc(hidden)]
     pub sample: ::std::option::Option<crate::types::Sample>,
     /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata tags associated with this project.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Describes the current state of the session:</p>
     /// <ul>
@@ -42,13 +31,10 @@ pub struct DescribeProjectOutput {
     /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
     /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub session_status: ::std::option::Option<crate::types::SessionStatus>,
     /// <p>The identifier (user name) of the user that opened the project for use. </p>
-    #[doc(hidden)]
     pub opened_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the project was opened. </p>
-    #[doc(hidden)]
     pub open_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

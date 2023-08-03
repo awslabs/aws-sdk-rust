@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCertificateAuthorityAuditReportOutput {
     /// <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
-    #[doc(hidden)]
     pub audit_report_status: ::std::option::Option<crate::types::AuditReportStatus>,
     /// <p>Name of the S3 bucket that contains the report.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the report was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

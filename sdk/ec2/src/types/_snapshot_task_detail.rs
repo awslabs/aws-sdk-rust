@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnapshotTaskDetail {
     /// <p>The description of the snapshot.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in the snapshot, in GiB.</p>
-    #[doc(hidden)]
     pub disk_image_size: ::std::option::Option<f64>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The format of the disk image from which the snapshot is created.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the KMS key that was used to create the encrypted snapshot.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of completion for the import snapshot task.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot ID of the disk being imported.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>A brief status for the import snapshot task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A detailed status message for the import snapshot task.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the disk image from which the snapshot is created.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket for the disk image.</p>
-    #[doc(hidden)]
     pub user_bucket: ::std::option::Option<crate::types::UserBucketDetails>,
 }
 impl SnapshotTaskDetail {

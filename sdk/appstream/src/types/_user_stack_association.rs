@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserStackAssociation {
     /// <p>The name of the stack that is associated with the user.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the user.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
-    #[doc(hidden)]
     pub send_email_notification: bool,
 }
 impl UserStackAssociation {

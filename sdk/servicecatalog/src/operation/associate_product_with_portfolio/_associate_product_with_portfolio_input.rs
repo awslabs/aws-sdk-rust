@@ -8,16 +8,12 @@ pub struct AssociateProductWithPortfolioInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the source portfolio.</p>
-    #[doc(hidden)]
     pub source_portfolio_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateProductWithPortfolioInput {

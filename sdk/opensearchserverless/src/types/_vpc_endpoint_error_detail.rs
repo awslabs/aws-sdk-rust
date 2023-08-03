@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpointErrorDetail {
     /// <p>The unique identifier of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An error message describing the reason for the failure.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error code for the failed request.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointErrorDetail {

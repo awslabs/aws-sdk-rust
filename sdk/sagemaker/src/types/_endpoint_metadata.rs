@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointMetadata {
     /// <p>The name of the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint configuration.</p>
-    #[doc(hidden)]
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p> The status of the endpoint. For possible values of the status of an endpoint, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>. </p>
-    #[doc(hidden)]
     pub endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
     /// <p> If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code> but update operation fails, this provides the reason why it failed. </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl EndpointMetadata {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubscriptionOutput {
     /// <p>The Shield Advanced subscription details for an account.</p>
-    #[doc(hidden)]
     pub subscription: ::std::option::Option<crate::types::Subscription>,
     _request_id: Option<String>,
 }

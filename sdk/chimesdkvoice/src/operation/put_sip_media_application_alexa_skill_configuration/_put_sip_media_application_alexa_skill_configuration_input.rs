@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSipMediaApplicationAlexaSkillConfigurationInput {
     /// <p>The SIP media application ID.</p>
-    #[doc(hidden)]
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Alexa Skill configuration.</p>
-    #[doc(hidden)]
     pub sip_media_application_alexa_skill_configuration: ::std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
 }
 impl PutSipMediaApplicationAlexaSkillConfigurationInput {

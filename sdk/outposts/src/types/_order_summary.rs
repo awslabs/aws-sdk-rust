@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderSummary {
     /// <p> The ID of the Outpost. </p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the order. </p>
-    #[doc(hidden)]
     pub order_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of order. </p>
-    #[doc(hidden)]
     pub order_type: ::std::option::Option<crate::types::OrderType>,
     /// <p>The status of the order.</p>
     /// <ul>
@@ -23,16 +20,12 @@ pub struct OrderSummary {
     /// </ul> <note>
     /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OrderStatus>,
     /// <p> The status of all line items in the order. </p>
-    #[doc(hidden)]
     pub line_item_counts_by_status: ::std::option::Option<::std::collections::HashMap<crate::types::LineItemStatus, i32>>,
     /// <p> The submission date for the order. </p>
-    #[doc(hidden)]
     pub order_submission_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The fulfilment date for the order. </p>
-    #[doc(hidden)]
     pub order_fulfilled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OrderSummary {

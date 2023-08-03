@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsEncryption {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    #[doc(hidden)]
     pub constant_initialization_vector: ::std::option::Option<::std::string::String>,
     /// The encryption method to use.
-    #[doc(hidden)]
     pub encryption_method: ::std::option::Option<crate::types::EncryptionMethod>,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[doc(hidden)]
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl HlsEncryption {

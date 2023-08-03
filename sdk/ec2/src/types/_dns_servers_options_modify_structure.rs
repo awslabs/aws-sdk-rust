@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsServersOptionsModifyStructure {
     /// <p>The IPv4 address range, in CIDR notation, of the DNS servers to be used. You can specify up to two DNS servers. Ensure that the DNS servers can be reached by the clients. The specified values overwrite the existing values.</p>
-    #[doc(hidden)]
     pub custom_dns_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether DNS servers should be used. Specify <code>False</code> to delete the existing DNS servers.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl DnsServersOptionsModifyStructure {

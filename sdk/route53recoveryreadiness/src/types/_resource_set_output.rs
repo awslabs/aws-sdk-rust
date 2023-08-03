@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    #[doc(hidden)]
     pub resource_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource set.</p>
-    #[doc(hidden)]
     pub resource_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    #[doc(hidden)]
     pub resource_set_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource objects.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ResourceSetOutput {

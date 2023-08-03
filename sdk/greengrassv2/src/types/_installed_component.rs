@@ -5,37 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstalledComponent {
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
-    #[doc(hidden)]
     pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle state of the component.</p>
-    #[doc(hidden)]
     pub lifecycle_state: ::std::option::Option<crate::types::InstalledComponentLifecycleState>,
     /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
-    #[doc(hidden)]
     pub lifecycle_state_details: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not the component is a root component.</p>
-    #[doc(hidden)]
     pub is_root: bool,
     /// <p>The status of how current the data is.</p>
     /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
-    #[doc(hidden)]
     pub last_status_change_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
-    #[doc(hidden)]
     pub last_reported_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
-    #[doc(hidden)]
     pub last_installation_source: ::std::option::Option<::std::string::String>,
     /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note>
-    #[doc(hidden)]
     pub lifecycle_status_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstalledComponent {

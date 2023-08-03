@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBackupPlanInput {
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
-    #[doc(hidden)]
     pub backup_plan: ::std::option::Option<crate::types::BackupPlanInput>,
     /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
-    #[doc(hidden)]
     pub backup_plan_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateBackupPlanInput {

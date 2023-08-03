@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserIdentity {
     /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
-    #[doc(hidden)]
     pub assumed_role: ::std::option::Option<crate::types::AssumedRole>,
     /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
-    #[doc(hidden)]
     pub aws_account: ::std::option::Option<crate::types::AwsAccount>,
     /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
-    #[doc(hidden)]
     pub aws_service: ::std::option::Option<crate::types::AwsService>,
     /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
-    #[doc(hidden)]
     pub federated_user: ::std::option::Option<crate::types::FederatedUser>,
     /// <p>If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and other details about the user.</p>
-    #[doc(hidden)]
     pub iam_user: ::std::option::Option<crate::types::IamUser>,
     /// <p>If the action was performed using the credentials for your Amazon Web Services account, the details of your account.</p>
-    #[doc(hidden)]
     pub root: ::std::option::Option<crate::types::UserIdentityRoot>,
     /// <p>The type of entity that performed the action.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UserIdentityType>,
 }
 impl UserIdentity {

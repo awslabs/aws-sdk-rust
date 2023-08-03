@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaChangePolicy {
     /// <p>The update behavior when the crawler finds a changed schema.</p>
-    #[doc(hidden)]
     pub update_behavior: ::std::option::Option<crate::types::UpdateBehavior>,
     /// <p>The deletion behavior when the crawler finds a deleted object.</p>
-    #[doc(hidden)]
     pub delete_behavior: ::std::option::Option<crate::types::DeleteBehavior>,
 }
 impl SchemaChangePolicy {

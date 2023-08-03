@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackDetail {
     /// <p>The unique identifier (ID) of the attack.</p>
-    #[doc(hidden)]
     pub attack_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-    #[doc(hidden)]
     pub sub_resources: ::std::option::Option<::std::vec::Vec<crate::types::SubResourceSummary>>,
     /// <p>The time the attack started, in Unix time in seconds. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the attack ended, in Unix time in seconds. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>List of counters that describe the attack for the specified time period.</p>
-    #[doc(hidden)]
     pub attack_counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
     /// <p>The array of objects that provide details of the Shield event. </p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub attack_properties: ::std::option::Option<::std::vec::Vec<crate::types::AttackProperty>>,
     /// <p>List of mitigation actions taken for the attack.</p>
-    #[doc(hidden)]
     pub mitigations: ::std::option::Option<::std::vec::Vec<crate::types::Mitigation>>,
 }
 impl AttackDetail {

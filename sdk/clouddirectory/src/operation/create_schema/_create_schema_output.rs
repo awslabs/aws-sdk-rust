@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

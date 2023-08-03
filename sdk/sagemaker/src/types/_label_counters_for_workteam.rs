@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelCountersForWorkteam {
     /// <p>The total number of data objects labeled by a human worker.</p>
-    #[doc(hidden)]
     pub human_labeled: i32,
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
-    #[doc(hidden)]
     pub pending_human: i32,
     /// <p>The total number of tasks in the labeling job.</p>
-    #[doc(hidden)]
     pub total: i32,
 }
 impl LabelCountersForWorkteam {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VdmOptions {
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
-    #[doc(hidden)]
     pub dashboard_options: ::std::option::Option<crate::types::DashboardOptions>,
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
-    #[doc(hidden)]
     pub guardian_options: ::std::option::Option<crate::types::GuardianOptions>,
 }
 impl VdmOptions {

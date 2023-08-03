@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPackageOriginConfigurationOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that describes the origin configuration set for the package. It contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that describes how new versions of the package can be introduced to the repository.</p>
-    #[doc(hidden)]
     pub origin_configuration: ::std::option::Option<crate::types::PackageOriginConfiguration>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceRoleForAccountOutput {
     /// The time when the service role was associated with the account.
-    #[doc(hidden)]
     pub associated_at: ::std::option::Option<::std::string::String>,
     /// The ARN of the role which is associated with the account.
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

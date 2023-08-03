@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schema {
     /// <p>The columns for the relation this schema represents.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>The partition keys for the dataset underlying this schema.</p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
-    #[doc(hidden)]
     pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
     /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
-    #[doc(hidden)]
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
-    #[doc(hidden)]
     pub creator_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
-    #[doc(hidden)]
     pub collaboration_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
-    #[doc(hidden)]
     pub collaboration_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description for the schema.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time the schema was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the schema was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SchemaType>,
 }
 impl Schema {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlanRatesInput {
     /// <p>The ID of the Savings Plan.</p>
-    #[doc(hidden)]
     pub savings_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanRateFilter>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeSavingsPlanRatesInput {

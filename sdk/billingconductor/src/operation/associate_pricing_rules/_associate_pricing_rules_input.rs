@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatePricingRulesInput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </p>
-    #[doc(hidden)]
     pub pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociatePricingRulesInput {

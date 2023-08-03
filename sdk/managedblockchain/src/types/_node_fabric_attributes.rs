@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeFabricAttributes {
     /// <p>The endpoint that identifies the peer node for all services except peer channel-based event services.</p>
-    #[doc(hidden)]
     pub peer_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint that identifies the peer node for peer channel-based event services.</p>
-    #[doc(hidden)]
     pub peer_event_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl NodeFabricAttributes {

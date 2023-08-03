@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationTemplatesInput {
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    #[doc(hidden)]
     pub launch_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The token of the next Launch Configuration Template to retrieve.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLaunchConfigurationTemplatesInput {

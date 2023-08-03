@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainSuggestion {
     /// <p>A suggested domain name.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
@@ -67,7 +66,6 @@ pub struct DomainSuggestion {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub availability: ::std::option::Option<::std::string::String>,
 }
 impl DomainSuggestion {

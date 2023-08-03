@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShareRule {
     /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
-    #[doc(hidden)]
     pub target_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
-    #[doc(hidden)]
     pub unshare_interval: i32,
     /// <p>The unit of time for the automatic unsharing interval.</p>
-    #[doc(hidden)]
     pub unshare_interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl ShareRule {

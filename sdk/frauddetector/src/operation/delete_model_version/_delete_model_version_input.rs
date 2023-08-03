@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteModelVersionInput {
     /// <p>The model ID of the model version to delete.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type of the model version to delete.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The model version number of the model version to delete.</p>
-    #[doc(hidden)]
     pub model_version_number: ::std::option::Option<::std::string::String>,
 }
 impl DeleteModelVersionInput {

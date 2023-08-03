@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all Amazon Web Services accounts for an extended period of time.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier associated with the act of receiving the message. A new receipt handle is returned every time you receive a message. When deleting a message, you provide the last received receipt handle to delete the message.</p>
-    #[doc(hidden)]
     pub receipt_handle: ::std::option::Option<::std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message body string.</p>
-    #[doc(hidden)]
     pub md5_of_body: ::std::option::Option<::std::string::String>,
     /// <p>The message's contents (not URL-encoded).</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>A map of the attributes requested in <code> <code>ReceiveMessage</code> </code> to their respective values. Supported attributes:</p>
     /// <ul>
@@ -27,13 +23,10 @@ pub struct Message {
     /// <li> <p> <code>SequenceNumber</code> </p> </li>
     /// </ul>
     /// <p> <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<crate::types::MessageSystemAttributeName, ::std::string::String>>,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-    #[doc(hidden)]
     pub md5_of_message_attributes: ::std::option::Option<::std::string::String>,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
 }
 impl Message {

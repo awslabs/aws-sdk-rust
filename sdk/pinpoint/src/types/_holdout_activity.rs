@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HoldoutActivity {
     /// <p>The unique identifier for the next activity to perform, after performing the holdout activity.</p>
-    #[doc(hidden)]
     pub next_activity: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of participants who shouldn't continue the journey.</p>
     /// <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
-    #[doc(hidden)]
     pub percentage: ::std::option::Option<i32>,
 }
 impl HoldoutActivity {

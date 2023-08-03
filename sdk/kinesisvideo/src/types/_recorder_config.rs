@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecorderConfig {
     /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files streamed to the camera. </p>
-    #[doc(hidden)]
     pub media_source_config: ::std::option::Option<crate::types::MediaSourceConfig>,
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided, then the Edge Agent will always be set to recording mode.</p>
-    #[doc(hidden)]
     pub schedule_config: ::std::option::Option<crate::types::ScheduleConfig>,
 }
 impl RecorderConfig {

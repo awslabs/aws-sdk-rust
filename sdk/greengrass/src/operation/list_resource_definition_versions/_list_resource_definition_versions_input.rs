@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceDefinitionVersionsInput {
     /// The maximum number of results to be returned per request.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<::std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// The ID of the resource definition.
-    #[doc(hidden)]
     pub resource_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl ListResourceDefinitionVersionsInput {

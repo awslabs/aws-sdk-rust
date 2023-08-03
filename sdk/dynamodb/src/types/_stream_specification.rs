@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
-    #[doc(hidden)]
     pub stream_enabled: ::std::option::Option<bool>,
     /// <p> When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct StreamSpecification {
     /// <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p> </li>
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
 }
 impl StreamSpecification {

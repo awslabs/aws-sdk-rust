@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTextDetectionOutput {
     /// <p>Current status of the text detection job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    #[doc(hidden)]
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
-    #[doc(hidden)]
     pub text_detections: ::std::option::Option<::std::vec::Vec<crate::types::TextDetectionResult>>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Version number of the text detection model that was used to detect text.</p>
-    #[doc(hidden)]
     pub text_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Job identifier for the text detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartTextDetection.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::Video>,
     /// <p>A job identifier specified in the call to StartTextDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    #[doc(hidden)]
     pub job_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

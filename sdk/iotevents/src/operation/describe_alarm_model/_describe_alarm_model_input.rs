@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlarmModelInput {
     /// <p>The name of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the alarm model.</p>
-    #[doc(hidden)]
     pub alarm_model_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAlarmModelInput {

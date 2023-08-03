@@ -4,56 +4,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCompilationJobOutput {
     /// <p>The name of the model compilation job.</p>
-    #[doc(hidden)]
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
-    #[doc(hidden)]
     pub compilation_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the model compilation job.</p>
-    #[doc(hidden)]
     pub compilation_job_status: ::std::option::Option<crate::types::CompilationJobStatus>,
     /// <p>The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
     /// <p>You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to download the compilation job, which depends on the size of the compilation job container. </p>
-    #[doc(hidden)]
     pub compilation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the model compilation job on a compilation job instance ended. For a successful or stopped job, this is when the job's model artifacts have finished uploading. For a failed job, this is when Amazon SageMaker detected that the job failed. </p>
-    #[doc(hidden)]
     pub compilation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>The inference image to use when compiling a model. Specify an image only if the target device is a cloud instance.</p>
-    #[doc(hidden)]
     pub inference_image: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the versioned model package that was provided to SageMaker Neo when you initiated a compilation job.</p>
-    #[doc(hidden)]
     pub model_package_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the model compilation job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the status of the model compilation job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a model compilation job failed, the reason it failed. </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location in Amazon S3 that has been configured for storing the model artifacts used in the compilation job.</p>
-    #[doc(hidden)]
     pub model_artifacts: ::std::option::Option<crate::types::ModelArtifacts>,
     /// <p>Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.</p>
-    #[doc(hidden)]
     pub model_digests: ::std::option::Option<crate::types::ModelDigests>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location in Amazon S3 of the input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::InputConfig>,
     /// <p>Information about the output location for the compiled model and the target device that the model runs on.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::NeoVpcConfig>,
     _request_id: Option<String>,
 }

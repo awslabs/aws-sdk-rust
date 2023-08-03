@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stream {
     /// <p>The stream ID.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a file associated with a stream.</p>
-    #[doc(hidden)]
     pub file_id: ::std::option::Option<i32>,
 }
 impl Stream {

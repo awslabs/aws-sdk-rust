@@ -4,79 +4,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfileInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Any additional information relevant to the customer’s profile.</p>
-    #[doc(hidden)]
     pub additional_information: ::std::option::Option<::std::string::String>,
     /// <p>A unique account number that you have given to the customer.</p>
-    #[doc(hidden)]
     pub account_number: ::std::option::Option<::std::string::String>,
     /// <p>The type of profile used to describe the customer.</p>
-    #[doc(hidden)]
     pub party_type: ::std::option::Option<crate::types::PartyType>,
     /// <p>The name of the customer’s business.</p>
-    #[doc(hidden)]
     pub business_name: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s first name.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s middle name.</p>
-    #[doc(hidden)]
     pub middle_name: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s last name.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s birth date. </p>
-    #[doc(hidden)]
     pub birth_date: ::std::option::Option<::std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
-    #[doc(hidden)]
     pub gender: ::std::option::Option<crate::types::Gender>,
     /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
-    #[doc(hidden)]
     pub mobile_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s home phone number.</p>
-    #[doc(hidden)]
     pub home_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s business phone number.</p>
-    #[doc(hidden)]
     pub business_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s personal email address.</p>
-    #[doc(hidden)]
     pub personal_email_address: ::std::option::Option<::std::string::String>,
     /// <p>The customer’s business email address.</p>
-    #[doc(hidden)]
     pub business_email_address: ::std::option::Option<::std::string::String>,
     /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::UpdateAddress>,
     /// <p>The customer’s shipping address.</p>
-    #[doc(hidden)]
     pub shipping_address: ::std::option::Option<crate::types::UpdateAddress>,
     /// <p>The customer’s mailing address.</p>
-    #[doc(hidden)]
     pub mailing_address: ::std::option::Option<crate::types::UpdateAddress>,
     /// <p>The customer’s billing address.</p>
-    #[doc(hidden)]
     pub billing_address: ::std::option::Option<crate::types::UpdateAddress>,
     /// <p>A key value pair of attributes of a customer profile.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
-    #[doc(hidden)]
     pub party_type_string: ::std::option::Option<::std::string::String>,
     /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
-    #[doc(hidden)]
     pub gender_string: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProfileInput {

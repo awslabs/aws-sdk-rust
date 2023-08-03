@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuiteDefinitionInformation {
     /// <p>Suite definition ID of the test suite.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite name of the test suite.</p>
-    #[doc(hidden)]
     pub suite_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the devices that are under test for the test suite.</p>
-    #[doc(hidden)]
     pub default_devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
     /// <p>Specifies if the test suite is intended for qualification.</p>
-    #[doc(hidden)]
     pub intended_for_qualification: bool,
     /// <p>Verifies if the test suite is a long duration test.</p>
-    #[doc(hidden)]
     pub is_long_duration_test: bool,
     /// <p>Gets the MQTT protocol that is configured in the suite definition.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SuiteDefinitionInformation {

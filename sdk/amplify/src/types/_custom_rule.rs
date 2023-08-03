@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomRule {
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p> The status code for a URL rewrite or redirect rule. </p>
     /// <dl>
@@ -43,10 +41,8 @@ pub struct CustomRule {
     /// <p>Represents a 404 rewrite rule.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<::std::string::String>,
 }
 impl CustomRule {

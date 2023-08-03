@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketLifecycleConfigurationOutput {
     /// <p>Container for a lifecycle rule.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignFilters {
     /// Connect instance identifier filter
-    #[doc(hidden)]
     pub instance_id_filter: ::std::option::Option<crate::types::InstanceIdFilter>,
 }
 impl CampaignFilters {

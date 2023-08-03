@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionExecutionResult {
     /// <p>The action provider's external ID for the action execution.</p>
-    #[doc(hidden)]
     pub external_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The action provider's summary for the action execution.</p>
-    #[doc(hidden)]
     pub external_execution_summary: ::std::option::Option<::std::string::String>,
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
-    #[doc(hidden)]
     pub external_execution_url: ::std::option::Option<::std::string::String>,
 }
 impl ActionExecutionResult {

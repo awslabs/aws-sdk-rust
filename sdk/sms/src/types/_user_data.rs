@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserData {
     /// <p>Amazon S3 location of the user-data script.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl UserData {

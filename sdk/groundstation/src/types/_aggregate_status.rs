@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateStatus {
     /// <p>Aggregate status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgentStatus>,
     /// <p>Sparse map of failure signatures.</p>
-    #[doc(hidden)]
     pub signature_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
 }
 impl AggregateStatus {

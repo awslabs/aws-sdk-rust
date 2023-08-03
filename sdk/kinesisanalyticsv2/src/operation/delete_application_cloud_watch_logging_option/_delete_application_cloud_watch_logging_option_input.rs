@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     /// <p>The application name.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    #[doc(hidden)]
     pub conditional_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {

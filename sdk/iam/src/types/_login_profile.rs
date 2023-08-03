@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoginProfile {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the password for the user was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
-    #[doc(hidden)]
     pub password_reset_required: bool,
 }
 impl LoginProfile {

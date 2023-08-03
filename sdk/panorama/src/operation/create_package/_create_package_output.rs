@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePackageOutput {
     /// <p>The package's ID.</p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The package's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The package's storage location.</p>
-    #[doc(hidden)]
     pub storage_location: ::std::option::Option<crate::types::StorageLocation>,
     _request_id: Option<String>,
 }

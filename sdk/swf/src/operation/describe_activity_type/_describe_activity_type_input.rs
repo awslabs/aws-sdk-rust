@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
-    #[doc(hidden)]
     pub activity_type: ::std::option::Option<crate::types::ActivityType>,
 }
 impl DescribeActivityTypeInput {

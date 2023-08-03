@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPolicyStats {
     /// <p>The number of data access policies in the current account.</p>
-    #[doc(hidden)]
     pub data_policy_count: ::std::option::Option<i64>,
 }
 impl AccessPolicyStats {

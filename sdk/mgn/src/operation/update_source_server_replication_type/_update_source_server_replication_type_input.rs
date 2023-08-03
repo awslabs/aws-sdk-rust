@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSourceServerReplicationTypeInput {
     /// <p>ID of source server on which to update replication type.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Replication type to which to update source server.</p>
-    #[doc(hidden)]
     pub replication_type: ::std::option::Option<crate::types::ReplicationType>,
     /// <p>Account ID on which to update replication type.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSourceServerReplicationTypeInput {

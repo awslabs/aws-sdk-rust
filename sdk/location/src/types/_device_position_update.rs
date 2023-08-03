@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DevicePositionUpdate {
     /// <p>The device associated to the position update.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    #[doc(hidden)]
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">WGS 84</a> format: <code>[X or longitude, Y or latitude]</code>.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
-    #[doc(hidden)]
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>Associates one of more properties with the position update. A property is a key-value pair stored with the position update and added to any geofence event the update may trigger.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
-    #[doc(hidden)]
     pub position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DevicePositionUpdate {

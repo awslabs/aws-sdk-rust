@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageClassAnalysis {
     /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
-    #[doc(hidden)]
     pub data_export: ::std::option::Option<crate::types::StorageClassAnalysisDataExport>,
 }
 impl StorageClassAnalysis {

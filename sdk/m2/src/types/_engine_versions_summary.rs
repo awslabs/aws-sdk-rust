@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<::std::string::String>,
     /// <p>The version of the engine type used by the application.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl EngineVersionsSummary {

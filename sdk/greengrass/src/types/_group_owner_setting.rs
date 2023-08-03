@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupOwnerSetting {
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
-    #[doc(hidden)]
     pub auto_add_group_owner: ::std::option::Option<bool>,
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
-    #[doc(hidden)]
     pub group_owner: ::std::option::Option<::std::string::String>,
 }
 impl GroupOwnerSetting {

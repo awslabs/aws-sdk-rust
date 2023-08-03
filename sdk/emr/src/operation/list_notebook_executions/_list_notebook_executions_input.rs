@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotebookExecutionsInput {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
-    #[doc(hidden)]
     pub editor_id: ::std::option::Option<::std::string::String>,
     /// <p>The status filter for listing notebook executions.</p>
     /// <ul>
@@ -19,19 +18,14 @@ pub struct ListNotebookExecutionsInput {
     /// <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>
     /// <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::NotebookExecutionStatus>,
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
-    #[doc(hidden)]
     pub from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
-    #[doc(hidden)]
     pub to: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the execution engine.</p>
-    #[doc(hidden)]
     pub execution_engine_id: ::std::option::Option<::std::string::String>,
 }
 impl ListNotebookExecutionsInput {

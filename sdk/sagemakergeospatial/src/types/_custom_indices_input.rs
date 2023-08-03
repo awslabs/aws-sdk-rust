@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomIndicesInput {
     /// <p>A list of BandMath indices to compute.</p>
-    #[doc(hidden)]
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
 }
 impl CustomIndicesInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleMasterConfiguration {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
-    #[doc(hidden)]
     pub message_ttl_seconds: ::std::option::Option<i32>,
 }
 impl SingleMasterConfiguration {

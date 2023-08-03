@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastResult {
     /// <p>The period of time that the forecast covers.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The mean value of the forecast.</p>
-    #[doc(hidden)]
     pub mean_value: ::std::option::Option<::std::string::String>,
     /// <p>The lower limit for the prediction interval. </p>
-    #[doc(hidden)]
     pub prediction_interval_lower_bound: ::std::option::Option<::std::string::String>,
     /// <p>The upper limit for the prediction interval. </p>
-    #[doc(hidden)]
     pub prediction_interval_upper_bound: ::std::option::Option<::std::string::String>,
 }
 impl ForecastResult {

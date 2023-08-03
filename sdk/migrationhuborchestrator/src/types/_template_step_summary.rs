@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateStepSummary {
     /// <p>The ID of the step.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
     pub step_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    #[doc(hidden)]
     pub step_action_type: ::std::option::Option<crate::types::StepActionType>,
     /// <p>The servers on which to run the script.</p>
-    #[doc(hidden)]
     pub target_type: ::std::option::Option<crate::types::TargetType>,
     /// <p>The owner of the step.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The previous step.</p>
-    #[doc(hidden)]
     pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next step.</p>
-    #[doc(hidden)]
     pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TemplateStepSummary {

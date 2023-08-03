@@ -5,13 +5,10 @@
 pub struct CreateCertificateAuthorityAuditReportInput {
     /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
-    #[doc(hidden)]
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket that will contain the audit report.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
-    #[doc(hidden)]
     pub audit_report_response_format: ::std::option::Option<crate::types::AuditReportResponseFormat>,
 }
 impl CreateCertificateAuthorityAuditReportInput {

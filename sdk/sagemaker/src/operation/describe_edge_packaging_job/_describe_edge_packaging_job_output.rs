@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEdgePackagingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge packaging job.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SageMaker Neo compilation job that is used to locate model artifacts that are being packaged.</p>
-    #[doc(hidden)]
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact Neo.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output configuration for the edge packaging job.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::EdgeOutputConfig>,
     /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the job run on.</p>
-    #[doc(hidden)]
     pub resource_key: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the packaging job.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_status: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
     /// <p>Returns a message describing the job status and error messages.</p>
-    #[doc(hidden)]
     pub edge_packaging_job_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the packaging job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the job was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Simple Storage (S3) URI where model artifacts ares stored.</p>
-    #[doc(hidden)]
     pub model_artifact: ::std::option::Option<::std::string::String>,
     /// <p>The signature document of files in the model artifact.</p>
-    #[doc(hidden)]
     pub model_signature: ::std::option::Option<::std::string::String>,
     /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
-    #[doc(hidden)]
     pub preset_deployment_output: ::std::option::Option<crate::types::EdgePresetDeploymentOutput>,
     _request_id: Option<String>,
 }

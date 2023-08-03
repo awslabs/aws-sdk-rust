@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockerDeclaration {
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BlockerType>,
 }
 impl BlockerDeclaration {

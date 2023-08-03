@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBridgeOutput {
     /// The Amazon Resource Number (ARN) of the deleted bridge.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

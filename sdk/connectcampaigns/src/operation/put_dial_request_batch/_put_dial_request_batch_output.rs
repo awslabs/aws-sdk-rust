@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDialRequestBatchOutput {
     /// A list of successful requests identified by the unique client token.
-    #[doc(hidden)]
     pub successful_requests: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulRequest>>,
     /// A list of failed requests.
-    #[doc(hidden)]
     pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedRequest>>,
     _request_id: Option<String>,
 }

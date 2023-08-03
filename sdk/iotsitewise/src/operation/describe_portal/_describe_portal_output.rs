@@ -4,50 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePortalOutput {
     /// <p>The ID of the portal.</p>
-    #[doc(hidden)]
     pub portal_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the portal, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code> </p>
-    #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the portal.</p>
-    #[doc(hidden)]
     pub portal_name: ::std::option::Option<::std::string::String>,
     /// <p>The portal's description.</p>
-    #[doc(hidden)]
     pub portal_description: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
-    #[doc(hidden)]
     pub portal_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    #[doc(hidden)]
     pub portal_start_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    #[doc(hidden)]
     pub portal_contact_email: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the portal, which contains a state and any error message.</p>
-    #[doc(hidden)]
     pub portal_status: ::std::option::Option<crate::types::PortalStatus>,
     /// <p>The date the portal was created, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub portal_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub portal_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The portal's logo image, which is available at a URL.</p>
-    #[doc(hidden)]
     pub portal_logo_image_location: ::std::option::Option<crate::types::ImageLocation>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The service to use to authenticate users to the portal.</p>
-    #[doc(hidden)]
     pub portal_auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>The email address that sends alarm notifications.</p>
-    #[doc(hidden)]
     pub notification_sender_email: ::std::option::Option<::std::string::String>,
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.</p>
-    #[doc(hidden)]
     pub alarms: ::std::option::Option<crate::types::Alarms>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TracingConfiguration {
     /// <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl TracingConfiguration {

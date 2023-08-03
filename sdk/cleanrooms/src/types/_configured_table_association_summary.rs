@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfiguredTableAssociationSummary {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
-    #[doc(hidden)]
     pub configured_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    #[doc(hidden)]
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the membership that the configured table association belongs to.</p>
-    #[doc(hidden)]
     pub membership_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configured table association. The table is identified by this name when running Protected Queries against the underlying data.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time the configured table association was created.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the configured table association was last updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique ID for the configured table association.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the configured table association.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ConfiguredTableAssociationSummary {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelCertificateTransferInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelCertificateTransferInput {

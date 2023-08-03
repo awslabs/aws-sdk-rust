@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationAggregatorOutput {
     /// <p>Returns a ConfigurationAggregator object.</p>
-    #[doc(hidden)]
     pub configuration_aggregator: ::std::option::Option<crate::types::ConfigurationAggregator>,
     _request_id: Option<String>,
 }

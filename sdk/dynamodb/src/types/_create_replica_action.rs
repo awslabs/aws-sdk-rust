@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReplicaAction {
     /// <p>The Region of the replica to be added.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateReplicaAction {

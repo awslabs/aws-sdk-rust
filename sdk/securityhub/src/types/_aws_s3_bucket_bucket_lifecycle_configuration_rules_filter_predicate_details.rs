@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
     /// <p>The values to use for the filter.</p>
-    #[doc(hidden)]
     pub operands: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
     /// <p>A prefix filter.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A tag filter.</p>
-    #[doc(hidden)]
     pub tag: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails>,
     /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {

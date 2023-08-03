@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBotAliasesInput {
     /// <p>The name of the bot.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token for fetching the next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of aliases to return in the response. The default is 50. . </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
 }
 impl GetBotAliasesInput {

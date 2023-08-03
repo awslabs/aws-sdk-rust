@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSummary {
     /// <p>The unique identifier for the cluster.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The details about the current status of the cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClusterStatus>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
-    #[doc(hidden)]
     pub normalized_instance_hours: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSummary {

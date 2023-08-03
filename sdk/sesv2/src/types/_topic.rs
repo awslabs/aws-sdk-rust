@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Topic {
     /// <p>The name of the topic.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the topic the contact will see.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of what the topic is about, which the contact will see.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The default subscription status to be applied to a contact if the contact has not noted their preference for subscribing to a topic.</p>
-    #[doc(hidden)]
     pub default_subscription_status: ::std::option::Option<crate::types::SubscriptionStatus>,
 }
 impl Topic {

@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKxDatabaseOutput {
     /// <p>The name of the kdb database for which the information is retrieved.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier of the database.</p>
-    #[doc(hidden)]
     pub database_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the database.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the database is created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique identifier for the changeset.</p>
-    #[doc(hidden)]
     pub last_completed_changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The total number of bytes in the database.</p>
-    #[doc(hidden)]
     pub num_bytes: i64,
     /// <p>The total number of changesets in the database.</p>
-    #[doc(hidden)]
     pub num_changesets: i32,
     /// <p>The total number of files in the database.</p>
-    #[doc(hidden)]
     pub num_files: i32,
     _request_id: Option<String>,
 }

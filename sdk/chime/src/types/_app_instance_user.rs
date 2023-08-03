@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceUser {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppInstanceUser {

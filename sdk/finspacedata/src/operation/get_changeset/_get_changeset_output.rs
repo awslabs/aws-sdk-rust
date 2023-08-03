@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangesetOutput {
     /// <p>The unique identifier for a Changeset.</p>
-    #[doc(hidden)]
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier of the Changeset.</p>
-    #[doc(hidden)]
     pub changeset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    #[doc(hidden)]
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
@@ -19,34 +16,24 @@ pub struct GetChangesetOutput {
     /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub change_type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
-    #[doc(hidden)]
     pub source_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Structure of the source file(s).</p>
-    #[doc(hidden)]
     pub format_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub create_time: i64,
     /// <p>The status of Changeset creation operation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IngestionStatus>,
     /// <p>The structure with error messages.</p>
-    #[doc(hidden)]
     pub error_info: ::std::option::Option<crate::types::ChangesetErrorInfo>,
     /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub active_until_timestamp: ::std::option::Option<i64>,
     /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    #[doc(hidden)]
     pub active_from_timestamp: ::std::option::Option<i64>,
     /// <p>The unique identifier of the Changeset that is being updated.</p>
-    #[doc(hidden)]
     pub updates_changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the updated Changeset.</p>
-    #[doc(hidden)]
     pub updated_by_changeset_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

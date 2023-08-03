@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    #[doc(hidden)]
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a put integration response request's resource identifier.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a put integration response request's HTTP method.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the selection pattern of a put integration response.</p>
-    #[doc(hidden)]
     pub selection_pattern: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> must be a valid and unique response header name and <code>JSON-expression</code> a valid JSON expression without the <code>$</code> prefix.</p>
-    #[doc(hidden)]
     pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies a put integration response's templates.</p>
-    #[doc(hidden)]
     pub response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-    #[doc(hidden)]
     pub content_handling: ::std::option::Option<crate::types::ContentHandlingStrategy>,
 }
 impl PutIntegrationResponseInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<i64>,
     /// <p>The data contained in the log event.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    #[doc(hidden)]
     pub ingestion_time: ::std::option::Option<i64>,
 }
 impl OutputLogEvent {

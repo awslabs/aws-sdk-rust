@@ -5,11 +5,9 @@
 pub struct DeleteFirewallPolicyInput {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallPolicyInput {

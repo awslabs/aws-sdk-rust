@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Route {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR block used for the destination match.</p>
-    #[doc(hidden)]
     pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the Amazon Web Service.</p>
-    #[doc(hidden)]
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the egress-only internet gateway.</p>
-    #[doc(hidden)]
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a gateway attached to your VPC.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a NAT instance in your VPC.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of Amazon Web Services account that owns the instance.</p>
-    #[doc(hidden)]
     pub instance_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a NAT gateway.</p>
-    #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway.</p>
-    #[doc(hidden)]
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the carrier gateway.</p>
-    #[doc(hidden)]
     pub carrier_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes how the route was created.</p>
     /// <ul>
@@ -46,16 +34,12 @@ pub struct Route {
     /// <li> <p> <code>CreateRoute</code> - The route was manually added to the route table.</p> </li>
     /// <li> <p> <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<crate::types::RouteOrigin>,
     /// <p>The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RouteState>,
     /// <p>The ID of a VPC peering connection.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    #[doc(hidden)]
     pub core_network_arn: ::std::option::Option<::std::string::String>,
 }
 impl Route {

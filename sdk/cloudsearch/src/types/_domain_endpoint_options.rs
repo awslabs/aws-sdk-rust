@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainEndpointOptions {
     /// <p>Whether the domain is HTTPS only enabled.</p>
-    #[doc(hidden)]
     pub enforce_https: ::std::option::Option<bool>,
     /// <p>The minimum required TLS version</p>
-    #[doc(hidden)]
     pub tls_security_policy: ::std::option::Option<crate::types::TlsSecurityPolicy>,
 }
 impl DomainEndpointOptions {

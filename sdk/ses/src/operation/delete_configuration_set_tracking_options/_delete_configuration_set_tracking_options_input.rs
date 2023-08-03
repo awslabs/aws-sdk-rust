@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationSetTrackingOptionsInput {

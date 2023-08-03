@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityInput {
     /// <p>The device pool's ARN.</p>
-    #[doc(hidden)]
     pub device_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
@@ -32,13 +30,10 @@ pub struct GetDevicePoolCompatibilityInput {
     /// <li> <p>XCTEST.</p> </li>
     /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub test_type: ::std::option::Option<crate::types::TestType>,
     /// <p>Information about the uploaded test to be run against the device pool.</p>
-    #[doc(hidden)]
     pub test: ::std::option::Option<crate::types::ScheduleRunTest>,
     /// <p>An object that contains information about the settings for a run.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
 }
 impl GetDevicePoolCompatibilityInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMobileDeviceAccessEffectOutput {
     /// <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the WorkMail organization for the simulated user parameters.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
-    #[doc(hidden)]
     pub matched_rules: ::std::option::Option<::std::vec::Vec<crate::types::MobileDeviceAccessMatchedRule>>,
     _request_id: Option<String>,
 }

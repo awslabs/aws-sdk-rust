@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SymmetricEncryptionAttributes {
     /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
-    #[doc(hidden)]
     pub initialization_vector: ::std::option::Option<::std::string::String>,
     /// <p>The padding to be included with the data.</p>
-    #[doc(hidden)]
     pub padding_type: ::std::option::Option<crate::types::PaddingType>,
 }
 impl SymmetricEncryptionAttributes {

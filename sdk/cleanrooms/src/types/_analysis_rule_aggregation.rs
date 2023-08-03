@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRuleAggregation {
     /// <p>The columns that query runners are allowed to use in aggregation queries.</p>
-    #[doc(hidden)]
     pub aggregate_columns: ::std::option::Option<::std::vec::Vec<crate::types::AggregateColumn>>,
     /// <p>Columns in configured table that can be used in join statements and/or as aggregate columns. They can never be outputted directly.</p>
-    #[doc(hidden)]
     pub join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Control that requires member who runs query to do a join with their configured table and/or other configured table in query.</p>
-    #[doc(hidden)]
     pub join_required: ::std::option::Option<crate::types::JoinRequiredOption>,
     /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    #[doc(hidden)]
     pub allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
     /// <p>The columns that query runners are allowed to select, group by, or filter by.</p>
-    #[doc(hidden)]
     pub dimension_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Set of scalar functions that are allowed to be used on dimension columns and the output of aggregation of metrics.</p>
-    #[doc(hidden)]
     pub scalar_functions: ::std::option::Option<::std::vec::Vec<crate::types::ScalarFunctions>>,
     /// <p>Columns that must meet a specific threshold value (after an aggregation function is applied to it) for each output row to be returned.</p>
-    #[doc(hidden)]
     pub output_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConstraint>>,
 }
 impl AnalysisRuleAggregation {

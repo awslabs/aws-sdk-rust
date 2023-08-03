@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MagneticStoreWriteProperties {
     /// <p>A flag to enable magnetic store writes.</p>
-    #[doc(hidden)]
     pub enable_magnetic_store_writes: ::std::option::Option<bool>,
     /// <p>The location to write error reports for records rejected asynchronously during magnetic store writes.</p>
-    #[doc(hidden)]
     pub magnetic_store_rejected_data_location: ::std::option::Option<crate::types::MagneticStoreRejectedDataLocation>,
 }
 impl MagneticStoreWriteProperties {

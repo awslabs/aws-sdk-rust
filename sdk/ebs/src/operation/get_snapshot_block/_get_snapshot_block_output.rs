@@ -3,15 +3,12 @@
 #[non_exhaustive]
 pub struct GetSnapshotBlockOutput {
     /// <p>The size of the data in the block.</p>
-    #[doc(hidden)]
     pub data_length: ::std::option::Option<i32>,
     /// <p>The data content of the block.</p>
     pub block_data: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
-    #[doc(hidden)]
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
-    #[doc(hidden)]
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     _request_id: Option<String>,
 }

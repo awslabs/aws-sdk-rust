@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterCertificateWithoutCaOutput {
     /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

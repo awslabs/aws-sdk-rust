@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHsmInput {
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
-    #[doc(hidden)]
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
-    #[doc(hidden)]
     pub hsm_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
-    #[doc(hidden)]
     pub eni_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
-    #[doc(hidden)]
     pub eni_ip: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHsmInput {

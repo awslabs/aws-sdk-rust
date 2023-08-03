@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionSummary {
     /// <p>The session ID.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The session description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>The notebook version.</p>
-    #[doc(hidden)]
     pub notebook_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the session status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::SessionStatus>,
 }
 impl SessionSummary {

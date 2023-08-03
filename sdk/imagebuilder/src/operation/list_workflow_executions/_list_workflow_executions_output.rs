@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowExecutionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
-    #[doc(hidden)]
     pub workflow_executions: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>>,
     /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
-    #[doc(hidden)]
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output message from the list action, if applicable.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

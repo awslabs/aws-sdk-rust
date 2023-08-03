@@ -5,28 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Accessor {
     /// <p>The unique identifier of the accessor.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the accessor.</p> <note>
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AccessorType>,
     /// <p>The billing token is a property of the accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
-    #[doc(hidden)]
     pub billing_token: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the accessor.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AccessorStatus>,
     /// <p>The creation date and time of the accessor.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the Accessor.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Accessor {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSecretOutput {
     /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new secret.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier associated with the version of the new secret.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the replicas of this secret and their status:</p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct CreateSecretOutput {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
     _request_id: Option<String>,
 }

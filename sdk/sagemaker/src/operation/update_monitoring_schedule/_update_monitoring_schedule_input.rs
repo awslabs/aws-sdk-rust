@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    #[doc(hidden)]
     pub monitoring_schedule_config: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
 }
 impl UpdateMonitoringScheduleInput {

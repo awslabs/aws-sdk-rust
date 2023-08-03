@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryId {
     /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided. </p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
-    #[doc(hidden)]
     pub registry_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegistryId {

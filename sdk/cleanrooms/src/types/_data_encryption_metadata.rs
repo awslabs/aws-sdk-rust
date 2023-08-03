@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataEncryptionMetadata {
     /// <p>Indicates whether encrypted tables can contain cleartext data (true) or are to cryptographically process every column (false).</p>
-    #[doc(hidden)]
     pub allow_cleartext: ::std::option::Option<bool>,
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
-    #[doc(hidden)]
     pub allow_duplicates: ::std::option::Option<bool>,
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
-    #[doc(hidden)]
     pub allow_joins_on_columns_with_different_names: ::std::option::Option<bool>,
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
-    #[doc(hidden)]
     pub preserve_nulls: ::std::option::Option<bool>,
 }
 impl DataEncryptionMetadata {

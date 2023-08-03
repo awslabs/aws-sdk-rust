@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProductOutput {
     /// <p>Information about the product view.</p>
-    #[doc(hidden)]
     pub product_view_detail: ::std::option::Option<crate::types::ProductViewDetail>,
     /// <p>Information about the tags associated with the product.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

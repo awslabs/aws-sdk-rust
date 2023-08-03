@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchedInstance {
     /// <p>Launched instance EC2 ID.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Launched instance Job ID.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Launched instance first boot.</p>
-    #[doc(hidden)]
     pub first_boot: ::std::option::Option<crate::types::FirstBoot>,
 }
 impl LaunchedInstance {

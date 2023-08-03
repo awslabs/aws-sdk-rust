@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ssml {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<crate::types::Locale>,
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Ssml {

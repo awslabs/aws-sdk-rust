@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOfferingInput {
     /// Unique offering ID, e.g. '87654321'
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOfferingInput {

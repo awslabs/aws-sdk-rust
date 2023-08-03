@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationSet {
     /// <p> The target destination for the recommendation set. </p>
-    #[doc(hidden)]
     pub transformation_tool: ::std::option::Option<crate::types::TransformationTool>,
     /// <p> The recommended target destination. </p>
-    #[doc(hidden)]
     pub target_destination: ::std::option::Option<crate::types::TargetDestination>,
     /// <p> The recommended strategy. </p>
-    #[doc(hidden)]
     pub strategy: ::std::option::Option<crate::types::Strategy>,
 }
 impl RecommendationSet {

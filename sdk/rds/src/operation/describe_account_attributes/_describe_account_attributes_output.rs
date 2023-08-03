@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
-    #[doc(hidden)]
     pub account_quotas: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputLossFailoverSettings {
     /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
-    #[doc(hidden)]
     pub input_loss_threshold_msec: ::std::option::Option<i32>,
 }
 impl InputLossFailoverSettings {

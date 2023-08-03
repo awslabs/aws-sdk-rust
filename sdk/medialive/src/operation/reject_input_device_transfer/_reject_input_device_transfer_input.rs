@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectInputDeviceTransferInput {
     /// The unique ID of the input device to reject. For example, hd-123456789abcdef.
-    #[doc(hidden)]
     pub input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl RejectInputDeviceTransferInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhaseContext {
     /// <p>The status code for the context of the build phase.</p>
-    #[doc(hidden)]
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl PhaseContext {

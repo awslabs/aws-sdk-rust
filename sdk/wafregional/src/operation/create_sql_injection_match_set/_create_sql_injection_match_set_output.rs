@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-    #[doc(hidden)]
     pub sql_injection_match_set: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

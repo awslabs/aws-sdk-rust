@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactDetail {
     /// <p>The identifier of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning artifact.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
@@ -19,20 +16,15 @@ pub struct ProvisioningArtifactDetail {
     /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
     /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ProvisioningArtifactType>,
     /// <p>The UTC time stamp of the creation time.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the product version is active.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
-    #[doc(hidden)]
     pub guidance: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
     /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
     /// <p>This field only exists for Repo-Synced products. </p>
-    #[doc(hidden)]
     pub source_revision: ::std::option::Option<::std::string::String>,
 }
 impl ProvisioningArtifactDetail {

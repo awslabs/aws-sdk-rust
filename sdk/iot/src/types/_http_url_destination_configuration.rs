@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpUrlDestinationConfiguration {
     /// <p>The URL IoT uses to confirm ownership of or access to the topic rule destination URL.</p>
-    #[doc(hidden)]
     pub confirmation_url: ::std::option::Option<::std::string::String>,
 }
 impl HttpUrlDestinationConfiguration {

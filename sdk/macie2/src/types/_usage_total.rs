@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageTotal {
     /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<crate::types::Currency>,
     /// <p>The estimated value for the metric.</p>
-    #[doc(hidden)]
     pub estimated_cost: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UsageType>,
 }
 impl UsageTotal {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServerNeighborsOutput {
     /// <p>List of distinct servers that are one hop away from the given server.</p>
-    #[doc(hidden)]
     pub neighbors: ::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>>,
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Count of distinct servers that are one hop away from the given server.</p>
-    #[doc(hidden)]
     pub known_dependency_count: i64,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetVdmOptionsInput {
     /// <p>The name of the configuration set.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The VDM options to apply to the configuration set.</p>
-    #[doc(hidden)]
     pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
 }
 impl PutConfigurationSetVdmOptionsInput {

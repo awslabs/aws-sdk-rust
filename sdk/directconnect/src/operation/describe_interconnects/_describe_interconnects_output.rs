@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInterconnectsOutput {
     /// <p>The interconnects.</p>
-    #[doc(hidden)]
     pub interconnects: ::std::option::Option<::std::vec::Vec<crate::types::Interconnect>>,
     _request_id: Option<String>,
 }

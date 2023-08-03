@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpamScopeOutput {
     /// <p>Information about the created scope.</p>
-    #[doc(hidden)]
     pub ipam_scope: ::std::option::Option<crate::types::IpamScope>,
     _request_id: Option<String>,
 }

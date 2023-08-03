@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerDatasetAction {
     /// <p>The ARN of the Docker container stored in your account. The Docker container contains an application and required support libraries and is used to generate dataset contents.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that gives permission to the system to access required resources to run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the input to the containerized application.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
-    #[doc(hidden)]
     pub resource_configuration: ::std::option::Option<crate::types::ResourceConfiguration>,
     /// <p>The values of variables used in the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::Variable>>,
 }
 impl ContainerDatasetAction {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisSummary {
     /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
-    #[doc(hidden)]
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The last known status for the analysis.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The time that the analysis was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the analysis was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AnalysisSummary {

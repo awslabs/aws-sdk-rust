@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonInput {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::JsonType>,
 }
 impl JsonInput {

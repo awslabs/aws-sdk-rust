@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobFailure {
     /// <p>The failure code, if any, for the specified job.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>The failure reason, if any, for the specified job.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl JobFailure {

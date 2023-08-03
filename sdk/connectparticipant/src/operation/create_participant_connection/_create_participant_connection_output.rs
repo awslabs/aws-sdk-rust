@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateParticipantConnectionOutput {
     /// <p>Creates the participant's websocket connection.</p>
-    #[doc(hidden)]
     pub websocket: ::std::option::Option<crate::types::Websocket>,
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
-    #[doc(hidden)]
     pub connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
     _request_id: Option<String>,
 }

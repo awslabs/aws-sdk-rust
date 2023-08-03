@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Summary {
     /// <p>The finding classification of the recommendation.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::Finding>,
     /// <p>The value of the recommendation summary.</p>
-    #[doc(hidden)]
     pub value: f64,
     /// <p>An array of objects that summarize a finding reason code.</p>
-    #[doc(hidden)]
     pub reason_code_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
 }
 impl Summary {

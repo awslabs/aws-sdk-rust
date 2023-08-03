@@ -10,7 +10,6 @@ pub struct EnvironmentTier {
     /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
     /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
@@ -18,12 +17,10 @@ pub struct EnvironmentTier {
     /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
     /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentTier {

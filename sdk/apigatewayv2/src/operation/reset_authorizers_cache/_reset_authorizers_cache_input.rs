@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetAuthorizersCacheInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl ResetAuthorizersCacheInput {

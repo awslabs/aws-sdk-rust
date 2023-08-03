@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaselineEbsBandwidthMbps {
     /// <p>The minimum baseline bandwidth, in Mbps. If this parameter is not specified, there is no minimum limit.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum baseline bandwidth, in Mbps. If this parameter is not specified, there is no maximum limit.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl BaselineEbsBandwidthMbps {

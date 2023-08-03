@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

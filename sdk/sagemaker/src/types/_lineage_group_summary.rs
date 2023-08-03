@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineageGroupSummary {
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
-    #[doc(hidden)]
     pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-    #[doc(hidden)]
     pub lineage_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the lineage group summary.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the lineage group summary.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified time of the lineage group summary.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LineageGroupSummary {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContactInput {
     /// <p>The name of the contact list to which the contact belongs.</p>
-    #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The contact's email address.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl GetContactInput {

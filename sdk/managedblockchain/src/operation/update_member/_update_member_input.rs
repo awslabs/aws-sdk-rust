@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMemberInput {
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
-    #[doc(hidden)]
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member.</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_publishing_configuration: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
 }
 impl UpdateMemberInput {

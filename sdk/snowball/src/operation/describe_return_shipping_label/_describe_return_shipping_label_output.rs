@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShippingLabelStatus>,
     /// <p>The expiration date of the current return shipping label.</p>
-    #[doc(hidden)]
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
-    #[doc(hidden)]
     pub return_shipping_label_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

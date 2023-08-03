@@ -6,16 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    #[doc(hidden)]
     pub rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
 impl RuleGroupReferenceStatement {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RegisterTargetWithMaintenanceWindowInput {
     /// <p>The ID of the maintenance window the target should be registered with.</p>
-    #[doc(hidden)]
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of target being registered with the maintenance window.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
     /// <p>The targets to register with the maintenance window. In other words, the managed nodes to run commands on when the maintenance window runs.</p> <note>
     /// <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>
@@ -50,19 +48,14 @@ pub struct RegisterTargetWithMaintenanceWindowInput {
     /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    #[doc(hidden)]
     pub owner_information: ::std::option::Option<::std::string::String>,
     /// <p>An optional name for the target.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the target.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>User-provided idempotency token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl RegisterTargetWithMaintenanceWindowInput {

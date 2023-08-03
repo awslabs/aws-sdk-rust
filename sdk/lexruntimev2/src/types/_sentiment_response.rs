@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentResponse {
     /// <p>The overall sentiment expressed in the user's response. This is the sentiment most likely expressed by the user based on the analysis by Amazon Comprehend.</p>
-    #[doc(hidden)]
     pub sentiment: ::std::option::Option<crate::types::SentimentType>,
     /// <p>The individual sentiment responses for the utterance.</p>
-    #[doc(hidden)]
     pub sentiment_score: ::std::option::Option<crate::types::SentimentScore>,
 }
 impl SentimentResponse {

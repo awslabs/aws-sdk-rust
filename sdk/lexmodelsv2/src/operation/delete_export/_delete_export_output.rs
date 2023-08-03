@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExportOutput {
     /// <p>The unique identifier of the deleted export.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>
-    #[doc(hidden)]
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     _request_id: Option<String>,
 }

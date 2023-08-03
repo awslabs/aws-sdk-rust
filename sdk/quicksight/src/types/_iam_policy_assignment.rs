@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamPolicyAssignment {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Assignment ID.</p>
-    #[doc(hidden)]
     pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p>Assignment name.</p>
-    #[doc(hidden)]
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identities.</p>
-    #[doc(hidden)]
     pub identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Assignment status.</p>
-    #[doc(hidden)]
     pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
 }
 impl IamPolicyAssignment {

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionSourceSettings {
     /// Settings for ancillary captions source.
-    #[doc(hidden)]
     pub ancillary_source_settings: ::std::option::Option<crate::types::AncillarySourceSettings>,
     /// DVB Sub Source Settings
-    #[doc(hidden)]
     pub dvb_sub_source_settings: ::std::option::Option<crate::types::DvbSubSourceSettings>,
     /// Settings for embedded captions Source
-    #[doc(hidden)]
     pub embedded_source_settings: ::std::option::Option<crate::types::EmbeddedSourceSettings>,
     /// If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
-    #[doc(hidden)]
     pub file_source_settings: ::std::option::Option<crate::types::FileSourceSettings>,
     /// Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::CaptionSourceType>,
     /// Settings specific to Teletext caption sources, including Page number.
-    #[doc(hidden)]
     pub teletext_source_settings: ::std::option::Option<crate::types::TeletextSourceSettings>,
     /// Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings.
-    #[doc(hidden)]
     pub track_source_settings: ::std::option::Option<crate::types::TrackSourceSettings>,
     /// Settings specific to WebVTT sources in HLS alternative rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique subtitle track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the specified properties, the job fails. If there is only one subtitle track in the rendition group, the settings can be left empty and the default subtitle track will be chosen. If your caption source is a sidecar file, use FileSourceSettings instead of WebvttHlsSourceSettings.
-    #[doc(hidden)]
     pub webvtt_hls_source_settings: ::std::option::Option<crate::types::WebvttHlsSourceSettings>,
 }
 impl CaptionSourceSettings {

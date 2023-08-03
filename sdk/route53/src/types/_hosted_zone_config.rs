@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostedZoneConfig {
     /// <p>Any comments that you want to include about the hosted zone.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether this is a private hosted zone.</p>
-    #[doc(hidden)]
     pub private_zone: bool,
 }
 impl HostedZoneConfig {

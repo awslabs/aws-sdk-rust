@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RxNormAttribute {
     /// <p>The type of attribute. The types of attributes recognized by InferRxNorm are <code>BRAND_NAME</code> and <code>GENERIC_NAME</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RxNormAttributeType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the attribute is accurately linked to an entity.</p>
-    #[doc(hidden)]
     pub relationship_score: ::std::option::Option<f32>,
     /// <p>The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string.</p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p>The segment of input text which corresponds to the detected attribute.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Contextual information for the attribute. InferRxNorm recognizes the trait <code>NEGATION</code> for attributes, i.e. that the patient is not taking a specific dose or form of a medication.</p>
-    #[doc(hidden)]
     pub traits: ::std::option::Option<::std::vec::Vec<crate::types::RxNormTrait>>,
 }
 impl RxNormAttribute {

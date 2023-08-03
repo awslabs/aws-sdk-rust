@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnomedctEntity {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p> The segment of input text extracted as this entity. </p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p> The category of the detected entity. Possible categories are MEDICAL_CONDITION, ANATOMY, or TEST_TREATMENT_PROCEDURE. </p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::SnomedctEntityCategory>,
     /// <p> Describes the specific type of entity with category of entities. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, or TREATMENT_NAME. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SnomedctEntityType>,
     /// <p> The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity. </p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctAttribute>>,
     /// <p> Contextual information for the entity. </p>
-    #[doc(hidden)]
     pub traits: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
     /// <p> The SNOMED concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
-    #[doc(hidden)]
     pub snomedct_concepts: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
 }
 impl SnomedctEntity {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLicenseVersionOutput {
     /// <p>License ARN.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>New version of the license.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>License status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LicenseStatus>,
     _request_id: Option<String>,
 }

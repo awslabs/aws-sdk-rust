@@ -12,7 +12,6 @@ pub struct GetParametersForImportInput {
     /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm you will use with the RSA public key (<code>PublicKey</code>) in the response to protect your key material during import. For more information, see <a href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>For RSA_AES wrapping algorithms, you encrypt your key material with an AES key that you generate, then encrypt your AES key with the RSA public key from KMS. For RSAES wrapping algorithms, you encrypt your key material directly with the RSA public key from KMS.</p>
@@ -24,12 +23,10 @@ pub struct GetParametersForImportInput {
     /// <li> <p> <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p> <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p> </li>
     /// <li> <p> <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub wrapping_algorithm: ::std::option::Option<crate::types::AlgorithmSpec>,
     /// <p>The type of RSA public key to return in the response. You will use this wrapping key with the specified wrapping algorithm to protect your key material during import. </p>
     /// <p>Use the longest RSA wrapping key that is practical. </p>
     /// <p>You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.</p>
-    #[doc(hidden)]
     pub wrapping_key_spec: ::std::option::Option<crate::types::WrappingKeySpec>,
 }
 impl GetParametersForImportInput {

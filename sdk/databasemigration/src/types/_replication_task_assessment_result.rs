@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTaskAssessmentResult {
     /// <p> The replication task identifier of the task on which the task assessment was run. </p>
-    #[doc(hidden)]
     pub replication_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    #[doc(hidden)]
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date the task assessment was completed. </p>
-    #[doc(hidden)]
     pub replication_task_last_assessment_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of the task assessment. </p>
-    #[doc(hidden)]
     pub assessment_status: ::std::option::Option<::std::string::String>,
     /// <p> The file containing the results of the task assessment. </p>
-    #[doc(hidden)]
     pub assessment_results_file: ::std::option::Option<::std::string::String>,
     /// <p> The task assessment results in JSON format. </p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
-    #[doc(hidden)]
     pub assessment_results: ::std::option::Option<::std::string::String>,
     /// <p> The URL of the S3 object containing the task assessment results. </p>
     /// <p>The response object only contains this field if you provide <code>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</code> in the request.</p>
-    #[doc(hidden)]
     pub s3_object_url: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationTaskAssessmentResult {

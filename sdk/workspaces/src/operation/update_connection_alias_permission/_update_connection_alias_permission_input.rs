@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionAliasPermissionInput {
     /// <p>The identifier of the connection alias that you want to update permissions for.</p>
-    #[doc(hidden)]
     pub alias_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub connection_alias_permission: ::std::option::Option<crate::types::ConnectionAliasPermission>,
 }
 impl UpdateConnectionAliasPermissionInput {

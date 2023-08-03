@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to start.</p>
-    #[doc(hidden)]
     pub experiment: ::std::option::Option<::std::string::String>,
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
-    #[doc(hidden)]
     pub analysis_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StartExperimentInput {

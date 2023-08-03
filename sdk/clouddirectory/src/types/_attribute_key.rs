@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeKey {
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the facet that the attribute exists within.</p>
-    #[doc(hidden)]
     pub facet_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AttributeKey {

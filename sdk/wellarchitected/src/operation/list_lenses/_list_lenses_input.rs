@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLensesInput {
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The type of lenses to be returned.</p>
-    #[doc(hidden)]
     pub lens_type: ::std::option::Option<crate::types::LensType>,
     /// <p>The status of lenses to be returned.</p>
-    #[doc(hidden)]
     pub lens_status: ::std::option::Option<crate::types::LensStatusType>,
     /// <p>The full name of the lens.</p>
-    #[doc(hidden)]
     pub lens_name: ::std::option::Option<::std::string::String>,
 }
 impl ListLensesInput {

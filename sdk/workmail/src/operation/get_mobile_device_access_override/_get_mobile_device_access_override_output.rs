@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMobileDeviceAccessOverrideOutput {
     /// <p>The WorkMail user to which the access override applies.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The device to which the access override applies.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-    #[doc(hidden)]
     pub effect: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
     /// <p>A description of the override.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date the override was first created.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the description was last modified.</p>
-    #[doc(hidden)]
     pub date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListAppInstancesInput {
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAppInstancesInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualRoutersOutput {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    #[doc(hidden)]
     pub virtual_routers: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

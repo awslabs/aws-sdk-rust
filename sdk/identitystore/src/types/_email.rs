@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Email {
     /// <p>A string containing an email address. For example, "johndoe@amazon.com."</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>A string representing the type of address. For example, "Work."</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value representing whether this is the primary email address for the associated resource.</p>
-    #[doc(hidden)]
     pub primary: bool,
 }
 impl Email {

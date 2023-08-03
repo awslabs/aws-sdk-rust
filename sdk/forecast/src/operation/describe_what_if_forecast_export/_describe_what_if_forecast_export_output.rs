@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWhatIfForecastExportOutput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
-    #[doc(hidden)]
     pub what_if_forecast_export_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the what-if forecast export.</p>
-    #[doc(hidden)]
     pub what_if_forecast_export_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
-    #[doc(hidden)]
     pub what_if_forecast_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>If an error occurred, an informational message about the error.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
@@ -27,13 +22,10 @@ pub struct DescribeWhatIfForecastExportOutput {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>When the what-if forecast export was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The approximate time remaining to complete the what-if forecast export, in minutes.</p>
-    #[doc(hidden)]
     pub estimated_time_remaining_in_minutes: ::std::option::Option<i64>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -43,10 +35,8 @@ pub struct DescribeWhatIfForecastExportOutput {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

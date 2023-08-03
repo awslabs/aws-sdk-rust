@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNetworkServiceAssociationSummary {
     /// <p>The ID of the association.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status. If the deletion fails, try to delete again.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>,
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The account that created the association.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the service.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service network.</p>
-    #[doc(hidden)]
     pub service_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service network.</p>
-    #[doc(hidden)]
     pub service_network_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    #[doc(hidden)]
     pub service_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>DNS information about the service.</p>
-    #[doc(hidden)]
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     /// <p> The custom domain name of the service. </p>
-    #[doc(hidden)]
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNetworkServiceAssociationSummary {

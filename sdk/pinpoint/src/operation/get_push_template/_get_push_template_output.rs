@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPushTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
-    #[doc(hidden)]
     pub push_notification_template_response: ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
     _request_id: Option<String>,
 }

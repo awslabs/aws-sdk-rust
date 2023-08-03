@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The unique identifier for the instance in Amazon EMR.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
-    #[doc(hidden)]
     pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The public DNS name of the instance.</p>
-    #[doc(hidden)]
     pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The public IP address of the instance.</p>
-    #[doc(hidden)]
     pub public_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS name of the instance.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address of the instance.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the instance.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>The identifier of the instance group to which this instance belongs.</p>
-    #[doc(hidden)]
     pub instance_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the instance fleet to which an Amazon EC2 instance belongs.</p>
-    #[doc(hidden)]
     pub instance_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
-    #[doc(hidden)]
     pub market: ::std::option::Option<crate::types::MarketType>,
     /// <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-    #[doc(hidden)]
     pub ebs_volumes: ::std::option::Option<::std::vec::Vec<crate::types::EbsVolume>>,
 }
 impl Instance {

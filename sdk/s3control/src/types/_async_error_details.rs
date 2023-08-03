@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncErrorDetails {
     /// <p>A string that uniquely identifies the error condition.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A generic description of the error condition in English.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource associated with the error.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the request associated with the error.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl AsyncErrorDetails {

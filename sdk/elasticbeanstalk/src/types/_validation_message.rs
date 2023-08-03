@@ -5,20 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationMessage {
     /// <p>A message describing the error or warning.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
     /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
     /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::ValidationSeverity>,
     /// <p>The namespace to which the option belongs.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the option.</p>
-    #[doc(hidden)]
     pub option_name: ::std::option::Option<::std::string::String>,
 }
 impl ValidationMessage {

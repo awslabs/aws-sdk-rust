@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationPortMapping {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator that you have port mappings for.</p>
-    #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address/port combinations (sockets) that map to a given destination socket address.</p>
-    #[doc(hidden)]
     pub accelerator_socket_addresses: ::std::option::Option<::std::vec::Vec<crate::types::SocketAddress>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
-    #[doc(hidden)]
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for the endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint IP address/port combination for traffic received on the accelerator socket address.</p>
-    #[doc(hidden)]
     pub destination_socket_address: ::std::option::Option<crate::types::SocketAddress>,
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
-    #[doc(hidden)]
     pub destination_traffic_state: ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
 }
 impl DestinationPortMapping {

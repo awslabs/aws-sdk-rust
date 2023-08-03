@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateResourceResponseElement {
     /// <p>The resource ARN that was disassociated from the custom line item. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> An <code>AssociateResourceError</code> that's shown if the resource disassociation fails. </p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::AssociateResourceError>,
 }
 impl DisassociateResourceResponseElement {

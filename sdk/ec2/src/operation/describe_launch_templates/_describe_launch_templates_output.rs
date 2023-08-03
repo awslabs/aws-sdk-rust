@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLaunchTemplatesOutput {
     /// <p>Information about the launch templates.</p>
-    #[doc(hidden)]
     pub launch_templates: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplate>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

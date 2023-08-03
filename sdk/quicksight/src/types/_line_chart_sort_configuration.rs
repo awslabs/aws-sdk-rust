@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartSortConfiguration {
     /// <p>The sort configuration of the category fields.</p>
-    #[doc(hidden)]
     pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of categories that are displayed in a line chart.</p>
-    #[doc(hidden)]
     pub category_items_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The limit on the number of lines that are displayed in a line chart.</p>
-    #[doc(hidden)]
     pub color_items_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The sort configuration of the small multiples field.</p>
-    #[doc(hidden)]
     pub small_multiples_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
-    #[doc(hidden)]
     pub small_multiples_limit_configuration: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl LineChartSortConfiguration {

@@ -26,10 +26,8 @@ pub struct Operator {
     /// <li>@actualEndTime</li>
     /// </ul>
     /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OperatorType>,
     /// <p>The value that the actual field value will be compared with.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Operator {

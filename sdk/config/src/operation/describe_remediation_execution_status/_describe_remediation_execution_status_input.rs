@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRemediationExecutionStatusInput {
     /// <p>A list of Config rule names.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-    #[doc(hidden)]
     pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>>,
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRemediationExecutionStatusInput {

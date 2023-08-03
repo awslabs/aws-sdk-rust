@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpnGatewayOutput {
     /// <p>Information about the virtual private gateway.</p>
-    #[doc(hidden)]
     pub vpn_gateway: ::std::option::Option<crate::types::VpnGateway>,
     _request_id: Option<String>,
 }

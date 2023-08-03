@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GdgAttributes {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
-    #[doc(hidden)]
     pub limit: i32,
     /// <p>The disposition of the data set in the catalog.</p>
-    #[doc(hidden)]
     pub roll_disposition: ::std::option::Option<::std::string::String>,
 }
 impl GdgAttributes {

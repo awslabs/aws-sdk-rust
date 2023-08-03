@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLicenseVersionInput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>License name.</p>
-    #[doc(hidden)]
     pub license_name: ::std::option::Option<::std::string::String>,
     /// <p>Product name.</p>
-    #[doc(hidden)]
     pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>License issuer.</p>
-    #[doc(hidden)]
     pub issuer: ::std::option::Option<crate::types::Issuer>,
     /// <p>Home Region of the license.</p>
-    #[doc(hidden)]
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-    #[doc(hidden)]
     pub validity: ::std::option::Option<crate::types::DatetimeRange>,
     /// <p>Information about the license.</p>
-    #[doc(hidden)]
     pub license_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     /// <p>License entitlements.</p>
-    #[doc(hidden)]
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    #[doc(hidden)]
     pub consumption_configuration: ::std::option::Option<crate::types::ConsumptionConfiguration>,
     /// <p>License status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LicenseStatus>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Current version of the license.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateLicenseVersionInput {

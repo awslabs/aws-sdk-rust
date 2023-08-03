@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
     /// <p>Whether node-to-node encryption is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {

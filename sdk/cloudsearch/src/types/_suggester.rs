@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Suggester {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    #[doc(hidden)]
     pub suggester_name: ::std::option::Option<::std::string::String>,
     /// <p>Options for a search suggester.</p>
-    #[doc(hidden)]
     pub document_suggester_options: ::std::option::Option<crate::types::DocumentSuggesterOptions>,
 }
 impl Suggester {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbDomainMembership {
     /// <p>The identifier of the Active Directory domain.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Active Directory Domain membership for the DB instance.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name of the Active Directory domain.</p>
-    #[doc(hidden)]
     pub fqdn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
-    #[doc(hidden)]
     pub iam_role_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbDomainMembership {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutNotificationSettingsInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    #[doc(hidden)]
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    #[doc(hidden)]
     pub notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>>,
 }
 impl PutNotificationSettingsInput {

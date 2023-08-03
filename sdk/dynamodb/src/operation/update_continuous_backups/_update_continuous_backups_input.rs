@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContinuousBackupsInput {
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the settings used to enable point in time recovery.</p>
-    #[doc(hidden)]
     pub point_in_time_recovery_specification: ::std::option::Option<crate::types::PointInTimeRecoverySpecification>,
 }
 impl UpdateContinuousBackupsInput {

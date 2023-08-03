@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBillingGroupsOutput {
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
-    #[doc(hidden)]
     pub billing_groups: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupListElement>>,
     /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

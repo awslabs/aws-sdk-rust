@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationError {
     /// Path to the source of the error.
-    #[doc(hidden)]
     pub element_path: ::std::option::Option<::std::string::String>,
     /// The error message.
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ValidationError {

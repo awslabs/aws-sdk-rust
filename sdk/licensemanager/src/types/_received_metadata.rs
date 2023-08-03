@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReceivedMetadata {
     /// <p>Received status.</p>
-    #[doc(hidden)]
     pub received_status: ::std::option::Option<crate::types::ReceivedStatus>,
     /// <p>Received status reason.</p>
-    #[doc(hidden)]
     pub received_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Allowed operations.</p>
-    #[doc(hidden)]
     pub allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
 }
 impl ReceivedMetadata {

@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateExtendedKeyUsage {
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
-    #[doc(hidden)]
     pub o_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateExtendedKeyUsage {

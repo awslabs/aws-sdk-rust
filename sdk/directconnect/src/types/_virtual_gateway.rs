@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGateway {
     /// <p>The ID of the virtual private gateway.</p>
-    #[doc(hidden)]
     pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the virtual private gateway. The following are the possible values:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct VirtualGateway {
     /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
     /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub virtual_gateway_state: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGateway {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCsvHeaderOutput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The header information of the CSV file for the user import job.</p>
-    #[doc(hidden)]
     pub csv_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -4,40 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
-    #[doc(hidden)]
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>The list of endpoint objects.</p>
-    #[doc(hidden)]
     pub endpoint_configurations: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
-    #[doc(hidden)]
     pub traffic_dial_percentage: ::std::option::Option<f32>,
     /// <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
-    #[doc(hidden)]
     pub health_check_port: ::std::option::Option<i32>,
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
-    #[doc(hidden)]
     pub health_check_protocol: ::std::option::Option<crate::types::HealthCheckProtocol>,
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
-    #[doc(hidden)]
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
-    #[doc(hidden)]
     pub health_check_interval_seconds: ::std::option::Option<i32>,
     /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
-    #[doc(hidden)]
     pub threshold_count: ::std::option::Option<i32>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub port_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>,
 }
 impl CreateEndpointGroupInput {

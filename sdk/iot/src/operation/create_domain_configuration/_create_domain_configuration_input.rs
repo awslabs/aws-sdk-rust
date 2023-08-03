@@ -4,34 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainConfigurationInput {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
-    #[doc(hidden)]
     pub domain_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
-    #[doc(hidden)]
     pub server_certificate_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
-    #[doc(hidden)]
     pub validation_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies the authorization service for a domain.</p>
-    #[doc(hidden)]
     pub authorizer_config: ::std::option::Option<crate::types::AuthorizerConfig>,
     /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
-    #[doc(hidden)]
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An object that specifies the TLS configuration for a domain.</p>
-    #[doc(hidden)]
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
 }
 impl CreateDomainConfigurationInput {

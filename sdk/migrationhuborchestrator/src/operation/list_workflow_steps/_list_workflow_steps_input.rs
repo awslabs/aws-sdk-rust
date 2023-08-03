@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowStepsInput {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that can be returned.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
-    #[doc(hidden)]
     pub step_group_id: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkflowStepsInput {

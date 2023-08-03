@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberAccountStatus {
     /// <p>The 12-digit account ID of a member account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of Config rule deployed in the member account.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the rule to:</p>
@@ -23,16 +21,12 @@ pub struct MemberAccountStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub member_account_rule_status: ::std::option::Option<crate::types::MemberAccountRuleStatus>,
     /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message indicating that Config rule account creation or deletion has failed due to an error in the member account.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the last status update.</p>
-    #[doc(hidden)]
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MemberAccountStatus {

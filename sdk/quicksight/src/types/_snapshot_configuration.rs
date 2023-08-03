@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotConfiguration {
     /// <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain information about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code> configurations.</p>
-    #[doc(hidden)]
     pub file_groups: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFileGroup>>,
     /// <p>A structure that contains information on the Amazon S3 bucket that the generated snapshot is stored in.</p>
-    #[doc(hidden)]
     pub destination_configuration: ::std::option::Option<crate::types::SnapshotDestinationConfiguration>,
     /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<crate::types::Parameters>,
 }
 impl SnapshotConfiguration {

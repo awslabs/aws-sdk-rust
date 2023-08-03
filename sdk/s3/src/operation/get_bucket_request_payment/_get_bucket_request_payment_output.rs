@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketRequestPaymentOutput {
     /// <p>Specifies who pays for the download and request fees.</p>
-    #[doc(hidden)]
     pub payer: ::std::option::Option<crate::types::Payer>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

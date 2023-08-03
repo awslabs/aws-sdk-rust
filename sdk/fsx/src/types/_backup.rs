@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Backup {
     /// <p>The ID of the backup.</p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle status of the backup.</p>
     /// <ul>
@@ -17,49 +16,34 @@ pub struct Backup {
     /// <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li>
     /// <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::BackupLifecycle>,
     /// <p>Details explaining any failures that occurred when creating a backup.</p>
-    #[doc(hidden)]
     pub failure_details: ::std::option::Option<crate::types::BackupFailureDetails>,
     /// <p>The type of the file-system backup.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BackupType>,
     /// <p>Displays the current percent of progress of an asynchronous task.</p>
-    #[doc(hidden)]
     pub progress_percent: ::std::option::Option<i32>,
     /// <p>The time when a particular backup was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest. </p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with a particular file system.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
-    #[doc(hidden)]
     pub file_system: ::std::option::Option<crate::types::FileSystem>,
     /// <p>The configuration of the self-managed Microsoft Active Directory directory to which the Windows File Server instance is joined.</p>
-    #[doc(hidden)]
     pub directory_information: ::std::option::Option<crate::types::ActiveDirectoryBackupAttributes>,
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-    #[doc(hidden)]
     pub source_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The source Region of the backup. Specifies the Region from where this backup is copied.</p>
-    #[doc(hidden)]
     pub source_backup_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the resource type that's backed up.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
-    #[doc(hidden)]
     pub volume: ::std::option::Option<crate::types::Volume>,
 }
 impl Backup {

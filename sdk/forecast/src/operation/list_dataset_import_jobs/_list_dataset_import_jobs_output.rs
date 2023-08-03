@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetImportJobsOutput {
     /// <p>An array of objects that summarize each dataset import job's properties.</p>
-    #[doc(hidden)]
     pub dataset_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DatasetImportJobSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

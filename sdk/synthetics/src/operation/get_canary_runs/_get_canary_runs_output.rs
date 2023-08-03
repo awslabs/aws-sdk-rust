@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCanaryRunsOutput {
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
-    #[doc(hidden)]
     pub canary_runs: ::std::option::Option<::std::vec::Vec<crate::types::CanaryRun>>,
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

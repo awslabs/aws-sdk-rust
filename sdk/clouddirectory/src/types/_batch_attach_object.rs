@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAttachObject {
     /// <p>The parent object reference.</p>
-    #[doc(hidden)]
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The child object reference that is to be attached to the object.</p>
-    #[doc(hidden)]
     pub child_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of the link.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchAttachObject {

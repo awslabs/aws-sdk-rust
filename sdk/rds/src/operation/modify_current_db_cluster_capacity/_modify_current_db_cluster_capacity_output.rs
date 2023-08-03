@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCurrentDbClusterCapacityOutput {
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
-    #[doc(hidden)]
     pub pending_capacity: ::std::option::Option<i32>,
     /// <p>The current capacity of the DB cluster.</p>
-    #[doc(hidden)]
     pub current_capacity: ::std::option::Option<i32>,
     /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
-    #[doc(hidden)]
     pub seconds_before_timeout: ::std::option::Option<i32>,
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    #[doc(hidden)]
     pub timeout_action: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

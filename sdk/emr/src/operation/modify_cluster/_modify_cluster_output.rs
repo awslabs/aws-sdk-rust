@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterOutput {
     /// <p>The number of steps that can be executed concurrently.</p>
-    #[doc(hidden)]
     pub step_concurrency_level: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

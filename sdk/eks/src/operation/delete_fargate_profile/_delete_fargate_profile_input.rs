@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFargateProfileInput {
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Fargate profile to delete.</p>
-    #[doc(hidden)]
     pub fargate_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFargateProfileInput {

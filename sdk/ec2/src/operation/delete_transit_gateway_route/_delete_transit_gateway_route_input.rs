@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayRouteInput {
     /// <p>The ID of the transit gateway route table.</p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DeleteTransitGatewayRouteInput {

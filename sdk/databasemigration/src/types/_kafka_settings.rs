@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KafkaSettings {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>. </p>
-    #[doc(hidden)]
     pub broker: ::std::option::Option<::std::string::String>,
     /// <p>The topic to which you migrate the data. If you don't specify a topic, DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The output format for the records created on the endpoint. The message format is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).</p>
-    #[doc(hidden)]
     pub message_format: ::std::option::Option<crate::types::MessageFormatValue>,
     /// <p>Provides detailed transaction information from the source database. This information includes a commit timestamp, a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_transaction_details: ::std::option::Option<bool>,
     /// <p>Shows the partition value within the Kafka message output unless the partition type is <code>schema-table-type</code>. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_partition_value: ::std::option::Option<bool>,
     /// <p>Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>. Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary key. In this case, the same primary key is sent from thousands of tables to the same partition, which causes throttling. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub partition_include_schema_table: ::std::option::Option<bool>,
     /// <p>Includes any data definition language (DDL) operations that change the table in the control data, such as <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and <code>rename-column</code>. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_table_alter_operations: ::std::option::Option<bool>,
     /// <p>Shows detailed control information for table definition, column definition, and table and column changes in the Kafka message output. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_control_details: ::std::option::Option<bool>,
     /// <p>The maximum size in bytes for records created on the endpoint The default is 1,000,000.</p>
-    #[doc(hidden)]
     pub message_max_bytes: ::std::option::Option<i32>,
     /// <p>Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_null_and_empty: ::std::option::Option<bool>,
     /// <p>Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.</p>
-    #[doc(hidden)]
     pub security_protocol: ::std::option::Option<crate::types::KafkaSecurityProtocol>,
     /// <p>The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.</p>
-    #[doc(hidden)]
     pub ssl_client_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.</p>
-    #[doc(hidden)]
     pub ssl_client_key_arn: ::std::option::Option<::std::string::String>,
     /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
-    #[doc(hidden)]
     pub ssl_client_key_password: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
-    #[doc(hidden)]
     pub ssl_ca_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p> The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
-    #[doc(hidden)]
     pub sasl_username: ::std::option::Option<::std::string::String>,
     /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
-    #[doc(hidden)]
     pub sasl_password: ::std::option::Option<::std::string::String>,
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
-    #[doc(hidden)]
     pub no_hex_prefix: ::std::option::Option<bool>,
     /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code> </p>
-    #[doc(hidden)]
     pub sasl_mechanism: ::std::option::Option<crate::types::KafkaSaslMechanism>,
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later. </p>
-    #[doc(hidden)]
     pub ssl_endpoint_identification_algorithm: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
 }
 impl KafkaSettings {

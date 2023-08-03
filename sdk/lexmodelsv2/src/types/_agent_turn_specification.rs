@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentTurnSpecification {
     /// <p>The agent prompt for the agent turn in a test set.</p>
-    #[doc(hidden)]
     pub agent_prompt: ::std::option::Option<::std::string::String>,
 }
 impl AgentTurnSpecification {

@@ -15,16 +15,12 @@
 pub struct Rule {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-    #[doc(hidden)]
     pub predicates: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
 }
 impl Rule {

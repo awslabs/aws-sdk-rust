@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsBinBySpecification {
     /// <p>Specifies the time metric by which to bin the analytics data.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsBinByName>,
     /// <p>Specifies the interval of time by which to bin the analytics data.</p>
-    #[doc(hidden)]
     pub interval: ::std::option::Option<crate::types::AnalyticsInterval>,
     /// <p>Specifies whether to bin the analytics data in ascending or descending order. If this field is left blank, the default order is by the key of the bin in descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
 impl AnalyticsBinBySpecification {

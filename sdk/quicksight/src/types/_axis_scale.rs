@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisScale {
     /// <p>The linear axis scale setup.</p>
-    #[doc(hidden)]
     pub linear: ::std::option::Option<crate::types::AxisLinearScale>,
     /// <p>The logarithmic axis scale setup.</p>
-    #[doc(hidden)]
     pub logarithmic: ::std::option::Option<crate::types::AxisLogarithmicScale>,
 }
 impl AxisScale {

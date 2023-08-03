@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentArtifactsConfiguration {
     /// <p>Indicates whether the content artifact is enabled or disabled.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArtifactsState>,
     /// <p>The MUX type of the artifact configuration.</p>
-    #[doc(hidden)]
     pub mux_type: ::std::option::Option<crate::types::ContentMuxType>,
 }
 impl ContentArtifactsConfiguration {

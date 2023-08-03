@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppRegistryConfiguration {
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
-    #[doc(hidden)]
     pub tag_query_configuration: ::std::option::Option<crate::types::TagQueryConfiguration>,
 }
 impl AppRegistryConfiguration {

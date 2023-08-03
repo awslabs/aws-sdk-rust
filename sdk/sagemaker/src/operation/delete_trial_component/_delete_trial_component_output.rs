@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
-    #[doc(hidden)]
     pub trial_component_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

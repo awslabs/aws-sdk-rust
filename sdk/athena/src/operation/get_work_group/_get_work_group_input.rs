@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkGroupInput {
     /// <p>The name of the workgroup.</p>
-    #[doc(hidden)]
     pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkGroupInput {

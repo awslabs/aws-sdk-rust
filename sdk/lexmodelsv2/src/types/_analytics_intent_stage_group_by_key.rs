@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsIntentStageGroupByKey {
     /// <p>A category by which the intent stage analytics were grouped.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
     /// <p>A member of the category by which the intent stage analytics were grouped.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AnalyticsIntentStageGroupByKey {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListAppInstanceAdminsOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    #[doc(hidden)]
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The information for each administrator.</p>
-    #[doc(hidden)]
     pub app_instance_admins: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

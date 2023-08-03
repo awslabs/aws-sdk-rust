@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewDefaultValues {
     /// <p>A list of static default values for a given string parameter.</p>
-    #[doc(hidden)]
     pub string_static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of static default values for a given decimal parameter.</p>
-    #[doc(hidden)]
     pub decimal_static_values: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>A list of static default values for a given date time parameter.</p>
-    #[doc(hidden)]
     pub date_time_static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>A list of static default values for a given integer parameter.</p>
-    #[doc(hidden)]
     pub integer_static_values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl NewDefaultValues {

@@ -5,11 +5,9 @@
 pub struct UpdateDistributionBundleInput {
     /// <p>The name of the distribution for which to update the bundle.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    #[doc(hidden)]
     pub distribution_name: ::std::option::Option<::std::string::String>,
     /// <p>The bundle ID of the new bundle to apply to your distribution.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDistributionBundleInput {

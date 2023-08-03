@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnalyzerOutput {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
-    #[doc(hidden)]
     pub analyzer: ::std::option::Option<crate::types::AnalyzerSummary>,
     _request_id: Option<String>,
 }

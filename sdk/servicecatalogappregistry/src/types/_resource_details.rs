@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>The value of the tag.</p>
-    #[doc(hidden)]
     pub tag_value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDetails {

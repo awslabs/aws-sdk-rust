@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
-    #[doc(hidden)]
     pub tags_model: ::std::option::Option<crate::types::TagsModel>,
 }
 impl TagResourceInput {

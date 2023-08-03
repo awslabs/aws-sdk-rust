@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     /// <p> The ID of the event. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
-    #[doc(hidden)]
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The Amazon Web Services source that emitted the event. </p>
-    #[doc(hidden)]
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p> The name of the event. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::EventDataSource>,
     /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
-    #[doc(hidden)]
     pub event_class: ::std::option::Option<crate::types::EventClass>,
     /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::EventResource>>,
 }
 impl Event {

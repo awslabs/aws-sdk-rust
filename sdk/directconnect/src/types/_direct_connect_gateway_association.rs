@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectConnectGatewayAssociation {
     /// <p>The ID of the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
-    #[doc(hidden)]
     pub direct_connect_gateway_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association. The following are the possible values:</p>
     /// <ul>
@@ -18,28 +16,20 @@ pub struct DirectConnectGatewayAssociation {
     /// <li> <p> <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p> </li>
     /// <li> <p> <code>updating</code>: The CIDR blocks for the virtual private gateway or transit gateway are currently being updated. This could be new CIDR blocks added or current CIDR blocks removed.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub association_state: ::std::option::Option<crate::types::DirectConnectGatewayAssociationState>,
     /// <p>The error message if the state of an object failed to advance.</p>
-    #[doc(hidden)]
     pub state_change_error: ::std::option::Option<::std::string::String>,
     /// <p>Information about the associated gateway.</p>
-    #[doc(hidden)]
     pub associated_gateway: ::std::option::Option<crate::types::AssociatedGateway>,
     /// <p>The ID of the Direct Connect gateway association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    #[doc(hidden)]
     pub allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    #[doc(hidden)]
     pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
-    #[doc(hidden)]
     pub virtual_gateway_region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
-    #[doc(hidden)]
     pub virtual_gateway_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl DirectConnectGatewayAssociation {

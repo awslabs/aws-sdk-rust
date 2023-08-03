@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageLensConfiguration {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A container for all the account-level configurations of your S3 Storage Lens configuration.</p>
-    #[doc(hidden)]
     pub account_level: ::std::option::Option<crate::types::AccountLevel>,
     /// <p>A container for what is included in this configuration. This container can only be valid if there is no <code>Exclude</code> container submitted, and it's not empty. </p>
-    #[doc(hidden)]
     pub include: ::std::option::Option<crate::types::Include>,
     /// <p>A container for what is excluded in this configuration. This container can only be valid if there is no <code>Include</code> container submitted, and it's not empty. </p>
-    #[doc(hidden)]
     pub exclude: ::std::option::Option<crate::types::Exclude>,
     /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>
-    #[doc(hidden)]
     pub data_export: ::std::option::Option<crate::types::StorageLensDataExport>,
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
-    #[doc(hidden)]
     pub is_enabled: bool,
     /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
-    #[doc(hidden)]
     pub aws_org: ::std::option::Option<crate::types::StorageLensAwsOrg>,
     /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code> </p>
-    #[doc(hidden)]
     pub storage_lens_arn: ::std::option::Option<::std::string::String>,
 }
 impl StorageLensConfiguration {

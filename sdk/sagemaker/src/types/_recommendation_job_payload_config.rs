@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationJobPayloadConfig {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    #[doc(hidden)]
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
     /// <p>The supported MIME types for the input data.</p>
-    #[doc(hidden)]
     pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RecommendationJobPayloadConfig {

@@ -8,10 +8,8 @@ pub struct ListTagsInput {
     /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-    #[doc(hidden)]
     pub resource_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInput {

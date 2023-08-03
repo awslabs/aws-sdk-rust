@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CryptogramVerificationArpcMethod2 {
     /// <p>The data indicating whether the issuer approves or declines an online transaction using an EMV chip card.</p>
-    #[doc(hidden)]
     pub card_status_update: ::std::option::Option<::std::string::String>,
     /// <p>The proprietary authentication data used by issuer for communication during online transaction using an EMV chip card.</p>
-    #[doc(hidden)]
     pub proprietary_authentication_data: ::std::option::Option<::std::string::String>,
 }
 impl CryptogramVerificationArpcMethod2 {

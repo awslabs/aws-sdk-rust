@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFeatureMetadataInput {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.</p>
-    #[doc(hidden)]
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature that you're updating.</p>
-    #[doc(hidden)]
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>A description that you can write to better describe the feature.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    #[doc(hidden)]
     pub parameter_additions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    #[doc(hidden)]
     pub parameter_removals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFeatureMetadataInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionStepMetadata {
     /// <p>The outcome of the Condition step evaluation.</p>
-    #[doc(hidden)]
     pub outcome: ::std::option::Option<crate::types::ConditionOutcome>,
 }
 impl ConditionStepMetadata {

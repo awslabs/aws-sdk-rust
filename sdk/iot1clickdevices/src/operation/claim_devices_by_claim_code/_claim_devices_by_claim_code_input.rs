@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimDevicesByClaimCodeInput {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
-    #[doc(hidden)]
     pub claim_code: ::std::option::Option<::std::string::String>,
 }
 impl ClaimDevicesByClaimCodeInput {

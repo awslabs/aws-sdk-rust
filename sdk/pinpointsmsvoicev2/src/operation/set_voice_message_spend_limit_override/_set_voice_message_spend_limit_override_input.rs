@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetVoiceMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on voice messages.</p>
-    #[doc(hidden)]
     pub monthly_limit: ::std::option::Option<i64>,
 }
 impl SetVoiceMessageSpendLimitOverrideInput {

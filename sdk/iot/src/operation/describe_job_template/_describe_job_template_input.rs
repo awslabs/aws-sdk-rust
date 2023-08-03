@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobTemplateInput {
     /// <p>The unique identifier of the job template.</p>
-    #[doc(hidden)]
     pub job_template_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobTemplateInput {

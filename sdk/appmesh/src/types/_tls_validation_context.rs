@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-    #[doc(hidden)]
     pub trust: ::std::option::Option<crate::types::TlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the service discovery name.</p>
-    #[doc(hidden)]
     pub subject_alternative_names: ::std::option::Option<crate::types::SubjectAlternativeNames>,
 }
 impl TlsValidationContext {

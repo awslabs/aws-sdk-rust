@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
     /// Description of the error.
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// Service Quotas requirement to identify originating service.
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// Service Quotas requirement to identify originating quota.
-    #[doc(hidden)]
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// Advice to clients on when the call can be safely retried.
-    #[doc(hidden)]
     pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

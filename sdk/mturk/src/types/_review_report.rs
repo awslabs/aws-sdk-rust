@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReviewReport {
     /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
-    #[doc(hidden)]
     pub review_results: ::std::option::Option<::std::vec::Vec<crate::types::ReviewResultDetail>>,
     /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
-    #[doc(hidden)]
     pub review_actions: ::std::option::Option<::std::vec::Vec<crate::types::ReviewActionDetail>>,
 }
 impl ReviewReport {

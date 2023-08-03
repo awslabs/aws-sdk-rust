@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesOutput {
     /// <p>A summary of the data lake resources.</p>
-    #[doc(hidden)]
     pub resource_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceInfo>>,
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

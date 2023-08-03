@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelFlow {
     /// <p>The ARN of the channel flow.</p>
-    #[doc(hidden)]
     pub channel_flow_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the processor Lambda functions.</p>
-    #[doc(hidden)]
     pub processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
     /// <p>The name of the channel flow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the channel flow was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a channel flow was updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ChannelFlow {

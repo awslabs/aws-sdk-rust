@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPartnerEventsInput {
     /// <p>The list of events to write to the event bus.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>,
 }
 impl PutPartnerEventsInput {

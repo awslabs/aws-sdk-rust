@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesInput {
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    #[doc(hidden)]
     pub replication_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to describe Replication Configuration template by max results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Request to describe Replication Configuration template by next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReplicationConfigurationTemplatesInput {

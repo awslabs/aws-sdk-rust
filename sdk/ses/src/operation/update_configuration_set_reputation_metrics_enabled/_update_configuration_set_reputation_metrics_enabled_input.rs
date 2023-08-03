@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetReputationMetricsEnabledInput {
     /// <p>The name of the configuration set that you want to update.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl UpdateConfigurationSetReputationMetricsEnabledInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CloseStatus>,
 }
 impl CloseStatusFilter {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchCasesOutput {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
-    #[doc(hidden)]
     pub cases: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>>,
     _request_id: Option<String>,
 }

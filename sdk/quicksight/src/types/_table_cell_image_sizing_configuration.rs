@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableCellImageSizingConfiguration {
     /// <p>The cell scaling configuration of the sizing options for the table image configuration.</p>
-    #[doc(hidden)]
     pub table_cell_image_scaling_configuration: ::std::option::Option<crate::types::TableCellImageScalingConfiguration>,
 }
 impl TableCellImageSizingConfiguration {

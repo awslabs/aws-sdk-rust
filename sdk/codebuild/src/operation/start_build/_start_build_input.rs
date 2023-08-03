@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBuildInput {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    #[doc(hidden)]
     pub secondary_sources_override: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
     /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
-    #[doc(hidden)]
     pub secondary_sources_version_override: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
     /// <dl>
@@ -41,90 +38,64 @@ pub struct StartBuildInput {
     /// </dl>
     /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
-    #[doc(hidden)]
     pub artifacts_override: ::std::option::Option<crate::types::ProjectArtifacts>,
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-    #[doc(hidden)]
     pub secondary_artifacts_override: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>,
     /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-    #[doc(hidden)]
     pub environment_variables_override: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
-    #[doc(hidden)]
     pub source_type_override: ::std::option::Option<crate::types::SourceType>,
     /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
-    #[doc(hidden)]
     pub source_location_override: ::std::option::Option<::std::string::String>,
     /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
-    #[doc(hidden)]
     pub source_auth_override: ::std::option::Option<crate::types::SourceAuth>,
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
-    #[doc(hidden)]
     pub git_clone_depth_override: ::std::option::Option<i32>,
     /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
-    #[doc(hidden)]
     pub git_submodules_config_override: ::std::option::Option<crate::types::GitSubmodulesConfig>,
     /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
     /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-    #[doc(hidden)]
     pub buildspec_override: ::std::option::Option<::std::string::String>,
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
-    #[doc(hidden)]
     pub insecure_ssl_override: ::std::option::Option<bool>,
     /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>
     /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p>
     /// </note>
-    #[doc(hidden)]
     pub report_build_status_override: ::std::option::Option<bool>,
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-    #[doc(hidden)]
     pub build_status_config_override: ::std::option::Option<crate::types::BuildStatusConfig>,
     /// <p>A container type for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
     pub environment_type_override: ::std::option::Option<crate::types::EnvironmentType>,
     /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
     pub image_override: ::std::option::Option<::std::string::String>,
     /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
     pub compute_type_override: ::std::option::Option<crate::types::ComputeType>,
     /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
     pub certificate_override: ::std::option::Option<::std::string::String>,
     /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
-    #[doc(hidden)]
     pub cache_override: ::std::option::Option<crate::types::ProjectCache>,
     /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
-    #[doc(hidden)]
     pub service_role_override: ::std::option::Option<::std::string::String>,
     /// <p>Enable this flag to override privileged mode in the build project.</p>
-    #[doc(hidden)]
     pub privileged_mode_override: ::std::option::Option<bool>,
     /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
-    #[doc(hidden)]
     pub timeout_in_minutes_override: ::std::option::Option<i32>,
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
-    #[doc(hidden)]
     pub queued_timeout_in_minutes_override: ::std::option::Option<i32>,
     /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>
     /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>).</p>
-    #[doc(hidden)]
     pub encryption_key_override: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p> Log settings for this build that override the log settings defined in the build project. </p>
-    #[doc(hidden)]
     pub logs_config_override: ::std::option::Option<crate::types::LogsConfig>,
     /// <p> The credentials for access to a private registry. </p>
-    #[doc(hidden)]
     pub registry_credential_override: ::std::option::Option<crate::types::RegistryCredential>,
     /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
     /// <dl>
@@ -142,10 +113,8 @@ pub struct StartBuildInput {
     /// </dd>
     /// </dl>
     /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
-    #[doc(hidden)]
     pub image_pull_credentials_type_override: ::std::option::Option<crate::types::ImagePullCredentialsType>,
     /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
-    #[doc(hidden)]
     pub debug_session_enabled: ::std::option::Option<bool>,
 }
 impl StartBuildInput {

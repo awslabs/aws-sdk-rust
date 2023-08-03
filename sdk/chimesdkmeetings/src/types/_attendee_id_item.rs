@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
-    #[doc(hidden)]
     pub attendee_id: ::std::option::Option<::std::string::String>,
 }
 impl AttendeeIdItem {

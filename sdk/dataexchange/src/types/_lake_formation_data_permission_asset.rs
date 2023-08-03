@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LakeFormationDataPermissionAsset {
     /// <p>Details about the AWS Lake Formation data permission.</p>
-    #[doc(hidden)]
     pub lake_formation_data_permission_details: ::std::option::Option<crate::types::LakeFormationDataPermissionDetails>,
     /// <p>The data permission type.</p>
-    #[doc(hidden)]
     pub lake_formation_data_permission_type: ::std::option::Option<crate::types::LakeFormationDataPermissionType>,
     /// <p>The permissions granted to the subscribers on the resource.</p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::LfPermission>>,
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions to AWS Lake Formation data permissions.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl LakeFormationDataPermissionAsset {

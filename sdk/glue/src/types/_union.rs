@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Union {
     /// <p>The name of the transform node.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The node ID inputs to the transform.</p>
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates the type of Union transform. </p>
     /// <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p>
     /// <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
-    #[doc(hidden)]
     pub union_type: ::std::option::Option<crate::types::UnionType>,
 }
 impl Union {

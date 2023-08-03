@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppsListInput {
     /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
-    #[doc(hidden)]
     pub list_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppsListInput {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMessageMoveTasksResultEntry {
     /// <p>An identifier associated with a message movement task. When this field is returned in the response of the <code>ListMessageMoveTasks</code> action, it is only populated for tasks that are in RUNNING status.</p>
-    #[doc(hidden)]
     pub task_handle: ::std::option::Option<::std::string::String>,
     /// <p>The status of the message movement task. Possible values are: RUNNING, COMPLETED, CANCELLING, CANCELLED, and FAILED.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the queue that contains the messages to be moved to another queue.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the destination queue if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>DestinationArn</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of messages to be moved per second (the message movement rate), if it has been specified in the <code>StartMessageMoveTask</code> request. If a <code>MaxNumberOfMessagesPerSecond</code> has not been specified in the <code>StartMessageMoveTask</code> request, this field value will be NULL.</p>
-    #[doc(hidden)]
     pub max_number_of_messages_per_second: i32,
     /// <p>The approximate number of messages already moved to the destination queue.</p>
-    #[doc(hidden)]
     pub approximate_number_of_messages_moved: i64,
     /// <p>The number of messages to be moved from the source queue. This number is obtained at the time of starting the message movement task.</p>
-    #[doc(hidden)]
     pub approximate_number_of_messages_to_move: i64,
     /// <p>The task failure reason (only included if the task status is FAILED).</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of starting the message movement task.</p>
-    #[doc(hidden)]
     pub started_timestamp: i64,
 }
 impl ListMessageMoveTasksResultEntry {

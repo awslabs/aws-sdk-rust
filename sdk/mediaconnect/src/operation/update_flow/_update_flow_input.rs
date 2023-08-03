@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowInput {
     /// The flow that you want to update.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The settings for source failover.
-    #[doc(hidden)]
     pub source_failover_config: ::std::option::Option<crate::types::UpdateFailoverConfig>,
     /// Update maintenance setting for a flow
-    #[doc(hidden)]
     pub maintenance: ::std::option::Option<crate::types::UpdateMaintenance>,
 }
 impl UpdateFlowInput {

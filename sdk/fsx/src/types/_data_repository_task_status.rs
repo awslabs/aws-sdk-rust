@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataRepositoryTaskStatus {
     /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
-    #[doc(hidden)]
     pub total_count: ::std::option::Option<i64>,
     /// <p>A running total of the number of files that the task has successfully processed.</p>
-    #[doc(hidden)]
     pub succeeded_count: ::std::option::Option<i64>,
     /// <p>A running total of the number of files that the task failed to process.</p>
-    #[doc(hidden)]
     pub failed_count: ::std::option::Option<i64>,
     /// <p>The time at which the task status was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
-    #[doc(hidden)]
     pub released_capacity: ::std::option::Option<i64>,
 }
 impl DataRepositoryTaskStatus {

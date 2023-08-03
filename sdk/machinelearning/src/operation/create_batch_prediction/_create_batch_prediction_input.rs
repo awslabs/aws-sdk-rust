@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-    #[doc(hidden)]
     pub batch_prediction_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    #[doc(hidden)]
     pub batch_prediction_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub output_uri: ::std::option::Option<::std::string::String>,
 }
 impl CreateBatchPredictionInput {

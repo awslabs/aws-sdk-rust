@@ -4,29 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetImportJobInput {
     /// <p>The name for the dataset import job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dataset that receives the imported data.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
     /// <ul>
     /// <li> <p>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.</p> </li>
     /// <li> <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::ImportMode>,
     /// <p>If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3</p>
-    #[doc(hidden)]
     pub publish_attribution_metrics_to_s3: ::std::option::Option<bool>,
 }
 impl CreateDatasetImportJobInput {

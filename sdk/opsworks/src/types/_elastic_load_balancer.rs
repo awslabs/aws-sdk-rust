@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticLoadBalancer {
     /// <p>The Elastic Load Balancing instance's name.</p>
-    #[doc(hidden)]
     pub elastic_load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance's AWS region.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The instance's public DNS name.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the stack that the instance is associated with.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the layer that the instance is attached to.</p>
-    #[doc(hidden)]
     pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of Availability Zones.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of subnet IDs, if the stack is running in a VPC.</p>
-    #[doc(hidden)]
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.</p>
-    #[doc(hidden)]
     pub ec2_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ElasticLoadBalancer {

@@ -11,13 +11,10 @@ pub struct ResourceGroup {
     /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
     /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ResourceGroupState>,
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ResourceGroup {

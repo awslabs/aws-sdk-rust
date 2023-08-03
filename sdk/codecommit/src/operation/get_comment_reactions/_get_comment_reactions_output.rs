@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommentReactionsOutput {
     /// <p>An array of reactions to the specified comment.</p>
-    #[doc(hidden)]
     pub reactions_for_comment: ::std::option::Option<::std::vec::Vec<crate::types::ReactionForComment>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

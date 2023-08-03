@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferencedSecurityGroup {
     /// <p>The ID of the security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of a VPC peering connection, if applicable.</p>
-    #[doc(hidden)]
     pub peering_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC peering connection.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl ReferencedSecurityGroup {

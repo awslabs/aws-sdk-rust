@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProfilingGroupInput {
     /// <p> The name of the profiling group to get information about. </p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProfilingGroupInput {

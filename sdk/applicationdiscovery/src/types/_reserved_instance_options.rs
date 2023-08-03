@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstanceOptions {
     /// <p> The payment plan to use for your Reserved Instance. </p>
-    #[doc(hidden)]
     pub purchasing_option: ::std::option::Option<crate::types::PurchasingOption>,
     /// <p> The flexibility to change the instance types needed for your Reserved Instance. </p>
-    #[doc(hidden)]
     pub offering_class: ::std::option::Option<crate::types::OfferingClass>,
     /// <p> The preferred duration of the Reserved Instance term. </p>
-    #[doc(hidden)]
     pub term_length: ::std::option::Option<crate::types::TermLength>,
 }
 impl ReservedInstanceOptions {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateConnectionFromLagOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the connection.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
@@ -25,63 +22,44 @@ pub struct DisassociateConnectionFromLagOutput {
     /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The location of the connection.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The bandwidth of the connection.</p>
-    #[doc(hidden)]
     pub bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VLAN.</p>
-    #[doc(hidden)]
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    #[doc(hidden)]
     pub partner_name: ::std::option::Option<::std::string::String>,
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    #[doc(hidden)]
     pub loa_issue_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
-    #[doc(hidden)]
     pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    #[doc(hidden)]
     pub aws_device: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether jumbo frames are supported.</p>
-    #[doc(hidden)]
     pub jumbo_frame_capable: ::std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    #[doc(hidden)]
     pub aws_device_v2: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    #[doc(hidden)]
     pub aws_logical_device_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    #[doc(hidden)]
     pub has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the connection.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
-    #[doc(hidden)]
     pub mac_sec_capable: ::std::option::Option<bool>,
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    #[doc(hidden)]
     pub port_encryption_status: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    #[doc(hidden)]
     pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    #[doc(hidden)]
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     _request_id: Option<String>,
 }

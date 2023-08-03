@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-    #[doc(hidden)]
     pub application_component_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationComponentStrategiesInput {

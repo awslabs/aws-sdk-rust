@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightResults {
     /// <p>The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    #[doc(hidden)]
     pub insight_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    #[doc(hidden)]
     pub group_by_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The list of insight result values returned by the <code>GetInsightResults</code> operation.</p>
-    #[doc(hidden)]
     pub result_values: ::std::option::Option<::std::vec::Vec<crate::types::InsightResultValue>>,
 }
 impl InsightResults {

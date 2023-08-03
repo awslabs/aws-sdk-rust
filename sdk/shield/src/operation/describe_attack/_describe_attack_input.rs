@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAttackInput {
     /// <p>The unique identifier (ID) for the attack.</p>
-    #[doc(hidden)]
     pub attack_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAttackInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The parent reference from which the object with the specified link name is detached.</p>
-    #[doc(hidden)]
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The link name associated with the object that needs to be detached.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl DetachObjectInput {

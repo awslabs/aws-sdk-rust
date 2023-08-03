@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFacetInput {
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
@@ -25,10 +22,8 @@ pub struct CreateFacetInput {
     /// <ul>
     /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub object_type: ::std::option::Option<crate::types::ObjectType>,
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    #[doc(hidden)]
     pub facet_style: ::std::option::Option<crate::types::FacetStyle>,
 }
 impl CreateFacetInput {

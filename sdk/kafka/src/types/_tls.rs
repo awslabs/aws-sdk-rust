@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tls {
     /// <p>List of ACM Certificate Authority ARNs.</p>
-    #[doc(hidden)]
     pub certificate_authority_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl Tls {

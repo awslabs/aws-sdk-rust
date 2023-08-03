@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoverInstancesOutput {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::HttpInstanceSummary>>,
     _request_id: Option<String>,
 }

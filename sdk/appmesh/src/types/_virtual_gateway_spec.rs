@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
-    #[doc(hidden)]
     pub backend_defaults: ::std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
-    #[doc(hidden)]
     pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayListener>>,
     /// <p>An object that represents logging information.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<crate::types::VirtualGatewayLogging>,
 }
 impl VirtualGatewaySpec {

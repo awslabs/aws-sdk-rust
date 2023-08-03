@@ -17,21 +17,18 @@ pub struct DocumentReaderConfig {
     /// <li> <p> <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The Amazon Comprehend service uses the <code>DetectDocumentText</code> API operation. </p> </li>
     /// <li> <p> <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub document_read_action: ::std::option::Option<crate::types::DocumentReadAction>,
     /// <p>Determines the text extraction actions for PDF files. Enter one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>SERVICE_DEFAULT</code> - use the Amazon Comprehend service defaults for PDF files.</p> </li>
     /// <li> <p> <code>FORCE_DOCUMENT_READ_ACTION</code> - Amazon Comprehend uses the Textract API specified by DocumentReadAction for all PDF files, including digital PDF files. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub document_read_mode: ::std::option::Option<crate::types::DocumentReadMode>,
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
     /// <ul>
     /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
     /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
 }
 impl DocumentReaderConfig {

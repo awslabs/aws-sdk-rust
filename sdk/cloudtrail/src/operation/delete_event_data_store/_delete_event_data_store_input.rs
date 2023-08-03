@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventDataStoreInput {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
-    #[doc(hidden)]
     pub event_data_store: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventDataStoreInput {

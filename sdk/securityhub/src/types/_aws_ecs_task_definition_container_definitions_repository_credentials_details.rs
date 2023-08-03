@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
-    #[doc(hidden)]
     pub credentials_parameter: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {

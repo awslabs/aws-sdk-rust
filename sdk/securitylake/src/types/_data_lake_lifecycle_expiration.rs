@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeLifecycleExpiration {
     /// <p>Number of days before data expires in the Amazon Security Lake object.</p>
-    #[doc(hidden)]
     pub days: ::std::option::Option<i32>,
 }
 impl DataLakeLifecycleExpiration {

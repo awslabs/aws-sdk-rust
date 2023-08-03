@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutOrganizationConfigRuleInput {
     /// <p>The name that you assign to an organization Config rule.</p>
-    #[doc(hidden)]
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
-    #[doc(hidden)]
     pub organization_managed_rule_metadata: ::std::option::Option<crate::types::OrganizationManagedRuleMetadata>,
     /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
-    #[doc(hidden)]
     pub organization_custom_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomRuleMetadata>,
     /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
-    #[doc(hidden)]
     pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
-    #[doc(hidden)]
     pub organization_custom_policy_rule_metadata: ::std::option::Option<crate::types::OrganizationCustomPolicyRuleMetadata>,
 }
 impl PutOrganizationConfigRuleInput {

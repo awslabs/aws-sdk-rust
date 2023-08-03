@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPermissionsBoundaryForPermissionSetOutput {
     /// <p>The permissions boundary attached to the specified permission set.</p>
-    #[doc(hidden)]
     pub permissions_boundary: ::std::option::Option<crate::types::PermissionsBoundary>,
     _request_id: Option<String>,
 }

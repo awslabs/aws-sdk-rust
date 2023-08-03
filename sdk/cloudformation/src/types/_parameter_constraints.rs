@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterConstraints {
     /// <p>A list of values that are permitted for a parameter.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ParameterConstraints {

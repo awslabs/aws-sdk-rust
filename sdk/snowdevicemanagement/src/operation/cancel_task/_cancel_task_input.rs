@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelTaskInput {
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelTaskInput {

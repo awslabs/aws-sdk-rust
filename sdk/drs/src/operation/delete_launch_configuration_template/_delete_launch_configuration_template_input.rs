@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLaunchConfigurationTemplateInput {
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
-    #[doc(hidden)]
     pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLaunchConfigurationTemplateInput {

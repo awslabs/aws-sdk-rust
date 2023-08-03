@@ -5,64 +5,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TraceSummary {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<f64>,
     /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
-    #[doc(hidden)]
     pub response_time: ::std::option::Option<f64>,
     /// <p>The root segment document has a 500 series error.</p>
-    #[doc(hidden)]
     pub has_fault: ::std::option::Option<bool>,
     /// <p>The root segment document has a 400 series error.</p>
-    #[doc(hidden)]
     pub has_error: ::std::option::Option<bool>,
     /// <p>One or more of the segment documents has a 429 throttling error.</p>
-    #[doc(hidden)]
     pub has_throttle: ::std::option::Option<bool>,
     /// <p>One or more of the segment documents is in progress.</p>
-    #[doc(hidden)]
     pub is_partial: ::std::option::Option<bool>,
     /// <p>Information about the HTTP request served by the trace.</p>
-    #[doc(hidden)]
     pub http: ::std::option::Option<crate::types::Http>,
     /// <p>Annotations from the trace's segment documents.</p>
-    #[doc(hidden)]
     pub annotations: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ValueWithServiceIds>>>,
     /// <p>Users from the trace's segment documents.</p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::TraceUser>>,
     /// <p>Service IDs from the trace's segment documents.</p>
-    #[doc(hidden)]
     pub service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-    #[doc(hidden)]
     pub resource_ar_ns: ::std::option::Option<::std::vec::Vec<crate::types::ResourceArnDetail>>,
     /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIdDetail>>,
     /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneDetail>>,
     /// <p>The root of a trace.</p>
-    #[doc(hidden)]
     pub entry_point: ::std::option::Option<crate::types::ServiceId>,
     /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
-    #[doc(hidden)]
     pub fault_root_causes: ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCause>>,
     /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
-    #[doc(hidden)]
     pub error_root_causes: ::std::option::Option<::std::vec::Vec<crate::types::ErrorRootCause>>,
     /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
-    #[doc(hidden)]
     pub response_time_root_causes: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCause>>,
     /// <p>The revision number of a trace.</p>
-    #[doc(hidden)]
     pub revision: i32,
     /// <p>The matched time stamp of a defined event.</p>
-    #[doc(hidden)]
     pub matched_event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TraceSummary {

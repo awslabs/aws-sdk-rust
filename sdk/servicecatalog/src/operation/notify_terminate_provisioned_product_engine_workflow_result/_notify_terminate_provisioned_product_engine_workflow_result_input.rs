@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyTerminateProvisionedProductEngineWorkflowResultInput {
     /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
-    #[doc(hidden)]
     pub workflow_token: ::std::option::Option<::std::string::String>,
     /// <p> The identifier of the record. </p>
-    #[doc(hidden)]
     pub record_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the terminate engine execution. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EngineWorkflowStatus>,
     /// <p> The reason why the terminate engine execution failed. </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p> The idempotency token that identifies the terminate engine execution. </p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl NotifyTerminateProvisionedProductEngineWorkflowResultInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSimulationJobBatchInput {
     /// <p>The id of the batch to describe.</p>
-    #[doc(hidden)]
     pub batch: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSimulationJobBatchInput {

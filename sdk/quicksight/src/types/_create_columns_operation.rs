@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateColumnsOperation {
     /// <p>Calculated columns to create.</p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>>,
 }
 impl CreateColumnsOperation {

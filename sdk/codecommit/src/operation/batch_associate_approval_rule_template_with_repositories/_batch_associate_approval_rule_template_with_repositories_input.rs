@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
     /// <p>The name of the template you want to associate with one or more repositories.</p>
-    #[doc(hidden)]
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of the repositories you want to associate with the template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    #[doc(hidden)]
     pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {

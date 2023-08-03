@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDatum {
     /// <p>The name of the metric.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
     /// <p>The value of the metric.</p>
-    #[doc(hidden)]
     pub value: f32,
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
-    #[doc(hidden)]
     pub set: ::std::option::Option<crate::types::MetricSetSource>,
     /// <p>The name of the standard metric. </p> <note>
     /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub standard_metric_name: ::std::option::Option<crate::types::AutoMlMetricExtendedEnum>,
 }
 impl MetricDatum {

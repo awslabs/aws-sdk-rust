@@ -5,7 +5,6 @@
 pub struct RequestCertificateOutput {
     /// <p>String that contains the ARN of the issued certificate. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

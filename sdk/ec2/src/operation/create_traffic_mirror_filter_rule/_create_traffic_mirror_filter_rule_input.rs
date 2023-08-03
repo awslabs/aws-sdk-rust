@@ -4,41 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrafficMirrorFilterRuleInput {
     /// <p>The ID of the filter that this rule is associated with.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of traffic.</p>
-    #[doc(hidden)]
     pub traffic_direction: ::std::option::Option<crate::types::TrafficDirection>,
     /// <p>The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.</p>
-    #[doc(hidden)]
     pub rule_number: ::std::option::Option<i32>,
     /// <p>The action to take on the filtered traffic.</p>
-    #[doc(hidden)]
     pub rule_action: ::std::option::Option<crate::types::TrafficMirrorRuleAction>,
     /// <p>The destination port range.</p>
-    #[doc(hidden)]
     pub destination_port_range: ::std::option::Option<crate::types::TrafficMirrorPortRangeRequest>,
     /// <p>The source port range.</p>
-    #[doc(hidden)]
     pub source_port_range: ::std::option::Option<crate::types::TrafficMirrorPortRangeRequest>,
     /// <p>The protocol, for example UDP, to assign to the Traffic Mirror rule.</p>
     /// <p>For information about the protocol value, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a> on the Internet Assigned Numbers Authority (IANA) website.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<i32>,
     /// <p>The destination CIDR block to assign to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The source CIDR block to assign to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub source_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTrafficMirrorFilterRuleInput {

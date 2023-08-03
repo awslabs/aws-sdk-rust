@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Communication {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
     /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
     /// </janedoe@example.com></p>
-    #[doc(hidden)]
     pub submitted_by: ::std::option::Option<::std::string::String>,
     /// <p>The time the communication was created.</p>
-    #[doc(hidden)]
     pub time_created: ::std::option::Option<::std::string::String>,
     /// <p>Information about the attachments to the case communication.</p>
-    #[doc(hidden)]
     pub attachment_set: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
 }
 impl Communication {

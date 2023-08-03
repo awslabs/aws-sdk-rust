@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHsmConfigurationInput {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    #[doc(hidden)]
     pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHsmConfigurationInput {

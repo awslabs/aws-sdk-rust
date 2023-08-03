@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenOutput {
     /// <p>The name of the GitHub account connection that was deleted.</p>
-    #[doc(hidden)]
     pub token_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

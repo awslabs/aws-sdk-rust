@@ -4,39 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDetectorVersionOutput {
     /// <p>The detector ID.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version ID.</p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
-    #[doc(hidden)]
     pub external_model_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The model versions included in the detector version. </p>
-    #[doc(hidden)]
     pub model_versions: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
     /// <p>The rules included in the detector version.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>The status of the detector version.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetectorVersionStatus>,
     /// <p>The timestamp when the detector version was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the detector version was created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The execution mode of the rule in the dectector</p>
     /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
     /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
-    #[doc(hidden)]
     pub rule_execution_mode: ::std::option::Option<crate::types::RuleExecutionMode>,
     /// <p>The detector version ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

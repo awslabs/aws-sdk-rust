@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schema {
     /// <p>A non-empty list of partition keys defining the attributes used to partition the table data. The order of the list determines the partition hierarchy. The name and type of each partition key as well as the partition key order cannot be changed after the table is created. However, the enforcement level of each partition key can be changed. </p>
-    #[doc(hidden)]
     pub composite_partition_key: ::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>>,
 }
 impl Schema {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsBillingPeriodRangeFilter {
     /// <p>The inclusive start billing period that defines a billing period range where a custom line item version is applied.</p>
-    #[doc(hidden)]
     pub start_billing_period: ::std::option::Option<::std::string::String>,
     /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
-    #[doc(hidden)]
     pub end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl ListCustomLineItemVersionsBillingPeriodRangeFilter {

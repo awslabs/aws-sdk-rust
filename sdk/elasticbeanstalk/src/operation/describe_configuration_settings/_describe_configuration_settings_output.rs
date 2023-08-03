@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSettingsOutput {
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
-    #[doc(hidden)]
     pub configuration_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSettingsDescription>>,
     _request_id: Option<String>,
 }

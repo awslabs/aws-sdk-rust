@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataReplicationInfoReplicatedDisk {
     /// <p>Request to query device name.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Request to query total amount of data replicated in bytes.</p>
-    #[doc(hidden)]
     pub total_storage_bytes: i64,
     /// <p>Request to query amount of data replicated in bytes.</p>
-    #[doc(hidden)]
     pub replicated_storage_bytes: i64,
     /// <p>Request to query amount of data rescanned in bytes.</p>
-    #[doc(hidden)]
     pub rescanned_storage_bytes: i64,
     /// <p>Request to query data replication backlog size in bytes.</p>
-    #[doc(hidden)]
     pub backlogged_storage_bytes: i64,
 }
 impl DataReplicationInfoReplicatedDisk {

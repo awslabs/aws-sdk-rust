@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationOutput {
     /// <p>The details of the custom location you created.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::LocationModel>,
     _request_id: Option<String>,
 }

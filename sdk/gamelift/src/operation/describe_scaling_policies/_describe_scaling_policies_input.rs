@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScalingPoliciesInput {
     /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
@@ -16,16 +15,12 @@ pub struct DescribeScalingPoliciesInput {
     /// <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>
     /// <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status_filter: ::std::option::Option<crate::types::ScalingStatusType>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The fleet location. If you don't specify this value, the response contains the scaling policies of every location in the fleet. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScalingPoliciesInput {

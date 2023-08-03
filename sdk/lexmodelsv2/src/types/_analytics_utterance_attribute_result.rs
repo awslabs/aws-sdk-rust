@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceAttributeResult {
     /// <p>The intent that the bot mapped the utterance to.</p>
-    #[doc(hidden)]
     pub last_used_intent: ::std::option::Option<::std::string::String>,
 }
 impl AnalyticsUtteranceAttributeResult {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchCasesInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A word or phrase used to perform a quick search.</p>
-    #[doc(hidden)]
     pub search_term: ::std::option::Option<::std::string::String>,
     /// <p>A list of filter objects.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::CaseFilter>,
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
-    #[doc(hidden)]
     pub sorts: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
     /// <p>The list of field identifiers to be returned as part of the response.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
 }
 impl SearchCasesInput {

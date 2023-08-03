@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainEndpointOptions {
     /// <p>True to require that all traffic to the domain arrive over HTTPS.</p>
-    #[doc(hidden)]
     pub enforce_https: ::std::option::Option<bool>,
     /// <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.</p>
     /// <p> Can be one of the following values:</p>
@@ -13,16 +12,12 @@ pub struct DomainEndpointOptions {
     /// <li> <p> <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 and higher.</p> </li>
     /// <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2 </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tls_security_policy: ::std::option::Option<crate::types::TlsSecurityPolicy>,
     /// <p>Whether to enable a custom endpoint for the domain.</p>
-    #[doc(hidden)]
     pub custom_endpoint_enabled: ::std::option::Option<bool>,
     /// <p>The fully qualified URL for the custom endpoint.</p>
-    #[doc(hidden)]
     pub custom_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for your security certificate, managed in Amazon Web Services Certificate Manager (ACM).</p>
-    #[doc(hidden)]
     pub custom_endpoint_certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl DomainEndpointOptions {

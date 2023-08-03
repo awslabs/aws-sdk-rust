@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayStatus {
     /// <p>The current status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VirtualGatewayStatusCode>,
 }
 impl VirtualGatewayStatus {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExcelOptions {
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
-    #[doc(hidden)]
     pub sheet_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
-    #[doc(hidden)]
     pub sheet_indexes: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
-    #[doc(hidden)]
     pub header_row: ::std::option::Option<bool>,
 }
 impl ExcelOptions {

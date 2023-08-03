@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeliverabilityDashboardOptionsOutput {
     /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value is <code>true</code>, the dashboard is enabled.</p>
-    #[doc(hidden)]
     pub dashboard_enabled: bool,
     /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
-    #[doc(hidden)]
     pub subscription_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
-    #[doc(hidden)]
     pub account_status: ::std::option::Option<crate::types::DeliverabilityDashboardAccountStatus>,
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
-    #[doc(hidden)]
     pub active_subscribed_domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
-    #[doc(hidden)]
     pub pending_expiration_subscribed_domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
     _request_id: Option<String>,
 }

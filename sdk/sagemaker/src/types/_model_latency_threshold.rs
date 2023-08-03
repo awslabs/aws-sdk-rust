@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelLatencyThreshold {
     /// <p>The model latency percentile threshold.</p>
-    #[doc(hidden)]
     pub percentile: ::std::option::Option<::std::string::String>,
     /// <p>The model latency percentile value in milliseconds.</p>
-    #[doc(hidden)]
     pub value_in_milliseconds: i32,
 }
 impl ModelLatencyThreshold {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDraftAppVersionTemplateInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that provides information about your application structure. To learn more about the <code>appTemplateBody</code> template, see the sample template provided in the <i>Examples</i> section.</p>
     /// <p>The <code>appTemplateBody</code> JSON string has the following structure:</p>
@@ -72,7 +71,6 @@ pub struct PutDraftAppVersionTemplateInput {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub app_template_body: ::std::option::Option<::std::string::String>,
 }
 impl PutDraftAppVersionTemplateInput {

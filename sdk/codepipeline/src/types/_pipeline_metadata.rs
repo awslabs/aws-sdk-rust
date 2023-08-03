@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineMetadata {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    #[doc(hidden)]
     pub updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
-    #[doc(hidden)]
     pub polling_disabled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineMetadata {

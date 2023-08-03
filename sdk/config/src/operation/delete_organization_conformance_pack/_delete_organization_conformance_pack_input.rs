@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOrganizationConformancePackInput {
     /// <p>The name of organization conformance pack that you want to delete.</p>
-    #[doc(hidden)]
     pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOrganizationConformancePackInput {

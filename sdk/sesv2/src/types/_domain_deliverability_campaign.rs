@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainDeliverabilityCampaign {
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
-    #[doc(hidden)]
     pub campaign_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an image that contains a snapshot of the email message that was sent.</p>
-    #[doc(hidden)]
     pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>The subject line, or title, of the email message.</p>
-    #[doc(hidden)]
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The verified email address that the email message was sent from.</p>
-    #[doc(hidden)]
     pub from_address: ::std::option::Option<::std::string::String>,
     /// <p>The IP addresses that were used to send the email message.</p>
-    #[doc(hidden)]
     pub sending_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The first time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
-    #[doc(hidden)]
     pub first_seen_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
-    #[doc(hidden)]
     pub last_seen_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
-    #[doc(hidden)]
     pub inbox_count: ::std::option::Option<i64>,
     /// <p>The number of email messages that were delivered to recipients' spam or junk mail folders.</p>
-    #[doc(hidden)]
     pub spam_count: ::std::option::Option<i64>,
     /// <p>The percentage of email messages that were opened by recipients. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
-    #[doc(hidden)]
     pub read_rate: ::std::option::Option<f64>,
     /// <p>The percentage of email messages that were deleted by recipients, without being opened first. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
-    #[doc(hidden)]
     pub delete_rate: ::std::option::Option<f64>,
     /// <p>The percentage of email messages that were opened and then deleted by recipients. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
-    #[doc(hidden)]
     pub read_delete_rate: ::std::option::Option<f64>,
     /// <p>The projected number of recipients that the email message was sent to.</p>
-    #[doc(hidden)]
     pub projected_volume: ::std::option::Option<i64>,
     /// <p>The major email providers who handled the email message.</p>
-    #[doc(hidden)]
     pub esps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DomainDeliverabilityCampaign {

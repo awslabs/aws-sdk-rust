@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEntityOutput {
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
-    #[doc(hidden)]
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    #[doc(hidden)]
     pub entity_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
-    #[doc(hidden)]
     pub entity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    #[doc(hidden)]
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>This stringified JSON object includes the details of the entity.</p>
-    #[doc(hidden)]
     pub details: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
 }
 impl DatasetContentVersionValue {

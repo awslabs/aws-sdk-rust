@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ami {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EC2 AMI.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Image status and the reason for that status.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>The account ID of the owner of the AMI.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl Ami {

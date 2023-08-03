@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpsCoordinates {
     /// <p>The latitude coordinate of the location.</p>
-    #[doc(hidden)]
     pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude coordinate of the location.</p>
-    #[doc(hidden)]
     pub longitude: ::std::option::Option<f64>,
 }
 impl GpsCoordinates {

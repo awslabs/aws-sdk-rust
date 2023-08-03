@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBotAliasInput {
     /// <p>The name of the alias to delete. The name is case sensitive. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot that the alias points to.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBotAliasInput {

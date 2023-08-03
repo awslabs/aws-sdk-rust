@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnalysisInput {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the analysis that you're deleting.</p>
-    #[doc(hidden)]
     pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
-    #[doc(hidden)]
     pub recovery_window_in_days: ::std::option::Option<i64>,
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
-    #[doc(hidden)]
     pub force_delete_without_recovery: ::std::option::Option<bool>,
 }
 impl DeleteAnalysisInput {

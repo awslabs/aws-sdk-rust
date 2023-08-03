@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAggregatedUtterancesOutput {
     /// <p>The identifier of the bot that contains the utterances.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot alias that contains the utterances. If you specified the bot version, the bot alias ID isn't returned.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot version that contains the utterances. If you specified the bot alias, the bot version isn't returned.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the language and locale that the utterances are in.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The time period used to aggregate the utterance data.</p>
-    #[doc(hidden)]
     pub aggregation_duration: ::std::option::Option<crate::types::UtteranceAggregationDuration>,
     /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
-    #[doc(hidden)]
     pub aggregation_window_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
-    #[doc(hidden)]
     pub aggregation_window_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
     /// <ul>
@@ -30,13 +23,10 @@ pub struct ListAggregatedUtterancesOutput {
     /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
     /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub aggregation_last_refreshed_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
-    #[doc(hidden)]
     pub aggregated_utterances_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

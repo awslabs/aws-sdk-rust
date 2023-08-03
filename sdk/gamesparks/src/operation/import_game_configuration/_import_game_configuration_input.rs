@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportGameConfigurationInput {
     /// <p>The name of the game.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
     /// <p>The source used to import configuration sections.</p>
-    #[doc(hidden)]
     pub import_source: ::std::option::Option<crate::types::ImportGameConfigurationSource>,
 }
 impl ImportGameConfigurationInput {

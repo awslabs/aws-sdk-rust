@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTopicRuleOutput {
     /// <p>The rule ARN.</p>
-    #[doc(hidden)]
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rule.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::TopicRule>,
     _request_id: Option<String>,
 }

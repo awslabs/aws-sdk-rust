@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransferInputDeviceInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    #[doc(hidden)]
     pub input_device_id: ::std::option::Option<::std::string::String>,
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
-    #[doc(hidden)]
     pub target_customer_id: ::std::option::Option<::std::string::String>,
     /// The target AWS region to transfer the device.
-    #[doc(hidden)]
     pub target_region: ::std::option::Option<::std::string::String>,
     /// An optional message for the recipient. Maximum 280 characters.
-    #[doc(hidden)]
     pub transfer_message: ::std::option::Option<::std::string::String>,
 }
 impl TransferInputDeviceInput {

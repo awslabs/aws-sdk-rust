@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppImageConfigInput {
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-    #[doc(hidden)]
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to apply to the AppImageConfig.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
-    #[doc(hidden)]
     pub kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
 }
 impl CreateAppImageConfigInput {

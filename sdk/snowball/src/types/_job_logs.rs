@@ -8,13 +8,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobLogs {
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
-    #[doc(hidden)]
     pub job_completion_report_uri: ::std::option::Option<::std::string::String>,
     /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
-    #[doc(hidden)]
     pub job_success_log_uri: ::std::option::Option<::std::string::String>,
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
-    #[doc(hidden)]
     pub job_failure_log_uri: ::std::option::Option<::std::string::String>,
 }
 impl JobLogs {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterV2Input {
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>A map of tags that you want the cluster to have.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about the provisioned cluster.</p>
-    #[doc(hidden)]
     pub provisioned: ::std::option::Option<crate::types::ProvisionedRequest>,
     /// <p>Information about the serverless cluster.</p>
-    #[doc(hidden)]
     pub serverless: ::std::option::Option<crate::types::ServerlessRequest>,
 }
 impl CreateClusterV2Input {

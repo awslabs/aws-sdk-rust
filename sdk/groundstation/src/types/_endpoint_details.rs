@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointDetails {
     /// <p>Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.</p>
-    #[doc(hidden)]
     pub security_details: ::std::option::Option<crate::types::SecurityDetails>,
     /// <p>A dataflow endpoint.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<crate::types::DataflowEndpoint>,
     /// <p>An agent endpoint.</p>
-    #[doc(hidden)]
     pub aws_ground_station_agent_endpoint: ::std::option::Option<crate::types::AwsGroundStationAgentEndpoint>,
     /// <p>A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::CapabilityHealth>,
     /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
-    #[doc(hidden)]
     pub health_reasons: ::std::option::Option<::std::vec::Vec<crate::types::CapabilityHealthReason>>,
 }
 impl EndpointDetails {

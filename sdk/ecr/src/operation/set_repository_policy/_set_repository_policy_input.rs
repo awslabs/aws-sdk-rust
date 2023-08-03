@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetRepositoryPolicyInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to receive the policy.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    #[doc(hidden)]
     pub policy_text: ::std::option::Option<::std::string::String>,
     /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
-    #[doc(hidden)]
     pub force: bool,
 }
 impl SetRepositoryPolicyInput {

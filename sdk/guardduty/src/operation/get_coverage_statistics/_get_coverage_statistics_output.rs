@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCoverageStatisticsOutput {
     /// <p>Represents the count aggregated by the <code>statusCode</code> and <code>resourceType</code>.</p>
-    #[doc(hidden)]
     pub coverage_statistics: ::std::option::Option<crate::types::CoverageStatistics>,
     _request_id: Option<String>,
 }

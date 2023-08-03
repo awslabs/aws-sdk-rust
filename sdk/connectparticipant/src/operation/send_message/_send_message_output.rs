@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendMessageOutput {
     /// <p>The ID of the message.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the message was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    #[doc(hidden)]
     pub absolute_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

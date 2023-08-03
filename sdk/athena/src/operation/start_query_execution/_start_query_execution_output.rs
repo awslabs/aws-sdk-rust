@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryExecutionOutput {
     /// <p>The unique ID of the query that ran as a result of this request.</p>
-    #[doc(hidden)]
     pub query_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

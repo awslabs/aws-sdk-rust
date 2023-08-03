@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceMonitoringDetails {
     /// <p> Indicates whether detailed monitoring is turned on. Otherwise, basic monitoring is turned on. </p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2InstanceMonitoringDetails {

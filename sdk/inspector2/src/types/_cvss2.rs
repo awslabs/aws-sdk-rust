@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cvss2 {
     /// <p>The CVSS v2 base score for the vulnerability.</p>
-    #[doc(hidden)]
     pub base_score: f64,
     /// <p>The scoring vector associated with the CVSS v2 score.</p>
-    #[doc(hidden)]
     pub scoring_vector: ::std::option::Option<::std::string::String>,
 }
 impl Cvss2 {

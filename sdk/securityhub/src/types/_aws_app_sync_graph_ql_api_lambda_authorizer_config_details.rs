@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {
     /// <p> The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). </p>
-    #[doc(hidden)]
     pub authorizer_result_ttl_in_seconds: i32,
     /// <p> The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (.../v3), or an alias ARN. </p>
-    #[doc(hidden)]
     pub authorizer_uri: ::std::option::Option<::std::string::String>,
     /// <p> A regular expression for validation of tokens before the Lambda function is called. </p>
-    #[doc(hidden)]
     pub identity_validation_expression: ::std::option::Option<::std::string::String>,
 }
 impl AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {

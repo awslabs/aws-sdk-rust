@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to accept.</p>
-    #[doc(hidden)]
     pub cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptInboundCrossClusterSearchConnectionInput {

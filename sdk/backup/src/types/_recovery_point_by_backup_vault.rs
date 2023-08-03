@@ -5,72 +5,50 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryPointByBackupVault {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    #[doc(hidden)]
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    #[doc(hidden)]
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The backup vault where the recovery point was originally copied from. If the recovery point is restored to the same account this value will be <code>null</code>.</p>
-    #[doc(hidden)]
     pub source_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::RecoveryPointCreator>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A status code specifying the state of the recovery point.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecoveryPointStatus>,
     /// <p>A message explaining the reason of the recovery point deletion failure.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a recovery point is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of a backup.</p>
-    #[doc(hidden)]
     pub backup_size_in_bytes: ::std::option::Option<i64>,
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
-    #[doc(hidden)]
     pub calculated_lifecycle: ::std::option::Option<crate::types::CalculatedLifecycle>,
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     /// <p>Resource types that are able to be transitioned to cold storage are listed in the "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature availability by resource</a> table. Backup ignores this expression for other resource types.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::Lifecycle>,
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
-    #[doc(hidden)]
     pub is_encrypted: bool,
     /// <p>The date and time a recovery point was last restored, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    #[doc(hidden)]
     pub last_restore_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
-    #[doc(hidden)]
     pub parent_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"> logical ID</a> within a stack.</p>
-    #[doc(hidden)]
     pub composite_member_identifier: ::std::option::Option<::std::string::String>,
     /// <p>This is a boolean value indicating this is a parent (composite) recovery point.</p>
-    #[doc(hidden)]
     pub is_parent: bool,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryPointByBackupVault {

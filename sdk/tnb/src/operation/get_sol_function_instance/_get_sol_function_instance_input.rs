@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolFunctionInstanceInput {
     /// <p>ID of the network function.</p>
-    #[doc(hidden)]
     pub vnf_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSolFunctionInstanceInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventTypesFilter {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::ListEventTypesFilterName>,
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ListEventTypesFilter {

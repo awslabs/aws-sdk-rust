@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDetectMitigationActionsTaskInput {
     /// <p> The unique identifier of the task. </p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::DetectMitigationActionsTaskTarget>,
     /// <p> The actions to be performed when a device has unexpected behavior. </p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Specifies the time period of which violation events occurred between. </p>
-    #[doc(hidden)]
     pub violation_event_occurrence_range: ::std::option::Option<crate::types::ViolationEventOccurrenceRange>,
     /// <p> Specifies to list only active violations. </p>
-    #[doc(hidden)]
     pub include_only_active_violations: ::std::option::Option<bool>,
     /// <p> Specifies to include suppressed alerts. </p>
-    #[doc(hidden)]
     pub include_suppressed_alerts: ::std::option::Option<bool>,
     /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl StartDetectMitigationActionsTaskInput {

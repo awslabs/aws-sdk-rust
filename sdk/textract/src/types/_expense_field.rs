@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpenseField {
     /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ExpenseType>,
     /// <p>The explicitly stated label of a detected element.</p>
-    #[doc(hidden)]
     pub label_detection: ::std::option::Option<crate::types::ExpenseDetection>,
     /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
-    #[doc(hidden)]
     pub value_detection: ::std::option::Option<crate::types::ExpenseDetection>,
     /// <p>The page number the value was detected on.</p>
-    #[doc(hidden)]
     pub page_number: ::std::option::Option<i32>,
     /// <p>Shows the kind of currency, both the code and confidence associated with any monatary value detected.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<crate::types::ExpenseCurrency>,
     /// <p>Shows which group a response object belongs to, such as whether an address line belongs to the vendor's address or the recipent's address.</p>
-    #[doc(hidden)]
     pub group_properties: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseGroupProperty>>,
 }
 impl ExpenseField {

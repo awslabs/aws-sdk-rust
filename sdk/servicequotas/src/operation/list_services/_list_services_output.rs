@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the services.</p>
-    #[doc(hidden)]
     pub services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInfo>>,
     _request_id: Option<String>,
 }

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The workflowId of the workflow execution to signal.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The runId of the workflow execution to signal.</p>
-    #[doc(hidden)]
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    #[doc(hidden)]
     pub signal_name: ::std::option::Option<::std::string::String>,
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
 }
 impl SignalWorkflowExecutionInput {

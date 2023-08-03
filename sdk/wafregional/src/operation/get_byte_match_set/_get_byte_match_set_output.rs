@@ -9,7 +9,6 @@ pub struct GetByteMatchSetOutput {
     /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub byte_match_set: ::std::option::Option<crate::types::ByteMatchSet>,
     _request_id: Option<String>,
 }

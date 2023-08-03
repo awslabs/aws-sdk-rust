@@ -4,55 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowOutput {
     /// <p>The workflow's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
     /// <p>The workflow's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The workflow's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<crate::types::WorkflowEngine>,
     /// <p>The workflow's definition.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The path of the main definition file for the workflow.</p>
-    #[doc(hidden)]
     pub main: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's digest.</p>
-    #[doc(hidden)]
     pub digest: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's parameter template.</p>
-    #[doc(hidden)]
     pub parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
     /// <p>The workflow's storage capacity in gigabytes.</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>When the workflow was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The workflow's status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The workflow's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Gets metadata for workflow. </p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The computational accelerator specified to run the workflow. </p>
-    #[doc(hidden)]
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }

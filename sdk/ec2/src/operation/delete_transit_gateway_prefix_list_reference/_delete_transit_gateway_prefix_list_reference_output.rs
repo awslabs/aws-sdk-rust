@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayPrefixListReferenceOutput {
     /// <p>Information about the deleted prefix list reference.</p>
-    #[doc(hidden)]
     pub transit_gateway_prefix_list_reference: ::std::option::Option<crate::types::TransitGatewayPrefixListReference>,
     _request_id: Option<String>,
 }

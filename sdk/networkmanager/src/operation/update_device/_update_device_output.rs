@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeviceOutput {
     /// <p>Information about the device.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<crate::types::Device>,
     _request_id: Option<String>,
 }

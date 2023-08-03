@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The image pipeline object.</p>
-    #[doc(hidden)]
     pub image_pipeline: ::std::option::Option<crate::types::ImagePipeline>,
     _request_id: Option<String>,
 }

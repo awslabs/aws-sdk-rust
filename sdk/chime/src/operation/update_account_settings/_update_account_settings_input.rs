@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime account settings to update.</p>
-    #[doc(hidden)]
     pub account_settings: ::std::option::Option<crate::types::AccountSettings>,
 }
 impl UpdateAccountSettingsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastScenario {
     /// <p>The what-if analysis forecast setup with the target date.</p>
-    #[doc(hidden)]
     pub what_if_point_scenario: ::std::option::Option<crate::types::WhatIfPointScenario>,
     /// <p>The what-if analysis forecast setup with the date range.</p>
-    #[doc(hidden)]
     pub what_if_range_scenario: ::std::option::Option<crate::types::WhatIfRangeScenario>,
 }
 impl ForecastScenario {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EulaAcceptance {
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
-    #[doc(hidden)]
     pub accepted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the person who accepted the EULA.</p>
-    #[doc(hidden)]
     pub accepted_by: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the acceptee.</p>
-    #[doc(hidden)]
     pub acceptee_id: ::std::option::Option<::std::string::String>,
     /// <p>The EULA acceptance ID.</p>
-    #[doc(hidden)]
     pub eula_acceptance_id: ::std::option::Option<::std::string::String>,
     /// <p>The EULA ID.</p>
-    #[doc(hidden)]
     pub eula_id: ::std::option::Option<::std::string::String>,
 }
 impl EulaAcceptance {

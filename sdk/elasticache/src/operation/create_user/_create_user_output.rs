@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserOutput {
     /// <p>The ID of the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The current supported value is Redis.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    #[doc(hidden)]
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Access permissions string used for this user.</p>
-    #[doc(hidden)]
     pub access_string: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    #[doc(hidden)]
     pub user_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Denotes whether the user requires a password to authenticate.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<crate::types::Authentication>,
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

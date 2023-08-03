@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecognizedBotMember {
     /// <p>The identifier of the bot member that processes the request.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot member that processes the request.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
 }
 impl RecognizedBotMember {

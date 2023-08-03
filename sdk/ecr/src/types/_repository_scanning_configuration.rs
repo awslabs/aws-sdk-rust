@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryScanningConfiguration {
     /// <p>The ARN of the repository.</p>
-    #[doc(hidden)]
     pub repository_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not scan on push is configured for the repository.</p>
-    #[doc(hidden)]
     pub scan_on_push: bool,
     /// <p>The scan frequency for the repository.</p>
-    #[doc(hidden)]
     pub scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
     /// <p>The scan filters applied to the repository.</p>
-    #[doc(hidden)]
     pub applied_scan_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
 }
 impl RepositoryScanningConfiguration {

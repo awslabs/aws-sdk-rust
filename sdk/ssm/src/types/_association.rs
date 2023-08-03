@@ -5,42 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Association {
     /// <p>The name of the SSM document.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID created by the system when you create an association. An association is a binding between a document and a set of targets with a schedule.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The association version.</p>
-    #[doc(hidden)]
     pub association_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the document used in the association. If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p> <important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The managed nodes targeted by the request to create an association. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The date on which the association was last run.</p>
-    #[doc(hidden)]
     pub last_execution_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the association.</p>
-    #[doc(hidden)]
     pub overview: ::std::option::Option<crate::types::AssociationOverview>,
     /// <p>A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated Universal Time (UTC).</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>The association name.</p>
-    #[doc(hidden)]
     pub association_name: ::std::option::Option<::std::string::String>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
-    #[doc(hidden)]
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    #[doc(hidden)]
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
 }

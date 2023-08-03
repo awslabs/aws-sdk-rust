@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// The ID of a Channel.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChannelInput {

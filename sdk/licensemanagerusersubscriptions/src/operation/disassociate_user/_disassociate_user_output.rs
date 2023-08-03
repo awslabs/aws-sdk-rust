@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
-    #[doc(hidden)]
     pub instance_user_summary: ::std::option::Option<crate::types::InstanceUserSummary>,
     _request_id: Option<String>,
 }

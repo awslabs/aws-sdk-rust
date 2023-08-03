@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EvaluatedExternalModel {
     /// <p> The endpoint of the external (Amazon Sagemaker) model. </p>
-    #[doc(hidden)]
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether event variables were used to generate predictions. </p>
-    #[doc(hidden)]
     pub use_event_variables: ::std::option::Option<bool>,
     /// <p> Input variables use for generating predictions. </p>
-    #[doc(hidden)]
     pub input_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> Output variables. </p>
-    #[doc(hidden)]
     pub output_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EvaluatedExternalModel {

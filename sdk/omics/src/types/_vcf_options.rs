@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VcfOptions {
     /// <p>The file's ignore qual field setting.</p>
-    #[doc(hidden)]
     pub ignore_qual_field: ::std::option::Option<bool>,
     /// <p>The file's ignore filter field setting.</p>
-    #[doc(hidden)]
     pub ignore_filter_field: ::std::option::Option<bool>,
 }
 impl VcfOptions {

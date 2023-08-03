@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnalyzerInput {
     /// <p>The name of the analyzer retrieved.</p>
-    #[doc(hidden)]
     pub analyzer_name: ::std::option::Option<::std::string::String>,
 }
 impl GetAnalyzerInput {

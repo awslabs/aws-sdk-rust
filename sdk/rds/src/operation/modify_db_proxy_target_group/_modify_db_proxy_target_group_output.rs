@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbProxyTargetGroupOutput {
     /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
-    #[doc(hidden)]
     pub db_proxy_target_group: ::std::option::Option<crate::types::DbProxyTargetGroup>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedAction {
     /// <p>A unique identifier for the managed action.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the managed action.</p>
-    #[doc(hidden)]
     pub action_description: ::std::option::Option<::std::string::String>,
     /// <p>The type of managed action.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActionStatus>,
     /// <p>The start time of the maintenance window in which the managed action will execute.</p>
-    #[doc(hidden)]
     pub window_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ManagedAction {

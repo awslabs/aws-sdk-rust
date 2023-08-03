@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBuildInput {
     /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
-    #[doc(hidden)]
     pub build_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label associated with a build. Build names don't need to be unique. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBuildInput {

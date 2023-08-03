@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessConnection {
     /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
-    #[doc(hidden)]
     pub is_wifi_enabled: bool,
 }
 impl WirelessConnection {

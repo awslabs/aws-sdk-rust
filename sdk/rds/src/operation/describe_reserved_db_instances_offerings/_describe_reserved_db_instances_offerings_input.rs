@@ -6,37 +6,28 @@
 pub struct DescribeReservedDbInstancesOfferingsInput {
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    #[doc(hidden)]
     pub reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<::std::string::String>,
     /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
-    #[doc(hidden)]
     pub multi_az: ::std::option::Option<bool>,
     /// <p>This parameter isn't currently supported.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedDbInstancesOfferingsInput {

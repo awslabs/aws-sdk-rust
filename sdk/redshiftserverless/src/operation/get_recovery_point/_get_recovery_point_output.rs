@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecoveryPointOutput {
     /// <p>The returned recovery point object.</p>
-    #[doc(hidden)]
     pub recovery_point: ::std::option::Option<crate::types::RecoveryPoint>,
     _request_id: Option<String>,
 }

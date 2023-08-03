@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::TokenProviders>,
     /// <p>Information about the refresh token request.</p>
-    #[doc(hidden)]
     pub refresh_token_body: ::std::option::Option<crate::types::RefreshTokenRequestBody>,
 }
 impl RefreshTokenInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportDestination {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportDestination {

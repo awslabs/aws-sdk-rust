@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamPermissionsBoundary {
     /// <p>The ARN of the policy used to set the permissions boundary.</p>
-    #[doc(hidden)]
     pub permissions_boundary_arn: ::std::option::Option<::std::string::String>,
     /// <p>The usage type for the permissions boundary.</p>
-    #[doc(hidden)]
     pub permissions_boundary_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamPermissionsBoundary {

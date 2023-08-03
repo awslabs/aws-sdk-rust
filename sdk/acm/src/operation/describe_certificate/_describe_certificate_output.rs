@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCertificateOutput {
     /// <p>Metadata about an ACM certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<crate::types::CertificateDetail>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSegmentInput {
     /// <p>Specifies the segment to delete.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSegmentInput {

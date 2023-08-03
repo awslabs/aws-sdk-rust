@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceConfig {
     /// <p>The name of the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket where the data files are located.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The list of S3 keys identifying the data source files.</p>
-    #[doc(hidden)]
     pub s3_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>The location where your files are mounted in the container image.</p>
     /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
     /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceConfig {

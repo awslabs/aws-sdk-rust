@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFunctionInput {
     /// <p>The name of the function whose code you are getting.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::FunctionStage>,
 }
 impl GetFunctionInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperatingSystem {
     /// <p>The name of the operating system, such as <code>Amazon Linux 2018.03</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
-    #[doc(hidden)]
     pub configuration_managers: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>,
     /// <p>A short name for the operating system manufacturer.</p>
-    #[doc(hidden)]
     pub reported_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the operating system, including the release and edition, if applicable.</p>
-    #[doc(hidden)]
     pub reported_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that an operating system is not supported for new instances.</p>
-    #[doc(hidden)]
     pub supported: ::std::option::Option<bool>,
 }
 impl OperatingSystem {

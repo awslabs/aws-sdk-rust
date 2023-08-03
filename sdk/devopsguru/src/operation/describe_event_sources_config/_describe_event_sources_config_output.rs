@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventSourcesConfigOutput {
     /// <p>Lists the event sources in the configuration.</p>
-    #[doc(hidden)]
     pub event_sources: ::std::option::Option<crate::types::EventSourcesConfig>,
     _request_id: Option<String>,
 }

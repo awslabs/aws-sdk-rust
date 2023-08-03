@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TgwOnDeviceServiceConfiguration {
     /// <p>The maximum number of virtual tapes to store on one Snow Family device. Due to physical resource limitations, this value must be set to 80 for Snowball Edge.</p>
-    #[doc(hidden)]
     pub storage_limit: i32,
     /// <p>The scale unit of the virtual tapes on the device.</p>
-    #[doc(hidden)]
     pub storage_unit: ::std::option::Option<crate::types::StorageUnit>,
 }
 impl TgwOnDeviceServiceConfiguration {

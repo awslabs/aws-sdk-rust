@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentOverview {
     /// <p>The number of instances in the deployment in a pending state.</p>
-    #[doc(hidden)]
     pub pending: i64,
     /// <p>The number of instances in which the deployment is in progress.</p>
-    #[doc(hidden)]
     pub in_progress: i64,
     /// <p>The number of instances in the deployment to which revisions have been successfully deployed.</p>
-    #[doc(hidden)]
     pub succeeded: i64,
     /// <p>The number of instances in the deployment in a failed state.</p>
-    #[doc(hidden)]
     pub failed: i64,
     /// <p>The number of instances in the deployment in a skipped state.</p>
-    #[doc(hidden)]
     pub skipped: i64,
     /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
-    #[doc(hidden)]
     pub ready: i64,
 }
 impl DeploymentOverview {

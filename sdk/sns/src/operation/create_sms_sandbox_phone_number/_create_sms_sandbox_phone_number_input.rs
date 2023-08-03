@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.</p>
-    #[doc(hidden)]
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The language to use for sending the OTP. The default value is <code>en-US</code>.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCodeString>,
 }
 impl CreateSmsSandboxPhoneNumberInput {

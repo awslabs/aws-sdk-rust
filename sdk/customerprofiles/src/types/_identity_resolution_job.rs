@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityResolutionJob {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Identity Resolution Job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
@@ -20,22 +18,16 @@ pub struct IdentityResolutionJob {
     /// <li> <p> <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged. The Identity Resolution Job writes a message indicating the source of the problem.</p> </li>
     /// <li> <p> <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IdentityResolutionJobStatus>,
     /// <p>The timestamp of when the job was started or will be started.</p>
-    #[doc(hidden)]
     pub job_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the job was completed.</p>
-    #[doc(hidden)]
     pub job_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Statistics about an Identity Resolution Job.</p>
-    #[doc(hidden)]
     pub job_stats: ::std::option::Option<crate::types::JobStats>,
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-    #[doc(hidden)]
     pub exporting_location: ::std::option::Option<crate::types::ExportingLocation>,
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl IdentityResolutionJob {

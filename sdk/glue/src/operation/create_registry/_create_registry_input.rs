@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRegistryInput {
     /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
-    #[doc(hidden)]
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRegistryInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompromisedCredentialsRiskConfigurationType {
     /// <p>Perform the action for these events. The default is to perform all events if no event filter is specified.</p>
-    #[doc(hidden)]
     pub event_filter: ::std::option::Option<::std::vec::Vec<crate::types::EventFilterType>>,
     /// <p>The compromised credentials risk configuration actions.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<crate::types::CompromisedCredentialsActionsType>,
 }
 impl CompromisedCredentialsRiskConfigurationType {

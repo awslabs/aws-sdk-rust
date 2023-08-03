@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The container for the exception message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The <code>resourceId</code> of the resource that caused the exception.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>resourceType</code> of the resource that caused the exception.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

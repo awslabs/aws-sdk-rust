@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRefresh {
     /// <p>The instance refresh ID.</p>
-    #[doc(hidden)]
     pub instance_refresh_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status for the instance refresh operation:</p>
     /// <ul>
@@ -22,38 +20,28 @@ pub struct InstanceRefresh {
     /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li>
     /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceRefreshStatus>,
     /// <p>The explanation for the specific status assigned to this operation.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the instance refresh began.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the instance refresh ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note>
     /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p>
     /// </note>
-    #[doc(hidden)]
     pub percentage_complete: ::std::option::Option<i32>,
     /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note>
     /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p>
     /// </note>
-    #[doc(hidden)]
     pub instances_to_update: ::std::option::Option<i32>,
     /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
-    #[doc(hidden)]
     pub progress_details: ::std::option::Option<crate::types::InstanceRefreshProgressDetails>,
     /// <p>The preferences for an instance refresh.</p>
-    #[doc(hidden)]
     pub preferences: ::std::option::Option<crate::types::RefreshPreferences>,
     /// <p>Describes the desired configuration for the instance refresh.</p>
-    #[doc(hidden)]
     pub desired_configuration: ::std::option::Option<crate::types::DesiredConfiguration>,
     /// <p>The rollback details.</p>
-    #[doc(hidden)]
     pub rollback_details: ::std::option::Option<crate::types::RollbackDetails>,
 }
 impl InstanceRefresh {

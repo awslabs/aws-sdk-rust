@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsToResourceOutput {
     /// <p>The status of the operation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

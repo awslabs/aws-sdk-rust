@@ -6,7 +6,6 @@
 pub struct DeleteDbSnapshotInput {
     /// <p>The DB snapshot identifier.</p>
     /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSnapshotInput {

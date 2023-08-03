@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityPoliciesOutput {
     /// <p>A list of names of policies that apply to the specified identity.</p>
-    #[doc(hidden)]
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

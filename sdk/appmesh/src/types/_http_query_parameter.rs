@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The query parameter to match on.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<crate::types::QueryParameterMatch>,
 }
 impl HttpQueryParameter {

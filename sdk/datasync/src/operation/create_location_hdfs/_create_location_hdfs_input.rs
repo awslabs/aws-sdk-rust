@@ -4,51 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocationHdfsInput {
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
-    #[doc(hidden)]
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    #[doc(hidden)]
     pub name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
-    #[doc(hidden)]
     pub block_size: ::std::option::Option<i32>,
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
-    #[doc(hidden)]
     pub replication_factor: ::std::option::Option<i32>,
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    #[doc(hidden)]
     pub kms_key_provider_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
-    #[doc(hidden)]
     pub qop_configuration: ::std::option::Option<crate::types::QopConfiguration>,
     /// <p>The type of authentication used to determine the identity of the user. </p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::HdfsAuthenticationType>,
     /// <p>The user name used to identify the client on the host operating system. </p> <note>
     /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
-    #[doc(hidden)]
     pub simple_user: ::std::option::Option<::std::string::String>,
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
-    #[doc(hidden)]
     pub kerberos_principal: ::std::option::Option<::std::string::String>,
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
-    #[doc(hidden)]
     pub kerberos_keytab: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
-    #[doc(hidden)]
     pub kerberos_krb5_conf: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl CreateLocationHdfsInput {

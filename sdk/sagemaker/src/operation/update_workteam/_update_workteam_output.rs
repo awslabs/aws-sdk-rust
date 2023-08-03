@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkteamOutput {
     /// <p>A <code>Workteam</code> object that describes the updated work team.</p>
-    #[doc(hidden)]
     pub workteam: ::std::option::Option<crate::types::Workteam>,
     _request_id: Option<String>,
 }

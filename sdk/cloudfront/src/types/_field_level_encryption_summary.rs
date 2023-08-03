@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionSummary {
     /// <p>The unique ID of a field-level encryption item.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The last time that the summary of field-level encryption items was modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional comment about the field-level encryption item. The comment cannot be longer than 128 characters.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A summary of a query argument-profile mapping.</p>
-    #[doc(hidden)]
     pub query_arg_profile_config: ::std::option::Option<crate::types::QueryArgProfileConfig>,
     /// <p>A summary of a content type-profile mapping.</p>
-    #[doc(hidden)]
     pub content_type_profile_config: ::std::option::Option<crate::types::ContentTypeProfileConfig>,
 }
 impl FieldLevelEncryptionSummary {

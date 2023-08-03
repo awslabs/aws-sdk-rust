@@ -13,10 +13,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetPropertyTimestamp {
     /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
-    #[doc(hidden)]
     pub time_in_seconds: ::std::option::Option<::std::string::String>,
     /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
-    #[doc(hidden)]
     pub offset_in_nanos: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyTimestamp {

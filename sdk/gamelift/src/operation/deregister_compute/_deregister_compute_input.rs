@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterComputeInput {
     /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the compute resource you want to delete.</p>
-    #[doc(hidden)]
     pub compute_name: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterComputeInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePoolInput {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePoolInput {

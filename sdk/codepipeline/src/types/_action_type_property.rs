@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeProperty {
     /// <p>The property name that is displayed to users.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the configuration property is an optional value.</p>
-    #[doc(hidden)]
     pub optional: bool,
     /// <p>Whether the configuration property is a key.</p>
-    #[doc(hidden)]
     pub key: bool,
     /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
-    #[doc(hidden)]
     pub no_echo: bool,
     /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
-    #[doc(hidden)]
     pub queryable: bool,
     /// <p>The description of the property that is displayed to users.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ActionTypeProperty {

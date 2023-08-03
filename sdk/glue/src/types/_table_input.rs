@@ -5,36 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableInput {
     /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the table.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The last time that the table was accessed.</p>
-    #[doc(hidden)]
     pub last_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that column statistics were computed for this table.</p>
-    #[doc(hidden)]
     pub last_analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The retention time for this table.</p>
-    #[doc(hidden)]
     pub retention: i32,
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
-    #[doc(hidden)]
     pub storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
-    #[doc(hidden)]
     pub view_original_text: ::std::option::Option<::std::string::String>,
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
-    #[doc(hidden)]
     pub view_expanded_text: ::std::option::Option<::std::string::String>,
     /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
@@ -52,13 +42,10 @@ pub struct TableInput {
     /// <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub table_type: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define properties associated with the table.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
-    #[doc(hidden)]
     pub target_table: ::std::option::Option<crate::types::TableIdentifier>,
 }
 impl TableInput {

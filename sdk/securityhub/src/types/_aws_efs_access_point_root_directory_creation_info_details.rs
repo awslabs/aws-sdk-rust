@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointRootDirectoryCreationInfoDetails {
     /// <p>Specifies the POSIX group ID to apply to the root directory. </p>
-    #[doc(hidden)]
     pub owner_gid: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the POSIX user ID to apply to the root directory. </p>
-    #[doc(hidden)]
     pub owner_uid: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the POSIX permissions to apply to the root directory, in the format of an octal number representing the file's mode bits. </p>
-    #[doc(hidden)]
     pub permissions: ::std::option::Option<::std::string::String>,
 }
 impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {

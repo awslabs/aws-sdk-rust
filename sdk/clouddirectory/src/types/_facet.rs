@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Facet {
     /// <p>The name of the <code>Facet</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
-    #[doc(hidden)]
     pub object_type: ::std::option::Option<crate::types::ObjectType>,
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    #[doc(hidden)]
     pub facet_style: ::std::option::Option<crate::types::FacetStyle>,
 }
 impl Facet {

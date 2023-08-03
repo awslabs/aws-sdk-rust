@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryScanningConfiguration {
     /// <p>The type of scanning configured for the registry.</p>
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
     /// <p>The scanning rules associated with the registry.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>>,
 }
 impl RegistryScanningConfiguration {

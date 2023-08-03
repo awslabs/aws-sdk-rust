@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrustOutput {
     /// <p>The Amazon Web Services request identifier.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the trust relationship.</p>
-    #[doc(hidden)]
     pub trust_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

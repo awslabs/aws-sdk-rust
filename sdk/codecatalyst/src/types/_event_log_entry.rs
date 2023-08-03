@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventLogEntry {
     /// <p>The system-generated unique ID of the event.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event.</p>
-    #[doc(hidden)]
     pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the event.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>The category for the event.</p>
-    #[doc(hidden)]
     pub event_category: ::std::option::Option<::std::string::String>,
     /// <p>The source of the event.</p>
-    #[doc(hidden)]
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    #[doc(hidden)]
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the event.</p>
-    #[doc(hidden)]
     pub operation_type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
-    #[doc(hidden)]
     pub user_identity: ::std::option::Option<crate::types::UserIdentity>,
     /// <p>Information about the project where the event occurred.</p>
-    #[doc(hidden)]
     pub project_information: ::std::option::Option<crate::types::ProjectInformation>,
     /// <p>The system-generated unique ID of the request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the payload of the request.</p>
-    #[doc(hidden)]
     pub request_payload: ::std::option::Option<crate::types::EventPayload>,
     /// <p>Information about the payload of the response, if any.</p>
-    #[doc(hidden)]
     pub response_payload: ::std::option::Option<crate::types::EventPayload>,
     /// <p>The code of the error, if any.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the user whose actions are recorded in the event.</p>
-    #[doc(hidden)]
     pub source_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The user agent whose actions are recorded in the event.</p>
-    #[doc(hidden)]
     pub user_agent: ::std::option::Option<::std::string::String>,
 }
 impl EventLogEntry {

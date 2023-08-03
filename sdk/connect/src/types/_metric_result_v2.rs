@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricResultV2 {
     /// <p>The dimension for the metrics.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The set of metrics.</p>
-    #[doc(hidden)]
     pub collections: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>,
 }
 impl MetricResultV2 {

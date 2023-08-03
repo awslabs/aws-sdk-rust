@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetHealth {
     /// <p>The state of the target.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TargetHealthStateEnum>,
     /// <p>The reason code.</p>
     /// <p>If the target state is <code>healthy</code>, a reason code is not provided.</p>
@@ -37,10 +36,8 @@ pub struct TargetHealth {
     /// <li> <p> <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p> </li>
     /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::TargetHealthReasonEnum>,
     /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl TargetHealth {

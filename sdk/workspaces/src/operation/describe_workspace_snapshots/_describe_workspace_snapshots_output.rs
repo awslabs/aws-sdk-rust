@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceSnapshotsOutput {
     /// <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
-    #[doc(hidden)]
     pub rebuild_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     /// <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
-    #[doc(hidden)]
     pub restore_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     _request_id: Option<String>,
 }

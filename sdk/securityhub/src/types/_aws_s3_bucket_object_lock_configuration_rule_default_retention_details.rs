@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {
     /// <p> The number of days that you want to specify for the default retention period. </p>
-    #[doc(hidden)]
     pub days: i32,
     /// <p> The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. </p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<::std::string::String>,
     /// <p> The number of years that you want to specify for the default retention period. </p>
-    #[doc(hidden)]
     pub years: i32,
 }
 impl AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails {

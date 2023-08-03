@@ -18,65 +18,49 @@ pub struct ContainerProperties {
     /// <li> <p>Images in other repositories on Docker Hub are qualified with an organization name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li>
     /// <li> <p>Images in other online repositories are qualified further by a domain name (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
     /// <p>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The number of vCPUs must be specified but can be specified in several places. You must specify it at least once for each node.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
-    #[doc(hidden)]
     pub vcpus: ::std::option::Option<i32>,
     /// <p>This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory hard limit can be specified in several places. It must be specified for each node at least once.</p>
     #[deprecated(note = "This field is deprecated, use resourceRequirements instead.")]
-    #[doc(hidden)]
     pub memory: ::std::option::Option<i32>,
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub job_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs that run on Fargate resources, you must provide an execution role. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch execution IAM role</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of data volumes used in a job.</p>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
     /// <p>The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-    #[doc(hidden)]
     pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::MountPoint>>,
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.</p>
-    #[doc(hidden)]
     pub readonly_root_filesystem: ::std::option::Option<bool>,
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). This parameter maps to <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. The default value is false.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as false.</p>
     /// </note>
-    #[doc(hidden)]
     pub privileged: ::std::option::Option<bool>,
     /// <p>A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    #[doc(hidden)]
     pub ulimits: ::std::option::Option<::std::vec::Vec<crate::types::Ulimit>>,
     /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-    #[doc(hidden)]
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>The instance type to use for a multi-node parallel job. All node groups in a multi-node parallel job must use the same instance type.</p> <note>
     /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    #[doc(hidden)]
     pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
     /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
-    #[doc(hidden)]
     pub linux_parameters: ::std::option::Option<crate::types::LinuxParameters>,
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance (or on a different log server for remote logging options). For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p> <note>
@@ -85,22 +69,16 @@ pub struct ContainerProperties {
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code> </p> <note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     /// <p>The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub secrets: ::std::option::Option<::std::vec::Vec<crate::types::Secret>>,
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
-    #[doc(hidden)]
     pub fargate_platform_configuration: ::std::option::Option<crate::types::FargatePlatformConfiguration>,
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
-    #[doc(hidden)]
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
-    #[doc(hidden)]
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
 }
 impl ContainerProperties {

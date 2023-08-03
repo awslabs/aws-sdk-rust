@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BillingRecord {
     /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The operation that you were charged for.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::OperationType>,
     /// <p>The ID of the invoice that is associated with the billing record.</p>
-    #[doc(hidden)]
     pub invoice_id: ::std::option::Option<::std::string::String>,
     /// <p>The date that the operation was billed, in Unix format.</p>
-    #[doc(hidden)]
     pub bill_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The price that you were charged for the operation, in US dollars.</p>
     /// <p>Example value: 12.0</p>
-    #[doc(hidden)]
     pub price: f64,
 }
 impl BillingRecord {

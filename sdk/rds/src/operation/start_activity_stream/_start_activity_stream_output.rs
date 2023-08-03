@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartActivityStreamOutput {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-    #[doc(hidden)]
     pub kinesis_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the database activity stream.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     /// <p>The mode of the database activity stream.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ActivityStreamMode>,
     /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
-    #[doc(hidden)]
     pub engine_native_audit_fields_included: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    #[doc(hidden)]
     pub rule_group_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRuleGroupInput {

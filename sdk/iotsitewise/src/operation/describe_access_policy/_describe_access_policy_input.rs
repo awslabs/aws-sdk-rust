@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
-    #[doc(hidden)]
     pub access_policy_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAccessPolicyInput {

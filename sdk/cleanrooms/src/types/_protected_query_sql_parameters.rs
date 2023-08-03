@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ProtectedQuerySqlParameters {
     /// <p>The query string to be submitted.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQuerySqlParameters {

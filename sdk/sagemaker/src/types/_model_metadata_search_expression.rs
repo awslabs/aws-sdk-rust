@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelMetadataSearchExpression {
     /// <p>A list of filter objects.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>>,
 }
 impl ModelMetadataSearchExpression {

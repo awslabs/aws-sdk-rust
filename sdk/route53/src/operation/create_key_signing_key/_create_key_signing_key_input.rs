@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeySigningKeyInput {
     /// <p>A unique string that identifies the request.</p>
-    #[doc(hidden)]
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
     /// <p>You must configure the customer managed customer managed key as follows:</p>
@@ -47,13 +45,10 @@ pub struct CreateKeySigningKeyInput {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    #[doc(hidden)]
     pub key_management_service_arn: ::std::option::Option<::std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl CreateKeySigningKeyInput {

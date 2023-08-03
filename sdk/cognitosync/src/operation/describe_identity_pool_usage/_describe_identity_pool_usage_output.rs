@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityPoolUsageOutput {
     /// Information about the usage of the identity pool.
-    #[doc(hidden)]
     pub identity_pool_usage: ::std::option::Option<crate::types::IdentityPoolUsage>,
     _request_id: Option<String>,
 }

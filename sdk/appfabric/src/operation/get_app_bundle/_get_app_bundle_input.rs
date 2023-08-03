@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppBundleInput {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    #[doc(hidden)]
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetAppBundleInput {

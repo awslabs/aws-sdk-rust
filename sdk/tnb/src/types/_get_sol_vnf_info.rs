@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolVnfInfo {
     /// <p>State of the network function instance.</p>
-    #[doc(hidden)]
     pub vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
     /// <p>Compute info used by the network function instance.</p>
-    #[doc(hidden)]
     pub vnfc_resource_info: ::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>>,
 }
 impl GetSolVnfInfo {

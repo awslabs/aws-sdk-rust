@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTagMapping {
     /// <p>The ARN of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
-    #[doc(hidden)]
     pub compliance_details: ::std::option::Option<crate::types::ComplianceDetails>,
 }
 impl ResourceTagMapping {

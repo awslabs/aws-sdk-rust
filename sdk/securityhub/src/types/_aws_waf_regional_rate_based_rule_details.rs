@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRegionalRateBasedRuleDetails {
     /// <p>The name of the metrics for the rate-based rule.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rate-based rule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The field that WAF uses to determine whether requests are likely arriving from single source and are subject to rate monitoring.</p>
-    #[doc(hidden)]
     pub rate_key: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
-    #[doc(hidden)]
     pub rate_limit: i64,
     /// <p>The unique identifier for the rate-based rule.</p>
-    #[doc(hidden)]
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The predicates to include in the rate-based rule.</p>
-    #[doc(hidden)]
     pub match_predicates: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRateBasedRuleMatchPredicate>>,
 }
 impl AwsWafRegionalRateBasedRuleDetails {

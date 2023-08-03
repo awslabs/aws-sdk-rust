@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpsertTableRowsOutput {
     /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>>,
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
-    #[doc(hidden)]
     pub workbook_cursor: i64,
     /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
-    #[doc(hidden)]
     pub failed_batch_items: ::std::option::Option<::std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }

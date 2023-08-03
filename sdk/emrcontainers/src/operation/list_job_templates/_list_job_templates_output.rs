@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobTemplatesOutput {
     /// <p>This output lists information about the specified job templates.</p>
-    #[doc(hidden)]
     pub templates: ::std::option::Option<::std::vec::Vec<crate::types::JobTemplate>>,
     /// <p> This output displays the token for the next set of job templates.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

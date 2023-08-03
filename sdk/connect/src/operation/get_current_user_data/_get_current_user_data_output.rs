@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCurrentUserDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the user data that is returned.</p>
-    #[doc(hidden)]
     pub user_data_list: ::std::option::Option<::std::vec::Vec<crate::types::UserData>>,
     /// <p>The total count of the result, regardless of the current page size.</p>
-    #[doc(hidden)]
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

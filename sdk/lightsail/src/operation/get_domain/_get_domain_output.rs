@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainOutput {
     /// <p>An array of key-value pairs containing information about your get domain request.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::Domain>,
     _request_id: Option<String>,
 }

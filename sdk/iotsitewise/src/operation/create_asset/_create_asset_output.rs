@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssetOutput {
     /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
-    #[doc(hidden)]
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    #[doc(hidden)]
     pub asset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    #[doc(hidden)]
     pub asset_status: ::std::option::Option<crate::types::AssetStatus>,
     _request_id: Option<String>,
 }

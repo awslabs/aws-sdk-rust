@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePatchPropertiesOutput {
     /// <p>A list of the properties for patches matching the filter request parameters.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

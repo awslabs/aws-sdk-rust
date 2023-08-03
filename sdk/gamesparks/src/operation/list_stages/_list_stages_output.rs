@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStagesOutput {
     /// <p> A list of stage summaries. You can use the stage names in the <code>UpdateStage</code> and <code>GetStage</code> actions. </p>
-    #[doc(hidden)]
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::StageSummary>>,
     /// <p>The token that indicates the start of the next sequential page of results.</p>
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

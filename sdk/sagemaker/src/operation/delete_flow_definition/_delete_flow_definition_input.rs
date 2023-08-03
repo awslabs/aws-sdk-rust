@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFlowDefinitionInput {
     /// <p>The name of the flow definition you are deleting.</p>
-    #[doc(hidden)]
     pub flow_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFlowDefinitionInput {

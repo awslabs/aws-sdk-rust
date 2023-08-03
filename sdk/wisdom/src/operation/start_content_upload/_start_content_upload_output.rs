@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartContentUploadOutput {
     /// <p>The identifier of the upload.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the upload.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    #[doc(hidden)]
     pub url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The headers to include in the upload.</p>
-    #[doc(hidden)]
     pub headers_to_include: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConferenceProviderOutput {
     /// <p>The conference provider.</p>
-    #[doc(hidden)]
     pub conference_provider: ::std::option::Option<crate::types::ConferenceProvider>,
     _request_id: Option<String>,
 }

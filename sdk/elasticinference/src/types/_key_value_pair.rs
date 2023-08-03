@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyValuePair {
     /// <p> The throughput value of the Elastic Inference Accelerator type. It can assume the following values: TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS. TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS. </p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p> The throughput value of the Elastic Inference Accelerator type. </p>
-    #[doc(hidden)]
     pub value: i32,
 }
 impl KeyValuePair {

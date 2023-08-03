@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DevEnvironmentAccessDetails {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    #[doc(hidden)]
     pub stream_url: ::std::option::Option<::std::string::String>,
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    #[doc(hidden)]
     pub token_value: ::std::option::Option<::std::string::String>,
 }
 impl DevEnvironmentAccessDetails {

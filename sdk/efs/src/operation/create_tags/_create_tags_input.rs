@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTagsInput {
     /// <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateTagsInput {

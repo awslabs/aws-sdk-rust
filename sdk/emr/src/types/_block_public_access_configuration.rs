@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockPublicAccessConfiguration {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
-    #[doc(hidden)]
     pub block_public_security_group_rules: bool,
     /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
     /// <p>By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
-    #[doc(hidden)]
     pub permitted_public_security_group_rule_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The classification within a configuration.</p>
-    #[doc(hidden)]
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>A set of properties specified within a configuration classification.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl BlockPublicAccessConfiguration {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCorsPolicyInput {
     /// <p>The name of the container that the policy is assigned to.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl GetCorsPolicyInput {

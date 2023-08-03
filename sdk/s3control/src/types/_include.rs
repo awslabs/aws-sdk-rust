@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Include {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
-    #[doc(hidden)]
     pub buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A container for the S3 Storage Lens Region includes.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Include {

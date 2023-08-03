@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElicitSubSlot {
     /// <p>The name of the slot that should be elicited from the user.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The field is not supported.</p>
-    #[doc(hidden)]
     pub sub_slot_to_elicit: ::std::option::Option<::std::boxed::Box<crate::types::ElicitSubSlot>>,
 }
 impl ElicitSubSlot {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimePeriod {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Lightsail for Research retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-    #[doc(hidden)]
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Lightsail for Research retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
-    #[doc(hidden)]
     pub end: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimePeriod {

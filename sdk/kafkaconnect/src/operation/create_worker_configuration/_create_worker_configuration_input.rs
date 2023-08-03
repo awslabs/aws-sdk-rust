@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWorkerConfigurationInput {
     /// <p>A summary description of the worker configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the worker configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    #[doc(hidden)]
     pub properties_file_content: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkerConfigurationInput {

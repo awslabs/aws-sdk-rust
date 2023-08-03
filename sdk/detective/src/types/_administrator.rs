@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Administrator {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organization behavior graph.</p>
-    #[doc(hidden)]
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    #[doc(hidden)]
     pub delegation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Administrator {

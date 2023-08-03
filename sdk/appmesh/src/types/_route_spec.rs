@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteSpec {
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>An object that represents the specification of an HTTP route.</p>
-    #[doc(hidden)]
     pub http_route: ::std::option::Option<crate::types::HttpRoute>,
     /// <p>An object that represents the specification of a TCP route.</p>
-    #[doc(hidden)]
     pub tcp_route: ::std::option::Option<crate::types::TcpRoute>,
     /// <p>An object that represents the specification of an HTTP/2 route.</p>
-    #[doc(hidden)]
     pub http2_route: ::std::option::Option<crate::types::HttpRoute>,
     /// <p>An object that represents the specification of a gRPC route.</p>
-    #[doc(hidden)]
     pub grpc_route: ::std::option::Option<crate::types::GrpcRoute>,
 }
 impl RouteSpec {

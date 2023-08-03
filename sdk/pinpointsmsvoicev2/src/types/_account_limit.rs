@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The name of the attribute to apply the account limit to.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::AccountLimitName>,
     /// <p>The current amount that has been spent, in US dollars.</p>
-    #[doc(hidden)]
     pub used: i64,
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
-    #[doc(hidden)]
     pub max: i64,
 }
 impl AccountLimit {

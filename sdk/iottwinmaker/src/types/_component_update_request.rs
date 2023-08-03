@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentUpdateRequest {
     /// <p>The update type of the component update request.</p>
-    #[doc(hidden)]
     pub update_type: ::std::option::Option<crate::types::ComponentUpdateType>,
     /// <p>The description of the component type.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type.</p>
-    #[doc(hidden)]
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type update. Each string in the mapping must be unique to this object.</p>
-    #[doc(hidden)]
     pub property_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>>,
     /// <p>The property group updates.</p>
-    #[doc(hidden)]
     pub property_group_updates:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
 }

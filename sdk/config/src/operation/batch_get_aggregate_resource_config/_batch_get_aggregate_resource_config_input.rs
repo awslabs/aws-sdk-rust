@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
-    #[doc(hidden)]
     pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
 }
 impl BatchGetAggregateResourceConfigInput {

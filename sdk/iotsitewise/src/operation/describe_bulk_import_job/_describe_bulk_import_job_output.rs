@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBulkImportJobOutput {
     /// <p>The ID of the job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique name that helps identify the job request.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the bulk import job can be one of following values.</p>
     /// <ul>
@@ -18,25 +16,18 @@ pub struct DescribeBulkImportJobOutput {
     /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
-    #[doc(hidden)]
     pub job_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    #[doc(hidden)]
     pub error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    #[doc(hidden)]
     pub job_configuration: ::std::option::Option<crate::types::JobConfiguration>,
     /// <p>The date the job was created, in Unix epoch TIME.</p>
-    #[doc(hidden)]
     pub job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the job was last updated, in Unix epoch time.</p>
-    #[doc(hidden)]
     pub job_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackagesForDomainOutput {
     /// <p>List of all packages associated with a domain.</p>
-    #[doc(hidden)]
     pub domain_package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

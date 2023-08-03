@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGameServerInput {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    #[doc(hidden)]
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
-    #[doc(hidden)]
     pub game_server_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGameServerInput {

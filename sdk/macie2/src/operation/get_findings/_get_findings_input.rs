@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsInput {
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    #[doc(hidden)]
     pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The criteria for sorting the results of the request.</p>
-    #[doc(hidden)]
     pub sort_criteria: ::std::option::Option<crate::types::SortCriteria>,
 }
 impl GetFindingsInput {

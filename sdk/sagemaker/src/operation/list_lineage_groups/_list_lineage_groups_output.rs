@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLineageGroupsOutput {
     /// <p>A list of lineage groups and their properties.</p>
-    #[doc(hidden)]
     pub lineage_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

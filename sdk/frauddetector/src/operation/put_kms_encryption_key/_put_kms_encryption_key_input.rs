@@ -5,7 +5,6 @@
 pub struct PutKmsEncryptionKeyInput {
     /// <p>The KMS encryption key ARN.</p>
     /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
-    #[doc(hidden)]
     pub kms_encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutKmsEncryptionKeyInput {

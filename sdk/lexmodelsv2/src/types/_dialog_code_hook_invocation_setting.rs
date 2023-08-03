@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
-    #[doc(hidden)]
     pub enable_code_hook_invocation: ::std::option::Option<bool>,
     /// <p>Determines whether a dialog code hook is used when the intent is activated.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    #[doc(hidden)]
     pub invocation_label: ::std::option::Option<::std::string::String>,
     /// <p>Contains the responses and actions that Amazon Lex takes after the Lambda function is complete.</p>
-    #[doc(hidden)]
     pub post_code_hook_specification: ::std::option::Option<crate::types::PostDialogCodeHookInvocationSpecification>,
 }
 impl DialogCodeHookInvocationSetting {

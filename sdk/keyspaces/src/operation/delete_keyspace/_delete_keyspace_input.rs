@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyspaceInput {
     /// <p>The name of the keyspace to be deleted.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyspaceInput {

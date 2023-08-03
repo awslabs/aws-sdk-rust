@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessorInfo {
     /// <p>The architectures supported by the instance type.</p>
-    #[doc(hidden)]
     pub supported_architectures: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
     /// <p>The speed of the processor, in GHz.</p>
-    #[doc(hidden)]
     pub sustained_clock_speed_in_ghz: ::std::option::Option<f64>,
     /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
-    #[doc(hidden)]
     pub supported_features: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>>,
 }
 impl ProcessorInfo {

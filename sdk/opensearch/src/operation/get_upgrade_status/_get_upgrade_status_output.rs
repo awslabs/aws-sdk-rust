@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUpgradeStatusOutput {
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
-    #[doc(hidden)]
     pub upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     /// <p>The status of the current step that an upgrade is on.</p>
-    #[doc(hidden)]
     pub step_status: ::std::option::Option<crate::types::UpgradeStatus>,
     /// <p>A string that describes the update.</p>
-    #[doc(hidden)]
     pub upgrade_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

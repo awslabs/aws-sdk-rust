@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompatibleKafkaVersion {
     /// <p>An Apache Kafka version.</p>
-    #[doc(hidden)]
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of Apache Kafka versions.</p>
-    #[doc(hidden)]
     pub target_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CompatibleKafkaVersion {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAccessControlAttributeConfiguration {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    #[doc(hidden)]
     pub access_control_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>,
 }
 impl InstanceAccessControlAttributeConfiguration {

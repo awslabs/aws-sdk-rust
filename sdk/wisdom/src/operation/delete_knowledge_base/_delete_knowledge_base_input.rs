@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKnowledgeBaseInput {
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    #[doc(hidden)]
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKnowledgeBaseInput {

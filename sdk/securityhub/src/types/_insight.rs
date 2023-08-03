@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Insight {
     /// <p>The ARN of a Security Hub insight.</p>
-    #[doc(hidden)]
     pub insight_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a Security Hub insight.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
-    #[doc(hidden)]
     pub group_by_attribute: ::std::option::Option<::std::string::String>,
 }
 impl Insight {

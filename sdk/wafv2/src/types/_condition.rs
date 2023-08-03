@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>A single action condition. This is the action setting that a log record must contain in order to meet the condition.</p>
-    #[doc(hidden)]
     pub action_condition: ::std::option::Option<crate::types::ActionCondition>,
     /// <p>A single label name condition. This is the fully qualified label name that a log record must contain in order to meet the condition. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. </p>
-    #[doc(hidden)]
     pub label_name_condition: ::std::option::Option<crate::types::LabelNameCondition>,
 }
 impl Condition {

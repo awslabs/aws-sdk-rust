@@ -10,25 +10,19 @@ pub struct EntityRecognizerInputDataConfig {
     /// <li> <p> <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its labels. Each label annotates a named entity in the training document. </p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p> </li>
     /// </ul>
     /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::EntityRecognizerDataFormat>,
     /// <p>The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer. Any entity types that you don't specify are ignored.</p>
     /// <p>A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma). </p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>>,
     /// <p>The S3 location of the folder that contains the training documents for your custom entity recognizer.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
-    #[doc(hidden)]
     pub documents: ::std::option::Option<crate::types::EntityRecognizerDocuments>,
     /// <p>The S3 location of the CSV file that annotates your training documents.</p>
-    #[doc(hidden)]
     pub annotations: ::std::option::Option<crate::types::EntityRecognizerAnnotations>,
     /// <p>The S3 location of the CSV file that has the entity list for your custom entity recognizer.</p>
-    #[doc(hidden)]
     pub entity_list: ::std::option::Option<crate::types::EntityRecognizerEntityList>,
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
-    #[doc(hidden)]
     pub augmented_manifests: ::std::option::Option<::std::vec::Vec<crate::types::AugmentedManifestsListItem>>,
 }
 impl EntityRecognizerInputDataConfig {

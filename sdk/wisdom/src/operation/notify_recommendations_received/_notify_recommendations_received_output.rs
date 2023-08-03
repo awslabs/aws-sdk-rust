@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedOutput {
     /// <p>The identifiers of the recommendations.</p>
-    #[doc(hidden)]
     pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifiers of recommendations that are causing errors.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>,
     _request_id: Option<String>,
 }

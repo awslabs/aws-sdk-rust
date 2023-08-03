@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentParameterDetail {
     /// <p>The name of this input parameter.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The default value of this parameter if no input is provided.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes this parameter.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ComponentParameterDetail {

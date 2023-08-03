@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventDataStoresOutput {
     /// <p>Contains information about event data stores in the account, in the current Region.</p>
-    #[doc(hidden)]
     pub event_data_stores: ::std::option::Option<::std::vec::Vec<crate::types::EventDataStore>>,
     /// <p>A token you can use to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

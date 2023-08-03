@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
-    #[doc(hidden)]
     pub idle: ::std::option::Option<crate::types::Duration>,
 }
 impl TcpTimeout {

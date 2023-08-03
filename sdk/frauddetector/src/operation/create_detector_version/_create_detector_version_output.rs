@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDetectorVersionOutput {
     /// <p>The ID for the created version's parent detector.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the created detector. </p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the detector version.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetectorVersionStatus>,
     _request_id: Option<String>,
 }

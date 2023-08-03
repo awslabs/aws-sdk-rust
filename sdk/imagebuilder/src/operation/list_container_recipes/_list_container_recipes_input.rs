@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContainerRecipesInput {
     /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -13,13 +12,10 @@ pub struct ListContainerRecipesInput {
     /// <li> <p> <code>parentImage</code> </p> </li>
     /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum items to return in a request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListContainerRecipesInput {

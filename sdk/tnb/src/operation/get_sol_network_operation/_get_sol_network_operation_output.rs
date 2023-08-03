@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSolNetworkOperationOutput {
     /// <p>ID of this network operation occurrence.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network operation ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the network operation.</p>
-    #[doc(hidden)]
     pub operation_state: ::std::option::Option<crate::types::NsLcmOperationState>,
     /// <p>ID of the network operation instance.</p>
-    #[doc(hidden)]
     pub ns_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of the operation represented by this occurrence.</p>
-    #[doc(hidden)]
     pub lcm_operation_type: ::std::option::Option<crate::types::LcmOperationType>,
     /// <p>Error related to this specific network operation occurrence.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::ProblemDetails>,
     /// <p>Metadata of this network operation occurrence.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::GetSolNetworkOperationMetadata>,
     /// <p>All tasks associated with this operation occurrence.</p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

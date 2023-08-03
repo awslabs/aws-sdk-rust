@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Consent {
     /// <p> Maximum amount the customer agreed to accept. </p>
-    #[doc(hidden)]
     pub max_price: f64,
     /// <p> Currency for the <code>MaxPrice</code>. </p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<::std::string::String>,
 }
 impl Consent {

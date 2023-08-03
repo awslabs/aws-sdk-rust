@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitorErrorDetails {
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::MonitorErrorCode>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl MonitorErrorDetails {

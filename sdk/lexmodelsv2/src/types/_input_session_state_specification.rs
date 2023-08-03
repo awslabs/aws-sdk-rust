@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSessionStateSpecification {
     /// <p>Session attributes for the session state.</p>
-    #[doc(hidden)]
     pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Active contexts for the session state.</p>
-    #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     /// <p>Runtime hints for the session state.</p>
-    #[doc(hidden)]
     pub runtime_hints: ::std::option::Option<crate::types::RuntimeHints>,
 }
 impl InputSessionStateSpecification {

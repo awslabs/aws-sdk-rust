@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateDelegationSignerToDomainInput {
     /// <p>The name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
-    #[doc(hidden)]
     pub signing_attributes: ::std::option::Option<crate::types::DnssecSigningAttributes>,
 }
 impl AssociateDelegationSignerToDomainInput {

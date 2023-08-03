@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCostForecastOutput {
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<crate::types::MetricValue>,
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
-    #[doc(hidden)]
     pub forecast_results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>>,
     _request_id: Option<String>,
 }

@@ -10,7 +10,6 @@ pub struct PredictOutput {
     /// <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li>
     /// <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub prediction: ::std::option::Option<crate::types::Prediction>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAlertInput {
     /// <p>The ARN of the alert to delete.</p>
-    #[doc(hidden)]
     pub alert_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlertInput {

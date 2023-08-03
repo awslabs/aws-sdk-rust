@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRescoreExecutionPlanInput {
     /// <p>The identifier of the rescore execution plan that you want to get information on.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRescoreExecutionPlanInput {

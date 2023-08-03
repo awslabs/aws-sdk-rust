@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
-    #[doc(hidden)]
     pub custom_verification_email_templates: ::std::option::Option<::std::vec::Vec<crate::types::CustomVerificationEmailTemplate>>,
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

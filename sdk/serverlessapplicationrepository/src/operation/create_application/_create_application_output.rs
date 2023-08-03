@@ -4,52 +4,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this resource was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    #[doc(hidden)]
     pub home_page_url: ::std::option::Option<::std::string::String>,
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
-    #[doc(hidden)]
     pub is_verified_author: ::std::option::Option<bool>,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
-    #[doc(hidden)]
     pub license_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
-    #[doc(hidden)]
     pub readme_url: ::std::option::Option<::std::string::String>,
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-    #[doc(hidden)]
     pub spdx_license_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    #[doc(hidden)]
     pub verified_author_url: ::std::option::Option<::std::string::String>,
     /// <p>Version information about the application.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<crate::types::Version>,
     _request_id: Option<String>,
 }

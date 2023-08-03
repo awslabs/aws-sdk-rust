@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMonitoringMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartMonitoringMembersInput {

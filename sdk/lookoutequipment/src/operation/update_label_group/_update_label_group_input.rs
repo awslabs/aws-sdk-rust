@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLabelGroupInput {
     /// <p> The name of the label group to be updated. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]
     pub fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateLabelGroupInput {

@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseSnapshot {
     /// <p>The name of the database snapshot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the database snapshot.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code for the database snapshot. Include this code in your email to support when you have questions about a database snapshot in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    #[doc(hidden)]
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the database snapshot was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Region name and Availability Zone where the database snapshot is located.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The database engine version for the database snapshot (for example, <code>5.7.23</code>).</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in GB (for example, <code>32</code>) for the database snapshot.</p>
-    #[doc(hidden)]
     pub size_in_gb: ::std::option::Option<i32>,
     /// <p>The state of the database snapshot.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source database from which the database snapshot was created.</p>
-    #[doc(hidden)]
     pub from_relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the database from which the database snapshot was created.</p>
-    #[doc(hidden)]
     pub from_relational_database_arn: ::std::option::Option<::std::string::String>,
     /// <p>The bundle ID of the database from which the database snapshot was created.</p>
-    #[doc(hidden)]
     pub from_relational_database_bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The blueprint ID of the database from which the database snapshot was created. A blueprint describes the major engine version of a database.</p>
-    #[doc(hidden)]
     pub from_relational_database_blueprint_id: ::std::option::Option<::std::string::String>,
 }
 impl RelationalDatabaseSnapshot {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficPattern {
     /// <p>Defines the traffic patterns.</p>
-    #[doc(hidden)]
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
     /// <p>Defines the phases traffic specification.</p>
-    #[doc(hidden)]
     pub phases: ::std::option::Option<::std::vec::Vec<crate::types::Phase>>,
 }
 impl TrafficPattern {

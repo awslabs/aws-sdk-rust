@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetParametersForImportInput {
     /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
-    #[doc(hidden)]
     pub key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
-    #[doc(hidden)]
     pub wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
 }
 impl GetParametersForImportInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFailbackReplicationConfigurationInput {
     /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
-    #[doc(hidden)]
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFailbackReplicationConfigurationInput {

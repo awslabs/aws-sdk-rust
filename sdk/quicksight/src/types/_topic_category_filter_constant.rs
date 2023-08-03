@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicCategoryFilterConstant {
     /// <p>The type of category filter constant. This element is used to specify whether a constant is a singular or collective. Valid values are <code>SINGULAR</code> and <code>COLLECTIVE</code>.</p>
-    #[doc(hidden)]
     pub constant_type: ::std::option::Option<crate::types::ConstantType>,
     /// <p>A singular constant used in a category filter. This element is used to specify a single value for the constant.</p>
-    #[doc(hidden)]
     pub singular_constant: ::std::option::Option<::std::string::String>,
     /// <p>A collective constant used in a category filter. This element is used to specify a list of values for the constant.</p>
-    #[doc(hidden)]
     pub collective_constant: ::std::option::Option<crate::types::CollectiveConstant>,
 }
 impl TopicCategoryFilterConstant {

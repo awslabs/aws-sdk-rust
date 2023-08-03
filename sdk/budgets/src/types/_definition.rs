@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Definition {
     /// <p>The Identity and Access Management (IAM) action definition details. </p>
-    #[doc(hidden)]
     pub iam_action_definition: ::std::option::Option<crate::types::IamActionDefinition>,
     /// <p>The service control policies (SCPs) action definition details. </p>
-    #[doc(hidden)]
     pub scp_action_definition: ::std::option::Option<crate::types::ScpActionDefinition>,
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
-    #[doc(hidden)]
     pub ssm_action_definition: ::std::option::Option<crate::types::SsmActionDefinition>,
 }
 impl Definition {

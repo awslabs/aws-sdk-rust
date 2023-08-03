@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMultiRegionAccessPointPolicyInput {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutMultiRegionAccessPointPolicyInput {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category.</p>
-    #[doc(hidden)]
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    #[doc(hidden)]
     pub effective_start: ::std::option::Option<::std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
-    #[doc(hidden)]
     pub rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     /// <p>The default value for the cost category.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    #[doc(hidden)]
     pub split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
 }
 impl UpdateCostCategoryDefinitionInput {

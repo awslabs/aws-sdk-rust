@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PermissionGroupParams {
     /// <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-    #[doc(hidden)]
     pub permission_group_id: ::std::option::Option<::std::string::String>,
     /// <p>List of resource permissions.</p>
-    #[doc(hidden)]
     pub dataset_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl PermissionGroupParams {

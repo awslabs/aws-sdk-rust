@@ -29,7 +29,6 @@ pub struct HealthCheckCustomConfig {
     /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
     /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
     #[deprecated(note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
-    #[doc(hidden)]
     pub failure_threshold: ::std::option::Option<i32>,
 }
 impl HealthCheckCustomConfig {

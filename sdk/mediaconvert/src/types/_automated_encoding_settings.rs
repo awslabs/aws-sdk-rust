@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomatedEncodingSettings {
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
-    #[doc(hidden)]
     pub abr_settings: ::std::option::Option<crate::types::AutomatedAbrSettings>,
 }
 impl AutomatedEncodingSettings {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlPolicy {
     /// <p>A list of grants.</p>
-    #[doc(hidden)]
     pub grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     /// <p>Container for the bucket owner's display name and ID.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<crate::types::Owner>,
 }
 impl AccessControlPolicy {

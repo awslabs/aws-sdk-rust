@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
-    #[doc(hidden)]
     pub s3_data_source: ::std::option::Option<crate::types::S3DataSource>,
     /// <p>The file system that is associated with a channel.</p>
-    #[doc(hidden)]
     pub file_system_data_source: ::std::option::Option<crate::types::FileSystemDataSource>,
 }
 impl DataSource {

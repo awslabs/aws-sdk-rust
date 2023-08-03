@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactChannel {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    #[doc(hidden)]
     pub contact_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the contact that contains the contact channel.</p>
-    #[doc(hidden)]
     pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the contact channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
     /// <ul>
@@ -19,13 +16,10 @@ pub struct ContactChannel {
     /// <li> <p>VOICE</p> </li>
     /// <li> <p>EMAIL</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    #[doc(hidden)]
     pub delivery_address: ::std::option::Option<crate::types::ContactChannelAddress>,
     /// <p>A Boolean value describing if the contact channel has been activated or not. If the contact channel isn't activated, Incident Manager can't engage the contact through it.</p>
-    #[doc(hidden)]
     pub activation_status: ::std::option::Option<crate::types::ActivationStatus>,
 }
 impl ContactChannel {

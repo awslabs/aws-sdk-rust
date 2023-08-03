@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceiScsiAttributes {
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The network interface identifier of the VTL device.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The port used to communicate with iSCSI VTL device targets.</p>
-    #[doc(hidden)]
     pub network_interface_port: i32,
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
-    #[doc(hidden)]
     pub chap_enabled: bool,
 }
 impl DeviceiScsiAttributes {

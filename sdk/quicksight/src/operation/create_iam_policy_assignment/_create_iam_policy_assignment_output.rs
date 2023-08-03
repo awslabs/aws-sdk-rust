@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIamPolicyAssignmentOutput {
     /// <p>The name of the assignment. The name must be unique within the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the assignment.</p>
-    #[doc(hidden)]
     pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
@@ -15,19 +13,14 @@ pub struct CreateIamPolicyAssignmentOutput {
     /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
     /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
     /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
-    #[doc(hidden)]
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
-    #[doc(hidden)]
     pub identities: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

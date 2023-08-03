@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     /// Description of the error.
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// Reason the request failed validation.
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     /// The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate in the message.
-    #[doc(hidden)]
     pub field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PricingPlan {
     /// <p>The billable entity count.</p>
-    #[doc(hidden)]
     pub billable_entity_count: ::std::option::Option<i64>,
     /// <p>The pricing plan's bundle information.</p>
-    #[doc(hidden)]
     pub bundle_information: ::std::option::Option<crate::types::BundleInformation>,
     /// <p>The effective date and time of the pricing plan.</p>
-    #[doc(hidden)]
     pub effective_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The pricing mode.</p>
-    #[doc(hidden)]
     pub pricing_mode: ::std::option::Option<crate::types::PricingMode>,
     /// <p>The set date and time for updating a pricing plan.</p>
-    #[doc(hidden)]
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The update reason for changing a pricing plan.</p>
-    #[doc(hidden)]
     pub update_reason: ::std::option::Option<crate::types::UpdateReason>,
 }
 impl PricingPlan {

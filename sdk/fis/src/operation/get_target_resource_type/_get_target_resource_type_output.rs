@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTargetResourceTypeOutput {
     /// <p>Information about the resource type.</p>
-    #[doc(hidden)]
     pub target_resource_type: ::std::option::Option<crate::types::TargetResourceType>,
     _request_id: Option<String>,
 }

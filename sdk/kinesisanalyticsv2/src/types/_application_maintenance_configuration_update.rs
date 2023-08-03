@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationMaintenanceConfigurationUpdate {
     /// <p>The updated start time for the maintenance window.</p>
-    #[doc(hidden)]
     pub application_maintenance_window_start_time_update: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationMaintenanceConfigurationUpdate {

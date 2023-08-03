@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionHistory {
     /// <p>The package version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>A message associated with the package version when it was uploaded.</p>
-    #[doc(hidden)]
     pub commit_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the package was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PackageVersionHistory {

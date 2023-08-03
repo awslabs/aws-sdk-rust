@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPositionConfigurationOutput {
     /// <p>The wrapper for the solver configuration details object.</p>
-    #[doc(hidden)]
     pub solvers: ::std::option::Option<crate::types::PositionSolverDetails>,
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

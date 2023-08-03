@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVirtualNodeOutput {
     /// <p>A full description of the virtual node that was updated.</p>
-    #[doc(hidden)]
     pub virtual_node: ::std::option::Option<crate::types::VirtualNodeData>,
     _request_id: Option<String>,
 }

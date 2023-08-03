@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
-    #[doc(hidden)]
     pub state_name: ::std::option::Option<::std::string::String>,
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>,
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    #[doc(hidden)]
     pub timers: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>,
 }
 impl DetectorStateDefinition {

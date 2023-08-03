@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTokenOutput {
     /// <p>An opaque token to access IAM Identity Center resources assigned to a user.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
-    #[doc(hidden)]
     pub token_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the time in seconds when an access token will expire.</p>
-    #[doc(hidden)]
     pub expires_in: i32,
     /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     /// <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
-    #[doc(hidden)]
     pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p>Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API Reference</a>.</p>
     /// <p>The identifier of the user that associated with the access token, if present.</p>
-    #[doc(hidden)]
     pub id_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

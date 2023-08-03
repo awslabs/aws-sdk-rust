@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMetricAttributionInput {
     /// <p>Add new metric attributes to the metric attribution.</p>
-    #[doc(hidden)]
     pub add_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>>,
     /// <p>Remove metric attributes from the metric attribution.</p>
-    #[doc(hidden)]
     pub remove_metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An output config for the metric attribution.</p>
-    #[doc(hidden)]
     pub metrics_output_config: ::std::option::Option<crate::types::MetricAttributionOutput>,
     /// <p>The Amazon Resource Name (ARN) for the metric attribution to update.</p>
-    #[doc(hidden)]
     pub metric_attribution_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMetricAttributionInput {

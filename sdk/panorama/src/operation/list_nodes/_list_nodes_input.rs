@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNodesInput {
     /// <p>Search for nodes by category.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::NodeCategory>,
     /// <p>Search for nodes by the account ID of the nodes' owner.</p>
-    #[doc(hidden)]
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>Search for nodes by name.</p>
-    #[doc(hidden)]
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>Search for nodes by version.</p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>Search for nodes by patch version.</p>
-    #[doc(hidden)]
     pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of nodes to return in one page of results.</p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListNodesInput {

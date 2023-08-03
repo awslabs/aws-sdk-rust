@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogTarget {
     /// <p>The name of the database to be synchronized.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tables to be synchronized.</p>
-    #[doc(hidden)]
     pub tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code> Connection type.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
-    #[doc(hidden)]
     pub event_queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
-    #[doc(hidden)]
     pub dlq_event_queue_arn: ::std::option::Option<::std::string::String>,
 }
 impl CatalogTarget {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
-    #[doc(hidden)]
     pub add_gw_metadata: bool,
     /// <p>The DrMin value.</p>
-    #[doc(hidden)]
     pub dr_min: ::std::option::Option<i32>,
     /// <p>The DrMax value.</p>
-    #[doc(hidden)]
     pub dr_max: ::std::option::Option<i32>,
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
-    #[doc(hidden)]
     pub pr_allowed: bool,
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
-    #[doc(hidden)]
     pub ra_allowed: bool,
 }
 impl LoRaWanServiceProfile {

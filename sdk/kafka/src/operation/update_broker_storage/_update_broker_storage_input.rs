@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBrokerStorageInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    #[doc(hidden)]
     pub target_broker_ebs_volume_info: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
 }
 impl UpdateBrokerStorageInput {

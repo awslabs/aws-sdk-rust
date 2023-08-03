@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDefaultCreditSpecificationOutput {
     /// <p>The default credit option for CPU usage of the instance family.</p>
-    #[doc(hidden)]
     pub instance_family_credit_specification: ::std::option::Option<crate::types::InstanceFamilyCreditSpecification>,
     _request_id: Option<String>,
 }

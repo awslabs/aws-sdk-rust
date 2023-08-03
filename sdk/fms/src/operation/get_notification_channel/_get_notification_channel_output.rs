@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNotificationChannelOutput {
     /// <p>The SNS topic that records Firewall Manager activity. </p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
-    #[doc(hidden)]
     pub sns_role_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

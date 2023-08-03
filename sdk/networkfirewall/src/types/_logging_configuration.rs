@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups. </p>
-    #[doc(hidden)]
     pub log_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::LogDestinationConfig>>,
 }
 impl LoggingConfiguration {

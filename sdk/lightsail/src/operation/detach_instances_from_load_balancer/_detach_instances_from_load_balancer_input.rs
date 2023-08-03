@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachInstancesFromLoadBalancerInput {
     /// <p>The name of the Lightsail load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    #[doc(hidden)]
     pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetachInstancesFromLoadBalancerInput {

@@ -8,11 +8,9 @@
 pub struct CognitoUserPoolConfiguration {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code> </p>
-    #[doc(hidden)]
     pub user_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
     /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code> </p>
-    #[doc(hidden)]
     pub client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CognitoUserPoolConfiguration {

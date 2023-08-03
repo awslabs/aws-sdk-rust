@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaConcatenationPipeline {
     /// <p>The ID of the media pipeline being concatenated.</p>
-    #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code> object.</p>
-    #[doc(hidden)]
     pub media_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The data sources being concatenated.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSource>>,
     /// <p>The data sinks of the concatenation pipeline.</p>
-    #[doc(hidden)]
     pub sinks: ::std::option::Option<::std::vec::Vec<crate::types::ConcatenationSink>>,
     /// <p>The status of the concatenation pipeline.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MediaPipelineStatus>,
     /// <p>The time at which the concatenation pipeline was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the concatenation pipeline was last updated.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MediaConcatenationPipeline {

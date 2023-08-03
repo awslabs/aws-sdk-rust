@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTimelineEventOutput {
     /// <p>The ARN of the incident record that you added the event to.</p>
-    #[doc(hidden)]
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event for easy reference later. </p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

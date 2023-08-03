@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VerifySoftwareTokenOutput {
     /// <p>The status of the verify software token.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VerifySoftwareTokenResponseType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateOriginRequestPolicyOutput {
     /// <p>An origin request policy.</p>
-    #[doc(hidden)]
     pub origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,
     /// <p>The current version of the origin request policy.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

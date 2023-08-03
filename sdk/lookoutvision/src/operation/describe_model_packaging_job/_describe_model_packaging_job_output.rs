@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelPackagingJobOutput {
     /// <p>The description of the model packaging job. </p>
-    #[doc(hidden)]
     pub model_packaging_description: ::std::option::Option<crate::types::ModelPackagingDescription>,
     _request_id: Option<String>,
 }

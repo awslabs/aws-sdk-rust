@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiConditionalFormatting {
     /// <p>The conditional formatting options of a KPI visual.</p>
-    #[doc(hidden)]
     pub conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
 }
 impl KpiConditionalFormatting {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuppressedDestinationInput {
     /// <p>The email address that's on the account suppression list.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl GetSuppressedDestinationInput {

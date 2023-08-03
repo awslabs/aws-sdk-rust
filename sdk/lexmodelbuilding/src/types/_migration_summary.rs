@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MigrationSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
-    #[doc(hidden)]
     pub migration_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
-    #[doc(hidden)]
     pub v1_bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
-    #[doc(hidden)]
     pub v1_bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
-    #[doc(hidden)]
     pub v1_bot_locale: ::std::option::Option<crate::types::Locale>,
     /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
-    #[doc(hidden)]
     pub v2_bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    #[doc(hidden)]
     pub v2_bot_role: ::std::option::Option<::std::string::String>,
     /// <p>The status of the operation. When the status is <code>COMPLETE</code> the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    #[doc(hidden)]
     pub migration_status: ::std::option::Option<crate::types::MigrationStatus>,
     /// <p>The strategy used to conduct the migration.</p>
-    #[doc(hidden)]
     pub migration_strategy: ::std::option::Option<crate::types::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
-    #[doc(hidden)]
     pub migration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MigrationSummary {

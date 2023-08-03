@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessageContent {
     /// <p>The background color for the message.</p>
-    #[doc(hidden)]
     pub background_color: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the message body.</p>
-    #[doc(hidden)]
     pub body_config: ::std::option::Option<crate::types::InAppMessageBodyConfig>,
     /// <p>The configuration for the message header.</p>
-    #[doc(hidden)]
     pub header_config: ::std::option::Option<crate::types::InAppMessageHeaderConfig>,
     /// <p>The image url for the background of message.</p>
-    #[doc(hidden)]
     pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>The first button inside the message.</p>
-    #[doc(hidden)]
     pub primary_btn: ::std::option::Option<crate::types::InAppMessageButton>,
     /// <p>The second button inside message.</p>
-    #[doc(hidden)]
     pub secondary_btn: ::std::option::Option<crate::types::InAppMessageButton>,
 }
 impl InAppMessageContent {

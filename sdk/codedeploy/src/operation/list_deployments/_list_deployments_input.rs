@@ -7,15 +7,12 @@ pub struct ListDeploymentsInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a deployment group for the specified application.</p> <note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
-    #[doc(hidden)]
     pub deployment_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
@@ -26,13 +23,10 @@ pub struct ListDeploymentsInput {
     /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub include_only_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
-    #[doc(hidden)]
     pub create_time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDeploymentsInput {

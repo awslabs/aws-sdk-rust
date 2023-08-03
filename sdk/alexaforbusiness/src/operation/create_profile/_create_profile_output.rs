@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileOutput {
     /// <p>The ARN of the newly created room profile in the response.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

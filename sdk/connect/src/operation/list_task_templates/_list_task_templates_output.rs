@@ -4,12 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTaskTemplatesOutput {
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
-    #[doc(hidden)]
     pub task_templates: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateMetadata>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as a null in the response.</p>
     /// </important>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

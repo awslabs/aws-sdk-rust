@@ -6,22 +6,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Listener {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
-    #[doc(hidden)]
     pub load_balancer_port: i32,
     /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
     /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
-    #[doc(hidden)]
     pub instance_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the instance is listening.</p>
-    #[doc(hidden)]
     pub instance_port: i32,
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
-    #[doc(hidden)]
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl Listener {

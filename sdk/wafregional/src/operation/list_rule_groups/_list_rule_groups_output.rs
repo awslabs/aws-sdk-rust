@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleGroupsOutput {
     /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    #[doc(hidden)]
     pub rule_groups: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>>,
     _request_id: Option<String>,
 }

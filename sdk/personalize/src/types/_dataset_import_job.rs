@@ -9,41 +9,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetImportJob {
     /// <p>The name of the import job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the dataset import job.</p>
-    #[doc(hidden)]
     pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that receives the imported data.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset import job.</p>
     /// <p>A dataset import job can be in one of the following states:</p>
     /// <ul>
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset import job.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) the dataset was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If a dataset import job fails, provides the reason why.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The import mode used by the dataset import job to import new records.</p>
-    #[doc(hidden)]
     pub import_mode: ::std::option::Option<crate::types::ImportMode>,
     /// <p>Whether the job publishes metrics to Amazon S3 for a metric attribution.</p>
-    #[doc(hidden)]
     pub publish_attribution_metrics_to_s3: ::std::option::Option<bool>,
 }
 impl DatasetImportJob {

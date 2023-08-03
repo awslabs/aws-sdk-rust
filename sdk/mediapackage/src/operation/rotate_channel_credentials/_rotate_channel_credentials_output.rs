@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotateChannelCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The date and time the Channel was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::std::string::String>,
     /// A short text description of the Channel.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// Configure egress access logging.
-    #[doc(hidden)]
     pub egress_access_logs: ::std::option::Option<crate::types::EgressAccessLogs>,
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    #[doc(hidden)]
     pub hls_ingest: ::std::option::Option<crate::types::HlsIngest>,
     /// The ID of the Channel.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Configure ingress access logging.
-    #[doc(hidden)]
     pub ingress_access_logs: ::std::option::Option<crate::types::IngressAccessLogs>,
     /// A collection of tags associated with a resource
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

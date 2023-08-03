@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceRootVolumeTask {
     /// <p>The ID of the root volume replacement task.</p>
-    #[doc(hidden)]
     pub replace_root_volume_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance for which the root volume replacement task was created.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the task. The task can be in one of the following states:</p>
     /// <ul>
@@ -20,25 +18,18 @@ pub struct ReplaceRootVolumeTask {
     /// <li> <p> <code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p> </li>
     /// <li> <p> <code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub task_state: ::std::option::Option<crate::types::ReplaceRootVolumeTaskState>,
     /// <p>The time the task was started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The time the task completed.</p>
-    #[doc(hidden)]
     pub complete_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the AMI used to create the replacement root volume.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot used to create the replacement root volume.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the original root volume is to be deleted after the root volume replacement task completes.</p>
-    #[doc(hidden)]
     pub delete_replaced_root_volume: ::std::option::Option<bool>,
 }
 impl ReplaceRootVolumeTask {

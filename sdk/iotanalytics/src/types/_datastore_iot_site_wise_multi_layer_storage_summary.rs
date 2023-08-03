@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreIotSiteWiseMultiLayerStorageSummary {
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
-    #[doc(hidden)]
     pub customer_managed_s3_storage: ::std::option::Option<crate::types::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
 }
 impl DatastoreIotSiteWiseMultiLayerStorageSummary {

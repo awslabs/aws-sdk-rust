@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterDefaultCapacityProviderStrategyDetails {
     /// <p>The minimum number of tasks to run on the specified capacity provider.</p>
-    #[doc(hidden)]
     pub base: i32,
     /// <p>The name of the capacity provider.</p>
-    #[doc(hidden)]
     pub capacity_provider: ::std::option::Option<::std::string::String>,
     /// <p>The relative percentage of the total number of tasks launched that should use the capacity provider.</p>
-    #[doc(hidden)]
     pub weight: i32,
 }
 impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {

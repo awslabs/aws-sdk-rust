@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGameInput {
     /// <p>The name of the game.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
 }
 impl GetGameInput {

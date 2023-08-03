@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceVersionsOutput {
     /// <p>A list of supported versions.</p>
-    #[doc(hidden)]
     pub service_versions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>,
     /// <p>The name of the service for which the system provided supported versions.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<crate::types::ServiceName>,
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
-    #[doc(hidden)]
     pub dependent_services: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

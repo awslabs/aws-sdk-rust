@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteResponseInput {
     /// <p>The API identifier.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
-    #[doc(hidden)]
     pub model_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>The response models for the route response.</p>
-    #[doc(hidden)]
     pub response_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The route response parameters.</p>
-    #[doc(hidden)]
     pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>>,
     /// <p>The route ID.</p>
-    #[doc(hidden)]
     pub route_id: ::std::option::Option<::std::string::String>,
     /// <p>The route response ID.</p>
-    #[doc(hidden)]
     pub route_response_id: ::std::option::Option<::std::string::String>,
     /// <p>The route response key.</p>
-    #[doc(hidden)]
     pub route_response_key: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRouteResponseInput {

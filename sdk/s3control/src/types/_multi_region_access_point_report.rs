@@ -5,24 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointReport {
     /// <p>The name of the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>When the Multi-Region Access Point create request was received.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    #[doc(hidden)]
     pub public_access_block: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     /// <p>The current status of the Multi-Region Access Point.</p>
     /// <p> <code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>,
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionReport>>,
 }
 impl MultiRegionAccessPointReport {

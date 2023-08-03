@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EstimateByTime {
     /// <p>The amount of cost or usage that's measured for the cost estimate.</p>
-    #[doc(hidden)]
     pub usage_cost: ::std::option::Option<f64>,
     /// <p>The unit of measurement that's used for the cost estimate.</p>
-    #[doc(hidden)]
     pub pricing_unit: ::std::option::Option<crate::types::PricingUnit>,
     /// <p>The number of pricing units used to calculate the total number of hours. For example, 1 unit equals 1 hour.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<f64>,
     /// <p>The currency of the estimate in USD.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<crate::types::Currency>,
     /// <p>The period of time, in days, that an estimate covers. The period has a start date and an end date. The start date must come before the end date.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::TimePeriod>,
 }
 impl EstimateByTime {

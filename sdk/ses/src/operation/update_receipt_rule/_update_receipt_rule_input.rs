@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReceiptRuleInput {
     /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
-    #[doc(hidden)]
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A data structure that contains the updated receipt rule information.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::ReceiptRule>,
 }
 impl UpdateReceiptRuleInput {

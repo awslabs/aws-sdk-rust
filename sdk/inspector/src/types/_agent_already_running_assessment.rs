@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentAlreadyRunningAssessment {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
-    #[doc(hidden)]
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the assessment run that has already been started.</p>
-    #[doc(hidden)]
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl AgentAlreadyRunningAssessment {

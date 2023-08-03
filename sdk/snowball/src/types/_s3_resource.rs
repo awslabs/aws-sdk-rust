@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Resource {
     /// <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>For export jobs, you can provide an optional <code>KeyRange</code> within a specific Amazon S3 bucket. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
-    #[doc(hidden)]
     pub key_range: ::std::option::Option<crate::types::KeyRange>,
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
-    #[doc(hidden)]
     pub target_on_device_services: ::std::option::Option<::std::vec::Vec<crate::types::TargetOnDeviceService>>,
 }
 impl S3Resource {

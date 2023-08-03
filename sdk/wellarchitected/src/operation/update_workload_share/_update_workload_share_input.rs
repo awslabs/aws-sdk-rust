@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkloadShareInput {
     /// <p>The ID associated with the share.</p>
-    #[doc(hidden)]
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>Permission granted on a share request.</p>
-    #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
 }
 impl UpdateWorkloadShareInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentMembershipInput {
     /// <p>The ID of the environment to delete the environment member from.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
-    #[doc(hidden)]
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentMembershipInput {

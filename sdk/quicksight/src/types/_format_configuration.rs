@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormatConfiguration {
     /// <p>Formatting configuration for string fields.</p>
-    #[doc(hidden)]
     pub string_format_configuration: ::std::option::Option<crate::types::StringFormatConfiguration>,
     /// <p>Formatting configuration for number fields.</p>
-    #[doc(hidden)]
     pub number_format_configuration: ::std::option::Option<crate::types::NumberFormatConfiguration>,
     /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
-    #[doc(hidden)]
     pub date_time_format_configuration: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
 impl FormatConfiguration {

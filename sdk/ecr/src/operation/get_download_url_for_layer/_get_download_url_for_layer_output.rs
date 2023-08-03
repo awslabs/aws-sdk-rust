@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDownloadUrlForLayerOutput {
     /// <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
-    #[doc(hidden)]
     pub download_url: ::std::option::Option<::std::string::String>,
     /// <p>The digest of the image layer to download.</p>
-    #[doc(hidden)]
     pub layer_digest: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

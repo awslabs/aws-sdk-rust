@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociationsInput {
     /// <p>A filter that returns only associations with the specified source ARN.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only associations with the specified source type.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only associations with the specified destination type.</p>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only associations of the specified type.</p>
-    #[doc(hidden)]
     pub association_type: ::std::option::Option<crate::types::AssociationEdgeType>,
     /// <p>A filter that returns only associations created on or after the specified time.</p>
-    #[doc(hidden)]
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only associations created on or before the specified time.</p>
-    #[doc(hidden)]
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortAssociationsBy>,
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAssociationsInput {

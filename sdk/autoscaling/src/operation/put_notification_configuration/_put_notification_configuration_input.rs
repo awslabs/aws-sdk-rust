@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutNotificationConfigurationInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    #[doc(hidden)]
     pub notification_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PutNotificationConfigurationInput {

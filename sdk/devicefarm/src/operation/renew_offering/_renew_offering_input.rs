@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewOfferingInput {
     /// <p>The ID of a request to renew an offering.</p>
-    #[doc(hidden)]
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The quantity requested in an offering renewal.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
 }
 impl RenewOfferingInput {

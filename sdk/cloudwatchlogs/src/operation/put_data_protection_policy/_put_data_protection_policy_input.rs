@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDataProtectionPolicyInput {
     /// <p>Specify either the log group name or log group ARN.</p>
-    #[doc(hidden)]
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specify the data protection policy, in JSON.</p>
     /// <p>This policy must include two JSON blocks:</p>
@@ -17,7 +16,6 @@ pub struct PutDataProtectionPolicyInput {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    #[doc(hidden)]
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PutDataProtectionPolicyInput {

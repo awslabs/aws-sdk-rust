@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputColumn {
     /// <p>A display name for the dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for a column.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ColumnDataType>,
 }
 impl OutputColumn {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSnapshotInput {
     /// <p>The name of the game.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the snapshot to export.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
 }
 impl ExportSnapshotInput {

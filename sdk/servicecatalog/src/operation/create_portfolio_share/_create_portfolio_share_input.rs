@@ -8,23 +8,17 @@ pub struct CreatePortfolioShareInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
-    #[doc(hidden)]
     pub organization_node: ::std::option::Option<crate::types::OrganizationNode>,
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
-    #[doc(hidden)]
     pub share_tag_options: ::std::option::Option<bool>,
     /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
     /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
-    #[doc(hidden)]
     pub share_principals: ::std::option::Option<bool>,
 }
 impl CreatePortfolioShareInput {

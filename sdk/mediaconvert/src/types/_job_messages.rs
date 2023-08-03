@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobMessages {
     /// List of messages that are informational only and don't indicate a problem with your job.
-    #[doc(hidden)]
     pub info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// List of messages that warn about conditions that might cause your job not to run or to fail.
-    #[doc(hidden)]
     pub warning: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl JobMessages {

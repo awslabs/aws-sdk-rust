@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetRulePrioritiesInput {
     /// <p>The rule priorities.</p>
-    #[doc(hidden)]
     pub rule_priorities: ::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>>,
 }
 impl SetRulePrioritiesInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetDescription {
     /// <p>The name of the project that contains the dataset.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time and date that the dataset was created.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the date and time that the dataset was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the dataset.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p>The status message for the dataset. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Statistics about the images in a dataset.</p>
-    #[doc(hidden)]
     pub image_stats: ::std::option::Option<crate::types::DatasetImageStats>,
 }
 impl DatasetDescription {

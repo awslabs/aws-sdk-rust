@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionMapping {
     /// <p>Column name from query result.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Type for the dimension. </p>
-    #[doc(hidden)]
     pub dimension_value_type: ::std::option::Option<crate::types::DimensionValueType>,
 }
 impl DimensionMapping {

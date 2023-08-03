@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile ID.</p>
-    #[doc(hidden)]
     pub configuration_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The content of the configuration or the configuration data.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
-    #[doc(hidden)]
     pub latest_version_number: ::std::option::Option<i32>,
     /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
-    #[doc(hidden)]
     pub version_label: ::std::option::Option<::std::string::String>,
 }
 impl CreateHostedConfigurationVersionInput {

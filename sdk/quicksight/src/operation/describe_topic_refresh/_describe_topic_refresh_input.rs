@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTopicRefreshInput {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the refresh, which is performed when the topic is created or updated.</p>
-    #[doc(hidden)]
     pub refresh_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTopicRefreshInput {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationComponent {
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p> If logging is supported for the resource type, indicates whether the component has configured logs to be monitored. </p>
-    #[doc(hidden)]
     pub component_remarks: ::std::option::Option<::std::string::String>,
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p> The operating system of the component. </p>
-    #[doc(hidden)]
     pub os_type: ::std::option::Option<crate::types::OsType>,
     /// <p>The stack tier of the application component.</p>
-    #[doc(hidden)]
     pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>Indicates whether the application component is monitored. </p>
-    #[doc(hidden)]
     pub monitor: ::std::option::Option<bool>,
     /// <p> Workloads detected in the application component. </p>
-    #[doc(hidden)]
     pub detected_workload: ::std::option::Option<
         ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,

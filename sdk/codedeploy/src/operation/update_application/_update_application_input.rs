@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The current name of the application you want to change.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The new name to give the application.</p>
-    #[doc(hidden)]
     pub new_application_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInput {

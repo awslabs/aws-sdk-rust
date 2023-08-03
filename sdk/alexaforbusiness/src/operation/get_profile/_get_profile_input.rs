@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProfileInput {
     /// <p>The ARN of the room profile for which to request details. Required.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetProfileInput {

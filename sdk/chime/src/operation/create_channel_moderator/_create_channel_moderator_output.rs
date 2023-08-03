@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelModeratorOutput {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the channel and the moderator.</p>
-    #[doc(hidden)]
     pub channel_moderator: ::std::option::Option<crate::types::Identity>,
     _request_id: Option<String>,
 }

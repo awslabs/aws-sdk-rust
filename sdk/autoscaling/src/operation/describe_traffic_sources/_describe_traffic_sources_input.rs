@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrafficSourcesInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
@@ -13,13 +12,10 @@ pub struct DescribeTrafficSourcesInput {
     /// <li> <p> <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p> </li>
     /// <li> <p> <code>vpc-lattice</code> if the traffic source is VPC Lattice.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub traffic_source_type: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeTrafficSourcesInput {

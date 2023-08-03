@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLendingAnalysisOutput {
     /// <p>Information about the input document.</p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p> The current status of the lending analysis job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of lending results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Holds the information returned by one of AmazonTextract's document analysis operations for the pinstripe.</p>
-    #[doc(hidden)]
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::LendingResult>>,
     /// <p> A list of warnings that occurred during the lending analysis operation. </p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
     /// <p> Returns if the lending analysis job could not be completed. Contains explanation for what error occurred. </p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p> The current model version of the Analyze Lending API.</p>
-    #[doc(hidden)]
     pub analyze_lending_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditFinding {
     /// <p>A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or more sets of findings.</p>
-    #[doc(hidden)]
     pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the audit that generated this result (finding).</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The audit check that generated this result.</p>
-    #[doc(hidden)]
     pub check_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the audit started.</p>
-    #[doc(hidden)]
     pub task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the result (finding) was discovered.</p>
-    #[doc(hidden)]
     pub finding_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The severity of the result (finding).</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::AuditFindingSeverity>,
     /// <p>The resource that was found to be noncompliant with the audit check.</p>
-    #[doc(hidden)]
     pub non_compliant_resource: ::std::option::Option<crate::types::NonCompliantResource>,
     /// <p>The list of related resources.</p>
-    #[doc(hidden)]
     pub related_resources: ::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>>,
     /// <p>The reason the resource was noncompliant.</p>
-    #[doc(hidden)]
     pub reason_for_non_compliance: ::std::option::Option<::std::string::String>,
     /// <p>A code that indicates the reason that the resource was noncompliant.</p>
-    #[doc(hidden)]
     pub reason_for_non_compliance_code: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
-    #[doc(hidden)]
     pub is_suppressed: ::std::option::Option<bool>,
 }
 impl AuditFinding {

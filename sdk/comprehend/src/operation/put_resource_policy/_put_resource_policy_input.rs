@@ -4,16 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the custom model to attach the policy to.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON resource-based policy to attach to your custom model. Provide your JSON as a UTF-8 encoded string without line breaks. To provide valid JSON for your policy, enclose the attribute names and values in double quotes. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:</p>
     /// <p> <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> </p>
     /// <p>To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:</p>
     /// <p> <code>'{"attribute": "value", "attribute": ["value"]}'</code> </p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<::std::string::String>,
     /// <p>The revision ID that Amazon Comprehend assigned to the policy that you are updating. If you are creating a new policy that has no prior version, don't use this parameter. Amazon Comprehend creates the revision ID for you.</p>
-    #[doc(hidden)]
     pub policy_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {

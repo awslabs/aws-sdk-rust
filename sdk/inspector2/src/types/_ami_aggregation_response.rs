@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmiAggregationResponse {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
-    #[doc(hidden)]
     pub ami: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID for the AMI.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
-    #[doc(hidden)]
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
-    #[doc(hidden)]
     pub affected_instances: ::std::option::Option<i64>,
 }
 impl AmiAggregationResponse {

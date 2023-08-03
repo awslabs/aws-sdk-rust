@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    #[doc(hidden)]
     pub session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the session.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the session.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration information for the session integration.</p>
-    #[doc(hidden)]
     pub integration_configuration: ::std::option::Option<crate::types::SessionIntegrationConfiguration>,
 }
 impl SessionData {

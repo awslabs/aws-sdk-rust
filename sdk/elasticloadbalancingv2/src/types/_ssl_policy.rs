@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SslPolicy {
     /// <p>The protocols.</p>
-    #[doc(hidden)]
     pub ssl_protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ciphers.</p>
-    #[doc(hidden)]
     pub ciphers: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>,
     /// <p>The name of the policy.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The supported load balancers. </p>
-    #[doc(hidden)]
     pub supported_load_balancer_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SslPolicy {

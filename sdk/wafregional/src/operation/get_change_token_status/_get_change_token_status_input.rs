@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangeTokenStatusInput {
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl GetChangeTokenStatusInput {

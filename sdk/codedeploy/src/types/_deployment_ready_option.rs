@@ -9,10 +9,8 @@ pub struct DeploymentReadyOption {
     /// <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li>
     /// <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <code>ContinueDeployment</code>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub action_on_timeout: ::std::option::Option<crate::types::DeploymentReadyAction>,
     /// <p>The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
-    #[doc(hidden)]
     pub wait_time_in_minutes: i32,
 }
 impl DeploymentReadyOption {

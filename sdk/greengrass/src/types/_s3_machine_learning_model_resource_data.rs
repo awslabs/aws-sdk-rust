@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3MachineLearningModelResourceData {
     /// The absolute local path of the resource inside the Lambda environment.
-    #[doc(hidden)]
     pub destination_path: ::std::option::Option<::std::string::String>,
     /// The owner setting for downloaded machine learning resources.
-    #[doc(hidden)]
     pub owner_setting: ::std::option::Option<crate::types::ResourceDownloadOwnerSetting>,
     /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl S3MachineLearningModelResourceData {

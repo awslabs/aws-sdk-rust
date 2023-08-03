@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MigrationWorkflowSummary {
     /// <p>The ID of the migration workflow.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the migration workflow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    #[doc(hidden)]
     pub ads_application_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the migration workflow.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
     /// <p>The time at which the migration workflow was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the migration workflow ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status message of the migration workflow.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The steps completed in the migration workflow.</p>
-    #[doc(hidden)]
     pub completed_steps: ::std::option::Option<i32>,
     /// <p>All the steps in a migration workflow.</p>
-    #[doc(hidden)]
     pub total_steps: ::std::option::Option<i32>,
 }
 impl MigrationWorkflowSummary {

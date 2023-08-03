@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metrics {
     /// <p> <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.</p>
-    #[doc(hidden)]
     pub metered_lines_of_code_count: ::std::option::Option<i64>,
     /// <p> <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. </p>
-    #[doc(hidden)]
     pub suppressed_lines_of_code_count: ::std::option::Option<i64>,
     /// <p>Total number of recommendations found in the code review.</p>
-    #[doc(hidden)]
     pub findings_count: ::std::option::Option<i64>,
 }
 impl Metrics {

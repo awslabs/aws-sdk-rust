@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRealtimeEndpointOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
-    #[doc(hidden)]
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint information of the <code>MLModel</code> </p>
-    #[doc(hidden)]
     pub realtime_endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     _request_id: Option<String>,
 }

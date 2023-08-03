@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the resource in use. </p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of the resource in use. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Reason for the inconsistent state. </p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::ConflictExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

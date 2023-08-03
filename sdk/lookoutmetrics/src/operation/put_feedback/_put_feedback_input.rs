@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>Feedback for an anomalous metric.</p>
-    #[doc(hidden)]
     pub anomaly_group_time_series_feedback: ::std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
 }
 impl PutFeedbackInput {

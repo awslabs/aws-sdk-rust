@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLabelDetectionOutput {
     /// <p>The current status of the label detection job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    #[doc(hidden)]
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of labels.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetection>>,
     /// <p>Version number of the label detection model that was used to detect labels.</p>
-    #[doc(hidden)]
     pub label_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Job identifier for the label detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartLabelDetection.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-    #[doc(hidden)]
     pub video: ::std::option::Option<crate::types::Video>,
     /// <p>A job identifier specified in the call to StartLabelDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    #[doc(hidden)]
     pub job_tag: ::std::option::Option<::std::string::String>,
     /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    #[doc(hidden)]
     pub get_request_metadata: ::std::option::Option<crate::types::GetLabelDetectionRequestMetadata>,
     _request_id: Option<String>,
 }

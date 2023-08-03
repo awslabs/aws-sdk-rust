@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultData {
     /// <p>The identifier of the result data.</p>
-    #[doc(hidden)]
     pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>The document.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<crate::types::Document>,
     /// <p>The relevance score of the results.</p>
-    #[doc(hidden)]
     pub relevance_score: f64,
 }
 impl ResultData {

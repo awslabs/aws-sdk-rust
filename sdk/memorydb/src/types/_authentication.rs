@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Authentication {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
-    #[doc(hidden)]
     pub password_count: ::std::option::Option<i32>,
 }
 impl Authentication {

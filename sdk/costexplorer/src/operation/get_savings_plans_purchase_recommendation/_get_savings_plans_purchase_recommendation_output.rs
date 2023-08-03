@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansPurchaseRecommendationOutput {
     /// <p>Information that regards this specific recommendation set.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata>,
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
-    #[doc(hidden)]
     pub savings_plans_purchase_recommendation: ::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

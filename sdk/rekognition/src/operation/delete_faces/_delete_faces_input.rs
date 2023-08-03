@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFacesInput {
     /// <p>Collection from which to remove the specific faces.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of face IDs to delete.</p>
-    #[doc(hidden)]
     pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteFacesInput {

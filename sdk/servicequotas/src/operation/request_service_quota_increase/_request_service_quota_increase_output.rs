@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestServiceQuotaIncreaseOutput {
     /// <p>Information about the quota increase request.</p>
-    #[doc(hidden)]
     pub requested_quota: ::std::option::Option<crate::types::RequestedServiceQuotaChange>,
     _request_id: Option<String>,
 }

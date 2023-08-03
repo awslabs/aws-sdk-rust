@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnSelector {
     /// <p>A regular expression for selecting a column from a dataset.</p>
-    #[doc(hidden)]
     pub regex: ::std::option::Option<::std::string::String>,
     /// <p>The name of a column from a dataset.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl ColumnSelector {

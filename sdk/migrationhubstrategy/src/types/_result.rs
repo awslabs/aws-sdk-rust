@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Result {
     /// <p>The error in server analysis.</p>
-    #[doc(hidden)]
     pub analysis_type: ::std::option::Option<crate::types::AnalysisType>,
     /// <p>The error in server analysis.</p>
-    #[doc(hidden)]
     pub analysis_status: ::std::option::Option<crate::types::AnalysisStatusUnion>,
     /// <p>The error in server analysis.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The error in server analysis.</p>
-    #[doc(hidden)]
     pub antipattern_report_result_list: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>>,
 }
 impl Result {

@@ -5,16 +5,12 @@
 pub struct GetCurrentMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the real-time metrics.</p>
-    #[doc(hidden)]
     pub metric_results: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricResult>>,
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
-    #[doc(hidden)]
     pub data_snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total count of the result, regardless of the current page size. </p>
-    #[doc(hidden)]
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

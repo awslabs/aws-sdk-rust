@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataSourceInput {
     /// <p>The identifier of the data source connector.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index used with the data source connector.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataSourceInput {

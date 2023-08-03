@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationInstanceOutput {
     /// <p>The replication instance that was deleted.</p>
-    #[doc(hidden)]
     pub replication_instance: ::std::option::Option<crate::types::ReplicationInstance>,
     _request_id: Option<String>,
 }

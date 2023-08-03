@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCampaignStateResponse {
     /// Identifier representing a Campaign
-    #[doc(hidden)]
     pub campaign_id: ::std::option::Option<::std::string::String>,
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
 }
 impl FailedCampaignStateResponse {

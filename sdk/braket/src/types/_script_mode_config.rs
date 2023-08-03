@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptModeConfig {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
-    #[doc(hidden)]
     pub entry_point: ::std::option::Option<::std::string::String>,
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
-    #[doc(hidden)]
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
 }
 impl ScriptModeConfig {

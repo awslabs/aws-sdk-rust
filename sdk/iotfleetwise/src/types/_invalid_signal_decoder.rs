@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidSignalDecoder {
     /// <p>The name of a signal decoder that isn't valid.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A message about why the signal decoder isn't valid.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::SignalDecoderFailureReason>,
 }
 impl InvalidSignalDecoder {

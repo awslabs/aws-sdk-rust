@@ -5,54 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitJobInput {
     /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
-    #[doc(hidden)]
     pub job_queue: ::std::option::Option<::std::string::String>,
     /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
-    #[doc(hidden)]
     pub share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
-    #[doc(hidden)]
     pub scheduling_priority_override: ::std::option::Option<i32>,
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
-    #[doc(hidden)]
     pub array_properties: ::std::option::Option<crate::types::ArrayProperties>,
     /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
-    #[doc(hidden)]
     pub depends_on: ::std::option::Option<::std::vec::Vec<crate::types::JobDependency>>,
     /// <p>The job definition used by this job. This value can be one of <code>definition-name</code>, <code>definition-name:revision</code>, or the Amazon Resource Name (ARN) for the job definition, with or without the revision (<code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i>:<i>revision</i> </code>, or <code>arn:aws:batch:<i>region</i>:<i>account</i>:job-definition/<i>definition-name</i> </code>).</p>
     /// <p>If the revision is not specified, then the latest active revision is used.</p>
-    #[doc(hidden)]
     pub job_definition: ::std::option::Option<::std::string::String>,
     /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object with various properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
-    #[doc(hidden)]
     pub container_overrides: ::std::option::Option<crate::types::ContainerOverrides>,
     /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
     /// </note>
-    #[doc(hidden)]
     pub node_overrides: ::std::option::Option<crate::types::NodeOverrides>,
     /// <p>The retry strategy to use for failed jobs from this <code>SubmitJob</code> operation. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
-    #[doc(hidden)]
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job definition.</p>
-    #[doc(hidden)]
     pub propagate_tags: ::std::option::Option<bool>,
     /// <p>The timeout configuration for this <code>SubmitJob</code> operation. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<crate::types::JobTimeout>,
     /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that override defaults for the job definition.</p>
-    #[doc(hidden)]
     pub eks_properties_override: ::std::option::Option<crate::types::EksPropertiesOverride>,
 }
 impl SubmitJobInput {

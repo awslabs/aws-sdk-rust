@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountDetail {
     /// <p>The Amazon Web Services account ID for the account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address for the account.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
 }
 impl AccountDetail {

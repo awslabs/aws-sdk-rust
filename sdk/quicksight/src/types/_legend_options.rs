@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LegendOptions {
     /// <p>Determines whether or not the legend is visible.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The custom title for the legend.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>The positions for the legend. Choose one of the following options:</p>
     /// <ul>
@@ -17,13 +15,10 @@ pub struct LegendOptions {
     /// <li> <p> <code>BOTTOM</code> </p> </li>
     /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::LegendPosition>,
     /// <p>The width of the legend. If this value is omitted, a default width is used when rendering.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<::std::string::String>,
     /// <p>The height of the legend. If this value is omitted, a default height is used when rendering.</p>
-    #[doc(hidden)]
     pub height: ::std::option::Option<::std::string::String>,
 }
 impl LegendOptions {

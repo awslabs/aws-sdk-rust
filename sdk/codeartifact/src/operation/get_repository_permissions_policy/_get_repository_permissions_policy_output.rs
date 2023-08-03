@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryPermissionsPolicyOutput {
     /// <p> The returned resource policy. </p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
 }

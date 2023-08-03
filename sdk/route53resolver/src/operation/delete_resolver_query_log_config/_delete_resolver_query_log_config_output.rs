@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResolverQueryLogConfigOutput {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
-    #[doc(hidden)]
     pub resolver_query_log_config: ::std::option::Option<crate::types::ResolverQueryLogConfig>,
     _request_id: Option<String>,
 }

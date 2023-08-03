@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportBackendAuthInput {
     /// <p>The app ID.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
-    #[doc(hidden)]
     pub backend_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Cognito identity pool.</p>
-    #[doc(hidden)]
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Cognito native client.</p>
-    #[doc(hidden)]
     pub native_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Cognito user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Cognito web client.</p>
-    #[doc(hidden)]
     pub web_client_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportBackendAuthInput {

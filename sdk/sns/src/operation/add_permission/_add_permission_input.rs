@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddPermissionInput {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
-    #[doc(hidden)]
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the new policy statement.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The action you want to allow for the specified principal(s).</p>
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddPermissionInput {

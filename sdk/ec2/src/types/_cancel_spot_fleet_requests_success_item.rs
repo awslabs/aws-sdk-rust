@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsSuccessItem {
     /// <p>The current state of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub current_spot_fleet_request_state: ::std::option::Option<crate::types::BatchState>,
     /// <p>The previous state of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub previous_spot_fleet_request_state: ::std::option::Option<crate::types::BatchState>,
     /// <p>The ID of the Spot Fleet request.</p>
-    #[doc(hidden)]
     pub spot_fleet_request_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelSpotFleetRequestsSuccessItem {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightRuleReportInput {
     /// <p>The name of the rule that you want to see data from.</p>
-    #[doc(hidden)]
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
-    #[doc(hidden)]
     pub max_contributor_count: ::std::option::Option<i32>,
     /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
     /// <ul>
@@ -28,10 +23,8 @@ pub struct GetInsightRuleReportInput {
     /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
     /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
-    #[doc(hidden)]
     pub order_by: ::std::option::Option<::std::string::String>,
 }
 impl GetInsightRuleReportInput {

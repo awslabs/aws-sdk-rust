@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStorageSystemInput {
     /// <p>Specifies the ARN of the on-premises storage system that you want reconfigure.</p>
-    #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
-    #[doc(hidden)]
     pub server_configuration: ::std::option::Option<crate::types::DiscoveryServerConfiguration>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies a familiar name for your on-premises storage system.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    #[doc(hidden)]
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::Credentials>,
 }
 impl UpdateStorageSystemInput {

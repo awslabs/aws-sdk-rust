@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline the patch group was registered with.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch group registered with the patch baseline.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
-    #[doc(hidden)]
     pub provider: ::std::option::Option<crate::types::VirtualServiceProvider>,
 }
 impl VirtualServiceSpec {

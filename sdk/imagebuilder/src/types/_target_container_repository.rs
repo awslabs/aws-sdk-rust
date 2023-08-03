@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<crate::types::ContainerRepositoryService>,
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl TargetContainerRepository {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionRevision {
     /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
-    #[doc(hidden)]
     pub revision_change_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ActionRevision {

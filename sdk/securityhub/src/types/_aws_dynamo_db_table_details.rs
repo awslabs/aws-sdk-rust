@@ -5,59 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableDetails {
     /// <p>A list of attribute definitions for the table.</p>
-    #[doc(hidden)]
     pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>,
     /// <p>Information about the billing for read/write capacity on the table.</p>
-    #[doc(hidden)]
     pub billing_mode_summary: ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>,
     /// <p>Indicates when the table was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::std::string::String>,
     /// <p>List of global secondary indexes for the table.</p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>>,
     /// <p>The version of global tables being used.</p>
-    #[doc(hidden)]
     pub global_table_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of items in the table.</p>
-    #[doc(hidden)]
     pub item_count: i32,
     /// <p>The primary key structure for the table.</p>
-    #[doc(hidden)]
     pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     /// <p>The ARN of the latest stream for the table.</p>
-    #[doc(hidden)]
     pub latest_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The label of the latest stream. The label is not a unique identifier.</p>
-    #[doc(hidden)]
     pub latest_stream_label: ::std::option::Option<::std::string::String>,
     /// <p>The list of local secondary indexes for the table.</p>
-    #[doc(hidden)]
     pub local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>>,
     /// <p>Information about the provisioned throughput for the table.</p>
-    #[doc(hidden)]
     pub provisioned_throughput: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
     /// <p>The list of replicas of this table.</p>
-    #[doc(hidden)]
     pub replicas: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableReplica>>,
     /// <p>Information about the restore for the table.</p>
-    #[doc(hidden)]
     pub restore_summary: ::std::option::Option<crate::types::AwsDynamoDbTableRestoreSummary>,
     /// <p>Information about the server-side encryption for the table.</p>
-    #[doc(hidden)]
     pub sse_description: ::std::option::Option<crate::types::AwsDynamoDbTableSseDescription>,
     /// <p>The current DynamoDB Streams configuration for the table.</p>
-    #[doc(hidden)]
     pub stream_specification: ::std::option::Option<crate::types::AwsDynamoDbTableStreamSpecification>,
     /// <p>The identifier of the table.</p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The total size of the table in bytes.</p>
-    #[doc(hidden)]
     pub table_size_bytes: i64,
     /// <p>The current status of the table. Valid values are as follows:</p>
     /// <ul>
@@ -69,7 +51,6 @@ pub struct AwsDynamoDbTableDetails {
     /// <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> </p> </li>
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub table_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableDetails {

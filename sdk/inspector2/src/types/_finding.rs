@@ -5,67 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Finding {
     /// <p>The Amazon Resource Number (ARN) of the finding.</p>
-    #[doc(hidden)]
     pub finding_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the finding.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the finding.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FindingType>,
     /// <p>The description of the finding.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The title of the finding.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the details about how to remediate a finding.</p>
-    #[doc(hidden)]
     pub remediation: ::std::option::Option<crate::types::Remediation>,
     /// <p>The severity of the finding.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::Severity>,
     /// <p>The date and time that the finding was first observed.</p>
-    #[doc(hidden)]
     pub first_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the finding was last observed.</p>
-    #[doc(hidden)]
     pub last_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the finding was last updated at.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the finding.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FindingStatus>,
     /// <p>Contains information on the resources involved in a finding.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The Amazon Inspector score given to the finding.</p>
-    #[doc(hidden)]
     pub inspector_score: ::std::option::Option<f64>,
     /// <p>An object that contains details of the Amazon Inspector score.</p>
-    #[doc(hidden)]
     pub inspector_score_details: ::std::option::Option<crate::types::InspectorScoreDetails>,
     /// <p>An object that contains the details of a network reachability finding.</p>
-    #[doc(hidden)]
     pub network_reachability_details: ::std::option::Option<crate::types::NetworkReachabilityDetails>,
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    #[doc(hidden)]
     pub package_vulnerability_details: ::std::option::Option<crate::types::PackageVulnerabilityDetails>,
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
-    #[doc(hidden)]
     pub fix_available: ::std::option::Option<crate::types::FixAvailable>,
     /// <p>If a finding discovered in your environment has an exploit available.</p>
-    #[doc(hidden)]
     pub exploit_available: ::std::option::Option<crate::types::ExploitAvailable>,
     /// <p>The details of an exploit available for a finding discovered in your environment.</p>
-    #[doc(hidden)]
     pub exploitability_details: ::std::option::Option<crate::types::ExploitabilityDetails>,
     /// <p>Details about the code vulnerability identified in a Lambda function used to filter findings.</p>
-    #[doc(hidden)]
     pub code_vulnerability_details: ::std::option::Option<crate::types::CodeVulnerabilityDetails>,
     /// <p>The finding's EPSS score.</p>
-    #[doc(hidden)]
     pub epss: ::std::option::Option<crate::types::EpssDetails>,
 }
 impl Finding {

@@ -12,7 +12,6 @@ pub struct AutoImportPolicy {
     /// <li> <p> <code>DELETED</code> - Amazon FSx automatically deletes files on the file system as corresponding files are deleted in the data repository.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoImportPolicy</code>.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl AutoImportPolicy {

@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendOtpMessageRequestParameters {
     /// <p>The attempts allowed to validate an OTP.</p>
-    #[doc(hidden)]
     pub allowed_attempts: ::std::option::Option<i32>,
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
-    #[doc(hidden)]
     pub brand_name: ::std::option::Option<::std::string::String>,
     /// <p>Channel type for the OTP message. Supported values: [SMS].</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The number of characters in the generated OTP.</p>
-    #[doc(hidden)]
     pub code_length: ::std::option::Option<i32>,
     /// <p>The destination identity to send OTP to.</p>
-    #[doc(hidden)]
     pub destination_identity: ::std::option::Option<::std::string::String>,
     /// <p>A unique Entity ID received from DLT after entity registration is approved.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The language to be used for the outgoing message body containing the OTP.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity used to send OTP from.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>Developer-specified reference identifier. Required to match during OTP verification.</p>
-    #[doc(hidden)]
     pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique Template ID received from DLT after entity registration is approved.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The time in minutes before the OTP is no longer valid.</p>
-    #[doc(hidden)]
     pub validity_period: ::std::option::Option<i32>,
 }
 impl SendOtpMessageRequestParameters {

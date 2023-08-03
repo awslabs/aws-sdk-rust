@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProvisioningTemplateVersionInput {
     /// <p>The template name.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The provisioning template version ID.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<i32>,
 }
 impl DescribeProvisioningTemplateVersionInput {

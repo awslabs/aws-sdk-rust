@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsPackage {
     /// An HTTP Live Streaming (HLS) encryption configuration.
-    #[doc(hidden)]
     pub encryption: ::std::option::Option<crate::types::HlsEncryption>,
     /// A list of HLS manifest configurations.
-    #[doc(hidden)]
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
-    #[doc(hidden)]
     pub include_dvb_subtitles: ::std::option::Option<bool>,
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
-    #[doc(hidden)]
     pub segment_duration_seconds: ::std::option::Option<i32>,
     /// When enabled, audio streams will be placed in rendition groups in the output.
-    #[doc(hidden)]
     pub use_audio_rendition_group: ::std::option::Option<bool>,
 }
 impl HlsPackage {

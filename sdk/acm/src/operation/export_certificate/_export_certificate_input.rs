@@ -5,14 +5,12 @@
 pub struct ExportCertificateInput {
     /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
     /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
-    #[doc(hidden)]
     pub passphrase: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ExportCertificateInput {

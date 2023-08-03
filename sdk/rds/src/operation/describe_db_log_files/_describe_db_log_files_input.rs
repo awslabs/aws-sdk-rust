@@ -9,25 +9,18 @@ pub struct DescribeDbLogFilesInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    #[doc(hidden)]
     pub filename_contains: ::std::option::Option<::std::string::String>,
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
-    #[doc(hidden)]
     pub file_last_written: i64,
     /// <p>Filters the available log files for files larger than the specified size.</p>
-    #[doc(hidden)]
     pub file_size: i64,
     /// <p>This parameter isn't currently supported.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbLogFilesInput {

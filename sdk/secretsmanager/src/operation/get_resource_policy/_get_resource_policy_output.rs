@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePolicyOutput {
     /// <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret that the resource-based policy was retrieved for.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAgentStatusOutput {
     /// <p>The agent status.</p>
-    #[doc(hidden)]
     pub agent_status: ::std::option::Option<crate::types::AgentStatus>,
     _request_id: Option<String>,
 }

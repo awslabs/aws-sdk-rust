@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderBy {
     /// <p>The set order that filters results.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::Order>,
     /// <p>The property name.</p>
-    #[doc(hidden)]
     pub property_name: ::std::option::Option<::std::string::String>,
 }
 impl OrderBy {

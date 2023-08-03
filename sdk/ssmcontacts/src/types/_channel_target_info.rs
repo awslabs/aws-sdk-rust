@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    #[doc(hidden)]
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
-    #[doc(hidden)]
     pub retry_interval_in_minutes: ::std::option::Option<i32>,
 }
 impl ChannelTargetInfo {

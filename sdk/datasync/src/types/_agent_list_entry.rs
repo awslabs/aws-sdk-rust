@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentListEntry {
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
-    #[doc(hidden)]
     pub agent_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of an agent.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of an agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-agent-statuses.html">DataSync agent statuses</a>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AgentStatus>,
 }
 impl AgentListEntry {

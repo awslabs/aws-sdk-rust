@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDimensionGroups {
     /// <p>The metric type to which the dimension information belongs.</p>
-    #[doc(hidden)]
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The available dimension groups for a metric type.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::DimensionGroupDetail>>,
 }
 impl MetricDimensionGroups {

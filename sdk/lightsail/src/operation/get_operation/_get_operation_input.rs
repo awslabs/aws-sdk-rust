@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOperationInput {
     /// <p>A GUID used to identify the operation.</p>
-    #[doc(hidden)]
     pub operation_id: ::std::option::Option<::std::string::String>,
 }
 impl GetOperationInput {

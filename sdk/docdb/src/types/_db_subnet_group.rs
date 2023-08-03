@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbSubnetGroup {
     /// <p>The name of the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the description of the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Provides the virtual private cloud (VPC) ID of the subnet group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the subnet group.</p>
-    #[doc(hidden)]
     pub subnet_group_status: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about one or more subnets within a subnet group.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbSubnetGroup {

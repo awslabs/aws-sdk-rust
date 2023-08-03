@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGrantOutput {
     /// <p>Grant details.</p>
-    #[doc(hidden)]
     pub grant: ::std::option::Option<crate::types::Grant>,
     _request_id: Option<String>,
 }

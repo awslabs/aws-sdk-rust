@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SoftwareTokenMfaConfigType {
     /// <p>Specifies whether software token MFA is activated.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl SoftwareTokenMfaConfigType {

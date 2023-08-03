@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesOutput {
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
-    #[doc(hidden)]
     pub instance_refreshes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRefresh>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
-    #[doc(hidden)]
     pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>,
 }
 impl BatchCreateVehicleInput {

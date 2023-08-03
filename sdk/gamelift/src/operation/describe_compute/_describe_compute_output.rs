@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComputeOutput {
     /// <p>The details of the compute resource you registered to the specified fleet.</p>
-    #[doc(hidden)]
     pub compute: ::std::option::Option<crate::types::Compute>,
     _request_id: Option<String>,
 }

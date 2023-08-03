@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessTrustProviderOutput {
     /// <p>The ID of the Verified Access trust provider.</p>
-    #[doc(hidden)]
     pub verified_access_trust_provider: ::std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     _request_id: Option<String>,
 }

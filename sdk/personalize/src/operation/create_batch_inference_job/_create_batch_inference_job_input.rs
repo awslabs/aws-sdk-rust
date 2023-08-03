@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBatchInferenceJobInput {
     /// <p>The name of the batch inference job to create.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
-    #[doc(hidden)]
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering batch recommendations</a>.</p>
-    #[doc(hidden)]
     pub filter_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of recommendations to retrieve.</p>
-    #[doc(hidden)]
     pub num_results: ::std::option::Option<i32>,
     /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
-    #[doc(hidden)]
     pub job_input: ::std::option::Option<crate::types::BatchInferenceJobInput>,
     /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
-    #[doc(hidden)]
     pub job_output: ::std::option::Option<crate::types::BatchInferenceJobOutput>,
     /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration details of a batch inference job.</p>
-    #[doc(hidden)]
     pub batch_inference_job_config: ::std::option::Option<crate::types::BatchInferenceJobConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateBatchInferenceJobInput {

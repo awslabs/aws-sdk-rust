@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserStorageMetadata {
     /// <p>The amount of storage used, in bytes.</p>
-    #[doc(hidden)]
     pub storage_utilized_in_bytes: ::std::option::Option<i64>,
     /// <p>The storage for a user.</p>
-    #[doc(hidden)]
     pub storage_rule: ::std::option::Option<crate::types::StorageRuleType>,
 }
 impl UserStorageMetadata {

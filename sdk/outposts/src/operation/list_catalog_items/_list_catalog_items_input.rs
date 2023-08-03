@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCatalogItemsInput {
     /// <p>The pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters the results by item class.</p>
-    #[doc(hidden)]
     pub item_class_filter: ::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>>,
     /// <p>Filters the results by storage option.</p>
-    #[doc(hidden)]
     pub supported_storage_filter: ::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>>,
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    #[doc(hidden)]
     pub ec2_family_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCatalogItemsInput {

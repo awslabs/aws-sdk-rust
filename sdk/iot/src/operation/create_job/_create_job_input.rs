@@ -4,66 +4,49 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of things and thing groups to which the job should be sent.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
     /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
-    #[doc(hidden)]
     pub document_source: ::std::option::Option<::std::string::String>,
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
-    #[doc(hidden)]
     pub document: ::std::option::Option<::std::string::String>,
     /// <p>A short text description of the job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for pre-signed S3 URLs.</p>
-    #[doc(hidden)]
     pub presigned_url_config: ::std::option::Option<crate::types::PresignedUrlConfig>,
     /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
     /// <p>Allows you to create a staged rollout of the job.</p>
-    #[doc(hidden)]
     pub job_executions_rollout_config: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     /// <p>Allows you to create the criteria to abort a job.</p>
-    #[doc(hidden)]
     pub abort_config: ::std::option::Option<crate::types::AbortConfig>,
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    #[doc(hidden)]
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
     /// <p>Metadata which can be used to manage the job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
-    #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the job template used to create the job.</p>
-    #[doc(hidden)]
     pub job_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>Allows you to create the criteria to retry a job.</p>
-    #[doc(hidden)]
     pub job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
     /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
     /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
-    #[doc(hidden)]
     pub document_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
-    #[doc(hidden)]
     pub scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    #[doc(hidden)]
     pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateJobInput {

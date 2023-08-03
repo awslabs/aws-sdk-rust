@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyCacheClusterInput {
     /// <p>The cluster identifier. This value is stored as a lowercase string.</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are canceled.</p>
     /// <p>If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
@@ -13,11 +12,9 @@ pub struct ModifyCacheClusterInput {
     /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
     /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
     /// </note>
-    #[doc(hidden)]
     pub num_cache_nodes: ::std::option::Option<i32>,
     /// <p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.</p>
     /// <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
-    #[doc(hidden)]
     pub cache_node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p>
     /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
@@ -25,7 +22,6 @@ pub struct ModifyCacheClusterInput {
     /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
     /// <p>Only newly created nodes are located in different Availability Zones. </p>
     /// </note>
-    #[doc(hidden)]
     pub az_mode: ::std::option::Option<crate::types::AzMode>,
     /// <note>
     /// <p>This option is only supported on Memcached clusters.</p>
@@ -69,16 +65,13 @@ pub struct ModifyCacheClusterInput {
     /// </important> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub new_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of cache security group names to authorize on this cluster. This change is asynchronously applied as soon as possible.</p>
     /// <p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
-    #[doc(hidden)]
     pub cache_security_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the VPC Security Groups associated with the cluster.</p>
     /// <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -92,19 +85,15 @@ pub struct ModifyCacheClusterInput {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
     /// </note>
-    #[doc(hidden)]
     pub notification_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group to apply to this cluster. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>.</p>
     /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
-    #[doc(hidden)]
     pub notification_topic_status: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
     /// <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p> <important>
@@ -112,25 +101,19 @@ pub struct ModifyCacheClusterInput {
     /// </important>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <note>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </note>
-    #[doc(hidden)]
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
-    #[doc(hidden)]
     pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>A valid cache node type that you want to scale this cluster up to.</p>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter. Password constraints:</p>
     /// <ul>
@@ -139,7 +122,6 @@ pub struct ModifyCacheClusterInput {
     /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
     /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
-    #[doc(hidden)]
     pub auth_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
@@ -147,13 +129,10 @@ pub struct ModifyCacheClusterInput {
     /// <li> <p>Set</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
-    #[doc(hidden)]
     pub auth_token_update_strategy: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>,
     /// <p>Specifies the destination, format and type of the logs.</p>
-    #[doc(hidden)]
     pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
 }
 impl ModifyCacheClusterInput {

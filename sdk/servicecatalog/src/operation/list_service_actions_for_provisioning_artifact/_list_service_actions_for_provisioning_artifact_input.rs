@@ -4,23 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceActionsForProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    #[doc(hidden)]
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    #[doc(hidden)]
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>The language code.</p>
     /// <ul>
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceActionsForProvisioningArtifactInput {

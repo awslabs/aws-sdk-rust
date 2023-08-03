@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInstanceSnapshotInput {
     /// <p>The name of the snapshot to delete.</p>
-    #[doc(hidden)]
     pub instance_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInstanceSnapshotInput {

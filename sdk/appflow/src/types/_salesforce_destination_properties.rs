@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
-    #[doc(hidden)]
     pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    #[doc(hidden)]
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
-    #[doc(hidden)]
     pub write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
     /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
     /// <dl>
@@ -40,7 +36,6 @@ pub struct SalesforceDestinationProperties {
     /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub data_transfer_api: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
 }
 impl SalesforceDestinationProperties {

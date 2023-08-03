@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteQueuedMessagesInput {
     /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
-    #[doc(hidden)]
     pub wireless_device_type: ::std::option::Option<crate::types::WirelessDeviceType>,
 }
 impl DeleteQueuedMessagesInput {

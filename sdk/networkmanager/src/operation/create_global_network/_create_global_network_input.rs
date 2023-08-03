@@ -5,10 +5,8 @@
 pub struct CreateGlobalNetworkInput {
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGlobalNetworkInput {

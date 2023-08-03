@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResolverConfigOutput {
     /// <p>Information about the behavior configuration of Route&nbsp;53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
-    #[doc(hidden)]
     pub resolver_config: ::std::option::Option<crate::types::ResolverConfig>,
     _request_id: Option<String>,
 }

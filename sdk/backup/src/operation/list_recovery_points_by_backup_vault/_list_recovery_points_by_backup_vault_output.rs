@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultOutput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    #[doc(hidden)]
     pub recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,
     _request_id: Option<String>,
 }

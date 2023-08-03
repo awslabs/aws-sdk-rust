@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListDevicePositionsResponseEntry {
     /// <p>The ID of the device for this position.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    #[doc(hidden)]
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last known device position. Empty if no positions currently stored.</p>
-    #[doc(hidden)]
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
-    #[doc(hidden)]
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
-    #[doc(hidden)]
     pub position_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListDevicePositionsResponseEntry {

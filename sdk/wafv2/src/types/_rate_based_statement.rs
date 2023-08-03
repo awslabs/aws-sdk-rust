@@ -44,7 +44,6 @@ pub struct RateBasedStatement {
     /// <li> <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address. </p> </li>
     /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub limit: i64,
     /// <p>Setting that indicates how to aggregate the request counts. </p> <note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling. </p>
@@ -55,19 +54,15 @@ pub struct RateBasedStatement {
     /// <li> <p> <code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header. </p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property. </p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// <li> <p> <code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub aggregate_key_type: ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
-    #[doc(hidden)]
     pub scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings. </p>
-    #[doc(hidden)]
     pub forwarded_ip_config: ::std::option::Option<crate::types::ForwardedIpConfig>,
     /// <p>Specifies the aggregate keys to use in a rate-base rule. </p>
-    #[doc(hidden)]
     pub custom_keys: ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
 }
 impl RateBasedStatement {

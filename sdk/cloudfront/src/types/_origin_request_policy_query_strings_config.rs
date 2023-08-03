@@ -11,10 +11,8 @@ pub struct OriginRequestPolicyQueryStringsConfig {
     /// <li> <p> <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
     /// <li> <p> <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type, which are not included.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub query_string_behavior: ::std::option::Option<crate::types::OriginRequestPolicyQueryStringBehavior>,
     /// <p>Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i> included in requests that CloudFront sends to the origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query strings are).</p>
-    #[doc(hidden)]
     pub query_strings: ::std::option::Option<crate::types::QueryStringNames>,
 }
 impl OriginRequestPolicyQueryStringsConfig {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SseConfiguration {
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
-    #[doc(hidden)]
     pub kms_encryption_config: ::std::option::Option<crate::types::KmsEncryptionConfig>,
 }
 impl SseConfiguration {

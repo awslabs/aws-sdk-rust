@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKnowledgeBasesOutput {
     /// <p>Information about the knowledge bases.</p>
-    #[doc(hidden)]
     pub knowledge_base_summaries: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

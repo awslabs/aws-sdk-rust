@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DedicatedIpPool {
     /// <p>The name of the dedicated IP pool.</p>
-    #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the dedicated IP pool.</p>
     /// <ul>
     /// <li> <p> <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part of the pool.</p> </li>
     /// <li> <p> <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs are automatically managed by Amazon SES.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scaling_mode: ::std::option::Option<crate::types::ScalingMode>,
 }
 impl DedicatedIpPool {

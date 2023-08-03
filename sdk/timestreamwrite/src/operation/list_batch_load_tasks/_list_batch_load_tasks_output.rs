@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBatchLoadTasksOutput {
     /// <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of batch load task details.</p>
-    #[doc(hidden)]
     pub batch_load_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>>,
     _request_id: Option<String>,
 }

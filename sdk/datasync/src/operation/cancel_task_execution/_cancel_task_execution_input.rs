@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-    #[doc(hidden)]
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl CancelTaskExecutionInput {

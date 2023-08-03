@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopSuiteRunInput {
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
-    #[doc(hidden)]
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Suite run ID of the test suite run to be stopped.</p>
-    #[doc(hidden)]
     pub suite_run_id: ::std::option::Option<::std::string::String>,
 }
 impl StopSuiteRunInput {

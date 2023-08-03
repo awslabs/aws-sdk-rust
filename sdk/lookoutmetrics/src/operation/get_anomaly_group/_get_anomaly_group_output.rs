@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomalyGroupOutput {
     /// <p>Details about the anomaly group.</p>
-    #[doc(hidden)]
     pub anomaly_group: ::std::option::Option<crate::types::AnomalyGroup>,
     _request_id: Option<String>,
 }

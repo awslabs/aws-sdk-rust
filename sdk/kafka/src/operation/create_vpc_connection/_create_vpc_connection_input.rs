@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcConnectionInput {
     /// <p>The cluster Amazon Resource Name (ARN) for the VPC connection.</p>
-    #[doc(hidden)]
     pub target_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type of VPC connection.</p>
-    #[doc(hidden)]
     pub authentication: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of VPC connection.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of client subnets.</p>
-    #[doc(hidden)]
     pub client_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of security groups.</p>
-    #[doc(hidden)]
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map of tags for the VPC connection.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateVpcConnectionInput {

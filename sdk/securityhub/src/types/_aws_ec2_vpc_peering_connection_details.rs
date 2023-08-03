@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpcPeeringConnectionDetails {
     /// <p>Information about the accepter VPC. </p>
-    #[doc(hidden)]
     pub accepter_vpc_info: ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
     /// <p>The time at which an unaccepted VPC peering connection will expire. </p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::std::string::String>,
     /// <p>Information about the requester VPC. </p>
-    #[doc(hidden)]
     pub requester_vpc_info: ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails>,
     /// <p>The status of the VPC peering connection. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionStatusDetails>,
     /// <p>The ID of the VPC peering connection. </p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpcPeeringConnectionDetails {

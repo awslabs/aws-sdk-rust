@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormInputBindingPropertiesValueProperties {
     /// <p>An Amplify DataStore model.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
 }
 impl FormInputBindingPropertiesValueProperties {

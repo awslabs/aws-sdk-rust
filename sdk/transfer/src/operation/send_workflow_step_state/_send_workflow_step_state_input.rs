@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendWorkflowStepStateInput {
     /// <p>A unique identifier for the workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the execution of a workflow.</p>
-    #[doc(hidden)]
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the specified step succeeded or failed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CustomStepStatus>,
 }
 impl SendWorkflowStepStateInput {

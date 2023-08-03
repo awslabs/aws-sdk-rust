@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldBasedTooltip {
     /// <p>The visibility of <code>Show aggregations</code>.</p>
-    #[doc(hidden)]
     pub aggregation_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The type for the &gt;tooltip title. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Doesn't use the primary value as the title.</p> </li>
     /// <li> <p> <code>PRIMARY_VALUE</code>: Uses primary value as the title.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub tooltip_title_type: ::std::option::Option<crate::types::TooltipTitleType>,
     /// <p>The fields configuration in the tooltip.</p>
-    #[doc(hidden)]
     pub tooltip_fields: ::std::option::Option<::std::vec::Vec<crate::types::TooltipItem>>,
 }
 impl FieldBasedTooltip {

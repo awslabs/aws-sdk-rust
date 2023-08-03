@@ -5,71 +5,50 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHsmOutput {
     /// <p>The ARN of the HSM.</p>
-    #[doc(hidden)]
     pub hsm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the HSM.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::HsmStatus>,
     /// <p>Contains additional information about the status of the HSM.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone that the HSM is in.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
-    #[doc(hidden)]
     pub eni_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address assigned to the HSM's ENI.</p>
-    #[doc(hidden)]
     pub eni_ip: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
     /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
     /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub subscription_type: ::std::option::Option<crate::types::SubscriptionType>,
     /// <p>The subscription start date.</p>
-    #[doc(hidden)]
     pub subscription_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The subscription end date.</p>
-    #[doc(hidden)]
     pub subscription_end_date: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC that the HSM is in.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subnet that the HSM is in.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role assigned to the HSM.</p>
-    #[doc(hidden)]
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the HSM.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The name of the HSM vendor.</p>
-    #[doc(hidden)]
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The HSM model type.</p>
-    #[doc(hidden)]
     pub hsm_type: ::std::option::Option<::std::string::String>,
     /// <p>The HSM software version.</p>
-    #[doc(hidden)]
     pub software_version: ::std::option::Option<::std::string::String>,
     /// <p>The public SSH key.</p>
-    #[doc(hidden)]
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the SSH key was last updated.</p>
-    #[doc(hidden)]
     pub ssh_key_last_updated: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the certificate server.</p>
-    #[doc(hidden)]
     pub server_cert_uri: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the server certificate was last updated.</p>
-    #[doc(hidden)]
     pub server_cert_last_updated: ::std::option::Option<::std::string::String>,
     /// <p>The list of partitions on the HSM.</p>
-    #[doc(hidden)]
     pub partitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

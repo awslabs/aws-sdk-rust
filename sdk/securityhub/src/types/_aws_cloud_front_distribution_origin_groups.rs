@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginGroups {
     /// <p>The list of origin groups.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginGroup>>,
 }
 impl AwsCloudFrontDistributionOriginGroups {

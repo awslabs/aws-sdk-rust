@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TcpRouteMatch {
     /// <p>The port number to match on.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl TcpRouteMatch {

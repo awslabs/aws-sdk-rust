@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMediaConcatenationPipelineOutput {
     /// <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
-    #[doc(hidden)]
     pub media_concatenation_pipeline: ::std::option::Option<crate::types::MediaConcatenationPipeline>,
     _request_id: Option<String>,
 }

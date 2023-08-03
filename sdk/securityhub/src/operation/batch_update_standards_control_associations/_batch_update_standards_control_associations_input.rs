@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateStandardsControlAssociationsInput {
     /// <p> Updates the enablement status of a security control in a specified standard. </p>
-    #[doc(hidden)]
     pub standards_control_association_updates: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>>,
 }
 impl BatchUpdateStandardsControlAssociationsInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Put {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>Name of the table in which to write the item.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
-    #[doc(hidden)]
     pub condition_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    #[doc(hidden)]
     pub expression_attribute_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
-    #[doc(hidden)]
     pub expression_attribute_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Put</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
-    #[doc(hidden)]
     pub return_values_on_condition_check_failure: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl Put {

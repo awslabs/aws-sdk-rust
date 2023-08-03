@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationCoverageGroup {
     /// <p>The attributes for this group of reservations.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>How much instance usage this group of reservations covered.</p>
-    #[doc(hidden)]
     pub coverage: ::std::option::Option<crate::types::Coverage>,
 }
 impl ReservationCoverageGroup {

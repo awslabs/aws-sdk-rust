@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySamlPropertiesInput {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
-    #[doc(hidden)]
     pub saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     /// <p>The SAML properties to delete as part of your request.</p>
     /// <p>Specify one of the following options:</p>
@@ -15,7 +13,6 @@ pub struct ModifySamlPropertiesInput {
     /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
     /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub properties_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
 }
 impl ModifySamlPropertiesInput {

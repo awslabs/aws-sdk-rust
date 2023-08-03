@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLifecyclePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SettablePolicyStateValues>,
     /// <p>The configuration details of the lifecycle policy.</p>
-    #[doc(hidden)]
     pub policy_details: ::std::option::Option<crate::types::PolicyDetails>,
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLifecyclePolicyInput {

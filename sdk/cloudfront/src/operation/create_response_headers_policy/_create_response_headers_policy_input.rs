@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResponseHeadersPolicyInput {
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
-    #[doc(hidden)]
     pub response_headers_policy_config: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
 }
 impl CreateResponseHeadersPolicyInput {

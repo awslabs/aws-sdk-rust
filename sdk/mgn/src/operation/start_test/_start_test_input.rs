@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
-    #[doc(hidden)]
     pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Start Test by Tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Start Test for Account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartTestInput {

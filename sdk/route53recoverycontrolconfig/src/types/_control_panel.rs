@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlPanel {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    #[doc(hidden)]
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
-    #[doc(hidden)]
     pub default_control_panel: ::std::option::Option<bool>,
     /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The number of routing controls in the control panel.</p>
-    #[doc(hidden)]
     pub routing_control_count: ::std::option::Option<i32>,
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::Status>,
 }
 impl ControlPanel {

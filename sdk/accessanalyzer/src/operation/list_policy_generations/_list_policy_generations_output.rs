@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPolicyGenerationsOutput {
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-    #[doc(hidden)]
     pub policy_generations: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>>,
     /// <p>A token used for pagination of results returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

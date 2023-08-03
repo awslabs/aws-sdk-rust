@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsOutput {
     /// <p>Returns a remediation configuration object.</p>
-    #[doc(hidden)]
     pub remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDominantLanguageDetectionJobInput {
     /// <p>The identifier of the dominant language detection job to stop.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl StopDominantLanguageDetectionJobInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DecryptDataInput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ciphertext to decrypt.</p>
-    #[doc(hidden)]
     pub cipher_text: ::std::option::Option<::std::string::String>,
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
-    #[doc(hidden)]
     pub decryption_attributes: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
 }
 impl DecryptDataInput {

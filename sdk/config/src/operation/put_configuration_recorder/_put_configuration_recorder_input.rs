@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationRecorderInput {
     /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
-    #[doc(hidden)]
     pub configuration_recorder: ::std::option::Option<crate::types::ConfigurationRecorder>,
 }
 impl PutConfigurationRecorderInput {

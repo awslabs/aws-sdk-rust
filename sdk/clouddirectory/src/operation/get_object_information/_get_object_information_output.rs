@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectInformationOutput {
     /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
-    #[doc(hidden)]
     pub schema_facets: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginSslProtocols {
     /// <p>A list that contains allowed SSL/TLS protocols for this distribution. </p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin. </p>
-    #[doc(hidden)]
     pub quantity: i32,
 }
 impl AwsCloudFrontDistributionOriginSslProtocols {

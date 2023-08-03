@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVoiceConnectorOutput {
     /// <p>The details of the Voice Connector.</p>
-    #[doc(hidden)]
     pub voice_connector: ::std::option::Option<crate::types::VoiceConnector>,
     _request_id: Option<String>,
 }

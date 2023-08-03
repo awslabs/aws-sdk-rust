@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the principal that assumes the IAM identity.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The person or application which assumes the IAM identity.</p>
-    #[doc(hidden)]
     pub source_identity: ::std::option::Option<::std::string::String>,
 }
 impl IamIdentity {

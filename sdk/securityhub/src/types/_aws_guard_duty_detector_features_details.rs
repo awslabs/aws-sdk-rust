@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsGuardDutyDetectorFeaturesDetails {
     /// <p> Indicates the name of the feature that is activated for the detector. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the status of the feature that is activated for the detector. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsGuardDutyDetectorFeaturesDetails {

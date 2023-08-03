@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderInput {
     /// <p>The phone number product type.</p>
-    #[doc(hidden)]
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>List of phone numbers, in E.164 format.</p>
-    #[doc(hidden)]
     pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreatePhoneNumberOrderInput {

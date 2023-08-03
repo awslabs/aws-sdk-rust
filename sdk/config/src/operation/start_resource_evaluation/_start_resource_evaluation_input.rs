@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartResourceEvaluationInput {
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
-    #[doc(hidden)]
     pub evaluation_context: ::std::option::Option<crate::types::EvaluationContext>,
     /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
-    #[doc(hidden)]
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
-    #[doc(hidden)]
     pub evaluation_timeout: ::std::option::Option<i32>,
     /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
     /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
     /// </note>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceEvaluationInput {

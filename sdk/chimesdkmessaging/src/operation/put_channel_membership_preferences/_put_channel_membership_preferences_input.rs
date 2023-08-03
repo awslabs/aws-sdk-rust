@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutChannelMembershipPreferencesInput {
     /// <p>The ARN of the channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the member setting the preferences.</p>
-    #[doc(hidden)]
     pub member_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    #[doc(hidden)]
     pub chime_bearer: ::std::option::Option<::std::string::String>,
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
-    #[doc(hidden)]
     pub preferences: ::std::option::Option<crate::types::ChannelMembershipPreferences>,
 }
 impl PutChannelMembershipPreferencesInput {

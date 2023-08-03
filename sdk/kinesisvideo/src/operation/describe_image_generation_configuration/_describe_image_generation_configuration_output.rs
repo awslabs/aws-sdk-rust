@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImageGenerationConfigurationOutput {
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
-    #[doc(hidden)]
     pub image_generation_configuration: ::std::option::Option<crate::types::ImageGenerationConfiguration>,
     _request_id: Option<String>,
 }

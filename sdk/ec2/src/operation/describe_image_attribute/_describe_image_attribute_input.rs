@@ -6,13 +6,10 @@
 pub struct DescribeImageAttributeInput {
     /// <p>The AMI attribute.</p>
     /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::ImageAttributeName>,
     /// <p>The ID of the AMI.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeImageAttributeInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeDetails {
     /// <p>Information about the observed process.</p>
-    #[doc(hidden)]
     pub process: ::std::option::Option<crate::types::ProcessDetails>,
     /// <p>Additional information about the suspicious activity.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<crate::types::RuntimeContext>,
 }
 impl RuntimeDetails {

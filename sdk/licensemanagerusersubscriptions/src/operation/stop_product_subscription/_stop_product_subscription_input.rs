@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopProductSubscriptionInput {
     /// <p>The user name from the identity provider for the user.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
-    #[doc(hidden)]
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
-    #[doc(hidden)]
     pub product: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the user.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl StopProductSubscriptionInput {

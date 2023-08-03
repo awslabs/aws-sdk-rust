@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerationSummary {
     /// <p>Indicates the ID for this specific recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
-    #[doc(hidden)]
     pub generation_status: ::std::option::Option<crate::types::GenerationStatus>,
     /// <p>Indicates the start time of the recommendation generation.</p>
-    #[doc(hidden)]
     pub generation_started_time: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the completion time of the recommendation generation.</p>
-    #[doc(hidden)]
     pub generation_completion_time: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
-    #[doc(hidden)]
     pub estimated_completion_time: ::std::option::Option<::std::string::String>,
 }
 impl GenerationSummary {

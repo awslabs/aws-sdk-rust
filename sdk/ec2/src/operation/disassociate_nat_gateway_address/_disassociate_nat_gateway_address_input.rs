@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateNatGatewayAddressInput {
     /// <p>The ID of the NAT gateway.</p>
-    #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    #[doc(hidden)]
     pub association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
-    #[doc(hidden)]
     pub max_drain_duration_seconds: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DisassociateNatGatewayAddressInput {

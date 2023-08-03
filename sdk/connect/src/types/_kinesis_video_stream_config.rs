@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamConfig {
     /// <p>The prefix of the video stream.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
-    #[doc(hidden)]
     pub retention_period_hours: i32,
     /// <p>The encryption configuration.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl KinesisVideoStreamConfig {

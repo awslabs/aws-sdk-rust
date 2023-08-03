@@ -5,34 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionDeclaration {
     /// <p>The action declaration's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the action type and the provider of the action.</p>
-    #[doc(hidden)]
     pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>The order in which actions are run.</p>
-    #[doc(hidden)]
     pub run_order: ::std::option::Option<i32>,
     /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
     /// <p> <i>JSON:</i> </p>
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
-    #[doc(hidden)]
     pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>>,
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
-    #[doc(hidden)]
     pub input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>>,
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl ActionDeclaration {

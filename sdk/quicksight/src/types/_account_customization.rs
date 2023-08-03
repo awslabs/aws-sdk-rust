@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountCustomization {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
-    #[doc(hidden)]
     pub default_theme: ::std::option::Option<::std::string::String>,
     /// <p>The default email customization template.</p>
-    #[doc(hidden)]
     pub default_email_customization_template: ::std::option::Option<::std::string::String>,
 }
 impl AccountCustomization {

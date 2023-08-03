@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSchemaUpdate {
     /// <p>Specifies the format of the records on the streaming source.</p>
-    #[doc(hidden)]
     pub record_format_update: ::std::option::Option<crate::types::RecordFormat>,
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
-    #[doc(hidden)]
     pub record_encoding_update: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream. </p>
-    #[doc(hidden)]
     pub record_column_updates: ::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>>,
 }
 impl InputSchemaUpdate {

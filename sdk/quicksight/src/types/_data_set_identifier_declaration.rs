@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetIdentifierDeclaration {
     /// <p>The identifier of the data set, typically the data set's name.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
-    #[doc(hidden)]
     pub data_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSetIdentifierDeclaration {

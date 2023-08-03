@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevEndpointInput {
     /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
-    #[doc(hidden)]
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDevEndpointInput {

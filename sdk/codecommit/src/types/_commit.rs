@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Commit {
     /// <p>The full SHA ID of the specified commit. </p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>Tree information for the specified commit.</p>
-    #[doc(hidden)]
     pub tree_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
-    #[doc(hidden)]
     pub parents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The commit message associated with the specified commit.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Information about the author of the specified commit. Information includes the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured in Git.</p>
-    #[doc(hidden)]
     pub author: ::std::option::Option<crate::types::UserInfo>,
     /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured in Git.</p>
     /// <p>For more information about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
-    #[doc(hidden)]
     pub committer: ::std::option::Option<crate::types::UserInfo>,
     /// <p>Any other data associated with the specified commit.</p>
-    #[doc(hidden)]
     pub additional_data: ::std::option::Option<::std::string::String>,
 }
 impl Commit {

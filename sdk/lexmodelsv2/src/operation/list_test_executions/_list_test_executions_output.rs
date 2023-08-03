@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestExecutionsOutput {
     /// <p>The list of test executions.</p>
-    #[doc(hidden)]
     pub test_executions: ::std::option::Option<::std::vec::Vec<crate::types::TestExecutionSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the ListTestExecutions operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestExecutions operation request to get the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

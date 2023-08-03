@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThumbnailDetail {
     /// Pipeline ID
-    #[doc(hidden)]
     pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// thumbnails of a single pipeline
-    #[doc(hidden)]
     pub thumbnails: ::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>>,
 }
 impl ThumbnailDetail {

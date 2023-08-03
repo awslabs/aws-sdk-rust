@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizationRule {
     /// <p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the authorization rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Active Directory group to which the authorization rule grants access.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the authorization rule grants access to all clients.</p>
-    #[doc(hidden)]
     pub access_all: ::std::option::Option<bool>,
     /// <p>The IPv4 address range, in CIDR notation, of the network to which the authorization rule applies.</p>
-    #[doc(hidden)]
     pub destination_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the authorization rule.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatus>,
 }
 impl AuthorizationRule {

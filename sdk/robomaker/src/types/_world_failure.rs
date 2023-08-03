@@ -37,13 +37,10 @@ pub struct WorldFailure {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>,
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
-    #[doc(hidden)]
     pub sample_failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The number of failed worlds.</p>
-    #[doc(hidden)]
     pub failure_count: i32,
 }
 impl WorldFailure {

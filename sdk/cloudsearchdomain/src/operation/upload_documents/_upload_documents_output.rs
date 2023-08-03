@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadDocumentsOutput {
     /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents that were added to the search domain.</p>
-    #[doc(hidden)]
     pub adds: i64,
     /// <p>The number of documents that were deleted from the search domain.</p>
-    #[doc(hidden)]
     pub deletes: i64,
     /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::DocumentServiceWarning>>,
     _request_id: Option<String>,
 }

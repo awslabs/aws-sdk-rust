@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShuffleConfig {
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-    #[doc(hidden)]
     pub seed: i64,
 }
 impl ShuffleConfig {

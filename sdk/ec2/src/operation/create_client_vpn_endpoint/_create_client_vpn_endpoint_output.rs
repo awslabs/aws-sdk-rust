@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClientVpnEndpointOutput {
     /// <p>The ID of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the Client VPN endpoint.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ClientVpnEndpointStatus>,
     /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

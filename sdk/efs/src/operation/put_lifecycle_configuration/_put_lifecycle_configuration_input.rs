@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutLifecycleConfigurationInput {
     /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct PutLifecycleConfigurationInput {
     /// </ul> <note>
     /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
     /// </note>
-    #[doc(hidden)]
     pub lifecycle_policies: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>>,
 }
 impl PutLifecycleConfigurationInput {

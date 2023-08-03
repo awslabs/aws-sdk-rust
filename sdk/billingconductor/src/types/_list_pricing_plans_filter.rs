@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingPlansFilter {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
-    #[doc(hidden)]
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListPricingPlansFilter {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicateKeyOutput {
     /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
-    #[doc(hidden)]
     pub replica_key_metadata: ::std::option::Option<crate::types::KeyMetadata>,
     /// <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
-    #[doc(hidden)]
     pub replica_policy: ::std::option::Option<::std::string::String>,
     /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
-    #[doc(hidden)]
     pub replica_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

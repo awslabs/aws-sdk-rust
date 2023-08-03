@@ -3,25 +3,19 @@
 #[non_exhaustive]
 pub struct RecognizeUtteranceInput {
     /// <p>The identifier of the bot that should receive the request.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias identifier in use for the bot that should receive the request.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale where the session is in use.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session in use.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    #[doc(hidden)]
     pub session_state: ::std::option::Option<::std::string::String>,
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    #[doc(hidden)]
     pub request_attributes: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
@@ -40,7 +34,6 @@ pub struct RecognizeUtteranceInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub request_content_type: ::std::option::Option<::std::string::String>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
@@ -56,7 +49,6 @@ pub struct RecognizeUtteranceInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub response_content_type: ::std::option::Option<::std::string::String>,
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
     pub input_stream: ::aws_smithy_http::byte_stream::ByteStream,

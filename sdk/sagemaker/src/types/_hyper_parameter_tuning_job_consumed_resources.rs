@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobConsumedResources {
     /// <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
-    #[doc(hidden)]
     pub runtime_in_seconds: i32,
 }
 impl HyperParameterTuningJobConsumedResources {

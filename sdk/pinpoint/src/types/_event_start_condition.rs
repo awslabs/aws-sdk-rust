@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventStartCondition {
     /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
-    #[doc(hidden)]
     pub event_filter: ::std::option::Option<crate::types::EventFilter>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub segment_id: ::std::option::Option<::std::string::String>,
 }
 impl EventStartCondition {

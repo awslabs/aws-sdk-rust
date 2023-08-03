@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectiveStatusCounters {
     /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
-    #[doc(hidden)]
     pub succeeded: i32,
     /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
-    #[doc(hidden)]
     pub pending: i32,
     /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
-    #[doc(hidden)]
     pub failed: i32,
 }
 impl ObjectiveStatusCounters {

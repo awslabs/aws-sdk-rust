@@ -7,25 +7,18 @@
 pub struct Filter {
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html">Adding text filters</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub category_filter: ::std::option::Option<crate::types::CategoryFilter>,
     /// <p>A <code>NumericRangeFilter</code> filters numeric values that are either inside or outside a given numeric range.</p>
-    #[doc(hidden)]
     pub numeric_range_filter: ::std::option::Option<crate::types::NumericRangeFilter>,
     /// <p>A <code>NumericEqualityFilter</code> filters numeric values that equal or do not equal a given numeric value.</p>
-    #[doc(hidden)]
     pub numeric_equality_filter: ::std::option::Option<crate::types::NumericEqualityFilter>,
     /// <p>A <code>TimeEqualityFilter</code> filters date-time values that equal or do not equal a given date/time value.</p>
-    #[doc(hidden)]
     pub time_equality_filter: ::std::option::Option<crate::types::TimeEqualityFilter>,
     /// <p>A <code>TimeRangeFilter</code> filters date-time values that are either inside or outside a given date/time range.</p>
-    #[doc(hidden)]
     pub time_range_filter: ::std::option::Option<crate::types::TimeRangeFilter>,
     /// <p>A <code>RelativeDatesFilter</code> filters date values that are relative to a given date.</p>
-    #[doc(hidden)]
     pub relative_dates_filter: ::std::option::Option<crate::types::RelativeDatesFilter>,
     /// <p>A <code>TopBottomFilter</code> filters data to the top or bottom values for a given column.</p>
-    #[doc(hidden)]
     pub top_bottom_filter: ::std::option::Option<crate::types::TopBottomFilter>,
 }
 impl Filter {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFeaturedResultsSetInput {
     /// <p>The identifier of the index used for featuring results.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the set of featured results that you want to update.</p>
-    #[doc(hidden)]
     pub featured_results_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the set of featured results.</p>
-    #[doc(hidden)]
     pub featured_results_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the set of featured results.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code>. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    #[doc(hidden)]
     pub query_texts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    #[doc(hidden)]
     pub featured_documents: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>,
 }
 impl UpdateFeaturedResultsSetInput {

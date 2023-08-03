@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRepositoryTriggersInput {
     /// <p>The name of the repository in which to test the triggers.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of triggers to test.</p>
-    #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,
 }
 impl TestRepositoryTriggersInput {

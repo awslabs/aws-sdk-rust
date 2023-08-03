@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The name of the repository to which the external connection is added. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p> The name of the external connection to add to the repository. The following values are supported: </p>
     /// <ul>
@@ -23,7 +20,6 @@ pub struct AssociateExternalConnectionInput {
     /// <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>
     /// <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub external_connection: ::std::option::Option<::std::string::String>,
 }
 impl AssociateExternalConnectionInput {

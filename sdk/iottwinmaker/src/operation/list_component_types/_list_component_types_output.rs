@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentTypesOutput {
     /// <p>The ID of the workspace.</p>
-    #[doc(hidden)]
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects that contain information about the component types.</p>
-    #[doc(hidden)]
     pub component_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,
     /// <p>The string that specifies the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of results to display.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }

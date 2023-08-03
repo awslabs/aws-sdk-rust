@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeArtifactOutput {
     /// <p>The name of the artifact.</p>
-    #[doc(hidden)]
     pub artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
-    #[doc(hidden)]
     pub artifact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source of the artifact.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::ArtifactSource>,
     /// <p>The type of the artifact.</p>
-    #[doc(hidden)]
     pub artifact_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of the artifact's properties.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>When the artifact was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the artifact was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    #[doc(hidden)]
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    #[doc(hidden)]
     pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

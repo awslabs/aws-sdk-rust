@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthEventType {
     /// <p>The event ID.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::EventType>,
     /// <p>The creation date</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The event response.</p>
-    #[doc(hidden)]
     pub event_response: ::std::option::Option<crate::types::EventResponseType>,
     /// <p>The event risk.</p>
-    #[doc(hidden)]
     pub event_risk: ::std::option::Option<crate::types::EventRiskType>,
     /// <p>The challenge responses.</p>
-    #[doc(hidden)]
     pub challenge_responses: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeResponseType>>,
     /// <p>The user context data captured at the time of an event request. This value provides additional information about the client from which event the request is received.</p>
-    #[doc(hidden)]
     pub event_context_data: ::std::option::Option<crate::types::EventContextDataType>,
     /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
-    #[doc(hidden)]
     pub event_feedback: ::std::option::Option<crate::types::EventFeedbackType>,
 }
 impl AuthEventType {

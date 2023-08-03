@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
     /// <p>ARN of a <code>Config</code>.</p>
-    #[doc(hidden)]
     pub config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPatchBaselineForPatchGroupInput {
     /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
     /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
 }
 impl GetPatchBaselineForPatchGroupInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueuedMessagesInput {
     /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
-    #[doc(hidden)]
     pub wireless_device_type: ::std::option::Option<crate::types::WirelessDeviceType>,
 }
 impl ListQueuedMessagesInput {

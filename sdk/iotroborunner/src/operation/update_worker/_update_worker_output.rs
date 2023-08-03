@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerOutput {
     /// Full ARN of the worker.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// Filters access by the workers identifier
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Full ARN of the worker fleet.
-    #[doc(hidden)]
     pub fleet: ::std::option::Option<::std::string::String>,
     /// Timestamp at which the resource was last updated.
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Human friendly name of the resource.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    #[doc(hidden)]
     pub additional_transient_properties: ::std::option::Option<::std::string::String>,
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    #[doc(hidden)]
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
     /// Worker orientation measured in units clockwise from north.
-    #[doc(hidden)]
     pub orientation: ::std::option::Option<crate::types::Orientation>,
     /// Properties of the worker that are provided by the vendor FMS.
-    #[doc(hidden)]
     pub vendor_properties: ::std::option::Option<crate::types::VendorProperties>,
     /// Supported coordinates for worker position.
-    #[doc(hidden)]
     pub position: ::std::option::Option<crate::types::PositionCoordinates>,
     _request_id: Option<String>,
 }

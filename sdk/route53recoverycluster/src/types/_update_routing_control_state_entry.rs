@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStateEntry {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-    #[doc(hidden)]
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The routing control state in a set of routing control state entries.</p>
-    #[doc(hidden)]
     pub routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
 }
 impl UpdateRoutingControlStateEntry {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTemplateInput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<crate::types::Template>,
 }
 impl CreateTemplateInput {

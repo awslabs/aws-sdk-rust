@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2SecurityGroupDetails {
     /// <p>The name of the security group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The inbound rules associated with the security group.</p>
-    #[doc(hidden)]
     pub ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
-    #[doc(hidden)]
     pub ip_permissions_egress: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
 }
 impl AwsEc2SecurityGroupDetails {

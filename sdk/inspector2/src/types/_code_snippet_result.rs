@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSnippetResult {
     /// <p>The ARN of a finding that the code snippet is associated with.</p>
-    #[doc(hidden)]
     pub finding_arn: ::std::option::Option<::std::string::String>,
     /// <p>The line number of the first line of a code snippet.</p>
-    #[doc(hidden)]
     pub start_line: ::std::option::Option<i32>,
     /// <p>The line number of the last line of a code snippet.</p>
-    #[doc(hidden)]
     pub end_line: ::std::option::Option<i32>,
     /// <p>Contains information on the retrieved code snippet.</p>
-    #[doc(hidden)]
     pub code_snippet: ::std::option::Option<::std::vec::Vec<crate::types::CodeLine>>,
     /// <p>Details of a suggested code fix.</p>
-    #[doc(hidden)]
     pub suggested_fixes: ::std::option::Option<::std::vec::Vec<crate::types::SuggestedFix>>,
 }
 impl CodeSnippetResult {

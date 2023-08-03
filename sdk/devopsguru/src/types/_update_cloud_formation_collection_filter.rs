@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCloudFormationCollectionFilter {
     /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    #[doc(hidden)]
     pub stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCloudFormationCollectionFilter {

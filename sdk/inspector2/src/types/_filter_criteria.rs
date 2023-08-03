@@ -5,130 +5,88 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterCriteria {
     /// <p>Details on the finding ARNs used to filter findings.</p>
-    #[doc(hidden)]
     pub finding_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the finding types used to filter findings.</p>
-    #[doc(hidden)]
     pub finding_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the severity used to filter findings.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
-    #[doc(hidden)]
     pub first_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
-    #[doc(hidden)]
     pub last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>Details on the finding status types used to filter findings.</p>
-    #[doc(hidden)]
     pub finding_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the finding title used to filter findings.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The Amazon Inspector score to filter on.</p>
-    #[doc(hidden)]
     pub inspector_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>Details on the resource types used to filter findings.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the resource IDs used to filter findings.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the resource tags used to filter findings.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
-    #[doc(hidden)]
     pub ec2_instance_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
-    #[doc(hidden)]
     pub ec2_instance_vpc_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
-    #[doc(hidden)]
     pub ec2_instance_subnet_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
-    #[doc(hidden)]
     pub ecr_image_pushed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
-    #[doc(hidden)]
     pub ecr_image_architecture: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the Amazon ECR registry used to filter findings.</p>
-    #[doc(hidden)]
     pub ecr_image_registry: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
-    #[doc(hidden)]
     pub ecr_image_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The tags attached to the Amazon ECR container image.</p>
-    #[doc(hidden)]
     pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
-    #[doc(hidden)]
     pub ecr_image_hash: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the port ranges used to filter findings.</p>
-    #[doc(hidden)]
     pub port_range: ::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>>,
     /// <p>Details on the ingress source addresses used to filter findings.</p>
-    #[doc(hidden)]
     pub network_protocol: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the component IDs used to filter findings.</p>
-    #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details of the component types used to filter findings.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the vulnerability ID used to filter findings.</p>
-    #[doc(hidden)]
     pub vulnerability_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the vulnerability type used to filter findings.</p>
-    #[doc(hidden)]
     pub vulnerability_source: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the vendor severity used to filter findings.</p>
-    #[doc(hidden)]
     pub vendor_severity: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the vulnerable packages used to filter findings.</p>
-    #[doc(hidden)]
     pub vulnerable_packages: ::std::option::Option<::std::vec::Vec<crate::types::PackageFilter>>,
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
-    #[doc(hidden)]
     pub related_vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
-    #[doc(hidden)]
     pub fix_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filters the list of AWS Lambda functions by the name of the function.</p>
-    #[doc(hidden)]
     pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    #[doc(hidden)]
     pub lambda_function_layers: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
-    #[doc(hidden)]
     pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
-    #[doc(hidden)]
     pub lambda_function_last_modified_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>Filters the list of AWS Lambda functions by execution role.</p>
-    #[doc(hidden)]
     pub lambda_function_execution_role_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
-    #[doc(hidden)]
     pub exploit_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
-    #[doc(hidden)]
     pub code_vulnerability_detector_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
-    #[doc(hidden)]
     pub code_vulnerability_detector_tags: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
-    #[doc(hidden)]
     pub code_vulnerability_file_path: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The EPSS score used to filter findings.</p>
-    #[doc(hidden)]
     pub epss_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
 }
 impl FilterCriteria {

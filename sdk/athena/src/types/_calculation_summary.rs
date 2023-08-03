@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculationSummary {
     /// <p>The calculation execution UUID.</p>
-    #[doc(hidden)]
     pub calculation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the calculation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the status of the calculation.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CalculationStatus>,
 }
 impl CalculationSummary {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaPipeline {
     /// <p>A pipeline that enables users to capture audio and video.</p>
-    #[doc(hidden)]
     pub media_capture_pipeline: ::std::option::Option<crate::types::MediaCapturePipeline>,
     /// <p>The connector pipeline of the media pipeline.</p>
-    #[doc(hidden)]
     pub media_live_connector_pipeline: ::std::option::Option<crate::types::MediaLiveConnectorPipeline>,
     /// <p>The media concatenation pipeline in a media pipeline.</p>
-    #[doc(hidden)]
     pub media_concatenation_pipeline: ::std::option::Option<crate::types::MediaConcatenationPipeline>,
     /// <p>The media insights pipeline of a media pipeline.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline: ::std::option::Option<crate::types::MediaInsightsPipeline>,
 }
 impl MediaPipeline {

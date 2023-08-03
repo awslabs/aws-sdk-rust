@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationRunStageDetails {
     /// <p>The current stage of a replication run.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the current stage of a replication run.</p>
-    #[doc(hidden)]
     pub stage_progress: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationRunStageDetails {

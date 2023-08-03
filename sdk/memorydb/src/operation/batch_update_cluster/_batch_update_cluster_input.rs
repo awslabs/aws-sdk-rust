@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateClusterInput {
     /// <p>The cluster names to apply the updates.</p>
-    #[doc(hidden)]
     pub cluster_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique ID of the service update</p>
-    #[doc(hidden)]
     pub service_update: ::std::option::Option<crate::types::ServiceUpdateRequest>,
 }
 impl BatchUpdateClusterInput {

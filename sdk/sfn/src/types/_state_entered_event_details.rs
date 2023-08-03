@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StateEnteredEventDetails {
     /// <p>The name of the state.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
-    #[doc(hidden)]
     pub input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl StateEnteredEventDetails {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestGridProjectsInput {
     /// <p>Return no more than this number of results.</p>
-    #[doc(hidden)]
     pub max_result: ::std::option::Option<i32>,
     /// <p>From a response, used to continue a paginated listing. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTestGridProjectsInput {

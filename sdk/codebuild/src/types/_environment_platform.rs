@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentPlatform {
     /// <p>The platform's name.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The list of programming languages that are available for the specified platform.</p>
-    #[doc(hidden)]
     pub languages: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLanguage>>,
 }
 impl EnvironmentPlatform {

@@ -5,32 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>The ID of the environment.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the environment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
     /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
     /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EnvironmentType>,
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
-    #[doc(hidden)]
     pub owner_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::EnvironmentLifecycle>,
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
@@ -45,7 +37,6 @@ pub struct Environment {
     /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
     /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub managed_credentials_status: ::std::option::Option<crate::types::ManagedCredentialsStatus>,
 }
 impl Environment {

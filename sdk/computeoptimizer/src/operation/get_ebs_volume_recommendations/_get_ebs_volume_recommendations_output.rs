@@ -5,14 +5,11 @@
 pub struct GetEbsVolumeRecommendationsOutput {
     /// <p>The token to use to advance to the next page of volume recommendations.</p>
     /// <p>This value is null when there are no more pages of volume recommendations to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe volume recommendations.</p>
-    #[doc(hidden)]
     pub volume_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }

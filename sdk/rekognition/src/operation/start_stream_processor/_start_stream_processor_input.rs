@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartStreamProcessorInput {
     /// <p>The name of the stream processor to start processing.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
-    #[doc(hidden)]
     pub start_selector: ::std::option::Option<crate::types::StreamProcessingStartSelector>,
     /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
-    #[doc(hidden)]
     pub stop_selector: ::std::option::Option<crate::types::StreamProcessingStopSelector>,
 }
 impl StartStreamProcessorInput {

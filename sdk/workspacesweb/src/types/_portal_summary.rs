@@ -5,48 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PortalSummary {
     /// <p>The ARN of the web portal.</p>
-    #[doc(hidden)]
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The renderer that is used in streaming sessions.</p>
-    #[doc(hidden)]
     pub renderer_type: ::std::option::Option<crate::types::RendererType>,
     /// <p>The browser type of the web portal.</p>
-    #[doc(hidden)]
     pub browser_type: ::std::option::Option<crate::types::BrowserType>,
     /// <p>The status of the web portal.</p>
-    #[doc(hidden)]
     pub portal_status: ::std::option::Option<crate::types::PortalStatus>,
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
-    #[doc(hidden)]
     pub portal_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The name of the web portal.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation date of the web portal.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the browser settings that is associated with the web portal.</p>
-    #[doc(hidden)]
     pub browser_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user settings that is associated with the web portal.</p>
-    #[doc(hidden)]
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
-    #[doc(hidden)]
     pub network_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the trust that is associated with this web portal.</p>
-    #[doc(hidden)]
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
-    #[doc(hidden)]
     pub user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p> <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
     /// <p> <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The ARN of the IP access settings.</p>
-    #[doc(hidden)]
     pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl PortalSummary {

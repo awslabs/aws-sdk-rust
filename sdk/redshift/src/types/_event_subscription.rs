@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification subscription.</p>
-    #[doc(hidden)]
     pub customer_aws_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Redshift event notification subscription.</p>
-    #[doc(hidden)]
     pub cust_subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon Redshift event notification subscription.</p>
     /// <p>Constraints:</p>
@@ -19,30 +16,22 @@ pub struct EventSubscription {
     /// <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li>
     /// <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the Amazon Redshift event notification subscription was created.</p>
-    #[doc(hidden)]
     pub subscription_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. </p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
-    #[doc(hidden)]
     pub source_ids_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    #[doc(hidden)]
     pub event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p>
     /// <p>Values: ERROR, INFO</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The list of tags for the event subscription.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EventSubscription {

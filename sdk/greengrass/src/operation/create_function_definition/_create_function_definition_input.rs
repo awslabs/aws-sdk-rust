@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFunctionDefinitionInput {
     /// A client token used to correlate requests and responses.
-    #[doc(hidden)]
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// Information about the initial version of the function definition.
-    #[doc(hidden)]
     pub initial_version: ::std::option::Option<crate::types::FunctionDefinitionVersion>,
     /// The name of the function definition.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Tag(s) to add to the new resource.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFunctionDefinitionInput {

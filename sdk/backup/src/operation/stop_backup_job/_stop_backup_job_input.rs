@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopBackupJobInput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    #[doc(hidden)]
     pub backup_job_id: ::std::option::Option<::std::string::String>,
 }
 impl StopBackupJobInput {

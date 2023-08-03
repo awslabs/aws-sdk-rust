@@ -5,10 +5,8 @@
 pub struct ListServiceSpecificCredentialsInput {
     /// <p>The name of the user whose service-specific credentials you want information about. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not specified, then Amazon Web Services returns service-specific credentials for all services.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceSpecificCredentialsInput {

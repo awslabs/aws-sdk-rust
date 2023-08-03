@@ -5,106 +5,73 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationExecution {
     /// <p>The execution ID.</p>
-    #[doc(hidden)]
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Automation runbook used during the execution.</p>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the document to use during execution.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The time the execution started.</p>
-    #[doc(hidden)]
     pub execution_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the execution finished.</p>
-    #[doc(hidden)]
     pub execution_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The execution status of the Automation.</p>
-    #[doc(hidden)]
     pub automation_execution_status: ::std::option::Option<crate::types::AutomationExecutionStatus>,
     /// <p>A list of details about the current state of all steps that comprise an execution. An Automation runbook contains a list of steps that are run in order.</p>
-    #[doc(hidden)]
     pub step_executions: ::std::option::Option<::std::vec::Vec<crate::types::StepExecution>>,
     /// <p>A boolean value that indicates if the response contains the full list of the Automation step executions. If true, use the DescribeAutomationStepExecutions API operation to get the full list of step executions.</p>
-    #[doc(hidden)]
     pub step_executions_truncated: bool,
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>A message describing why an execution has failed, if the status is set to Failed.</p>
-    #[doc(hidden)]
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The automation execution mode.</p>
-    #[doc(hidden)]
     pub mode: ::std::option::Option<crate::types::ExecutionMode>,
     /// <p>The AutomationExecutionId of the parent automation.</p>
-    #[doc(hidden)]
     pub parent_automation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who ran the automation.</p>
-    #[doc(hidden)]
     pub executed_by: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step that is currently running.</p>
-    #[doc(hidden)]
     pub current_step_name: ::std::option::Option<::std::string::String>,
     /// <p>The action of the step that is currently running.</p>
-    #[doc(hidden)]
     pub current_action: ::std::option::Option<::std::string::String>,
     /// <p>The parameter name.</p>
-    #[doc(hidden)]
     pub target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The specified targets.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
-    #[doc(hidden)]
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>A list of resolved targets in the rate control execution.</p>
-    #[doc(hidden)]
     pub resolved_targets: ::std::option::Option<crate::types::ResolvedTargets>,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the execution started.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The MaxErrors value specified by the user when the execution started.</p>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The target of the execution.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the Automation.</p>
-    #[doc(hidden)]
     pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.</p>
-    #[doc(hidden)]
     pub progress_counters: ::std::option::Option<crate::types::ProgressCounters>,
     /// <p>The details for the CloudWatch alarm applied to your automation.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the automation.</p>
-    #[doc(hidden)]
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>
-    #[doc(hidden)]
     pub automation_subtype: ::std::option::Option<crate::types::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
-    #[doc(hidden)]
     pub scheduled_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    #[doc(hidden)]
     pub runbooks: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
     /// <p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a State Manager association used in the Automation operation.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Change Manager change request.</p>
-    #[doc(hidden)]
     pub change_request_name: ::std::option::Option<::std::string::String>,
 }
 impl AutomationExecution {

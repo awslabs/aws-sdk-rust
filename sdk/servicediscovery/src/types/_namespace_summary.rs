@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamespaceSummary {
     /// <p>The ID of the namespace.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route&nbsp;53 hosted zone that has the same name as the namespace.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the namespace, either public or private.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::NamespaceType>,
     /// <p>A description for the namespace.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of services that were created using the namespace.</p>
-    #[doc(hidden)]
     pub service_count: ::std::option::Option<i32>,
     /// <p>The properties of the namespace.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<crate::types::NamespaceProperties>,
     /// <p>The date and time that the namespace was created.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NamespaceSummary {

@@ -6,7 +6,6 @@
 pub struct SnapshotAnonymousUser {
     /// <p>The tags to be used for row-level security (RLS). Make sure that the relevant datasets have RLS tags configured before you start a snapshot export job. You can configure the RLS tags of a dataset with a <code>DataSet$RowLevelPermissionTagConfiguration</code> API call.</p>
     /// <p>These are not the tags that are used for Amazon Web Services resource tagging. For more information on row level security in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub row_level_permission_tags: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>,
 }
 impl SnapshotAnonymousUser {

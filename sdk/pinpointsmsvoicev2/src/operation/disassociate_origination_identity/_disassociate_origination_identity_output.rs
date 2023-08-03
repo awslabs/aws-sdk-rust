@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateOriginationIdentityOutput {
     /// <p>The Amazon Resource Name (ARN) of the pool.</p>
-    #[doc(hidden)]
     pub pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The PoolId of the pool no longer associated with the origination identity.</p>
-    #[doc(hidden)]
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-    #[doc(hidden)]
     pub origination_identity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-    #[doc(hidden)]
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    #[doc(hidden)]
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

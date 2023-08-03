@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrantFlowEntitlementsInput {
     /// The list of entitlements that you want to grant.
-    #[doc(hidden)]
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>,
     /// The flow that you want to grant entitlements on.
-    #[doc(hidden)]
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl GrantFlowEntitlementsInput {

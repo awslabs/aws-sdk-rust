@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelPackageGroupInput {
     /// <p>The name of the model group.</p>
-    #[doc(hidden)]
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the model group.</p>
-    #[doc(hidden)]
     pub model_package_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelPackageGroupInput {

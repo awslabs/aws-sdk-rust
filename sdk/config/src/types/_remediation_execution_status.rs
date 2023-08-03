@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationExecutionStatus {
     /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
-    #[doc(hidden)]
     pub resource_key: ::std::option::Option<crate::types::ResourceKey>,
     /// <p>ENUM of the values.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RemediationExecutionState>,
     /// <p>Details of every step.</p>
-    #[doc(hidden)]
     pub step_details: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExecutionStep>>,
     /// <p>Start time when the remediation was executed.</p>
-    #[doc(hidden)]
     pub invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the remediation execution was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RemediationExecutionStatus {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    #[doc(hidden)]
     pub regex_pattern_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRegexPatternSetInput {

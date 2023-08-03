@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDetectorVersionInput {
     /// <p>The ID of the parent detector for the detector version to delete.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the detector version to delete.</p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDetectorVersionInput {

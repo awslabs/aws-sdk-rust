@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigninDelegateGroup {
     /// <p>The group name.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl SigninDelegateGroup {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateAutomationRulesOutput {
     /// <p> A list of properly processed rule ARNs. </p>
-    #[doc(hidden)]
     pub processed_automation_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't update and why. </p>
-    #[doc(hidden)]
     pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }

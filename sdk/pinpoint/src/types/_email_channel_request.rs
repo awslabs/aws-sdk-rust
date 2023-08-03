@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailChannelRequest {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
-    #[doc(hidden)]
     pub configuration_set: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable the email channel for the application.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
-    #[doc(hidden)]
     pub from_address: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EmailChannelRequest {

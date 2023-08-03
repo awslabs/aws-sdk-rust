@@ -12,25 +12,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeeklyAutoScalingSchedule {
     /// <p>The schedule for Monday.</p>
-    #[doc(hidden)]
     pub monday: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The schedule for Tuesday.</p>
-    #[doc(hidden)]
     pub tuesday: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The schedule for Wednesday.</p>
-    #[doc(hidden)]
     pub wednesday: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The schedule for Thursday.</p>
-    #[doc(hidden)]
     pub thursday: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The schedule for Friday.</p>
-    #[doc(hidden)]
     pub friday: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The schedule for Saturday.</p>
-    #[doc(hidden)]
     pub saturday: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The schedule for Sunday.</p>
-    #[doc(hidden)]
     pub sunday: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WeeklyAutoScalingSchedule {

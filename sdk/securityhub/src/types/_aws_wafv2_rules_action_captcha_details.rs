@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2RulesActionCaptchaDetails {
     /// <p> Defines custom handling for the web request, used when the CAPTCHA inspection determines that the request's token is valid and unexpired. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
-    #[doc(hidden)]
     pub custom_request_handling: ::std::option::Option<crate::types::AwsWafv2CustomRequestHandlingDetails>,
 }
 impl AwsWafv2RulesActionCaptchaDetails {

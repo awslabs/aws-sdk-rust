@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdmaLocalId {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    #[doc(hidden)]
     pub pn_offset: ::std::option::Option<i32>,
     /// <p>CDMA channel information.</p>
-    #[doc(hidden)]
     pub cdma_channel: ::std::option::Option<i32>,
 }
 impl CdmaLocalId {

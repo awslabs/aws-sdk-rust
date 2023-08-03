@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestDetails {
     /// <p>Details about the export to signed URL request.</p>
-    #[doc(hidden)]
     pub export_asset_to_signed_url: ::std::option::Option<crate::types::ExportAssetToSignedUrlRequestDetails>,
     /// <p>Details about the export to Amazon S3 request.</p>
-    #[doc(hidden)]
     pub export_assets_to_s3: ::std::option::Option<crate::types::ExportAssetsToS3RequestDetails>,
     /// <p>Details about the export to Amazon S3 request.</p>
-    #[doc(hidden)]
     pub export_revisions_to_s3: ::std::option::Option<crate::types::ExportRevisionsToS3RequestDetails>,
     /// <p>Details about the import from Amazon S3 request.</p>
-    #[doc(hidden)]
     pub import_asset_from_signed_url: ::std::option::Option<crate::types::ImportAssetFromSignedUrlRequestDetails>,
     /// <p>Details about the import asset from API Gateway API request.</p>
-    #[doc(hidden)]
     pub import_assets_from_s3: ::std::option::Option<crate::types::ImportAssetsFromS3RequestDetails>,
     /// <p>Details from an import from Amazon Redshift datashare request.</p>
-    #[doc(hidden)]
     pub import_assets_from_redshift_data_shares: ::std::option::Option<crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails>,
     /// <p>Details about the import from signed URL request.</p>
-    #[doc(hidden)]
     pub import_asset_from_api_gateway_api: ::std::option::Option<crate::types::ImportAssetFromApiGatewayApiRequestDetails>,
     /// <p>Details of the request to create S3 data access from the Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub create_s3_data_access_from_s3_bucket: ::std::option::Option<crate::types::CreateS3DataAccessFromS3BucketRequestDetails>,
     /// <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
-    #[doc(hidden)]
     pub import_assets_from_lake_formation_tag_policy: ::std::option::Option<crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails>,
 }
 impl RequestDetails {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConferenceProviderInput {
     /// <p>The name of the conference provider.</p>
-    #[doc(hidden)]
     pub conference_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents a type within a list of predefined types.</p>
-    #[doc(hidden)]
     pub conference_provider_type: ::std::option::Option<crate::types::ConferenceProviderType>,
     /// <p>The IP endpoint and protocol for calling.</p>
-    #[doc(hidden)]
     pub ip_dial_in: ::std::option::Option<crate::types::IpDialIn>,
     /// <p>The information for PSTN conferencing.</p>
-    #[doc(hidden)]
     pub pstn_dial_in: ::std::option::Option<crate::types::PstnDialIn>,
     /// <p>The meeting settings for the conference provider.</p>
-    #[doc(hidden)]
     pub meeting_setting: ::std::option::Option<crate::types::MeetingSetting>,
     /// <p>The request token of the client.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateConferenceProviderInput {

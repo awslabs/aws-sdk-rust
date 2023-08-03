@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataCreditSpecificationDetails {
     /// <p> The credit option for CPU usage of a T instance. </p>
-    #[doc(hidden)]
     pub cpu_credits: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {

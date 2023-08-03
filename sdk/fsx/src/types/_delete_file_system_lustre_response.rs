@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemLustreResponse {
     /// <p>The ID of the final backup for this file system.</p>
-    #[doc(hidden)]
     pub final_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The set of tags applied to the final backup.</p>
-    #[doc(hidden)]
     pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteFileSystemLustreResponse {

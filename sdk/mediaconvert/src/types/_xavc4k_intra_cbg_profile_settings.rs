@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Xavc4kIntraCbgProfileSettings {
     /// Specify the XAVC Intra 4k (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
-    #[doc(hidden)]
     pub xavc_class: ::std::option::Option<crate::types::Xavc4kIntraCbgProfileClass>,
 }
 impl Xavc4kIntraCbgProfileSettings {

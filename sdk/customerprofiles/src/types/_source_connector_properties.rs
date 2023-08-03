@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConnectorProperties {
     /// <p>The properties that are applied when Marketo is being used as a source.</p>
-    #[doc(hidden)]
     pub marketo: ::std::option::Option<crate::types::MarketoSourceProperties>,
     /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3SourceProperties>,
     /// <p>The properties that are applied when Salesforce is being used as a source.</p>
-    #[doc(hidden)]
     pub salesforce: ::std::option::Option<crate::types::SalesforceSourceProperties>,
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
-    #[doc(hidden)]
     pub service_now: ::std::option::Option<crate::types::ServiceNowSourceProperties>,
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
-    #[doc(hidden)]
     pub zendesk: ::std::option::Option<crate::types::ZendeskSourceProperties>,
 }
 impl SourceConnectorProperties {

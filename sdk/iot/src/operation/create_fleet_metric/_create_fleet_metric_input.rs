@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetMetricInput {
     /// <p>The name of the fleet metric to create.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The search query string.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The type of the aggregation query.</p>
-    #[doc(hidden)]
     pub aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     /// <p>The time in seconds between fleet metric emissions. Range [60(1 min), 86400(1 day)] and must be multiple of 60.</p>
-    #[doc(hidden)]
     pub period: ::std::option::Option<i32>,
     /// <p>The field to aggregate.</p>
-    #[doc(hidden)]
     pub aggregation_field: ::std::option::Option<::std::string::String>,
     /// <p>The fleet metric description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The query version.</p>
-    #[doc(hidden)]
     pub query_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index to search.</p>
-    #[doc(hidden)]
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::FleetMetricUnit>,
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFleetMetricInput {

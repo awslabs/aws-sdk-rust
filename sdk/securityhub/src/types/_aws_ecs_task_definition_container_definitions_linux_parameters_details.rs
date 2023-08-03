@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
     /// <p>The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails>,
     /// <p>The host devices to expose to the container.</p>
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails>>,
     /// <p>Whether to run an <code>init</code> process inside the container that forwards signals and reaps processes. </p>
-    #[doc(hidden)]
     pub init_process_enabled: bool,
     /// <p>The total amount of swap memory (in MiB) that a container can use.</p>
-    #[doc(hidden)]
     pub max_swap: i32,
     /// <p>The value for the size (in MiB) of the <b>/dev/shm</b> volume.</p>
-    #[doc(hidden)]
     pub shared_memory_size: i32,
     /// <p>Configures the container's memory swappiness behavior. Determines how aggressively pages are swapped. The higher the value, the more aggressive the swappiness. The default is 60.</p>
-    #[doc(hidden)]
     pub swappiness: i32,
     /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount.</p>
-    #[doc(hidden)]
     pub tmpfs: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails>>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {

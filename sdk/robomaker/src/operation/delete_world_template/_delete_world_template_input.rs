@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWorldTemplateInput {

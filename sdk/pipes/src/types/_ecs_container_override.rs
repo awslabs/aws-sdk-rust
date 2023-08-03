@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsContainerOverride {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of <code>cpu</code> units reserved for the container, instead of the default value from the task definition. You must also specify a container name.</p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<i32>,
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentVariable>>,
     /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
-    #[doc(hidden)]
     pub environment_files: ::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentFile>>,
     /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<i32>,
     /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.</p>
-    #[doc(hidden)]
     pub memory_reservation: ::std::option::Option<i32>,
     /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    #[doc(hidden)]
     pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>>,
 }
 impl EcsContainerOverride {

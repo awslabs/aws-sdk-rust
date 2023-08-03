@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamSessionsInput {
     /// <p>Channel ARN used to filter the list.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of streams to return. Default: 100.</p>
-    #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListStreamSessionsInput {

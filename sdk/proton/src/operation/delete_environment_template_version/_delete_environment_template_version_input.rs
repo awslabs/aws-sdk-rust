@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The environment template major version to delete.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>The environment template minor version to delete.</p>
-    #[doc(hidden)]
     pub minor_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentTemplateVersionInput {

@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLabelType {
     /// <p>Determines the label configuration for the entire field.</p>
-    #[doc(hidden)]
     pub field_label_type: ::std::option::Option<crate::types::FieldLabelType>,
     /// <p>The option that specifies individual data values for labels.</p>
-    #[doc(hidden)]
     pub data_path_label_type: ::std::option::Option<crate::types::DataPathLabelType>,
     /// <p>Determines the label configuration for range end value in a visual.</p>
-    #[doc(hidden)]
     pub range_ends_label_type: ::std::option::Option<crate::types::RangeEndsLabelType>,
     /// <p>Determines the label configuration for the minimum value in a visual.</p>
-    #[doc(hidden)]
     pub minimum_label_type: ::std::option::Option<crate::types::MinimumLabelType>,
     /// <p>Determines the label configuration for the maximum value in a visual.</p>
-    #[doc(hidden)]
     pub maximum_label_type: ::std::option::Option<crate::types::MaximumLabelType>,
 }
 impl DataLabelType {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusEvent {
     /// <p>A description of the event.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of this event.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of this event.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>The latest end time of the event.</p>
-    #[doc(hidden)]
     pub not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The earliest start time of the event.</p>
-    #[doc(hidden)]
     pub not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the instance associated with the event.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusEvent {

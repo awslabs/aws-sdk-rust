@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrimaryKey {
     /// <p>A name for the Primary Key.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A positive integer value representing the offset to mark the start of the primary key in the record byte array.</p>
-    #[doc(hidden)]
     pub offset: i32,
     /// <p>A strictly positive integer value representing the length of the primary key. </p>
-    #[doc(hidden)]
     pub length: i32,
 }
 impl PrimaryKey {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotVersionSummary {
     /// <p>The name of the bot associated with the version.</p>
-    #[doc(hidden)]
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
-    #[doc(hidden)]
     pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     /// <p>A timestamp of the date and time that the version was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotVersionSummary {

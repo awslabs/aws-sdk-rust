@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    #[doc(hidden)]
     pub assistant_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    #[doc(hidden)]
     pub assistant_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssistantAssociationInput {

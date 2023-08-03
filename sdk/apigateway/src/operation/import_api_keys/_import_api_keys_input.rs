@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportApiKeysInput {
     /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::ApiKeysFormat>,
     /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-    #[doc(hidden)]
     pub fail_on_warnings: bool,
 }
 impl ImportApiKeysInput {

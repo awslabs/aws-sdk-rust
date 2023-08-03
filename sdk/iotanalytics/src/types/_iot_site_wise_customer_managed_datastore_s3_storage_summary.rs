@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
     /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
-    #[doc(hidden)]
     pub key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {

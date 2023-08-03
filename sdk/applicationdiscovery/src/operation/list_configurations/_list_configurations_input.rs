@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationsInput {
     /// <p>A valid configuration identified by Application Discovery Service. </p>
-    #[doc(hidden)]
     pub configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The total number of items to return. The maximum value is 100.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    #[doc(hidden)]
     pub order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>>,
 }
 impl ListConfigurationsInput {

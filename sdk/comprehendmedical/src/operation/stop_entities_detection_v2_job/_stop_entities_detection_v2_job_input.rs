@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopEntitiesDetectionV2JobInput {
     /// <p>The identifier of the medical entities job to stop.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl StopEntitiesDetectionV2JobInput {

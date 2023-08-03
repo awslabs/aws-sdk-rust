@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactLocation {
     /// <p>The type of artifact in the location.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ArtifactLocationType>,
     /// <p>The S3 bucket that contains the artifact.</p>
-    #[doc(hidden)]
     pub s3_location: ::std::option::Option<crate::types::S3ArtifactLocation>,
 }
 impl ArtifactLocation {

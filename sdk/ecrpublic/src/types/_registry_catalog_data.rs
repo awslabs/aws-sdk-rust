@@ -7,7 +7,6 @@ pub struct RegistryCatalogData {
     /// <p>The display name for a public registry. This appears on the Amazon ECR Public Gallery.</p> <important>
     /// <p>Only accounts that have the verified account badge can have a registry display name.</p>
     /// </important>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl RegistryCatalogData {

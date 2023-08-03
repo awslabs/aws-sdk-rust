@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointDemographic {
     /// <p>The version of the app that's associated with the endpoint.</p>
-    #[doc(hidden)]
     pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2 value.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
-    #[doc(hidden)]
     pub make: ::std::option::Option<::std::string::String>,
     /// <p>The model name or number of the endpoint device, such as iPhone or SM-G900F.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The model version of the endpoint device.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the endpoint device, such as ios.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The platform version of the endpoint device.</p>
-    #[doc(hidden)]
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
 }
 impl EndpointDemographic {

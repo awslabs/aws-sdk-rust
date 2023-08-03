@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArchivesOutput {
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-    #[doc(hidden)]
     pub archives: ::std::option::Option<::std::vec::Vec<crate::types::Archive>>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

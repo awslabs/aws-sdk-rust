@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubjectsOutput {
     /// <p>A list of subjects.</p>
-    #[doc(hidden)]
     pub subjects: ::std::option::Option<::std::vec::Vec<crate::types::SubjectSummary>>,
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

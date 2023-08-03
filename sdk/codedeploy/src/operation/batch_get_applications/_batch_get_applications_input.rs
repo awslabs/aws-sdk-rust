@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetApplicationsInput {
     /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
-    #[doc(hidden)]
     pub application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetApplicationsInput {

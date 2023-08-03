@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTokenBalanceInput {
     /// <p>The container for the identifier for the token, including the unique token ID and its blockchain network.</p>
-    #[doc(hidden)]
     pub token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,
     /// <p>The container for the identifier for the owner.</p>
-    #[doc(hidden)]
     pub owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
     /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
-    #[doc(hidden)]
     pub at_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
 }
 impl GetTokenBalanceInput {

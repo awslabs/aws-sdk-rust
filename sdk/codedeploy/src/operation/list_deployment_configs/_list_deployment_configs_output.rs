@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentConfigsOutput {
     /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
-    #[doc(hidden)]
     pub deployment_configs_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

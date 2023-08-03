@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCommitOutput {
     /// <p>The full commit ID of the commit that contains your committed file changes.</p>
-    #[doc(hidden)]
     pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
-    #[doc(hidden)]
     pub tree_id: ::std::option::Option<::std::string::String>,
     /// <p>The files added as part of the committed file changes.</p>
-    #[doc(hidden)]
     pub files_added: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
     /// <p>The files updated as part of the commited file changes.</p>
-    #[doc(hidden)]
     pub files_updated: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
     /// <p>The files deleted as part of the committed file changes.</p>
-    #[doc(hidden)]
     pub files_deleted: ::std::option::Option<::std::vec::Vec<crate::types::FileMetadata>>,
     _request_id: Option<String>,
 }

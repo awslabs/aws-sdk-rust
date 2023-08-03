@@ -7,16 +7,12 @@ pub struct DescribeInputDeviceThumbnailOutput {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     pub body: ::aws_smithy_http::byte_stream::ByteStream,
     /// Specifies the media type of the thumbnail.
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// The length of the content.
-    #[doc(hidden)]
     pub content_length: ::std::option::Option<i64>,
     /// The unique, cacheable version of this thumbnail.
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// The date and time the thumbnail was last updated at the device.
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsBackupRecoveryPointCreatedByDetails {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan. </p>
-    #[doc(hidden)]
     pub backup_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a backup plan. </p>
-    #[doc(hidden)]
     pub backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited. </p>
-    #[doc(hidden)]
     pub backup_plan_version: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a rule used to schedule the backup of a selection of resources. </p>
-    #[doc(hidden)]
     pub backup_rule_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsBackupRecoveryPointCreatedByDetails {

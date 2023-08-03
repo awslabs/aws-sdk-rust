@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTestSetDiscrepancyReportOutput {
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
-    #[doc(hidden)]
     pub test_set_discrepancy_report_id: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test set Id for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub test_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The target bot for the test set discrepancy report.</p>
-    #[doc(hidden)]
     pub target: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResponseHeadersPoliciesOutput {
     /// <p>A list of response headers policies.</p>
-    #[doc(hidden)]
     pub response_headers_policy_list: ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
     _request_id: Option<String>,
 }

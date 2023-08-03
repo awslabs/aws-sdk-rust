@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsOutput {
     /// <p>A list of summary information records for VPC Ingress Connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    #[doc(hidden)]
     pub vpc_ingress_connection_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::VpcIngressConnectionSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAddressBookOutput {
     /// <p>The details of the requested address book.</p>
-    #[doc(hidden)]
     pub address_book: ::std::option::Option<crate::types::AddressBook>,
     _request_id: Option<String>,
 }

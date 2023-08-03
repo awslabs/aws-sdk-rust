@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotInput {
     /// <p>The name of the simulation.</p>
-    #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
     /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl CreateSnapshotInput {

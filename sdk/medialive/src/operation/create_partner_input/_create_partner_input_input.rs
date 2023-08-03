@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePartnerInputInput {
     /// Unique ID of the input.
-    #[doc(hidden)]
     pub input_id: ::std::option::Option<::std::string::String>,
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePartnerInputInput {

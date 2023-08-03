@@ -5,13 +5,10 @@
 pub struct UpdateGroupInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name or the ARN of the resource group to modify.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGroupInput {

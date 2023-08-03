@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSkillsInput {
     /// <p>The ARN of the skill group for which to list enabled skills.</p>
-    #[doc(hidden)]
     pub skill_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the skill is enabled under the user's account.</p>
-    #[doc(hidden)]
     pub enablement_type: ::std::option::Option<crate::types::EnablementTypeFilter>,
     /// <p>Whether the skill is publicly available or is a private skill.</p>
-    #[doc(hidden)]
     pub skill_type: ::std::option::Option<crate::types::SkillTypeFilter>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListSkillsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterSubnetGroupInput {
     /// <p>The name of the cluster subnet group name to be deleted.</p>
-    #[doc(hidden)]
     pub cluster_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteClusterSubnetGroupInput {

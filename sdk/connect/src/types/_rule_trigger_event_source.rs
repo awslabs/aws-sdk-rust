@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleTriggerEventSource {
     /// <p>The name of the event source.</p>
-    #[doc(hidden)]
     pub event_source_name: ::std::option::Option<crate::types::EventSourceName>,
     /// <p>The identifier for the integration association.</p>
-    #[doc(hidden)]
     pub integration_association_id: ::std::option::Option<::std::string::String>,
 }
 impl RuleTriggerEventSource {

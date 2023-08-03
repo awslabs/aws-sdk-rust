@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDocumentDefaultVersionOutput {
     /// <p>The description of a custom document that you want to set as the default version.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<crate::types::DocumentDefaultVersionDescription>,
     _request_id: Option<String>,
 }

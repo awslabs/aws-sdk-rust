@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomVocabularyMetadataInput {
     /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot version of the bot to return metadata for.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCustomVocabularyMetadataInput {

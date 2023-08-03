@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddEndpointsOutput {
     /// <p>The list of endpoint objects.</p>
-    #[doc(hidden)]
     pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    #[doc(hidden)]
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

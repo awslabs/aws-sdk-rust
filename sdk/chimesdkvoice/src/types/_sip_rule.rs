@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SipRule {
     /// <p>A SIP rule's ID.</p>
-    #[doc(hidden)]
     pub sip_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>A SIP rule's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the SIP rule is enabled or disabled. You must disable a rule before you can delete it.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
     /// <p>The type of trigger set for a SIP rule, either a phone number or a URI request host name.</p>
-    #[doc(hidden)]
     pub trigger_type: ::std::option::Option<crate::types::SipRuleTriggerType>,
     /// <p>The value set for a SIP rule's trigger type. Either a phone number or a URI hostname.</p>
-    #[doc(hidden)]
     pub trigger_value: ::std::option::Option<::std::string::String>,
     /// <p>The target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
-    #[doc(hidden)]
     pub target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
     /// <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the SIP rule was updated, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SipRule {

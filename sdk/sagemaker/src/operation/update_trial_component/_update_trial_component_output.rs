@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    #[doc(hidden)]
     pub trial_component_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

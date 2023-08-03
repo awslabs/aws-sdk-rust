@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerRecommendation {
     /// <p> The name of the container. </p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p> The recommended memory size configurations for the container. </p>
-    #[doc(hidden)]
     pub memory_size_configuration: ::std::option::Option<crate::types::MemorySizeConfiguration>,
     /// <p> The recommended number of CPU units reserved for the container. </p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<i32>,
 }
 impl ContainerRecommendation {

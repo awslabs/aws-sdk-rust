@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptAttachmentOutput {
     /// <p>The response to the attachment request. </p>
-    #[doc(hidden)]
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
 }

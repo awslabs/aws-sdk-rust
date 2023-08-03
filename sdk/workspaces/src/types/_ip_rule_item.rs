@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpRuleItem {
     /// <p>The IP address range, in CIDR notation.</p>
-    #[doc(hidden)]
     pub ip_rule: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub rule_desc: ::std::option::Option<::std::string::String>,
 }
 impl IpRuleItem {

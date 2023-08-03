@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerServiceDeploymentsInput {
     /// <p>The name of the container service for which to return deployments.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl GetContainerServiceDeploymentsInput {

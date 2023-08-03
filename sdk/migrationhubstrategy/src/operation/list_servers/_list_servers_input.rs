@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServersInput {
     /// <p> Criteria for filtering servers. </p>
-    #[doc(hidden)]
     pub server_criteria: ::std::option::Option<crate::types::ServerCriteria>,
     /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
-    #[doc(hidden)]
     pub filter_value: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::SortOrder>,
     /// <p> Specifies the group ID to filter on. </p>
-    #[doc(hidden)]
     pub group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListServersInput {

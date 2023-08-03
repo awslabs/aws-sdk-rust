@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioLanguageSelection {
     /// Selects a specific three-letter language code from within an audio source.
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
-    #[doc(hidden)]
     pub language_selection_policy: ::std::option::Option<crate::types::AudioLanguageSelectionPolicy>,
 }
 impl AudioLanguageSelection {

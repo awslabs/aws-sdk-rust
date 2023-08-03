@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformApplication {
     /// <p>PlatformApplicationArn for platform application object.</p>
-    #[doc(hidden)]
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Attributes for platform application object.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PlatformApplication {

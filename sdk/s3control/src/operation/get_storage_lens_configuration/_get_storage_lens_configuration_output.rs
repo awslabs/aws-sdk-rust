@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStorageLensConfigurationOutput {
     /// <p>The S3 Storage Lens configuration requested.</p>
-    #[doc(hidden)]
     pub storage_lens_configuration: ::std::option::Option<crate::types::StorageLensConfiguration>,
     _request_id: Option<String>,
 }

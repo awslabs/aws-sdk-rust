@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationSummary {
     /// <p>The ARN of the source.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source type.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The destination type.</p>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<::std::string::String>,
     /// <p>The type of the association.</p>
-    #[doc(hidden)]
     pub association_type: ::std::option::Option<crate::types::AssociationEdgeType>,
     /// <p>The name of the source.</p>
-    #[doc(hidden)]
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the destination.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>When the association was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
 }
 impl AssociationSummary {

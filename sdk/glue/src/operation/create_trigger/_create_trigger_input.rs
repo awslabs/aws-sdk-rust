@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTriggerInput {
     /// <p>The name of the trigger.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow associated with the trigger.</p>
-    #[doc(hidden)]
     pub workflow_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the new trigger.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TriggerType>,
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>A predicate to specify when the new trigger should fire.</p>
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
-    #[doc(hidden)]
     pub predicate: ::std::option::Option<crate::types::Predicate>,
     /// <p>The actions initiated by this trigger when it fires.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>A description of the new trigger.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
-    #[doc(hidden)]
     pub start_on_creation: ::std::option::Option<bool>,
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
-    #[doc(hidden)]
     pub event_batching_condition: ::std::option::Option<crate::types::EventBatchingCondition>,
 }
 impl CreateTriggerInput {

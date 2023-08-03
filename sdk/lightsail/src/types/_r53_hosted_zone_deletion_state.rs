@@ -12,10 +12,8 @@ pub struct R53HostedZoneDeletionState {
     /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
     /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl R53HostedZoneDeletionState {

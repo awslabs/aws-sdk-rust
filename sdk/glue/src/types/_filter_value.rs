@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterValue {
     /// <p>The type of filter value.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::FilterValueType>,
     /// <p>The value to be associated.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FilterValue {

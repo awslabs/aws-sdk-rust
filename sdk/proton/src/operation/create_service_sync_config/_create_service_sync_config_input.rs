@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceSyncConfigInput {
     /// <p>The name of the service the Proton Ops file is for.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The provider type for your repository.</p>
-    #[doc(hidden)]
     pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository branch for your Proton Ops file.</p>
-    #[doc(hidden)]
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Proton Ops file.</p>
-    #[doc(hidden)]
     pub file_path: ::std::option::Option<::std::string::String>,
 }
 impl CreateServiceSyncConfigInput {

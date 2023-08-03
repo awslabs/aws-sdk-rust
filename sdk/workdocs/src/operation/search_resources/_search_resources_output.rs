@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesOutput {
     /// <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseItem>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

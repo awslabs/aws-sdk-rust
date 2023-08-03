@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentEnaSrdUdpSpecification {
     /// <p>Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first enable ENA Express.</p>
-    #[doc(hidden)]
     pub ena_srd_udp_enabled: ::std::option::Option<bool>,
 }
 impl AttachmentEnaSrdUdpSpecification {

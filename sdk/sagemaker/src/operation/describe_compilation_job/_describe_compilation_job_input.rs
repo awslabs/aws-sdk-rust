@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCompilationJobInput {
     /// <p>The name of the model compilation job that you want information about.</p>
-    #[doc(hidden)]
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCompilationJobInput {

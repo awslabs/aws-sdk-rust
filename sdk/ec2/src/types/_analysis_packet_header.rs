@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisPacketHeader {
     /// <p>The destination addresses.</p>
-    #[doc(hidden)]
     pub destination_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination port ranges.</p>
-    #[doc(hidden)]
     pub destination_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The source addresses.</p>
-    #[doc(hidden)]
     pub source_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The source port ranges.</p>
-    #[doc(hidden)]
     pub source_port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
 }
 impl AnalysisPacketHeader {

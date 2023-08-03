@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApiDestinationInput {
     /// <p>The name of the API destination to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API destination to update.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the connection to use for the API destination.</p>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the endpoint to use for the API destination.</p>
-    #[doc(hidden)]
     pub invocation_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The method to use for the API destination.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
-    #[doc(hidden)]
     pub invocation_rate_limit_per_second: ::std::option::Option<i32>,
 }
 impl UpdateApiDestinationInput {

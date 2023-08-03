@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     /// <p>The following are requirements for the resource policy:</p>
@@ -13,7 +12,6 @@ pub struct PutResourcePolicyInput {
     /// <li> <p> Contains at least one statement. The policy can have a maximum of 20 statements. </p> </li>
     /// <li> <p> Each statement contains at least one principal. A statement can have a maximum of 50 principals. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {

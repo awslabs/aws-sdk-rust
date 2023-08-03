@@ -5,45 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the table.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the table.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The time when the table definition was created in the Data Catalog.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that the table was updated.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
-    #[doc(hidden)]
     pub last_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that column statistics were computed for this table.</p>
-    #[doc(hidden)]
     pub last_analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The retention time for this table.</p>
-    #[doc(hidden)]
     pub retention: i32,
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
-    #[doc(hidden)]
     pub storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
     /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
     /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
     /// <p> <code>"PartitionKeys": []</code> </p>
-    #[doc(hidden)]
     pub partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
-    #[doc(hidden)]
     pub view_original_text: ::std::option::Option<::std::string::String>,
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
-    #[doc(hidden)]
     pub view_expanded_text: ::std::option::Option<::std::string::String>,
     /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
@@ -61,28 +48,20 @@ pub struct Table {
     /// <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub table_type: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define properties associated with the table.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The person or entity who created the table.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the table has been registered with Lake Formation.</p>
-    #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
-    #[doc(hidden)]
     pub target_table: ::std::option::Option<crate::types::TableIdentifier>,
     /// <p>The ID of the Data Catalog in which the table resides.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the table version.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.</p>
-    #[doc(hidden)]
     pub federated_table: ::std::option::Option<crate::types::FederatedTable>,
 }
 impl Table {

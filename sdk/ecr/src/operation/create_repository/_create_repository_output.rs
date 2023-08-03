@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRepositoryOutput {
     /// <p>The repository that was created.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<crate::types::Repository>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSource {
     /// <p>The type of content stored in the file source.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The digest of the file source.</p>
-    #[doc(hidden)]
     pub content_digest: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI for the file source.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl FileSource {

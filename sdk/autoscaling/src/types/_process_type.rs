@@ -17,7 +17,6 @@ pub struct ProcessType {
     /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub process_name: ::std::option::Option<::std::string::String>,
 }
 impl ProcessType {

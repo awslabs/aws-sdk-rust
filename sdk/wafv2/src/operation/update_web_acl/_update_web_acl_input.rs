@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -12,47 +11,35 @@ pub struct UpdateWebAclInput {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
-    #[doc(hidden)]
     pub default_action: ::std::option::Option<crate::types::DefaultAction>,
     /// <p>A description of the web ACL that helps with identification. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    #[doc(hidden)]
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    #[doc(hidden)]
     pub lock_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    #[doc(hidden)]
     pub custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
-    #[doc(hidden)]
     pub captcha_config: ::std::option::Option<crate::types::CaptchaConfig>,
     /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
-    #[doc(hidden)]
     pub challenge_config: ::std::option::Option<crate::types::ChallengeConfig>,
     /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
     /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    #[doc(hidden)]
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
     /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub association_config: ::std::option::Option<crate::types::AssociationConfig>,
 }
 impl UpdateWebAclInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainEndpointOptionsStatus {
     /// <p>The domain endpoint options configured for the domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>The status of the configured domain endpoint options.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl DomainEndpointOptionsStatus {

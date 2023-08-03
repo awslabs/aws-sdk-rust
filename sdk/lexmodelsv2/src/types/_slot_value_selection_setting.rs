@@ -10,13 +10,10 @@ pub struct SlotValueSelectionSetting {
     /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
-    #[doc(hidden)]
     pub resolution_strategy: ::std::option::Option<crate::types::SlotValueResolutionStrategy>,
     /// <p>A regular expression used to validate the value of a slot.</p>
-    #[doc(hidden)]
     pub regex_filter: ::std::option::Option<crate::types::SlotValueRegexFilter>,
     /// <p>Provides settings that enable advanced recognition settings for slot values. You can use this to enable using slot values as a custom vocabulary for recognizing user utterances.</p>
-    #[doc(hidden)]
     pub advanced_recognition_setting: ::std::option::Option<crate::types::AdvancedRecognitionSetting>,
 }
 impl SlotValueSelectionSetting {

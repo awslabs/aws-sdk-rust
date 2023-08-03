@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataQualityRuleRecommendationRunsOutput {
     /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
-    #[doc(hidden)]
     pub runs: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>>,
     /// <p>A pagination token, if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

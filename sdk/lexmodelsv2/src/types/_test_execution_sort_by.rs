@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestExecutionSortBy {
     /// <p>Specifies whether to sort the test set executions by the date and time at which the test sets were created.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::TestExecutionSortAttribute>,
     /// <p>Specifies whether to sort in ascending or descending order.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl TestExecutionSortBy {

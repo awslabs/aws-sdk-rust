@@ -22,14 +22,11 @@ pub struct DescribeVpnGatewaysInput {
     /// <li> <p> <code>type</code> - The type of virtual private gateway. Currently the only supported type is <code>ipsec.1</code>.</p> </li>
     /// <li> <p> <code>vpn-gateway-id</code> - The ID of the virtual private gateway.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>One or more virtual private gateway IDs.</p>
     /// <p>Default: Describes all your virtual private gateways.</p>
-    #[doc(hidden)]
     pub vpn_gateway_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeVpnGatewaysInput {

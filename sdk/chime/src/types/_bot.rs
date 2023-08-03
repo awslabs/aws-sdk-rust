@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Bot {
     /// <p>The bot ID.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the bot user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot display name.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The bot type.</p>
-    #[doc(hidden)]
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>When true, the bot is stopped from running in your account.</p>
-    #[doc(hidden)]
     pub disabled: ::std::option::Option<bool>,
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The bot email address.</p>
-    #[doc(hidden)]
     pub bot_email: ::std::option::Option<::std::string::String>,
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
-    #[doc(hidden)]
     pub security_token: ::std::option::Option<::std::string::String>,
 }
 impl Bot {

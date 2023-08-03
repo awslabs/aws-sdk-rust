@@ -10,7 +10,6 @@ pub struct PipeTargetLambdaFunctionParameters {
     /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
     /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetLambdaFunctionParameters {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIndexingConfigurationInput {
     /// <p>Thing indexing configuration.</p>
-    #[doc(hidden)]
     pub thing_indexing_configuration: ::std::option::Option<crate::types::ThingIndexingConfiguration>,
     /// <p>Thing group indexing configuration.</p>
-    #[doc(hidden)]
     pub thing_group_indexing_configuration: ::std::option::Option<crate::types::ThingGroupIndexingConfiguration>,
 }
 impl UpdateIndexingConfigurationInput {

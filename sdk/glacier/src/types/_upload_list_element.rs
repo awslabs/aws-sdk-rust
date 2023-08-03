@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadListElement {
     /// <p>The ID of a multipart upload.</p>
-    #[doc(hidden)]
     pub multipart_upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
-    #[doc(hidden)]
     pub vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    #[doc(hidden)]
     pub archive_description: ::std::option::Option<::std::string::String>,
     /// <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
-    #[doc(hidden)]
     pub part_size_in_bytes: i64,
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::std::string::String>,
 }
 impl UploadListElement {

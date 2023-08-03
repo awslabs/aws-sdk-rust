@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditLogDestinationConfiguration {
     /// <p>Contains information about an audit log destination.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::Destination>,
 }
 impl AuditLogDestinationConfiguration {

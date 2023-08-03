@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMediaCapturePipelineInput {
     /// <p>Source type from which the media artifacts are captured. A Chime SDK Meeting is the only supported source.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::MediaPipelineSourceType>,
     /// <p>ARN of the source from which the media artifacts are captured.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
-    #[doc(hidden)]
     pub sink_type: ::std::option::Option<crate::types::MediaPipelineSinkType>,
     /// <p>The ARN of the sink type.</p>
-    #[doc(hidden)]
     pub sink_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    #[doc(hidden)]
     pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
     /// <p>The tag key-value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaCapturePipelineInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Member {
     /// <p>The identifier of the member.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the member.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A member can be a user or group.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MemberType>,
     /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EntityState>,
     /// <p>The date indicating when the member was enabled for WorkMail use.</p>
-    #[doc(hidden)]
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date indicating when the member was disabled from WorkMail use.</p>
-    #[doc(hidden)]
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Member {

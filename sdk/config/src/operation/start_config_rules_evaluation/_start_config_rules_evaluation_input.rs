@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConfigRulesEvaluationInput {
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    #[doc(hidden)]
     pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StartConfigRulesEvaluationInput {

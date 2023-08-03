@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDetectorRequest {
     /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the detector model that created the detectors (instances).</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
-    #[doc(hidden)]
     pub key_value: ::std::option::Option<::std::string::String>,
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DetectorStateDefinition>,
 }
 impl UpdateDetectorRequest {

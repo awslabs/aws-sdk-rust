@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackStatusDetail {
     /// <p>Name of the conformance pack.</p>
-    #[doc(hidden)]
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>ID of the conformance pack.</p>
-    #[doc(hidden)]
     pub conformance_pack_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of comformance pack.</p>
-    #[doc(hidden)]
     pub conformance_pack_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates deployment status of conformance pack.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
@@ -22,19 +19,14 @@ pub struct ConformancePackStatusDetail {
     /// <li> <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress. </p> </li>
     /// <li> <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub conformance_pack_state: ::std::option::Option<crate::types::ConformancePackState>,
     /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
-    #[doc(hidden)]
     pub stack_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason of conformance pack creation failure.</p>
-    #[doc(hidden)]
     pub conformance_pack_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Last time when conformation pack creation and update was requested.</p>
-    #[doc(hidden)]
     pub last_update_requested_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Last time when conformation pack creation and update was successful.</p>
-    #[doc(hidden)]
     pub last_update_completed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConformancePackStatusDetail {

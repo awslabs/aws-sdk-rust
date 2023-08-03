@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrainingJobsInput {
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of training jobs to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A filter that retrieves only training jobs with a specific status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::TrainingJobStatus>,
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::SortBy>,
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
-    #[doc(hidden)]
     pub warm_pool_status_equals: ::std::option::Option<crate::types::WarmPoolResourceStatus>,
 }
 impl ListTrainingJobsInput {

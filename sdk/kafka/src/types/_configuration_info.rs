@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationInfo {
     /// <p>ARN of the configuration to use.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the configuration to use.</p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<i64>,
 }
 impl ConfigurationInfo {

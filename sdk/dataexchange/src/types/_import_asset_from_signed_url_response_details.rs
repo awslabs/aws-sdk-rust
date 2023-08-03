@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlResponseDetails {
     /// <p>The name for the asset associated with this import job.</p>
-    #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
-    #[doc(hidden)]
     pub md5_hash: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision associated with this import response.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The signed URL.</p>
-    #[doc(hidden)]
     pub signed_url: ::std::option::Option<::std::string::String>,
     /// <p>The time and date at which the signed URL expires, in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub signed_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportAssetFromSignedUrlResponseDetails {

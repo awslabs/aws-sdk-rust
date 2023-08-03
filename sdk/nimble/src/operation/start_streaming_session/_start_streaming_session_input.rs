@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID for the StartStreamingSessionRequest.</p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the backup.</p>
-    #[doc(hidden)]
     pub backup_id: ::std::option::Option<::std::string::String>,
 }
 impl StartStreamingSessionInput {

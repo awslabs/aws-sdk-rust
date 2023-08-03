@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationRevisionsOutput {
     /// <p>Paginated results marker.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of ConfigurationRevision objects.</p>
-    #[doc(hidden)]
     pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRevision>>,
     _request_id: Option<String>,
 }

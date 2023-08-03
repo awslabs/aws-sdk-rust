@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSigningProfilesInput {
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
-    #[doc(hidden)]
     pub include_canceled: ::std::option::Option<bool>,
     /// <p>The maximum number of profiles to be returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
-    #[doc(hidden)]
     pub platform_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
-    #[doc(hidden)]
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>,
 }
 impl ListSigningProfilesInput {

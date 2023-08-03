@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskDefinition {
     /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
-    #[doc(hidden)]
     pub task_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
     /// <p>The name of a family that this task definition is registered to. Up to 255 characters are allowed. Letters (both uppercase and lowercase letters), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.</p>
-    #[doc(hidden)]
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access Management role that grants containers in the task permission to call Amazon Web Services APIs on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code to use the feature. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub task_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is <code>bridge</code>.</p>
     /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used. For Amazon ECS tasks on Amazon EC2 Windows instances, <code>
@@ -30,38 +25,29 @@ pub struct TaskDefinition {
     /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must specify a <code>NetworkConfiguration</code> value when you create a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the same task on a single container instance when port mappings are used.</p>
     /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network settings</a> in the <i>Docker run reference</i>.</p>
-    #[doc(hidden)]
     pub network_mode: ::std::option::Option<crate::types::NetworkMode>,
     /// <p>The revision of the task in a particular family. The revision is a version number of a task definition in a family. When you register a task definition for the first time, the revision is <code>1</code>. Each time that you register a new revision of a task definition in the same family, the revision value always increases by one. This is even if you deregistered previous revisions in this family.</p>
-    #[doc(hidden)]
     pub revision: i32,
     /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>The <code>host</code> and <code>sourcePath</code> parameters aren't supported for tasks run on Fargate. </p>
     /// </note>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     /// <p>The status of the task definition.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TaskDefinitionStatus>,
     /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is registered to your cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom attributes. These are specified as key-value pairs using the Amazon ECS console or the <code>PutAttributes</code> API. These attributes are used when determining task placement for tasks hosted on Amazon EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    #[doc(hidden)]
     pub requires_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>An array of placement constraint objects to use for tasks.</p> <note>
     /// <p>This parameter isn't supported for tasks run on Fargate.</p>
     /// </note>
-    #[doc(hidden)]
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>>,
     /// <p>The task launch types the task definition validated against during task definition registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>The operating system that your task definitions are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p>When you specify a task in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
-    #[doc(hidden)]
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     /// <p>The task launch types the task definition was validated against. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub requires_compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     /// <p>The number of <code>cpu</code> units used by the task. If you use the EC2 launch type, this field is optional. Any value can be used. If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines your range of valid values for the <code>memory</code> parameter.</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
@@ -74,7 +60,6 @@ pub struct TaskDefinition {
     /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The amount (in MiB) of memory used by the task.</p>
     /// <p>If your tasks runs on Amazon EC2 instances, you must specify either a task-level memory value or a container-level memory value. This field is optional and any value can be used. If a task-level memory value is specified, the container-level memory value is optional. For more information regarding container-level memory and memory reservation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
@@ -88,16 +73,13 @@ pub struct TaskDefinition {
     /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
-    #[doc(hidden)]
     pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     /// <p>The process namespace to use for the containers in the task. The valid values are <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run reference</i>.</p>
     /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
     /// </note>
-    #[doc(hidden)]
     pub pid_mode: ::std::option::Option<crate::types::PidMode>,
     /// <p>The IPC resource namespace to use for the containers in the task. The valid values are <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is specified, then all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same IPC resources. If <code>none</code> is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the <i>Docker run reference</i>.</p>
     /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p>
@@ -108,23 +90,17 @@ pub struct TaskDefinition {
     /// </ul> <note>
     /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
     /// </note>
-    #[doc(hidden)]
     pub ipc_mode: ::std::option::Option<crate::types::IpcMode>,
     /// <p>The configuration details for the App Mesh proxy.</p>
     /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
     /// <p>The Unix timestamp for the time when the task definition was registered.</p>
-    #[doc(hidden)]
     pub registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the task definition was deregistered.</p>
-    #[doc(hidden)]
     pub deregistered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The principal that registered the task definition.</p>
-    #[doc(hidden)]
     pub registered_by: ::std::option::Option<::std::string::String>,
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
-    #[doc(hidden)]
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
 }
 impl TaskDefinition {

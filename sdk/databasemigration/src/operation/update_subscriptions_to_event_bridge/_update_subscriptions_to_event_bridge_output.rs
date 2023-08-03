@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionsToEventBridgeOutput {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableAwsNetworkPerformanceMetricSubscriptionOutput {
     /// <p>Indicates whether the subscribe action was successful.</p>
-    #[doc(hidden)]
     pub output: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

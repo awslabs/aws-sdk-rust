@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>The conditions to evaluate for the activity.</p>
-    #[doc(hidden)]
     pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::SimpleCondition>>,
     /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl Condition {

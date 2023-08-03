@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetActivityTaskOutput {
     /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
-    #[doc(hidden)]
     pub task_token: ::std::option::Option<::std::string::String>,
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

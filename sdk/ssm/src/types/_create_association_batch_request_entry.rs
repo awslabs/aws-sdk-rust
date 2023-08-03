@@ -11,68 +11,49 @@ pub struct CreateAssociationBatchRequestEntry {
     /// <p>For example:</p>
     /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameters for a document. </p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Specify the target for the association. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
-    #[doc(hidden)]
     pub automation_target_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The document version.</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The managed nodes targeted by the request.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>A cron expression that specifies a schedule when the association runs.</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    #[doc(hidden)]
     pub output_location: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>,
     /// <p>Specify a descriptive name for the association.</p>
-    #[doc(hidden)]
     pub association_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
     /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The severity level to assign to the association.</p>
-    #[doc(hidden)]
     pub compliance_severity: ::std::option::Option<crate::types::AssociationComplianceSeverity>,
     /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>. </p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-    #[doc(hidden)]
     pub sync_compliance: ::std::option::Option<crate::types::AssociationSyncCompliance>,
     /// <p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
-    #[doc(hidden)]
     pub apply_only_at_cron_interval: bool,
     /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your associations are gated under. The associations only run when that Change Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
-    #[doc(hidden)]
     pub calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Use this action to create an association in multiple Regions and multiple accounts.</p>
-    #[doc(hidden)]
     pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
-    #[doc(hidden)]
     pub schedule_offset: ::std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    #[doc(hidden)]
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl CreateAssociationBatchRequestEntry {

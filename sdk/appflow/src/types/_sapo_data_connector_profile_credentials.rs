@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataConnectorProfileCredentials {
     /// <p> The SAPOData basic authentication credentials. </p>
-    #[doc(hidden)]
     pub basic_auth_credentials: ::std::option::Option<crate::types::BasicAuthCredentials>,
     /// <p> The SAPOData OAuth type authentication credentials. </p>
-    #[doc(hidden)]
     pub o_auth_credentials: ::std::option::Option<crate::types::OAuthCredentials>,
 }
 impl SapoDataConnectorProfileCredentials {

@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyProjectVersionInput {
     /// <p>The ARN of the source project in the trusting AWS account.</p>
-    #[doc(hidden)]
     pub source_project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
-    #[doc(hidden)]
     pub source_project_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
-    #[doc(hidden)]
     pub destination_project_arn: ::std::option::Option<::std::string::String>,
     /// <p>A name for the version of the model that's copied to the destination project.</p>
-    #[doc(hidden)]
     pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The key-value tags to assign to the model version. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
@@ -30,7 +24,6 @@ pub struct CopyProjectVersionInput {
     /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CopyProjectVersionInput {

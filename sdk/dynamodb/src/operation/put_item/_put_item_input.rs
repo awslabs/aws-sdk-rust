@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutItemInput {
     /// <p>The name of the table to contain the item.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
     /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
@@ -13,10 +12,8 @@ pub struct PutItemInput {
     /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub expected: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ExpectedAttributeValue>>,
     /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are:</p>
     /// <ul>
@@ -27,7 +24,6 @@ pub struct PutItemInput {
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p> <note>
     /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however, <code>PutItem</code> does not recognize any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub return_values: ::std::option::Option<crate::types::ReturnValue>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -35,13 +31,10 @@ pub struct PutItemInput {
     /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
-    #[doc(hidden)]
     pub return_item_collection_metrics: ::std::option::Option<crate::types::ReturnItemCollectionMetrics>,
     /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub conditional_operator: ::std::option::Option<crate::types::ConditionalOperator>,
     /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to succeed.</p>
     /// <p>An expression can contain any of the following:</p>
@@ -51,7 +44,6 @@ pub struct PutItemInput {
     /// <li> <p> Logical operators: <code>AND | OR | NOT</code> </p> </li>
     /// </ul>
     /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub condition_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
     /// <ul>
@@ -74,7 +66,6 @@ pub struct PutItemInput {
     /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
     /// </note>
     /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub expression_attribute_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
     /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
@@ -84,11 +75,9 @@ pub struct PutItemInput {
     /// <p>You could then use these values in an expression, such as this:</p>
     /// <p> <code>ProductStatus IN (:avail, :back, :disc)</code> </p>
     /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub expression_attribute_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>An optional parameter that returns the item attributes for a <code>PutItem</code> operation that failed a condition check.</p>
     /// <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>
-    #[doc(hidden)]
     pub return_values_on_condition_check_failure: ::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl PutItemInput {

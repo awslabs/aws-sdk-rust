@@ -4,33 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTrafficMirrorSessionInput {
     /// <p>The ID of the Traffic Mirror session.</p>
-    #[doc(hidden)]
     pub traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The Traffic Mirror target. The target must be in the same VPC as the source, or have a VPC peering connection with the source.</p>
-    #[doc(hidden)]
     pub traffic_mirror_target_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Traffic Mirror filter.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. To mirror a subset, set this to the length (in bytes) to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target. Do not specify this parameter when you want to mirror the entire packet.</p>
-    #[doc(hidden)]
     pub packet_length: ::std::option::Option<i32>,
     /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
     /// <p>Valid values are 1-32766.</p>
-    #[doc(hidden)]
     pub session_number: ::std::option::Option<i32>,
     /// <p>The virtual network ID of the Traffic Mirror session.</p>
-    #[doc(hidden)]
     pub virtual_network_id: ::std::option::Option<i32>,
     /// <p>The description to assign to the Traffic Mirror session.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The properties that you want to remove from the Traffic Mirror session.</p>
     /// <p>When you remove a property from a Traffic Mirror session, the property is set to the default.</p>
-    #[doc(hidden)]
     pub remove_fields: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl ModifyTrafficMirrorSessionInput {

@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPermissionsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a principal to filter the permissions returned.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>Specifies a resource type to filter the permissions returned.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::DataLakeResourceType>,
     /// <p>A resource where you will get a list of the principal permissions.</p>
     /// <p>This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Indicates that related permissions should be included in the results.</p>
-    #[doc(hidden)]
     pub include_related: ::std::option::Option<::std::string::String>,
 }
 impl ListPermissionsInput {

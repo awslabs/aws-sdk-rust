@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCompatibleImagesOutput {
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
-    #[doc(hidden)]
     pub compatible_images: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleImage>>,
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapRunExecutionCounts {
     /// <p>The total number of child workflow executions that were started by a Map Run, but haven't started executing yet. </p>
-    #[doc(hidden)]
     pub pending: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run and are currently in-progress.</p>
-    #[doc(hidden)]
     pub running: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run and have completed successfully.</p>
-    #[doc(hidden)]
     pub succeeded: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run, but have failed.</p>
-    #[doc(hidden)]
     pub failed: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run and have timed out.</p>
-    #[doc(hidden)]
     pub timed_out: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run and were running, but were either stopped by the user or by Step Functions because the Map Run failed. </p>
-    #[doc(hidden)]
     pub aborted: i64,
     /// <p>The total number of child workflow executions that were started by a Map Run.</p>
-    #[doc(hidden)]
     pub total: i64,
     /// <p>Returns the count of child workflow executions whose results were written by <code>ResultWriter</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a> in the <i>Step Functions Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub results_written: i64,
 }
 impl MapRunExecutionCounts {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDescription {
     /// <p>The most recent description of the event.</p>
-    #[doc(hidden)]
     pub latest_description: ::std::option::Option<::std::string::String>,
 }
 impl EventDescription {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationSummary {
     /// <p>The list of vCenter configurations.</p>
-    #[doc(hidden)]
     pub vcenter_based_remote_info_list: ::std::option::Option<::std::vec::Vec<crate::types::VcenterBasedRemoteInfo>>,
     /// <p>IP address based configurations.</p>
-    #[doc(hidden)]
     pub ip_address_based_remote_info_list: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressBasedRemoteInfo>>,
     /// <p>The list of the version control configurations.</p>
-    #[doc(hidden)]
     pub version_control_info_list: ::std::option::Option<::std::vec::Vec<crate::types::VersionControlInfo>>,
     /// <p>The list of pipeline info configurations.</p>
-    #[doc(hidden)]
     pub pipeline_info_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineInfo>>,
     /// <p>Info about the remote server source code configuration.</p>
-    #[doc(hidden)]
     pub remote_source_code_analysis_server_info: ::std::option::Option<crate::types::RemoteSourceCodeAnalysisServerInfo>,
 }
 impl ConfigurationSummary {

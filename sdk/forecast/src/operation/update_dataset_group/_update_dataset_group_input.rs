@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatasetGroupInput {
     /// <p>The ARN of the dataset group.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
-    #[doc(hidden)]
     pub dataset_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateDatasetGroupInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsOptions {
     /// <p>Indicates whether EBS volumes are attached to data nodes in an OpenSearch Service domain.</p>
-    #[doc(hidden)]
     pub ebs_enabled: ::std::option::Option<bool>,
     /// <p>Specifies the type of EBS volumes attached to data nodes.</p>
-    #[doc(hidden)]
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>Specifies the size (in GiB) of EBS volumes attached to data nodes.</p>
-    #[doc(hidden)]
     pub volume_size: ::std::option::Option<i32>,
     /// <p>Specifies the baseline input/output (I/O) performance of EBS volumes attached to data nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS volume types.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Specifies the throughput (in MiB/s) of the EBS volumes attached to data nodes. Applicable only for the <code>gp3</code> volume type.</p>
-    #[doc(hidden)]
     pub throughput: ::std::option::Option<i32>,
 }
 impl EbsOptions {

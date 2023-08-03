@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpenseDocument {
     /// <p>Denotes which invoice or receipt in the document the information is coming from. First document will be 1, the second 2, and so on.</p>
-    #[doc(hidden)]
     pub expense_index: ::std::option::Option<i32>,
     /// <p>Any information found outside of a table by Amazon Textract.</p>
-    #[doc(hidden)]
     pub summary_fields: ::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>>,
     /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
-    #[doc(hidden)]
     pub line_item_groups: ::std::option::Option<::std::vec::Vec<crate::types::LineItemGroup>>,
     /// <p>This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level recognition of text.</p>
-    #[doc(hidden)]
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
 }
 impl ExpenseDocument {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentStageStatusSummary {
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of the devices in the stage.</p>
-    #[doc(hidden)]
     pub device_selection_config: ::std::option::Option<crate::types::DeviceSelectionConfig>,
     /// <p>Configuration of the deployment details.</p>
-    #[doc(hidden)]
     pub deployment_config: ::std::option::Option<crate::types::EdgeDeploymentConfig>,
     /// <p>General status of the current state.</p>
-    #[doc(hidden)]
     pub deployment_status: ::std::option::Option<crate::types::EdgeDeploymentStatus>,
 }
 impl DeploymentStageStatusSummary {

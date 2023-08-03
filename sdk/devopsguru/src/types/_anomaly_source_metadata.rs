@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalySourceMetadata {
     /// <p>The source of the anomaly.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the anomaly's resource.</p>
-    #[doc(hidden)]
     pub source_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The anomaly's resource type.</p>
-    #[doc(hidden)]
     pub source_resource_type: ::std::option::Option<::std::string::String>,
 }
 impl AnomalySourceMetadata {

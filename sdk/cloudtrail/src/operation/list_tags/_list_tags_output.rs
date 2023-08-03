@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsOutput {
     /// <p>A list of resource tags.</p>
-    #[doc(hidden)]
     pub resource_tag_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    #[doc(hidden)]
     pub certificate_authority_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VirtualGatewayTlsValidationContextAcmTrust {

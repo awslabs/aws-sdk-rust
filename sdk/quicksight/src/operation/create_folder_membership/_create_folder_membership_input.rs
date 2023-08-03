@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFolderMembershipInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
-    #[doc(hidden)]
     pub folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
-    #[doc(hidden)]
     pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
-    #[doc(hidden)]
     pub member_type: ::std::option::Option<crate::types::MemberType>,
 }
 impl CreateFolderMembershipInput {

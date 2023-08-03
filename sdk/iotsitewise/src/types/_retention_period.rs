@@ -7,12 +7,10 @@ pub struct RetentionPeriod {
     /// <p>The number of days that your data is kept.</p> <note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub number_of_days: ::std::option::Option<i32>,
     /// <p>If true, your data is kept indefinitely.</p> <note>
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
-    #[doc(hidden)]
     pub unlimited: ::std::option::Option<bool>,
 }
 impl RetentionPeriod {

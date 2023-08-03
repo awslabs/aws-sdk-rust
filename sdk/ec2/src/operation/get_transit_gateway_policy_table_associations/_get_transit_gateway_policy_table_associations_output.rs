@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPolicyTableAssociationsOutput {
     /// <p>Returns details about the transit gateway policy table association.</p>
-    #[doc(hidden)]
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableAssociation>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

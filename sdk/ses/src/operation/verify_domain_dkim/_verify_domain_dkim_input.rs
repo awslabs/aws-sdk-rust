@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyDomainDkimInput {
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl VerifyDomainDkimInput {

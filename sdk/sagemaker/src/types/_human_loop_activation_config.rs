@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopActivationConfig {
     /// <p>Container structure for defining under what conditions SageMaker creates a human loop.</p>
-    #[doc(hidden)]
     pub human_loop_activation_conditions_config: ::std::option::Option<crate::types::HumanLoopActivationConditionsConfig>,
 }
 impl HumanLoopActivationConfig {

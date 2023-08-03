@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateClusterKafkaVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    #[doc(hidden)]
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The custom configuration that should be applied on the new version of cluster.</p>
-    #[doc(hidden)]
     pub configuration_info: ::std::option::Option<crate::types::ConfigurationInfo>,
     /// <p>Current cluster version.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>Target Kafka version.</p>
-    #[doc(hidden)]
     pub target_kafka_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateClusterKafkaVersionInput {

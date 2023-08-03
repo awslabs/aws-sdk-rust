@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeVpcEndpointAccessOutput {
     /// <p>Information about the Amazon Web Services account or service that was provided access to the domain.</p>
-    #[doc(hidden)]
     pub authorized_principal: ::std::option::Option<crate::types::AuthorizedPrincipal>,
     _request_id: Option<String>,
 }

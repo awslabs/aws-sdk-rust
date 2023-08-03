@@ -21,10 +21,8 @@ pub struct ErrorInformation {
     /// <li> <p>TIMEOUT: The deployment has timed out.</p> </li>
     /// <li> <p>REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted after the deployment is created, but before it is started.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>An accompanying error message.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorInformation {

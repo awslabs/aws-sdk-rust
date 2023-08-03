@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsOutput {
     /// <p>An array of <code>Dataset</code> objects. Each object provides metadata information.</p>
-    #[doc(hidden)]
     pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
     /// <p>A token for getting the next set of datasets (if they exist).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

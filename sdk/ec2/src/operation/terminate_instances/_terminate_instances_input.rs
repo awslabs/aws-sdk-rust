@@ -5,10 +5,8 @@
 pub struct TerminateInstancesInput {
     /// <p>The IDs of the instances.</p>
     /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl TerminateInstancesInput {

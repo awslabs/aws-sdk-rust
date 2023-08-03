@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachThingPrincipalInput {
     /// <p>The name of the thing.</p>
-    #[doc(hidden)]
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
-    #[doc(hidden)]
     pub principal: ::std::option::Option<::std::string::String>,
 }
 impl DetachThingPrincipalInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScannedItemCount {
     /// <p>Total GB of files scanned for malware.</p>
-    #[doc(hidden)]
     pub total_gb: i32,
     /// <p>Number of files scanned.</p>
-    #[doc(hidden)]
     pub files: i32,
     /// <p>Total number of scanned volumes.</p>
-    #[doc(hidden)]
     pub volumes: i32,
 }
 impl ScannedItemCount {

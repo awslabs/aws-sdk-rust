@@ -5,7 +5,6 @@
 pub struct ExportJournalToS3Output {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
     /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
-    #[doc(hidden)]
     pub export_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

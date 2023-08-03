@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTopicInput {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The definition of the topic that you want to update.</p>
-    #[doc(hidden)]
     pub topic: ::std::option::Option<crate::types::TopicDetails>,
 }
 impl UpdateTopicInput {

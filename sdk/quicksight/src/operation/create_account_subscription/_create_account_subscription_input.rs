@@ -11,50 +11,35 @@ pub struct CreateAccountSubscriptionInput {
     /// <li> <p> <code>EmailAddress</code> </p> </li>
     /// <li> <p> <code>ContactNumber</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::Edition>,
     /// <p>The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.</p>
     /// <p>If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an <code>AdminGroup</code> associated with your Active Directory.</p>
-    #[doc(hidden)]
     pub authentication_method: ::std::option::Option<crate::types::AuthenticationMethodOption>,
     /// <p>The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of your Amazon QuickSight account. This name is unique over all of Amazon Web Services, and it appears only when users sign in. You can't change <code>AccountName</code> value after the Amazon QuickSight account is created.</p>
-    #[doc(hidden)]
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon QuickSight account or Amazon QuickSight subscription.</p>
-    #[doc(hidden)]
     pub notification_email: ::std::option::Option<::std::string::String>,
     /// <p>The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub active_directory_name: ::std::option::Option<::std::string::String>,
     /// <p>The realm of the Active Directory that is associated with your Amazon QuickSight account. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub realm: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Active Directory that is associated with your Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
-    #[doc(hidden)]
     pub admin_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The author group associated with your Active Directory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.</p>
-    #[doc(hidden)]
     pub author_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The reader group associated with your Active Direcrtory. For more information about using Active Directory in Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    #[doc(hidden)]
     pub reader_group: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The first name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>A 10-digit phone number for the author of the Amazon QuickSight account to use for future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of the new Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub contact_number: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccountSubscriptionInput {

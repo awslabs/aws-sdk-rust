@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddCommunicationToCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    #[doc(hidden)]
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The body of an email communication to add to the support case.</p>
-    #[doc(hidden)]
     pub communication_body: ::std::option::Option<::std::string::String>,
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    #[doc(hidden)]
     pub cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
-    #[doc(hidden)]
     pub attachment_set_id: ::std::option::Option<::std::string::String>,
 }
 impl AddCommunicationToCaseInput {

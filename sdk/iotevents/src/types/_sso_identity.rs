@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsoIdentity {
     /// <p>The ID of the AWS SSO identity store.</p>
-    #[doc(hidden)]
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The user ID.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl SsoIdentity {

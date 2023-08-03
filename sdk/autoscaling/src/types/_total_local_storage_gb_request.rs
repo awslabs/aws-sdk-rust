@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TotalLocalStorageGbRequest {
     /// <p>The storage minimum in GB.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
     /// <p>The storage maximum in GB.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<f64>,
 }
 impl TotalLocalStorageGbRequest {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
-    #[doc(hidden)]
     pub update: ::std::option::Option<crate::types::Update>,
     _request_id: Option<String>,
 }

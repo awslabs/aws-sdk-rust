@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionSelector {
     /// When specified this field indicates the three letter language code of the caption track to extract from the source.
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
     /// Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Caption selector settings.
-    #[doc(hidden)]
     pub selector_settings: ::std::option::Option<crate::types::CaptionSelectorSettings>,
 }
 impl CaptionSelector {

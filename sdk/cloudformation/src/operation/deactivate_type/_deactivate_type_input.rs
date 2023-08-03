@@ -5,15 +5,12 @@
 pub struct DeactivateTypeInput {
     /// <p>The type name of the extension, in this account and Region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The extension type.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ThirdPartyType>,
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
     /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeactivateTypeInput {

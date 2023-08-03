@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionFilter {
     /// <p>The name of the filter.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::SessionFilterKey>,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
@@ -24,7 +23,6 @@ pub struct SessionFilter {
     /// </ul> </li>
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl SessionFilter {

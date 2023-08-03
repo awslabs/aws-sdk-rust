@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The identifier of the resource.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The email of the resource.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource: equipment or room.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EntityState>,
     /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
-    #[doc(hidden)]
     pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
-    #[doc(hidden)]
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Resource {

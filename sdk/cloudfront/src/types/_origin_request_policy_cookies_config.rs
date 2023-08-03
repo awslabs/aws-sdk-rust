@@ -11,10 +11,8 @@ pub struct OriginRequestPolicyCookiesConfig {
     /// <li> <p> <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin.</p> </li>
     /// <li> <p> <code>allExcept</code> – All cookies in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>CookieNames</code> type, which are not included.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cookie_behavior: ::std::option::Option<crate::types::OriginRequestPolicyCookieBehavior>,
     /// <p>Contains a list of cookie names.</p>
-    #[doc(hidden)]
     pub cookies: ::std::option::Option<crate::types::CookieNames>,
 }
 impl OriginRequestPolicyCookiesConfig {

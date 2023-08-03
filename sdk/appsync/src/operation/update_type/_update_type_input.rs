@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTypeInput {
     /// <p>The API ID.</p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The new type name.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The new definition.</p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The new type format: SDL or JSON.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TypeDefinitionFormat>,
 }
 impl UpdateTypeInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEndpointInput {
     /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEndpointInput {

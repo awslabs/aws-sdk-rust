@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
-    #[doc(hidden)]
     pub virtual_service_name: ::std::option::Option<::std::string::String>,
 }
 impl GatewayRouteVirtualService {

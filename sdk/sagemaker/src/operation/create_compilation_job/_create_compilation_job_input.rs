@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCompilationJobInput {
     /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf. </p>
     /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
@@ -15,25 +14,18 @@ pub struct CreateCompilationJobInput {
     /// <li> <p>Publish metrics to Amazon CloudWatch</p> </li>
     /// </ul>
     /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a> </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
-    #[doc(hidden)]
     pub model_package_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
-    #[doc(hidden)]
     pub input_config: ::std::option::Option<crate::types::InputConfig>,
     /// <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::NeoVpcConfig>,
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCompilationJobInput {

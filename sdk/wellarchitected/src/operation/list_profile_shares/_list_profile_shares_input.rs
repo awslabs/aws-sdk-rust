@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfileSharesInput {
     /// <p>The profile ARN.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the profile is shared.</p>
-    #[doc(hidden)]
     pub shared_with_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The status of the share request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ShareStatus>,
 }
 impl ListProfileSharesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Content {
     /// <p>The list of text messages.</p>
-    #[doc(hidden)]
     pub text_list: ::std::option::Option<::std::vec::Vec<crate::types::Text>>,
     /// <p>The list of SSML messages.</p>
-    #[doc(hidden)]
     pub ssml_list: ::std::option::Option<::std::vec::Vec<crate::types::Ssml>>,
     /// <p>The list of audio messages.</p>
-    #[doc(hidden)]
     pub audio_list: ::std::option::Option<::std::vec::Vec<crate::types::Audio>>,
 }
 impl Content {

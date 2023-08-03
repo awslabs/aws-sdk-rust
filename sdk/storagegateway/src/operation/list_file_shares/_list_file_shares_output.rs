@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFileSharesOutput {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
-    #[doc(hidden)]
     pub file_share_info_list: ::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>>,
     _request_id: Option<String>,
 }

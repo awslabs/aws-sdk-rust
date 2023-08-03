@@ -6,13 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryFilterConfiguration {
     /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
-    #[doc(hidden)]
     pub filter_list_configuration: ::std::option::Option<crate::types::FilterListConfiguration>,
     /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
-    #[doc(hidden)]
     pub custom_filter_list_configuration: ::std::option::Option<crate::types::CustomFilterListConfiguration>,
     /// <p>A custom filter that filters based on a single value. This filter can be partially matched.</p>
-    #[doc(hidden)]
     pub custom_filter_configuration: ::std::option::Option<crate::types::CustomFilterConfiguration>,
 }
 impl CategoryFilterConfiguration {

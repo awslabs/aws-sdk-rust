@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CandidateProperties {
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
-    #[doc(hidden)]
     pub candidate_artifact_locations: ::std::option::Option<crate::types::CandidateArtifactLocations>,
     /// <p>Information about the candidate metrics for an AutoML job.</p>
-    #[doc(hidden)]
     pub candidate_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl CandidateProperties {

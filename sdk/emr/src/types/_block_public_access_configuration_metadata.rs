@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-    #[doc(hidden)]
     pub created_by_arn: ::std::option::Option<::std::string::String>,
 }
 impl BlockPublicAccessConfigurationMetadata {

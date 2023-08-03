@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapConditionalFormattingOption {
     /// <p>The conditional formatting that determines the shape of the filled map.</p>
-    #[doc(hidden)]
     pub shape: ::std::option::Option<crate::types::FilledMapShapeConditionalFormatting>,
 }
 impl FilledMapConditionalFormattingOption {

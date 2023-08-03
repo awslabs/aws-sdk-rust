@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOutpostResolversInput {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of Resolvers on the Outpost that you want to return in the response to a <code>ListOutpostResolver</code> request. If you don't specify a value for <code>MaxResults</code>, the request returns up to 100 Resolvers.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>For the first <code>ListOutpostResolver</code> request, omit this value.</p>
     /// <p></p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOutpostResolversInput {

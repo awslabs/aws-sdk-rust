@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusReason {
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    #[doc(hidden)]
     pub reason_code: ::std::option::Option<::std::string::String>,
     /// <p>The corresponding description for the status reason code.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl StatusReason {

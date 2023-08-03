@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSipRuleOutput {
     /// <p>The updated SIP rule details.</p>
-    #[doc(hidden)]
     pub sip_rule: ::std::option::Option<crate::types::SipRule>,
     _request_id: Option<String>,
 }

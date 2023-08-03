@@ -6,19 +6,14 @@ pub struct CreatePublicDnsNamespaceInput {
     /// <p>The name that you want to assign to this namespace.</p> <note>
     /// <p>Do not include sensitive information in the name. The name is publicly available using DNS queries.</p>
     /// </note>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    #[doc(hidden)]
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the namespace.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Properties for the public DNS namespace.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<crate::types::PublicDnsNamespaceProperties>,
 }
 impl CreatePublicDnsNamespaceInput {

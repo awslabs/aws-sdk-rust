@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateChangeSetInput {
     /// <p>The ID of the application associated with the change set.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The format for the change set.</p>
-    #[doc(hidden)]
     pub changeset_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl GenerateChangeSetInput {

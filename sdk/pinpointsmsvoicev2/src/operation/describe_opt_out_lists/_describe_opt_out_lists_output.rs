@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptOutListsOutput {
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
-    #[doc(hidden)]
     pub opt_out_lists: ::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

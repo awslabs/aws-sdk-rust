@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordsEvent {
     /// <p>The byte array of partial, one or more result records.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RecordsEvent {

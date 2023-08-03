@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AuthRequest {
     /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
-    #[doc(hidden)]
     pub redirect_uri: ::std::option::Option<::std::string::String>,
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl AuthRequest {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClusterSnapshotAttributesInput {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
-    #[doc(hidden)]
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbClusterSnapshotAttributesInput {

@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobInput {
     /// <p>The ID of the job to be updated.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>A short text description of the job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for pre-signed S3 URLs.</p>
-    #[doc(hidden)]
     pub presigned_url_config: ::std::option::Option<crate::types::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of the job.</p>
-    #[doc(hidden)]
     pub job_executions_rollout_config: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     /// <p>Allows you to create criteria to abort a job.</p>
-    #[doc(hidden)]
     pub abort_config: ::std::option::Option<crate::types::AbortConfig>,
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
-    #[doc(hidden)]
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
-    #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>Allows you to create the criteria to retry a job.</p>
-    #[doc(hidden)]
     pub job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
 }
 impl UpdateJobInput {

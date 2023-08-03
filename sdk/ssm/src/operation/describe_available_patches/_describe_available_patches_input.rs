@@ -34,13 +34,10 @@ pub struct DescribeAvailablePatchesInput {
     /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
     /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     /// <p>The maximum number of patches to return (per page).</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAvailablePatchesInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedPersistenceMonitoringConfiguration {
     /// <p>Enables managed logging and defaults to true. If set to false, managed logging will be turned off.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-    #[doc(hidden)]
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl ManagedPersistenceMonitoringConfiguration {

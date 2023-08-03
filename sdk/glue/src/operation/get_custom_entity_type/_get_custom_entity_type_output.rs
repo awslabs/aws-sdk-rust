@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCustomEntityTypeOutput {
     /// <p>The name of the custom pattern that you retrieved.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
-    #[doc(hidden)]
     pub regex_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
-    #[doc(hidden)]
     pub context_words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

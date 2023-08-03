@@ -9,13 +9,10 @@ pub struct S3LogsConfig {
     /// <li> <p> <code>ENABLED</code>: S3 build logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LogsConfigStatusType>,
     /// <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     /// <p> Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted. </p>
-    #[doc(hidden)]
     pub encryption_disabled: ::std::option::Option<bool>,
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -46,7 +43,6 @@ pub struct S3LogsConfig {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub bucket_owner_access: ::std::option::Option<crate::types::BucketOwnerAccess>,
 }
 impl S3LogsConfig {

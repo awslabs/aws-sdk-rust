@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssetPropertyValueOutput {
     /// <p>The current asset property value.</p>
-    #[doc(hidden)]
     pub property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
     _request_id: Option<String>,
 }

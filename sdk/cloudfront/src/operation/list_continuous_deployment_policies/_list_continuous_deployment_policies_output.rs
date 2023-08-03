@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContinuousDeploymentPoliciesOutput {
     /// <p>A list of continuous deployment policies.</p>
-    #[doc(hidden)]
     pub continuous_deployment_policy_list: ::std::option::Option<crate::types::ContinuousDeploymentPolicyList>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseTableOutputOptions {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can store intermediate results.</p>
-    #[doc(hidden)]
     pub temp_directory: ::std::option::Option<crate::types::S3Location>,
     /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseTableOutputOptions {

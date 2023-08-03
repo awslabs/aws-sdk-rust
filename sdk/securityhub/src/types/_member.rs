@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the member account.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
-    #[doc(hidden)]
     pub master_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
-    #[doc(hidden)]
     pub administrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the relationship between the member account and its administrator account. </p>
     /// <p>The status can have one of the following values:</p>
@@ -29,13 +25,10 @@ pub struct Member {
     /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
     /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub member_status: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
-    #[doc(hidden)]
     pub invited_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for the date and time when the member account was updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Member {

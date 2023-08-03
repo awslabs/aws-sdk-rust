@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddListenerCertificatesInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub listener_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    #[doc(hidden)]
     pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
 }
 impl AddListenerCertificatesInput {

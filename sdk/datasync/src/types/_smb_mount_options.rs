@@ -15,7 +15,6 @@ pub struct SmbMountOptions {
     /// <p>The <code>SMB1</code> option isn't available when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating an Amazon FSx for NetApp ONTAP location</a>.</p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub version: ::std::option::Option<crate::types::SmbVersion>,
 }
 impl SmbMountOptions {

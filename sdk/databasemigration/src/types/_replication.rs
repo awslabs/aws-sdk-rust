@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Replication {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
-    #[doc(hidden)]
     pub replication_config_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name for the <code>ReplicationConfig</code> associated with the replication.</p>
-    #[doc(hidden)]
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data source.</p>
-    #[doc(hidden)]
     pub source_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name for an existing <code>Endpoint</code> the serverless replication uses for its data target.</p>
-    #[doc(hidden)]
     pub target_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the serverless replication.</p>
-    #[doc(hidden)]
     pub replication_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     /// <p>The current status of the serverless replication.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Information about provisioning resources for an DMS serverless replication.</p>
-    #[doc(hidden)]
     pub provision_data: ::std::option::Option<crate::types::ProvisionData>,
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
@@ -42,37 +35,26 @@ pub struct Replication {
     /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
     /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stop_reason: ::std::option::Option<::std::string::String>,
     /// <p>Error and other information about why a serverless replication failed.</p>
-    #[doc(hidden)]
     pub failure_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This object provides a collection of statistics about a serverless replication.</p>
-    #[doc(hidden)]
     pub replication_stats: ::std::option::Option<crate::types::ReplicationStats>,
     /// <p>The replication type.</p>
-    #[doc(hidden)]
     pub start_replication_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    #[doc(hidden)]
     pub cdc_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
-    #[doc(hidden)]
     pub cdc_start_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
-    #[doc(hidden)]
     pub cdc_stop_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
-    #[doc(hidden)]
     pub recovery_checkpoint: ::std::option::Option<::std::string::String>,
     /// <p>The time the serverless replication was created.</p>
-    #[doc(hidden)]
     pub replication_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the serverless replication was updated.</p>
-    #[doc(hidden)]
     pub replication_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when replication was last stopped.</p>
-    #[doc(hidden)]
     pub replication_last_stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Replication {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// URL of endpoint
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl Endpoint {

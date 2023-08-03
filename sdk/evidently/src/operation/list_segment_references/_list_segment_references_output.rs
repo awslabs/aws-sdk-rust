@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSegmentReferencesOutput {
     /// <p>An array of structures, where each structure contains information about one experiment or launch that uses this segment. </p>
-    #[doc(hidden)]
     pub referenced_by: ::std::option::Option<::std::vec::Vec<crate::types::RefResource>>,
     /// <p>The token to use in a subsequent <code>ListSegmentReferences</code> operation to return the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

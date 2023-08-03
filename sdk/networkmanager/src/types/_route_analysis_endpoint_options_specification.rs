@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteAnalysisEndpointOptionsSpecification {
     /// <p>The ARN of the transit gateway attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
 }
 impl RouteAnalysisEndpointOptionsSpecification {

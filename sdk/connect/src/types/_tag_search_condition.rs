@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagSearchCondition {
     /// <p>The tag key used in the tag search condition.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value used in the tag search condition.</p>
-    #[doc(hidden)]
     pub tag_value: ::std::option::Option<::std::string::String>,
     /// <p>The type of comparison to be made when evaluating the tag key in tag search condition.</p>
-    #[doc(hidden)]
     pub tag_key_comparison_type: ::std::option::Option<crate::types::StringComparisonType>,
     /// <p>The type of comparison to be made when evaluating the tag value in tag search condition.</p>
-    #[doc(hidden)]
     pub tag_value_comparison_type: ::std::option::Option<crate::types::StringComparisonType>,
 }
 impl TagSearchCondition {

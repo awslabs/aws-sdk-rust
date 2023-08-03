@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAssociation {
     /// <p>The association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The content of the association document for the managed node(s).</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Version information for the association on the managed node.</p>
-    #[doc(hidden)]
     pub association_version: ::std::option::Option<::std::string::String>,
 }
 impl InstanceAssociation {

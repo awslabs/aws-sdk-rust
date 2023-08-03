@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTransitGatewayPeeringInput {
     /// <p>The ID of the peering request.</p>
-    #[doc(hidden)]
     pub peering_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTransitGatewayPeeringInput {

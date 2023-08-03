@@ -6,16 +6,12 @@
 pub struct FulfillmentUpdatesSpecification {
     /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
-    #[doc(hidden)]
     pub start_response: ::std::option::Option<crate::types::FulfillmentStartResponseSpecification>,
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
-    #[doc(hidden)]
     pub update_response: ::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification>,
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
-    #[doc(hidden)]
     pub timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl FulfillmentUpdatesSpecification {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTaskExecutionsOutput {
     /// <p>A list of executed tasks.</p>
-    #[doc(hidden)]
     pub task_executions: ::std::option::Option<::std::vec::Vec<crate::types::TaskExecutionListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

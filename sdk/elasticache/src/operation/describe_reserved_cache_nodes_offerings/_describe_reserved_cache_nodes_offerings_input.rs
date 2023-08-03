@@ -6,7 +6,6 @@
 pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
-    #[doc(hidden)]
     pub reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The cache node type filter value. Use this parameter to show only the available offerings matching the specified cache node type.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -37,26 +36,20 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
     /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_node_type: ::std::option::Option<::std::string::String>,
     /// <p>Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<::std::string::String>,
     /// <p>The product description filter value. Use this parameter to show only the available offerings matching the specified product description.</p>
-    #[doc(hidden)]
     pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
-    #[doc(hidden)]
     pub offering_type: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
-    #[doc(hidden)]
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedCacheNodesOfferingsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartialMatch {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
-    #[doc(hidden)]
     pub reference: ::std::option::Option<::std::string::String>,
     /// <p>The violation reason.</p>
-    #[doc(hidden)]
     pub target_violation_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PartialMatch {

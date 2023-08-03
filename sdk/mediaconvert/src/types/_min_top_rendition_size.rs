@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MinTopRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
-    #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
     /// Use Width to define the video resolution width, in pixels, for this rule.
-    #[doc(hidden)]
     pub width: ::std::option::Option<i32>,
 }
 impl MinTopRenditionSize {

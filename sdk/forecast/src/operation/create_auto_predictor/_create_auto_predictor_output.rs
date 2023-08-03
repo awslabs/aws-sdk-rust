@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAutoPredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    #[doc(hidden)]
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

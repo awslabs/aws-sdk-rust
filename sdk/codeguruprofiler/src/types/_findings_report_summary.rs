@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingsReportSummary {
     /// <p>The universally unique identifier (UUID) of the recommendation report.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    #[doc(hidden)]
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    #[doc(hidden)]
     pub profile_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    #[doc(hidden)]
     pub profile_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total number of different recommendations that were found by the analysis.</p>
-    #[doc(hidden)]
     pub total_number_of_findings: ::std::option::Option<i32>,
 }
 impl FindingsReportSummary {

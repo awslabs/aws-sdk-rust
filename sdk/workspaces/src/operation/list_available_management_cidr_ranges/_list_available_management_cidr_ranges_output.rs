@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableManagementCidrRangesOutput {
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
-    #[doc(hidden)]
     pub management_cidr_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePlacementInput {
     /// <p>The name of the placement within a project.</p>
-    #[doc(hidden)]
     pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The project containing the placement to be described.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribePlacementInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
     /// <p>The path on the container to mount the host volume at.</p>
-    #[doc(hidden)]
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether the container has read-only access to the volume.</p>
-    #[doc(hidden)]
     pub read_only: bool,
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
-    #[doc(hidden)]
     pub source_volume: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {

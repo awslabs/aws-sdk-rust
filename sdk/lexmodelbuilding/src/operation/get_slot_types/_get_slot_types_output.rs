@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSlotTypesOutput {
     /// <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
-    #[doc(hidden)]
     pub slot_types: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>,
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

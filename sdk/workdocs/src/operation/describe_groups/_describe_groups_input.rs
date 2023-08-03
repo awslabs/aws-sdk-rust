@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeGroupsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    #[doc(hidden)]
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>A query to describe groups by group name.</p>
-    #[doc(hidden)]
     pub search_query: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the organization.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
 }
 impl DescribeGroupsInput {

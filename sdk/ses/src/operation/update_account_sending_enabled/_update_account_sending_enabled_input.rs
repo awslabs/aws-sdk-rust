@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountSendingEnabledInput {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
-    #[doc(hidden)]
     pub enabled: bool,
 }
 impl UpdateAccountSendingEnabledInput {

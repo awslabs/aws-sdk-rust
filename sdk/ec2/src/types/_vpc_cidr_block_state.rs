@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcCidrBlockState {
     /// <p>The state of the CIDR block.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::VpcCidrBlockStateCode>,
     /// <p>A message about the status of the CIDR block, if applicable.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl VpcCidrBlockState {

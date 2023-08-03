@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateConfig {
     /// <p>The launch template to use. Make sure that the launch template does not contain the <code>NetworkInterfaceId</code> parameter because you can't specify a network interface ID in a Spot Fleet.</p>
-    #[doc(hidden)]
     pub launch_template_specification: ::std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
-    #[doc(hidden)]
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplateConfig {

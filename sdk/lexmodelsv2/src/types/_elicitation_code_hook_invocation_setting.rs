@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElicitationCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
-    #[doc(hidden)]
     pub enable_code_hook_invocation: ::std::option::Option<bool>,
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
-    #[doc(hidden)]
     pub invocation_label: ::std::option::Option<::std::string::String>,
 }
 impl ElicitationCodeHookInvocationSetting {

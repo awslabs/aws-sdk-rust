@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
-    #[doc(hidden)]
     pub current_shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
-    #[doc(hidden)]
     pub desired_shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     /// <p>The ARN of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

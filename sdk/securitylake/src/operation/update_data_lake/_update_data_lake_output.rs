@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataLakeOutput {
     /// <p>The created Security Lake configuration object.</p>
-    #[doc(hidden)]
     pub data_lakes: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeResource>>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShadowModeConfig {
     /// <p> The name of the production variant, which takes all the inference requests. </p>
-    #[doc(hidden)]
     pub source_model_variant_name: ::std::option::Option<::std::string::String>,
     /// <p>List of shadow variant configurations.</p>
-    #[doc(hidden)]
     pub shadow_model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
 }
 impl ShadowModeConfig {

@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelArtifacts {
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-    #[doc(hidden)]
     pub s3_model_artifacts: ::std::option::Option<::std::string::String>,
 }
 impl ModelArtifacts {

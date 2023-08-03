@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceBudgetEstimate {
     /// <p>The resource name.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource the budget will track.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The cost estimate for the specified budget.</p>
-    #[doc(hidden)]
     pub cost_estimates: ::std::option::Option<::std::vec::Vec<crate::types::CostEstimate>>,
     /// <p>The estimate start time.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The estimate end time.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceBudgetEstimate {

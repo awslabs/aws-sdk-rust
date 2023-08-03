@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIpAccessSettingsOutput {
     /// <p>The IP access settings.</p>
-    #[doc(hidden)]
     pub ip_access_settings: ::std::option::Option<crate::types::IpAccessSettings>,
     _request_id: Option<String>,
 }

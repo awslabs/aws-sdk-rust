@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackProvisioningParametersOutput {
     /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
-    #[doc(hidden)]
     pub agent_installer_url: ::std::option::Option<::std::string::String>,
     /// <p>An embedded object that contains the provisioning parameters.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

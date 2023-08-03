@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterDateTimePickerControl {
     /// <p>The ID of the <code>FilterDateTimePickerControl</code>.</p>
-    #[doc(hidden)]
     pub filter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>FilterDateTimePickerControl</code>.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source filter ID of the <code>FilterDateTimePickerControl</code>.</p>
-    #[doc(hidden)]
     pub source_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
-    #[doc(hidden)]
     pub display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
     /// <p>The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>SINGLE_VALUED</code>: The filter condition is a fixed date.</p> </li>
     /// <li> <p> <code>DATE_RANGE</code>: The filter condition is a date time range.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SheetControlDateTimePickerType>,
 }
 impl FilterDateTimePickerControl {

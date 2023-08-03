@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainNameInput {
     /// <p>The name of the DomainName resource.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
-    #[doc(hidden)]
     pub certificate_body: ::std::option::Option<::std::string::String>,
     /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
-    #[doc(hidden)]
     pub certificate_private_key: ::std::option::Option<::std::string::String>,
     /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
-    #[doc(hidden)]
     pub regional_certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-    #[doc(hidden)]
     pub regional_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
-    #[doc(hidden)]
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
-    #[doc(hidden)]
     pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
-    #[doc(hidden)]
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
-    #[doc(hidden)]
     pub ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateDomainNameInput {

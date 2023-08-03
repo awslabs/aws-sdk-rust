@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sort {
     /// <p>The sort key of a sort object.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The sort value of a sort object.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::SortValue>,
 }
 impl Sort {

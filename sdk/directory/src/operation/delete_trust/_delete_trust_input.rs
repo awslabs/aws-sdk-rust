@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrustInput {
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
-    #[doc(hidden)]
     pub trust_id: ::std::option::Option<::std::string::String>,
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
-    #[doc(hidden)]
     pub delete_associated_conditional_forwarder: ::std::option::Option<bool>,
 }
 impl DeleteTrustInput {

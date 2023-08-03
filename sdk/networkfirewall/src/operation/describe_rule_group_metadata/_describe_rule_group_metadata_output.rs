@@ -5,29 +5,22 @@
 pub struct DescribeRuleGroupMetadataOutput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    #[doc(hidden)]
     pub rule_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the metadata objects for the specified rule group. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p>
-    #[doc(hidden)]
     pub capacity: ::std::option::Option<i32>,
     /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
-    #[doc(hidden)]
     pub stateful_rule_options: ::std::option::Option<crate::types::StatefulRuleOptions>,
     /// <p>The last time that the rule group was changed.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

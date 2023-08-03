@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuppressedDestinationOutput {
     /// <p>An object containing information about the suppressed email address.</p>
-    #[doc(hidden)]
     pub suppressed_destination: ::std::option::Option<crate::types::SuppressedDestination>,
     _request_id: Option<String>,
 }

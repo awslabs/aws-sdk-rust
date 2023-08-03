@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetectEntitiesItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
-    #[doc(hidden)]
     pub index: ::std::option::Option<i32>,
     /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
 }
 impl BatchDetectEntitiesItemResult {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageDeliveryStatusResourceTypeEventConfiguration {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }
 impl MessageDeliveryStatusResourceTypeEventConfiguration {

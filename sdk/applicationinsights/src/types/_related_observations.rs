@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedObservations {
     /// <p>The list of observations related to the problem.</p>
-    #[doc(hidden)]
     pub observation_list: ::std::option::Option<::std::vec::Vec<crate::types::Observation>>,
 }
 impl RelatedObservations {

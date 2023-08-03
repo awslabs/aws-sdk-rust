@@ -23,13 +23,10 @@ pub struct DynamoDbAction {
     /// <li> <p> <code>'NUMBER'</code> - The hash key is a number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
-    #[doc(hidden)]
     pub hash_key_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
-    #[doc(hidden)]
     pub hash_key_field: ::std::option::Option<::std::string::String>,
     /// <p>The value of the hash key (also called the partition key).</p>
-    #[doc(hidden)]
     pub hash_key_value: ::std::option::Option<::std::string::String>,
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
@@ -37,13 +34,10 @@ pub struct DynamoDbAction {
     /// <li> <p> <code>'NUMBER'</code> - The range key is number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
-    #[doc(hidden)]
     pub range_key_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table. </p>
-    #[doc(hidden)]
     pub range_key_field: ::std::option::Option<::std::string::String>,
     /// <p>The value of the range key (also called the sort key).</p>
-    #[doc(hidden)]
     pub range_key_value: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation to perform. You can specify the following values: </p>
     /// <ul>
@@ -52,18 +46,14 @@ pub struct DynamoDbAction {
     /// <li> <p> <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
-    #[doc(hidden)]
     pub payload_field: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table. </p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl DynamoDbAction {

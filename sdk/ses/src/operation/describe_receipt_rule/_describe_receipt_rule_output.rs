@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReceiptRuleOutput {
     /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::ReceiptRule>,
     _request_id: Option<String>,
 }

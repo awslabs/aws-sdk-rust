@@ -4,21 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterConnectorInput {
     /// <p> The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub connector_label: ::std::option::Option<::std::string::String>,
     /// <p>A description about the connector that's being registered.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA. </p>
-    #[doc(hidden)]
     pub connector_provisioning_type: ::std::option::Option<crate::types::ConnectorProvisioningType>,
     /// <p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>
-    #[doc(hidden)]
     pub connector_provisioning_config: ::std::option::Option<crate::types::ConnectorProvisioningConfig>,
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The token is active for 8 hours.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl RegisterConnectorInput {

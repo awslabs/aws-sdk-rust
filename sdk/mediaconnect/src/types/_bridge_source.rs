@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BridgeSource {
     /// The source of the bridge. A flow source originates in MediaConnect as an existing cloud flow.
-    #[doc(hidden)]
     pub flow_source: ::std::option::Option<crate::types::BridgeFlowSource>,
     /// The source of the bridge. A network source originates at your premises.
-    #[doc(hidden)]
     pub network_source: ::std::option::Option<crate::types::BridgeNetworkSource>,
 }
 impl BridgeSource {

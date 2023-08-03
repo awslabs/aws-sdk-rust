@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDetails {
     /// <p>Summary information about the event.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::Event>,
     /// <p>The most recent description of the event.</p>
-    #[doc(hidden)]
     pub event_description: ::std::option::Option<crate::types::EventDescription>,
     /// <p>Additional metadata about the event.</p>
-    #[doc(hidden)]
     pub event_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EventDetails {

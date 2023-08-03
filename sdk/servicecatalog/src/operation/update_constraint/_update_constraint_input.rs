@@ -8,13 +8,10 @@ pub struct UpdateConstraintInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the constraint.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the constraint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
@@ -65,7 +62,6 @@ pub struct UpdateConstraintInput {
     /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConstraintInput {

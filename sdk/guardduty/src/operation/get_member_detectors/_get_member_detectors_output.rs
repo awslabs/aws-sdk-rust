@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMemberDetectorsOutput {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    #[doc(hidden)]
     pub member_data_source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    #[doc(hidden)]
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }

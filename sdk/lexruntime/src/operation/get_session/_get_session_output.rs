@@ -5,20 +5,15 @@
 pub struct GetSessionOutput {
     /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
     /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
-    #[doc(hidden)]
     pub recent_intent_summary_view: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>,
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
-    #[doc(hidden)]
     pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique identifier for the session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the current state of the bot.</p>
-    #[doc(hidden)]
     pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
-    #[doc(hidden)]
     pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     _request_id: Option<String>,
 }

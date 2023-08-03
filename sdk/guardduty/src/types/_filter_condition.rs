@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterCondition {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
-    #[doc(hidden)]
     pub equals_value: ::std::option::Option<::std::string::String>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
-    #[doc(hidden)]
     pub greater_than: i64,
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
-    #[doc(hidden)]
     pub less_than: i64,
 }
 impl FilterCondition {

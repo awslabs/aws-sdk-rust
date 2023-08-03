@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateConfiguration {
     /// <p>The email template to use for the message.</p>
-    #[doc(hidden)]
     pub email_template: ::std::option::Option<crate::types::Template>,
     /// <p>The push notification template to use for the message.</p>
-    #[doc(hidden)]
     pub push_template: ::std::option::Option<crate::types::Template>,
     /// <p>The SMS template to use for the message.</p>
-    #[doc(hidden)]
     pub sms_template: ::std::option::Option<crate::types::Template>,
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
-    #[doc(hidden)]
     pub voice_template: ::std::option::Option<crate::types::Template>,
 }
 impl TemplateConfiguration {

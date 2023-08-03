@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLicenseOutput {
     /// <p>License details.</p>
-    #[doc(hidden)]
     pub license: ::std::option::Option<crate::types::License>,
     _request_id: Option<String>,
 }

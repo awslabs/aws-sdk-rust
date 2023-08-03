@@ -5,10 +5,8 @@
 pub struct UntagOpenIdConnectProviderInput {
     /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified OIDC provider.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagOpenIdConnectProviderInput {

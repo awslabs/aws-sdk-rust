@@ -6,10 +6,8 @@
 pub struct RegisteredUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
-    #[doc(hidden)]
     pub initial_dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-    #[doc(hidden)]
     pub feature_configurations: ::std::option::Option<crate::types::RegisteredUserDashboardFeatureConfigurations>,
 }
 impl RegisteredUserDashboardEmbeddingConfiguration {

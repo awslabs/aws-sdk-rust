@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportHostKeyOutput {
     /// <p>Returns the server identifier that contains the imported key.</p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the host key identifier for the imported key.</p>
-    #[doc(hidden)]
     pub host_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

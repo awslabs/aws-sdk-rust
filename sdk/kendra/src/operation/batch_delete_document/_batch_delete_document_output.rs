@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentOutput {
     /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
-    #[doc(hidden)]
     pub failed_documents: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoaInput {
     /// <p>The ID of a connection, LAG, or interconnect.</p>
-    #[doc(hidden)]
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    #[doc(hidden)]
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-    #[doc(hidden)]
     pub loa_content_type: ::std::option::Option<crate::types::LoaContentType>,
 }
 impl DescribeLoaInput {

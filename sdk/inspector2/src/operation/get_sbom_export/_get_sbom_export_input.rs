@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSbomExportInput {
     /// <p>The report ID of the SBOM export to get details for.</p>
-    #[doc(hidden)]
     pub report_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSbomExportInput {

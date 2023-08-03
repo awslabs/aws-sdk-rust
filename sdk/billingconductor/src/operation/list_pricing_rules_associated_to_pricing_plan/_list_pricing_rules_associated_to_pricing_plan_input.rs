@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingRulesAssociatedToPricingPlanInput {
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
-    #[doc(hidden)]
     pub pricing_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The optional pagination token returned by a previous call. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPricingRulesAssociatedToPricingPlanInput {

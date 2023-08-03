@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionOutput {
     /// <p>The session ID.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the session. A description of each state follows.</p>
     /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
@@ -15,7 +14,6 @@ pub struct StartSessionOutput {
     /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
     /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::SessionState>,
     _request_id: Option<String>,
 }

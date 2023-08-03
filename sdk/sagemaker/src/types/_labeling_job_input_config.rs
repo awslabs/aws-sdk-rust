@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobInputConfig {
     /// <p>The location of the input data.</p>
-    #[doc(hidden)]
     pub data_source: ::std::option::Option<crate::types::LabelingJobDataSource>,
     /// <p>Attributes of the data specified by the customer.</p>
-    #[doc(hidden)]
     pub data_attributes: ::std::option::Option<crate::types::LabelingJobDataAttributes>,
 }
 impl LabelingJobInputConfig {

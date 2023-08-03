@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionCredentials {
     /// <p>The connection token.</p>
-    #[doc(hidden)]
     pub connection_token: ::std::option::Option<::std::string::String>,
     /// <p>The expiration of the token.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    #[doc(hidden)]
     pub expiry: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionCredentials {

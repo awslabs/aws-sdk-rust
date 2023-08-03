@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExternalModelsInput {
     /// <p>The Amazon SageMaker model endpoint.</p>
-    #[doc(hidden)]
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The next page token for the request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects to return for the request.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetExternalModelsInput {

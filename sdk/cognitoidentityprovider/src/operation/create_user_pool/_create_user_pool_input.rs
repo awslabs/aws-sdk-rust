@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserPoolInput {
     /// <p>A string used to name the user pool.</p>
-    #[doc(hidden)]
     pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The policies associated with the new user pool.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<crate::types::UserPoolPolicyType>,
     /// <p>When active, <code>DeletionProtection</code> prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.</p>
     /// <p>When you try to delete a protected user pool in a <code>DeleteUserPool</code> API request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To delete a protected user pool, send a new <code>DeleteUserPool</code> request after you deactivate deletion protection in an <code>UpdateUserPool</code> API request.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtectionType>,
     /// <p>The Lambda trigger configuration information for the new user pool.</p> <note>
     /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you must make an extra call to add permission for these event sources to invoke your Lambda function.</p>
@@ -20,66 +17,46 @@ pub struct CreateUserPoolInput {
     /// <p>For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>
     /// <p>For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub lambda_config: ::std::option::Option<crate::types::LambdaConfigType>,
     /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
-    #[doc(hidden)]
     pub auto_verified_attributes: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAttributeType>>,
     /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
-    #[doc(hidden)]
     pub alias_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AliasAttributeType>>,
     /// <p>Specifies whether a user can use an email address or phone number as a username when they sign up.</p>
-    #[doc(hidden)]
     pub username_attributes: ::std::option::Option<::std::vec::Vec<crate::types::UsernameAttributeType>>,
     /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
-    #[doc(hidden)]
     pub sms_verification_message: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
-    #[doc(hidden)]
     pub email_verification_message: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
-    #[doc(hidden)]
     pub email_verification_subject: ::std::option::Option<::std::string::String>,
     /// <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
-    #[doc(hidden)]
     pub verification_message_template: ::std::option::Option<crate::types::VerificationMessageTemplateType>,
     /// <p>A string representing the SMS authentication message.</p>
-    #[doc(hidden)]
     pub sms_authentication_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies MFA configuration details.</p>
-    #[doc(hidden)]
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
     /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
-    #[doc(hidden)]
     pub user_attribute_update_settings: ::std::option::Option<crate::types::UserAttributeUpdateSettingsType>,
     /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
     /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
     /// </note>
-    #[doc(hidden)]
     pub device_configuration: ::std::option::Option<crate::types::DeviceConfigurationType>,
     /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p>
-    #[doc(hidden)]
     pub email_configuration: ::std::option::Option<crate::types::EmailConfigurationType>,
     /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub sms_configuration: ::std::option::Option<crate::types::SmsConfigurationType>,
     /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    #[doc(hidden)]
     pub user_pool_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
-    #[doc(hidden)]
     pub admin_create_user_config: ::std::option::Option<crate::types::AdminCreateUserConfigType>,
     /// <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>,
     /// <p>Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
-    #[doc(hidden)]
     pub user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
     /// <p>Case sensitivity on the username input for the selected sign-in option. For example, when case sensitivity is set to <code>False</code>, users can sign in using either "username" or "Username". This configuration is immutable once it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
-    #[doc(hidden)]
     pub username_configuration: ::std::option::Option<crate::types::UsernameConfigurationType>,
     /// <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
-    #[doc(hidden)]
     pub account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
 }
 impl CreateUserPoolInput {

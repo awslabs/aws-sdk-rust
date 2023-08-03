@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycle {
     /// <p>The date and time of when the Source Server was added to the service.</p>
-    #[doc(hidden)]
     pub added_to_service_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of the first byte that was replicated from the Source Server.</p>
-    #[doc(hidden)]
     pub first_byte_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time that the Source Server has been replicating for.</p>
-    #[doc(hidden)]
     pub elapsed_replication_duration: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this Source Server was last seen by the service.</p>
-    #[doc(hidden)]
     pub last_seen_by_service_date_time: ::std::option::Option<::std::string::String>,
     /// <p>An object containing information regarding the last launch of the Source Server.</p>
-    #[doc(hidden)]
     pub last_launch: ::std::option::Option<crate::types::LifeCycleLastLaunch>,
 }
 impl LifeCycle {

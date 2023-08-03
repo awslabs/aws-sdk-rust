@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NeighborConnectionDetail {
     /// <p>The ID of the server that opened the network connection.</p>
-    #[doc(hidden)]
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the server that accepted the network connection.</p>
-    #[doc(hidden)]
     pub destination_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The destination network port for the connection.</p>
-    #[doc(hidden)]
     pub destination_port: ::std::option::Option<i32>,
     /// <p>The network protocol used for the connection.</p>
-    #[doc(hidden)]
     pub transport_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The number of open network connections with the neighboring server.</p>
-    #[doc(hidden)]
     pub connections_count: i64,
 }
 impl NeighborConnectionDetail {

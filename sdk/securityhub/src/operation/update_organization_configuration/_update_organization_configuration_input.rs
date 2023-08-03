@@ -6,12 +6,10 @@ pub struct UpdateOrganizationConfigurationInput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
     /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
     /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<bool>,
     /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
     /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
     /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
-    #[doc(hidden)]
     pub auto_enable_standards: ::std::option::Option<crate::types::AutoEnableStandards>,
 }
 impl UpdateOrganizationConfigurationInput {

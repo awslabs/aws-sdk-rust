@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutTargetsInput {
     /// <p>The name of the rule.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    #[doc(hidden)]
     pub event_bus_name: ::std::option::Option<::std::string::String>,
     /// <p>The targets to update or add to the rule.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl PutTargetsInput {

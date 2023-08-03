@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedSecurityControl {
     /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
-    #[doc(hidden)]
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p> The error code for the unprocessed security control. </p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     /// <p> The reason why the security control was unprocessed. </p>
-    #[doc(hidden)]
     pub error_reason: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedSecurityControl {

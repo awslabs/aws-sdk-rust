@@ -5,35 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamConfigurationCreate {
     /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
-    #[doc(hidden)]
     pub clipboard_mode: ::std::option::Option<crate::types::StreamingClipboardMode>,
     /// <p>The EC2 instance types that users can select from when launching a streaming session with this launch profile.</p>
-    #[doc(hidden)]
     pub ec2_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::StreamingInstanceType>>,
     /// <p>The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690 minutes, and the maximum length of time is 30 days.</p>
-    #[doc(hidden)]
     pub max_session_length_in_minutes: ::std::option::Option<i32>,
     /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
-    #[doc(hidden)]
     pub streaming_image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
     /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
     /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
     /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
-    #[doc(hidden)]
     pub max_stopped_session_length_in_minutes: i32,
     /// <p>The upload storage for a streaming workstation that is created using this launch profile.</p>
-    #[doc(hidden)]
     pub session_storage: ::std::option::Option<crate::types::StreamConfigurationSessionStorage>,
     /// <p>Configures how streaming sessions are backed up when launched from this launch profile.</p>
-    #[doc(hidden)]
     pub session_backup: ::std::option::Option<crate::types::StreamConfigurationSessionBackup>,
     /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
-    #[doc(hidden)]
     pub session_persistence_mode: ::std::option::Option<crate::types::SessionPersistenceMode>,
     /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
-    #[doc(hidden)]
     pub volume_configuration: ::std::option::Option<crate::types::VolumeConfiguration>,
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
@@ -41,7 +32,6 @@ pub struct StreamConfigurationCreate {
     /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
     /// </ul>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
-    #[doc(hidden)]
     pub automatic_termination_mode: ::std::option::Option<crate::types::AutomaticTerminationMode>,
 }
 impl StreamConfigurationCreate {

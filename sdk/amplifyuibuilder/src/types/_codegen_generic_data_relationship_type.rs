@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenGenericDataRelationshipType {
     /// <p>The data relationship type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::GenericDataRelationshipType>,
     /// <p>The name of the related model in the data relationship.</p>
-    #[doc(hidden)]
     pub related_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The related model fields in the data relationship.</p>
-    #[doc(hidden)]
     pub related_model_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the relationship can unlink the associated model.</p>
-    #[doc(hidden)]
     pub can_unlink_associated_model: ::std::option::Option<bool>,
     /// <p>The name of the related join field in the data relationship.</p>
-    #[doc(hidden)]
     pub related_join_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the related join table in the data relationship.</p>
-    #[doc(hidden)]
     pub related_join_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>belongsTo</code> field on the related data model. </p>
-    #[doc(hidden)]
     pub belongs_to_field_on_related_model: ::std::option::Option<::std::string::String>,
     /// <p>The associated fields of the data relationship.</p>
-    #[doc(hidden)]
     pub associated_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code> data relationship.</p>
-    #[doc(hidden)]
     pub is_has_many_index: ::std::option::Option<bool>,
 }
 impl CodegenGenericDataRelationshipType {

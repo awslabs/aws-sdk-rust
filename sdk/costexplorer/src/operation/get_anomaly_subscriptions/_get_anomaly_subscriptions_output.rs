@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsOutput {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
-    #[doc(hidden)]
     pub anomaly_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::AnomalySubscription>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

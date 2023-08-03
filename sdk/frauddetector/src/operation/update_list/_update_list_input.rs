@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateListInput {
     /// <p> The name of the list to update. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    #[doc(hidden)]
     pub elements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The new description. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The update mode (type). </p>
     /// <ul>
@@ -19,12 +16,10 @@ pub struct UpdateListInput {
     /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
     /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub update_mode: ::std::option::Option<crate::types::ListUpdateMode>,
     /// <p> The variable type you want to assign to the list. </p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
-    #[doc(hidden)]
     pub variable_type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateListInput {

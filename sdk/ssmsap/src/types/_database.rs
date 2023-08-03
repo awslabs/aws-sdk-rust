@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Database {
     /// <p>The ID of the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component.</p>
-    #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The credentials of the database.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>The ID of the SAP HANA database.</p>
-    #[doc(hidden)]
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the database.</p>
-    #[doc(hidden)]
     pub database_type: ::std::option::Option<crate::types::DatabaseType>,
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the database.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DatabaseStatus>,
     /// <p>The primary host of the database.</p>
-    #[doc(hidden)]
     pub primary_host: ::std::option::Option<::std::string::String>,
     /// <p>The SQL port of the database.</p>
-    #[doc(hidden)]
     pub sql_port: ::std::option::Option<i32>,
     /// <p>The time at which the database was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Database {

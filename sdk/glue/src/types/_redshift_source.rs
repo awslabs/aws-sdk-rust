@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftSource {
     /// <p>The name of the Amazon Redshift data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The database to read from.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The database table to read from.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
-    #[doc(hidden)]
     pub redshift_tmp_dir: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role with permissions.</p>
-    #[doc(hidden)]
     pub tmp_dir_iam_role: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftSource {

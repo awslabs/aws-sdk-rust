@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalySourceDetails {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
-    #[doc(hidden)]
     pub cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    #[doc(hidden)]
     pub performance_insights_metrics: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
 }
 impl AnomalySourceDetails {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateAnomalyDetectorInput {
     /// <p>The ARN of the anomaly detector.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
 }
 impl ActivateAnomalyDetectorInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricKeyDataPoints {
     /// <p>The dimensions to which the data points apply.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::ResponseResourceMetricKey>,
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
-    #[doc(hidden)]
     pub data_points: ::std::option::Option<::std::vec::Vec<crate::types::DataPoint>>,
 }
 impl MetricKeyDataPoints {

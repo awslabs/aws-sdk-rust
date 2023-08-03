@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventTrackerInput {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
-    #[doc(hidden)]
     pub event_tracker_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventTrackerInput {

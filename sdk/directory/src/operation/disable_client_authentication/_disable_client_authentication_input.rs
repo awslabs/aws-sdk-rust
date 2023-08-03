@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableClientAuthenticationInput {
     /// <p>The identifier of the directory </p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
 }
 impl DisableClientAuthenticationInput {

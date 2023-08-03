@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkProfileInput {
     /// <p>The ARN of the network profile associated with a device.</p>
-    #[doc(hidden)]
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNetworkProfileInput {

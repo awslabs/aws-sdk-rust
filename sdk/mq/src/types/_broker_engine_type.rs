@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerEngineType {
     /// <p>The broker's engine type.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The list of engine versions.</p>
-    #[doc(hidden)]
     pub engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::EngineVersion>>,
 }
 impl BrokerEngineType {

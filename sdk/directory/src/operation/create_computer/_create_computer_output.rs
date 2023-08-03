@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateComputerOutput {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
-    #[doc(hidden)]
     pub computer: ::std::option::Option<crate::types::Computer>,
     _request_id: Option<String>,
 }

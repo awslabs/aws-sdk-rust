@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GsmLocalId {
     /// <p>GSM base station identity code (BSIC).</p>
-    #[doc(hidden)]
     pub bsic: ::std::option::Option<i32>,
     /// <p>GSM broadcast control channel.</p>
-    #[doc(hidden)]
     pub bcch: ::std::option::Option<i32>,
 }
 impl GsmLocalId {

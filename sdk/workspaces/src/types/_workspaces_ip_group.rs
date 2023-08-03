@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspacesIpGroup {
     /// <p>The identifier of the group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the group.</p>
-    #[doc(hidden)]
     pub group_desc: ::std::option::Option<::std::string::String>,
     /// <p>The rules.</p>
-    #[doc(hidden)]
     pub user_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
 }
 impl WorkspacesIpGroup {

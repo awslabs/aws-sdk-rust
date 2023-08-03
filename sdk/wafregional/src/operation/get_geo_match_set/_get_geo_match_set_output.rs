@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGeoMatchSetOutput {
     /// <p>Information about the <code>GeoMatchSet</code> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
-    #[doc(hidden)]
     pub geo_match_set: ::std::option::Option<crate::types::GeoMatchSet>,
     _request_id: Option<String>,
 }

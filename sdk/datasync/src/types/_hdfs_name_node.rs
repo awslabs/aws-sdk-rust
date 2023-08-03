@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HdfsNameNode {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
-    #[doc(hidden)]
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The port that the NameNode uses to listen to client requests.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
 }
 impl HdfsNameNode {

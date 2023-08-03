@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentMembershipOutput {
     /// <p>Information about the environment member that was added.</p>
-    #[doc(hidden)]
     pub membership: ::std::option::Option<crate::types::EnvironmentMember>,
     _request_id: Option<String>,
 }

@@ -6,7 +6,6 @@
 pub struct ActionCondition {
     /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
     /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::ActionValue>,
 }
 impl ActionCondition {

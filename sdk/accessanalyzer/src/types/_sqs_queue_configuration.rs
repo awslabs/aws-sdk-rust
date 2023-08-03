@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsQueueConfiguration {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
-    #[doc(hidden)]
     pub queue_policy: ::std::option::Option<::std::string::String>,
 }
 impl SqsQueueConfiguration {

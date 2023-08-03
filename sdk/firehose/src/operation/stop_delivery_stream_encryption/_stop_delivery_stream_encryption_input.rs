@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl StopDeliveryStreamEncryptionInput {

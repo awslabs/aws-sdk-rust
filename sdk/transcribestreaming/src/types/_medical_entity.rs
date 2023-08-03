@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalEntity {
     /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
-    #[doc(hidden)]
     pub start_time: f64,
     /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
-    #[doc(hidden)]
     pub end_time: f64,
     /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The word or words identified as PHI.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f64>,
 }
 impl MedicalEntity {

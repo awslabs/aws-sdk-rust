@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactDetails {
     /// <p>The minimum number of artifacts allowed for the action type.</p>
-    #[doc(hidden)]
     pub minimum_count: i32,
     /// <p>The maximum number of artifacts allowed for the action type.</p>
-    #[doc(hidden)]
     pub maximum_count: i32,
 }
 impl ArtifactDetails {

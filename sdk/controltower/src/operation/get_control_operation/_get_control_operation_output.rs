@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetControlOperationOutput {
     /// <p></p>
-    #[doc(hidden)]
     pub control_operation: ::std::option::Option<crate::types::ControlOperation>,
     _request_id: Option<String>,
 }

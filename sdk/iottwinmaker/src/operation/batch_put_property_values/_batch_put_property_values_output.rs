@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutPropertyValuesOutput {
     /// <p>Entries that caused errors in the batch put operation.</p>
-    #[doc(hidden)]
     pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>,
     _request_id: Option<String>,
 }

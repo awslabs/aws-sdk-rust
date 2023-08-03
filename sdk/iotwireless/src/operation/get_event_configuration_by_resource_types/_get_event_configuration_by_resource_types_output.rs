@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventConfigurationByResourceTypesOutput {
     /// <p>Resource type event configuration for the device registration state event.</p>
-    #[doc(hidden)]
     pub device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the proximity event.</p>
-    #[doc(hidden)]
     pub proximity: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the join event.</p>
-    #[doc(hidden)]
     pub join: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration for the connection status event.</p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
     /// <p>Resource type event configuration object for the message delivery status event.</p>
-    #[doc(hidden)]
     pub message_delivery_status: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
     _request_id: Option<String>,
 }

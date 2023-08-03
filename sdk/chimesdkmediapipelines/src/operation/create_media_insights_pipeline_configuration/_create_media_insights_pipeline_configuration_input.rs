@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateMediaInsightsPipelineConfigurationInput {
     /// <p>The name of the media insights pipeline configuration.</p>
-    #[doc(hidden)]
     pub media_insights_pipeline_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
-    #[doc(hidden)]
     pub resource_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
-    #[doc(hidden)]
     pub real_time_alert_configuration: ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
-    #[doc(hidden)]
     pub elements: ::std::option::Option<::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
     /// <p>The tags assigned to the media insights pipeline configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateMediaInsightsPipelineConfigurationInput {

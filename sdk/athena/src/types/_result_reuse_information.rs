@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultReuseInformation {
     /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
-    #[doc(hidden)]
     pub reused_previous_result: bool,
 }
 impl ResultReuseInformation {

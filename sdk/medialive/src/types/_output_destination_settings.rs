@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputDestinationSettings {
     /// key used to extract the password from EC2 Parameter store
-    #[doc(hidden)]
     pub password_param: ::std::option::Option<::std::string::String>,
     /// Stream name for RTMP destinations (URLs of type rtmp://)
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// A URL specifying a destination
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// username for destination
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl OutputDestinationSettings {

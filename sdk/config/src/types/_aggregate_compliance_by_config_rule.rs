@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateComplianceByConfigRule {
     /// <p>The name of the Config rule.</p>
-    #[doc(hidden)]
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
-    #[doc(hidden)]
     pub compliance: ::std::option::Option<crate::types::Compliance>,
     /// <p>The 12-digit account ID of the source account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source region from where the data is aggregated.</p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
 impl AggregateComplianceByConfigRule {

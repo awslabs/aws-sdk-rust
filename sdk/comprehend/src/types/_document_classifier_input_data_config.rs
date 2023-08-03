@@ -11,28 +11,21 @@ pub struct DocumentClassifierInputDataConfig {
     /// <li> <p> <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels. </p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p> </li>
     /// </ul>
     /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
-    #[doc(hidden)]
     pub data_format: ::std::option::Option<crate::types::DocumentClassifierDataFormat>,
     /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Amazon Web Services Region as the API endpoint that you are calling. </p>
-    #[doc(hidden)]
     pub test_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
-    #[doc(hidden)]
     pub label_delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
-    #[doc(hidden)]
     pub augmented_manifests: ::std::option::Option<::std::vec::Vec<crate::types::AugmentedManifestsListItem>>,
     /// <p>The type of input documents for training the model. Provide plain-text documents to create a plain-text model, and provide semi-structured documents to create a native model.</p>
-    #[doc(hidden)]
     pub document_type: ::std::option::Option<crate::types::DocumentClassifierDocumentTypeFormat>,
     /// <p>The S3 location of the training documents. This parameter is required in a request to create a native classifier model.</p>
-    #[doc(hidden)]
     pub documents: ::std::option::Option<crate::types::DocumentClassifierDocuments>,
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files. </p>
     /// <p> By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type: </p>
@@ -43,7 +36,6 @@ pub struct DocumentClassifierInputDataConfig {
     /// </ul>
     /// <p> <code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p>
     /// <p> For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide. </p>
-    #[doc(hidden)]
     pub document_reader_config: ::std::option::Option<crate::types::DocumentReaderConfig>,
 }
 impl DocumentClassifierInputDataConfig {

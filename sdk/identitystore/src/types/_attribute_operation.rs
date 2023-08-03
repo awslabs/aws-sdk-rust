@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeOperation {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    #[doc(hidden)]
     pub attribute_path: ::std::option::Option<::std::string::String>,
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-    #[doc(hidden)]
     pub attribute_value: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl AttributeOperation {

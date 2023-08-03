@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPreviewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
-    #[doc(hidden)]
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    #[doc(hidden)]
     pub configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
     /// <p>A client token.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessPreviewInput {

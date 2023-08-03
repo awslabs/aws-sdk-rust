@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GaugeChartOptions {
     /// <p>The options that determine the primary value display type.</p>
-    #[doc(hidden)]
     pub primary_value_display_type: ::std::option::Option<crate::types::PrimaryValueDisplayType>,
     /// <p>The comparison configuration of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub comparison: ::std::option::Option<crate::types::ComparisonConfiguration>,
     /// <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub arc_axis: ::std::option::Option<crate::types::ArcAxisConfiguration>,
     /// <p>The arc configuration of a <code>GaugeChartVisual</code>.</p>
-    #[doc(hidden)]
     pub arc: ::std::option::Option<crate::types::ArcConfiguration>,
     /// <p>The options that determine the primary value font configuration.</p>
-    #[doc(hidden)]
     pub primary_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
 }
 impl GaugeChartOptions {

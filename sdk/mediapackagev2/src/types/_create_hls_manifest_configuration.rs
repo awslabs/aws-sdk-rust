@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    #[doc(hidden)]
     pub manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index, with an added suffix to distinguish it from the manifest name. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    #[doc(hidden)]
     pub child_manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>The SCTE configuration.</p>
-    #[doc(hidden)]
     pub scte_hls: ::std::option::Option<crate::types::ScteHls>,
     /// <p>The total duration (in seconds) of the manifest's content.</p>
-    #[doc(hidden)]
     pub manifest_window_seconds: ::std::option::Option<i32>,
     /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
-    #[doc(hidden)]
     pub program_date_time_interval_seconds: ::std::option::Option<i32>,
 }
 impl CreateHlsManifestConfiguration {

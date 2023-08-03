@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LambdaFunctionSinkConfiguration {
     /// <p>The ARN of the sink.</p>
-    #[doc(hidden)]
     pub insights_target: ::std::option::Option<::std::string::String>,
 }
 impl LambdaFunctionSinkConfiguration {

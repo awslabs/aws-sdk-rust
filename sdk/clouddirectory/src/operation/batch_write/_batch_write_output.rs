@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchWriteOutput {
     /// <p>A list of all the responses for each batch write.</p>
-    #[doc(hidden)]
     pub responses: ::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperationResponse>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBackupInput {
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-    #[doc(hidden)]
     pub backup_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBackupInput {

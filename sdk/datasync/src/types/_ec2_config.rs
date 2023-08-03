@@ -12,10 +12,8 @@ pub struct Ec2Config {
     /// </ul> <note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
-    #[doc(hidden)]
     pub subnet_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated with an Amazon EFS file system's mount target.</p>
-    #[doc(hidden)]
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Ec2Config {

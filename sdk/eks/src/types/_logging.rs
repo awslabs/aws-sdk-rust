@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
-    #[doc(hidden)]
     pub cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::LogSetup>>,
 }
 impl Logging {

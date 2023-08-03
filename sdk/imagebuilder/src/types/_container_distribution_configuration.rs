@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerDistributionConfiguration {
     /// <p>The description of the container distribution configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    #[doc(hidden)]
     pub container_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination repository for the container distribution configuration.</p>
-    #[doc(hidden)]
     pub target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
 }
 impl ContainerDistributionConfiguration {

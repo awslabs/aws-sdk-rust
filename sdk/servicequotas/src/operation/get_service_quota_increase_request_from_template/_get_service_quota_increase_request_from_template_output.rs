@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceQuotaIncreaseRequestFromTemplateOutput {
     /// <p>Information about the quota increase request.</p>
-    #[doc(hidden)]
     pub service_quota_increase_request_in_template: ::std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
     _request_id: Option<String>,
 }

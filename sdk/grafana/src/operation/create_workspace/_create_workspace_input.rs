@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-    #[doc(hidden)]
     pub account_access_type: ::std::option::Option<crate::types::AccountAccessType>,
     /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
-    #[doc(hidden)]
     pub organization_role_name: ::std::option::Option<::std::string::String>,
     /// <p>When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use when accessing those datasources and notification channels.</p>
@@ -18,52 +15,38 @@ pub struct CreateWorkspaceInput {
     /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation. </p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
-    #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-    #[doc(hidden)]
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is for internal use only, and should not be used.</p>
-    #[doc(hidden)]
     pub workspace_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>,
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
     /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
-    #[doc(hidden)]
     pub workspace_description: ::std::option::Option<::std::string::String>,
     /// <p>The name for the workspace. It does not have to be unique.</p>
-    #[doc(hidden)]
     pub workspace_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    #[doc(hidden)]
     pub workspace_notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    #[doc(hidden)]
     pub workspace_organizational_units: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added. </p>
-    #[doc(hidden)]
     pub workspace_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    #[doc(hidden)]
     pub authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     /// <p>The list of tags associated with the workspace.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
     /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
     /// </note>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for network access to your workspace.</p>
     /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
     /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
-    #[doc(hidden)]
     pub network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
-    #[doc(hidden)]
     pub grafana_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkspaceInput {

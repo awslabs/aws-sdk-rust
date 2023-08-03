@@ -5,85 +5,58 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Job {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
-    #[doc(hidden)]
     pub acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     /// Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
-    #[doc(hidden)]
     pub acceleration_status: ::std::option::Option<crate::types::AccelerationStatus>,
     /// An identifier for this resource that is unique within all of AWS.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
-    #[doc(hidden)]
     pub billing_tags_source: ::std::option::Option<crate::types::BillingTagsSource>,
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// The time, in Unix epoch format in seconds, when the job got created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
-    #[doc(hidden)]
     pub current_phase: ::std::option::Option<crate::types::JobPhase>,
     /// Error code for the job
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<i32>,
     /// Error message of Job
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// Optional list of hop destinations.
-    #[doc(hidden)]
     pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
-    #[doc(hidden)]
     pub job_percent_complete: ::std::option::Option<i32>,
     /// The job template that the job is created from, if it is created from a job template.
-    #[doc(hidden)]
     pub job_template: ::std::option::Option<::std::string::String>,
     /// Provides messages from the service about jobs that you have already successfully submitted.
-    #[doc(hidden)]
     pub messages: ::std::option::Option<crate::types::JobMessages>,
     /// List of output group details
-    #[doc(hidden)]
     pub output_group_details: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroupDetail>>,
     /// Relative priority on the job.
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    #[doc(hidden)]
     pub queue: ::std::option::Option<::std::string::String>,
     /// The job's queue hopping history.
-    #[doc(hidden)]
     pub queue_transitions: ::std::option::Option<::std::vec::Vec<crate::types::QueueTransition>>,
     /// The number of times that the service automatically attempted to process your job after encountering an error.
-    #[doc(hidden)]
     pub retry_count: ::std::option::Option<i32>,
     /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// JobSettings contains all the transcode settings for a job.
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::JobSettings>,
     /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
-    #[doc(hidden)]
     pub simulate_reserved_queue: ::std::option::Option<crate::types::SimulateReservedQueue>,
     /// A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    #[doc(hidden)]
     pub status_update_interval: ::std::option::Option<crate::types::StatusUpdateInterval>,
     /// Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
-    #[doc(hidden)]
     pub timing: ::std::option::Option<crate::types::Timing>,
     /// User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.
-    #[doc(hidden)]
     pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningGroup>>,
 }
 impl Job {

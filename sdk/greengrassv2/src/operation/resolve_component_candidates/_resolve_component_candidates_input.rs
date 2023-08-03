@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveComponentCandidatesInput {
     /// <p>The platform to use to resolve compatible components.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::ComponentPlatform>,
     /// <p>The list of components to resolve.</p>
-    #[doc(hidden)]
     pub component_candidates: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>,
 }
 impl ResolveComponentCandidatesInput {

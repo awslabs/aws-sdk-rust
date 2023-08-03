@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsInput {
     /// <p>The name of the target environment.</p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID of the target environment.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>To show only actions with a particular status, specify a status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActionStatus>,
 }
 impl DescribeEnvironmentManagedActionsInput {

@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataIntegrationInput {
     /// <p>The name of the DataIntegration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the DataIntegration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key for the DataIntegration.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the data source.</p>
-    #[doc(hidden)]
     pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    #[doc(hidden)]
     pub schedule_config: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for what files should be pulled from the source.</p>
-    #[doc(hidden)]
     pub file_configuration: ::std::option::Option<crate::types::FileConfiguration>,
     /// <p>The configuration for what data should be pulled from the source.</p>
-    #[doc(hidden)]
     pub object_configuration: ::std::option::Option<
         ::std::collections::HashMap<
             ::std::string::String,

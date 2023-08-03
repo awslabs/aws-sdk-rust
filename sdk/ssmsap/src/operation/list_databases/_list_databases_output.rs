@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatabasesOutput {
     /// <p>The SAP HANA databases of an application.</p>
-    #[doc(hidden)]
     pub databases: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

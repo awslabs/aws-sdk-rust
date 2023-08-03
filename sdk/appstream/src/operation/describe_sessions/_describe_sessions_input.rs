@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSessionsInput {
     /// <p>The name of the stack. This value is case-sensitive.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet. This value is case-sensitive.</p>
-    #[doc(hidden)]
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
 impl DescribeSessionsInput {

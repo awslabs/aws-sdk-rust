@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVerifiedEmailAddressesOutput {
     /// <p>A list of email addresses that have been verified.</p>
-    #[doc(hidden)]
     pub verified_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

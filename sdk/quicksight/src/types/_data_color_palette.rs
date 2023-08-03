@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataColorPalette {
     /// <p>The hexadecimal codes for the colors.</p>
-    #[doc(hidden)]
     pub colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
-    #[doc(hidden)]
     pub min_max_gradient: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
-    #[doc(hidden)]
     pub empty_fill_color: ::std::option::Option<::std::string::String>,
 }
 impl DataColorPalette {

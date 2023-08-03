@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanFindingAggregation {
     /// <p>Returns an object that contains severity counts based on an account ID.</p>
-    #[doc(hidden)]
     pub account_aggregation: ::std::option::Option<crate::types::AccountAggregation>,
     /// <p>Returns an object that contains severity counts based on the Amazon Resource Name (ARN) for a specific image.</p>
-    #[doc(hidden)]
     pub image_aggregation: ::std::option::Option<crate::types::ImageAggregation>,
     /// <p>Returns an object that contains severity counts based on an image pipeline ARN.</p>
-    #[doc(hidden)]
     pub image_pipeline_aggregation: ::std::option::Option<crate::types::ImagePipelineAggregation>,
     /// <p>Returns an object that contains severity counts based on vulnerability ID.</p>
-    #[doc(hidden)]
     pub vulnerability_id_aggregation: ::std::option::Option<crate::types::VulnerabilityIdAggregation>,
 }
 impl ImageScanFindingAggregation {

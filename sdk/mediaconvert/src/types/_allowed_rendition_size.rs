@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
-    #[doc(hidden)]
     pub height: ::std::option::Option<i32>,
     /// Set to ENABLED to force a rendition to be included.
-    #[doc(hidden)]
     pub required: ::std::option::Option<crate::types::RequiredFlag>,
     /// Use Width to define the video resolution width, in pixels, for this rule.
-    #[doc(hidden)]
     pub width: ::std::option::Option<i32>,
 }
 impl AllowedRenditionSize {

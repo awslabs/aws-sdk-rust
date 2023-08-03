@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectOutput {
     /// <p> Resources which were deleted. </p>
-    #[doc(hidden)]
     pub deleted_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
-    #[doc(hidden)]
     pub orphaned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     _request_id: Option<String>,
 }

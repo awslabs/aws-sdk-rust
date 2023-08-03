@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationOutput {
     /// Metadata object containing information about the logging configuration of a workspace.
-    #[doc(hidden)]
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfigurationMetadata>,
     _request_id: Option<String>,
 }

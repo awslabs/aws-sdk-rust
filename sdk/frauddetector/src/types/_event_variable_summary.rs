@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EventVariableSummary {
     /// <p> The event variable name. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The value of the event variable. </p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p> The event variable source. </p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
 }
 impl EventVariableSummary {

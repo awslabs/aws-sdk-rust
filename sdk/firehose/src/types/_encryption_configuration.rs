@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
-    #[doc(hidden)]
     pub no_encryption_config: ::std::option::Option<crate::types::NoEncryptionConfig>,
     /// <p>The encryption key.</p>
-    #[doc(hidden)]
     pub kms_encryption_config: ::std::option::Option<crate::types::KmsEncryptionConfig>,
 }
 impl EncryptionConfiguration {

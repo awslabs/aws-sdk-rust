@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainControllersOutput {
     /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
-    #[doc(hidden)]
     pub domain_controllers: ::std::option::Option<::std::vec::Vec<crate::types::DomainController>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

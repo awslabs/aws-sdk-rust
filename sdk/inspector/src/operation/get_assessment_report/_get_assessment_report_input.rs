@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentReportInput {
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-    #[doc(hidden)]
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
-    #[doc(hidden)]
     pub report_file_format: ::std::option::Option<crate::types::ReportFileFormat>,
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
-    #[doc(hidden)]
     pub report_type: ::std::option::Option<crate::types::ReportType>,
 }
 impl GetAssessmentReportInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSummary {
     /// <p>The stack ID.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The stack name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The stack's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of layers.</p>
-    #[doc(hidden)]
     pub layers_count: ::std::option::Option<i32>,
     /// <p>The number of apps.</p>
-    #[doc(hidden)]
     pub apps_count: ::std::option::Option<i32>,
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
-    #[doc(hidden)]
     pub instances_count: ::std::option::Option<crate::types::InstancesCount>,
 }
 impl StackSummary {

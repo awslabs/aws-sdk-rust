@@ -6,43 +6,30 @@ pub struct ListNotebookInstancesInput {
     /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
     /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
     /// </note>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of notebook instances to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::NotebookInstanceSortKey>,
     /// <p>The sort order for results. </p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::NotebookInstanceSortOrder>,
     /// <p>A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.</p>
-    #[doc(hidden)]
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
-    #[doc(hidden)]
     pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only notebook instances that were created after the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only notebook instances that were modified before the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub last_modified_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
-    #[doc(hidden)]
     pub last_modified_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter that returns only notebook instances with the specified status.</p>
-    #[doc(hidden)]
     pub status_equals: ::std::option::Option<crate::types::NotebookInstanceStatus>,
     /// <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
-    #[doc(hidden)]
     pub notebook_instance_lifecycle_config_name_contains: ::std::option::Option<::std::string::String>,
     /// <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
-    #[doc(hidden)]
     pub default_code_repository_contains: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
-    #[doc(hidden)]
     pub additional_code_repository_equals: ::std::option::Option<::std::string::String>,
 }
 impl ListNotebookInstancesInput {

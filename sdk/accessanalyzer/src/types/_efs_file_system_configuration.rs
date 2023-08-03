@@ -10,7 +10,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EfsFileSystemConfiguration {
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
-    #[doc(hidden)]
     pub file_system_policy: ::std::option::Option<::std::string::String>,
 }
 impl EfsFileSystemConfiguration {

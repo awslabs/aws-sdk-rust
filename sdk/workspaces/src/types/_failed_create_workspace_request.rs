@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCreateWorkspaceRequest {
     /// <p>Information about the WorkSpace.</p>
-    #[doc(hidden)]
     pub workspace_request: ::std::option::Option<crate::types::WorkspaceRequest>,
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedCreateWorkspaceRequest {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDetails {
     /// <p>The unique system-generated ID of the job.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Represents other information about a job required for a job worker to complete the job. </p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<crate::types::JobData>,
     /// <p>The Amazon Web Services account ID associated with the job.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl JobDetails {

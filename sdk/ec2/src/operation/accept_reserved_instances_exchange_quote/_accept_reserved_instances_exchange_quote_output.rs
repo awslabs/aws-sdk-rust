@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptReservedInstancesExchangeQuoteOutput {
     /// <p>The ID of the successful exchange.</p>
-    #[doc(hidden)]
     pub exchange_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

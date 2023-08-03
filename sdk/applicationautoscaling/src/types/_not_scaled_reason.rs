@@ -13,16 +13,12 @@ pub struct NotScaledReason {
     /// <li> <p>AlreadyAtMinCapacity</p> </li>
     /// <li> <p>AlreadyAtDesiredCapacity</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The maximum capacity.</p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>The minimum capacity.</p>
-    #[doc(hidden)]
     pub min_capacity: ::std::option::Option<i32>,
     /// <p>The current capacity.</p>
-    #[doc(hidden)]
     pub current_capacity: ::std::option::Option<i32>,
 }
 impl NotScaledReason {

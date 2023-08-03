@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMediaPipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
-    #[doc(hidden)]
     pub media_pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMediaPipelineInput {

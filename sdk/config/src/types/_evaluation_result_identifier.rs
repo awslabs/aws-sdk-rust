@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResultIdentifier {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
-    #[doc(hidden)]
     pub evaluation_result_qualifier: ::std::option::Option<crate::types::EvaluationResultQualifier>,
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
-    #[doc(hidden)]
     pub ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A Unique ID for an evaluation result.</p>
-    #[doc(hidden)]
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationResultIdentifier {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioPidSelection {
     /// Selects a specific PID from within a source.
-    #[doc(hidden)]
     pub pid: ::std::option::Option<i32>,
 }
 impl AudioPidSelection {

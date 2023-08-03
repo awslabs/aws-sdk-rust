@@ -5,76 +5,53 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceViolation {
     /// <p>Violation detail for security groups.</p>
-    #[doc(hidden)]
     pub aws_vpc_security_group_violation: ::std::option::Option<crate::types::AwsVpcSecurityGroupViolation>,
     /// <p>Violation detail for a network interface.</p>
-    #[doc(hidden)]
     pub aws_ec2_network_interface_violation: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceViolation>,
     /// <p>Violation detail for an EC2 instance.</p>
-    #[doc(hidden)]
     pub aws_ec2_instance_violation: ::std::option::Option<crate::types::AwsEc2InstanceViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager managed firewall in its VPC. </p>
-    #[doc(hidden)]
     pub network_firewall_missing_firewall_violation: ::std::option::Option<crate::types::NetworkFirewallMissingFirewallViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that an Availability Zone is missing the expected Firewall Manager managed subnet.</p>
-    #[doc(hidden)]
     pub network_firewall_missing_subnet_violation: ::std::option::Option<crate::types::NetworkFirewallMissingSubnetViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that a subnet is not associated with the expected Firewall Manager managed route table. </p>
-    #[doc(hidden)]
     pub network_firewall_missing_expected_rt_violation: ::std::option::Option<crate::types::NetworkFirewallMissingExpectedRtViolation>,
     /// <p>Violation detail for an Network Firewall policy that indicates that a firewall policy in an individual account has been modified in a way that makes it noncompliant. For example, the individual account owner might have deleted a rule group, changed the priority of a stateless rule group, or changed a policy default action.</p>
-    #[doc(hidden)]
     pub network_firewall_policy_modified_violation: ::std::option::Option<crate::types::NetworkFirewallPolicyModifiedViolation>,
     /// <p>Violation detail for the subnet for which internet traffic hasn't been inspected.</p>
-    #[doc(hidden)]
     pub network_firewall_internet_traffic_not_inspected_violation:
         ::std::option::Option<crate::types::NetworkFirewallInternetTrafficNotInspectedViolation>,
     /// <p>The route configuration is invalid.</p>
-    #[doc(hidden)]
     pub network_firewall_invalid_route_configuration_violation:
         ::std::option::Option<crate::types::NetworkFirewallInvalidRouteConfigurationViolation>,
     /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
-    #[doc(hidden)]
     pub network_firewall_black_hole_route_detected_violation: ::std::option::Option<crate::types::NetworkFirewallBlackHoleRouteDetectedViolation>,
     /// <p>There's an unexpected firewall route.</p>
-    #[doc(hidden)]
     pub network_firewall_unexpected_firewall_routes_violation: ::std::option::Option<crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation>,
     /// <p>There's an unexpected gateway route.</p>
-    #[doc(hidden)]
     pub network_firewall_unexpected_gateway_routes_violation: ::std::option::Option<crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation>,
     /// <p>Expected routes are missing from Network Firewall.</p>
-    #[doc(hidden)]
     pub network_firewall_missing_expected_routes_violation: ::std::option::Option<crate::types::NetworkFirewallMissingExpectedRoutesViolation>,
     /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
-    #[doc(hidden)]
     pub dns_rule_group_priority_conflict_violation: ::std::option::Option<crate::types::DnsRuleGroupPriorityConflictViolation>,
     /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
-    #[doc(hidden)]
     pub dns_duplicate_rule_group_violation: ::std::option::Option<crate::types::DnsDuplicateRuleGroupViolation>,
     /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
-    #[doc(hidden)]
     pub dns_rule_group_limit_exceeded_violation: ::std::option::Option<crate::types::DnsRuleGroupLimitExceededViolation>,
     /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
-    #[doc(hidden)]
     pub possible_remediation_actions: ::std::option::Option<crate::types::PossibleRemediationActions>,
     /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
-    #[doc(hidden)]
     pub firewall_subnet_is_out_of_scope_violation: ::std::option::Option<crate::types::FirewallSubnetIsOutOfScopeViolation>,
     /// <p>Contains details about the route endpoint that violates the policy scope.</p>
-    #[doc(hidden)]
     pub route_has_out_of_scope_endpoint_violation: ::std::option::Option<crate::types::RouteHasOutOfScopeEndpointViolation>,
     /// <p>The violation details for a third-party firewall that's been deleted.</p>
-    #[doc(hidden)]
     pub third_party_firewall_missing_firewall_violation: ::std::option::Option<crate::types::ThirdPartyFirewallMissingFirewallViolation>,
     /// <p>The violation details for a third-party firewall's subnet that's been deleted.</p>
-    #[doc(hidden)]
     pub third_party_firewall_missing_subnet_violation: ::std::option::Option<crate::types::ThirdPartyFirewallMissingSubnetViolation>,
     /// <p>The violation details for a third-party firewall that has the Firewall Manager managed route table that was associated with the third-party firewall has been deleted.</p>
-    #[doc(hidden)]
     pub third_party_firewall_missing_expected_route_table_violation:
         ::std::option::Option<crate::types::ThirdPartyFirewallMissingExpectedRouteTableViolation>,
     /// <p>The violation details for a third-party firewall's VPC endpoint subnet that was deleted.</p>
-    #[doc(hidden)]
     pub firewall_subnet_missing_vpc_endpoint_violation: ::std::option::Option<crate::types::FirewallSubnetMissingVpcEndpointViolation>,
 }
 impl ResourceViolation {

@@ -11,7 +11,6 @@ pub struct AssociateThirdPartyFirewallOutput {
     /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
     /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub third_party_firewall_status: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     _request_id: Option<String>,
 }

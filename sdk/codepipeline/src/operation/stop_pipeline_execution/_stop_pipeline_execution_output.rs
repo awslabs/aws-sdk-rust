@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
-    #[doc(hidden)]
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

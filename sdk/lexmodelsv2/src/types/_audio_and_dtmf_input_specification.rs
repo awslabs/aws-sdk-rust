@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioAndDtmfInputSpecification {
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
-    #[doc(hidden)]
     pub start_timeout_ms: ::std::option::Option<i32>,
     /// <p>Specifies the settings on audio input.</p>
-    #[doc(hidden)]
     pub audio_specification: ::std::option::Option<crate::types::AudioSpecification>,
     /// <p>Specifies the settings on DTMF input.</p>
-    #[doc(hidden)]
     pub dtmf_specification: ::std::option::Option<crate::types::DtmfSpecification>,
 }
 impl AudioAndDtmfInputSpecification {

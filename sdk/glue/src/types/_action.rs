@@ -5,25 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>The name of a job to be run.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
-    #[doc(hidden)]
     pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
-    #[doc(hidden)]
     pub timeout: ::std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
-    #[doc(hidden)]
     pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Specifies configuration properties of a job run notification.</p>
-    #[doc(hidden)]
     pub notification_property: ::std::option::Option<crate::types::NotificationProperty>,
     /// <p>The name of the crawler to be used with this action.</p>
-    #[doc(hidden)]
     pub crawler_name: ::std::option::Option<::std::string::String>,
 }
 impl Action {

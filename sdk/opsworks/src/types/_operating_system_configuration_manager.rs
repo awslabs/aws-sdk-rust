@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperatingSystemConfigurationManager {
     /// <p>The name of the configuration manager, which is Chef.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl OperatingSystemConfigurationManager {

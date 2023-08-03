@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactSourceType {
     /// <p>The type of ID.</p>
-    #[doc(hidden)]
     pub source_id_type: ::std::option::Option<crate::types::ArtifactSourceIdType>,
     /// <p>The ID.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ArtifactSourceType {

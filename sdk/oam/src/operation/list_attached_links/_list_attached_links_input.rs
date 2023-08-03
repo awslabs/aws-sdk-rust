@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAttachedLinksInput {
     /// <p>Limits the number of returned links to the specified number.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. You received this token from a previous call.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
-    #[doc(hidden)]
     pub sink_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListAttachedLinksInput {

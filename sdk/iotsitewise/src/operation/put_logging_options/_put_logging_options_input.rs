@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutLoggingOptionsInput {
     /// <p>The logging options to set.</p>
-    #[doc(hidden)]
     pub logging_options: ::std::option::Option<crate::types::LoggingOptions>,
 }
 impl PutLoggingOptionsInput {

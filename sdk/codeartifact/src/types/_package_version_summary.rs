@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionSummary {
     /// <p> Information about a package version. </p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p> The revision associated with a package version. </p>
-    #[doc(hidden)]
     pub revision: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    #[doc(hidden)]
     pub origin: ::std::option::Option<crate::types::PackageVersionOrigin>,
 }
 impl PackageVersionSummary {

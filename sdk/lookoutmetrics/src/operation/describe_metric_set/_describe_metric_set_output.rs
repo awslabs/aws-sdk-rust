@@ -4,46 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMetricSetOutput {
     /// <p>The ARN of the dataset.</p>
-    #[doc(hidden)]
     pub metric_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the detector that contains the dataset.</p>
-    #[doc(hidden)]
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub metric_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The dataset's description.</p>
-    #[doc(hidden)]
     pub metric_set_description: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the dataset was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the dataset was last modified.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
-    #[doc(hidden)]
     pub offset: ::std::option::Option<i32>,
     /// <p>A list of the metrics defined by the dataset.</p>
-    #[doc(hidden)]
     pub metric_list: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
     /// <p>Contains information about the column used for tracking time in your source data.</p>
-    #[doc(hidden)]
     pub timestamp_column: ::std::option::Option<crate::types::TimestampColumn>,
     /// <p>A list of the dimensions chosen for analysis.</p>
-    #[doc(hidden)]
     pub dimension_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The interval at which the data will be analyzed for anomalies.</p>
-    #[doc(hidden)]
     pub metric_set_frequency: ::std::option::Option<crate::types::Frequency>,
     /// <p>The time zone in which the dataset's data was recorded.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the dataset's source data.</p>
-    #[doc(hidden)]
     pub metric_source: ::std::option::Option<crate::types::MetricSource>,
     /// <p>The dimensions and their values that were used to filter the dataset.</p>
-    #[doc(hidden)]
     pub dimension_filter_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackupVaultAccessPolicyOutput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    #[doc(hidden)]
     pub backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The backup vault access policy document in JSON format.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

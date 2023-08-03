@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataConnector {
     /// <p>The Lambda function associated with this data connector.</p>
-    #[doc(hidden)]
     pub lambda: ::std::option::Option<crate::types::LambdaFunction>,
     /// <p>A Boolean value that specifies whether the data connector is native to IoT TwinMaker.</p>
-    #[doc(hidden)]
     pub is_native: ::std::option::Option<bool>,
 }
 impl DataConnector {

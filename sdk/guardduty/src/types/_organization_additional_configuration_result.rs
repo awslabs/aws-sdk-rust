@@ -5,12 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationAdditionalConfigurationResult {
     /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
     /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
     /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
-    #[doc(hidden)]
     pub auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
 }
 impl OrganizationAdditionalConfigurationResult {

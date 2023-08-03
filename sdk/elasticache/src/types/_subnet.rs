@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The unique identifier for the subnet.</p>
-    #[doc(hidden)]
     pub subnet_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone associated with the subnet.</p>
-    #[doc(hidden)]
     pub subnet_availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
     /// <p>The outpost ARN of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_outpost: ::std::option::Option<crate::types::SubnetOutpost>,
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    #[doc(hidden)]
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
 }
 impl Subnet {

@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>The name of the filter key.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InventoryQueryOperatorType>,
 }
 impl InventoryFilter {

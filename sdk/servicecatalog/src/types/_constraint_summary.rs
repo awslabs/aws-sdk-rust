@@ -11,10 +11,8 @@ pub struct ConstraintSummary {
     /// <li> <p>STACKSET</p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the constraint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl ConstraintSummary {

@@ -6,24 +6,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Connection {
     /// <p>The name of the connection. Connection names must be unique in an AWS user account.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
-    #[doc(hidden)]
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
-    #[doc(hidden)]
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the connection. </p>
-    #[doc(hidden)]
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
-    #[doc(hidden)]
     pub host_arn: ::std::option::Option<::std::string::String>,
 }
 impl Connection {

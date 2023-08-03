@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinKeyProperties {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
-    #[doc(hidden)]
     pub unique_key: ::std::option::Option<bool>,
 }
 impl JoinKeyProperties {

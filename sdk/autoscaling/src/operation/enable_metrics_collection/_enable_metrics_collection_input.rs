@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableMetricsCollectionInput {
     /// <p>The name of the Auto Scaling group.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the metrics to enable.</p>
     /// <p>You can specify one or more of the following metrics:</p>
@@ -32,10 +31,8 @@ pub struct EnableMetricsCollectionInput {
     /// </ul>
     /// <p>If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
-    #[doc(hidden)]
     pub granularity: ::std::option::Option<::std::string::String>,
 }
 impl EnableMetricsCollectionInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
     /// <p>The starting port value for the port range.</p>
-    #[doc(hidden)]
     pub from_port: i32,
     /// <p>The ending port value for the port range.</p>
-    #[doc(hidden)]
     pub to_port: i32,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {

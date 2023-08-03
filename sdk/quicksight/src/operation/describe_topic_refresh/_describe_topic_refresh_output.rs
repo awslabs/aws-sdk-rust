@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTopicRefreshOutput {
     /// <p>Details of the refresh, which is performed when the topic is created or updated.</p>
-    #[doc(hidden)]
     pub refresh_details: ::std::option::Option<crate::types::TopicRefreshDetails>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

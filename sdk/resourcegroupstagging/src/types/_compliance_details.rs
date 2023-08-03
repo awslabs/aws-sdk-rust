@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceDetails {
     /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
-    #[doc(hidden)]
     pub noncompliant_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These are keys defined in the effective policy that are on the resource with either incorrect case treatment or noncompliant values. </p>
-    #[doc(hidden)]
     pub keys_with_noncompliant_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether a resource is compliant with the effective tag policy.</p>
-    #[doc(hidden)]
     pub compliance_status: ::std::option::Option<bool>,
 }
 impl ComplianceDetails {

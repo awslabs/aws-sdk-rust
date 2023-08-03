@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleRuleEvaluation {
     /// <p>The value of the input property, on the left side of the comparison operator.</p>
-    #[doc(hidden)]
     pub input_property_value: ::std::option::Option<::std::string::String>,
     /// <p>The comparison operator.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The threshold value, on the right side of the comparison operator.</p>
-    #[doc(hidden)]
     pub threshold_value: ::std::option::Option<::std::string::String>,
 }
 impl SimpleRuleEvaluation {

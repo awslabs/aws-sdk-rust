@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
-    #[doc(hidden)]
     pub channel_moderator: ::std::option::Option<crate::types::ChannelModerator>,
     _request_id: Option<String>,
 }

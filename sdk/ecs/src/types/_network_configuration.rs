@@ -7,7 +7,6 @@ pub struct NetworkConfiguration {
     /// <p>The VPC subnets and security groups that are associated with a task.</p> <note>
     /// <p>All specified subnets and security groups must be from the same VPC.</p>
     /// </note>
-    #[doc(hidden)]
     pub awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
 impl NetworkConfiguration {

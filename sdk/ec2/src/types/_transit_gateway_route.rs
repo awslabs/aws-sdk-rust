@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRoute {
     /// <p>The CIDR block used for destination matches.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list used for destination matches.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway route table announcement. </p>
-    #[doc(hidden)]
     pub transit_gateway_route_table_announcement_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachments.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteAttachment>>,
     /// <p>The route type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TransitGatewayRouteType>,
     /// <p>The state of the route.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::TransitGatewayRouteState>,
 }
 impl TransitGatewayRoute {

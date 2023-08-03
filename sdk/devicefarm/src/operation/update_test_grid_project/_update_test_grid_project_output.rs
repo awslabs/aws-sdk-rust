@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTestGridProjectOutput {
     /// <p>The project, including updated information.</p>
-    #[doc(hidden)]
     pub test_grid_project: ::std::option::Option<crate::types::TestGridProject>,
     _request_id: Option<String>,
 }

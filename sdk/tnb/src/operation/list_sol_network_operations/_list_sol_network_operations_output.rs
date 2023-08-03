@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolNetworkOperationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
-    #[doc(hidden)]
     pub network_operations: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>>,
     _request_id: Option<String>,
 }

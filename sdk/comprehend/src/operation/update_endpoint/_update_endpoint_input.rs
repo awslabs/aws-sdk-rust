@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
-    #[doc(hidden)]
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    #[doc(hidden)]
     pub desired_model_arn: ::std::option::Option<::std::string::String>,
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
-    #[doc(hidden)]
     pub desired_inference_units: ::std::option::Option<i32>,
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    #[doc(hidden)]
     pub desired_data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEndpointInput {

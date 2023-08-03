@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MasterUserOptions {
     /// <p>Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-    #[doc(hidden)]
     pub master_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub master_user_name: ::std::option::Option<::std::string::String>,
     /// <p>Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
 }
 impl MasterUserOptions {

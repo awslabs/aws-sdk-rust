@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EMR release associated with the application.</p>
-    #[doc(hidden)]
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The capacity to initialize when the application is created.</p>
-    #[doc(hidden)]
     pub initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
     /// <p>The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.</p>
-    #[doc(hidden)]
     pub maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
     /// <p>The tags assigned to the application.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    #[doc(hidden)]
     pub auto_start_configuration: ::std::option::Option<crate::types::AutoStartConfig>,
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    #[doc(hidden)]
     pub auto_stop_configuration: ::std::option::Option<crate::types::AutoStopConfig>,
     /// <p>The network configuration for customer VPC connectivity.</p>
-    #[doc(hidden)]
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The CPU architecture of an application.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
-    #[doc(hidden)]
     pub image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
-    #[doc(hidden)]
     pub worker_type_specifications:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
 }

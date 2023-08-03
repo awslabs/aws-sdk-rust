@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSbomExportInput {
     /// <p>The resource filter criteria for the software bill of materials (SBOM) report.</p>
-    #[doc(hidden)]
     pub resource_filter_criteria: ::std::option::Option<crate::types::ResourceFilterCriteria>,
     /// <p>The output format for the software bill of materials (SBOM) report.</p>
-    #[doc(hidden)]
     pub report_format: ::std::option::Option<crate::types::SbomReportFormat>,
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
-    #[doc(hidden)]
     pub s3_destination: ::std::option::Option<crate::types::Destination>,
 }
 impl CreateSbomExportInput {

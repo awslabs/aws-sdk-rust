@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictingItem {
     /// <p>The text of the conflicting query.</p>
-    #[doc(hidden)]
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>The name for the set of featured results that the conflicting query belongs to.</p>
-    #[doc(hidden)]
     pub set_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the set of featured results that the conflicting query belongs to.</p>
-    #[doc(hidden)]
     pub set_id: ::std::option::Option<::std::string::String>,
 }
 impl ConflictingItem {

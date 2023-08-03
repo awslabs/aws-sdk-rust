@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchMeterUsageInput {
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    #[doc(hidden)]
     pub usage_records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    #[doc(hidden)]
     pub product_code: ::std::option::Option<::std::string::String>,
 }
 impl BatchMeterUsageInput {

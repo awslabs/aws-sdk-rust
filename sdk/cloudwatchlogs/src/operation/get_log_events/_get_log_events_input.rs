@@ -6,35 +6,26 @@ pub struct GetLogEventsInput {
     /// <p>The name of the log group.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    #[doc(hidden)]
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p> <note>
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
     /// </note>
-    #[doc(hidden)]
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log stream.</p>
-    #[doc(hidden)]
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<i64>,
     /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not included.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<i64>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can fit in a response size of 1 MB (up to 10,000 log events).</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.</p>
     /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</p>
-    #[doc(hidden)]
     pub start_from_head: ::std::option::Option<bool>,
     /// <p>Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The default is <code>false</code>.</p>
     /// <p>To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code> permission.</p>
-    #[doc(hidden)]
     pub unmask: ::std::option::Option<bool>,
 }
 impl GetLogEventsInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceInstance {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that describe the device instance.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The status of the device instance. Valid values are listed here.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>Unique device identifier for the device instance.</p>
-    #[doc(hidden)]
     pub udid: ::std::option::Option<::std::string::String>,
     /// <p>A object that contains information about the instance profile.</p>
-    #[doc(hidden)]
     pub instance_profile: ::std::option::Option<crate::types::InstanceProfile>,
 }
 impl DeviceInstance {

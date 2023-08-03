@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanFinding {
     /// <p>The name associated with the finding, usually a CVE number.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the finding.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A link containing additional details about the security vulnerability.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The finding severity.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<crate::types::FindingSeverity>,
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl ImageScanFinding {

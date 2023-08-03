@@ -5,19 +5,15 @@
 pub struct ResyncMfaDeviceInput {
     /// <p>The name of the user whose MFA device you want to resynchronize.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Serial number that uniquely identifies the MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>An authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a sequence of six digits.</p>
-    #[doc(hidden)]
     pub authentication_code1: ::std::option::Option<::std::string::String>,
     /// <p>A subsequent authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a sequence of six digits.</p>
-    #[doc(hidden)]
     pub authentication_code2: ::std::option::Option<::std::string::String>,
 }
 impl ResyncMfaDeviceInput {

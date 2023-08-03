@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceMetrics {
     /// <p>The time when DataSync Discovery collected this information from the resource.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The types of performance data that DataSync Discovery collects about the on-premises storage system resource.</p>
-    #[doc(hidden)]
     pub p95_metrics: ::std::option::Option<crate::types::P95Metrics>,
     /// <p>The storage capacity of the on-premises storage system resource.</p>
-    #[doc(hidden)]
     pub capacity: ::std::option::Option<crate::types::Capacity>,
     /// <p>The universally unique identifier (UUID) of the on-premises storage system resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of on-premises storage system resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::DiscoveryResourceType>,
 }
 impl ResourceMetrics {

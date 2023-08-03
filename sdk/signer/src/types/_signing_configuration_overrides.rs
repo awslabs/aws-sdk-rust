@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningConfigurationOverrides {
     /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
-    #[doc(hidden)]
     pub encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithm>,
     /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
-    #[doc(hidden)]
     pub hash_algorithm: ::std::option::Option<crate::types::HashAlgorithm>,
 }
 impl SigningConfigurationOverrides {

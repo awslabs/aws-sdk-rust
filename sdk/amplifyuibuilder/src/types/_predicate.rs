@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Predicate {
     /// <p>A list of predicates to combine logically.</p>
-    #[doc(hidden)]
     pub or: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     /// <p>A list of predicates to combine logically.</p>
-    #[doc(hidden)]
     pub and: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     /// <p>The field to query.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The operator to use to perform the evaluation.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The value to use when performing the evaluation.</p>
-    #[doc(hidden)]
     pub operand: ::std::option::Option<::std::string::String>,
     /// <p>The type of value to use when performing the evaluation.</p>
-    #[doc(hidden)]
     pub operand_type: ::std::option::Option<::std::string::String>,
 }
 impl Predicate {

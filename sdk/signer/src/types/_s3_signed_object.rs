@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SignedObject {
     /// <p>Name of the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl S3SignedObject {

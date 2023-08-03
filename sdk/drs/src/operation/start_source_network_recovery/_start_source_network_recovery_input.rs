@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartSourceNetworkRecoveryInput {
     /// <p>The Source Networks that we want to start a Recovery Job for.</p>
-    #[doc(hidden)]
     pub source_networks: ::std::option::Option<::std::vec::Vec<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry>>,
     /// <p>Don't update existing CloudFormation Stack, recover the network using a new stack.</p>
-    #[doc(hidden)]
     pub deploy_as_new: ::std::option::Option<bool>,
     /// <p>The tags to be associated with the Source Network recovery Job.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartSourceNetworkRecoveryInput {

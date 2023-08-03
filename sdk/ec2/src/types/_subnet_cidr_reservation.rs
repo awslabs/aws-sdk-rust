@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetCidrReservation {
     /// <p>The ID of the subnet CIDR reservation.</p>
-    #[doc(hidden)]
     pub subnet_cidr_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR that has been reserved.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The type of reservation. </p>
-    #[doc(hidden)]
     pub reservation_type: ::std::option::Option<crate::types::SubnetCidrReservationType>,
     /// <p>The ID of the account that owns the subnet CIDR reservation. </p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The description assigned to the subnet CIDR reservation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the subnet CIDR reservation.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl SubnetCidrReservation {

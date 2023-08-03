@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossRegionCopyRetainRule {
     /// <p>The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
-    #[doc(hidden)]
     pub interval: i32,
     /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    #[doc(hidden)]
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl CrossRegionCopyRetainRule {

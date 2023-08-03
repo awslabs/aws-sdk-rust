@@ -6,70 +6,52 @@ pub struct SendCommandInput {
     /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
     /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>
     /// <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
     /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
     /// </note>
-    #[doc(hidden)]
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p>--document-version "\$DEFAULT"</p>
     /// <p>--document-version "\$LATEST"</p>
     /// <p>--document-version "3"</p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
-    #[doc(hidden)]
     pub document_hash: ::std::option::Option<::std::string::String>,
     /// <p>Sha256 or Sha1.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
-    #[doc(hidden)]
     pub document_hash_type: ::std::option::Option<crate::types::DocumentHashType>,
     /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
-    #[doc(hidden)]
     pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The required and optional parameters specified in the document being run.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
-    #[doc(hidden)]
     pub output_s3_region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
-    #[doc(hidden)]
     pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
-    #[doc(hidden)]
     pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
     /// <p>This role must provide the <code>sns:Publish</code> permission for your notification topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications.</p>
-    #[doc(hidden)]
     pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
     /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
-    #[doc(hidden)]
     pub cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     /// <p>The CloudWatch alarm you want to apply to your command.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl SendCommandInput {

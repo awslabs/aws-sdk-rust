@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Edge {
     /// <p>The unique of the node within the workflow where the edge starts.</p>
-    #[doc(hidden)]
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique of the node within the workflow where the edge ends.</p>
-    #[doc(hidden)]
     pub destination_id: ::std::option::Option<::std::string::String>,
 }
 impl Edge {

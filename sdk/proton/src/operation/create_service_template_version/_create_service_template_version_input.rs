@@ -4,31 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateServiceTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the new version of a service template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
-    #[doc(hidden)]
     pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<crate::types::TemplateVersionSourceInput>,
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    #[doc(hidden)]
     pub compatible_environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub supported_component_sources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
 }
 impl CreateServiceTemplateVersionInput {

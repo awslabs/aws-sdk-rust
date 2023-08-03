@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LicenseConfigurationUsage {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Type of resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Status of the resource.</p>
-    #[doc(hidden)]
     pub resource_status: ::std::option::Option<::std::string::String>,
     /// <p>ID of the account that owns the resource.</p>
-    #[doc(hidden)]
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Time when the license configuration was initially associated with the resource.</p>
-    #[doc(hidden)]
     pub association_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Number of licenses consumed by the resource.</p>
-    #[doc(hidden)]
     pub consumed_licenses: ::std::option::Option<i64>,
 }
 impl LicenseConfigurationUsage {

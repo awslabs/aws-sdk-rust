@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerConfig {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
-    #[doc(hidden)]
     pub trigger_type: ::std::option::Option<crate::types::TriggerType>,
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
-    #[doc(hidden)]
     pub trigger_properties: ::std::option::Option<crate::types::TriggerProperties>,
 }
 impl TriggerConfig {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyProvisionProductEngineWorkflowResultInput {
     /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
-    #[doc(hidden)]
     pub workflow_token: ::std::option::Option<::std::string::String>,
     /// <p> The identifier of the record. </p>
-    #[doc(hidden)]
     pub record_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the provisioning engine execution. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EngineWorkflowStatus>,
     /// <p> The reason why the provisioning engine execution failed. </p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<crate::types::EngineWorkflowResourceIdentifier>,
     /// <p> The output of the provisioning engine execution. </p>
-    #[doc(hidden)]
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>>,
     /// <p> The idempotency token that identifies the provisioning engine execution. </p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl NotifyProvisionProductEngineWorkflowResultInput {

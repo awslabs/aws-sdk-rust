@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     /// <p>The Amazon Chime SDK Voice Connector group ID.</p>
-    #[doc(hidden)]
     pub voice_connector_group_id: ::std::option::Option<::std::string::String>,
     /// <p>List of phone numbers, in E.164 format.</p>
-    #[doc(hidden)]
     pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime SDK Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
-    #[doc(hidden)]
     pub force_associate: ::std::option::Option<bool>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {

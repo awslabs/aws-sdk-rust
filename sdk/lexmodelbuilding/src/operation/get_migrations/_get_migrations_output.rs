@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMigrationsOutput {
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
-    #[doc(hidden)]
     pub migration_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>>,
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

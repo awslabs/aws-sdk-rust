@@ -14,10 +14,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRequirements {
     /// <p>The minimum and maximum number of vCPUs for an instance type.</p>
-    #[doc(hidden)]
     pub v_cpu_count: ::std::option::Option<crate::types::VCpuCountRequest>,
     /// <p>The minimum and maximum instance memory size for an instance type, in MiB.</p>
-    #[doc(hidden)]
     pub memory_mi_b: ::std::option::Option<crate::types::MemoryMiBRequest>,
     /// <p>Lists which specific CPU manufacturers to include.</p>
     /// <ul>
@@ -28,18 +26,15 @@ pub struct InstanceRequirements {
     /// <p>Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template. </p>
     /// </note>
     /// <p>Default: Any manufacturer</p>
-    #[doc(hidden)]
     pub cpu_manufacturers: ::std::option::Option<::std::vec::Vec<crate::types::CpuManufacturer>>,
     /// <p>The minimum and maximum amount of memory per vCPU for an instance type, in GiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    #[doc(hidden)]
     pub memory_gi_b_per_v_cpu: ::std::option::Option<crate::types::MemoryGiBPerVCpuRequest>,
     /// <p>The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>. </p>
     /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p> <note>
     /// <p>If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: No excluded instance types</p>
-    #[doc(hidden)]
     pub excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether current or previous generation instance types are included.</p>
     /// <ul>
@@ -47,37 +42,29 @@ pub struct InstanceRequirements {
     /// <li> <p>For previous generation instance types, specify <code>previous</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
-    #[doc(hidden)]
     pub instance_generations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>>,
     /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
     /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>100</code> </p>
-    #[doc(hidden)]
     pub spot_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
     /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>20</code> </p>
-    #[doc(hidden)]
     pub on_demand_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     /// <p>Indicates whether bare metal instance types are included, excluded, or required.</p>
     /// <p>Default: <code>excluded</code> </p>
-    #[doc(hidden)]
     pub bare_metal: ::std::option::Option<crate::types::BareMetal>,
     /// <p>Indicates whether burstable performance instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>Default: <code>excluded</code> </p>
-    #[doc(hidden)]
     pub burstable_performance: ::std::option::Option<crate::types::BurstablePerformance>,
     /// <p>Indicates whether instance types must provide On-Demand Instance hibernation support.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub require_hibernate_support: ::std::option::Option<bool>,
     /// <p>The minimum and maximum number of network interfaces for an instance type.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    #[doc(hidden)]
     pub network_interface_count: ::std::option::Option<crate::types::NetworkInterfaceCountRequest>,
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>Default: <code>included</code> </p>
-    #[doc(hidden)]
     pub local_storage: ::std::option::Option<crate::types::LocalStorage>,
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
@@ -85,15 +72,12 @@ pub struct InstanceRequirements {
     /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
-    #[doc(hidden)]
     pub local_storage_types: ::std::option::Option<::std::vec::Vec<crate::types::LocalStorageType>>,
     /// <p>The minimum and maximum total local storage size for an instance type, in GB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    #[doc(hidden)]
     pub total_local_storage_gb: ::std::option::Option<crate::types::TotalLocalStorageGbRequest>,
     /// <p>The minimum and maximum baseline bandwidth performance for an instance type, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    #[doc(hidden)]
     pub baseline_ebs_bandwidth_mbps: ::std::option::Option<crate::types::BaselineEbsBandwidthMbpsRequest>,
     /// <p>Lists the accelerator types that must be on an instance type.</p>
     /// <ul>
@@ -102,12 +86,10 @@ pub struct InstanceRequirements {
     /// <li> <p>For instance types with inference accelerators, specify <code>inference</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
-    #[doc(hidden)]
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
     /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) for an instance type.</p>
     /// <p>To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    #[doc(hidden)]
     pub accelerator_count: ::std::option::Option<crate::types::AcceleratorCountRequest>,
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
@@ -117,7 +99,6 @@ pub struct InstanceRequirements {
     /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
-    #[doc(hidden)]
     pub accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>>,
     /// <p>Lists the accelerators that must be on an instance type.</p>
     /// <ul>
@@ -130,15 +111,12 @@ pub struct InstanceRequirements {
     /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
-    #[doc(hidden)]
     pub accelerator_names: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>,
     /// <p>The minimum and maximum total memory size for the accelerators on an instance type, in MiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    #[doc(hidden)]
     pub accelerator_total_memory_mi_b: ::std::option::Option<crate::types::AcceleratorTotalMemoryMiBRequest>,
     /// <p>The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
     /// <p>Default: No minimum or maximum limits</p>
-    #[doc(hidden)]
     pub network_bandwidth_gbps: ::std::option::Option<crate::types::NetworkBandwidthGbpsRequest>,
     /// <p>The instance types to apply your specified attributes against. All other instance types are ignored, even if they match your specified attributes.</p>
     /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
@@ -146,7 +124,6 @@ pub struct InstanceRequirements {
     /// <p>If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: All instance types</p>
-    #[doc(hidden)]
     pub allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceRequirements {

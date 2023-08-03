@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryStreamOutput {
     /// <p>Information about the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_description: ::std::option::Option<crate::types::DeliveryStreamDescription>,
     _request_id: Option<String>,
 }

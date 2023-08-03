@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserByPermissionGroup {
     /// <p>The unique identifier for the user.</p>
-    #[doc(hidden)]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the user account. </p>
     /// <ul>
@@ -13,33 +12,26 @@ pub struct UserByPermissionGroup {
     /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UserStatus>,
     /// <p>The first name of the user.</p>
-    #[doc(hidden)]
     pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the user.</p>
-    #[doc(hidden)]
     pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::UserType>,
     /// <p>Indicates whether the user can access FinSpace API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub api_access: ::std::option::Option<crate::types::ApiAccess>,
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
-    #[doc(hidden)]
     pub api_access_principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
@@ -47,7 +39,6 @@ pub struct UserByPermissionGroup {
     /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl UserByPermissionGroup {

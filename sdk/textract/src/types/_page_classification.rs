@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PageClassification {
     /// <p>The class, or document type, assigned to a detected Page object. The class, or document type, assigned to a detected Page object.</p>
-    #[doc(hidden)]
     pub page_type: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>,
     /// <p> The page number the value was detected on, relative to Amazon Textract's starting position.</p>
-    #[doc(hidden)]
     pub page_number: ::std::option::Option<::std::vec::Vec<crate::types::Prediction>>,
 }
 impl PageClassification {

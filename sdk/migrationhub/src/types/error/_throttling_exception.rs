@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>A message that provides information about the exception.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds the caller should wait before retrying.</p>
-    #[doc(hidden)]
     pub retry_after_seconds: i32,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomCodeSigning {
     /// <p>The signature for the file.</p>
-    #[doc(hidden)]
     pub signature: ::std::option::Option<crate::types::CodeSigningSignature>,
     /// <p>The certificate chain.</p>
-    #[doc(hidden)]
     pub certificate_chain: ::std::option::Option<crate::types::CodeSigningCertificateChain>,
     /// <p>The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.</p>
-    #[doc(hidden)]
     pub hash_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
-    #[doc(hidden)]
     pub signature_algorithm: ::std::option::Option<::std::string::String>,
 }
 impl CustomCodeSigning {

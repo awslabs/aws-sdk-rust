@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDominantLanguageDetectionJobOutput {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
-    #[doc(hidden)]
     pub dominant_language_detection_job_properties: ::std::option::Option<crate::types::DominantLanguageDetectionJobProperties>,
     _request_id: Option<String>,
 }

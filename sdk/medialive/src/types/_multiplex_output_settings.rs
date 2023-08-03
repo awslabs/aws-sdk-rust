@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexOutputSettings {
     /// Destination is a Multiplex.
-    #[doc(hidden)]
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
 }
 impl MultiplexOutputSettings {

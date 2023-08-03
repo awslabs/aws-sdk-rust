@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableSummary {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    #[doc(hidden)]
     pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl TableSummary {

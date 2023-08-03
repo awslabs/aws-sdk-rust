@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceStorageConfigOutput {
     /// <p>A valid storage type.</p>
-    #[doc(hidden)]
     pub storage_config: ::std::option::Option<crate::types::InstanceStorageConfig>,
     _request_id: Option<String>,
 }

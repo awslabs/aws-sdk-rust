@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceUpdatesOutput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of service updates</p>
-    #[doc(hidden)]
     pub service_updates: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>>,
     _request_id: Option<String>,
 }

@@ -12,10 +12,8 @@ pub struct LustreLogConfiguration {
     /// <li> <p> <code>DISABLED</code> - logging of data repository events is turned off.</p> </li>
     /// </ul>
     /// <p>Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which can't be changed.</p>
-    #[doc(hidden)]
     pub level: ::std::option::Option<crate::types::LustreAccessAuditLogLevel>,
     /// <p>The Amazon Resource Name (ARN) that specifies the destination of the logs. The destination can be any Amazon CloudWatch Logs log group ARN. The destination ARN must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
 }
 impl LustreLogConfiguration {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetProjectsOutput {
     /// <p>Information about the requested build projects.</p>
-    #[doc(hidden)]
     pub projects: ::std::option::Option<::std::vec::Vec<crate::types::Project>>,
     /// <p>The names of build projects for which information could not be found.</p>
-    #[doc(hidden)]
     pub projects_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamplingRuleRecord {
     /// <p>The sampling rule.</p>
-    #[doc(hidden)]
     pub sampling_rule: ::std::option::Option<crate::types::SamplingRule>,
     /// <p>When the rule was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the rule was last modified.</p>
-    #[doc(hidden)]
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SamplingRuleRecord {

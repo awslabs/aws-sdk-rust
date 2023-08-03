@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupRetentionPolicy {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::BackupRetentionType>,
     /// <p>Use a value between 7 - 379.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl BackupRetentionPolicy {

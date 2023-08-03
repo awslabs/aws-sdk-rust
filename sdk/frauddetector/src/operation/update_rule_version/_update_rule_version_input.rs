@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateRuleVersionInput {
     /// <p>The rule to update.</p>
-    #[doc(hidden)]
     pub rule: ::std::option::Option<crate::types::Rule>,
     /// <p>The description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The rule expression.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The language.</p>
-    #[doc(hidden)]
     pub language: ::std::option::Option<crate::types::Language>,
     /// <p>The outcomes.</p>
-    #[doc(hidden)]
     pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to assign to the rule version.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateRuleVersionInput {

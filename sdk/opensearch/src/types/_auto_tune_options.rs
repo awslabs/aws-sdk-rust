@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptions {
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
-    #[doc(hidden)]
     pub desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     /// <p>When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise, OpenSearch Service is unable to perform the rollback.</p>
-    #[doc(hidden)]
     pub rollback_on_disable: ::std::option::Option<crate::types::RollbackOnDisable>,
     /// <p>DEPRECATED. Use <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a> instead.</p>
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes.</p>
-    #[doc(hidden)]
     pub maintenance_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
     /// <p>Whether to use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a> to deploy configuration changes on the domain rather than a maintenance schedule.</p>
-    #[doc(hidden)]
     pub use_off_peak_window: ::std::option::Option<bool>,
 }
 impl AutoTuneOptions {

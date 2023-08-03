@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolInstantiatedVnfInfo {
     /// <p>State of the network function.</p>
-    #[doc(hidden)]
     pub vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
 }
 impl GetSolInstantiatedVnfInfo {

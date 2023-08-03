@@ -5,11 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaAttribute {
     /// <p>The name of the dataset field.</p>
-    #[doc(hidden)]
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the field.</p>
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
-    #[doc(hidden)]
     pub attribute_type: ::std::option::Option<crate::types::AttributeType>,
 }
 impl SchemaAttribute {

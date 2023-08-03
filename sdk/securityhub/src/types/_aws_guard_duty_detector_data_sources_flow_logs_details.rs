@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
     /// <p> Describes whether VPC Flow Logs are activated as a data source for the detector. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsGuardDutyDetectorDataSourcesFlowLogsDetails {

@@ -4,37 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectVersionsInput {
     /// <p>The bucket name that contains the objects. </p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the <code>max-keys</code> limitation. These keys are not returned elsewhere in the response.</p>
-    #[doc(hidden)]
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key can contain any Unicode character; however, the XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
-    #[doc(hidden)]
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// <p>Specifies the key to start with when listing objects in a bucket.</p>
-    #[doc(hidden)]
     pub key_marker: ::std::option::Option<::std::string::String>,
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. If additional keys satisfy the search criteria, but were not returned because <code>max-keys</code> was exceeded, the response contains <code>
     /// <istruncated>
     /// true
     /// </istruncated></code>. To return the additional keys, see <code>key-marker</code> and <code>version-id-marker</code>.</p>
-    #[doc(hidden)]
     pub max_keys: ::std::option::Option<i32>,
     /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using <code>prefix</code> to make groups in the same way that you'd use a folder in a file system.) You can use <code>prefix</code> with <code>delimiter</code> to roll up numerous objects into a single result under <code>CommonPrefixes</code>. </p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the object version you want to start listing from.</p>
-    #[doc(hidden)]
     pub version_id_marker: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    #[doc(hidden)]
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub request_payer: ::std::option::Option<crate::types::RequestPayer>,
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
-    #[doc(hidden)]
     pub optional_object_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
 }
 impl ListObjectVersionsInput {

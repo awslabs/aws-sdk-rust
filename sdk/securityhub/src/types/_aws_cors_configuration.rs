@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCorsConfiguration {
     /// <p>The allowed origins for CORS requests.</p>
-    #[doc(hidden)]
     pub allow_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the CORS request includes credentials.</p>
-    #[doc(hidden)]
     pub allow_credentials: bool,
     /// <p>The exposed headers for CORS requests.</p>
-    #[doc(hidden)]
     pub expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of seconds for which the browser caches preflight request results.</p>
-    #[doc(hidden)]
     pub max_age: i32,
     /// <p>The allowed methods for CORS requests.</p>
-    #[doc(hidden)]
     pub allow_methods: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The allowed headers for CORS requests.</p>
-    #[doc(hidden)]
     pub allow_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsCorsConfiguration {

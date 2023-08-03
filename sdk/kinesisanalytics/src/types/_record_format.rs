@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordFormat {
     /// <p>The type of record format.</p>
-    #[doc(hidden)]
     pub record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
-    #[doc(hidden)]
     pub mapping_parameters: ::std::option::Option<crate::types::MappingParameters>,
 }
 impl RecordFormat {

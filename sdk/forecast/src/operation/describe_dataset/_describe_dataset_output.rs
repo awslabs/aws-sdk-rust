@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
-    #[doc(hidden)]
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain associated with the dataset.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::Domain>,
     /// <p>The dataset type.</p>
-    #[doc(hidden)]
     pub dataset_type: ::std::option::Option<crate::types::DatasetType>,
     /// <p>The frequency of data collection.</p>
     /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
-    #[doc(hidden)]
     pub data_frequency: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
     /// <p>The Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
-    #[doc(hidden)]
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     /// <p>The status of the dataset. States include:</p>
     /// <ul>
@@ -35,13 +28,10 @@ pub struct DescribeDatasetOutput {
     /// <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>
     /// <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>When the dataset was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
-    #[doc(hidden)]
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

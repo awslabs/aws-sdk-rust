@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuccessfulCampaignStateResponse {
     /// Identifier representing a Campaign
-    #[doc(hidden)]
     pub campaign_id: ::std::option::Option<::std::string::String>,
     /// State of a campaign
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CampaignState>,
 }
 impl SuccessfulCampaignStateResponse {

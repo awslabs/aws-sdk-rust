@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVoiceProfileDomainInput {
     /// <p>The voice profile domain ID.</p>
-    #[doc(hidden)]
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVoiceProfileDomainInput {

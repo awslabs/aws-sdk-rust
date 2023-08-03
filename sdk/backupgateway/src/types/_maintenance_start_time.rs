@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceStartTime {
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
-    #[doc(hidden)]
     pub day_of_month: ::std::option::Option<i32>,
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<i32>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
-    #[doc(hidden)]
     pub hour_of_day: ::std::option::Option<i32>,
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
-    #[doc(hidden)]
     pub minute_of_hour: ::std::option::Option<i32>,
 }
 impl MaintenanceStartTime {

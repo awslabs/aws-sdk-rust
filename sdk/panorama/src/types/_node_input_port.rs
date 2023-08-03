@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInputPort {
     /// <p>The input port's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The input port's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The input port's type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PortType>,
     /// <p>The input port's default value.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The input port's max connections.</p>
-    #[doc(hidden)]
     pub max_connections: i32,
 }
 impl NodeInputPort {

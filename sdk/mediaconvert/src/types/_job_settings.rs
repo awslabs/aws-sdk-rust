@@ -5,40 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSettings {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
-    #[doc(hidden)]
     pub ad_avail_offset: ::std::option::Option<i32>,
     /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
-    #[doc(hidden)]
     pub avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
-    #[doc(hidden)]
     pub esam: ::std::option::Option<crate::types::EsamSettings>,
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
-    #[doc(hidden)]
     pub extended_data_services: ::std::option::Option<crate::types::ExtendedDataServices>,
     /// Use Inputs to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
-    #[doc(hidden)]
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
-    #[doc(hidden)]
     pub kantar_watermark: ::std::option::Option<crate::types::KantarWatermarkSettings>,
     /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
-    #[doc(hidden)]
     pub motion_image_inserter: ::std::option::Option<crate::types::MotionImageInserter>,
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
-    #[doc(hidden)]
     pub nielsen_configuration: ::std::option::Option<crate::types::NielsenConfiguration>,
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
-    #[doc(hidden)]
     pub nielsen_non_linear_watermark: ::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings>,
     /// Contains one group of settings for each set of outputs that share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as well. Required in is a group of settings that apply to the whole group. This required object depends on the value you set for Type. Type, settings object pairs are as follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS, HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS, CmafGroupSettings
-    #[doc(hidden)]
     pub output_groups: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>,
     /// These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping.
-    #[doc(hidden)]
     pub timecode_config: ::std::option::Option<crate::types::TimecodeConfig>,
     /// Insert user-defined custom ID3 metadata at timecodes that you specify. In each output that you want to include this metadata, you must set ID3 metadata to Passthrough.
-    #[doc(hidden)]
     pub timed_metadata_insertion: ::std::option::Option<crate::types::TimedMetadataInsertion>,
 }
 impl JobSettings {

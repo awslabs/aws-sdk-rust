@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceEvaluationSummaryOutput {
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
-    #[doc(hidden)]
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>Lists results of the mode that you requested to retrieve the resource evaluation summary. The valid values are Detective or Proactive.</p>
-    #[doc(hidden)]
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
     /// <p>Returns an <code>EvaluationStatus</code> object.</p>
-    #[doc(hidden)]
     pub evaluation_status: ::std::option::Option<crate::types::EvaluationStatus>,
     /// <p>The start timestamp when Config rule starts evaluating compliance for the provided resource details.</p>
-    #[doc(hidden)]
     pub evaluation_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The compliance status of the resource evaluation summary.</p>
-    #[doc(hidden)]
     pub compliance: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
-    #[doc(hidden)]
     pub evaluation_context: ::std::option::Option<crate::types::EvaluationContext>,
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     _request_id: Option<String>,
 }

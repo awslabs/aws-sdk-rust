@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyPairIds {
     /// <p>The number of key pair identifiers in the list.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>A list of CloudFront key pair identifiers.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KeyPairIds {

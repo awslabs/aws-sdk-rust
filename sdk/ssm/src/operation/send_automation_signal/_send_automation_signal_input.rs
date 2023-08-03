@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendAutomationSignalInput {
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
-    #[doc(hidden)]
     pub automation_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of signal to send to an Automation execution. </p>
-    #[doc(hidden)]
     pub signal_type: ::std::option::Option<crate::types::SignalType>,
     /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
     /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
@@ -16,7 +14,6 @@ pub struct SendAutomationSignalInput {
     /// <p> <code>StepName="step1"</code> </p>
     /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
     /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl SendAutomationSignalInput {

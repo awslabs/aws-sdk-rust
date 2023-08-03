@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextDocumentStatistics {
     /// <p>The number of text documents indexed.</p>
-    #[doc(hidden)]
     pub indexed_text_documents_count: i32,
     /// <p>The total size, in bytes, of the indexed documents.</p>
-    #[doc(hidden)]
     pub indexed_text_bytes: i64,
 }
 impl TextDocumentStatistics {

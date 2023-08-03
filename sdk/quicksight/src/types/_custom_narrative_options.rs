@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomNarrativeOptions {
     /// <p>The string input of custom narrative.</p>
-    #[doc(hidden)]
     pub narrative: ::std::option::Option<::std::string::String>,
 }
 impl CustomNarrativeOptions {

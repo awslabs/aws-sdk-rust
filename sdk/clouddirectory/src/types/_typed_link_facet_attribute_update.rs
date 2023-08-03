@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkFacetAttributeUpdate {
     /// <p>The attribute to update.</p>
-    #[doc(hidden)]
     pub attribute: ::std::option::Option<crate::types::TypedLinkAttributeDefinition>,
     /// <p>The action to perform when updating the attribute.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::UpdateActionType>,
 }
 impl TypedLinkFacetAttributeUpdate {

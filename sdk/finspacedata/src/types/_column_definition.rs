@@ -8,13 +8,10 @@ pub struct ColumnDefinition {
     /// <ul>
     /// <li> <p> <code>STRING</code> – A String data type.</p> <p> <code>CHAR</code> – A char data type.</p> <p> <code>INTEGER</code> – An integer data type.</p> <p> <code>TINYINT</code> – A tinyint data type.</p> <p> <code>SMALLINT</code> – A smallint data type.</p> <p> <code>BIGINT</code> – A bigint data type.</p> <p> <code>FLOAT</code> – A float data type.</p> <p> <code>DOUBLE</code> – A double data type.</p> <p> <code>DATE</code> – A date data type.</p> <p> <code>DATETIME</code> – A datetime data type.</p> <p> <code>BOOLEAN</code> – A boolean data type.</p> <p> <code>BINARY</code> – A binary data type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::ColumnDataType>,
     /// <p>The name of a column.</p>
-    #[doc(hidden)]
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>Description for a column.</p>
-    #[doc(hidden)]
     pub column_description: ::std::option::Option<::std::string::String>,
 }
 impl ColumnDefinition {

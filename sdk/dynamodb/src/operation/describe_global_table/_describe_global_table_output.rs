@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
-    #[doc(hidden)]
     pub global_table_description: ::std::option::Option<crate::types::GlobalTableDescription>,
     _request_id: Option<String>,
 }

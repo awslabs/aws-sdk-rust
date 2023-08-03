@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterOutput {
     /// <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
-    #[doc(hidden)]
     pub cluster_metadata: ::std::option::Option<crate::types::ClusterMetadata>,
     _request_id: Option<String>,
 }

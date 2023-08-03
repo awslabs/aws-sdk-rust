@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureShard {
     /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
-    #[doc(hidden)]
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
@@ -17,13 +16,10 @@ pub struct ConfigureShard {
     /// </ul> </li>
     /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub new_replica_count: i32,
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
-    #[doc(hidden)]
     pub preferred_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    #[doc(hidden)]
     pub preferred_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConfigureShard {

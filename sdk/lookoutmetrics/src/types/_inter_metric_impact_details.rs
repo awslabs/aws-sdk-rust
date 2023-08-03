@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InterMetricImpactDetails {
     /// <p>The name of the measure.</p>
-    #[doc(hidden)]
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the anomaly group.</p>
-    #[doc(hidden)]
     pub anomaly_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
-    #[doc(hidden)]
     pub relationship_type: ::std::option::Option<crate::types::RelationshipType>,
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
-    #[doc(hidden)]
     pub contribution_percentage: ::std::option::Option<f64>,
 }
 impl InterMetricImpactDetails {

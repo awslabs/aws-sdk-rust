@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipError {
     /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
-    #[doc(hidden)]
     pub member_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateChannelMembershipError {

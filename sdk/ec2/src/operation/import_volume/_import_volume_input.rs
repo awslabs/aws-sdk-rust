@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportVolumeInput {
     /// <p>The Availability Zone for the resulting EBS volume.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A description of the volume.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The disk image.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<crate::types::DiskImageDetail>,
     /// <p>The volume size.</p>
-    #[doc(hidden)]
     pub volume: ::std::option::Option<crate::types::VolumeDetail>,
 }
 impl ImportVolumeInput {

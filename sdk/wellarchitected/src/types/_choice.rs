@@ -5,25 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Choice {
     /// <p>The ID of a choice.</p>
-    #[doc(hidden)]
     pub choice_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of a choice.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The description of a choice.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The helpful resource (both text and URL) for a particular choice.</p>
     /// <p>This field only applies to custom lenses. Each choice can have only one helpful resource.</p>
-    #[doc(hidden)]
     pub helpful_resource: ::std::option::Option<crate::types::ChoiceContent>,
     /// <p>The improvement plan (both text and URL) for a particular choice.</p>
     /// <p>This field only applies to custom lenses. Each choice can have only one improvement plan.</p>
-    #[doc(hidden)]
     pub improvement_plan: ::std::option::Option<crate::types::ChoiceContent>,
     /// <p>The additional resources for a choice in a custom lens.</p>
     /// <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
-    #[doc(hidden)]
     pub additional_resources: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalResources>>,
 }
 impl Choice {

@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryChannelStatus {
     /// <p>The name of the delivery channel.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub config_snapshot_delivery_info: ::std::option::Option<crate::types::ConfigExportDeliveryInfo>,
     /// <p>A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.</p>
-    #[doc(hidden)]
     pub config_history_delivery_info: ::std::option::Option<crate::types::ConfigExportDeliveryInfo>,
     /// <p>A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub config_stream_delivery_info: ::std::option::Option<crate::types::ConfigStreamDeliveryInfo>,
 }
 impl DeliveryChannelStatus {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the ML object to tag.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
 }
 impl AddTagsInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to reject.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl RejectEnvironmentAccountConnectionInput {

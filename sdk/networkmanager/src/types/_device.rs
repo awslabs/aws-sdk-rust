@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The ID of the device.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the global network.</p>
-    #[doc(hidden)]
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services location of the device.</p>
-    #[doc(hidden)]
     pub aws_location: ::std::option::Option<crate::types::AwsLocation>,
     /// <p>The description of the device.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The device type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The device vendor.</p>
-    #[doc(hidden)]
     pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The device model.</p>
-    #[doc(hidden)]
     pub model: ::std::option::Option<::std::string::String>,
     /// <p>The device serial number.</p>
-    #[doc(hidden)]
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The site location.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>The site ID.</p>
-    #[doc(hidden)]
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the site was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device state.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::DeviceState>,
     /// <p>The tags for the device.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Device {

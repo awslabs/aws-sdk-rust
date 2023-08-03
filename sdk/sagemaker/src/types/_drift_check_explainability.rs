@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DriftCheckExplainability {
     /// <p>The drift check explainability constraints.</p>
-    #[doc(hidden)]
     pub constraints: ::std::option::Option<crate::types::MetricsSource>,
     /// <p>The explainability config file for the model.</p>
-    #[doc(hidden)]
     pub config_file: ::std::option::Option<crate::types::FileSource>,
 }
 impl DriftCheckExplainability {

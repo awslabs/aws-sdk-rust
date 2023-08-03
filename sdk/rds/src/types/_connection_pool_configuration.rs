@@ -8,26 +8,21 @@ pub struct ConnectionPoolConfiguration {
     /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
     /// <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines</p>
     /// <p>Constraints: Must be between 1 and 100.</p>
-    #[doc(hidden)]
     pub max_connections_percent: ::std::option::Option<i32>,
     /// <p>Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low value causes the proxy to close more idle connections and return them to the database.</p>
     /// <p>If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.</p>
     /// <p>Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.</p>
     /// <p>Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
-    #[doc(hidden)]
     pub max_idle_connections_percent: ::std::option::Option<i32>,
     /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
     /// <p>Default: 120</p>
     /// <p>Constraints: between 1 and 3600, or 0 representing unlimited</p>
-    #[doc(hidden)]
     pub connection_borrow_timeout: ::std::option::Option<i32>,
     /// <p>Each item in the list represents a class of SQL operations that normally cause all later statements in a session using a proxy to be pinned to the same underlying database connection. Including an item in the list exempts that class of SQL operations from the pinning behavior.</p>
     /// <p>Default: no session pinning filters</p>
-    #[doc(hidden)]
     pub session_pinning_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more SQL statements for the proxy to run when opening each new database connection. Typically used with <code>SET</code> statements to make sure that each connection has identical settings such as time zone and character set. For multiple statements, use semicolons as the separator. You can also include multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.</p>
     /// <p>Default: no initialization query</p>
-    #[doc(hidden)]
     pub init_query: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionPoolConfiguration {

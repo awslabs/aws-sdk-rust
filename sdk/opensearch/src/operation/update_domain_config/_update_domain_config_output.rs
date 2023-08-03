@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
-    #[doc(hidden)]
     pub domain_config: ::std::option::Option<crate::types::DomainConfig>,
     /// <p>Results of the dry run performed in the update domain request.</p>
-    #[doc(hidden)]
     pub dry_run_results: ::std::option::Option<crate::types::DryRunResults>,
     /// <p>The status of the dry run being performed on the domain, if any.</p>
-    #[doc(hidden)]
     pub dry_run_progress_status: ::std::option::Option<crate::types::DryRunProgressStatus>,
     _request_id: Option<String>,
 }

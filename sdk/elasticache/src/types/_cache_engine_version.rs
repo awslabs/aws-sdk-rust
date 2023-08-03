@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheEngineVersion {
     /// <p>The name of the cache engine.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the cache engine.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group family associated with this cache engine.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
-    #[doc(hidden)]
     pub cache_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cache engine.</p>
-    #[doc(hidden)]
     pub cache_engine_description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cache engine version.</p>
-    #[doc(hidden)]
     pub cache_engine_version_description: ::std::option::Option<::std::string::String>,
 }
 impl CacheEngineVersion {

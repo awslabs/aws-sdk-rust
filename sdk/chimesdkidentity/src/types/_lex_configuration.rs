@@ -8,19 +8,14 @@ pub struct LexConfiguration {
     /// <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
     /// </important>
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
-    #[doc(hidden)]
     pub responds_to: ::std::option::Option<crate::types::RespondsTo>,
     /// <p>Specifies the type of message that triggers a bot.</p>
-    #[doc(hidden)]
     pub invoked_by: ::std::option::Option<crate::types::InvokedBy>,
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
-    #[doc(hidden)]
     pub lex_bot_alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the Amazon Lex V2 bot's language and locale. The string must match one of the supported locales in Amazon Lex V2. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> in the <i>Amazon Lex V2 Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the welcome intent configured in the Amazon Lex V2 bot.</p>
-    #[doc(hidden)]
     pub welcome_intent: ::std::option::Option<::std::string::String>,
 }
 impl LexConfiguration {

@@ -6,7 +6,6 @@ pub struct AddTagsToResourceInput {
     /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
@@ -18,12 +17,10 @@ pub struct AddTagsToResourceInput {
     /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsToResourceInput {

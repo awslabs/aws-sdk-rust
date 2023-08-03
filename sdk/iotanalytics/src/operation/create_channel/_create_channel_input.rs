@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// <p>The name of the channel.</p>
-    #[doc(hidden)]
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
-    #[doc(hidden)]
     pub channel_storage: ::std::option::Option<crate::types::ChannelStorage>,
     /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>Metadata which can be used to manage the channel.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateChannelInput {

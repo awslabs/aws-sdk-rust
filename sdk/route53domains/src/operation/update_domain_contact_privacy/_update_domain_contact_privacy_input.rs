@@ -5,22 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainContactPrivacyInput {
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
-    #[doc(hidden)]
     pub admin_privacy: ::std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
-    #[doc(hidden)]
     pub registrant_privacy: ::std::option::Option<bool>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
-    #[doc(hidden)]
     pub tech_privacy: ::std::option::Option<bool>,
 }
 impl UpdateDomainContactPrivacyInput {

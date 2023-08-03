@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelMembership {
     /// <p>The identifier of the member who invited another member.</p>
-    #[doc(hidden)]
     pub invited_by: ::std::option::Option<crate::types::Identity>,
     /// <p>The membership type set for the channel member.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
     /// <p>The data of the channel member.</p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::Identity>,
     /// <p>The ARN of the member's channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the channel membership was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a channel membership was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ChannelMembership {

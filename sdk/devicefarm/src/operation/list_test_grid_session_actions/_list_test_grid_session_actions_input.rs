@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestGridSessionActionsInput {
     /// <p>The ARN of the session to retrieve.</p>
-    #[doc(hidden)]
     pub session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of sessions to return per response.</p>
-    #[doc(hidden)]
     pub max_result: ::std::option::Option<i32>,
     /// <p>Pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTestGridSessionActionsInput {

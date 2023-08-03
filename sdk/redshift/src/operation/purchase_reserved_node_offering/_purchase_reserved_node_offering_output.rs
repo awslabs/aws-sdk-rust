@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedNodeOfferingOutput {
     /// <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
-    #[doc(hidden)]
     pub reserved_node: ::std::option::Option<crate::types::ReservedNode>,
     _request_id: Option<String>,
 }

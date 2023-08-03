@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeOutputInput {
     /// The ARN of the bridge that you want to update.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// Update an existing network output.
-    #[doc(hidden)]
     pub network_output: ::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest>,
     /// The name of the bridge output that you want to update.
-    #[doc(hidden)]
     pub output_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBridgeOutputInput {

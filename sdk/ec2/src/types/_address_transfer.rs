@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddressTransfer {
     /// <p>The Elastic IP address being transferred.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The allocation ID of an Elastic IP address.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    #[doc(hidden)]
     pub transfer_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the Elastic IP address transfer expired. When the source account starts the transfer, the transfer account has seven hours to allocate the Elastic IP address to complete the transfer, or the Elastic IP address will return to its original owner.</p>
-    #[doc(hidden)]
     pub transfer_offer_expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the Elastic IP address transfer was accepted.</p>
-    #[doc(hidden)]
     pub transfer_offer_accepted_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Elastic IP address transfer status.</p>
-    #[doc(hidden)]
     pub address_transfer_status: ::std::option::Option<crate::types::AddressTransferStatus>,
 }
 impl AddressTransfer {

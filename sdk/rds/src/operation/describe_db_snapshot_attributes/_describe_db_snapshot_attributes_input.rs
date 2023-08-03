@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbSnapshotAttributesInput {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-    #[doc(hidden)]
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbSnapshotAttributesInput {

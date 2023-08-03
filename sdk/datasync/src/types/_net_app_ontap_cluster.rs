@@ -5,38 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetAppOntapCluster {
     /// <p>The number of CIFS shares in the cluster.</p>
-    #[doc(hidden)]
     pub cifs_share_count: ::std::option::Option<i64>,
     /// <p>The number of NFS volumes in the cluster.</p>
-    #[doc(hidden)]
     pub nfs_exported_volumes: ::std::option::Option<i64>,
     /// <p>The universally unique identifier (UUID) of the cluster.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
-    #[doc(hidden)]
     pub max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
     /// <p>The total storage space that's available in the cluster.</p>
-    #[doc(hidden)]
     pub cluster_block_storage_size: ::std::option::Option<i64>,
     /// <p>The storage space that's being used in a cluster.</p>
-    #[doc(hidden)]
     pub cluster_block_storage_used: ::std::option::Option<i64>,
     /// <p>The storage space that's being used in the cluster without accounting for compression or deduplication.</p>
-    #[doc(hidden)]
     pub cluster_block_storage_logical_used: ::std::option::Option<i64>,
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the cluster. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    #[doc(hidden)]
     pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
-    #[doc(hidden)]
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     /// <p>The number of LUNs (logical unit numbers) in the cluster.</p>
-    #[doc(hidden)]
     pub lun_count: ::std::option::Option<i64>,
 }
 impl NetAppOntapCluster {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableOutput {
     /// <p>The updated configured table.</p>
-    #[doc(hidden)]
     pub configured_table: ::std::option::Option<crate::types::ConfiguredTable>,
     _request_id: Option<String>,
 }

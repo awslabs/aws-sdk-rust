@@ -6,19 +6,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLevel {
     /// <p>A container for S3 Storage Lens activity metrics.</p>
-    #[doc(hidden)]
     pub activity_metrics: ::std::option::Option<crate::types::ActivityMetrics>,
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
-    #[doc(hidden)]
     pub bucket_level: ::std::option::Option<crate::types::BucketLevel>,
     /// <p>A container for S3 Storage Lens advanced cost-optimization metrics.</p>
-    #[doc(hidden)]
     pub advanced_cost_optimization_metrics: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
     /// <p>A container for S3 Storage Lens advanced data-protection metrics.</p>
-    #[doc(hidden)]
     pub advanced_data_protection_metrics: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
     /// <p>A container for detailed status code metrics. </p>
-    #[doc(hidden)]
     pub detailed_status_codes_metrics: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
 }
 impl AccountLevel {

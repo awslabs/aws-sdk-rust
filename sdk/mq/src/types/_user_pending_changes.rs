@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPendingChanges {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-    #[doc(hidden)]
     pub console_access: ::std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    #[doc(hidden)]
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
-    #[doc(hidden)]
     pub pending_change: ::std::option::Option<crate::types::ChangeType>,
 }
 impl UserPendingChanges {

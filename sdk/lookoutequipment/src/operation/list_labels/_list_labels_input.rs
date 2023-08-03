@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLabelsInput {
     /// <p> Retruns the name of the label group. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
-    #[doc(hidden)]
     pub interval_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Returns all labels with a start time earlier than the end time given. </p>
-    #[doc(hidden)]
     pub interval_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Returns labels with a particular fault code. </p>
-    #[doc(hidden)]
     pub fault_code: ::std::option::Option<::std::string::String>,
     /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
-    #[doc(hidden)]
     pub equipment: ::std::option::Option<::std::string::String>,
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the maximum number of labels to list. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListLabelsInput {

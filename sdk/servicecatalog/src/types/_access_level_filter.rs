@@ -10,10 +10,8 @@ pub struct AccessLevelFilter {
     /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
     /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::AccessLevelFilterKey>,
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AccessLevelFilter {

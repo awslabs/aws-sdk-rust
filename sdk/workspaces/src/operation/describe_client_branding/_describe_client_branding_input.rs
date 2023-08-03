@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClientBrandingInput {
     /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClientBrandingInput {

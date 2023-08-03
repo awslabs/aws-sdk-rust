@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
-    #[doc(hidden)]
     pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl OutputFileUriValue {

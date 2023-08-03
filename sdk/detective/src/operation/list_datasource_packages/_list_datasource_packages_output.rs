@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasourcePackagesOutput {
     /// <p>Details on the data source packages active in the behavior graph.</p>
-    #[doc(hidden)]
     pub datasource_packages:
         ::std::option::Option<::std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>>,
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

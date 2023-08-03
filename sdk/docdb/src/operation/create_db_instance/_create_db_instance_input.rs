@@ -12,52 +12,40 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>. </p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid value: <code>docdb</code> </p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. </p>
     /// <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The identifier of the cluster that the instance will belong to.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid values: 0-15</p>
-    #[doc(hidden)]
     pub promotion_tier: ::std::option::Option<i32>,
     /// <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
-    #[doc(hidden)]
     pub enable_performance_insights: ::std::option::Option<bool>,
     /// <p>The KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachObjectInput {
     /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The parent object reference.</p>
-    #[doc(hidden)]
     pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The child object reference to be attached to the object.</p>
-    #[doc(hidden)]
     pub child_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The link name with which the child object is attached to the parent.</p>
-    #[doc(hidden)]
     pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachObjectInput {

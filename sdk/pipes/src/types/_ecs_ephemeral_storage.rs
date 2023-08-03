@@ -7,7 +7,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsEphemeralStorage {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
-    #[doc(hidden)]
     pub size_in_gi_b: i32,
 }
 impl EcsEphemeralStorage {

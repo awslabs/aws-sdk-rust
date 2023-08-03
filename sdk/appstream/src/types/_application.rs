@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Application {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The application name to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the application icon. This URL might be time-limited.</p>
-    #[doc(hidden)]
     pub icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The path to the application executable in the instance.</p>
-    #[doc(hidden)]
     pub launch_path: ::std::option::Option<::std::string::String>,
     /// <p>The arguments that are passed to the application at launch.</p>
-    #[doc(hidden)]
     pub launch_parameters: ::std::option::Option<::std::string::String>,
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Additional attributes that describe the application.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory for the application.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The app block ARN of the application.</p>
-    #[doc(hidden)]
     pub app_block_arn: ::std::option::Option<::std::string::String>,
     /// <p>The S3 location of the application icon.</p>
-    #[doc(hidden)]
     pub icon_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The platforms on which the application can run.</p>
-    #[doc(hidden)]
     pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     /// <p>The instance families for the application.</p>
-    #[doc(hidden)]
     pub instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time at which the application was created within the app block.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Application {

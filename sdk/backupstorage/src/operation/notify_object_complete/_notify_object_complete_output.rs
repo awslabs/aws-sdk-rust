@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyObjectCompleteOutput {
     /// Object checksum
-    #[doc(hidden)]
     pub object_checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm
-    #[doc(hidden)]
     pub object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     _request_id: Option<String>,
 }

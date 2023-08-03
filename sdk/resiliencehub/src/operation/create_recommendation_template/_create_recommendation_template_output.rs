@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRecommendationTemplateOutput {
     /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
-    #[doc(hidden)]
     pub recommendation_template: ::std::option::Option<crate::types::RecommendationTemplate>,
     _request_id: Option<String>,
 }

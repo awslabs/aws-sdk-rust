@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastGroup {
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    #[doc(hidden)]
     pub group_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
-    #[doc(hidden)]
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource, for example a VPC attachment.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     /// <p> The ID of the Amazon Web Services account that owns the transit gateway multicast domain group resource.</p>
-    #[doc(hidden)]
     pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates that the resource is a transit gateway multicast group member.</p>
-    #[doc(hidden)]
     pub group_member: ::std::option::Option<bool>,
     /// <p>Indicates that the resource is a transit gateway multicast group member.</p>
-    #[doc(hidden)]
     pub group_source: ::std::option::Option<bool>,
     /// <p>The member type (for example, <code>static</code>).</p>
-    #[doc(hidden)]
     pub member_type: ::std::option::Option<crate::types::MembershipType>,
     /// <p>The source type.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<crate::types::MembershipType>,
 }
 impl TransitGatewayMulticastGroup {

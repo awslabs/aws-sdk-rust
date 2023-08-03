@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomImage {
     /// <p>The name of the CustomImage. Must be unique to your account.</p>
-    #[doc(hidden)]
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the CustomImage.</p>
-    #[doc(hidden)]
     pub image_version_number: ::std::option::Option<i32>,
     /// <p>The name of the AppImageConfig.</p>
-    #[doc(hidden)]
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
 }
 impl CustomImage {

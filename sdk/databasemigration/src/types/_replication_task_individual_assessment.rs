@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTaskIndividualAssessment {
     /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
-    #[doc(hidden)]
     pub replication_task_individual_assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the premigration assessment run that is created to run this individual assessment.</p>
-    #[doc(hidden)]
     pub replication_task_assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of this individual assessment.</p>
-    #[doc(hidden)]
     pub individual_assessment_name: ::std::option::Option<::std::string::String>,
     /// <p>Individual assessment status.</p>
     /// <p>This status can have one of the following values:</p>
@@ -23,10 +20,8 @@ pub struct ReplicationTaskIndividualAssessment {
     /// <li> <p> <code>"pending"</code> </p> </li>
     /// <li> <p> <code>"running"</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Date when this individual assessment was started as part of running the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
-    #[doc(hidden)]
     pub replication_task_individual_assessment_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationTaskIndividualAssessment {

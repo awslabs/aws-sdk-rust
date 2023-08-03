@@ -5,23 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksPodProperties {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub service_account_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub host_network: ::std::option::Option<bool>,
     /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
     /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code> </p>
-    #[doc(hidden)]
     pub dns_policy: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
-    #[doc(hidden)]
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>,
     /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodProperties {

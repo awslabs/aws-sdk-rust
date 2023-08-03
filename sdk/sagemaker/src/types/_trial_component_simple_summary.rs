@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponentSimpleSummary {
     /// <p>The name of the trial component.</p>
-    #[doc(hidden)]
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    #[doc(hidden)]
     pub trial_component_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
-    #[doc(hidden)]
     pub trial_component_source: ::std::option::Option<crate::types::TrialComponentSource>,
     /// <p>When the component was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::UserContext>,
 }
 impl TrialComponentSimpleSummary {

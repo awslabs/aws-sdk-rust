@@ -4,22 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCalculationExecutionInput {
     /// <p>The session ID.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the calculation.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    #[doc(hidden)]
     pub calculation_configuration: ::std::option::Option<crate::types::CalculationConfiguration>,
     /// <p>A string that contains the code of the calculation.</p>
-    #[doc(hidden)]
     pub code_block: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl StartCalculationExecutionInput {

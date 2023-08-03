@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHitTypeOutput {
     /// <p> The ID of the newly registered HIT type.</p>
-    #[doc(hidden)]
     pub hit_type_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationFleetAssociationsInput {
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of each page of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeApplicationFleetAssociationsInput {

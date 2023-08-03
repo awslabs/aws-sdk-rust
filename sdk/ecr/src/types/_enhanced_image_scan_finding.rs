@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnhancedImageScanFinding {
     /// <p>The Amazon Web Services account ID associated with the image.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the finding.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the finding.</p>
-    #[doc(hidden)]
     pub finding_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the finding was first observed.</p>
-    #[doc(hidden)]
     pub first_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the finding was last observed.</p>
-    #[doc(hidden)]
     pub last_observed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    #[doc(hidden)]
     pub package_vulnerability_details: ::std::option::Option<crate::types::PackageVulnerabilityDetails>,
     /// <p>An object that contains the details about how to remediate a finding.</p>
-    #[doc(hidden)]
     pub remediation: ::std::option::Option<crate::types::Remediation>,
     /// <p>Contains information on the resources involved in a finding.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The Amazon Inspector score given to the finding.</p>
-    #[doc(hidden)]
     pub score: f64,
     /// <p>An object that contains details of the Amazon Inspector score.</p>
-    #[doc(hidden)]
     pub score_details: ::std::option::Option<crate::types::ScoreDetails>,
     /// <p>The severity of the finding.</p>
-    #[doc(hidden)]
     pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The status of the finding.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The title of the finding.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The type of the finding.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the finding was last updated at.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnhancedImageScanFinding {

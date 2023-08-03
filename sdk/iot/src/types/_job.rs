@@ -5,88 +5,63 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Job {
     /// <p>An ARN identifying the job with format "arn:aws:iot:region:account:job/jobId".</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a device when the thing representing the device is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
     /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
     /// </note>
-    #[doc(hidden)]
     pub target_selection: ::std::option::Option<crate::types::TargetSelection>,
     /// <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to <code>true</code>.</p>
-    #[doc(hidden)]
     pub force_canceled: ::std::option::Option<bool>,
     /// <p>If the job was updated, provides the reason code for the update.</p>
-    #[doc(hidden)]
     pub reason_code: ::std::option::Option<::std::string::String>,
     /// <p>If the job was updated, describes the reason for the update.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A list of IoT things and thing groups to which the job should be sent.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A short text description of the job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for pre-signed S3 URLs.</p>
-    #[doc(hidden)]
     pub presigned_url_config: ::std::option::Option<crate::types::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of a job.</p>
-    #[doc(hidden)]
     pub job_executions_rollout_config: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     /// <p>Configuration for criteria to abort the job.</p>
-    #[doc(hidden)]
     pub abort_config: ::std::option::Option<crate::types::AbortConfig>,
     /// <p>The time, in seconds since the epoch, when the job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in seconds since the epoch, when the job was completed.</p>
-    #[doc(hidden)]
     pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about the job process.</p>
-    #[doc(hidden)]
     pub job_process_details: ::std::option::Option<crate::types::JobProcessDetails>,
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    #[doc(hidden)]
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
-    #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the job template used to create the job.</p>
-    #[doc(hidden)]
     pub job_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the criteria to retry the job.</p>
-    #[doc(hidden)]
     pub job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
     /// <p>A key-value map that pairs the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note>
     /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
     /// </note>
-    #[doc(hidden)]
     pub document_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether a job is concurrent. Will be true when a job is rolling out new job executions or canceling previously created executions, otherwise false.</p>
-    #[doc(hidden)]
     pub is_concurrent: ::std::option::Option<bool>,
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
-    #[doc(hidden)]
     pub scheduling_config: ::std::option::Option<crate::types::SchedulingConfig>,
     /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
-    #[doc(hidden)]
     pub scheduled_job_rollouts: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledJobRollout>>,
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    #[doc(hidden)]
     pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Job {

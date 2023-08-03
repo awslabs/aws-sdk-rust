@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCorsPolicyInput {
     /// <p>The name of the container to remove the policy from.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCorsPolicyInput {

@@ -10,13 +10,10 @@
 pub struct SqlInjectionMatchSet {
     /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
     /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    #[doc(hidden)]
     pub sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    #[doc(hidden)]
     pub sql_injection_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchTuple>>,
 }
 impl SqlInjectionMatchSet {

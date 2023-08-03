@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfiguration {

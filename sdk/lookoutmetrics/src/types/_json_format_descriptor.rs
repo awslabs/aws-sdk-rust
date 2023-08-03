@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
-    #[doc(hidden)]
     pub file_compression: ::std::option::Option<crate::types::JsonFileCompression>,
     /// <p>The character set in which the source JSON file is written.</p>
-    #[doc(hidden)]
     pub charset: ::std::option::Option<::std::string::String>,
 }
 impl JsonFormatDescriptor {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeMetadata {
     /// <p>A Boolean value indicating whether the merge has been made.</p>
-    #[doc(hidden)]
     pub is_merged: bool,
     /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
-    #[doc(hidden)]
     pub merged_by: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID for the merge commit, if any.</p>
-    #[doc(hidden)]
     pub merge_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The merge strategy used in the merge.</p>
-    #[doc(hidden)]
     pub merge_option: ::std::option::Option<crate::types::MergeOptionTypeEnum>,
 }
 impl MergeMetadata {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAuthorizerInput {
     /// <p>The name of the authorizer to describe.</p>
-    #[doc(hidden)]
     pub authorizer_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAuthorizerInput {

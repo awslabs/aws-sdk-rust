@@ -8,10 +8,8 @@ pub struct DescribePatchGroupsOutput {
     /// <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>
     /// <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub mappings: ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

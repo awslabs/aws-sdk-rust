@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceBot {
     /// <p>The ARN of the AppInstanceBot.</p>
-    #[doc(hidden)]
     pub app_instance_bot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AppInstanceBot.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data processing instructions for an AppInstanceBot.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::Configuration>,
     /// <p>The time at which the <code>AppInstanceBot</code> was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the <code>AppInstanceBot</code> was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata for an AppInstanceBot.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
 }
 impl AppInstanceBot {

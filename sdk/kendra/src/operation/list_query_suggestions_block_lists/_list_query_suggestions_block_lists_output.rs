@@ -6,10 +6,8 @@ pub struct ListQuerySuggestionsBlockListsOutput {
     /// <p>Summary items for a block list.</p>
     /// <p>This includes summary items on the block list ID, block list name, when the block list was created, when the block list was last updated, and the count of block words/phrases in the block list.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    #[doc(hidden)]
     pub block_list_summary_items: ::std::option::Option<::std::vec::Vec<crate::types::QuerySuggestionsBlockListSummary>>,
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of block lists.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobOutputDataConfig {
     /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    #[doc(hidden)]
     pub s3_path: ::std::option::Option<::std::string::String>,
 }
 impl JobOutputDataConfig {

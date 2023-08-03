@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsInput {
     /// <p> The preferred billing period to get custom line items (FFLIs). </p>
-    #[doc(hidden)]
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of billing groups to retrieve. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ListCustomLineItemsFilter</code> that specifies the custom line item names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI information.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::ListCustomLineItemsFilter>,
 }
 impl ListCustomLineItemsInput {

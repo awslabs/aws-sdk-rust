@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfacePrivateIpAddress {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
-    #[doc(hidden)]
     pub association: ::std::option::Option<crate::types::NetworkInterfaceAssociation>,
     /// <p>Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.</p>
-    #[doc(hidden)]
     pub primary: ::std::option::Option<bool>,
     /// <p>The private DNS name.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfacePrivateIpAddress {

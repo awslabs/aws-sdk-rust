@@ -10,7 +10,6 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -21,13 +20,11 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    #[doc(hidden)]
     pub new_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is disabled, changes to the DB cluster are applied during the next maintenance window.</p>
     /// <p>Most modifications can be applied immediately or during the next scheduled maintenance window. Some modifications, such as turning on deletion protection and changing the master password, are applied immediately—regardless of when you choose to apply them.</p>
     /// <p>By default, this parameter is disabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    #[doc(hidden)]
     pub apply_immediately: bool,
     /// <p>The number of days for which automated backups are retained. Specify a minimum value of <code>1</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -36,21 +33,17 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must be a value from 1 to 35.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    #[doc(hidden)]
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port number on which the DB cluster accepts connections.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The new password for the master database user.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -60,11 +53,9 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Can contain any printable ASCII character except "/", """, or "@".</p> </li>
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The option group to associate the DB cluster with.</p>
     /// <p>DB clusters are associated with a default option group that can't be modified.</p>
-    #[doc(hidden)]
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"> Backup window</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -76,7 +67,6 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -88,12 +78,10 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    #[doc(hidden)]
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Aurora MySQL DB clusters only</p>
@@ -102,7 +90,6 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub backtrack_window: ::std::option::Option<i64>,
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -115,7 +102,6 @@ pub struct ModifyDbClusterInput {
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>If the cluster that you're modifying has one or more read replicas, all replicas must be running an engine version that's the same or later than the version you specify.</p>
@@ -128,7 +114,6 @@ pub struct ModifyDbClusterInput {
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether major version upgrades are allowed.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
@@ -136,7 +121,6 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub allow_major_version_upgrade: bool,
     /// <p>The name of the DB parameter group to apply to all instances of the DB cluster.</p> <note>
     /// <p>When you apply a parameter group using the <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next maintenance window.</p>
@@ -148,48 +132,38 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>The DB parameter group must be in the same DB parameter group family as this DB cluster.</p> </li>
     /// <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_instance_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from its current domain. The domain must be created prior to this operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    #[doc(hidden)]
     pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    #[doc(hidden)]
     pub scaling_configuration: ::std::option::Option<crate::types::ScalingConfiguration>,
     /// <p>Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB cluster. By default, the HTTP endpoint is disabled.</p>
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    #[doc(hidden)]
     pub enable_http_endpoint: ::std::option::Option<bool>,
     /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    #[doc(hidden)]
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
     /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    #[doc(hidden)]
     pub enable_global_write_forwarding: ::std::option::Option<bool>,
     /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example <code>db.m6gd.xlarge</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    #[doc(hidden)]
     pub db_cluster_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage configurations for Amazon Aurora DB clusters</a>. For information on storage types for Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings for creating Multi-AZ DB clusters</a>.</p>
@@ -205,7 +179,6 @@ pub struct ModifyDbClusterInput {
     /// <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
     /// <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
     /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -214,34 +187,28 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
     /// <p>Specifies whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    #[doc(hidden)]
     pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
     /// <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
     /// <p>Default: <code>0</code> </p>
-    #[doc(hidden)]
     pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    #[doc(hidden)]
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    #[doc(hidden)]
     pub enable_performance_insights: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
-    #[doc(hidden)]
     pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
@@ -253,25 +220,21 @@ pub struct ModifyDbClusterInput {
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
-    #[doc(hidden)]
     pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    #[doc(hidden)]
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The network type of the DB cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code> </p>
-    #[doc(hidden)]
     pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>If the DB cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify <code>MasterUserPassword</code>.</p>
     /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    #[doc(hidden)]
     pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster. The secret value contains the updated password.</p>
@@ -281,7 +244,6 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub rotate_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
@@ -292,14 +254,12 @@ pub struct ModifyDbClusterInput {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
-    #[doc(hidden)]
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p> <note>
     /// <p>The DB engine mode can be modified only from <code>serverless</code> to <code>provisioned</code>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
-    #[doc(hidden)]
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether engine mode changes from <code>serverless</code> to <code>provisioned</code> are allowed.</p>
     /// <p>Valid for Cluster Type: Aurora Serverless v1 DB clusters only</p>
@@ -307,7 +267,6 @@ pub struct ModifyDbClusterInput {
     /// <ul>
     /// <li> <p>You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub allow_engine_mode_change: bool,
 }
 impl ModifyDbClusterInput {

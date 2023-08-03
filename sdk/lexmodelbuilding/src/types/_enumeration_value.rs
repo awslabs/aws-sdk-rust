@@ -11,10 +11,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnumerationValue {
     /// <p>The value of the slot type.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Additional values related to the slot type value.</p>
-    #[doc(hidden)]
     pub synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnumerationValue {

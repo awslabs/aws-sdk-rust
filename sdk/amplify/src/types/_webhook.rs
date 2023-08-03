@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Webhook {
     /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
-    #[doc(hidden)]
     pub webhook_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the webhook. </p>
-    #[doc(hidden)]
     pub webhook_id: ::std::option::Option<::std::string::String>,
     /// <p> The URL of the webhook. </p>
-    #[doc(hidden)]
     pub webhook_url: ::std::option::Option<::std::string::String>,
     /// <p> The name for a branch that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> The description for a webhook. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The create date and time for a webhook. </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Updates the date and time for a webhook. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Webhook {

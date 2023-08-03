@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingLogDeliveryConfiguration {
     /// <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or engine-log..</p>
-    #[doc(hidden)]
     pub log_type: ::std::option::Option<crate::types::LogType>,
     /// <p>Returns the destination type, either CloudWatch Logs or Kinesis Data Firehose.</p>
-    #[doc(hidden)]
     pub destination_type: ::std::option::Option<crate::types::DestinationType>,
     /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
-    #[doc(hidden)]
     pub destination_details: ::std::option::Option<crate::types::DestinationDetails>,
     /// <p>Returns the log format, either JSON or TEXT</p>
-    #[doc(hidden)]
     pub log_format: ::std::option::Option<crate::types::LogFormat>,
 }
 impl PendingLogDeliveryConfiguration {

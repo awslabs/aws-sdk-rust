@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamInput {
     /// <p>The stream ID.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStreamInput {

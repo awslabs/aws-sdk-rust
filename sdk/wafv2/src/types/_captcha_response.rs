@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptchaResponse {
     /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
-    #[doc(hidden)]
     pub response_code: ::std::option::Option<i32>,
     /// <p>The time that the <code>CAPTCHA</code> was last solved for the supplied token. </p>
-    #[doc(hidden)]
     pub solve_timestamp: ::std::option::Option<i64>,
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<crate::types::FailureReason>,
 }
 impl CaptchaResponse {

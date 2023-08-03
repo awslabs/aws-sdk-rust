@@ -4,16 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGeofenceCollectionOutput {
     /// <p>The name for the geofence collection.</p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub collection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

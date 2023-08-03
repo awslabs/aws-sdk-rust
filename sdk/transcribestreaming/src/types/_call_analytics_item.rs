@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CallAnalyticsItem {
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the identified item.</p>
-    #[doc(hidden)]
     pub begin_offset_millis: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the end of the identified item.</p>
-    #[doc(hidden)]
     pub end_offset_millis: ::std::option::Option<i64>,
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ItemType>,
     /// <p>The word or punctuation that was transcribed.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score associated with a word or phrase in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f64>,
     /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your Call Analytics request. If <code>true</code>, there is a vocabulary filter match.</p>
-    #[doc(hidden)]
     pub vocabulary_filter_match: bool,
     /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
-    #[doc(hidden)]
     pub stable: ::std::option::Option<bool>,
 }
 impl CallAnalyticsItem {

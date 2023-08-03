@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompositeSlotTypeSetting {
     /// <p>Subslots in the composite slot.</p>
-    #[doc(hidden)]
     pub sub_slots: ::std::option::Option<::std::vec::Vec<crate::types::SubSlotTypeComposition>>,
 }
 impl CompositeSlotTypeSetting {

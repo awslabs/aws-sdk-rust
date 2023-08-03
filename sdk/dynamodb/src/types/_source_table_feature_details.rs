@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceTableFeatureDetails {
     /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup. </p>
-    #[doc(hidden)]
     pub local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndexInfo>>,
     /// <p>Represents the GSI properties for the table when the backup was created. It includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the GSIs on the table at the time of backup. </p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexInfo>>,
     /// <p>Stream settings on the table when the backup was created.</p>
-    #[doc(hidden)]
     pub stream_description: ::std::option::Option<crate::types::StreamSpecification>,
     /// <p>Time to Live settings on the table when the backup was created.</p>
-    #[doc(hidden)]
     pub time_to_live_description: ::std::option::Option<crate::types::TimeToLiveDescription>,
     /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
-    #[doc(hidden)]
     pub sse_description: ::std::option::Option<crate::types::SseDescription>,
 }
 impl SourceTableFeatureDetails {

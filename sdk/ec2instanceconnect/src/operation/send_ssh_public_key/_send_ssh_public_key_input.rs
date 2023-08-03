@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendSshPublicKeyInput {
     /// <p>The ID of the EC2 instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
-    #[doc(hidden)]
     pub instance_os_user: ::std::option::Option<::std::string::String>,
     /// <p>The public key material. To use the public key, you must have the matching private key.</p>
-    #[doc(hidden)]
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl SendSshPublicKeyInput {

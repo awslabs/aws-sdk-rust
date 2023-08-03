@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionsInfo {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
-    #[doc(hidden)]
     pub primary_region: ::std::option::Option<::std::string::String>,
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    #[doc(hidden)]
     pub additional_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegionsInfo {

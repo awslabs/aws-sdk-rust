@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreatePricingPlanInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the pricing plan. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
-    #[doc(hidden)]
     pub pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePricingPlanInput {

@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamRoleDetails {
     /// <p>The trust policy that grants permission to assume the role.</p>
-    #[doc(hidden)]
     pub assume_role_policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The list of the managed policies that are attached to the role.</p>
-    #[doc(hidden)]
     pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
     /// <p>Indicates when the role was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    #[doc(hidden)]
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>The list of instance profiles that contain this role.</p>
-    #[doc(hidden)]
     pub instance_profile_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamInstanceProfile>>,
     /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
-    #[doc(hidden)]
     pub permissions_boundary: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>,
     /// <p>The stable and unique string identifying the role.</p>
-    #[doc(hidden)]
     pub role_id: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name that identifies the role.</p>
-    #[doc(hidden)]
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of inline policies that are embedded in the role.</p>
-    #[doc(hidden)]
     pub role_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamRolePolicy>>,
     /// <p>The maximum session duration (in seconds) that you want to set for the specified role.</p>
-    #[doc(hidden)]
     pub max_session_duration: i32,
     /// <p>The path to the role.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamRoleDetails {

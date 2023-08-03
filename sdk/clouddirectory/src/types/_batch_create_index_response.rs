@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-    #[doc(hidden)]
     pub object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateIndexResponse {

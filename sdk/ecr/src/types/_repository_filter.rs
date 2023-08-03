@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryFilter {
     /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified, this value is required and should be the repository name prefix to configure replication for.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<::std::string::String>,
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
-    #[doc(hidden)]
     pub filter_type: ::std::option::Option<crate::types::RepositoryFilterType>,
 }
 impl RepositoryFilter {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEc2InstanceLimitsOutput {
     /// <p>The maximum number of instances for the specified instance type.</p>
-    #[doc(hidden)]
     pub ec2_instance_limits: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceLimit>>,
     _request_id: Option<String>,
 }

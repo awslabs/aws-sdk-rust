@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryDefinition {
     /// <p>The unique ID of the query definition.</p>
-    #[doc(hidden)]
     pub query_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the query definition.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The date that the query definition was most recently modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<i64>,
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
-    #[doc(hidden)]
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryDefinition {

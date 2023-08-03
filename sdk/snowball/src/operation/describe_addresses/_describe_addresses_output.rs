@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAddressesOutput {
     /// <p>The Snow device shipping addresses that were created for this account.</p>
-    #[doc(hidden)]
     pub addresses: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

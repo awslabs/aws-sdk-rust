@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationConfig {
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
-    #[doc(hidden)]
     pub is_basic_auth_supported: bool,
     /// <p>Indicates whether API key authentication is supported by the connector</p>
-    #[doc(hidden)]
     pub is_api_key_auth_supported: bool,
     /// <p>Indicates whether OAuth 2.0 authentication is supported by the connector.</p>
-    #[doc(hidden)]
     pub is_o_auth2_supported: bool,
     /// <p>Indicates whether custom authentication is supported by the connector</p>
-    #[doc(hidden)]
     pub is_custom_auth_supported: bool,
     /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
-    #[doc(hidden)]
     pub o_auth2_defaults: ::std::option::Option<crate::types::OAuth2Defaults>,
     /// <p>Contains information required for custom authentication.</p>
-    #[doc(hidden)]
     pub custom_auth_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>>,
 }
 impl AuthenticationConfig {

@@ -8,22 +8,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextDetection {
     /// <p>The word or line of text recognized by Amazon Rekognition. </p>
-    #[doc(hidden)]
     pub detected_text: ::std::option::Option<::std::string::String>,
     /// <p>The type of text that was detected.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::TextTypes>,
     /// <p>The identifier for the detected text. The identifier is only unique for a single call to <code>DetectText</code>. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p>The Parent identifier for the detected text identified by the value of <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code> is <code>Null</code>. </p>
-    #[doc(hidden)]
     pub parent_id: ::std::option::Option<i32>,
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the detected text and the accuracy of the geometry points around the detected text.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>The location of the detected text on the image. Includes an axis aligned coarse bounding box surrounding the text and a finer grain polygon for more accurate spatial information.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::Geometry>,
 }
 impl TextDetection {

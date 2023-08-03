@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The name of the event.</p>
-    #[doc(hidden)]
     pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<::std::string::String>,
     /// <p>The actions to be performed.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
 }
 impl Event {

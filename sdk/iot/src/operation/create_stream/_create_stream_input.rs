@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStreamInput {
     /// <p>The stream ID.</p>
-    #[doc(hidden)]
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the stream.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The files to stream.</p>
-    #[doc(hidden)]
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::StreamFile>>,
     /// <p>An IAM role that allows the IoT service principal to access your S3 files.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata which can be used to manage streams.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateStreamInput {

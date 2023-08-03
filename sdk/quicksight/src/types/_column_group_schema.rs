@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnGroupSchema {
     /// <p>The name of the column group schema.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing the list of schemas for column group columns.</p>
-    #[doc(hidden)]
     pub column_group_column_schema_list: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>>,
 }
 impl ColumnGroupSchema {

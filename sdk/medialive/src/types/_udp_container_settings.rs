@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UdpContainerSettings {
     /// M2ts Settings
-    #[doc(hidden)]
     pub m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
 }
 impl UdpContainerSettings {

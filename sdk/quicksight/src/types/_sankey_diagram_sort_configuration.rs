@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SankeyDiagramSortConfiguration {
     /// <p>The sort configuration of the weight fields.</p>
-    #[doc(hidden)]
     pub weight_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of source nodes that are displayed in a sankey diagram.</p>
-    #[doc(hidden)]
     pub source_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The limit on the number of destination nodes that are displayed in a sankey diagram.</p>
-    #[doc(hidden)]
     pub destination_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl SankeyDiagramSortConfiguration {

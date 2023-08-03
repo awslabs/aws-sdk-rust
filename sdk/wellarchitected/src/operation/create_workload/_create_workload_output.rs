@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkloadOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the workload.</p>
-    #[doc(hidden)]
     pub workload_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

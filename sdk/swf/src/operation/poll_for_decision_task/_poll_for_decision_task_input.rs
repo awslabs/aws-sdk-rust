@@ -4,30 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the task list to poll for decision tasks.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    #[doc(hidden)]
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
     /// <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
-    #[doc(hidden)]
     pub maximum_page_size: ::std::option::Option<i32>,
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
-    #[doc(hidden)]
     pub reverse_order: ::std::option::Option<bool>,
     /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
-    #[doc(hidden)]
     pub start_at_previous_started_event: ::std::option::Option<bool>,
 }
 impl PollForDecisionTaskInput {

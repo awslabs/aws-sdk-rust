@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableDataPathOption {
     /// <p>The list of data path values for the data path options.</p>
-    #[doc(hidden)]
     pub data_path_list: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
     /// <p>The width of the data path option.</p>
-    #[doc(hidden)]
     pub width: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableDataPathOption {

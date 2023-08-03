@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreatmentResource {
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
-    #[doc(hidden)]
     pub custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     /// <p>The unique identifier for the treatment.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The message configuration settings for the treatment.</p>
-    #[doc(hidden)]
     pub message_configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     /// <p>The schedule settings for the treatment.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::Schedule>,
     /// <p>The allocated percentage of users (segment members) that the treatment is sent to.</p>
-    #[doc(hidden)]
     pub size_percent: ::std::option::Option<i32>,
     /// <p>The current status of the treatment.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CampaignState>,
     /// <p>The message template to use for the treatment.</p>
-    #[doc(hidden)]
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
     /// <p>The custom description of the treatment.</p>
-    #[doc(hidden)]
     pub treatment_description: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the treatment.</p>
-    #[doc(hidden)]
     pub treatment_name: ::std::option::Option<::std::string::String>,
 }
 impl TreatmentResource {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Summary {
     /// <p>The timestamp that shows when this summary was generated in this Region. </p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::std::string::String>,
     /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
-    #[doc(hidden)]
     pub target_id_type: ::std::option::Option<crate::types::TargetIdType>,
     /// <p>The Amazon Web Services Region that the summary applies to.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The count of noncompliant resources.</p>
-    #[doc(hidden)]
     pub non_compliant_resources: i64,
 }
 impl Summary {

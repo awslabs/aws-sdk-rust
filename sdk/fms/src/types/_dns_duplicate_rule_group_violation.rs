@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsDuplicateRuleGroupViolation {
     /// <p>Information about the VPC ID. </p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
-    #[doc(hidden)]
     pub violation_target_description: ::std::option::Option<::std::string::String>,
 }
 impl DnsDuplicateRuleGroupViolation {

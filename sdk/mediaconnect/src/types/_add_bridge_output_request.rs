@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeOutputRequest {
     /// Add a network output to an existing bridge.
-    #[doc(hidden)]
     pub network_output: ::std::option::Option<crate::types::AddBridgeNetworkOutputRequest>,
 }
 impl AddBridgeOutputRequest {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplateActionsInput {
     /// <p>Launch configuration template ID.</p>
-    #[doc(hidden)]
     pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters to apply when listing template post migration custom actions.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::TemplateActionsRequestFilters>,
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
-    #[doc(hidden)]
     pub max_results: i32,
     /// <p>Next token to use when listing template post migration custom actions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTemplateActionsInput {

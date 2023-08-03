@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEntityInput {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>Required. The unique ID of the entity to describe.</p>
-    #[doc(hidden)]
     pub entity_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEntityInput {

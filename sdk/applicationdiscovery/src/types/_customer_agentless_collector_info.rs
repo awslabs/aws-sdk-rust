@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerAgentlessCollectorInfo {
     /// <p>The number of active Agentless Collector collectors. </p>
-    #[doc(hidden)]
     pub active_agentless_collectors: i32,
     /// <p>The number of healthy Agentless Collector collectors. </p>
-    #[doc(hidden)]
     pub healthy_agentless_collectors: i32,
     /// <p>The number of deny-listed Agentless Collector collectors. </p>
-    #[doc(hidden)]
     pub deny_listed_agentless_collectors: i32,
     /// <p>The number of Agentless Collector collectors with <code>SHUTDOWN</code> status. </p>
-    #[doc(hidden)]
     pub shutdown_agentless_collectors: i32,
     /// <p> The number of unhealthy Agentless Collector collectors. </p>
-    #[doc(hidden)]
     pub unhealthy_agentless_collectors: i32,
     /// <p> The total number of Agentless Collector collectors. </p>
-    #[doc(hidden)]
     pub total_agentless_collectors: i32,
     /// <p> The number of unknown Agentless Collector collectors. </p>
-    #[doc(hidden)]
     pub unknown_agentless_collectors: i32,
 }
 impl CustomerAgentlessCollectorInfo {

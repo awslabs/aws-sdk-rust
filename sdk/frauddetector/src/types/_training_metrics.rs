@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingMetrics {
     /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
-    #[doc(hidden)]
     pub auc: ::std::option::Option<f32>,
     /// <p>The data points details.</p>
-    #[doc(hidden)]
     pub metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataPoint>>,
 }
 impl TrainingMetrics {

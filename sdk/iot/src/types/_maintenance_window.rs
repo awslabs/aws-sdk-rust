@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindow {
     /// <p>Displays the start time of the next maintenance window.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>Displays the duration of the next maintenance window.</p>
-    #[doc(hidden)]
     pub duration_in_minutes: ::std::option::Option<i32>,
 }
 impl MaintenanceWindow {

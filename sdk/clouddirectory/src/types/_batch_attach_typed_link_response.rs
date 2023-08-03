@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
-    #[doc(hidden)]
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
 }
 impl BatchAttachTypedLinkResponse {

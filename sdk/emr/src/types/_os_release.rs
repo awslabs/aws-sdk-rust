@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OsRelease {
     /// <p>The Amazon Linux release specified for a cluster in the RunJobFlow request. The format is as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, 2.0.20220218.1.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
 }
 impl OsRelease {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Order {
     /// <p> The ID of the Outpost in the order. </p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the order.</p>
-    #[doc(hidden)]
     pub order_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the order.</p>
     /// <ul>
@@ -20,25 +18,18 @@ pub struct Order {
     /// </ul> <note>
     /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OrderStatus>,
     /// <p>The line items for the order</p>
-    #[doc(hidden)]
     pub line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItem>>,
     /// <p>The payment option for the order.</p>
-    #[doc(hidden)]
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The submission date for the order.</p>
-    #[doc(hidden)]
     pub order_submission_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The fulfillment date of the order.</p>
-    #[doc(hidden)]
     pub order_fulfilled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The payment term.</p>
-    #[doc(hidden)]
     pub payment_term: ::std::option::Option<crate::types::PaymentTerm>,
     /// <p>Type of order.</p>
-    #[doc(hidden)]
     pub order_type: ::std::option::Option<crate::types::OrderType>,
 }
 impl Order {

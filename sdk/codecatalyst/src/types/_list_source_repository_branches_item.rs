@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSourceRepositoryBranchesItem {
     /// <p>The Git reference name of the branch.</p>
-    #[doc(hidden)]
     pub r#ref: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
-    #[doc(hidden)]
     pub head_commit_id: ::std::option::Option<::std::string::String>,
 }
 impl ListSourceRepositoryBranchesItem {

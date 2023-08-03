@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCalculatedAttributesForProfileOutput {
     /// <p>The list of calculated attributes.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListCalculatedAttributeForProfileItem>>,
     /// <p>The pagination token from the previous call to ListCalculatedAttributesForProfile.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

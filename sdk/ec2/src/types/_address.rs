@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Address {
     /// <p>The ID of the instance that the address is associated with (if any).</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic IP address.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID representing the allocation of the address.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID representing the association of the address with an instance.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The network (<code>vpc</code>).</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::DomainType>,
     /// <p>The ID of the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the network interface.</p>
-    #[doc(hidden)]
     pub network_interface_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address associated with the Elastic IP address.</p>
-    #[doc(hidden)]
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the Elastic IP address.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of an address pool.</p>
-    #[doc(hidden)]
     pub public_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
-    #[doc(hidden)]
     pub network_border_group: ::std::option::Option<::std::string::String>,
     /// <p>The customer-owned IP address.</p>
-    #[doc(hidden)]
     pub customer_owned_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer-owned address pool.</p>
-    #[doc(hidden)]
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
-    #[doc(hidden)]
     pub carrier_ip: ::std::option::Option<::std::string::String>,
 }
 impl Address {

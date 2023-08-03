@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// <p>The ARN or the <code>UUID</code> value of the channel that you want to delete.</p>
-    #[doc(hidden)]
     pub channel: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChannelInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWirelessGatewayTaskCreate {
     /// <p>The link to the S3 bucket.</p>
-    #[doc(hidden)]
     pub update_data_source: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role used to read data from the S3 bucket.</p>
-    #[doc(hidden)]
     pub update_data_role: ::std::option::Option<::std::string::String>,
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
-    #[doc(hidden)]
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskCreate>,
 }
 impl UpdateWirelessGatewayTaskCreate {

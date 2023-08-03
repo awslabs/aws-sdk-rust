@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the input into which the message payload is transformed.</p>
-    #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
-    #[doc(hidden)]
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The timestamp associated with the message.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<crate::types::TimestampValue>,
 }
 impl Message {

@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInferenceSchedulerInput {
     /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference scheduler being created. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p>The interval (in minutes) of planned delay at the start of each inference segment. For example, if inference is set to run every ten minutes, the delay is set to five minutes and the time is 09:08. The inference scheduler will wake up at the configured interval (which, without a delay configured, would be 09:10) plus the additional five minute delay time (so 09:15) to check your Amazon S3 bucket. The delay provides a buffer for you to upload data at the same frequency, so that you don't have to stop and restart the scheduler when uploading new data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    #[doc(hidden)]
     pub data_delay_offset_in_minutes: ::std::option::Option<i64>,
     /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
-    #[doc(hidden)]
     pub data_upload_frequency: ::std::option::Option<crate::types::DataUploadFrequency>,
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
-    #[doc(hidden)]
     pub data_input_configuration: ::std::option::Option<crate::types::InferenceInputConfiguration>,
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
-    #[doc(hidden)]
     pub data_output_configuration: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-    #[doc(hidden)]
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Any tags associated with the inference scheduler. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateInferenceSchedulerInput {

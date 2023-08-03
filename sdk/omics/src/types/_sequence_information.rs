@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SequenceInformation {
     /// <p>The sequence's total read count.</p>
-    #[doc(hidden)]
     pub total_read_count: ::std::option::Option<i64>,
     /// <p>The sequence's total base count.</p>
-    #[doc(hidden)]
     pub total_base_count: ::std::option::Option<i64>,
     /// <p>Where the sequence originated.</p>
-    #[doc(hidden)]
     pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p>The sequence's alignment setting.</p>
-    #[doc(hidden)]
     pub alignment: ::std::option::Option<::std::string::String>,
 }
 impl SequenceInformation {

@@ -4,17 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGeoMatchSetInput {
     /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    #[doc(hidden)]
     pub geo_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
     /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
     /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>,
 }
 impl UpdateGeoMatchSetInput {

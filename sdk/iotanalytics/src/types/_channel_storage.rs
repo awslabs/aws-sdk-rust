@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelStorage {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
-    #[doc(hidden)]
     pub service_managed_s3: ::std::option::Option<crate::types::ServiceManagedChannelS3Storage>,
     /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
-    #[doc(hidden)]
     pub customer_managed_s3: ::std::option::Option<crate::types::CustomerManagedChannelS3Storage>,
 }
 impl ChannelStorage {

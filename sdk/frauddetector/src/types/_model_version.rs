@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelVersion {
     /// <p>The model ID.</p>
-    #[doc(hidden)]
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The model version number.</p>
-    #[doc(hidden)]
     pub model_version_number: ::std::option::Option<::std::string::String>,
     /// <p>The model version ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ModelVersion {

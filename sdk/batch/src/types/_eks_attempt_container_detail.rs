@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksAttemptContainerDetail {
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
-    #[doc(hidden)]
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl EksAttemptContainerDetail {

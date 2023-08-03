@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaShortInfoResponse {
     /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    #[doc(hidden)]
     pub database_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl SchemaShortInfoResponse {

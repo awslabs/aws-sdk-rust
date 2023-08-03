@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingConfig {
     /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
-    #[doc(hidden)]
     pub maximum_concurrency: ::std::option::Option<i32>,
 }
 impl ScalingConfig {

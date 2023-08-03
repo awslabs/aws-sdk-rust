@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanSignal {
     /// <p>The ID of the message.</p>
-    #[doc(hidden)]
     pub message_id: i32,
     /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
-    #[doc(hidden)]
     pub is_big_endian: bool,
     /// <p>Whether the message data is specified as a signed value.</p>
-    #[doc(hidden)]
     pub is_signed: bool,
     /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
     /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
-    #[doc(hidden)]
     pub start_bit: i32,
     /// <p>The offset used to calculate the signal value. Combined with factor, the calculation is <code>value = raw_value * factor + offset</code>.</p>
-    #[doc(hidden)]
     pub offset: ::std::option::Option<f64>,
     /// <p>A multiplier used to decode the CAN message.</p>
-    #[doc(hidden)]
     pub factor: ::std::option::Option<f64>,
     /// <p>How many bytes of data are in the message.</p>
-    #[doc(hidden)]
     pub length: i32,
     /// <p>The name of the signal.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl CanSignal {

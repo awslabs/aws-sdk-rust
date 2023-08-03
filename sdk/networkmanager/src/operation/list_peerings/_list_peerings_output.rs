@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPeeringsOutput {
     /// <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
-    #[doc(hidden)]
     pub peerings: ::std::option::Option<::std::vec::Vec<crate::types::Peering>>,
     /// <p>The token for the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

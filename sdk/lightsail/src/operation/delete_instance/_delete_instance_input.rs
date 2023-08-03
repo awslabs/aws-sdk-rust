@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInstanceInput {
     /// <p>The name of the instance to delete.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
-    #[doc(hidden)]
     pub force_delete_add_ons: ::std::option::Option<bool>,
 }
 impl DeleteInstanceInput {

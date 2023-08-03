@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUsageForLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    #[doc(hidden)]
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
@@ -18,7 +15,6 @@ pub struct ListUsageForLicenseConfigurationInput {
     /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl ListUsageForLicenseConfigurationInput {

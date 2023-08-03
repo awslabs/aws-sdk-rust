@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicCalculatedField {
     /// <p>The calculated field name.</p>
-    #[doc(hidden)]
     pub calculated_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The calculated field description.</p>
-    #[doc(hidden)]
     pub calculated_field_description: ::std::option::Option<::std::string::String>,
     /// <p>The calculated field expression.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the calculated field.</p>
-    #[doc(hidden)]
     pub calculated_field_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A boolean value that indicates if a calculated field is included in the topic.</p>
-    #[doc(hidden)]
     pub is_included_in_topic: bool,
     /// <p>A Boolean value that indicates if a calculated field is visible in the autocomplete.</p>
-    #[doc(hidden)]
     pub disable_indexing: ::std::option::Option<bool>,
     /// <p>The column data role for a calculated field. Valid values for this structure are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
-    #[doc(hidden)]
     pub column_data_role: ::std::option::Option<crate::types::ColumnDataRole>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    #[doc(hidden)]
     pub time_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     /// <p>The default formatting definition.</p>
-    #[doc(hidden)]
     pub default_formatting: ::std::option::Option<crate::types::DefaultFormatting>,
     /// <p>The default aggregation. Valid values for this structure are <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
-    #[doc(hidden)]
     pub aggregation: ::std::option::Option<crate::types::DefaultAggregation>,
     /// <p>The order in which data is displayed for the calculated field when it's used in a comparative context.</p>
-    #[doc(hidden)]
     pub comparative_order: ::std::option::Option<crate::types::ComparativeOrder>,
     /// <p>The semantic type.</p>
-    #[doc(hidden)]
     pub semantic_type: ::std::option::Option<crate::types::SemanticType>,
     /// <p>The list of aggregation types that are allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    #[doc(hidden)]
     pub allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     /// <p>The list of aggregation types that are not allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    #[doc(hidden)]
     pub not_allowed_aggregations: ::std::option::Option<::std::vec::Vec<crate::types::AuthorSpecifiedAggregation>>,
     /// <p>A Boolean value that indicates whether to never aggregate calculated field in filters.</p>
-    #[doc(hidden)]
     pub never_aggregate_in_filter: bool,
     /// <p>The other names or aliases for the calculated field cell value.</p>
-    #[doc(hidden)]
     pub cell_value_synonyms: ::std::option::Option<::std::vec::Vec<crate::types::CellValueSynonym>>,
 }
 impl TopicCalculatedField {

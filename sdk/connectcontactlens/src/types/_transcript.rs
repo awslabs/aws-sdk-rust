@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transcript {
     /// <p>The identifier of the transcript.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the participant.</p>
-    #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<::std::string::String>,
     /// <p>The content of the transcript.</p>
-    #[doc(hidden)]
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The beginning offset in the contact for this transcript.</p>
-    #[doc(hidden)]
     pub begin_offset_millis: i32,
     /// <p>The end offset in the contact for this transcript.</p>
-    #[doc(hidden)]
     pub end_offset_millis: i32,
     /// <p>The sentiment of the detected for this piece of transcript.</p>
-    #[doc(hidden)]
     pub sentiment: ::std::option::Option<crate::types::SentimentValue>,
     /// <p>List of positions where issues were detected on the transcript.</p>
-    #[doc(hidden)]
     pub issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
 }
 impl Transcript {

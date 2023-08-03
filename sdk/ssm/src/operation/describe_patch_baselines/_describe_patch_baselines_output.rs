@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePatchBaselinesOutput {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
-    #[doc(hidden)]
     pub baseline_identities: ::std::option::Option<::std::vec::Vec<crate::types::PatchBaselineIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

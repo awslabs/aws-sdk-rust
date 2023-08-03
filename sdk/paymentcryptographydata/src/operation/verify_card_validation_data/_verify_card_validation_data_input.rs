@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VerifyCardValidationDataInput {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.</p>
-    #[doc(hidden)]
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    #[doc(hidden)]
     pub primary_account_number: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub verification_attributes: ::std::option::Option<crate::types::CardVerificationAttributes>,
     /// <p>The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub validation_data: ::std::option::Option<::std::string::String>,
 }
 impl VerifyCardValidationDataInput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableOutput {
     /// <p>The updated Timestream table.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::Table>,
     _request_id: Option<String>,
 }

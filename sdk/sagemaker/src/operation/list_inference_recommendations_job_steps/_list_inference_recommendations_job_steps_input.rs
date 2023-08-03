@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobStepsInput {
     /// <p>The name for the Inference Recommender job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>A filter to return details about the specified type of subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
-    #[doc(hidden)]
     pub step_type: ::std::option::Option<crate::types::RecommendationStepType>,
     /// <p>The maximum number of results to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListInferenceRecommendationsJobStepsInput {

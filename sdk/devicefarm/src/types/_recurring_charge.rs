@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecurringCharge {
     /// <p>The cost of the recurring charge.</p>
-    #[doc(hidden)]
     pub cost: ::std::option::Option<crate::types::MonetaryAmount>,
     /// <p>The frequency in which charges recur.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<crate::types::RecurringChargeFrequency>,
 }
 impl RecurringCharge {

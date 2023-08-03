@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisDisplayRange {
     /// <p>The minimum and maximum setup of an axis display range.</p>
-    #[doc(hidden)]
     pub min_max: ::std::option::Option<crate::types::AxisDisplayMinMaxRange>,
     /// <p>The data-driven setup of an axis display range.</p>
-    #[doc(hidden)]
     pub data_driven: ::std::option::Option<crate::types::AxisDisplayDataDrivenRange>,
 }
 impl AxisDisplayRange {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyRecommendationDetail {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
-    #[doc(hidden)]
     pub target_instances: ::std::option::Option<::std::vec::Vec<crate::types::TargetInstance>>,
 }
 impl ModifyRecommendationDetail {

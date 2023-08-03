@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDestinationsOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// List of destinations.
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
     _request_id: Option<String>,
 }

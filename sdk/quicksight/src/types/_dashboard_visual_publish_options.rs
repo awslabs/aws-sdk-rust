@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardVisualPublishOptions {
     /// <p>Determines if hidden fields are included in an exported dashboard.</p>
-    #[doc(hidden)]
     pub export_hidden_fields_option: ::std::option::Option<crate::types::ExportHiddenFieldsOption>,
 }
 impl DashboardVisualPublishOptions {

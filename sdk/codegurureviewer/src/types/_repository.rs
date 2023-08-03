@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Repository {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
-    #[doc(hidden)]
     pub code_commit: ::std::option::Option<crate::types::CodeCommitRepository>,
     /// <p> Information about a Bitbucket repository. </p>
-    #[doc(hidden)]
     pub bitbucket: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
     /// <p>Information about a GitHub Enterprise Server repository.</p>
-    #[doc(hidden)]
     pub git_hub_enterprise_server: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
     /// <p>Information about a repository in an S3 bucket.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<crate::types::S3Repository>,
 }
 impl Repository {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBridgeDataSourceConfig {
     /// <p>The ARN of the event bus. For more information about event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon EventBridge event buses</a>.</p>
-    #[doc(hidden)]
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventBridgeDataSourceConfig {

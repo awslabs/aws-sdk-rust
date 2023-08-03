@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelBan {
     /// <p>The member being banned from the channel.</p>
-    #[doc(hidden)]
     pub member: ::std::option::Option<crate::types::Identity>,
     /// <p>The ARN of the channel from which a member is being banned.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the ban was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::Identity>,
 }
 impl ChannelBan {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectEntitiesV2Output {
     /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence in the detection and analysis. Attributes and traits of the entity are also returned.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     /// <p>Attributes extracted from the input text that couldn't be related to an entity.</p>
-    #[doc(hidden)]
     pub unmapped_attributes: ::std::option::Option<::std::vec::Vec<crate::types::UnmappedAttribute>>,
     /// <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
-    #[doc(hidden)]
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    #[doc(hidden)]
     pub model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

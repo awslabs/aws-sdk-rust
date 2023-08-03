@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceAccessControlAttributeConfigurationOutput {
     /// <p>The status of the attribute configuration process.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InstanceAccessControlAttributeConfigurationStatus>,
     /// <p>Provides more details about the current status of the specified attribute.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.</p>
-    #[doc(hidden)]
     pub instance_access_control_attribute_configuration: ::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
     _request_id: Option<String>,
 }

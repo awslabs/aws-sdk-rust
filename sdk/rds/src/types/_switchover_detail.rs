@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SwitchoverDetail {
     /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-    #[doc(hidden)]
     pub source_member: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-    #[doc(hidden)]
     pub target_member: ::std::option::Option<::std::string::String>,
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
     /// <p>Values:</p>
@@ -22,7 +20,6 @@ pub struct SwitchoverDetail {
     /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
     /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl SwitchoverDetail {

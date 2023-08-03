@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnshareDirectoryOutput {
     /// <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>
-    #[doc(hidden)]
     pub shared_directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

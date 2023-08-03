@@ -6,7 +6,6 @@
 pub struct RetentionPolicy {
     /// <p>The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.</p>
     /// <p>Specify <code>Delete</code> to delete the data stored on the EFS volume.</p>
-    #[doc(hidden)]
     pub home_efs_file_system: ::std::option::Option<crate::types::RetentionType>,
 }
 impl RetentionPolicy {

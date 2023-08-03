@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAddressBookInput {
     /// <p>The ARN of the address book to delete.</p>
-    #[doc(hidden)]
     pub address_book_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAddressBookInput {

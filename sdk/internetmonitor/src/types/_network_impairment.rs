@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkImpairment {
     /// <p>The networks that could be impacted by a network impairment event.</p>
-    #[doc(hidden)]
     pub networks: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
     /// <p>The combination of the Autonomous System Number (ASN) of the network and the name of the network.</p>
-    #[doc(hidden)]
     pub as_path: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
     /// <p>Type of network impairment.</p>
-    #[doc(hidden)]
     pub network_event_type: ::std::option::Option<crate::types::TriangulationEventType>,
 }
 impl NetworkImpairment {

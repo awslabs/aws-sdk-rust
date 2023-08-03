@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRunInput {
     /// <p>The run's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The run's export format.</p>
-    #[doc(hidden)]
     pub export: ::std::option::Option<::std::vec::Vec<crate::types::RunExport>>,
 }
 impl GetRunInput {

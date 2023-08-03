@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the resource.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the resource.</p>
-    #[doc(hidden)]
     pub owning_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which the resource was created and exists.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Service that owns the resource and is responsible for creating and updating it.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
-    #[doc(hidden)]
     pub last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>>,
 }
 impl Resource {

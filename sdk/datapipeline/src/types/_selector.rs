@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Selector {
     /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
-    #[doc(hidden)]
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl Selector {

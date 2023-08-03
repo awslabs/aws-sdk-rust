@@ -11,11 +11,9 @@ pub struct UpdatePrimaryRegionInput {
     /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code> </p> </li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code> or <code>ap-southeast-2</code>. There must be an existing replica key in this Region. </p>
     /// <p>When the operation completes, the multi-Region key in this Region will be the primary key.</p>
-    #[doc(hidden)]
     pub primary_region: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePrimaryRegionInput {

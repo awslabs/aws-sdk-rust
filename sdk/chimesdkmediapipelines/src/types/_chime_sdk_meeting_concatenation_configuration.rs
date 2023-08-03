@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChimeSdkMeetingConcatenationConfiguration {
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting concatenation.</p>
-    #[doc(hidden)]
     pub artifacts_configuration: ::std::option::Option<crate::types::ArtifactsConcatenationConfiguration>,
 }
 impl ChimeSdkMeetingConcatenationConfiguration {

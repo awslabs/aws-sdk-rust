@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobProcessDetails {
     /// <p>The target devices to which the job execution is being rolled out. This value will be null after the job execution has finished rolling out to all the target devices.</p>
-    #[doc(hidden)]
     pub processing_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of things that cancelled the job.</p>
-    #[doc(hidden)]
     pub number_of_canceled_things: ::std::option::Option<i32>,
     /// <p>The number of things which successfully completed the job.</p>
-    #[doc(hidden)]
     pub number_of_succeeded_things: ::std::option::Option<i32>,
     /// <p>The number of things that failed executing the job.</p>
-    #[doc(hidden)]
     pub number_of_failed_things: ::std::option::Option<i32>,
     /// <p>The number of things that rejected the job.</p>
-    #[doc(hidden)]
     pub number_of_rejected_things: ::std::option::Option<i32>,
     /// <p>The number of things that are awaiting execution of the job.</p>
-    #[doc(hidden)]
     pub number_of_queued_things: ::std::option::Option<i32>,
     /// <p>The number of things currently executing the job.</p>
-    #[doc(hidden)]
     pub number_of_in_progress_things: ::std::option::Option<i32>,
     /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or have been removed from the group that was a target of the job.</p>
-    #[doc(hidden)]
     pub number_of_removed_things: ::std::option::Option<i32>,
     /// <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>
-    #[doc(hidden)]
     pub number_of_timed_out_things: ::std::option::Option<i32>,
 }
 impl JobProcessDetails {

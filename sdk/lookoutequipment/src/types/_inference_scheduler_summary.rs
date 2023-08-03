@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceSchedulerSummary {
     /// <p>The name of the ML model used for the inference scheduler. </p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference scheduler. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
-    #[doc(hidden)]
     pub inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the inference scheduler. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
     /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if an offset delay time of five minutes was selected, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
-    #[doc(hidden)]
     pub data_delay_offset_in_minutes: ::std::option::Option<i64>,
     /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
-    #[doc(hidden)]
     pub data_upload_frequency: ::std::option::Option<crate::types::DataUploadFrequency>,
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
-    #[doc(hidden)]
     pub latest_inference_result: ::std::option::Option<crate::types::LatestInferenceResult>,
 }
 impl InferenceSchedulerSummary {

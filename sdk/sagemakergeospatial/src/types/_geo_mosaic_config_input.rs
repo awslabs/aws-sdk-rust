@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMosaicConfigInput {
     /// <p>The name of the algorithm being used for geomosaic.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
     /// <p>The target bands for geomosaic.</p>
-    #[doc(hidden)]
     pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GeoMosaicConfigInput {

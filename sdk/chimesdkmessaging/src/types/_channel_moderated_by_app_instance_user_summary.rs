@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
-    #[doc(hidden)]
     pub channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
 }
 impl ChannelModeratedByAppInstanceUserSummary {

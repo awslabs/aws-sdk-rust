@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticLoadBalancersOutput {
     /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
-    #[doc(hidden)]
     pub elastic_load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::ElasticLoadBalancer>>,
     _request_id: Option<String>,
 }

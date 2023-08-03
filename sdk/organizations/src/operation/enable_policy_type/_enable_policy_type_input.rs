@@ -5,7 +5,6 @@
 pub struct EnablePolicyTypeInput {
     /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
-    #[doc(hidden)]
     pub root_id: ::std::option::Option<::std::string::String>,
     /// <p>The policy type that you want to enable. You can specify one of the following values:</p>
     /// <ul>
@@ -14,7 +13,6 @@ pub struct EnablePolicyTypeInput {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
 }
 impl EnablePolicyTypeInput {

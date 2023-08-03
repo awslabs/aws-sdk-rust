@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingGroupProperties {
     /// <p>The thing group description.</p>
-    #[doc(hidden)]
     pub thing_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The thing group attributes in JSON format.</p>
-    #[doc(hidden)]
     pub attribute_payload: ::std::option::Option<crate::types::AttributePayload>,
 }
 impl ThingGroupProperties {

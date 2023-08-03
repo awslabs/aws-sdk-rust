@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInferenceRecommendationsJobInput {
     /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInferenceRecommendationsJobInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReusableDelegationSetLimitOutput {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<crate::types::ReusableDelegationSetLimit>,
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    #[doc(hidden)]
     pub count: i64,
     _request_id: Option<String>,
 }

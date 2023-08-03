@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReportJobsInput {
     /// <p>Returns only report jobs with the specified report plan name.</p>
-    #[doc(hidden)]
     pub by_report_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    #[doc(hidden)]
     pub by_creation_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    #[doc(hidden)]
     pub by_creation_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
     /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
-    #[doc(hidden)]
     pub by_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListReportJobsInput {

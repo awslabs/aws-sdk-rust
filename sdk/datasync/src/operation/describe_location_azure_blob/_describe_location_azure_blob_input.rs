@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationAzureBlobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of your Azure Blob Storage transfer location.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationAzureBlobInput {

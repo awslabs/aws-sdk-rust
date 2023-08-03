@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopQueryExecutionInput {
     /// <p>The unique ID of the query execution to stop.</p>
-    #[doc(hidden)]
     pub query_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl StopQueryExecutionInput {

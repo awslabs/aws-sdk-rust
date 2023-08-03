@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceOutput {
     /// <p>The resource's identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The parent resource's identifier.</p>
-    #[doc(hidden)]
     pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>The last path segment for this resource.</p>
-    #[doc(hidden)]
     pub path_part: ::std::option::Option<::std::string::String>,
     /// <p>The full path for this resource.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
-    #[doc(hidden)]
     pub resource_methods: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>>,
     _request_id: Option<String>,
 }

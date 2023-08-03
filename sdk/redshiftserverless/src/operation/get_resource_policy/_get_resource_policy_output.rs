@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePolicyOutput {
     /// <p>The returned resource policy.</p>
-    #[doc(hidden)]
     pub resource_policy: ::std::option::Option<crate::types::ResourcePolicy>,
     _request_id: Option<String>,
 }

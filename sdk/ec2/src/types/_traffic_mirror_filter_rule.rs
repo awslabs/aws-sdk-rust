@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficMirrorFilterRule {
     /// <p>The ID of the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Traffic Mirror filter that the rule is associated with.</p>
-    #[doc(hidden)]
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The traffic direction assigned to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub traffic_direction: ::std::option::Option<crate::types::TrafficDirection>,
     /// <p>The rule number of the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub rule_number: ::std::option::Option<i32>,
     /// <p>The action assigned to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub rule_action: ::std::option::Option<crate::types::TrafficMirrorRuleAction>,
     /// <p>The protocol assigned to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<i32>,
     /// <p>The destination port range assigned to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub destination_port_range: ::std::option::Option<crate::types::TrafficMirrorPortRange>,
     /// <p>The source port range assigned to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub source_port_range: ::std::option::Option<crate::types::TrafficMirrorPortRange>,
     /// <p>The destination CIDR block assigned to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The source CIDR block assigned to the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub source_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Traffic Mirror rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl TrafficMirrorFilterRule {

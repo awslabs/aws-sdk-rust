@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptPageInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    #[doc(hidden)]
     pub page_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the contact channel.</p>
-    #[doc(hidden)]
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
-    #[doc(hidden)]
     pub accept_type: ::std::option::Option<crate::types::AcceptType>,
     /// <p>Information provided by the user when the user acknowledges the page.</p>
-    #[doc(hidden)]
     pub note: ::std::option::Option<::std::string::String>,
     /// <p>A 6-digit code used to acknowledge the page.</p>
-    #[doc(hidden)]
     pub accept_code: ::std::option::Option<::std::string::String>,
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
-    #[doc(hidden)]
     pub accept_code_validation: ::std::option::Option<crate::types::AcceptCodeValidation>,
 }
 impl AcceptPageInput {

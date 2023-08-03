@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageFilterCondition {
     /// <p>Represents an equal condition that is applied to a single field while retrieving the coverage details.</p>
-    #[doc(hidden)]
     pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a not equal condition that is applied to a single field while retrieving the coverage details.</p>
-    #[doc(hidden)]
     pub not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CoverageFilterCondition {

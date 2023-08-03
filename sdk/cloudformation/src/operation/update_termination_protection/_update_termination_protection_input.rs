@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTerminationProtectionInput {
     /// <p>Whether to enable termination protection on the specified stack.</p>
-    #[doc(hidden)]
     pub enable_termination_protection: ::std::option::Option<bool>,
     /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateTerminationProtectionInput {

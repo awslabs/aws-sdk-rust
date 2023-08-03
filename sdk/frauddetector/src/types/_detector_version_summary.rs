@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorVersionSummary {
     /// <p>The detector version ID. </p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version status. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::DetectorVersionStatus>,
     /// <p>The detector version description. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the detector version was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
 }
 impl DetectorVersionSummary {

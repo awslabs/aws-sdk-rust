@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChildWorkflowExecutionStartedEventAttributes {
     /// <p>The child workflow execution that was started.</p>
-    #[doc(hidden)]
     pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
-    #[doc(hidden)]
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    #[doc(hidden)]
     pub initiated_event_id: i64,
 }
 impl ChildWorkflowExecutionStartedEventAttributes {

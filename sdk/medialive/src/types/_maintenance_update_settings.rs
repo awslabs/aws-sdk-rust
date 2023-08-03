@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceUpdateSettings {
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
-    #[doc(hidden)]
     pub maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     /// Choose a specific date for maintenance to occur. The chosen date is used for the next maintenance window only.
-    #[doc(hidden)]
     pub maintenance_scheduled_date: ::std::option::Option<::std::string::String>,
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
-    #[doc(hidden)]
     pub maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceUpdateSettings {

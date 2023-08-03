@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {
     /// <p> Indicates whether Amazon Simple Storage Service (Amazon S3) server-side encryption with Amazon S3 managed keys (SSE_S3), server-side encryption with KMS keys (SSE_KMS), or client-side encryption with KMS customer managed keys (CSE_KMS) is used. </p>
-    #[doc(hidden)]
     pub encryption_option: ::std::option::Option<::std::string::String>,
     /// <p> For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key Amazon Resource Name (ARN) or ID. </p>
-    #[doc(hidden)]
     pub kms_key: ::std::option::Option<::std::string::String>,
 }
 impl AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails {

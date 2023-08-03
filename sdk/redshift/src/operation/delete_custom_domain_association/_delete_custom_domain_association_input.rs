@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomDomainAssociationInput {
     /// <p>The identifier of the cluster to delete a custom domain association for.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomDomainAssociationInput {

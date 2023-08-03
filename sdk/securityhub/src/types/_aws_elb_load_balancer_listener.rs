@@ -5,23 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerListener {
     /// <p>The port on which the instance is listening.</p>
-    #[doc(hidden)]
     pub instance_port: i32,
     /// <p>The protocol to use to route traffic to instances.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
-    #[doc(hidden)]
     pub instance_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the load balancer is listening.</p>
     /// <p>On EC2-VPC, you can specify any port from the range 1-65535.</p>
     /// <p>On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
-    #[doc(hidden)]
     pub load_balancer_port: i32,
     /// <p>The load balancer transport protocol to use for routing.</p>
     /// <p>Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code> </p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the server certificate.</p>
-    #[doc(hidden)]
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbLoadBalancerListener {

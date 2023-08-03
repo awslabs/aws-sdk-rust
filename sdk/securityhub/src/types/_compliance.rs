@@ -15,19 +15,14 @@ pub struct Compliance {
     /// <li> <p> <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
-    #[doc(hidden)]
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    #[doc(hidden)]
     pub status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>,
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
-    #[doc(hidden)]
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The enabled security standards in which a security control is currently enabled. </p>
-    #[doc(hidden)]
     pub associated_standards: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
 }
 impl Compliance {

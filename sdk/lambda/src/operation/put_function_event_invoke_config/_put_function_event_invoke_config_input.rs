@@ -11,16 +11,12 @@ pub struct PutFunctionEventInvokeConfigInput {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>A version number or alias name.</p>
-    #[doc(hidden)]
     pub qualifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of times to retry when the function returns an error.</p>
-    #[doc(hidden)]
     pub maximum_retry_attempts: ::std::option::Option<i32>,
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-    #[doc(hidden)]
     pub maximum_event_age_in_seconds: ::std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"> <b>Destinations</b> </p>
@@ -30,7 +26,6 @@ pub struct PutFunctionEventInvokeConfigInput {
     /// <li> <p> <b>Topic</b> - The ARN of a standard SNS topic.</p> </li>
     /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
 }
 impl PutFunctionEventInvokeConfigInput {

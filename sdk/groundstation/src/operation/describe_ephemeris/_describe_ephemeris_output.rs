@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEphemerisOutput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    #[doc(hidden)]
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
-    #[doc(hidden)]
     pub satellite_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the ephemeris.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::EphemerisStatus>,
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The time the ephemeris was uploaded in UTC.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether or not the ephemeris is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to an ephemeris.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Supplied ephemeris data.</p>
-    #[doc(hidden)]
     pub supplied_data: ::std::option::Option<crate::types::EphemerisTypeDescription>,
     /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
-    #[doc(hidden)]
     pub invalid_reason: ::std::option::Option<crate::types::EphemerisInvalidReason>,
     _request_id: Option<String>,
 }

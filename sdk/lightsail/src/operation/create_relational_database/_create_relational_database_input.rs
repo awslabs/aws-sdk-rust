@@ -9,19 +9,15 @@ pub struct CreateRelationalDatabaseInput {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
-    #[doc(hidden)]
     pub relational_database_blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
-    #[doc(hidden)]
     pub relational_database_bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
     /// <p> <b>MySQL</b> </p>
@@ -40,7 +36,6 @@ pub struct CreateRelationalDatabaseInput {
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>
     /// <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name for the master user.</p>
     /// <p> <b>MySQL</b> </p>
@@ -59,14 +54,12 @@ pub struct CreateRelationalDatabaseInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.</p>
     /// <p> <b>MySQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>
@@ -77,7 +70,6 @@ pub struct CreateRelationalDatabaseInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur on your new database.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
@@ -89,14 +81,11 @@ pub struct CreateRelationalDatabaseInput {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
-    #[doc(hidden)]
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRelationalDatabaseInput {

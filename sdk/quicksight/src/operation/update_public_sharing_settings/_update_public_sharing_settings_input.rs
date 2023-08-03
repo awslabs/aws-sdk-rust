@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePublicSharingSettingsInput {
     /// <p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.</p>
-    #[doc(hidden)]
     pub public_sharing_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePublicSharingSettingsInput {

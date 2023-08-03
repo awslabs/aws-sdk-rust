@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowDefinition {
     /// <p>A description of the flow you want to create.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
-    #[doc(hidden)]
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
-    #[doc(hidden)]
     pub kms_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
-    #[doc(hidden)]
     pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
     /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
-    #[doc(hidden)]
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     /// <p>The trigger settings that determine how and when the flow runs.</p>
-    #[doc(hidden)]
     pub trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
 }
 impl FlowDefinition {

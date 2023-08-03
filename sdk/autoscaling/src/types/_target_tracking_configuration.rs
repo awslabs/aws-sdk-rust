@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
-    #[doc(hidden)]
     pub predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
-    #[doc(hidden)]
     pub customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     /// <p>The target value for the metric.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
-    #[doc(hidden)]
     pub target_value: ::std::option::Option<f64>,
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingConfiguration {

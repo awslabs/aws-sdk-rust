@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChangeSetsInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    #[doc(hidden)]
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>An array of filter objects.</p>
-    #[doc(hidden)]
     pub filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    #[doc(hidden)]
     pub sort: ::std::option::Option<crate::types::Sort>,
     /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListChangeSetsInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
-    #[doc(hidden)]
     pub user_import_job: ::std::option::Option<crate::types::UserImportJobType>,
     _request_id: Option<String>,
 }

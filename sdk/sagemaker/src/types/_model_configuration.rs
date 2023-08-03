@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelConfiguration {
     /// <p>The inference specification name in the model package version.</p>
-    #[doc(hidden)]
     pub inference_specification_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
-    #[doc(hidden)]
     pub environment_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
-    #[doc(hidden)]
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelConfiguration {

@@ -6,34 +6,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>The name of the API operation tested on the indicated resource.</p>
-    #[doc(hidden)]
     pub eval_action_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource that the indicated API operation was tested on.</p>
-    #[doc(hidden)]
     pub eval_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The result of the simulation.</p>
-    #[doc(hidden)]
     pub eval_decision: ::std::option::Option<crate::types::PolicyEvaluationDecisionType>,
     /// <p>A list of the statements in the input policies that determine the result for this scenario. Remember that even if multiple statements allow the operation on the resource, if only one statement denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.</p>
-    #[doc(hidden)]
     pub matched_statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
     /// <p>A list of context keys that are required by the included input policies but that were not provided by one of the input parameters. This list is used when the resource in a simulation is "*", either explicitly, or when the <code>ResourceArns</code> parameter blank. If you include a list of resources, then any missing context values are instead included under the <code>ResourceSpecificResults</code> section. To discover the context keys used by a set of policies, you can call <code>GetContextKeysForCustomPolicy</code> or <code>GetContextKeysForPrincipalPolicy</code>.</p>
-    #[doc(hidden)]
     pub missing_context_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure that details how Organizations and its service control policies affect the results of the simulation. Only applies if the simulated user's account is part of an organization.</p>
-    #[doc(hidden)]
     pub organizations_decision_detail: ::std::option::Option<crate::types::OrganizationsDecisionDetail>,
     /// <p>Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity.</p>
-    #[doc(hidden)]
     pub permissions_boundary_decision_detail: ::std::option::Option<crate::types::PermissionsBoundaryDecisionDetail>,
     /// <p>Additional details about the results of the cross-account evaluation decision. This parameter is populated for only cross-account simulations. It contains a brief summary of how each policy type contributes to the final evaluation decision.</p>
     /// <p>If the simulation evaluates policies within the same account and includes a resource ARN, then the parameter is present but the response is empty. If the simulation evaluates policies within the same account and specifies all resources (<code>*</code>), then the parameter is not returned.</p>
     /// <p>When you make a cross-account request, Amazon Web Services evaluates the request in the trusting account and the trusted account. The request is allowed only if both evaluations return <code>true</code>. For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies within a single account</a>.</p>
     /// <p>If an Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy evaluation does not proceed any further and this parameter is not returned.</p>
-    #[doc(hidden)]
     pub eval_decision_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PolicyEvaluationDecisionType>>,
     /// <p>The individual results of the simulation of the API operation specified in EvalActionName on each resource.</p>
-    #[doc(hidden)]
     pub resource_specific_results: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSpecificResult>>,
 }
 impl EvaluationResult {

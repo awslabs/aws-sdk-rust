@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSupportedLanguagesInput {
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.</p>
-    #[doc(hidden)]
     pub issue_type: ::std::option::Option<::std::string::String>,
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
-    #[doc(hidden)]
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
-    #[doc(hidden)]
     pub category_code: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSupportedLanguagesInput {

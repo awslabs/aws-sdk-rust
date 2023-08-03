@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesPlacement {
     /// <p>The Availability Zone.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesPlacement {

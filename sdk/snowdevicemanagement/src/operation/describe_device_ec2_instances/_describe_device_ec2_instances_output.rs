@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesOutput {
     /// <p>A list of structures containing information about each instance. </p>
-    #[doc(hidden)]
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     _request_id: Option<String>,
 }

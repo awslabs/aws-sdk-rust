@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlRequestDetails {
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
-    #[doc(hidden)]
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
-    #[doc(hidden)]
     pub md5_hash: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision associated with this import request.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetFromSignedUrlRequestDetails {

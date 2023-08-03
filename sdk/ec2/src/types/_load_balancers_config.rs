@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancersConfig {
     /// <p>The Classic Load Balancers.</p>
-    #[doc(hidden)]
     pub classic_load_balancers_config: ::std::option::Option<crate::types::ClassicLoadBalancersConfig>,
     /// <p>The target groups.</p>
-    #[doc(hidden)]
     pub target_groups_config: ::std::option::Option<crate::types::TargetGroupsConfig>,
 }
 impl LoadBalancersConfig {

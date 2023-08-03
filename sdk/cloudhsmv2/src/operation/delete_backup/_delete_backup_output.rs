@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBackupOutput {
     /// <p>Information on the <code>Backup</code> object deleted.</p>
-    #[doc(hidden)]
     pub backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,
 }

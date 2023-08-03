@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerMetadataEntityTypesListItem {
     /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types. </p>
-    #[doc(hidden)]
     pub evaluation_metrics: ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
-    #[doc(hidden)]
     pub number_of_train_mentions: ::std::option::Option<i32>,
 }
 impl EntityRecognizerMetadataEntityTypesListItem {

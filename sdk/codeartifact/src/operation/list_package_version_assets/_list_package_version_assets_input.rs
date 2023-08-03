@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackageVersionAssetsInput {
     /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    #[doc(hidden)]
     pub domain_owner: ::std::option::Option<::std::string::String>,
     /// <p> The name of the repository that contains the package that contains the requested package version assets. </p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<::std::string::String>,
     /// <p> The format of the package that contains the requested package version assets. </p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -22,19 +18,14 @@ pub struct ListPackageVersionAssetsInput {
     /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package that contains the requested package version assets. </p>
-    #[doc(hidden)]
     pub package: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of results to return per page. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPackageVersionAssetsInput {

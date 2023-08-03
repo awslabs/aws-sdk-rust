@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BrowserSettings {
     /// <p>The ARN of the browser settings.</p>
-    #[doc(hidden)]
     pub browser_settings_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of web portal ARNs that this browser settings is associated with.</p>
-    #[doc(hidden)]
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
-    #[doc(hidden)]
     pub browser_policy: ::std::option::Option<::std::string::String>,
 }
 impl BrowserSettings {

@@ -4,61 +4,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobOutput {
     /// <p>The status of the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::JobPrimaryStatus>,
     /// <p>The ARN of the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
-    #[doc(hidden)]
     pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::InputFileConfig>>,
     /// <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::JobOutputDataConfig>,
     /// <p>The user-defined criteria that specifies when to stop a job running.</p>
-    #[doc(hidden)]
     pub stopping_condition: ::std::option::Option<crate::types::JobStoppingCondition>,
     /// <p>Information about the output locations for job checkpoint data.</p>
-    #[doc(hidden)]
     pub checkpoint_config: ::std::option::Option<crate::types::JobCheckpointConfig>,
     /// <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
-    #[doc(hidden)]
     pub algorithm_specification: ::std::option::Option<crate::types::AlgorithmSpecification>,
     /// <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
-    #[doc(hidden)]
     pub instance_config: ::std::option::Option<crate::types::InstanceConfig>,
     /// <p>The date and time that the Amazon Braket job was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Braket job was started.</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the Amazon Braket job ended.</p>
-    #[doc(hidden)]
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The billable time the Amazon Braket job used to complete.</p>
-    #[doc(hidden)]
     pub billable_duration: ::std::option::Option<i32>,
     /// <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub device_config: ::std::option::Option<crate::types::DeviceConfig>,
     /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

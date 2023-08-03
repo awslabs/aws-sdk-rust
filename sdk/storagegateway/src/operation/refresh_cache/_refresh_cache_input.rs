@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
-    #[doc(hidden)]
     pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
-    #[doc(hidden)]
     pub folder_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    #[doc(hidden)]
     pub recursive: ::std::option::Option<bool>,
 }
 impl RefreshCacheInput {

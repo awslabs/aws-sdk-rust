@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWavesRequestFilters {
     /// <p>Filter waves list by wave ID.</p>
-    #[doc(hidden)]
     pub wave_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter waves list by archival status.</p>
-    #[doc(hidden)]
     pub is_archived: ::std::option::Option<bool>,
 }
 impl ListWavesRequestFilters {

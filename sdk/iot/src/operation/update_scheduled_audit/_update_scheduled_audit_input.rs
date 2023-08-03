@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScheduledAuditInput {
     /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
-    #[doc(hidden)]
     pub frequency: ::std::option::Option<crate::types::AuditFrequency>,
     /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
-    #[doc(hidden)]
     pub day_of_month: ::std::option::Option<::std::string::String>,
     /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    #[doc(hidden)]
     pub target_check_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
-    #[doc(hidden)]
     pub scheduled_audit_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateScheduledAuditInput {

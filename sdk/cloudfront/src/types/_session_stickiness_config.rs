@@ -6,11 +6,9 @@
 pub struct SessionStickinessConfig {
     /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
-    #[doc(hidden)]
     pub idle_ttl: ::std::option::Option<i32>,
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
-    #[doc(hidden)]
     pub maximum_ttl: ::std::option::Option<i32>,
 }
 impl SessionStickinessConfig {

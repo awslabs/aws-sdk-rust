@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerStrategiesInput {
     /// <p> The ID of the server. </p>
-    #[doc(hidden)]
     pub server_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServerStrategiesInput {

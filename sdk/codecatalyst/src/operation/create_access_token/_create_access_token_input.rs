@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessTokenInput {
     /// <p>The friendly name of the personal access token.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    #[doc(hidden)]
     pub expires_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CreateAccessTokenInput {

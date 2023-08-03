@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysOutput {
     /// <p>The virtual private gateways.</p>
-    #[doc(hidden)]
     pub virtual_gateways: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGateway>>,
     _request_id: Option<String>,
 }

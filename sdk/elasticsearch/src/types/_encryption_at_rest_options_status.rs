@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionAtRestOptionsStatus {
     /// <p> Specifies the Encryption At Rest options for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p> Specifies the status of the Encryption At Rest options for the specified Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl EncryptionAtRestOptionsStatus {

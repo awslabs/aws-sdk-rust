@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkflowInput {
     /// <p>A name for the workflow.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An engine for the workflow.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<crate::types::WorkflowEngine>,
     /// <p>A ZIP archive for the workflow.</p>
-    #[doc(hidden)]
     pub definition_zip: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The URI of a definition for the workflow.</p>
-    #[doc(hidden)]
     pub definition_uri: ::std::option::Option<::std::string::String>,
     /// <p>The path of the main definition file for the workflow.</p>
-    #[doc(hidden)]
     pub main: ::std::option::Option<::std::string::String>,
     /// <p>A parameter template for the workflow.</p>
-    #[doc(hidden)]
     pub parameter_template: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>>,
     /// <p>A storage capacity for the workflow in gigabytes.</p>
-    #[doc(hidden)]
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>Tags for the workflow.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p> The computational accelerator specified to run the workflow. </p>
-    #[doc(hidden)]
     pub accelerators: ::std::option::Option<crate::types::Accelerators>,
 }
 impl CreateWorkflowInput {

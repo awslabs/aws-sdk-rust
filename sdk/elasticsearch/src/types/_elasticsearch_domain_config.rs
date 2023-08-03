@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchDomainConfig {
     /// <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub elasticsearch_version: ::std::option::Option<crate::types::ElasticsearchVersionStatus>,
     /// <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub elasticsearch_cluster_config: ::std::option::Option<crate::types::ElasticsearchClusterConfigStatus>,
     /// <p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub ebs_options: ::std::option::Option<crate::types::EbsOptionsStatus>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
-    #[doc(hidden)]
     pub access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
     /// <p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptionsStatus>,
     /// <p>The <code>VPCOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
-    #[doc(hidden)]
     pub vpc_options: ::std::option::Option<crate::types::VpcDerivedInfoStatus>,
     /// <p>The <code>CognitoOptions</code> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
-    #[doc(hidden)]
     pub cognito_options: ::std::option::Option<crate::types::CognitoOptionsStatus>,
     /// <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptionsStatus>,
     /// <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptionsStatus>,
     /// <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuring Advanced Options</a> for more information.</p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<crate::types::AdvancedOptionsStatus>,
     /// <p>Log publishing options for the given domain.</p>
-    #[doc(hidden)]
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptionsStatus>,
     /// <p>Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.</p>
-    #[doc(hidden)]
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     /// <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
-    #[doc(hidden)]
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
     /// <p>Specifies <code>AutoTuneOptions</code> for the domain. </p>
-    #[doc(hidden)]
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
     /// <p>Specifies change details of the domain configuration change.</p>
-    #[doc(hidden)]
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
 }
 impl ElasticsearchDomainConfig {

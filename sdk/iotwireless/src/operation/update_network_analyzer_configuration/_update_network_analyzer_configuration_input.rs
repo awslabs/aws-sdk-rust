@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
-    #[doc(hidden)]
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    #[doc(hidden)]
     pub trace_content: ::std::option::Option<crate::types::TraceContent>,
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    #[doc(hidden)]
     pub wireless_devices_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    #[doc(hidden)]
     pub wireless_devices_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    #[doc(hidden)]
     pub wireless_gateways_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    #[doc(hidden)]
     pub wireless_gateways_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The description of the new resource.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    #[doc(hidden)]
     pub multicast_groups_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
-    #[doc(hidden)]
     pub multicast_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateNetworkAnalyzerConfigurationInput {

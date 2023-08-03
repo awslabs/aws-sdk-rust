@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityBaselineConfig {
     /// <p>The name of the job that performs baselining for the data quality monitoring job.</p>
-    #[doc(hidden)]
     pub baselining_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The constraints resource for a monitoring job.</p>
-    #[doc(hidden)]
     pub constraints_resource: ::std::option::Option<crate::types::MonitoringConstraintsResource>,
     /// <p>The statistics resource for a monitoring job.</p>
-    #[doc(hidden)]
     pub statistics_resource: ::std::option::Option<crate::types::MonitoringStatisticsResource>,
 }
 impl DataQualityBaselineConfig {

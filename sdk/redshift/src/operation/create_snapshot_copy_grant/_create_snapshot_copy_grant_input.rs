@@ -13,13 +13,10 @@ pub struct CreateSnapshotCopyGrantInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSnapshotCopyGrantInput {

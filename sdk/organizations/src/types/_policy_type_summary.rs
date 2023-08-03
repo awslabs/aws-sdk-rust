@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyTypeSummary {
     /// <p>The name of the policy type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::PolicyTypeStatus>,
 }
 impl PolicyTypeSummary {

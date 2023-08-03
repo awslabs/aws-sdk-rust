@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alarm {
     /// <p>The name of a CloudWatch alarm in your account.</p>
-    #[doc(hidden)]
     pub alarm_name: ::std::option::Option<::std::string::String>,
 }
 impl Alarm {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSortResult {
     /// <p>Sort search results based on this field name.</p>
-    #[doc(hidden)]
     pub field: ::std::option::Option<crate::types::OrderByFieldType>,
     /// <p>Sort direction.</p>
-    #[doc(hidden)]
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SearchSortResult {

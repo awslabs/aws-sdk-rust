@@ -4,32 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryAssociationInput {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
-    #[doc(hidden)]
     pub file_system_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
-    #[doc(hidden)]
     pub data_repository_path: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub batch_import_meta_data_on_create: ::std::option::Option<bool>,
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
-    #[doc(hidden)]
     pub imported_file_chunk_size: ::std::option::Option<i32>,
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDataRepositoryAssociationInput {

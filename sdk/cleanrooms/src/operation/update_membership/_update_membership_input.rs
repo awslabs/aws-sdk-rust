@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMembershipInput {
     /// <p>The unique identifier of the membership.</p>
-    #[doc(hidden)]
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    #[doc(hidden)]
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
 }
 impl UpdateMembershipInput {

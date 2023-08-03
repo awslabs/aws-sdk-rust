@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationRestoreConfiguration {
     /// <p>Specifies how the application should be restored.</p>
-    #[doc(hidden)]
     pub application_restore_type: ::std::option::Option<crate::types::ApplicationRestoreType>,
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
-    #[doc(hidden)]
     pub snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationRestoreConfiguration {

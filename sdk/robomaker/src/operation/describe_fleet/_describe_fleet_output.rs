@@ -7,28 +7,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetOutput {
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of robots.</p>
-    #[doc(hidden)]
     pub robots: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the last deployment.</p>
-    #[doc(hidden)]
     pub last_deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    #[doc(hidden)]
     pub last_deployment_job: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last deployment.</p>
-    #[doc(hidden)]
     pub last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified fleet.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

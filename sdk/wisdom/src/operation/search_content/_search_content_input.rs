@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchContentInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    #[doc(hidden)]
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The search expression to filter results.</p>
-    #[doc(hidden)]
     pub search_expression: ::std::option::Option<crate::types::SearchExpression>,
 }
 impl SearchContentInput {

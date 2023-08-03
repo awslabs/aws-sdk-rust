@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateFindingsOutput {
     /// <p>The list of findings that were updated successfully.</p>
-    #[doc(hidden)]
     pub processed_findings: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
     /// <p>The list of findings that were not updated.</p>
-    #[doc(hidden)]
     pub unprocessed_findings: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateFindingsUnprocessedFinding>>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProfileInput {
     /// <p>The identifier of the profile that you are deleting.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProfileInput {

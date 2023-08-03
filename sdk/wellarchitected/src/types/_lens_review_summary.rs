@@ -8,31 +8,22 @@ pub struct LensReviewSummary {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    #[doc(hidden)]
     pub lens_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the lens.</p>
-    #[doc(hidden)]
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the lens.</p>
-    #[doc(hidden)]
     pub lens_version: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the lens.</p>
-    #[doc(hidden)]
     pub lens_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the lens.</p>
-    #[doc(hidden)]
     pub lens_status: ::std::option::Option<crate::types::LensStatus>,
     /// <p>The date and time recorded.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     /// <p>The profiles associated with the workload.</p>
-    #[doc(hidden)]
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    #[doc(hidden)]
     pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensReviewSummary {

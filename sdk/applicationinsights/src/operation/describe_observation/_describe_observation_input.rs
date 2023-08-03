@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeObservationInput {
     /// <p>The ID of the observation.</p>
-    #[doc(hidden)]
     pub observation_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeObservationInput {

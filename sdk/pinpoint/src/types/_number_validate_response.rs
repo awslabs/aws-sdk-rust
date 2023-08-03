@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumberValidateResponse {
     /// <p>The carrier or service provider that the phone number is currently registered with. In some countries and regions, this value may be the carrier or service provider that the phone number was originally registered with.</p>
-    #[doc(hidden)]
     pub carrier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the city where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub cleansed_phone_number_e164: ::std::option::Option<::std::string::String>,
     /// <p>The cleansed phone number, in the format for the location where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub cleansed_phone_number_national: ::std::option::Option<::std::string::String>,
     /// <p>The name of the country or region where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub country_code_iso2: ::std::option::Option<::std::string::String>,
     /// <p>The numeric code for the country or region where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub country_code_numeric: ::std::option::Option<::std::string::String>,
     /// <p>The name of the county where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub county: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.</p>
-    #[doc(hidden)]
     pub original_country_code_iso2: ::std::option::Option<::std::string::String>,
     /// <p>The phone number that was sent in the request body.</p>
-    #[doc(hidden)]
     pub original_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.</p>
-    #[doc(hidden)]
     pub phone_type: ::std::option::Option<::std::string::String>,
     /// <p>The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4 (other), and 5 (prepaid).</p>
-    #[doc(hidden)]
     pub phone_type_code: ::std::option::Option<i32>,
     /// <p>The time zone for the location where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The postal or ZIP code for the location where the phone number was originally registered.</p>
-    #[doc(hidden)]
     pub zip_code: ::std::option::Option<::std::string::String>,
 }
 impl NumberValidateResponse {

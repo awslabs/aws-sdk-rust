@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEntityTypesOutput {
     /// <p>An array of entity types.</p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     /// <p>The next page token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

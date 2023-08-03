@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportsListItem {
     /// <p> The ID of the import. </p>
-    #[doc(hidden)]
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the import. </p>
-    #[doc(hidden)]
     pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p> The ARN of the destination event data store. </p>
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The timestamp of the import's creation. </p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The timestamp of the import's last update. </p>
-    #[doc(hidden)]
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportsListItem {

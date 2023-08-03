@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomDomainsOutput {
     /// <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
-    #[doc(hidden)]
     pub dns_target: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the App Runner service whose associated custom domain names you want to describe.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
-    #[doc(hidden)]
     pub custom_domains: ::std::option::Option<::std::vec::Vec<crate::types::CustomDomain>>,
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    #[doc(hidden)]
     pub vpc_dns_targets: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

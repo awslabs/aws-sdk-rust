@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyIpamResourceDiscoveryInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A resource discovery ID.</p>
-    #[doc(hidden)]
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>A resource discovery description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Add operating Regions to the resource discovery. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
-    #[doc(hidden)]
     pub add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     /// <p>Remove operating Regions.</p>
-    #[doc(hidden)]
     pub remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
 }
 impl ModifyIpamResourceDiscoveryInput {

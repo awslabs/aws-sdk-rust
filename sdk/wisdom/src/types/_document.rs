@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Document {
     /// <p>A reference to the content resource.</p>
-    #[doc(hidden)]
     pub content_reference: ::std::option::Option<crate::types::ContentReference>,
     /// <p>The title of the document.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<crate::types::DocumentText>,
     /// <p>The excerpt from the document.</p>
-    #[doc(hidden)]
     pub excerpt: ::std::option::Option<crate::types::DocumentText>,
 }
 impl Document {

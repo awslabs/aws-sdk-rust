@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteActionTargetInput {
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
-    #[doc(hidden)]
     pub action_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteActionTargetInput {

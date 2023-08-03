@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionConfiguration {
     /// <p>The configuration of options to include in a group.</p>
-    #[doc(hidden)]
     pub option_name: ::std::option::Option<::std::string::String>,
     /// <p>The optional port for the option.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The version for the option.</p>
-    #[doc(hidden)]
     pub option_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of DBSecurityGroupMembership name strings used for this option.</p>
-    #[doc(hidden)]
     pub db_security_group_memberships: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of VpcSecurityGroupMembership name strings used for this option.</p>
-    #[doc(hidden)]
     pub vpc_security_group_memberships: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The option settings to include in an option group.</p>
-    #[doc(hidden)]
     pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>,
 }
 impl OptionConfiguration {

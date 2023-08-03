@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DriftCheckModelDataQuality {
     /// <p>The drift check model data quality statistics.</p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::MetricsSource>,
     /// <p>The drift check model data quality constraints.</p>
-    #[doc(hidden)]
     pub constraints: ::std::option::Option<crate::types::MetricsSource>,
 }
 impl DriftCheckModelDataQuality {

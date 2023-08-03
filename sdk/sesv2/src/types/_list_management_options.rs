@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagementOptions {
     /// <p>The name of the contact list.</p>
-    #[doc(hidden)]
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the topic.</p>
-    #[doc(hidden)]
     pub topic_name: ::std::option::Option<::std::string::String>,
 }
 impl ListManagementOptions {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanTaskUiSummary {
     /// <p>The name of the human task user interface.</p>
-    #[doc(hidden)]
     pub human_task_ui_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
-    #[doc(hidden)]
     pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp when SageMaker created the human task user interface.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HumanTaskUiSummary {

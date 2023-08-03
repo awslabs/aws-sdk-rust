@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaTarget {
     /// <p> The unique ID of a deployment. </p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID of a deployment target that has a type of <code>lambdaTarget</code>. </p>
-    #[doc(hidden)]
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the target. </p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p> The status an Lambda deployment's target Lambda function. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TargetStatus>,
     /// <p> The date and time when the target Lambda function was updated by a deployment. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
-    #[doc(hidden)]
     pub lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. </p>
-    #[doc(hidden)]
     pub lambda_function_info: ::std::option::Option<crate::types::LambdaFunctionInfo>,
 }
 impl LambdaTarget {

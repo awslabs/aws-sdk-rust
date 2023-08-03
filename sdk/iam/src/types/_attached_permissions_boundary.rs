@@ -7,10 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachedPermissionsBoundary {
     /// <p> The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <code>Policy</code>.</p>
-    #[doc(hidden)]
     pub permissions_boundary_type: ::std::option::Option<crate::types::PermissionsBoundaryAttachmentType>,
     /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
-    #[doc(hidden)]
     pub permissions_boundary_arn: ::std::option::Option<::std::string::String>,
 }
 impl AttachedPermissionsBoundary {

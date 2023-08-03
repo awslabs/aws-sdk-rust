@@ -7,16 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
-    #[doc(hidden)]
     pub instance_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
-    #[doc(hidden)]
     pub target_on_demand_capacity: ::std::option::Option<i32>,
     /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
-    #[doc(hidden)]
     pub target_spot_capacity: ::std::option::Option<i32>,
     /// <p>The resize specification for the instance fleet.</p>
-    #[doc(hidden)]
     pub resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
 impl InstanceFleetModifyConfig {

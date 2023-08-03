@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobOutput {
     /// <p> The ID of the Amazon Web Services account that the dashboard snapshot job is executed in. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dashboard that you have started a snapshot job for.</p>
-    #[doc(hidden)]
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    #[doc(hidden)]
     pub snapshot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The user configuration for the snapshot job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    #[doc(hidden)]
     pub user_configuration: ::std::option::Option<crate::types::SnapshotUserConfigurationRedacted>,
     /// <p>The snapshot configuration of the job. This information is provided when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    #[doc(hidden)]
     pub snapshot_configuration: ::std::option::Option<crate::types::SnapshotConfiguration>,
     /// <p>The Amazon Resource Name (ARN) for the snapshot job. The job ARN is generated when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of a job. The status updates as the job executes. This shows one of the following values.</p>
     /// <ul>
@@ -28,19 +22,14 @@ pub struct DescribeDashboardSnapshotJobOutput {
     /// <li> <p> <code>QUEUED</code> - The job is queued and hasn't started yet.</p> </li>
     /// <li> <p> <code>RUNNING</code> - The job is still running.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::SnapshotJobStatus>,
     /// <p> The time that the snapshot job was created. </p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time that the snapshot job status was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The Amazon Web Services request ID for this operation. </p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

@@ -4,53 +4,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRouteInput {
     /// <p>The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific match. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    #[doc(hidden)]
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.</p>
-    #[doc(hidden)]
     pub destination_ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a prefix list used for the destination match.</p>
-    #[doc(hidden)]
     pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    #[doc(hidden)]
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an internet gateway or virtual private gateway attached to your VPC.</p>
-    #[doc(hidden)]
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one network interface is attached.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
-    #[doc(hidden)]
     pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a transit gateway.</p>
-    #[doc(hidden)]
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the local gateway.</p>
-    #[doc(hidden)]
     pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the carrier gateway.</p>
     /// <p>You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.</p>
-    #[doc(hidden)]
     pub carrier_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a network interface.</p>
-    #[doc(hidden)]
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route table for the route.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a VPC peering connection.</p>
-    #[doc(hidden)]
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the core network.</p>
-    #[doc(hidden)]
     pub core_network_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateRouteInput {

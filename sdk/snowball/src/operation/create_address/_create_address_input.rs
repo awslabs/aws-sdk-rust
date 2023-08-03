@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAddressInput {
     /// <p>The address that you want the Snow device shipped to.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::Address>,
 }
 impl CreateAddressInput {

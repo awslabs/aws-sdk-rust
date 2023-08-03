@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatefulRulesDetails {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The stateful inspection criteria for the rule.</p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<crate::types::RuleGroupSourceStatefulRulesHeaderDetails>,
     /// <p>Additional options for the rule.</p>
-    #[doc(hidden)]
     pub rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>>,
 }
 impl RuleGroupSourceStatefulRulesDetails {

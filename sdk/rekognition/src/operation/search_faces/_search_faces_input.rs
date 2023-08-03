@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchFacesInput {
     /// <p>ID of the collection the face belongs to.</p>
-    #[doc(hidden)]
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of a face to find matches for in the collection.</p>
-    #[doc(hidden)]
     pub face_id: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
-    #[doc(hidden)]
     pub max_faces: ::std::option::Option<i32>,
     /// <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
-    #[doc(hidden)]
     pub face_match_threshold: ::std::option::Option<f32>,
 }
 impl SearchFacesInput {

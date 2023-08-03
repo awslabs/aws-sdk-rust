@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Table {
     /// <p>The id of the table.</p>
-    #[doc(hidden)]
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl Table {

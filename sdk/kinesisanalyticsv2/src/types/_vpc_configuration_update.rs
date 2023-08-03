@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfigurationUpdate {
     /// <p>Describes an update to the ID of the VPC configuration.</p>
-    #[doc(hidden)]
     pub vpc_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    #[doc(hidden)]
     pub subnet_id_updates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    #[doc(hidden)]
     pub security_group_id_updates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcConfigurationUpdate {

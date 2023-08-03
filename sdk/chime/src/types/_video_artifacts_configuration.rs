@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoArtifactsConfiguration {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArtifactsState>,
     /// <p>The MUX type of the video artifact configuration object.</p>
-    #[doc(hidden)]
     pub mux_type: ::std::option::Option<crate::types::VideoMuxType>,
 }
 impl VideoArtifactsConfiguration {

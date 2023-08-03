@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseOfferingOutput {
     /// <p>Represents the offering transaction for the purchase result.</p>
-    #[doc(hidden)]
     pub offering_transaction: ::std::option::Option<crate::types::OfferingTransaction>,
     _request_id: Option<String>,
 }

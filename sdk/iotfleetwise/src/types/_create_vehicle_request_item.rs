@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to create.</p>
-    #[doc(hidden)]
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
-    #[doc(hidden)]
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
-    #[doc(hidden)]
     pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
-    #[doc(hidden)]
     pub association_behavior: ::std::option::Option<crate::types::VehicleAssociationBehavior>,
     /// <p>Metadata which can be used to manage the vehicle.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateVehicleRequestItem {

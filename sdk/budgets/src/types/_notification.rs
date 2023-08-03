@@ -13,19 +13,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Notification {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
-    #[doc(hidden)]
     pub notification_type: ::std::option::Option<crate::types::NotificationType>,
     /// <p>The comparison that's used for this notification.</p>
-    #[doc(hidden)]
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
-    #[doc(hidden)]
     pub threshold: f64,
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
-    #[doc(hidden)]
     pub threshold_type: ::std::option::Option<crate::types::ThresholdType>,
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
-    #[doc(hidden)]
     pub notification_state: ::std::option::Option<crate::types::NotificationState>,
 }
 impl Notification {

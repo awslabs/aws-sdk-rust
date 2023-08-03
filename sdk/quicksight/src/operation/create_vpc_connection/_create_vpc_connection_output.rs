@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcConnectionOutput {
     /// <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the VPC connection that you're creating. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub vpc_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the creation of the VPC connection.</p>
-    #[doc(hidden)]
     pub creation_status: ::std::option::Option<crate::types::VpcConnectionResourceStatus>,
     /// <p>The availability status of the VPC connection.</p>
-    #[doc(hidden)]
     pub availability_status: ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
-    #[doc(hidden)]
     pub status: i32,
     _request_id: Option<String>,
 }

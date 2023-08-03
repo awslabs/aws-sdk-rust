@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackDriftDetectionStatusOutput {
     /// <p>The ID of the stack.</p>
-    #[doc(hidden)]
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
-    #[doc(hidden)]
     pub stack_drift_detection_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
     /// <ul>
@@ -17,7 +15,6 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>The status of the stack drift detection operation.</p>
     /// <ul>
@@ -25,16 +22,12 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
     /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub detection_status: ::std::option::Option<crate::types::StackDriftDetectionStatus>,
     /// <p>The reason the stack drift detection operation has its current status.</p>
-    #[doc(hidden)]
     pub detection_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Total number of stack resources that have drifted. This is NULL until the drift detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
-    #[doc(hidden)]
     pub drifted_stack_resource_count: ::std::option::Option<i32>,
     /// <p>Time at which the stack drift detection operation was initiated.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

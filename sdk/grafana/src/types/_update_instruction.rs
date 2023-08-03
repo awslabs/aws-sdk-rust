@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInstruction {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::UpdateAction>,
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::Role>,
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    #[doc(hidden)]
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
 }
 impl UpdateInstruction {

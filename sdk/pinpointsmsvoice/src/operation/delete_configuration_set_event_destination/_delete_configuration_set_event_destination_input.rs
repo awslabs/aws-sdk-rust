@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// EventDestinationName
-    #[doc(hidden)]
     pub event_destination_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationSetEventDestinationInput {

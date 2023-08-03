@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcInterfaceAttachment {
     /// The name of the VPC interface to use for this resource.
-    #[doc(hidden)]
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
 }
 impl VpcInterfaceAttachment {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPresetsOutput {
     /// Use this string to request the next batch of presets.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// List of presets
-    #[doc(hidden)]
     pub presets: ::std::option::Option<::std::vec::Vec<crate::types::Preset>>,
     _request_id: Option<String>,
 }

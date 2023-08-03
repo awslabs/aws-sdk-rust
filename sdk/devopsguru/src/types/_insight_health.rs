@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightHealth {
     /// <p> The number of open proactive insights. </p>
-    #[doc(hidden)]
     pub open_proactive_insights: i32,
     /// <p> The number of open reactive insights. </p>
-    #[doc(hidden)]
     pub open_reactive_insights: i32,
     /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
-    #[doc(hidden)]
     pub mean_time_to_recover_in_milliseconds: ::std::option::Option<i64>,
 }
 impl InsightHealth {

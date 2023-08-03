@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterCriterion {
     /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
-    #[doc(hidden)]
     pub criterion_key: ::std::option::Option<crate::types::CriterionKey>,
     /// <p>Contains information about the condition.</p>
-    #[doc(hidden)]
     pub filter_condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl FilterCriterion {

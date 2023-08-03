@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeVersionErrorDetail {
     /// <p>The HTTP status code for the error.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the recipe version associated with this error.</p>
-    #[doc(hidden)]
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl RecipeVersionErrorDetail {

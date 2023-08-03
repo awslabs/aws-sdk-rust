@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowDefinitionInput {
     /// <p>The name of the flow definition.</p>
-    #[doc(hidden)]
     pub flow_definition_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFlowDefinitionInput {

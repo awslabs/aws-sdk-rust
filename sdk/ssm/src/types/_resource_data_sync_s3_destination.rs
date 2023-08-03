@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncS3Destination {
     /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
-    #[doc(hidden)]
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon S3 prefix for the bucket.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
-    #[doc(hidden)]
     pub sync_format: ::std::option::Option<crate::types::ResourceDataSyncS3Format>,
     /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
-    #[doc(hidden)]
     pub awskms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
-    #[doc(hidden)]
     pub destination_data_sharing: ::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing>,
 }
 impl ResourceDataSyncS3Destination {

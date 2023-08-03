@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminDeleteUserAttributesInput {
     /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user from which you would like to delete attributes.</p>
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings representing the user attribute names you want to delete.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    #[doc(hidden)]
     pub user_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdminDeleteUserAttributesInput {

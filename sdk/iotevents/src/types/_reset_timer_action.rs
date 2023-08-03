@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetTimerAction {
     /// <p>The name of the timer to reset.</p>
-    #[doc(hidden)]
     pub timer_name: ::std::option::Option<::std::string::String>,
 }
 impl ResetTimerAction {

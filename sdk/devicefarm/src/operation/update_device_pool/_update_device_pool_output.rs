@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDevicePoolOutput {
     /// <p>The device pool you just updated.</p>
-    #[doc(hidden)]
     pub device_pool: ::std::option::Option<crate::types::DevicePool>,
     _request_id: Option<String>,
 }

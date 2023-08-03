@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomerGatewaysOutput {
     /// <p>Information about one or more customer gateways.</p>
-    #[doc(hidden)]
     pub customer_gateways: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
     _request_id: Option<String>,
 }

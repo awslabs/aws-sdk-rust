@@ -6,12 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStringObject {
     /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
-    #[doc(hidden)]
     pub option: ::std::option::Option<bool>,
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    #[doc(hidden)]
     pub query_strings_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryStringObject {

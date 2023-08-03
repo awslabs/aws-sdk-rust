@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionRunAsConfig {
     /// The group ID whose permissions are used to run a Lambda function.
-    #[doc(hidden)]
     pub gid: ::std::option::Option<i32>,
     /// The user ID whose permissions are used to run a Lambda function.
-    #[doc(hidden)]
     pub uid: ::std::option::Option<i32>,
 }
 impl FunctionRunAsConfig {

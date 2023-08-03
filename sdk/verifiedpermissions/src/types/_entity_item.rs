@@ -7,13 +7,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityItem {
     /// <p>The identifier of the entity.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>A list of attributes for the entity.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>The parents in the hierarchy that contains the entity.</p>
-    #[doc(hidden)]
     pub parents: ::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>>,
 }
 impl EntityItem {

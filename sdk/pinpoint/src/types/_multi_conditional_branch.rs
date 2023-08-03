@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiConditionalBranch {
     /// <p>The condition to evaluate for the activity path.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::SimpleCondition>,
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
-    #[doc(hidden)]
     pub next_activity: ::std::option::Option<::std::string::String>,
 }
 impl MultiConditionalBranch {

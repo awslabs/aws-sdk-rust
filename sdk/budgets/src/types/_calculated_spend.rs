@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculatedSpend {
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you used.</p>
-    #[doc(hidden)]
     pub actual_spend: ::std::option::Option<crate::types::Spend>,
     /// <p>The amount of cost, usage, RI units, or Savings Plans units that you're forecasted to use.</p>
-    #[doc(hidden)]
     pub forecasted_spend: ::std::option::Option<crate::types::Spend>,
 }
 impl CalculatedSpend {

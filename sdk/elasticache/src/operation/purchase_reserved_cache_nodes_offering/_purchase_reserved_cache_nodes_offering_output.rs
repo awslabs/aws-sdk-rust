@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedCacheNodesOfferingOutput {
     /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
-    #[doc(hidden)]
     pub reserved_cache_node: ::std::option::Option<crate::types::ReservedCacheNode>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the member account.</p>
-    #[doc(hidden)]
     pub relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
-    #[doc(hidden)]
     pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp showing when the status of this member was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Member {

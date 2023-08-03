@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Checksum {
     /// <p>The type of the checksum.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ChecksumType>,
     /// <p>The checksum of the model.</p>
-    #[doc(hidden)]
     pub sum: ::std::option::Option<::std::string::String>,
 }
 impl Checksum {

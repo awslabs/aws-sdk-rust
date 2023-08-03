@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskExecutionResultDetail {
     /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase. </p>
-    #[doc(hidden)]
     pub prepare_duration: ::std::option::Option<i64>,
     /// <p>The status of the PREPARING phase.</p>
-    #[doc(hidden)]
     pub prepare_status: ::std::option::Option<crate::types::PhaseStatus>,
     /// <p>The total time in milliseconds that DataSync took to transfer the file from the source to the destination location.</p>
-    #[doc(hidden)]
     pub total_duration: ::std::option::Option<i64>,
     /// <p>The total time in milliseconds that DataSync spent in the TRANSFERRING phase.</p>
-    #[doc(hidden)]
     pub transfer_duration: ::std::option::Option<i64>,
     /// <p>The status of the TRANSFERRING phase.</p>
-    #[doc(hidden)]
     pub transfer_status: ::std::option::Option<crate::types::PhaseStatus>,
     /// <p>The total time in milliseconds that DataSync spent in the VERIFYING phase.</p>
-    #[doc(hidden)]
     pub verify_duration: ::std::option::Option<i64>,
     /// <p>The status of the VERIFYING phase.</p>
-    #[doc(hidden)]
     pub verify_status: ::std::option::Option<crate::types::PhaseStatus>,
     /// <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
-    #[doc(hidden)]
     pub error_detail: ::std::option::Option<::std::string::String>,
 }
 impl TaskExecutionResultDetail {

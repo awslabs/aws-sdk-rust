@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the remote access session.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the remote access session was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
@@ -25,7 +22,6 @@ pub struct RemoteAccessSession {
     /// <li> <p>COMPLETED.</p> </li>
     /// <li> <p>STOPPING.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The result of the remote access session. Can be any of the following:</p>
     /// <ul>
@@ -37,53 +33,38 @@ pub struct RemoteAccessSession {
     /// <li> <p>ERRORED.</p> </li>
     /// <li> <p>STOPPED.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>A message about the remote access session.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the remote access session was started.</p>
-    #[doc(hidden)]
     pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the remote access session was stopped.</p>
-    #[doc(hidden)]
     pub stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device (phone or tablet) used in the remote access session.</p>
-    #[doc(hidden)]
     pub device: ::std::option::Option<crate::types::Device>,
     /// <p>The ARN of the instance.</p>
-    #[doc(hidden)]
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    #[doc(hidden)]
     pub remote_debug_enabled: ::std::option::Option<bool>,
     /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
-    #[doc(hidden)]
     pub remote_record_enabled: ::std::option::Option<bool>,
     /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    #[doc(hidden)]
     pub remote_record_app_arn: ::std::option::Option<::std::string::String>,
     /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    #[doc(hidden)]
     pub host_address: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
-    #[doc(hidden)]
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
     /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
-    #[doc(hidden)]
     pub device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
     /// <p>The endpoint for the remote access sesssion.</p>
-    #[doc(hidden)]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    #[doc(hidden)]
     pub device_udid: ::std::option::Option<::std::string::String>,
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
@@ -91,14 +72,11 @@ pub struct RemoteAccessSession {
     /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
     /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
-    #[doc(hidden)]
     pub skip_app_resign: ::std::option::Option<bool>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl RemoteAccessSession {

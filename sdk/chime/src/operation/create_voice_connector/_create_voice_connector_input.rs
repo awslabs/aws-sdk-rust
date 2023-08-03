@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVoiceConnectorInput {
     /// <p>The name of the Amazon Chime Voice Connector.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
-    #[doc(hidden)]
     pub aws_region: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>,
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
-    #[doc(hidden)]
     pub require_encryption: ::std::option::Option<bool>,
 }
 impl CreateVoiceConnectorInput {

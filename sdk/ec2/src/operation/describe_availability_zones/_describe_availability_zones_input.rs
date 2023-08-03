@@ -16,20 +16,15 @@ pub struct DescribeAvailabilityZonesInput {
     /// <li> <p> <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li>
     /// <li> <p> <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    #[doc(hidden)]
     pub zone_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    #[doc(hidden)]
     pub zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Include all Availability Zones, Local Zones, and Wavelength Zones regardless of your opt-in status.</p>
     /// <p>If you do not use this parameter, the results include only the zones for the Regions where you have chosen the option to opt in.</p>
-    #[doc(hidden)]
     pub all_availability_zones: ::std::option::Option<bool>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAvailabilityZonesInput {

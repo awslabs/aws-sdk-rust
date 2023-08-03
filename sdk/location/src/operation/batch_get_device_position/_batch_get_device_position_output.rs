@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionOutput {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetDevicePositionError>>,
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
-    #[doc(hidden)]
     pub device_positions: ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>,
     _request_id: Option<String>,
 }

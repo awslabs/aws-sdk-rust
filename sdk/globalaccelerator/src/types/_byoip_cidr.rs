@@ -19,13 +19,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The state of the address pool.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ByoipCidrState>,
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>,
 }
 impl ByoipCidr {

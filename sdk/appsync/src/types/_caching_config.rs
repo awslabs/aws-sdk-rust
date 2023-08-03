@@ -6,11 +6,9 @@
 pub struct CachingConfig {
     /// <p>The TTL in seconds for a resolver that has caching activated.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
-    #[doc(hidden)]
     pub ttl: i64,
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
-    #[doc(hidden)]
     pub caching_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CachingConfig {

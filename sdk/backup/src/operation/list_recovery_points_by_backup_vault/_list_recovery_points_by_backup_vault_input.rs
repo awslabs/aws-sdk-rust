@@ -6,31 +6,22 @@ pub struct ListRecoveryPointsByBackupVaultInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
-    #[doc(hidden)]
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub by_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns only recovery points that match the specified resource type.</p>
-    #[doc(hidden)]
     pub by_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
-    #[doc(hidden)]
     pub by_backup_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns only recovery points that were created before the specified timestamp.</p>
-    #[doc(hidden)]
     pub by_created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only recovery points that were created after the specified timestamp.</p>
-    #[doc(hidden)]
     pub by_created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub by_parent_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListRecoveryPointsByBackupVaultInput {

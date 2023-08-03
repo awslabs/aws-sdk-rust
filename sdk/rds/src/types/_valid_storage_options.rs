@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidStorageOptions {
     /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
-    #[doc(hidden)]
     pub storage_size: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
-    #[doc(hidden)]
     pub provisioned_iops: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    #[doc(hidden)]
     pub iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
     /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-    #[doc(hidden)]
     pub supports_storage_autoscaling: bool,
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
-    #[doc(hidden)]
     pub provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
-    #[doc(hidden)]
     pub storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
 }
 impl ValidStorageOptions {

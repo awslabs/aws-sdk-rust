@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubDomain {
     /// <p> Describes the settings for the subdomain. </p>
-    #[doc(hidden)]
     pub sub_domain_setting: ::std::option::Option<crate::types::SubDomainSetting>,
     /// <p> The verified status of the subdomain </p>
-    #[doc(hidden)]
     pub verified: ::std::option::Option<bool>,
     /// <p> The DNS record for the subdomain. </p>
-    #[doc(hidden)]
     pub dns_record: ::std::option::Option<::std::string::String>,
 }
 impl SubDomain {

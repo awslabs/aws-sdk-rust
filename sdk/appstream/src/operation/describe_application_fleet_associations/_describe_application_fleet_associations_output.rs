@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationFleetAssociationsOutput {
     /// <p>The application fleet associations in the list.</p>
-    #[doc(hidden)]
     pub application_fleet_associations: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationFleetAssociation>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

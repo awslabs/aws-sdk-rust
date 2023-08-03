@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanConditionPair {
     /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ScanConditionPair {

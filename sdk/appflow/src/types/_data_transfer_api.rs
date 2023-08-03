@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataTransferApi {
     /// <p>The name of the connector application API.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>You can specify one of the following types:</p>
     /// <dl>
@@ -28,7 +27,6 @@ pub struct DataTransferApi {
     /// <p>An asynchronous API. This type of API optimizes a flow for large datasets.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DataTransferApiType>,
 }
 impl DataTransferApi {

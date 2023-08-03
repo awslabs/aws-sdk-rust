@@ -4,29 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRuleInput {
     /// <p>The name of the rule that you are creating or updating.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
-    #[doc(hidden)]
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    #[doc(hidden)]
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule is enabled or disabled.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RuleState>,
     /// <p>A description of the rule.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
     /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value pairs to associate with the rule.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
-    #[doc(hidden)]
     pub event_bus_name: ::std::option::Option<::std::string::String>,
 }
 impl PutRuleInput {

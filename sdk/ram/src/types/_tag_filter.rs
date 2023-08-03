@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
-    #[doc(hidden)]
     pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
-    #[doc(hidden)]
     pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TagFilter {

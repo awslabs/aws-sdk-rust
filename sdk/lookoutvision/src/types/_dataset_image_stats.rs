@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetImageStats {
     /// <p>The total number of images in the dataset.</p>
-    #[doc(hidden)]
     pub total: ::std::option::Option<i32>,
     /// <p>The total number of labeled images.</p>
-    #[doc(hidden)]
     pub labeled: ::std::option::Option<i32>,
     /// <p>The total number of images labeled as normal.</p>
-    #[doc(hidden)]
     pub normal: ::std::option::Option<i32>,
     /// <p>the total number of images labeled as an anomaly.</p>
-    #[doc(hidden)]
     pub anomaly: ::std::option::Option<i32>,
 }
 impl DatasetImageStats {

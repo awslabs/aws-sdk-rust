@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputLocation {
     /// key used to extract the password from EC2 Parameter store
-    #[doc(hidden)]
     pub password_param: ::std::option::Option<::std::string::String>,
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// Documentation update needed
-    #[doc(hidden)]
     pub username: ::std::option::Option<::std::string::String>,
 }
 impl InputLocation {

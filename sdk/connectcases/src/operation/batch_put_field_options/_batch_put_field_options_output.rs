@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutFieldOptionsOutput {
     /// <p>A list of field errors. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::FieldOptionError>>,
     _request_id: Option<String>,
 }

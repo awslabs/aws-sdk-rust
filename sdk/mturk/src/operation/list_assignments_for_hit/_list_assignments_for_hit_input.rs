@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssignmentsForHitInput {
     /// <p>The ID of the HIT.</p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p>Pagination token</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
-    #[doc(hidden)]
     pub assignment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::AssignmentStatus>>,
 }
 impl ListAssignmentsForHitInput {

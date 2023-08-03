@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstancePatchesInput {
     /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Each element in the array is a structure containing a key-value pair.</p>
     /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
@@ -14,13 +13,10 @@ pub struct DescribeInstancePatchesInput {
     /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
     /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of patches to return (per page).</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeInstancePatchesInput {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLicenseConfigurationInput {
     /// <p>Name of the license configuration.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the license configuration.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Dimension used to track the license inventory.</p>
-    #[doc(hidden)]
     pub license_counting_type: ::std::option::Option<crate::types::LicenseCountingType>,
     /// <p>Number of licenses managed by the license configuration.</p>
-    #[doc(hidden)]
     pub license_count: ::std::option::Option<i64>,
     /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
-    #[doc(hidden)]
     pub license_count_hard_limit: ::std::option::Option<bool>,
     /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
     /// <ul>
@@ -26,16 +21,12 @@ pub struct CreateLicenseConfigurationInput {
     /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    #[doc(hidden)]
     pub license_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags to add to the license configuration.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
-    #[doc(hidden)]
     pub disassociate_when_not_found: ::std::option::Option<bool>,
     /// <p>Product information.</p>
-    #[doc(hidden)]
     pub product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
 }
 impl CreateLicenseConfigurationInput {

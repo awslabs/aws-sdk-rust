@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateApplicationComponentConfigInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    #[doc(hidden)]
     pub application_component_id: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
-    #[doc(hidden)]
     pub inclusion_status: ::std::option::Option<crate::types::InclusionStatus>,
     /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
-    #[doc(hidden)]
     pub strategy_option: ::std::option::Option<crate::types::StrategyOption>,
     /// <p> The list of source code configurations to update for the application component. </p>
-    #[doc(hidden)]
     pub source_code_list: ::std::option::Option<::std::vec::Vec<crate::types::SourceCode>>,
     /// <p> Database credentials. </p>
-    #[doc(hidden)]
     pub secrets_manager_key: ::std::option::Option<::std::string::String>,
     /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
-    #[doc(hidden)]
     pub configure_only: ::std::option::Option<bool>,
     /// <p>The type of known component.</p>
-    #[doc(hidden)]
     pub app_type: ::std::option::Option<crate::types::AppType>,
 }
 impl UpdateApplicationComponentConfigInput {

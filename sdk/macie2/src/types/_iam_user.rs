@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamUser {
     /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user who performed the action.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the IAM user who performed the action.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the IAM user who performed the action.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
 }
 impl IamUser {

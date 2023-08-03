@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UniqueTagResourceIdentifier {
     /// <p> A unique key that's attached to a resource. </p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p> A unique value that's attached to a resource. </p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl UniqueTagResourceIdentifier {

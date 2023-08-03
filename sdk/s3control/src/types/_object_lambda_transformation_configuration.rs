@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLambdaTransformationConfiguration {
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>>,
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
-    #[doc(hidden)]
     pub content_transformation: ::std::option::Option<crate::types::ObjectLambdaContentTransformation>,
 }
 impl ObjectLambdaTransformationConfiguration {

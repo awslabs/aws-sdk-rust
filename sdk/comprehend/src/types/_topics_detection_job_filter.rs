@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicsDetectionJobFilter {
     /// <p></p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of topic detection jobs based on job status. Returns only jobs with the specified status.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Only returns jobs submitted before the specified time. Jobs are returned in descending order, newest to oldest.</p>
-    #[doc(hidden)]
     pub submit_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing. Only returns jobs submitted after the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    #[doc(hidden)]
     pub submit_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TopicsDetectionJobFilter {

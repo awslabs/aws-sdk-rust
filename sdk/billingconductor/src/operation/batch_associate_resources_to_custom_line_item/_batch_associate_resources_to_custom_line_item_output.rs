@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAssociateResourcesToCustomLineItemOutput {
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
-    #[doc(hidden)]
     pub successfully_associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
-    #[doc(hidden)]
     pub failed_associated_resources: ::std::option::Option<::std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     _request_id: Option<String>,
 }

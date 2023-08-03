@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyDefinitionRequest {
     /// <p>An object that contains information about the data type.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>A Boolean value that specifies whether the property is required.</p>
-    #[doc(hidden)]
     pub is_required_in_entity: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
-    #[doc(hidden)]
     pub is_external_id: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
-    #[doc(hidden)]
     pub is_stored_externally: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
-    #[doc(hidden)]
     pub is_time_series: ::std::option::Option<bool>,
     /// <p>An object that contains the default value.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<crate::types::DataValue>,
     /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A friendly name for the property.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl PropertyDefinitionRequest {

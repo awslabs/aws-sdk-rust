@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorEntityOutput {
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-    #[doc(hidden)]
     pub connector_entity_fields: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
     _request_id: Option<String>,
 }

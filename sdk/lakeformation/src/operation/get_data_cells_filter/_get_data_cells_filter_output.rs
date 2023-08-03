@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataCellsFilterOutput {
     /// <p>A structure that describes certain columns on certain rows.</p>
-    #[doc(hidden)]
     pub data_cells_filter: ::std::option::Option<crate::types::DataCellsFilter>,
     _request_id: Option<String>,
 }

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperimentTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A description for the experiment template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The stop conditions.</p>
-    #[doc(hidden)]
     pub stop_conditions: ::std::option::Option<::std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>>,
     /// <p>The targets for the experiment.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateTargetInput>>,
     /// <p>The actions for the experiment.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CreateExperimentTemplateActionInput>>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the experiment template.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput>,
 }
 impl CreateExperimentTemplateInput {

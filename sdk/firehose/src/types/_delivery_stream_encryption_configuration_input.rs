@@ -5,14 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryStreamEncryptionConfigurationInput {
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data Firehose uses a service-account CMK.</p>
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of customer master key (CMK) to use for encryption. The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys (CMKs)</a>. When you invoke <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> with <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant that allows the Kinesis Data Firehose service to use the customer managed CMK to perform encryption and decryption. Kinesis Data Firehose manages that grant. </p>
     /// <p>When you invoke <code>StartDeliveryStreamEncryption</code> to change the CMK for a delivery stream that is encrypted with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement.</p>
     /// <p>You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> operation exceeds this limit, Kinesis Data Firehose throws a <code>LimitExceededException</code>. </p> <important>
     /// <p>To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.</p>
     /// </important>
-    #[doc(hidden)]
     pub key_type: ::std::option::Option<crate::types::KeyType>,
 }
 impl DeliveryStreamEncryptionConfigurationInput {

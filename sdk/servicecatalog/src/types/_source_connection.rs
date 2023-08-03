@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConnection {
     /// <p>The only supported <code>SourceConnection</code> type is Codestar. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The connection details based on the connection <code>Type</code>. </p>
-    #[doc(hidden)]
     pub connection_parameters: ::std::option::Option<crate::types::SourceConnectionParameters>,
 }
 impl SourceConnection {

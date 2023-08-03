@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexSettingsSummary {
     /// Transport stream bit rate.
-    #[doc(hidden)]
     pub transport_stream_bitrate: ::std::option::Option<i32>,
 }
 impl MultiplexSettingsSummary {

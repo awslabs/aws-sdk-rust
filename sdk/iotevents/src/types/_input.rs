@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Input {
     /// <p>Information about the configuration of an input.</p>
-    #[doc(hidden)]
     pub input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
     /// <p>The definition of the input.</p>
-    #[doc(hidden)]
     pub input_definition: ::std::option::Option<crate::types::InputDefinition>,
 }
 impl Input {

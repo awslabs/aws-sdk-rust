@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentSourceConfiguration {
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub data_source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
-    #[doc(hidden)]
     pub faq_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
-    #[doc(hidden)]
     pub direct_put_content: bool,
 }
 impl ContentSourceConfiguration {

@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesBlockDeviceMapping {
     /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters used to set up EBS volumes automatically when the instance is launched.</p>
-    #[doc(hidden)]
     pub ebs: ::std::option::Option<crate::types::ScheduledInstancesEbs>,
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
-    #[doc(hidden)]
     pub no_device: ::std::option::Option<::std::string::String>,
     /// <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
     /// <p>Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block device mapping for the AMI.</p>
-    #[doc(hidden)]
     pub virtual_name: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesBlockDeviceMapping {

@@ -40,10 +40,8 @@ pub struct DeviceSelectionConfiguration {
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     /// <p>The maximum number of devices to be included in a test run.</p>
-    #[doc(hidden)]
     pub max_devices: ::std::option::Option<i32>,
 }
 impl DeviceSelectionConfiguration {

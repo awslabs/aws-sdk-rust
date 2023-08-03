@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportLabelsTaskRunOutput {
     /// <p>The unique identifier for the task run.</p>
-    #[doc(hidden)]
     pub task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

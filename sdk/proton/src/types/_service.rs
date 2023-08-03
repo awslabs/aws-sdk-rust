@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Service {
     /// <p>The name of the service.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the service.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the service was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the service was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the service.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ServiceStatus>,
     /// <p>A service status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The formatted specification that defines the service.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The service pipeline detail data.</p>
-    #[doc(hidden)]
     pub pipeline: ::std::option::Option<crate::types::ServicePipeline>,
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
-    #[doc(hidden)]
     pub repository_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the source code repository.</p>
-    #[doc(hidden)]
     pub repository_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the code repository branch that holds the code that's deployed in Proton.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
 impl Service {

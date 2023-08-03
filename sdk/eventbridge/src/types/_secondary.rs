@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Secondary {
     /// <p>Defines the secondary Region.</p>
-    #[doc(hidden)]
     pub route: ::std::option::Option<::std::string::String>,
 }
 impl Secondary {

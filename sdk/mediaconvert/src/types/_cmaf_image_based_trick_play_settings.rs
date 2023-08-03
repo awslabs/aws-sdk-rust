@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CmafImageBasedTrickPlaySettings {
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
-    #[doc(hidden)]
     pub interval_cadence: ::std::option::Option<crate::types::CmafIntervalCadence>,
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
-    #[doc(hidden)]
     pub thumbnail_height: ::std::option::Option<i32>,
     /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
-    #[doc(hidden)]
     pub thumbnail_interval: ::std::option::Option<f64>,
     /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
-    #[doc(hidden)]
     pub thumbnail_width: ::std::option::Option<i32>,
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
-    #[doc(hidden)]
     pub tile_height: ::std::option::Option<i32>,
     /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
-    #[doc(hidden)]
     pub tile_width: ::std::option::Option<i32>,
 }
 impl CmafImageBasedTrickPlaySettings {

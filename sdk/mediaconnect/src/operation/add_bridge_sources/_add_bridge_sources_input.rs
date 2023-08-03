@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeSourcesInput {
     /// The ARN of the bridge that you want to update.
-    #[doc(hidden)]
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The sources that you want to add to this bridge.
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
 }
 impl AddBridgeSourcesInput {

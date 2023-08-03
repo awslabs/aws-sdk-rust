@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamespaceInfoV2 {
     /// <p>The name of the error.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The namespace Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub capacity_region: ::std::option::Option<::std::string::String>,
     /// <p>The creation status of a namespace that is not yet completely created.</p>
-    #[doc(hidden)]
     pub creation_status: ::std::option::Option<crate::types::NamespaceStatus>,
     /// <p>The identity store used for the namespace.</p>
-    #[doc(hidden)]
     pub identity_store: ::std::option::Option<crate::types::IdentityStore>,
     /// <p>An error that occurred when the namespace was created.</p>
-    #[doc(hidden)]
     pub namespace_error: ::std::option::Option<crate::types::NamespaceError>,
 }
 impl NamespaceInfoV2 {

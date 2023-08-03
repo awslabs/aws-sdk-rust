@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionInfo {
     /// <p>The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub sse_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Amazon Web Services Region in the replication set.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RegionStatus>,
     /// <p>Information displayed about the status of the Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.</p>
-    #[doc(hidden)]
     pub status_update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RegionInfo {

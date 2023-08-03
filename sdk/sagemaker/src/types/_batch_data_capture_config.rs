@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDataCaptureConfig {
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    #[doc(hidden)]
     pub destination_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
@@ -15,10 +14,8 @@ pub struct BatchDataCaptureConfig {
     /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Flag that indicates whether to append inference id to the output.</p>
-    #[doc(hidden)]
     pub generate_inference_id: bool,
 }
 impl BatchDataCaptureConfig {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceValue {
     /// <p>The value is a resource ID.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::ResourceValueType>,
 }
 impl ResourceValue {

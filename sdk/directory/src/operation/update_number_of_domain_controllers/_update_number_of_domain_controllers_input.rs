@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNumberOfDomainControllersInput {
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of domain controllers desired in the directory.</p>
-    #[doc(hidden)]
     pub desired_number: ::std::option::Option<i32>,
 }
 impl UpdateNumberOfDomainControllersInput {

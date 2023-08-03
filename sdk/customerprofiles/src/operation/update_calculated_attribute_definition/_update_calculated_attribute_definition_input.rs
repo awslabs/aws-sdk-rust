@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCalculatedAttributeDefinitionInput {
     /// <p>The unique name of the domain.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the calculated attribute.</p>
-    #[doc(hidden)]
     pub calculated_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the calculated attribute.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the calculated attribute.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
-    #[doc(hidden)]
     pub conditions: ::std::option::Option<crate::types::Conditions>,
 }
 impl UpdateCalculatedAttributeDefinitionInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverShardInput {
     /// <p>The cluster being failed over</p>
-    #[doc(hidden)]
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the shard</p>
-    #[doc(hidden)]
     pub shard_name: ::std::option::Option<::std::string::String>,
 }
 impl FailoverShardInput {

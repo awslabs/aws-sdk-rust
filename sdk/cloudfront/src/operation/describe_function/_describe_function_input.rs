@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFunctionInput {
     /// <p>The name of the function that you are getting information about.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::FunctionStage>,
 }
 impl DescribeFunctionInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOrganizationConfigRuleDetailedStatusInput {
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
-    #[doc(hidden)]
     pub organization_config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>StatusDetailFilters</code> object.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::StatusDetailFilters>,
     /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetOrganizationConfigRuleDetailedStatusInput {

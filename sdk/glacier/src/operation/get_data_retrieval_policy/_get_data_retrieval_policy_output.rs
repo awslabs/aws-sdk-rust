@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataRetrievalPolicyOutput {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
-    #[doc(hidden)]
     pub policy: ::std::option::Option<crate::types::DataRetrievalPolicy>,
     _request_id: Option<String>,
 }

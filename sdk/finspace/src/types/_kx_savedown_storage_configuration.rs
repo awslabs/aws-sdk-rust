@@ -8,10 +8,8 @@ pub struct KxSavedownStorageConfiguration {
     /// <ul>
     /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::KxSavedownStorageType>,
     /// <p>The size of temporary storage in bytes.</p>
-    #[doc(hidden)]
     pub size: i32,
 }
 impl KxSavedownStorageConfiguration {

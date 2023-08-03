@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkInterfaceOutput {
     /// <p>Information about the network interface.</p>
-    #[doc(hidden)]
     pub network_interface: ::std::option::Option<crate::types::NetworkInterface>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

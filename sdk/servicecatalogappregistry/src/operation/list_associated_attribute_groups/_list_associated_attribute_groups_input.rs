@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociatedAttributeGroupsInput {
     /// <p>The name or ID of the application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAssociatedAttributeGroupsInput {

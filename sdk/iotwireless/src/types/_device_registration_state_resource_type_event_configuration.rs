@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceRegistrationStateResourceTypeEventConfiguration {
     /// <p>Device registration resource type state event configuration object for enabling or disabling Sidewalk related event topics.</p>
-    #[doc(hidden)]
     pub sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }
 impl DeviceRegistrationStateResourceTypeEventConfiguration {

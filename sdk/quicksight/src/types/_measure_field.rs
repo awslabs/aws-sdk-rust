@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeasureField {
     /// <p>The measure type field with numerical type columns.</p>
-    #[doc(hidden)]
     pub numerical_measure_field: ::std::option::Option<crate::types::NumericalMeasureField>,
     /// <p>The measure type field with categorical type columns.</p>
-    #[doc(hidden)]
     pub categorical_measure_field: ::std::option::Option<crate::types::CategoricalMeasureField>,
     /// <p>The measure type field with date type columns.</p>
-    #[doc(hidden)]
     pub date_measure_field: ::std::option::Option<crate::types::DateMeasureField>,
     /// <p>The calculated measure field only used in pivot tables.</p>
-    #[doc(hidden)]
     pub calculated_measure_field: ::std::option::Option<crate::types::CalculatedMeasureField>,
 }
 impl MeasureField {

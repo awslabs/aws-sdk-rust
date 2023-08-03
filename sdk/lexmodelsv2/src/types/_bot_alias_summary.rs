@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotAliasSummary {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot alias.</p>
-    #[doc(hidden)]
     pub bot_alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the bot alias.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that the bot alias references.</p>
-    #[doc(hidden)]
     pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
-    #[doc(hidden)]
     pub bot_alias_status: ::std::option::Option<crate::types::BotAliasStatus>,
     /// <p>A timestamp of the date and time that the bot alias was created.</p>
-    #[doc(hidden)]
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotAliasSummary {

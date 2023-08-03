@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scoping {
     /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<crate::types::JobScopingBlock>,
     /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<crate::types::JobScopingBlock>,
 }
 impl Scoping {

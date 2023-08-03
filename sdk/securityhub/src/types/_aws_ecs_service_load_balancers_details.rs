@@ -5,18 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsServiceLoadBalancersDetails {
     /// <p>The name of the container to associate with the load balancer.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
-    #[doc(hidden)]
     pub container_port: i32,
     /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>Only specified when using a Classic Load Balancer. For an Application Load Balancer or a Network Load Balancer, the load balancer name is omitted.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
-    #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsServiceLoadBalancersDetails {

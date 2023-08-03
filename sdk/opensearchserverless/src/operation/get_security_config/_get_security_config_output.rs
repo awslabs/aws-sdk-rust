@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSecurityConfigOutput {
     /// <p>Details of the requested security configuration.</p>
-    #[doc(hidden)]
     pub security_config_detail: ::std::option::Option<crate::types::SecurityConfigDetail>,
     _request_id: Option<String>,
 }

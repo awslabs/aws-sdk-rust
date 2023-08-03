@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WhatIfPointScenario {
     /// <p>The date that you need the forecast results for.</p>
-    #[doc(hidden)]
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The target value that you want to meet for the provided date.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl WhatIfPointScenario {

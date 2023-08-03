@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserGroupsUpdateStatus {
     /// <p>The ID of the user group to add.</p>
-    #[doc(hidden)]
     pub user_group_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the user group to remove.</p>
-    #[doc(hidden)]
     pub user_group_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UserGroupsUpdateStatus {

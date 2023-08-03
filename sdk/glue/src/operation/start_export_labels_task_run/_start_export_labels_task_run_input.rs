@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExportLabelsTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    #[doc(hidden)]
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path where you export the labels.</p>
-    #[doc(hidden)]
     pub output_s3_path: ::std::option::Option<::std::string::String>,
 }
 impl StartExportLabelsTaskRunInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OfflineStoreStatus {
     /// <p>An <code>OfflineStore</code> status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OfflineStoreStatusValue>,
     /// <p>The justification for why the OfflineStoreStatus is Blocked (if applicable).</p>
-    #[doc(hidden)]
     pub blocked_reason: ::std::option::Option<::std::string::String>,
 }
 impl OfflineStoreStatus {

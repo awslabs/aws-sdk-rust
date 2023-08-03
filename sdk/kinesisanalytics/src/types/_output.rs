@@ -7,19 +7,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Output {
     /// <p>Name of the in-application stream.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies an Amazon Kinesis stream as the destination.</p>
-    #[doc(hidden)]
     pub kinesis_streams_output: ::std::option::Option<crate::types::KinesisStreamsOutput>,
     /// <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
-    #[doc(hidden)]
     pub kinesis_firehose_output: ::std::option::Option<crate::types::KinesisFirehoseOutput>,
     /// <p>Identifies an AWS Lambda function as the destination.</p>
-    #[doc(hidden)]
     pub lambda_output: ::std::option::Option<crate::types::LambdaOutput>,
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
-    #[doc(hidden)]
     pub destination_schema: ::std::option::Option<crate::types::DestinationSchema>,
 }
 impl Output {

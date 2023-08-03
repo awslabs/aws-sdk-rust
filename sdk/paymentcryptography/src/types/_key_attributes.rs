@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyAttributes {
     /// <p>The cryptographic usage of an Amazon Web Services Payment Cryptography key as deﬁned in section A.5.2 of the TR-31 spec.</p>
-    #[doc(hidden)]
     pub key_usage: ::std::option::Option<crate::types::KeyUsage>,
     /// <p>The type of Amazon Web Services Payment Cryptography key to create, which determines the classiﬁcation of the cryptographic method and whether Amazon Web Services Payment Cryptography key contains a symmetric key or an asymmetric key pair.</p>
-    #[doc(hidden)]
     pub key_class: ::std::option::Option<crate::types::KeyClass>,
     /// <p>The key algorithm to be use during creation of an Amazon Web Services Payment Cryptography key.</p>
     /// <p>For symmetric keys, Amazon Web Services Payment Cryptography supports <code>AES</code> and <code>TDES</code> algorithms. For asymmetric keys, Amazon Web Services Payment Cryptography supports <code>RSA</code> and <code>ECC_NIST</code> algorithms.</p>
-    #[doc(hidden)]
     pub key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     /// <p>The list of cryptographic operations that you can perform using the key.</p>
-    #[doc(hidden)]
     pub key_modes_of_use: ::std::option::Option<crate::types::KeyModesOfUse>,
 }
 impl KeyAttributes {

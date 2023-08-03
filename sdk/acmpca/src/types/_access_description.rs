@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDescription {
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
-    #[doc(hidden)]
     pub access_method: ::std::option::Option<crate::types::AccessMethod>,
     /// <p>The location of <code>AccessDescription</code> information.</p>
-    #[doc(hidden)]
     pub access_location: ::std::option::Option<crate::types::GeneralName>,
 }
 impl AccessDescription {

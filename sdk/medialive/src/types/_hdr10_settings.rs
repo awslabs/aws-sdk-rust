@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Hdr10Settings {
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
-    #[doc(hidden)]
     pub max_cll: ::std::option::Option<i32>,
     /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
-    #[doc(hidden)]
     pub max_fall: ::std::option::Option<i32>,
 }
 impl Hdr10Settings {

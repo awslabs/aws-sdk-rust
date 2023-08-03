@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryTimeline {
     /// <p>The date and time the canary was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the canary was most recently modified.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the canary's most recent run started.</p>
-    #[doc(hidden)]
     pub last_started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the canary's most recent run ended.</p>
-    #[doc(hidden)]
     pub last_stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CanaryTimeline {

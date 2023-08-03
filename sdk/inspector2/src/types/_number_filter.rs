@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumberFilter {
     /// <p>The highest number to be included in the filter.</p>
-    #[doc(hidden)]
     pub upper_inclusive: ::std::option::Option<f64>,
     /// <p>The lowest number to be included in the filter.</p>
-    #[doc(hidden)]
     pub lower_inclusive: ::std::option::Option<f64>,
 }
 impl NumberFilter {

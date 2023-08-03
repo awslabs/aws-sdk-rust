@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LivenessOutputConfig {
     /// <p>The path to an AWS Amazon S3 bucket used to store Face Liveness session results.</p>
-    #[doc(hidden)]
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix prepended to the output files for the Face Liveness session results.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl LivenessOutputConfig {

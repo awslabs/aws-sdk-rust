@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeviceInput {
     /// <p>The ARN of the device to update. Required.</p>
-    #[doc(hidden)]
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated device name. Required.</p>
-    #[doc(hidden)]
     pub device_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDeviceInput {

@@ -5,37 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The Amazon customer account associated with the event notification subscription.</p>
-    #[doc(hidden)]
     pub customer_aws_id: ::std::option::Option<::std::string::String>,
     /// <p>The event notification subscription Id.</p>
-    #[doc(hidden)]
     pub cust_subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The topic ARN of the event notification subscription.</p>
-    #[doc(hidden)]
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
     /// <p>The status "no-permission" indicates that Neptune no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The time the event notification subscription was created.</p>
-    #[doc(hidden)]
     pub subscription_creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The source type for the event notification subscription.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of source IDs for the event notification subscription.</p>
-    #[doc(hidden)]
     pub source_ids_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of event categories for the event notification subscription.</p>
-    #[doc(hidden)]
     pub event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
-    #[doc(hidden)]
     pub event_subscription_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventSubscription {

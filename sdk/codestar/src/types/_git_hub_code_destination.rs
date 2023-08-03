@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GitHubCodeDestination {
     /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Whether the GitHub repository is to be a private repository.</p>
-    #[doc(hidden)]
     pub private_repository: bool,
     /// <p>Whether to enable issues for the GitHub repository.</p>
-    #[doc(hidden)]
     pub issues_enabled: bool,
     /// <p>The GitHub user's personal access token for the GitHub repository.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
 }
 impl GitHubCodeDestination {

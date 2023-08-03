@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeReference {
     /// <p>The name of the recipe.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the version for the recipe. </p>
-    #[doc(hidden)]
     pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl RecipeReference {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopMatchmakingInput {
     /// <p>A unique identifier for a matchmaking ticket.</p>
-    #[doc(hidden)]
     pub ticket_id: ::std::option::Option<::std::string::String>,
 }
 impl StopMatchmakingInput {

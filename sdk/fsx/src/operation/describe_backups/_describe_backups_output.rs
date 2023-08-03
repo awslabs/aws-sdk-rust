@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBackupsOutput {
     /// <p>An array of backups.</p>
-    #[doc(hidden)]
     pub backups: ::std::option::Option<::std::vec::Vec<crate::types::Backup>>,
     /// <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

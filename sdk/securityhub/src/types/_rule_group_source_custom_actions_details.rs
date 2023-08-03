@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceCustomActionsDetails {
     /// <p>The definition of a custom action.</p>
-    #[doc(hidden)]
     pub action_definition: ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
     /// <p>A descriptive name of the custom action.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceCustomActionsDetails {

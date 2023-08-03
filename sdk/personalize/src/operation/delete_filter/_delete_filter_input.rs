@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFilterInput {
     /// <p>The ARN of the filter to delete.</p>
-    #[doc(hidden)]
     pub filter_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFilterInput {

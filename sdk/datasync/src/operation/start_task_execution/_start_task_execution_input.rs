@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTaskExecutionInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    #[doc(hidden)]
     pub override_options: ::std::option::Option<crate::types::Options>,
     /// <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl StartTaskExecutionInput {

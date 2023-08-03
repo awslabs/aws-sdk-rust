@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerTlsCertificateInput {
     /// <p>The load balancer name.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The SSL/TLS certificate name.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
     /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
-    #[doc(hidden)]
     pub force: ::std::option::Option<bool>,
 }
 impl DeleteLoadBalancerTlsCertificateInput {

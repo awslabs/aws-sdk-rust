@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventSourceOutput {
     /// <p>The ARN of the partner event source.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SaaS partner that created the event source.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the event source was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
-    #[doc(hidden)]
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the partner event source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::EventSourceState>,
     _request_id: Option<String>,
 }

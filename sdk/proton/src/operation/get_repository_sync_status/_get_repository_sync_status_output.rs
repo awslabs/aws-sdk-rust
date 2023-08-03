@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositorySyncStatusOutput {
     /// <p>The repository sync status detail data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub latest_sync: ::std::option::Option<crate::types::RepositorySyncAttempt>,
     _request_id: Option<String>,
 }

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringColumnStatisticsData {
     /// <p>The size of the longest string in the column.</p>
-    #[doc(hidden)]
     pub maximum_length: i64,
     /// <p>The average string length in the column.</p>
-    #[doc(hidden)]
     pub average_length: f64,
     /// <p>The number of null values in the column.</p>
-    #[doc(hidden)]
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
-    #[doc(hidden)]
     pub number_of_distinct_values: i64,
 }
 impl StringColumnStatisticsData {

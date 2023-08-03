@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>The type of attribute validation rule.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::RuleType>,
     /// <p>The minimum and maximum parameters that are associated with the rule.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Rule {

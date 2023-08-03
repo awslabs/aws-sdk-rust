@@ -8,10 +8,8 @@ pub struct ListOrganizationPortfolioAccessInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
-    #[doc(hidden)]
     pub portfolio_id: ::std::option::Option<::std::string::String>,
     /// <p>The organization node type that will be returned in the output.</p>
     /// <ul>
@@ -19,13 +17,10 @@ pub struct ListOrganizationPortfolioAccessInput {
     /// <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>
     /// <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub organization_node_type: ::std::option::Option<crate::types::OrganizationNodeType>,
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    #[doc(hidden)]
     pub page_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListOrganizationPortfolioAccessInput {

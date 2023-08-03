@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationDataSourceConfigurations {
     /// <p>Describes whether S3 data event logs are enabled for new members of the organization.</p>
-    #[doc(hidden)]
     pub s3_logs: ::std::option::Option<crate::types::OrganizationS3LogsConfiguration>,
     /// <p>Describes the configuration of Kubernetes data sources for new members of the organization.</p>
-    #[doc(hidden)]
     pub kubernetes: ::std::option::Option<crate::types::OrganizationKubernetesConfiguration>,
     /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
-    #[doc(hidden)]
     pub malware_protection: ::std::option::Option<crate::types::OrganizationMalwareProtectionConfiguration>,
 }
 impl OrganizationDataSourceConfigurations {

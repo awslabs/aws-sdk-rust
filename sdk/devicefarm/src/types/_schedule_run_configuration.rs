@@ -5,33 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleRunConfiguration {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
-    #[doc(hidden)]
     pub extra_data_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for internal use.</p>
-    #[doc(hidden)]
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the locale that is used for the run.</p>
-    #[doc(hidden)]
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location that is used for the run.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
-    #[doc(hidden)]
     pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
-    #[doc(hidden)]
     pub customer_artifact_paths: ::std::option::Option<crate::types::CustomerArtifactPaths>,
     /// <p>Information about the radio states for the run.</p>
-    #[doc(hidden)]
     pub radios: ::std::option::Option<crate::types::Radios>,
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
-    #[doc(hidden)]
     pub auxiliary_apps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
-    #[doc(hidden)]
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
 }
 impl ScheduleRunConfiguration {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReplicationSetInput {
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    #[doc(hidden)]
     pub regions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add to the replication set.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateReplicationSetInput {

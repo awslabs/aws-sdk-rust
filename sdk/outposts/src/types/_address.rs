@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Address {
     /// <p>The name of the contact.</p>
-    #[doc(hidden)]
     pub contact_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the contact.</p>
-    #[doc(hidden)]
     pub contact_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The first line of the address.</p>
-    #[doc(hidden)]
     pub address_line1: ::std::option::Option<::std::string::String>,
     /// <p>The second line of the address.</p>
-    #[doc(hidden)]
     pub address_line2: ::std::option::Option<::std::string::String>,
     /// <p>The third line of the address.</p>
-    #[doc(hidden)]
     pub address_line3: ::std::option::Option<::std::string::String>,
     /// <p>The city for the address.</p>
-    #[doc(hidden)]
     pub city: ::std::option::Option<::std::string::String>,
     /// <p>The state for the address.</p>
-    #[doc(hidden)]
     pub state_or_region: ::std::option::Option<::std::string::String>,
     /// <p>The district or county for the address.</p>
-    #[doc(hidden)]
     pub district_or_county: ::std::option::Option<::std::string::String>,
     /// <p>The postal code for the address.</p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-3166 two-letter country code for the address.</p>
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The municipality for the address.</p>
-    #[doc(hidden)]
     pub municipality: ::std::option::Option<::std::string::String>,
 }
 impl Address {

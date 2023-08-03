@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetSummary {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the fleet was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the fleet was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet to display.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
-    #[doc(hidden)]
     pub company_code: ::std::option::Option<::std::string::String>,
     /// <p>The status of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_status: ::std::option::Option<crate::types::FleetStatus>,
     /// <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FleetSummary {

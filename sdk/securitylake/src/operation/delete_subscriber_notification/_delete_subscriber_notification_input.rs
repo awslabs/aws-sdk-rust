@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubscriberNotificationInput {
     /// <p>The ID of the Security Lake subscriber account.</p>
-    #[doc(hidden)]
     pub subscriber_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSubscriberNotificationInput {

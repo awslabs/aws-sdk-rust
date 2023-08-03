@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFindingsInput {
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
-    #[doc(hidden)]
     pub finding_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>>,
 }
 impl BatchGetFindingsInput {

@@ -7,7 +7,6 @@ pub struct EndpointNetworkConfiguration {
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
-    #[doc(hidden)]
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EndpointNetworkConfiguration {

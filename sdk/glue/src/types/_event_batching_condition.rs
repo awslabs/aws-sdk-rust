@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
-    #[doc(hidden)]
     pub batch_size: i32,
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
-    #[doc(hidden)]
     pub batch_window: ::std::option::Option<i32>,
 }
 impl EventBatchingCondition {

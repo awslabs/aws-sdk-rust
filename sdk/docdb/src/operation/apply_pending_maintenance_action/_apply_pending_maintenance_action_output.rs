@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
-    #[doc(hidden)]
     pub resource_pending_maintenance_actions: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
     _request_id: Option<String>,
 }

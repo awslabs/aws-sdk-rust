@@ -8,26 +8,19 @@ pub struct CopyProductInput {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source product.</p>
-    #[doc(hidden)]
     pub source_product_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target product. By default, a new product is created.</p>
-    #[doc(hidden)]
     pub target_product_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the target product. The default is the name of the source product.</p>
-    #[doc(hidden)]
     pub target_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
-    #[doc(hidden)]
     pub source_provisioning_artifact_identifiers:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<crate::types::ProvisioningArtifactPropertyName, ::std::string::String>>>,
     /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
-    #[doc(hidden)]
     pub copy_options: ::std::option::Option<::std::vec::Vec<crate::types::CopyOption>>,
     /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
-    #[doc(hidden)]
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl CopyProductInput {

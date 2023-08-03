@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeSecurityGroupIngressInput {
     /// <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
-    #[doc(hidden)]
     pub cidr_ip: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>The ID of the security group.</p>
-    #[doc(hidden)]
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set of permissions.</p>
-    #[doc(hidden)]
     pub ip_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
-    #[doc(hidden)]
     pub ip_protocol: ::std::option::Option<::std::string::String>,
     /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
-    #[doc(hidden)]
     pub source_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Not supported.</p>
-    #[doc(hidden)]
     pub source_security_group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the security group rules.</p>
-    #[doc(hidden)]
     pub security_group_rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RevokeSecurityGroupIngressInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchFacesOutput {
     /// <p>ID of the face that was searched for matches in a collection.</p>
-    #[doc(hidden)]
     pub searched_face_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
-    #[doc(hidden)]
     pub face_matches: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    #[doc(hidden)]
     pub face_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

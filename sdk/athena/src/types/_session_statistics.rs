@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionStatistics {
     /// <p>The data processing unit execution time for a session in milliseconds.</p>
-    #[doc(hidden)]
     pub dpu_execution_in_millis: ::std::option::Option<i64>,
 }
 impl SessionStatistics {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutOrganizationConformancePackOutput {
     /// <p>ARN of the organization conformance pack.</p>
-    #[doc(hidden)]
     pub organization_conformance_pack_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

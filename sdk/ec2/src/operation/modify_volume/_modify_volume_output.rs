@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVolumeOutput {
     /// <p>Information about the volume modification.</p>
-    #[doc(hidden)]
     pub volume_modification: ::std::option::Option<crate::types::VolumeModification>,
     _request_id: Option<String>,
 }

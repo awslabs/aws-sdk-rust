@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateVariableInput {
     /// <p>The list of variables for the batch create variable request.</p>
-    #[doc(hidden)]
     pub variable_entries: ::std::option::Option<::std::vec::Vec<crate::types::VariableEntry>>,
     /// <p>A collection of key and value pairs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl BatchCreateVariableInput {

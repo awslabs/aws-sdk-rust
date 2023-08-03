@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeSourceKinesisStreamParameters {
     /// <p>The maximum number of records to include in each batch.</p>
-    #[doc(hidden)]
     pub batch_size: ::std::option::Option<i32>,
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    #[doc(hidden)]
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    #[doc(hidden)]
     pub on_partial_batch_item_failure: ::std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
     /// <p>The maximum length of a time to wait for events.</p>
-    #[doc(hidden)]
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
-    #[doc(hidden)]
     pub maximum_record_age_in_seconds: ::std::option::Option<i32>,
     /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
-    #[doc(hidden)]
     pub maximum_retry_attempts: ::std::option::Option<i32>,
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
-    #[doc(hidden)]
     pub parallelization_factor: ::std::option::Option<i32>,
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    #[doc(hidden)]
     pub starting_position: ::std::option::Option<crate::types::KinesisStreamStartPosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading, in Unix time seconds.</p>
-    #[doc(hidden)]
     pub starting_position_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipeSourceKinesisStreamParameters {

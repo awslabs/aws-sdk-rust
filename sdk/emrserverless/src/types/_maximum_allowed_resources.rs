@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaximumAllowedResources {
     /// <p>The maximum allowed CPU for an application.</p>
-    #[doc(hidden)]
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed resources for an application.</p>
-    #[doc(hidden)]
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed disk for an application.</p>
-    #[doc(hidden)]
     pub disk: ::std::option::Option<::std::string::String>,
 }
 impl MaximumAllowedResources {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAllowedNodeTypeUpdatesOutput {
     /// <p>A list node types which you can use to scale up your cluster.</p>
-    #[doc(hidden)]
     pub scale_up_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list node types which you can use to scale down your cluster.</p>
-    #[doc(hidden)]
     pub scale_down_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

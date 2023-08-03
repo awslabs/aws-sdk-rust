@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EventsConfiguration {
     /// <p>The bot ID.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>HTTPS endpoint that allows a bot to receive outgoing events.</p>
-    #[doc(hidden)]
     pub outbound_events_https_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Lambda function ARN that allows a bot to receive outgoing events.</p>
-    #[doc(hidden)]
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventsConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VirtualServiceStatusCode>,
 }
 impl VirtualServiceStatus {

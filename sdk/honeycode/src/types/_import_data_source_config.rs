@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportDataSourceConfig {
     /// <p> The URL from which source data will be downloaded for the import request. </p>
-    #[doc(hidden)]
     pub data_source_url: ::std::option::Option<::std::string::String>,
 }
 impl ImportDataSourceConfig {

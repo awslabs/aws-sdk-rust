@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailMessage {
     /// <p>The body of the email message.</p>
-    #[doc(hidden)]
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The email address to forward bounces and complaints to, if feedback forwarding is enabled.</p>
-    #[doc(hidden)]
     pub feedback_forwarding_address: ::std::option::Option<::std::string::String>,
     /// <p>The verified email address to send the email message from. The default value is the FromAddress specified for the email channel.</p>
-    #[doc(hidden)]
     pub from_address: ::std::option::Option<::std::string::String>,
     /// <p>The email message, represented as a raw MIME message.</p>
-    #[doc(hidden)]
     pub raw_email: ::std::option::Option<crate::types::RawEmail>,
     /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
-    #[doc(hidden)]
     pub reply_to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
-    #[doc(hidden)]
     pub simple_email: ::std::option::Option<crate::types::SimpleEmail>,
     /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
-    #[doc(hidden)]
     pub substitutions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl EmailMessage {

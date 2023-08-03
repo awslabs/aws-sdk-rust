@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetBundleImportJobInput {
     /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
-    #[doc(hidden)]
     pub asset_bundle_import_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAssetBundleImportJobInput {

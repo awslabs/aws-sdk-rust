@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatabaseInput {
     /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
-    #[doc(hidden)]
     pub database_input: ::std::option::Option<crate::types::DatabaseInput>,
 }
 impl UpdateDatabaseInput {

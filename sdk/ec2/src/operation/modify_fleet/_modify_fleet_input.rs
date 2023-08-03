@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyFleetInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    #[doc(hidden)]
     pub excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
     /// <p>The launch template and overrides.</p>
-    #[doc(hidden)]
     pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
     /// <p>The ID of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the EC2 Fleet.</p>
-    #[doc(hidden)]
     pub target_capacity_specification: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
     /// <p>Reserved.</p>
-    #[doc(hidden)]
     pub context: ::std::option::Option<::std::string::String>,
 }
 impl ModifyFleetInput {

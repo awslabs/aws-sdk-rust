@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationVersionLifecycleConfig {
     /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
-    #[doc(hidden)]
     pub max_count_rule: ::std::option::Option<crate::types::MaxCountRule>,
     /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
-    #[doc(hidden)]
     pub max_age_rule: ::std::option::Option<crate::types::MaxAgeRule>,
 }
 impl ApplicationVersionLifecycleConfig {

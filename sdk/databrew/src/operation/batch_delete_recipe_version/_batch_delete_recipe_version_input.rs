@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionInput {
     /// <p>The name of the recipe whose versions are to be deleted.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    #[doc(hidden)]
     pub recipe_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchDeleteRecipeVersionInput {

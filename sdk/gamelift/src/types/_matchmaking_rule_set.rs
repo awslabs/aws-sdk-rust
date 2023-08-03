@@ -12,20 +12,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchmakingRuleSet {
     /// <p>A unique identifier for the matchmaking rule set</p>
-    #[doc(hidden)]
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
-    #[doc(hidden)]
     pub rule_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    #[doc(hidden)]
     pub rule_set_body: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MatchmakingRuleSet {

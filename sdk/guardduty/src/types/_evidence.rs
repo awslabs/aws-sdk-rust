@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Evidence {
     /// <p>A list of threat intelligence details related to the evidence.</p>
-    #[doc(hidden)]
     pub threat_intelligence_details: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelligenceDetail>>,
 }
 impl Evidence {

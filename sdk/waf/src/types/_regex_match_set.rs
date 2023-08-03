@@ -11,10 +11,8 @@
 pub struct RegexMatchSet {
     /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
     /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    #[doc(hidden)]
     pub regex_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p>
     /// <ul>
@@ -22,7 +20,6 @@ pub struct RegexMatchSet {
     /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li>
     /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub regex_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::RegexMatchTuple>>,
 }
 impl RegexMatchSet {

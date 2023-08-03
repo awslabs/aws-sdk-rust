@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFileSystemAssociationsOutput {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>If a value is present, there are more file system associations to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
-    #[doc(hidden)]
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of information about the Amazon FSx gateway's file system associations.</p>
-    #[doc(hidden)]
     pub file_system_association_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationSummary>>,
     _request_id: Option<String>,
 }

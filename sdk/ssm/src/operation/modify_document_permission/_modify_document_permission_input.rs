@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDocumentPermissionInput {
     /// <p>The name of the document that you want to share.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    #[doc(hidden)]
     pub permission_type: ::std::option::Option<crate::types::DocumentPermissionType>,
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    #[doc(hidden)]
     pub account_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    #[doc(hidden)]
     pub account_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
-    #[doc(hidden)]
     pub shared_document_version: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDocumentPermissionInput {

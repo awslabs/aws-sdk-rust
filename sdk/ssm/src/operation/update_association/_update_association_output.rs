@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssociationOutput {
     /// <p>The description of the association that was updated.</p>
-    #[doc(hidden)]
     pub association_description: ::std::option::Option<crate::types::AssociationDescription>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryHeadSourceCodeType {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
-    #[doc(hidden)]
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryHeadSourceCodeType {

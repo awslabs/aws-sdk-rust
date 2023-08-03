@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceRecommendationsJob {
     /// <p>The name of the job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job description.</p>
-    #[doc(hidden)]
     pub job_description: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation job type.</p>
-    #[doc(hidden)]
     pub job_type: ::std::option::Option<crate::types::RecommendationJobType>,
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-    #[doc(hidden)]
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>A timestamp that shows when the job was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job completed.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the job was last modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the job fails, provides information why the job failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The name of the created model.</p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    #[doc(hidden)]
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
-    #[doc(hidden)]
     pub model_package_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl InferenceRecommendationsJob {

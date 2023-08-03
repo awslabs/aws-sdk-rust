@@ -4,27 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceBundleInput {
     /// <p>The name of the bundle.</p>
-    #[doc(hidden)]
     pub bundle_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the bundle.</p>
-    #[doc(hidden)]
     pub bundle_description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the image that is used to create the bundle.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the compute type of the bundle.</p>
-    #[doc(hidden)]
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
-    #[doc(hidden)]
     pub user_storage: ::std::option::Option<crate::types::UserStorage>,
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
-    #[doc(hidden)]
     pub root_storage: ::std::option::Option<crate::types::RootStorage>,
     /// <p>The tags associated with the bundle.</p> <note>
     /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateWorkspaceBundleInput {

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsKeyConfiguration {
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
-    #[doc(hidden)]
     pub key_policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
-    #[doc(hidden)]
     pub grants: ::std::option::Option<::std::vec::Vec<crate::types::KmsGrantConfiguration>>,
 }
 impl KmsKeyConfiguration {

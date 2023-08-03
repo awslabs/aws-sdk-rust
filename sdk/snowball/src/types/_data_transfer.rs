@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataTransfer {
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
-    #[doc(hidden)]
     pub bytes_transferred: i64,
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
-    #[doc(hidden)]
     pub objects_transferred: i64,
     /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
-    #[doc(hidden)]
     pub total_bytes: i64,
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
-    #[doc(hidden)]
     pub total_objects: i64,
 }
 impl DataTransfer {

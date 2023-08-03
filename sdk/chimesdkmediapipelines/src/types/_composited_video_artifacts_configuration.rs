@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompositedVideoArtifactsConfiguration {
     /// <p>The layout setting, such as <code>GridView</code> in the configuration object.</p>
-    #[doc(hidden)]
     pub layout: ::std::option::Option<crate::types::LayoutOption>,
     /// <p>The video resolution setting in the configuration object. Default: HD at 1280 x 720. FHD resolution: 1920 x 1080.</p>
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<crate::types::ResolutionOption>,
     /// <p>The <code>GridView</code> configuration setting.</p>
-    #[doc(hidden)]
     pub grid_view_configuration: ::std::option::Option<crate::types::GridViewConfiguration>,
 }
 impl CompositedVideoArtifactsConfiguration {

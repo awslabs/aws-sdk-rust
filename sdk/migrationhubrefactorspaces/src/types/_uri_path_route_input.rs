@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UriPathRouteInput {
     /// <p>This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. To use path parameters in the source path, add a variable in curly braces. For example, the resource path {user} represents a path parameter called 'user'.</p>
-    #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    #[doc(hidden)]
     pub activation_state: ::std::option::Option<crate::types::RouteActivationState>,
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    #[doc(hidden)]
     pub methods: ::std::option::Option<::std::vec::Vec<crate::types::HttpMethod>>,
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
-    #[doc(hidden)]
     pub include_child_paths: ::std::option::Option<bool>,
     /// <p>If set to <code>true</code>, this option appends the source path to the service URL endpoint.</p>
-    #[doc(hidden)]
     pub append_source_path: ::std::option::Option<bool>,
 }
 impl UriPathRouteInput {

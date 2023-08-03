@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemIdentifier {
     /// <p>Details about the related item.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::ItemValue>,
     /// <p>The type of related item. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ItemType>,
 }
 impl ItemIdentifier {

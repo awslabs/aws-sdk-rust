@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelPackageGroupsOutput {
     /// <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
-    #[doc(hidden)]
     pub model_package_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageGroupSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model groups, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

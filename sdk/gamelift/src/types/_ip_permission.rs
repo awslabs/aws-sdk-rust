@@ -7,18 +7,14 @@ pub struct IpPermission {
     /// <p>A starting value for a range of allowed port numbers.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
-    #[doc(hidden)]
     pub from_port: ::std::option::Option<i32>,
     /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be equal to or greater than <code>FromPort</code>.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
-    #[doc(hidden)]
     pub to_port: ::std::option::Option<i32>,
     /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
-    #[doc(hidden)]
     pub ip_range: ::std::option::Option<::std::string::String>,
     /// <p>The network communication protocol used by the fleet.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::IpProtocol>,
 }
 impl IpPermission {

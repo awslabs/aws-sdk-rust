@@ -8,16 +8,12 @@ pub struct UpdateSchemaInput {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub schema_id: ::std::option::Option<crate::types::SchemaId>,
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
-    #[doc(hidden)]
     pub schema_version_number: ::std::option::Option<crate::types::SchemaVersionNumber>,
     /// <p>The new compatibility setting for the schema.</p>
-    #[doc(hidden)]
     pub compatibility: ::std::option::Option<crate::types::Compatibility>,
     /// <p>The new description for the schema.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSchemaInput {

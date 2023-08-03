@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Method {
     /// <p>The method's HTTP verb.</p>
-    #[doc(hidden)]
     pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-    #[doc(hidden)]
     pub authorization_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an Authorizer to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
-    #[doc(hidden)]
     pub authorizer_id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag specifying whether a valid ApiKey is required to invoke this method.</p>
-    #[doc(hidden)]
     pub api_key_required: ::std::option::Option<bool>,
     /// <p>The identifier of a RequestValidator for request validation.</p>
-    #[doc(hidden)]
     pub request_validator_id: ::std::option::Option<::std::string::String>,
     /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-    #[doc(hidden)]
     pub operation_name: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or templates.</p>
-    #[doc(hidden)]
     pub request_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     /// <p>A key-value map specifying data schemas, represented by Model resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
-    #[doc(hidden)]
     pub request_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Gets a method response associated with a given HTTP status code. </p>
-    #[doc(hidden)]
     pub method_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MethodResponse>>,
     /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
-    #[doc(hidden)]
     pub method_integration: ::std::option::Option<crate::types::Integration>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
-    #[doc(hidden)]
     pub authorization_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Method {

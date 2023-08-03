@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalCluster {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.</p>
-    #[doc(hidden)]
     pub global_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
-    #[doc(hidden)]
     pub global_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current state of this global database cluster.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The Aurora database engine used by the global database cluster.</p>
-    #[doc(hidden)]
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The default database name within the new global database cluster.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The storage encryption setting for the global database cluster.</p>
-    #[doc(hidden)]
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The deletion protection setting for the new global database cluster.</p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The list of primary and secondary clusters within the global database cluster.</p>
-    #[doc(hidden)]
     pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
     /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
-    #[doc(hidden)]
     pub failover_state: ::std::option::Option<crate::types::FailoverState>,
 }
 impl GlobalCluster {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSummary {
     /// <p>The unique identifier for the template.</p>
-    #[doc(hidden)]
     pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    #[doc(hidden)]
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The template name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the template.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TemplateStatus>,
 }
 impl TemplateSummary {

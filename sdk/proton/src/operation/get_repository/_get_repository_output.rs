@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryOutput {
     /// <p>The repository link's detail data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub repository: ::std::option::Option<crate::types::Repository>,
     _request_id: Option<String>,
 }

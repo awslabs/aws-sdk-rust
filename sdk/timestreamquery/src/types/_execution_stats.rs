@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionStats {
     /// <p>Total time, measured in milliseconds, that was needed for the scheduled query run to complete.</p>
-    #[doc(hidden)]
     pub execution_time_in_millis: i64,
     /// <p>Data writes metered for records ingested in a single scheduled query run.</p>
-    #[doc(hidden)]
     pub data_writes: i64,
     /// <p>Bytes metered for a single scheduled query run.</p>
-    #[doc(hidden)]
     pub bytes_metered: i64,
     /// <p>The number of records ingested for a single scheduled query run. </p>
-    #[doc(hidden)]
     pub records_ingested: i64,
     /// <p>Number of rows present in the output from running a query before ingestion to destination data source.</p>
-    #[doc(hidden)]
     pub query_result_rows: i64,
 }
 impl ExecutionStats {

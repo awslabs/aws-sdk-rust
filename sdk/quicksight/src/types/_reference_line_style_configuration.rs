@@ -10,10 +10,8 @@ pub struct ReferenceLineStyleConfiguration {
     /// <li> <p> <code>DASHED</code> </p> </li>
     /// <li> <p> <code>DOTTED</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub pattern: ::std::option::Option<crate::types::ReferenceLinePatternType>,
     /// <p>The hex color of the reference line.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
 }
 impl ReferenceLineStyleConfiguration {

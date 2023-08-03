@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
-    #[doc(hidden)]
     pub vpc_ingress_connection: ::std::option::Option<crate::types::VpcIngressConnection>,
     _request_id: Option<String>,
 }

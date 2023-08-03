@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageStatusDetails {
     /// <p>The validation status of the model package.</p>
-    #[doc(hidden)]
     pub validation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
     /// <p>The status of the scan of the Docker image container for the model package.</p>
-    #[doc(hidden)]
     pub image_scan_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>>,
 }
 impl ModelPackageStatusDetails {

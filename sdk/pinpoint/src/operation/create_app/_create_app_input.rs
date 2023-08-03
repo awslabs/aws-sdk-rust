@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppInput {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
-    #[doc(hidden)]
     pub create_application_request: ::std::option::Option<crate::types::CreateApplicationRequest>,
 }
 impl CreateAppInput {

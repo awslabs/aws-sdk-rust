@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDataSetRefreshPropertiesInput {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the dataset.</p>
-    #[doc(hidden)]
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The dataset refresh properties.</p>
-    #[doc(hidden)]
     pub data_set_refresh_properties: ::std::option::Option<crate::types::DataSetRefreshProperties>,
 }
 impl PutDataSetRefreshPropertiesInput {

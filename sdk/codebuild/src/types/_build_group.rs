@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildGroup {
     /// <p>Contains the identifier of the build group.</p>
-    #[doc(hidden)]
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that contain the identifiers of the build groups that this build group depends on.</p>
-    #[doc(hidden)]
     pub depends_on: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies if failures in this build group can be ignored.</p>
-    #[doc(hidden)]
     pub ignore_failure: bool,
     /// <p>A <code>BuildSummary</code> object that contains a summary of the current build group.</p>
-    #[doc(hidden)]
     pub current_build_summary: ::std::option::Option<crate::types::BuildSummary>,
     /// <p>An array of <code>BuildSummary</code> objects that contain summaries of previous build groups.</p>
-    #[doc(hidden)]
     pub prior_build_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::BuildSummary>>,
 }
 impl BuildGroup {

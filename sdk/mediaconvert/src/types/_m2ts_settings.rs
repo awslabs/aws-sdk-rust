@@ -5,121 +5,82 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct M2tsSettings {
     /// Selects between the DVB and ATSC buffer models for Dolby Digital audio.
-    #[doc(hidden)]
     pub audio_buffer_model: ::std::option::Option<crate::types::M2tsAudioBufferModel>,
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
-    #[doc(hidden)]
     pub audio_duration: ::std::option::Option<crate::types::M2tsAudioDuration>,
     /// The number of audio frames to insert for each PES packet.
-    #[doc(hidden)]
     pub audio_frames_per_pes: ::std::option::Option<i32>,
     /// Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify multiple PIDs as a JSON array. Default is the range 482-492.
-    #[doc(hidden)]
     pub audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
-    #[doc(hidden)]
     pub bitrate: ::std::option::Option<i32>,
     /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
-    #[doc(hidden)]
     pub buffer_model: ::std::option::Option<crate::types::M2tsBufferModel>,
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value to allow all PTS values.
-    #[doc(hidden)]
     pub data_pts_control: ::std::option::Option<crate::types::M2tsDataPtsControl>,
     /// Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
-    #[doc(hidden)]
     pub dvb_nit_settings: ::std::option::Option<crate::types::DvbNitSettings>,
     /// Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
-    #[doc(hidden)]
     pub dvb_sdt_settings: ::std::option::Option<crate::types::DvbSdtSettings>,
     /// Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
-    #[doc(hidden)]
     pub dvb_sub_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
-    #[doc(hidden)]
     pub dvb_tdt_settings: ::std::option::Option<crate::types::DvbTdtSettings>,
     /// Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499.
-    #[doc(hidden)]
     pub dvb_teletext_pid: ::std::option::Option<i32>,
     /// When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
-    #[doc(hidden)]
     pub ebp_audio_interval: ::std::option::Option<crate::types::M2tsEbpAudioInterval>,
     /// Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
-    #[doc(hidden)]
     pub ebp_placement: ::std::option::Option<crate::types::M2tsEbpPlacement>,
     /// Controls whether to include the ES Rate field in the PES header.
-    #[doc(hidden)]
     pub es_rate_in_pes: ::std::option::Option<crate::types::M2tsEsRateInPes>,
     /// Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force.
-    #[doc(hidden)]
     pub force_ts_video_ebp_order: ::std::option::Option<crate::types::M2tsForceTsVideoEbpOrder>,
     /// The length, in seconds, of each fragment. Only used with EBP markers.
-    #[doc(hidden)]
     pub fragment_time: ::std::option::Option<f64>,
     /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
-    #[doc(hidden)]
     pub klv_metadata: ::std::option::Option<crate::types::M2tsKlvMetadata>,
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
-    #[doc(hidden)]
     pub max_pcr_interval: ::std::option::Option<i32>,
     /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
-    #[doc(hidden)]
     pub min_ebp_interval: ::std::option::Option<i32>,
     /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    #[doc(hidden)]
     pub nielsen_id3: ::std::option::Option<crate::types::M2tsNielsenId3>,
     /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
-    #[doc(hidden)]
     pub null_packet_bitrate: ::std::option::Option<f64>,
     /// The number of milliseconds between instances of this table in the output transport stream.
-    #[doc(hidden)]
     pub pat_interval: ::std::option::Option<i32>,
     /// When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream.
-    #[doc(hidden)]
     pub pcr_control: ::std::option::Option<crate::types::M2tsPcrControl>,
     /// Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a value, the service will use the value for Video PID.
-    #[doc(hidden)]
     pub pcr_pid: ::std::option::Option<i32>,
     /// Specify the number of milliseconds between instances of the program map table (PMT) in the output transport stream.
-    #[doc(hidden)]
     pub pmt_interval: ::std::option::Option<i32>,
     /// Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
-    #[doc(hidden)]
     pub pmt_pid: ::std::option::Option<i32>,
     /// Specify the packet identifier (PID) of the private metadata stream. Default is 503.
-    #[doc(hidden)]
     pub private_metadata_pid: ::std::option::Option<i32>,
     /// Use Program number to specify the program number used in the program map table (PMT) for this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
-    #[doc(hidden)]
     pub program_number: ::std::option::Option<i32>,
     /// When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
-    #[doc(hidden)]
     pub rate_mode: ::std::option::Option<crate::types::M2tsRateMode>,
     /// Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
-    #[doc(hidden)]
     pub scte35_esam: ::std::option::Option<crate::types::M2tsScte35Esam>,
     /// Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream.
-    #[doc(hidden)]
     pub scte35_pid: ::std::option::Option<i32>,
     /// For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
-    #[doc(hidden)]
     pub scte35_source: ::std::option::Option<crate::types::M2tsScte35Source>,
     /// Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
-    #[doc(hidden)]
     pub segmentation_markers: ::std::option::Option<crate::types::M2tsSegmentationMarkers>,
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
-    #[doc(hidden)]
     pub segmentation_style: ::std::option::Option<crate::types::M2tsSegmentationStyle>,
     /// Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
-    #[doc(hidden)]
     pub segmentation_time: ::std::option::Option<f64>,
     /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
-    #[doc(hidden)]
     pub timed_metadata_pid: ::std::option::Option<i32>,
     /// Specify the ID for the transport stream itself in the program map table for this output. Transport stream IDs and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
-    #[doc(hidden)]
     pub transport_stream_id: ::std::option::Option<i32>,
     /// Specify the packet identifier (PID) of the elementary video stream in the transport stream.
-    #[doc(hidden)]
     pub video_pid: ::std::option::Option<i32>,
 }
 impl M2tsSettings {

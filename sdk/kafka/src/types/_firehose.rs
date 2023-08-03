@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Firehose {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub delivery_stream: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
 }
 impl Firehose {

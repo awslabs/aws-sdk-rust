@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsOutput {
     /// <p>A list of ARNs that specifies the findings returned by the action.</p>
-    #[doc(hidden)]
     pub finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

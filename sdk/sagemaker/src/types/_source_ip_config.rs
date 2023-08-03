@@ -8,7 +8,6 @@ pub struct SourceIpConfig {
     /// <p>Maximum: Ten CIDR values</p> <note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
-    #[doc(hidden)]
     pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SourceIpConfig {

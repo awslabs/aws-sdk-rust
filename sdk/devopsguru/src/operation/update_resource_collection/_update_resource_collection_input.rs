@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceCollectionInput {
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<crate::types::UpdateResourceCollectionAction>,
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::UpdateResourceCollectionFilter>,
 }
 impl UpdateResourceCollectionInput {

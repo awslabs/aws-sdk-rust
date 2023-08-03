@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotErrorMessage {
     /// <p>A unique identifier for the snapshot returning the error.</p>
-    #[doc(hidden)]
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the cluster.</p>
-    #[doc(hidden)]
     pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The failure code for the error.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>The text message describing the error.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl SnapshotErrorMessage {

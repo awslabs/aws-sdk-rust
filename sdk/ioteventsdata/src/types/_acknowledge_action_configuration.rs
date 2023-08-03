@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
-    #[doc(hidden)]
     pub note: ::std::option::Option<::std::string::String>,
 }
 impl AcknowledgeActionConfiguration {

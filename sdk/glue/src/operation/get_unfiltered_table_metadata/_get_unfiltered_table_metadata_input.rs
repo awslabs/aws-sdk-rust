@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataInput {
     /// <p>The catalog ID where the table resides.</p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing Lake Formation audit context information.</p>
-    #[doc(hidden)]
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>(Required) A list of supported permission types. </p>
-    #[doc(hidden)]
     pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl GetUnfilteredTableMetadataInput {

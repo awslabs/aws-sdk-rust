@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Step {
     /// <p>The component ID.</p>
-    #[doc(hidden)]
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The component type.</p>
-    #[doc(hidden)]
     pub component_type: ::std::option::Option<::std::string::String>,
 }
 impl Step {

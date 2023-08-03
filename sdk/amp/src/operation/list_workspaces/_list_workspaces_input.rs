@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkspacesInput {
     /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// Maximum results to return in response (default=100, maximum=1000).
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListWorkspacesInput {

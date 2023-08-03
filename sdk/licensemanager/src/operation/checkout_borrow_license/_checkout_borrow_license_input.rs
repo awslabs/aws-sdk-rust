@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckoutBorrowLicenseInput {
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
-    #[doc(hidden)]
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>License entitlements. Partial checkouts are not supported.</p>
-    #[doc(hidden)]
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
-    #[doc(hidden)]
     pub digital_signature_method: ::std::option::Option<crate::types::DigitalSignatureMethod>,
     /// <p>Node ID.</p>
-    #[doc(hidden)]
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about constraints.</p>
-    #[doc(hidden)]
     pub checkout_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CheckoutBorrowLicenseInput {

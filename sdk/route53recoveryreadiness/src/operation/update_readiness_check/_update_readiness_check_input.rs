@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
-    #[doc(hidden)]
     pub readiness_check_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource set to be checked.</p>
-    #[doc(hidden)]
     pub resource_set_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReadinessCheckInput {

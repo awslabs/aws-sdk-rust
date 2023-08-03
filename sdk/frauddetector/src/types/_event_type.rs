@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EventType {
     /// <p>The event type name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The event type description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The event type event variables.</p>
-    #[doc(hidden)]
     pub event_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The event type labels.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The event type entity types.</p>
-    #[doc(hidden)]
     pub entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and improve fraud predictions.</p>
-    #[doc(hidden)]
     pub event_ingestion: ::std::option::Option<crate::types::EventIngestion>,
     /// <p>Data about the stored events.</p>
-    #[doc(hidden)]
     pub ingested_event_statistics: ::std::option::Option<crate::types::IngestedEventStatistics>,
     /// <p>Timestamp of when the event type was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the event type was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The entity type ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The event orchestration status. </p>
-    #[doc(hidden)]
     pub event_orchestration: ::std::option::Option<crate::types::EventOrchestration>,
 }
 impl EventType {

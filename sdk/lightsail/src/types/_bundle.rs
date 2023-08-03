@@ -5,42 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bundle {
     /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
-    #[doc(hidden)]
     pub price: ::std::option::Option<f32>,
     /// <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
-    #[doc(hidden)]
     pub cpu_count: ::std::option::Option<i32>,
     /// <p>The size of the SSD (e.g., <code>30</code>).</p>
-    #[doc(hidden)]
     pub disk_size_in_gb: ::std::option::Option<i32>,
     /// <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
-    #[doc(hidden)]
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the bundle is active.</p>
-    #[doc(hidden)]
     pub is_active: ::std::option::Option<bool>,
     /// <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
-    #[doc(hidden)]
     pub power: ::std::option::Option<i32>,
     /// <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
-    #[doc(hidden)]
     pub ram_size_in_gb: ::std::option::Option<f32>,
     /// <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
-    #[doc(hidden)]
     pub transfer_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    #[doc(hidden)]
     pub supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    #[doc(hidden)]
     pub supported_app_categories: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
 }
 impl Bundle {

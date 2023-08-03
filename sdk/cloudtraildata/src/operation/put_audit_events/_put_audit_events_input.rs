@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAuditEventsInput {
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    #[doc(hidden)]
     pub audit_events: ::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>>,
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.</p>
-    #[doc(hidden)]
     pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl PutAuditEventsInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndPoint {
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
-    #[doc(hidden)]
     pub stream_type: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    #[doc(hidden)]
     pub kinesis_stream_config: ::std::option::Option<crate::types::KinesisStreamConfig>,
 }
 impl EndPoint {

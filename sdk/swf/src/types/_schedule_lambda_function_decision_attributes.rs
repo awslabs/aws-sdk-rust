@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleLambdaFunctionDecisionAttributes {
     /// <p>A string that identifies the Lambda function execution in the event history.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
-    #[doc(hidden)]
     pub control: ::std::option::Option<::std::string::String>,
     /// <p>The optional input data to be supplied to the Lambda function.</p>
-    #[doc(hidden)]
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
     /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
-    #[doc(hidden)]
     pub start_to_close_timeout: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleLambdaFunctionDecisionAttributes {

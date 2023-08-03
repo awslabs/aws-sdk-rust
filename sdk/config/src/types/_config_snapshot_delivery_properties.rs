@@ -19,7 +19,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigSnapshotDeliveryProperties {
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
-    #[doc(hidden)]
     pub delivery_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
 }
 impl ConfigSnapshotDeliveryProperties {

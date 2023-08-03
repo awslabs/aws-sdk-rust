@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorCountRequest {
     /// <p>The minimum value.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum value.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl AcceleratorCountRequest {

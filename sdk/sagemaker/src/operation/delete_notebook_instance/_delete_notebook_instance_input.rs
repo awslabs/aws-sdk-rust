@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNotebookInstanceInput {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
-    #[doc(hidden)]
     pub notebook_instance_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNotebookInstanceInput {

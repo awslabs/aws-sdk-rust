@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIpSetInput {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    #[doc(hidden)]
     pub ip_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
@@ -15,7 +13,6 @@ pub struct UpdateIpSetInput {
     /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    #[doc(hidden)]
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::IpSetUpdate>>,
 }
 impl UpdateIpSetInput {

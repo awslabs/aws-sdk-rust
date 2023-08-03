@@ -8,13 +8,11 @@ pub struct DeleteDbClusterInput {
     /// <ul>
     /// <li> <p>Must match an existing DBClusterIdentifier.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p> Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub skip_final_snapshot: bool,
     /// <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
     /// <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
@@ -25,7 +23,6 @@ pub struct DeleteDbClusterInput {
     /// <li> <p>First character must be a letter</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbClusterInput {

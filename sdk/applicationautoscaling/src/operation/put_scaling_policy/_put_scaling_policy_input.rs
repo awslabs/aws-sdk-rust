@@ -5,10 +5,8 @@
 pub struct PutScalingPolicyInput {
     /// <p>The name of the scaling policy.</p>
     /// <p>You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new scaling policy with the same settings and a different name.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    #[doc(hidden)]
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -30,7 +28,6 @@ pub struct PutScalingPolicyInput {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -56,22 +53,18 @@ pub struct PutScalingPolicyInput {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
     /// <p>The following policy types are supported: </p>
     /// <p> <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p>
     /// <p> <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    #[doc(hidden)]
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>A step scaling policy.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.</p>
-    #[doc(hidden)]
     pub step_scaling_policy_configuration: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
     /// <p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
-    #[doc(hidden)]
     pub target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
 }
 impl PutScalingPolicyInput {

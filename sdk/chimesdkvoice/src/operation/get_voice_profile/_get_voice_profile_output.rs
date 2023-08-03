@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVoiceProfileOutput {
     /// <p>The voice profile details.</p>
-    #[doc(hidden)]
     pub voice_profile: ::std::option::Option<crate::types::VoiceProfile>,
     _request_id: Option<String>,
 }

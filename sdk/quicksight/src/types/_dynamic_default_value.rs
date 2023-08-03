@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamicDefaultValue {
     /// <p>The column that contains the username.</p>
-    #[doc(hidden)]
     pub user_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The column that contains the group name.</p>
-    #[doc(hidden)]
     pub group_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The column that contains the default value of each user or group.</p>
-    #[doc(hidden)]
     pub default_value_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl DynamicDefaultValue {

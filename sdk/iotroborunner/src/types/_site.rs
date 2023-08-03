@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Site {
     /// Site ARN.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The name of the site. Mutable after creation and unique within a given account.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// Timestamp at which the resource was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Site {

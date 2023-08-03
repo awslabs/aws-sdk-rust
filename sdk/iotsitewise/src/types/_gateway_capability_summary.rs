@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayCapabilitySummary {
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    #[doc(hidden)]
     pub capability_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct GatewayCapabilitySummary {
     /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
     /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub capability_sync_status: ::std::option::Option<crate::types::CapabilitySyncStatus>,
 }
 impl GatewayCapabilitySummary {

@@ -6,16 +6,12 @@
 pub struct ConfigStreamDeliveryInfo {
     /// <p>Status of the last attempted delivery.</p>
     /// <p> <b>Note</b> Providing an SNS topic on a <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
-    #[doc(hidden)]
     pub last_status: ::std::option::Option<crate::types::DeliveryStatus>,
     /// <p>The error code from the last attempted delivery.</p>
-    #[doc(hidden)]
     pub last_error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message from the last attempted delivery.</p>
-    #[doc(hidden)]
     pub last_error_message: ::std::option::Option<::std::string::String>,
     /// <p>The time from the last status change.</p>
-    #[doc(hidden)]
     pub last_status_change_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigStreamDeliveryInfo {

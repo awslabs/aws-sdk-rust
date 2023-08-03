@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAlgorithmInput {
     /// <p>The name of the algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the algorithm.</p>
-    #[doc(hidden)]
     pub algorithm_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
     /// <ul>
@@ -19,7 +17,6 @@ pub struct CreateAlgorithmInput {
     /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
     /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub training_specification: ::std::option::Option<crate::types::TrainingSpecification>,
     /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
     /// <ul>
@@ -27,16 +24,12 @@ pub struct CreateAlgorithmInput {
     /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
     /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
-    #[doc(hidden)]
     pub validation_specification: ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
-    #[doc(hidden)]
     pub certify_for_marketplace: ::std::option::Option<bool>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAlgorithmInput {

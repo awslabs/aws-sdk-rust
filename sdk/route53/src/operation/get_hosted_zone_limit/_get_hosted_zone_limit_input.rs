@@ -9,10 +9,8 @@ pub struct GetHostedZoneLimitInput {
     /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
     /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::HostedZoneLimitType>,
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHostedZoneLimitInput {

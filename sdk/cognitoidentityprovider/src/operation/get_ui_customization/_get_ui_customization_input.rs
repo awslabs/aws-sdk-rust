@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUiCustomizationInput {
     /// <p>The user pool ID for the user pool.</p>
-    #[doc(hidden)]
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The client ID for the client app.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUiCustomizationInput {

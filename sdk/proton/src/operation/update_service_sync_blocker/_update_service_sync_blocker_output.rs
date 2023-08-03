@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncBlockerOutput {
     /// <p>The name of the service that you want to update the service sync blocker for.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that you want to update the service sync blocker for.</p>
-    #[doc(hidden)]
     pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The detailed data on the service sync blocker that was updated.</p>
-    #[doc(hidden)]
     pub service_sync_blocker: ::std::option::Option<crate::types::SyncBlocker>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RxNormConcept {
     /// <p>The description of the RxNorm concept.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>RxNorm concept ID, also known as the RxCUI.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl RxNormConcept {

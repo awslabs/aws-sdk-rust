@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline that should be used for the patch group.</p>
-    #[doc(hidden)]
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch group.</p>
-    #[doc(hidden)]
     pub patch_group: ::std::option::Option<::std::string::String>,
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
-    #[doc(hidden)]
     pub operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     _request_id: Option<String>,
 }

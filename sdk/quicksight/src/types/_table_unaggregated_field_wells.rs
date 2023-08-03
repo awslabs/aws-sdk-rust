@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableUnaggregatedFieldWells {
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>>,
 }
 impl TableUnaggregatedFieldWells {

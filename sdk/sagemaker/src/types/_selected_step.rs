@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectedStep {
     /// <p>The name of the pipeline step.</p>
-    #[doc(hidden)]
     pub step_name: ::std::option::Option<::std::string::String>,
 }
 impl SelectedStep {

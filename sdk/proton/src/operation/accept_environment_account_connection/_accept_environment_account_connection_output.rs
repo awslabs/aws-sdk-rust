@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptEnvironmentAccountConnectionOutput {
     /// <p>The environment account connection data that's returned by Proton.</p>
-    #[doc(hidden)]
     pub environment_account_connection: ::std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,
 }

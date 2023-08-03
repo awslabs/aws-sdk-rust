@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobUnlockCodeOutput {
     /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
-    #[doc(hidden)]
     pub unlock_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

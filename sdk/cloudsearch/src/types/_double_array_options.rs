@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DoubleArrayOptions {
     /// A value to use for the field if the field isn't specified for a document.
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<f64>,
     /// <p>A list of source fields to map to the field. </p>
-    #[doc(hidden)]
     pub source_fields: ::std::option::Option<::std::string::String>,
     /// <p>Whether facet information can be returned for the field.</p>
-    #[doc(hidden)]
     pub facet_enabled: ::std::option::Option<bool>,
     /// <p>Whether the contents of the field are searchable.</p>
-    #[doc(hidden)]
     pub search_enabled: ::std::option::Option<bool>,
     /// <p>Whether the contents of the field can be returned in the search results.</p>
-    #[doc(hidden)]
     pub return_enabled: ::std::option::Option<bool>,
 }
 impl DoubleArrayOptions {

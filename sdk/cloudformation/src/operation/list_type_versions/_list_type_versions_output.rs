@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTypeVersionsOutput {
     /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's versions.</p>
-    #[doc(hidden)]
     pub type_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TypeVersionSummary>>,
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

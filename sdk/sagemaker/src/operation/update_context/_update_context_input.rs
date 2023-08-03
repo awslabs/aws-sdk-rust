@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContextInput {
     /// <p>The name of the context to update.</p>
-    #[doc(hidden)]
     pub context_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description for the context.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of properties to remove.</p>
-    #[doc(hidden)]
     pub properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateContextInput {

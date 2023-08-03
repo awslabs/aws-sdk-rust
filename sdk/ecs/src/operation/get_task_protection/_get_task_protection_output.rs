@@ -9,10 +9,8 @@ pub struct GetTaskProtectionOutput {
     /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
     /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub protected_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>,
     /// <p>Any failures associated with the call.</p>
-    #[doc(hidden)]
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }

@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminologyProperties {
     /// <p>The name of the custom terminology.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the custom terminology properties.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
-    #[doc(hidden)]
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    #[doc(hidden)]
     pub target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The encryption key for the custom terminology.</p>
-    #[doc(hidden)]
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
     /// <p>The size of the file used when importing a custom terminology.</p>
-    #[doc(hidden)]
     pub size_bytes: ::std::option::Option<i32>,
     /// <p>The number of terms included in the custom terminology.</p>
-    #[doc(hidden)]
     pub term_count: ::std::option::Option<i32>,
     /// <p>The time at which the custom terminology was created, based on the timestamp.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
     /// <dl>
@@ -49,16 +39,12 @@ pub struct TerminologyProperties {
     /// <p>Any language in the terminology resource can be the source language.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub directionality: ::std::option::Option<crate::types::Directionality>,
     /// <p>Additional information from Amazon Translate about the terminology resource.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
-    #[doc(hidden)]
     pub skipped_term_count: ::std::option::Option<i32>,
     /// <p>The format of the custom terminology input file.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::TerminologyDataFormat>,
 }
 impl TerminologyProperties {

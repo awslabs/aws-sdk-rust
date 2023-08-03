@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentPolicyConfig {
     /// <p>The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
-    #[doc(hidden)]
     pub staging_distribution_dns_names: ::std::option::Option<crate::types::StagingDistributionDnsNames>,
     /// <p>A Boolean that indicates whether this continuous deployment policy is enabled (in effect). When this value is <code>true</code>, this policy is enabled and in effect. When this value is <code>false</code>, this policy is not enabled and has no effect.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>Contains the parameters for routing production traffic from your primary to staging distributions.</p>
-    #[doc(hidden)]
     pub traffic_config: ::std::option::Option<crate::types::TrafficConfig>,
 }
 impl ContinuousDeploymentPolicyConfig {

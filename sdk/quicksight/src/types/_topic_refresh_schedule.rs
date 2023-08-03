@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRefreshSchedule {
     /// <p>A Boolean value that controls whether to schedule is enabled.</p>
-    #[doc(hidden)]
     pub is_enabled: ::std::option::Option<bool>,
     /// <p>A Boolean value that controls whether to schedule runs at the same schedule that is specified in SPICE dataset.</p>
-    #[doc(hidden)]
     pub based_on_spice_schedule: bool,
     /// <p>The starting date and time for the refresh schedule.</p>
-    #[doc(hidden)]
     pub starting_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timezone that you want the refresh schedule to use.</p>
-    #[doc(hidden)]
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The time of day when the refresh should run, for example, Monday-Sunday.</p>
-    #[doc(hidden)]
     pub repeat_at: ::std::option::Option<::std::string::String>,
     /// <p>The type of refresh schedule. Valid values for this structure are <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, and <code>MONTHLY</code>.</p>
-    #[doc(hidden)]
     pub topic_schedule_type: ::std::option::Option<crate::types::TopicScheduleType>,
 }
 impl TopicRefreshSchedule {

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationJobInferenceBenchmark {
     /// <p>The metrics of recommendations.</p>
-    #[doc(hidden)]
     pub metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
-    #[doc(hidden)]
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
-    #[doc(hidden)]
     pub model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     /// <p>The reason why a benchmark failed.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
-    #[doc(hidden)]
     pub endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,
     /// <p>A timestamp that shows when the benchmark completed.</p>
-    #[doc(hidden)]
     pub invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the benchmark started.</p>
-    #[doc(hidden)]
     pub invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RecommendationJobInferenceBenchmark {

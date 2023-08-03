@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReloadReplicationTablesOutput {
     /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
-    #[doc(hidden)]
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

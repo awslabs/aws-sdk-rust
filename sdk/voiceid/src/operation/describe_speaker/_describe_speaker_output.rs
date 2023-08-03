@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpeakerOutput {
     /// <p>Information about the specified speaker.</p>
-    #[doc(hidden)]
     pub speaker: ::std::option::Option<crate::types::Speaker>,
     _request_id: Option<String>,
 }

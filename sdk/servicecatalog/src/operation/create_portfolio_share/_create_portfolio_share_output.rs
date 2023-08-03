@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePortfolioShareOutput {
     /// <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
-    #[doc(hidden)]
     pub portfolio_share_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

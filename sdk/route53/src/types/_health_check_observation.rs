@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheckObservation {
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<crate::types::HealthCheckRegion>,
     /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
-    #[doc(hidden)]
     pub status_report: ::std::option::Option<crate::types::StatusReport>,
 }
 impl HealthCheckObservation {

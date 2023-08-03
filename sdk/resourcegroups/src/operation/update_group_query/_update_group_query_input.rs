@@ -5,15 +5,12 @@
 pub struct UpdateGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name or the ARN of the resource group to query.</p>
-    #[doc(hidden)]
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
 }
 impl UpdateGroupQueryInput {

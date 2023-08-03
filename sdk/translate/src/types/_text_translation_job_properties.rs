@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextTranslationJobProperties {
     /// <p>The ID of the translation job.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-defined name of the translation job.</p>
-    #[doc(hidden)]
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the translation job.</p>
-    #[doc(hidden)]
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
-    #[doc(hidden)]
     pub job_details: ::std::option::Option<crate::types::JobDetails>,
     /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
-    #[doc(hidden)]
     pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    #[doc(hidden)]
     pub target_language_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
-    #[doc(hidden)]
     pub terminology_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
-    #[doc(hidden)]
     pub parallel_data_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the translation job was submitted.</p>
-    #[doc(hidden)]
     pub submitted_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the translation job ended.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The input configuration properties that were specified when the job was requested.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The output configuration properties that were specified when the job was requested.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
-    #[doc(hidden)]
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Settings that modify the translation output.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::TranslationSettings>,
 }
 impl TextTranslationJobProperties {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRunTaskInput {
     /// <p>The task's ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The task's ID.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetRunTaskInput {

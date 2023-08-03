@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestInvokeAuthorizerInput {
     /// <p>The custom authorizer name.</p>
-    #[doc(hidden)]
     pub authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>The token returned by your custom authentication service.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
     /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
-    #[doc(hidden)]
     pub token_signature: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a test HTTP authorization request.</p>
-    #[doc(hidden)]
     pub http_context: ::std::option::Option<crate::types::HttpContext>,
     /// <p>Specifies a test MQTT authorization request.</p>
-    #[doc(hidden)]
     pub mqtt_context: ::std::option::Option<crate::types::MqttContext>,
     /// <p>Specifies a test TLS authorization request.</p>
-    #[doc(hidden)]
     pub tls_context: ::std::option::Option<crate::types::TlsContext>,
 }
 impl TestInvokeAuthorizerInput {

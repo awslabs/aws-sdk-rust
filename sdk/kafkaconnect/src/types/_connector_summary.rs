@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorSummary {
     /// <p>The connector's compute capacity settings.</p>
-    #[doc(hidden)]
     pub capacity: ::std::option::Option<crate::types::CapacityDescription>,
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
-    #[doc(hidden)]
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the connector.</p>
-    #[doc(hidden)]
     pub connector_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connector.</p>
-    #[doc(hidden)]
     pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connector.</p>
-    #[doc(hidden)]
     pub connector_state: ::std::option::Option<crate::types::ConnectorState>,
     /// <p>The time that the connector was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current version of the connector.</p>
-    #[doc(hidden)]
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
-    #[doc(hidden)]
     pub kafka_cluster: ::std::option::Option<crate::types::KafkaClusterDescription>,
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
-    #[doc(hidden)]
     pub kafka_cluster_client_authentication: ::std::option::Option<crate::types::KafkaClusterClientAuthenticationDescription>,
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
-    #[doc(hidden)]
     pub kafka_cluster_encryption_in_transit: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    #[doc(hidden)]
     pub kafka_connect_version: ::std::option::Option<::std::string::String>,
     /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub log_delivery: ::std::option::Option<crate::types::LogDeliveryDescription>,
     /// <p>Specifies which plugins were used for this connector.</p>
-    #[doc(hidden)]
     pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
-    #[doc(hidden)]
     pub service_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The worker configurations that are in use with the connector.</p>
-    #[doc(hidden)]
     pub worker_configuration: ::std::option::Option<crate::types::WorkerConfigurationDescription>,
 }
 impl ConnectorSummary {

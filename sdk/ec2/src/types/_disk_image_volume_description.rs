@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskImageVolumeDescription {
     /// <p>The volume identifier.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<i64>,
 }
 impl DiskImageVolumeDescription {

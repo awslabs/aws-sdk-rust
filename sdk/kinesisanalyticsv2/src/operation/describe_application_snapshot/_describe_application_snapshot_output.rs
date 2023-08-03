@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationSnapshotOutput {
     /// <p>An object containing information about the application snapshot.</p>
-    #[doc(hidden)]
     pub snapshot_details: ::std::option::Option<crate::types::SnapshotDetails>,
     _request_id: Option<String>,
 }

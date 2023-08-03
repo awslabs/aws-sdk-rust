@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAgreementOutput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    #[doc(hidden)]
     pub agreement_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

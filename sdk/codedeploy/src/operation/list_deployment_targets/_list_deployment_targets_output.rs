@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentTargetsOutput {
     /// <p> The unique IDs of deployment targets. </p>
-    #[doc(hidden)]
     pub target_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

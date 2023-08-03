@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlAttribute {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::AccessControlAttributeValue>,
 }
 impl AccessControlAttribute {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConformancePackComplianceScoresOutput {
     /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
-    #[doc(hidden)]
     pub conformance_pack_compliance_scores: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceScore>>,
     _request_id: Option<String>,
 }

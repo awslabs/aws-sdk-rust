@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStatus {
     /// <p>The Availability Zone of the instance.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    #[doc(hidden)]
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Any scheduled events associated with the instance.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusEvent>>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The intended state of the instance. <code>DescribeInstanceStatus</code> requires that an instance be in the <code>running</code> state.</p>
-    #[doc(hidden)]
     pub instance_state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.</p>
-    #[doc(hidden)]
     pub instance_status: ::std::option::Option<crate::types::InstanceStatusSummary>,
     /// <p>Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network connectivity problems.</p>
-    #[doc(hidden)]
     pub system_status: ::std::option::Option<crate::types::InstanceStatusSummary>,
 }
 impl InstanceStatus {

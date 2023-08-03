@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Language {
     /// <p>Language name of the supported language.</p>
-    #[doc(hidden)]
     pub language_name: ::std::option::Option<::std::string::String>,
     /// <p>Language code for the supported language.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<::std::string::String>,
 }
 impl Language {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>A list of summaries of projects.</p>
-    #[doc(hidden)]
     pub project_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

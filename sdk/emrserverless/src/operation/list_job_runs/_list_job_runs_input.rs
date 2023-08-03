@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the application for which to list the job run.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of job run results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of job runs that can be listed.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The lower bound of the option to filter by creation date and time.</p>
-    #[doc(hidden)]
     pub created_at_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The upper bound of the option to filter by creation date and time.</p>
-    #[doc(hidden)]
     pub created_at_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    #[doc(hidden)]
     pub states: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
 }
 impl ListJobRunsInput {

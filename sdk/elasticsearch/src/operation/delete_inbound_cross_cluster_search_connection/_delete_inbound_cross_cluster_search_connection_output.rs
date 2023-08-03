@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of deleted inbound connection. </p>
-    #[doc(hidden)]
     pub cross_cluster_search_connection: ::std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
     _request_id: Option<String>,
 }

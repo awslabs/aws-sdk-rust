@@ -11,7 +11,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidRequestDetail {
     /// <p>Reason code is <code>INVALID_DOCUMENT</code>.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::InvalidRequestDetailReason>,
 }
 impl InvalidRequestDetail {

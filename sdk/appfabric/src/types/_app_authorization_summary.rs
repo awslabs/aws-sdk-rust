@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppAuthorizationSummary {
     /// <p>The Amazon Resource Name (ARN) of the app authorization.</p>
-    #[doc(hidden)]
     pub app_authorization_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
-    #[doc(hidden)]
     pub app_bundle_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub app: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
-    #[doc(hidden)]
     pub tenant: ::std::option::Option<crate::types::Tenant>,
     /// <p>The state of the app authorization.</p>
     /// <p>The following states are possible:</p>
@@ -24,10 +20,8 @@ pub struct AppAuthorizationSummary {
     /// <li> <p> <code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p> </li>
     /// <li> <p> <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::AppAuthorizationStatus>,
     /// <p>Timestamp for when the app authorization was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppAuthorizationSummary {

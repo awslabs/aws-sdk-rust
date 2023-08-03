@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CharacterOffsets {
     /// <p>The beginning of the issue.</p>
-    #[doc(hidden)]
     pub begin_offset_char: i32,
     /// <p>The end of the issue.</p>
-    #[doc(hidden)]
     pub end_offset_char: i32,
 }
 impl CharacterOffsets {

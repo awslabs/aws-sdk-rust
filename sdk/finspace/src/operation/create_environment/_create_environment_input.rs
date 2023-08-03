@@ -4,36 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the FinSpace environment to be created.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the FinSpace environment to be created.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Add tags to your FinSpace environment.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
     /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
     /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub federation_mode: ::std::option::Option<crate::types::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
-    #[doc(hidden)]
     pub federation_parameters: ::std::option::Option<crate::types::FederationParameters>,
     /// <p>Configuration information for the superuser.</p>
-    #[doc(hidden)]
     pub superuser_parameters: ::std::option::Option<crate::types::SuperuserParameters>,
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
     /// <ul>
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub data_bundles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateEnvironmentInput {

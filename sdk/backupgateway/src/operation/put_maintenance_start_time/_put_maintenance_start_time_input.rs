@@ -4,20 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hour of the day to start maintenance on a gateway.</p>
-    #[doc(hidden)]
     pub hour_of_day: ::std::option::Option<i32>,
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
-    #[doc(hidden)]
     pub minute_of_hour: ::std::option::Option<i32>,
     /// <p>The day of the week to start maintenance on a gateway.</p>
-    #[doc(hidden)]
     pub day_of_week: ::std::option::Option<i32>,
     /// <p>The day of the month start maintenance on a gateway.</p>
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
-    #[doc(hidden)]
     pub day_of_month: ::std::option::Option<i32>,
 }
 impl PutMaintenanceStartTimeInput {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssumeDecoratedRoleWithSamlInput {
     /// <p>A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.</p>
-    #[doc(hidden)]
     pub saml_assertion: ::std::option::Option<::std::string::String>,
     /// <p>The role that represents an IAM principal whose scope down policy allows it to call credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller must also have iam:PassRole permission on this role. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
-    #[doc(hidden)]
     pub principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.</p>
-    #[doc(hidden)]
     pub duration_seconds: ::std::option::Option<i32>,
 }
 impl AssumeDecoratedRoleWithSamlInput {

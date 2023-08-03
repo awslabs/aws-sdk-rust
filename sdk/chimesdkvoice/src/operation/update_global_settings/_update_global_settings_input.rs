@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>The Voice Connector settings.</p>
-    #[doc(hidden)]
     pub voice_connector: ::std::option::Option<crate::types::VoiceConnectorSettings>,
 }
 impl UpdateGlobalSettingsInput {

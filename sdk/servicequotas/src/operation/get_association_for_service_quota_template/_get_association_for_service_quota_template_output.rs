@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssociationForServiceQuotaTemplateOutput {
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
-    #[doc(hidden)]
     pub service_quota_template_association_status: ::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus>,
     _request_id: Option<String>,
 }

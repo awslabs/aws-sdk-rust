@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
-    #[doc(hidden)]
     pub simple_rule_evaluation: ::std::option::Option<crate::types::SimpleRuleEvaluation>,
 }
 impl RuleEvaluation {

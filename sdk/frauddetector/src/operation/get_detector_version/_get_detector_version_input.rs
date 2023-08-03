@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDetectorVersionInput {
     /// <p>The detector ID.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version ID.</p>
-    #[doc(hidden)]
     pub detector_version_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDetectorVersionInput {

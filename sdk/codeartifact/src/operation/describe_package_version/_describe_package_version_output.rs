@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageVersionOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
-    #[doc(hidden)]
     pub package_version: ::std::option::Option<crate::types::PackageVersionDescription>,
     _request_id: Option<String>,
 }

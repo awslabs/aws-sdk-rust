@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Datapoint {
     /// <p>The time stamp for the data point in UTC format.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The value of the data point.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
 }
 impl Datapoint {

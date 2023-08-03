@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Invitation {
     /// <p>The ID of the account that the invitation was sent from.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the invitation. This value is used to validate the inviter account to the member account.</p>
-    #[doc(hidden)]
     pub invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the relationship between the inviter and invitee accounts.</p>
-    #[doc(hidden)]
     pub relationship_status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
-    #[doc(hidden)]
     pub invited_at: ::std::option::Option<::std::string::String>,
 }
 impl Invitation {

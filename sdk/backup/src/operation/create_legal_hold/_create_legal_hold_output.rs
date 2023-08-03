@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLegalHoldOutput {
     /// <p>This is the string title of the legal hold returned after creating the legal hold.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>This displays the status of the legal hold returned after creating the legal hold. Statuses can be <code>ACTIVE</code>, <code>PENDING</code>, <code>CANCELED</code>, <code>CANCELING</code>, or <code>FAILED</code>.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::LegalHoldStatus>,
     /// <p>This is the returned string description of the legal hold.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Legal hold ID returned for the specified legal hold on a recovery point.</p>
-    #[doc(hidden)]
     pub legal_hold_id: ::std::option::Option<::std::string::String>,
     /// <p>This is the ARN (Amazon Resource Number) of the created legal hold.</p>
-    #[doc(hidden)]
     pub legal_hold_arn: ::std::option::Option<::std::string::String>,
     /// <p>Time in number format when legal hold was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
-    #[doc(hidden)]
     pub recovery_point_selection: ::std::option::Option<crate::types::RecoveryPointSelection>,
     _request_id: Option<String>,
 }

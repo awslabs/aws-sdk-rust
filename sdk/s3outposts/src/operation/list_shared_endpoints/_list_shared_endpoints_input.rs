@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSharedEndpointsInput {
     /// <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of endpoints that will be returned in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The ID of the Amazon Web Services Outpost.</p>
-    #[doc(hidden)]
     pub outpost_id: ::std::option::Option<::std::string::String>,
 }
 impl ListSharedEndpointsInput {

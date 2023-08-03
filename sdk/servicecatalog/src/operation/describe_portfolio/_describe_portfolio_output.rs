@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePortfolioOutput {
     /// <p>Information about the portfolio.</p>
-    #[doc(hidden)]
     pub portfolio_detail: ::std::option::Option<crate::types::PortfolioDetail>,
     /// <p>Information about the tags associated with the portfolio.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the TagOptions associated with the portfolio.</p>
-    #[doc(hidden)]
     pub tag_options: ::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>>,
     /// <p>Information about the associated budgets.</p>
-    #[doc(hidden)]
     pub budgets: ::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>>,
     _request_id: Option<String>,
 }

@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RtmpGroupSettings {
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
-    #[doc(hidden)]
     pub ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::RtmpAdMarkers>>,
     /// Authentication scheme to use when connecting with CDN
-    #[doc(hidden)]
     pub authentication_scheme: ::std::option::Option<crate::types::AuthenticationScheme>,
     /// Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.
-    #[doc(hidden)]
     pub cache_full_behavior: ::std::option::Option<crate::types::RtmpCacheFullBehavior>,
     /// Cache length, in seconds, is used to calculate buffer size.
-    #[doc(hidden)]
     pub cache_length: ::std::option::Option<i32>,
     /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
-    #[doc(hidden)]
     pub caption_data: ::std::option::Option<crate::types::RtmpCaptionData>,
     /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
-    #[doc(hidden)]
     pub input_loss_action: ::std::option::Option<crate::types::InputLossActionForRtmpOut>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-    #[doc(hidden)]
     pub restart_delay: ::std::option::Option<i32>,
 }
 impl RtmpGroupSettings {

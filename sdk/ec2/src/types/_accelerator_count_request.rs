@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorCountRequest {
     /// <p>The minimum number of accelerators. To specify no minimum limit, omit this parameter.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum number of accelerators. To specify no maximum limit, omit this parameter. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<i32>,
 }
 impl AcceleratorCountRequest {

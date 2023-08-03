@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ContentLocationUpdate {
     /// <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
-    #[doc(hidden)]
     pub bucket_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>The new file key for the object containing the application code.</p>
-    #[doc(hidden)]
     pub file_key_update: ::std::option::Option<::std::string::String>,
     /// <p>The new version of the object containing the application code.</p>
-    #[doc(hidden)]
     pub object_version_update: ::std::option::Option<::std::string::String>,
 }
 impl S3ContentLocationUpdate {

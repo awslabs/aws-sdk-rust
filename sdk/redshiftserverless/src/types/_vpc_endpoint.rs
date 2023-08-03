@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpoint {
     /// <p>The connection endpoint ID for connecting to Amazon Redshift Serverless.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC identifier that the endpoint is associated with.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
-    #[doc(hidden)]
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
 }
 impl VpcEndpoint {

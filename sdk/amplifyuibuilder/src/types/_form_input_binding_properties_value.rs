@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormInputBindingPropertiesValue {
     /// <p>The property type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties to customize with data at runtime.</p>
-    #[doc(hidden)]
     pub binding_properties: ::std::option::Option<crate::types::FormInputBindingPropertiesValueProperties>,
 }
 impl FormInputBindingPropertiesValue {

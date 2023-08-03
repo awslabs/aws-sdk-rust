@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisLinearScale {
     /// <p>The step count setup of a linear axis.</p>
-    #[doc(hidden)]
     pub step_count: ::std::option::Option<i32>,
     /// <p>The step size setup of a linear axis.</p>
-    #[doc(hidden)]
     pub step_size: ::std::option::Option<f64>,
 }
 impl AxisLinearScale {

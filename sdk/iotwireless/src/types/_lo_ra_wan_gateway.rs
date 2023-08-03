@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanGateway {
     /// <p>The gateway's EUI value.</p>
-    #[doc(hidden)]
     pub gateway_eui: ::std::option::Option<::std::string::String>,
     /// <p>The frequency band (RFRegion) value.</p>
-    #[doc(hidden)]
     pub rf_region: ::std::option::Option<::std::string::String>,
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    #[doc(hidden)]
     pub join_eui_filters: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    #[doc(hidden)]
     pub net_id_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
-    #[doc(hidden)]
     pub sub_bands: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
-    #[doc(hidden)]
     pub beaconing: ::std::option::Option<crate::types::Beaconing>,
     /// <p>The MaxEIRP value.</p>
-    #[doc(hidden)]
     pub max_eirp: ::std::option::Option<f32>,
 }
 impl LoRaWanGateway {

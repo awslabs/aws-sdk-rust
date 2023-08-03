@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterScopeConfiguration {
     /// <p>The configuration for applying a filter to specific sheets.</p>
-    #[doc(hidden)]
     pub selected_sheets: ::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
 }
 impl FilterScopeConfiguration {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDimensionValuesInput {
     /// <p>The value that you want to search the filter values for.</p>
-    #[doc(hidden)]
     pub search_string: ::std::option::Option<::std::string::String>,
     /// <p>The start date and end date for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-    #[doc(hidden)]
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>. </p>
-    #[doc(hidden)]
     pub dimension: ::std::option::Option<crate::types::Dimension>,
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
@@ -62,7 +59,6 @@ pub struct GetDimensionValuesInput {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub context: ::std::option::Option<crate::types::Context>,
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -101,7 +97,6 @@ pub struct GetDimensionValuesInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
@@ -116,14 +111,11 @@ pub struct GetDimensionValuesInput {
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    #[doc(hidden)]
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDimensionValuesInput {

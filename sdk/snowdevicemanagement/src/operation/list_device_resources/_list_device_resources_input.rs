@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeviceResourcesInput {
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    #[doc(hidden)]
     pub managed_device_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure used to filter the results by type of resource.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resources per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDeviceResourcesInput {

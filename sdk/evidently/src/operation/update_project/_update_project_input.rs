@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>The name or ARN of the project to update.</p>
-    #[doc(hidden)]
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
     /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
-    #[doc(hidden)]
     pub app_config_resource: ::std::option::Option<crate::types::ProjectAppConfigResourceConfig>,
     /// <p>An optional description of the project.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInput {

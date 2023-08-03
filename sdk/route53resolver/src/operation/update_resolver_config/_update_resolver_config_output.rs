@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResolverConfigOutput {
     /// <p>An array that contains settings for the specified Resolver configuration.</p>
-    #[doc(hidden)]
     pub resolver_config: ::std::option::Option<crate::types::ResolverConfig>,
     _request_id: Option<String>,
 }

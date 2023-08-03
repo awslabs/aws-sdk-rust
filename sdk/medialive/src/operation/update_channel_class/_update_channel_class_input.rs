@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelClassInput {
     /// The channel class that you wish to update this channel to use.
-    #[doc(hidden)]
     pub channel_class: ::std::option::Option<crate::types::ChannelClass>,
     /// Channel Id of the channel whose class should be updated.
-    #[doc(hidden)]
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// A list of output destinations for this channel.
-    #[doc(hidden)]
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
 }
 impl UpdateChannelClassInput {

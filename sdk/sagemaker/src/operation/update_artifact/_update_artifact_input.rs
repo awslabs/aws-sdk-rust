@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
-    #[doc(hidden)]
     pub artifact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the artifact.</p>
-    #[doc(hidden)]
     pub artifact_name: ::std::option::Option<::std::string::String>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of properties to remove.</p>
-    #[doc(hidden)]
     pub properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateArtifactInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTypesByAssociationOutput {
     /// <p>The <code>Type</code> objects.</p>
-    #[doc(hidden)]
     pub types: ::std::option::Option<::std::vec::Vec<crate::types::Type>>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

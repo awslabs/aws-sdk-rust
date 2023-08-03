@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorProfile {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-    #[doc(hidden)]
     pub connector_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p>The label for the connector profile being created.</p>
-    #[doc(hidden)]
     pub connector_label: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the connection mode and if it is public or private. </p>
-    #[doc(hidden)]
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     /// <p> The Amazon Resource Name (ARN) of the connector profile credentials. </p>
-    #[doc(hidden)]
     pub credentials_arn: ::std::option::Option<::std::string::String>,
     /// <p> The connector-specific properties of the profile configuration. </p>
-    #[doc(hidden)]
     pub connector_profile_properties: ::std::option::Option<crate::types::ConnectorProfileProperties>,
     /// <p> Specifies when the connector profile was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies when the connector profile was last updated. </p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the private connection provisioning state. </p>
-    #[doc(hidden)]
     pub private_connection_provisioning_state: ::std::option::Option<crate::types::PrivateConnectionProvisioningState>,
 }
 impl ConnectorProfile {

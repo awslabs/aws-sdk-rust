@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFirewallRuleOutput {
     /// <p>The specification for the firewall rule that you just deleted.</p>
-    #[doc(hidden)]
     pub firewall_rule: ::std::option::Option<crate::types::FirewallRule>,
     _request_id: Option<String>,
 }

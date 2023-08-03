@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Session {
     /// <p>The duration of the session, in milliseconds.</p>
-    #[doc(hidden)]
     pub duration: ::std::option::Option<i32>,
     /// <p>The unique identifier for the session.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the session began.</p>
-    #[doc(hidden)]
     pub start_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the session ended.</p>
-    #[doc(hidden)]
     pub stop_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl Session {

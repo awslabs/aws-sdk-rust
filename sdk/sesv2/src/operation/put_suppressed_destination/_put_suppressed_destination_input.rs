@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSuppressedDestinationInput {
     /// <p>The email address that should be added to the suppression list for your account.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<crate::types::SuppressionListReason>,
 }
 impl PutSuppressedDestinationInput {

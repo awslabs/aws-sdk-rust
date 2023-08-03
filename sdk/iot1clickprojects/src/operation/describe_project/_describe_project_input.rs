@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectInput {
     /// <p>The name of the project to be described.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProjectInput {

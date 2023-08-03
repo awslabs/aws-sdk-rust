@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLogSourceConfiguration {
     /// <p>The configuration for the Glue Crawler for the third-party custom source.</p>
-    #[doc(hidden)]
     pub crawler_configuration: ::std::option::Option<crate::types::CustomLogSourceCrawlerConfiguration>,
     /// <p>The identity of the log provider for the third-party custom source.</p>
-    #[doc(hidden)]
     pub provider_identity: ::std::option::Option<crate::types::AwsIdentity>,
 }
 impl CustomLogSourceConfiguration {

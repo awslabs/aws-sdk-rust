@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAttendeeOutput {
     /// <p>The Amazon Chime SDK attendee information.</p>
-    #[doc(hidden)]
     pub attendee: ::std::option::Option<crate::types::Attendee>,
     _request_id: Option<String>,
 }

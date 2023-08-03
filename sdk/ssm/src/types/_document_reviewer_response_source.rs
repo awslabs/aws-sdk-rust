@@ -5,21 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentReviewerResponseSource {
     /// <p>The date and time that a reviewer entered a response to a document review request.</p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that a reviewer last updated a response to a document review request.</p>
-    #[doc(hidden)]
     pub updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p>
     /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of a document can be in review, or PENDING, at a time.</p>
-    #[doc(hidden)]
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
     /// <p>The comment entered by a reviewer as part of their document review response.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
     /// <p>The user in your organization assigned to review a document request.</p>
-    #[doc(hidden)]
     pub reviewer: ::std::option::Option<::std::string::String>,
 }
 impl DocumentReviewerResponseSource {

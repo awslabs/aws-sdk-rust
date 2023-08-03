@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
-    #[doc(hidden)]
     pub region_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>>,
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ReplicationSetStatus>,
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
-    #[doc(hidden)]
     pub deletion_protected: ::std::option::Option<bool>,
     /// <p>When the replication set was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about who created the replication set.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>When the replication set was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who last modified the replication set.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationSet {

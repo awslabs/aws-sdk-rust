@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceData {
     /// <p>The name of the reference data.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The specific reference values used to evaluate the Performance Insights. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceComparisonValues.html">PerformanceInsightsReferenceComparisonValues</a> </code>. </p>
-    #[doc(hidden)]
     pub comparison_values: ::std::option::Option<crate::types::PerformanceInsightsReferenceComparisonValues>,
 }
 impl PerformanceInsightsReferenceData {

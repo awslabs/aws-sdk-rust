@@ -9,10 +9,8 @@ pub struct StopDeploymentOutput {
     /// <li> <p>Pending: The stop operation is pending.</p> </li>
     /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::StopStatus>,
     /// <p>An accompanying status message.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

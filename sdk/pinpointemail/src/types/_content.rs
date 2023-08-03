@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Content {
     /// <p>The content of the message itself.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
-    #[doc(hidden)]
     pub charset: ::std::option::Option<::std::string::String>,
 }
 impl Content {

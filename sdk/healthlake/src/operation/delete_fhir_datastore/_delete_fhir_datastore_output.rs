@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFhirDatastoreOutput {
     /// <p>The AWS-generated ID for the data store to be deleted.</p>
-    #[doc(hidden)]
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
-    #[doc(hidden)]
     pub datastore_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the data store that the user has requested to be deleted. </p>
-    #[doc(hidden)]
     pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
     /// <p>The AWS endpoint for the data store the user has requested to be deleted.</p>
-    #[doc(hidden)]
     pub datastore_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

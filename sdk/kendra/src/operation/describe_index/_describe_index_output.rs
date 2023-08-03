@@ -4,52 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIndexOutput {
     /// <p>The name of the index.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::IndexEdition>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    #[doc(hidden)]
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IndexStatus>,
     /// <p>The description for the index.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when the index was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix when the index was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    #[doc(hidden)]
     pub document_metadata_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
-    #[doc(hidden)]
     pub index_statistics: ::std::option::Option<crate::types::IndexStatistics>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    #[doc(hidden)]
     pub capacity_units: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
     /// <p>The user token configuration for the Amazon Kendra index.</p>
-    #[doc(hidden)]
     pub user_token_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UserTokenConfiguration>>,
     /// <p>The user context policy for the Amazon Kendra index.</p>
-    #[doc(hidden)]
     pub user_context_policy: ::std::option::Option<crate::types::UserContextPolicy>,
     /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
-    #[doc(hidden)]
     pub user_group_resolution_configuration: ::std::option::Option<crate::types::UserGroupResolutionConfiguration>,
     _request_id: Option<String>,
 }

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShrinkPolicy {
     /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
-    #[doc(hidden)]
     pub decommission_timeout: ::std::option::Option<i32>,
     /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
-    #[doc(hidden)]
     pub instance_resize_policy: ::std::option::Option<crate::types::InstanceResizePolicy>,
 }
 impl ShrinkPolicy {

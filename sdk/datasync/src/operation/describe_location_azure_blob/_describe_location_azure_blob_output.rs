@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationAzureBlobOutput {
     /// <p>The ARN of your Azure Blob Storage transfer location.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Azure Blob Storage container involved in your transfer.</p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<crate::types::AzureBlobAuthenticationType>,
     /// <p>The type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
-    #[doc(hidden)]
     pub blob_type: ::std::option::Option<crate::types::AzureBlobType>,
     /// <p>The access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
-    #[doc(hidden)]
     pub access_tier: ::std::option::Option<crate::types::AzureAccessTier>,
     /// <p>The ARNs of the DataSync agents that can connect with your Azure Blob Storage container.</p>
-    #[doc(hidden)]
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that your Azure Blob Storage transfer location was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

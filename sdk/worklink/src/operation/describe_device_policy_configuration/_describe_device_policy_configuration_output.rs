@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDevicePolicyConfigurationOutput {
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    #[doc(hidden)]
     pub device_ca_certificate: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

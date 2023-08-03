@@ -5,29 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleRunInput {
     /// <p>The ARN of the project for the run to be scheduled.</p>
-    #[doc(hidden)]
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
-    #[doc(hidden)]
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
-    #[doc(hidden)]
     pub device_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
     /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
-    #[doc(hidden)]
     pub device_selection_configuration: ::std::option::Option<crate::types::DeviceSelectionConfiguration>,
     /// <p>The name for the run to be scheduled.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the test for the run to be scheduled.</p>
-    #[doc(hidden)]
     pub test: ::std::option::Option<crate::types::ScheduleRunTest>,
     /// <p>Information about the settings for the run to be scheduled.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
     /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
-    #[doc(hidden)]
     pub execution_configuration: ::std::option::Option<crate::types::ExecutionConfiguration>,
 }
 impl ScheduleRunInput {

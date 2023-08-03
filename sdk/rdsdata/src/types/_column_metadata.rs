@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnMetadata {
     /// <p>The name of the column.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the column.</p>
-    #[doc(hidden)]
     pub r#type: i32,
     /// <p>The database-specific data type of the column.</p>
-    #[doc(hidden)]
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The label for the column.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema that owns the table that includes the column.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table that includes the column.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the column increments automatically.</p>
-    #[doc(hidden)]
     pub is_auto_increment: bool,
     /// <p>A value that indicates whether an integer column is signed.</p>
-    #[doc(hidden)]
     pub is_signed: bool,
     /// <p>A value that indicates whether the column contains currency values.</p>
-    #[doc(hidden)]
     pub is_currency: bool,
     /// <p>A value that indicates whether the column is case-sensitive.</p>
-    #[doc(hidden)]
     pub is_case_sensitive: bool,
     /// <p>A value that indicates whether the column is nullable.</p>
-    #[doc(hidden)]
     pub nullable: i32,
     /// <p>The precision value of a decimal number column.</p>
-    #[doc(hidden)]
     pub precision: i32,
     /// <p>The scale value of a decimal number column.</p>
-    #[doc(hidden)]
     pub scale: i32,
     /// <p>The type of the column.</p>
-    #[doc(hidden)]
     pub array_base_column_type: i32,
 }
 impl ColumnMetadata {

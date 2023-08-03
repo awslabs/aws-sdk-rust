@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSnapshotsOutput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>All of the returned snapshot objects.</p>
-    #[doc(hidden)]
     pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     _request_id: Option<String>,
 }

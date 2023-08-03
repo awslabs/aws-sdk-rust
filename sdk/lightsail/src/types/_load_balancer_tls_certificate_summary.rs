@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateSummary {
     /// <p>The name of the SSL/TLS certificate.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
-    #[doc(hidden)]
     pub is_attached: ::std::option::Option<bool>,
 }
 impl LoadBalancerTlsCertificateSummary {

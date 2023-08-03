@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityInfo {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported for email identity types.</p>
-    #[doc(hidden)]
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The address or domain of the identity.</p>
-    #[doc(hidden)]
     pub identity_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not you can send email from the identity.</p>
     /// <p>An <i>identity</i> is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon SES to send email from that identity.</p>
-    #[doc(hidden)]
     pub sending_enabled: bool,
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
@@ -22,7 +19,6 @@ pub struct IdentityInfo {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
     /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
 }
 impl IdentityInfo {

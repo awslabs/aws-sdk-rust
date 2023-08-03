@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricMonitorConfig {
     /// <p>A structure that defines the metric.</p>
-    #[doc(hidden)]
     pub metric_definition: ::std::option::Option<crate::types::MetricDefinitionConfig>,
 }
 impl MetricMonitorConfig {

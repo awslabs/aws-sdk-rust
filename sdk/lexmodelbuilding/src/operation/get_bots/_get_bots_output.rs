@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBotsOutput {
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
-    #[doc(hidden)]
     pub bots: ::std::option::Option<::std::vec::Vec<crate::types::BotMetadata>>,
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

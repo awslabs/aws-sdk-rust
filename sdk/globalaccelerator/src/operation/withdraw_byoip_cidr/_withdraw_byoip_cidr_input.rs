@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WithdrawByoipCidrInput {
     /// <p>The address range, in CIDR notation.</p>
-    #[doc(hidden)]
     pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl WithdrawByoipCidrInput {

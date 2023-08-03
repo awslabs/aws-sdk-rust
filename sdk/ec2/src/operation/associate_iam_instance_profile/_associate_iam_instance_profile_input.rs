@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateIamInstanceProfileInput {
     /// <p>The IAM instance profile.</p>
-    #[doc(hidden)]
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileSpecification>,
     /// <p>The ID of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIamInstanceProfileInput {

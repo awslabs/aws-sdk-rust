@@ -4,34 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMultipartReadSetUploadInput {
     /// <p> The sequence store ID for the store that is the destination of the multipart uploads. </p>
-    #[doc(hidden)]
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p> An idempotency token that can be used to avoid triggering multiple multipart uploads. </p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The type of file being uploaded. </p>
-    #[doc(hidden)]
     pub source_file_type: ::std::option::Option<crate::types::FileType>,
     /// <p> The source's subject ID. </p>
-    #[doc(hidden)]
     pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p> The source's sample ID. </p>
-    #[doc(hidden)]
     pub sample_id: ::std::option::Option<::std::string::String>,
     /// <p> Where the source originated. </p>
-    #[doc(hidden)]
     pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the reference. </p>
-    #[doc(hidden)]
     pub reference_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the read set. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the read set. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> Any tags to add to the read set. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMultipartReadSetUploadInput {

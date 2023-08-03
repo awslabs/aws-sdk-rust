@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterBacktrack {
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains the backtrack identifier.</p>
-    #[doc(hidden)]
     pub backtrack_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-    #[doc(hidden)]
     pub backtrack_to: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-    #[doc(hidden)]
     pub backtracked_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
-    #[doc(hidden)]
     pub backtrack_request_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the backtrack. This property returns one of the following values:</p>
     /// <ul>
@@ -26,7 +21,6 @@ pub struct DbClusterBacktrack {
     /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
     /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterBacktrack {

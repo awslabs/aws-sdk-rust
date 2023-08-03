@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstancePortStatesInput {
     /// <p>The name of the instance for which to return firewall port states.</p>
-    #[doc(hidden)]
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
 impl GetInstancePortStatesInput {

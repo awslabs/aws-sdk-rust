@@ -9,10 +9,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchConstraint {
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::GeoMatchConstraintType>,
     /// <p>The country that you want AWS WAF to search for.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<crate::types::GeoMatchConstraintValue>,
 }
 impl GeoMatchConstraint {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
-    #[doc(hidden)]
     pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
 }
 impl UpdateBandwidthRateLimitScheduleInput {

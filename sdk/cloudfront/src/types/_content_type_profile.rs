@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentTypeProfile {
     /// <p>The format for a field-level encryption content type-profile mapping.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The profile ID for a field-level encryption content type-profile mapping.</p>
-    #[doc(hidden)]
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The content type for a field-level encryption content type-profile mapping.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl ContentTypeProfile {

@@ -5,14 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filters {
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
-    #[doc(hidden)]
     pub extended_key_usage: ::std::option::Option<::std::vec::Vec<crate::types::ExtendedKeyUsageName>>,
     /// <p>Specify one or more <code>KeyUsage</code> extension values.</p>
-    #[doc(hidden)]
     pub key_usage: ::std::option::Option<::std::vec::Vec<crate::types::KeyUsageName>>,
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
-    #[doc(hidden)]
     pub key_types: ::std::option::Option<::std::vec::Vec<crate::types::KeyAlgorithm>>,
 }
 impl Filters {

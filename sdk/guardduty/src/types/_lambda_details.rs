@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaDetails {
     /// <p>Amazon Resource Name (ARN) of the Lambda function.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Lambda function.</p>
-    #[doc(hidden)]
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the Lambda function.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the Lambda function was last modified. This field is in the UTC date string format <code>(2023-03-22T19:37:20.168Z)</code>.</p>
-    #[doc(hidden)]
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The revision ID of the Lambda function version.</p>
-    #[doc(hidden)]
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Lambda function.</p>
-    #[doc(hidden)]
     pub function_version: ::std::option::Option<::std::string::String>,
     /// <p>The execution role of the Lambda function.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
-    #[doc(hidden)]
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>A list of tags attached to this resource, listed in the format of <code>key</code>:<code>value</code> pair.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaDetails {

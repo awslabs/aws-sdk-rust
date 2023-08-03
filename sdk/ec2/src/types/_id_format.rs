@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdFormat {
     /// <p>The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet available for this resource type, this field is not returned.</p>
-    #[doc(hidden)]
     pub deadline: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of resource.</p>
-    #[doc(hidden)]
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether longer IDs (17-character IDs) are enabled for the resource.</p>
-    #[doc(hidden)]
     pub use_long_ids: ::std::option::Option<bool>,
 }
 impl IdFormat {

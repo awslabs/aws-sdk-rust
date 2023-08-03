@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingIconSet {
     /// <p>The expression that determines the formatting configuration for the icon set.</p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Determines the icon set type.</p>
-    #[doc(hidden)]
     pub icon_set_type: ::std::option::Option<crate::types::ConditionalFormattingIconSetType>,
 }
 impl ConditionalFormattingIconSet {

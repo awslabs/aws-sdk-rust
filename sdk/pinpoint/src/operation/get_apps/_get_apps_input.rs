@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppsInput {
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    #[doc(hidden)]
     pub page_size: ::std::option::Option<::std::string::String>,
     /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
 }
 impl GetAppsInput {

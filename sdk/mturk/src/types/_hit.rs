@@ -5,67 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Hit {
     /// <p> A unique identifier for the HIT.</p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the HIT type of this HIT</p>
-    #[doc(hidden)]
     pub hit_type_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the HIT Group of this HIT.</p>
-    #[doc(hidden)]
     pub hit_group_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the HIT Layout of this HIT.</p>
-    #[doc(hidden)]
     pub hit_layout_id: ::std::option::Option<::std::string::String>,
     /// <p> The date and time the HIT was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The title of the HIT.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p> A general description of the HIT.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The data the Worker completing the HIT uses produce the results. This is either either a QuestionForm, HTMLQuestion or an ExternalQuestion data structure.</p>
-    #[doc(hidden)]
     pub question: ::std::option::Option<::std::string::String>,
     /// <p> One or more words or phrases that describe the HIT, separated by commas. Search terms similar to the keywords of a HIT are more likely to have the HIT in the search results.</p>
-    #[doc(hidden)]
     pub keywords: ::std::option::Option<::std::string::String>,
     /// <p>The status of the HIT and its assignments. Valid Values are Assignable | Unassignable | Reviewable | Reviewing | Disposed. </p>
-    #[doc(hidden)]
     pub hit_status: ::std::option::Option<crate::types::HitStatus>,
     /// <p>The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
-    #[doc(hidden)]
     pub max_assignments: ::std::option::Option<i32>,
     /// <p>A string representing a currency amount.</p>
-    #[doc(hidden)]
     pub reward: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, after the Worker submits an assignment for the HIT that the results are automatically approved by Amazon Mechanical Turk. This is the amount of time the Requester has to reject an assignment submitted by a Worker before the assignment is auto-approved and the Worker is paid. </p>
-    #[doc(hidden)]
     pub auto_approval_delay_in_seconds: ::std::option::Option<i64>,
     /// <p>The date and time the HIT expires.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The length of time, in seconds, that a Worker has to complete the HIT after accepting it.</p>
-    #[doc(hidden)]
     pub assignment_duration_in_seconds: ::std::option::Option<i64>,
     /// <p> An arbitrary data field the Requester who created the HIT can use. This field is visible only to the creator of the HIT.</p>
-    #[doc(hidden)]
     pub requester_annotation: ::std::option::Option<::std::string::String>,
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    #[doc(hidden)]
     pub qualification_requirements: ::std::option::Option<::std::vec::Vec<crate::types::QualificationRequirement>>,
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
-    #[doc(hidden)]
     pub hit_review_status: ::std::option::Option<crate::types::HitReviewStatus>,
     /// <p> The number of assignments for this HIT that are being previewed or have been accepted by Workers, but have not yet been submitted, returned, or abandoned.</p>
-    #[doc(hidden)]
     pub number_of_assignments_pending: ::std::option::Option<i32>,
     /// <p> The number of assignments for this HIT that are available for Workers to accept.</p>
-    #[doc(hidden)]
     pub number_of_assignments_available: ::std::option::Option<i32>,
     /// <p> The number of assignments for this HIT that have been approved or rejected.</p>
-    #[doc(hidden)]
     pub number_of_assignments_completed: ::std::option::Option<i32>,
 }
 impl Hit {

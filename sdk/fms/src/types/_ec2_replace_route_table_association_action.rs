@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2ReplaceRouteTableAssociationAction {
     /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<crate::types::ActionTarget>,
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
-    #[doc(hidden)]
     pub route_table_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2ReplaceRouteTableAssociationAction {

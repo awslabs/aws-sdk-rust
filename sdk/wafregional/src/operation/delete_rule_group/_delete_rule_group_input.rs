@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    #[doc(hidden)]
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    #[doc(hidden)]
     pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRuleGroupInput {

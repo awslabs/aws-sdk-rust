@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStateChangeReason {
     /// <p>The programmable code for the state change reason.</p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<crate::types::InstanceStateChangeReasonCode>,
     /// <p>The status change reason description.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl InstanceStateChangeReason {

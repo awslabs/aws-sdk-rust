@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelPackagingJobsOutput {
     /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
-    #[doc(hidden)]
     pub model_packaging_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackagingJobMetadata>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

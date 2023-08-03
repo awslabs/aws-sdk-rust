@@ -6,7 +6,6 @@
 pub struct DataSource {
     /// <p>The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example: </p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
-    #[doc(hidden)]
     pub data_location: ::std::option::Option<::std::string::String>,
 }
 impl DataSource {

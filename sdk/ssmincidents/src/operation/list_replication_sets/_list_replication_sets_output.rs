@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReplicationSetsOutput {
     /// <p>The Amazon Resource Name (ARN) of the list replication set.</p>
-    #[doc(hidden)]
     pub replication_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

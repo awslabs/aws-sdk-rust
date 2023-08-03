@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSiteInput {
     /// <p>The name of the site.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the site.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p> The tags to apply to a site. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
-    #[doc(hidden)]
     pub operating_address: ::std::option::Option<crate::types::Address>,
     /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
-    #[doc(hidden)]
     pub shipping_address: ::std::option::Option<crate::types::Address>,
     /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
-    #[doc(hidden)]
     pub rack_physical_properties: ::std::option::Option<crate::types::RackPhysicalProperties>,
 }
 impl CreateSiteInput {

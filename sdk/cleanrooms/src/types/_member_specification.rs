@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberSpecification {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The abilities granted to the collaboration member.</p>
-    #[doc(hidden)]
     pub member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     /// <p>The member's display name.</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl MemberSpecification {

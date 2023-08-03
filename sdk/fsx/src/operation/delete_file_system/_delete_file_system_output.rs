@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemOutput {
     /// <p>The ID of the file system that's being deleted.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
-    #[doc(hidden)]
     pub lifecycle: ::std::option::Option<crate::types::FileSystemLifecycle>,
     /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
-    #[doc(hidden)]
     pub windows_response: ::std::option::Option<crate::types::DeleteFileSystemWindowsResponse>,
     /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
-    #[doc(hidden)]
     pub lustre_response: ::std::option::Option<crate::types::DeleteFileSystemLustreResponse>,
     /// <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
-    #[doc(hidden)]
     pub open_zfs_response: ::std::option::Option<crate::types::DeleteFileSystemOpenZfsResponse>,
     _request_id: Option<String>,
 }

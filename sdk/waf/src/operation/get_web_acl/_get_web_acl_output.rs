@@ -10,7 +10,6 @@ pub struct GetWebAclOutput {
     /// <li> <p> <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
     /// <li> <p> <code>Action</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub web_acl: ::std::option::Option<crate::types::WebAcl>,
     _request_id: Option<String>,
 }

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
-    #[doc(hidden)]
     pub deleted_branch: ::std::option::Option<crate::types::BranchInfo>,
     _request_id: Option<String>,
 }

@@ -5,28 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterConstraints {
     /// <p>The values that the administrator has allowed for the parameter.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
-    #[doc(hidden)]
     pub allowed_pattern: ::std::option::Option<::std::string::String>,
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
     /// <p> <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code> </p>
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
     /// <p> <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code> </p>
-    #[doc(hidden)]
     pub constraint_description: ::std::option::Option<::std::string::String>,
     /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
-    #[doc(hidden)]
     pub max_length: ::std::option::Option<::std::string::String>,
     /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
-    #[doc(hidden)]
     pub min_length: ::std::option::Option<::std::string::String>,
     /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
-    #[doc(hidden)]
     pub max_value: ::std::option::Option<::std::string::String>,
     /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
-    #[doc(hidden)]
     pub min_value: ::std::option::Option<::std::string::String>,
 }
 impl ParameterConstraints {

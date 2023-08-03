@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthorizationTokenOutput {
     /// <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
-    #[doc(hidden)]
     pub authorization_data: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizationData>>,
     _request_id: Option<String>,
 }

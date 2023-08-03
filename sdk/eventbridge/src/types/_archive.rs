@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Archive {
     /// <p>The name of the archive.</p>
-    #[doc(hidden)]
     pub archive_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
-    #[doc(hidden)]
     pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the archive.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ArchiveState>,
     /// <p>A description for the reason that the archive is in the current state.</p>
-    #[doc(hidden)]
     pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
-    #[doc(hidden)]
     pub retention_days: ::std::option::Option<i32>,
     /// <p>The size of the archive, in bytes.</p>
-    #[doc(hidden)]
     pub size_bytes: i64,
     /// <p>The number of events in the archive.</p>
-    #[doc(hidden)]
     pub event_count: i64,
     /// <p>The time stamp for the time that the archive was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Archive {

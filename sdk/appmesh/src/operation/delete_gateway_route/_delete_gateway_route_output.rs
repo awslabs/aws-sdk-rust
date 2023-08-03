@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayRouteOutput {
     /// <p>The gateway route that was deleted.</p>
-    #[doc(hidden)]
     pub gateway_route: ::std::option::Option<crate::types::GatewayRouteData>,
     _request_id: Option<String>,
 }

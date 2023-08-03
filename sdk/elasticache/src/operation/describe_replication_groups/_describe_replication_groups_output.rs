@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    #[doc(hidden)]
     pub replication_groups: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroup>>,
     _request_id: Option<String>,
 }

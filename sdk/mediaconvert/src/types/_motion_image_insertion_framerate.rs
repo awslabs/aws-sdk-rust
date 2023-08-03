@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MotionImageInsertionFramerate {
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
-    #[doc(hidden)]
     pub framerate_denominator: ::std::option::Option<i32>,
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
-    #[doc(hidden)]
     pub framerate_numerator: ::std::option::Option<i32>,
 }
 impl MotionImageInsertionFramerate {

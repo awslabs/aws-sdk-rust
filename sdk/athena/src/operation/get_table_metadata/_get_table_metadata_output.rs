@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableMetadataOutput {
     /// <p>An object that contains table metadata.</p>
-    #[doc(hidden)]
     pub table_metadata: ::std::option::Option<crate::types::TableMetadata>,
     _request_id: Option<String>,
 }

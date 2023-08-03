@@ -5,29 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTableRoute {
     /// <p>The CIDR block used for destination matches.</p>
-    #[doc(hidden)]
     pub destination_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The state of the route.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The route origin. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>static</p> </li>
     /// <li> <p>propagated</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub route_origin: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the prefix list.</p>
-    #[doc(hidden)]
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource for the route attachment.</p>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type for the route attachment.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayRouteTableRoute {

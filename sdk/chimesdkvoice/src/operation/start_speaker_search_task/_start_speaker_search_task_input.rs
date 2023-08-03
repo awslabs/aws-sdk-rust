@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSpeakerSearchTaskInput {
     /// <p>The Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The transaction ID of the call being analyzed.</p>
-    #[doc(hidden)]
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
-    #[doc(hidden)]
     pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which call leg to stream for speaker search.</p>
-    #[doc(hidden)]
     pub call_leg: ::std::option::Option<crate::types::CallLegType>,
 }
 impl StartSpeakerSearchTaskInput {

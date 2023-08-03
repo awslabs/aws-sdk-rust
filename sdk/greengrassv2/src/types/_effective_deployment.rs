@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EffectiveDeployment {
     /// <p>The ID of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment.</p>
-    #[doc(hidden)]
     pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
-    #[doc(hidden)]
     pub iot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
-    #[doc(hidden)]
     pub iot_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the deployment job.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
-    #[doc(hidden)]
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
@@ -33,19 +27,14 @@ pub struct EffectiveDeployment {
     /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub core_device_execution_status: ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>,
     /// <p>The reason code for the update, if the job was updated.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
-    #[doc(hidden)]
     pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<crate::types::EffectiveDeploymentStatusDetails>,
 }
 impl EffectiveDeployment {

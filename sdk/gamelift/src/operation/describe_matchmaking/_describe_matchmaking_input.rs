@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingInput {
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
-    #[doc(hidden)]
     pub ticket_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeMatchmakingInput {

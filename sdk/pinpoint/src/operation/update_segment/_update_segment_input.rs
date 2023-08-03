@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSegmentInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the segment.</p>
-    #[doc(hidden)]
     pub segment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
-    #[doc(hidden)]
     pub write_segment_request: ::std::option::Option<crate::types::WriteSegmentRequest>,
 }
 impl UpdateSegmentInput {

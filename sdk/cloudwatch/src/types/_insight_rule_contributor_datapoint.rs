@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightRuleContributorDatapoint {
     /// <p>The timestamp of the data point.</p>
-    #[doc(hidden)]
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The approximate value that this contributor added during this timestamp.</p>
-    #[doc(hidden)]
     pub approximate_value: ::std::option::Option<f64>,
 }
 impl InsightRuleContributorDatapoint {

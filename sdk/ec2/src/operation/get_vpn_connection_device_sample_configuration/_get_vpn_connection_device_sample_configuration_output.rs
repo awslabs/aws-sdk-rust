@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetVpnConnectionDeviceSampleConfigurationOutput {
     /// <p>Sample configuration file for the specified customer gateway device.</p>
-    #[doc(hidden)]
     pub vpn_connection_device_sample_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

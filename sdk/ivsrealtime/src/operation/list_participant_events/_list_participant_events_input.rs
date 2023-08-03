@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListParticipantEventsInput {
     /// <p>Stage ARN.</p>
-    #[doc(hidden)]
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of a session within the stage.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    #[doc(hidden)]
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return. Default: 50.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListParticipantEventsInput {

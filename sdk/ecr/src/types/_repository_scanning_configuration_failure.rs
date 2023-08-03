@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryScanningConfigurationFailure {
     /// <p>The name of the repository.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
-    #[doc(hidden)]
     pub failure_code: ::std::option::Option<crate::types::ScanningConfigurationFailureCode>,
     /// <p>The reason for the failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryScanningConfigurationFailure {

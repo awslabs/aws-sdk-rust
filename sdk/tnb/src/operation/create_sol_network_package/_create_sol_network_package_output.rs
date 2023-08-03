@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateSolNetworkPackageOutput {
     /// <p>ID of the network package.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network package ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_onboarding_state: ::std::option::Option<crate::types::NsdOnboardingState>,
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_operational_state: ::std::option::Option<crate::types::NsdOperationalState>,
     /// <p>Usage state of the network service descriptor in the network package.</p>
-    #[doc(hidden)]
     pub nsd_usage_state: ::std::option::Option<crate::types::NsdUsageState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }

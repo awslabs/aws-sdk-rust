@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceData {
     /// <p>The text that was entered by the user or the text representation of an audio clip.</p>
-    #[doc(hidden)]
     pub utterance_string: ::std::option::Option<::std::string::String>,
     /// <p>The number of times that the utterance was processed.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>The total number of individuals that used the utterance.</p>
-    #[doc(hidden)]
     pub distinct_users: ::std::option::Option<i32>,
     /// <p>The date that the utterance was first recorded.</p>
-    #[doc(hidden)]
     pub first_uttered_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date that the utterance was last recorded.</p>
-    #[doc(hidden)]
     pub last_uttered_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UtteranceData {

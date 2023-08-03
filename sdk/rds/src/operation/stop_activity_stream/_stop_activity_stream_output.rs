@@ -5,13 +5,10 @@
 pub struct StopActivityStreamOutput {
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
-    #[doc(hidden)]
     pub kinesis_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the database activity stream.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     _request_id: Option<String>,
 }

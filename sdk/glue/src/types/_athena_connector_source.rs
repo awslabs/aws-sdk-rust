@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AthenaConnectorSource {
     /// <p>The name of the data source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection that is associated with the connector.</p>
-    #[doc(hidden)]
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    #[doc(hidden)]
     pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.</p>
-    #[doc(hidden)]
     pub connection_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table in the data source.</p>
-    #[doc(hidden)]
     pub connection_table: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data schema for the custom Athena source.</p>
-    #[doc(hidden)]
     pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl AthenaConnectorSource {

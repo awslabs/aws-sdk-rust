@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEdgeConfigurationOutput {
     /// <p>The name of the stream from which the edge configuration was updated.</p>
-    #[doc(hidden)]
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which a stream’s edge configuration was first created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which a stream’s edge configuration was last updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest status of the edge configuration update.</p>
-    #[doc(hidden)]
     pub sync_status: ::std::option::Option<crate::types::SyncStatus>,
     /// <p>A description of the generated failure status.</p>
-    #[doc(hidden)]
     pub failed_status_details: ::std::option::Option<::std::string::String>,
     /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-    #[doc(hidden)]
     pub edge_config: ::std::option::Option<crate::types::EdgeConfig>,
     /// <p>An object that contains the latest status details for an edge agent's recorder and uploader jobs. Use this information to determine the current health of an edge agent.</p>
-    #[doc(hidden)]
     pub edge_agent_status: ::std::option::Option<crate::types::EdgeAgentStatus>,
     _request_id: Option<String>,
 }

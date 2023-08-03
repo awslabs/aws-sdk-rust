@@ -8,10 +8,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassicLinkDnsSupport {
     /// <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-    #[doc(hidden)]
     pub classic_link_dns_supported: ::std::option::Option<bool>,
     /// <p>The ID of the VPC.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl ClassicLinkDnsSupport {

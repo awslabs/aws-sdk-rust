@@ -4,49 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBucketStatisticsOutput {
     /// <p>The total number of buckets.</p>
-    #[doc(hidden)]
     pub bucket_count: ::std::option::Option<i64>,
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
-    #[doc(hidden)]
     pub bucket_count_by_effective_permission: ::std::option::Option<crate::types::BucketCountByEffectivePermission>,
     /// <p>The total number of buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets.</p>
-    #[doc(hidden)]
     pub bucket_count_by_encryption_type: ::std::option::Option<crate::types::BucketCountByEncryptionType>,
     /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are added to the buckets.</p>
-    #[doc(hidden)]
     pub bucket_count_by_object_encryption_requirement: ::std::option::Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads>,
     /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
-    #[doc(hidden)]
     pub bucket_count_by_shared_access_type: ::std::option::Option<crate::types::BucketCountBySharedAccessType>,
     /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
-    #[doc(hidden)]
     pub bucket_statistics_by_sensitivity: ::std::option::Option<crate::types::BucketStatisticsBySensitivity>,
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-    #[doc(hidden)]
     pub classifiable_object_count: ::std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
-    #[doc(hidden)]
     pub classifiable_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the buckets.</p>
-    #[doc(hidden)]
     pub object_count: ::std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
-    #[doc(hidden)]
     pub size_in_bytes: ::std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
-    #[doc(hidden)]
     pub size_in_bytes_compressed: ::std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-    #[doc(hidden)]
     pub unclassifiable_object_count: ::std::option::Option<crate::types::ObjectLevelStatistics>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-    #[doc(hidden)]
     pub unclassifiable_object_size_in_bytes: ::std::option::Option<crate::types::ObjectLevelStatistics>,
     _request_id: Option<String>,
 }

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficConfig {
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
-    #[doc(hidden)]
     pub single_weight_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>,
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
-    #[doc(hidden)]
     pub single_header_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>,
     /// <p>The type of traffic configuration.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ContinuousDeploymentPolicyType>,
 }
 impl TrafficConfig {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the Amazon S3 bucket where the application revision is stored.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The file type of the application revision. Must be one of the following:</p>
     /// <ul>
@@ -16,15 +14,12 @@ pub struct S3Location {
     /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
     /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub bundle_type: ::std::option::Option<crate::types::BundleType>,
     /// <p>A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
     /// <p>If the version is not specified, the system uses the most recent version by default.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
     /// <p>If the ETag is not specified as an input parameter, ETag validation of the object is skipped.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {

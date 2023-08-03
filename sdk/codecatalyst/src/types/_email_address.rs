@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailAddress {
     /// <p>The email address.</p>
-    #[doc(hidden)]
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>Whether the email address has been verified.</p>
-    #[doc(hidden)]
     pub verified: ::std::option::Option<bool>,
 }
 impl EmailAddress {

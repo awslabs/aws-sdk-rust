@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrioritizeBusinessGoals {
     /// <p> Rank of business goals based on priority. </p>
-    #[doc(hidden)]
     pub business_goals: ::std::option::Option<crate::types::BusinessGoals>,
 }
 impl PrioritizeBusinessGoals {

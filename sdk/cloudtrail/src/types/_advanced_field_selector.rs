@@ -309,25 +309,18 @@ pub struct AdvancedFieldSelector {
     /// </partition></code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    #[doc(hidden)]
     pub field: ::std::option::Option<::std::string::String>,
     /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
-    #[doc(hidden)]
     pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
-    #[doc(hidden)]
     pub starts_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
-    #[doc(hidden)]
     pub ends_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
-    #[doc(hidden)]
     pub not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
-    #[doc(hidden)]
     pub not_starts_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
-    #[doc(hidden)]
     pub not_ends_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdvancedFieldSelector {

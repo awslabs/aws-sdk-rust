@@ -9,24 +9,18 @@ pub struct CustomMessageActivity {
     /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
     /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub delivery_uri: ::std::option::Option<::std::string::String>,
     /// <p>The types of endpoints to send the custom message to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
     /// <p>Specifies the message data included in a custom channel message that's sent to participants in a journey.</p>
-    #[doc(hidden)]
     pub message_config: ::std::option::Option<crate::types::JourneyCustomMessage>,
     /// <p>The unique identifier for the next activity to perform, after Amazon Pinpoint calls the AWS Lambda function or web hook.</p>
-    #[doc(hidden)]
     pub next_activity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the custom message template to use for the message. If specified, this value must match the name of an existing message template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the version of the message template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
     /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
-    #[doc(hidden)]
     pub template_version: ::std::option::Option<::std::string::String>,
 }
 impl CustomMessageActivity {

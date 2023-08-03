@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringS3Output {
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
-    #[doc(hidden)]
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
-    #[doc(hidden)]
     pub s3_upload_mode: ::std::option::Option<crate::types::ProcessingS3UploadMode>,
 }
 impl MonitoringS3Output {

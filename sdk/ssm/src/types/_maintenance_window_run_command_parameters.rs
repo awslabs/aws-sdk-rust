@@ -10,40 +10,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowRunCommandParameters {
     /// <p>Information about the commands to run.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
-    #[doc(hidden)]
     pub cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.</p>
-    #[doc(hidden)]
     pub document_hash: ::std::option::Option<::std::string::String>,
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
-    #[doc(hidden)]
     pub document_hash_type: ::std::option::Option<crate::types::DocumentHashType>,
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p> <code>--document-version "\$DEFAULT"</code> </p>
     /// <p> <code>--document-version "\$LATEST"</code> </p>
     /// <p> <code>--document-version "3"</code> </p>
-    #[doc(hidden)]
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
-    #[doc(hidden)]
     pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
     /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    #[doc(hidden)]
     pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket subfolder.</p>
-    #[doc(hidden)]
     pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    #[doc(hidden)]
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>If this time is reached and the command hasn't already started running, it doesn't run.</p>
-    #[doc(hidden)]
     pub timeout_seconds: ::std::option::Option<i32>,
 }
 impl MaintenanceWindowRunCommandParameters {

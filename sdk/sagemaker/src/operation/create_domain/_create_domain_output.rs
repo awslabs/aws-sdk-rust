@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainOutput {
     /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
-    #[doc(hidden)]
     pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the created domain.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

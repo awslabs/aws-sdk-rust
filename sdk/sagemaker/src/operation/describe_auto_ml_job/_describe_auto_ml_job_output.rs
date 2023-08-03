@@ -4,67 +4,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAutoMlJobOutput {
     /// <p>Returns the name of the AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the ARN of the AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns the input data configuration for the AutoML job.</p>
-    #[doc(hidden)]
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>>,
     /// <p>Returns the job's output data config.</p>
-    #[doc(hidden)]
     pub output_data_config: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns the job's objective.</p>
-    #[doc(hidden)]
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
     /// <p>Returns the job's problem type.</p>
-    #[doc(hidden)]
     pub problem_type: ::std::option::Option<crate::types::ProblemType>,
     /// <p>Returns the configuration for the AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_config: ::std::option::Option<crate::types::AutoMlJobConfig>,
     /// <p>Returns the creation time of the AutoML job.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the end time of the AutoML job.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the job's last modified time.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the failure reason for an AutoML job, when applicable.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
-    #[doc(hidden)]
     pub partial_failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
     /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
-    #[doc(hidden)]
     pub best_candidate: ::std::option::Option<crate::types::AutoMlCandidate>,
     /// <p>Returns the status of the AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_status: ::std::option::Option<crate::types::AutoMlJobStatus>,
     /// <p>Returns the secondary status of the AutoML job.</p>
-    #[doc(hidden)]
     pub auto_ml_job_secondary_status: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>,
     /// <p>Indicates whether the output for an AutoML job generates candidate definitions only.</p>
-    #[doc(hidden)]
     pub generate_candidate_definitions_only: bool,
     /// <p>Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.</p>
-    #[doc(hidden)]
     pub auto_ml_job_artifacts: ::std::option::Option<crate::types::AutoMlJobArtifacts>,
     /// <p>Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>. If you do not provide these values, they are inferred.</p>
-    #[doc(hidden)]
     pub resolved_attributes: ::std::option::Option<crate::types::ResolvedAttributes>,
     /// <p>Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed automatically.</p>
-    #[doc(hidden)]
     pub model_deploy_config: ::std::option::Option<crate::types::ModelDeployConfig>,
     /// <p>Provides information about endpoint for the model deployment.</p>
-    #[doc(hidden)]
     pub model_deploy_result: ::std::option::Option<crate::types::ModelDeployResult>,
     _request_id: Option<String>,
 }

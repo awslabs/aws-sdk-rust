@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Threshold {
     /// <p>The value of the threshold.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The operator of the threshold.</p>
-    #[doc(hidden)]
     pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl Threshold {

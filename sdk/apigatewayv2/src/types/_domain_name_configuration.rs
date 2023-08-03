@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainNameConfiguration {
     /// <p>A domain name for the API.</p>
-    #[doc(hidden)]
     pub api_gateway_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An AWS-managed certificate that will be used by the edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the certificate that will be used by the edge-optimized endpoint for this domain name.</p>
-    #[doc(hidden)]
     pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    #[doc(hidden)]
     pub certificate_upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
-    #[doc(hidden)]
     pub domain_name_status: ::std::option::Option<crate::types::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the domain name migration.</p>
-    #[doc(hidden)]
     pub domain_name_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint type.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     /// <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
-    #[doc(hidden)]
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
-    #[doc(hidden)]
     pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn</p>
-    #[doc(hidden)]
     pub ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl DomainNameConfiguration {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-    #[doc(hidden)]
     pub definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IpSet {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
-    #[doc(hidden)]
     pub sql_query: ::std::option::Option<::std::string::String>,
     /// <p>Prefilters applied to message data.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
 }
 impl SqlQueryDatasetAction {

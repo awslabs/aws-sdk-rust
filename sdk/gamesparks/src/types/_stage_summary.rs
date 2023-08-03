@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageSummary {
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
-    #[doc(hidden)]
     pub game_key: ::std::option::Option<::std::string::String>,
     /// <p>The description of the stage.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state of the stage.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StageState>,
     /// <p>The tags associated with the stage.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StageSummary {

@@ -4,36 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSolutionInput {
     /// <p>The name for the solution.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
     /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
-    #[doc(hidden)]
     pub perform_hpo: ::std::option::Option<bool>,
     /// <important>
     /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
     /// </important>
     /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
     /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
-    #[doc(hidden)]
     pub perform_auto_ml: ::std::option::Option<bool>,
     /// <p>The ARN of the recipe to use for model training. This is required when <code>performAutoML</code> is false.</p>
-    #[doc(hidden)]
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    #[doc(hidden)]
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
     /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
-    #[doc(hidden)]
     pub solution_config: ::std::option::Option<crate::types::SolutionConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the solution.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateSolutionInput {

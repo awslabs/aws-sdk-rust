@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMatchmakingConfigurationOutput {
     /// <p>The updated matchmaking configuration.</p>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<crate::types::MatchmakingConfiguration>,
     _request_id: Option<String>,
 }

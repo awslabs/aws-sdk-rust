@@ -16,13 +16,10 @@ pub struct ListIncidentRecordsInput {
     /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results per page.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIncidentRecordsInput {

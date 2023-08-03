@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpointConnection {
     /// <p>The ID of the service to which the endpoint is connected.</p>
-    #[doc(hidden)]
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_owner: ::std::option::Option<::std::string::String>,
     /// <p>The state of the VPC endpoint.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_state: ::std::option::Option<crate::types::State>,
     /// <p>The date and time that the VPC endpoint was created.</p>
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DNS entries for the VPC endpoint.</p>
-    #[doc(hidden)]
     pub dns_entries: ::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>>,
     /// <p>The Amazon Resource Names (ARNs) of the network load balancers for the service.</p>
-    #[doc(hidden)]
     pub network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
-    #[doc(hidden)]
     pub gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type for the endpoint.</p>
-    #[doc(hidden)]
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The ID of the VPC endpoint connection.</p>
-    #[doc(hidden)]
     pub vpc_endpoint_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VpcEndpointConnection {

@@ -4,21 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRoleAliasInput {
     /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
-    #[doc(hidden)]
     pub role_alias: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
     /// <p>This value must be less than or equal to the maximum session duration of the IAM role that the role alias references.</p>
-    #[doc(hidden)]
     pub credential_duration_seconds: ::std::option::Option<i32>,
     /// <p>Metadata which can be used to manage the role alias.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRoleAliasInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan from which the stage will be deleted.</p>
-    #[doc(hidden)]
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEdgeDeploymentStageInput {

@@ -5,26 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineDeclaration {
     /// <p>The name of the pipeline.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub artifact_store: ::std::option::Option<crate::types::ArtifactStore>,
     /// <p>A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web Services Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
     /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub artifact_stores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>>,
     /// <p>The stage in which to perform the action.</p>
-    #[doc(hidden)]
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::StageDeclaration>>,
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<i32>,
 }
 impl PipelineDeclaration {

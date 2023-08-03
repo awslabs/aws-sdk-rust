@@ -7,12 +7,10 @@ pub struct WorkflowType {
     /// <p> The name of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The version of the workflow type.</p> <note>
     /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
     /// </note>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowType {

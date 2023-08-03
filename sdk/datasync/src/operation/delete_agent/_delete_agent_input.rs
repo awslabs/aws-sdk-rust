@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub agent_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentInput {

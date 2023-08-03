@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Counts {
     /// <p>The number of resources.</p>
-    #[doc(hidden)]
     pub count: i64,
     /// <p>The key associated with this group</p>
-    #[doc(hidden)]
     pub group_key: ::std::option::Option<crate::types::GroupKey>,
 }
 impl Counts {

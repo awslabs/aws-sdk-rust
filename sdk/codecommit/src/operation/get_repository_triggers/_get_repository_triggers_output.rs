@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryTriggersOutput {
     /// <p>The system-generated unique ID for the trigger.</p>
-    #[doc(hidden)]
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON block of configuration information for each trigger.</p>
-    #[doc(hidden)]
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,
     _request_id: Option<String>,
 }

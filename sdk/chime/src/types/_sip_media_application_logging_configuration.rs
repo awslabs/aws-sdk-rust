@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SipMediaApplicationLoggingConfiguration {
     /// <p>Enables application message logs for the SIP media application.</p>
-    #[doc(hidden)]
     pub enable_sip_media_application_message_logs: ::std::option::Option<bool>,
 }
 impl SipMediaApplicationLoggingConfiguration {

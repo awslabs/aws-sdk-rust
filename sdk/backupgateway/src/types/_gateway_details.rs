@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayDetails {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the gateway.</p>
-    #[doc(hidden)]
     pub gateway_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the gateway type.</p>
-    #[doc(hidden)]
     pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>The hypervisor ID of the gateway.</p>
-    #[doc(hidden)]
     pub hypervisor_id: ::std::option::Option<::std::string::String>,
     /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
-    #[doc(hidden)]
     pub last_seen_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
-    #[doc(hidden)]
     pub maintenance_start_time: ::std::option::Option<crate::types::MaintenanceStartTime>,
     /// <p>Details showing the next update availability time of the gateway.</p>
-    #[doc(hidden)]
     pub next_update_availability_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
-    #[doc(hidden)]
     pub vpc_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl GatewayDetails {

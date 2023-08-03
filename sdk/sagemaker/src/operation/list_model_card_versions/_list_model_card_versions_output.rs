@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListModelCardVersionsOutput {
     /// <p>The summaries of the listed versions of the model card.</p>
-    #[doc(hidden)]
     pub model_card_version_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ModelCardVersionSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

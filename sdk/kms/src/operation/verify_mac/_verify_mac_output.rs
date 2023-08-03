@@ -4,14 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyMacOutput {
     /// <p>The HMAC KMS key used in the verification.</p>
-    #[doc(hidden)]
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether the HMAC was verified. A value of <code>True</code> indicates that the HMAC (<code>Mac</code>) was generated with the specified <code>Message</code>, HMAC KMS key (<code>KeyID</code>) and <code>MacAlgorithm.</code>.</p>
     /// <p>If the HMAC is not verified, the <code>VerifyMac</code> operation fails with a <code>KMSInvalidMacException</code> exception. This exception indicates that one or more of the inputs changed since the HMAC was computed.</p>
-    #[doc(hidden)]
     pub mac_valid: bool,
     /// <p>The MAC algorithm used in the verification.</p>
-    #[doc(hidden)]
     pub mac_algorithm: ::std::option::Option<crate::types::MacAlgorithmSpec>,
     _request_id: Option<String>,
 }

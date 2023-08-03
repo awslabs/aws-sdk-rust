@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsOutput {
     /// <p>A list of executions in the history of a pipeline.</p>
-    #[doc(hidden)]
     pub pipeline_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
     /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

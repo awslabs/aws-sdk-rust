@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExportTasksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
-    #[doc(hidden)]
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
-    #[doc(hidden)]
     pub export_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>,
     _request_id: Option<String>,
 }

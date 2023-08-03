@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokeScreenAutomationOutput {
     /// <p>The updated workbook cursor after performing the automation action.</p>
-    #[doc(hidden)]
     pub workbook_cursor: i64,
     _request_id: Option<String>,
 }

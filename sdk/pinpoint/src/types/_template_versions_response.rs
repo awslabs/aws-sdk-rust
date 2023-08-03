@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateVersionsResponse {
     /// <p>An array of responses, one for each version of the message template.</p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::vec::Vec<crate::types::TemplateVersionResponse>>,
     /// <p>The message that's returned from the API for the request to retrieve information about all the versions of the message template.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the request to retrieve information about all the versions of the message template.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl TemplateVersionsResponse {

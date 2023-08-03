@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Url {
     /// <p> The name or word that's used as a hyperlink to the URL. </p>
-    #[doc(hidden)]
     pub hyperlink_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the internet resource. </p>
-    #[doc(hidden)]
     pub link: ::std::option::Option<::std::string::String>,
 }
 impl Url {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorDefinitionVersion {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    #[doc(hidden)]
     pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
 }
 impl ConnectorDefinitionVersion {

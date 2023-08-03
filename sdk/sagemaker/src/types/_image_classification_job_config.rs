@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageClassificationJobConfig {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    #[doc(hidden)]
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }
 impl ImageClassificationJobConfig {

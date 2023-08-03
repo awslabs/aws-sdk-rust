@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateIamInstanceProfileInput {
     /// <p>The ID of the IAM instance profile association.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateIamInstanceProfileInput {

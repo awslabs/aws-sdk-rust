@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RobotSoftwareSuite {
     /// <p>The name of the robot software suite (ROS distribution).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::RobotSoftwareSuiteType>,
     /// <p>The version of the robot software suite (ROS distribution).</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<crate::types::RobotSoftwareSuiteVersionType>,
 }
 impl RobotSoftwareSuite {

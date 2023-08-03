@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDetectorModelInput {
     /// <p>The name of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the detector model.</p>
-    #[doc(hidden)]
     pub detector_model_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDetectorModelInput {

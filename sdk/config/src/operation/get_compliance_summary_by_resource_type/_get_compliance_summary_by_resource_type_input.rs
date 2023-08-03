@@ -6,7 +6,6 @@
 pub struct GetComplianceSummaryByResourceTypeInput {
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
-    #[doc(hidden)]
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetComplianceSummaryByResourceTypeInput {

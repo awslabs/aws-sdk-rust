@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskVolumeHostDetails {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. </p>
-    #[doc(hidden)]
     pub source_path: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskVolumeHostDetails {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetLocationCapacityOutput {
     /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
-    #[doc(hidden)]
     pub fleet_capacity: ::std::option::Option<crate::types::FleetCapacity>,
     _request_id: Option<String>,
 }

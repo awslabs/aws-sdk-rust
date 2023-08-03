@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendDataToWirelessDeviceOutput {
     /// <p>The ID of the message sent to the wireless device.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

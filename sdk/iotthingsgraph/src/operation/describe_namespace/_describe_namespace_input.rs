@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNamespaceInput {
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNamespaceInput {

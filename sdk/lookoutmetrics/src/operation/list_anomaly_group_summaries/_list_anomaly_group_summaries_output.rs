@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomalyGroupSummariesOutput {
     /// <p>A list of anomaly group summaries.</p>
-    #[doc(hidden)]
     pub anomaly_group_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyGroupSummary>>,
     /// <p>Aggregated details about the anomaly groups.</p>
-    #[doc(hidden)]
     pub anomaly_group_statistics: ::std::option::Option<crate::types::AnomalyGroupStatistics>,
     /// <p>The pagination token that's included if more results are available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

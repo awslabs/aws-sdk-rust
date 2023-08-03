@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzeIdOutput {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
-    #[doc(hidden)]
     pub identity_documents: ::std::option::Option<::std::vec::Vec<crate::types::IdentityDocument>>,
     /// <p>Information about the input document.</p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-    #[doc(hidden)]
     pub analyze_id_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelImportTaskOutput {
     /// <p>The ID of the task being canceled.</p>
-    #[doc(hidden)]
     pub import_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the task being canceled.</p>
-    #[doc(hidden)]
     pub previous_state: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the task being canceled.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

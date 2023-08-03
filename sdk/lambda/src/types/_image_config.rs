@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageConfig {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    #[doc(hidden)]
     pub entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    #[doc(hidden)]
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the working directory.</p>
-    #[doc(hidden)]
     pub working_directory: ::std::option::Option<::std::string::String>,
 }
 impl ImageConfig {

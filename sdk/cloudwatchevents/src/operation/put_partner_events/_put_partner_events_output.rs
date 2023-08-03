@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPartnerEventsOutput {
     /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
-    #[doc(hidden)]
     pub failed_entry_count: i32,
     /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
-    #[doc(hidden)]
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>>,
     _request_id: Option<String>,
 }

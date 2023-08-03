@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    #[doc(hidden)]
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
 }
 impl ModifyTargetGroupAttributesInput {

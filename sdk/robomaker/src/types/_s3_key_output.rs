@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3KeyOutput {
     /// <p>The S3 key.</p>
-    #[doc(hidden)]
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>The etag for the object.</p>
-    #[doc(hidden)]
     pub etag: ::std::option::Option<::std::string::String>,
 }
 impl S3KeyOutput {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokeDeviceMethodOutput {
     /// <p>A JSON encoded string containing the device method response.</p>
-    #[doc(hidden)]
     pub device_method_response: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFieldOutput {
     /// <p>A list of detailed field information. </p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>>,
     /// <p>A list of field errors. </p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::FieldError>>,
     _request_id: Option<String>,
 }

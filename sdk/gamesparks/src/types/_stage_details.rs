@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageDetails {
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
-    #[doc(hidden)]
     pub game_key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stage.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role used to run the game runtimes deployed to the stage.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The description of the stage.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the stage was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the stage was last updated.</p>
-    #[doc(hidden)]
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the stage.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StageState>,
     /// <p>The tags associated with the stage.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl StageDetails {

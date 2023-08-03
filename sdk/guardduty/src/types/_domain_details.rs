@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainDetails {
     /// <p>The domain information for the Amazon Web Services API call.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl DomainDetails {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEmailTemplateOutput {
     /// <p>The name of the template.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
-    #[doc(hidden)]
     pub template_content: ::std::option::Option<crate::types::EmailTemplateContent>,
     _request_id: Option<String>,
 }

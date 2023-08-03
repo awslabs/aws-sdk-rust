@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTimelineEventOutput {
     /// <p>Details about the timeline event.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::TimelineEvent>,
     _request_id: Option<String>,
 }

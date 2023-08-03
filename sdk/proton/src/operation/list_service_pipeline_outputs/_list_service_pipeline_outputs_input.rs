@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicePipelineOutputsInput {
     /// <p>The name of the service whose pipeline's outputs you want.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment you want the outputs for.</p>
-    #[doc(hidden)]
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
 impl ListServicePipelineOutputsInput {

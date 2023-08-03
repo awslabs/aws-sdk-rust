@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExpirationForHitInput {
     /// <p> The HIT to update. </p>
-    #[doc(hidden)]
     pub hit_id: ::std::option::Option<::std::string::String>,
     /// <p> The date and time at which you want the HIT to expire </p>
-    #[doc(hidden)]
     pub expire_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UpdateExpirationForHitInput {

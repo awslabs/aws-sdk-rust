@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelDataRepositoryTaskInput {
     /// <p>Specifies the data repository task to cancel.</p>
-    #[doc(hidden)]
     pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelDataRepositoryTaskInput {

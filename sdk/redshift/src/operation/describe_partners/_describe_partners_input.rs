@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePartnersInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
-    #[doc(hidden)]
     pub partner_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribePartnersInput {

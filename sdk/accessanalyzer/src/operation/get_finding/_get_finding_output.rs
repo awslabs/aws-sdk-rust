@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingOutput {
     /// <p>A <code>finding</code> object that contains finding details.</p>
-    #[doc(hidden)]
     pub finding: ::std::option::Option<crate::types::Finding>,
     _request_id: Option<String>,
 }

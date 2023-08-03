@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitionEvent {
     /// <p>The name of the transition event.</p>
-    #[doc(hidden)]
     pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<::std::string::String>,
     /// <p>The actions to be performed.</p>
-    #[doc(hidden)]
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>The next state to enter.</p>
-    #[doc(hidden)]
     pub next_state: ::std::option::Option<::std::string::String>,
 }
 impl TransitionEvent {

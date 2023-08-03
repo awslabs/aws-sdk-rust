@@ -6,10 +6,8 @@ pub struct BatchUpdateVehicleOutput {
     /// <p> A list of information about the batch of updated vehicles. </p> <note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
-    #[doc(hidden)]
     pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>>,
     _request_id: Option<String>,
 }

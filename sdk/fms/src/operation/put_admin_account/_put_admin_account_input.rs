@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAdminAccountInput {
     /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
-    #[doc(hidden)]
     pub admin_account: ::std::option::Option<::std::string::String>,
     /// <p>Configures the resources that the specified Firewall Manager administrator can manage. As a best practice, set the administrative scope according to the principles of least privilege. Only grant the administrator the specific resources or permissions that they need to perform the duties of their role.</p>
-    #[doc(hidden)]
     pub admin_scope: ::std::option::Option<crate::types::AdminScope>,
 }
 impl PutAdminAccountInput {

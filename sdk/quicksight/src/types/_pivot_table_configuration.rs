@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableConfiguration {
     /// <p>The field wells of the visual.</p>
-    #[doc(hidden)]
     pub field_wells: ::std::option::Option<crate::types::PivotTableFieldWells>,
     /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
-    #[doc(hidden)]
     pub sort_configuration: ::std::option::Option<crate::types::PivotTableSortConfiguration>,
     /// <p>The table options for a pivot table visual.</p>
-    #[doc(hidden)]
     pub table_options: ::std::option::Option<crate::types::PivotTableOptions>,
     /// <p>The total options for a pivot table visual.</p>
-    #[doc(hidden)]
     pub total_options: ::std::option::Option<crate::types::PivotTableTotalOptions>,
     /// <p>The field options for a pivot table visual.</p>
-    #[doc(hidden)]
     pub field_options: ::std::option::Option<crate::types::PivotTableFieldOptions>,
     /// <p>The paginated report options for a pivot table visual.</p>
-    #[doc(hidden)]
     pub paginated_report_options: ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>,
 }
 impl PivotTableConfiguration {

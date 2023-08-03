@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMultiRegionAccessPointsOutput {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
-    #[doc(hidden)]
     pub access_points: ::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointReport>>,
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

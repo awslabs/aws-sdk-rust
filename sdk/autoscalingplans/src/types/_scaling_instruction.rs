@@ -9,7 +9,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingInstruction {
     /// <p>The namespace of the AWS service.</p>
-    #[doc(hidden)]
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -20,7 +19,6 @@ pub struct ScalingInstruction {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
@@ -33,27 +31,20 @@ pub struct ScalingInstruction {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The minimum capacity of the resource. </p>
-    #[doc(hidden)]
     pub min_capacity: ::std::option::Option<i32>,
     /// <p>The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
-    #[doc(hidden)]
     pub max_capacity: ::std::option::Option<i32>,
     /// <p>The target tracking configurations (up to 10). Each of these structures must specify a unique scaling metric and a target value for the metric. </p>
-    #[doc(hidden)]
     pub target_tracking_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingConfiguration>>,
     /// <p>The predefined load metric to use for predictive scaling. This parameter or a <b>CustomizedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
-    #[doc(hidden)]
     pub predefined_load_metric_specification: ::std::option::Option<crate::types::PredefinedLoadMetricSpecification>,
     /// <p>The customized load metric to use for predictive scaling. This parameter or a <b>PredefinedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
-    #[doc(hidden)]
     pub customized_load_metric_specification: ::std::option::Option<crate::types::CustomizedLoadMetricSpecification>,
     /// <p>The amount of time, in seconds, to buffer the run time of scheduled scaling actions when scaling out. For example, if the forecast says to add capacity at 10:00 AM, and the buffer time is 5 minutes, then the run time of the corresponding scheduled scaling action will be 9:55 AM. The intention is to give resources time to be provisioned. For example, it can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). The default is 300 seconds. </p>
     /// <p>Only valid when configuring predictive scaling. </p>
-    #[doc(hidden)]
     pub scheduled_action_buffer_time: ::std::option::Option<i32>,
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
     /// <p>The following are possible values:</p>
@@ -63,25 +54,20 @@ pub struct ScalingInstruction {
     /// <li> <p> <code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs. </p> </li>
     /// </ul>
     /// <p>Only valid when configuring predictive scaling.</p>
-    #[doc(hidden)]
     pub predictive_scaling_max_capacity_behavior: ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior>,
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>Only valid when configuring predictive scaling. Required if the <b>PredictiveScalingMaxCapacityBehavior</b> is set to <code>SetMaxCapacityAboveForecastCapacity</code>, and cannot be used otherwise.</p>
     /// <p>The range is 1-100.</p>
-    #[doc(hidden)]
     pub predictive_scaling_max_capacity_buffer: ::std::option::Option<i32>,
     /// <p>The predictive scaling mode. The default value is <code>ForecastAndScale</code>. Otherwise, AWS Auto Scaling forecasts capacity but does not create any scheduled scaling actions based on the capacity forecast. </p>
-    #[doc(hidden)]
     pub predictive_scaling_mode: ::std::option::Option<crate::types::PredictiveScalingMode>,
     /// <p>Controls whether a resource's externally created scaling policies are kept or replaced. </p>
     /// <p>The default value is <code>KeepExternalPolicies</code>. If the parameter is set to <code>ReplaceExternalPolicies</code>, any scaling policies that are external to AWS Auto Scaling are deleted and new target tracking scaling policies created. </p>
     /// <p>Only valid when configuring dynamic scaling. </p>
     /// <p>Condition: The number of existing policies to be replaced must be less than or equal to 50. If there are more than 50 policies to be replaced, AWS Auto Scaling keeps all existing policies and does not create new ones.</p>
-    #[doc(hidden)]
     pub scaling_policy_update_behavior: ::std::option::Option<crate::types::ScalingPolicyUpdateBehavior>,
     /// <p>Controls whether dynamic scaling by AWS Auto Scaling is disabled. When dynamic scaling is enabled, AWS Auto Scaling creates target tracking scaling policies based on the specified target tracking configurations. </p>
     /// <p>The default is enabled (<code>false</code>). </p>
-    #[doc(hidden)]
     pub disable_dynamic_scaling: ::std::option::Option<bool>,
 }
 impl ScalingInstruction {

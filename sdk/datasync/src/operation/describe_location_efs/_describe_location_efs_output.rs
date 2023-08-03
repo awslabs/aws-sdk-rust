@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationEfsOutput {
     /// <p>The ARN of the Amazon EFS file system location.</p>
-    #[doc(hidden)]
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon EFS file system location.</p>
-    #[doc(hidden)]
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub ec2_config: ::std::option::Option<crate::types::Ec2Config>,
     /// <p>The time that the location was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub file_system_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
-    #[doc(hidden)]
     pub in_transit_encryption: ::std::option::Option<crate::types::EfsInTransitEncryption>,
     _request_id: Option<String>,
 }

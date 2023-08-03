@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSegmentPatternOutput {
     /// <p>Returns <code>true</code> if the pattern matches the payload.</p>
-    #[doc(hidden)]
     pub r#match: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

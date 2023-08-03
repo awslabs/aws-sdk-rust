@@ -4,43 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataIngestionJobOutput {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job. </p>
-    #[doc(hidden)]
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
-    #[doc(hidden)]
     pub ingestion_input_configuration: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the data ingestion job was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IngestionJobStatus>,
     /// <p>Specifies the reason for failure when a data ingestion job has failed. </p>
-    #[doc(hidden)]
     pub failed_reason: ::std::option::Option<::std::string::String>,
     /// <p> Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps. </p>
-    #[doc(hidden)]
     pub data_quality_summary: ::std::option::Option<crate::types::DataQualitySummary>,
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
-    #[doc(hidden)]
     pub ingested_files_summary: ::std::option::Option<crate::types::IngestedFilesSummary>,
     /// <p> Provides details about status of the ingestion job that is currently in progress. </p>
-    #[doc(hidden)]
     pub status_detail: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the size of the ingested dataset. </p>
-    #[doc(hidden)]
     pub ingested_data_size: ::std::option::Option<i64>,
     /// <p> Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
-    #[doc(hidden)]
     pub data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job. </p>
-    #[doc(hidden)]
     pub data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

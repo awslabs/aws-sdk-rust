@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>(Optional)A reason code string that explains why the job was canceled.</p>
-    #[doc(hidden)]
     pub reason_code: ::std::option::Option<::std::string::String>,
     /// <p>An optional comment string describing why the job was canceled.</p>
-    #[doc(hidden)]
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
     /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
-    #[doc(hidden)]
     pub force: ::std::option::Option<bool>,
 }
 impl CancelJobInput {

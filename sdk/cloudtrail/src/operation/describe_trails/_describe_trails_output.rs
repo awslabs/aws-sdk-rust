@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrailsOutput {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
-    #[doc(hidden)]
     pub trail_list: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>,
     _request_id: Option<String>,
 }

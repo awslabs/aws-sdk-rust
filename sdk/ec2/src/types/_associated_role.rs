@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedRole {
     /// <p>The ARN of the associated IAM role.</p>
-    #[doc(hidden)]
     pub associated_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket in which the Amazon S3 object is stored.</p>
-    #[doc(hidden)]
     pub certificate_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>. </p>
-    #[doc(hidden)]
     pub certificate_s3_object_key: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the KMS customer master key (CMK) used to encrypt the private key.</p>
-    #[doc(hidden)]
     pub encryption_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedRole {

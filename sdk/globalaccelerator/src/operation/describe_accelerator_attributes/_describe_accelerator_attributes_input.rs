@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
-    #[doc(hidden)]
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAcceleratorAttributesInput {

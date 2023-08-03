@@ -10,22 +10,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerformanceInsightsMetricsDetail {
     /// <p>The name used for a specific Performance Insights metric.</p>
-    #[doc(hidden)]
     pub metric_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measure for a metric. For example, a session or a process.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>A single query to be processed for the metric. For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsMetricQuery.html">PerformanceInsightsMetricQuery</a> </code>.</p>
-    #[doc(hidden)]
     pub metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
     /// <p> For more information, see <code> <a href="https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_PerformanceInsightsReferenceData.html">PerformanceInsightsReferenceData</a> </code>. </p>
-    #[doc(hidden)]
     pub reference_data: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsReferenceData>>,
     /// <p>The metric statistics during the anomalous period detected by DevOps Guru;</p>
-    #[doc(hidden)]
     pub stats_at_anomaly: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
     /// <p>Typical metric statistics that are not considered anomalous. When DevOps Guru analyzes metrics, it compares them to <code>StatsAtBaseline</code> to help determine if they are anomalous.</p>
-    #[doc(hidden)]
     pub stats_at_baseline: ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsStat>>,
 }
 impl PerformanceInsightsMetricsDetail {

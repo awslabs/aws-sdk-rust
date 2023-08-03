@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkInsightsAccessScopeAnalysisFindingsOutput {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of Network Access Scope Analysis.</p>
-    #[doc(hidden)]
     pub analysis_status: ::std::option::Option<crate::types::AnalysisStatus>,
     /// <p>The findings associated with Network Access Scope Analysis.</p>
-    #[doc(hidden)]
     pub analysis_findings: ::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

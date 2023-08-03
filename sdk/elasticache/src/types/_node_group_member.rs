@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeGroupMember {
     /// <p>The ID of the cluster to which the node belongs.</p>
-    #[doc(hidden)]
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the node within its cluster. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    #[doc(hidden)]
     pub cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The information required for client programs to connect to a node for read operations. The read endpoint is only applicable on Redis (cluster mode disabled) clusters.</p>
-    #[doc(hidden)]
     pub read_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The name of the Availability Zone in which the node is located.</p>
-    #[doc(hidden)]
     pub preferred_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The outpost ARN of the node group member.</p>
-    #[doc(hidden)]
     pub preferred_outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is only applicable for Redis (cluster mode disabled) replication groups.</p>
-    #[doc(hidden)]
     pub current_role: ::std::option::Option<::std::string::String>,
 }
 impl NodeGroupMember {

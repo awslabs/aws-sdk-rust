@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartStageDeploymentOutput {
     /// <p>Properties that describe the stage deployment.</p>
-    #[doc(hidden)]
     pub stage_deployment: ::std::option::Option<crate::types::StageDeploymentDetails>,
     _request_id: Option<String>,
 }

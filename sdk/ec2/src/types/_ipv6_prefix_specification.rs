@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ipv6PrefixSpecification {
     /// <p>The IPv6 prefix.</p>
-    #[doc(hidden)]
     pub ipv6_prefix: ::std::option::Option<::std::string::String>,
 }
 impl Ipv6PrefixSpecification {

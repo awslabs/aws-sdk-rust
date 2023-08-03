@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartNetworkInsightsAccessScopeAnalysisOutput {
     /// <p>The Network Access Scope analysis.</p>
-    #[doc(hidden)]
     pub network_insights_access_scope_analysis: ::std::option::Option<crate::types::NetworkInsightsAccessScopeAnalysis>,
     _request_id: Option<String>,
 }

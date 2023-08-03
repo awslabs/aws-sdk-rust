@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaVersionErrorItem {
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub version_number: i64,
     /// <p>The details of the error for the schema version.</p>
-    #[doc(hidden)]
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl SchemaVersionErrorItem {

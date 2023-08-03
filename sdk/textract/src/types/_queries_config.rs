@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueriesConfig {
     /// <p></p>
-    #[doc(hidden)]
     pub queries: ::std::option::Option<::std::vec::Vec<crate::types::Query>>,
 }
 impl QueriesConfig {

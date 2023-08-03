@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamAccessKeySessionContextSessionIssuer {
     /// <p>The type of principal (user, role, or group) that created the session.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The principal ID of the principal (user, role, or group) that created the session.</p>
-    #[doc(hidden)]
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the session.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account that created the session.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the principal that created the session.</p>
-    #[doc(hidden)]
     pub user_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamAccessKeySessionContextSessionIssuer {

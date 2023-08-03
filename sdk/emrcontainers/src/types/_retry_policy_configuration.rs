@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryPolicyConfiguration {
     /// <p>The maximum number of attempts on the job's driver.</p>
-    #[doc(hidden)]
     pub max_attempts: ::std::option::Option<i32>,
 }
 impl RetryPolicyConfiguration {

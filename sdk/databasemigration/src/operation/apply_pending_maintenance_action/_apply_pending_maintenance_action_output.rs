@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionOutput {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-    #[doc(hidden)]
     pub resource_pending_maintenance_actions: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
     _request_id: Option<String>,
 }

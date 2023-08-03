@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRuleGroupPriorityConflictViolation {
     /// <p>Information about the VPC ID. </p>
-    #[doc(hidden)]
     pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>A description of the violation that specifies the VPC and the rule group that's already associated with it.</p>
-    #[doc(hidden)]
     pub violation_target_description: ::std::option::Option<::std::string::String>,
     /// <p>The priority setting of the two conflicting rule groups.</p>
-    #[doc(hidden)]
     pub conflicting_priority: i32,
     /// <p>The ID of the Firewall Manager DNS Firewall policy that was already applied to the VPC. This policy contains the rule group that's already associated with the VPC. </p>
-    #[doc(hidden)]
     pub conflicting_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The priorities of rule groups that are already associated with the VPC. To retry your operation, choose priority settings that aren't in this list for the rule groups in your new DNS Firewall policy. </p>
-    #[doc(hidden)]
     pub unavailable_priorities: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl DnsRuleGroupPriorityConflictViolation {

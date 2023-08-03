@@ -5,17 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubtitlesOutput {
     /// <p>Provides the format of your subtitle files. If your request included both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, both formats are shown.</p>
-    #[doc(hidden)]
     pub formats: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your subtitle file. Your subtitle file is stored in the same location as your transcript. If you specified both WebVTT and SubRip subtitle formats, two URIs are provided.</p>
     /// <p>If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
     /// <p>If you didn't include <code>OutputBucketName</code> in your transcription job request, your subtitle file is stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for secure access to your subtitle file.</p> <note>
     /// <p>Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.</p>
     /// </note>
-    #[doc(hidden)]
     pub subtitle_file_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Provides the start index value for your subtitle files. If you did not specify a value in your request, the default value of <code>0</code> is used.</p>
-    #[doc(hidden)]
     pub output_start_index: ::std::option::Option<i32>,
 }
 impl SubtitlesOutput {

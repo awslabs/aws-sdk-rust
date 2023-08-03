@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attribute {
     /// <p> The type of attribute. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::EntitySubType>,
     /// <p> The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
     /// <p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>
-    #[doc(hidden)]
     pub relationship_score: ::std::option::Option<f32>,
     /// <p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>
-    #[doc(hidden)]
     pub relationship_type: ::std::option::Option<crate::types::RelationshipType>,
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
-    #[doc(hidden)]
     pub begin_offset: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string.</p>
-    #[doc(hidden)]
     pub end_offset: ::std::option::Option<i32>,
     /// <p> The segment of input text extracted as this attribute.</p>
-    #[doc(hidden)]
     pub text: ::std::option::Option<::std::string::String>,
     /// <p> The category of attribute. </p>
-    #[doc(hidden)]
     pub category: ::std::option::Option<crate::types::EntityType>,
     /// <p> Contextual information for this attribute. </p>
-    #[doc(hidden)]
     pub traits: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
 }
 impl Attribute {

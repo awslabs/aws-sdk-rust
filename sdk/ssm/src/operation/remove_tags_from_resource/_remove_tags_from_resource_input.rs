@@ -6,7 +6,6 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>The type of resource from which you want to remove a tag.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceTypeForTagging>,
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
     /// <p>ManagedInstance: mi-012345abcde</p>
@@ -17,10 +16,8 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p>
     /// </note>
-    #[doc(hidden)]
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Tag keys that you want to remove from the specified resource.</p>
-    #[doc(hidden)]
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {

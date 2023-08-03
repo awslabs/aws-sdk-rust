@@ -10,10 +10,8 @@ pub struct DescribeNodeAssociationStatusOutput {
     /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
     /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub node_association_status: ::std::option::Option<crate::types::NodeAssociationStatus>,
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
-    #[doc(hidden)]
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
     _request_id: Option<String>,
 }

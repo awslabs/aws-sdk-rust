@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBatchPredictionInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    #[doc(hidden)]
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBatchPredictionInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisDefaults {
     /// <p>The configuration for default new sheet settings.</p>
-    #[doc(hidden)]
     pub default_new_sheet_configuration: ::std::option::Option<crate::types::DefaultNewSheetConfiguration>,
 }
 impl AnalysisDefaults {

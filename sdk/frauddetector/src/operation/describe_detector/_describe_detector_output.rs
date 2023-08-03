@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDetectorOutput {
     /// <p>The detector ID.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The status and description for each detector version.</p>
-    #[doc(hidden)]
     pub detector_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DetectorVersionSummary>>,
     /// <p>The next token to be used for subsequent requests.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The detector ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

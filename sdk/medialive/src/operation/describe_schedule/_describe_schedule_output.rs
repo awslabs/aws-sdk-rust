@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduleOutput {
     /// The next token; for use in pagination.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// The list of actions in the schedule.
-    #[doc(hidden)]
     pub schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
     _request_id: Option<String>,
 }

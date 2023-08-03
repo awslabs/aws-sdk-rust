@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePositionHistoryOutput {
     /// <p>Contains the position history details for the requested device.</p>
-    #[doc(hidden)]
     pub device_positions: ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

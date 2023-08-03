@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsInput {
     /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
-    #[doc(hidden)]
     pub assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::FindingFilter>,
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListFindingsInput {

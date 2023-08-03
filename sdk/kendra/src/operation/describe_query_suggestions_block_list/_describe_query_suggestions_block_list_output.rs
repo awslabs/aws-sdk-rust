@@ -4,43 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsBlockListOutput {
     /// <p>The identifier of the index for the block list.</p>
-    #[doc(hidden)]
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the block list.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the block list.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the block list.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::QuerySuggestionsBlockListStatus>,
     /// <p>The error message containing details if there are issues processing the block list.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    #[doc(hidden)]
     pub source_s3_path: ::std::option::Option<crate::types::S3Path>,
     /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
-    #[doc(hidden)]
     pub item_count: ::std::option::Option<i32>,
     /// <p>The current size of the block list text file in S3.</p>
-    #[doc(hidden)]
     pub file_size_bytes: ::std::option::Option<i64>,
     /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
     /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

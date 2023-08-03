@@ -4,24 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetScreenDataInput {
     /// <p>The ID of the workbook that contains the screen.</p>
-    #[doc(hidden)]
     pub workbook_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the app that contains the screen.</p>
-    #[doc(hidden)]
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the screen.</p>
-    #[doc(hidden)]
     pub screen_id: ::std::option::Option<::std::string::String>,
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    #[doc(hidden)]
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::VariableValue>>,
     /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
     /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetScreenDataInput {

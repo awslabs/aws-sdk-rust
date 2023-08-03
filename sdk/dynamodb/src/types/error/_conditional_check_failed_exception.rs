@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalCheckFailedException {
     /// <p>The conditional request failed.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-    #[doc(hidden)]
     pub item: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

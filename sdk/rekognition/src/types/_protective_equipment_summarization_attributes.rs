@@ -7,10 +7,8 @@ pub struct ProtectiveEquipmentSummarizationAttributes {
     /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
     /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
     /// <p> </p>
-    #[doc(hidden)]
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
-    #[doc(hidden)]
     pub required_equipment_types: ::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>>,
 }
 impl ProtectiveEquipmentSummarizationAttributes {

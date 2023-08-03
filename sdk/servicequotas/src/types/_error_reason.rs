@@ -11,10 +11,8 @@ pub struct ErrorReason {
     /// <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li>
     /// <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorReason {

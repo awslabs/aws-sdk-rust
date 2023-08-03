@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceInput {
     /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>>,
 }
 impl DeleteAwsLogSourceInput {

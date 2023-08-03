@@ -5,7 +5,6 @@
 pub struct DeletePermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
-    #[doc(hidden)]
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePermissionPolicyInput {

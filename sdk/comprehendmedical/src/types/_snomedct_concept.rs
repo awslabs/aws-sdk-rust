@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnomedctConcept {
     /// <p> The description of the SNOMED-CT concept. </p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The numeric ID for the SNOMED-CT concept. </p>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p> The level of confidence Amazon Comprehend Medical has that the entity should be linked to the identified SNOMED-CT concept. </p>
-    #[doc(hidden)]
     pub score: ::std::option::Option<f32>,
 }
 impl SnomedctConcept {

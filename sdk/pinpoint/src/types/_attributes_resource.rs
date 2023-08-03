@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributesResource {
     /// <p>The unique identifier for the application.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
@@ -13,10 +12,8 @@ pub struct AttributesResource {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub attribute_type: ::std::option::Option<::std::string::String>,
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttributesResource {

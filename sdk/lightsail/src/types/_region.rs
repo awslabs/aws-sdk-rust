@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Region {
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
-    #[doc(hidden)]
     pub continent_code: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name (e.g., <code>Ohio</code>).</p>
-    #[doc(hidden)]
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The region name (e.g., <code>us-east-2</code>).</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::RegionName>,
     /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    #[doc(hidden)]
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    #[doc(hidden)]
     pub relational_database_availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl Region {

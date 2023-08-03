@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListenerSummary {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the listener.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the listener.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The listener protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::ListenerProtocol>,
     /// <p>The listener port.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
-    #[doc(hidden)]
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListenerSummary {

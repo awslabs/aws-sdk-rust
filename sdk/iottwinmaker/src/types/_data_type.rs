@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataType {
     /// <p>The underlying type of the data type.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The nested type in the data type.</p>
-    #[doc(hidden)]
     pub nested_type: ::std::option::Option<::std::boxed::Box<crate::types::DataType>>,
     /// <p>The allowed values for this data type.</p>
-    #[doc(hidden)]
     pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::DataValue>>,
     /// <p>The unit of measure used in this data type.</p>
-    #[doc(hidden)]
     pub unit_of_measure: ::std::option::Option<::std::string::String>,
     /// <p>A relationship that associates a component with another component.</p>
-    #[doc(hidden)]
     pub relationship: ::std::option::Option<crate::types::Relationship>,
 }
 impl DataType {

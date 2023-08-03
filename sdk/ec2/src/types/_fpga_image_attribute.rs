@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FpgaImageAttribute {
     /// <p>The ID of the AFI.</p>
-    #[doc(hidden)]
     pub fpga_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the AFI.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the AFI.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The load permissions.</p>
-    #[doc(hidden)]
     pub load_permissions: ::std::option::Option<::std::vec::Vec<crate::types::LoadPermission>>,
     /// <p>The product codes.</p>
-    #[doc(hidden)]
     pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
 }
 impl FpgaImageAttribute {

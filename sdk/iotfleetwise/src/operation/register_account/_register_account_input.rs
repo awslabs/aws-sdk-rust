@@ -5,11 +5,9 @@
 pub struct RegisterAccountInput {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
-    #[doc(hidden)]
     pub timestream_resources: ::std::option::Option<crate::types::TimestreamResources>,
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
-    #[doc(hidden)]
     pub iam_resources: ::std::option::Option<crate::types::IamResources>,
 }
 impl RegisterAccountInput {

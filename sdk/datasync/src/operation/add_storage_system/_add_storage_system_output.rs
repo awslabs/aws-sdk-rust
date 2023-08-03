@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddStorageSystemOutput {
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
-    #[doc(hidden)]
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -11,7 +11,6 @@ pub struct CreateDbClusterParameterGroupInput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    #[doc(hidden)]
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.</p>
     /// <p> <b>Aurora MySQL</b> </p>
@@ -36,13 +35,10 @@ pub struct CreateDbClusterParameterGroupInput {
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>postgres</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description for the DB cluster parameter group.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the DB cluster parameter group.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbClusterParameterGroupInput {

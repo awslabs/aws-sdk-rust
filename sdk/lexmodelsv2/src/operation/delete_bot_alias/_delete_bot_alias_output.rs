@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBotAliasOutput {
     /// <p>The unique identifier of the bot alias to delete.</p>
-    #[doc(hidden)]
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the bot that contains the alias to delete.</p>
-    #[doc(hidden)]
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
-    #[doc(hidden)]
     pub bot_alias_status: ::std::option::Option<crate::types::BotAliasStatus>,
     _request_id: Option<String>,
 }

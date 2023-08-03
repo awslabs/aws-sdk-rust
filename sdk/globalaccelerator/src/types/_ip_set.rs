@@ -6,13 +6,10 @@
 pub struct IpSet {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
     #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
-    #[doc(hidden)]
     pub ip_family: ::std::option::Option<::std::string::String>,
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
-    #[doc(hidden)]
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of IP addresses included in this IP set. </p>
-    #[doc(hidden)]
     pub ip_address_family: ::std::option::Option<crate::types::IpAddressFamily>,
 }
 impl IpSet {

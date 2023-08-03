@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSecurityPolicyInput {
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    #[doc(hidden)]
     pub security_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSecurityPolicyInput {

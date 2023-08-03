@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccountAssociationsListElement {
     /// <p>The associating array of account IDs.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Billing Group Arn that the linked account is associated to.</p>
-    #[doc(hidden)]
     pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account name.</p>
-    #[doc(hidden)]
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account email.</p>
-    #[doc(hidden)]
     pub account_email: ::std::option::Option<::std::string::String>,
 }
 impl AccountAssociationsListElement {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentSingleHeaderConfig {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-    #[doc(hidden)]
     pub header: ::std::option::Option<::std::string::String>,
     /// <p>The request header value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ContinuousDeploymentSingleHeaderConfig {

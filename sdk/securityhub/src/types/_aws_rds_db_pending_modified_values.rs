@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbPendingModifiedValues {
     /// <p>The new DB instance class for the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The new value of the allocated storage for the DB instance.</p>
-    #[doc(hidden)]
     pub allocated_storage: i32,
     /// <p>The new master user password for the DB instance.</p>
-    #[doc(hidden)]
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The new port for the DB instance.</p>
-    #[doc(hidden)]
     pub port: i32,
     /// <p>The new backup retention period for the DB instance.</p>
-    #[doc(hidden)]
     pub backup_retention_period: i32,
     /// <p>Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.</p>
-    #[doc(hidden)]
     pub multi_az: bool,
     /// <p>The new engine version for the DB instance.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The new license model value for the DB instance.</p>
-    #[doc(hidden)]
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The new provisioned IOPS value for the DB instance.</p>
-    #[doc(hidden)]
     pub iops: i32,
     /// <p>The new DB instance identifier for the DB instance.</p>
-    #[doc(hidden)]
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new storage type for the DB instance.</p>
-    #[doc(hidden)]
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The new CA certificate identifier for the DB instance.</p>
-    #[doc(hidden)]
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new subnet group for the DB instance.</p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that are being enabled or disabled.</p>
-    #[doc(hidden)]
     pub pending_cloud_watch_logs_exports: ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>,
     /// <p>Processor features that are being updated.</p>
-    #[doc(hidden)]
     pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
 }
 impl AwsRdsDbPendingModifiedValues {

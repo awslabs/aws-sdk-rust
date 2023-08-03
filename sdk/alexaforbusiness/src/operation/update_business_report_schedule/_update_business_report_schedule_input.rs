@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBusinessReportScheduleInput {
     /// <p>The ARN of the business report schedule.</p>
-    #[doc(hidden)]
     pub schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The S3 location of the output reports.</p>
-    #[doc(hidden)]
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
-    #[doc(hidden)]
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::BusinessReportFormat>,
     /// <p>The name identifier of the schedule.</p>
-    #[doc(hidden)]
     pub schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The recurrence of the reports.</p>
-    #[doc(hidden)]
     pub recurrence: ::std::option::Option<crate::types::BusinessReportRecurrence>,
 }
 impl UpdateBusinessReportScheduleInput {

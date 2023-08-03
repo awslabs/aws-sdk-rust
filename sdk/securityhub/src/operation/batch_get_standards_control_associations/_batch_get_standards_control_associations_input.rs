@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsInput {
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
-    #[doc(hidden)]
     pub standards_control_association_ids: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>>,
 }
 impl BatchGetStandardsControlAssociationsInput {

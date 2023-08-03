@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsageTotalsOutput {
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-    #[doc(hidden)]
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    #[doc(hidden)]
     pub usage_totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
     _request_id: Option<String>,
 }

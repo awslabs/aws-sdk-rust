@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountOutput {
     /// <p>A structure that contains information about the requested account.</p>
-    #[doc(hidden)]
     pub account: ::std::option::Option<crate::types::Account>,
     _request_id: Option<String>,
 }

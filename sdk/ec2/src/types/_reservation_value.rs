@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationValue {
     /// <p>The hourly rate of the reservation.</p>
-    #[doc(hidden)]
     pub hourly_price: ::std::option::Option<::std::string::String>,
     /// <p>The balance of the total value (the sum of remainingUpfrontValue + hourlyPrice * number of hours remaining).</p>
-    #[doc(hidden)]
     pub remaining_total_value: ::std::option::Option<::std::string::String>,
     /// <p>The remaining upfront cost of the reservation.</p>
-    #[doc(hidden)]
     pub remaining_upfront_value: ::std::option::Option<::std::string::String>,
 }
 impl ReservationValue {

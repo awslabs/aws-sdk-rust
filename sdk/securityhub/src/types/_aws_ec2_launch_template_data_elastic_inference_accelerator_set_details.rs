@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
-    #[doc(hidden)]
     pub count: i32,
     /// <p> The type of Elastic Inference accelerator. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {

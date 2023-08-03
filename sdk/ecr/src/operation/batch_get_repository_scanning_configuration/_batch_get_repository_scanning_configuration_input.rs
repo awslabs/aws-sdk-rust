@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRepositoryScanningConfigurationInput {
     /// <p>One or more repository names to get the scanning configuration for.</p>
-    #[doc(hidden)]
     pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetRepositoryScanningConfigurationInput {

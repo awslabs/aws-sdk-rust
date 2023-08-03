@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PatchSource {
     /// <p>The name specified to identify the patch source.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
-    #[doc(hidden)]
     pub products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value of the yum repo configuration. For example:</p>
     /// <p> <code>[main]</code> </p>
@@ -17,7 +15,6 @@ pub struct PatchSource {
     /// <p> <code>enabled=1</code> </p> <note>
     /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
-    #[doc(hidden)]
     pub configuration: ::std::option::Option<::std::string::String>,
 }
 impl PatchSource {

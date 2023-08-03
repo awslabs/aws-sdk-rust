@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessInstanceOutput {
     /// <p>The ID of the Verified Access instance.</p>
-    #[doc(hidden)]
     pub verified_access_instance: ::std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKeyPairOutput {
     /// <p>An array of key-value pairs containing information about the key pair.</p>
-    #[doc(hidden)]
     pub key_pair: ::std::option::Option<crate::types::KeyPair>,
     _request_id: Option<String>,
 }

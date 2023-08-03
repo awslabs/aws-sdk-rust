@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalClusterMember {
     /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
-    #[doc(hidden)]
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
-    #[doc(hidden)]
     pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
-    #[doc(hidden)]
     pub is_writer: bool,
 }
 impl GlobalClusterMember {

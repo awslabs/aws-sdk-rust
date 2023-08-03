@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
-    #[doc(hidden)]
     pub s3_encryption: ::std::option::Option<::std::vec::Vec<crate::types::S3Encryption>>,
     /// <p>The encryption configuration for Amazon CloudWatch.</p>
-    #[doc(hidden)]
     pub cloud_watch_encryption: ::std::option::Option<crate::types::CloudWatchEncryption>,
     /// <p>The encryption configuration for job bookmarks.</p>
-    #[doc(hidden)]
     pub job_bookmarks_encryption: ::std::option::Option<crate::types::JobBookmarksEncryption>,
 }
 impl EncryptionConfiguration {

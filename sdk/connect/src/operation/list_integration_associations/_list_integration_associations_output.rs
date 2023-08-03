@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIntegrationAssociationsOutput {
     /// <p>The associations.</p>
-    #[doc(hidden)]
     pub integration_association_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

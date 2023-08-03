@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSkillsStoreSkillsByCategoryOutput {
     /// <p>The skill store skills.</p>
-    #[doc(hidden)]
     pub skills_store_skills: ::std::option::Option<::std::vec::Vec<crate::types::SkillsStoreSkill>>,
     /// <p>The tokens used for pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

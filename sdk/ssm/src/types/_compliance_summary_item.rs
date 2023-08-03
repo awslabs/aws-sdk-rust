@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceSummaryItem {
     /// <p>The type of compliance item. For example, the compliance type can be Association, Patch, or Custom:string.</p>
-    #[doc(hidden)]
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of COMPLIANT items for the specified compliance type.</p>
-    #[doc(hidden)]
     pub compliant_summary: ::std::option::Option<crate::types::CompliantSummary>,
     /// <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
-    #[doc(hidden)]
     pub non_compliant_summary: ::std::option::Option<crate::types::NonCompliantSummary>,
 }
 impl ComplianceSummaryItem {

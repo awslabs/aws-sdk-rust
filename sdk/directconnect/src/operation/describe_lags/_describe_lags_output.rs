@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLagsOutput {
     /// <p>The LAGs.</p>
-    #[doc(hidden)]
     pub lags: ::std::option::Option<::std::vec::Vec<crate::types::Lag>>,
     _request_id: Option<String>,
 }

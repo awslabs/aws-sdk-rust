@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStatementsOutput {
     /// <p>Returns the list of statements.</p>
-    #[doc(hidden)]
     pub statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
     /// <p>A continuation token, if not all statements have yet been returned.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

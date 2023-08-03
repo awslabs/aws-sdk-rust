@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Elevation {
     /// <p>Elevation angle value.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<f64>,
     /// <p>Elevation angle units.</p>
-    #[doc(hidden)]
     pub unit: ::std::option::Option<crate::types::AngleUnits>,
 }
 impl Elevation {

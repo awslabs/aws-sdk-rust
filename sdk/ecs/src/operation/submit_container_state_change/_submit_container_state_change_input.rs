@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitContainerStateChangeInput {
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
-    #[doc(hidden)]
     pub task: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container.</p>
-    #[doc(hidden)]
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Docker container.</p>
-    #[doc(hidden)]
     pub runtime_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the state change request.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The exit code that's returned for the state change request.</p>
-    #[doc(hidden)]
     pub exit_code: ::std::option::Option<i32>,
     /// <p>The reason for the state change request.</p>
-    #[doc(hidden)]
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The network bindings of the container.</p>
-    #[doc(hidden)]
     pub network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
 }
 impl SubmitContainerStateChangeInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItemRequest {
     /// <p>The ID of the catalog item.</p>
-    #[doc(hidden)]
     pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of a line item request.</p>
-    #[doc(hidden)]
     pub quantity: i32,
 }
 impl LineItemRequest {

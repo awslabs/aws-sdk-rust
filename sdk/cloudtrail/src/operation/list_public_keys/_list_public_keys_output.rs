@@ -7,10 +7,8 @@ pub struct ListPublicKeysOutput {
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
-    #[doc(hidden)]
     pub public_key_list: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>,
     /// <p>Reserved for future use.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

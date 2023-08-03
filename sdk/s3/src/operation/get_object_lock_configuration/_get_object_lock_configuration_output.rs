@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectLockConfigurationOutput {
     /// <p>The specified bucket's Object Lock configuration.</p>
-    #[doc(hidden)]
     pub object_lock_configuration: ::std::option::Option<crate::types::ObjectLockConfiguration>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

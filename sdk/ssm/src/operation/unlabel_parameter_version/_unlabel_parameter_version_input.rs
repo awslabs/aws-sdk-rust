@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlabelParameterVersionInput {
     /// <p>The name of the parameter from which you want to delete one or more labels.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
-    #[doc(hidden)]
     pub parameter_version: ::std::option::Option<i64>,
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnlabelParameterVersionInput {

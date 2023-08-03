@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeParameters {
     /// <p>Host.</p>
-    #[doc(hidden)]
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>Database.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>Warehouse.</p>
-    #[doc(hidden)]
     pub warehouse: ::std::option::Option<::std::string::String>,
 }
 impl SnowflakeParameters {

@@ -9,7 +9,6 @@ pub struct RevokeCacheSecurityGroupIngressOutput {
     /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
     /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub cache_security_group: ::std::option::Option<crate::types::CacheSecurityGroup>,
     _request_id: Option<String>,
 }

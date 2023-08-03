@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
-    #[doc(hidden)]
     pub configuration_recorder_name: ::std::option::Option<::std::string::String>,
 }
 impl StartConfigurationRecorderInput {

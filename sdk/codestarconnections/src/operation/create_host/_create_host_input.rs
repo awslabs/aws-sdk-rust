@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHostInput {
     /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
-    #[doc(hidden)]
     pub provider_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateHostInput {

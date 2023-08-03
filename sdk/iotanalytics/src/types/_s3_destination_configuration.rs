@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
@@ -17,13 +16,10 @@ pub struct S3DestinationConfiguration {
     /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
     /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
-    #[doc(hidden)]
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
-    #[doc(hidden)]
     pub glue_configuration: ::std::option::Option<crate::types::GlueConfiguration>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3DestinationConfiguration {

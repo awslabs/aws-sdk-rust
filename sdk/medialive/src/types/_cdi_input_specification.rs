@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdiInputSpecification {
     /// Maximum CDI input resolution
-    #[doc(hidden)]
     pub resolution: ::std::option::Option<crate::types::CdiInputResolution>,
 }
 impl CdiInputSpecification {

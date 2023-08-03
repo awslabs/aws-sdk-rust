@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CartesianCoordinates {
     /// X coordinate.
-    #[doc(hidden)]
     pub x: ::std::option::Option<f64>,
     /// Y coordinate.
-    #[doc(hidden)]
     pub y: ::std::option::Option<f64>,
     /// Z coordinate.
-    #[doc(hidden)]
     pub z: ::std::option::Option<f64>,
 }
 impl CartesianCoordinates {

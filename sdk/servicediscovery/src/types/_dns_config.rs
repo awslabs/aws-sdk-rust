@@ -9,7 +9,6 @@ pub struct DnsConfig {
     /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
-    #[doc(hidden)]
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
     /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
@@ -35,10 +34,8 @@ pub struct DnsConfig {
     /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub routing_policy: ::std::option::Option<crate::types::RoutingPolicy>,
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
-    #[doc(hidden)]
     pub dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
 }
 impl DnsConfig {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchRoutingProfilesOutput {
     /// <p>Information about the routing profiles.</p>
-    #[doc(hidden)]
     pub routing_profiles: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfile>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of routing profiles which matched your search query.</p>
-    #[doc(hidden)]
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }

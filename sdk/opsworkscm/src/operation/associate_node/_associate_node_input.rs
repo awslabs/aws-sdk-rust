@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateNodeInput {
     /// <p>The name of the server with which to associate the node. </p>
-    #[doc(hidden)]
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the node. </p>
-    #[doc(hidden)]
     pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>Engine attributes used for associating the node. </p>
     /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
@@ -19,7 +17,6 @@ pub struct AssociateNodeInput {
     /// <ul>
     /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
 }
 impl AssociateNodeInput {

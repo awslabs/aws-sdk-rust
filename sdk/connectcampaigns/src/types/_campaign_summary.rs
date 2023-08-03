@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignSummary {
     /// Identifier representing a Campaign
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The resource name of an Amazon Connect campaign.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The name of an Amazon Connect Campaign name.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// Amazon Connect Instance Id
-    #[doc(hidden)]
     pub connect_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl CampaignSummary {

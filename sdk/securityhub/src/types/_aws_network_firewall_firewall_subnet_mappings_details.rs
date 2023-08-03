@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallSubnetMappingsDetails {
     /// <p>The identifier of the subnet</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallFirewallSubnetMappingsDetails {

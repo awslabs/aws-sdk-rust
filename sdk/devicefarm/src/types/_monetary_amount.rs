@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonetaryAmount {
     /// <p>The numerical amount of an offering or transaction.</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<f64>,
     /// <p>The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCode>,
 }
 impl MonetaryAmount {

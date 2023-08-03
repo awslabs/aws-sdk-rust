@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArcAxisDisplayRange {
     /// <p>The minimum value of the arc axis range.</p>
-    #[doc(hidden)]
     pub min: ::std::option::Option<f64>,
     /// <p>The maximum value of the arc axis range.</p>
-    #[doc(hidden)]
     pub max: ::std::option::Option<f64>,
 }
 impl ArcAxisDisplayRange {

@@ -4,52 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportImageOutput {
     /// <p>The architecture of the virtual machine.</p>
-    #[doc(hidden)]
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>A description of the import task.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the AMI is encrypted.</p>
-    #[doc(hidden)]
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The target hypervisor of the import task.</p>
-    #[doc(hidden)]
     pub hypervisor: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The task ID of the import image task.</p>
-    #[doc(hidden)]
     pub import_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the symmetric KMS key that was used to create the encrypted AMI.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The license type of the virtual machine.</p>
-    #[doc(hidden)]
     pub license_type: ::std::option::Option<::std::string::String>,
     /// <p>The operating system of the virtual machine.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the task.</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>Information about the snapshots.</p>
-    #[doc(hidden)]
     pub snapshot_details: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>>,
     /// <p>A brief status of the task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A detailed status message of the import task.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the license configurations.</p>
-    #[doc(hidden)]
     pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>>,
     /// <p>Any tags assigned to the import image task.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The usage operation value.</p>
-    #[doc(hidden)]
     pub usage_operation: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

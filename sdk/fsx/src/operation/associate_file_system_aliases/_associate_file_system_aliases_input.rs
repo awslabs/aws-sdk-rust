@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    #[doc(hidden)]
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
-    #[doc(hidden)]
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>
     /// <ul>
@@ -18,7 +16,6 @@ pub struct AssociateFileSystemAliasesInput {
     /// <li> <p>Can start with a numeric.</p> </li>
     /// </ul>
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-    #[doc(hidden)]
     pub aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociateFileSystemAliasesInput {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3LogDeliveryDescription {
     /// <p>The name of the S3 bucket that is the destination for log delivery.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether connector logs get sent to the specified Amazon S3 destination.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>The S3 prefix that is the destination for log delivery.</p>
-    #[doc(hidden)]
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3LogDeliveryDescription {

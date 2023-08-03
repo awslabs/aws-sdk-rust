@@ -6,13 +6,10 @@
 pub struct DeploymentPolicies {
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
     /// <p>Default: <code>ROLLBACK</code> </p>
-    #[doc(hidden)]
     pub failure_handling_policy: ::std::option::Option<crate::types::DeploymentFailureHandlingPolicy>,
     /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
-    #[doc(hidden)]
     pub component_update_policy: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicy>,
     /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
-    #[doc(hidden)]
     pub configuration_validation_policy: ::std::option::Option<crate::types::DeploymentConfigurationValidationPolicy>,
 }
 impl DeploymentPolicies {

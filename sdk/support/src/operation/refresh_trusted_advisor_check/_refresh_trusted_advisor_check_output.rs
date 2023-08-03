@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
     _request_id: Option<String>,
 }

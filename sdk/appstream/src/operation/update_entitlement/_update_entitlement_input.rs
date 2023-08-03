@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEntitlementInput {
     /// <p>The name of the entitlement.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack with which the entitlement is associated.</p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the entitlement.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether all or only selected apps are entitled.</p>
-    #[doc(hidden)]
     pub app_visibility: ::std::option::Option<crate::types::AppVisibility>,
     /// <p>The attributes of the entitlement.</p>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementAttribute>>,
 }
 impl UpdateEntitlementInput {

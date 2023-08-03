@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppMonitorSummary {
     /// <p>The name of this app monitor.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of this app monitor.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the app monitor was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this app monitor.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::StateEnum>,
 }
 impl AppMonitorSummary {

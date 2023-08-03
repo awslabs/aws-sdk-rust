@@ -8,31 +8,25 @@ pub struct MqttHeaders {
     /// <p>Valid values are <code>UNSPECIFIED_BYTES</code> and <code>UTF8_DATA</code>.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901111"> Payload Format Indicator</a> from the MQTT Version 5.0 specification.</p>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
-    #[doc(hidden)]
     pub payload_format_indicator: ::std::option::Option<::std::string::String>,
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901118"> Content Type</a> from the MQTT Version 5.0 specification.</p>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901114"> Response Topic</a> from the MQTT Version 5.0 specification.</p>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
-    #[doc(hidden)]
     pub response_topic: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received.</p>
     /// <p>For more information, see <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901115"> Correlation Data</a> from the MQTT Version 5.0 specification.</p> <note>
     /// <p> This binary data must be based64-encoded. </p>
     /// </note>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
-    #[doc(hidden)]
     pub correlation_data: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined integer value that will persist a message at the message broker for a specified amount of time to ensure that the message will expire if it's no longer relevant to the subscriber. The value of <code>messageExpiry</code> represents the number of seconds before it expires. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
     /// <p>Supports <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution templates</a>.</p>
-    #[doc(hidden)]
     pub message_expiry: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs that you define in the MQTT5 header.</p>
-    #[doc(hidden)]
     pub user_properties: ::std::option::Option<::std::vec::Vec<crate::types::UserProperty>>,
 }
 impl MqttHeaders {

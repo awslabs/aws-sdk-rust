@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMappingOutput {
     /// <p>A list of mappings to the specified targets.</p>
-    #[doc(hidden)]
     pub mapping: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>,
     _request_id: Option<String>,
 }

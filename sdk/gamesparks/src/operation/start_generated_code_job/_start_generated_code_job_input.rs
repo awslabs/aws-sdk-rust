@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartGeneratedCodeJobInput {
     /// <p>The name of the game.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the snapshot for which to generate code.</p>
-    #[doc(hidden)]
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Properties of the generator to use for the job.</p>
-    #[doc(hidden)]
     pub generator: ::std::option::Option<crate::types::Generator>,
 }
 impl StartGeneratedCodeJobInput {

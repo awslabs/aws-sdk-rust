@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>List of policy objects.</p>
-    #[doc(hidden)]
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>,
 }
 impl PolicyToPath {

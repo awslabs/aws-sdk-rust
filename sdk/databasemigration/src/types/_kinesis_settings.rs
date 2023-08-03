@@ -5,34 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisSettings {
     /// <p>The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams endpoint.</p>
-    #[doc(hidden)]
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output format for the records created on the endpoint. The message format is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).</p>
-    #[doc(hidden)]
     pub message_format: ::std::option::Option<crate::types::MessageFormatValue>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the Kinesis data stream. The role must allow the <code>iam:PassRole</code> action.</p>
-    #[doc(hidden)]
     pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed transaction information from the source database. This information includes a commit timestamp, a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_transaction_details: ::std::option::Option<bool>,
     /// <p>Shows the partition value within the Kinesis message output, unless the partition type is <code>schema-table-type</code>. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_partition_value: ::std::option::Option<bool>,
     /// <p>Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>. Doing this increases data distribution among Kinesis shards. For example, suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary key. In this case, the same primary key is sent from thousands of tables to the same shard, which causes throttling. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub partition_include_schema_table: ::std::option::Option<bool>,
     /// <p>Includes any data definition language (DDL) operations that change the table in the control data, such as <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and <code>rename-column</code>. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_table_alter_operations: ::std::option::Option<bool>,
     /// <p>Shows detailed control information for table definition, column definition, and table and column changes in the Kinesis message output. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_control_details: ::std::option::Option<bool>,
     /// <p>Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.</p>
-    #[doc(hidden)]
     pub include_null_and_empty: ::std::option::Option<bool>,
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to an Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
-    #[doc(hidden)]
     pub no_hex_prefix: ::std::option::Option<bool>,
 }
 impl KinesisSettings {

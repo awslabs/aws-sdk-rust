@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StudioSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
-    #[doc(hidden)]
     pub auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>The time when the Amazon EMR Studio was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StudioSummary {

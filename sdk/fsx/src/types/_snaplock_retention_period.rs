@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnaplockRetentionPeriod {
     /// <p>The retention period assigned to a write once, read many (WORM) file by default if an explicit retention period is not set for an FSx for ONTAP SnapLock volume. The default retention period must be greater than or equal to the minimum retention period and less than or equal to the maximum retention period. </p>
-    #[doc(hidden)]
     pub default_retention: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>The shortest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
-    #[doc(hidden)]
     pub minimum_retention: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>The longest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. </p>
-    #[doc(hidden)]
     pub maximum_retention: ::std::option::Option<crate::types::RetentionPeriod>,
 }
 impl SnaplockRetentionPeriod {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FulfillmentCodeHookSettings {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
-    #[doc(hidden)]
     pub enabled: bool,
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
-    #[doc(hidden)]
     pub post_fulfillment_status_specification: ::std::option::Option<crate::types::PostFulfillmentStatusSpecification>,
     /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
-    #[doc(hidden)]
     pub fulfillment_updates_specification: ::std::option::Option<crate::types::FulfillmentUpdatesSpecification>,
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
-    #[doc(hidden)]
     pub active: ::std::option::Option<bool>,
 }
 impl FulfillmentCodeHookSettings {

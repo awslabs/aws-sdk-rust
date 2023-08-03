@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentInfo {
     /// <p>The identifier of the document.</p>
-    #[doc(hidden)]
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
@@ -20,7 +19,6 @@ pub struct DocumentInfo {
     /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
     /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl DocumentInfo {

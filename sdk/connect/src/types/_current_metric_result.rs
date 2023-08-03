@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CurrentMetricResult {
     /// <p>The dimensions for the metrics.</p>
-    #[doc(hidden)]
     pub dimensions: ::std::option::Option<crate::types::Dimensions>,
     /// <p>The set of metrics.</p>
-    #[doc(hidden)]
     pub collections: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricData>>,
 }
 impl CurrentMetricResult {

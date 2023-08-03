@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTimeSeriesOutput {
     /// <p>One or more time series summaries to list.</p>
-    #[doc(hidden)]
     pub time_series_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

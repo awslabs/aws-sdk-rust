@@ -4,36 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLabelOutput {
     /// <p> The name of the requested label group. </p>
-    #[doc(hidden)]
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the requested label group. </p>
-    #[doc(hidden)]
     pub label_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the requested label. </p>
-    #[doc(hidden)]
     pub label_id: ::std::option::Option<::std::string::String>,
     /// <p> The start time of the requested label. </p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end time of the requested label. </p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    #[doc(hidden)]
     pub rating: ::std::option::Option<crate::types::LabelRating>,
     /// <p> Indicates the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]
     pub fault_code: ::std::option::Option<::std::string::String>,
     /// <p>Metadata providing additional information about the label.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    #[doc(hidden)]
     pub notes: ::std::option::Option<::std::string::String>,
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
-    #[doc(hidden)]
     pub equipment: ::std::option::Option<::std::string::String>,
     /// <p> The time at which the label was created. </p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

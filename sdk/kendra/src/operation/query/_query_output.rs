@@ -4,26 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryOutput {
     /// <p>The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.</p>
-    #[doc(hidden)]
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The results of the search.</p>
-    #[doc(hidden)]
     pub result_items: ::std::option::Option<::std::vec::Vec<crate::types::QueryResultItem>>,
     /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
-    #[doc(hidden)]
     pub facet_results: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
     /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
-    #[doc(hidden)]
     pub total_number_of_results: ::std::option::Option<i32>,
     /// <p>A list of warning codes and their messages on problems with your query.</p>
     /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
-    #[doc(hidden)]
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
     /// <p>A list of information related to suggested spell corrections for a query.</p>
-    #[doc(hidden)]
     pub spell_corrected_queries: ::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>>,
     /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
-    #[doc(hidden)]
     pub featured_results_items: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>>,
     _request_id: Option<String>,
 }

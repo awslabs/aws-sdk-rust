@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<crate::types::PolicyTemplateName>,
 }
 impl ReplaceDefaultPolicyVersionParams {

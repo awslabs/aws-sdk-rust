@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LteLocalId {
     /// <p>Physical cell ID.</p>
-    #[doc(hidden)]
     pub pci: ::std::option::Option<i32>,
     /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
-    #[doc(hidden)]
     pub earfcn: ::std::option::Option<i32>,
 }
 impl LteLocalId {

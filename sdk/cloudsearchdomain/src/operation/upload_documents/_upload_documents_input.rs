@@ -11,7 +11,6 @@ pub struct UploadDocumentsInput {
     /// <li>application/json</li>
     /// <li>application/xml</li>
     /// </ul>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<crate::types::ContentType>,
 }
 impl UploadDocumentsInput {

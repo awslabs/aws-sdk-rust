@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisconnectPlayerInput {
     /// <p>The unique identifier representing a player.</p>
-    #[doc(hidden)]
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the game.</p>
-    #[doc(hidden)]
     pub game_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectPlayerInput {

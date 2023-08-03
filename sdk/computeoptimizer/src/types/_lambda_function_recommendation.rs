@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
-    #[doc(hidden)]
     pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the current function.</p>
-    #[doc(hidden)]
     pub function_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the function.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory, in MB, that's allocated to the current function.</p>
-    #[doc(hidden)]
     pub current_memory_size: i32,
     /// <p>The number of times your function code was applied during the look-back period.</p>
-    #[doc(hidden)]
     pub number_of_invocations: i64,
     /// <p>An array of objects that describe the utilization metrics of the function.</p>
-    #[doc(hidden)]
     pub utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionUtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the function.</p>
-    #[doc(hidden)]
     pub lookback_period_in_days: f64,
     /// <p>The timestamp of when the function recommendation was last generated.</p>
-    #[doc(hidden)]
     pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The finding classification of the function.</p>
     /// <p>Findings for functions include:</p>
@@ -37,7 +29,6 @@ pub struct LambdaFunctionRecommendation {
     /// <p>Functions with a finding of unavailable are not returned unless you specify the <code>filter</code> parameter with a value of <code>Unavailable</code> in your <code>GetLambdaFunctionRecommendations</code> request.</p>
     /// </note> </li>
     /// </ul>
-    #[doc(hidden)]
     pub finding: ::std::option::Option<crate::types::LambdaFunctionRecommendationFinding>,
     /// <p>The reason for the finding classification of the function.</p> <note>
     /// <p>Functions that have a finding classification of <code>Optimized</code> don't have a finding reason code.</p>
@@ -49,16 +40,12 @@ pub struct LambdaFunctionRecommendation {
     /// <li> <p> <b> <code>InsufficientData</code> </b> — The function does not have sufficient metric data for Compute Optimizer to generate a recommendation. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This finding reason code is part of the <code>Unavailable</code> finding classification.</p> </li>
     /// <li> <p> <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the <code>Unavailable</code> finding classification.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFindingReasonCode>>,
     /// <p>An array of objects that describe the memory configuration recommendation options for the function.</p>
-    #[doc(hidden)]
     pub memory_size_recommendation_options: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>>,
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
-    #[doc(hidden)]
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p> A list of tags assigned to your Lambda function recommendations. </p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaFunctionRecommendation {

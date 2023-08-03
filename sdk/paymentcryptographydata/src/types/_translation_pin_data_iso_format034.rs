@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TranslationPinDataIsoFormat034 {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    #[doc(hidden)]
     pub primary_account_number: ::std::option::Option<::std::string::String>,
 }
 impl TranslationPinDataIsoFormat034 {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectivityInfo {
     /// <p>Public access control for brokers.</p>
-    #[doc(hidden)]
     pub public_access: ::std::option::Option<crate::types::PublicAccess>,
     /// <p>VPC connectivity access control for brokers.</p>
-    #[doc(hidden)]
     pub vpc_connectivity: ::std::option::Option<crate::types::VpcConnectivity>,
 }
 impl ConnectivityInfo {

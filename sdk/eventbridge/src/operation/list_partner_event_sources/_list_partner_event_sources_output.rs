@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPartnerEventSourcesOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
-    #[doc(hidden)]
     pub partner_event_sources: ::std::option::Option<::std::vec::Vec<crate::types::PartnerEventSource>>,
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBucketOutput {
     /// <p>A forward slash followed by the name of the bucket.</p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

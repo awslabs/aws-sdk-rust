@@ -5,26 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfaceAssociation {
     /// <p>The allocation ID.</p>
-    #[doc(hidden)]
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Elastic IP address owner.</p>
-    #[doc(hidden)]
     pub ip_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The public DNS name.</p>
-    #[doc(hidden)]
     pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The address of the Elastic IP address bound to the network interface.</p>
-    #[doc(hidden)]
     pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The customer-owned IP address associated with the network interface.</p>
-    #[doc(hidden)]
     pub customer_owned_ip: ::std::option::Option<::std::string::String>,
     /// <p>The carrier IP address associated with the network interface.</p>
     /// <p>This option is only available when the network interface is in a subnet which is associated with a Wavelength Zone.</p>
-    #[doc(hidden)]
     pub carrier_ip: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfaceAssociation {

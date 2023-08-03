@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReceiptFilterInput {
     /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
-    #[doc(hidden)]
     pub filter: ::std::option::Option<crate::types::ReceiptFilter>,
 }
 impl CreateReceiptFilterInput {

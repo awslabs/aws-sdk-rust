@@ -6,16 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualCustomActionOperation {
     /// <p>The filter operation that filters data included in a visual or in an entire sheet.</p>
-    #[doc(hidden)]
     pub filter_operation: ::std::option::Option<crate::types::CustomActionFilterOperation>,
     /// <p>The navigation operation that navigates between different sheets in the same analysis.</p>
-    #[doc(hidden)]
     pub navigation_operation: ::std::option::Option<crate::types::CustomActionNavigationOperation>,
     /// <p>The URL operation that opens a link to another webpage.</p>
-    #[doc(hidden)]
     pub url_operation: ::std::option::Option<crate::types::CustomActionUrlOperation>,
     /// <p>The set parameter operation that sets parameters in custom action.</p>
-    #[doc(hidden)]
     pub set_parameters_operation: ::std::option::Option<crate::types::CustomActionSetParametersOperation>,
 }
 impl VisualCustomActionOperation {

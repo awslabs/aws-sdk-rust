@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationConfig {
     /// <p>The Fport value.</p>
-    #[doc(hidden)]
     pub f_port: ::std::option::Option<i32>,
     /// <p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ApplicationConfigType>,
     /// <p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    #[doc(hidden)]
     pub destination_name: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationConfig {

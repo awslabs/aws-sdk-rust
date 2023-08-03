@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3AccountPublicAccessBlockDetails {
     /// <p>Indicates whether to reject calls to update an S3 bucket if the calls include a public access control list (ACL).</p>
-    #[doc(hidden)]
     pub block_public_acls: bool,
     /// <p>Indicates whether to reject calls to update the access policy for an S3 bucket or access point if the policy allows public access.</p>
-    #[doc(hidden)]
     pub block_public_policy: bool,
     /// <p>Indicates whether Amazon S3 ignores public ACLs that are associated with an S3 bucket.</p>
-    #[doc(hidden)]
     pub ignore_public_acls: bool,
     /// <p>Indicates whether to restrict access to an access point or S3 bucket that has a public policy to only Amazon Web Services service principals and authorized users within the S3 bucket owner's account.</p>
-    #[doc(hidden)]
     pub restrict_public_buckets: bool,
 }
 impl AwsS3AccountPublicAccessBlockDetails {

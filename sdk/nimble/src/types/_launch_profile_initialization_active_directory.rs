@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LaunchProfileInitializationActiveDirectory {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
-    #[doc(hidden)]
     pub computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory name.</p>
-    #[doc(hidden)]
     pub directory_name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS IP address.</p>
-    #[doc(hidden)]
     pub dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name for the organizational unit distinguished name.</p>
-    #[doc(hidden)]
     pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a studio component resource.</p>
-    #[doc(hidden)]
     pub studio_component_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the studio component.</p>
-    #[doc(hidden)]
     pub studio_component_name: ::std::option::Option<::std::string::String>,
 }
 impl LaunchProfileInitializationActiveDirectory {

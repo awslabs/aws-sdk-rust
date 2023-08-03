@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportComponentInput {
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -21,37 +20,26 @@ pub struct ImportComponentInput {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    #[doc(hidden)]
     pub semantic_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component. Describes the contents of the component.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    #[doc(hidden)]
     pub change_description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ComponentType>,
     /// <p>The format of the resource that you want to import as a component.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::ComponentFormat>,
     /// <p>The platform of the component.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    #[doc(hidden)]
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the component.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The idempotency token of the component.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ImportComponentInput {

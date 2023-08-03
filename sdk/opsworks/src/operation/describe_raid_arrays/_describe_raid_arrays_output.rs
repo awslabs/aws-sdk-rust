@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRaidArraysOutput {
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    #[doc(hidden)]
     pub raid_arrays: ::std::option::Option<::std::vec::Vec<crate::types::RaidArray>>,
     _request_id: Option<String>,
 }

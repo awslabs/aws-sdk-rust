@@ -9,17 +9,14 @@ pub struct ModifyGlobalClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
     /// <ul>
     /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
-    #[doc(hidden)]
     pub new_global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
-    #[doc(hidden)]
     pub deletion_protection: ::std::option::Option<bool>,
 }
 impl ModifyGlobalClusterInput {

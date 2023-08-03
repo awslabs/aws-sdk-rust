@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingActor {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
-    #[doc(hidden)]
     pub domain_details: ::std::option::Option<crate::types::DomainDetails>,
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
-    #[doc(hidden)]
     pub ip_address_details: ::std::option::Option<crate::types::IpAddressDetails>,
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
-    #[doc(hidden)]
     pub user_identity: ::std::option::Option<crate::types::UserIdentity>,
 }
 impl FindingActor {

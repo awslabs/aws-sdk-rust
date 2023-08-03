@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelModerator {
     /// <p>The moderator's data.</p>
-    #[doc(hidden)]
     pub moderator: ::std::option::Option<crate::types::Identity>,
     /// <p>The ARN of the moderator's channel.</p>
-    #[doc(hidden)]
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the moderator was created.</p>
-    #[doc(hidden)]
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::Identity>,
 }
 impl ChannelModerator {

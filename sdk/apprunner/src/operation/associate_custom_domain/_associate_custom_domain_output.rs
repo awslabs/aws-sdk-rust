@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
-    #[doc(hidden)]
     pub dns_target: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
-    #[doc(hidden)]
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the domain name that's being associated.</p>
-    #[doc(hidden)]
     pub custom_domain: ::std::option::Option<crate::types::CustomDomain>,
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    #[doc(hidden)]
     pub vpc_dns_targets: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>,
     _request_id: Option<String>,
 }

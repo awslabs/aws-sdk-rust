@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TileLayoutStyle {
     /// <p>The gutter settings that apply between tiles. </p>
-    #[doc(hidden)]
     pub gutter: ::std::option::Option<crate::types::GutterStyle>,
     /// <p>The margin settings that apply around the outside edge of sheets.</p>
-    #[doc(hidden)]
     pub margin: ::std::option::Option<crate::types::MarginStyle>,
 }
 impl TileLayoutStyle {

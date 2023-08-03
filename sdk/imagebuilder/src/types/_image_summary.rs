@@ -5,37 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageSummary {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the image.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ImageType>,
     /// <p>The version of the image.</p>
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The image operating system platform, such as Linux or Windows.</p>
-    #[doc(hidden)]
     pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<::std::string::String>,
     /// <p>The state of the image.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>The owner of the image.</p>
-    #[doc(hidden)]
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date on which Image Builder created this image.</p>
-    #[doc(hidden)]
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The output resources that Image Builder produced when it created this image.</p>
-    #[doc(hidden)]
     pub output_resources: ::std::option::Option<crate::types::OutputResources>,
     /// <p>The tags that apply to this image.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
     /// <ul>
@@ -43,10 +32,8 @@ pub struct ImageSummary {
     /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
     /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub build_type: ::std::option::Option<crate::types::BuildType>,
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    #[doc(hidden)]
     pub image_source: ::std::option::Option<crate::types::ImageSource>,
 }
 impl ImageSummary {

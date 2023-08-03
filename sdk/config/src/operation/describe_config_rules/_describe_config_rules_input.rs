@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigRulesInput {
     /// <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
-    #[doc(hidden)]
     pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns a list of Detective or Proactive Config rules. By default, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<crate::types::DescribeConfigRulesFilters>,
 }
 impl DescribeConfigRulesInput {

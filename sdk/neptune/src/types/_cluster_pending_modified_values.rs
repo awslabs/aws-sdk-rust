@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterPendingModifiedValues {
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
-    #[doc(hidden)]
     pub pending_cloudwatch_logs_exports: ::std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    #[doc(hidden)]
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The database engine version.</p>
-    #[doc(hidden)]
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
-    #[doc(hidden)]
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The allocated storage size in gibibytes (GiB) for database engines. For Neptune, <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
-    #[doc(hidden)]
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub iops: ::std::option::Option<i32>,
 }
 impl ClusterPendingModifiedValues {

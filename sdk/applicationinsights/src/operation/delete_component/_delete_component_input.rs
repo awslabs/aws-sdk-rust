@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteComponentInput {
     /// <p>The name of the resource group.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
-    #[doc(hidden)]
     pub component_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteComponentInput {

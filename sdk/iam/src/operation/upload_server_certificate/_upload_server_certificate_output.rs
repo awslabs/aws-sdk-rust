@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadServerCertificateOutput {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
-    #[doc(hidden)]
     pub server_certificate_metadata: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }

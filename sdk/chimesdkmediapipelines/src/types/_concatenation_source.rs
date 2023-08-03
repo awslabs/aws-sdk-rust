@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConcatenationSource {
     /// <p>The type of concatenation source in a configuration object.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::ConcatenationSourceType>,
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
-    #[doc(hidden)]
     pub media_capture_pipeline_source_configuration: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
 }
 impl ConcatenationSource {

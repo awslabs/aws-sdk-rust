@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTarget {
     /// <p>Condition of an assessment.</p>
-    #[doc(hidden)]
     pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>Name of an assessment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Values of an assessment.</p>
-    #[doc(hidden)]
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssessmentTarget {

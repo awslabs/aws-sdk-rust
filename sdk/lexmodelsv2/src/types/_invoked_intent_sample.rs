@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokedIntentSample {
     /// <p>The name of an intent that was invoked.</p>
-    #[doc(hidden)]
     pub intent_name: ::std::option::Option<::std::string::String>,
 }
 impl InvokedIntentSample {

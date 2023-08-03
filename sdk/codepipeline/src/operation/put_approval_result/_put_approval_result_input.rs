@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutApprovalResultInput {
     /// <p>The name of the pipeline that contains the action. </p>
-    #[doc(hidden)]
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage that contains the action.</p>
-    #[doc(hidden)]
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action for which approval is requested.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about the result of the approval request.</p>
-    #[doc(hidden)]
     pub result: ::std::option::Option<crate::types::ApprovalResult>,
     /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
-    #[doc(hidden)]
     pub token: ::std::option::Option<::std::string::String>,
 }
 impl PutApprovalResultInput {

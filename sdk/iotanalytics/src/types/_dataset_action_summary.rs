@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetActionSummary {
     /// <p>The name of the action that automatically creates the dataset's contents.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of action by which the dataset's contents are automatically created.</p>
-    #[doc(hidden)]
     pub action_type: ::std::option::Option<crate::types::DatasetActionType>,
 }
 impl DatasetActionSummary {

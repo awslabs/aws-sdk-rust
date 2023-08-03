@@ -10,7 +10,6 @@ pub struct DeleteObjectInput {
     /// <file name></file>
     /// </folder>
     /// </folder></p>
-    #[doc(hidden)]
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl DeleteObjectInput {

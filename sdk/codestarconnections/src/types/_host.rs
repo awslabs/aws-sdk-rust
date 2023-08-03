@@ -7,25 +7,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Host {
     /// <p>The name of the host.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
-    #[doc(hidden)]
     pub host_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    #[doc(hidden)]
     pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
-    #[doc(hidden)]
     pub provider_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration provisioned for the host.</p>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The status description for the host.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl Host {

@@ -5,109 +5,74 @@ pub struct GetObjectOutput {
     /// <p>Object data.</p>
     pub body: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
-    #[doc(hidden)]
     pub delete_marker: bool,
     /// <p>Indicates that a range of bytes was specified.</p>
-    #[doc(hidden)]
     pub accept_ranges: ::std::option::Option<::std::string::String>,
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
-    #[doc(hidden)]
     pub restore: ::std::option::Option<::std::string::String>,
     /// <p>Creation date of the object.</p>
-    #[doc(hidden)]
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
-    #[doc(hidden)]
     pub content_length: i64,
     /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
-    #[doc(hidden)]
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_crc32: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_crc32_c: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_sha1: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    #[doc(hidden)]
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
-    #[doc(hidden)]
     pub missing_meta: i32,
     /// <p>Version of the object.</p>
-    #[doc(hidden)]
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies caching behavior along the request/reply chain.</p>
-    #[doc(hidden)]
     pub cache_control: ::std::option::Option<::std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
-    #[doc(hidden)]
     pub content_disposition: ::std::option::Option<::std::string::String>,
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
-    #[doc(hidden)]
     pub content_encoding: ::std::option::Option<::std::string::String>,
     /// <p>The language the content is in.</p>
-    #[doc(hidden)]
     pub content_language: ::std::option::Option<::std::string::String>,
     /// <p>The portion of the object returned in the response.</p>
-    #[doc(hidden)]
     pub content_range: ::std::option::Option<::std::string::String>,
     /// <p>A standard MIME type describing the format of the object data.</p>
-    #[doc(hidden)]
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    #[doc(hidden)]
     pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
-    #[doc(hidden)]
     pub website_redirect_location: ::std::option::Option<::std::string::String>,
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).</p>
-    #[doc(hidden)]
     pub server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>A map of metadata to store with the object in S3.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
-    #[doc(hidden)]
     pub sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
-    #[doc(hidden)]
     pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>If present, specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p>
-    #[doc(hidden)]
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
-    #[doc(hidden)]
     pub bucket_key_enabled: bool,
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
-    #[doc(hidden)]
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    #[doc(hidden)]
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or destination in a replication rule.</p>
-    #[doc(hidden)]
     pub replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
     /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
-    #[doc(hidden)]
     pub parts_count: i32,
     /// <p>The number of tags, if any, on the object.</p>
-    #[doc(hidden)]
     pub tag_count: i32,
     /// <p>The Object Lock mode currently in place for this object.</p>
-    #[doc(hidden)]
     pub object_lock_mode: ::std::option::Option<crate::types::ObjectLockMode>,
     /// <p>The date and time when this object's Object Lock will expire.</p>
-    #[doc(hidden)]
     pub object_lock_retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether this object has an active legal hold. This field is only returned if you have permission to view an object's legal hold status. </p>
-    #[doc(hidden)]
     pub object_lock_legal_hold_status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,

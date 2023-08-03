@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointServiceConfigurationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether requests from service consumers to create an endpoint to your service must be accepted manually.</p>
-    #[doc(hidden)]
     pub acceptance_required: ::std::option::Option<bool>,
     /// <p>(Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.</p>
-    #[doc(hidden)]
     pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
-    #[doc(hidden)]
     pub network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
-    #[doc(hidden)]
     pub gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
-    #[doc(hidden)]
     pub supported_ip_address_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the service.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateVpcEndpointServiceConfigurationInput {

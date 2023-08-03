@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeterUsageOutput {
     /// <p>Metering record id.</p>
-    #[doc(hidden)]
     pub metering_record_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

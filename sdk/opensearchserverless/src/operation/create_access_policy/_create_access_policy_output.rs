@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPolicyOutput {
     /// <p>Details about the created access policy.</p>
-    #[doc(hidden)]
     pub access_policy_detail: ::std::option::Option<crate::types::AccessPolicyDetail>,
     _request_id: Option<String>,
 }

@@ -6,7 +6,6 @@
 pub struct GetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    #[doc(hidden)]
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes for which to retrieve information.</p>
     /// <p>The <code>AttributeNames</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p> <note>
@@ -75,7 +74,6 @@ pub struct GetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
 }
 impl GetQueueAttributesInput {

@@ -5,35 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceExperimentSummary {
     /// <p>The name of the inference experiment.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the inference experiment.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InferenceExperimentType>,
     /// <p>The duration for which the inference experiment ran or will run.</p>
     /// <p>The maximum duration that you can set for an inference experiment is 30 days.</p>
-    #[doc(hidden)]
     pub schedule: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
     /// <p>The status of the inference experiment.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InferenceExperimentStatus>,
     /// <p>The error message for the inference experiment status result.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The description of the inference experiment.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the inference experiment was created.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the inference experiment was completed.</p>
-    #[doc(hidden)]
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when you last modified the inference experiment.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl InferenceExperimentSummary {

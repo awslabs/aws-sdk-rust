@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthEventsConfig {
     /// <p>The health event threshold percentage set for availability scores.</p>
-    #[doc(hidden)]
     pub availability_score_threshold: f64,
     /// <p>The health event threshold percentage set for performance scores.</p>
-    #[doc(hidden)]
     pub performance_score_threshold: f64,
 }
 impl HealthEventsConfig {

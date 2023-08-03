@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistorySuccessEntry {
     /// <p>The ID of the entry.</p>
-    #[doc(hidden)]
     pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The requested historical values for the specified asset property.</p>
-    #[doc(hidden)]
     pub asset_property_value_history: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
 }
 impl BatchGetAssetPropertyValueHistorySuccessEntry {

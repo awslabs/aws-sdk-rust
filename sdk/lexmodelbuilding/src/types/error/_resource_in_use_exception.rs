@@ -9,13 +9,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub reference_type: ::std::option::Option<crate::types::ReferenceType>,
     /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
-    #[doc(hidden)]
     pub example_reference: ::std::option::Option<crate::types::ResourceReference>,
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

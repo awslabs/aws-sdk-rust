@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    #[doc(hidden)]
     pub execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
-    #[doc(hidden)]
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -20,31 +18,23 @@ pub struct ExecutionListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the execution.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The date the execution started.</p>
-    #[doc(hidden)]
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the execution already ended, the date the execution stopped.</p>
-    #[doc(hidden)]
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
-    #[doc(hidden)]
     pub map_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The total number of items processed in a child workflow execution. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't returned.</p>
-    #[doc(hidden)]
     pub item_count: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN, it returns null.</p>
     /// <p>If the execution was started using a <code>stateMachineAliasArn</code>, both the <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective values.</p>
-    #[doc(hidden)]
     pub state_machine_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
-    #[doc(hidden)]
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionListItem {

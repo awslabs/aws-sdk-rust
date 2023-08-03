@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PrepareQueryOutput {
     /// <p>The query string that you want prepare.</p>
-    #[doc(hidden)]
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of SELECT clause columns of the submitted query string. </p>
-    #[doc(hidden)]
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::SelectColumn>>,
     /// <p>A list of parameters used in the submitted query string. </p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMapping>>,
     _request_id: Option<String>,
 }

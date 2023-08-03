@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlywheelOutput {
     /// <p>The flywheel properties.</p>
-    #[doc(hidden)]
     pub flywheel_properties: ::std::option::Option<crate::types::FlywheelProperties>,
     _request_id: Option<String>,
 }

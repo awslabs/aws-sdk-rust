@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PermissionConfiguration {
     /// <p>Contains information about the bucket level permissions for the S3 bucket.</p>
-    #[doc(hidden)]
     pub bucket_level_permissions: ::std::option::Option<crate::types::BucketLevelPermissions>,
     /// <p>Contains information about the account level permissions on the S3 bucket.</p>
-    #[doc(hidden)]
     pub account_level_permissions: ::std::option::Option<crate::types::AccountLevelPermissions>,
 }
 impl PermissionConfiguration {

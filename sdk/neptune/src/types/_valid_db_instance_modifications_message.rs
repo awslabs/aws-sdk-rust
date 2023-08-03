@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidDbInstanceModificationsMessage {
     /// <p>Valid storage options for your DB instance.</p>
-    #[doc(hidden)]
     pub storage: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
 }
 impl ValidDbInstanceModificationsMessage {

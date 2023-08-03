@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateExtendedSourceServerInput {
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
-    #[doc(hidden)]
     pub source_server_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the extended source server.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateExtendedSourceServerInput {

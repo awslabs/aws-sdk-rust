@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSiteOutput {
     /// Site ARN.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// Filters access by the site's identifier
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    #[doc(hidden)]
     pub country_code: ::std::option::Option<::std::string::String>,
     /// A high-level description of the site.
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// Timestamp at which the resource was created.
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Timestamp at which the resource was last updated.
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

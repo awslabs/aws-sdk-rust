@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeElasticsearchDomainInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    #[doc(hidden)]
     pub target_version: ::std::option::Option<::std::string::String>,
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
-    #[doc(hidden)]
     pub perform_check_only: ::std::option::Option<bool>,
 }
 impl UpgradeElasticsearchDomainInput {

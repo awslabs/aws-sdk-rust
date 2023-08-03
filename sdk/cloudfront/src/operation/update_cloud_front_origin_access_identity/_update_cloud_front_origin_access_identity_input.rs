@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCloudFrontOriginAccessIdentityInput {
     /// <p>The identity's configuration information.</p>
-    #[doc(hidden)]
     pub cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
     /// <p>The identity's id.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    #[doc(hidden)]
     pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCloudFrontOriginAccessIdentityInput {

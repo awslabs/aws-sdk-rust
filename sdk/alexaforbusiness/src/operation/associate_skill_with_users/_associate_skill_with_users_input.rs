@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateSkillWithUsersInput {
     /// <p>The private skill ID you want to make available to enrolled users.</p>
-    #[doc(hidden)]
     pub skill_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSkillWithUsersInput {

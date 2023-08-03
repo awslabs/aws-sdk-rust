@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupInput {
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
-    #[doc(hidden)]
     pub voice_connector_items: ::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>>,
 }
 impl CreateVoiceConnectorGroupInput {

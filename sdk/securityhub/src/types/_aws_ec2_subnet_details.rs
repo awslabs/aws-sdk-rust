@@ -5,43 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2SubnetDetails {
     /// <p>Whether to assign an IPV6 address to a network interface that is created in this subnet.</p>
-    #[doc(hidden)]
     pub assign_ipv6_address_on_creation: bool,
     /// <p>The Availability Zone for the subnet.</p>
-    #[doc(hidden)]
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Availability Zone for the subnet.</p>
-    #[doc(hidden)]
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of available IPV4 addresses in the subnet. Does not include addresses for stopped instances.</p>
-    #[doc(hidden)]
     pub available_ip_address_count: i32,
     /// <p>The IPV4 CIDR block that is assigned to the subnet.</p>
-    #[doc(hidden)]
     pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Whether this subnet is the default subnet for the Availability Zone.</p>
-    #[doc(hidden)]
     pub default_for_az: bool,
     /// <p>Whether instances in this subnet receive a public IP address.</p>
-    #[doc(hidden)]
     pub map_public_ip_on_launch: bool,
     /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the VPC that contains the subnet.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPV6 CIDR blocks that are associated with the subnet.</p>
-    #[doc(hidden)]
     pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
 }
 impl AwsEc2SubnetDetails {

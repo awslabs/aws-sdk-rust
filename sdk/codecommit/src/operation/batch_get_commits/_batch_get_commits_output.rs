@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCommitsOutput {
     /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
-    #[doc(hidden)]
     pub commits: ::std::option::Option<::std::vec::Vec<crate::types::Commit>>,
     /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetCommitsError>>,
     _request_id: Option<String>,
 }

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHubContentInput {
     /// <p>The name of the hub that contains the content to describe.</p>
-    #[doc(hidden)]
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of content in the hub.</p>
-    #[doc(hidden)]
     pub hub_content_type: ::std::option::Option<crate::types::HubContentType>,
     /// <p>The name of the content to describe.</p>
-    #[doc(hidden)]
     pub hub_content_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the content to describe.</p>
-    #[doc(hidden)]
     pub hub_content_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHubContentInput {

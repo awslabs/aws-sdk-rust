@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotPriority {
     /// <p>The priority that Amazon Lex should apply to the slot.</p>
-    #[doc(hidden)]
     pub priority: ::std::option::Option<i32>,
     /// <p>The unique identifier of the slot.</p>
-    #[doc(hidden)]
     pub slot_id: ::std::option::Option<::std::string::String>,
 }
 impl SlotPriority {

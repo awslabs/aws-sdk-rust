@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectorEntitiesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
-    #[doc(hidden)]
     pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    #[doc(hidden)]
     pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
     /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
-    #[doc(hidden)]
     pub entities_path: ::std::option::Option<::std::string::String>,
     /// <p>The version of the API that's used by the connector.</p>
-    #[doc(hidden)]
     pub api_version: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items that the operation returns in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big for the page size. You specify this token to get the next page of results in paginated response.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListConnectorEntitiesInput {

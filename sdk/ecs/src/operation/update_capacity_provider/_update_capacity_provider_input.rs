@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCapacityProviderInput {
     /// <p>The name of the capacity provider to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
-    #[doc(hidden)]
     pub auto_scaling_group_provider: ::std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
 }
 impl UpdateCapacityProviderInput {

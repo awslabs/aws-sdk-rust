@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProxySessionInput {
     /// <p>The Voice Connector ID.</p>
-    #[doc(hidden)]
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The proxy session ID.</p>
-    #[doc(hidden)]
     pub proxy_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The proxy session capabilities.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>The number of minutes allowed for the proxy session.</p>
-    #[doc(hidden)]
     pub expiry_minutes: ::std::option::Option<i32>,
 }
 impl UpdateProxySessionInput {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSetInput {
     /// <p>The name of the configuration set to describe.</p>
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of configuration set attributes to return.</p>
-    #[doc(hidden)]
     pub configuration_set_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSetAttribute>>,
 }
 impl DescribeConfigurationSetInput {

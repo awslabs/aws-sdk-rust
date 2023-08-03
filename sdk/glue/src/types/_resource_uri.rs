@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceUri {
     /// <p>The type of the resource.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The URI for accessing the resource.</p>
-    #[doc(hidden)]
     pub uri: ::std::option::Option<::std::string::String>,
 }
 impl ResourceUri {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnStatisticsConfiguration {
     /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
-    #[doc(hidden)]
     pub selectors: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>,
     /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
-    #[doc(hidden)]
     pub statistics: ::std::option::Option<crate::types::StatisticsConfiguration>,
 }
 impl ColumnStatisticsConfiguration {

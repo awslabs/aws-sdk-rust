@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerApiMetadataOutput {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     _request_id: Option<String>,
 }

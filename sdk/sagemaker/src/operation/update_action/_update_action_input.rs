@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateActionInput {
     /// <p>The name of the action to update.</p>
-    #[doc(hidden)]
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description for the action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new status for the action.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ActionStatus>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    #[doc(hidden)]
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of properties to remove.</p>
-    #[doc(hidden)]
     pub properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateActionInput {

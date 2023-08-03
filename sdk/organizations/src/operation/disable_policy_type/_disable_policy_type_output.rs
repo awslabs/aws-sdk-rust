@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
-    #[doc(hidden)]
     pub root: ::std::option::Option<crate::types::Root>,
     _request_id: Option<String>,
 }

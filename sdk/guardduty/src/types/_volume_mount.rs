@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeMount {
     /// <p>Volume mount name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Volume mount path.</p>
-    #[doc(hidden)]
     pub mount_path: ::std::option::Option<::std::string::String>,
 }
 impl VolumeMount {

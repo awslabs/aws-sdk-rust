@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstanceLimitPrice {
     /// <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
-    #[doc(hidden)]
     pub amount: ::std::option::Option<f64>,
     /// <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
-    #[doc(hidden)]
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
 }
 impl ReservedInstanceLimitPrice {

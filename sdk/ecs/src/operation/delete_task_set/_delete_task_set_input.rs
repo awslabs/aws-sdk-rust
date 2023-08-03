@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
-    #[doc(hidden)]
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
-    #[doc(hidden)]
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
-    #[doc(hidden)]
     pub task_set: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, you can delete a task set even if it hasn't been scaled down to zero.</p>
-    #[doc(hidden)]
     pub force: ::std::option::Option<bool>,
 }
 impl DeleteTaskSetInput {

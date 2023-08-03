@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordsOutput {
     /// <p>The data records retrieved from the shard.</p>
-    #[doc(hidden)]
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
-    #[doc(hidden)]
     pub next_shard_iterator: ::std::option::Option<::std::string::String>,
     /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
-    #[doc(hidden)]
     pub millis_behind_latest: ::std::option::Option<i64>,
     /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
-    #[doc(hidden)]
     pub child_shards: ::std::option::Option<::std::vec::Vec<crate::types::ChildShard>>,
     _request_id: Option<String>,
 }

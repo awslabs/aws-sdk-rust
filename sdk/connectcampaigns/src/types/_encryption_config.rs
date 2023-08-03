@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// Boolean to indicate if custom encryption has been enabled.
-    #[doc(hidden)]
     pub enabled: bool,
     /// Server-side encryption type.
-    #[doc(hidden)]
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// KMS key id/arn for encryption config.
-    #[doc(hidden)]
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfig {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCostEstimationInput {
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
-    #[doc(hidden)]
     pub resource_collection: ::std::option::Option<crate::types::CostEstimationResourceCollectionFilter>,
     /// <p>The idempotency token used to identify each cost estimate request.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartCostEstimationInput {

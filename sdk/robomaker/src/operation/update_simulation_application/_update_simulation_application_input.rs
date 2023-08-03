@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
-    #[doc(hidden)]
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the simulation application.</p>
-    #[doc(hidden)]
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
     /// <p>The simulation software suite used by the simulation application.</p>
-    #[doc(hidden)]
     pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    #[doc(hidden)]
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>The rendering engine for the simulation application.</p>
-    #[doc(hidden)]
     pub rendering_engine: ::std::option::Option<crate::types::RenderingEngine>,
     /// <p>The revision id for the robot application.</p>
-    #[doc(hidden)]
     pub current_revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
-    #[doc(hidden)]
     pub environment: ::std::option::Option<crate::types::Environment>,
 }
 impl UpdateSimulationApplicationInput {

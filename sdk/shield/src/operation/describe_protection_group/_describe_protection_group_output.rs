@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProtectionGroupOutput {
     /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
-    #[doc(hidden)]
     pub protection_group: ::std::option::Option<crate::types::ProtectionGroup>,
     _request_id: Option<String>,
 }

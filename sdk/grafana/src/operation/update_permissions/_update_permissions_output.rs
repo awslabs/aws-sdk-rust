@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePermissionsOutput {
     /// <p>An array of structures that contain the errors from the operation, if any.</p>
-    #[doc(hidden)]
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateError>>,
     _request_id: Option<String>,
 }

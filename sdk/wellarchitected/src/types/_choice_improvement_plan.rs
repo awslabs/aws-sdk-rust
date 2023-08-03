@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChoiceImprovementPlan {
     /// <p>The ID of a choice.</p>
-    #[doc(hidden)]
     pub choice_id: ::std::option::Option<::std::string::String>,
     /// <p>The display text for the improvement plan.</p>
-    #[doc(hidden)]
     pub display_text: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    #[doc(hidden)]
     pub improvement_plan_url: ::std::option::Option<::std::string::String>,
 }
 impl ChoiceImprovementPlan {

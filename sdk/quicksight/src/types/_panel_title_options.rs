@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PanelTitleOptions {
     /// <p>Determines whether or not panel titles are displayed.</p>
-    #[doc(hidden)]
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Configures the display properties of the given text.</p>
-    #[doc(hidden)]
     pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>Sets the horizontal text alignment of the title within each panel.</p>
-    #[doc(hidden)]
     pub horizontal_text_alignment: ::std::option::Option<crate::types::HorizontalTextAlignment>,
 }
 impl PanelTitleOptions {

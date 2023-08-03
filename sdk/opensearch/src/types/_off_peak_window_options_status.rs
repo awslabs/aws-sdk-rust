@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OffPeakWindowOptionsStatus {
     /// <p>The domain's off-peak window configuration.</p>
-    #[doc(hidden)]
     pub options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     /// <p>The current status of off-peak window options.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl OffPeakWindowOptionsStatus {

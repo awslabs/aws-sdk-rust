@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryItemAttribute {
     /// <p>Name of the inventory item attribute.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the inventory item attribute. </p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::InventoryAttributeDataType>,
 }
 impl InventoryItemAttribute {

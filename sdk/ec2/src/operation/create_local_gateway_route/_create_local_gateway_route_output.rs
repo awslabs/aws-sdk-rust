@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteOutput {
     /// <p>Information about the route.</p>
-    #[doc(hidden)]
     pub route: ::std::option::Option<crate::types::LocalGatewayRoute>,
     _request_id: Option<String>,
 }

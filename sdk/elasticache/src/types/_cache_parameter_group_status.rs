@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheParameterGroupStatus {
     /// <p>The name of the cache parameter group.</p>
-    #[doc(hidden)]
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of parameter updates.</p>
-    #[doc(hidden)]
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    #[doc(hidden)]
     pub cache_node_ids_to_reboot: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CacheParameterGroupStatus {

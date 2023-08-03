@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTextTranslationJobInput {
     /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
-    #[doc(hidden)]
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTextTranslationJobInput {

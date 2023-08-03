@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectionsOutput {
     /// <p>A list of requested connection definitions.</p>
-    #[doc(hidden)]
     pub connection_list: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     /// <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

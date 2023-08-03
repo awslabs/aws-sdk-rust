@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationPresignedUrlOutput {
     /// <p>The URL of the extension.</p>
-    #[doc(hidden)]
     pub authorized_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

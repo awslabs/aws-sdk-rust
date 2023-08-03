@@ -9,7 +9,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WafOverrideAction {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::WafOverrideActionType>,
 }
 impl WafOverrideAction {

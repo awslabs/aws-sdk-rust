@@ -13,22 +13,16 @@
 pub struct TranscriptFilter {
     /// <p>Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
     /// <p>Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.</p>
-    #[doc(hidden)]
     pub transcript_filter_type: ::std::option::Option<crate::types::TranscriptFilterType>,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified key words or phrases. See for more detail.</p>
-    #[doc(hidden)]
     pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified key words or phrases. See for more detail.</p>
-    #[doc(hidden)]
     pub relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
     /// <p>Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
-    #[doc(hidden)]
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified in your request.</p>
-    #[doc(hidden)]
     pub negate: ::std::option::Option<bool>,
     /// <p>Specify the phrases that you want to flag.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TranscriptFilter {

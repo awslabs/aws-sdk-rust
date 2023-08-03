@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageStatistics {
     /// <p>The usage statistic sum organized by account ID.</p>
-    #[doc(hidden)]
     pub sum_by_account: ::std::option::Option<::std::vec::Vec<crate::types::UsageAccountResult>>,
     /// <p>The usage statistic sum organized by on data source.</p>
-    #[doc(hidden)]
     pub sum_by_data_source: ::std::option::Option<::std::vec::Vec<crate::types::UsageDataSourceResult>>,
     /// <p>The usage statistic sum organized by resource.</p>
-    #[doc(hidden)]
     pub sum_by_resource: ::std::option::Option<::std::vec::Vec<crate::types::UsageResourceResult>>,
     /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from most to least expensive.</p>
-    #[doc(hidden)]
     pub top_resources: ::std::option::Option<::std::vec::Vec<crate::types::UsageResourceResult>>,
     /// <p>The usage statistic sum organized by feature.</p>
-    #[doc(hidden)]
     pub sum_by_feature: ::std::option::Option<::std::vec::Vec<crate::types::UsageFeatureResult>>,
 }
 impl UsageStatistics {

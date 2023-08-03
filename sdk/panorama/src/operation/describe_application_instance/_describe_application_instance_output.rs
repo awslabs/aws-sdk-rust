@@ -4,49 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationInstanceOutput {
     /// <p>The application instance's name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's description.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The device's ID.</p>
-    #[doc(hidden)]
     pub default_runtime_context_device: ::std::option::Option<::std::string::String>,
     /// <p>The device's bane.</p>
-    #[doc(hidden)]
     pub default_runtime_context_device_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application instance that this instance replaced.</p>
-    #[doc(hidden)]
     pub application_instance_id_to_replace: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's runtime role ARN.</p>
-    #[doc(hidden)]
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::ApplicationInstanceStatus>,
     /// <p>The application instance's health status.</p>
-    #[doc(hidden)]
     pub health_status: ::std::option::Option<crate::types::ApplicationInstanceHealthStatus>,
     /// <p>The application instance's status description.</p>
-    #[doc(hidden)]
     pub status_description: ::std::option::Option<::std::string::String>,
     /// <p>When the application instance was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The application instance was updated.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The application instance's ID.</p>
-    #[doc(hidden)]
     pub application_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's ARN.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The application instance's tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The application instance's state.</p>
-    #[doc(hidden)]
     pub runtime_context_states: ::std::option::Option<::std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
     _request_id: Option<String>,
 }

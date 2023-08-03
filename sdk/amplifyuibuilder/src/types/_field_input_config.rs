@@ -5,52 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldInputConfig {
     /// <p>The input type for the field. </p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a field that requires input.</p>
-    #[doc(hidden)]
     pub required: ::std::option::Option<bool>,
     /// <p>Specifies a read only field.</p>
-    #[doc(hidden)]
     pub read_only: ::std::option::Option<bool>,
     /// <p>The text to display as a placeholder for the field.</p>
-    #[doc(hidden)]
     pub placeholder: ::std::option::Option<::std::string::String>,
     /// <p>The default value for the field.</p>
-    #[doc(hidden)]
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The text to display to describe the field.</p>
-    #[doc(hidden)]
     pub descriptive_text: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a field has a default value.</p>
-    #[doc(hidden)]
     pub default_checked: ::std::option::Option<bool>,
     /// <p>The default country code for a phone number.</p>
-    #[doc(hidden)]
     pub default_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The information to use to customize the input fields with data at runtime.</p>
-    #[doc(hidden)]
     pub value_mappings: ::std::option::Option<crate::types::ValueMappings>,
     /// <p>The name of the field.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum value to display for the field.</p>
-    #[doc(hidden)]
     pub min_value: ::std::option::Option<f32>,
     /// <p>The maximum value to display for the field.</p>
-    #[doc(hidden)]
     pub max_value: ::std::option::Option<f32>,
     /// <p>The stepping increment for a numeric value in a field.</p>
-    #[doc(hidden)]
     pub step: ::std::option::Option<f32>,
     /// <p>The value for the field.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
-    #[doc(hidden)]
     pub is_array: ::std::option::Option<bool>,
     /// <p>The configuration for the file uploader field.</p>
-    #[doc(hidden)]
     pub file_uploader_config: ::std::option::Option<crate::types::FileUploaderFieldConfig>,
 }
 impl FieldInputConfig {

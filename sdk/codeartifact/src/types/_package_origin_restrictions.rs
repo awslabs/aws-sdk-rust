@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageOriginRestrictions {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
-    #[doc(hidden)]
     pub publish: ::std::option::Option<crate::types::AllowPublish>,
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
-    #[doc(hidden)]
     pub upstream: ::std::option::Option<crate::types::AllowUpstream>,
 }
 impl PackageOriginRestrictions {

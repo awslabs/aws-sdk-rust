@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
-    #[doc(hidden)]
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The world template body.</p>
-    #[doc(hidden)]
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>The location of the world template.</p>
-    #[doc(hidden)]
     pub template_location: ::std::option::Option<crate::types::TemplateLocation>,
 }
 impl UpdateWorldTemplateInput {

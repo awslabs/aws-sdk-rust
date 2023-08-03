@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
-    #[doc(hidden)]
     pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
-    #[doc(hidden)]
     pub insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
     _request_id: Option<String>,
 }

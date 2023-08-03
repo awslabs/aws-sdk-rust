@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    #[doc(hidden)]
     pub cache_cluster: ::std::option::Option<crate::types::CacheCluster>,
     _request_id: Option<String>,
 }

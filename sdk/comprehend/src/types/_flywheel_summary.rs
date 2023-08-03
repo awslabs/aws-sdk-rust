@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlywheelSummary {
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    #[doc(hidden)]
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the active model version for the flywheel.</p>
-    #[doc(hidden)]
     pub active_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>Amazon S3 URI of the data lake location. </p>
-    #[doc(hidden)]
     pub data_lake_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The status of the flywheel.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::FlywheelStatus>,
     /// <p>Model type of the flywheel's model.</p>
-    #[doc(hidden)]
     pub model_type: ::std::option::Option<crate::types::ModelType>,
     /// <p>A description of the status of the flywheel.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Creation time of the flywheel.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Last modified time for the flywheel.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent flywheel iteration.</p>
-    #[doc(hidden)]
     pub latest_flywheel_iteration: ::std::option::Option<::std::string::String>,
 }
 impl FlywheelSummary {

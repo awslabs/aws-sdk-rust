@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAgentInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
-    #[doc(hidden)]
     pub agent_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAgentInput {

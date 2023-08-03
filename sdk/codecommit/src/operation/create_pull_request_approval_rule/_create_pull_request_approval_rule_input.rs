@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePullRequestApprovalRuleInput {
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
-    #[doc(hidden)]
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the approval rule.</p>
-    #[doc(hidden)]
     pub approval_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
     /// <p>When you create the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
@@ -21,7 +19,6 @@ pub struct CreatePullRequestApprovalRuleInput {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
-    #[doc(hidden)]
     pub approval_rule_content: ::std::option::Option<::std::string::String>,
 }
 impl CreatePullRequestApprovalRuleInput {

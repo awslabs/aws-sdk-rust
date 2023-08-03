@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnEnterLifecycle {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
-    #[doc(hidden)]
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
 }
 impl OnEnterLifecycle {

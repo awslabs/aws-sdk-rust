@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStackPolicyOutput {
     /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the CloudFormation User Guide.)</p>
-    #[doc(hidden)]
     pub stack_policy_body: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

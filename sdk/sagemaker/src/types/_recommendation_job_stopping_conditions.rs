@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationJobStoppingConditions {
     /// <p>The maximum number of requests per minute expected for the endpoint.</p>
-    #[doc(hidden)]
     pub max_invocations: i32,
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. The interval includes the local communication time taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
-    #[doc(hidden)]
     pub model_latency_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>>,
 }
 impl RecommendationJobStoppingConditions {

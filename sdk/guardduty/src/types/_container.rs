@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Container {
     /// <p>The container runtime (such as, Docker or containerd) used to run the container.</p>
-    #[doc(hidden)]
     pub container_runtime: ::std::option::Option<::std::string::String>,
     /// <p>Container ID.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Container name.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Container image.</p>
-    #[doc(hidden)]
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>Part of the image name before the last slash. For example, imagePrefix for public.ecr.aws/amazonlinux/amazonlinux:latest would be public.ecr.aws/amazonlinux. If the image name is relative and does not have a slash, this field is empty.</p>
-    #[doc(hidden)]
     pub image_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Container volume mounts.</p>
-    #[doc(hidden)]
     pub volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
     /// <p>Container security context.</p>
-    #[doc(hidden)]
     pub security_context: ::std::option::Option<crate::types::SecurityContext>,
 }
 impl Container {

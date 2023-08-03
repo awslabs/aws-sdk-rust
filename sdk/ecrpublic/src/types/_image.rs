@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>The Amazon Web Services account ID that's associated with the registry containing the image.</p>
-    #[doc(hidden)]
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that's associated with the image.</p>
-    #[doc(hidden)]
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the image tag and image digest associated with an image.</p>
-    #[doc(hidden)]
     pub image_id: ::std::option::Option<crate::types::ImageIdentifier>,
     /// <p>The image manifest that's associated with the image.</p>
-    #[doc(hidden)]
     pub image_manifest: ::std::option::Option<::std::string::String>,
     /// <p>The manifest media type of the image.</p>
-    #[doc(hidden)]
     pub image_manifest_media_type: ::std::option::Option<::std::string::String>,
 }
 impl Image {

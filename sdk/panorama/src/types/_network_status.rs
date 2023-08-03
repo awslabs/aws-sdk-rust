@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkStatus {
     /// <p>The status of Ethernet port 0.</p>
-    #[doc(hidden)]
     pub ethernet0_status: ::std::option::Option<crate::types::EthernetStatus>,
     /// <p>The status of Ethernet port 1.</p>
-    #[doc(hidden)]
     pub ethernet1_status: ::std::option::Option<crate::types::EthernetStatus>,
     /// <p>Details about a network time protocol (NTP) server connection.</p>
-    #[doc(hidden)]
     pub ntp_status: ::std::option::Option<crate::types::NtpStatus>,
     /// <p>When the network status changed.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NetworkStatus {

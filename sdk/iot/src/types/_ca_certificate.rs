@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaCertificate {
     /// <p>The ARN of the CA certificate.</p>
-    #[doc(hidden)]
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the CA certificate.</p>
-    #[doc(hidden)]
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the CA certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::CaCertificateStatus>,
     /// <p>The date the CA certificate was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CaCertificate {

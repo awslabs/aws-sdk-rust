@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItemRelatedItemSummary {
     /// <p>The OpsItem ID.</p>
-    #[doc(hidden)]
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The association ID.</p>
-    #[doc(hidden)]
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The association type.</p>
-    #[doc(hidden)]
     pub association_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the related-item resource.</p>
-    #[doc(hidden)]
     pub resource_uri: ::std::option::Option<::std::string::String>,
     /// <p>Information about the user or resource that created an OpsItem event.</p>
-    #[doc(hidden)]
     pub created_by: ::std::option::Option<crate::types::OpsItemIdentity>,
     /// <p>The time the related-item association was created.</p>
-    #[doc(hidden)]
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user or resource that created an OpsItem event.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<crate::types::OpsItemIdentity>,
     /// <p>The time the related-item association was last updated.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OpsItemRelatedItemSummary {

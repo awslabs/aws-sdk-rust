@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbSecurityGroupIpRange {
     /// <p>Specifies the IP range.</p>
-    #[doc(hidden)]
     pub cidr_ip: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of the IP range.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSecurityGroupIpRange {

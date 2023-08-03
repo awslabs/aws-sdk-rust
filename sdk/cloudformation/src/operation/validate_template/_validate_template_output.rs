@@ -5,20 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateTemplateOutput {
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>>,
     /// <p>The description found within the template.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    #[doc(hidden)]
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    #[doc(hidden)]
     pub capabilities_reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of the transforms that are declared in the template.</p>
-    #[doc(hidden)]
     pub declared_transforms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }

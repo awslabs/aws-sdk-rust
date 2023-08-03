@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartingEventBatchCondition {
     /// <p>Number of events in the batch.</p>
-    #[doc(hidden)]
     pub batch_size: ::std::option::Option<i32>,
     /// <p>Duration of the batch window in seconds.</p>
-    #[doc(hidden)]
     pub batch_window: ::std::option::Option<i32>,
 }
 impl StartingEventBatchCondition {

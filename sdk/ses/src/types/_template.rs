@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Template {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
-    #[doc(hidden)]
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The subject line of the email.</p>
-    #[doc(hidden)]
     pub subject_part: ::std::option::Option<::std::string::String>,
     /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
-    #[doc(hidden)]
     pub text_part: ::std::option::Option<::std::string::String>,
     /// <p>The HTML body of the email.</p>
-    #[doc(hidden)]
     pub html_part: ::std::option::Option<::std::string::String>,
 }
 impl Template {

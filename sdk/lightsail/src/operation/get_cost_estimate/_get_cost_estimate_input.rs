@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCostEstimateInput {
     /// <p>The resource name.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The cost estimate start time.</p>
     /// <p>Constraints:</p>
@@ -13,7 +12,6 @@ pub struct GetCostEstimateInput {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you want to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The cost estimate end time.</p>
     /// <p>Constraints:</p>
@@ -22,7 +20,6 @@ pub struct GetCostEstimateInput {
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you want to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
     /// </ul>
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetCostEstimateInput {

@@ -5,31 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFormData {
     /// <p>The name of the form.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data source to use to create the form.</p>
-    #[doc(hidden)]
     pub data_type: ::std::option::Option<crate::types::FormDataTypeConfig>,
     /// <p>Specifies whether to perform a create or update action on the form.</p>
-    #[doc(hidden)]
     pub form_action_type: ::std::option::Option<crate::types::FormActionType>,
     /// <p>The configuration information for the form's fields.</p>
-    #[doc(hidden)]
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>>,
     /// <p>The configuration for the form's style.</p>
-    #[doc(hidden)]
     pub style: ::std::option::Option<crate::types::FormStyle>,
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-    #[doc(hidden)]
     pub sectional_elements: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>>,
     /// <p>The schema version of the form.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
-    #[doc(hidden)]
     pub cta: ::std::option::Option<crate::types::FormCta>,
     /// <p>Specifies an icon or decoration to display on the form.</p>
-    #[doc(hidden)]
     pub label_decorator: ::std::option::Option<crate::types::LabelDecorator>,
 }
 impl UpdateFormData {

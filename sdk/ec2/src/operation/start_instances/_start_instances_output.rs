@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInstancesOutput {
     /// <p>Information about the started instances.</p>
-    #[doc(hidden)]
     pub starting_instances: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }

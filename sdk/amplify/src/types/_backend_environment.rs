@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendEnvironment {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub backend_environment_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
-    #[doc(hidden)]
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of deployment artifacts. </p>
-    #[doc(hidden)]
     pub deployment_artifacts: ::std::option::Option<::std::string::String>,
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BackendEnvironment {

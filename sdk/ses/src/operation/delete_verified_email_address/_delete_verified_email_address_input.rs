@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVerifiedEmailAddressInput {
     /// <p>An email address to be removed from the list of verified addresses.</p>
-    #[doc(hidden)]
     pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVerifiedEmailAddressInput {

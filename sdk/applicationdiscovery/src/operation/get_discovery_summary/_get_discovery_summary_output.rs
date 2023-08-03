@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiscoverySummaryOutput {
     /// <p>The number of servers discovered.</p>
-    #[doc(hidden)]
     pub servers: i64,
     /// <p>The number of applications discovered.</p>
-    #[doc(hidden)]
     pub applications: i64,
     /// <p>The number of servers mapped to applications.</p>
-    #[doc(hidden)]
     pub servers_mapped_to_applications: i64,
     /// <p>The number of servers mapped to tags.</p>
-    #[doc(hidden)]
     pub servers_mappedto_tags: i64,
     /// <p>Details about discovered agents, including agent status and health.</p>
-    #[doc(hidden)]
     pub agent_summary: ::std::option::Option<crate::types::CustomerAgentInfo>,
     /// <p>Details about discovered connectors, including connector status and health.</p>
-    #[doc(hidden)]
     pub connector_summary: ::std::option::Option<crate::types::CustomerConnectorInfo>,
     /// <p> Details about Migration Evaluator collectors, including collector status and health. </p>
-    #[doc(hidden)]
     pub me_collector_summary: ::std::option::Option<crate::types::CustomerMeCollectorInfo>,
     /// <p> Details about Agentless Collector collectors, including status. </p>
-    #[doc(hidden)]
     pub agentless_collector_summary: ::std::option::Option<crate::types::CustomerAgentlessCollectorInfo>,
     _request_id: Option<String>,
 }

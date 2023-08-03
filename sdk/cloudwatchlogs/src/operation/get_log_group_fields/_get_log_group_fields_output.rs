@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLogGroupFieldsOutput {
     /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
-    #[doc(hidden)]
     pub log_group_fields: ::std::option::Option<::std::vec::Vec<crate::types::LogGroupField>>,
     _request_id: Option<String>,
 }

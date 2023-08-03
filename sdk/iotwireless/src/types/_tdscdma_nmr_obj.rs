@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TdscdmaNmrObj {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
-    #[doc(hidden)]
     pub uarfcn: ::std::option::Option<i32>,
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
-    #[doc(hidden)]
     pub cell_params: ::std::option::Option<i32>,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
-    #[doc(hidden)]
     pub utran_cid: ::std::option::Option<i32>,
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
-    #[doc(hidden)]
     pub rscp: ::std::option::Option<i32>,
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
-    #[doc(hidden)]
     pub path_loss: ::std::option::Option<i32>,
 }
 impl TdscdmaNmrObj {

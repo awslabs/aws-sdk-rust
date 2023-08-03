@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpGroupInput {
     /// <p>The name of the group.</p>
-    #[doc(hidden)]
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the group.</p>
-    #[doc(hidden)]
     pub group_desc: ::std::option::Option<::std::string::String>,
     /// <p>The rules to add to the group.</p>
-    #[doc(hidden)]
     pub user_rules: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateIpGroupInput {

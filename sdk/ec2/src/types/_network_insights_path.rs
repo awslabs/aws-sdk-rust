@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInsightsPath {
     /// <p>The ID of the path.</p>
-    #[doc(hidden)]
     pub network_insights_path_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the path.</p>
-    #[doc(hidden)]
     pub network_insights_path_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp when the path was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the source.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the destination.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    #[doc(hidden)]
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    #[doc(hidden)]
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the source.</p>
-    #[doc(hidden)]
     pub source_ip: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the destination.</p>
-    #[doc(hidden)]
     pub destination_ip: ::std::option::Option<::std::string::String>,
     /// <p>The protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>The destination port.</p>
-    #[doc(hidden)]
     pub destination_port: ::std::option::Option<i32>,
     /// <p>The tags associated with the path.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Scopes the analysis to network paths that match specific filters at the source.</p>
-    #[doc(hidden)]
     pub filter_at_source: ::std::option::Option<crate::types::PathFilter>,
     /// <p>Scopes the analysis to network paths that match specific filters at the destination.</p>
-    #[doc(hidden)]
     pub filter_at_destination: ::std::option::Option<crate::types::PathFilter>,
 }
 impl NetworkInsightsPath {

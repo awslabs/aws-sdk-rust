@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContactFlowModuleMetadataInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow module.</p>
-    #[doc(hidden)]
     pub contact_flow_module_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the flow module.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the flow module.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state of flow module.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::ContactFlowModuleState>,
 }
 impl UpdateContactFlowModuleMetadataInput {

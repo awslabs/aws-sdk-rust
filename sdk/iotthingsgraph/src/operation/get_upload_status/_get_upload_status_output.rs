@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUploadStatusOutput {
     /// <p>The ID of the upload.</p>
-    #[doc(hidden)]
     pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
-    #[doc(hidden)]
     pub upload_status: ::std::option::Option<crate::types::UploadStatus>,
     /// <p>The ARN of the upload.</p>
-    #[doc(hidden)]
     pub namespace_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the upload's namespace.</p>
-    #[doc(hidden)]
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-    #[doc(hidden)]
     pub namespace_version: ::std::option::Option<i64>,
     /// <p>The reason for an upload failure.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date at which the upload was created.</p>
-    #[doc(hidden)]
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }

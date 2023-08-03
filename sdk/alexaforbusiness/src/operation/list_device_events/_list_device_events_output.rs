@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeviceEventsOutput {
     /// <p>The device events requested for the device ARN.</p>
-    #[doc(hidden)]
     pub device_events: ::std::option::Option<::std::vec::Vec<crate::types::DeviceEvent>>,
     /// <p>The token returned to indicate that there is more data available.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

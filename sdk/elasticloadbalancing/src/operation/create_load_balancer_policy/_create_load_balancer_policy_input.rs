@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
-    #[doc(hidden)]
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
-    #[doc(hidden)]
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    #[doc(hidden)]
     pub policy_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy attributes.</p>
-    #[doc(hidden)]
     pub policy_attributes: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>,
 }
 impl CreateLoadBalancerPolicyInput {

@@ -6,60 +6,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Place {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
-    #[doc(hidden)]
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
-    #[doc(hidden)]
     pub geometry: ::std::option::Option<crate::types::PlaceGeometry>,
     /// <p>The numerical portion of an address, such as a building number. </p>
-    #[doc(hidden)]
     pub address_number: ::std::option::Option<::std::string::String>,
     /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
-    #[doc(hidden)]
     pub street: ::std::option::Option<::std::string::String>,
     /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
-    #[doc(hidden)]
     pub neighborhood: ::std::option::Option<::std::string::String>,
     /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
-    #[doc(hidden)]
     pub municipality: ::std::option::Option<::std::string::String>,
     /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
-    #[doc(hidden)]
     pub sub_region: ::std::option::Option<::std::string::String>,
     /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
-    #[doc(hidden)]
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
-    #[doc(hidden)]
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location. </p>
-    #[doc(hidden)]
     pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p> <code>True</code> if the result is interpolated from other known places.</p>
     /// <p> <code>False</code> if the Place is a known place.</p>
     /// <p>Not returned when the partner does not provide the information.</p>
     /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses. </p>
-    #[doc(hidden)]
     pub interpolated: ::std::option::Option<bool>,
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
-    #[doc(hidden)]
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
-    #[doc(hidden)]
     pub unit_type: ::std::option::Option<::std::string::String>,
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note>
     /// <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
-    #[doc(hidden)]
     pub unit_number: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Location categories that describe this Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    #[doc(hidden)]
     pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    #[doc(hidden)]
     pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Place {

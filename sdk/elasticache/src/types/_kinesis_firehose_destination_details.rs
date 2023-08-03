@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseDestinationDetails {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseDestinationDetails {

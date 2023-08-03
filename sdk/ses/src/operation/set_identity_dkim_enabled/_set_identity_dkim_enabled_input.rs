@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledInput {
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
-    #[doc(hidden)]
     pub dkim_enabled: bool,
 }
 impl SetIdentityDkimEnabledInput {

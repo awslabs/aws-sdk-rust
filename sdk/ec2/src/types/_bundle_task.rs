@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BundleTask {
     /// <p>The ID of the bundle task.</p>
-    #[doc(hidden)]
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>If the task fails, a description of the error.</p>
-    #[doc(hidden)]
     pub bundle_task_error: ::std::option::Option<crate::types::BundleTaskError>,
     /// <p>The ID of the instance associated with this bundle task.</p>
-    #[doc(hidden)]
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The level of task completion, as a percent (for example, 20%).</p>
-    #[doc(hidden)]
     pub progress: ::std::option::Option<::std::string::String>,
     /// <p>The time this task started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the task.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::BundleTaskState>,
     /// <p>The Amazon S3 storage locations.</p>
-    #[doc(hidden)]
     pub storage: ::std::option::Option<crate::types::Storage>,
     /// <p>The time of the most recent update for the task.</p>
-    #[doc(hidden)]
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BundleTask {

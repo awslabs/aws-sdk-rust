@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
     /// <p>The identifier of the KMS key that is used to encrypt the data between the local client and the container.</p>
-    #[doc(hidden)]
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The log configuration for the results of the run command actions. Required if <code>Logging</code> is <code>NONE</code>.</p>
-    #[doc(hidden)]
     pub log_configuration: ::std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails>,
     /// <p>The log setting to use for redirecting logs for run command results.</p>
-    #[doc(hidden)]
     pub logging: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {

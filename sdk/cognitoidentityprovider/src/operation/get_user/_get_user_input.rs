@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUserInput {
     /// <p>A non-expired access token for the user whose information you want to query.</p>
-    #[doc(hidden)]
     pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl GetUserInput {

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentTemplateAction {
     /// <p>The ID of the action.</p>
-    #[doc(hidden)]
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the action.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The targets for the action.</p>
-    #[doc(hidden)]
     pub targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the action that must be completed before the current action starts.</p>
-    #[doc(hidden)]
     pub start_after: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ExperimentTemplateAction {

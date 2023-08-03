@@ -5,58 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessEndpoint {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    #[doc(hidden)]
     pub verified_access_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Verified Access group.</p>
-    #[doc(hidden)]
     pub verified_access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name for users to reach your application.</p>
-    #[doc(hidden)]
     pub application_domain: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services Verified Access endpoint. Incoming application requests will be sent to an IP address, load balancer or a network interface depending on the endpoint type specified.</p>
-    #[doc(hidden)]
     pub endpoint_type: ::std::option::Option<crate::types::VerifiedAccessEndpointType>,
     /// <p>The type of attachment used to provide connectivity between the Amazon Web Services Verified Access endpoint and the application.</p>
-    #[doc(hidden)]
     pub attachment_type: ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
     /// <p>The ARN of a public TLS/SSL certificate imported into or created with ACM.</p>
-    #[doc(hidden)]
     pub domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>A DNS name that is generated for the endpoint.</p>
-    #[doc(hidden)]
     pub endpoint_domain: ::std::option::Option<::std::string::String>,
     /// <p>Returned if endpoint has a device trust provider attached.</p>
-    #[doc(hidden)]
     pub device_validation_domain: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups for the endpoint.</p>
-    #[doc(hidden)]
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The load balancer details if creating the Amazon Web Services Verified Access endpoint as <code>load-balancer</code>type.</p>
-    #[doc(hidden)]
     pub load_balancer_options: ::std::option::Option<crate::types::VerifiedAccessEndpointLoadBalancerOptions>,
     /// <p>The options for network-interface type endpoint.</p>
-    #[doc(hidden)]
     pub network_interface_options: ::std::option::Option<crate::types::VerifiedAccessEndpointEniOptions>,
     /// <p>The endpoint status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::VerifiedAccessEndpointStatus>,
     /// <p>A description for the Amazon Web Services Verified Access endpoint.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The last updated time.</p>
-    #[doc(hidden)]
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The deletion time.</p>
-    #[doc(hidden)]
     pub deletion_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessEndpoint {

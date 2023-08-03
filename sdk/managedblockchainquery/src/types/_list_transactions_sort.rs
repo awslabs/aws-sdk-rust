@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTransactionsSort {
     /// <p>Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.</p>
-    #[doc(hidden)]
     pub sort_by: ::std::option::Option<crate::types::ListTransactionsSortBy>,
     /// <p>The container for the <i>sort order</i> for <code>ListTransactions</code>. The <code>SortOrder</code> field only accepts the values <code>ASCENDING</code> and <code>DESCENDING</code>. Not providing <code>SortOrder</code> will default to <code>ASCENDING</code>.</p>
-    #[doc(hidden)]
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ListTransactionsSort {

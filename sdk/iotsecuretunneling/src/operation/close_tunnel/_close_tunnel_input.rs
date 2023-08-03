@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloseTunnelInput {
     /// <p>The ID of the tunnel to close.</p>
-    #[doc(hidden)]
     pub tunnel_id: ::std::option::Option<::std::string::String>,
     /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
-    #[doc(hidden)]
     pub delete: ::std::option::Option<bool>,
 }
 impl CloseTunnelInput {

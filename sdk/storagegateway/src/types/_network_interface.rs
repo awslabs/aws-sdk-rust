@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
-    #[doc(hidden)]
     pub ipv4_address: ::std::option::Option<::std::string::String>,
     /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
     /// <p>This is currently unsupported and will not be returned in output.</p>
     /// </note>
-    #[doc(hidden)]
     pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently not supported</i>.</p>
-    #[doc(hidden)]
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterface {

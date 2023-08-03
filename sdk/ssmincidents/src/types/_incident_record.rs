@@ -5,46 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncidentRecord {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The title of the incident.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
-    #[doc(hidden)]
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the incident.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::IncidentRecordStatus>,
     /// <p>The impact of the incident on customers and applications.</p>
-    #[doc(hidden)]
     pub impact: ::std::option::Option<i32>,
     /// <p>The time that Incident Manager created the incident record.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
-    #[doc(hidden)]
     pub resolved_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the incident was most recently modified.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who modified the incident most recently.</p>
-    #[doc(hidden)]
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
-    #[doc(hidden)]
     pub automation_executions: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecution>>,
     /// <p>Details about the action that started the incident.</p>
-    #[doc(hidden)]
     pub incident_record_source: ::std::option::Option<crate::types::IncidentRecordSource>,
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    #[doc(hidden)]
     pub dedupe_string: ::std::option::Option<::std::string::String>,
     /// <p>The chat channel used for collaboration during an incident.</p>
-    #[doc(hidden)]
     pub chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    #[doc(hidden)]
     pub notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
 }
 impl IncidentRecord {

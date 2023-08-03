@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectPeerInput {
     /// <p>The ID of the Connect peer.</p>
-    #[doc(hidden)]
     pub connect_peer_id: ::std::option::Option<::std::string::String>,
 }
 impl GetConnectPeerInput {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsOutput {
     /// <p> The ID of the insight containing the log groups. </p>
-    #[doc(hidden)]
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
-    #[doc(hidden)]
     pub anomalous_log_groups: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WcdmaNmrObj {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-    #[doc(hidden)]
     pub uarfcndl: ::std::option::Option<i32>,
     /// <p>Primary Scrambling Code.</p>
-    #[doc(hidden)]
     pub psc: ::std::option::Option<i32>,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    #[doc(hidden)]
     pub utran_cid: ::std::option::Option<i32>,
     /// <p>Received Signal Code Power (signal power) (dBm)</p>
-    #[doc(hidden)]
     pub rscp: ::std::option::Option<i32>,
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
-    #[doc(hidden)]
     pub path_loss: ::std::option::Option<i32>,
 }
 impl WcdmaNmrObj {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleClusterMarker {
     /// <p>The color of the simple cluster marker.</p>
-    #[doc(hidden)]
     pub color: ::std::option::Option<::std::string::String>,
 }
 impl SimpleClusterMarker {

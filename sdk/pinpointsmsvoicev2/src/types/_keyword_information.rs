@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeywordInformation {
     /// <p>The keyword as a string.</p>
-    #[doc(hidden)]
     pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>A custom message that can be used with the keyword.</p>
-    #[doc(hidden)]
     pub keyword_message: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform for the keyword.</p>
-    #[doc(hidden)]
     pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
 }
 impl KeywordInformation {

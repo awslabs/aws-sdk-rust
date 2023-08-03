@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultSet {
     /// <p>The rows in the table.</p>
-    #[doc(hidden)]
     pub rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
-    #[doc(hidden)]
     pub result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
 }
 impl ResultSet {

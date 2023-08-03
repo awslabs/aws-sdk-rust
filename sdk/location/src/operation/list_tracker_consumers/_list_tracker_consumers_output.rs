@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    #[doc(hidden)]
     pub consumer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

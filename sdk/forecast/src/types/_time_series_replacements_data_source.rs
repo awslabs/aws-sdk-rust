@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesReplacementsDataSource {
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
-    #[doc(hidden)]
     pub s3_config: ::std::option::Option<crate::types::S3Config>,
     /// <p>Defines the fields of a dataset.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Schema>,
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp format of the replacement data.</p>
-    #[doc(hidden)]
     pub timestamp_format: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesReplacementsDataSource {

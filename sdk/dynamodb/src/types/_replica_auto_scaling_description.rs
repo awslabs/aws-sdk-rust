@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaAutoScalingDescription {
     /// <p>The Region where the replica exists.</p>
-    #[doc(hidden)]
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific global secondary index auto scaling settings.</p>
-    #[doc(hidden)]
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexAutoScalingDescription>>,
     /// <p>Represents the auto scaling settings for a global table or global secondary index.</p>
-    #[doc(hidden)]
     pub replica_provisioned_read_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     /// <p>Represents the auto scaling settings for a global table or global secondary index.</p>
-    #[doc(hidden)]
     pub replica_provisioned_write_capacity_auto_scaling_settings: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     /// <p>The current state of the replica:</p>
     /// <ul>
@@ -23,7 +19,6 @@ pub struct ReplicaAutoScalingDescription {
     /// <li> <p> <code>DELETING</code> - The replica is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The replica is ready for use.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
 }
 impl ReplicaAutoScalingDescription {

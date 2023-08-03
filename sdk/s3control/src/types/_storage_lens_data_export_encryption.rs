@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageLensDataExportEncryption {
     /// <p></p>
-    #[doc(hidden)]
     pub sses3: ::std::option::Option<crate::types::Sses3>,
     /// <p></p>
-    #[doc(hidden)]
     pub ssekms: ::std::option::Option<crate::types::Ssekms>,
 }
 impl StorageLensDataExportEncryption {

@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoiseReducerSpatialFilterSettings {
     /// Specify strength of post noise reduction sharpening filter, with 0 disabling the filter and 3 enabling it at maximum strength.
-    #[doc(hidden)]
     pub post_filter_sharpen_strength: ::std::option::Option<i32>,
     /// The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being the nominal value.
-    #[doc(hidden)]
     pub speed: ::std::option::Option<i32>,
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
-    #[doc(hidden)]
     pub strength: ::std::option::Option<i32>,
 }
 impl NoiseReducerSpatialFilterSettings {

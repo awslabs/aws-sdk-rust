@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>The access key ID that identifies the temporary security credentials.</p>
-    #[doc(hidden)]
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret access key that can be used to sign requests.</p>
-    #[doc(hidden)]
     pub secret_access_key: ::std::option::Option<::std::string::String>,
     /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
-    #[doc(hidden)]
     pub session_token: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the current credentials expire.</p>
-    #[doc(hidden)]
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Credentials {

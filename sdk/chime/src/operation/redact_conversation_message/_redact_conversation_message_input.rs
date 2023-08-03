@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedactConversationMessageInput {
     /// <p>The Amazon Chime account ID.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The conversation ID.</p>
-    #[doc(hidden)]
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The message ID.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
 }
 impl RedactConversationMessageInput {

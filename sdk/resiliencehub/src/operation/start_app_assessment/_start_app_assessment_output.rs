@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAppAssessmentOutput {
     /// <p>The assessment created.</p>
-    #[doc(hidden)]
     pub assessment: ::std::option::Option<crate::types::AppAssessment>,
     _request_id: Option<String>,
 }

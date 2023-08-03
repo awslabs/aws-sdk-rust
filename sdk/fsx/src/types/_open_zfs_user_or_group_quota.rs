@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenZfsUserOrGroupQuota {
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::OpenZfsQuotaType>,
     /// <p>The ID of the user or group.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<i32>,
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-    #[doc(hidden)]
     pub storage_capacity_quota_gi_b: ::std::option::Option<i32>,
 }
 impl OpenZfsUserOrGroupQuota {

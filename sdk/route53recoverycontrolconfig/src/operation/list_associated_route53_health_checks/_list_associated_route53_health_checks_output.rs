@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssociatedRoute53HealthChecksOutput {
     /// <p>Identifiers for the health checks.</p>
-    #[doc(hidden)]
     pub health_check_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Next token for listing health checks.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

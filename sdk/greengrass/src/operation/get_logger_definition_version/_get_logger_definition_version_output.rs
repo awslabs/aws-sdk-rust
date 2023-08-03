@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoggerDefinitionVersionOutput {
     /// The ARN of the logger definition version.
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the logger definition version was created.
-    #[doc(hidden)]
     pub creation_timestamp: ::std::option::Option<::std::string::String>,
     /// Information about the logger definition version.
-    #[doc(hidden)]
     pub definition: ::std::option::Option<crate::types::LoggerDefinitionVersion>,
     /// The ID of the logger definition version.
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// The version of the logger definition version.
-    #[doc(hidden)]
     pub version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

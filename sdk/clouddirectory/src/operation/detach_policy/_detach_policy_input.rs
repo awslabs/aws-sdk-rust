@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachPolicyInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    #[doc(hidden)]
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Reference that identifies the policy object.</p>
-    #[doc(hidden)]
     pub policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
-    #[doc(hidden)]
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl DetachPolicyInput {

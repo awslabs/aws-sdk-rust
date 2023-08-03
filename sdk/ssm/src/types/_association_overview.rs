@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationOverview {
     /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A detailed status of the association.</p>
-    #[doc(hidden)]
     pub detailed_status: ::std::option::Option<::std::string::String>,
     /// <p>Returns the number of targets for the association status. For example, if you created an association with two managed nodes, and one of them was successful, this would return the count of managed nodes by status.</p>
-    #[doc(hidden)]
     pub association_status_aggregated_count: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl AssociationOverview {

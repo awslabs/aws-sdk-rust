@@ -5,82 +5,56 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonRedshiftNodeData {
     /// <p>The access type for the Redshift connection. Can be a direct connection or catalog connections.</p>
-    #[doc(hidden)]
     pub access_type: ::std::option::Option<::std::string::String>,
     /// <p>The source type to specify whether a specific table is the source or a custom query.</p>
-    #[doc(hidden)]
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The Glue connection to the Redshift cluster.</p>
-    #[doc(hidden)]
     pub connection: ::std::option::Option<crate::types::Option>,
     /// <p>The Redshift schema name when working with a direct connection.</p>
-    #[doc(hidden)]
     pub schema: ::std::option::Option<crate::types::Option>,
     /// <p>The Redshift table name when working with a direct connection.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<crate::types::Option>,
     /// <p>The name of the Glue Data Catalog database when working with a data catalog.</p>
-    #[doc(hidden)]
     pub catalog_database: ::std::option::Option<crate::types::Option>,
     /// <p>The Glue Data Catalog table name when working with a data catalog.</p>
-    #[doc(hidden)]
     pub catalog_table: ::std::option::Option<crate::types::Option>,
     /// <p>The Redshift schema name when working with a data catalog.</p>
-    #[doc(hidden)]
     pub catalog_redshift_schema: ::std::option::Option<::std::string::String>,
     /// <p>The database table to read from.</p>
-    #[doc(hidden)]
     pub catalog_redshift_table: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
-    #[doc(hidden)]
     pub temp_dir: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The role name use when connection to S3. The IAM role ill default to the role on the job when left blank.</p>
-    #[doc(hidden)]
     pub iam_role: ::std::option::Option<crate::types::Option>,
     /// <p>Optional values when connecting to the Redshift cluster.</p>
-    #[doc(hidden)]
     pub advanced_options: ::std::option::Option<::std::vec::Vec<crate::types::AmazonRedshiftAdvancedOption>>,
     /// <p>The SQL used to fetch the data from a Redshift sources when the SourceType is 'query'.</p>
-    #[doc(hidden)]
     pub sample_query: ::std::option::Option<::std::string::String>,
     /// <p>The SQL used before a MERGE or APPEND with upsert is run.</p>
-    #[doc(hidden)]
     pub pre_action: ::std::option::Option<::std::string::String>,
     /// <p>The SQL used before a MERGE or APPEND with upsert is run.</p>
-    #[doc(hidden)]
     pub post_action: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how writing to a Redshift cluser will occur.</p>
-    #[doc(hidden)]
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the prefix to a table.</p>
-    #[doc(hidden)]
     pub table_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The action used on Redshift sinks when doing an APPEND.</p>
-    #[doc(hidden)]
     pub upsert: bool,
     /// <p>The action used when to detemine how a MERGE in a Redshift sink will be handled.</p>
-    #[doc(hidden)]
     pub merge_action: ::std::option::Option<::std::string::String>,
     /// <p>The action used when to detemine how a MERGE in a Redshift sink will be handled when an existing record matches a new record.</p>
-    #[doc(hidden)]
     pub merge_when_matched: ::std::option::Option<::std::string::String>,
     /// <p>The action used when to detemine how a MERGE in a Redshift sink will be handled when an existing record doesn't match a new record.</p>
-    #[doc(hidden)]
     pub merge_when_not_matched: ::std::option::Option<::std::string::String>,
     /// <p>The SQL used in a custom merge to deal with matching records.</p>
-    #[doc(hidden)]
     pub merge_clause: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the connection that is associated with the catalog table used.</p>
-    #[doc(hidden)]
     pub crawler_connection: ::std::option::Option<::std::string::String>,
     /// <p>The array of schema output for a given node.</p>
-    #[doc(hidden)]
     pub table_schema: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
     /// <p>The name of the temporary staging table that is used when doing a MERGE or APPEND with upsert.</p>
-    #[doc(hidden)]
     pub staging_table: ::std::option::Option<::std::string::String>,
     /// <p>The list of column names used to determine a matching record when doing a MERGE or APPEND with upsert.</p>
-    #[doc(hidden)]
     pub selected_columns: ::std::option::Option<::std::vec::Vec<crate::types::Option>>,
 }
 impl AmazonRedshiftNodeData {

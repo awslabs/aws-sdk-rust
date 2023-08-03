@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityFilter {
     /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::EntityFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    #[doc(hidden)]
     pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EntityFilter {

@@ -4,73 +4,51 @@
 #[derive(::std::fmt::Debug)]
 pub struct StartStreamTranscriptionOutput {
     /// <p>Provides the identifier for your streaming request.</p>
-    #[doc(hidden)]
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the language code that you specified in your request.</p>
-    #[doc(hidden)]
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Provides the sample rate that you specified in your request.</p>
-    #[doc(hidden)]
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>Provides the media encoding you specified in your request.</p>
-    #[doc(hidden)]
     pub media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
     /// <p>Provides the name of the custom vocabulary that you specified in your request.</p>
-    #[doc(hidden)]
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the identifier for your transcription session.</p>
-    #[doc(hidden)]
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides detailed information about your streaming session.</p>
     pub transcript_result_stream:
         ::aws_smithy_http::event_stream::Receiver<crate::types::TranscriptResultStream, crate::types::error::TranscriptResultStreamError>,
     /// <p>Provides the name of the custom vocabulary filter that you specified in your request.</p>
-    #[doc(hidden)]
     pub vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the vocabulary filtering method used in your transcription.</p>
-    #[doc(hidden)]
     pub vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     /// <p>Shows whether speaker partitioning was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub show_speaker_label: bool,
     /// <p>Shows whether channel identification was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub enable_channel_identification: bool,
     /// <p>Provides the number of channels that you specified in your request.</p>
-    #[doc(hidden)]
     pub number_of_channels: ::std::option::Option<i32>,
     /// <p>Shows whether partial results stabilization was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub enable_partial_results_stabilization: bool,
     /// <p>Provides the stabilization level used for your transcription.</p>
-    #[doc(hidden)]
     pub partial_results_stability: ::std::option::Option<crate::types::PartialResultsStability>,
     /// <p>Shows whether content identification was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub content_identification_type: ::std::option::Option<crate::types::ContentIdentificationType>,
     /// <p>Shows whether content redaction was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub content_redaction_type: ::std::option::Option<crate::types::ContentRedactionType>,
     /// <p>Lists the PII entity types you specified in your request.</p>
-    #[doc(hidden)]
     pub pii_entity_types: ::std::option::Option<::std::string::String>,
     /// <p>Provides the name of the custom language model that you specified in your request.</p>
-    #[doc(hidden)]
     pub language_model_name: ::std::option::Option<::std::string::String>,
     /// <p>Shows whether automatic language identification was enabled for your transcription.</p>
-    #[doc(hidden)]
     pub identify_language: bool,
     /// <p>Provides the language codes that you specified in your request.</p>
-    #[doc(hidden)]
     pub language_options: ::std::option::Option<::std::string::String>,
     /// <p>Provides the preferred language that you specified in your request.</p>
-    #[doc(hidden)]
     pub preferred_language: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Provides the names of the custom vocabularies that you specified in your request.</p>
-    #[doc(hidden)]
     pub vocabulary_names: ::std::option::Option<::std::string::String>,
     /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
-    #[doc(hidden)]
     pub vocabulary_filter_names: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

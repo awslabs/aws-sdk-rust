@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutManagedInsightRulesInput {
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    #[doc(hidden)]
     pub managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>,
 }
 impl PutManagedInsightRulesInput {

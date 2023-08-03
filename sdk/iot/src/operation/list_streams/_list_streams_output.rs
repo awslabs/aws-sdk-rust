@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamsOutput {
     /// <p>A list of streams.</p>
-    #[doc(hidden)]
     pub streams: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
     /// <p>A token used to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

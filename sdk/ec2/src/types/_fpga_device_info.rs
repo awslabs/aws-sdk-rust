@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FpgaDeviceInfo {
     /// <p>The name of the FPGA accelerator.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The manufacturer of the FPGA accelerator.</p>
-    #[doc(hidden)]
     pub manufacturer: ::std::option::Option<::std::string::String>,
     /// <p>The count of FPGA accelerators for the instance type.</p>
-    #[doc(hidden)]
     pub count: ::std::option::Option<i32>,
     /// <p>Describes the memory for the FPGA accelerator for the instance type.</p>
-    #[doc(hidden)]
     pub memory_info: ::std::option::Option<crate::types::FpgaDeviceMemoryInfo>,
 }
 impl FpgaDeviceInfo {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyInput {
     /// <p>The name of the API key to delete.</p>
-    #[doc(hidden)]
     pub key_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyInput {

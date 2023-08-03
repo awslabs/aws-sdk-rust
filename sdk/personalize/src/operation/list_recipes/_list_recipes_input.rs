@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecipesInput {
     /// <p>The default is <code>SERVICE</code>.</p>
-    #[doc(hidden)]
     pub recipe_provider: ::std::option::Option<crate::types::RecipeProvider>,
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of recipes to return.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<crate::types::Domain>,
 }
 impl ListRecipesInput {

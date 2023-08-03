@@ -4,23 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeviceFleetInput {
     /// <p>The name of the fleet that the device belongs to.</p>
-    #[doc(hidden)]
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the fleet.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
-    #[doc(hidden)]
     pub output_config: ::std::option::Option<crate::types::EdgeOutputConfig>,
     /// <p>Creates tags for the specified fleet.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
-    #[doc(hidden)]
     pub enable_iot_role_alias: ::std::option::Option<bool>,
 }
 impl CreateDeviceFleetInput {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateWebsiteCertificateAuthorityInput {
     /// <p>The ARN of the fleet.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the CA.</p>
-    #[doc(hidden)]
     pub website_ca_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateWebsiteCertificateAuthorityInput {

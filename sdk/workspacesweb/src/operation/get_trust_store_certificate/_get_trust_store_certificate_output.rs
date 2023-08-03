@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrustStoreCertificateOutput {
     /// <p>The ARN of the trust store certificate.</p>
-    #[doc(hidden)]
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate of the trust store certificate.</p>
-    #[doc(hidden)]
     pub certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,
 }

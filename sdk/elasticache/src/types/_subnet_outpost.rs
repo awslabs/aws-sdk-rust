@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetOutpost {
     /// <p>The outpost ARN of the subnet.</p>
-    #[doc(hidden)]
     pub subnet_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl SubnetOutpost {

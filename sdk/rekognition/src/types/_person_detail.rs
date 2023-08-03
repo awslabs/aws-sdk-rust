@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PersonDetail {
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
-    #[doc(hidden)]
     pub index: i64,
     /// <p>Bounding box around the detected person.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Face details for the detected person.</p>
-    #[doc(hidden)]
     pub face: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl PersonDetail {

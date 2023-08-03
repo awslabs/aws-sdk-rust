@@ -6,7 +6,6 @@ pub struct DescribeBuildOutput {
     /// <p>Set of properties describing the requested build.</p>
     ///
     /// _Note: This member has been renamed from `build`._
-    #[doc(hidden)]
     pub build_value: ::std::option::Option<crate::types::Build>,
     _request_id: Option<String>,
 }

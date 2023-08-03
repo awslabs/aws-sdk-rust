@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeValue {
     /// <p>A string.</p>
-    #[doc(hidden)]
     pub s: ::std::option::Option<::std::string::String>,
     /// <p>A number.</p>
-    #[doc(hidden)]
     pub n: ::std::option::Option<::std::string::String>,
     /// <p>A binary value.</p>
-    #[doc(hidden)]
     pub b: ::std::option::Option<::std::string::String>,
     /// <p>A list of strings.</p>
-    #[doc(hidden)]
     pub ss: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of numbers.</p>
-    #[doc(hidden)]
     pub ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of binary values.</p>
-    #[doc(hidden)]
     pub bs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttributeValue {

@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzeDocumentOutput {
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
-    #[doc(hidden)]
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
-    #[doc(hidden)]
     pub blocks: ::std::option::Option<::std::vec::Vec<crate::types::Block>>,
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    #[doc(hidden)]
     pub human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     /// <p>The version of the model used to analyze the document.</p>
-    #[doc(hidden)]
     pub analyze_document_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

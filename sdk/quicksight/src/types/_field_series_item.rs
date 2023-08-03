@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldSeriesItem {
     /// <p>The field ID of the field for which you are setting the axis binding.</p>
-    #[doc(hidden)]
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The axis that you are binding the field to.</p>
-    #[doc(hidden)]
     pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
     /// <p>The options that determine the presentation of line series associated to the field.</p>
-    #[doc(hidden)]
     pub settings: ::std::option::Option<crate::types::LineChartSeriesSettings>,
 }
 impl FieldSeriesItem {

@@ -5,41 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAppSyncGraphQlApiDetails {
     /// <p> The unique identifier for the API. </p>
-    #[doc(hidden)]
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the API.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the authorization configuration for using an OpenID Connect compliant service with an AppSync GraphQL API endpoint. </p>
-    #[doc(hidden)]
     pub open_id_connect_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>,
     /// <p> The API name. </p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the configuration for Lambda function authorization. </p>
-    #[doc(hidden)]
     pub lambda_authorizer_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
     /// <p> Indicates whether to use X-Ray tracing for the GraphQL API. </p>
-    #[doc(hidden)]
     pub xray_enabled: bool,
     /// <p> The Amazon Resource Name (ARN) of the API. </p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Cognito user pools configuration. </p>
-    #[doc(hidden)]
     pub user_pool_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails>,
     /// <p> The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda. </p>
-    #[doc(hidden)]
     pub authentication_type: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon CloudWatch Logs configuration. </p>
-    #[doc(hidden)]
     pub log_config: ::std::option::Option<crate::types::AwsAppSyncGraphQlApiLogConfigDetails>,
     /// <p> A list of additional authentication providers for the GraphQL API. </p>
-    #[doc(hidden)]
     pub additional_authentication_providers:
         ::std::option::Option<::std::vec::Vec<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>>,
     /// <p> The Amazon Resource Name (ARN) of the WAF web access control list (web ACL) associated with this GraphQL API, if one exists. </p>
-    #[doc(hidden)]
     pub waf_web_acl_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsAppSyncGraphQlApiDetails {

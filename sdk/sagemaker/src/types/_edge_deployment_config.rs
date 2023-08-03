@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeDeploymentConfig {
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
-    #[doc(hidden)]
     pub failure_handling_policy: ::std::option::Option<crate::types::FailureHandlingPolicy>,
 }
 impl EdgeDeploymentConfig {

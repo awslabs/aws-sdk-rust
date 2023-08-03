@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was updated.</p>
-    #[doc(hidden)]
     pub endpoint_group: ::std::option::Option<crate::types::EndpointGroup>,
     _request_id: Option<String>,
 }

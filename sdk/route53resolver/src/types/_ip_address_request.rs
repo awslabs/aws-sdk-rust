@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpAddressRequest {
     /// <p>The ID of the subnet that contains the IP address. </p>
-    #[doc(hidden)]
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address that you want to use for DNS queries.</p>
-    #[doc(hidden)]
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
-    #[doc(hidden)]
     pub ipv6: ::std::option::Option<::std::string::String>,
 }
 impl IpAddressRequest {

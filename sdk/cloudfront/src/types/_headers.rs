@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Headers {
     /// <p>The number of header names in the <code>Items</code> list.</p>
-    #[doc(hidden)]
     pub quantity: ::std::option::Option<i32>,
     /// <p>A list of HTTP header names.</p>
-    #[doc(hidden)]
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Headers {

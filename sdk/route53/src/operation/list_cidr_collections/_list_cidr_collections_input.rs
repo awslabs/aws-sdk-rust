@@ -5,10 +5,8 @@
 pub struct ListCidrCollectionsInput {
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of CIDR collections to return in the response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListCidrCollectionsInput {

@@ -5,86 +5,60 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DirectoryDescription {
     /// <p>The directory identifier.</p>
-    #[doc(hidden)]
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified name of the directory.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The short name of the directory.</p>
-    #[doc(hidden)]
     pub short_name: ::std::option::Option<::std::string::String>,
     /// <p>The directory size.</p>
-    #[doc(hidden)]
     pub size: ::std::option::Option<crate::types::DirectorySize>,
     /// <p>The edition associated with this directory.</p>
-    #[doc(hidden)]
     pub edition: ::std::option::Option<crate::types::DirectoryEdition>,
     /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The access URL for the directory, such as <code>http://
     /// <alias>
     /// .awsapps.com
     /// </alias></code>. If no alias has been created for the directory, <code>
     /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
-    #[doc(hidden)]
     pub access_url: ::std::option::Option<::std::string::String>,
     /// <p>The description for the directory.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
-    #[doc(hidden)]
     pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current stage of the directory.</p>
-    #[doc(hidden)]
     pub stage: ::std::option::Option<crate::types::DirectoryStage>,
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
-    #[doc(hidden)]
     pub share_status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
-    #[doc(hidden)]
     pub share_method: ::std::option::Option<crate::types::ShareMethod>,
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
-    #[doc(hidden)]
     pub share_notes: ::std::option::Option<::std::string::String>,
     /// <p>Specifies when the directory was created.</p>
-    #[doc(hidden)]
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the stage was last updated.</p>
-    #[doc(hidden)]
     pub stage_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The directory size.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::DirectoryType>,
     /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
-    #[doc(hidden)]
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
     /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
-    #[doc(hidden)]
     pub connect_settings: ::std::option::Option<crate::types::DirectoryConnectSettingsDescription>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
-    #[doc(hidden)]
     pub radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
     /// <p>The status of the RADIUS MFA server connection.</p>
-    #[doc(hidden)]
     pub radius_status: ::std::option::Option<crate::types::RadiusStatus>,
     /// <p>Additional information about the directory stage.</p>
-    #[doc(hidden)]
     pub stage_reason: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
-    #[doc(hidden)]
     pub sso_enabled: bool,
     /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
-    #[doc(hidden)]
     pub desired_number_of_domain_controllers: i32,
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
-    #[doc(hidden)]
     pub owner_directory_description: ::std::option::Option<crate::types::OwnerDirectoryDescription>,
     /// <p>Lists the Regions where the directory has replicated.</p>
-    #[doc(hidden)]
     pub regions_info: ::std::option::Option<crate::types::RegionsInfo>,
     /// <p>The operating system (OS) version of the directory.</p>
-    #[doc(hidden)]
     pub os_version: ::std::option::Option<crate::types::OsVersion>,
 }
 impl DirectoryDescription {

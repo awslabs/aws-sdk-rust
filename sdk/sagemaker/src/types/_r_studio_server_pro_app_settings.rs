@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RStudioServerProAppSettings {
     /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
-    #[doc(hidden)]
     pub access_status: ::std::option::Option<crate::types::RStudioServerProAccessStatus>,
     /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
-    #[doc(hidden)]
     pub user_group: ::std::option::Option<crate::types::RStudioServerProUserGroup>,
 }
 impl RStudioServerProAppSettings {

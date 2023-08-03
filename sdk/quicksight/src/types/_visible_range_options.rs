@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisibleRangeOptions {
     /// <p>The percent range in the visible range.</p>
-    #[doc(hidden)]
     pub percent_range: ::std::option::Option<crate::types::PercentVisibleRange>,
 }
 impl VisibleRangeOptions {

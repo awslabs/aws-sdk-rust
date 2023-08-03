@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserProfileOutput {
     /// <p>The ID of the domain that contains the profile.</p>
-    #[doc(hidden)]
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub user_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name.</p>
-    #[doc(hidden)]
     pub user_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
-    #[doc(hidden)]
     pub home_efs_file_system_uid: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::UserProfileStatus>,
     /// <p>The last modified time.</p>
-    #[doc(hidden)]
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The creation time.</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure reason.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center user identifier.</p>
-    #[doc(hidden)]
     pub single_sign_on_user_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center user value.</p>
-    #[doc(hidden)]
     pub single_sign_on_user_value: ::std::option::Option<::std::string::String>,
     /// <p>A collection of settings.</p>
-    #[doc(hidden)]
     pub user_settings: ::std::option::Option<crate::types::UserSettings>,
     _request_id: Option<String>,
 }

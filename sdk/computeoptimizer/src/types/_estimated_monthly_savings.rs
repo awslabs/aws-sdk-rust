@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EstimatedMonthlySavings {
     /// <p>The currency of the estimated monthly savings.</p>
-    #[doc(hidden)]
     pub currency: ::std::option::Option<crate::types::Currency>,
     /// <p>The value of the estimated monthly savings.</p>
-    #[doc(hidden)]
     pub value: f64,
 }
 impl EstimatedMonthlySavings {

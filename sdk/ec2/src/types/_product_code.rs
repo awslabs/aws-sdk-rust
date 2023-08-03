@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductCode {
     /// <p>The product code.</p>
-    #[doc(hidden)]
     pub product_code_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of product code.</p>
-    #[doc(hidden)]
     pub product_code_type: ::std::option::Option<crate::types::ProductCodeValues>,
 }
 impl ProductCode {

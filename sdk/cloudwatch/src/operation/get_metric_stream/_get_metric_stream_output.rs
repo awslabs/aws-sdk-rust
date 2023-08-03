@@ -4,40 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetricStreamOutput {
     /// <p>The ARN of the metric stream.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric stream.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
-    #[doc(hidden)]
     pub include_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-    #[doc(hidden)]
     pub exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
-    #[doc(hidden)]
     pub firehose_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
-    #[doc(hidden)]
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>The date that the metric stream was created.</p>
-    #[doc(hidden)]
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
-    #[doc(hidden)]
     pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
-    #[doc(hidden)]
     pub output_format: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
-    #[doc(hidden)]
     pub statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
-    #[doc(hidden)]
     pub include_linked_accounts_metrics: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

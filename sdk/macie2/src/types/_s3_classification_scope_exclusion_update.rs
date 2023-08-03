@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ClassificationScopeExclusionUpdate {
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
-    #[doc(hidden)]
     pub bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
@@ -13,7 +12,6 @@ pub struct S3ClassificationScopeExclusionUpdate {
     /// <li><p>REMOVE - Remove the specified bucket names from the current list.</p></li>
     /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
-    #[doc(hidden)]
     pub operation: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
 }
 impl S3ClassificationScopeExclusionUpdate {

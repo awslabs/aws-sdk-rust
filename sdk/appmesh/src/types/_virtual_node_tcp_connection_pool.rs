@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeTcpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
-    #[doc(hidden)]
     pub max_connections: i32,
 }
 impl VirtualNodeTcpConnectionPool {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedWorkflow {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the text description for the workflow.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    #[doc(hidden)]
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    #[doc(hidden)]
     pub on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     /// <p>A unique identifier for the workflow.</p>
-    #[doc(hidden)]
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DescribedWorkflow {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDataIdentifiersResult {
     /// <p>The list of detected instances of sensitive data.</p>
-    #[doc(hidden)]
     pub detections: ::std::option::Option<::std::vec::Vec<crate::types::CustomDataIdentifiersDetections>>,
     /// <p>The total number of occurrences of sensitive data.</p>
-    #[doc(hidden)]
     pub total_count: i64,
 }
 impl CustomDataIdentifiersResult {

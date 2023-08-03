@@ -4,11 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyPairInput {
     /// <p>The name for your new key pair.</p>
-    #[doc(hidden)]
     pub key_pair_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateKeyPairInput {

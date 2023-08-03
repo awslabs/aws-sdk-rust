@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkforcesOutput {
     /// <p>A list containing information about your workforce.</p>
-    #[doc(hidden)]
     pub workforces: ::std::option::Option<::std::vec::Vec<crate::types::Workforce>>,
     /// <p>A token to resume pagination.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

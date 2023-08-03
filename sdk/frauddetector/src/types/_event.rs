@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The event ID.</p>
-    #[doc(hidden)]
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type.</p>
-    #[doc(hidden)]
     pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    #[doc(hidden)]
     pub event_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
-    #[doc(hidden)]
     pub event_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The label associated with the event.</p>
-    #[doc(hidden)]
     pub current_label: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    #[doc(hidden)]
     pub label_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The event entities.</p>
-    #[doc(hidden)]
     pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
 }
 impl Event {

@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    #[doc(hidden)]
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
-    #[doc(hidden)]
     pub task_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
-    #[doc(hidden)]
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role that was assumed when running the task.</p>
-    #[doc(hidden)]
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The type of task that was run.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
     /// <p>The parameters passed to the task when it was run.</p> <note>
     /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
@@ -26,36 +21,26 @@ pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
     /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub task_parameters: ::std::option::Option<
         ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
     >,
     /// <p>The priority of the task.</p>
-    #[doc(hidden)]
     pub priority: i32,
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
-    #[doc(hidden)]
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
-    #[doc(hidden)]
     pub max_errors: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
     /// <p>The details explaining the status. Not available for all status values.</p>
-    #[doc(hidden)]
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>The time the task execution started.</p>
-    #[doc(hidden)]
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the task execution completed.</p>
-    #[doc(hidden)]
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    #[doc(hidden)]
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-    #[doc(hidden)]
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
     _request_id: Option<String>,
 }

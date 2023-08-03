@@ -4,31 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRescoreExecutionPlanOutput {
     /// <p>The identifier of the rescore execution plan.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the rescore execution plan.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the rescore execution plan.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The capacity units set for the rescore execution plan. A capacity of zero indicates that the rescore execution plan is using the default capacity. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    #[doc(hidden)]
     pub capacity_units: ::std::option::Option<crate::types::CapacityUnitsConfiguration>,
     /// <p>The Unix timestamp of when the rescore execution plan was created.</p>
-    #[doc(hidden)]
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp of when the rescore execution plan was last updated.</p>
-    #[doc(hidden)]
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::RescoreExecutionPlanStatus>,
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

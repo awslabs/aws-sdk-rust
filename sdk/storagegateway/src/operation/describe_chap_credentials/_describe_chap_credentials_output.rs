@@ -11,7 +11,6 @@ pub struct DescribeChapCredentialsOutput {
     /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
     /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub chap_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>,
     _request_id: Option<String>,
 }

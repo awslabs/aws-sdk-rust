@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DuplicateTimestamps {
     /// <p> Indicates the total number of duplicate timestamps. </p>
-    #[doc(hidden)]
     pub total_number_of_duplicate_timestamps: ::std::option::Option<i32>,
 }
 impl DuplicateTimestamps {

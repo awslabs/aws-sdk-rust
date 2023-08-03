@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EgressEndpoint {
     /// The ID of the PackagingConfiguration being applied to the Asset.
-    #[doc(hidden)]
     pub packaging_configuration_id: ::std::option::Option<::std::string::String>,
     /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
-    #[doc(hidden)]
     pub status: ::std::option::Option<::std::string::String>,
     /// The URL of the parent manifest for the repackaged Asset.
-    #[doc(hidden)]
     pub url: ::std::option::Option<::std::string::String>,
 }
 impl EgressEndpoint {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
-    #[doc(hidden)]
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-    #[doc(hidden)]
     pub account_customization: ::std::option::Option<crate::types::AccountCustomization>,
 }
 impl UpdateAccountCustomizationInput {

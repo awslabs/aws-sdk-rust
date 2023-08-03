@@ -4,17 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSensitivityInspectionTemplateInput {
     /// <p>A custom description of the template. The description can contain as many as 200 characters.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
     /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
-    #[doc(hidden)]
     pub excludes: ::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes>,
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
-    #[doc(hidden)]
     pub includes: ::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes>,
 }
 impl UpdateSensitivityInspectionTemplateInput {

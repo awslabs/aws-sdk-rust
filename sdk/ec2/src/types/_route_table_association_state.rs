@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteTableAssociationState {
     /// <p>The state of the association.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::RouteTableAssociationStateCode>,
     /// <p>The status message, if applicable.</p>
-    #[doc(hidden)]
     pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl RouteTableAssociationState {

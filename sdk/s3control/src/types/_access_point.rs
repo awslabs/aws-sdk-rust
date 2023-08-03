@@ -5,27 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPoint {
     /// <p>The name of this access point.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>
-    #[doc(hidden)]
     pub network_origin: ::std::option::Option<crate::types::NetworkOrigin>,
     /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
     /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
-    #[doc(hidden)]
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The name of the bucket associated with this access point.</p>
-    #[doc(hidden)]
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the access point.</p>
-    #[doc(hidden)]
     pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name or alias of the access point.</p>
-    #[doc(hidden)]
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
-    #[doc(hidden)]
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
 }
 impl AccessPoint {

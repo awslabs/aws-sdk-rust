@@ -8,13 +8,10 @@ pub struct SetIdentityNotificationTopicInput {
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
     /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    #[doc(hidden)]
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
-    #[doc(hidden)]
     pub notification_type: ::std::option::Option<crate::types::NotificationType>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
-    #[doc(hidden)]
     pub sns_topic: ::std::option::Option<::std::string::String>,
 }
 impl SetIdentityNotificationTopicInput {

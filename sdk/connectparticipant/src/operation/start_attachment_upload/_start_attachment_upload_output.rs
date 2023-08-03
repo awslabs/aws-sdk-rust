@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAttachmentUploadOutput {
     /// <p>A unique identifier for the attachment.</p>
-    #[doc(hidden)]
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Fields to be used while uploading the attachment.</p>
-    #[doc(hidden)]
     pub upload_metadata: ::std::option::Option<crate::types::UploadMetadata>,
     _request_id: Option<String>,
 }

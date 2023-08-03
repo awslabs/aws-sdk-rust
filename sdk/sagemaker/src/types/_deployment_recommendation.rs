@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentRecommendation {
     /// <p>Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default recommendation for the model using the information provided. If the deployment status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a> items.</p>
-    #[doc(hidden)]
     pub real_time_inference_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>,
 }
 impl DeploymentRecommendation {

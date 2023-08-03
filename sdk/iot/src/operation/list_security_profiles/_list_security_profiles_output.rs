@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityProfilesOutput {
     /// <p>A list of security profile identifiers (names and ARNs).</p>
-    #[doc(hidden)]
     pub security_profile_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileIdentifier>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

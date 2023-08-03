@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetailedStatusCodesMetrics {
     /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
-    #[doc(hidden)]
     pub is_enabled: bool,
 }
 impl DetailedStatusCodesMetrics {

@@ -9,7 +9,6 @@ pub struct SuppressionListDestination {
     /// <li> <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the suppression list.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub suppression_list_import_action: ::std::option::Option<crate::types::SuppressionListImportAction>,
 }
 impl SuppressionListDestination {

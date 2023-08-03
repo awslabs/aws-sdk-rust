@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignStateOutput {
     /// State of a campaign
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::CampaignState>,
     _request_id: Option<String>,
 }

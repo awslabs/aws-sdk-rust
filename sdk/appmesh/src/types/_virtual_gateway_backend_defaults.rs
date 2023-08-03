@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
-    #[doc(hidden)]
     pub client_policy: ::std::option::Option<crate::types::VirtualGatewayClientPolicy>,
 }
 impl VirtualGatewayBackendDefaults {

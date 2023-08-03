@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedScheduledUpdateGroupActionRequest {
     /// <p>The name of the scheduled action.</p>
-    #[doc(hidden)]
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message accompanying the error code.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedScheduledUpdateGroupActionRequest {

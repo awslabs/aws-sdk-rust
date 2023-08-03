@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackendAuthOAuthConfig {
     /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
-    #[doc(hidden)]
     pub domain_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
-    #[doc(hidden)]
     pub o_auth_grant_type: ::std::option::Option<crate::types::OAuthGrantType>,
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
-    #[doc(hidden)]
     pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<crate::types::OAuthScopesElement>>,
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    #[doc(hidden)]
     pub redirect_sign_in_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    #[doc(hidden)]
     pub redirect_sign_out_ur_is: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
-    #[doc(hidden)]
     pub social_provider_settings: ::std::option::Option<crate::types::SocialProviderSettings>,
 }
 impl UpdateBackendAuthOAuthConfig {

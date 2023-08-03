@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
     /// <p>The application ID that includes the environment that you want to delete.</p>
-    #[doc(hidden)]
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment that you want to delete.</p>
-    #[doc(hidden)]
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentInput {

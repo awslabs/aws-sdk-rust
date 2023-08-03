@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The name of the application.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application.</p>
-    #[doc(hidden)]
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application.</p>
-    #[doc(hidden)]
     pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>Provides the current application version.</p>
-    #[doc(hidden)]
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The runtime environment for the application.</p>
-    #[doc(hidden)]
     pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
     /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
-    #[doc(hidden)]
     pub application_mode: ::std::option::Option<crate::types::ApplicationMode>,
 }
 impl ApplicationSummary {

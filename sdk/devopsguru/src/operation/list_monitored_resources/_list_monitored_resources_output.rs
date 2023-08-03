@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesOutput {
     /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
-    #[doc(hidden)]
     pub monitored_resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::MonitoredResourceIdentifier>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

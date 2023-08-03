@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeHookSpecification {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
-    #[doc(hidden)]
     pub lambda_code_hook: ::std::option::Option<crate::types::LambdaCodeHook>,
 }
 impl CodeHookSpecification {

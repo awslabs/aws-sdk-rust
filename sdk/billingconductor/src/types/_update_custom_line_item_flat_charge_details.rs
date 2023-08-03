@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's new fixed charge value in USD. </p>
-    #[doc(hidden)]
     pub charge_value: ::std::option::Option<f64>,
 }
 impl UpdateCustomLineItemFlatChargeDetails {

@@ -4,28 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInstanceInput {
     /// <p>A name for the application instance.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the application instance.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The application's manifest document.</p>
-    #[doc(hidden)]
     pub manifest_payload: ::std::option::Option<crate::types::ManifestPayload>,
     /// <p>Setting overrides for the application manifest.</p>
-    #[doc(hidden)]
     pub manifest_overrides_payload: ::std::option::Option<crate::types::ManifestOverridesPayload>,
     /// <p>The ID of an application instance to replace with the new instance.</p>
-    #[doc(hidden)]
     pub application_instance_id_to_replace: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a runtime role for the application instance.</p>
-    #[doc(hidden)]
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A device's ID.</p>
-    #[doc(hidden)]
     pub default_runtime_context_device: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the application instance.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInstanceInput {

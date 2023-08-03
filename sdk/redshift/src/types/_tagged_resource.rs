@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaggedResource {
     /// <p>The tag for the resource.</p>
-    #[doc(hidden)]
     pub tag: ::std::option::Option<crate::types::Tag>,
     /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
-    #[doc(hidden)]
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
     /// <ul>
@@ -23,7 +21,6 @@ pub struct TaggedResource {
     /// <li> <p>Parameter group</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl TaggedResource {

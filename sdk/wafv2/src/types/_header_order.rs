@@ -11,7 +11,6 @@ pub struct HeaderOrder {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
 impl HeaderOrder {

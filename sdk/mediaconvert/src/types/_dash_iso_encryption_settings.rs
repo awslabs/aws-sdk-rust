@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashIsoEncryptionSettings {
     /// This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
-    #[doc(hidden)]
     pub playback_device_compatibility: ::std::option::Option<crate::types::DashIsoPlaybackDeviceCompatibility>,
     /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
-    #[doc(hidden)]
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl DashIsoEncryptionSettings {

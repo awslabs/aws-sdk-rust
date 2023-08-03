@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PresetSettings {
     /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
-    #[doc(hidden)]
     pub audio_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>>,
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
-    #[doc(hidden)]
     pub caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
     /// Container specific settings.
-    #[doc(hidden)]
     pub container_settings: ::std::option::Option<crate::types::ContainerSettings>,
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
-    #[doc(hidden)]
     pub video_description: ::std::option::Option<crate::types::VideoDescription>,
 }
 impl PresetSettings {

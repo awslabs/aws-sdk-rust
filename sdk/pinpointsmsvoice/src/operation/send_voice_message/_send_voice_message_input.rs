@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendVoiceMessageInput {
     /// The phone number that appears on recipients' devices when they receive the message.
-    #[doc(hidden)]
     pub caller_id: ::std::option::Option<::std::string::String>,
     /// The name of the configuration set that you want to use to send the message.
-    #[doc(hidden)]
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// An object that contains a voice message and information about the recipient that you want to send it to.
-    #[doc(hidden)]
     pub content: ::std::option::Option<crate::types::VoiceMessageContent>,
     /// The phone number that you want to send the voice message to.
-    #[doc(hidden)]
     pub destination_phone_number: ::std::option::Option<::std::string::String>,
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-    #[doc(hidden)]
     pub origination_phone_number: ::std::option::Option<::std::string::String>,
 }
 impl SendVoiceMessageInput {

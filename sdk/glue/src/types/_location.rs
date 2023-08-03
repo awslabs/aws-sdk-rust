@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>A JDBC location.</p>
-    #[doc(hidden)]
     pub jdbc: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     /// <p>An Amazon DynamoDB table location.</p>
-    #[doc(hidden)]
     pub dynamo_db: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
 }
 impl Location {

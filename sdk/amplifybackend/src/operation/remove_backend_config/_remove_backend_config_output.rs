@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveBackendConfigOutput {
     /// <p>If the request fails, this error is returned.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to enable server-side encryption (SSE).</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    #[doc(hidden)]
     pub delivery_stream_encryption_configuration_input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
 }
 impl StartDeliveryStreamEncryptionInput {

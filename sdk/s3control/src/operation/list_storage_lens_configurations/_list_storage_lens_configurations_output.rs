@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStorageLensConfigurationsOutput {
     /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of S3 Storage Lens configurations.</p>
-    #[doc(hidden)]
     pub storage_lens_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
     _request_id: Option<String>,
 }

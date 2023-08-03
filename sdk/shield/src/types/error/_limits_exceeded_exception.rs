@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LimitsExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The type of limit that would be exceeded.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The threshold that would be exceeded.</p>
-    #[doc(hidden)]
     pub limit: i64,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }

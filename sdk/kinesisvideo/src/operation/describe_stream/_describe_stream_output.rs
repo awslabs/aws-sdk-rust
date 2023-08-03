@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamOutput {
     /// <p>An object that describes the stream.</p>
-    #[doc(hidden)]
     pub stream_info: ::std::option::Option<crate::types::StreamInfo>,
     _request_id: Option<String>,
 }

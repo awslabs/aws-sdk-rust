@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContinuousBackupsOutput {
     /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
-    #[doc(hidden)]
     pub continuous_backups_description: ::std::option::Option<crate::types::ContinuousBackupsDescription>,
     _request_id: Option<String>,
 }

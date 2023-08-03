@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTextTranslationJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    #[doc(hidden)]
     pub text_translation_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::TextTranslationJobProperties>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

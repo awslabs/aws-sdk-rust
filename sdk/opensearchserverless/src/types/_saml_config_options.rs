@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlConfigOptions {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
-    #[doc(hidden)]
     pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>A user attribute for this SAML integration.</p>
-    #[doc(hidden)]
     pub user_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The group attribute for this SAML integration.</p>
-    #[doc(hidden)]
     pub group_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
-    #[doc(hidden)]
     pub session_timeout: ::std::option::Option<i32>,
 }
 impl SamlConfigOptions {

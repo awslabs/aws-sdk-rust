@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
-    #[doc(hidden)]
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database where the partitions reside.</p>
-    #[doc(hidden)]
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table that contains the partition.</p>
-    #[doc(hidden)]
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>An expression that filters the partitions to be returned.</p>
     /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
@@ -79,22 +76,16 @@ pub struct GetUnfilteredPartitionsMetadataInput {
     /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-    #[doc(hidden)]
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing Lake Formation audit context information.</p>
-    #[doc(hidden)]
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>A list of supported permission types. </p>
-    #[doc(hidden)]
     pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The segment of the table's partitions to scan in this request.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<crate::types::Segment>,
     /// <p>The maximum number of partitions to return in a single response.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl GetUnfilteredPartitionsMetadataInput {

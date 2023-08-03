@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
-    #[doc(hidden)]
     pub input_name: ::std::option::Option<::std::string::String>,
 }
 impl IotEventsInputIdentifier {

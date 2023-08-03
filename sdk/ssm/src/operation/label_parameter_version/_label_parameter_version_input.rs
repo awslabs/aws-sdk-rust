@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelParameterVersionInput {
     /// <p>The parameter name on which you want to attach one or more labels.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
-    #[doc(hidden)]
     pub parameter_version: ::std::option::Option<i64>,
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    #[doc(hidden)]
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LabelParameterVersionInput {

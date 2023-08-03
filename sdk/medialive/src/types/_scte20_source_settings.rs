@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte20SourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
-    #[doc(hidden)]
     pub convert608_to708: ::std::option::Option<crate::types::Scte20Convert608To708>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-    #[doc(hidden)]
     pub source608_channel_number: ::std::option::Option<i32>,
 }
 impl Scte20SourceSettings {

@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceInformationFilter {
     /// <p>The name of the filter. </p>
-    #[doc(hidden)]
     pub key: ::std::option::Option<crate::types::InstanceInformationFilterKey>,
     /// <p>The filter values.</p>
-    #[doc(hidden)]
     pub value_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceInformationFilter {

@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServiceLinkedRoleOutput {
     /// <p>A <code>Role</code> object that contains details about the newly created role.</p>
-    #[doc(hidden)]
     pub role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,
 }

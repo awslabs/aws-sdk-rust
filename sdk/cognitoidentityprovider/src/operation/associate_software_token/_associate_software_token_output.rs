@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenOutput {
     /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
-    #[doc(hidden)]
     pub secret_code: ::std::option::Option<::std::string::String>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
-    #[doc(hidden)]
     pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

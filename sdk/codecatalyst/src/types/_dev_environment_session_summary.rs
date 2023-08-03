@@ -5,19 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevEnvironmentSessionSummary {
     /// <p>The name of the space.</p>
-    #[doc(hidden)]
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    #[doc(hidden)]
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    #[doc(hidden)]
     pub dev_environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the session started, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a> </p>
-    #[doc(hidden)]
     pub started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl DevEnvironmentSessionSummary {

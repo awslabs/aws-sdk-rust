@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBounceInput {
     /// <p>The message ID of the message to be bounced.</p>
-    #[doc(hidden)]
     pub original_message_id: ::std::option::Option<::std::string::String>,
     /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
-    #[doc(hidden)]
     pub bounce_sender: ::std::option::Option<::std::string::String>,
     /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
-    #[doc(hidden)]
     pub explanation: ::std::option::Option<::std::string::String>,
     /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
-    #[doc(hidden)]
     pub message_dsn: ::std::option::Option<crate::types::MessageDsn>,
     /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
-    #[doc(hidden)]
     pub bounced_recipient_info_list: ::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>>,
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    #[doc(hidden)]
     pub bounce_sender_arn: ::std::option::Option<::std::string::String>,
 }
 impl SendBounceInput {

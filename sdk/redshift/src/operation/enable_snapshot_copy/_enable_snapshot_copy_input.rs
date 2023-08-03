@@ -6,23 +6,18 @@
 pub struct EnableSnapshotCopyInput {
     /// <p>The unique identifier of the source cluster to copy snapshots from.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.</p>
-    #[doc(hidden)]
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
     /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
-    #[doc(hidden)]
     pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain automated snapshots in the destination region after they are copied from the source region.</p>
     /// <p>Default: 7.</p>
     /// <p>Constraints: Must be at least 1 and no more than 35.</p>
-    #[doc(hidden)]
     pub retention_period: ::std::option::Option<i32>,
     /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted cluster are copied to the destination region.</p>
-    #[doc(hidden)]
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-    #[doc(hidden)]
     pub manual_snapshot_retention_period: ::std::option::Option<i32>,
 }
 impl EnableSnapshotCopyInput {

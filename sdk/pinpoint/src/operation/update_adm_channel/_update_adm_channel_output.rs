@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAdmChannelOutput {
     /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-    #[doc(hidden)]
     pub adm_channel_response: ::std::option::Option<crate::types::AdmChannelResponse>,
     _request_id: Option<String>,
 }

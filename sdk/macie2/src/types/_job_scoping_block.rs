@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobScopingBlock {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    #[doc(hidden)]
     pub and: ::std::option::Option<::std::vec::Vec<crate::types::JobScopeTerm>>,
 }
 impl JobScopingBlock {

@@ -6,17 +6,13 @@
 pub struct LambdaContainerParams {
     /// <p>The memory size of the container, expressed in kilobytes.</p>
     /// <p>Default: <code>16384</code> (16 MB)</p>
-    #[doc(hidden)]
     pub memory_size_in_kb: ::std::option::Option<i32>,
     /// <p>Whether or not the container can read information from the device's <code>/sys</code> folder.</p>
     /// <p>Default: <code>false</code> </p>
-    #[doc(hidden)]
     pub mount_ro_sysfs: ::std::option::Option<bool>,
     /// <p>The list of volumes that the container can access.</p>
-    #[doc(hidden)]
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::LambdaVolumeMount>>,
     /// <p>The list of system devices that the container can access.</p>
-    #[doc(hidden)]
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::LambdaDeviceMount>>,
 }
 impl LambdaContainerParams {

@@ -6,12 +6,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    #[doc(hidden)]
     pub ip_set_forwarded_ip_config: ::std::option::Option<crate::types::IpSetForwardedIpConfig>,
 }
 impl IpSetReferenceStatement {

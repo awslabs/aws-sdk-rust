@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyAddressAttributeOutput {
     /// <p>Information about the Elastic IP address.</p>
-    #[doc(hidden)]
     pub address: ::std::option::Option<crate::types::AddressAttribute>,
     _request_id: Option<String>,
 }

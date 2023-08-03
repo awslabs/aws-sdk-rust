@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationMode {
     /// <p>Specifies the authentication type. Possible options are IAM authentication, password and no password.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::InputAuthenticationType>,
     /// <p>Specifies the passwords to use for authentication if <code>Type</code> is set to <code>password</code>.</p>
-    #[doc(hidden)]
     pub passwords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthenticationMode {

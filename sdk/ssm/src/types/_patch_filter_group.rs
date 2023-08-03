@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchFilterGroup {
     /// <p>The set of patch filters that make up the group.</p>
-    #[doc(hidden)]
     pub patch_filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
 }
 impl PatchFilterGroup {

@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenFeatureFlags {
     /// <p>Specifes whether a code generation job supports data relationships.</p>
-    #[doc(hidden)]
     pub is_relationship_supported: ::std::option::Option<bool>,
     /// <p>Specifies whether a code generation job supports non models.</p>
-    #[doc(hidden)]
     pub is_non_model_supported: ::std::option::Option<bool>,
 }
 impl CodegenFeatureFlags {

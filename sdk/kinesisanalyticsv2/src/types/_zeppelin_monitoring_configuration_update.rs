@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationUpdate {
     /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
-    #[doc(hidden)]
     pub log_level_update: ::std::option::Option<crate::types::LogLevel>,
 }
 impl ZeppelinMonitoringConfigurationUpdate {

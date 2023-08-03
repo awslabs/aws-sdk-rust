@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallMetadata {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    #[doc(hidden)]
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    #[doc(hidden)]
     pub firewall_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallMetadata {

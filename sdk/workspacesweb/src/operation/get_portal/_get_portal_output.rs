@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPortalOutput {
     /// <p>The web portal.</p>
-    #[doc(hidden)]
     pub portal: ::std::option::Option<crate::types::Portal>,
     _request_id: Option<String>,
 }

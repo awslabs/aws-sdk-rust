@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogCloudWatchLogsDestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
-    #[doc(hidden)]
     pub enabled: ::std::option::Option<bool>,
     /// <p>The ID of the CloudWatch Logs log group.</p>
-    #[doc(hidden)]
     pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogCloudWatchLogsDestinationOptions {

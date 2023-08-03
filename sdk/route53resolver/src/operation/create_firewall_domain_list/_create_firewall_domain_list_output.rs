@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFirewallDomainListOutput {
     /// <p>The domain list that you just created.</p>
-    #[doc(hidden)]
     pub firewall_domain_list: ::std::option::Option<crate::types::FirewallDomainList>,
     _request_id: Option<String>,
 }

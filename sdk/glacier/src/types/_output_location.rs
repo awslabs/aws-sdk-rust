@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the job request.</p>
-    #[doc(hidden)]
     pub s3: ::std::option::Option<crate::types::S3Location>,
 }
 impl OutputLocation {

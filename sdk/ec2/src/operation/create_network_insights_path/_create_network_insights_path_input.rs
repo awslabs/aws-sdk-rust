@@ -4,37 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathInput {
     /// <p>The IP address of the source.</p>
-    #[doc(hidden)]
     pub source_ip: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the destination.</p>
-    #[doc(hidden)]
     pub destination_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID or ARN of the source. If the resource is in another account, you must specify an ARN.</p>
-    #[doc(hidden)]
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.</p>
-    #[doc(hidden)]
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The protocol.</p>
-    #[doc(hidden)]
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>The destination port.</p>
-    #[doc(hidden)]
     pub destination_port: ::std::option::Option<i32>,
     /// <p>The tags to add to the path.</p>
-    #[doc(hidden)]
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    #[doc(hidden)]
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
-    #[doc(hidden)]
     pub filter_at_source: ::std::option::Option<crate::types::PathRequestFilter>,
     /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
-    #[doc(hidden)]
     pub filter_at_destination: ::std::option::Option<crate::types::PathRequestFilter>,
 }
 impl CreateNetworkInsightsPathInput {

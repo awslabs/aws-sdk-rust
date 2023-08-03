@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Usd {
     /// <p>The whole number of dollars in the amount.</p>
-    #[doc(hidden)]
     pub dollars: i32,
     /// <p>The fractional portion, in cents, of the amount. </p>
-    #[doc(hidden)]
     pub cents: i32,
     /// <p>Fractions of a cent, in tenths.</p>
-    #[doc(hidden)]
     pub tenth_fractions_of_a_cent: i32,
 }
 impl Usd {

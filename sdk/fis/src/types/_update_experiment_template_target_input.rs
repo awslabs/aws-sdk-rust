@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    #[doc(hidden)]
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-    #[doc(hidden)]
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags for the target resources.</p>
-    #[doc(hidden)]
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
-    #[doc(hidden)]
     pub selection_mode: ::std::option::Option<::std::string::String>,
     /// <p>The resource type parameters.</p>
-    #[doc(hidden)]
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateExperimentTemplateTargetInput {

@@ -5,22 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbSubnetGroup {
     /// <p>The name of the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the subnet group.</p>
-    #[doc(hidden)]
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the subnet group.</p>
-    #[doc(hidden)]
     pub subnet_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnets in the subnet group.</p>
-    #[doc(hidden)]
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbSubnetGroupSubnet>>,
     /// <p>The ARN of the subnet group.</p>
-    #[doc(hidden)]
     pub db_subnet_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSubnetGroup {

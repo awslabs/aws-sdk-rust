@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayInput {
     /// <p>The ARN of the gateway to update.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the gateway.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the gateway.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    #[doc(hidden)]
     pub software_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGatewayInput {

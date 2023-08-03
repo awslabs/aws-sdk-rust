@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantTokenCredentials {
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant. </p>
-    #[doc(hidden)]
     pub participant_token: ::std::option::Option<::std::string::String>,
     /// <p>The expiration of the token. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    #[doc(hidden)]
     pub expiry: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantTokenCredentials {

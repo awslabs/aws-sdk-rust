@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The position of the label instance on the image.</p>
-    #[doc(hidden)]
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
-    #[doc(hidden)]
     pub confidence: ::std::option::Option<f32>,
     /// <p>The dominant colors found in an individual instance of a label.</p>
-    #[doc(hidden)]
     pub dominant_colors: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
 }
 impl Instance {

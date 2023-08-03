@@ -5,15 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishBatchResultEntry {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the message.</p>
-    #[doc(hidden)]
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
-    #[doc(hidden)]
     pub sequence_number: ::std::option::Option<::std::string::String>,
 }
 impl PublishBatchResultEntry {

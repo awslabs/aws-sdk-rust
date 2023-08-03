@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tiering {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
-    #[doc(hidden)]
     pub free_tier: ::std::option::Option<crate::types::FreeTierConfig>,
 }
 impl Tiering {

@@ -5,49 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scan {
     /// <p>The unique ID of the detector that the request is associated with.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
-    #[doc(hidden)]
     pub admin_detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique scan ID associated with a scan entry.</p>
-    #[doc(hidden)]
     pub scan_id: ::std::option::Option<::std::string::String>,
     /// <p>An enum value representing possible scan statuses.</p>
-    #[doc(hidden)]
     pub scan_status: ::std::option::Option<crate::types::ScanStatus>,
     /// <p>Represents the reason for FAILED scan status.</p>
-    #[doc(hidden)]
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the scan was triggered.</p>
-    #[doc(hidden)]
     pub scan_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the scan was finished.</p>
-    #[doc(hidden)]
     pub scan_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the reason why the scan was initiated.</p>
-    #[doc(hidden)]
     pub trigger_details: ::std::option::Option<crate::types::TriggerDetails>,
     /// <p>Represents the resources that were scanned in the scan entry.</p>
-    #[doc(hidden)]
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>Represents the result of the scan.</p>
-    #[doc(hidden)]
     pub scan_result_details: ::std::option::Option<crate::types::ScanResultDetails>,
     /// <p>The ID for the account that belongs to the scan.</p>
-    #[doc(hidden)]
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents total bytes that were scanned.</p>
-    #[doc(hidden)]
     pub total_bytes: i64,
     /// <p>Represents the number of files that were scanned.</p>
-    #[doc(hidden)]
     pub file_count: i64,
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
-    #[doc(hidden)]
     pub attached_volumes: ::std::option::Option<::std::vec::Vec<crate::types::VolumeDetail>>,
     /// <p>Specifies the scan type that invoked the malware scan.</p>
-    #[doc(hidden)]
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
 }
 impl Scan {

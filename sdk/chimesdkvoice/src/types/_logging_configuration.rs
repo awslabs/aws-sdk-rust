@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
-    #[doc(hidden)]
     pub enable_sip_logs: ::std::option::Option<bool>,
     /// <p>Enables or disables media metrics logging.</p>
-    #[doc(hidden)]
     pub enable_media_metric_logs: ::std::option::Option<bool>,
 }
 impl LoggingConfiguration {

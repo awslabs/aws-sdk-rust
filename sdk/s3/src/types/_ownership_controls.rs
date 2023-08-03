@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OwnershipControls {
     /// <p>The container element for an ownership control rule.</p>
-    #[doc(hidden)]
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::OwnershipControlsRule>>,
 }
 impl OwnershipControls {

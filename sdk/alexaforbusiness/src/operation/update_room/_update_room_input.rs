@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoomInput {
     /// <p>The ARN of the room to update. </p>
-    #[doc(hidden)]
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name for the room.</p>
-    #[doc(hidden)]
     pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated description for the room.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated provider calendar ARN for the room.</p>
-    #[doc(hidden)]
     pub provider_calendar_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated profile ARN for the room.</p>
-    #[doc(hidden)]
     pub profile_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRoomInput {

@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkSingleStartImportInfo {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>
-    #[doc(hidden)]
     pub sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkSingleStartImportInfo {

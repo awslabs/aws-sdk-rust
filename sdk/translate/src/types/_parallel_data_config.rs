@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelDataConfig {
     /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
-    #[doc(hidden)]
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The format of the parallel data input file.</p>
-    #[doc(hidden)]
     pub format: ::std::option::Option<crate::types::ParallelDataFormat>,
 }
 impl ParallelDataConfig {

@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RightsizingRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
-    #[doc(hidden)]
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    #[doc(hidden)]
     pub generation_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>
-    #[doc(hidden)]
     pub lookback_period_in_days: ::std::option::Option<crate::types::LookbackPeriodInDays>,
     /// <p>Additional metadata that might be applicable to the recommendation.</p>
-    #[doc(hidden)]
     pub additional_metadata: ::std::option::Option<::std::string::String>,
 }
 impl RightsizingRecommendationMetadata {

@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     /// <p>The Kinesis Analytics application name.</p>
-    #[doc(hidden)]
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the Kinesis Analytics application.</p>
-    #[doc(hidden)]
     pub current_application_version_id: ::std::option::Option<i64>,
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
-    #[doc(hidden)]
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {

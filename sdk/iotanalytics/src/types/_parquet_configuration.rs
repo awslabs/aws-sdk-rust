@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
-    #[doc(hidden)]
     pub schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
 }
 impl ParquetConfiguration {

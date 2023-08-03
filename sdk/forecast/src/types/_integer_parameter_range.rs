@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum tunable value of the hyperparameter.</p>
-    #[doc(hidden)]
     pub max_value: ::std::option::Option<i32>,
     /// <p>The minimum tunable value of the hyperparameter.</p>
-    #[doc(hidden)]
     pub min_value: ::std::option::Option<i32>,
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
@@ -43,7 +40,6 @@ pub struct IntegerParameterRange {
     /// </dd>
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-    #[doc(hidden)]
     pub scaling_type: ::std::option::Option<crate::types::ScalingType>,
 }
 impl IntegerParameterRange {

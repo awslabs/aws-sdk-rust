@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeHistory {
     /// <p>A string that describes the update briefly</p>
-    #[doc(hidden)]
     pub upgrade_name: ::std::option::Option<::std::string::String>,
     /// <p>UTC Timestamp at which the Upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.</p>
-    #[doc(hidden)]
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The overall status of the update. The status can take one of the following values: </p>
     /// <ul>
@@ -18,10 +16,8 @@ pub struct UpgradeHistory {
     /// <li>Failed</li>
     /// </ul>
     /// <p></p>
-    #[doc(hidden)]
     pub upgrade_status: ::std::option::Option<crate::types::UpgradeStatus>,
     /// <p> A list of <code> <code>UpgradeStepItem</code> </code> s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. </p>
-    #[doc(hidden)]
     pub steps_list: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeStepItem>>,
 }
 impl UpgradeHistory {

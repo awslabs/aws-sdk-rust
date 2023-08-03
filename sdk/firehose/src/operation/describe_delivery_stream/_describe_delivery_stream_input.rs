@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
-    #[doc(hidden)]
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
-    #[doc(hidden)]
     pub limit: ::std::option::Option<i32>,
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-    #[doc(hidden)]
     pub exclusive_start_destination_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeliveryStreamInput {

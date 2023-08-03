@@ -6,20 +6,16 @@
 pub struct Root {
     /// <p>The unique identifier (ID) for the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
-    #[doc(hidden)]
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    #[doc(hidden)]
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
     /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
     /// </note>
-    #[doc(hidden)]
     pub policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
 }
 impl Root {

@@ -5,47 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ipam {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
-    #[doc(hidden)]
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IPAM.</p>
-    #[doc(hidden)]
     pub ipam_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IPAM.</p>
-    #[doc(hidden)]
     pub ipam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the IPAM.</p>
-    #[doc(hidden)]
     pub ipam_region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IPAM's default public scope.</p>
-    #[doc(hidden)]
     pub public_default_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the IPAM's default private scope.</p>
-    #[doc(hidden)]
     pub private_default_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
-    #[doc(hidden)]
     pub scope_count: ::std::option::Option<i32>,
     /// <p>The description for the IPAM.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
     /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    #[doc(hidden)]
     pub operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::IpamOperatingRegion>>,
     /// <p>The state of the IPAM.</p>
-    #[doc(hidden)]
     pub state: ::std::option::Option<crate::types::IpamState>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    #[doc(hidden)]
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IPAM's default resource discovery ID.</p>
-    #[doc(hidden)]
     pub default_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPAM's default resource discovery association ID.</p>
-    #[doc(hidden)]
     pub default_resource_discovery_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPAM's resource discovery association count.</p>
-    #[doc(hidden)]
     pub resource_discovery_association_count: ::std::option::Option<i32>,
 }
 impl Ipam {

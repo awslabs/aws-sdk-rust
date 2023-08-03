@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReceivedGrantsForOrganizationOutput {
     /// <p>Lists the grants the organization has received.</p>
-    #[doc(hidden)]
     pub grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
     /// <p>Token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

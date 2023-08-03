@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FontWeight {
     /// <p>The lexical name for the level of boldness of the text display.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<crate::types::FontWeightName>,
 }
 impl FontWeight {

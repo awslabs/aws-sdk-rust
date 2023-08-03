@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListControlPanelsOutput {
     /// <p>The result of a successful ListControlPanel request.</p>
-    #[doc(hidden)]
     pub control_panels: ::std::option::Option<::std::vec::Vec<crate::types::ControlPanel>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

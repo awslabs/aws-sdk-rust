@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FmsPolicyUpdateFirewallCreationConfigAction {
     /// <p>Describes the remedial action.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A <code>FirewallCreationConfig</code> that you can copy into your current policy's <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_SecurityServicePolicyData.html">SecurityServiceData</a> in order to remedy scope violations.</p>
-    #[doc(hidden)]
     pub firewall_creation_config: ::std::option::Option<::std::string::String>,
 }
 impl FmsPolicyUpdateFirewallCreationConfigAction {

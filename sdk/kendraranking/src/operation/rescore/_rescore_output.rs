@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RescoreOutput {
     /// <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
-    #[doc(hidden)]
     pub rescore_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
-    #[doc(hidden)]
     pub result_items: ::std::option::Option<::std::vec::Vec<crate::types::RescoreResultItem>>,
     _request_id: Option<String>,
 }

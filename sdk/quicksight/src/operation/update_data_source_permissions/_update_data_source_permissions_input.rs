@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataSourcePermissionsInput {
     /// <p>The Amazon Web Services account ID.</p>
-    #[doc(hidden)]
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-    #[doc(hidden)]
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource permissions that you want to grant on the data source.</p>
-    #[doc(hidden)]
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     /// <p>A list of resource permissions that you want to revoke on the data source.</p>
-    #[doc(hidden)]
     pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateDataSourcePermissionsInput {

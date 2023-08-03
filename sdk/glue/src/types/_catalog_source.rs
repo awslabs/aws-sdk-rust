@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogSource {
     /// <p>The name of the data store.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to read from.</p>
-    #[doc(hidden)]
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
-    #[doc(hidden)]
     pub table: ::std::option::Option<::std::string::String>,
 }
 impl CatalogSource {

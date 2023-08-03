@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemAssociationSummary {
     /// <p>The ID of the file system association.</p>
-    #[doc(hidden)]
     pub file_system_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-    #[doc(hidden)]
     pub file_system_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-    #[doc(hidden)]
     pub file_system_association_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    #[doc(hidden)]
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemAssociationSummary {

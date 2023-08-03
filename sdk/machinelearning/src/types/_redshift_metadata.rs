@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftMetadata {
     /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
-    #[doc(hidden)]
     pub redshift_database: ::std::option::Option<crate::types::RedshiftDatabase>,
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
-    #[doc(hidden)]
     pub database_user_name: ::std::option::Option<::std::string::String>,
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
-    #[doc(hidden)]
     pub select_sql_query: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftMetadata {

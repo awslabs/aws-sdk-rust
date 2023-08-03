@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobEventDetails {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub event_type: ::std::option::Option<crate::types::JobEventType>,
     /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub time_of_event: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl JobEventDetails {

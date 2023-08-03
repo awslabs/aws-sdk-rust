@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationsOutput {
     /// <p>The locations.</p>
-    #[doc(hidden)]
     pub locations: ::std::option::Option<::std::vec::Vec<crate::types::Location>>,
     _request_id: Option<String>,
 }

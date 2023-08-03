@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrendmicroSourceProperties {
     /// <p> The object specified in the Trend Micro flow source. </p>
-    #[doc(hidden)]
     pub object: ::std::option::Option<::std::string::String>,
 }
 impl TrendmicroSourceProperties {

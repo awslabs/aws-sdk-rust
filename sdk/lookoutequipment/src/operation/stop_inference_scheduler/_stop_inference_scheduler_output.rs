@@ -4,19 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
-    #[doc(hidden)]
     pub model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the ML model used by the inference scheduler being stopped. </p>
-    #[doc(hidden)]
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference scheduler being stopped. </p>
-    #[doc(hidden)]
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
-    #[doc(hidden)]
     pub inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the inference scheduler. </p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
     _request_id: Option<String>,
 }

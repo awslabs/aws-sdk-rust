@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmergencyCallingConfiguration {
     /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details.</p>
-    #[doc(hidden)]
     pub dnis: ::std::option::Option<::std::vec::Vec<crate::types::DnisEmergencyCallingConfiguration>>,
 }
 impl EmergencyCallingConfiguration {

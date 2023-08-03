@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySpotFleetRequestOutput {
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
-    #[doc(hidden)]
     pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }

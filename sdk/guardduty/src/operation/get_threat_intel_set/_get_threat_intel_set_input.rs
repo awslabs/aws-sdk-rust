@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetThreatIntelSetInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
-    #[doc(hidden)]
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the threatIntelSet that you want to get.</p>
-    #[doc(hidden)]
     pub threat_intel_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetThreatIntelSetInput {

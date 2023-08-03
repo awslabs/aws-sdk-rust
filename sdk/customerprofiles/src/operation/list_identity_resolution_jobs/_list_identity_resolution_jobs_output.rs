@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityResolutionJobsOutput {
     /// <p>A list of Identity Resolution Jobs.</p>
-    #[doc(hidden)]
     pub identity_resolution_jobs_list: ::std::option::Option<::std::vec::Vec<crate::types::IdentityResolutionJob>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

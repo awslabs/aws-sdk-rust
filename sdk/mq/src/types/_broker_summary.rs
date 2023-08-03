@@ -5,28 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerSummary {
     /// <p>The broker's Amazon Resource Name (ARN).</p>
-    #[doc(hidden)]
     pub broker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    #[doc(hidden)]
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>The broker's name. This value is unique in your Amazon Web Services account, 1-50 characters long, and containing only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-    #[doc(hidden)]
     pub broker_name: ::std::option::Option<::std::string::String>,
     /// <p>The broker's status.</p>
-    #[doc(hidden)]
     pub broker_state: ::std::option::Option<crate::types::BrokerState>,
     /// <p>The time when the broker was created.</p>
-    #[doc(hidden)]
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The broker's deployment mode.</p>
-    #[doc(hidden)]
     pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     /// <p>The type of broker engine.</p>
-    #[doc(hidden)]
     pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The broker's instance type.</p>
-    #[doc(hidden)]
     pub host_instance_type: ::std::option::Option<::std::string::String>,
 }
 impl BrokerSummary {

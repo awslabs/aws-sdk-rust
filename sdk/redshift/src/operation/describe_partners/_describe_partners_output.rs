@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePartnersOutput {
     /// <p>A list of partner integrations.</p>
-    #[doc(hidden)]
     pub partner_integration_info_list: ::std::option::Option<::std::vec::Vec<crate::types::PartnerIntegrationInfo>>,
     _request_id: Option<String>,
 }

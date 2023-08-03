@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueueQuickConnectConfig {
     /// <p>The identifier for the queue.</p>
-    #[doc(hidden)]
     pub queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow.</p>
-    #[doc(hidden)]
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
 }
 impl QueueQuickConnectConfig {

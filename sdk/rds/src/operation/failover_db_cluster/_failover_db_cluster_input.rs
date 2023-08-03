@@ -9,12 +9,10 @@ pub struct FailoverDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
-    #[doc(hidden)]
     pub target_db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl FailoverDbClusterInput {

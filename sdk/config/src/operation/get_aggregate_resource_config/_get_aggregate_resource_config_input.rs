@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
-    #[doc(hidden)]
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that identifies aggregate resource.</p>
-    #[doc(hidden)]
     pub resource_identifier: ::std::option::Option<crate::types::AggregateResourceIdentifier>,
 }
 impl GetAggregateResourceConfigInput {

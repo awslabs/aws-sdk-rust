@@ -6,10 +6,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessDeviceEventLogOption {
     /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
-    #[doc(hidden)]
     pub event: ::std::option::Option<crate::types::WirelessDeviceEvent>,
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    #[doc(hidden)]
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl WirelessDeviceEventLogOption {

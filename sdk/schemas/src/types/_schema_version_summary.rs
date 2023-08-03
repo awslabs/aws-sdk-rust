@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaVersionSummary {
     /// <p>The ARN of the schema version.</p>
-    #[doc(hidden)]
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
-    #[doc(hidden)]
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the schema.</p>
-    #[doc(hidden)]
     pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of schema.</p>
-    #[doc(hidden)]
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl SchemaVersionSummary {

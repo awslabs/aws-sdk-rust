@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserHierarchyGroupOutput {
     /// <p>Information about the hierarchy group.</p>
-    #[doc(hidden)]
     pub hierarchy_group: ::std::option::Option<crate::types::HierarchyGroup>,
     _request_id: Option<String>,
 }

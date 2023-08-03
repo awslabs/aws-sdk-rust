@@ -10,10 +10,8 @@ pub struct BucketState {
     /// <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li>
     /// <li> <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A message that describes the state of the bucket.</p>
-    #[doc(hidden)]
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl BucketState {

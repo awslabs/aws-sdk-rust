@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLogPatternSetsOutput {
     /// <p>The name of the resource group.</p>
-    #[doc(hidden)]
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of log pattern sets.</p>
-    #[doc(hidden)]
     pub log_pattern_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

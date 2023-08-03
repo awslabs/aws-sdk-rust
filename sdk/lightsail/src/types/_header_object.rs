@@ -12,10 +12,8 @@ pub struct HeaderObject {
     /// <li> <p> <b> <code>none</code> </b> - Forward only the default headers.</p> </li>
     /// <li> <p> <b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p> </li>
     /// </ul>
-    #[doc(hidden)]
     pub option: ::std::option::Option<crate::types::ForwardValues>,
     /// <p>The specific headers to forward to your distribution's origin.</p>
-    #[doc(hidden)]
     pub headers_allow_list: ::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>>,
 }
 impl HeaderObject {

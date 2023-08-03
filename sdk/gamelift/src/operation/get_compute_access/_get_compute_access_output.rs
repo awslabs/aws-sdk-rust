@@ -4,25 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetComputeAccessOutput {
     /// <p>The fleet ID of compute resource.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the compute resource you requested credentials for.</p>
-    #[doc(hidden)]
     pub compute_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub compute_arn: ::std::option::Option<::std::string::String>,
     /// <p>The access credentials for the compute resource.</p>
-    #[doc(hidden)]
     pub credentials: ::std::option::Option<crate::types::AwsCredentials>,
     _request_id: Option<String>,
 }

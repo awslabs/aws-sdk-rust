@@ -4,22 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartAppInput {
     /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the simulation of the app.</p>
-    #[doc(hidden)]
     pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain of the app.</p>
-    #[doc(hidden)]
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the app.</p>
-    #[doc(hidden)]
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
-    #[doc(hidden)]
     pub launch_overrides: ::std::option::Option<crate::types::LaunchOverrides>,
 }
 impl StartAppInput {

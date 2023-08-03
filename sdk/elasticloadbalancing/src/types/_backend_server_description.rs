@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendServerDescription {
     /// <p>The port on which the EC2 instance is listening.</p>
-    #[doc(hidden)]
     pub instance_port: i32,
     /// <p>The names of the policies enabled for the EC2 instance.</p>
-    #[doc(hidden)]
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BackendServerDescription {

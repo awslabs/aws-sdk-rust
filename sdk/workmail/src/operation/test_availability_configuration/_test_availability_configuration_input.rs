@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestAvailabilityConfigurationInput {
     /// <p>The WorkMail organization where the availability provider will be tested.</p>
-    #[doc(hidden)]
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
-    #[doc(hidden)]
     pub ews_provider: ::std::option::Option<crate::types::EwsAvailabilityProvider>,
     /// <p>Describes a Lambda based availability provider.</p>
-    #[doc(hidden)]
     pub lambda_provider: ::std::option::Option<crate::types::LambdaAvailabilityProvider>,
 }
 impl TestAvailabilityConfigurationInput {

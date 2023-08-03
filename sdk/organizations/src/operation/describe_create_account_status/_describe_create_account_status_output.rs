@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCreateAccountStatusOutput {
     /// <p>A structure that contains the current status of an account creation request.</p>
-    #[doc(hidden)]
     pub create_account_status: ::std::option::Option<crate::types::CreateAccountStatus>,
     _request_id: Option<String>,
 }

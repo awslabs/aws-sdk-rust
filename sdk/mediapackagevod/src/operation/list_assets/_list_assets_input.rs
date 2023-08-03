@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetsInput {
     /// Upper bound on number of records to return.
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// A token used to resume pagination from the end of a previous request.
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// Returns Assets associated with the specified PackagingGroup.
-    #[doc(hidden)]
     pub packaging_group_id: ::std::option::Option<::std::string::String>,
 }
 impl ListAssetsInput {

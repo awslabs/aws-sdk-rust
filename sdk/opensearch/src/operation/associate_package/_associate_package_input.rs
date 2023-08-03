@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatePackageInput {
     /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
-    #[doc(hidden)]
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the domain to associate the package with.</p>
-    #[doc(hidden)]
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociatePackageInput {

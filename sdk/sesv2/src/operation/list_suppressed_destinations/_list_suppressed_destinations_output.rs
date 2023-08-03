@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSuppressedDestinationsOutput {
     /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
-    #[doc(hidden)]
     pub suppressed_destination_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }

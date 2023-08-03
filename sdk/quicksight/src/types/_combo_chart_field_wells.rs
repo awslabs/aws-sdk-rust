@@ -6,7 +6,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComboChartFieldWells {
     /// <p>The aggregated field wells of a combo chart. Combo charts only have aggregated field wells. Columns in a combo chart are aggregated by category.</p>
-    #[doc(hidden)]
     pub combo_chart_aggregated_field_wells: ::std::option::Option<crate::types::ComboChartAggregatedFieldWells>,
 }
 impl ComboChartFieldWells {

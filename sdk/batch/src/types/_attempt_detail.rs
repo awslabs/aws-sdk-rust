@@ -5,16 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttemptDetail {
     /// <p>The details for the container in this job attempt.</p>
-    #[doc(hidden)]
     pub container: ::std::option::Option<crate::types::AttemptContainerDetail>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    #[doc(hidden)]
     pub started_at: ::std::option::Option<i64>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    #[doc(hidden)]
     pub stopped_at: ::std::option::Option<i64>,
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl AttemptDetail {

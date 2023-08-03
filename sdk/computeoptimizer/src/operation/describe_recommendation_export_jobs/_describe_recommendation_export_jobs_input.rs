@@ -6,17 +6,13 @@ pub struct DescribeRecommendationExportJobsInput {
     /// <p>The identification numbers of the export jobs to return.</p>
     /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
-    #[doc(hidden)]
     pub job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::JobFilter>>,
     /// <p>The token to advance to the next page of export jobs.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of export jobs to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl DescribeRecommendationExportJobsInput {

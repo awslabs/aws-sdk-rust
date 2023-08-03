@@ -4,16 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVolumesInput {
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-    #[doc(hidden)]
     pub volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
-    #[doc(hidden)]
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVolumesInput {

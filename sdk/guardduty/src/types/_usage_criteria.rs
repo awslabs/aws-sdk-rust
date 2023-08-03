@@ -5,17 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageCriteria {
     /// <p>The account IDs to aggregate usage statistics from.</p>
-    #[doc(hidden)]
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The data sources to aggregate usage statistics from.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    #[doc(hidden)]
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
-    #[doc(hidden)]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The features to aggregate usage statistics from.</p>
-    #[doc(hidden)]
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::UsageFeature>>,
 }
 impl UsageCriteria {

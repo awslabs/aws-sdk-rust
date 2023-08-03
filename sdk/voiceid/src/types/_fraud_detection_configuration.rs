@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FraudDetectionConfiguration {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
-    #[doc(hidden)]
     pub risk_threshold: ::std::option::Option<i32>,
     /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
-    #[doc(hidden)]
     pub watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl FraudDetectionConfiguration {

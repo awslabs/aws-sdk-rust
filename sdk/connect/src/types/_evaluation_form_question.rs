@@ -5,25 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormQuestion {
     /// <p>The title of the question.</p>
-    #[doc(hidden)]
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The instructions of the section.</p>
-    #[doc(hidden)]
     pub instructions: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the question. An identifier must be unique within the evaluation form.</p>
-    #[doc(hidden)]
     pub ref_id: ::std::option::Option<::std::string::String>,
     /// <p>The flag to enable not applicable answers to the question.</p>
-    #[doc(hidden)]
     pub not_applicable_enabled: bool,
     /// <p>The type of the question.</p>
-    #[doc(hidden)]
     pub question_type: ::std::option::Option<crate::types::EvaluationFormQuestionType>,
     /// <p>The properties of the type of question. Text questions do not have to define question type properties.</p>
-    #[doc(hidden)]
     pub question_type_properties: ::std::option::Option<crate::types::EvaluationFormQuestionTypeProperties>,
     /// <p>The scoring weight of the section.</p>
-    #[doc(hidden)]
     pub weight: f64,
 }
 impl EvaluationFormQuestion {

@@ -4,25 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranslatePinDataInput {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
-    #[doc(hidden)]
     pub incoming_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
-    #[doc(hidden)]
     pub outgoing_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub incoming_translation_attributes: ::std::option::Option<crate::types::TranslationIsoFormats>,
     /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
-    #[doc(hidden)]
     pub outgoing_translation_attributes: ::std::option::Option<crate::types::TranslationIsoFormats>,
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
-    #[doc(hidden)]
     pub encrypted_pin_block: ::std::option::Option<::std::string::String>,
     /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
-    #[doc(hidden)]
     pub incoming_dukpt_attributes: ::std::option::Option<crate::types::DukptDerivationAttributes>,
     /// <p>The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.</p>
-    #[doc(hidden)]
     pub outgoing_dukpt_attributes: ::std::option::Option<crate::types::DukptDerivationAttributes>,
 }
 impl TranslatePinDataInput {

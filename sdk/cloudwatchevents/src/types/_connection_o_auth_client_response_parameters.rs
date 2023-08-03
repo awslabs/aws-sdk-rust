@@ -5,7 +5,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionOAuthClientResponseParameters {
     /// <p>The client ID associated with the response to the connection request.</p>
-    #[doc(hidden)]
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionOAuthClientResponseParameters {

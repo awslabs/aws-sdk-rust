@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
-    #[doc(hidden)]
     pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobListDescriptor>>,
     _request_id: Option<String>,
 }

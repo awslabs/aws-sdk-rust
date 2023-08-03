@@ -4,15 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGeofencesInput {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
-    #[doc(hidden)]
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional limit for the number of geofences returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListGeofencesInput {

@@ -15,40 +15,28 @@ pub struct GameSession {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>.</p>
-    #[doc(hidden)]
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the fleet that the game session is running on.</p>
-    #[doc(hidden)]
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that this game session is running on. </p>
-    #[doc(hidden)]
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    #[doc(hidden)]
     pub termination_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Number of players currently in the game session.</p>
-    #[doc(hidden)]
     pub current_player_session_count: ::std::option::Option<i32>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-    #[doc(hidden)]
     pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>Current status of the game session. A game session must have an <code>ACTIVE</code> status to have player sessions.</p>
-    #[doc(hidden)]
     pub status: ::std::option::Option<crate::types::GameSessionStatus>,
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
-    #[doc(hidden)]
     pub status_reason: ::std::option::Option<crate::types::GameSessionStatusReason>,
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    #[doc(hidden)]
     pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    #[doc(hidden)]
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
@@ -65,25 +53,18 @@ pub struct GameSession {
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    #[doc(hidden)]
     pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    #[doc(hidden)]
     pub port: ::std::option::Option<i32>,
     /// <p>Indicates whether or not the game session is accepting new players.</p>
-    #[doc(hidden)]
     pub player_session_creation_policy: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
-    #[doc(hidden)]
     pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    #[doc(hidden)]
     pub game_session_data: ::std::option::Option<::std::string::String>,
     /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
-    #[doc(hidden)]
     pub matchmaker_data: ::std::option::Option<::std::string::String>,
     /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    #[doc(hidden)]
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl GameSession {

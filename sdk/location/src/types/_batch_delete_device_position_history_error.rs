@@ -5,10 +5,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryError {
     /// <p>The ID of the device for this position.</p>
-    #[doc(hidden)]
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the batch request error details associated with the request.</p>
-    #[doc(hidden)]
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchDeleteDevicePositionHistoryError {

@@ -4,10 +4,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateServiceInstanceInput {
     /// <p>The name of the service instance to update.</p>
-    #[doc(hidden)]
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that the service instance belongs to.</p>
-    #[doc(hidden)]
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
     /// <dl>
@@ -32,19 +30,14 @@ pub struct UpdateServiceInstanceInput {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    #[doc(hidden)]
     pub deployment_type: ::std::option::Option<crate::types::DeploymentUpdateType>,
     /// <p>The formatted specification that defines the service instance update.</p>
-    #[doc(hidden)]
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The major version of the service template to update.</p>
-    #[doc(hidden)]
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of the service template to update.</p>
-    #[doc(hidden)]
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>The client token of the service instance to update.</p>
-    #[doc(hidden)]
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateServiceInstanceInput {

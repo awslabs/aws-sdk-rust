@@ -5,13 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeTypeConfigurationsError {
     /// <p>The error code.</p>
-    #[doc(hidden)]
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message.</p>
-    #[doc(hidden)]
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
-    #[doc(hidden)]
     pub type_configuration_identifier: ::std::option::Option<crate::types::TypeConfigurationIdentifier>,
 }
 impl BatchDescribeTypeConfigurationsError {

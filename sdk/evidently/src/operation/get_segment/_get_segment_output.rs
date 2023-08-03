@@ -4,7 +4,6 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSegmentOutput {
     /// <p>A structure that contains the complete information about the segment.</p>
-    #[doc(hidden)]
     pub segment: ::std::option::Option<crate::types::Segment>,
     _request_id: Option<String>,
 }

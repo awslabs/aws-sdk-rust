@@ -4,13 +4,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRotationsInput {
     /// <p>A filter to include rotations in list results based on their common prefix. For example, entering prod returns a list of all rotation names that begin with <code>prod</code>, such as <code>production</code> and <code>prod-1</code>.</p>
-    #[doc(hidden)]
     pub rotation_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    #[doc(hidden)]
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    #[doc(hidden)]
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListRotationsInput {
